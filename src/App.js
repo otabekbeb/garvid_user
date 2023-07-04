@@ -1,10 +1,10 @@
 
-import './App.css';
+import Profil from "./pages/js/profil"
 
 function App() {
   return (
     <div>
-      
+      <Profil/>
     </div>
   );
 }
