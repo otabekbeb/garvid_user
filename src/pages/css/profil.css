@@ -88,7 +88,7 @@ box-shadow: 0px 2px 2px 0px #0000001A;
 .user_img_hover {
   position: absolute;
   bottom: 2px;
-  height: 40px;
+  height: 24%;
   width: 100%;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.295);
@@ -320,53 +320,41 @@ cursor: pointer;
 
 
   @media (max-width:700px) {
-    .profil_blok_ikki_icon{
-      margin-top: 10px;
-    }
-    .blok_bir_icon{
-      margin-bottom: 15px;
-    }
-    .blok_bir_text h1{
-      margin-top: 10px;
-    }  
-    .profil_size{
-      flex-direction: column;
-      width: auto;
-    }
     .profil_blok_bir{
-      flex-direction: column;
-      text-align: center;
-    }
-    .blok_bir_icon{
       width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      text-align: center;
     }
     .profil_blok_ikki{
-      flex-direction: column;
-
-    }
-    .profil_blok_ikki_text{
+      width: 100%;
       text-align: center;
     }
-    .profil_blok_ikki_sum{
-      width: 100%;
-      display: flex;
-      justify-content:center;
-      gap: 10px;
-    }
-    .profil_blok_ikki_button{
-      width: 100%;
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
-      justify-content: center;
-    }
     .profil_blok_ikki_icon{
+      width: 60px;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    .blok_bir_text{
+      width: 100%;
+    }
+    .blok_bir_icon{
       width: 100%;
       display: flex;
-      gap: 15px;
       justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
     }
+    .profil_size_df{
+      position: relative;
+    }
+    .user_hover_photo_icon{
+      margin-top:1%;
+      font-size: 5vw;
+    }
+    .profil_blok_ikki_sum p{
+      margin-bottom: 0;
+    }
+  
   }
