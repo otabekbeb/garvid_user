@@ -1,46 +1,120 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../css/Pdp.css'
-import {CiSearch} from 'react-icons/ci'
-import {BiMenu} from 'react-icons/bi'
-import {MdWindow} from 'react-icons/md'
-import {TfiMenuAlt} from 'react-icons/tfi'
+import Nav from 'react-bootstrap/Nav';
+import Filtr from "./Searchfilter"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Mon from '../img/Mon.png'
+import { AiFillStar } from 'react-icons/ai'
+import {HiArrowRight} from 'react-icons/hi'
+import Rasp from '../img/Rasp.png'
 export default function Pdp() {
-  return (
-    <div>
-        <div className="gray_blok">
-        <div className="kurs_blok">
-            <div className="mening_kursm">
-                <h2>Мои курсы</h2>
-            </div>
-            <div className="bilimlar">
-                <h2>Мои усвоенные знания</h2>
-            </div>
-            <div className="Sertifikat">
-                <h2>Мои сертификаты</h2>
-            </div>
-            <div className="Azomentorlarim">
-                <h2>Мои наставники-члены</h2>
-            </div>
-        </div>
-        </div>
-        <div className="Filter">
-            <div className="blur_blok">
-            <div className="inp_blok">
-                <input type="text"  placeholder='Поиск среди моих курсов' />
-                <CiSearch className='search'/>
-            </div>
-            <div className="icon_blok">
-                <div className="sel_blok">
-                    <BiMenu className='menyu'/>
-                   <h4>Фильтр</h4>
-                </div>
-                <div className="win_men">
-                <MdWindow className='window'/>
-                <TfiMenuAlt className='manu'/>
+    const [toggle, setToggle] = useState(1)
+
+    function updatetoggle(id) {
+        setToggle(id)
+    }
+
+    return (
+        <div>
+            <div className="gray_blok">
+                <div className="fil_text_blok">
+                    <Nav variant="underline" defaultActiveKey="/home">
+                        <Nav.Item>
+                            <Nav.Link onClick={() => updatetoggle(1)} >Мои курсы</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link onClick={() => updatetoggle(2)} className='znani'  >Мои усвоенные знания</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link onClick={() => updatetoggle(3)} >
+                                Мои сертификаты
+                            </Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link className='werker' onClick={() => updatetoggle(4)}  >
+                                Мои наставники-члены
+                            </Nav.Link>
+                        </Nav.Item>
+                    </Nav>
                 </div>
             </div>
-            </div>   
+    <div className={toggle === 1 ? "show-content" : "content"}><Filtr />
+
+        <div className='cali_df'>
+            <div className="cali">
+                <img src={Mon} alt="" />
+                <div className="zero_blok">
+                <div className="text_blok">
+                    <h3>AWS для разработчиков: балансировка нагрузки ECS и Multi-Regional</h3>
+                </div>
+                <div className="star_icon_blok">
+                                <AiFillStar className='gold' />
+                                <AiFillStar className='gold' />
+                                <AiFillStar className='gold' />
+                                <AiFillStar className='gold' />
+                                <AiFillStar />
+                                <div className="number">
+                                    <h6>4.1 (524)</h6>
+                                </div>
+                    </div>
+                    <div className="bolim_blok">
+                        <div className="kurs_hajmi">
+                        <p>Размер курса</p>
+                        <h3 className='soat'>38 часы</h3>
+                        </div>
+                        <div className="kurs_bolimlari">
+                        <p>Разделы курса</p>
+                        <h3 className='soat'>38 часы</h3>
+                        </div>
+                        <div className="left_icon">
+                        <HiArrowRight/>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            <div className="cali">
+                <img src={Rasp} alt="" />
+                <div className="zero_blok">
+                <div className="text_blok">
+                    <h3>Программирование Raspberry Pi
+основы</h3>
+                </div>
+                <div className="star_icon_blok">
+                                <AiFillStar className='gold' />
+                                <AiFillStar className='gold' />
+                                <AiFillStar className='gold' />
+                                <AiFillStar className='gold' />
+                                <AiFillStar />
+                                <div className="number">
+                                    <h6>4.1 (524)</h6>
+                                </div>
+                    </div>
+                    <div className="bolim_blok">
+                        <div className="kurs_hajmi">
+                        <p>Размер курса</p>
+                        <h3 className='soat'>38 часы</h3>
+                        </div>
+                        <div className="kurs_bolimlari">
+                        <p>Разделы курса</p>
+                        <h3 className='soat'>38 часы</h3>
+                        </div>
+                        <div className="left_icon">
+                        <HiArrowRight/>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+            <div className="cali1">
+              
+            </div>
+
         </div>
-    </div>
-  )
+
+            </div>
+            <div className={toggle === 2 ? "show-content" : "content"}><h1>Oqganganim</h1></div>
+            <div className={toggle === 3 ? "show-content" : "content"}>sertifikatim </div>
+            <div className={toggle === 4 ? "show-content" : "content"}>azolarim</div>
+
+        </div>
+    )
 }

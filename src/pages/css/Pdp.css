@@ -1,43 +1,27 @@
-.gray_blok{
+.gray_blok {
     width: 100%;
-    height: 120px;
+    height: auto;
     background-color: rgba(221, 221, 221, 0.856);
 }
-.kurs_blok{
-    width: 50%;
-    padding-left: 10%;
-    height: 40px;
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    padding-top: 50px;
-}
-.kurs_blok h2{
-    font-size: 20px;
-    font-weight: 480;
-    height: 50px;
-    
-    margin-top: 65px;
-    color: rgba(0, 0, 0, 0.541);
-}
-.kurs_blok h2:hover {
-    cursor: pointer;
-    border-bottom:2.5px solid blue ;
-    color: black;
-}
-.Filter{
+
+
+
+.Filter {
     width: 100%;
+    align-items: center !important;
 }
-.blur_blok{
-    width: 80%;
+
+.blur_blok {
+    width: 80% !important;
     margin: auto;
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
 }
-.inp_blok input{
+
+.inp_blok input {
     width: 100%;
-    height:45px;
+    height: 45px;
     border-radius: 5px;
     outline: none;
     font-size: 15px;
@@ -45,52 +29,226 @@
     border: none;
     background-color: #e2e2e2;
 }
-.inp_blok{
+
+.inp_blok {
     width: 450px;
     display: flex;
     position: relative;
     border-radius: 5px;
     justify-content: space-around;
-  
+
 }
-.search{
+
+.search {
     font-size: 25px;
     position: absolute;
     right: 30px;
     top: 10px;
 }
-.icon_blok{
-    width: 12%;
+
+.icon_blok {
+    width: 200px;
     align-items: center;
     display: flex;
     justify-content: space-around;
 }
-.sel_blok{
+
+.sel_blok {
     width: 100px;
     height: 40px;
     border-radius: 5px;
     border: 2px solid rgba(128, 128, 128, 0.507);
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: center !important;
 }
-.sel_blok h4{
+
+.sel_blok h4 {
     font-size: 15px;
     font-weight: 500;
+    align-items: center !important;
+    margin-top: 5px;
 }
-.menyu{
+
+.menyu {
     font-size: 20px !important;
 }
-.window{
+
+.window {
     font-size: 30px;
     color: rgba(131, 131, 131, 0.801);
 }
-.manu{
+
+.manu {
     font-size: 30px;
     color: rgba(131, 131, 131, 0.801);
 }
-.win_men{
+
+.win_men {
     width: 35%;
     display: flex;
     justify-content: space-around;
+}
+.fil_text_blok{
+    width: 80%;
+    display: flex;
+    margin-left: 8.5%;
+    padding-top: 70px;
+}
+.nav-link{
+    color:black  !important;
+    font-size: 17px !important;
+}
+.nav-link:hover{
+    border-bottom: 2px solid blue !important;
+}
+.nav-underline{
+    width: 50% !important;
+    display: flex;
+    margin-left: 8%;
+    justify-content: space-around !important;
+}
+.fil_text_blok{
+    margin: auto !important;
+}
+.werker{
+    text-align: center !important;
+    font-size: 15px !important;
+    width: 100% !important;
+}
+@media (max-width:860px) {
+    .inp_blok {
+        width: 300px;
+    }
+}
+@media (max-width:642px) {
+    .blur_blok{
+        flex-direction: column;
+    }
+    .icon_blok{
+        margin-top: 30px;
+    }
+}
+@media (max-width:700px) {
+.nav-underline{
+    margin: auto;
+}
+}
+@media (max-width:345px) {
+   .inp_blok{
+    width: 270px !important;
+   } 
+}
+.znani{    
+    text-align: center;
+    font-size: 15px !important;
+}
+.fil_text_blok{
+    width: 100%;
+}
+.Nav.Link3{
+    color: red !important;
+}
+.show-content{
+    display: block;
+}
+.content{
+    display: none;
+}
+.cali_df{
+    width: 80% !important;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+.cali{
+    width: 350px;
+    height: 420px !important;
+    box-shadow: 2px 2px 10px gray;
+    border-radius: 5px;
+}
+.cali img{
+    width: 100%;
+}
+.text_blok{
+    width: 300px;
+    height: 80px;
+    margin-top: 10px !important;
+  
+    margin: auto;
+
+}
+.text_blok h3{
+    font-size: 20px !important;
+    
+}
+.gold{
+    color: gold;
+}
+
+.star_icon_blok{
+    width: 200px;
+    margin-top: 7%;
+    display: flex;
+    justify-content: space-around;
+}
+.bolim_blok{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    padding-top: 5%;
+    
+}
+.kurs_hajmi p{
+    font-weight: 700;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.61);   
+}
+.kurs_hajmi h3{
+    font-size: 20px !important;
+    margin-top: -10px !important;
+    font-weight: 700 !important;
+
+}
+.kurs_bolimlari p{
+    font-weight: 700;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.61);   
+}
+.kurs_bolimlari h3{
+    font-size: 20px !important;
+    font-weight: 700;
+    margin-top: -10px !important;
+}
+.left_icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 25px;
+    color:  rgba(0, 0, 255, 0.747);
+    border: 1px solid gray;
+    text-align: center;
+    align-items: center !important;
+    padding-top:1px !important;
+}
+.left_icon:hover{
+    background-color: rgba(0, 0, 255, 0.575);
+    color: #fff !important;
+}
+.zero_blok{
+    width: 300px;
+    margin: auto;
+   
+}
+.text_blok h3:hover{
+    color: rgba(0, 0, 255, 0.747);
+    cursor: pointer;
+}
+.cali1{
+    width: 350px;
+    height: 420px !important;
+    border: 3px  dashed #9DA7BB;
+    border-radius: 4px;
+    
 }
