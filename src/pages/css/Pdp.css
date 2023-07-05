@@ -319,7 +319,10 @@
     font-size: 20px;
     color: rgba(0, 0, 255, 0.747);
 }
-
+.nav{
+    width:auto !important;
+    flex-wrap: nowrap !important;
+}
 @media (max-width:368px) {
     .cali{
         width: 300px;

@@ -100,7 +100,7 @@ export default function Pdp() {
                         <h3 className='soat'>38 часы</h3>
                         </div>
                         <div className="left_icon">
-                        <HiArrowRight />
+                        <HiArrowRight/>
                         </div>
                     </div>
                     </div>

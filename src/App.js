@@ -1,12 +1,12 @@
 import React from 'react'
-import Pdp from './pages/js/Pdp.js'
+import Pdp from './pages/js/Pdp'
 
 
 export default function App() {
   return (
     <div>
+     <Pdp/>
      
-      <Pdp/>
     </div>
   )
 }
