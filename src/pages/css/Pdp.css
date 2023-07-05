@@ -1,0 +1,96 @@
+.gray_blok{
+    width: 100%;
+    height: 120px;
+    background-color: rgba(221, 221, 221, 0.856);
+}
+.kurs_blok{
+    width: 50%;
+    padding-left: 10%;
+    height: 40px;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+}
+.kurs_blok h2{
+    font-size: 20px;
+    font-weight: 480;
+    height: 50px;
+    
+    margin-top: 65px;
+    color: rgba(0, 0, 0, 0.541);
+}
+.kurs_blok h2:hover {
+    cursor: pointer;
+    border-bottom:2.5px solid blue ;
+    color: black;
+}
+.Filter{
+    width: 100%;
+}
+.blur_blok{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.inp_blok input{
+    width: 100%;
+    height:45px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+    padding-left: 20px;
+    border: none;
+    background-color: #e2e2e2;
+}
+.inp_blok{
+    width: 450px;
+    display: flex;
+    position: relative;
+    border-radius: 5px;
+    justify-content: space-around;
+  
+}
+.search{
+    font-size: 25px;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+.icon_blok{
+    width: 12%;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+.sel_blok{
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid rgba(128, 128, 128, 0.507);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.sel_blok h4{
+    font-size: 15px;
+    font-weight: 500;
+}
+.menyu{
+    font-size: 20px !important;
+}
+.window{
+    font-size: 30px;
+    color: rgba(131, 131, 131, 0.801);
+}
+.manu{
+    font-size: 30px;
+    color: rgba(131, 131, 131, 0.801);
+}
+.win_men{
+    width: 35%;
+    display: flex;
+    justify-content: space-around;
+}
