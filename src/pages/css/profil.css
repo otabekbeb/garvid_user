@@ -149,7 +149,7 @@ cursor: pointer;
   cursor: pointer;
   }
   .profil_size{
-    width: 95%;
+    width: 95% !important;
     display: flex;
     justify-content: space-around;
     align-items: center;

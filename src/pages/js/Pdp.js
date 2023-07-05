@@ -7,6 +7,8 @@ import Mon from '../img/Mon.png'
 import { AiFillStar } from 'react-icons/ai'
 import {HiArrowRight} from 'react-icons/hi'
 import Rasp from '../img/Rasp.png'
+import {BsPlus} from 'react-icons/bs'
+import {TbPointFilled} from 'react-icons/tb'
 export default function Pdp() {
     const [toggle, setToggle] = useState(1)
 
@@ -39,7 +41,6 @@ export default function Pdp() {
                 </div>
             </div>
     <div className={toggle === 1 ? "show-content" : "content"}><Filtr />
-
         <div className='cali_df'>
             <div className="cali">
                 <img src={Mon} alt="" />
@@ -99,18 +100,30 @@ export default function Pdp() {
                         <h3 className='soat'>38 часы</h3>
                         </div>
                         <div className="left_icon">
-                        <HiArrowRight/>
+                        <HiArrowRight />
                         </div>
                     </div>
                     </div>
             </div>
             <div className="cali1">
-              
+                <div className="plus_blok">
+              <BsPlus className='plus_icon'/>
+                <h6>Yangi kurs qo’shish</h6>
+                </div>
             </div>
 
         </div>
-
+        <div className="point_blok">
+            <TbPointFilled className="nuqta"/>
+            <TbPointFilled className="nuqta"/>
+            <TbPointFilled className="nuqta"/>
+            <h6>Yuklanmoqda</h6>
+        </div>
             </div>
+
+
+
+
             <div className={toggle === 2 ? "show-content" : "content"}><h1>Oqganganim</h1></div>
             <div className={toggle === 3 ? "show-content" : "content"}>sertifikatim </div>
             <div className={toggle === 4 ? "show-content" : "content"}>azolarim</div>
