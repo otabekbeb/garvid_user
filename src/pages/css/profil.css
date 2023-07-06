@@ -257,7 +257,9 @@ cursor: pointer;
   .taxrirlash_chad_size{
     display: block;
     width: 70%;
-    margin-top: 10px;
+  }
+  .profil_blok_ikki_icon_taxriirlash_chat p{
+    margin-bottom: auto;
   }
   .taxrirlash_chad{
     width: 100%;
@@ -272,8 +274,22 @@ cursor: pointer;
   }
   .taxrirlash_chad_text p{
     font-size: 13px;
-    margin-top: -10px;
+    margin-top: -5px;
   }
+  .taxrirlash_chad_barchasini{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 5px;
+    margin-right: 10px;
+  }
+  .taxrirlash_chad_barchasini p{
+  color: #536DFD;
+  font-size: 12px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  }
+
 
 
 

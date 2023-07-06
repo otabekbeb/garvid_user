@@ -9,6 +9,7 @@ import {BsActivity,BsFillBellFill,BsThreeDots} from "react-icons/bs"
 import {BiCast} from "react-icons/bi"
 import {FiEdit,FiLifeBuoy,FiLogOut} from "react-icons/fi"
 import {TbPointFilled} from "react-icons/tb"
+import {AiOutlineRight} from "react-icons/ai"
 import chadimg from "../img/Ellipse.jpg"
 
 
@@ -127,6 +128,10 @@ export default function Profil() {
               </div>
               </div>
             </div>
+             
+             <div className="taxrirlash_chad_barchasini">
+              <p>Посмотреть все<AiOutlineRight/></p>
+             </div>
             </div>
           </div>
 
