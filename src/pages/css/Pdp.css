@@ -198,7 +198,7 @@ align-items: center;
 }
 
 .cali_df {
-    width: 92.5% !important;
+    width: 80% !important;
     display: flex;
     margin: auto;
     flex-wrap: wrap !important;
