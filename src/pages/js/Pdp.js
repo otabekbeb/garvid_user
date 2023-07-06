@@ -20,10 +20,10 @@ export default function Pdp() {
         <div>
             <div className="gray_blok">
                 <div className="fil_text_blok">
-                <h1 className='fromLeft'>Мои курсы</h1>
-                <h1 className='fromLeft'>Мои усвоенные знания</h1>
-                <h1 className='fromLeft'>Мои сертификаты</h1>
-                <h1 className='fromLeft'>Мои наставники-члены</h1>
+                <h1 onClick={()=>updatetoggle(1)} className='fromLeft'>Мои курсы</h1>
+                <h1 onClick={()=>updatetoggle(2)} className='fromLeft'>Мои усвоенные знания</h1>
+                <h1 onClick={()=>updatetoggle(3)} className='fromLeft'>Мои сертификаты</h1>
+                <h1 onClick={()=>updatetoggle(4)} className='fromLeft'>Мои наставники-члены</h1>
                 </div>
             </div>
             
