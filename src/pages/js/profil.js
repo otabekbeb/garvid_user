@@ -6,6 +6,8 @@ import icon_img2 from "../img/medal.svg"
 import "../css/profil.css"
 import {MdOutlinePhotoCamera} from "react-icons/md"
 import {BsActivity,BsFillBellFill,BsThreeDots} from "react-icons/bs"
+import {BiCast} from "react-icons/bi"
+import {FiEdit,FiLifeBuoy,FiLogOut} from "react-icons/fi"
 
 export default function Profil() {
 
@@ -16,6 +18,10 @@ export default function Profil() {
   function userimgClose(){
     document.querySelector(".user_img_hover").style="  position: absolute;bottom: -100px;"
     
+  }
+
+  function taxrirlashModal(){
+    document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style="display:block;"
   }
 
   return (
@@ -60,7 +66,13 @@ export default function Profil() {
           </div>
           <div className="profil_blok_ikki_icon">
           <BsFillBellFill className='profil_blok_ikki_icon_bir' />
-          <BsThreeDots className='profil_blok_ikki_icon_ikki' />
+          <BsThreeDots onMouseEnter={()=>taxrirlashModal()} className='profil_blok_ikki_icon_ikki' />
+          <div className="profil_blok_ikki_icon_texrirlash_modal">
+            <div className='taxrirlash_modal_div'><FiEdit/><p>Редактировать профиль</p></div>
+            <div className='taxrirlash_modal_div'><BiCast/><p>Уведомления</p></div>
+            <div className='taxrirlash_modal_div'><FiLifeBuoy/><p>Помощь</p></div>
+            <div className='taxrirlash_modal_div'><FiLogOut/><p>Выход</p></div>
+          </div>
           </div>
         </div>
         </div> 
