@@ -1,0 +1,62 @@
+.cards_sertifikat{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    
+}
+.sertifikat{
+    width: 430px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.sertifikat img{
+width: 100%;
+}
+.card_sertifikat{
+    width: 86%;
+    display: grid;
+    margin-left: 5%;
+    grid-template-columns: auto auto auto;
+    gap: 30px;
+ 
+}
+.text_pro_max_gap_sos_lift_gr h4{
+    font-size: 15px;
+    padding-top: 10px;
+}
+.Dast_konter_dust_pro_dest{
+    width: 100px;
+    background-color: green;
+    color: #fff;
+    align-items: center;
+    height: 30px;
+    border: none;
+    border-radius: 2px;
+}
+.button_text_df_blok_pitani_pro_Max{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+@media (max-width:1544px) {
+    .card_sertifikat{
+        width: 80% !important;
+        display: grid;
+        margin-left: -1%;
+        grid-template-columns: auto auto ;
+        gap: 50px;
+
+    }  
+}
+@media (max-width:1036px) {
+    .card_sertifikat{
+        width: 80% !important;
+        display: grid;
+        margin-left: 30%;
+        grid-template-columns: auto  ;
+        gap: 50px;
+
+    } 
+}
