@@ -3,7 +3,7 @@ import '../css/Bilim.css'
 import Sas from '../img/Sas.png'
 import Htmlimg from '../img/Html.png'
 import Bootstrap from '../img/Bootstrap.png'
-
+import Git from '../img/Git.png'
 export default function Bilim() {
   return (
     <div>
@@ -47,8 +47,8 @@ amet, consectetur ar.</p>
             </div>
             <div className="html_code_tutoril">
             <div className="html_div">
-                <div className="bootstrap_red">
-                    <img src={Bootstrap} alt="" />
+                <div className="git_red">
+                    <img src={Git} alt="" />
                 </div>  
             </div>
             <div className="text_html">
