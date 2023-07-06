@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Filtr from "./Searchfilter"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Bilim from './Bilim'
+import Sertifikat from '../js/Sertifikate'
 // import Mon from '../img/Mon.png'
 // import { AiFillStar } from 'react-icons/ai'
 // import {HiArrowRight} from 'react-icons/hi'
@@ -43,7 +44,7 @@ export default function Pdp() {
             
             <div className={toggle === 1 ? "show-content" : "content"}><Filtr /></div>
             <div className={toggle === 2 ? "show-content" : "content"}><Bilim/></div>
-            <div className={toggle === 3 ? "show-content" : "content"}>sertifikatim </div>
+            <div className={toggle === 3 ? "show-content" : "content"}><Sertifikat/> </div>
             <div className={toggle === 4 ? "show-content" : "content"}>azolarim</div>
 
         </div>
