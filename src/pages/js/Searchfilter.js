@@ -13,6 +13,7 @@ import {TbPointFilled} from 'react-icons/tb'
 export default function Searchfilter() {
   return (
     <div>
+        
          <div className="Filter">
             <div className="blur_blok">
             <div className="inp_blok">

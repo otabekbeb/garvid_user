@@ -3,6 +3,7 @@ import '../css/Pdp.css'
 import Nav from 'react-bootstrap/Nav';
 import Filtr from "./Searchfilter"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Bilim from './pages/js/Bilim'
 // import Mon from '../img/Mon.png'
 // import { AiFillStar } from 'react-icons/ai'
 // import {HiArrowRight} from 'react-icons/hi'
@@ -28,7 +29,7 @@ export default function Pdp() {
             </div>
             
             <div className={toggle === 1 ? "show-content" : "content"}><Filtr /></div>
-            <div className={toggle === 2 ? "show-content" : "content"}><h1>Oqganganim</h1></div>
+            <div className={toggle === 2 ? "show-content" : "content"}><Bilim/></div>
             <div className={toggle === 3 ? "show-content" : "content"}>sertifikatim </div>
             <div className={toggle === 4 ? "show-content" : "content"}>azolarim</div>
 
