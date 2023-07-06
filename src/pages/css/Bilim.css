@@ -1,0 +1,59 @@
+.program{
+    width: 100%;
+}
+.ptogram_tutorial{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.html_div{
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 50% !important; 
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.html_red{
+
+    width: 85px;
+    height: 85px;
+    background-color: rgba(255, 72, 0, 0.815);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.html_red img{
+    width: 50px;
+    height: 50px ;
+}
+.html_code_tutoril{
+    width: 300px;
+    
+    display: flex;
+    justify-content: space-around;
+}
+.text_html p{
+    width: 170px;
+    opacity: 0.5;
+}
+.sas_red{
+    width: 85px;
+    height: 85px;
+    background-color: #eb7eb377;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bootstrap_red{
+    width: 85px;
+    height: 85px;
+    background-color:  #563D7C;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
