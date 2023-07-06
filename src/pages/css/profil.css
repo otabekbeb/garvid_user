@@ -21,8 +21,8 @@
   cursor: pointer;
 }
 .blok_bir_icon_img1 {
-  padding: 5px;
-  padding-top: 5px;
+  padding: 6px;
+  padding-top: 4px;
   text-align: center;
   width: 40px;
   border-radius: 50%;
@@ -32,8 +32,8 @@
   cursor: pointer;
 }
 .blok_bir_icon_img2 {
-  padding: 5px;
-  padding-top: 5px;
+  padding: 6px;
+  padding-top: 4px;
   text-align: center;
   width: 40px;
   border-radius: 50%;
@@ -43,8 +43,8 @@
   cursor: pointer;
 }
 .blok_bir_icon_img3 {
-  padding: 5px;
-  padding-top: 5px;
+  padding: 6px;
+  padding-top: 4px;
   text-align: center;
   width: 40px;
   border-radius: 50%;
@@ -75,7 +75,7 @@ box-shadow: 0px 2px 2px 0px #0000001A;
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  width: 40%;
+  width: 45%;
   border-radius: 50%;
 }
 .user_img {
@@ -195,7 +195,7 @@ cursor: pointer;
       width: 89% !important;
     }
     .user_img_size{
-    width: 40%;
+    width: 42%;
     }
     .blok_bir_icon{
       width: 70%;
