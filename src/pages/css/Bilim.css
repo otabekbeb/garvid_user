@@ -1,10 +1,13 @@
 .program{
     width: 100%;
+display: flex;
+justify-content: center;
 }
 .ptogram_tutorial{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
+    width: 83%;
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns: auto auto auto  auto auto ;
 }
 .html_div{
     width: 100px !important;
@@ -25,13 +28,23 @@
     justify-content: center;
     align-items: center;
 }
+.sp_red{
+    width: 85px;
+    height: 85px;
+    background-color: #24d3ada8;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .html_red img{
     width: 50px;
     height: 50px ;
 }
 .html_code_tutoril{
     width: 300px;
-    
+    margin-top: 10%;
     display: flex;
     justify-content: space-around;
 }
@@ -66,4 +79,71 @@
     justify-content: center;
     align-items: center;  
 } 
-
+.react_bootstrap{
+    font-size: 20px;
+}
+@media (max-width:1640px) {
+    .ptogram_tutorial{
+        width: 83%;
+        display: grid;
+        margin-top: 30px;
+        grid-template-columns: auto auto auto  ;
+    }
+}
+@media (max-width:984px) {
+    .ptogram_tutorial{
+        width: 83%;
+        display: grid;
+        margin-top: 30px;
+        grid-template-columns: auto auto  ;
+        margin:auto;
+    }
+}
+@media (max-width:756px) {
+    .sp_red{
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+    }
+    .git_red{
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+    }
+    .bootstrap_red{
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+    }
+    .sas_red{
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+    }
+    .html_red{
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+    }
+    .html_div{
+        width: 80px !important;
+        height: 80px !important;
+        border-radius: 50% !important;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+}
+@media (max-width:654px) {
+    .text_html h3{
+        font-size: 17px !important;
+    }
+    .text_html p{
+        font-size: 13px !important;
+    }
+        .ptogram_tutorial{
+        width: 83%;
+        display: grid;
+        margin-top: 30px;
+            justify-content: center !important;
+        grid-template-columns: auto   ;
+    }
+}
