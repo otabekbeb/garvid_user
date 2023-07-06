@@ -8,6 +8,9 @@ import {MdOutlinePhotoCamera} from "react-icons/md"
 import {BsActivity,BsFillBellFill,BsThreeDots} from "react-icons/bs"
 import {BiCast} from "react-icons/bi"
 import {FiEdit,FiLifeBuoy,FiLogOut} from "react-icons/fi"
+import {TbPointFilled} from "react-icons/tb"
+import chadimg from "../img/Ellipse.jpg"
+
 
 export default function Profil() {
 
@@ -17,11 +20,19 @@ export default function Profil() {
   }
   function userimgClose(){
     document.querySelector(".user_img_hover").style="  position: absolute;bottom: -100px;"
-    
   }
 
   function taxrirlashModal(){
     document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style="display:block;"
+    document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style="display:none;"
+  }
+  function taxrirlashClose(){
+    document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style="display:none;"
+    document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style="display:none;"
+  }
+  function taxrirlashChadModal(){
+    document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style="display:block;"
+    document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style="display:none;"
   }
 
   return (
@@ -64,19 +75,66 @@ export default function Profil() {
             <button><BsActivity/></button><button>Пополнение баланса</button>
           </div>
           </div>
-          <div className="profil_blok_ikki_icon">
-          <BsFillBellFill className='profil_blok_ikki_icon_bir' />
-          <BsThreeDots onMouseEnter={()=>taxrirlashModal()} className='profil_blok_ikki_icon_ikki' />
+          <div onMouseLeave={()=>taxrirlashClose()} className="profil_blok_ikki_icon">
+          <BsFillBellFill onMouseEnter={()=>taxrirlashChadModal()} className='profil_blok_ikki_icon_bir' />
+          <BsThreeDots  onMouseEnter={()=>taxrirlashModal()} className='profil_blok_ikki_icon_ikki' />
           <div className="profil_blok_ikki_icon_texrirlash_modal">
-            <div className='taxrirlash_modal_div'><FiEdit/><p>Редактировать профиль</p></div>
-            <div className='taxrirlash_modal_div'><BiCast/><p>Уведомления</p></div>
-            <div className='taxrirlash_modal_div'><FiLifeBuoy/><p>Помощь</p></div>
-            <div className='taxrirlash_modal_div'><FiLogOut/><p>Выход</p></div>
+            <div className='taxrirlash_modal_div'><FiEdit className='taxrirlash_modal_icon' /><p>Редактировать профиль</p></div>
+            <div className='taxrirlash_modal_div'><BiCast className='taxrirlash_modal_icon'/><p>Уведомления</p></div>
+            <div className='taxrirlash_modal_div'><FiLifeBuoy className='taxrirlash_modal_icon'/><p>Помощь</p></div>
+            <hr />
+            <div className='taxrirlash_modal_div'><FiLogOut className='taxrirlash_modal_icon'/><p>Выход</p></div>
           </div>
+          <div className="profil_blok_ikki_icon_taxriirlash_chat">
+            <p>Bugun</p>
+            <div className="taxrirlash_chad">
+              <div className="taxrirlash_chad_img_size">
+              <img src={chadimg} alt="" />
+              </div>
+               <div className="taxrirlash_chad_size">
+              <div className="taxrirlash_chad_vaqt">
+                <h1>Дженни Фокс</h1><div className='taxrirlash_chad_vaqt_soat'><TbPointFilled className='chad_set'/><p>19:22</p></div>
+              </div>
+              <div className="taxrirlash_chad_text">
+                <p>Lorem ipsum dolor sit.</p>
+              </div>
+              </div>
+            </div>
+            <div className="taxrirlash_chad">
+              <div className="taxrirlash_chad_img_size">
+              <img src={chadimg} alt="" />
+              </div>
+               <div className="taxrirlash_chad_size">
+              <div className="taxrirlash_chad_vaqt">
+                <h1>Дженни Фокс</h1><div className='taxrirlash_chad_vaqt_soat'><TbPointFilled className='chad_set'/><p>19:22</p></div>
+              </div>
+              <div className="taxrirlash_chad_text">
+                <p>Lorem ipsum dolor sit.</p>
+              </div>
+              </div>
+            </div>
+            <p>06.08.2019</p>
+            <div className="taxrirlash_chad">
+              <div className="taxrirlash_chad_img_size">
+              <img src={chadimg} alt="" />
+              </div>
+               <div className="taxrirlash_chad_size">
+              <div className="taxrirlash_chad_vaqt">
+                <h1>Дженни Фокс</h1><div className='taxrirlash_chad_vaqt_soat'><TbPointFilled className='chad_set'/><p>19:22</p></div>
+              </div>
+              <div className="taxrirlash_chad_text">
+                <p>Lorem ipsum dolor sit.</p>
+              </div>
+              </div>
+            </div>
+            </div>
+          </div>
+
+
+
           </div>
         </div>
         </div> 
       </div>
-    </div>
   )
 }
