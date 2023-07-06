@@ -96,6 +96,38 @@ export default function Searchfilter() {
                     </div>
                     </div>
             </div>
+            <div className="cali">
+                <img src={Rasp} alt="" />
+                <div className="zero_blok">
+                <div className="text_blok">
+                    <h3>Программирование Raspberry Pi
+основы</h3>
+                </div>
+                <div className="star_icon_blok">
+                                <AiFillStar className='gold' />
+                                <AiFillStar className='gold' />
+                                <AiFillStar className='gold' />
+                                <AiFillStar className='gold' />
+                                <AiFillStar />
+                                <div className="number">
+                                    <h6>4.1 (524)</h6>
+                                </div>
+                    </div>
+                    <div className="bolim_blok">
+                        <div className="kurs_hajmi">
+                        <p>Размер курса</p>
+                        <h3 className='soat'>38 часы</h3>
+                        </div>
+                        <div className="kurs_bolimlari">
+                        <p>Разделы курса</p>
+                        <h3 className='soat'>38 часы</h3>
+                        </div>
+                        <div className="left_icon">
+                        <HiArrowRight/>
+                        </div>
+                    </div>
+                    </div>
+            </div>
             <div className="cali1">
                 <div className="plus_blok">
               <BsPlus className='plus_icon'/>
