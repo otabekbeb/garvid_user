@@ -1,5 +1,5 @@
 .gray_blok {
-height: 120px;
+height: auto;
 width: 100%;
 background-color: #f1f2f6;
 display: flex;
@@ -385,6 +385,10 @@ align-items: center;
 @media (max-width:1000px) {
     .fil_text_blok h1{
     font-size: 19px;
+    }
+    .gray_blok{
+        width: 100%;
+        overflow-x: scroll;
     }
 }
 /* @media (max-width:800px) {
