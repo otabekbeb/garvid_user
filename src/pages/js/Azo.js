@@ -22,7 +22,7 @@ export default function azo() {
                     <h1>Диана Генри</h1>
                     <p>Разработчик Java, Python</p>
                 </div>
-                <button  onClick={()=>obuna()} id='azo_bolgan_katta_div_text_block_button'><span className='obuna_olin'>Отмена членства</span><span className='obuna_text'>Bos</span></button>
+                <button  onClick={()=>obuna()} id='azo_bolgan_katta_div_text_block_button'><span className='obuna_olin'>Подписались</span><span className='obuna_text'>Подписка</span></button>
             </div>
         </div>
     </div>
