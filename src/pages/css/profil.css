@@ -14,11 +14,12 @@
 .blok_bir_text button {
   background-color: #f1f2f6;
   width: 200px;
-  font-size: 16px;
+  font-size: 15px;
   height: 30px;
   border: 0;
   margin-bottom: 10px;
   cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
 }
 .blok_bir_icon_img1 {
   padding: 6px;
@@ -281,6 +282,7 @@ cursor: pointer;
     justify-content: end;
     margin-bottom: 5px;
     margin-right: 10px;
+    cursor: pointer;
   }
   .taxrirlash_chad_barchasini p{
   color: #536DFD;
@@ -422,6 +424,51 @@ cursor: pointer;
         display: flex;
         justify-content: space-between;
         }
+        .profil_blok_ikki_icon_texrirlash_modal{
+          padding: 0;
+          width: 210px;
+          position: absolute;
+          right: 8px;
+          top: 25px;
+        }
+        .profil_blok_ikki_icon_texrirlash_modal hr{
+        margin: 0 !important;
+        }
+        .taxrirlash_modal_div p{
+          font-size: 15px;
+        }
+        .taxrirlash_modal_div{
+          margin-left: 7px;
+          margin-top: 5px;
+          gap: 5px;
+        }
+        .taxrirlash_modal_icon{
+          font-size: 15px;
+        }
+        .profil_blok_ikki_icon_taxriirlash_chat{
+          width: 200px;
+          position: absolute;
+          top: 25px;
+          right: 45px;
+        }
+        .taxrirlash_chad_text{
+          text-align: left;
+        }
+        .taxrirlash_chad_vaqt h1{
+          font-size: 11px;
+        }
+        .taxrirlash_chad_vaqt_soat{
+          font-size: 8px;
+        }
+        .taxrirlash_chad_vaqt_soat .chad_set{
+          margin-top: 1px;
+        }
+        .profil_blok_ikki_icon_taxriirlash_chat p{
+          font-size: 8px;
+        }
+        .taxrirlash_chad_img_size{
+          padding: 3px;
+        }
 
   }
 
@@ -466,6 +513,17 @@ cursor: pointer;
     }
     .profil_blok_ikki_sum p{
       margin-bottom: 0;
+      font-size: 10px;
+    }
+    .profil_blok_ikki_sum h1{
+    font-size: 30px;
+    }
+    .profil_blok_ikki_sum{
+      width: 155px;
+      margin: auto;
+    }
+    .profil_blok_ikki_button{
+      margin-top: 5px;
     }
   
   }
