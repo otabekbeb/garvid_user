@@ -39,8 +39,9 @@ border: 0px;
     margin-left: 10%;
 }
 .button_obuna{
-    background-color: green !important;
+    background-color:rgba(255, 0, 0, 0.836) !important;
     color: white;
+    user-select: none;
 }
 .obuna_text{
     display: none;
