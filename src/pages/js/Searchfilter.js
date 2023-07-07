@@ -12,18 +12,13 @@ import {TbPointFilled} from 'react-icons/tb'
 import "../css/loader.css"
 
 export default function Searchfilter() {
-    const [loader,setLoader] = useState(0)
 
 
-    useEffect(()=>{
-        setTimeout(() => {
-            setLoader(1)
-        }, 6000);
-    })
+
 
   return (
     <div>
-        {loader===1?(<div><div className="Filter">
+<div className="Filter">
             <div className="blur_blok">
             <div className="inp_blok">
                 <input type="text"  placeholder='Поиск среди моих курсов' />
@@ -145,12 +140,7 @@ export default function Searchfilter() {
             </div>
 
         </div>
-        <div className="point_blok">
-            <TbPointFilled className="nuqta"/>
-            <TbPointFilled className="nuqta"/>
-            <TbPointFilled className="nuqta"/>
-            <h6>Yuklanmoqda</h6>
-        </div></div>):(<div className='loader_size'>Odil</div>)}
+
          
     </div>
   )
