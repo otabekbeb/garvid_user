@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {CiSearch} from 'react-icons/ci'
 import {BiMenu} from 'react-icons/bi'
 import {MdWindow} from 'react-icons/md'
@@ -9,12 +9,21 @@ import {HiArrowRight} from 'react-icons/hi'
 import Rasp from '../img/Rasp.png'
 import {BsPlus} from 'react-icons/bs'
 import {TbPointFilled} from 'react-icons/tb'
+import "../css/loader.css"
 
 export default function Searchfilter() {
+    const [loader,setLoader] = useState(0)
+
+
+    useEffect(()=>{
+        setTimeout(() => {
+            setLoader(1)
+        }, 6000);
+    })
+
   return (
     <div>
-        
-         <div className="Filter">
+        {loader===1?(<div><div className="Filter">
             <div className="blur_blok">
             <div className="inp_blok">
                 <input type="text"  placeholder='Поиск среди моих курсов' />
@@ -141,7 +150,8 @@ export default function Searchfilter() {
             <TbPointFilled className="nuqta"/>
             <TbPointFilled className="nuqta"/>
             <h6>Yuklanmoqda</h6>
-        </div>
+        </div></div>):(<div className='loader_size'>Odil</div>)}
+         
     </div>
   )
 }

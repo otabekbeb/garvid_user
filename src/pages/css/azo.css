@@ -37,21 +37,12 @@ border: 0px;
     display: grid;
     grid-template-columns: auto;
     margin-left: 10%;
-}
-.button_obuna{
-    background-color:rgba(255, 0, 0, 0.836) !important;
-    color: white;
-    user-select: none;
+    margin-bottom: 40px;
 }
 .obuna_text{
     display: none;
 }
-.db{
-    display: block;
-}
-.dn{
-    display: none;
-}
+
 
 @media (max-width:860px) {
     .azo_bolgan_katta_div_text{
