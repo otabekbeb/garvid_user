@@ -45,7 +45,7 @@ export default function Searchfilter() {
             <div className="cali">
                 <img src={Mon} alt="" />
                 <div className="zero_blok">
-                <div className="text_blok">
+                <div id="eadi" className="text_blok">
                     <h3>AWS для разработчиков: балансировка нагрузки ECS и Multi-Regional</h3>
                 </div>
                 <div className="star_icon_blok">
