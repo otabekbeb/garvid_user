@@ -60,3 +60,48 @@ width: 100%;
 
     } 
 }
+@media (max-width:772px) {
+    .card_sertifikat{
+        width: 80% !important;
+        justify-content: center !important;
+       margin: auto !important;
+
+    }  
+}
+
+@media (max-width:502px) {
+    .sertifikat{
+        width: 290px !important;
+    }
+    .Dast_konter_dust_pro_dest{
+        width: 100px;
+        font-size: 15px !important;
+    }    
+    .text_pro_max_gap_sos_lift_gr{
+      width: 50%;  
+    }
+    .text_pro_max_gap_sos_lift_gr p{
+        font-size: 13px ;
+    }
+}
+@media (max-width:326px) {
+    .sertifikat{
+        width: 250px !important;
+        height: auto
+    }
+    .Dast_konter_dust_pro_dest{
+        width:80px;
+        margin-top: 10%;
+        font-size: 15px !important;
+    }    
+    .text_pro_max_gap_sos_lift_gr{
+      width: 50%; 
+
+    }
+    .text_pro_max_gap_sos_lift_gr p{
+        font-size: 13px ;
+    }
+    .text_pro_max_gap_sos_lift_gr h4{
+        font-size: 14px ;
+    }
+}
