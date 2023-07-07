@@ -496,3 +496,18 @@ align-items: center;
         height: 370px !important; 
     }
 }
+@media (max-width:404px) {
+    .text_blok{
+        padding: 10px;
+    }
+    .star_icon_blok{
+        padding: 10px;
+    }
+    .bolim_blok{
+        padding: 10px;
+    }
+    #eadi{
+      font-size: 10px;
+    
+    }
+}
