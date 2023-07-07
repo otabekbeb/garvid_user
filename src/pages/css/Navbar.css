@@ -1,0 +1,43 @@
+.Navbar_df_flex {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+}
+
+.profil_emile {
+    width: 300px;
+    
+    display: flex;
+    align-items: center !important;
+    justify-content: space-around;
+}
+.profil_text p{
+margin-top: -11px;
+font-size: 15px;
+color: rgba(0, 0, 0, 0.603);
+}
+.profil_img img {
+    width: 80px;
+}
+    width: 350px;
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+}
+.Down_icon{
+    font-size: 40px;
+}
+.profil_menu_modal{
+    display: none;
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background-color: red;
+    top: 10%;
+    color: white;
+}
+.db{
+    display: block;
+}
