@@ -38,6 +38,19 @@ border: 0px;
     grid-template-columns: auto;
     margin-left: 10%;
 }
+.button_obuna{
+    background-color: green !important;
+    color: white;
+}
+.obuna_text{
+    display: none;
+}
+.db{
+    display: block;
+}
+.dn{
+    display: none;
+}
 
 @media (max-width:860px) {
     .azo_bolgan_katta_div_text{

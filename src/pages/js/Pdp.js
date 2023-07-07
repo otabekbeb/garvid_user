@@ -4,7 +4,7 @@ import Filtr from "./Searchfilter"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Bilim from './Bilim'
 import Sertifikat from './Sertifikate'
-import Azo from "./azo"
+import Azo from "./Azo"
 // import Mon from '../img/Mon.png'
 // import { AiFillStar } from 'react-icons/ai'
 // import {HiArrowRight} from 'react-icons/hi'
