@@ -9,7 +9,7 @@ export default function App() {
     <div>
       {/* <Mentor/> */}
 
-          <Navbar />
+          {/* <Navbar /> */}
      {/* <Profil/> */}
      {/* <Pdp/> */}
 
