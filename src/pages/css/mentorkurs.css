@@ -1,0 +1,614 @@
+.gray_blok {
+  height: 120px;
+  width: 100%;
+  background-color: #f1f2f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Filter {
+  width: 100%;
+  align-items: center !important;
+}
+
+.blur_blok {
+  width: 80% !important;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.inp_blok input {
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  outline: none;
+  font-size: 15px;
+  padding-left: 20px;
+  border: none;
+  background-color: #e2e2e2;
+}
+
+.inp_blok {
+  width: 450px;
+  display: flex;
+  position: relative;
+  border-radius: 5px;
+  justify-content: space-around;
+}
+
+.search {
+  font-size: 25px;
+  position: absolute;
+  right: 30px;
+  top: 10px;
+}
+
+.icon_blok {
+  width: 200px;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.sel_blok {
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid rgba(128, 128, 128, 0.507);
+  display: flex;
+  justify-content: space-around;
+  align-items: center !important;
+}
+
+.sel_blok h4 {
+  font-size: 15px;
+  font-weight: 500;
+  align-items: center !important;
+  margin-top: 5px;
+}
+
+.menyu {
+  font-size: 20px !important;
+}
+
+.window {
+  font-size: 30px;
+  color: rgba(131, 131, 131, 0.801);
+}
+
+.manu {
+  font-size: 30px;
+  color: rgba(131, 131, 131, 0.801);
+}
+
+.win_men {
+  width: 35%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.fil_text_blok {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-top: 85px;
+}
+.fil_text_blok_soz {
+  position: relative;
+}
+.fil_text_blok h1 {
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.fromLeft:after {
+  padding-bottom: 20px;
+  display: block;
+  content: "";
+  border-bottom: solid 3px #536dfd;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.fromLeft.fromLeft:hover:after {
+  transform: scaleX(1);
+  transform-origin: 0% 50%;
+}
+
+.nav-link {
+  color: black !important;
+  font-size: 17px !important;
+}
+
+.nav-link:hover {
+  border-bottom: 2px solid blue !important;
+}
+
+.nav-underline {
+  width: 50% !important;
+  display: flex;
+  margin-left: 8%;
+  justify-content: space-around !important;
+}
+.fil_text_blok_kurs_lenght {
+  width: auto;
+  position: absolute;
+  padding: 5px;
+  top: -30px;
+  right: -50px;
+  border: 2px solid #9da7bb4d;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-size: 10px;
+  color: #536dfd;
+}
+
+.werker {
+  text-align: center !important;
+  font-size: 15px !important;
+  width: 100% !important;
+}
+
+@media (max-width: 860px) {
+  .inp_blok {
+    width: 300px;
+  }
+}
+
+@media (max-width: 642px) {
+  .blur_blok {
+    width: 100% !important;
+    flex-direction: column;
+    margin: auto !important;
+  }
+
+  .icon_blok {
+    margin: 30px auto;
+  }
+
+  .inp_blok {
+    margin: auto;
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-underline {
+    margin: auto;
+  }
+}
+
+@media (max-width: 345px) {
+  .inp_blok {
+    width: 270px !important;
+  }
+}
+
+.znani {
+  text-align: center;
+  font-size: 15px !important;
+}
+
+.Nav.Link3 {
+  color: red !important;
+}
+
+.show-content {
+  display: block;
+}
+
+.content {
+  display: none;
+}
+
+.cali_df {
+  width: 82% !important;
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap !important;
+  justify-content: space-around;
+  margin-top: 5%;
+}
+
+.cali {
+  width: 350px;
+  height: 420px !important;
+  box-shadow: 2px 2px 10px gray;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+.cali img {
+  width: 100%;
+}
+
+.text_blok {
+  width: 300px;
+  height: 80px;
+  margin-top: 10px !important;
+
+  margin: auto;
+}
+
+.text_blok h3 {
+  font-size: 20px !important;
+}
+
+.gold {
+  color: gold;
+}
+
+.star_icon_blok_mentor {
+  width: 200px;
+  margin-top: 7%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bolim_blok {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 95%;
+  padding-top: 5%;
+}
+
+.kurs_hajmi p {
+  font-weight: 700;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.61);
+}
+
+.kurs_hajmi h3 {
+  font-size: 20px !important;
+  margin-top: -10px !important;
+  font-weight: 700 !important;
+}
+
+.kurs_bolimlari p {
+  font-weight: 700;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.61);
+}
+
+.kurs_bolimlari h3 {
+  font-size: 20px !important;
+  font-weight: 700;
+  margin-top: -10px !important;
+}
+
+.left_icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  font-size: 25px;
+  color: rgba(0, 0, 255, 0.747);
+  border: 1px solid gray;
+  text-align: center;
+  align-items: center !important;
+  padding-top: 1px !important;
+}
+
+.left_icon:hover {
+  background-color: rgba(0, 0, 255, 0.575);
+  color: #fff !important;
+}
+
+.zero_blok {
+  width: 300px;
+  margin: auto;
+}
+
+.text_blok h3:hover {
+  color: rgba(0, 0, 255, 0.747);
+  cursor: pointer;
+}
+
+.cali1 {
+  width: 350px;
+  height: 420px !important;
+  border: 3px dashed #9da7bb;
+  border-radius: 4px;
+  margin-top: 30px;
+}
+
+.plus_blok {
+  text-align: center !important;
+  margin-top: 50%;
+  color: rgba(0, 0, 0, 0.582);
+}
+
+.plus_icon {
+  font-size: 40px !important;
+}
+
+.point_blok {
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5% !important;
+  margin: auto;
+}
+.profil_blok_menu {
+  display: none;
+}
+
+.nuqta {
+  font-size: 20px;
+  color: rgba(0, 0, 255, 0.747);
+}
+.profil_modal_media {
+  display: none;
+}
+.nav {
+  width: auto !important;
+  flex-wrap: nowrap !important;
+}
+@media (max-width: 368px) {
+  .cali {
+    width: 300px;
+    height: auto;
+  }
+  .text_blok {
+    width: 250px !important;
+  }
+  .zero_blok {
+    width: 250px;
+    margin-top: 20px;
+  }
+  .text_blok h3 {
+    width: 250px;
+    font-size: 15px !important;
+  }
+  .star_icon_blok_mentor {
+    width: 70%;
+  }
+  .kurs_hajmi p {
+    font-size: 12px !important;
+  }
+  .kurs_hajmi h3 {
+    font-size: 17px !important;
+  }
+  .kurs_bolimlari p {
+    font-size: 12px !important;
+  }
+  .kurs_bolimlari h3 {
+    font-size: 16px !important;
+  }
+  .left_icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  .cali1 {
+    width: 300px;
+  }
+}
+@media (max-width: 1000px) {
+  .fil_text_blok {
+    width: auto;
+    gap: 30px;
+  }
+  .fil_text_blok h1 {
+    font-size: 2vw;
+  }
+  .gray_blok {
+    height: 90px;
+  }
+  .fil_text_blok_kurs_lenght {
+    top: -20px;
+    right: -35px;
+    font-size: 7px;
+    border: 1px solid #9da7bb;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+  .fil_text_blok {
+    margin-top: 58px;
+  }
+  .fil_text_blok_kurs_lenght {
+    padding: 2px;
+  }
+}
+@media (max-width: 600px) {
+  .fil_text_blok {
+    display: none;
+  }
+  .profil_blok_menu {
+    display: block;
+    padding: 10px;
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.911);
+    margin-right: 5%;
+    border: 2px solid #9da7bb;
+    background-color: #cfd5e2;
+    border-radius: 50%;
+  }
+  .profil_blok_menu_size {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+  .gray_blok {
+    position: relative;
+  }
+  .profil_modal_media {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -100%;
+    z-index: 10;
+    height: auto;
+    background-color: white;
+    box-shadow: 0px 1px 2px 0px grey;
+    display: none;
+  }
+  .menu_modal {
+    display: block;
+    position: absolute;
+    top: 90px;
+  }
+  .profil_modal_media h1 {
+    width: 200px;
+    font-size: 15px;
+    padding-top: 15px;
+    padding-left: 15px;
+  }
+  .fromMenu:after {
+    padding-bottom: 10px;
+    display: block;
+    content: "";
+    border-bottom: solid 3px #536dfd;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
+  .fromMenu.fromMenu:hover:after {
+    transform: scaleX(1);
+    transform-origin: 0% 50%;
+  }
+}
+@media (max-width: 356px) {
+  .cali {
+    height: 400px !important;
+  }
+  .cali1 {
+    height: 370px !important;
+  }
+}
+@media (max-width: 404px) {
+  .text_blok {
+    padding: 10px;
+  }
+  .bolim_blok {
+    padding: 10px;
+  }
+  #eadi {
+    font-size: 10px;
+  }
+}
+.Mentor_kurs_icon {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.mentor_kurs_icon_edit {
+  width: 35px;
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 50%;
+  border: 1px solid grey;
+  color: #536dfd;
+  text-align: center;
+}
+.mentor_text_icon{
+    display: block;
+    cursor: pointer;
+}
+.mentor_kurs_icon_trash {
+    margin-top: 10px;
+  width: 35px;
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 50%;
+  color: #536dfd;
+  border: 1px solid grey;
+  text-align: center;
+}
+.mentor_kurs_icon_HiArrowRight{
+    margin-top: 10px;
+    width: 35px;
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 50%;
+  color: #536dfd;
+  border: 1px solid grey;
+  text-align: center;  
+}
+.mentor_size{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mentor_kurs_icon_HiArrowRight:hover{
+    color: white;
+    background-color: #536dfd;
+}
+.mentor_kurs_icon_trash:hover {
+  color: white;
+  background-color: #536dfd;
+}
+.mentor_kurs_icon_edit:hover {
+  color: white;
+  background-color: #536dfd;
+}
+.mentor_soat_bolim {
+    margin-top: 20px;
+    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mentor_soat {
+  display: block;
+  width: 100px;
+}
+.mentor_soat h1 {
+  font-size: 20px;
+}
+.mentor_soat p {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+.mentor_bolim {
+  display: block;
+  width: 100px;
+}
+.mentor_bolim h1 {
+  font-size: 20px;
+}
+.mentor_bolim p {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+.mentor_text_kurs {
+  padding: 20px;
+}
+.mentor_star{
+    margin-top: 40px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+@media (max-width:360px) {
+    .mentor_bolim h1{
+    font-size: 18px;
+    }
+    .mentor_bolim p{
+    font-size: 11px;
+    }
+    .mentor_soat h1{
+        font-size: 18px;
+        }
+        .mentor_soat p{
+        font-size: 11px;
+        }
+        .mentor_star{
+            width: 70%;
+        }
+        .mentor_soat_bolim{
+            width: 90%;
+        }
+}
+.delete_big_div{
+  display: none;
+}
+

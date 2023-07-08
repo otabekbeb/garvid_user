@@ -29,7 +29,6 @@ export default function Pdp() {
 
         <div>
         
-
             <div className="gray_blok">
                 <div className="fil_text_blok">
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} className='fromLeft'>Мои курсы</h1>{toggle===1?(<div className="fil_text_blok_kurs_lenght">4 штуки</div>):("")}</div>
