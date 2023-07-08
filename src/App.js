@@ -7,7 +7,12 @@ import MentorPdp from "./pages/js/MentorPdp"
 export default function App() {
   return (
     <div>
-      <Mentor/>
+      {/* <Mentor/> */}
+
+          <Navbar />
+     {/* <Profil/> */}
+     {/* <Pdp/> */}
+
     </div>
   )
 }
