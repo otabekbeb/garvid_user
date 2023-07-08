@@ -6,21 +6,18 @@
 }
 
 .navbar {
-
     width: 100%;
-
 }
 
 .profil_emile {
     width: 300px;
-
     display: flex;
     align-items: center !important;
     justify-content: space-around;
 }
 
 .profil_text p {
-    margin-top: -11px;
+    margin-top: -5px;
     font-size: 15px;
     color: rgba(0, 0, 0, 0.603);
 }
@@ -48,31 +45,23 @@
     display: none;
     width: 300px;
     height: 160px !important;
-
     height: auto;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     position: absolute;
     right: 5%;
     top: 120% !important;
     color: white;
-
-
 }
 
 .db {
     display: block;
 }
 
-
-
 .profil_menu_modal h3 {
-    font-size: 14px;
+    font-size: 14px !important;
+    margin-top: 5% !important;
     color: rgba(0, 0, 0, 0.671);
 }
-
-
-
-
 
 .profil_menu_modal {
     --g: 4px;
@@ -81,8 +70,6 @@
     /* border thickness*/
     --c: #063997;
     /* the color */
-
-
     padding: calc(var(--g) + var(--b));
     --_c: #0000 0 25%, var(--c) 0 50%;
     --_g1: repeating-linear-gradient(90deg, var(--_c)) repeat-x;
@@ -100,18 +87,6 @@
     --_p: 75%;
     filter: grayscale(0%);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 .Front_div {
     width: 90%;
@@ -168,6 +143,10 @@
         width: 60px;
     }
 
+    .profil_text h3 {
+        font-size: 10px !important;
+    }
+
     .profil_profil {
         width: 250px;
     }
@@ -212,16 +191,31 @@
         width: 30% !important;
 
     }
-
+    .profil_name{
+        height: 180px;
+    }
     .profil_emile {
         width: 50px;
     }
-
+    .Front_div{
+        height: 30px;
+        padding-top: 10px;
+    }
+    .Modx_div{
+        height: 30px;
+        padding-top: 10px;
+    }
+    .Bac_div{
+        height: 30px;
+        padding-top: 10px;
+    }
     .Navbar_df_flex {
         width: 100% !important;
     }
-
-}
+    .tex_name h3{
+        margin-top: 10px !important;  
+    }
+}   
 
 
 .profil_name {
@@ -274,8 +268,20 @@
     display: block !important;
 }
 
+.profil_text h3 {
+    font-size: 20px;
+}
+
 @media(min-width:443px) {
     .profil_name {
         display: none !important;
+    }
+}
+@media (max-width:570px) {
+    .profil_text h3{
+        font-size: 15px !important;
+    }
+    .profil_text p{
+        font-size: 12px;
     }
 }
