@@ -112,7 +112,8 @@ left:10px;
 }
 @media (max-width:1400px) {
     .yozishma_small_div{
-        display: none;
+        width: 99%;
+        /* display: none; */
         border: 1px solid grey;
     }
     .yozishma_bolim_text_nik{
@@ -127,7 +128,23 @@ left:10px;
         font-size: 20px;
     }
 }
-@media (max-width:550px) {
+@media (max-width:1000px) {
+    .yozishma_bolim_text_nik_text img{
+        width: 40px;
+        height: 40px;
+        }
+        .yozishma_bolim_text_nik_text_ism_p h1{
+            font-size: 1.7vw;
+            margin-bottom: 0;
+        }
+        .yozishma_bolim_text_nik_text_ism_p p{
+            font-size: 1.5vw;
+        }
+        .yozishma_bolim_text_nik_text_ism_p{
+            padding-bottom: -5px;
+        }
+}
+@media (max-width:700px) {
     .yozishma_bolim_text_nik_text_ism_p h1{
         font-size: 17px;
     }
@@ -163,6 +180,10 @@ left:10px;
     .yoq1{
         display: none !important;
     }
+    .yozishma_bolim_text_nik{
+        width: 50%;
+    }
+    
     
 }
 @media(max-width:700px){
@@ -171,7 +192,15 @@ left:10px;
     } */
     /* .yozishma_small_div{
         display: block !important;
-    } */
+    } */    
+    .yoq{
+        display: none !important;
+    }
+    .yozishma_small_text_div{
+        padding: 5px;
+        padding-left: 15px;
+    }
+
 }
 .yozishma_telegram_profil{
     width: 100%;
@@ -202,16 +231,4 @@ margin-bottom: 0;
 .telegram_pro_text p{
     font-size: 12px;
     margin-top: 0;
-}
-@media (max-width:1000px) {
-    .yozishma_bolim_text_nik_text img{
-    width: 50px;
-    height: 50px;
-    }
-    .yozishma_bolim_text_nik_text_ism_p h1{
-        font-size: 17px;
-    }
-    .yozishma_bolim_text_nik_text_ism_p p{
-        font-size: 15px;
-    }
 }
