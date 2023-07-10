@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import "../css/mentorPdp.css"
 import Mentorkurs from "./Mentorkurs"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Bilim from './Bilim'
+import Yozishma from './Yozishmalar'
 import Sertifikat from './Sertifikate'
 import Azo from "./Azo"
 // import Mon from '../img/Mon.png'
@@ -45,7 +45,7 @@ export default function MentorPdp() {
             </div>
 
             <div className={toggle === 1 ? "show-content" : "content"}><Mentorkurs /></div>
-            <div className={toggle === 2 ? "show-content" : "content"}><Bilim /></div>
+            <div className={toggle === 2 ? "show-content" : "content"}><Yozishma /></div>
             <div className={toggle === 3 ? "show-content" : "content"}><Sertifikat /></div>
             <div className={toggle === 4 ? "show-content" : "content"}><Azo/></div>
 

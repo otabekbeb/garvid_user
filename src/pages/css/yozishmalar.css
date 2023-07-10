@@ -1,0 +1,205 @@
+.yozishma_small_text_div_chat{
+    width:100%;
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+.yozishma_small_text_div_chat img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.yozishma_small_text_div{
+    padding: 20px;
+    padding-left: 40px;
+    width: 100%;
+    height: 546px;
+    overflow-y: scroll;
+}
+.yozishma_small_text_div::-webkit-scrollbar{
+    width: 10px;
+}
+.yozishma_bolim_text_nik::-webkit-scrollbar{
+    width: 10px;
+}
+.yozishma_small_text_div_text h1{
+    font-size: 20px;
+}
+.yozishma_small_text_div_text p{
+    width: 100%;
+}
+.yozishma_small_text_div_text_javob_sozi{
+    margin-top: 10px;
+    font-size: 15px;
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+    color: rgba(83, 109, 253, 1);
+}
+.yozishma_small_text_div_text_javob_sozi .javob_sozi{
+font-size: 13px;
+margin-top: 4px;
+}
+.javob_sozi_big{
+    display: flex;
+    gap: 5px;
+}
+.yozishma_vaqt_soat_kun span{
+    color: rgba(157, 167, 187, 1);
+}
+.yozishma_small_xabar_div input{
+    width: 100%;
+    height: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.yozishma_small_xabar_div{
+    position: relative;
+}
+.yozishma_small_div{
+    display: block;
+    border-top: 1px solid grey;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+.yozishma_big_div_size{
+    width: 1400px;
+    display: flex;
+}
+.yozishma_bolim_text_nik_text{
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    margin-top: 5%;
+}
+.yozishma_bolim_text_nik_text_ism_p h1{
+    font-size: 20px;
+}
+.yozishma_bolim_text_nik_text img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.yozishma_bolim_text_nik{
+    padding: 10px;
+    width: 60%;
+    height: 650px;
+    overflow-y: scroll;
+    border: 1px solid grey;
+}
+.yozishma_bolim_text_nik_text_ism_p{
+    width: 100%;
+    border-bottom: 1px solid gray;
+}
+.yozishma_big_div{
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+    margin-bottom: 5%;
+    padding: 20px;
+}
+.chat_file_smile_link{
+position: absolute;
+top: 10px;
+font-size: 20px;
+left:10px;
+}
+.chat_file_smile_smile{
+    position: absolute;
+    top: 10px;
+    font-size: 20px;
+    right: 10px;
+}
+@media (max-width:1400px) {
+    .yozishma_small_div{
+        display: none;
+        border: 1px solid grey;
+    }
+    .yozishma_bolim_text_nik{
+        width: 100%;
+        display: block;
+    }
+    .yozishma_bolim_text_nik_text{
+        margin-top: 0px !important;
+        margin-bottom: 3%;
+    }
+    .yozishma_bolim_text_nik_text_ism_p h1{
+        font-size: 20px;
+    }
+}
+@media (max-width:550px) {
+    .yozishma_bolim_text_nik_text_ism_p h1{
+        font-size: 17px;
+    }
+    .yozishma_bolim_text_nik_text_ism_p p{
+        font-size: 15px;
+    }
+    .yozishma_bolim_text_nik_text img{
+     width: 60px;
+     height: 50px;   
+    }
+}
+.smile_blok{
+    position: absolute;
+    top: -450px;
+    right: 0px;
+    display: block;
+}
+.smile_none{
+    display: none;
+}
+@media(min-width:1400px){
+    .yozishma_small_div{
+        display: block !important;
+    }
+    .yozishma_bolim_text_nik{
+        display: block !important;
+    }
+    .yoq{
+        display: none !important;
+    }
+}
+@media(min-width:700px){
+    .yoq1{
+        display: none !important;
+    }
+    
+}
+@media(max-width:700px){
+    .yozishma_bolim_text_nik{
+        display: none; 
+    }
+    /* .yozishma_small_div{
+        display: block !important;
+    } */
+}
+.yozishma_telegram_profil{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-left: 20px;
+    box-shadow: 0px 1px 1px 0px gray;
+}
+.telegram_pro_img_text img{
+    width: 40px;
+    height: 40px;
+}
+.telegram_pro_img_text{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.telegram_pro_text{
+    margin-top: 10px;
+    display: block;
+}
+.telegram_pro_text h1{
+font-size: 15px;
+margin-bottom: 0;
+}
+.telegram_pro_text p{
+    font-size: 12px;
+    margin-top: 0;
+}
