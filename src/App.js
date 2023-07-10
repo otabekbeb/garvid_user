@@ -8,7 +8,8 @@ import Navbar from   './pages/js/Navbar'
 export default function App() {
   return (
     <div>
-      <Mentor/>
+      <Profil/>
+      <Pdp/>
     </div>
   )
 }
