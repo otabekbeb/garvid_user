@@ -203,3 +203,15 @@ margin-bottom: 0;
     font-size: 12px;
     margin-top: 0;
 }
+@media (max-width:1000px) {
+    .yozishma_bolim_text_nik_text img{
+    width: 50px;
+    height: 50px;
+    }
+    .yozishma_bolim_text_nik_text_ism_p h1{
+        font-size: 17px;
+    }
+    .yozishma_bolim_text_nik_text_ism_p p{
+        font-size: 15px;
+    }
+}
