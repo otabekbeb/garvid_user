@@ -11,8 +11,8 @@ export default function App() {
   return (
     <div>
       <Mentor/>
-      {/* <Profil/> */}
-      {/* <Pdp/> */}
+      {/* <Profil/> 
+       <Pdp/> */}
     </div>
   )
 }
