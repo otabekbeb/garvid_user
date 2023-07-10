@@ -24,6 +24,10 @@ export default function Mentorkurs() {
     document.querySelector(".delete_big_div").style="display:none"
 
    }
+   
+   function Filter (){
+    document.querySelector(".filter_button").classList.toggle("filter")
+}
 
 
   return (
@@ -44,16 +48,26 @@ export default function Mentorkurs() {
             <input type="text" placeholder="Поиск среди моих курсов" />
             <CiSearch className="search" />
           </div>
-          <div className="icon_blok">
-            <div className="sel_blok">
-              <BiMenu className="menyu" />
-              <h4>Фильтр</h4>
-            </div>
-            <div className="win_men">
-              <MdWindow className="window" />
-              <TfiMenuAlt className="manu" />
-            </div>
-          </div>
+          <div className="blur">
+                    <div className="icon_blok">
+                        <div className="sel_blok" onClick={()=>{Filter()}}>
+                            <BiMenu className='menyu' />
+                            <h4>Фильтр</h4>
+                        </div>
+                        <div className="win_men">
+                            <MdWindow className='window' />
+                            <TfiMenuAlt className='manu' />
+                        </div>
+                    </div>
+                    <div className="filter_button">
+                        <div className="button_filter_kurs">
+                       <div className='div_kurs'>FrontEnd</div>
+                       <div className='div_kurs'>Backend</div>
+                       <div className='div_kurs'>Modx</div>
+
+                       </div>
+                    </div>
+                </div>
         </div>
       </div>
       <div className="cali_df">
