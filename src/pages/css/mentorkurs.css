@@ -48,6 +48,7 @@
 
 .icon_blok {
   width: 200px;
+  
   align-items: center;
   display: flex;
   justify-content: space-around;
@@ -209,9 +210,9 @@
   width: 82% !important;
   display: flex;
   margin: auto;
-  flex-wrap: wrap !important;
   justify-content: space-around;
   margin-top: 5%;
+  margin-bottom: 50px !important;
 }
 
 .cali {

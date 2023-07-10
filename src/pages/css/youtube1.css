@@ -1,0 +1,325 @@
+.youtube_bgc{
+    background-color: #F1F2F6;
+}
+
+.flex_youtube{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.youtube_kotta_img{
+    width: 60%;
+
+}
+.img_youtube_kotta img{
+    width: 99%;
+    margin-top: 1px;
+    height: auto;
+}
+.img_youtube_kotta{
+    border-radius: 5px;
+background-color: #fff;
+width: 100%;
+height: auto;
+display: flex;
+justify-content: center;align-items: center;
+margin-bottom: 20px;
+}
+.flex_logig{
+    display: flex;
+    align-items: center;
+}
+.flex_logig span{
+    color: #9DA7BB;
+}
+.flex_logig p{
+    gap: 5px;
+    color: #2E2E2E;
+    margin-left: 5px;
+    padding-top: 10px;
+}
+.raspberry_pi{
+    font-size: 24px ;
+    color: #2E2E2E;
+}
+.flex_star{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+.flex_star1{
+    display: flex;
+    align-items: center;
+}
+.flex_star p{
+    color: #FFD401;
+}
+.flex_star1 p{
+    margin-left: 5px;
+    color: #9DA7BB;
+}
+.buttons_next_back{
+    display: flex;  align-items: center;
+    margin: auto;
+    margin-right: 0px;
+}
+.buttons_next_back button{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: none;
+    background-color: #fff;
+    border-radius: 5px;
+    color: #2E2E2E !important;
+    height: 40px;
+}
+.button_back{
+    margin-right: 10px;  
+}
+.buttons_next_back p{
+    margin-top: 5px;
+}
+.post_ava{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.post_ava button{
+    text-align: center;
+    background-color: #536DFD;
+    color: white;
+    width: 90px;
+    height: 20px;
+    border-radius: 2px;
+    border: none;
+    font-size: 11px;
+    margin-left: 10px;
+}
+.post_ava h6{
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.odtel_media_uchun{
+    display: none;
+}
+@media (max-width:1450px) {
+    .buttons_next_back button{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 130px;
+        font-size: 12px;
+        border: none;
+        background-color: #fff;
+        border-radius: 5px;
+        color: #2E2E2E !important;
+        height: 40px;
+    }
+    
+    .flex_star{
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        font-size: 13px;
+    }
+    .flex_star1{
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+    }
+    .flex_star p{
+        color: #FFD401;
+    }
+    .flex_star1 p{
+        margin-left: 5px;
+        color: #9DA7BB;
+    }
+    .flex_logig p{
+        gap: 5px;
+        margin-left: 5px;
+        padding-top: 10px;
+    }
+    .raspberry_pi{
+        font-size: 18px ;
+        color: #2E2E2E;
+    }
+}
+
+@media (max-width:1200px) {
+    .buttons_next_back button{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 120px;
+        font-size: 11px;
+        border: none;
+        background-color: #fff;
+        border-radius: 5px;
+        color: #2E2E2E !important;
+        height: 40px;
+    }
+    
+    .flex_star{
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        font-size: 11px;
+    }
+    .flex_star1{
+        display: flex;
+        align-items: center;
+        font-size: 11px;
+    }
+    .flex_star p{
+        color: #FFD401;
+    }
+    .flex_star1 p{
+        margin-left: 5px;
+        font-size: 11px;
+        color: #9DA7BB;
+    }
+    .p_4_1_524{
+        gap: 5px;
+        font-size: 12px;
+        margin-left: 5px;
+        padding-top: 10px;
+    }
+    .raspberry_pi{
+        font-size: 15px ;
+        color: #2E2E2E;
+    }
+}
+@media (max-width:1050px) {
+    .raspberry_pi{
+        display: none;
+    }
+    .odtel_media_uchun{
+        display: block;
+    }
+    .flex_star{
+        display: none;
+    }
+    .flex_star1{
+        display: none;
+    }
+    .flex_star2{
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+    }
+    .flex_star12{
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+    }
+    .flex_star2 p{
+        color: #FFD401;
+    }
+    .flex_star12 p{
+        margin-left: 5px;
+        color: #9DA7BB;
+    }
+    .p_4_1_524{
+        display: none;
+    }
+    .odtel_media_uchun h1{
+        font-size: 15px ;
+        color: #2E2E2E;
+    }
+    .flex_star_p{
+        display: flex;
+        margin-top: -10px;
+    }
+    .p_4_1_5245{
+        gap: 5px;
+        font-size: 12px;
+        margin-left: 5px;
+        margin-top: 3px ;
+    }
+
+    .buttons_next_back button{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100px;
+        font-size: 9px;
+        border: none;
+        background-color: #fff;
+        border-radius: 5px;
+        color: #2E2E2E !important;
+        height: 40px;
+        margin-top: -50px;
+    }
+}
+
+@media (max-width:800px) {
+
+
+    .buttons_next_back button{
+        display: flex;
+        align-items: center;
+        width: 80px;
+        font-size: 9px;
+        border: none;
+        background-color: #fff;
+        border-radius: 5px;
+        color: #2E2E2E !important;
+        height: 40px;
+        margin-top: -50px;
+    }
+    .urok_back, .urok_next{
+        display: none;
+    }
+}
+@media (max-width:700px) {
+
+
+    .buttons_next_back button{
+        display: flex;
+        align-items: center;
+        width: 30px;
+        font-size: 9px;
+        border: none;
+        background-color: #fff;
+        border-radius: 50%;
+        color: #2E2E2E !important;
+        height: 30px;
+        margin-top: -50px;
+    }
+    .buttons_next_back p{
+        display: none;
+    }
+    .post_ava button{
+        text-align: center;
+        background-color: #536DFD;
+        color: white;
+        width: 70px;
+        height: 20px;
+        border-radius: 2px;
+        border: none;
+        font-size: 9px;
+        margin: auto;
+        margin-right: 0px;
+    }
+}
+
+@media (max-width:550px) {
+    .post_ava{
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    }
+    
+    .post_ava h6{
+        margin-left: 10px;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+}
+
+.youtube_kichkina{
+    width: 35px;
+}
