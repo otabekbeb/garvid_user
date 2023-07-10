@@ -8,10 +8,10 @@ export default function Navbar() {
     function Down() {
         document.querySelector(".profil_menu_modal").classList.toggle("db")
 
- }
+    }
     function Foto() {
         document.querySelector(".profil_name").classList.toggle("dode");
-        document
+
     }
     return (
         <div>
@@ -32,7 +32,7 @@ export default function Navbar() {
 
                             </div>
                         </div>
-                        <BiChevronDown  onClick={() => { Down() }} className='Down_icon' />
+                        <BiChevronDown onClick={() => { Down() }} className='Down_icon' />
                         <div className="profil_menu_modal">
                             <div className="Front_div">
                                 <h3>Front End Kursi</h3>
