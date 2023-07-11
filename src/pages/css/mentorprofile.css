@@ -118,20 +118,20 @@
   margin-bottom: 0px;
   }
   .profil_blok_ikki_sum{
-    width: 250px;
+    width: 200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .profil_blok_ikki_sum h1{
-    font-size: 45px;
+    font-size: 35px;
   }
   .profil_blok_ikki_button{
     width: 250px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 10px;
   
   }
   .profil_blok_ikki_button button:nth-child(1){
