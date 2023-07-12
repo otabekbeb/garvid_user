@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import "../css/mentorPdp.css"
 import Mentorkurs from "./Mentorkurs"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Yozishma from './Yozishmalar'
+import Yozishma from './MentorChat'
 import Sertifikat from './Sertifikate'
 import Azo from "./Azo"
 // import Mon from '../img/Mon.png'
@@ -29,7 +29,7 @@ export default function MentorPdp() {
             <div className="gray_blok">
                 <div className="fil_text_blok">
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} className='fromLeft'>Мои курсы</h1>{toggle===1?(<div className="fil_text_blok_kurs_lenght">4 штуки</div>):("")}</div>
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} className='fromLeft'>Переписка</h1>{toggle===2?(<div className="fil_text_blok_kurs_lenght">14 штуки</div>):("")}</div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} className='fromLeft'>Переписка</h1><div className="fil_text_blok_kurs_lenght">14 штуки</div></div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} className='fromLeft'>Задачи</h1>{toggle===3?(<div className="fil_text_blok_kurs_lenght">24 штуки</div>):("")}</div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} className='fromLeft'>Мне члены</h1>{toggle===4?(<div className="fil_text_blok_kurs_lenght">24 штуки</div>):("")}</div>
                 </div>

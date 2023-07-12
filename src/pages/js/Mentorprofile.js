@@ -1,7 +1,7 @@
 import React from 'react'
 import Use_img from "../img/Ellipse.jpg"
 import "../css/mentorprofile.css"
-import Pdp from "../js/Pdp"
+import Pdp from "./UserPdp"
 import {MdOutlinePhotoCamera} from "react-icons/md"
 import {BsActivity,BsFillBellFill,BsThreeDots} from "react-icons/bs"
 import {BiCast} from "react-icons/bi"
