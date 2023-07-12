@@ -14,7 +14,7 @@ import ImgChatt from "../img/Ellipse 2.4.png"
 export default function Yozishmalar() {
   const [state,setState]=useState()
 
-  function chatModal(img,name) {
+  function chatModal(img,name,time) {
 
     document.querySelector(".yozishma_small_div").style = "display:block;";
     document.querySelector(".yozishma_bolim_text_nik").style = "display:none";
@@ -24,7 +24,7 @@ export default function Yozishmalar() {
     var abj = {
       img: img,
       name: name,
-      
+      time:time
   }
   var tush=[]
  tush.push(abj)
@@ -33,7 +33,7 @@ export default function Yozishmalar() {
     <img style="width: 40px !important;height: 40px !important;border-radius: 50% !important;" src='${item.img}' alt="" />
     <div style="margin-top: 10px !important;display: block !important;" className="telegram_pro_text">
       <h1 style="font-size: 15px !important;margin-bottom: 0 !important;" >${item.name}</h1>
-      <p style="font-size: 12px !important;margin-top: 0 !important;">16:49</p></div>`
+      <p style="font-size: 12px !important;margin-top: 0 !important;">${item.time}</p></div>`
   })
 
   }
@@ -57,17 +57,23 @@ export default function Yozishmalar() {
   var data=[
     {
       name:"002",
-      img:Anime
+      img:Anime,
+      time:"12:10"
     },
     {
       name:"abdurahm",
-      img:ImgChat
-    },{
+      img:ImgChat,
+      time:"23:10"
+    },
+    {
       name:"jonibek",
-      img:ImgChatt
-    },{
+      img:ImgChatt,
+      time:"6:10"
+    },
+    {
       name:"otabek",
-      img:YozishmaUserImg
+      img:YozishmaUserImg,
+      time:"13:10"
     }
   ]
 
@@ -88,7 +94,7 @@ export default function Yozishmalar() {
           {data.map(item=>{
             return(
               <div
-              onClick={() => chatModal(item.img,item.name)}
+              onClick={() => chatModal(item.img,item.name,item.time)}
               className="yozishma_bolim_text_nik_text"
             >
                   <img id="img" src={item.img} alt="" />
@@ -97,7 +103,7 @@ export default function Yozishmalar() {
                   <p>привет</p>
                 </div>
               <div className="yozishma_bolim_text_nik_text_qongiroq">
-                <div className="yozishma_bolim_text_nik_text_qongiroq_vaqti">13:14</div>
+                <div className="yozishma_bolim_text_nik_text_qongiroq_vaqti">{item.time}</div>
                 <div className="yozishma_bolim_text_nik_text_qongiroq_bildir">2</div>
               </div>
             </div>
