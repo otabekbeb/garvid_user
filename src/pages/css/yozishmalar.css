@@ -12,6 +12,7 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     padding: 10px;
+    position: relative;
 }
 .javob_berish_img img{
     width: 50px;
@@ -32,6 +33,32 @@
     font-size: 13px;
     margin-bottom: 0;
 }
+.javob_chat_ikki_beruvchi h1{
+    font-size: 16px;
+    margin-bottom: 0; 
+}
+.javob_berish_ikki{
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    background-color:#fff;
+    border-top:1px solid #e2e2e2;
+    width: 100%;
+    transition: 4s;
+    padding-left: 10px;
+    display: none;
+}
+.javob_chat_ikki_beruvchi{
+    display: block;
+    padding-left: 10px;
+    border-left: 3px solid #536DFD;
+    margin-top: 10px;
+}
+.javob_chat_ikki_beruvchi p{
+    font-size: 13px;
+    margin-bottom: 0;
+}
 .yozishma_small_text_div{
     padding: 20px;
     padding-left: 40px;
@@ -49,12 +76,15 @@
     font-size: 20px;
 }
 .yozishma_small_text_div_text p{
-    width: 100%;
+    width: 90%;
 }
 .yozishma_small_text_div_text_javob_sozi{
     margin-top: 10px;
     font-size: 15px;
     display: flex;
+    height: 15px;
+    justify-content: space-between;
+    align-items: stretch;
     gap: 10px;
     cursor: pointer;
     color: rgba(83, 109, 253, 1);
@@ -74,14 +104,13 @@ margin-top: 4px;
     width: 100%;
     height: 40px;
     padding-left: 37px;
+    outline: none;
     padding-right: 37px;
     border-bottom-right-radius: 10px;
     border: 0;
     border-top: 1px solid #e2e2e2;
 }
-.yozishma_small_xabar_div input:active{
-    border: 1px solid #536DFD !important;
-}
+
 .chat_file_smile_link_file{
     position: absolute;
     top: 5px;
@@ -207,6 +236,36 @@ cursor: pointer;
             font-size: 10px !important;
 
         }
+        .yozishma_small_text_div_text p{
+            font-size: 1.5vw;
+        }
+        .javob_chat_div_beruvchi h1{
+        font-size: 1.7vw;
+        }
+        .javob_chat_div_beruvchi p{
+            font-size: 1.5vw;
+        }
+        .javob_chat_div_beruvchi{
+        border-left: 1px solid #536DFD;
+        }
+        .javob_sozi{
+            font-size: 1.5vw !important;
+            margin-top: 3% !important;
+        }
+        .yozishma_vaqt_soat_kun span{
+            font-size: 1.5vw !important;
+            margin-top: -2px !important;
+        }
+        .yozishma_small_text_div_text_javob_sozi{
+            align-items: baseline;
+            height: 15px;
+        }
+        .javob_berish_blok_text h1{
+            font-size: 1.7vw !important;
+        }
+        .javob_berish_blok_text p{
+            font-size: 1.5vw !important;
+        }
 }
 @media (max-width:700px) {
     .yozishma_bolim_text_nik_text_ism_p h1{
@@ -216,8 +275,43 @@ cursor: pointer;
         font-size: 15px;
     }
     .yozishma_bolim_text_nik_text img{
-     width: 60px;
+     width: 50px;
      height: 50px;   
+    }
+    .yozishma_small_text_div_text p{
+    font-size: 15px;
+    }
+    .javob_sozi{
+        font-size: 15px !important;
+    }
+    .yozishma_vaqt_soat_kun span{
+        font-size: 15px !important;
+    }
+    .yozishma_small_text_div_text_javob_sozi{
+        align-items: stretch;
+        height: 20px;
+    }
+    .javob_chat_div_beruvchi h1{
+    font-size: 15px;
+    }
+    .javob_chat_div_beruvchi p{
+        font-size: 15px;
+    }
+    .yozishma_telegram_profil{
+        padding-left: 10px !important;
+        gap: 10px !important;
+    }
+    .javob_berish_blok_text h1{
+        font-size: 15px !important;
+    }
+    .javob_berish_blok_text p{
+        font-size: 13px !important;
+    }
+    .chat_yoq_payt{
+        display: none !important;
+    }
+    .chat_gap_text_div{
+        display: block !important;
     }
 }
 .smile_blok{
@@ -239,16 +333,19 @@ cursor: pointer;
     }
     .yoq{
         display: none !important;
-        color: #536DFD !important;
+
     }
 }
+
 @media(min-width:700px){
     .yoq1{
         display: none !important;
-        color: #536DFD !important;
     }
     .yozishma_bolim_text_nik{
-        width: 50%;
+        width: 400px;
+    }
+    .yozishma_small_div{
+    width: 100%;
     }
     .yoq{
         display: none;
@@ -321,6 +418,7 @@ margin-bottom: 0 !important;
     background-color:#fff;
     border-top:1px solid #e2e2e2;
     width: 100%;
+    padding-left: 10px;
     display: none;
     transition: 4s;
 }
@@ -362,7 +460,6 @@ margin-bottom: 0 !important;
     align-items: center;
     justify-content: space-between;
     padding-bottom: 5px;
-    padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;
 }
@@ -392,4 +489,83 @@ margin-bottom: 0 !important;
 .yozishma_bolim_text_nik_text_qongiroq_vaqti{
     font-size: 15px;
     padding-bottom: 5px;
+}
+.yozishma_small_text_div_ptichka{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60px;
+    
+}
+.yozishma_small_text_div_ptichka .ptichka_chat{
+    color: green;
+    font-size: 15px;
+}
+.yozishma_small_text_div_ptichka .edit_chat{
+    color: grey;
+    font-size: 15px;
+    cursor: pointer;
+}
+.edit_chat_hover_relative{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.edit_chat_hover_ikki_relative{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.edit_chat_hover_ikki{
+    position: absolute;
+    right: -12px;
+    top: -20px;
+    padding: 5px;
+    font-size: 8px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 1px 1px 10px 2px rgb(218, 218, 218);
+    display: none;
+}
+
+.edit_chat_hover{
+    position: absolute;
+    right: -12px;
+    top: -20px;
+    padding: 5px;
+    font-size: 8px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 1px 1px 10px 2px rgb(218, 218, 218);
+    display: none;
+}
+.edit_chat_hover_ikki{
+    position: absolute;
+    padding: 5px;
+    font-size: 8px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 1px 1px 10px 5px rgb(218, 218, 218);
+    display: none;
+    
+    
+}
+.chat_yoq_payt{
+    display: flex;
+    justify-content: center;
+    margin-top:250px;
+}
+.chat_gap_text_div{
+    display: none;
+}
+.chat_yoq_payt p{
+    border: 1px solid #e2e2e2;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+    font-size: 1.2vw;
+}
+.javob_berish_ikki_db{
+    display: block;
 }
