@@ -391,6 +391,7 @@
     text-align: center;
     align-items: center !important;
     padding-top: 1px !important;
+    margin-top: -2px !important;
 }
 
 .left_icon:hover {
