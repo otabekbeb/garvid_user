@@ -11,9 +11,9 @@ export default function App() {
   return (
     <div>
       {/* <Mentor/> */}
-      <Profil/> 
-      <Pdp/> 
-      {/* <YouTube /> */}
+      {/* <Profil/>  */}
+      {/* <Pdp/>  */}
+      <YouTube />
       
     </div>
   )
