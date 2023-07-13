@@ -468,7 +468,7 @@
         display: none;
     }
     .menu_modal{
-        display: block;
+        display: block ;
         position: absolute;
         top: 90px;
     }
