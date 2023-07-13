@@ -5,6 +5,7 @@ import {AiFillStar} from 'react-icons/ai'
 import {BsChevronLeft, BsChevronRight} from 'react-icons/bs'
 import '../css/youtube1.css'
 import Navbar from '../js/Navbar'
+import Vazifa from  '../js/Vazifa'
 export default function Youtube1() {
   return (
 <>
@@ -18,9 +19,9 @@ export default function Youtube1() {
           <img src={img_kotta} alt="" />
         </div>
           <div className="flex_logig">
-            <h1 className='raspberry_pi'>Raspberry Pi dasturlash asoslari</h1>
+            <h1 className='raspberry_pi'>Основы программирования Raspberry Pi</h1>
             <div className="odtel_media_uchun">
-            <h1>Raspberry Pi dasturlash asoslari</h1>
+            <h1>Основы программирования Raspberry Pi</h1>
             <div className="flex_star_p">
             <div className="flex_star2">
                 <p><AiFillStar/></p>
@@ -59,6 +60,7 @@ export default function Youtube1() {
       </div>
     </div>
 </div> 
+<Vazifa/>
 </>
   )
 }
