@@ -218,7 +218,7 @@
     }
     
     .cali_df {
-        width: 82% !important;
+        width: 82% ;
         display: flex;
         margin: auto;
         flex-wrap: wrap !important;
@@ -306,7 +306,7 @@
         border: 1px solid gray;
         text-align: center;
         align-items: center !important;
-        padding-top: 1px !important;
+        padding-top: 1px ;
     }
     
     .left_icon:hover {
@@ -373,7 +373,7 @@
             height: auto;
         }
         .text_blok{
-            width: 250px !important;
+            width: 250px ;
         }
         .zero_blok{
             width: 250px;

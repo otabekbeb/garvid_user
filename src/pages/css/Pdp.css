@@ -167,18 +167,67 @@
     font-size: 15px !important;
     width: 100% !important;
 }
-@media (max-width:423px ) { 
-   #eadi{
-    width: 250px;
-   }
-   .star_icon_blok{
-    width: 180px !important;
-   }
-   .zero_blok{
-    border: 1px solid red;
-    height: ;
-   }
+
+@media (max-width:423px) {
+    #eadi {
+        width: 270px;
+    }
+
+    .text_blok {
+        width: 250px !important;
+    }
+
+    .star_icon_blok {
+        width: 180px !important;
+        margin-left: 5%;
+    }
+
+    .bolim_blok p {
+        font-size: 12px !important;
+    }
+
+    .bolim_blok {
+        width: 100%;
+        margin: auto;
+        align-items: center;
+    }
+
+    .soat {
+        font-size: 120px !important;
+    }
+
+    .left_icon {
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 50px;
+        font-size: 20px;
+        color: rgba(0, 0, 255, 0.747);
+        border: 1px solid gray;
+        text-align: center;
+        align-items: center !important;
+        padding-top: 10%;
+    }
 }
+
+@media (max-width:406px) {
+    .bolim_blok {
+        width: 80% !important;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width:404px) {
+    .bolim_blok {
+        width: 90% !important;
+    }
+
+    .cali {
+        width: 100% !important;
+    }
+
+ 
+}
+
 @media (max-width:860px) {
     .inp_blok {
         width: 300px;
@@ -250,6 +299,7 @@
     justify-content: space-around;
     margin-bottom: 50px !important;
     margin-top: 5%;
+    
     gap: 20px;
 }
 
@@ -483,7 +533,7 @@
     }
 
     .text_blok {
-        width: 250px !important;
+        width: 250px;
     }
 
     .zero_blok {
@@ -641,7 +691,7 @@
 
 @media (max-width:354px) {
     .text_blok {
-        width: 200px !important;
+        width: 200px;
 
     }
 
@@ -686,5 +736,21 @@
     #eadi {
         font-size: 10px;
 
+    }
+    .cali{
+        width: 100% !important;
+    }
+   
+    .left_icon {
+        width: 40px !important;
+        height: 40px !important; 
+        border-radius: 50px;
+        font-size: 20px !important;
+        color: rgba(0, 0, 255, 0.747);
+        border: 1px solid gray;
+        text-align: center;
+        align-items: center !important;
+        padding-top: 1px !important;
+        margin-top: -2px !important;
     }
 }

@@ -7,7 +7,7 @@ import Services from './pages/js/Services'
 import Ourteam from './pages/js/Ourteam'
 import User from "./pages/js/user"
 import Mento from "./pages/js/Mentor"
-
+import Card from './pages/js/Card'
 
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -25,7 +25,7 @@ export default function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/user" element={<User/>}/>
         <Route path="/mentor" element={<Mento/>}/>
-
+        <Route path='/Card' element={<Card/>}/> 
           {/* <Route index element={} />*/}
       </Routes>
     </BrowserRouter>
