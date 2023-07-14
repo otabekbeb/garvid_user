@@ -1,0 +1,227 @@
+.login_small_div_input {
+  width: 100%;
+  padding: 77px 61px 66px;
+}
+.login_small_div {
+  width: 435px;
+  background-color: #fff;
+  box-shadow: 0px 0px 9px 0px rgb(173, 173, 173);
+  z-index: 10;
+}
+.login_small_div_input h1 {
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+.login_small_input {
+  position: relative;
+}
+.royhat_small_input {
+    position: relative;
+  }
+.login_small_input input {
+  width: 100%;
+  height: 40px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: #333;
+  padding-left: 35px;
+  border-bottom: 1.5px solid grey;
+  outline: none;
+  margin-top: 20px;
+}
+.royhat_small_input input {
+    width: 100%;
+    height: 40px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: #333;
+    padding-left: 35px;
+    border-bottom: 1.5px solid grey;
+    outline: none;
+    margin-top: 20px;
+  }
+.royhat_small_input input[type="text"]:focus {
+  border-bottom: 1.5px solid #9cf;
+}
+.royhat_small_input input[type="password"]:focus {
+  border-bottom: 1px solid #9cf;
+}
+.login_small_input input[type="text"]:focus {
+    border-bottom: 1.5px solid #9cf;
+  }
+  .login_small_input input[type="password"]:focus {
+    border-bottom: 1px solid #9cf;
+  }
+.login_small_input .login_icon {
+  position: absolute;
+  top: 30px;
+  font-weight: 2.3;
+  font-size: 20px;
+  color: #333;
+}
+.royhat_small_input .login_icon {
+    position: absolute;
+    top: 30px;
+    font-weight: 2.3;
+    font-size: 20px;
+    color: #333;
+}
+.login_button_div {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: relative;
+}
+.login_button_div input {
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  background-color: #9cf;
+  border: 0;
+  position: relative;
+  cursor: pointer;
+}
+.login_button_div input p{
+    margin-bottom: 0;
+    color: white;
+    position: relative;
+    z-index: 10;
+}
+
+.hover_div {
+  position: absolute;
+  background-color: white;
+  opacity: 0.25;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: 0.1s;
+  cursor: pointer;
+}
+.hover_div1 {
+  position: absolute;
+  background-color: rgb(64, 159, 255);
+  opacity: 0.25;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.hover_div2 {
+  position: absolute;
+  background-color: rgb(30, 140, 250);
+  opacity: 0.25;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.login_button_div:hover .hover_div {
+  width: 100%;
+}
+.login_button_div:hover .hover_div1 {
+  width: 100%;
+}
+.login_button_div:hover .hover_div2 {
+  width: 100%;
+}
+.login_button_div input:hover {
+  color: white;
+}
+.login_big_div{
+width: 100%;
+height: 100%;
+position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.login_big_div .LoginImg{
+    z-index: 20;
+position: absolute;
+left: -190px;
+bottom: -10px;
+}
+.login_big_div .loginimg{
+position: absolute;
+right: -120px;
+}
+
+.login_relative{
+    position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    margin: auto;
+}
+.login_db{
+    display: block;
+}
+.login_i_register_button{
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+.login_i_register_button button{
+width: 49%;
+border: 0;
+border-top-right-radius: 10px;
+border-top-left-radius: 10px;
+background-color: #9cf;
+color: white;
+height: 40px;
+}
+
+@media (max-width:900px) {
+    .login_relative{
+        left: 35px;
+    }
+    .login_i_register_button{
+        margin-left: 35px;
+    }
+}
+@media(max-width:750px){
+.LoginImg{
+    display: none;
+}
+.loginimg{
+    display: none;
+}
+.login_small_div{
+    width: 100%;
+    height: 100%;
+}
+.login_small_div_input{
+    width: 100%;
+    padding: 57px 5% 60px;
+}
+.login_relative{
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+.login_db{
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+}
+.login_i_register_button{
+    margin-left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+}
+.login_i_register_button button{
+    width: 48%;
+}
+}
+

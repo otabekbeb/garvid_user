@@ -131,7 +131,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   
   }
   .profil_blok_ikki_button button:nth-child(1){
@@ -392,7 +392,7 @@
             justify-content: space-between;
             align-items: center;
             gap: 10px;
-            margin-top: 27px;
+            /* margin-top: 27px; */
           }
           .profil_blok_ikki_icon_ikki{
             padding: 5px;

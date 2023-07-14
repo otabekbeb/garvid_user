@@ -22,10 +22,20 @@ export default function Pdp() {
 
     function updatetoggle(id) {
         setToggle(id)
+        document.querySelector(".profil_modal_media").style="display:none;"
+        document.querySelector(".profil_blok_menu_clone").style="display:none !important;"
+        document.querySelector(".profil_blok_menu").style="display:block;"
     }
 
     function menuModal() {
-        document.querySelector(".profil_modal_media").classList.toggle("menu_modal")
+        document.querySelector(".profil_modal_media").style="display:block;"
+        document.querySelector(".profil_blok_menu").style="display:none !important;"
+        document.querySelector(".profil_blok_menu_clone").style="display:block;"
+    }
+    function menuModalClone() {
+        document.querySelector(".profil_modal_media").style="display:none;"
+        document.querySelector(".profil_blok_menu_clone").style="display:none !important;"
+        document.querySelector(".profil_blok_menu").style="display:block;"
     }
 
     return (
@@ -38,10 +48,11 @@ export default function Pdp() {
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} className='fromLeft'>Мои усвоенные знания</h1>{toggle===2?(<div className="fil_text_blok_kurs_lenght">14 штуки</div>):("")}</div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} className='fromLeft'>Мои сертификаты</h1>{toggle===3?(<div className="fil_text_blok_kurs_lenght">24 штуки</div>):("")}</div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} className='fromLeft'>Мои наставники-члены</h1>{toggle===4?(<div className="fil_text_blok_kurs_lenght">24 штуки</div>):("")}</div>
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} className='fromLeft'>Переписка</h1>{toggle===4?(<div className="fil_text_blok_kurs_lenght">1 штуки</div>):("")}</div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} className='fromLeft'>Переписка</h1><div className="fil_text_blok_kurs_lenght">1 штуки</div></div>
                 </div>
                 <div className="profil_blok_menu_size">
                     <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
+                    <TiThMenu onClick={() => menuModalClone()} className='profil_blok_menu_clone' />
                 </div>
                 <div className="profil_modal_media">
                     <h1 onClick={() => updatetoggle(1)} className='fromMenu'>Мои курсы</h1>

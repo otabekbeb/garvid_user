@@ -1,76 +1,191 @@
-import React from 'react'
-import Pdp from '../img/Pdp.png'
-import Elp from '../img/Ellipse.jpg'
+'use clint'
+import React, { useState } from 'react'
 import '../css/Navbar.css'
-import { BiChevronDown } from 'react-icons/bi'
+
+function sa(){
+    var y= document.querySelector(".media-ul").style.display;
+    if(y=="flex"){
+    document.querySelector(".media-ul").style.display="none";
+    }else{
+       document.querySelector(".media-ul").style.display="flex";
+    }
+    document.querySelector(".bar-menu").classList.toggle("la")
+    document.querySelector(".wone").classList.toggle("laa")
+    document.querySelector(".wone1").classList.toggle("laa")
+    document.querySelector(".wone2").classList.toggle("laa")
+   }
+
+    function about2() {
+  
+        document.querySelector(".ichi span").style="transform: rotate(180deg);"
+        }
+    
+        function aboutClose2() {
+      
+            document.querySelector(".ichi span").style="transform: rotate(0deg);"
+            }
+            function ffd() {
+    var t=document.querySelector(".ffd ul").style.display
+    var p=document.querySelector(".ffd ul").style.opacity
+    if(t=="none"){
+        document.querySelector(".ffd ul").style.display="block";
+        document.querySelector(".ffd ul").style.opacity="1";
+        }else{
+           document.querySelector(".ffd ul").style.display="none";
+           document.querySelector(".ffd ul").style.opacity="0";
+        }
+    }    
+   
+    function ochil1() {
+        var t=document.querySelector(".lll ul").style.display
+        var p=document.querySelector(".lll ul").style.opacity
+        if(t=="none"){
+            document.querySelector(".lll ul").style.display="block";
+            document.querySelector(".lll ul").style.opacity="1";
+            }else{
+               document.querySelector(".lll ul").style.display="none";
+               document.querySelector(".lll ul").style.opacity="0";
+            }
+        }
+        function menuul() {
+            document.querySelector(".div1").style="display:block"
+            document.querySelector(".menu ul").style="display:block"
+            document.querySelector(".menuu  span").style="transform: rotate(180deg);"
+        }
+        function menuufolse(){
+            document.querySelector(".menuu  span").style="transform: rotate(0deg);"
+        }
+        function menuul1() {
+            document.querySelector(".menu ul").style="display:none"
+            
+        }
+        function menu2ul() {
+            document.querySelector(".blog1").style="display:block"
+        }
+        function menu2ul12() {
+            document.querySelector(".menu ul").style="display:block"
+            document.querySelector(".blog1").style="display:block"
+        }
+        function menu2leave() {
+            document.querySelector(".blog1").style="display:none"
+            // document.querySelector(".div1").style="display:none"
+        }
+        function menu2leave1() {
+            document.querySelector(".blog1").style="display:none"
+            document.querySelector(".menu ul").style="display:none"
+            document.querySelector(".div1").style="display:none"
+        }
 export default function Navbar() {
+    
 
-    function Down() {
-        document.querySelector(".profil_menu_modal").classList.toggle("db")
 
-    }
-    function Foto() {
-        document.querySelector(".profil_name").classList.toggle("dode");
 
-    }
-    return (
-        <div>
-            <div className="navbar">
-                <div className="Navbar_df_flex">
+ const [state,State] = React.useState(1)
 
-                    <div className="img_navbar_img">
-                        <img src={Pdp} alt="" />
-                    </div>
-                    <div className="profil_profil">
-                        <div className="profil_emile">
-                            <div className="profil_img" onClick={() => { Foto() }}>
-                                <img src={Elp} alt="" />
-                            </div>
-                            <div className="profil_text">
-                                <h3>To’rayev Ja’farbek</h3>
-                                <p>Oddiy foydalanuvchi</p>
 
-                            </div>
-                        </div>
-                        <BiChevronDown onClick={() => { Down() }} className='Down_icon' />
-                        <div className="profil_menu_modal">
-                            <div className="Front_div">
-                                <h3>Front End Kursi</h3>
-                            </div>
-                            <div className="Modx_div">
-                                <h3>Modx Kursi</h3>
-                            </div>
-                            <div className="Bac_div">
-                                <h3>Backend Kursi</h3>
-                            </div>
+return (
+    <div>
+<section className='navbar'>
+    <div className="navbar-ul">
+<ul>
+     {/* <li className='moto-menu-item'><a href="#">Главный</a></li> */}
 
-                        </div>
-                    </div>
+  <div className="menu" onMouseLeave={()=>menuufolse()} >
+    <div className="menuu" onMouseEnter={() => menuul()}>
+    <p ><a href="/about">О нас</a> <span><box-icon name='chevron-down' color='#44bef1' ></box-icon></span></p>
+    <ul onMouseLeave={() => menuul1()} >
+        <li ><a href="#" >Архивы</a></li>
+        <div className='hr' />
+ <div  id='hh1'></div>
+     <div className="menu2" >
+     <p onMouseEnter={() => menu2ul()} onMouseLeave={()=> menu2leave()}> <a href="#" className='zaib' >Новости  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a> </p>
+<div id='hh2'></div>
+<div className='hr' />
+     <ul onMouseEnter={() => menu2ul()} onMouseLeave={()=> menu2leave1()} className='blog1'>
+        <li id='ded1'><a href="/blog">Блог</a></li>
+        <div className='hr' />
+        <div  id='hh1'></div>
+        <li id='ded'><a href="/contact">Контакты</a></li>
+      
+     </ul>
+     
+     </div>
+       
+        <li className='zaib'><a href="#">FAQs</a></li>
+    </ul>
+</div>
+   
+</div>
 
-                </div>
-                <div className="profil_name">
-                    <div className="profil_text_name">
-                        <div className="tex_name">
-                            <h3>To’rayev Ja’farbek</h3>
-                            <p>Oddiy foydalanuvchi</p>
-                        </div>
-                        <img className='elp_img_profil' src={Elp} alt="" />
-                    </div>
-                    <div className="profil_menu">
-                        <div className="Front_div">
-                            <h3>Front End Kursi</h3>
-                        </div>
-                        <div className="Modx_div">
-                            <h3>Modx Kursi</h3>
-                        </div>
-                        <div className="Bac_div">
-                            <h3>Backend Kursi</h3>
-                        </div>
+    <li className='moto-menu-item'> <a href="/servis">Услуги</a> </li>
+    <li className='moto-menu-item'><a href="/blog">Блог</a></li>
+    <li className='moto-menu-item'><a href="/ourteam">Наша команда</a></li>
+    <li className='moto-menu-item'><a href="/contact">Контакты</a></li>
+    <li className='moto-menu-item'><a href="/login">Регистрация</a></li>
+</ul>
 
-                    </div>
-                </div>
-            </div>
+    </div>
+    <div className="media-navbar">
+      
+  
 
-        </div>
-    )
+            <div className="navbar-menu">
+      <div  className="bar-menu"   id='sa' onClick={() => sa()} >
+      <div className="wone" ></div>
+      <div className="wone1"  ></div>
+      <div className="wone2"  ></div>
+
+
+      </div>
+     
+<div className="media-ul">
+<div className="dfdf">
+<ul>
+   {/* <li><a href="#" className='tt'>Home</a></li> */}
+   <div className="media-kategory"  onMouseLeave={()=>aboutClose2()}  onClick={()=> ffd()}>
+<div className="ichi" onMouseEnter={(() => about2())}>
+<li><a href="/" className='tt'>About</a></li> <span><box-icon name='chevron-down' color='#ffffff' ></box-icon></span>
+
+
+</div>
+
+</div>
+<div className="ffd" >
+<ul className='ffdul' >
+   <li className='ds'><a href="#">Archives</a></li>
+
+  <div className="ichi2" onClick={()=>ochil1()}>
+  <li className='ds'><a href="#">News</a></li><span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
+  </div>
+<div className="lll">
+   <ul>
+       <li className='lll1'><a href="/blog">Blog</a></li>
+       <li className='lll2'><a href="/contact">Contacts</a></li>
+   </ul>
+</div>
+
+   <li className='ds'><a href="#">FAQs</a></li>
+</ul>
+</div>
+   <li><a href="/servis" className='tt'>Services</a></li>
+  
+   <li><a href="/blog" className='tt'>Blog</a></li>
+   <li><a href="/ourteam" className='tt'>Our team</a></li>
+   <li><a href="/contact" className='tt'>Contacts</a></li>
+</ul>
+</div>
+</div>
+
+
+      </div>
+
+   </div>
+
+</section>
+
+<div className="div1" onMouseEnter={() => menu2ul12()} onMouseLeave={()=> menu2leave1()}></div>
+
+    </div>
+  )
 }
+

@@ -11,7 +11,9 @@
     }
     
     
-    
+    .profil_blok_menu_clone{
+        display: none;
+    } 
     .Filter {
         width: 100%;
         align-items: center !important;
@@ -408,11 +410,8 @@
     }
     @media (max-width:1000px) {
         .fil_text_blok{
-            width: auto;
+            width: 80%;
             gap: 30px;
-        }
-        .fil_text_blok h1{
-            font-size: 2vw;
         }
         .gray_blok{
             height: 90px;
@@ -433,12 +432,12 @@
         padding: 2px;
         }
     }
-    @media (max-width:600px) {
+    @media (max-width:991px) {
     .fil_text_blok{
-        display: none;
+        display: none ;
     }
     .profil_blok_menu{
-        display: block;
+        display: block !important;
         padding: 10px;
         font-size: 40px;
         color: rgba(255, 255, 255, 0.911);
@@ -453,6 +452,16 @@
         justify-content: end;
         align-items: center;
     }
+    .profil_blok_menu_clone {
+        /* display: block !important; */
+        padding: 10px;
+        font-size: 40px;
+        color: rgba(255, 255, 255, 0.911);
+        margin-right: 5%;
+        border: 2px solid #9DA7BB;
+        background-color: #cfd5e2;
+        border-radius: 50%;
+    }
     .gray_blok{
         position: relative;
     }
@@ -460,7 +469,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        top: -100%;
+        top: 100%;
         z-index: 10;
         height: auto;
         background-color: white;
@@ -473,7 +482,7 @@
         top: 90px;
     }
     .profil_modal_media h1{
-        width: 200px;
+        width: 100%;
         font-size: 15px;
         padding-top: 15px;
         padding-left: 15px;

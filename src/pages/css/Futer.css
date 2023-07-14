@@ -1,0 +1,128 @@
+.line1{
+    widows: 100%;
+    height: 1px;
+    box-shadow: 0px 2px 2px 0px  ;
+}
+.futer_container{
+    max-width: 1370px;
+    margin: auto;
+    margin-top: 40px;
+}
+.futer_row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+.futer ul{
+    list-style: none;
+}
+.futer{
+    padding: 70px 0;
+}
+.futer_col{
+    width: 320px;
+    padding: 0 15px;
+}
+.futer_col h4{
+    font-style: 18px;
+    color: black;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-weight: 500;
+    position: relative;
+}
+.futer_col ul li{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 30px;
+    text-transform: capitalize;
+    color: #9DA7BB;
+    display: block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.futer_col ul li:hover{
+    color: black;
+    padding-left: 5px;
+}
+.futer_col p{
+    margin-top: 80px;
+    font-size: 15px;
+    font-weight: 400;
+}
+.futer_col .aloqa_btn{
+    width: 200px;
+height: 40px;
+font-size: 18px;
+font-weight: 500;
+border: none;
+border-radius: 4px;
+color: white;
+background: var(--seriy, #9DA7BB);
+}
+.futer_i{
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+}
+.futer_i .social_i{
+    width: 30px;
+height: 30px;
+font-size: 19px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+color: var(--seriy, #9DA7BB);
+background-color: #F1F2F6;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+.futer_i .social_i:hover{
+    color: white;
+    background-color:  var(--seriy, #9DA7BB);
+}
+.botom_p{
+    display: flex;
+    align-items: center;
+    align-items: center;
+    gap: 14px;
+    margin-left: 10vw;
+    margin-top: 39px;
+}
+.botom_p p{
+    color: var(--seriy, #9DA7BB);
+    font-size: 10px;
+    font-weight: 400;
+}
+.botom_p .mini_line{
+    width: 1px;
+    height: 8px;
+    margin-top: -15px;
+    background-color: var(--seriy, #9DA7BB);
+}
+@media (max-width:960px) {
+    .botom_p{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+    }
+}
+
+@media (max-width:430px) {
+    .botom_p{
+        text-align: center;
+        display: block;
+    }
+    .futer_i{
+        margin-inline: auto !important;
+    }
+    .botom_p .mini_line{
+        width: 25%;
+        height: 1px;
+        margin-inline: auto !important;
+
+    }
+}

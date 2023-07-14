@@ -100,7 +100,7 @@
     width: 80%;
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 3%  !important;
     margin-top: 85px;
 }
 
@@ -443,6 +443,9 @@
 }
 
 .profil_blok_menu {
+    display: none !important;
+}
+.profil_blok_menu_clone{
     display: none;
 }
 
@@ -517,13 +520,10 @@
 
 @media (max-width:1000px) {
     .fil_text_blok {
-        width: auto;
-        gap: 30px;
+        width: 80% !important;
+        gap: 2% !important;
     }
 
-    .fil_text_blok h1 {
-        font-size: 2vw;
-    }
 
     .gray_blok {
         height: 90px;
@@ -548,13 +548,24 @@
     }
 }
 
-@media (max-width:600px) {
+
+@media (max-width:991px) {
     .fil_text_blok {
-        display: none;
+        display: none !important;
     }
 
     .profil_blok_menu {
-        display: block;
+        display: block !important;
+        padding: 10px;
+        font-size: 40px;
+        color: rgba(255, 255, 255, 0.911);
+        margin-right: 5%;
+        border: 2px solid #9DA7BB;
+        background-color: #cfd5e2;
+        border-radius: 50%;
+    }
+    .profil_blok_menu_clone {
+        /* display: block !important; */
         padding: 10px;
         font-size: 40px;
         color: rgba(255, 255, 255, 0.911);
@@ -579,7 +590,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        top: -100%;
+        top:100%;
         z-index: 10;
         height: auto;
         background-color: white;
@@ -588,13 +599,13 @@
     }
 
     .menu_modal {
-        display: block;
+        display: block  !important;
         position: absolute;
         top: 90px;
     }
 
     .profil_modal_media h1 {
-        width: 200px;
+        width: 100%;
         font-size: 15px;
         padding-top: 15px;
         padding-left: 15px;
