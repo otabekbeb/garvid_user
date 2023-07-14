@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Profil from './pages/js/Profil'
-import Pdp from './pages/js/UserPdp'
+// import Pdp from './pages/js/Pdp'
 import Mentor from './pages/js/Mentor'
 import MentorPdp from "./pages/js/MentorPdp"
 import Navbar from   './pages/js/Navbar2'
@@ -35,7 +35,6 @@ export default function App() {
           {/* <Route index element={} />*/}
       </Routes>
     </BrowserRouter>
-      
     </div>
   )
 }

@@ -2,7 +2,6 @@ import React from 'react'
 import '../css/Spiska.css'
 import { AiFillStar } from 'react-icons/ai'
 import { HiArrowRight } from 'react-icons/hi'
-
 import WWW from '../img/WWW.png'
 export default function Spiska() {
     return (

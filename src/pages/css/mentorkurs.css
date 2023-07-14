@@ -352,17 +352,17 @@
 @media (max-width: 368px) {
   .cali {
     width: 300px;
-    height: auto;
+    height:400px !important;
   }
   .text_blok {
-    width: 250px !important;
+    width: 250px;
   }
   .zero_blok {
     width: 250px;
     margin-top: 20px;
   }
   .text_blok h3 {
-    width: 250px;
+    width: 250px ;
     font-size: 15px !important;
   }
   .star_icon_blok_mentor {
@@ -370,6 +370,7 @@
   }
   .kurs_hajmi p {
     font-size: 12px !important;
+   
   }
   .kurs_hajmi h3 {
     font-size: 17px !important;
@@ -388,6 +389,7 @@
   }
   .cali1 {
     width: 300px;
+    height:350px !important;
   }
 }
 @media (max-width: 1000px) {
@@ -491,7 +493,7 @@
     padding: 10px;
   }
   #eadi {
-    font-size: 10px;
+    font-size: 10px ;
   }
 }
 .Mentor_kurs_icon {

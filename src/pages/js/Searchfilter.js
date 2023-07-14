@@ -12,6 +12,7 @@ import { TbPointFilled } from 'react-icons/tb'
 import "../css/loader.css"
 // import Spiska from './Spiska'
 import '../css/Spiska.css'
+
 import WWW from '../img/WWW.png'
 export default function Searchfilter() {
 
