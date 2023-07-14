@@ -13,7 +13,7 @@ transition: 0.5s;
     display: flex;
   gap: 40px;
 margin-left: 13.5vw;
-
+align-items: center;
 }
 .menu{
     position: relative;
@@ -22,7 +22,8 @@ margin-left: 13.5vw;
    display: flex;
     font-size: 15px;
     gap: 10px;
-
+position: relative;
+top: 8px;
 }
 #hh1{
     display: none;

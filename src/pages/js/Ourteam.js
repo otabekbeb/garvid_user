@@ -48,8 +48,8 @@ export default function Ourteam() {
               <div className="two21">
                 <div className="icon223">
                   <div className="dumalo12"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                  <div className="dumalo12"><i className='bx bxl-twitter'></i></div>
-                  <div className="dumalo12"><i className='bx bxl-linkedin' ></i></div>
+                  <div className="dumalo12"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                  <div className="dumalo12"><i class="fa fa-instagram" aria-hidden="true"></i></div>
                 </div>
                 <div className="view12"><h4>Профиль <span></span></h4></div>
               </div>
@@ -63,8 +63,8 @@ export default function Ourteam() {
               <div className="two21">
                 <div className="icon223">
                   <div className="dumalo12"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                  <div className="dumalo12"><i className='bx bxl-twitter'></i></div>
-                  <div className="dumalo12"><i className='bx bxl-linkedin' ></i></div>
+                  <div className="dumalo12"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                  <div className="dumalo12"><i class="fa fa-instagram" aria-hidden="true"></i></div>
                 </div>
                 <div className="view12"><h4>Профиль <span></span></h4></div>
               </div>
@@ -78,8 +78,8 @@ export default function Ourteam() {
               <div className="two21">
                 <div className="icon223">
                   <div className="dumalo12"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                  <div className="dumalo12"><i className='bx bxl-twitter'></i></div>
-                  <div className="dumalo12"><i className='bx bxl-linkedin'></i></div>
+                  <div className="dumalo12"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                  <div className="dumalo12"><i class="fa fa-instagram" aria-hidden="true"></i></div>
                 </div>
                 <div className="view12"><h4>Профиль <span></span></h4></div>
               </div>
@@ -93,8 +93,8 @@ export default function Ourteam() {
               <div className="two21">
                 <div className="icon223">
                   <div className="dumalo12"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                  <div className="dumalo12"><i className='bx bxl-twitter'></i></div>
-                  <div className="dumalo12"><i className='bx bxl-linkedin' ></i></div>
+                  <div className="dumalo12"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                  <div className="dumalo12"><i class="fa fa-instagram" aria-hidden="true"></i></div>
                 </div>
                 <div className="view12"><h4>Профиль <span></span></h4></div>
               </div>
@@ -108,8 +108,8 @@ export default function Ourteam() {
               <div className="two21">
                 <div className="icon223">
                   <div className="dumalo12"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                  <div className="dumalo12"><i className='bx bxl-twitter'></i></div>
-                  <div className="dumalo12"><i className='bx bxl-linkedin' ></i></div>
+                  <div className="dumalo12"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                  <div className="dumalo12"><i class="fa fa-instagram" aria-hidden="true"></i></div>
                 </div>
                 <div className="view12"><h4>Профиль <span></span></h4></div>
               </div>
@@ -123,8 +123,8 @@ export default function Ourteam() {
               <div className="two21">
                 <div className="icon223">
                   <div className="dumalo12"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                  <div className="dumalo12"><i className='bx bxl-twitter'></i></div>
-                  <div className="dumalo12"><i className='bx bxl-linkedin' ></i></div>
+                  <div className="dumalo12"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                  <div className="dumalo12"><i class="fa fa-instagram" aria-hidden="true"></i></div>
                 </div>
                 <div className="view12"><h4>Профиль <span></span></h4></div>
               </div>
