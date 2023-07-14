@@ -10,10 +10,7 @@ import YouTube from './pages/js/Youtube1'
 export default function App() {
   return (
     <div>
-      {/* <Mentor/> */}
-      {/* <Profil/>  */}
-      {/* <Pdp/>  */}
-      <YouTube />
+   
       
     </div>
   )
