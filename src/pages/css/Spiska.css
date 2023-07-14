@@ -185,3 +185,17 @@
         width: 70%;
     }
 }
+@media (max-width:469px) {
+    .left1_icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        font-size: 25px;
+        color: rgba(0, 0, 255, 0.747);
+        border: 1px solid gray;
+        text-align: center;
+        align-items: center !important;
+        padding-top: 1px !important;
+        
+    }
+}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Use_img from "../img/Ellipse.jpg"
 import icon_img from "../img/start-up.png"
 import icon_img1 from "../img/Vector.svg"
@@ -12,9 +12,11 @@ import {FiEdit,FiLifeBuoy,FiLogOut} from "react-icons/fi"
 import {TbPointFilled} from "react-icons/tb"
 import {AiOutlineRight} from "react-icons/ai"
 import chadimg from "../img/Ellipse.jpg"
+import axios from 'axios'
 
 
 export default function Profil() {
+  const [data,setData] = useState([])
 
   function userimgModal(){
     document.querySelector(".user_img_hover").style="  position: absolute;bottom: 0;"
@@ -37,6 +39,15 @@ export default function Profil() {
     document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style="display:none;"
   }
 
+  useEffect(()=>{
+  axios.get("https://baisan.onrender.com/auth/user/",{ headers: { 'Authorization': 'Bearer ' + sessionStorage.getItem("token") } }).then(res=>{
+    console.log(res.data);
+    setData(res.data)
+  }).catch((err) => {
+    console.log(err);
+  })
+  },[])
+
   return (
     <div>
       <div className="profil_size_df">
@@ -50,7 +61,7 @@ export default function Profil() {
         </div>
         </div>
            <div className="blok_bir_text">
-            <h1>Тураев Джафарбек</h1>
+            <h1>{data.username}</h1>
             <button>Обычный пользователь</button>
             <p>Мои знаки</p>
             <div className="blok_bir_icon">
