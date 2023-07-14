@@ -73,7 +73,7 @@
     font-weight: 500;
     align-items: center !important;
     margin-top: 5px;
-    user-select: none;
+   
 }
 
 .menyu {
@@ -274,7 +274,7 @@
     position: absolute;
 
     border-radius: 5px;
-    user-select: none;
+
 }
 
 .button_kurs {

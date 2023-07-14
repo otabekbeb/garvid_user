@@ -1,7 +1,7 @@
 
 .navbar{
     width: 100%;
-    min-height: 60px;
+height: 60px;
     background-color: #323946;
     padding-top: 20px;
     position: fixed;
@@ -11,9 +11,8 @@ transition: 0.5s;
 }
 .navbar-ul ul{
     display: flex;
-    align-items:stretch ;
   gap: 40px;
-margin-left: 280px;
+margin-left: 13.5vw;
 
 }
 .menu{
@@ -122,15 +121,25 @@ transition: 0.4s;
     height: 400px;
  
 }
-.hr{
-    background-color: rgb(217, 208, 208);
-    width: 100%;
+.navbbar-line-hr{
+    width: 116%;
     height: 1px;
+    background-color: #d8dbdf;
+    position: relative;
+    right: 33px;
+}
+.navbbar-line-hr1{
+    width: 127%;
+    height: 1px;
+    background-color: #d8dbdf;
+    position: relative;
+    right: 33px;
 }
 .menu ul li{
     width: 100%;
     padding: 5px;
-
+    position: relative;
+left: -35px;
 }
 
 .menu2 li a span{
@@ -164,10 +173,8 @@ transition: 0.4s;
     width: 120px;
     height: 92px;
 top: 130px;
-left: 30%;
+left: 25%;
 display: none;
- 
-   cursor: pointer;
 }
 .menu2 p{
     width: 100%;
@@ -184,7 +191,8 @@ display: none;
  font-weight: 300;
  font-style: normal;
  color: #333333 ;
- 
+ position: relative;
+ left: -34px;
  text-decoration: none;
  background-color: transparent;
 
@@ -251,7 +259,7 @@ font-size: 12px;
     }
     .navbar{
         width: 100%;
-        min-height: 60px;
+        height: 60px;
         background-color: #323946;
         padding-top: 15px;
     
@@ -382,7 +390,7 @@ overflow: hidden;
 z-index: 100;
 display: none;
 top: -10px;
-user-select: none;
+
 }
 .media-ul ul li{
 
@@ -620,13 +628,7 @@ justify-content: center;
 .asd-block{
     display: block;
 }
-.mini{
-margin: auto;
-    width: 45%;
-    height: 3px;
 
-    background-color: white;
-}
 .sahifa{
     width: 100%;
     min-height: 50px;
@@ -809,7 +811,7 @@ top: 8px;
     }
     .navbar{
         width: 100%;
-        min-height: 40px;
+      height: 50px !important;
         background-color: #323946;
         padding-top: 15px;
     
@@ -901,7 +903,7 @@ top: -30px !important;
        
     }
  
-    .menu2 ul{
+    .ul{
         position: absolute;
         width: 180px;
 
@@ -925,7 +927,7 @@ top: -30px !important;
     }
     .navbar{
         width: 100%;
-        min-height: 60px;
+       height: 60px;
         background-color: #323946;
         padding-top: 15px;
     
@@ -1055,7 +1057,7 @@ overflow: hidden;
 z-index: 100;
 display: none;
 top: -10px;
-user-select: none;
+
 }
 .media-ul ul li{
     text-decoration: none;
@@ -1142,7 +1144,7 @@ position: relative;
 .menu2 ul{
     position: absolute;
     width: 150px !important;
-left: -28% !important;
+left: -16% !important;
     transition: 0.4s;
 margin-top: 14px !important;
    background: #ffffff;
@@ -1216,7 +1218,7 @@ margin-left: 82vw;
         z-index: 100;
         display: none;
         top: -10px;
-        user-select: none;
+    
         }
 }
 @media (max-width:365px) {
@@ -1229,7 +1231,7 @@ margin-left: 82vw;
         z-index: 100;
         display: none;
         top: -10px;
-        user-select: none;
+
         }
 }
 
@@ -1246,4 +1248,8 @@ top: 15px;
  
         z-index: 3483 !important; 
     }
+}
+.menu2  ul li{
+    position: relative;
+    left: 0px;
 }

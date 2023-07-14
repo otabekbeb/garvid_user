@@ -37,8 +37,7 @@ export default function Futer() {
     </ul>
   </div>
 
-  <div className="futer_col">
-    <ul><h4>Поддерживать</h4>
+  <div className="futer_col">    <ul><h4>Поддерживать</h4>
       <li>Наиболее часто задаваемые вопросы</li>
       <li>Контакт</li>
     </ul>
