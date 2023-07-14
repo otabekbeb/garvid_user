@@ -22,10 +22,20 @@ export default function Pdp() {
 
     function updatetoggle(id) {
         setToggle(id)
+        document.querySelector(".profil_modal_media").style="display:none;"
+        document.querySelector(".profil_blok_menu_clone").style="display:none !important;"
+        document.querySelector(".profil_blok_menu").style="display:block;"
     }
 
     function menuModal() {
-        document.querySelector(".profil_modal_media").classList.toggle("menu_modal")
+        document.querySelector(".profil_modal_media").style="display:block;"
+        document.querySelector(".profil_blok_menu").style="display:none !important;"
+        document.querySelector(".profil_blok_menu_clone").style="display:block;"
+    }
+    function menuModalClone() {
+        document.querySelector(".profil_modal_media").style="display:none;"
+        document.querySelector(".profil_blok_menu_clone").style="display:none !important;"
+        document.querySelector(".profil_blok_menu").style="display:block;"
     }
 
     return (
@@ -42,6 +52,7 @@ export default function Pdp() {
                 </div>
                 <div className="profil_blok_menu_size">
                     <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
+                    <TiThMenu onClick={() => menuModalClone()} className='profil_blok_menu_clone' />
                 </div>
                 <div className="profil_modal_media">
                     <h1 onClick={() => updatetoggle(1)} className='fromMenu'>Мои курсы</h1>
