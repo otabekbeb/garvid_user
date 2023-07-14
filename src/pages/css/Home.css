@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab:wght@300&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+    font-family: 'Rubik', sans-serif !important;
+}
+.carousel-caption{
+    left: 10% !important;
+    top: 130px !important;
+    text-align: start !important;
+    z-index: 1111 !important;
+}
+.carousel-caption h1{
+    font-weight: 700;
+    font-style: normal;
+    font-family: 'Roboto', sans-serif;
+    color: #323946;
+    font-size: 50px;
+    line-height: 1.2;
+    letter-spacing: 0px;
+}
+.buttons button{
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 700 !important;
+    font-style: normal;
+    color: #ffffff;
+    background-color: #44bef1;
+    border-color: transparent;
+    width: 150px;
+    height: 50px;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+.button1{
+    margin-left: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    color: #44bef1 !important;
+    background-color: #00000000 !important;
+    border: 1px solid #44bef1 !important;
+    transition: 0.5s;
+}
+.buttons{
+    margin-top: 30px;
+}
+.button:hover{
+    background-color: #00000000;
+    border: 1px solid #44bef1;
+    color: #44bef1;
+}
+.button1:hover{
+    background-color: #44bef1 !important;
+    color: white !important;
+    border: 1px solid #44bef1;
+}
+.carusel .button1{
+    border: 1px solid white !important;
+    color: white !important;
+}
+.carusel .button:hover{
+    background-color: white;
+    border: 1px solid white;
+    color: #44bef1;
+}
+.carusel .button1:hover{
+    background-color: white !important;
+    border: 1px solid white !important;
+    color: #44bef1 !important;
+}
+.carusel p{
+    font-weight: 300;
+    font-style: normal;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 1.7;
+    letter-spacing: 0px;
+}
+.carusel h1{
+    font-weight: 700;
+    font-style: normal;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    font-size: 55px;
+    line-height: 1.7;
+    letter-spacing: 0px;
+}
+.card1{
+    width: 300px;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.bigdiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 1300px;
+    padding-top: 80px;
+    text-align: center;
+}
+.big1{
+    width: 100%;
+    background-color: white;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+.card1 h3{
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+    font-style: normal;
+    margin-top: 25px;
+    font-size: 22px;
+}
+.card1 p{
+    font-weight: 300;
+    font-style: normal;
+    font-family: 'Roboto', sans-serif;
+    color: #4d4d4d;
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: 0px;
+    margin-top: 15px;
+}
+.body1{
+    background: url("https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/08/mt-0514-home-parallax.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.soz1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 230px;
+    padding: 15px;
+}
+.soz1 h1{
+    color: white;
+}
+.line{
+    width: 1px;
+    height: 40px;
+    background-color: white;
+    margin-left: 50px;
+}
+.soz2{
+    display: flex;
+    align-items: center;
+}
+.soz2 p{
+    color: white;
+    margin-bottom: 0px;
+    font-size: 18px;
+    margin-left: 20px;
+}
+.soz2 button{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #ffffff;
+    background-color: #44bef1;
+    border-color: transparent;
+    border-radius: 4px;
+    width: 220px;
+    height: 55px;
+    margin-left: 50px;
+}
+.d-block{
+    vertical-align: bottom !important;
+}
+/* .item1{
+    background-position: center center;
+    background-image: url("https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/08/mt-0514-home-slider01.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    float: none;
+
+Миробид, [06.07.2023 8:34]
+list-style: none;
+    position: absolute;
+    z-index: 50;
+    display: flex;
+    height: 573px;
+    width: 1490px;
+} */
+.katta1{
+    width: 100%;
+    min-height: 1000px;
+    background-color: white;
+}
+.katta1 h1{
+    padding-top: 80px;
+}
+.blue1{
+    width: 70px;
+    height: 3px;
+    background-color: #44bef1;
+}
+.cards1{
+    display: flex;
+    justify-content: center;
+}
+.cards2{
+    display: flex;
+    justify-content: space-between;
+}
+.card4{
+    width: 600px;
+}
+.buttons1 button{
+    width: 200px;
+    height: 55px;
+    border: none;
+    font-family: 'Rubik', sans-serif !important;
+    font-size: 18px;
+    transition: 0.3s;
+}
+.but1{
+    
+    border: 1px solid #dedede !important;
+}
+.but1:hover{
+    border: 1px solid #dedede !important;
+    background-color: #44bef1 !important;
+}
+.but2{
+    border: 1px solid #dedede !important;
+    background-color: white;
+}
+.but2:hover{
+    background-color: #44bef1 !important;
+    border: 1px solid #dedede !important;
+}
+.buttons1{
+    margin-top: 50px;
+}
+.about_p{
+    font-family: 'Rubik', sans-serif !important;
+    margin-top: 30px;
+}
+
+.fact1,.advantage1,.skill1{
+    display: flex;
+    justify-content: space-between;
+}
+.facts,.advantages,.skills{
+    text-align: center;
+}
+.card4 h1{
+    padding-top: 10px;
+    color: #44bef1;
+    font-weight: 900;
+    font-size: 50px;
+}
