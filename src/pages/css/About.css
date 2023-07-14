@@ -24,16 +24,19 @@ overflow: hidden;
 .asd-block{
     display: block;
 }
+
+
 .mini{
 margin: auto;
-    width: 45%;
-    height: 3px;
-
+    width: 52% !important;
+    height: 4px;
+position: relative;
+top: -20px;
     background-color: white;
 }
 .sahifa{
     width: 100%;
-    min-height: 50px;
+    height: 50px !important;
 border-bottom: 1px solid   rgb(217, 208, 208);
 position: relative;
 overflow: hidden;
@@ -57,9 +60,9 @@ overflow: hidden;
 }
 .sahifa-glav{
     display: flex;
-    padding: 14px 0;
+    padding: 10px 0;
     position: relative;
-    left: 10vw;
+    left: 15vw;
 }
 .safiha-d p{
     font-family: 'Roboto', sans-serif;
@@ -122,7 +125,7 @@ top: 8px;
     .navbar-ul ul{
         display: flex;
       gap: 40px;
-    margin-left:6%;
+    margin-left:0% !important; 
     
     }
     .menu2 ul{
@@ -160,7 +163,7 @@ top: 8px;
     .navbar-ul ul{
         display: flex;
       gap: 40px;
-    margin-left:4%;
+    margin-left:0% !important;
     
     }
     .menu2 ul{
@@ -216,7 +219,7 @@ top: 8px;
     }
     .navbar{
         width: 100%;
-        min-height: 40px;
+        height: 40px;
         background-color: #323946;
         padding-top: 15px;
     
@@ -331,7 +334,7 @@ top: -30px !important;
     }
     .navbar{
         width: 100%;
-        min-height: 60px;
+      height: 50px !important;
         background-color: #323946;
         padding-top: 15px;
     
@@ -342,10 +345,10 @@ top: -30px !important;
 
     .bar-menu{
 width: 40px;
-height: 40px;
+height: 35px;
 background-color: #ffffff;
 position: relative;
-top: -10px;
+top: -6px !important;
 cursor: pointer;
 
     }
@@ -464,7 +467,7 @@ overflow: hidden;
 z-index: 100;
 display: none;
 top: -10px;
-user-select: none;
+
 }
 .media-ul ul li{
     text-decoration: none;
@@ -627,7 +630,7 @@ margin-left: 82vw;
         z-index: 100;
         display: none;
         top: -10px;
-        user-select: none;
+  
         }
 }
 @media (max-width:365px) {
@@ -640,7 +643,7 @@ margin-left: 82vw;
         z-index: 100;
         display: none;
         top: -10px;
-        user-select: none;
+       
         }
 }
 
@@ -873,7 +876,29 @@ text-decoration: none;
 font-weight: 500;
 font-style: normal;
 transition: 0.5s;
+position: relative;
+right: 14%;
 }
+.about-header-block2-text2 a{
+    text-decoration: none;
+    color: #bababa;
+    text-decoration: none;
+    font-weight: 500;
+    font-style: normal;
+    transition: 0.5s;
+    position: relative;
+    right: 14%;
+    }
+    .about-header-block2-text3 a{
+        text-decoration: none;
+        color: #bababa;
+        text-decoration: none;
+        font-weight: 500;
+        font-style: normal;
+        transition: 0.5s;
+        position: relative;
+        right: 14%;
+        }
 .about-header-f a:hover{
 color: #1aa1dc;
 }
@@ -924,8 +949,9 @@ color: #1aa1dc;
     height: 1px;
     background-color: #bababa;
     position: relative;
-    top: 15px;
+    top: 0px;
 }
+
 .about-header-block-swiper{
     margin-left: 1.6rem;
 }
@@ -960,7 +986,7 @@ padding-left: 35px;
     padding-top: 10px;
 }
 .about-header-card button{
-    /* width: 130px; */
+    width: 130px;
     height: 45px;
     border-radius: 5px;
     background: none;
@@ -968,7 +994,8 @@ padding-left: 35px;
     cursor: pointer;
     color: white;
    margin-left: 39px;
-   margin-top: 30px;
+   margin-top: 20px;
+   font-size: 14px;
 }
 .sli-text p{
     text-align: center;
@@ -2002,7 +2029,7 @@ right: 5%;
     height: 1px;
     background-color: #7e848f;
     position: relative;
-    top: 20px !important;
+    top: 10px !important;
 }
 .futer-liner2 {
     width: 220px;
@@ -2875,4 +2902,9 @@ font-size: 8.5px;
         position: relative;
         z-index:2;
     }
+}
+
+
+.asd-block h1{
+    margin-top: 30px;
 }

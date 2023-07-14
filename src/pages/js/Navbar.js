@@ -95,16 +95,16 @@ return (
     <p ><a href="/about">О нас</a> <span><box-icon name='chevron-down' color='#44bef1' ></box-icon></span></p>
     <ul onMouseLeave={() => menuul1()} >
         <li ><a href="#" >Архивы</a></li>
-        <div className='hr' />
- <div  id='hh1'></div>
+    <div className="navbbar-line-hr"></div>
+
      <div className="menu2" >
      <p onMouseEnter={() => menu2ul()} onMouseLeave={()=> menu2leave()}> <a href="#" className='zaib' >Новости  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a> </p>
-<div id='hh2'></div>
-<div className='hr' />
+     <div className="navbbar-line-hr"></div>
+
      <ul onMouseEnter={() => menu2ul()} onMouseLeave={()=> menu2leave1()} className='blog1'>
         <li id='ded1'><a href="/blog">Блог</a></li>
-        <div className='hr' />
-        <div  id='hh1'></div>
+        <div className="navbbar-line-hr1"></div>
+  
         <li id='ded'><a href="/contact">Контакты</a></li>
       
      </ul>

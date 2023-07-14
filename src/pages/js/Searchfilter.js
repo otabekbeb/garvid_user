@@ -7,33 +7,26 @@ import Mon from '../img/Mon.png'
 import { AiFillStar } from 'react-icons/ai'
 import { HiArrowRight } from 'react-icons/hi'
 import Rasp from '../img/Rasp.png'
+import { AiOutlineArrowRight } from 'react-icons/ai'
+import { AiOutlinePlus } from 'react-icons/ai'
 import { BsPlus } from 'react-icons/bs'
 import { TbPointFilled } from 'react-icons/tb'
-import "../css/loader.css"
-// import Spiska from './Spiska'
 import '../css/Spiska.css'
-
+import '../css/Calibig.css'
 import WWW from '../img/WWW.png'
 export default function Searchfilter() {
-
-
-
-
     function Filter() {
         document.querySelector(".filter_button").classList.toggle("filter")
     }
     function windowModal() {
-        document.querySelector(".calibig").style = "display:flex;transition:3s"
+        document.querySelector(".kurs_cards").style = "display:flex;transition:3s"
         document.querySelector(".spiska_img_title_div").style = "display:none"
     }
     function menuModal() {
-        document.querySelector(".calibig").style = "display:none"
+        document.querySelector(".kurs_cards").style = "display:none"
         document.querySelector(".spiska_img_title_div").style = "display:block;transition:3s"
 
     }
-
-
-
     return (
         <div>
             <div className="Filter">
@@ -65,112 +58,100 @@ export default function Searchfilter() {
                     </div>
                 </div>
             </div>
-            <div className="calibig">
-                <div className='cali_df'>
-                    <div className="cali">
-                        <img src={Mon} alt="" />
-                        <div className="zero_blok">
-                            <div id="eadi" className="text_blok">
-                                <h3>AWS для разработчиков: балансировка нагрузки ECS и Multi-Regional</h3>
-                            </div>
-                            <div className="star_icon_blok">
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar />
-                                <div className="number">
-                                    <h6>4.1 (524)</h6>
-                                </div>
-                            </div>
-                            <div className="bolim_blok">
-                                <div className="kurs_hajmi">
-                                    <p>Размер курса</p>
-                                    <h3 className='soat'>38 часы</h3>
-                                </div>
-                                <div className="kurs_bolimlari">
-                                    <p>Разделы курса</p>
-                                    <h3 className='soat'>38 часы</h3>
-                                </div>
-                                <div className="left_icon">
-                                    <HiArrowRight />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="cali">
-                        <img src={Rasp} alt="" />
-                        <div className="zero_blok">
-                            <div className="text_blok">
-                                <h3>Программирование Raspberry Pi
-                                    основы</h3>
-                            </div>
-                            <div className="star_icon_blok">
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar />
-                                <div className="number">
-                                    <h6>4.1 (524)</h6>
-                                </div>
-                            </div>
-                            <div className="bolim_blok">
-                                <div className="kurs_hajmi">
-                                    <p>Размер курса</p>
-                                    <h3 className='soat'>38 часы</h3>
-                                </div>
-                                <div className="kurs_bolimlari">
-                                    <p>Разделы курса</p>
-                                    <h3 className='soat'>38 часы</h3>
-                                </div>
-                                <div className="left_icon">
-                                    <HiArrowRight />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="cali">
-                        <img src={Rasp} alt="" />
-                        <div className="zero_blok">
-                            <div className="text_blok">
-                                <h3>Программирование Raspberry Pi
-                                    основы</h3>
-                            </div>
-                            <div className="star_icon_blok">
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar />
-                                <div className="number">
-                                    <h6>4.1 (524)</h6>
-                                </div>
-                            </div>
-                            <div className="bolim_blok">
-                                <div className="kurs_hajmi">
-                                    <p>Размер курса</p>
-                                    <h3 className='soat'>38 часы</h3>
-                                </div>
-                                <div className="kurs_bolimlari">
-                                    <p>Разделы курса</p>
-                                    <h3 className='soat'>38 часы</h3>
-                                </div>
-                                <div className="left_icon">
-                                    <HiArrowRight />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="cali1">
-                        <div className="plus_blok">
-                            <BsPlus className='plus_icon' />
-                            <h6>Yangi kurs qo’shish</h6>
-                        </div>
-                    </div>
 
+
+
+            <div className="kurs_cards">
+                <div className="kurs_card">
+                    <button className='btn_das'>Dasturlash</button>
+                    <img src={Rasp} alt="" />
+                    <h4>Ishlab chiquvchilar uchun AWS: ECS <br />
+                        va ko'p mintaqali yuklarni <br />
+                        muvozanatlash</h4>
+                    <div className='star_card'>
+                        <i className='star_i'><AiFillStar /></i>
+                        <i className='star_i'><AiFillStar /></i>
+                        <i className='star_i'><AiFillStar /></i>
+                        <i className='star_i'><AiFillStar /></i>
+                        <i className='star_ib'><AiFillStar /></i>
+                        <p>4.1 <span>(524)</span></p>
+                    </div>
+                    <div className='hajm'>
+                        <h5>
+                            <p>Kurs hajmi</p>
+                            38 soat
+                        </h5>
+                        <h5>
+                            <p>Kurs narxi</p>
+                            5 ta bo’lim
+                        </h5>
+                    </div>
+                    <button className='button_circle'><AiOutlineArrowRight /></button>
+                </div>
+
+                <div className="kurs_card">
+                    <button className='btn_das'>Dasturlash</button>
+                    <img src={Mon} alt="" />
+                    <h4>Ishlab chiquvchilar uchun AWS: ECS <br />
+                        va ko'p mintaqali yuklarni <br />
+                        muvozanatlash</h4>
+                    <div className='star_card'>
+                        <i className='star_i'><AiFillStar /></i>
+                        <i className='star_i'><AiFillStar /></i>
+                        <i className='star_i'><AiFillStar /></i>
+                        <i className='star_i'><AiFillStar /></i>
+                        <i className='star_ib'><AiFillStar /></i>
+                        <p>4.1 <span>(524)</span></p>
+                    </div>
+                    <div className='hajm'>
+                        <h5>
+                            <p>Kurs hajmi</p>
+                            38 soat
+                        </h5>
+                        <h5>
+                            <p>Kurs narxi</p>
+                            5 ta bo’lim
+                        </h5>
+                    </div>
+                    <button className='button_circle'><AiOutlineArrowRight /></button>
+                </div>
+                <div className="kurs_card">
+                    <button className='btn_das'>Dasturlash</button>
+                    <img src={Mon} alt="" />
+                    <h4>Ishlab chiquvchilar uchun AWS: ECS <br />
+                        va ko'p mintaqali yuklarni <br />
+                        muvozanatlash</h4>
+                    <div className='star_card'>
+                        <i className='star_i'><AiFillStar /></i>
+                        <i className='star_i'><AiFillStar /></i>
+                        <i className='star_i'><AiFillStar /></i>
+                        <i className='star_i'><AiFillStar /></i>
+                        <i className='star_ib'><AiFillStar /></i>
+                        <p>4.1 <span>(524)</span></p>
+                    </div>
+                    <div className='hajm'>
+                        <h5>
+                            <p>Kurs hajmi</p>
+                            38 soat
+                        </h5>
+                        <h5>
+                            <p>Kurs narxi</p>
+                            5 ta bo’lim
+                        </h5>
+                    </div>
+                    <button className='button_circle'><AiOutlineArrowRight /></button>
+                </div>
+                <div className="kurs_card1">
+                    <i><AiOutlinePlus /></i>
+                    <h4>Yangi kurs qo’shish</h4>
                 </div>
             </div>
+
+
+
+
+
+
 
             <div className="spiska_img_title_div">
                 <div className="Spiska_blok">
@@ -294,6 +275,8 @@ export default function Searchfilter() {
                     </div>
                 </div>
             </div>
+
+
         </div>
     )
 }

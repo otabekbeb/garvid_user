@@ -1,10 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Profil from './pages/js/Profil'
-// import Pdp from './pages/js/Pdp'
-import Mentor from './pages/js/Mentor'
-import MentorPdp from "./pages/js/MentorPdp"
-import Navbar from   './pages/js/Navbar2'
-import YouTube from   './pages/js/Youtube1'
 import Login from "./pages/js/Login"
 import Home from "./pages/js/Home"
 import About from "./pages/js/About"
@@ -33,7 +27,7 @@ export default function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/user" element={<User/>}/>
         <Route path="/mentor" element={<Mento/>}/>
-
+       
           {/* <Route index element={} />*/}
       </Routes>
     </BrowserRouter>

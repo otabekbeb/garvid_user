@@ -68,14 +68,16 @@ overflow: hidden;
 @media (max-width:980px) {
     .images-img img{
         width: 120px;
+        position: relative;
+        top: 0px !important;
     }
     .images{
         width: 100%;
-    height: 190px;
+    height: 170px !important;
     background-color: #f7f7f7;
 
     position: relative;
-    top: 93px;
+    top: 103px;
     overflow: hidden;
     
     }

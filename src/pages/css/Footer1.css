@@ -86,7 +86,7 @@ top: 2px;
 .krug i{
     color: rgb(29, 28, 28);
     position: relative;
-    top: 3px;
+    top: 6px;
     width: 100%;
     height: 100%;
 }
@@ -94,6 +94,7 @@ top: 2px;
     background-color: aqua;
 
 }
+
 .krug i:hover{
     color: white;
 }
@@ -112,7 +113,7 @@ top: 18px;
     height: 1px;
     background-color: #7e848f;
 position: relative;
-top: 9px;
+top: 0px;
 }
 .futer-liner2{
     width: 260px;
@@ -124,10 +125,11 @@ top: 9px;
 .qwe{
     display: block;
 }
+
 .futer-block-mini{
     display: flex;
-
-justify-content: space-between;}
+justify-content: space-between ;
+}
 
 .qwe ul{
     list-style: none;
@@ -140,6 +142,8 @@ justify-content: space-between;}
     letter-spacing: 0px;
     margin-top: 11px;
 }
+
+
 .futer-block2 h3{
     font-weight: 700;
     font-style: normal;
@@ -164,17 +168,22 @@ justify-content: space-between;}
 .qwe ul a:hover{
     color: #44bef1;
 }
+
 .futer-block-mini{
     margin-top: 20px;
 }
 .ry{
     position: relative;
-    right: 50px;
+
+}
+.ioguhofg{
+    position: relative;
+    left: -30%;
 }
 .futer-block3{
     display: block;
         position: relative;
-        top: 2px;
+        top: 3px;
 }
 .futer-text p{
     text-decoration: none;
@@ -184,8 +193,6 @@ justify-content: space-between;}
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
     font-size: 15px;
-    line-height: 2.4;
-    letter-spacing: 0px;
 }
 .futer-text i{
     color: #44bef1;
@@ -193,25 +200,31 @@ justify-content: space-between;}
 .futer-text span{
     position: relative;
    left: 20px;
+   transition: 0.5s;
+   cursor: pointer;
+}
+.futer-text span:hover{
+color: #44bef1;
+}
+.futer-text{
+  margin-top: 20px;
 }
 .futer-block3 h3{
     font-weight: 700;
     font-style: normal;
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1;
     letter-spacing: 0px;
     position: relative;
-    top: -5px;
+    top: -10px;
 }
-.futer-text{
-    margin-top: 13px;
-}
+
 .futer-block4{
     display: block;
     position: relative;
-    top: -13px;
+    top: -20px;
 }
 .futer-block4 h3{
     font-weight: 700;
@@ -248,7 +261,7 @@ border: none;
 .futer-block-pass button{
     height: 50px;
     border: none;
-    width: 85px;
+    width: 73px;
     background-color: #44bef1;
     color: white;
 border-top-right-radius: 5px;
@@ -258,9 +271,30 @@ cursor: pointer;
 
 /* media foterr */
 @media (max-width:1200px) {
+    
+    .futer-block-pass button{
+        height: 50px;
+        border: none;
+        width: 65px;
+        background-color: #44bef1;
+        color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    }
     .futer{
         overflow: hidden;
         
+    }
+    .futer-block-pass input {
+        padding-left: 11px;
+        margin-top: 20px;
+        outline: none;
+        height: 50px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border: none;
+        width: 180px;
     }
     .vbe {
         font-weight: 300;
@@ -314,7 +348,7 @@ cursor: pointer;
     height: 1px;
     background-color: #7e848f;
     position: relative;
-    top: 18px;
+    top: 12px !important;
 }
 .qwe ul a{
     text-decoration: none;
@@ -343,7 +377,7 @@ cursor: pointer;
     height: 1px;
     background-color: #7e848f;
     position: relative;
-    top: -5px;
+    top: -7px;
 }
 .futer-text p {
     text-decoration: none;
@@ -353,8 +387,7 @@ cursor: pointer;
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
     font-size: 12px;
-    line-height: 2.4;
-    letter-spacing: 0px;
+
 }
 .futer-block4 h3 {
     font-weight: 700;
@@ -373,8 +406,7 @@ cursor: pointer;
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
     font-size: 12px;
-    line-height: 1.6;
-    letter-spacing: 0px;
+
    position: relative;
    top: 6px;
 }
@@ -388,9 +420,24 @@ cursor: pointer;
 
 }
 @media (max-width:985px) {
+    .futer-ichi{
+      margin-top: 30px;
+    }
     .futer{
         overflow: hidden;
         
+    }
+    .futer-block-pass button {
+        height: 45px;
+        border: none;
+        width: 70px;
+        background-color: #44bef1;
+        color: white;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
+        position: relative;
+        top: -1px;
     }
     .vbe {
         font-weight: 300;
@@ -452,8 +499,7 @@ cursor: pointer;
     font-family: 'Roboto', sans-serif;
     color: #949494;
     font-size: 12px;
-    line-height: 2.4;
-    letter-spacing: 0px;
+
 }
 .futer-block3 h3 {
     font-weight: 700;
@@ -481,8 +527,7 @@ cursor: pointer;
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
     font-size: 12px;
-    line-height: 2.4;
-    letter-spacing: 0px;
+
     position: relative;
     top: -5px;
 }
@@ -510,8 +555,8 @@ cursor: pointer;
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
     font-size: 12px;
-    line-height: 1.6;
-    letter-spacing: 0px;
+
+
     position: relative;
     top: 7px;
 }
@@ -562,14 +607,20 @@ display: block;
 .media-foter-mobil{
     display: block;
 }
+.krug i{
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    top: -3px !important;
+}
 .futer{
     width: 100%;
     background: #323946;
-    min-height: 840px;
-    margin-top: 90px;
+    min-height: 800px !important;
+   
     padding-top: 40px;
     overflow: hidden;
-   padding-left: 20px;
+   padding-left: 20px !important;
    
 }
 .futer-mobil-text p{
@@ -846,5 +897,34 @@ font-family: unset;
         overflow: hidden;
        padding-left: 20px;
        
+    }
+}
+@media (max-width:1100px) {
+    .krug i{
+        color: rgb(29, 28, 28);
+        position: relative;
+        top: 5px;
+        width: 100%;
+        height: 100%;
+    }
+}
+@media (max-width:1040px) {
+    .krug i{
+        color: rgb(29, 28, 28);
+        position: relative;
+        top: 2px;
+        width: 100%;
+        height: 100%;
+    }
+    .ry{
+        position: relative;
+        right: 10px;
+    }
+    .futer-liner{
+        width: 180px;
+        height: 1px;
+        background-color: #7e848f;
+    position: relative;
+    top: 18px;
     }
 }
