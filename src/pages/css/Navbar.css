@@ -3,7 +3,7 @@
     width: 100%;
 height: 60px;
     background-color: #323946;
-    padding-top: 20px;
+
     position: fixed;
     z-index: 100;
     top: 0;
@@ -13,7 +13,7 @@ transition: 0.5s;
     display: flex;
   gap: 40px;
 margin-left: 13.5vw;
-align-items: center;
+
 }
 .menu{
     position: relative;
