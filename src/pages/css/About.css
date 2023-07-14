@@ -324,6 +324,18 @@ top: -30px !important;
        top: -0px;
        
     }
+    .media-header-button button {
+    width: 160px !important;
+    height: 45px;
+    border-radius: 5px;
+    background: none;
+    border: 2px solid white;
+    cursor: pointer;
+    color: white;
+    margin-left: 40px;
+    position: relative;
+    top: -10px !important;
+}
 }
 .media-navbar{
     display: none;

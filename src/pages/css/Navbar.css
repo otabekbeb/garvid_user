@@ -819,8 +819,16 @@ top: 8px;
         width: 100%;
       height: 50px !important;
         background-color: #323946;
-        padding-top: 15px;
+
     
+    }
+    .navbar-ul ul{
+        display: flex;
+      gap: 40px;
+    margin-left: 13.5vw;
+    align-items: center;
+   position: relative;
+   top: -5px !important;
     }
     #ded{
         position: relative;
@@ -923,6 +931,14 @@ top: -30px !important;
        top: -0px;
        
     }
+    .menu p{
+        display: flex;
+         font-size: 15px;
+         gap: 10px;
+     position: relative;
+top: -4px;
+     
+     }
 }
 .media-navbar{
     display: none;
