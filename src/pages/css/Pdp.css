@@ -333,7 +333,6 @@
     transition: .3s;
     display: none;
     position: absolute;
-
     border-radius: 5px;
     user-select: none;
 }
