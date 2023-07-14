@@ -1,4 +1,4 @@
-.kurs_cards{
+.kurs_cards {
     display: flex;
     padding-inline: 6vw;
     justify-content: space-around;
@@ -6,39 +6,47 @@
     gap: 30px;
     margin-bottom: 30px;
     margin-top: 5%;
+    position: relative;
+    
+    
 }
-.foto{
+
+.foto {
     width: 100%;
-        
+
 }
-.kurs_card{
+
+.kurs_card {
     position: relative;
     width: 350px;
-height: 400px;
-border-radius: 4px;
-background: var(--white, #FFF);
-/* blue shadow 2 */
-box-shadow: 0px 4px 20px 0px rgba(1, 102, 144, 0.10);
-transition: all 0.2s;
+    height: 400px;
+    border-radius: 4px;
+    background: var(--white, #FFF);
+    /* blue shadow 2 */
+    box-shadow: 0px 4px 20px 0px rgba(1, 102, 144, 0.10);
+    transition: all 0.2s;
 }
-.kurs_card:hover{
+
+.kurs_card:hover {
     cursor: pointer;
     color: rgba(83, 109, 253, 1);
     box-shadow: 0px 12px 45px 0px rgba(83, 109, 253, 0.25);
 }
-.kurs_card .btn_das{
+
+.kurs_card .btn_das {
     position: absolute;
     z-index: 12;
     width: 130px;
-height: 26px;
-top: 24px;
-left: 24px;
-border-radius: 2px;
-border: none;
-color: white;
-background: #10C8A0;
+    height: 26px;
+    top: 24px;
+    left: 24px;
+    border-radius: 2px;
+    border: none;
+    color: white;
+    background: #10C8A0;
 }
-.kurs_card h4{
+
+.kurs_card h4 {
     margin-top: 24px;
     display: flex;
     align-items: center;
@@ -46,50 +54,59 @@ background: #10C8A0;
     font-size: 18px;
     font-weight: 600;
 }
-.star_card{
+
+.star_card {
     margin-top: 30px;
     margin-left: 26px;
     display: flex;
     gap: 3px;
 }
-.star_card .star_i{
+
+.star_card .star_i {
     cursor: pointer;
     font-size: 14px;
     color: rgba(255, 212, 1, 1);
 }
-.star_card .star_ib{
+
+.star_card .star_ib {
     cursor: pointer;
     font-size: 14px;
     color: rgba(157, 167, 187, 1);
 }
-.star_card p{
+
+.star_card p {
     color: black;
     margin-left: 6px;
     margin-top: 1px;
     font-size: 14px;
     font-weight: 600;
 }
-.star_card p span{
+
+.star_card p span {
     font-weight: 400;
     color: var(--seriy, #9DA7BB);
 }
-.hajm{
+
+.hajm {
     margin-left: 26px;
     display: flex;
     gap: 32px;
 }
-.hajm p{
+
+.hajm p {
     margin-bottom: 0px;
     font-size: 12px;
     font-weight: 600;
     color: var(--seriy, #9DA7BB);
 }
-.kurs_card h5{
+
+.kurs_card h5 {
     color: black;
     font-size: 18px;
     font-weight: 700;
 }
-.button_circle{
+
+.button_circle {
     position: absolute;
     width: 42px;
     height: 42px;
@@ -105,29 +122,61 @@ background: #10C8A0;
     font-size: 20px;
     transition: all 0.3s;
 }
-.button_circle:hover{
+
+.button_circle:hover {
     border: 1px solid #536DFD;
     background: #536DFD;
     color: white;
 }
-.kurs_card1{
+
+.kurs_card1 {
     width: 350px;
-height: 400px;
-border-radius: 4px;
-border: 3px dashed var(--seriy, #9DA7BB);
-cursor: pointer;
+    height: 400px;
+    border-radius: 4px;
+    border: 3px dashed var(--seriy, #9DA7BB);
+    cursor: pointer;
 }
-.kurs_card1 i{
+
+.kurs_card1 i {
     margin-top: 176px;
     font-size: 24px;
     color: #9DA7BB;
     display: flex;
     justify-content: center;
 }
-.kurs_card1 h4{
+
+.kurs_card1 h4 {
     font-size: 18px;
     font-weight: 400;
     color: #9DA7BB;
     display: flex;
     justify-content: center;
+}
+@media (max-width:370px) {
+    .kurs_card{
+        width: 300px;
+    }
+    .kurs_card img{
+        width: 100%;
+    }
+    .kurs_card h4{
+        width: 260px;
+        font-size: 15px;
+        margin: 20px auto;
+    }
+    .hajm{
+        margin-top: 30px;
+    }
+    .kurs_card1{
+        width: 300px;  
+    }
+}
+@media (max-width:330px) {
+    .hajm{
+        width: 90%;
+        margin-top: 35px;
+    }
+    .hajm h5{
+        font-size: 16px;
+    }
 }
