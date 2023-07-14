@@ -100,7 +100,7 @@
     width: 80%;
     display: flex;
     align-items: center;
-    gap: 3%  !important;
+    gap: 3% !important;
     margin-top: 85px;
 }
 
@@ -167,7 +167,18 @@
     font-size: 15px !important;
     width: 100% !important;
 }
-
+@media (max-width:423px ) { 
+   #eadi{
+    width: 250px;
+   }
+   .star_icon_blok{
+    width: 180px !important;
+   }
+   .zero_blok{
+    border: 1px solid red;
+    height: ;
+   }
+}
 @media (max-width:860px) {
     .inp_blok {
         width: 300px;
@@ -445,7 +456,8 @@
 .profil_blok_menu {
     display: none !important;
 }
-.profil_blok_menu_clone{
+
+.profil_blok_menu_clone {
     display: none;
 }
 
@@ -466,7 +478,7 @@
 @media (max-width:368px) {
     .cali {
         width: 300px;
-        
+
 
     }
 
@@ -497,7 +509,7 @@
     }
 
     .kurs_bolimlari p {
-        font-size: 12px ;
+        font-size: 12px;
     }
 
     .kurs_bolimlari h3 {
@@ -513,7 +525,7 @@
 
     .cali1 {
         width: 300px;
-        
+
     }
 
 }
@@ -564,6 +576,7 @@
         background-color: #cfd5e2;
         border-radius: 50%;
     }
+
     .profil_blok_menu_clone {
         /* display: block !important; */
         padding: 10px;
@@ -590,7 +603,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        top:100%;
+        top: 100%;
         z-index: 10;
         height: auto;
         background-color: white;
@@ -599,7 +612,7 @@
     }
 
     .menu_modal {
-        display: block  !important;
+        display: block !important;
         position: absolute;
         top: 90px;
     }
@@ -625,23 +638,28 @@
         transform-origin: 0% 50%;
     }
 }
+
 @media (max-width:354px) {
-    .text_blok{
+    .text_blok {
         width: 200px !important;
 
     }
-    .text_blok h3{
-        width: 200px !important; 
+
+    .text_blok h3 {
+        width: 200px !important;
         font-size: 15px !important;
     }
-    .cali{
+
+    .cali {
         overflow: hidden;
     }
-    #eadi{
+
+    #eadi {
         font-size: 10px !important;
-       
+
     }
 }
+
 @media (max-width:356px) {
     .cali {
         height: 370px !important;

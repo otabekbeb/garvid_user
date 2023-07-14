@@ -6,7 +6,7 @@ import { AiFillStar } from 'react-icons/ai'
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 import '../css/youtube1.css'
 import Navbar from '../js/Navbar'
-import Vazifa from '../js/Vazifa'
+
 import { BiTime } from 'react-icons/bi'
 import '../css/youtube1.css';
 import Accordion from 'react-bootstrap/Accordion';
@@ -193,7 +193,7 @@ export default function Youtube1() {
           </div>
         </div>
       </div>
-      <Vazifa />
+    
     </div>
   )
 }
