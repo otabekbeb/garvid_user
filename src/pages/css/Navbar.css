@@ -144,6 +144,7 @@ transition: 0.4s;
     padding: 5px;
     position: relative;
 left: -35px;
+
 }
 
 .menu2 li a span{
@@ -164,7 +165,7 @@ left: 228px;
     text-align: left;
     transform: all 3s;
 transition: 0.4s;
-   display: none;
+   display: none ;
    /* z-index: 100; */
    top: -10px;
    cursor: pointer;

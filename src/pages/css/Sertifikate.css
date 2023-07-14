@@ -20,6 +20,7 @@ width: 100%;
     margin-left: 5%;
     grid-template-columns: auto auto auto;
     gap: 30px;
+    padding-bottom: 100px;
  
 }
 .text_pro_max_gap_sos_lift_gr h4{

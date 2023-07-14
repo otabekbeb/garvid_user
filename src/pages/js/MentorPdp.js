@@ -41,7 +41,7 @@ export default function MentorPdp() {
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} className='fromLeft'>Мои курсы</h1>{toggle===1?(<div className="fil_text_blok_kurs_lenght">4 штуки</div>):("")}</div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} className='fromLeft'>Переписка</h1><div className="fil_text_blok_kurs_lenght">14 штуки</div></div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} className='fromLeft'>Задачи</h1>{toggle===3?(<div className="fil_text_blok_kurs_lenght">24 штуки</div>):("")}</div>
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} className='fromLeft'>Мне члены</h1>{toggle===4?(<div className="fil_text_blok_kurs_lenght">24 штуки</div>):("")}</div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} className='fromLeft'>Мои подписчики</h1>{toggle===4?(<div className="fil_text_blok_kurs_lenght">24 штуки</div>):("")}</div>
                 </div>
                 <div className="profil_blok_menu_size">
                     <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
@@ -51,7 +51,7 @@ export default function MentorPdp() {
                     <h1 onClick={() => updatetoggle(1)} className='fromMenu'>Мои курсы</h1>
                     <h1 onClick={() => updatetoggle(2)} className='fromMenu'>Переписка</h1>
                     <h1 onClick={() => updatetoggle(3)} className='fromMenu'>Задачи</h1>
-                    <h1 onClick={() => updatetoggle(4)} className='fromMenu'>Мне члены</h1>
+                    <h1 onClick={() => updatetoggle(4)} className='fromMenu'>Мои подписчики</h1>
                 </div>
             </div>
 

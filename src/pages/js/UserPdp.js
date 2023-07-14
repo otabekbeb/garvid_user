@@ -47,7 +47,7 @@ export default function Pdp() {
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} className='fromLeft'>Мои курсы</h1>{toggle===1?(<div className="fil_text_blok_kurs_lenght">4 штуки</div>):("")}</div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} className='fromLeft'>Мои усвоенные знания</h1>{toggle===2?(<div className="fil_text_blok_kurs_lenght">14 штуки</div>):("")}</div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} className='fromLeft'>Мои сертификаты</h1>{toggle===3?(<div className="fil_text_blok_kurs_lenght">24 штуки</div>):("")}</div>
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} className='fromLeft'>Мои наставники-члены</h1>{toggle===4?(<div className="fil_text_blok_kurs_lenght">24 штуки</div>):("")}</div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} className='fromLeft'>Мои подписки</h1>{toggle===4?(<div className="fil_text_blok_kurs_lenght">24 штуки</div>):("")}</div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} className='fromLeft'>Переписка</h1><div className="fil_text_blok_kurs_lenght">1 штуки</div></div>
                 </div>
                 <div className="profil_blok_menu_size">
@@ -58,7 +58,7 @@ export default function Pdp() {
                     <h1 onClick={() => updatetoggle(1)} className='fromMenu'>Мои курсы</h1>
                     <h1 onClick={() => updatetoggle(2)} className='fromMenu'>Мои усвоенные знания</h1>
                     <h1 onClick={() => updatetoggle(3)} className='fromMenu'>Мои сертификаты</h1>
-                    <h1 onClick={() => updatetoggle(4)} className='fromMenu'>Мои наставники-члены</h1>
+                    <h1 onClick={() => updatetoggle(4)} className='fromMenu'>Мои подписки</h1>
                     <h1 onClick={() => updatetoggle(5)} className='fromMenu'>Переписка</h1>
                 </div>
             </div>

@@ -88,11 +88,11 @@ return (
 <section className='navbar'>
     <div className="navbar-ul">
 <ul>
-     {/* <li className='moto-menu-item'><a href="#">Главный</a></li> */}
+     <li className='moto-menu-item'><a href="/">Главный</a></li>
 
-  <div className="menu" onMouseLeave={()=>menuufolse()} >
-    <div className="menuu"  onMouseEnter={() => menuul()}>
-    <p ><a href="/about">О нас</a> <span><box-icon name='chevron-down' color='#44bef1' ></box-icon></span></p>
+  <div className="menu"  >{/* onMouseLeave={()=>menuufolse()} */}
+    <div className="menuu"  >{/* onMouseEnter={() => menuul()} */}
+    <p ><a href="/about">О нас</a></p>{/*  <span><box-icon name='chevron-down' color='#44bef1' ></box-icon></span> */}
     <ul onMouseLeave={() => menuul1()} >
         <li ><a href="#" >Архивы</a></li>
     <div className="navbbar-line-hr"></div>
