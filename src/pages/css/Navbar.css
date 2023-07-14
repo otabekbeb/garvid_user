@@ -13,7 +13,7 @@ transition: 0.5s;
     display: flex;
   gap: 40px;
 margin-left: 13.5vw;
-
+align-items: center;
 }
 .menu{
     position: relative;
@@ -23,7 +23,9 @@ margin-left: 13.5vw;
     font-size: 15px;
     gap: 10px;
 position: relative;
-top: 8px;
+justify-content: center;
+align-items: center;
+
 }
 #hh1{
     display: none;
@@ -33,7 +35,8 @@ top: 8px;
 }
 .menu p span{
   transition: 0.5s;
-    
+ 
+ 
     }
 
 .menu ul{
@@ -115,7 +118,7 @@ transition: 0.4s;
 }
 .menu p span{
  position: relative;
- top: -4px;
+ top: 7px !important;
 } 
 .asd img{
     width: 100%;
@@ -589,6 +592,8 @@ margin-left: 82vw;
 }
 .menuu p{
     display: flex;
+    align-items: self-end;
+    justify-content: center;
 }
 .menuu li{
     position: relative;
