@@ -100,7 +100,7 @@
     width: 80%;
     display: flex;
     align-items: center;
-    gap: 3%  !important;
+    gap: 3% !important;
     margin-top: 85px;
 }
 
@@ -166,6 +166,66 @@
     text-align: center !important;
     font-size: 15px !important;
     width: 100% !important;
+}
+
+@media (max-width:423px) {
+    #eadi {
+        width: 270px;
+    }
+
+    .text_blok {
+        width: 250px !important;
+    }
+
+    .star_icon_blok {
+        width: 180px !important;
+        margin-left: 5%;
+    }
+
+    .bolim_blok p {
+        font-size: 12px !important;
+    }
+
+    .bolim_blok {
+        width: 100%;
+        margin: auto;
+        align-items: center;
+    }
+
+    .soat {
+        font-size: 120px !important;
+    }
+
+    .left_icon {
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 50px;
+        font-size: 20px;
+        color: rgba(0, 0, 255, 0.747);
+        border: 1px solid gray;
+        text-align: center;
+        align-items: center !important;
+        padding-top: 10%;
+    }
+}
+
+@media (max-width:406px) {
+    .bolim_blok {
+        width: 80% !important;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width:404px) {
+    .bolim_blok {
+        width: 90% !important;
+    }
+
+    .cali {
+        width: 100% !important;
+    }
+
+ 
 }
 
 @media (max-width:860px) {
@@ -239,6 +299,7 @@
     justify-content: space-around;
     margin-bottom: 50px !important;
     margin-top: 5%;
+    
     gap: 20px;
 }
 
@@ -272,7 +333,6 @@
     transition: .3s;
     display: none;
     position: absolute;
-
     border-radius: 5px;
 
 }
@@ -445,7 +505,8 @@
 .profil_blok_menu {
     display: none !important;
 }
-.profil_blok_menu_clone{
+
+.profil_blok_menu_clone {
     display: none;
 }
 
@@ -466,12 +527,12 @@
 @media (max-width:368px) {
     .cali {
         width: 300px;
-        
+
 
     }
 
     .text_blok {
-        width: 250px !important;
+        width: 250px;
     }
 
     .zero_blok {
@@ -497,7 +558,7 @@
     }
 
     .kurs_bolimlari p {
-        font-size: 12px ;
+        font-size: 12px;
     }
 
     .kurs_bolimlari h3 {
@@ -513,7 +574,7 @@
 
     .cali1 {
         width: 300px;
-        
+
     }
 
 }
@@ -564,6 +625,7 @@
         background-color: #cfd5e2;
         border-radius: 50%;
     }
+
     .profil_blok_menu_clone {
         /* display: block !important; */
         padding: 10px;
@@ -590,7 +652,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        top:100%;
+        top: 100%;
         z-index: 10;
         height: auto;
         background-color: white;
@@ -599,7 +661,7 @@
     }
 
     .menu_modal {
-        display: block  !important;
+        display: block !important;
         position: absolute;
         top: 90px;
     }
@@ -625,23 +687,28 @@
         transform-origin: 0% 50%;
     }
 }
+
 @media (max-width:354px) {
-    .text_blok{
-        width: 200px !important;
+    .text_blok {
+        width: 200px;
 
     }
-    .text_blok h3{
-        width: 200px !important; 
+
+    .text_blok h3 {
+        width: 200px !important;
         font-size: 15px !important;
     }
-    .cali{
+
+    .cali {
         overflow: hidden;
     }
-    #eadi{
+
+    #eadi {
         font-size: 10px !important;
-       
+
     }
 }
+
 @media (max-width:356px) {
     .cali {
         height: 370px !important;
@@ -668,5 +735,21 @@
     #eadi {
         font-size: 10px;
 
+    }
+    .cali{
+        width: 100% !important;
+    }
+   
+    .left_icon {
+        width: 40px !important;
+        height: 40px !important; 
+        border-radius: 50px;
+        font-size: 20px !important;
+        color: rgba(0, 0, 255, 0.747);
+        border: 1px solid gray;
+        text-align: center;
+        align-items: center !important;
+        padding-top: 1px !important;
+        margin-top: -2px !important;
     }
 }
