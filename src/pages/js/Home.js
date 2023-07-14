@@ -4,6 +4,9 @@ import React, { Component,useState } from 'react'
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/Home.css'
+import Navbar from "./Navbar"
+import Futer from "./Footer1"
+import Images from "./Images"
 
 
 export default function Home() {
@@ -12,7 +15,7 @@ export default function Home() {
     
     return (
         <div className='body1'>
-
+            <Navbar/>
 
 
             <Carousel data-bs-theme="dark">
@@ -145,6 +148,9 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+
+             <Images/>
+             <Futer/>
         </div>
     )
 }

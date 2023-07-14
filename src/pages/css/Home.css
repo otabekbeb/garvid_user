@@ -324,5 +324,103 @@ color: #44bef1;
 }
 
 @media (max-width:1040px) {
-    
+   .about_p{
+    font-size: 12px;
+    line-height: 1.4;
+   }
+   .card_about_us_ikki_p{
+    font-size: 12px;
+    line-height: 1.4;
+   }
+   .card_about_us_ikki_page{
+    font-size: 16px !important;
+    line-height: 1.4;
+   }
+   .card_about_us_ikki_button{
+    width: 80px;
+    height: 30px;
+    font-size: 12px;
+   }
+   .facts h1{
+    font-size: 40px;
+    line-height: 1.4;
+   }
+   .facts p{
+    font-size: 11px;
+    line-height: 0.9;
+   }
+   .advantages h1{
+    font-size: 40px;
+    line-height: 1.4;
+   }
+   .advantages p{
+    font-size: 13px;
+    line-height: 0.9;
+   }
+   .skills h1{
+    font-size: 40px;
+    line-height: 1.4;
+   }
+   .skills p{
+    font-size: 13px;
+    line-height: 0.9;
+   }
+   .but1{
+    font-size: 13px !important;
+    height: 45px !important;
+    line-height: 0.9;
+   }
+   .but2{
+    font-size: 13px !important;
+    height: 45px !important;
+    line-height: 0.9;
+   }
+   .cards2{
+   align-items: center;
+   }
+}
+@media (max-width:767px) {
+    .cards2{
+        display: flex;
+        flex-direction: column;
+        padding-left: 20px !important;
+        padding-right: 20px;
+    }
+    .buttons1 button{
+        width: 100%;
+    }
+    .card4{
+        width: 100%;
+        max-width: 100%;
+        padding-bottom: 30px;
+    }
+    .card_about_us_ikki_p{
+        width: 100% !important;
+    }
+}
+@media (max-width:479px) {
+    .facts h1{
+        font-size: 30px;
+        line-height: 1.2;
+    }
+    .advantages h1{
+        font-size: 30px;
+        line-height: 1.2; 
+    }
+    .skills h1{
+        font-size: 30px;
+        line-height: 1.2;
+    }
+    .facts p{
+        font-size: 8px;
+        line-height: 1;
+    }
+    .advantages p{
+        font-size: 8px;
+        line-height: 1; 
+    }
+    .skills p{
+        font-size: 8px;
+        line-height: 1;
+    }
 }
