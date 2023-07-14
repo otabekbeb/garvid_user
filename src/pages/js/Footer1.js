@@ -29,7 +29,7 @@ function Footer() {
 
 <div className="futer-block-mini">
   <div className="qwe">
-<ul>
+<ul className='ioguhofg'>
   <li><a href="#">О нас</a></li>
   <li><a href="#">Блог</a></li>
   <li><a href="#">Контакты</a></li>

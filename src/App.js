@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Login from "./pages/js/Login"
+import Home from "./pages/js/Home"
 import About from "./pages/js/About"
 import Blog from './pages/js/Blog'
 import Contact from './pages/js/Contact'
@@ -17,7 +18,8 @@ export default function App() {
     <div>
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={<About/>}/>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/about" element={<About/>}/>
         <Route path="/servis" element={<Services/>}/>
         <Route path="/blog" element={<Blog/>}/>
         <Route path="/ourteam" element={<Ourteam/>}/>

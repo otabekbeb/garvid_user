@@ -198,7 +198,12 @@ list-style: none;
     background-color: white;
 }
 .katta1 h1{
+    padding-top: 10px;
+}
+.katta1 .katta1_about_h1{
     padding-top: 80px;
+    font-weight: 700;
+    color: #000000;
 }
 .blue1{
     width: 70px;
@@ -210,35 +215,43 @@ list-style: none;
     justify-content: center;
 }
 .cards2{
+    width: 1350px;
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: end;
+    padding-left: 20px;
 }
 .card4{
     width: 600px;
+    max-width: 45%;
 }
 .buttons1 button{
-    width: 200px;
+    width: 33%;
     height: 55px;
     border: none;
     font-family: 'Rubik', sans-serif !important;
     font-size: 18px;
     transition: 0.3s;
 }
-.but1{
-    
+.but1{ 
     border: 1px solid #dedede !important;
+    color: #4d4d4d;
 }
 .but1:hover{
     border: 1px solid #dedede !important;
     background-color: #44bef1 !important;
+    color: white;
 }
 .but2{
     border: 1px solid #dedede !important;
     background-color: white;
+    color: #4d4d4d;
 }
 .but2:hover{
     background-color: #44bef1 !important;
     border: 1px solid #dedede !important;
+    color: white;
 }
 .buttons1{
     margin-top: 50px;
@@ -249,15 +262,67 @@ list-style: none;
 }
 
 .fact1,.advantage1,.skill1{
+    width: 90%;
     display: flex;
     justify-content: space-between;
+    margin: auto;
 }
 .facts,.advantages,.skills{
     text-align: center;
 }
-.card4 h1{
-    padding-top: 10px;
-    color: #44bef1;
+.facts h1{
     font-weight: 900;
-    font-size: 50px;
+    font-size: 60px;
+    color: #75cff5;
+}
+.facts p{
+    margin-bottom: 0;
+}
+.advantage1 p{
+    margin-bottom: 0;
+}
+.skills p{
+    margin-bottom: 0;
+}
+.advantages h1{
+    font-weight: 900;
+    font-size: 60px;
+    color: #75cff5;
+}
+.skills h1{
+    font-weight: 900;
+    font-size: 60px;
+    color: #75cff5;
+}
+.card4 .card_about_us_ikki_page{
+    padding-top: 10px;
+    color: #000000;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: .3s;
+}.card4 .card_about_us_ikki_p{
+width: 95%;
+}
+.card4 .card_about_us_ikki_page:hover{
+color: #44bef1;
+}
+.card_about_us_ikki_button{
+    font-weight: 700;
+    color: #44bef1;
+    background-color: #fff;
+    border:1px solid #44bef1;
+    border-radius: 4px;
+    width: 150px;
+    height: 50px;
+    transition: .3s;
+}
+.card_about_us_ikki_button:hover{
+    color: #fff;
+    background-color: #44bef1;
+}
+
+@media (max-width:1040px) {
+    
 }

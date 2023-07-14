@@ -79,17 +79,17 @@ export default function Home() {
                 </div>
             </div>
             <div className="katta1">
-                <center><h1>О нас</h1></center>
+                <center><h1 className='katta1_about_h1'>О нас</h1></center>
                 <center><div className="blue1"></div></center>
-<div className="cards1">
+                <div className="cards1">
                     <div className="cards2">
                         <div className="card4">
                             <div className="buttons1">
                                 <button
-                                style={ state===1 ? {background:"#44bef1",border:"none !important"}:state===2?{background:"white"}:{background:"white"} }
+                                style={ state===1 ? {background:"#44bef1",color:"#fff",border:"none !important"}:state===2?{background:"white"}:{background:"white"} }
                                 onClick={()=> setState(1)} className='but1'>Факты</button>
-                                <button style={ state===2 ? {background:"#44bef1",border:"none"}:state===2?{background:"white"}:{background:"white"} } onClick={()=> setState(2)} className='but2'>Преимущества</button>
-                                <button style={ state===3 ? {background:"#44bef1",border:"none"}:state===2?{background:"white"}:{background:"white"} } onClick={()=> setState(3)} className='but2'>Навыки</button>
+                                <button style={ state===2 ? {background:"#44bef1",color:"#fff",border:"none"}:state===2?{background:"white"}:{background:"white"} } onClick={()=> setState(2)} className='but2'>Преимущества</button>
+                                <button style={ state===3 ? {background:"#44bef1",color:"#fff",border:"none"}:state===2?{background:"white"}:{background:"white"} } onClick={()=> setState(3)} className='but2'>Навыки</button>
                             </div>
                             <p className='about_p'>Наша компания является вашим универсальным решением для всех потребностей. Нет сомнений, что мы лидеры, и вам не нужно беспокоиться о нашем имидже, потому что он идеален.</p>
                             {state===1 ? (<div className='fact1'>
@@ -137,7 +137,11 @@ export default function Home() {
                              }
                             
                         </div>
-                        <div className="card4"></div>
+                        <div className="card4">
+                            <h1 className='card_about_us_ikki_page'>Поступаю правильно, в нужное время.</h1>
+                            <p className='card_about_us_ikki_p'>Добро пожаловать в ведущую компанию на рынке! Наш успех обусловлен высочайшим качеством обслуживания клиентов. Мы можем удовлетворить требования даже самых прихотливых клиентов, для нас нет сложных задач! Спасибо за ваш выбор! Наша компания может похвастаться репутацией надежного партнера, известного во всем мире. Мы гордимся бескомпромиссным качеством предоставляемых услуг</p>
+                            <button className='card_about_us_ikki_button'>Подробнее</button>
+                        </div>
                     </div>
                 </div>
             </div>
