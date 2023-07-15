@@ -11,7 +11,7 @@ import { type } from "@testing-library/user-event/dist/type";
 
 export default function Login() {
   const [page,setPage] =useState(1)
-  const [email,setEmail] =useState([])
+  const [email,setEmail] =useState()
   const [name,setName] =useState()
   const [data,setData] =useState([])
 
@@ -23,16 +23,7 @@ export default function Login() {
 
     axios.post(`${url}/auth/register/`,formdata).then(res=>{
     console.log(res);
-    if(data.email==document.querySelector(".email").value){
-    const nodeList= document.querySelectorAll(".error");
-    nodeList[1].style.display="block"
-    document.querySelector(".email").style="border-bottom: 1px solid red;"
-    }else{
-      const nodeList= document.querySelectorAll(".error");
-      nodeList[1].style.display="none"
-      document.querySelector(".email").style="border-bottom: 1px solid #9cf;"
-      setPage(4)
-    }
+    setPage(4)
     }).catch(err=>{
        console.log(err);
     })

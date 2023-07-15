@@ -145,10 +145,10 @@ return (
 <div className="media-ul">
 <div className="dfdf">
 <ul>
-   <li><a href="#" className='tt'>Главный</a></li>
+   <li><a href="/" className='tt'>Главный</a></li>
    <div className="media-kategory"  onMouseLeave={()=>aboutClose2()}  onClick={()=> ffd()}>
 <div className="ichi" onMouseEnter={(() => about2())}>
-<li><a href="/" className='tt'>О нас</a></li> <span><box-icon name='chevron-down' color='#ffffff' ></box-icon></span>
+<li><a href="/about" className='tt'>О нас</a></li> <span><box-icon name='chevron-down' color='#ffffff' ></box-icon></span>
 
 
 </div>
@@ -176,7 +176,7 @@ return (
    <li><a href="/blog" className='tt'>Блог</a></li>
    <li><a href="/ourteam" className='tt'>Наша команда</a></li>
    <li><a href="/contact" className='tt'>Контакты</a></li>
-   <li><a href="/contact" className='tt'>Регистрация</a></li>
+   <li><a href="/login" className='tt'>Регистрация</a></li>
 </ul>
 </div>
 </div>
