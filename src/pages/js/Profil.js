@@ -13,6 +13,7 @@ import {TbPointFilled} from "react-icons/tb"
 import {AiOutlineRight} from "react-icons/ai"
 import chadimg from "../img/Ellipse.jpg"
 import axios from 'axios'
+import url from './Host'
 
 
 export default function Profil() {
@@ -40,7 +41,7 @@ export default function Profil() {
   }
 
   useEffect(()=>{
-  axios.get("https://baisan.onrender.com/auth/user/",{ headers: { 'Authorization': 'Bearer ' + sessionStorage.getItem("token") } }).then(res=>{
+  axios.get(`${url}/auth/user/`,{ headers: { 'Authorization': 'Bearer ' + sessionStorage.getItem("token") } }).then(res=>{
     console.log(res.data);
     setData(res.data)
   }).catch((err) => {

@@ -115,232 +115,73 @@ top: 8px;
         letter-spacing: 0px;
     }
 }
-@media (max-width:1283px) {
-    .sahifa-glav{
-        display: flex;
-        padding: 14px 0;
-        position: relative;
-        left: 6vw;
-    }
-    .navbar-ul ul{
-        display: flex;
-      gap: 40px;
-    margin-left:0% !important; 
-    
-    }
-    .menu2 ul{
-        position: absolute;
 
 
- left: 19vw;
-       background: #ffffff;
-        list-style: none;
-        text-align: left;
-        transform: all 3s;
-        display: none;
-
-    }
-    .menu ul{
-        position: absolute;
-        width: 250px;
-    right: -150px;
-       background: #ffffff;
-        list-style: none;
-        text-align: left;
-        transform: all 3s;
-       display: none;
-       margin-top: 10px;
-    }
-
-}
-@media (max-width:1110px) {
-    .sahifa-glav{
-        display: flex;
-        padding: 14px 0;
-        position: relative;
-        left: 4vw;
-    }
-    .navbar-ul ul{
-        display: flex;
-      gap: 40px;
-    margin-left:0% !important;
-    
-    }
-    .menu2 ul{
-        position: absolute;
 
 
- left: 22vw;
-       background: #ffffff;
-        list-style: none;
-        text-align: left;
-        transform: all 3s;
-        display: none;
-
+@media (max-width: 1034px) {
+    .asd {
+      width: 100%;
+      min-height: 220px;
+      background: url("https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-header-bg.jpg");
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .menu ul{
-        position: absolute;
-        width: 250px;
-    right: -150px;
-       background: #ffffff;
-        list-style: none;
-        text-align: left;
-        transform: all 3s;
-       display: none;
-       margin-top: 10px;
+    .navbar {
+      width: 100%;
+      height: 50px !important;
+      background-color: #323946;
     }
-}
-@media (max-width:1053px) {
-    .sahifa-glav{
-        display: flex;
-        padding: 14px 0;
-        position: relative;
-        left: 2vw;
-    }
-    .navbar-ul ul{
-        display: flex;
-      gap: 40px;
-    margin-left:2%;
-    
-    }
-}
-
-@media (max-width:1034px) {
-    .asd{
-        width: 100%;
-    min-height: 160px;
-    background: url("https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-header-bg.jpg");
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    }
-    .navbar{
-        width: 100%;
-        height: 40px;
-        background-color: #323946;
-        padding-top: 15px;
-    
-    }
-    #ded{
-        position: relative;
-        top: -15px;
-    }
-.hr{
-    display: none;
-}
-    #ded1{
-        position: relative;
-        top: -5px;
-    }
-    .menu2 ul{
-        position: absolute;
-        width: 150px !important;
-        height: 70px !important;
-
-    left: 180px !important; 
-       background: #ffffff;
-        list-style: none;
-        text-align: left;
-        transform: all 3s;
-
-top: -30px !important;
-    }
-    .menuu{
-        height: 30px !important;
-        cursor: pointer;
-    }
-    .menu ul{
-        position: absolute;
-        width: 180px;
-        height: 100px;
-    right: -80px;
-       background: #ffffff;
-        list-style: none;
-        text-align: left;
-        transform: all 3s;
-        opacity: 0;
-       display: block;
-       margin-top: 0;
   
+   
+    .hr {
+      display: none;
     }
-    .menu p{
-        display: flex;
-         font-size: 15px;
-         gap: 5px;
-     
-     }
- #hh1{
-    width: 100%;
-    height: 1px;
-    background-color: rgb(229, 226, 232) !important;
-    position: relative;
-    top: -10px;
- } 
- #hh2{
-    width: 100%;
-    height: 1px;
-    background-color: rgb(229, 226, 232) !important;
-    position: relative;
-    top: 10px;
- } 
-    .menu2 p{
-        width: 100%;
-       height: 1px;
-       
-        padding: 5px;
+  
+    
+    
+    .menuu {
+      height: 30px !important;
+      cursor: pointer;
     }
-    .qqq{
-        position: relative;
-        top: -10px !important;
+  
+   
+  
+   
+   
+    .qqq {
+      position: relative;
+      top: -10px !important;
     }
-    .menu2 p{
-        width: 100%;
-        height: 0;
-        position: relative;
-        top: -20px;
-        padding: 5px;
+  
+  
+  
+    .ul {
+      position: absolute;
+      width: 180px;
+  
+      left: 170px;
+      background: #ffffff;
+      list-style: none;
+      text-align: left;
+      transform: all 3s;
+  
+      top: -0px;
     }
-    .menu2 p span{
-        position: relative;
-        top: 7px;
-       left: 90px;
-       
-    }
- 
-    .menu2 ul{
-        position: absolute;
-        width: 180px;
-
-    left: 170px;
-       background: #ffffff;
-        list-style: none;
-        text-align: left;
-        transform: all 3s;
-
-
-       top: -0px;
-       
-    }
-    .media-header-button button {
-    width: 160px !important;
-    height: 45px;
-    border-radius: 5px;
-    background: none;
-    border: 2px solid white;
-    cursor: pointer;
-    color: white;
-    margin-left: 40px;
-    position: relative;
-    top: -10px !important;
-}
-}
+  
+  }
 .media-navbar{
     display: none;
 }
 @media (max-width:770px) {
+    .navbar-mediao-barr{
+ position: relative;
+ left: 43vw;
+    }
     .navbar-ul{
         display: none;
     }
@@ -420,6 +261,8 @@ margin-left: 20%;
  
 } 
 @media (max-width: 1039px){
+  
+
 .asd-block h1{
 margin-top: -11px !important;
 }
@@ -470,17 +313,7 @@ position: relative;
     position: absolute;
     left: 2%;
 }
-.media-ul {
-width: 94vw;
-overflow: hidden;
-  position: relative;
-  border: 2px solid #44bef1;
-   background-color: #ffffff;
-z-index: 100;
-display: none;
-top: -10px;
 
-}
 .media-ul ul li{
     text-decoration: none;
     text-transform: uppercase;
@@ -498,16 +331,13 @@ padding: 15px 50px 10px 20px;
     text-decoration: none;
     color: #323946 ;
 }
-.bar-menu{
-    position: relative;
-    left: 43vw;
-}
+
 .adelna{
     background-color: #44bef1;
     width: 95vw;
     height: 35px;
     color: white;
-    
+
 }
 .adelna a{
     color: white !important;
@@ -563,18 +393,7 @@ border-bottom: 1px solid   rgb(217, 208, 208);
 position: relative;
 }
 }
-.menu2 ul{
-    position: absolute;
-    width: 150px !important;
 
-
-margin-top: 14px !important;
-   background: #ffffff;
-    list-style: none;
-    text-align: left;
-    transform: all 3s;
-   transition: 0.4s;
-}
 .menu2 ul a:hover{
     color: #1aa1dc;
 }
@@ -632,39 +451,10 @@ margin-left: 82vw;
     position: relative;
 }
 
-@media (max-width:480px) {
-    .media-ul {
-        width: 93vw;
-        overflow: hidden;
-          position: relative;
-          border: 2px solid #44bef1;
-           background-color: #ffffff;
-        z-index: 100;
-        display: none;
-        top: -10px;
-  
-        }
-}
-@media (max-width:365px) {
-    .media-ul {
-        width: 92vw;
-        overflow: hidden;
-          position: relative;
-          border: 2px solid #44bef1;
-           background-color: #ffffff;
-        z-index: 100;
-        display: none;
-        top: -10px;
-       
-        }
-}
 
-@media (max-width:400px) {
-  .bar-menu{
-    position: relative;
-    left: 41vw;
-  }  
-}
+
+
+
 
 
 

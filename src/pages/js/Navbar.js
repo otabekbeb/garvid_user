@@ -68,12 +68,12 @@ function sa(){
         }
         function menu2leave() {
             document.querySelector(".blog1").style="display:none"
-            // document.querySelector(".div1").style="display:none"
+      
         }
         function menu2leave1() {
             document.querySelector(".blog1").style="display:none"
             document.querySelector(".menu ul").style="display:none"
-            document.querySelector(".div1").style="display:none"
+      
         }
 export default function Navbar() {
     
@@ -129,22 +129,26 @@ return (
       
   
 
-            <div className="navbar-menu">
-      <div  className="bar-menu"   id='sa' onClick={() => sa()} >
+            <div className="navbar-menu"onClick={() => sa()}>
+<div className="navbar-mediao-barr">
+    
+<div  className="bar-menu"   id='sa'  >
       <div className="wone" ></div>
       <div className="wone1"  ></div>
       <div className="wone2"  ></div>
 
 
       </div>
+</div>
+
      
 <div className="media-ul">
 <div className="dfdf">
 <ul>
-   <li><a href="#" className='tt'>Home</a></li>
+   <li><a href="#" className='tt'>Главный</a></li>
    <div className="media-kategory"  onMouseLeave={()=>aboutClose2()}  onClick={()=> ffd()}>
 <div className="ichi" onMouseEnter={(() => about2())}>
-<li><a href="/" className='tt'>About</a></li> <span><box-icon name='chevron-down' color='#ffffff' ></box-icon></span>
+<li><a href="/" className='tt'>О нас</a></li> <span><box-icon name='chevron-down' color='#ffffff' ></box-icon></span>
 
 
 </div>
@@ -167,11 +171,12 @@ return (
    <li className='ds'><a href="#">FAQs</a></li>
 </ul>
 </div>
-   <li><a href="/servis" className='tt'>Services</a></li>
+   <li><a href="/servis" className='tt'>Услуги</a></li>
   
-   <li><a href="/blog" className='tt'>Blog</a></li>
-   <li><a href="/ourteam" className='tt'>Our team</a></li>
-   <li><a href="/contact" className='tt'>Contacts</a></li>
+   <li><a href="/blog" className='tt'>Блог</a></li>
+   <li><a href="/ourteam" className='tt'>Наша команда</a></li>
+   <li><a href="/contact" className='tt'>Контакты</a></li>
+   <li><a href="/contact" className='tt'>Регистрация</a></li>
 </ul>
 </div>
 </div>
