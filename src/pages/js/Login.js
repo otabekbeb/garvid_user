@@ -90,19 +90,19 @@ export default function Login() {
           <div className="login_relative">
             <img className="LoginImg" src={LoginImg} alt="" />
             <div className="login_small_div">
-              <form>
+              <form action="">
               <div className="login_small_div_input">
                 <h1>Авторизоваться</h1>
                 <div className="royhat_small_input">
                   <FiMail className="login_icon" />
-                  <input placeholder="Email" id="email" type="text" required/>
+                  <input placeholder="Email" id="email"  type="text" required/>
                 </div>
                 <div className="royhat_small_input">
                   <BiLockAlt className="login_icon" />
                   <input placeholder="Пароль" id="parol" type="password" required/>
                 </div>
                 <div className="login_button_div">
-                 <button type="button" onClick={()=>userAvto()} >Авторизоваться</button>
+                 <button  onClick={()=>userAvto()} >Авторизоваться</button>
                 </div>
               </div>
               </form>

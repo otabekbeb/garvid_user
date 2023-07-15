@@ -155,10 +155,22 @@ export default function Home() {
                 <h1>Контактная форма</h1>
                 <div className="blue1"></div>
                 <div className="contact_form_input_big_div_input">
-                    
+                <label>
+                    <p>Email</p>
+                    <input type="text" />
+                </label>
+                <label>
+                    <p>First name</p>
+                    <input type="text" />
+                </label>
+                <label>
+                    <p>Second name</p>
+                    <input type="text" />
+                </label>
                 </div>
+                <button>Подписываться</button>
              </div>
-             <img src="https://template59172.motopreview.com/mt-demo/5910…-content/uploads/2019/07/mt-0514-home-image-2.png" alt="" />
+             <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2019/07/mt-0514-home-image-2.png" alt="" />
             </div>
              <Images/>
              <Futer/>
