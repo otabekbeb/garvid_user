@@ -63,6 +63,7 @@ export default function Searchfilter() {
                 <div className="kurs_card">
                     <button className='btn_das'>Dasturlash</button>
                     <img  src={Rasp} alt="" />
+                    <div className="kurs_paddaing_auto">
                     <h4>Ishlab chiquvchilar uchun AWS: ECS <br />
                         va ko'p mintaqali yuklarni <br />
                         muvozanatlash</h4>
@@ -84,12 +85,14 @@ export default function Searchfilter() {
                             5 ta bo’lim
                         </h5>
                     </div>
+</div>
                     <button className='button_circle'><AiOutlineArrowRight /></button>
                 </div>
 
                 <div className="kurs_card">
                     <button className='btn_das'>Dasturlash</button>
                     <img src={Mon} alt="" />
+                    <div className="kurs_paddaing_auto">
                     <h4>Ishlab chiquvchilar uchun AWS: ECS <br />
                         va ko'p mintaqali yuklarni <br />
                         muvozanatlash</h4>
@@ -110,15 +113,17 @@ export default function Searchfilter() {
                             <p>Kurs narxi</p>
                             5 ta bo’lim
                         </h5>
+                    </div>
                     </div>
                     <button className='button_circle'><AiOutlineArrowRight /></button>
                 </div>
                 <div className="kurs_card">
                     <button className='btn_das'>Dasturlash</button>
                     <img src={Mon} alt="" />
+                    <div className="kurs_paddaing_auto">
                     <h4>Ishlab chiquvchilar uchun AWS: ECS <br />
-                        va ko'p mintaqali yuklarni <br />
-                        muvozanatlash</h4>
+                        a ko'p mintaqali yuklarni <br />
+                        muvozanatlashv</h4>
                     <div className='star_card'>
                         <i className='star_i'><AiFillStar /></i>
                         <i className='star_i'><AiFillStar /></i>
@@ -136,6 +141,7 @@ export default function Searchfilter() {
                             <p>Kurs narxi</p>
                             5 ta bo’lim
                         </h5>
+                    </div>
                     </div>
                     <button className='button_circle'><AiOutlineArrowRight /></button>
                 </div>
@@ -144,6 +150,8 @@ export default function Searchfilter() {
                     <h4>Yangi kurs qo’shish</h4>
                 </div>
             </div>
+
+            {/* SPISKA */}
 
             <div className="spiska_img_title_div">
                 <div className="Spiska_blok">

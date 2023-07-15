@@ -189,6 +189,12 @@ background-color: #9cf;
 color: white;
 height: 40px;
 }
+.login_small_input .error{
+  color: red;
+  font-size: 13px;
+  margin-bottom: 0;
+  display: none;
+}
 
 @media (max-width:900px) {
     .login_relative{
