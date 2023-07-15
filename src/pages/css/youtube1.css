@@ -558,6 +558,9 @@ color: #9DA7BB;
             .flex_star1 {
                 display: none;
             }
+            .p_4_1_524 {
+                display: none;
+            }
 
             .flex_star2 {
                 display: flex;
@@ -580,9 +583,6 @@ color: #9DA7BB;
                 color: #9DA7BB;
             }
 
-            .p_4_1_524 {
-                display: none;
-            }
 
             .odtel_media_uchun h1 {
                 font-size: 15px;
@@ -606,6 +606,7 @@ color: #9DA7BB;
             .accordion_text h6 {
                 font-size: 14px;
                 line-height: 20px;
+                font-weight: 650 !important;
             }
 
             .accordion_text p {
@@ -643,7 +644,7 @@ color: #9DA7BB;
 
 }
 
-@media (max-width:477px) {
+@media (max-width:500px) {
     .raspberry_pid h1 {
             font-size: 14px;
             line-height: 23px;
@@ -672,7 +673,7 @@ color: #9DA7BB;
         
                 .accordion_text p {
                     margin-top: 9px;
-                    font-size: 13px;
+                    font-size: 11px !important;
     }
         .accordion_img img {
             width: 85px;
@@ -682,18 +683,218 @@ color: #9DA7BB;
         }
 }
 
-@media (max-width:410px) {
+@media (max-width:430px) {
     .accordion_text h6 {
             font-size: 10px;
             line-height: 13px;
         }
 
-        .accordion_text p {
-            margin-top: 7px;
-            font-size: 13px;
-        }
 
         .accordion_img img {
             width: 90px;
         }
+        .accordion-button{
+            font-size: 13px !important;
+        }
+         .raspberry_pid h1 {
+            font-size: 12px;
+            line-height: 23px;
+            margin: auto;
+            margin-left: 0;
+        }
+    
+        .line_height {
+            width: 1px;
+            height: 45px;
+            border: none;
+            background-color: #9DA7BB;
+            margin-right: 20px;
+        }
+    
+        .raspberry_pid p {
+            font-size: 10px;
+            line-height: 20px;
+    
+        }
+
+         .buttons_next_back button {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border: none;
+            background-color: #fff;
+            border-radius: 50%;
+            color: #2E2E2E !important;
+            width: 30px;
+            height: 30px;
+            font-size: 12px;
+            
+            margin-top: -30px;
+        }
+        .post_ava button{
+                    text-align: center;
+                    background-color: #536DFD;
+                    color: white;
+                    width: 100px;
+                    height: 20px;
+                    border-radius: 2px;
+                    border: none;
+                    font-size: 11px;
+                    margin: auto;
+                    margin-right: 0;
+        }
+
+
+
+
+
+
+         .flex_star2 {
+                display: flex;
+                align-items: center;
+                font-size: 11px;
+            }
+
+            .flex_star12 {
+                display: flex;
+                align-items: center;
+                font-size: 11px;
+            }
+
+            .flex_star2 p {
+                color: #FFD401;
+            }
+
+            .flex_star12 p {
+                margin-left: 5px;
+                color: #9DA7BB;
+            }
+
+
+            .odtel_media_uchun h1 {
+                font-size: 13px;
+                color: #2E2E2E;
+            }
+
+            .flex_star_p {
+                display: flex;
+                margin-top: -10px;
+            }
+
+            .p_4_1_5245 {
+                gap: 5px;
+                font-size: 10px;
+                margin-left: 5px;
+                margin-top: 3px;
+            }
+
+}
+
+@media (max-width:390px) {
+    .accordion_text h6 {
+            font-size: 8px !important;
+            line-height: 11px;
+            font-weight: 700 !important;
+        }
+
+        .accordion_text p {
+            margin-top: 7px;
+            font-size: 9px !important;
+        }
+
+        .accordion_img img {
+            width: 75px;
+        }
+}
+@media (max-width:330px) {
+   .accordion_text h6 {
+            font-size: 8px !important;
+            line-height: 11px;
+            font-weight: 550 !important;
+        }
+
+        .accordion_text p {
+            margin-top: 7px;
+            font-size: 9px !important;
+        }
+
+        .accordion_img img {
+            width: 67px;
+        }
+}
+
+.navbar_video{
+    display: flex;align-items: center;justify-content: space-between;
+    width: 60%;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.navbar_otish{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #9DA7BB;
+    font-size: 18px;
+}
+.Задания{
+    color: #2E2E2E;
+    border-bottom: 2px solid #536DFD;
+}
+.navbar_rule{
+    color: #FFD401;
+    display: flex;align-items: center;
+}
+
+@media (max-width:1200px) {
+    .navbar_otish{
+        font-size: 15px;
+    }
+}
+@media (max-width:1000px) {
+    .navbar_video{
+        width: 100%;
+    }
+}
+@media (max-width:550px) {
+    .navbar_none{
+        display: none;
+    }
+.navbar_block{
+    display: block !important;
+width: 100%;
+}
+.menu_navbar{
+    margin-left: 50%;
+
+}
+.navbar_yon{
+    background-color: #fff;
+    padding: 10px;
+    width: 90%;
+    margin-left: 5%;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+    .navbar_otish{
+        width: 40%;
+        display: block;
+    } 
+}
+.navbar_yon{
+    display: none;
+}
+.menu_navbar{
+    color: #536DFD;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;align-items: center;justify-content: center;
+    font-size: 18px;
+    box-shadow: 0px 0px 5px #2E2E2E;
+}
+.navbar_block{
+    display: none;
 }

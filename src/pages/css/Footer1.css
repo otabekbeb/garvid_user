@@ -616,7 +616,7 @@ display: block;
 .futer{
     width: 100%;
     background: #323946;
-    min-height: 800px !important;
+height: 970px;
    
     padding-top: 40px;
     overflow: hidden;
@@ -926,5 +926,67 @@ font-family: unset;
         background-color: #7e848f;
     position: relative;
     top: 18px;
+    }
+}
+@media (max-width:516px) {
+    .futer{
+        width: 100%;
+        background: #323946;
+    height: 990px;
+       
+        padding-top: 40px;
+        overflow: hidden;
+       padding-left: 20px !important;
+       
+    }
+}
+@media (max-width:418px) {
+    .futer-mobil-block-ul1 {
+        display: block;
+        font-family: 'Roboto', sans-serif;
+        color: #949494;
+        font-size: 15px;
+        line-height: 2;
+        letter-spacing: 0px;
+        position: relative;
+        left: 25%;
+        transition: 0.4s;
+    }
+}
+@media (max-width:345px) {
+    .futer-mobil-block-ul1 {
+        display: block;
+        font-family: 'Roboto', sans-serif;
+        color: #949494;
+        font-size: 15px;
+        line-height: 2;
+        letter-spacing: 0px;
+        position: relative;
+        left: 18%;
+        transition: 0.4s;
+    }
+}
+@media (max-width:382px) {
+    .futer{
+        width: 100%;
+        background: #323946;
+    height: 1000px;
+       
+        padding-top: 40px;
+        overflow: hidden;
+       padding-left: 20px !important;
+       
+    }
+}
+@media (max-width:338px) {
+    .futer{
+        width: 100%;
+        background: #323946;
+    height: 1020px;
+       
+        padding-top: 40px;
+        overflow: hidden;
+       padding-left: 20px !important;
+       
     }
 }
