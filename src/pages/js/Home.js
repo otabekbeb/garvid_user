@@ -76,8 +76,10 @@ export default function Home() {
             <div className="soz1">
                 <h1>Что мы делаем</h1>
                 <div className="soz2">
+                <div style={{display:'flex',alignItems:'center'}}>
                 <div className="line"></div>
                 <p>Мы предоставляем экспертные финансовые консультации для предприятий и частных лиц</p>
+                </div>
                 <button>Посмотреть все услуги</button>
                 </div>
             </div>
@@ -148,7 +150,16 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-
+            <div className="contact_form_input_big">
+             <div className="contact_form_input_big_div">
+                <h1>Контактная форма</h1>
+                <div className="blue1"></div>
+                <div className="contact_form_input_big_div_input">
+                    
+                </div>
+             </div>
+             <img src="https://template59172.motopreview.com/mt-demo/5910…-content/uploads/2019/07/mt-0514-home-image-2.png" alt="" />
+            </div>
              <Images/>
              <Futer/>
         </div>

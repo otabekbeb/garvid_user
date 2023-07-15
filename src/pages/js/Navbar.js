@@ -85,14 +85,14 @@ export default function Navbar() {
 
 return (
     <div>
-<section className='navbar'>
+<section  onMouseLeave={() => menuul1()} className='navbar'>
     <div className="navbar-ul">
 <ul>
      <li className='moto-menu-item'><a href="/">Главный</a></li>
 
-  <div className="menu"  >{/* onMouseLeave={()=>menuufolse()} */}
-    <div className="menuu"  >{/* onMouseEnter={() => menuul()} */}
-    <p ><a href="/about">О нас</a></p>{/*  <span><box-icon name='chevron-down' color='#44bef1' ></box-icon></span> */}
+  <div className="menu" onMouseLeave={()=>menuufolse()} >
+    <div className="menuu" onMouseEnter={() => menuul()} >
+    <p ><a href="/about">О нас</a><span><box-icon name='chevron-down' color='#44bef1' ></box-icon></span></p> 
     <ul onMouseLeave={() => menuul1()} >
         <li ><a href="#" >Архивы</a></li>
     <div className="navbbar-line-hr"></div>
@@ -141,7 +141,7 @@ return (
 <div className="media-ul">
 <div className="dfdf">
 <ul>
-   {/* <li><a href="#" className='tt'>Home</a></li> */}
+   <li><a href="#" className='tt'>Home</a></li>
    <div className="media-kategory"  onMouseLeave={()=>aboutClose2()}  onClick={()=> ffd()}>
 <div className="ichi" onMouseEnter={(() => about2())}>
 <li><a href="/" className='tt'>About</a></li> <span><box-icon name='chevron-down' color='#ffffff' ></box-icon></span>

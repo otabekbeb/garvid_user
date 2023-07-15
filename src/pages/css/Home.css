@@ -322,6 +322,12 @@ color: #44bef1;
     color: #fff;
     background-color: #44bef1;
 }
+.contact_form_input_big{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
 
 @media (max-width:1040px) {
    .about_p{
@@ -378,6 +384,33 @@ color: #44bef1;
    .cards2{
    align-items: center;
    }
+   .carousel-caption h1{
+    font-size: 39px;
+    line-height: 1.1;
+   }
+   .buttons .button{
+    font-size: 13px;
+    height: 40px;
+    width: 120px;
+   }
+   .buttons .button1{
+    width: 120px;
+    height: 40px;
+    font-size: 13px;
+   }
+   .soz1 h1{
+    font-size: 27px;
+   }
+   .soz2 p{
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 100;
+   }
+   .soz2 button {
+   font-size: 13px;
+   width: 400px;
+   height: 35px;
+}
 }
 @media (max-width:767px) {
     .cards2{
@@ -386,8 +419,50 @@ color: #44bef1;
         padding-left: 20px !important;
         padding-right: 20px;
     }
+    .card1{
+    width: 100% !important;
+    }
+    .card1 p{
+        width: 100% !important;
+    }
+    .bigdiv{
+    justify-content: center !important;
+    }
+    .soz2{
+        flex-wrap: wrap;
+    }
+    .soz1{
+    flex-wrap: wrap;
+    }
+    .soz1 h1{
+        text-align: start;
+    }
+    .soz2 p{
+        font-size: 17px;
+        line-height: 2.1;
+    }
+    .line{
+    margin-left: 0px;
+    }
+    .soz2 button{
+        margin-top: 10px;
+        margin: auto;
+        width: 200px;
+        margin-top: 20px;
+    }
     .buttons1 button{
         width: 100%;
+    }
+    .buttons .button1{
+        margin-left: 0 !important;
+        margin-top: 10px;
+    }
+    .buttons{
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
     }
     .card4{
         width: 100%;
@@ -397,8 +472,22 @@ color: #44bef1;
     .card_about_us_ikki_p{
         width: 100% !important;
     }
+    .carousel-caption h1{
+        font-size: 30px;
+        line-height: 1.1;
+    }
+    .carusel p{
+        font-size: 17px;
+    }
 }
 @media (max-width:479px) {
+    .soz2 p{
+    font-size: 13px;
+    }
+    .soz2 button{
+        width:150px;
+        font-size: 12px;
+    }
     .facts h1{
         font-size: 30px;
         line-height: 1.2;
