@@ -1114,13 +1114,7 @@ overflow: hidden;
         margin-left: 30px;
         margin-top: 33px;
     }
-    .about-header-line {
-        width: 250px;
-        height: 1px;
-        background-color: #bababa;
-        position: relative;
-        top: 15px;
-    }
+
     .about-header-block-text p {
         font-weight: 300;
         font-style: normal;
@@ -1791,7 +1785,7 @@ color: white;
 
 }
 .media-header-button button{
-    width: 130px;
+    width: 160px;
     height: 45px;
     border-radius: 5px;
     background: none;
@@ -1799,7 +1793,7 @@ color: white;
     cursor: pointer;
     color: white;
    margin-left: 40px;
-  margin-top: 20px;
+ 
 }
 .mySwiper{
     width: 90%;
@@ -2155,20 +2149,9 @@ left: 40px;
         position: relative;
         top: 10px;
     }
-    .media-header-button p {
-        font-weight: 300;
-        font-style: normal;
-        font-family: 'Roboto', sans-serif;
-        color: white;
-        font-size: 12px;
-        line-height: 1.6;
-        letter-spacing: 0px;
-        margin-left: 40px;
-        position: relative;
-        top: 15px;
-    }
+
     .media-header-button button {
-        width: 130px;
+        width: 160px;
         height: 45px;
         border-radius: 5px;
         background: none;
@@ -2176,7 +2159,7 @@ left: 40px;
         cursor: pointer;
         color: white;
         margin-left: 40px;
-        margin-top: 30px;
+     
     }
     .about-header-blcos4 {
         position: relative;
@@ -2637,7 +2620,7 @@ font-size: 8.5px;
         font-style: normal;
         font-family: 'Roboto', sans-serif;
         color: white;
-        font-size: 12px;
+        font-size: 13px;
         line-height: 1.6;
         letter-spacing: 0px;
         margin-left: 30px;
@@ -2645,7 +2628,7 @@ font-size: 8.5px;
         top: 15px;
     }
     .media-header-button button {
-        width: 130px;
+        width: 160px;
         height: 45px;
         border-radius: 5px;
         background: none;
@@ -2653,7 +2636,7 @@ font-size: 8.5px;
         cursor: pointer;
         color: white;
         margin-left: 30px;
-        margin-top: 30px;
+  margin-top: 10px;
     }
     .media-header-button h3 {
         font-weight: 700;
@@ -2669,18 +2652,9 @@ font-size: 8.5px;
 }
 
 
-@media (max-width:500px) {
-    .about-header-block{
-        width: 100%;
-        height: 2000px;
-    }
-}
-@media (max-width:600px) {
-    .about-header-block{
-        width: 100%;
-        height: 1980px;
-    }
-}
+
+
+
 @media (max-width:351px) {
     .about-header-nn ul span {
         font-weight: 300;
@@ -2693,20 +2667,171 @@ font-size: 8.5px;
         margin-bottom: 10px;
     }
 }
-@media (max-width:370px) {
-    .about-header-block{
-        width: 100%;
-        height: 2300px !important; 
-    }
-}
-@media (max-width:321px) {
-    .asdod{
-        position: relative;
-        z-index:2;
-    }
-}
+
+
 
 
 .asd-block h1{
     margin-top: 30px;
 }
+@media (max-width:1386px) {
+    .safiha-d p {
+        position: relative;
+        top: 3px;
+        left: 4px;
+    }
+}
+@media (max-width:1041px) {
+    .safiha-d p {
+        position: relative;
+        top: 6px;
+        left: 4px;
+    }
+    .sahifa-glav {
+        display: flex;
+        padding: 10px 0;
+        position: relative;
+        left: 3vw !important;
+    }
+ 
+}
+@media (max-width:1260px) {
+    .navbar-ul ul {
+        display: flex;
+        gap: 40px;
+        margin-left: 0vw;
+        align-items: center;
+    }
+}
+@media (max-width:481px) {
+    .safiha-d p {
+        position: relative;
+        top: 8px;
+        left: 4px;
+    }
+}
+@media (max-width:369px) {
+    .media-header-button h3 {
+        font-weight: 700;
+        font-style: normal;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        font-size: 18px;
+        line-height: 2.2;
+        margin-left: 20px;
+        position: relative;
+        top: 10px;
+    }
+    .media-header-button p {
+        font-weight: 300;
+        font-style: normal;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        font-size: 13px;
+        line-height: 1.6;
+        letter-spacing: 0px;
+        margin-left: 20px;
+        position: relative;
+        top: 15px;
+    }
+    .media-header-button button {
+        width: 160px;
+        height: 45px;
+        border-radius: 5px;
+        background: none;
+        border: 2px solid white;
+        cursor: pointer;
+        color: white;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+}
+@media (max-width:344px) {
+    .media-header-button p {
+        font-weight: 300;
+        font-style: normal;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        font-size: 11px;
+        line-height: 1.6;
+        letter-spacing: 0px;
+        margin-left: 20px;
+        position: relative;
+        top: 15px;
+    }
+}
+
+@media (max-width:1035px) {
+.about-header-block{
+height: 2270px;
+}
+}
+@media (max-width:835px) {
+    .about-header-block{
+        height: 2170px;
+        }
+        .swiper-pagination-bullet{
+            width: 20px !important;
+            height: 20px !important;
+            background: none !important;
+            border: 2px solid #1aa1dc;
+          position: relative;
+          top: -12px !important;
+        } 
+.mySwiper{
+ position: relative;
+}
+
+}
+/* .sli{
+    border-radius: 10px;
+        border: 1px solid rgb(236, 230, 230);
+        }
+        .mySwiper{
+            width: 270px;
+            height: 380px;
+        position: relative;
+        top: 45px;
+         
+        }
+        .swiper-slide{
+            width: 100% !important;
+        }
+        .swiper-pagination-bullet{
+            width: 20px !important;
+            height: 20px !important;
+            background: none !important;
+            border: 2px solid #1aa1dc;
+          position: relative;
+          top: -25px !important;
+        }  */
+        @media (max-width:1000px) {
+            .swiper-pagination-bullet{
+                width: 20px !important;
+                height: 20px !important;
+                background: none !important;
+                border: 2px solid #1aa1dc;
+              position: relative;
+              top: -12px !important;
+            } 
+        }
+        @media (max-width:401px) {
+            .about-header-block{
+                height: 2250px;
+                }
+        }
+        @media (max-width:359px) {
+            .about-header-block{
+                height: 2300px;
+                }
+        }
+        @media (max-width:378px) {
+            .mySwiper{
+                width: 90%;
+                height: 366px;
+            position: relative;
+            top: 45px;
+            right: 15px;
+             
+            }
+        }

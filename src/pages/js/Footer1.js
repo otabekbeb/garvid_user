@@ -137,7 +137,7 @@ function Footer() {
 <input type="email" required placeholder='Email *' />
 
 
-<div className="futer-mobil-button"><button>Send</button></div>
+<div className="futer-mobil-button"><button>Отправить</button></div>
 </form>
 </div>
   </div>

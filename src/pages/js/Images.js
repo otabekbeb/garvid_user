@@ -15,9 +15,9 @@ export default function Images() {
         <img src={images1} alt="" />
         <img src={images2} alt="" />
         <img src={images3} alt="" />
-        <img src={images4} alt="" className='oppo1' />
-        <img src={images5} alt="" className='oppo1' />
-        <img src={images6} alt=""  className='oppo1'/>
+        <img src={images4} alt="" id='oppo1' />
+        <img src={images5} alt="" id='oppo1' />
+        <img src={images6} alt=""  id='oppo1'/>
     </div>
 </div>
 </header>

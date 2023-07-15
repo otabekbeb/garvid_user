@@ -238,7 +238,7 @@ export default function About() {
 
 
 
-<div className="asdod">
+<div className="asdosdd">
 
 
 <Swiper
