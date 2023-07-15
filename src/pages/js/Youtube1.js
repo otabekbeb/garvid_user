@@ -333,31 +333,22 @@ export default function Youtube1() {
               <p>Руководства</p>
               <p>Скачать</p>
             </div>
-            <div className="navbar_rule">
-              <p>
-                <span>
-                  {" "}
-                  <TbInfoTriangleFilled />{" "}
-                </span>{" "}
-                Правила
-              </p>
-            </div>
           </div>
-           <div className="navbar_block">
+        </div>
+        <div className="navbar_block">
           <div className="menu_navbar" onClick={()=>{openModal()}}>
               <TiThMenu />
             </div>
           <div className="navbar_yon" onMouseLeave={()=>{closeModal();}}>
             
            
-            <div className="navbar_otish">
+            <div className="navbar_otish1">
               <p>Вопрос и ответ</p>
               <p className="Задания">Задания</p>
               <p>Руководства</p>
               <p>Скачать</p>
             </div></div>
           </div>
-        </div>
         <Vazifa />
       </div>
     </div>

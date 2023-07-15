@@ -11,7 +11,7 @@
    
 }
 .youtube_kotta_img{
-    width: 64%;
+    width: 60%;
 
 }
 .img_youtube_kotta img{
@@ -218,7 +218,7 @@ margin-bottom: 20px;
 
 
 .youtube_kichkina{
-    width: 37%;
+    width: 38%;
 }
 
 
@@ -825,13 +825,13 @@ color: #9DA7BB;
 
 .navbar_video{
     display: flex;align-items: center;justify-content: space-between;
-    width: 60%;
+    width: 700px;
     padding: 10px;
     margin-top: 30px;
 }
 
 .navbar_otish{
-    width: 70%;
+    width: 500px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -877,9 +877,10 @@ width: 100%;
     border-radius: 5px;
     margin-top: 20px;
 }
-    .navbar_otish{
+    .navbar_otish1{
         width: 40%;
         display: block;
+        font-size: 15px;
     } 
 }
 .navbar_yon{
