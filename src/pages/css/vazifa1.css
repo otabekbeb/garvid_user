@@ -7,6 +7,8 @@
     background-color: #fff;
     border-radius: 2px;
     transition: .5s;
+    margin-bottom: 50px;
+    padding-bottom: 10px;
 }
 .scachat_kotta{
     display: flex;
