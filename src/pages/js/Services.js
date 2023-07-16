@@ -15,7 +15,7 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 export default function Services() {
   return (
-    <div>
+    <div className='services_div'>
         <Navbar/>
         <div className="asd">
     {/* <img src={abaut} alt="" /> */}
@@ -47,7 +47,7 @@ export default function Services() {
 
             <div className="cards">
                 <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img02.jpg" alt=""/>
-                <h1><a href="#">Инвестиционный Консалтинг</a></h1>
+                <h1><a href="#">Инвестиционный</a></h1>
                 <p>Наши инвестиционные консультанты изучают цели клиентов, инвестиционный опыт и устойчивость к риску и определяют план финансовых вложений, наиболее подходящий для каждого клиента.</p>
             </div>
 

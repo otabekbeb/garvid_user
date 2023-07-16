@@ -1,5 +1,5 @@
 'use clint'
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import '../css/Navbar.css'
 
 function sa(){
@@ -79,16 +79,21 @@ export default function Navbar() {
     
 
 
-
+    const [state1, setstate1] = React.useState();
  const [state,State] = React.useState(1)
 
+ useEffect(() => {
+    setstate1(
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "ru"
+    );
+  }, []);
 
 return (
     <div>
 <section  onMouseLeave={() => menuul1()} className='navbar'>
     <div className="navbar-ul">
 <ul>
-     <li className='moto-menu-item'><a href="/">Главный</a></li>
+     <li className='moto-menu-item'><a href="/">{state1 === "ru" ? "Связаться с нами" : "Biz bilan bog'laning"}</a></li>
 
   <div className="menu" onMouseLeave={()=>menuufolse()} >
     <div className="menuu" onMouseEnter={() => menuul()} >
@@ -105,7 +110,7 @@ return (
   
         <div className="navbbar-line-hr1"></div>
   
-        <li id='ded'><a href="/contact">Связь</a></li>
+        <li id='ded'><a href="/contacts">Связь</a></li>
       
      </ul>
      
@@ -122,7 +127,9 @@ return (
     <li className='moto-menu-item'><a href="/contact">Контакты</a></li>
     <li className='moto-menu-item'><a href="/login">Регистрация</a></li>
 </ul>
-
+<div class="checkbox-con">
+  <input id="checkbox" onClick={()=>{!document.querySelector("#checkbox").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "uz"));window.location.reload()}} type="checkbox"/>
+</div>
     </div>
     <div className="media-navbar">
       
@@ -177,7 +184,9 @@ return (
    <li><a href="/contact" className='tt'>Контакты</a></li>
    <li><a href="/login" className='tt'>Регистрация</a></li>
 </ul>
+
 </div>
+
 </div>
 
 
