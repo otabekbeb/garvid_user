@@ -2702,6 +2702,12 @@ font-size: 8.5px;
         margin-left: 0vw;
         align-items: center;
     }
+    .menu ul{
+        display: none;
+    }
+    .menu2 ul{
+        display: none;
+    }
 }
 @media (max-width:481px) {
     .safiha-d p {
