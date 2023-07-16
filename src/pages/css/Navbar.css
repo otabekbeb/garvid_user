@@ -400,9 +400,8 @@ left: 1%;
     color: white !important;
   }
   .ffd ul {
- 
+    transition: 0.4s !important;
     display: none;
-    opacity: 0;
     padding: 0px 20px;
     font-size: 14px;
     margin: 0;
