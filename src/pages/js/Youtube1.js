@@ -7,7 +7,8 @@ import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 import {TbInfoTriangleFilled} from 'react-icons/tb'
 import {TiThMenu} from 'react-icons/ti'
 import '../css/youtube1.css'
-// import Vazifa from '../js/Vazifa'
+import Qollamalar from '../js/Bilmadim1'
+import Scachat from '../js/Scachat'
 import Vazifa from '../js/Vazifa1'
 import Navbar from '../js/Navbar'
 
@@ -336,8 +337,8 @@ export default function Youtube1() {
         <div className="navbar_video">
           <div className="navbar_none">
             <div className="navbar_otish">
-              <p onClick={()=>videoBolim(1)} >Вопрос и ответ</p>
-              <p onClick={()=>videoBolim(2)} className="Задания">Задания</p>
+              <p onClick={()=>videoBolim(1)}className="zadaniya" >Вопрос и ответ</p>
+              <p onClick={()=>videoBolim(2)} >Задания</p>
               <p onClick={()=>videoBolim(3)} >Руководства</p>
               <p onClick={()=>videoBolim(4)} >Скачать</p>
             </div>
@@ -351,16 +352,16 @@ export default function Youtube1() {
             
            
             <div className="navbar_otish1">
-              <p onClick={()=>videoBolim(1)}>Вопрос и ответ</p>
-              <p onClick={()=>videoBolim(2)} className="Задания">Задания</p>
+              <p onClick={()=>videoBolim(1)}className="zadaniya">Вопрос и ответ</p>
+              <p onClick={()=>videoBolim(2)} >Задания</p>
               <p onClick={()=>videoBolim(3)}>Руководства</p>
               <p onClick={()=>videoBolim(4)}>Скачать</p>
             </div></div>
           </div>
-          <div className={id===1?"show-content":"content"}><Vazifa /></div>
-          <div className={id===2?"show-content":"content"}>salom</div>
-          <div className={id===3?"show-content":"content"}>MuhammadAli</div>
-          <div className={id===4?"show-content":"content"}>dawdwadwaw</div>
+          <div className={id===1?"show-content":"content"}>salom</div>
+          <div className={id===2?"show-content":"content"}><Vazifa /></div>
+          <div className={id===3?"show-content":"content"}><Qollamalar/></div>
+          <div className={id===4?"show-content":"content"}><Scachat/></div>
       </div>
     </div>
   );
