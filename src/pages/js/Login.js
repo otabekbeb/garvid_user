@@ -30,13 +30,7 @@ export default function Login() {
     
   }
 
-  useEffect(()=>{
-    axios.get(`${url}/auth/user/`,{headers:{'Authorization':'Bearer ' + sessionStorage.getItem("token")}}).then(res=>{
-    setData(res.data)
-    }).catch(err=>{
-      console.log(err);
-    })
-  },[])
+
 
   function userVeri(){
    
