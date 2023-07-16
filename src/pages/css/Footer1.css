@@ -261,7 +261,7 @@ border: none;
 .futer-block-pass button{
     height: 50px;
     border: none;
-    width: 73px;
+    width: 90px;
     background-color: #44bef1;
     color: white;
 border-top-right-radius: 5px;
@@ -275,12 +275,15 @@ cursor: pointer;
     .futer-block-pass button{
         height: 50px;
         border: none;
-        width: 65px;
+        width: 75px;
         background-color: #44bef1;
         color: white;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     cursor: pointer;
+    font-size: 13px;
+    position: relative;
+    top: -1px;
     }
     .futer{
         overflow: hidden;
@@ -1035,7 +1038,7 @@ font-family: unset;
         border-bottom-right-radius: 5px;
         cursor: pointer;
 position: relative;
-top: 0px;
+top: -1px;
     }
 }
 @media (max-width:383px) {
@@ -1043,6 +1046,17 @@ top: 0px;
         width: 100%;
         background: #323946;
       height:  1060px;
+    
+        padding-top: 90px;
+        overflow: hidden !important;
+        
+    }
+}
+@media (max-width:329px) {
+    .futer{
+        width: 100%;
+        background: #323946;
+      height:  1080px;
     
         padding-top: 90px;
         overflow: hidden !important;

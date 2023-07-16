@@ -159,7 +159,8 @@
   height: 92px;
   top: 130px;
   left: 30%;
-display: none;
+display: none !important;
+position: fixed;
 }
 .menu2 p {
   width: 100%;
@@ -241,6 +242,7 @@ left: 170%;
 @media (max-width: 770px) {
   .div1{
     display: none !important;
+    position: fixed;
   }
   .navbar-ul {
     display: none;
@@ -1087,6 +1089,7 @@ top: 600px  !important;
         top: 130px;
         left: 30%;
         display: none;
+        position: fixed;
       }
 }
 @media (max-width:1784px) {
@@ -1193,6 +1196,7 @@ top: 600px  !important;
         top: 130px;
         left: 32%;
         display: none;
+        position: fixed;
       }
 }
 @media (max-width:1556px) {
@@ -1380,6 +1384,7 @@ top: 600px  !important;
         top: 130px;
         left: 26%;
         display: none;
+        position: fixed;
       }
       .menu2 ul {
         position: absolute;
@@ -1539,6 +1544,7 @@ top: 600px  !important;
         top: 130px;
         left: 28%;
         display: none;
+        position: fixed;
       }
 }
 @media (max-width:1096px) {
@@ -1653,6 +1659,7 @@ top: 600px  !important;
         top: 100px;
         left: 25%;
         display: none;
+        position: fixed;
       }
 }
 @media (max-width:1047px) {
@@ -1707,6 +1714,7 @@ top: 600px  !important;
     top: 90px;
     left: 25%;
 display: none;
+position: fixed;
   }
 }
 @media (max-width:1016px) {
@@ -1936,4 +1944,56 @@ display: none;
     transform: all 3s;
     top: -10px;
   } 
+}
+@media (max-width:1263px) {
+  .menu2 ul {
+    position: absolute;
+margin-left: 1.2vw !important;
+
+    transition: 0.4s;
+    margin-top: 14px !important;
+    background: #ffffff;
+    list-style: none;
+    text-align: left;
+    transform: all 3s;
+    top: -15px;
+  } 
+  .div1 {
+    position: absolute;
+    width: 120px;
+    height: 92px;
+    top: 120px;
+    position: fixed;
+display: none;
+  }
+}
+@media (max-width:1085px) {
+  .div1 {
+    position: absolute;
+    width: 120px;
+    height: 92px;
+    top: 100px;
+  left: 20%;
+display: none;
+position: fixed;
+  }
+  .menu2 ul {
+    position: absolute;
+margin-left: 1.2vw !important;
+
+    transition: 0.4s;
+    margin-top: 14px !important;
+    background: #ffffff;
+    list-style: none;
+    text-align: left;
+    transform: all 3s;
+    top: -10px;
+  } 
+}
+.navbar-tepaga-krug{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #ad2a2a;
+  top: 0;
 }

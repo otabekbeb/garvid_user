@@ -94,7 +94,7 @@ return (
     <div className="menuu" onMouseEnter={() => menuul()} >
     <p ><a href="/about">О нас</a><span><box-icon name='chevron-down' color='#44bef1' ></box-icon></span></p> 
     <ul onMouseLeave={() => menuul1()} >
-        <li ><a href="#" >Архивы</a></li>
+        <li ><a href="#" >FAQs</a></li>
     <div className="navbbar-line-hr"></div>
 
      <div className="menu2" >
@@ -102,16 +102,15 @@ return (
      <div className="navbbar-line-hr"></div>
 
      <ul onMouseEnter={() => menu2ul()} onMouseLeave={()=> menu2leave1()} className='blog1'>
-        <li id='ded1'><a href="/blog">Блог</a></li>
+  
         <div className="navbbar-line-hr1"></div>
   
-        <li id='ded'><a href="/contact">Контакты</a></li>
+        <li id='ded'><a href="/contact">Связь</a></li>
       
      </ul>
      
      </div>
-       
-        <li className='zaib'><a href="#">FAQs</a></li>
+   
     </ul>
 </div>
    
@@ -189,7 +188,11 @@ return (
 </section>
 
 <div className="div1" onMouseEnter={() => menu2ul12()} onMouseLeave={()=> menu2leave1()}></div>
-
+<div className="navbar-futer-tepaga">
+    <a href="#">
+        <div className="navbar-tepaga-krug"></div>
+    </a>
+</div>
     </div>
   )
 }

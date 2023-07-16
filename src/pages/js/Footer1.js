@@ -70,7 +70,7 @@ function Footer() {
 <div className="futer-block-pass">
   <p>Получайте последние обновления <br /> и предложения.</p>
   <form action="">
-  <input type="text" placeholder='Email * ' required /><button >Send</button>
+  <input type="text" placeholder='Email * ' required /><button >Отправить</button>
 
 </form>
 </div>
@@ -134,7 +134,7 @@ function Footer() {
     <p>Получайте последние обновления и предложения.</p>
 <div className="futer-mobil-input">
 <form action="">
-<input type="email" required placeholder='Email *' />
+<input type="email" required placeholder='Электронная почта *' />
 
 
 <div className="futer-mobil-button"><button>Отправить</button></div>
