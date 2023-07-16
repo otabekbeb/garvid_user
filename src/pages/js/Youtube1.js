@@ -351,13 +351,16 @@ export default function Youtube1() {
             
            
             <div className="navbar_otish1">
-              <p>Вопрос и ответ</p>
-              <p className="Задания">Задания</p>
-              <p>Руководства</p>
-              <p>Скачать</p>
+              <p onClick={()=>videoBolim(1)}>Вопрос и ответ</p>
+              <p onClick={()=>videoBolim(2)} className="Задания">Задания</p>
+              <p onClick={()=>videoBolim(3)}>Руководства</p>
+              <p onClick={()=>videoBolim(4)}>Скачать</p>
             </div></div>
           </div>
-        <Vazifa />
+          <div className={id===1?"show-content":"content"}><Vazifa /></div>
+          <div className={id===2?"show-content":"content"}>salom</div>
+          <div className={id===3?"show-content":"content"}>MuhammadAli</div>
+          <div className={id===4?"show-content":"content"}>dawdwadwaw</div>
       </div>
     </div>
   );
