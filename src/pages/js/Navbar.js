@@ -17,7 +17,7 @@ function sa(){
 
     function about2() {
   
-        document.querySelector(".ichi span").style="transform: rotate(180deg);"
+        document.querySelector("#sdfdsfsd").style="transform: rotate(180deg);"
         }
     
         function aboutClose2() {
@@ -26,17 +26,15 @@ function sa(){
             }
             function ffd() {
     var t=document.querySelector(".ffd ul").style.display
-    var p=document.querySelector(".ffd ul").style.opacity
     if(t=="none"){
         document.querySelector(".ffd ul").style.display="block";
-        document.querySelector(".ffd ul").style.opacity="1";
         }else{
            document.querySelector(".ffd ul").style.display="none";
-           document.querySelector(".ffd ul").style.opacity="0";
         }
     }    
    
     function ochil1() {
+        
         var t=document.querySelector(".lll ul").style.display
         var p=document.querySelector(".lll ul").style.opacity
         if(t=="none"){
@@ -152,9 +150,9 @@ return (
 <div className="dfdf">
 <ul>
    <li><a href="/" className='tt'>Главный</a></li>
-   <div className="media-kategory"  onMouseLeave={()=>aboutClose2()}  onClick={()=> ffd()}>
-<div className="ichi" onMouseEnter={(() => about2())}>
-<li><a href="/about" className='tt'>О нас</a></li> <span><box-icon name='chevron-down' color='#ffffff' ></box-icon></span>
+   <div className="media-kategory"  onMouseLeave={()=>aboutClose2()}  >
+<div className="ichi" onMouseEnter={(() => about2())} onClick={()=> ffd()}>
+<li ><a href="/about" className='tt'>О нас</a></li> <span id='sdfdsfsd'><box-icon name='chevron-down' color='#ffffff' ></box-icon></span>
 
 
 </div>
@@ -164,7 +162,8 @@ return (
 <ul className='ffdul' >
    <li className='ds'><a href="#">Archives</a></li>
 
-  <div className="ichi2" onClick={()=>ochil1()}>
+  <div className="ichi2" onClick={()=>ochil1()
+}>
   <li className='ds'><a href="#">News</a></li><span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
   </div>
 <div className="lll">

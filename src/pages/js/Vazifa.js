@@ -8,7 +8,7 @@ import { FiFileText } from 'react-icons/fi'
 import { LuPaperclip } from 'react-icons/lu'
 export default function Vazifa() {
   return (
-    <div>
+    <div className='vazifa_kotta'>
       <div className='Vazifa_white_blok'>
         <div className="vazifa_blok">
 

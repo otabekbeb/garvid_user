@@ -317,7 +317,7 @@ position: relative;
 .media-ul ul li{
     text-decoration: none;
     text-transform: uppercase;
-display: flex;
+/* display: flex; */
 padding: 15px 50px 10px 20px;
     font-size: 13px;
     line-height: 1.2;
@@ -2701,6 +2701,12 @@ font-size: 8.5px;
         gap: 40px;
         margin-left: 0vw;
         align-items: center;
+    }
+    .menu ul{
+        display: none;
+    }
+    .menu2 ul{
+        display: none;
     }
 }
 @media (max-width:481px) {
