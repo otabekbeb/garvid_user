@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import img_kotta from '../img/Rectangle.png'
 import img_ava from '../img/Ellipse.png'
 import img_accordion from '../img/Rectangle 14.1.svg'
@@ -7,7 +7,8 @@ import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 import {TbInfoTriangleFilled} from 'react-icons/tb'
 import {TiThMenu} from 'react-icons/ti'
 import '../css/youtube1.css'
-import Vazifa from '../js/Vazifa'
+// import Vazifa from '../js/Vazifa'
+import Vazifa from '../js/Vazifa1'
 import Navbar from '../js/Navbar'
 
 import { BiTime } from 'react-icons/bi'
@@ -15,12 +16,19 @@ import '../css/youtube1.css';
 import Accordion from 'react-bootstrap/Accordion';
 import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Youtube1() {
+  const [id,setId]=useState()
+
   function openModal() {
     document.querySelector('.navbar_yon').style="display:block;"
   }
    function closeModal() {
      document.querySelector(".navbar_yon").style = "display:none;";
    }
+
+  function videoBolim(id){
+  setId(id)  
+  }
+
   return (
     <div>
       <div className="youtube_bgc">
@@ -328,10 +336,10 @@ export default function Youtube1() {
         <div className="navbar_video">
           <div className="navbar_none">
             <div className="navbar_otish">
-              <p>Вопрос и ответ</p>
-              <p className="Задания">Задания</p>
-              <p>Руководства</p>
-              <p>Скачать</p>
+              <p onClick={()=>videoBolim(1)} >Вопрос и ответ</p>
+              <p onClick={()=>videoBolim(2)} className="Задания">Задания</p>
+              <p onClick={()=>videoBolim(3)} >Руководства</p>
+              <p onClick={()=>videoBolim(4)} >Скачать</p>
             </div>
           </div>
         </div>
@@ -343,13 +351,16 @@ export default function Youtube1() {
             
            
             <div className="navbar_otish1">
-              <p>Вопрос и ответ</p>
-              <p className="Задания">Задания</p>
-              <p>Руководства</p>
-              <p>Скачать</p>
+              <p onClick={()=>videoBolim(1)}>Вопрос и ответ</p>
+              <p onClick={()=>videoBolim(2)} className="Задания">Задания</p>
+              <p onClick={()=>videoBolim(3)}>Руководства</p>
+              <p onClick={()=>videoBolim(4)}>Скачать</p>
             </div></div>
           </div>
-        <Vazifa />
+          <div className={id===1?"show-content":"content"}><Vazifa /></div>
+          <div className={id===2?"show-content":"content"}>salom</div>
+          <div className={id===3?"show-content":"content"}>MuhammadAli</div>
+          <div className={id===4?"show-content":"content"}>dawdwadwaw</div>
       </div>
     </div>
   );
