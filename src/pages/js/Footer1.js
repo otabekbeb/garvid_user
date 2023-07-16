@@ -17,9 +17,9 @@ function Footer() {
    
  <div className="poa">
   <div className="as"></div>
- <div className="krug"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-    <div className="krug"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-    <div className="krug"><i class="fa fa-twitch" aria-hidden="true"></i></div>
+ <div className="krug"><box-icon name='facebook' type='logo' color='white' id="ip"></box-icon></div>
+    <div className="krug"><box-icon name='twitter' type='logo' color='white'  id="ip" ></box-icon></div>
+    <div className="krug"><box-icon name='twitch' type='logo' color='white' id="ip" ></box-icon></div>
  </div>
   </div>
 </div>
@@ -53,10 +53,10 @@ function Footer() {
 <h3>Контактная информация</h3>
 <div className="futer-liner1"></div>
 <div className="futer-text">
-<p><i class="fa fa-phone" aria-hidden="true"></i><span>(123) 45678910</span></p>
-<p><i class="fa fa-envelope-o" aria-hidden="true"></i><span>info@demolink.org</span></p>
-<p><i class="fa fa-envelope-o" aria-hidden="true"></i><span>Пн - Сб: 9:00 - 18:00</span></p>
-<p><i class="fa fa-map-marker" aria-hidden="true"></i><span>267 Парк Авеню Нью-Йорк, NY 90210</span></p>
+<p><box-icon name='check' color='#44bef1' id="pdsfp"></box-icon><span>(123) 45678910</span></p>
+<p><box-icon name='check' color='#44bef1'id="pdsfp" ></box-icon><span>info@demolink.org</span></p>
+<p><box-icon name='check' color='#44bef1' id="pdsfp"></box-icon><span>Пн - Сб: 9:00 - 18:00</span></p>
+<p><box-icon name='check' color='#44bef1'id="pdsfp" ></box-icon><span>267 Парк Авеню Нью-Йорк, NY 90210</span></p>
 
 </div>
 
@@ -87,9 +87,9 @@ function Footer() {
 <div className="futer-mobil-krug">
 <p>следуйте за нами:</p>
 <div className="futer-nobil-ichi">
-<div className="krug"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-    <div className="krug"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-    <div className="krug"><i class="fa fa-twitch" aria-hidden="true"></i></div>
+<div className="krug"><box-icon name='facebook' type='logo' color='white' id="ip"></box-icon></div>
+    <div className="krug"><box-icon name='twitter' type='logo' color='white'  id="ip" ></box-icon></div>
+    <div className="krug"><box-icon name='twitch' type='logo' color='white' id="ip" ></box-icon></div>
 </div>
 </div>
   </div>
@@ -98,7 +98,7 @@ function Footer() {
     <div className="futer-nobil-block-line"></div>
 <div className="futer-mobil-block-text">
   <div className="futer-mobil-block-ul">
-<ul>
+<ul className='saidjaojd'>
   <li><a href="#">О нас</a></li>
   <li><a href="#">Блог</a></li>
   <li><a href="#">Контакты</a></li>
@@ -120,10 +120,10 @@ function Footer() {
     <h3>Контактная информация</h3>
     <div className="futer-nobil-block-line"></div>
     <div className="futer-text">
-<p className='lkas'><i class="fa fa-phone" aria-hidden="true"></i><span>(123) 45678910</span></p>
-<p className='lls'><i class="fa fa-envelope-o" aria-hidden="true"></i><span >info@demolink.org</span></p>
-<p className='lls'><i class="fa fa-envelope-o" aria-hidden="true"></i><span >Пн - Сб: 9:00 - 18:00</span></p>
-<p className='lkas'><i class="fa fa-map-marker" aria-hidden="true"></i><span>Парк-авеню, 267, Нью-Йорк, Нью-Йорк 90210</span></p>
+<p className='lkas'><box-icon name='check' color='#44bef1' id="pdsfp"></box-icon><span>(123) 45678910</span></p>
+<p className='lls'><box-icon name='check' color='#44bef1' id="pdsfp"></box-icon><span >info@demolink.org</span></p>
+<p className='lls'><box-icon name='check' color='#44bef1' id="pdsfp"></box-icon><span >Пн - Сб: 9:00 - 18:00</span></p>
+<p className='lkas'><box-icon name='check' color='#44bef1' id="pdsfp"></box-icon><span>Парк-авеню, 267, Нью-Йорк, Нью-Йорк 90210</span></p>
 
 </div>
 

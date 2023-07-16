@@ -1,6 +1,6 @@
 .navbar {
   width: 100%;
-  height: 60px;
+  height: 70px;
   background-color: #323946;
   position: fixed;
   z-index: 100456456456;
@@ -12,6 +12,7 @@
   gap: 40px;
   margin-left: 13.5vw;
   align-items: center;
+  margin-bottom: 0px;
 }
 .menu {
   position: relative;
@@ -313,6 +314,7 @@ top: 600px  !important;
     line-height: 0.9;
     letter-spacing: 0px;
   }
+
   .rr {
     display: none;
   }
@@ -365,7 +367,7 @@ top: 600px  !important;
     background-color: #ffffff;
     position: relative;
     top: -6px !important;
-
+left: 1%;
   }
 
   .media-ul ul li {
@@ -399,9 +401,8 @@ top: 600px  !important;
     color: white !important;
   }
   .ffd ul {
- 
+    transition: 0.4s !important;
     display: none;
-    opacity: 0;
     padding: 0px 20px;
     font-size: 14px;
     margin: 0;
@@ -751,9 +752,8 @@ top: 600px  !important;
     width: 40px;
     height: 40px;
     background-color: #ffffff;
-    position: relative;
-    top: 10px;
-    cursor: pointer;
+position: relative;
+left: 1.2vw;
     
   }
   .bar-menu box-icon {
@@ -1293,6 +1293,10 @@ top: 600px  !important;
         text-align: left;
         transform: all 3s;
         top: -15px;
+        display: none;
+      }
+      .menu ul{
+        display: none;
       }
 }
 @media (max-width:1413px) {
@@ -1362,6 +1366,10 @@ top: 600px  !important;
         text-align: left;
         transform: all 3s;
         top: -15px;
+        display: none;
+      }
+      .menu ul{
+        display: none;
       }
 }
 @media (max-width:1301px) {
@@ -1397,6 +1405,10 @@ top: 600px  !important;
         text-align: left;
         transform: all 3s;
         top: -15px;
+        display: none;
+      }
+      .menu ul{
+        display: none;
       }
 }
 @media (max-width:1281px) {
@@ -1423,6 +1435,10 @@ top: 600px  !important;
         text-align: left;
         transform: all 3s;
         top: -15px;
+        display: none;
+      }
+      .menu ul{
+        display: none;
       }
 }
 @media (max-width:1274px) {
@@ -1994,6 +2010,72 @@ margin-left: 1.2vw !important;
   position: absolute;
   width: 40px;
   height: 40px;
-  background: #ad2a2a;
+  background: #44bef1;
   top: 0;
 }
+.checkbox-con {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  color: white;
+ }
+ 
+ .checkbox-con input[type="checkbox"] {
+  appearance: none;
+  width: 64px;
+  height: 35px;
+  border: 2px solid #44bef1;
+  border-radius: 20px;
+  background: #f1e1e1;
+  position: relative;
+  box-sizing: border-box;
+ }
+ 
+ .checkbox-con input[type="checkbox"]::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  border: 2px solid #44bef1;
+  background: #44bef1;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(13%, 15%);
+  transition: all 0.3s ease-in-out;
+ }
+ 
+ .checkbox-con input[type="checkbox"]::after {
+ content:"ru";
+  position: absolute;
+  top: 3px;
+  font-size: 15px;
+  left: 35px;
+ }
+ 
+ .checkbox-con input[type="checkbox"]:checked {
+  border: 2px solid #44bef1;
+  background: #e2f1e1;
+ }
+ 
+ .checkbox-con input[type="checkbox"]:checked::before {
+  background: #44bef1;
+  border: 2px solid #44bef1;
+  transform: translate(133%, 13%);
+  transition: all 0.3s ease-in-out;
+ }
+ 
+ .checkbox-con input[type="checkbox"]:checked::after {
+  content: "eng";
+  position: absolute;
+  font-size: 15px;
+  top: 3px;
+  left: 4px;
+ }
+ 
+ .checkbox-con label {
+  margin-left: 10px;
+  cursor: pointer;
+  user-select: none;
+ }
+ 
