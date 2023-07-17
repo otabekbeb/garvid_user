@@ -46,7 +46,7 @@ export default function Comment1() {
 
             <div className="m_comment_yozish">
               <p><BsFillChatFill/></p>
-              <textarea placeholder='Ваш комментарий' name="" id="" cols="30" rows="10"></textarea>
+              <textarea placeholder='Ваш комментарий'  name="" id="" cols="30" rows="10"></textarea>
             </div>
             <div className="m_comment_button">
               <button className='m_otmen'>Отменить</button>
