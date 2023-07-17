@@ -14,10 +14,12 @@ import {AiOutlineRight} from "react-icons/ai"
 import chadimg from "../img/Ellipse.jpg"
 import axios from 'axios'
 import url from './Host'
+import userNull from "../img/149071.png"
 
 
 export default function Profil() {
   const [data,setData] = useState([])
+  
 
   function userimgModal(){
     document.querySelector(".user_img_hover").style="  position: absolute;bottom: 0;"
@@ -49,15 +51,26 @@ export default function Profil() {
   })
   },[])
 
+  function postUser(){
+    // var formdata=new FormData()
+    // formdata.append("image",document.querySelector("#userInput").file[0])
+
+    // axios.put(`${url}/auth/user/`,formdata,{ headers: { 'Authorization': 'Bearer ' + sessionStorage.getItem("token") }}).then(res=>{
+    //   alert("ishladi")
+    // }).catch(err=>{
+    //   alert("ishlamadi")
+    // })
+  }
+
   return (
     <div>
       <div className="profil_size_df">
        <div className="profil_size">
         <div className="profil_blok_bir">
           <div onMouseLeave={()=>userimgClose()} className='user_img_size'>
-          <img onMouseEnter={()=>userimgModal()} className='user_img' src={Use_img} alt="" />
+          {data.image===null?(<img onMouseEnter={()=>userimgModal()} className='user_img' src={userNull} alt="" />):(<img onMouseEnter={()=>userimgModal()} className='user_img' src={data.image} alt="" />)}
            <div className="user_img_hover">
-            <input type="file" />
+            <input id='userInput' onClick={()=>postUser()} type="file" />
           <MdOutlinePhotoCamera  className='user_hover_photo_icon'/>
         </div>
         </div>

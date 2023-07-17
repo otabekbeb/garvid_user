@@ -18,6 +18,7 @@ import axios from 'axios'
 import url from './Host'
 export default function Searchfilter() {
     const [kursdata,setKursdata]=useState([])
+    const [type,settype]=useState([])
 
     function Filter() {
         document.querySelector(".filter_button").classList.toggle("filter")
@@ -35,6 +36,9 @@ export default function Searchfilter() {
     useEffect(()=>{
         axios.get(`${url}/course/main/`,{ headers: {"Accept-Language":"en"}}).then(res=>{
         setKursdata(res.data)
+        })
+        axios.get(`${url}/course/type/`).then(res=>{
+        settype(res.data)
         })
     },[])
 
