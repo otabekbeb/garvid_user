@@ -17,20 +17,24 @@ export default function Comment1() {
       axios.get(`${url}/auth/user/`,{headers:{"Authorization":"Bearer " + sessionStorage.getItem("token")}}).then(res1=>{
       if (res.user==res1.id) {
         setComment(res.data)
-        
+        console.log(res.data,"salommmmmm");
       }
-      console.log(res.data,"salommmmmmm");
       })
     })
   },[])
 
   function messagePost(){
-    var formdata=new FormData()
-    formdata.append("")
+    // var formdata=new FormData()
+    // formdata.append("text",document.querySelector("#chat_text").value)
+    // formdata.append("image",null)
+    // formdata.append("subcomment",null)
 
-    axios.post(`${url}/course/theme_comment/`,{headers:{"Authorization":"Bearer " + sessionStorage.getItem("token")}}).then(res=>{
-    
-    })
+
+    // axios.post(`${url}/course/theme_comment/`,formdata,{headers:{"Authorization":"Bearer " + sessionStorage.getItem("token")}}).then(res=>{
+    // alert("yozildi")
+    // }).catch(err=>{
+    //   alert("ishladddddd")
+    // })
   }
 
   return (
@@ -58,7 +62,7 @@ export default function Comment1() {
 
             <div className="m_comment_yozish">
               <p><BsFillChatFill/></p>
-              <textarea placeholder='Ваш комментарий'  name="" id="" cols="30" rows="10"></textarea>
+              <textarea placeholder='Введите текст' id="chat_text"></textarea>
             </div>
             <div className="m_comment_button">
               <button className='m_otmen'>Отменить</button>
