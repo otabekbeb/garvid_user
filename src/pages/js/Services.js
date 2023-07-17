@@ -43,7 +43,7 @@ export default function Services() {
     <h4><a href="#">Main  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
 </div>
 <div className="safiha-d">
-    <p id='tepaga'>About Us</p>
+    <p id='tepaga'>Services</p>
 </div>
 </div>
 </div>
@@ -192,7 +192,7 @@ export default function Services() {
     <h4><a href="#">Главный  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
 </div>
 <div className="safiha-d">
-    <p id='tepaga'>О нас</p>
+    <p id='tepaga'>Услуги</p>
 </div>
 </div>
 </div>

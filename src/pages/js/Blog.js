@@ -33,7 +33,7 @@ export default function Blog() {
     <h4><a href="#">Home  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
 </div>
 <div className="safiha-d">
-    <p id='tepaga'>About</p>
+    <p id='tepaga'>Blog</p>
 </div>
 </div>
 </div>
@@ -125,7 +125,7 @@ export default function Blog() {
     <h4><a href="#">Главный  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
 </div>
 <div className="safiha-d">
-    <p id='tepaga'>О нас</p>
+    <p id='tepaga'>Блог</p>
 </div>
 </div>
 </div>
