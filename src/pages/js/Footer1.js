@@ -1,9 +1,16 @@
 import React from 'react'
 import '../css/Footer1.css'
 
-function Footer() {
+export default function Footer1() {
+  const [state1, setState1] = React.useState();
+  useEffect(() => {
+    setState1(
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+    );},[]);
   return (
-    <div className='asd1'>
+    <div>
+ 
+          <div className='asd1'>
 <header className='futer'>
 <div className="futer-ichi">
 
@@ -165,7 +172,6 @@ function Footer() {
   </div>
 </div>
     </div>
+    </div>
   )
 }
-
-export default Footer

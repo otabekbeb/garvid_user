@@ -111,20 +111,20 @@ return (
 
   <div className="menu" onMouseLeave={()=>menuufolse()} >
     <div className="menuu" onMouseEnter={() => menuul()} >
-    <p ><a href="/about">О нас</a><span><box-icon name='chevron-down' color='#44bef1' ></box-icon></span></p> 
+    <p ><a href="/about">{state1 === "eng" ? "About Us" : "О нас"}</a><span><box-icon name='chevron-down' color='#44bef1' ></box-icon></span></p> 
     <ul onMouseLeave={() => menuul1()} >
         <li ><a href="#" >FAQs</a></li>
     <div className="navbbar-line-hr"></div>
 
      <div className="menu2" >
-     <p onMouseEnter={() => menu2ul()} onMouseLeave={()=> menu2leave()}> <a href="#" className='zaib' >Новости  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a> </p>
+     <p onMouseEnter={() => menu2ul()} onMouseLeave={()=> menu2leave()}> <a href="#" className='zaib' >{state1 === "eng" ? "News" : "Новости"}  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a> </p>
      <div className="navbbar-line-hr"></div>
 
      <ul onMouseEnter={() => menu2ul()} onMouseLeave={()=> menu2leave1()} className='blog1'>
   
         <div className="navbbar-line-hr1"></div>
   
-        <li id='ded'><a href="/contacts">Связь</a></li>
+        <li id='ded'><a href="/contacts">{state1 === "eng" ? "Connection" : "Связь"} </a></li>
       
      </ul>
      
@@ -135,11 +135,11 @@ return (
    
 </div>
 
-    <li className='moto-menu-item'> <a href="/servis">Услуги</a> </li>
-    <li className='moto-menu-item'><a href="/blog">Блог</a></li>
-    <li className='moto-menu-item'><a href="/ourteam">Наша команда</a></li>
-    <li className='moto-menu-item'><a href="/contact">Контакты</a></li>
-    <li className='moto-menu-item'><a href="/login">Регистрация</a></li>
+    <li className='moto-menu-item'> <a href="/servis">{state1 === "eng" ? "Services" : "Услуги"}</a> </li>
+    <li className='moto-menu-item'><a href="/blog">{state1 === "eng" ? "Blog" : "Блог"}</a></li>
+    <li className='moto-menu-item'><a href="/ourteam">{state1 === "eng" ? "our team" : "Наша команда"}</a></li>
+    <li className='moto-menu-item'><a href="/contact">{state1 === "eng" ? "Contacts" : "Контакты"}</a></li>
+    <li className='moto-menu-item'><a href="/login">{state1 === "eng" ? "Registration" : "Регистрация"}</a></li>
 </ul>
 <div class="checkbox-con">
   <input id="checkbox" onClick={()=>{!document.querySelector("#checkbox").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "eng"));window.location.reload()}} type="checkbox"/>
