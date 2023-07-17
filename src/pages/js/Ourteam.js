@@ -4,6 +4,7 @@ import Footer from './Footer1'
 import Images from './Images'
 
 import "../css/Services.css"
+import "../css/Ourteam.css"
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -30,7 +31,7 @@ export default function Services() {
         <div className="asd">
     {/* <img src={abaut} alt="" /> */}
    <div className="asd-block">
-   <h1>Services</h1>
+   <h1>Our team</h1>
    <br />
    <br className='rr' />
   
@@ -43,47 +44,96 @@ export default function Services() {
     <h4><a href="#">Main  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
 </div>
 <div className="safiha-d">
-    <p id='tepaga'>About Us</p>
+    <p id='tepaga'>Our team</p>
 </div>
 </div>
 </div>
          <div className="box">
         <div className="left-card">
-            <div className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img01.jpg" alt=""/>
-                <h1><a href="#">Financial Planning</a></h1>
-                <p>Even though financial planning is an ongoing and complex process, it helps a person make smart decisions about money goals in their life.</p>
+            <div id='cards11' className="cards">
+                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-team-img01.jpg" alt=""/>
+                <h1><a href="#">Johnny Bennett</a></h1>
+                <p>As FinExpert's founder, Dennis solves issues concerning the company's development and its departments...</p>
+                <div class="two">
+               <div class="icon">
+                <div class="dumalo"><i class="bx bxl-facebook"></i></div>
+                <div class="dumalo"><i class="bx bxl-twitter"></i></div>
+                <div class="dumalo"><i class="bx bxl-linkedin"></i></div>
+               </div>
+               <div class="view"><h4>View profile <span>&gt;</span></h4></div>
+               </div>
             </div>
 
-            <div className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img02.jpg" alt=""/>
-                <h1><a href="#">Investment</a></h1>
-                <p>Our investment advisors study clients' goals, investment experience and risk tolerance and determine the investment plan best suited for each client.</p>
+            <div id='cards11' className="cards">
+                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-team-img02.jpg" alt=""/>
+                <h1><a href="#">Clarke Grinn</a></h1>
+                <p>Clarke provides financial planning and wealth management services trying to minimize expenses and risks of our...</p>
+                <div class="two">
+               <div class="icon">
+                <div class="dumalo"><i class="bx bxl-facebook"></i></div>
+                <div class="dumalo"><i class="bx bxl-twitter"></i></div>
+                <div class="dumalo"><i class="bx bxl-linkedin"></i></div>
+               </div>
+               <div class="view"><h4>View profile <span>&gt;</span></h4></div>
+               </div>
             </div>
 
-            <div className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img03.jpg" alt=""/>
-                <h1><a href="#">Taxation</a></h1>
-                <p>Arranging your affairs to avoid or defer taxation is an art, and effective tax planning can be the first step to your financial success and potential savings.</p>
+            <div id='cards11' className="cards">
+                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-team-img03.jpg" alt=""/>
+                <h1><a href="#">Ashley Jonas</a></h1>
+                <p>Ashley's main task is to manage the financial risks of FinExpert. She is also responsible for analyzing the data received from...</p>
+                <div class="two">
+               <div class="icon">
+                <div class="dumalo"><i class="bx bxl-facebook"></i></div>
+                <div class="dumalo"><i class="bx bxl-twitter"></i></div>
+                <div class="dumalo"><i class="bx bxl-linkedin"></i></div>
+               </div>
+               <div class="view"><h4>View profile <span>&gt;</span></h4></div>
+               </div>
             </div>
 
-            <div className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img04.jpg" alt=""/>
-                <h1><a href="#">Retirement planning</a></h1>
-                <p>Retirement planning can be problematic if you don't have the necessary knowledge on how to manage your funds or build a foundation for retirement.</p>
+            <div id='cards11' className="cards">
+                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-team-img04.jpg" alt=""/>
+                <h1><a href="#">Johnny Bennett</a></h1>
+                <p>Mr. Benett is an important member of our team. His work consists in managing the taxes and solving various situations...</p>
+                <div class="two">
+               <div class="icon">
+                <div class="dumalo"><i class="bx bxl-facebook"></i></div>
+                <div class="dumalo"><i class="bx bxl-twitter"></i></div>
+                <div class="dumalo"><i class="bx bxl-linkedin"></i></div>
+               </div>
+               <div class="view"><h4>View profile <span>&gt;</span></h4></div>
+               </div>
             </div>
 
-            <div className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img05.jpg" alt=""/>
-                <h1><a href="#">Business Planning</a></h1>
-                <p>Managing a company's finances, no matter how big or small, can often seem like a daunting task, but our experts can help you improve your company's financial health.</p>
+            <div id='cards11' className="cards">
+                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-team-img05.jpg" alt=""/>
+                <h1><a href="#">Joe Norris</a></h1>
+                <p>Ms. Norris deals with various financial concerns of small businesses and startups. He provides online consulting services...</p>
+                <div class="two">
+               <div class="icon">
+                <div class="dumalo"><i class="bx bxl-facebook"></i></div>
+                <div class="dumalo"><i class="bx bxl-twitter"></i></div>
+                <div class="dumalo"><i class="bx bxl-linkedin"></i></div>
+               </div>
+               <div class="view"><h4>View profile <span>&gt;</span></h4></div>
+               </div>
             </div>
 
-            <div className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img06.jpg" alt=""/>
-                <h1><a href="#">Management of risks</a></h1>
-                <p>This area of ​​financial advisory involves identifying, assessing and prioritizing potential risks to your business, followed by preventive action.</p>
+            <div id='cards11' className="cards">
+                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-team-img06.jpg" alt=""/>
+                <h1><a href="#">Bernard Harris</a></h1>
+                <p>When it comes to reduction of financial risks of international companies and business corporations, Bernard is our leading consultant...</p>
+                <div class="two">
+               <div class="icon">
+                <div class="dumalo"><i class="bx bxl-facebook"></i></div>
+                <div class="dumalo"><i class="bx bxl-twitter"></i></div>
+                <div class="dumalo"><i class="bx bxl-linkedin"></i></div>
+               </div>
+               <div class="view"><h4>View profile <span>&gt;</span></h4></div>
+               </div>
             </div>
+            
         </div>
 
 
@@ -151,35 +201,12 @@ export default function Services() {
     <Footer/>
     </div>
 
-      </div>):(
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <div>
-
-
-<div className='services_div'>
+      </div>):(<div><div className='services_div'>
         <Navbar/>
         <div className="asd">
     {/* <img src={abaut} alt="" /> */}
    <div className="asd-block">
-   <h1>Услуги</h1>
+   <h1>Наша команда</h1>
    <br />
    <br className='rr' />
   
@@ -189,59 +216,108 @@ export default function Services() {
 <div className="sahifa">
 <div className="sahifa-glav">
 <div className="safiha-p">
-    <h4><a href="#">Главный  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
+    <h4><a href="#">Основной  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
 </div>
 <div className="safiha-d">
-    <p id='tepaga'>О нас</p>
+    <p id='tepaga'>Наша команда</p>
 </div>
 </div>
 </div>
          <div className="box">
         <div className="left-card">
-            <div className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img01.jpg" alt=""/>
-                <h1><a href="#">Финансовое Планирование</a></h1>
-                <p>Несмотря на то, что финансовое планирование является непрерывным и сложным процессом, оно помогает человеку принимать разумные решения относительно денежных целей в своей жизни.</p>
+            <div id='cards11' className="cards">
+                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-team-img01.jpg" alt=""/>
+                <h1><a href="#">Джонни Беннетт</a></h1>
+                <p>Джонни Как основатель FinExpert, Деннис решает вопросы, касающиеся развития компании и ее подразделений...</p>
+                <div class="two">
+               <div class="icon">
+                <div class="dumalo"><i class="bx bxl-facebook"></i></div>
+                <div class="dumalo"><i class="bx bxl-twitter"></i></div>
+                <div class="dumalo"><i class="bx bxl-linkedin"></i></div>
+               </div>
+               <div class="view"><h4>профиль <span>&gt;</span></h4></div>
+               </div>
             </div>
 
-            <div className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img02.jpg" alt=""/>
-                <h1><a href="#">Инвестиционный</a></h1>
-                <p>Наши инвестиционные консультанты изучают цели клиентов, инвестиционный опыт и устойчивость к риску и определяют план финансовых вложений, наиболее подходящий для каждого клиента.</p>
+            <div id='cards11' className="cards">
+                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-team-img02.jpg" alt=""/>
+                <h1><a href="#">Кларк Гринн</a></h1>
+                <p>Clarke предоставляет услуги по финансовому планированию и управлению активами, стремясь минимизировать расходы и риски наших...</p>
+                <div class="two">
+               <div class="icon">
+                <div class="dumalo"><i class="bx bxl-facebook"></i></div>
+                <div class="dumalo"><i class="bx bxl-twitter"></i></div>
+                <div class="dumalo"><i class="bx bxl-linkedin"></i></div>
+               </div>
+               <div class="view"><h4>профиль <span>&gt;</span></h4></div>
+               </div>
             </div>
 
-            <div className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img03.jpg" alt=""/>
-                <h1><a href="#">Налогообложение</a></h1>
-                <p>Устроить свои дела так, чтобы избежать или отсрочить налогообложение — настоящее искусство, а эффективное налоговое планирование может стать первым шагом к вашему финансовому успеху и потенциальной экономии.</p>
+            <div id='cards11' className="cards">
+                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-team-img03.jpg" alt=""/>
+                <h1><a href="#">Эшли Джонас</a></h1>
+                <p>Основная задача Эшли — управление финансовыми рисками FinExpert. Она также отвечает за анализ данных, полученных от...</p>
+                <div class="two">
+               <div class="icon">
+                <div class="dumalo"><i class="bx bxl-facebook"></i></div>
+                <div class="dumalo"><i class="bx bxl-twitter"></i></div>
+                <div class="dumalo"><i class="bx bxl-linkedin"></i></div>
+               </div>
+               <div class="view"><h4>профиль <span>&gt;</span></h4></div>
+               </div>
             </div>
 
-            <div className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img04.jpg" alt=""/>
-                <h1><a href="#">Пенсионное планирование</a></h1>
-                <p>Планирование выхода на пенсию может быть проблематичным, если у вас нет необходимых знаний о том, как управлять своими средствами или создать основу для выхода на пенсию.</p>
+            <div id='cards11' className="cards">
+                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-team-img04.jpg" alt=""/>
+                <h1><a href="#">Джонни Беннетт</a></h1>
+                <p>Г-н Бенетт является важным членом нашей команды. Его работа заключается в управлении налогами и решении различных ситуаций...</p>
+                <div class="two">
+               <div class="icon">
+                <div class="dumalo"><i class="bx bxl-facebook"></i></div>
+                <div class="dumalo"><i class="bx bxl-twitter"></i></div>
+                <div class="dumalo"><i class="bx bxl-linkedin"></i></div>
+               </div>
+               <div class="view"><h4>профиль<span>&gt;</span></h4></div>
+               </div>
             </div>
 
-            <div className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img05.jpg" alt=""/>
-                <h1><a href="#">Планирование Бизнеса</a></h1>
-                <p>Управление финансами компании, независимо от того, большая она или маленькая, часто кажется сложной задачей, но наши специалисты могут помочь вам улучшить финансовое состояние вашей компании.</p>
+            <div id='cards11' className="cards">
+                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-team-img05.jpg" alt=""/>
+                <h1><a href="#">Джо Норрис</a></h1>
+                <p>Г-жа Норрис занимается различными финансовыми проблемами малого бизнеса и стартапов. Оказывает консультационные услуги онлайн...</p>
+                <div class="two">
+               <div class="icon">
+                <div class="dumalo"><i class="bx bxl-facebook"></i></div>
+                <div class="dumalo"><i class="bx bxl-twitter"></i></div>
+                <div class="dumalo"><i class="bx bxl-linkedin"></i></div>
+               </div>
+               <div class="view"><h4>профиль <span>&gt;</span></h4></div>
+               </div>
             </div>
 
-            <div className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img06.jpg" alt=""/>
-                <h1><a href="#">Управление Рисками</a></h1>
-                <p>Эта сфера финансового консультирования включает выявление, оценку и приоритизацию возможных рисков для вашего бизнеса с последующими превентивными мерами.</p>
+            <div id='cards11' className="cards">
+                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-team-img06.jpg" alt=""/>
+                <h1><a href="#">Бернард Харрис</a></h1>
+                <p>Когда речь идет о снижении финансовых рисков международных компаний и бизнес-корпораций, Бернар является нашим ведущим консультантом...</p>
+                <div class="two">
+               <div class="icon">
+                <div class="dumalo"><i class="bx bxl-facebook"></i></div>
+                <div class="dumalo"><i class="bx bxl-twitter"></i></div>
+                <div class="dumalo"><i class="bx bxl-linkedin"></i></div>
+               </div>
+               <div class="view"><h4>профиль <span>&gt;</span></h4></div>
+               </div>
             </div>
+            
         </div>
 
 
         <div className="right-card">
         <div className="about-header-card">
-<h4>Вам нужна помощь?</h4>
-<p>Свяжитесь с нами в FinExpert  ближайший к вам офис или отправьте бизнес-справка онлайн.</p>
+<h4>Do you need help?</h4>
+<p>Contact us at FinExpert office closest to you or submit your business inquiry online.</p>
 
-<button>Связаться с нами</button>
+<button>Connect with us</button>
 </div>
             <Swiper
         slidesPerView={1}
@@ -260,10 +336,10 @@ export default function Services() {
 
 </div>
 <div className="sli-text">
-<p>Вау, я так счастлива с тобой <br /> услуга. Вам удалось превзойти <br /> мои ожидания! Ты ребята очень оперативны</p>
+<p>Wow I'm so happy with you service. You managed to overcome my expectations! You guys are very efficient.</p>
 
-<strong>Адам Уотсон</strong>
-<h4>(Генеральный директор и основатель)</h4>
+<strong>Adam Watson</strong>
+<h4>(CEO and Founder)</h4>
 </div>
         </SwiperSlide>
         <SwiperSlide className='sli'>
@@ -273,10 +349,10 @@ export default function Services() {
 
 </div>
 <div className="sli-text">
-<p>Привет, ребята! Вы решили мою проблема в кратчайшие сроки! <br /> Твой  услуги и забота о клиентах отлично!</p>
+<p>Hi guys! You solved my problem in no time!<br />Your service and customer care is excellent!</p>
 
-<strong>Луиза Смит</strong>
-<h4>(Генеральный директор и основатель)</h4>
+<strong>Louise Smith</strong>
+<h4>(CEO and Founder)</h4>
 </div></SwiperSlide>
         <SwiperSlide className='sli'>
         <div className="sli-kurg-rasm">
@@ -285,10 +361,10 @@ export default function Services() {
 
 </div>
 <div className="sli-text">
-<p>Отличная организация!! Твой быстрый ответ стал  приятный сюрприз для меня.  Спасибо!</p>
+<p>Great organization!! Your quick response was a pleasant surprise for me. Thank you!</p>
 
-<strong>Джек Уолш</strong>
-<h4>(Генеральный директор и основатель)</h4>
+<strong>Jack Walsh</strong>
+<h4>(CEO and Founder)</h4>
 </div>
         </SwiperSlide>
 
@@ -298,15 +374,7 @@ export default function Services() {
     </div>
     <Images/>
     <Footer/>
-    </div>
-
-
-
-
-
-
-
-      </div>)}
+    </div></div>)}
    
   
     
