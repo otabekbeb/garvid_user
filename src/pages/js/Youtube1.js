@@ -18,7 +18,7 @@ import '../css/youtube1.css';
 import Accordion from 'react-bootstrap/Accordion';
 import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Youtube1() {
-  const [id,setId]=useState()
+  const [id,setId]=useState(1)
 
   function openModal() {
     document.querySelector('.navbar_yon').style="display:block;"
@@ -340,10 +340,10 @@ export default function Youtube1() {
         <div className="navbar_video">
           <div className="navbar_none">
             <div className="navbar_otish">
-              <p onClick={()=>videoBolim(1)}className="zadaniya" >Вопрос и ответ</p>
-              <p onClick={()=>videoBolim(2)} >Задания</p>
-              <p onClick={()=>videoBolim(3)} >Руководства</p>
-              <p onClick={()=>videoBolim(4)} >Скачать</p>
+              <p onClick={()=>videoBolim(1)} className="zadaniya">Вопрос и ответ</p>
+              <p onClick={()=>videoBolim(2)} className="zadaniya">Задания</p>
+              <p onClick={()=>videoBolim(3)} className="zadaniya">Руководства</p>
+              <p onClick={()=>videoBolim(4)} className="zadaniya">Скачать</p>
             </div>
           </div>
         </div>
@@ -355,10 +355,10 @@ export default function Youtube1() {
             
            
             <div className="navbar_otish1">
-              <p onClick={()=>videoBolim(1)} className="zadaniya">Вопрос и ответ</p>
-              <p onClick={()=>{videoBolim(2)}} className="zadaniya1">Задания</p>
-              <p onClick={()=>videoBolim(3)}>Руководства</p>
-              <p onClick={()=>videoBolim(4)}>Скачать</p>
+              <p onClick={()=>videoBolim(1)} className="zadaniya1">Вопрос и ответ</p>
+              <p onClick={()=>videoBolim(2)} className="zadaniya1">Задания</p>
+              <p onClick={()=>videoBolim(3)} className="zadaniya1">Руководства</p>
+              <p onClick={()=>videoBolim(4)} className="zadaniya1">Скачать</p>
             </div></div>
           </div>
           <div className={id===1?"show-content":"content"}><Comment/></div>
