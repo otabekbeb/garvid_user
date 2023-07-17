@@ -1,7 +1,7 @@
 
 import React, { Component, useEffect, useState } from "react";
 import '../css/Loginpage.css'
-
+import Usernavbar from "../js/Usernavbar"
 
 export default function Loginpage() {
     const [user, setUser] = React.useState([]);
@@ -32,7 +32,7 @@ export default function Loginpage() {
         <div>
 
             <div>
-
+<Usernavbar/>
 
                 <div className="katta12">
 
