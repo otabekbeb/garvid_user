@@ -242,7 +242,7 @@ export default function Footer1() {
 <ul className='ioguhofg'>
   <li><a href="#">О нас</a></li>
   <li><a href="#">Блог</a></li>
-  <li><a href="#">Контакты</a></li>
+  <li><a href="#">Связь</a></li>
   <li><a href="#">Архивы</a></li>
 </ul>
 
@@ -311,7 +311,7 @@ export default function Footer1() {
 <ul className='saidjaojd'>
   <li><a href="#">О нас</a></li>
   <li><a href="#">Блог</a></li>
-  <li><a href="#">Контакты</a></li>
+  <li><a href="#">Связь</a></li>
   <li><a href="#">Архивы</a></li>
 </ul>
 
