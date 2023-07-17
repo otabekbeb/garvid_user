@@ -51,16 +51,16 @@ export default function Profil() {
   })
   },[])
 
-  function postUser(){
-    // var formdata=new FormData()
-    // formdata.append("image",document.querySelector("#userInput").file[0])
+  // function postUser(){
+  //   var formdata=new FormData()
+  //   formdata.append("image",document.querySelector("#userInput").value)
 
-    // axios.put(`${url}/auth/user/`,formdata,{ headers: { 'Authorization': 'Bearer ' + sessionStorage.getItem("token") }}).then(res=>{
-    //   alert("ishladi")
-    // }).catch(err=>{
-    //   alert("ishlamadi")
-    // })
-  }
+  //   axios.put(`${url}/auth/user/`,formdata,{ headers: { 'Authorization': 'Bearer ' + sessionStorage.getItem("token") }}).then(res=>{
+  //     alert("ishladi")
+  //   }).catch(err=>{
+  //     alert("ishlamadi")
+  //   })
+  // }
 
   return (
     <div>
@@ -70,7 +70,7 @@ export default function Profil() {
           <div onMouseLeave={()=>userimgClose()} className='user_img_size'>
           {data.image===null?(<img onMouseEnter={()=>userimgModal()} className='user_img' src={userNull} alt="" />):(<img onMouseEnter={()=>userimgModal()} className='user_img' src={data.image} alt="" />)}
            <div className="user_img_hover">
-            <input id='userInput' onClick={()=>postUser()} type="file" />
+            <input id='userInput'  type="file" />
           <MdOutlinePhotoCamera  className='user_hover_photo_icon'/>
         </div>
         </div>
