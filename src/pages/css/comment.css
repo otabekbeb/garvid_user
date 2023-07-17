@@ -1,5 +1,6 @@
 .m_comment_text p{
-    width: 130%;
+    width: 80%;
+    font-size: 15px;
 }
 .m_comment_kotta{
     padding: 10px;
@@ -43,6 +44,7 @@ gap: 10px;
 border: 1px solid #9DA7BB50;
 border-radius: 5px;
 width: 70%;
+height: 110px;
 margin-top: 30px;
 }
 .m_comment_button button{
@@ -72,7 +74,7 @@ margin-top: 30px;
     border: none;
 }
 .m_comment_text h4{
-    font-weight: 530;
+    font-weight: 500;
 }
 
 @media (max-width:1000px) {
@@ -99,7 +101,7 @@ margin-top: 30px;
         margin-top: 30px;
         }
 }
-@media (max-width:500px) {
+@media (max-width:600px) {
     .m_comment_text p{
         width: 90%;
         font-size: 13px;
@@ -146,6 +148,56 @@ margin-top: 30px;
         }
         .m_comment_text h4{
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 500 !important;
+        }
+}
+@media (max-width:400px) {
+    .m_comment_text p{
+        width: 90%;
+        font-size: 10px;
+    }
+    .m_comment_yozish{
+        padding: 20px;
+        display: flex;
+        gap: 10px;
+        border: 1px solid #9DA7BB50;
+        border-radius: 5px;
+        width: 100%;
+        margin-top: 30px;
+        }
+        .m_comment_button{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .m_otmen{
+            background-color: #9DA7BB;
+            height: 30px;
+            width: 100px;
+            font-size: 11px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px !important;
+        }
+        .m_otpravit{
+            background-color: #536DFD;
+            height: 30px;
+            width: 100px;
+            font-size: 11px;
+            border-radius: 5px;
+            border: none;
+        }
+        .m_comment_yozish textarea{
+            outline: none;
+            border: none;
+            padding-top: 5px;
+            font-size: 13px;
+            width: 90%;
+            height: 40px;
+        }
+        .m_comment_text h4{
+            font-size: 16px;
+            font-weight: 500 !important;
         }
 }
