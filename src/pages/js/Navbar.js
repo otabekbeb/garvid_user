@@ -76,22 +76,28 @@ function sa(){
 export default function Navbar() {
     
 
-
-    const [state1, setstate1] = React.useState();
- const [state,State] = React.useState(1)
+    const [state1, setState1] = React.useState();
+    const [state,State] = React.useState(1)
 
  useEffect(() => {
-    setstate1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "ru"
+    setState1(
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
     );
+    if(localStorage.getItem("lang")!=="ru"){
+    document.querySelector("#checkbox").checked=true
+    }else{
+      document.querySelector("#checkbox").checked=false
+    }
   }, []);
+  
+    
 
 return (
     <div>
 <section  onMouseLeave={() => menuul1()} className='navbar'>
     <div className="navbar-ul">
 <ul>
-     <li className='moto-menu-item'><a href="/">{state1 === "ru" ? "Связаться с нами" : "Biz bilan bog'laning"}</a></li>
+     <li className='moto-menu-item'><a href="/">{state1 === "eng" ? "Home" : "Главный"}</a></li>
 
   <div className="menu" onMouseLeave={()=>menuufolse()} >
     <div className="menuu" onMouseEnter={() => menuul()} >
@@ -126,7 +132,7 @@ return (
     <li className='moto-menu-item'><a href="/login">Регистрация</a></li>
 </ul>
 <div class="checkbox-con">
-  <input id="checkbox" onClick={()=>{!document.querySelector("#checkbox").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "uz"));window.location.reload()}} type="checkbox"/>
+  <input id="checkbox" onClick={()=>{!document.querySelector("#checkbox").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "eng"));window.location.reload()}} type="checkbox"/>
 </div>
     </div>
     <div className="media-navbar">
