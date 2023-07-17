@@ -40,6 +40,59 @@ export default function Youtube1() {
     setId(id);
   }
 
+  function painModal() {
+    document.querySelector(".zadaniya").style="border-bottom: 2px solid #536DFD; color: #2E2E2E;"
+    document.querySelector(".zadaniya1").style="border-bottom: none; color: #9DA7BB;" 
+    document.querySelector(".zadaniya2").style="border-bottom: none; color: #9DA7BB;"
+    document.querySelector(".zadaniya3").style="border-bottom: none; color: #9DA7BB;"
+  }
+   function painModal1() {
+    document.querySelector(".zadaniya1").style="border-bottom: 2px solid #536DFD; color: #2E2E2E;"
+    document.querySelector(".zadaniya").style="border-bottom: none; color: #9DA7BB;" 
+    document.querySelector(".zadaniya2").style="border-bottom: none; color: #9DA7BB;"
+    document.querySelector(".zadaniya3").style="border-bottom: none; color: #9DA7BB;"
+  }
+  function painModal2() {
+    document.querySelector(".zadaniya2").style="border-bottom: 2px solid #536DFD; color: #2E2E2E;"
+    document.querySelector(".zadaniya1").style="border-bottom: none; color: #9DA7BB;" 
+    document.querySelector(".zadaniya1").style="border-bottom: none; color: #9DA7BB;" 
+    document.querySelector(".zadaniya3").style="border-bottom: none; color: #9DA7BB;"
+  }
+  function painModal3() {
+    document.querySelector(".zadaniya3").style="border-bottom: 2px solid #536DFD; color: #2E2E2E;"
+    document.querySelector(".zadaniya2").style="border-bottom: none; color: #9DA7BB;" 
+    document.querySelector(".zadaniya1").style="border-bottom: none; color: #9DA7BB;" 
+    document.querySelector(".zadaniya2").style="border-bottom: none; color: #9DA7BB;"
+  }
+
+//mediya
+
+function painModal5() {
+  document.querySelector(".zadaniya5").style="border-bottom: 2px solid #536DFD; color: #2E2E2E;"
+  document.querySelector(".zadaniya6").style="border-bottom: none; color: #9DA7BB;" 
+  document.querySelector(".zadaniya7").style="border-bottom: none; color: #9DA7BB;" 
+  document.querySelector(".zadaniya8").style="border-bottom: none; color: #9DA7BB;"
+}
+function painModal6() {
+  document.querySelector(".zadaniya6").style="border-bottom: 2px solid #536DFD; color: #2E2E2E;"
+  document.querySelector(".zadaniya5").style="border-bottom: none; color: #9DA7BB;" 
+  document.querySelector(".zadaniya7").style="border-bottom: none; color: #9DA7BB;" 
+  document.querySelector(".zadaniya8").style="border-bottom: none; color: #9DA7BB;"
+}
+function painModal7() {
+  document.querySelector(".zadaniya7").style="border-bottom: 2px solid #536DFD; color: #2E2E2E;"
+  document.querySelector(".zadaniya6").style="border-bottom: none; color: #9DA7BB;" 
+  document.querySelector(".zadaniya5").style="border-bottom: none; color: #9DA7BB;" 
+  document.querySelector(".zadaniya8").style="border-bottom: none; color: #9DA7BB;"
+}
+function painModal8() {
+  document.querySelector(".zadaniya8").style="border-bottom: 2px solid #536DFD; color: #2E2E2E;"
+  document.querySelector(".zadaniya6").style="border-bottom: none; color: #9DA7BB;" 
+  document.querySelector(".zadaniya7").style="border-bottom: none; color: #9DA7BB;" 
+  document.querySelector(".zadaniya5").style="border-bottom: none; color: #9DA7BB;"
+}
+
+
   useEffect(() => {
     axios
       .get(`${url}/course/category/`, { headers: { "Accept-Language": "en" } })
@@ -215,16 +268,16 @@ export default function Youtube1() {
         <div className="navbar_video">
           <div className="navbar_none">
             <div className="navbar_otish">
-              <p onClick={() => videoBolim(1)} className="zadaniya">
+              <p onClick={() => {videoBolim(1);painModal() }} className="zadaniya">
                 Вопрос и ответ
               </p>
-              <p onClick={() => videoBolim(2)} className="zadaniya">
+              <p onClick={() => {videoBolim(2);painModal1() }} className="zadaniya1">
                 Задания
               </p>
-              <p onClick={() => videoBolim(3)} className="zadaniya">
+              <p onClick={() =>{videoBolim(3);painModal2() }} className="zadaniya2">
                 Руководства
               </p>
-              <p onClick={() => videoBolim(4)} className="zadaniya">
+              <p onClick={() => {videoBolim(4);painModal3() }} className="zadaniya3">
                 Скачать
               </p>
             </div>
@@ -246,16 +299,16 @@ export default function Youtube1() {
             }}
           >
             <div className="navbar_otish1">
-              <p onClick={() => videoBolim(1)} className="zadaniya1">
+              <p onClick={() => {videoBolim(1);painModal5() }} className="zadaniya5">
                 Вопрос и ответ
               </p>
-              <p onClick={() => videoBolim(2)} className="zadaniya1">
+              <p onClick={() => {videoBolim(2);painModal6() }} className="zadaniya6">
                 Задания
               </p>
-              <p onClick={() => videoBolim(3)} className="zadaniya1">
+              <p onClick={() => {videoBolim(3);painModal7() }} className="zadaniya7">
                 Руководства
               </p>
-              <p onClick={() => videoBolim(4)} className="zadaniya1">
+              <p onClick={() => {videoBolim(4);painModal8() }} className="zadaniya8">
                 Скачать
               </p>
             </div>

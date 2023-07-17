@@ -301,3 +301,50 @@
         max-width: 100%;
     }
 }
+
+.two{
+    display: flex;
+    justify-content: space-between;
+align-items: center;
+}
+.icon{
+    display: flex;
+    justify-content: space-between;
+width: 105px;
+}
+.dumalo{
+    width: 30px;
+    height: 30px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.view h4{
+    font-size: 15px;
+}
+#cards11 p{
+    height: 100px;
+    
+}
+#cards11{
+    margin-top: 50px;
+}
+.dumalo:hover i{
+    color: white;
+}
+.dumalo:hover{
+    border: 1px solid #44bef1;
+}
+.dumalo:hover {
+    background: #44bef1;
+    cursor: pointer;
+}
+.view span{
+    color: #44bef1;
+}
+.view h4:hover{
+    color: #44bef1;
+    cursor: pointer;
+}
