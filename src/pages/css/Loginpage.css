@@ -70,15 +70,18 @@
   display: flex;
   justify-content: space-between;
   /* margin-top: 50px; */
+  gap: 20px;
   font-size: 18px;
 }
 
 #asd {
   margin-top: 50px;
 }
-
+/* .passportSer{
+  height: 100px !important;
+} */
 .input1 {
-  width: 48%;
+  width: 100%;
 }
 
 .minTableA h5 {

@@ -1,6 +1,8 @@
 
 import React, { Component, useEffect, useState } from "react";
 import '../css/Loginpage.css'
+import axios from "axios";
+import url from "./Host"
 
 
 export default function Loginpage() {
@@ -23,7 +25,26 @@ export default function Loginpage() {
         }
     };
 
+    
+    function putUser(){
+        var formdata=new FormData()
+        formdata.append("first_name",document.querySelector("#first_name").value)
+        formdata.append("last_name",document.querySelector("#last_name").value)
+        formdata.append("username",document.querySelector("#username").value)
+        formdata.append("image",document.querySelector("#image").filed[0])
+        formdata.append("phone_number",document.querySelector("#phone_number").value)
+        formdata.append("birthday",document.querySelector("#birthday").value)
+        formdata.append("balance",document.querySelector("#balance").value)
+        formdata.append("adress",document.querySelector("#adress").value)
+        formdata.append("description",document.querySelector("#description").value)
 
+        axios.put(`${url}/auth/user/`,formdata,{ headers: { 'Authorization': 'Bearer ' + sessionStorage.getItem("token") }}).then(res=>{
+            alert("ishladi")
+        })
+        .catch(err=>{
+            alert("ishlamadi")
+        })
+    }
 
 
 
@@ -37,12 +58,12 @@ export default function Loginpage() {
                 <div className="katta12">
 
 
-<div className="all-button">
+                    <div className="all-button">
                         <button
                             style={
                                 data === 1
-                                    ? { background: "#536DFD", color: "white",border:'none' }
-                                    : { background: "white", color: "black",border:'none' }
+                                    ? { background: "#536DFD", color: "white", border: 'none' }
+                                    : { background: "white", color: "black", border: 'none' }
                             }
                             onClick={() => { setData(1); }}
 
@@ -54,8 +75,8 @@ export default function Loginpage() {
                         <button
                             style={
                                 data === 2
-                                    ? { background: "#536DFD", color: "white",border:'none' }
-                                    : { background: "white", color: "black" ,border:'none'}
+                                    ? { background: "#536DFD", color: "white", border: 'none' }
+                                    : { background: "white", color: "black", border: 'none' }
                             }
                             onClick={() => {
                                 setData(2);
@@ -77,21 +98,21 @@ export default function Loginpage() {
                                             </h2>
 
 
-<div className="inputs1" id="asd">
+                                            <div className="inputs1" id="asd">
                                                 <div className="input1">
                                                     <h2>Имя</h2>
                                                     <input
                                                         type="text"
                                                         className="username"
-                                                        id="username"
+                                                        id="first_name"
                                                     />
-                                                    <h2>Телефон </h2>
-                                                    <input type="number" className="phone" id="phone" />
+                                                    <h2>Фамилия </h2>
+                                                    <input type="text" className="last_name" id="last_name" />
                                                 </div>
                                                 <div className="input1">
                                                     <h2>
-                                                  День рождения
-                                                            
+                                                        День рождения
+
                                                     </h2>
                                                     <input
                                                         type="date"
@@ -99,51 +120,67 @@ export default function Loginpage() {
                                                         id="birthday"
                                                     />
                                                     <h2>
-                                                       
-                                                            Электронная почта
-                                                           
+
+                                                    Адрес
+
                                                     </h2>
-                                                    <input type="text" className="email" id="email" />
+                                                    <input type="text" className="email" id="adress" />
                                                 </div>
                                             </div>
                                             <div className="inputs1">
                                                 <div className="input1">
                                                     <h2>
-                                                        Номер паспорта
+                                                        Телефон
                                                     </h2>
                                                     <input
                                                         type="number"
                                                         className="passportNum"
 
 
-id="passportNum"
+                                                        id="phone_number"
                                                     />
                                                 </div>
                                                 <div className="input1">
                                                     <h2>
 
-                                                        Паспорт серия
+                                                        Прозвище
 
                                                     </h2>
 
 
-<input
+                                                    <input
+                                                        type="text"
+                                                        className="username"
+                                                        id="username"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="inputs1">
+                                                <div className="input1">
+                                                    <h2>
+
+                                                    Описание
+
+                                                    </h2>
+
+
+                                                    <input
                                                         type="text"
                                                         className="passportSer"
-                                                        id="passportSer"
+                                                        id="description"
                                                     />
                                                 </div>
                                             </div>
                                             <div className="inputs111">
                                                 <button  >
-                                                Хранение
+                                                    Хранение
                                                 </button>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="profil">
                                         <h2>
-                                          Ваш фото
+                                            Ваш фото
                                         </h2>
                                         <div className="profil1">
                                             <input type="file" className="image" />
@@ -151,20 +188,9 @@ id="passportNum"
 
                                         </div>
                                         <h2 className="bb1">
-                                     
-                                                Загрузить фото профиля
-                                                
-                                        </h2>
-                                        <h2
-                                            className="dele1"
-                                            onClick={() => {
-                                                localStorage.clear();
-                                                window.location = "/";
-                                            }}
-                                        >
-                                        
-                                                Удалить аккаунт
-                                             
+
+                                            Загрузить фото профиля
+
                                         </h2>
                                     </div>
                                 </div>
@@ -176,26 +202,26 @@ id="passportNum"
                                         <div className="change-password">
                                             <div className="change">
                                                 <h2>
-                                                  
+
                                                     Изменить пароль
-                                                        
+
                                                 </h2>
                                                 <div className="inpu1">
 
 
 
-<h2>
-                                                       Старый пароль
+                                                    <h2>
+                                                        Старый пароль
                                                     </h2>
                                                     <input className="oldPassword" type="text" />
                                                     <h2>
                                                         {" "}
-                                                    Новый пароль
+                                                        Новый пароль
                                                     </h2>
                                                     <input className="passwordChange" type="password" />
                                                     <h2>
-                                                     
-                                                            Подтвердить новый пароль
+
+                                                        Подтвердить новый пароль
                                                     </h2>
                                                     <input className="restPassword" type="password" />
                                                 </div>
@@ -210,9 +236,9 @@ id="passportNum"
                                         <div className="regionDv">
                                             <div className="divAdress">
                                                 <h2>
-                                                    
-                                                        Добавить адрес
-                                                       
+
+                                                    Добавить адрес
+
 
                                                 </h2>
                                                 <br />
@@ -222,8 +248,8 @@ id="passportNum"
                                                     <div className="regionAdd">
                                                         <div className="in11">
                                                             <h2>
-                                                          
-                                                                   введите страну
+
+                                                                введите страну
                                                             </h2>
                                                             <input className="countrySlc" id="countrySlc" />
                                                         </div>
@@ -237,19 +263,19 @@ id="passportNum"
                                                     <div className="regionAdd">
                                                         <div className="in11">
                                                             <h2>
-                                                               введите город
+                                                                введите город
 
                                                             </h2>
                                                             <input className="citySlc" id="citySlc" />
                                                         </div>
                                                         <div className="in11">
                                                             <h2>
-                                                               введите округ
+                                                                введите округ
                                                             </h2>
 
 
 
-<input
+                                                            <input
                                                                 className="districtSlc"
                                                                 id="districtSlc"
                                                             />
@@ -260,7 +286,7 @@ id="passportNum"
                                                 <div className="regionAdd" id="region1">
                                                     <div className="in11">
                                                         <h2>
-                                                        введите улицу
+                                                            введите улицу
                                                         </h2>
                                                         <input className="streetSlc" id="streetSlc" />
                                                     </div>
@@ -283,7 +309,7 @@ id="passportNum"
                                                         <div className="regionAdd">
                                                             <div className="in11">
                                                                 <h2>
-                                                          
+
                                                                     введите страну
                                                                 </h2>
                                                                 <input
@@ -293,7 +319,7 @@ id="passportNum"
                                                             </div>
                                                             <div className="in11">
                                                                 <h2>
-                                                                  введите регион
+                                                                    введите регион
                                                                 </h2>
                                                                 <input
                                                                     className="regionSlc2"
@@ -304,16 +330,16 @@ id="passportNum"
                                                         <div className="regionAdd">
                                                             <div className="in11">
                                                                 <h2>
-                                                                   введите город
+                                                                    введите город
                                                                 </h2>
                                                                 <input className="citySlc2" id="citySlc2" />
                                                             </div>
 
 
 
-<div className="in11">
+                                                            <div className="in11">
                                                                 <h2>
-                                                                  введите район
+                                                                    введите район
                                                                 </h2>
                                                                 <input
                                                                     className="districtSlc2"
@@ -326,14 +352,14 @@ id="passportNum"
                                                     <div className="regionAdd" id="region1">
                                                         <div className="in11">
                                                             <h2>
-                                                               введите улицу
+                                                                введите улицу
                                                             </h2>
                                                             <input className="streetSlc2" id="streetSlc2" />
                                                         </div>
                                                     </div>
                                                     <div className="btnddiv">
                                                         <button>
-                                                         Закрыть
+                                                            Закрыть
                                                         </button>
                                                         <button>
                                                             Сохранить
