@@ -27,9 +27,14 @@ export default function Home() {
                     />
                     <Carousel.Caption id="carousel_c">
                         <h1>Решения, которые<br /> никогда не промахивайся</h1>
+
                         <div className="buttons">
-                            <button className='button'>Узнать больше</button>
-                            <button className='button1'>Наши услуги</button>
+                            <button onClick={()=>
+                            window.location="/servis"
+                            } className='button'>Узнать больше</button>
+                            <button onClick={()=>
+                            window.location="/blog"
+                            } className='button1'>Наши услуги</button>
                         </div>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -42,9 +47,13 @@ export default function Home() {
                     <Carousel.Caption className='carusel'>
                         <h1>Экспертный финансовый совет</h1>
                         <p>Благодаря более чем 20-летнему опыту мы гарантируем <br /> вы всегда получаете лучшее руководство</p>
-                        <div className="buttons">
+                        <div onClick={()=>
+                            window.location="/servis"
+                            } className="buttons">
                             <button className='button'>Наши услуги</button>
-                            <button className='button1'>Купить сейчас</button>
+                            <button onClick={()=>
+                            window.location="/blog"
+                            } className='button1'>Купить сейчас</button>
                         </div>
                     </Carousel.Caption>
                 </Carousel.Item>
