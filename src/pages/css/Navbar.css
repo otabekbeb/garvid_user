@@ -191,12 +191,26 @@ position: fixed ;
   top: 7px;
 left: 170%;
 }
-
+#menu2spanid{
+  position: relative;
+  top: 7px;
+left: 240%;
+}
+#menu2pp{
+  position: relative;
+  right: 10px;
+}
 .menu2 p a {
   font-size: 14px;
 
 }
-
+@media (max-width:1085px) {
+  #menu2spanid{
+    position: relative;
+    top: 7px;
+  left: 190%;
+  }
+}
 .media-menu-navbar {
   display: none;
 }
