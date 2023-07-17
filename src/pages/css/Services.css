@@ -155,10 +155,10 @@
     .services_div .about-header-card{
         min-height: 220px;
     }
-    .about-header-card {
+    .services_div .about-header-card {
     width: 100%;
     }
-    .mySwiper{
+    .services_div .mySwiper{
         width: 100%;
     }
     .services_div .about-header-card button {
