@@ -757,7 +757,7 @@ color: #1aa1dc;
 .about-header-card{
     margin-top: 2rem;
     width: 270px;
-    height: 285px;
+    min-height: 285px;
     background-color: #17aeee;
     border-radius: 10px;
 
@@ -1072,7 +1072,7 @@ overflow: hidden;
     .about-header-card {
         margin-top: 2rem;
         width: 250px;
-        height: 275px;
+        min-height: 275px;
         background-color: #17aeee;
         border-radius: 10px;
     }

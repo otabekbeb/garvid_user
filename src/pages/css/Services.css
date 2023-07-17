@@ -5,7 +5,7 @@
 }
 
 .right-card {
-    margin-top: 30px;
+    margin: 30px;
 }
 .box {
     width: 100%;
@@ -120,8 +120,56 @@
         flex-wrap: wrap;
     }
 }
+@media (max-width: 1235px){
+.box .about-header-card p {
+    font-weight: 300;
+    font-style: normal;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 14px;
+    line-height: 1.6;
+    letter-spacing: 0px;
+    padding-left: 26px;
+    padding-right: 26px;
+    padding-top: 10px;
+}
+.box .about-header-card{
+    min-height: 220px;
+}
+.box .about-header-card button {
+    margin-bottom: 30px;
+}
+.box .swiper-pagination-bullet{
+    top: 5px !important;
+}
+}
+@media(max-width:1389px){
+    .right-card{
+        width: 980px;
+    }
+    .about-header-card {
+    width: 100%;
+    }
+    .mySwiper{
+        width: 100%;
+    }
+}
+@media(max-width:1035px){
+    .box .mySwiper{
+        right: 0px;
+    }
+}
+@media(max-width:800px){
+    .right-card{
+        width: 100%;
+        padding: 20px;
+    }
+    .box{
+    padding: 0px;
+    }
+}
 .left-card {
-        width: 1200px;
+        width: 1020px;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
