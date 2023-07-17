@@ -1,13 +1,10 @@
 
 import React, { Component, useEffect, useState } from "react";
 import '../css/Loginpage.css'
-<<<<<<< HEAD
 import axios from "axios";
 import url from "./Host"
 
-=======
 import Usernavbar from "../js/Usernavbar"
->>>>>>> db0e170237886dca585432a52a67f85d396cec28
 
 export default function Loginpage() {
     const [user, setUser] = React.useState([]);
