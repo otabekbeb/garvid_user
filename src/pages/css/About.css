@@ -3044,3 +3044,9 @@ height: 2270px;
         left: 24px !important;
     }  
 }
+@media (max-width:770px) {
+    .checkbox-con{
+        position: relative;
+        left: -20px;
+    }
+}
