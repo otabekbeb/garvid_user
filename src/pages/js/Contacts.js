@@ -20,10 +20,10 @@ const dataPost=()=>{
     message:document.querySelector('.contact_textarea').value
   }
   axios.post("http://127.0.0.1:8000/auth/user_connect_with/",postdata).then(res=>{
-state==="ru"?(alert("Информация отправлена, дождитесь звонка оператора")):(alert("Ma'limot yuborildi.Operator qo'ngirog'ini kuting"))
+state==="ru"?(alert("Информация отправлена, дождитесь звонка оператора")):(alert("Information sent, wait for a call from the operator"))
 window.location.reload()
   }).catch(err=>{
-    state==="ru"?(alert("Проверить информацию,Не удалось отправить")):(alert("Ma'lumotlarni tekshiring yuborilmadi"))
+    state==="ru"?(alert("Проверить информацию,Не удалось отправить")):(alert("Check information, Failed to send"))
   })
 }
   useEffect(() => {
@@ -36,21 +36,21 @@ window.location.reload()
       <div className="contact">
         <div className="contact_left">
           <h1>
-            {state === "ru" ? "Связаться с нами" : "Biz bilan bog'laning"}
+            {state === "ru" ? "Связаться с нами" : "Connect with us"}
           </h1>
           <p className="contact_info">
             {state === "ru"
               ? (<div>Как я могу связаться с вами? <br /><br />По номеру <a className="contact_tel" href="tel: +998330321112">
               (+7) <span> 032 11 12</span>
             </a>  или же оставить сообщение и наши операторы с вами свяжутся в кратчайшее время. </div>)
-              : (<div>Siz bilan qanday bog'lanishim mumkin? <br /><br /><a className="contact_tel" href="tel: +998330321112">
+              : (<div>How can I contact you? <br /><br /><a className="contact_tel" href="tel: +998330321112">
             (+7) <span> 032 11 12</span>
-          </a> raqamiga qo'ng'iroq qiling yoki xabar qoldiring va operatorlarimiz imkon qadar tezroq siz bilan bog'lanadi.</div>)}
+          </a>call or leave a message and our operators will contact you as soon as possible.</div>)}
           </p>
           <p className="contact_address">
             {state === "ru"
               ? " Мирабадский район,Малая кольцевая дорога, Ташкент, 100015"
-              : "Mirobod tumani,Kichik Halqa Yo’li, Toshkent 100015"}
+              : "Mirabad District, Small Ring Road, Tashkent 100015"}
           </p>
           
           <div className="email_box">
@@ -77,29 +77,29 @@ window.location.reload()
             <input
               type="text"
               className="contact_inp"
-              placeholder={state === "ru" ? "Имя*" : "Ism*"}
+              placeholder={state === "ru" ? "Имя*" : "Name*"}
             />
             <input
               type="text"
               className="contact_inp"
               placeholder={
-                state === "ru" ? "Электронная почта*" : "Elektron pochta*"
+                state === "ru" ? "Электронная почта*" : "Email*"
               }
             />
             <input
               type="text"
               className="contact_inp"
-              placeholder={state === "ru" ? "Телефон*" : "Telefon*"}
+              placeholder={state === "ru" ? "Телефон*" : "Telephone*"}
             />
           </div>
           <textarea
             rows={10}
-            placeholder={state === "ru" ? "Сообщение*" : "Habar*"}
+            placeholder={state === "ru" ? "Сообщение*" : "Message*"}
             className="contact_textarea"
           ></textarea>
           <div className="inputs_bottom">
             <button onClick={()=>{dataPost()}} className="contact_btn">
-              {state === "ru" ? "отправить" : "yuborish"}
+              {state === "ru" ? "отправить" : "send"}
             </button>
           </div>
         </div>
