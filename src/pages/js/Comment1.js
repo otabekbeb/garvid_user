@@ -14,10 +14,24 @@ export default function Comment1() {
 
   useEffect(()=>{
     axios.get(`${url}/course/theme_comment/`,{headers:{"Authorization":"Bearer " + sessionStorage.getItem("token")}}).then(res=>{
-      console.log(res.data,"salom");
-      setComment(res.data)
+      axios.get(`${url}/auth/user/`,{headers:{"Authorization":"Bearer " + sessionStorage.getItem("token")}}).then(res1=>{
+      if (res.user==res1.id) {
+        setComment(res.data)
+        
+      }
+      console.log(res.data,"salommmmmmm");
+      })
     })
   },[])
+
+  function messagePost(){
+    var formdata=new FormData()
+    formdata.append("")
+
+    axios.post(`${url}/course/theme_comment/`,{headers:{"Authorization":"Bearer " + sessionStorage.getItem("token")}}).then(res=>{
+    
+    })
+  }
 
   return (
     <div className='m_comment_kotta'> 
@@ -31,12 +45,10 @@ export default function Comment1() {
           </div>
           <div className="m_comment_text">
               <h4>Jonibek Akbarov</h4>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Quod velit totam iste in nemo excepturi, quas doloremque dicta aspernatur voluptas saepe ipsam! 
-                Soluta magnam aliquam dolorum. Quis accusamus autem atque?</p>
-              <div className="m_comment_otvet"> 
+              <p>{item.text}</p>
+              {/* <div className="m_comment_otvet"> 
               <p><span><FiCornerUpLeft/></span>Ответить</p> 
-              </div>
+              </div> */}
           </div>
       </div>
         )
@@ -50,7 +62,7 @@ export default function Comment1() {
             </div>
             <div className="m_comment_button">
               <button className='m_otmen'>Отменить</button>
-              <button className='m_otpravit'>Отправить</button>
+              <button onClick={()=>messagePost()} className='m_otpravit'>Отправить</button>
               </div></div>
     </div>
   )
