@@ -174,10 +174,7 @@ export default function Youtube1() {
                     <h1>{item.name}</h1>
                     <div className="margin_right">
                       <div className="line_height"></div>
-                      <p>
-                        24 ta video <br />
-                        38 soat
-                      </p>
+                          <p>{theme.length}</p>
                     </div>
                   </div>
                 </div>
