@@ -9,7 +9,7 @@ export default function Vazifa1() {
         <div className="m_vazifa_scachat">
           <div className="scachat_kotta">
             <div className="m_zadaniya_s">
-              <input type="checkbox" id='checkbox'/>
+              <input type="checkbox" id='checkbox1'/>
                 <div className="m_scachat"><BsArrowDownShort /></div>
                 <div className="m_title_scac">
                    <h5>Задачи по переменным.txt</h5>
@@ -23,7 +23,7 @@ export default function Vazifa1() {
            </div>
            <div className="scachat_kotta">
             <div className="m_zadaniya_s">
-              <input type="checkbox" id='checkbox'/>
+              <input type="checkbox" id='checkbox1'/>
                 <div className="m_scachat"><BsArrowDownShort /></div>
                 <div className="m_title_scac">
                    <h5>Задачи по переменным.txt</h5>
@@ -37,7 +37,7 @@ export default function Vazifa1() {
            </div>
            <div className="scachat_kotta">
             <div className="m_zadaniya_s">
-              <input type="checkbox" id='checkbox'/>
+              <input type="checkbox" id='checkbox1'/>
                 <div className="m_scachat"><BsArrowDownShort /></div>
                 <div className="m_title_scac">
                    <h5>Задачи по переменным.txt</h5>
@@ -51,7 +51,7 @@ export default function Vazifa1() {
            </div>
            <div className="scachat_kotta">
             <div className="m_zadaniya_s">
-              <input type="checkbox" id='checkbox'/>
+              <input type="checkbox" id='checkbox1'/>
                 <div className="m_scachat"><BsArrowDownShort /></div>
                 <div className="m_title_scac">
                    <h5>Задачи по переменным.txt</h5>

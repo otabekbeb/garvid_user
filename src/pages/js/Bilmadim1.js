@@ -21,8 +21,8 @@ export default function Vazifa1() {
             <div className="m_zadaniya_s">
                 <div className="m_scachat"><BsArrowDownShort /></div>
                 <div className="m_title_scac">
-                   <h5>Задачи по переменным.txt</h5>
-                <p >5.1 MB | 25.06.2019</p></div>
+                   <h5>Книга по JAVA.pdf</h5>
+                <p >4.1 MB | 25.06.2019</p></div>
                
             </div>
            </div>
@@ -30,8 +30,8 @@ export default function Vazifa1() {
             <div className="m_zadaniya_s">
                 <div className="m_scachat"><BsArrowDownShort /></div>
                 <div className="m_title_scac">
-                   <h5>Задачи по переменным.txt</h5>
-                <p >5.1 MB | 25.06.2019</p></div>
+                   <h5>Последовательность данных.docx</h5>
+                <p >7.1 MB | 25.06.2019</p></div>
                
             </div>
            </div>

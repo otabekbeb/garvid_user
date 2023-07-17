@@ -12,7 +12,7 @@ export default function Vazifa1() {
             <div className="m_zadaniya_s">
                 <div className="m_scachat"><BsArrowDownShort /></div>
                 <div className="m_title_scac">
-                   <h5>Задачи по переменным.txt</h5>
+                   <h5>Intellij Idea.exe</h5>
                 <p >5.1 MB | 25.06.2019</p></div>
                
             </div>
