@@ -191,12 +191,26 @@ position: fixed ;
   top: 7px;
 left: 170%;
 }
-
+#menu2spanid{
+  position: relative;
+  top: 7px;
+left: 240%;
+}
+#menu2pp{
+  position: relative;
+  right: 10px;
+}
 .menu2 p a {
   font-size: 14px;
 
 }
-
+@media (max-width:1085px) {
+  #menu2spanid{
+    position: relative;
+    top: 7px;
+  left: 190%;
+  }
+}
 .media-menu-navbar {
   display: none;
 }
@@ -2199,7 +2213,7 @@ display: none;
   height: 35px;
   border: 2px solid #44bef1;
   border-radius: 20px;
-  background: #f1e1e1;
+  background: white;
   position: relative;
   box-sizing: border-box;
  }
@@ -2228,7 +2242,7 @@ display: none;
  
  .checkbox-con input[type="checkbox"]:checked {
   border: 2px solid #44bef1;
-  background: #e2f1e1;
+  background: white;
  }
  
  .checkbox-con input[type="checkbox"]:checked::before {
