@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../css/Pdp.css'
 import Filtr from "./Searchfilter"
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,10 +14,20 @@ import UserChat from "./userChat"
 // import Rasp from '../img/Rasp.png'
 // import {BsPlus} from 'react-icons/bs'
 import { TiThMenu } from 'react-icons/ti'
+import axios from 'axios';
+import url from './Host';
 
 
 export default function Pdp() {
     const [toggle, setToggle] = useState(1)
+    const [kursdata,setKursData] = useState([])
+
+
+    useEffect(()=>{
+        axios.get(`${url}/course/main/`).then(res=>{
+            setKursData(res.data)
+          })
+    },[])
 
 
     function updatetoggle(id) {
@@ -44,7 +54,7 @@ export default function Pdp() {
         
             <div className="gray_blok">
                 <div className="fil_text_blok">
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} className='fromLeft'>Мои курсы</h1>{toggle===1?(<div className="fil_text_blok_kurs_lenght">4 штуки</div>):("")}</div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} className='fromLeft'>Мои курсы</h1>{toggle===1?(<div className="fil_text_blok_kurs_lenght">{kursdata.length} штуки</div>):("")}</div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} className='fromLeft'>Мои усвоенные знания</h1>{toggle===2?(<div className="fil_text_blok_kurs_lenght">14 штуки</div>):("")}</div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} className='fromLeft'>Мои сертификаты</h1>{toggle===3?(<div className="fil_text_blok_kurs_lenght">24 штуки</div>):("")}</div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} className='fromLeft'>Мои подписки</h1>{toggle===4?(<div className="fil_text_blok_kurs_lenght">24 штуки</div>):("")}</div>

@@ -14,7 +14,12 @@ import { TbPointFilled } from 'react-icons/tb'
 import '../css/Spiska.css'
 import '../css/Calibig.css'
 import WWW from '../img/WWW.png'
+import axios from 'axios'
+import url from './Host'
 export default function Searchfilter() {
+    const [kursdata,setKursdata]=useState([])
+    const [type,settype]=useState([])
+
     function Filter() {
         document.querySelector(".filter_button").classList.toggle("filter")
     }
@@ -27,6 +32,16 @@ export default function Searchfilter() {
         document.querySelector(".spiska_img_title_div").style = "display:block;transition:3s"
 
     }
+    
+    useEffect(()=>{
+        axios.get(`${url}/course/main/`,{ headers: {"Accept-Language":"en"}}).then(res=>{
+        setKursdata(res.data)
+        })
+        axios.get(`${url}/course/type/`).then(res=>{
+        settype(res.data)
+        })
+    },[])
+
     return (
         <div>
             <div className="Filter">
@@ -60,13 +75,13 @@ export default function Searchfilter() {
             </div>
 
             <div className="kurs_cards">
-                <div className="kurs_card">
+            {kursdata.map(item=>{
+                return(
+                    <div className="kurs_card">
                     <button className='btn_das'>Dasturlash</button>
-                    <img  src={Rasp} alt="" />
+                    {item.image===null?(<div className='No_img'><h1>Нет изображение</h1></div>):(<img  src={item.image} />)}
                     <div className="kurs_paddaing_auto">
-                    <h4>Ishlab chiquvchilar uchun AWS: ECS <br />
-                        va ko'p mintaqali yuklarni <br />
-                        muvozanatlash</h4>
+                    <h4>{item.name}</h4>
                     <div className='star_card'>
                         <i className='star_i'><AiFillStar /></i>
                         <i className='star_i'><AiFillStar /></i>
@@ -78,93 +93,36 @@ export default function Searchfilter() {
                     <div className='hajm'>
                         <h5>
                             <p>Kurs hajmi</p>
-                            38 soat
+                            {item.planned_time}
                         </h5>
                         <h5>
                             <p>Kurs narxi</p>
-                            5 ta bo’lim
+                           {item.price}
                         </h5>
                     </div>
 </div>
                     <button className='button_circle'><AiOutlineArrowRight /></button>
                 </div>
+                )
+            })}
+               
 
-                <div className="kurs_card">
-                    <button className='btn_das'>Dasturlash</button>
-                    <img src={Mon} alt="" />
-                    <div className="kurs_paddaing_auto">
-                    <h4>Ishlab chiquvchilar uchun AWS: ECS <br />
-                        va ko'p mintaqali yuklarni <br />
-                        muvozanatlash</h4>
-                    <div className='star_card'>
-                        <i className='star_i'><AiFillStar /></i>
-                        <i className='star_i'><AiFillStar /></i>
-                        <i className='star_i'><AiFillStar /></i>
-                        <i className='star_i'><AiFillStar /></i>
-                        <i className='star_ib'><AiFillStar /></i>
-                        <p>4.1 <span>(524)</span></p>
-                    </div>
-                    <div className='hajm'>
-                        <h5>
-                            <p>Kurs hajmi</p>
-                            38 soat
-                        </h5>
-                        <h5>
-                            <p>Kurs narxi</p>
-                            5 ta bo’lim
-                        </h5>
-                    </div>
-                    </div>
-                    <button className='button_circle'><AiOutlineArrowRight /></button>
-                </div>
-                <div className="kurs_card">
-                    <button className='btn_das'>Dasturlash</button>
-                    <img src={Mon} alt="" />
-                    <div className="kurs_paddaing_auto">
-                    <h4>Ishlab chiquvchilar uchun AWS: ECS <br />
-                        a ko'p mintaqali yuklarni <br />
-                        muvozanatlashv</h4>
-                    <div className='star_card'>
-                        <i className='star_i'><AiFillStar /></i>
-                        <i className='star_i'><AiFillStar /></i>
-                        <i className='star_i'><AiFillStar /></i>
-                        <i className='star_i'><AiFillStar /></i>
-                        <i className='star_ib'><AiFillStar /></i>
-                        <p>4.1 <span>(524)</span></p>
-                    </div>
-                    <div className='hajm'>
-                        <h5>
-                            <p>Kurs hajmi</p>
-                            38 soat
-                        </h5>
-                        <h5>
-                            <p>Kurs narxi</p>
-                            5 ta bo’lim
-                        </h5>
-                    </div>
-                    </div>
-                    <button className='button_circle'><AiOutlineArrowRight /></button>
-                </div>
-                <div className="kurs_card1">
-                    <i><AiOutlinePlus /></i>
-                    <h4>Yangi kurs qo’shish</h4>
-                </div>
             </div>
 
             {/* SPISKA */}
 
             <div className="spiska_img_title_div">
-                <div className="Spiska_blok">
+             {kursdata.map(item=>{
+                return(
+                    <div className="Spiska_blok">
                     <div className="spiska">
                         <div className="spiska_display_flex">
                             <div className="spiska_img">
-                                <img src={WWW} alt="" />
+                            {item.image===null?(<div className='No_img1'><h1>Нет изображение</h1></div>):(<img  src={item.image} alt="No img" />)}
                             </div>
                             <div className="spiska_title_df">
                                 <div className="spiska_title">
-                                    <h3>Ishlab chiquvchilar uchun AWS: ECS
-                                        va ko'p mintaqali yuklarni
-                                        muvozanatlash</h3>
+                                    <h3>{item.name}</h3>
                                     <div className="star_icon_blok1">
                                         <AiFillStar className='gold' />
                                         <AiFillStar className='gold' />
@@ -184,96 +142,8 @@ export default function Searchfilter() {
                         </div>
                     </div>
                 </div>
-                <div className="Spiska_blok">
-                    <div className="spiska">
-                        <div className="spiska_display_flex">
-                            <div className="spiska_img">
-                                <img src={WWW} alt="" />
-                            </div>
-                            <div className="spiska_title_df">
-                                <div className="spiska_title">
-                                    <h3>Ishlab chiquvchilar uchun AWS: ECS
-                                        va ko'p mintaqali yuklarni
-                                        muvozanatlash</h3>
-                                    <div className="star_icon_blok1">
-                                        <AiFillStar className='gold' />
-                                        <AiFillStar className='gold' />
-                                        <AiFillStar className='gold' />
-                                        <AiFillStar className='gold' />
-                                        <AiFillStar />
-                                        <div className="number">
-                                            <h6>4.1 (524)</h6>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div className="left1_icon">
-                                    <HiArrowRight />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="Spiska_blok">
-                    <div className="spiska">
-                        <div className="spiska_display_flex">
-                            <div className="spiska_img">
-                                <img src={WWW} alt="" />
-                            </div>
-                            <div className="spiska_title_df">
-                                <div className="spiska_title">
-                                    <h3>Ishlab chiquvchilar uchun AWS: ECS
-                                        va ko'p mintaqali yuklarni
-                                        muvozanatlash</h3>
-                                    <div className="star_icon_blok1">
-                                        <AiFillStar className='gold' />
-                                        <AiFillStar className='gold' />
-                                        <AiFillStar className='gold' />
-                                        <AiFillStar className='gold' />
-                                        <AiFillStar />
-                                        <div className="number">
-                                            <h6>4.1 (524)</h6>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div className="left1_icon">
-                                    <HiArrowRight />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="Spiska_blok">
-                    <div className="spiska">
-                        <div className="spiska_display_flex">
-                            <div className="spiska_img">
-                                <img src={WWW} alt="" />
-                            </div>
-                            <div className="spiska_title_df">
-                                <div className="spiska_title">
-                                    <h3>Ishlab chiquvchilar uchun AWS: ECS
-                                        va ko'p mintaqali yuklarni
-                                        muvozanatlash</h3>
-                                    <div className="star_icon_blok1">
-                                        <AiFillStar className='gold' />
-                                        <AiFillStar className='gold' />
-                                        <AiFillStar className='gold' />
-                                        <AiFillStar className='gold' />
-                                        <AiFillStar />
-                                        <div className="number">
-                                            <h6>4.1 (524)</h6>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div className="left1_icon">
-                                    <HiArrowRight />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                )
+             })}
             </div>
         </div>
     )

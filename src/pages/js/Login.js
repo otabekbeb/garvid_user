@@ -26,6 +26,7 @@ export default function Login() {
     setPage(4)
     }).catch(err=>{
        console.log(err);
+       alert("Введите полную информацию")
     })
     
   }
@@ -39,6 +40,7 @@ export default function Login() {
     setPage(1)  
   }).catch(err=>{
     console.log(err);
+    alert("Ошибка верификации ")
   })
   }
 
@@ -52,6 +54,7 @@ export default function Login() {
     window.location="/user"
     }).catch(err=>{
       console.log(err);
+      alert("В базе нет такого логина или пароля")
     })
   }
 

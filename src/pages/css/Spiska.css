@@ -73,10 +73,16 @@
     font-size: 25px;
     color: rgba(0, 0, 255, 0.747);
     border: 1px solid gray;
-    text-align: center;
-    align-items: center !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-top: 1px !important;
     margin-top: 10%;
+    cursor: pointer;
+}
+.left1_icon:hover{
+    background-color: #536DFD;
+    color: white;
 }
 
 @media (max-width:808px) {
@@ -192,9 +198,10 @@
         font-size: 25px;
         color: rgba(0, 0, 255, 0.747);
         border: 1px solid gray;
-        text-align: center;
-        align-items: center !important;
+        display: flex;
+        justify-content: center;
         padding-top: 1px !important;
+        align-items: center;
         
     }
 }
