@@ -201,7 +201,7 @@ return (
    <li><a href="/blog" className='tt'>Blog</a></li>
    <li><a href="/ourteam" className='tt'>our team</a></li>
    <li><a href="/contacts" className='tt'>Contacts</a></li>
-   <li><a href="/login" className='tt'>Registration</a></li>
+   <li><a href="/login" className='tt'>Login</a></li>
    <div class="checkbox-con">
   <input id="checkbox" onClick={()=>{!document.querySelector("#checkbox").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "eng"));window.location.reload()}} type="checkbox"/>
 </div>
@@ -291,7 +291,7 @@ return (
     <li className='moto-menu-item'> <a href="/servis">Услуги</a> </li>
     <li className='moto-menu-item'><a href="/blog">Блог</a></li>
     <li className='moto-menu-item'><a href="/ourteam">Наша команда</a></li>
-    <li className='moto-menu-item'><a href="/contacts">Контакты</a></li>
+    <li className='moto-menu-item'><a href="/contacts">Связь</a></li>
     <li className='moto-menu-item'><a href="/login">Регистрация</a></li>
 </ul>
 <div class="checkbox-con">
