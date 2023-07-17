@@ -2541,9 +2541,10 @@ display: none;
  .checkbox-con input[type="checkbox"]::after {
  content:"ru";
   position: absolute;
-  top: 3px;
+  top: 4px;
   font-size: 15px;
   left: 35px;
+  color: black;
  }
  
  .checkbox-con input[type="checkbox"]:checked {
@@ -2562,8 +2563,9 @@ display: none;
   content: "eng";
   position: absolute;
   font-size: 15px;
-  top: 3px;
+  top: 4px;
   left: 4px;
+  color: black;
  }
  
  .checkbox-con label {
