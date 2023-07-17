@@ -32,10 +32,10 @@ export default function Loginpage() {
         formdata.append("first_name",document.querySelector("#first_name").value)
         formdata.append("last_name",document.querySelector("#last_name").value)
         formdata.append("username",document.querySelector("#username").value)
-        formdata.append("image",document.querySelector("#image").filed[0])
+        formdata.append("image",null)
         formdata.append("phone_number",document.querySelector("#phone_number").value)
         formdata.append("birthday",document.querySelector("#birthday").value)
-        formdata.append("balance",document.querySelector("#balance").value)
+        formdata.append("balance",1)
         formdata.append("adress",document.querySelector("#adress").value)
         formdata.append("description",document.querySelector("#description").value)
 
@@ -173,7 +173,7 @@ export default function Loginpage() {
                                                 </div>
                                             </div>
                                             <div className="inputs111">
-                                                <button  >
+                                                <button onClick={()=>putUser()} >
                                                     Хранение
                                                 </button>
                                             </div>
