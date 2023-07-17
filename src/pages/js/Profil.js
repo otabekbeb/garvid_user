@@ -41,7 +41,7 @@ export default function Profil() {
   }
 
   useEffect(()=>{
-  axios.get(`${url}/auth/user/`,{ headers: { 'Authorization': 'Bearer ' + sessionStorage.getItem("token") } }).then(res=>{
+  axios.get(`${url}/auth/user/`,{ headers: { 'Authorization': 'Bearer ' + sessionStorage.getItem("token") }}).then(res=>{
     console.log(res.data);
     setData(res.data)
   }).catch((err) => {
@@ -83,7 +83,7 @@ export default function Profil() {
           <div className="profil_blok_ikki_text">
           <p>Текущий баланс</p>
           <div className="profil_blok_ikki_sum">
-            <h1>1 350 000</h1><p>UZS</p>
+            {data.balance===null?(<h1>0</h1>):(<div><h1>{data.balance}</h1><p>RUB</p></div>)}
           </div>
           <div className="profil_blok_ikki_button">
             <button><BsActivity/></button><button>Пополнение баланса</button>
