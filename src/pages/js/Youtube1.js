@@ -10,6 +10,7 @@ import '../css/youtube1.css'
 import Qollamalar from '../js/Bilmadim1'
 import Scachat from '../js/Scachat'
 import Vazifa from '../js/Vazifa1'
+import Comment from '../js/Comment1'
 import Navbar from '../js/Navbar'
 
 import { BiTime } from 'react-icons/bi'
@@ -29,6 +30,8 @@ export default function Youtube1() {
   function videoBolim(id){
   setId(id)  
   }
+
+
 
   return (
     <div>
@@ -352,13 +355,13 @@ export default function Youtube1() {
             
            
             <div className="navbar_otish1">
-              <p onClick={()=>videoBolim(1)}className="zadaniya">Вопрос и ответ</p>
-              <p onClick={()=>videoBolim(2)} >Задания</p>
+              <p onClick={()=>videoBolim(1)} className="zadaniya">Вопрос и ответ</p>
+              <p onClick={()=>{videoBolim(2)}} className="zadaniya1">Задания</p>
               <p onClick={()=>videoBolim(3)}>Руководства</p>
               <p onClick={()=>videoBolim(4)}>Скачать</p>
             </div></div>
           </div>
-          <div className={id===1?"show-content":"content"}>salom</div>
+          <div className={id===1?"show-content":"content"}><Comment/></div>
           <div className={id===2?"show-content":"content"}><Vazifa /></div>
           <div className={id===3?"show-content":"content"}><Qollamalar/></div>
           <div className={id===4?"show-content":"content"}><Scachat/></div>

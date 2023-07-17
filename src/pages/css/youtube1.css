@@ -876,12 +876,14 @@ width: 100%;
     margin-left: 5%;
     border-radius: 5px;
     margin-top: 20px;
+    position: absolute;
 }
     .navbar_otish1{
-        width: 40%;
+        width: 50%;
         display: block;
         font-size: 15px;
         cursor: pointer;
+        color: #9DA7BB;
     } 
 }
 .navbar_yon{
