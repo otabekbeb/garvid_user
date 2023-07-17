@@ -79,7 +79,7 @@ export default function Login() {
           <form>
           <div className="login_small_div_input">
             <h1>{state1==="eng"?("Verification"):("Верификация")}</h1>
-            <p>Код отправлен на вашу электронную почту</p>
+            <p>{state1==="en"?("Code sent to your email"):("Код отправлен на вашу электронную почту")}</p>
             <div className="royhat_small_input">
               <FiMail className="login_icon" />
               <input  placeholder="Верификация"  onChange={setName}  type="number" required/>
@@ -107,11 +107,11 @@ export default function Login() {
                 <h1>{state1==="eng"?("Login"):("Авторизоваться")}</h1>
                 <div className="royhat_small_input">
                   <FiMail className="login_icon" />
-                  <input placeholder="Email" id="email"  type="text" required/>
+                  <input placeholder={state1==="eng"?("Email"):("Электронная почта")} id="email"  type="text" required/>
                 </div>
                 <div className="royhat_small_input">
                   <BiLockAlt className="login_icon" />
-                  <input placeholder="Пароль" id="parol" type="password" required/>
+                  <input placeholder={state1==="eng"?("Password"):("Пароль")} id="parol" type="password" required/>
                 </div>
                 <div className="login_button_div">
                  <button type="button"  onClick={()=>userAvto()} >{state1==="eng"?("Login"):("Авторизоваться")}</button>
@@ -130,17 +130,17 @@ export default function Login() {
                   <h1>{state1==="eng"?("Registration"):("Регистрация")}</h1>
                   <div className="login_small_input">
                     <AiOutlineUser className="login_icon" />
-                    <input className="name" placeholder="Имя" type="text" required/>
-                    <div className="error">Это уже используется</div>
+                    <input className="name" placeholder={state1==="eng"?("Name"):("Имя")} type="text" required/>
+                    <div className="error">{state1==="eng"?("It's already in use"):("Это уже используется")}</div>
                   </div>
                   <div className="login_small_input">
                     <FiMail className="login_icon" />
-                    <input  onChange={setEmail} className="email" placeholder="Email" type="text" required />
+                    <input  onChange={setEmail} className="email" placeholder={state1==="eng"?("Email"):("Электронная почта")} type="text" required />
                     <div className="error">{state1==="eng"?("It's already in use"):("Это уже используется")}</div>
                   </div>
                   <div className="login_small_input">
                     <BiLockAlt className="login_icon" />
-                    <input className="password" placeholder="Пароль" type="password" required />
+                    <input className="password" placeholder={state1==="eng"?("Password"):("Пароль")} type="password" required />
                   </div>
                   <div className="login_button_div">
                     <button type="button" onClick={()=>userModal()}>{state1==="eng"?("Registration"):("Регистрация")}</button>
