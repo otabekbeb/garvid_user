@@ -1,5 +1,5 @@
 'use clint'
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import '../css/Navbar.css'
 
 function sa(){
@@ -17,7 +17,7 @@ function sa(){
 
     function about2() {
   
-        document.querySelector(".ichi span").style="transform: rotate(180deg);"
+        document.querySelector("#sdfdsfsd").style="transform: rotate(180deg);"
         }
     
         function aboutClose2() {
@@ -26,17 +26,15 @@ function sa(){
             }
             function ffd() {
     var t=document.querySelector(".ffd ul").style.display
-    var p=document.querySelector(".ffd ul").style.opacity
     if(t=="none"){
         document.querySelector(".ffd ul").style.display="block";
-        document.querySelector(".ffd ul").style.opacity="1";
         }else{
            document.querySelector(".ffd ul").style.display="none";
-           document.querySelector(".ffd ul").style.opacity="0";
         }
     }    
    
     function ochil1() {
+        
         var t=document.querySelector(".lll ul").style.display
         var p=document.querySelector(".lll ul").style.opacity
         if(t=="none"){
@@ -79,16 +77,21 @@ export default function Navbar() {
     
 
 
-
+    const [state1, setstate1] = React.useState();
  const [state,State] = React.useState(1)
 
+ useEffect(() => {
+    setstate1(
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "ru"
+    );
+  }, []);
 
 return (
     <div>
 <section  onMouseLeave={() => menuul1()} className='navbar'>
     <div className="navbar-ul">
 <ul>
-     <li className='moto-menu-item'><a href="/">Главный</a></li>
+     <li className='moto-menu-item'><a href="/">{state1 === "ru" ? "Связаться с нами" : "Biz bilan bog'laning"}</a></li>
 
   <div className="menu" onMouseLeave={()=>menuufolse()} >
     <div className="menuu" onMouseEnter={() => menuul()} >
@@ -105,7 +108,7 @@ return (
   
         <div className="navbbar-line-hr1"></div>
   
-        <li id='ded'><a href="/contact">Связь</a></li>
+        <li id='ded'><a href="/contacts">Связь</a></li>
       
      </ul>
      
@@ -122,7 +125,9 @@ return (
     <li className='moto-menu-item'><a href="/contact">Контакты</a></li>
     <li className='moto-menu-item'><a href="/login">Регистрация</a></li>
 </ul>
-
+<div class="checkbox-con">
+  <input id="checkbox" onClick={()=>{!document.querySelector("#checkbox").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "uz"));window.location.reload()}} type="checkbox"/>
+</div>
     </div>
     <div className="media-navbar">
       
@@ -145,9 +150,9 @@ return (
 <div className="dfdf">
 <ul>
    <li><a href="/" className='tt'>Главный</a></li>
-   <div className="media-kategory"  onMouseLeave={()=>aboutClose2()}  onClick={()=> ffd()}>
-<div className="ichi" onMouseEnter={(() => about2())}>
-<li><a href="/about" className='tt'>О нас</a></li> <span><box-icon name='chevron-down' color='#ffffff' ></box-icon></span>
+   <div className="media-kategory"  onMouseLeave={()=>aboutClose2()}  >
+<div className="ichi" onMouseEnter={(() => about2())} onClick={()=> ffd()}>
+<li ><a href="/about" className='tt'>О нас</a></li> <span id='sdfdsfsd'><box-icon name='chevron-down' color='#ffffff' ></box-icon></span>
 
 
 </div>
@@ -157,7 +162,8 @@ return (
 <ul className='ffdul' >
    <li className='ds'><a href="#">Archives</a></li>
 
-  <div className="ichi2" onClick={()=>ochil1()}>
+  <div className="ichi2" onClick={()=>ochil1()
+}>
   <li className='ds'><a href="#">News</a></li><span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
   </div>
 <div className="lll">
@@ -177,7 +183,9 @@ return (
    <li><a href="/contact" className='tt'>Контакты</a></li>
    <li><a href="/login" className='tt'>Регистрация</a></li>
 </ul>
+
 </div>
+
 </div>
 
 
