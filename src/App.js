@@ -10,6 +10,7 @@ import User from "./pages/js/user"
 import Mento from "./pages/js/Mentor"
 import Video from "./pages/js/Youtube1";
 import Contacts from "./pages/js/Contacts";
+import Loginpage from "./pages/js/Loginpage";
 
 
 
@@ -22,6 +23,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/loginpage" element={<Loginpage />} />
           <Route path="/about" element={<About />} />
           <Route path="/servis" element={<Services />} />
           <Route path="/blog" element={<Blog />} />
