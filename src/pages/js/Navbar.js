@@ -97,6 +97,11 @@ export default function Navbar() {
     }else{
       document.querySelector("#checkbox").checked=false
     }
+    if(localStorage.getItem("lang")!=="ru"){
+        document.querySelector("#checkbox2").checked=true
+        }else{
+          document.querySelector("#checkbox2").checked=false
+        }
   }, []);
   
     
@@ -143,7 +148,7 @@ return (
     <li className='moto-menu-item'><a href="/blog">Blog</a></li>
     <li className='moto-menu-item'><a href="/ourteam">our team</a></li>
     <li className='moto-menu-item'><a href="/contacts">Contacts</a></li>
-    <li className='moto-menu-item'><a href="/login">Registration</a></li>
+    <li className='moto-menu-item'><a href="/login">Log in</a></li>
 </ul>
 <div class="checkbox-con">
   <input id="checkbox" onClick={()=>{!document.querySelector("#checkbox").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "eng"));window.location.reload()}} type="checkbox"/>
@@ -203,7 +208,7 @@ return (
    <li><a href="/contacts" className='tt'>Contacts</a></li>
    <li><a href="/login" className='tt'>Login</a></li>
    <div class="checkbox-con">
-  <input id="checkbox" onClick={()=>{!document.querySelector("#checkbox").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "eng"));window.location.reload()}} type="checkbox"/>
+  <input id="checkbox2" onClick={()=>{!document.querySelector("#checkbox2").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "eng"));window.location.reload()}} type="checkbox"/>
 </div>
 </ul>
 
@@ -349,10 +354,10 @@ return (
   
    <li><a href="/blog" className='tt'>Блог</a></li>
    <li><a href="/ourteam" className='tt'>Наша команда</a></li>
-   <li><a href="/contacts" className='tt'>Контакты</a></li>
+   <li><a href="/contacts" className='tt'>Связь</a></li>
    <li><a href="/login" className='tt'>Регистрация</a></li>
    <div class="checkbox-con">
-  <input id="checkbox" onClick={()=>{!document.querySelector("#checkbox").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "eng"));window.location.reload()}} type="checkbox"/>
+  <input id="checkbox2" onClick={()=>{!document.querySelector("#checkbox2").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "eng"));window.location.reload()}} type="checkbox"/>
 </div>
 </ul>
 

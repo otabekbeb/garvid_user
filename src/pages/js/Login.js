@@ -8,6 +8,7 @@ import { BiLockAlt } from "react-icons/bi";
 import axios from "axios";
 import url from "./Host";
 import { type } from "@testing-library/user-event/dist/type";
+import Navbar from "./Navbar";
 
 export default function Login() {
   const [page,setPage] =useState(1)
@@ -59,12 +60,16 @@ export default function Login() {
   }
 
 
-
+  const [state1, setState1] = React.useState();
+  useEffect(() => {
+    setState1(
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+    );},[]);
 
 
   return (
     <div>
-
+<Navbar/>
       <div className="login_big_div">
       {page===4?(
       <div className="login_db">
@@ -73,14 +78,14 @@ export default function Login() {
         <div className="login_small_div">
           <form>
           <div className="login_small_div_input">
-            <h1>Верификация</h1>
+            <h1>{state1==="eng"?("Verification"):("Верификация")}</h1>
             <p>Код отправлен на вашу электронную почту</p>
             <div className="royhat_small_input">
               <FiMail className="login_icon" />
               <input  placeholder="Верификация"  onChange={setName}  type="number" required/>
             </div>
             <div className="login_button_div">
-            <button type="button" onClick={()=>userVeri()}>Верификация</button>
+            <button type="button" onClick={()=>userVeri()}>{state1==="en"?("Verification"):("Верификация")}</button>
             </div>
           </div>
           </form>
@@ -90,8 +95,8 @@ export default function Login() {
         </div>):(
           <div className="login_db">
           <div className="login_i_register_button">
-            <button onClick={()=>setPage(1)}>Авторизоваться</button>
-            <button onClick={()=>setPage(2)}>Регистрация</button>
+            <button onClick={()=>setPage(1)}>{state1==="eng"?("Login"):("Авторизоваться")}</button>
+            <button onClick={()=>setPage(2)}>{state1==="eng"?("Registration"):("Регистрация")}</button>
           </div>
           {page===1?(
           <div className="login_relative">
@@ -99,7 +104,7 @@ export default function Login() {
             <div className="login_small_div">
               <form action="">
               <div className="login_small_div_input">
-                <h1>Авторизоваться</h1>
+                <h1>{state1==="eng"?("Login"):("Авторизоваться")}</h1>
                 <div className="royhat_small_input">
                   <FiMail className="login_icon" />
                   <input placeholder="Email" id="email"  type="text" required/>
@@ -109,7 +114,7 @@ export default function Login() {
                   <input placeholder="Пароль" id="parol" type="password" required/>
                 </div>
                 <div className="login_button_div">
-                 <button type="button"  onClick={()=>userAvto()} >Авторизоваться</button>
+                 <button type="button"  onClick={()=>userAvto()} >{state1==="eng"?("Login"):("Авторизоваться")}</button>
                 </div>
               </div>
               </form>
@@ -122,7 +127,7 @@ export default function Login() {
               <div className="login_small_div">
                 <form>
                 <div className="login_small_div_input">
-                  <h1>Регистрация</h1>
+                  <h1>{state1==="eng"?("Registration"):("Регистрация")}</h1>
                   <div className="login_small_input">
                     <AiOutlineUser className="login_icon" />
                     <input className="name" placeholder="Имя" type="text" required/>
@@ -131,14 +136,14 @@ export default function Login() {
                   <div className="login_small_input">
                     <FiMail className="login_icon" />
                     <input  onChange={setEmail} className="email" placeholder="Email" type="text" required />
-                    <div className="error">Это уже используется</div>
+                    <div className="error">{state1==="eng"?("It's already in use"):("Это уже используется")}</div>
                   </div>
                   <div className="login_small_input">
                     <BiLockAlt className="login_icon" />
                     <input className="password" placeholder="Пароль" type="password" required />
                   </div>
                   <div className="login_button_div">
-                    <button type="button" onClick={()=>userModal()}>Регистрация</button>
+                    <button type="button" onClick={()=>userModal()}>{state1==="eng"?("Registration"):("Регистрация")}</button>
                   </div>
                 </div>
                 </form>

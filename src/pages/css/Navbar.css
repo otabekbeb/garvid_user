@@ -81,13 +81,16 @@
 }
 .menu a {
   display: block;
-  color: #44bef1;
+  color: white;
   text-decoration: none;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   font-style: normal;
   text-decoration: none;
+}
+.menu a:hover{
+  color: rgb(68, 190, 241);
 }
 .moto-menu-item a {
   color: #ffffff;
