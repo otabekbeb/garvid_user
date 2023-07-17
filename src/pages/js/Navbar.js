@@ -142,7 +142,7 @@ return (
     <li className='moto-menu-item'> <a href="/servis">Services</a> </li>
     <li className='moto-menu-item'><a href="/blog">Blog</a></li>
     <li className='moto-menu-item'><a href="/ourteam">our team</a></li>
-    <li className='moto-menu-item'><a href="/contact">Contacts</a></li>
+    <li className='moto-menu-item'><a href="/contacts">Contacts</a></li>
     <li className='moto-menu-item'><a href="/login">Registration</a></li>
 </ul>
 <div class="checkbox-con">
@@ -189,7 +189,7 @@ return (
 <div className="lll">
    <ul>
        <li className='lll1'><a href="/blog">Blog</a></li>
-       <li className='lll2'><a href="/contact">Contacts</a></li>
+       <li className='lll2'><a href="/contacts">Contacts</a></li>
    </ul>
 </div>
 
@@ -200,8 +200,11 @@ return (
   
    <li><a href="/blog" className='tt'>Blog</a></li>
    <li><a href="/ourteam" className='tt'>our team</a></li>
-   <li><a href="/contact" className='tt'>Contacts</a></li>
+   <li><a href="/contacts" className='tt'>Contacts</a></li>
    <li><a href="/login" className='tt'>Registration</a></li>
+   <div class="checkbox-con">
+  <input id="checkbox" onClick={()=>{!document.querySelector("#checkbox").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "eng"));window.location.reload()}} type="checkbox"/>
+</div>
 </ul>
 
 </div>
@@ -288,7 +291,7 @@ return (
     <li className='moto-menu-item'> <a href="/servis">Услуги</a> </li>
     <li className='moto-menu-item'><a href="/blog">Блог</a></li>
     <li className='moto-menu-item'><a href="/ourteam">Наша команда</a></li>
-    <li className='moto-menu-item'><a href="/contact">Контакты</a></li>
+    <li className='moto-menu-item'><a href="/contacts">Контакты</a></li>
     <li className='moto-menu-item'><a href="/login">Регистрация</a></li>
 </ul>
 <div class="checkbox-con">
@@ -335,7 +338,7 @@ return (
 <div className="lll">
    <ul>
        <li className='lll1'><a href="/blog">Блог</a></li>
-       <li className='lll2'><a href="/contact">Контакты</a></li>
+       <li className='lll2'><a href="/contacts">Контакты</a></li>
    </ul>
 </div>
 
@@ -346,8 +349,11 @@ return (
   
    <li><a href="/blog" className='tt'>Блог</a></li>
    <li><a href="/ourteam" className='tt'>Наша команда</a></li>
-   <li><a href="/contact" className='tt'>Контакты</a></li>
+   <li><a href="/contacts" className='tt'>Контакты</a></li>
    <li><a href="/login" className='tt'>Регистрация</a></li>
+   <div class="checkbox-con">
+  <input id="checkbox" onClick={()=>{!document.querySelector("#checkbox").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "eng"));window.location.reload()}} type="checkbox"/>
+</div>
 </ul>
 
 </div>
