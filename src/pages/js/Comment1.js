@@ -27,7 +27,7 @@ export default function Comment1() {
         return(
           <div className="m_comment">
           <div className="m_comment_img">
-              <img src={img_comment} alt="" />
+              <img src={item.image} alt="" />
           </div>
           <div className="m_comment_text">
               <h4>Jonibek Akbarov</h4>
