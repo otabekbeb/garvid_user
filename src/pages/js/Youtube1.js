@@ -16,7 +16,6 @@ import Navbar from '../js/Navbar'
 
 import { BiBorderBottom, BiTime } from 'react-icons/bi'
 
-import { BiTime } from 'react-icons/bi'
 import '../css/youtube1.css';
 import Accordion from 'react-bootstrap/Accordion';
 import 'bootstrap/dist/css/bootstrap.min.css';
