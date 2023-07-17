@@ -36,9 +36,9 @@ export default function Searchfilter() {
     useEffect(()=>{
         axios.get(`${url}/course/main/`,{ headers: {"Accept-Language":"en"}}).then(res=>{
         setKursdata(res.data)
-        })
-        axios.get(`${url}/course/type/`).then(res=>{
-        settype(res.data)
+        axios.get(`${url}/course/type/`,{ headers: {"Accept-Language":"en"}}).then(res=>{
+            settype(res.data)
+            })
         })
     },[])
 
@@ -63,12 +63,21 @@ export default function Searchfilter() {
                             </div>
                         </div>
                         <div className="filter_button">
-                            <div className="button_filter_kurs">
-                                <div className='div_kurs'>FrontEnd</div>
-                                <div className='div_kurs'>Backend</div>
-                                <div className='div_kurs'>Modx</div>
-
-                            </div>
+                            {kursdata.map(item1=>{
+                                return(
+                                <>
+                                    {type.map(item2=>{
+                                    if (item1.course_type===item2.id) {
+                                        return(
+                                            <div className="button_filter_kurs">
+                                                <div className='div_kurs'>{item2.name}</div>
+                                            </div>
+                                        )
+                                    }
+                                    })}
+                                </>
+                                )
+                            })}
                         </div>
                     </div>
                 </div>
@@ -101,7 +110,7 @@ export default function Searchfilter() {
                         </h5>
                     </div>
 </div>
-                    <button className='button_circle'><AiOutlineArrowRight /></button>
+                    <button className='button_circle'><AiOutlineArrowRight onClick={()=>{window.location="/video"}} /></button>
                 </div>
                 )
             })}
