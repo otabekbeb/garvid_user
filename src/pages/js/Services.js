@@ -90,7 +90,7 @@ export default function Services() {
         <div className="right-card">
         <div className="about-header-card">
 <h4>Do you need help?</h4>
-<p>Contact us at FinExpert <br /> office closest to you or <br /> submit your business inquiry online.</p>
+<p>Contact us at FinExpert office closest to you or submit your business inquiry online.</p>
 
 <button>Connect with us</button>
 </div>
@@ -111,7 +111,7 @@ export default function Services() {
 
 </div>
 <div className="sli-text">
-<p>Wow I'm so happy with you <br /> service. You managed to overcome<br /> my expectations! You guys are very efficient.</p>
+<p>Wow I'm so happy with you service. You managed to overcome my expectations! You guys are very efficient.</p>
 
 <strong>Adam Watson</strong>
 <h4>(CEO and Founder)</h4>
@@ -239,7 +239,7 @@ export default function Services() {
         <div className="right-card">
         <div className="about-header-card">
 <h4>Вам нужна помощь?</h4>
-<p>Свяжитесь с нами в FinExpert  <br /> ближайший к вам офис или <br /> отправьте бизнес-справка онлайн.</p>
+<p>Свяжитесь с нами в FinExpert  ближайший к вам офис или отправьте бизнес-справка онлайн.</p>
 
 <button>Связаться с нами</button>
 </div>
