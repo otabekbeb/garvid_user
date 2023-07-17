@@ -47,9 +47,9 @@ export default function Ourteam() {
               <p>Как основатель FinExpert, Денис решает вопросы развития компании и ее подразделений...</p>
               <div className="two21">
                 <div className="icon223">
-                  <div className="dumalo12"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                  <div className="dumalo12"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                  <div className="dumalo12"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                  <div className="dumalo12"><i class='bx bxl-telegram'></i></div>
+                  <div className="dumalo12"><i class='bx bxl-instagram-alt'></i></div>
+                  <div className="dumalo12"><i class='bx bxl-facebook' ></i></div>
                 </div>
                 <div className="view12"><h4>Профиль <span></span></h4></div>
               </div>
@@ -62,9 +62,9 @@ export default function Ourteam() {
               <p>Clarke предоставляет услуги по финансовому планированию и управлению капиталом, пытаясь минимизировать наши расходы и риски.</p>
               <div className="two21">
                 <div className="icon223">
-                  <div className="dumalo12"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                  <div className="dumalo12"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                  <div className="dumalo12"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                  <div className="dumalo12"><i class='bx bxl-telegram'></i></div>
+                  <div className="dumalo12"><i class='bx bxl-instagram-alt'></i></div>
+                  <div className="dumalo12"><i class='bx bxl-facebook' ></i></div>
                 </div>
                 <div className="view12"><h4>Профиль <span></span></h4></div>
               </div>
@@ -77,9 +77,9 @@ export default function Ourteam() {
               <p>Основная задача Эшли — управление финансовыми рисками FinExpert. Она также отвечает за анализ данных, полученных от...</p>
               <div className="two21">
                 <div className="icon223">
-                  <div className="dumalo12"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                  <div className="dumalo12"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                  <div className="dumalo12"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                  <div className="dumalo12"><i class='bx bxl-telegram'></i></div>
+                  <div className="dumalo12"><i class='bx bxl-instagram-alt'></i></div>
+                  <div className="dumalo12"><i class='bx bxl-facebook' ></i></div>
                 </div>
                 <div className="view12"><h4>Профиль <span></span></h4></div>
               </div>
@@ -92,9 +92,9 @@ export default function Ourteam() {
               <p>Г-н Бенетт является важным членом нашей команды. Его работа заключается в управлении налогами и решении различных ситуаций...</p>
               <div className="two21">
                 <div className="icon223">
-                  <div className="dumalo12"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                  <div className="dumalo12"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                  <div className="dumalo12"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                  <div className="dumalo12"><i class='bx bxl-telegram'></i></div>
+                  <div className="dumalo12"><i class='bx bxl-instagram-alt'></i></div>
+                  <div className="dumalo12"><i class='bx bxl-facebook' ></i></div>
                 </div>
                 <div className="view12"><h4>Профиль <span></span></h4></div>
               </div>
@@ -107,9 +107,9 @@ export default function Ourteam() {
               <p>Г-жа Норрис занимается различными финансовыми проблемами малого бизнеса и стартапов. Оказывает консультационные услуги онлайн...</p>
               <div className="two21">
                 <div className="icon223">
-                  <div className="dumalo12"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                  <div className="dumalo12"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                  <div className="dumalo12"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                  <div className="dumalo12"><i class='bx bxl-telegram'></i></div>
+                  <div className="dumalo12"><i class='bx bxl-instagram-alt'></i></div>
+                  <div className="dumalo12"><i class='bx bxl-facebook' ></i></div>
                 </div>
                 <div className="view12"><h4>Профиль <span></span></h4></div>
               </div>
@@ -122,9 +122,9 @@ export default function Ourteam() {
               <p>Когда речь идет о снижении финансовых рисков международных компаний и бизнес-корпораций, Бернар является нашим ведущим консультантом...</p>
               <div className="two21">
                 <div className="icon223">
-                  <div className="dumalo12"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-                  <div className="dumalo12"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                  <div className="dumalo12"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                  <div className="dumalo12"><i class='bx bxl-telegram'></i></div>
+                  <div className="dumalo12"><i class='bx bxl-instagram-alt'></i></div>
+                  <div className="dumalo12"><i class='bx bxl-facebook' ></i></div>
                 </div>
                 <div className="view12"><h4>Профиль <span></span></h4></div>
               </div>

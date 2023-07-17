@@ -2199,7 +2199,7 @@ display: none;
   height: 35px;
   border: 2px solid #44bef1;
   border-radius: 20px;
-  background: #f1e1e1;
+  background: white;
   position: relative;
   box-sizing: border-box;
  }
@@ -2228,7 +2228,7 @@ display: none;
  
  .checkbox-con input[type="checkbox"]:checked {
   border: 2px solid #44bef1;
-  background: #e2f1e1;
+  background: white;
  }
  
  .checkbox-con input[type="checkbox"]:checked::before {
