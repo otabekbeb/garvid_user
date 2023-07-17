@@ -211,7 +211,11 @@ height: 40px;
 .loginimg{
     display: none;
 }
+.login_big_div{
+  margin-top: 150px;
+}
 .login_small_div{
+  
     width: 100%;
     height: 100%;
 }
