@@ -10,8 +10,11 @@
     padding: 10px;
    
 }
-.accordion_img img{
+.accordion_img{
     width: 10%;
+}
+.accordion_img img{
+    width: 100%;
     border-radius: 50%;
 }
 .navbar_otish1 p:after {
@@ -260,6 +263,7 @@ margin-bottom: 20px;
 .accordion_text
 {
     margin-left: 10px;
+    width: 80%;
 }
 .accordion_text h6{
     font-size: 15px;
