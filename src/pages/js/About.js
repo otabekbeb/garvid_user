@@ -66,19 +66,19 @@ export default function About() {
       <div className="about-header-df">
         <div className="about-header-blcos1">
           <h2>275</h2>
-          <p>Cases completed </p>
+          <p >Cases completed </p>
         </div>
         <div className="about-header-blcos2">
           <h2>19</h2>
-          <p>Consultants</p>
+          <p id='localengwon3'>Consultants</p>
         </div>
         <div className="about-header-blcos3">
           <h2>130</h2>
-          <p id='localengwon'>Won <br  className='dfoigdfoi'/> <br  className='dfoigdfoi'/></p>
+          <p id='localengwon'>Awards Won <br  className='dfoigdfoi'/> <br  className='dfoigdfoi'/></p>
         </div>
         <div className="about-header-blcos4">
           <h2>723</h2>
-          <p>Happy clients</p>
+          <p id='localengwon1'>Happy clients</p>
         </div>
       </div>
     </div>

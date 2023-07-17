@@ -145,7 +145,7 @@ export default function Footer1() {
     <p>Get the latest updates and offers.</p>
 <div className="futer-mobil-input">
 <form action="">
-<input type="email" required placeholder='Электронная почта *' />
+<input type="email" required placeholder='Email*' />
 
 
 <div className="futer-mobil-button"><button>Send</button></div>

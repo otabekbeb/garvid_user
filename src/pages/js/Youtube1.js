@@ -1,23 +1,26 @@
-import React, { useEffect, useState } from "react";
-import img_kotta from "../img/Rectangle.png";
-import img_ava from "../img/Ellipse.png";
-import img_accordion from "../img/Rectangle 14.1.svg";
-import { AiFillStar } from "react-icons/ai";
-import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import { TbInfoTriangleFilled } from "react-icons/tb";
-import { TiThMenu } from "react-icons/ti";
-import "../css/youtube1.css";
-import Qollamalar from "../js/Bilmadim1";
-import Scachat from "../js/Scachat";
-import Vazifa from "../js/Vazifa1";
-import Comment from "../js/Comment1";
-import Navbar from "../js/Navbar";
-import { BiTime } from "react-icons/bi";
-import "../css/youtube1.css";
-import Accordion from "react-bootstrap/Accordion";
-import "bootstrap/dist/css/bootstrap.min.css";
-import axios from "axios";
-import url from "./Host";
+import React, { useEffect, useState } from 'react'
+import img_kotta from '../img/Rectangle.png'
+import img_ava from '../img/Ellipse.png'
+import img_accordion from '../img/Rectangle 14.1.svg'
+import { AiFillStar } from 'react-icons/ai'
+import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
+import {TbInfoTriangleFilled} from 'react-icons/tb'
+import {TiThMenu} from 'react-icons/ti'
+import '../css/youtube1.css'
+import Qollamalar from '../js/Bilmadim1'
+import Scachat from '../js/Scachat'
+import Vazifa from '../js/Vazifa1'
+import Comment from '../js/Comment1'
+import Navbar from '../js/Navbar'
+
+
+import { BiBorderBottom, BiTime } from 'react-icons/bi'
+
+import '../css/youtube1.css';
+import Accordion from 'react-bootstrap/Accordion';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios'
+import url from "./Host"
 
 export default function Youtube1() {
   const [id, setId] = useState(1);

@@ -853,13 +853,13 @@ color: #9DA7BB;
 
 .navbar_video{
     display: flex;align-items: center;justify-content: space-between;
-    width: 700px;
+    width: 600px ;
     padding: 10px;
     margin-top: 30px;
 }
 
 .navbar_otish{
-    width: 500px;
+    width: 600px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -867,13 +867,13 @@ color: #9DA7BB;
     font-size: 18px;
     cursor: pointer;
 }
-.zadaniya{
-    color: #2E2E2E;
-    border-bottom: 2px solid #536DFD;
-}
 .navbar_rule{
     color: #FFD401;
     display: flex;align-items: center;
+}
+.zadaniya, .zadaniya5{
+    border-bottom: 1px solid #536DFD;
+    color: #2E2E2E;
 }
 
 @media (max-width:1200px) {
@@ -886,6 +886,11 @@ color: #9DA7BB;
         width: 100%;
     }
 }
+@media (max-width:630px) {
+    .navbar_otish{
+        width: 530px;
+    }
+}
 @media (max-width:550px) {
     .navbar_none{
         display: none;
@@ -894,18 +899,15 @@ color: #9DA7BB;
     display: block !important;
 width: 100%;
 }
-.menu_navbar{
-    margin-left: 50%;
 
-}
 .navbar_yon{
     background-color: #fff;
     padding: 10px;
-    width: 90%;
-    margin-left: 5%;
+    width: 100%;
     border-radius: 5px;
     margin-top: 20px;
     position: absolute;
+    height: 40vh;
 }
     .navbar_otish1{
         width: 50%;
@@ -917,6 +919,9 @@ width: 100%;
 }
 .navbar_yon{
     display: none;
+}
+.na{
+    display: block;
 }
 .menu_navbar{
     color: #536DFD;
@@ -931,4 +936,6 @@ width: 100%;
 .navbar_block{
     display: none;
 }
+
+
 

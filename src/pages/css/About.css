@@ -757,7 +757,7 @@ color: #1aa1dc;
 .about-header-card{
     margin-top: 2rem;
     width: 270px;
-    height: 285px;
+    min-height: 285px;
     background-color: #17aeee;
     border-radius: 10px;
 
@@ -1072,7 +1072,7 @@ overflow: hidden;
     .about-header-card {
         margin-top: 2rem;
         width: 250px;
-        height: 275px;
+        min-height: 275px;
         background-color: #17aeee;
         border-radius: 10px;
     }
@@ -2864,6 +2864,189 @@ height: 2270px;
         }
 #localengwon{
     position: relative;
-    left: 80px;
+    left: 60px;
     
+}
+#localengwon3{
+    position: relative;
+    left: 70px;
+    
+}
+#localengwon1{
+    position: relative;
+    left: 60px;
+    
+}
+@media (max-width:1116px) {
+    #localengwon3{
+        position: relative;
+        left: 60px;
+        
+    }
+}
+@media (max-width:1082px) {
+    #localengwon3{
+        position: relative;
+        left: 50px;
+        
+    }
+}
+@media (max-width:589px) {
+    #localengwon3{
+        position: relative;
+        left:46px;
+        
+    }
+}
+@media (max-width:581px) {
+    #localengwon3{
+        position: relative;
+        left:38px;
+        
+    }
+}
+@media (max-width:532px) {
+    #localengwon3{
+        position: relative;
+        left:33px;
+        
+    }
+}
+
+@media (max-width:423px) {
+    #localengwon3{
+        position: relative;
+        left:29px;
+        
+    }
+}
+@media (max-width:422px) {
+    #localengwon3{
+        position: relative;
+        left:24px !important;
+        
+    }
+}
+@media (max-width:369px) {
+    #localengwon3{
+        position: relative;
+        left:18px !important;
+        
+    }
+}
+@media (max-width:430px) {
+    #localengwon3{
+        position: relative;
+        left:26px !important;
+        
+    }
+}
+@media (max-width:581px) {
+    #localengwon1{
+        position: relative;
+        left: 40px !important;
+        
+    } 
+    
+}
+@media (max-width:422px) {
+    #localengwon1{
+        position: relative;
+        left: 30px !important;
+        
+    } 
+}
+@media (max-width:1081px) {
+    #localengwon1{
+        position: relative;
+        left: 55px;
+        
+    } 
+}
+@media (max-width:966px) {
+    #localengwon{
+        position: relative;
+        left: 50px;
+        
+    }
+}
+@media (max-width:695px) {
+    #localengwon{
+        position: relative;
+        left:45px;
+        
+    }
+}
+@media (max-width:601px) {
+    #localengwon{
+        position: relative;
+        left:30px;
+        
+    }
+}
+@media (max-width:500px) {
+    #localengwon{
+        position: relative;
+        left:25px;
+        
+    }
+}
+@media (max-width:440px) {
+    #localengwon{
+        position: relative;
+        left:27px;
+        
+    }
+}
+@media (max-width:431px) {
+    #localengwon{
+        position: relative;
+        left:22px;
+        
+    }
+}
+@media (max-width:400px) {
+    #localengwon{
+        position: relative;
+        left:19px;
+        
+    }
+}
+@media (max-width:370px) {
+    #localengwon{
+        position: relative;
+        left:10px;
+        
+    }
+}
+@media (max-width:394px) {
+    #localengwon3{
+        position: relative;
+        left:22px !important;
+        
+    }
+}
+@media (max-width:430px) {
+    #localengwon1{
+        position: relative;
+        left: 37px !important;
+    }
+}
+@media (max-width:393px) {
+    #localengwon1{
+        position: relative;
+        left: 30px !important;
+    }   
+}
+@media (max-width:321px) {
+    #localengwon1{
+        position: relative;
+        left: 24px !important;
+    }  
+}
+@media (max-width:770px) {
+    .checkbox-con{
+        position: relative;
+        left: -20px;
+    }
 }
