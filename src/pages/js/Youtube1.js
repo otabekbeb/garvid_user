@@ -12,6 +12,10 @@ import Scachat from '../js/Scachat'
 import Vazifa from '../js/Vazifa1'
 import Comment from '../js/Comment1'
 import Navbar from '../js/Navbar'
+
+
+import { BiBorderBottom, BiTime } from 'react-icons/bi'
+
 import { BiTime } from 'react-icons/bi'
 import '../css/youtube1.css';
 import Accordion from 'react-bootstrap/Accordion';
@@ -25,13 +29,73 @@ export default function Youtube1() {
   const [subcategory,setSubcategory]=useState([])
 
   function openModal() {
-    document.querySelector('.navbar_yon').style="display:block;"
+    document.querySelector('.navbar_yon').classList.toggle("na")
+    var a=document.querySelector(".navbar_yon").style.display
+
+    if (a=="none") {
+      document.querySelector('.navbar_yon').style="display:block"
+    }
+    else{
+      document.querySelector('.navbar_yon').style="display:none"
+    }
+
   }
-   function closeModal() {
-     document.querySelector(".navbar_yon").style = "display:none;";
-   }
+
+   function painModal() {
+    document.querySelector(".zadaniya").style="border-bottom: 2px solid #536DFD; color: #2E2E2E;"
+    document.querySelector(".zadaniya1").style="border-bottom: none; color: #9DA7BB;" 
+    document.querySelector(".zadaniya2").style="border-bottom: none; color: #9DA7BB;"
+    document.querySelector(".zadaniya3").style="border-bottom: none; color: #9DA7BB;"
+  }
+   function painModal1() {
+    document.querySelector(".zadaniya1").style="border-bottom: 2px solid #536DFD; color: #2E2E2E;"
+    document.querySelector(".zadaniya").style="border-bottom: none; color: #9DA7BB;" 
+    document.querySelector(".zadaniya2").style="border-bottom: none; color: #9DA7BB;"
+    document.querySelector(".zadaniya3").style="border-bottom: none; color: #9DA7BB;"
+  }
+  function painModal2() {
+    document.querySelector(".zadaniya2").style="border-bottom: 2px solid #536DFD; color: #2E2E2E;"
+    document.querySelector(".zadaniya1").style="border-bottom: none; color: #9DA7BB;" 
+    document.querySelector(".zadaniya1").style="border-bottom: none; color: #9DA7BB;" 
+    document.querySelector(".zadaniya3").style="border-bottom: none; color: #9DA7BB;"
+  }
+  function painModal3() {
+    document.querySelector(".zadaniya3").style="border-bottom: 2px solid #536DFD; color: #2E2E2E;"
+    document.querySelector(".zadaniya2").style="border-bottom: none; color: #9DA7BB;" 
+    document.querySelector(".zadaniya1").style="border-bottom: none; color: #9DA7BB;" 
+    document.querySelector(".zadaniya2").style="border-bottom: none; color: #9DA7BB;"
+  }
+
+//mediya
+
+function painModal5() {
+  document.querySelector(".zadaniya5").style="border-bottom: 2px solid #536DFD; color: #2E2E2E;"
+  document.querySelector(".zadaniya6").style="border-bottom: none; color: #9DA7BB;" 
+  document.querySelector(".zadaniya7").style="border-bottom: none; color: #9DA7BB;" 
+  document.querySelector(".zadaniya8").style="border-bottom: none; color: #9DA7BB;"
+}
+function painModal6() {
+  document.querySelector(".zadaniya6").style="border-bottom: 2px solid #536DFD; color: #2E2E2E;"
+  document.querySelector(".zadaniya5").style="border-bottom: none; color: #9DA7BB;" 
+  document.querySelector(".zadaniya7").style="border-bottom: none; color: #9DA7BB;" 
+  document.querySelector(".zadaniya8").style="border-bottom: none; color: #9DA7BB;"
+}
+function painModal7() {
+  document.querySelector(".zadaniya7").style="border-bottom: 2px solid #536DFD; color: #2E2E2E;"
+  document.querySelector(".zadaniya6").style="border-bottom: none; color: #9DA7BB;" 
+  document.querySelector(".zadaniya5").style="border-bottom: none; color: #9DA7BB;" 
+  document.querySelector(".zadaniya8").style="border-bottom: none; color: #9DA7BB;"
+}
+function painModal8() {
+  document.querySelector(".zadaniya8").style="border-bottom: 2px solid #536DFD; color: #2E2E2E;"
+  document.querySelector(".zadaniya6").style="border-bottom: none; color: #9DA7BB;" 
+  document.querySelector(".zadaniya7").style="border-bottom: none; color: #9DA7BB;" 
+  document.querySelector(".zadaniya5").style="border-bottom: none; color: #9DA7BB;"
+}
+
 
   function videoBolim(id){
+    document.querySelector('.navbar_yon').style="display:none"
   setId(id)  
   }
 
@@ -44,7 +108,6 @@ setSubcategory(res1.data)
     })
 
   },[])
-
 
 
   return (
@@ -244,25 +307,25 @@ setSubcategory(res1.data)
         <div className="navbar_video">
           <div className="navbar_none">
             <div className="navbar_otish">
-              <p onClick={()=>videoBolim(1)} className="zadaniya">Вопрос и ответ</p>
-              <p onClick={()=>videoBolim(2)} className="zadaniya">Задания</p>
-              <p onClick={()=>videoBolim(3)} className="zadaniya">Руководства</p>
-              <p onClick={()=>videoBolim(4)} className="zadaniya">Скачать</p>
+              <p onClick={()=>{videoBolim(1); painModal() } } className="zadaniya">Вопрос и ответ</p>
+              <p onClick={()=>{videoBolim(2); painModal1()}} className="zadaniya1">Задания</p>
+              <p onClick={()=>{videoBolim(3); painModal2()}} className="zadaniya2">Руководства</p>
+              <p onClick={()=>{videoBolim(4); painModal3()}} className="zadaniya3">Скачать</p>
             </div>
           </div>
         </div>
         <div className="navbar_block">
-          <div className="menu_navbar" onClick={()=>{openModal()}}>
+          <center><div className="menu_navbar" onClick={()=>{openModal()}}>
               <TiThMenu />
-            </div>
-          <div className="navbar_yon" onMouseLeave={()=>{closeModal();}}>
+            </div></center>
+          <div className="navbar_yon">
             
            
             <div className="navbar_otish1">
-              <p onClick={()=>videoBolim(1)} className="zadaniya1">Вопрос и ответ</p>
-              <p onClick={()=>videoBolim(2)} className="zadaniya1">Задания</p>
-              <p onClick={()=>videoBolim(3)} className="zadaniya1">Руководства</p>
-              <p onClick={()=>videoBolim(4)} className="zadaniya1">Скачать</p>
+              <p onClick={()=>{videoBolim(1); painModal5() }} className="zadaniya5">Вопрос и ответ</p>
+              <p onClick={()=>{videoBolim(2); painModal6() }} className="zadaniya6">Задания</p>
+              <p onClick={()=>{videoBolim(3); painModal7() }} className="zadaniya7">Руководства</p>
+              <p onClick={()=>{videoBolim(4); painModal8() }} className="zadaniya8">Скачать</p>
             </div></div>
           </div>
           <div className={id===1?"show-content":"content"}><Comment/></div>
