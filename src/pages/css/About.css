@@ -201,7 +201,7 @@ width: 40px;
 height: 35px;
 background-color: #ffffff;
 position: relative;
-top: -6px !important;
+top: -12px !important;
 cursor: pointer;
 
     }
@@ -309,10 +309,7 @@ position: relative;
     padding: 8px 0;
     margin: 0;
 }
-.media-navbar{
-    position: absolute;
-    left: 2%;
-}
+
 
 .media-ul ul li{
     text-decoration: none;
@@ -2841,3 +2838,29 @@ height: 2270px;
              
             }
         }
+        @media (max-width:560px) {
+            .asd-block {
+                position: relative;
+              left: 2.2%;
+                top: 15px;
+              }
+        }
+        @media (max-width:770px) {
+            .asd-block {
+                position: relative;
+              left: -1%;
+                top: 15px;
+              }
+        }
+  
+        @media (max-width:428px) {
+            .media-header-button {
+                margin-top: 25px;
+                width: 90%;
+                height: 200px;
+                background-color: #17aeee;
+                border-radius: 10px !important;
+            }
+        }
+  
+       

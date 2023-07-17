@@ -3,12 +3,13 @@ import React, { useState } from 'react'
 import '../css/Navbar.css'
 
 function sa(){
-    var y= document.querySelector(".media-ul").style.display;
-    if(y=="flex"){
-    document.querySelector(".media-ul").style.display="none";
-    }else{
-       document.querySelector(".media-ul").style.display="flex";
-    }
+    var o=document.querySelector(".media-ul").style.display
+    if(o=="flex"){
+        document.querySelector(".media-ul").style.display="none";
+        }else{
+           document.querySelector(".media-ul").style.display="flex";
+        }
+    // document.querySelector(".media-ul").style.display="flex";
     document.querySelector(".bar-menu").classList.toggle("la")
     document.querySelector(".wone").classList.toggle("laa")
     document.querySelector(".wone1").classList.toggle("laa")
@@ -16,8 +17,8 @@ function sa(){
    }
 
     function about2() {
-  
-        document.querySelector("#sdfdsfsd").style="transform: rotate(180deg);"
+        document.querySelector(".ichi span").style="transform: rotate(180deg);";
+
         }
     
         function aboutClose2() {
@@ -25,14 +26,9 @@ function sa(){
             document.querySelector(".ichi span").style="transform: rotate(0deg);"
             }
             function ffd() {
-    var t=document.querySelector(".ffd ul").style.display
-    if(t=="none"){
-        document.querySelector(".ffd ul").style.display="block";
-        }else{
-           document.querySelector(".ffd ul").style.display="none";
-        }
+  
     }    
-   
+    // meded
     function ochil1() {
         
         var t=document.querySelector(".lll ul").style.display
@@ -45,6 +41,18 @@ function sa(){
                document.querySelector(".lll ul").style.opacity="0";
             }
         }
+        function meded() {
+        
+            var t=document.querySelector(".ffdul ").style.display
+            var p=document.querySelector(".ffdul").style.opacity
+            if(t=="none"){
+                document.querySelector(".ffdul").style.display="block";
+                document.querySelector(".ffdul").style.opacity="1";
+                }else{
+                   document.querySelector(".ffdul").style.display="none";
+                   document.querySelector(".ffdul").style.opacity="0";
+                }
+            }
         function menuul() {
             document.querySelector(".div1").style="display:block"
             document.querySelector(".menu ul").style="display:block"
@@ -55,6 +63,7 @@ function sa(){
         }
         function menuul1() {
             document.querySelector(".menu ul").style="display:none"
+            document.querySelector(".div1").style="display:none important"
             
         }
         function menu2ul() {
@@ -65,7 +74,7 @@ function sa(){
             document.querySelector(".blog1").style="display:block"
         }
         function menu2leave() {
-            document.querySelector(".blog1").style="display:none"
+            document.querySelector(".blog1").style="display:none "
       
         }
         function menu2leave1() {
@@ -80,7 +89,7 @@ export default function Navbar() {
 
  const [state,State] = React.useState(1)
 
-
+//  {state1===eng ?("a"):("a")}
 return (
     <div>
 <section  onMouseLeave={() => menuul1()} className='navbar'>
@@ -126,8 +135,8 @@ return (
       
   
 
-            <div className="navbar-menu"onClick={() => sa()}>
-<div className="navbar-mediao-barr">
+            <div className="navbar-menu">
+<div className="navbar-mediao-barr" onClick={() => sa()}>
     
 <div  className="bar-menu"   id='sa'  >
       <div className="wone" ></div>
@@ -138,13 +147,13 @@ return (
       </div>
 </div>
 
-     
+{/* onMouseLeave={()=>aboutClose2()}  */}
 <div className="media-ul">
 <div className="dfdf">
 <ul>
    <li><a href="/" className='tt'>Главный</a></li>
-   <div className="media-kategory"  onMouseLeave={()=>aboutClose2()}  >
-<div className="ichi" onMouseEnter={(() => about2())} onClick={()=> ffd()}>
+   <div className="media-kategory" onMouseLeave={()=>aboutClose2()}  >
+<div className="ichi" onMouseEnter={()=>about2()}  onClick={(() => meded())}>
 <li ><a href="/about" className='tt'>О нас</a></li> <span id='sdfdsfsd'><box-icon name='chevron-down' color='#ffffff' ></box-icon></span>
 
 
