@@ -9,9 +9,8 @@ import Ourteam from './pages/js/Ourteam'
 import User from "./pages/js/user"
 import Mento from "./pages/js/Mentor"
 import Video from "./pages/js/Youtube1";
-import Contacts from "./pages/js/Contacts";
+import Contacts from "./pages/js/Contacts";    
 import Loginpage from "./pages/js/Loginpage";
-
 
 
 import './App.css'
@@ -34,7 +33,7 @@ export default function App() {
           <Route path="/mentor" element={<Mento />} />
           <Route path="/contacts" element={<Contacts/>} />
           <Route path="/video" element={<Video />} />
-
+      
           {/* <Route index element={} />*/}
         </Routes>
       </BrowserRouter>
