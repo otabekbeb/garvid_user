@@ -26,6 +26,14 @@
   align-items: center;
  
 }
+.media-ul ul li:hover{
+  background-color: #44bef1 !important;
+  cursor: pointer;
+}
+.ichi:hover{
+  background-color: #44bef1;
+  cursor: pointer;
+}
 #hh1 {
   display: none;
 }
@@ -901,13 +909,11 @@ display: none;
   height: 100%;
   position: relative;
   left: -40px !important;
-  background-color: #44bef1;
-  color: white;
 } 
 .ichi li a {
 
   position: relative;
-  top: -5px !important;
+  /* top: -5px !important; */
   left: 40px !important;
 }
   .media-ul ul a {
@@ -932,6 +938,9 @@ display: none;
 .la {
   background-color: #44bef1 !important;
 
+}
+.tt{
+  color: black !important;
 }
 .laa {
   background-color: white !important;

@@ -146,9 +146,10 @@ return (
 
     <li className='moto-menu-item'> <a href="/servis">Services</a> </li>
     <li className='moto-menu-item'><a href="/blog">Blog</a></li>
-    <li className='moto-menu-item'><a href="/ourteam">our team</a></li>
+    <li className='moto-menu-item'><a href="/ourteam">Our team</a></li>
     <li className='moto-menu-item'><a href="/contacts">Contacts</a></li>
     <li className='moto-menu-item'><a href="/login">Log in</a></li>
+    <li><a href="/teacher" className='tt'>Teacher</a></li>
 </ul>
 <div class="checkbox-con">
   <input id="checkbox" onClick={()=>{!document.querySelector("#checkbox").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "eng"));window.location.reload()}} type="checkbox"/>
@@ -177,7 +178,7 @@ return (
    <li><a href="/" className='tt'>Main</a></li>
    <div className="media-kategory" onMouseLeave={()=>aboutClose2()}  >
 <div className="ichi" onMouseEnter={()=>about2()}  onClick={(() => meded())}>
-<li ><a href="/about" className='tt'>About Us</a></li> <span id='sdfdsfsd'><box-icon name='chevron-down' color='#ffffff' ></box-icon></span>
+<li ><a href="/about" className='tt'>About Us</a></li> <span id='sdfdsfsd'><box-icon name='chevron-down' color='black' ></box-icon></span>
 
 
 </div>
@@ -185,7 +186,6 @@ return (
 </div>
 <div className="ffd" >
 <ul className='ffdul' >
-   <li className='ds'><a href="#">Archives</a></li>
 
   <div className="ichi2" onClick={()=>ochil1()
 }>
@@ -207,6 +207,7 @@ return (
    <li><a href="/ourteam" className='tt'>our team</a></li>
    <li><a href="/contacts" className='tt'>Contacts</a></li>
    <li><a href="/login" className='tt'>Login</a></li>
+   <li><a href="/teacher" className='tt'>Teacher</a></li>
    <div class="checkbox-con">
   <input id="checkbox2" onClick={()=>{!document.querySelector("#checkbox2").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "eng"));window.location.reload()}} type="checkbox"/>
 </div>
@@ -326,7 +327,7 @@ return (
    <li><a href="/" className='tt'>Главный</a></li>
    <div className="media-kategory" onMouseLeave={()=>aboutClose2()}  >
 <div className="ichi" onMouseEnter={()=>about2()}  onClick={(() => meded())}>
-<li ><a href="/about" className='tt'>О нас</a></li> <span id='sdfdsfsd'><box-icon name='chevron-down' color='#ffffff' ></box-icon></span>
+<li ><a href="/about" className='tt'>О нас</a></li> <span id='sdfdsfsd'><box-icon name='chevron-down' color='black' ></box-icon></span>
 
 
 </div>

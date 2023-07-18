@@ -49,37 +49,37 @@ export default function Services() {
 </div>
          <div className="box">
         <div className="left-card">
-            <div className="cards">
+            <div id='serviscards' className="cards">
                 <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img01.jpg" alt=""/>
                 <h1><a href="#">Financial Planning</a></h1>
                 <p>Even though financial planning is an ongoing and complex process, it helps a person make smart decisions about money goals in their life.</p>
             </div>
 
-            <div className="cards">
+            <div id='serviscards' className="cards">
                 <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img02.jpg" alt=""/>
                 <h1><a href="#">Investment</a></h1>
                 <p>Our investment advisors study clients' goals, investment experience and risk tolerance and determine the investment plan best suited for each client.</p>
             </div>
 
-            <div className="cards">
+            <div id='serviscards' className="cards">
                 <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img03.jpg" alt=""/>
                 <h1><a href="#">Taxation</a></h1>
                 <p>Arranging your affairs to avoid or defer taxation is an art, and effective tax planning can be the first step to your financial success and potential savings.</p>
             </div>
 
-            <div className="cards">
+            <div id='serviscards' className="cards">
                 <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img04.jpg" alt=""/>
                 <h1><a href="#">Retirement planning</a></h1>
                 <p>Retirement planning can be problematic if you don't have the necessary knowledge on how to manage your funds or build a foundation for retirement.</p>
             </div>
 
-            <div className="cards">
+            <div id='serviscards' className="cards">
                 <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img05.jpg" alt=""/>
                 <h1><a href="#">Business Planning</a></h1>
                 <p>Managing a company's finances, no matter how big or small, can often seem like a daunting task, but our experts can help you improve your company's financial health.</p>
             </div>
 
-            <div className="cards">
+            <div id='serviscards' className="cards">
                 <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img06.jpg" alt=""/>
                 <h1><a href="#">Management of risks</a></h1>
                 <p>This area of ​​financial advisory involves identifying, assessing and prioritizing potential risks to your business, followed by preventive action.</p>
@@ -111,7 +111,7 @@ export default function Services() {
 
 </div>
 <div className="sli-text">
-<p>Wow I'm so happy with you service. You managed to overcome my expectations! You guys are very efficient.</p>
+<p>Wow I'm so happy with you service. You managed to overcome my expectations!</p>
 
 <strong>Adam Watson</strong>
 <h4>(CEO and Founder)</h4>
@@ -198,37 +198,37 @@ export default function Services() {
 </div>
          <div className="box">
         <div className="left-card">
-            <div className="cards">
+            <div id='serviscards' className="cards">
                 <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img01.jpg" alt=""/>
                 <h1><a href="#">Финансовое Планирование</a></h1>
                 <p>Несмотря на то, что финансовое планирование является непрерывным и сложным процессом, оно помогает человеку принимать разумные решения относительно денежных целей в своей жизни.</p>
             </div>
 
-            <div className="cards">
+            <div id='serviscards' className="cards">
                 <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img02.jpg" alt=""/>
                 <h1><a href="#">Инвестиционный</a></h1>
                 <p>Наши инвестиционные консультанты изучают цели клиентов, инвестиционный опыт и устойчивость к риску и определяют план финансовых вложений, наиболее подходящий для каждого клиента.</p>
             </div>
 
-            <div className="cards">
+            <div id='serviscards' className="cards">
                 <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img03.jpg" alt=""/>
                 <h1><a href="#">Налогообложение</a></h1>
                 <p>Устроить свои дела так, чтобы избежать или отсрочить налогообложение — настоящее искусство, а эффективное налоговое планирование может стать первым шагом к вашему финансовому успеху и потенциальной экономии.</p>
             </div>
 
-            <div className="cards">
+            <div id='serviscards' className="cards">
                 <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img04.jpg" alt=""/>
                 <h1><a href="#">Пенсионное планирование</a></h1>
                 <p>Планирование выхода на пенсию может быть проблематичным, если у вас нет необходимых знаний о том, как управлять своими средствами или создать основу для выхода на пенсию.</p>
             </div>
 
-            <div className="cards">
+            <div id='serviscards' className="cards">
                 <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img05.jpg" alt=""/>
                 <h1><a href="#">Планирование Бизнеса</a></h1>
                 <p>Управление финансами компании, независимо от того, большая она или маленькая, часто кажется сложной задачей, но наши специалисты могут помочь вам улучшить финансовое состояние вашей компании.</p>
             </div>
 
-            <div className="cards">
+            <div id='serviscards' className="cards">
                 <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img06.jpg" alt=""/>
                 <h1><a href="#">Управление Рисками</a></h1>
                 <p>Эта сфера финансового консультирования включает выявление, оценку и приоритизацию возможных рисков для вашего бизнеса с последующими превентивными мерами.</p>
