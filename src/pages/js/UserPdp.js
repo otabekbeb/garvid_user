@@ -65,7 +65,7 @@ export default function Pdp() {
                     <TiThMenu onClick={() => menuModalClone()} className='profil_blok_menu_clone' />
                 </div>
                 <div className="profil_modal_media">
-                    <h1 onClick={() => updatetoggle(1)} className='fromMenu'>Мои курсыs</h1>
+                    <h1 onClick={() => updatetoggle(1)} className='fromMenu'>Мои курсы</h1>
                     <h1 onClick={() => updatetoggle(2)} className='fromMenu'>Мои усвоенные знания</h1>
                     <h1 onClick={() => updatetoggle(3)} className='fromMenu'>Мои сертификаты</h1>
                     <h1 onClick={() => updatetoggle(4)} className='fromMenu'>Мои подписки</h1>
