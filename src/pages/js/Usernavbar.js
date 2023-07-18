@@ -80,9 +80,9 @@ export default function Navbar() {
                 <div className="navbar-ul">
                     <ul>
                         <li onClick={()=> window.location="/user"} className='moto-menu-item'><a href="/user">{state1 === "eng" ? "User" : "Пользователь"}</a></li>
-                        <li className='moto-menu-item'> <a href="/servis">{state1 === "eng" ? "Student" : "Студент"}</a> </li>
-                        <li className='moto-menu-item'><a href="/blog">{state1 === "eng" ? "Mentor" : "Наставник"}</a></li>
-                        <li className='moto-menu-item'><a href="/ourteam">{state1 === "eng" ? "Partner" : "Партнёр"}</a></li>
+                        <li className='moto-menu-item'> <a href="">{state1 === "eng" ? "Student" : "Студент"}</a> </li>
+                        <li className='moto-menu-item'><a href="">{state1 === "eng" ? "Mentor" : "Наставник"}</a></li>
+                        <li className='moto-menu-item'><a href="">{state1 === "eng" ? "Partner" : "Партнёр"}</a></li>
                         <li onClick={()=> window.location="/loginpage"} className='moto-menu-item'><a href="/loginpage">{state1 === "eng" ? "Profile editing" : "Редактировать профиль"}</a></li>
                     </ul>
                     <div class="checkbox-con">
@@ -110,7 +110,7 @@ export default function Navbar() {
                         <div className="media-ul">
                             <div className="dfdf">
                                 <ul>
-                                    <li><a href="/" className='tt'>Главный</a></li>
+                                    <li><a href="/user" className='tt'>Пользователь</a></li>
                                     <div className="media-kategory" onMouseLeave={() => aboutClose2()}  >
 
 
