@@ -12,6 +12,8 @@ import Video from "./pages/js/Youtube1";
 import Contacts from "./pages/js/Contacts";    
 import Loginpage from "./pages/js/Loginpage";
 import Prover from './pages/js/Prover'
+import Teacher from "./pages/js/Teacherpage";
+
 
 
 import './App.css'
@@ -35,8 +37,8 @@ export default function App() {
           <Route path="/contacts" element={<Contacts/>} />
           <Route path="/video" element={<Video />} />
           <Route path="/prover" element={<Prover />} />
+          <Route path="/teacher" element={<Teacher />} />
 
-      
           {/* <Route index element={} />*/}
         </Routes>
       </BrowserRouter>

@@ -198,9 +198,10 @@
         line-height: 1.6;
         letter-spacing: 0px;
         margin-bottom: 14px;
+        margin-top: 14px;
     }
     .big-cards button {
-        width: 100px;
+        width: 120px;
         height: 40px;
         border-radius: 5px;
         font-family: 'Roboto', sans-serif;
@@ -231,8 +232,9 @@
         margin-bottom: 20px;
     }
     .category {
-        width: 80%;
+        width: 100%;
     }
+
     .category  h1 {
         font-weight: 550;
         font-style: normal;
@@ -252,6 +254,11 @@
         margin-bottom: 10px;
         font-weight: 400;
         cursor: pointer;
+    }
+    @media(max-width:400px){
+        #min-cards{
+            margin-bottom: 80px;
+        }
     }
     .category h3:hover {
         color: #44bef1;
@@ -273,4 +280,9 @@
 
 .sdkojfdsopj{
     overflow: hidden;
+}
+.big-cards button:hover{
+    background-color: #44bef1;
+    color: white;
+    
 }

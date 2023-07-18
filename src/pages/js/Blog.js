@@ -99,7 +99,7 @@ export default function Blog() {
                 <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-blog-img02.jpg" alt=""/>
                 <h2><a href="#">The main objectives of the marketer</a></h2>
             </div>
-            <div className="min-cards">
+            <div id='min-cards' className="min-cards">
                 <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-blog-img01.jpg" alt=""/>
                 <h2><a href="#">Recession is a good opportunity to deal a deathblow to the competitors</a></h2>
             </div>
@@ -191,7 +191,7 @@ export default function Blog() {
                 <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-blog-img02.jpg" alt=""/>
                 <h2><a href="#">Основные цели маркетолога</a></h2>
             </div>
-             <div className="min-cards">
+             <div id='min-cards' className="min-cards">
                 <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-blog-img01.jpg" alt=""/>
                 <h2><a href="#">Рецессия - это хорошая возможность нанести смертельный удар конкурентам</a></h2>
             </div>

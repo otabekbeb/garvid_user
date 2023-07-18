@@ -30,7 +30,7 @@ export default function Footer1() {
   <div className="as"></div>
  <div className="krug"><box-icon name='facebook' type='logo' color='white' id="ip"></box-icon></div>
     <div className="krug"><box-icon name='twitter' type='logo' color='white'  id="ip" ></box-icon></div>
-    <div className="krug"><box-icon name='twitch' type='logo' color='white' id="ip" ></box-icon></div>
+    <div className="krug"><box-icon name='instagram' type='logo' color='white' id="ip" ></box-icon></div>
  </div>
   </div>
 </div>
@@ -41,19 +41,19 @@ export default function Footer1() {
 <div className="futer-block-mini">
   <div className="qwe">
 <ul className='ioguhofg'>
-  <li><a href="#">About Us</a></li>
-  <li><a href="#">Blog</a></li>
-  <li><a href="#">Contacts</a></li>
-  <li><a href="#">Archives</a></li>
+  <li><a onClick={()=> window.location="/"} href="">Home</a></li>
+  <li><a onClick={()=> window.location="/about"} href="">About Us</a></li>
+  <li><a onClick={()=> window.location="/servis"} href="">Services</a></li>
+  <li><a onClick={()=> window.location="/blog"} href="">Blog</a></li>
 </ul>
 
 
   </div>
   <div className="qwe">
 <ul className='ry'>
-  <li><a href="#">Services</a></li>
-  <li><a href="#">News</a></li>
-  <li><a href="#">our team</a></li>
+  <li><a onClick={()=> window.location="/ourteam"} href="">Our team</a></li>
+  <li><a onClick={()=> window.location="/contact"} href="">Contacts</a></li>
+  <li><a onClick={()=> window.location="/login"} href="">Log in</a></li>
 </ul>
 
 
@@ -100,7 +100,7 @@ export default function Footer1() {
 <div className="futer-nobil-ichi">
 <div className="krug"><box-icon name='facebook' type='logo' color='white' id="ip"></box-icon></div>
     <div className="krug"><box-icon name='twitter' type='logo' color='white'  id="ip" ></box-icon></div>
-    <div className="krug"><box-icon name='twitch' type='logo' color='white' id="ip" ></box-icon></div>
+    <div className="krug"><box-icon name='instagram' type='logo' color='white' id="ip" ></box-icon></div>
 </div>
 </div>
   </div>
@@ -110,19 +110,19 @@ export default function Footer1() {
 <div className="futer-mobil-block-text">
   <div className="futer-mobil-block-ul">
 <ul className='saidjaojd'>
-  <li><a href="#">About Us</a></li>
-  <li><a href="#">Blog</a></li>
-  <li><a href="#">Contacts</a></li>
-  <li><a href="#">Archives</a></li>
+<li><a onClick={()=> window.location="/"} href="">Home</a></li>
+  <li><a onClick={()=> window.location="/about"} href="">About Us</a></li>
+  <li><a onClick={()=> window.location="/servis"} href="">Services</a></li>
+  <li><a onClick={()=> window.location="/blog"} href="">Blog</a></li>
 </ul>
 
 
   </div>
   <div className="futer-mobil-block-ul1">
     <ul>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">News</a></li>
-      <li><a href="#">our team</a></li>
+    <li><a onClick={()=> window.location="/ourteam"} href="">Our team</a></li>
+  <li><a onClick={()=> window.location="/contact"} href="">Contacts</a></li>
+  <li><a onClick={()=> window.location="/login"} href="">Log in</a></li>
     </ul>
   </div>
 </div>
@@ -229,7 +229,7 @@ export default function Footer1() {
   <div className="as"></div>
  <div className="krug"><box-icon name='facebook' type='logo' color='white' id="ip"></box-icon></div>
     <div className="krug"><box-icon name='twitter' type='logo' color='white'  id="ip" ></box-icon></div>
-    <div className="krug"><box-icon name='twitch' type='logo' color='white' id="ip" ></box-icon></div>
+    <div className="krug"><box-icon name='instagram' type='logo' color='white' id="ip" ></box-icon></div>
  </div>
   </div>
 </div>
@@ -240,10 +240,10 @@ export default function Footer1() {
 <div className="futer-block-mini">
   <div className="qwe">
 <ul className='ioguhofg'>
+  <li><a href="#">Архивы</a></li>
   <li><a href="#">О нас</a></li>
   <li><a href="#">Блог</a></li>
   <li><a href="#">Связь</a></li>
-  <li><a href="#">Архивы</a></li>
 </ul>
 
 
@@ -299,7 +299,7 @@ export default function Footer1() {
 <div className="futer-nobil-ichi">
 <div className="krug"><box-icon name='facebook' type='logo' color='white' id="ip"></box-icon></div>
     <div className="krug"><box-icon name='twitter' type='logo' color='white'  id="ip" ></box-icon></div>
-    <div className="krug"><box-icon name='twitch' type='logo' color='white' id="ip" ></box-icon></div>
+    <div className="krug"><box-icon name='instagram' type='logo' color='white' id="ip" ></box-icon></div>
 </div>
 </div>
   </div>

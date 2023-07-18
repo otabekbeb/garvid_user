@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 
-import "../css/Contacts.css";
+import "../css/Teacherpage.css";
 import Footer1 from "./Footer1";
 import Navbar from "./Navbar";
 import { MdEmail } from "react-icons/md";
@@ -73,11 +73,16 @@ window.location.reload()
           </div>
         </div>
         <div className="contact_right">
-          <div className="inputs_top">
+          <div id="inputs_top" className="inputs_top">
             <input
               type="text"
               className="contact_inp"
-              placeholder={state === "ru" ? "Имя*" : "Name*"}
+              placeholder={state === "ru" ? "Имя*" : "FirstName*"}
+            />
+            <input
+              type="text"
+              className="contact_inp"
+              placeholder={state === "ru" ? "Фамилия*" : "LastName*"}
             />
             <input
               type="text"
@@ -89,14 +94,16 @@ window.location.reload()
             <input
               type="text"
               className="contact_inp"
-              placeholder={state === "ru" ? "Телефон*" : "Telephone*"}
+              placeholder={state === "ru" ? "Телефон*" : "Phone Number*"}
+            />
+            <input
+              type="text"
+              className="contact_inp"
+              placeholder={state === "ru" ? "Страна*" : "Country*"}
             />
           </div>
-          <textarea
-            rows={10}
-            placeholder={state === "ru" ? "Сообщение*" : "Message*"}
-            className="contact_textarea"
-          ></textarea>
+          
+          
           <div className="inputs_bottom">
             <button onClick={()=>{dataPost()}} className="contact_btn">
               {state === "ru" ? "отправить" : "send"}

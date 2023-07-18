@@ -47,7 +47,7 @@ export default function Futer() {
     <ul>
         <h4>Виды оплаты</h4>
         <div className="tolov_"><img src={tolov} alt="" /></div>
-    <p>100011, г.Ташкент, Шайхонтохурский район,
+    <p>100011, г.Россия, Шайхонтохурский район,
     <br />ул.Заргайнар, дом 3Б</p>
     <button className='aloqa_btn'>
 Связаться с нами</button>
