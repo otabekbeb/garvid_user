@@ -11,6 +11,7 @@ import Mento from "./pages/js/Mentor"
 import Video from "./pages/js/Youtube1";
 import Contacts from "./pages/js/Contacts";    
 import Loginpage from "./pages/js/Loginpage";
+import Prover from './pages/js/Prover'
 
 
 import './App.css'
@@ -33,6 +34,8 @@ export default function App() {
           <Route path="/mentor" element={<Mento />} />
           <Route path="/contacts" element={<Contacts/>} />
           <Route path="/video" element={<Video />} />
+          <Route path="/prover" element={<Prover />} />
+
       
           {/* <Route index element={} />*/}
         </Routes>

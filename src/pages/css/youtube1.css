@@ -251,6 +251,8 @@ margin-bottom: 20px;
 
 .youtube_kichkina{
     width: 38%;
+    position: sticky;
+    top: 0;
 }
 
 .accordion_flex{
