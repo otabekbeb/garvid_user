@@ -149,7 +149,7 @@ return (
     <li className='moto-menu-item'><a href="/ourteam">Our team</a></li>
     <li className='moto-menu-item'><a href="/contacts">Contacts</a></li>
     <li className='moto-menu-item'><a href="/login">Log in</a></li>
-    <li><a href="/teacher" className='tt'>Teacher</a></li>
+    <li className='moto-menu-item'><a href="/teacher">Teacher</a></li>
 </ul>
 <div class="checkbox-con">
   <input id="checkbox" onClick={()=>{!document.querySelector("#checkbox").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "eng"));window.location.reload()}} type="checkbox"/>
