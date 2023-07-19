@@ -31,15 +31,18 @@ export default function Youtube1() {
   const [state1, setState1] = React.useState();
 
   function openModal() {
-    document.querySelector(".navbar_yon").style = "display:block;";
+    document.querySelector(".navbar_yon").classList.toggle("navbar_yon1")
+
+    
   }
   function closeModal() {
     document.querySelector(".navbar_yon").style = "display:none;";
   }
 
-  function videoBolim(id) {
-    setId(id);
-  }
+    function videoBolim(id) {
+      document.querySelector(".navbar_yon").style = "display:none;";
+      setId(id);
+    }
 
   function painModal() {
     document.querySelector(".zadaniya").style="border-bottom: 2px solid #536DFD; color: #2E2E2E;"

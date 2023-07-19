@@ -898,12 +898,15 @@ color: #9DA7BB;
     }
 }
 @media (max-width:550px) {
-    .navbar_none{
-        display: none;
-    }
+
 .navbar_block{
     display: block !important;
 width: 100%;
+}
+
+.menu_navbar{
+    margin: auto;
+
 }
 
 .navbar_yon{
@@ -925,6 +928,9 @@ width: 100%;
 }
 .navbar_yon{
     display: none;
+}
+.navbar_yon1{
+    display: block !important;
 }
 .na{
     display: block;

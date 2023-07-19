@@ -101,15 +101,72 @@ cursor: pointer;
     
     .m_2chidiv{
         width: 45% ; 
-        background-color: #fff;
-        border-radius: 5px;
     }
 
 
-
+    .m2chi_tex{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
     .m_glav_img_page{
         width: 100%;
     }
     .m_glav_img_page img{
         width: 100%;
+    }
+    .m_button_yon button{
+        background-color: #fff;
+       font-size: 10px;
+       width: 100px;
+       padding: 5px;
+       height: 35px;
+       gap: 5px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       border: none;
+
+    }
+    .m_button_yon span{
+        color: #9da7bb;
+        margin-top: -3px;
+    }
+    .m_star_flex{
+        display: flex;
+        align-items: center;
+        color: #FFD401;
+        gap: 5px;
+    }
+    .m_grey_star{
+        color: #9da7bb;
+    }
+
+    .m_2chidiv h5{
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    .m_41{
+        color: black;
+        font-size: 14px;
+        margin-top: 3px;
+    }
+    .m_41 span{
+        color: #9da7bb;
+    }
+
+    .m_otish_div{
+        display: flex;
+        align-items: center;
+    }
+    .m_about_course{
+        cursor: pointer;
+        width: 220px;
+        height: 50px;
+        background-color: #fff;
+        display: flex;justify-content: center;align-items: center;
+    }
+    .m_about_comment{
+        margin-top: 20px;
     }
