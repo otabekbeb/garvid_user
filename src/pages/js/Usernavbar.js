@@ -79,6 +79,7 @@ export default function Navbar() {
             <section className='navbar'>
                 <div className="navbar-ul">
                     <ul>
+                    <li onClick={()=> window.location="/"} className='moto-menu-item'><a href="/">{state1 === "eng" ? "Home" : "Главный"}</a></li>
                         <li onClick={()=> window.location="/user"} className='moto-menu-item'><a href="/user">{state1 === "eng" ? "User" : "Пользователь"}</a></li>
                         <li className='moto-menu-item'> <a href="">{state1 === "eng" ? "Student" : "Студент"}</a> </li>
                         <li className='moto-menu-item'><a href="">{state1 === "eng" ? "Mentor" : "Наставник"}</a></li>
@@ -110,7 +111,8 @@ export default function Navbar() {
                         <div className="media-ul">
                             <div className="dfdf">
                                 <ul>
-                                    <li><a href="/user" className='tt'>Пользователь</a></li>
+                                <li><a href="/user" className='tt'>{state1==="eng" ?("Home"):("Главный")}</a></li>
+                                    <li><a href="/user" className='tt'>{state1==="eng" ?("User"):("Пользователь")}</a></li>
                                     <div className="media-kategory" onMouseLeave={() => aboutClose2()}  >
 
 
@@ -120,11 +122,11 @@ export default function Navbar() {
 
                                         </ul>
                                     </div>
-                                    <li><a href="" className='tt'>Студент</a></li>
+                                    <li><a href="" className='tt'>{state1==="eng" ?("Student"):("Студент")}</a></li>
 
-                                    <li><a href="" className='tt'>Наставник</a></li>
-                                    <li><a href="" className='tt'>Партнер</a></li>
-                                    <li><a href="" className='tt'>Редактировать профиль</a></li>
+                                    <li><a href="" className='tt'>{state1==="eng" ?("Mentor"):("Наставник")}</a></li>
+                                    <li><a href="" className='tt'>{state1==="eng" ?("Partner"):("Партнер")}</a></li>
+                                    <li><a href="" className='tt'>{state1==="eng" ?("Edit profile"):("Редактировать профиль")}</a></li>
                                 </ul>
 
                             </div>

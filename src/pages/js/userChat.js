@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState,useEffect } from 'react'
 import "../css/yozishmalar.css";
 import YozishmaUserImg from "../img/Ellipse.jpg";
 import {
@@ -16,6 +16,11 @@ import ImgChatt from "../img/Ellipse 2.4.png"
 
 export default function MentorChat() {
   const [page,setPage]=useState()
+  const [state1, setState1] = React.useState();
+  useEffect(() => {
+    setState1(
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+    );},[]);
 
   function chatModal(img,name,time) {
 
@@ -112,7 +117,128 @@ export default function MentorChat() {
 
 
   return (
-    <div className="Chat_background">
+    <div>
+      {state1==="eng"? (<div className="Chat_background">
+      <div className="yozishma_big_div">
+        <div className="yozishma_big_div_size">
+          <div className="yozishma_bolim_text_nik">
+          {data.map(item=>{
+            return(
+              <div
+              onClick={() => chatModal(item.img,item.name,item.time)}
+              className="yozishma_bolim_text_nik_text"
+            >
+                  <img id="img" src={item.img} alt="" />
+                  <div className="yozishma_bolim_text_nik_text_ism_p">
+                  <h1  id="name">{item.name}</h1>
+                  <p>Hi</p>
+                </div>
+              <div className="yozishma_bolim_text_nik_text_qongiroq">
+                <div className="yozishma_bolim_text_nik_text_qongiroq_vaqti">{item.time}</div>
+                <div className="yozishma_bolim_text_nik_text_qongiroq_bildir">2</div>
+              </div>
+            </div>
+            )
+          })}
+          </div>
+
+          <div className="yozishma_small_div">
+          <div className="chat_gap_text_div">
+            <div className="yozishma_telegram_profil">
+              <BsArrowLeft className="yoq" onClick={() => Chatnone()} />
+              <BsArrowLeft className="yoq1" onClick={() => ChatClose()} />
+              
+                {[data[0]].map(item=>{
+                  return(
+                  <div className="telegram_pro_img_text">
+                  <img src={item.img} alt="" />
+                  <div className="telegram_pro_text">
+                  <h1>{item.name}</h1>
+                  <p>{item.time}</p>
+                  </div> 
+                  </div>
+                  )
+                })}
+              
+            </div>
+            <div className="yozishma_small_text_div">
+
+                  <div className="yozishma_small_text_div_chat">
+
+                <div className="yozishma_small_text_div_text">
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum iste harum tempora dolores fugit quidem necessitatibus totam doloribus eligendi aperiam architecto consequatur enim exercitationem reprehenderit mollitia, voluptatibus vitae. Illo, eligendi.</p>
+                  <div className="yozishma_small_text_div_text_javob_sozi">
+                    <div
+                      onClick={() => javobModal()}
+                      className="javob_sozi_big"
+                    >
+                      <BsArrow90DegLeft className="javob_sozi" />
+                      <p>
+                        <a className="Javob" href="#Javob">
+                        Reply
+                        </a>
+                      </p>
+                    </div>       
+                <div className="yozishma_small_text_div_ptichka">
+                  <div className="edit_chat_hover_relative">
+                  <div className="edit_chat_hover">
+                  Delete
+                  </div>
+                  <MdDeleteForever onMouseLeave={()=>edit_chat_hoverClose()} onMouseEnter={()=>edit_chat_hoverModal()} className="edit_chat"/>
+                  </div>
+                  <div className="edit_chat_hover_ikki_relative">
+                  <div className="edit_chat_hover_ikki">
+                  Edit
+                  </div>
+                  <MdEdit onMouseLeave={()=>edit_chat_ikki_hoverClose()} onMouseEnter={()=>edit_chat_ikki_hoverModal()} className="edit_chat"/>
+                  </div>
+                  <BsCheckAll className="ptichka_chat"/>
+                  <BsCheck className="ptichka_chat"/>
+                </div>
+                  </div>
+                </div>
+
+              </div>
+              
+            </div>
+            <div className="yozishma_small_xabar_div">
+              <div id="Javob" className="javob_berish">
+                <div className="javob_berish_div">
+                  <div className="javob_berish_blok_text">
+                    <h1>Turaev Jafarbek</h1>
+                    <p>Lorem ipsum dolor sit.</p>
+                  </div>
+                  <div className="javob_berish_div_fill">
+                    <MdClose onClick={() => javobClose()} />
+                  </div>
+                </div>
+              </div>
+              <div className="javob_berish_ikki">
+                <div className="javob_berish_div">
+                  <div className="javob_berish_blok_text">
+                    <h1>Turaev Jafarbek</h1>
+                    <p>Lorem ipsum dolor sit.</p>
+                  </div>
+                  <div className="javob_berish_div_fill">
+                    <MdClose onClick={() => javobBerishClose()} />
+                  </div>
+                </div>
+              </div>
+              <div className="chat_file_smile">
+                <LiaTelegramPlane  className="telegram_plane" />
+              </div>
+              <input placeholder="Введите текст" id="smile_input" type="text" />
+            </div>
+          </div>          
+          <div className="chat_yoq_payt">
+          <p>Select a chat to start messaging</p>
+          </div>
+          
+            
+          </div>
+        </div>
+      </div>
+    </div>):(<div className="Chat_background">
       <div className="yozishma_big_div">
         <div className="yozishma_big_div_size">
           <div className="yozishma_bolim_text_nik">
@@ -232,6 +358,8 @@ export default function MentorChat() {
           </div>
         </div>
       </div>
+    </div>)}
+    
     </div>
   );
 }

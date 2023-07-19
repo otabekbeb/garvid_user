@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import '../css/Sertifikate.css'
 import Sertifikat from '../img/Sertifikat.png'
 import Start from '../img/Start.png'
 export default function Sertifikate() {
+    const [state1, setState1] = React.useState();
+  useEffect(() => {
+    setState1(
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+    );},[]);
   return (
     <div>
+        {state1==="eng" ?(<div>
         <div className="cards_sertifikat">
             <div className="card_sertifikat">
             <div className="sertifikat">
@@ -14,56 +20,118 @@ export default function Sertifikate() {
                 <img src={Start} alt="" />
                 <div className="button_text_df_blok_pitani_pro_Max">
                     <div className="text_pro_max_gap_sos_lift_gr">
-                    <h4>Raspberry Pi dasturlash asoslari</h4>
-                    <p>20-iyun, 2019 y</p>
+                    <h4>Raspberry Pi programming basics</h4>
+                    <p>June 20, 2019</p>
                     </div>
-                    <button className='Dast_konter_dust_pro_dest'>Dasturlash</button>
+                    <button className='Dast_konter_dust_pro_dest'>Programming</button>
                 </div>
             </div>
             <div className="sertifikat">
                 <img src={Start} alt="" />
                 <div className="button_text_df_blok_pitani_pro_Max">
                     <div className="text_pro_max_gap_sos_lift_gr">
-                    <h4>Raspberry Pi dasturlash asoslari</h4>
-                    <p>20-iyun, 2019 y</p>
+                    <h4>Raspberry Pi programming basics</h4>
+                    <p>June 20, 2019</p>
                     </div>
-                    <button className='Dast_konter_dust_pro_dest'>Dasturlash</button>
+                    <button className='Dast_konter_dust_pro_dest'>Programming</button>
                 </div>
             </div>
             <div className="sertifikat">
                 <img src={Start} alt="" />
                 <div className="button_text_df_blok_pitani_pro_Max">
                     <div className="text_pro_max_gap_sos_lift_gr">
-                    <h4>Raspberry Pi dasturlash asoslari</h4>
-                    <p>20-iyun, 2019 y</p>
+                    <h4>Raspberry Pi programming basics</h4>
+                    <p>June 20, 2019</p>
                     </div>
-                    <button className='Dast_konter_dust_pro_dest'>Dasturlash</button>
+                    <button className='Dast_konter_dust_pro_dest'>Programming</button>
                 </div>
             </div>
             <div className="sertifikat">
                 <img src={Start} alt="" />
                 <div className="button_text_df_blok_pitani_pro_Max">
                     <div className="text_pro_max_gap_sos_lift_gr">
-                    <h4>Raspberry Pi dasturlash asoslari</h4>
-                    <p>20-iyun, 2019 y</p>
+                    <h4>Raspberry Pi programming basics</h4>
+                    <p>June 20, 2019</p>
                     </div>
-                    <button className='Dast_konter_dust_pro_dest'>Dasturlash</button>
+                    <button className='Dast_konter_dust_pro_dest'>Programming</button>
                 </div>
             </div>
             <div className="sertifikat">
                 <img src={Start} alt="" />
                 <div className="button_text_df_blok_pitani_pro_Max">
                     <div className="text_pro_max_gap_sos_lift_gr">
-                    <h4>Raspberry Pi dasturlash asoslari</h4>
-                    <p>20-iyun, 2019 y</p>
+                    <h4>Raspberry Pi programming basics</h4>
+                    <p>June 20, 2019</p>
                     </div>
-                    <button className='Dast_konter_dust_pro_dest'>Dasturlash</button>
+                    <button className='Dast_konter_dust_pro_dest'>Programming</button>
                 </div>
             </div>
             
             </div>
         </div>
 
+    </div>):(<div>
+        <div className="cards_sertifikat">
+            <div className="card_sertifikat">
+            <div className="sertifikat">
+                <img src={Sertifikat} alt="" />
+            </div>
+            <div className="sertifikat">
+                <img src={Start} alt="" />
+                <div className="button_text_df_blok_pitani_pro_Max">
+                    <div className="text_pro_max_gap_sos_lift_gr">
+                    <h4>Основы программирования на Raspberry Pi</h4>
+                    <p>20 июня 2019 г.</p>
+                    </div>
+                    <button className='Dast_konter_dust_pro_dest'>Программирование</button>
+                </div>
+            </div>
+            <div className="sertifikat">
+                <img src={Start} alt="" />
+                <div className="button_text_df_blok_pitani_pro_Max">
+                    <div className="text_pro_max_gap_sos_lift_gr">
+                    <h4>Основы программирования на Raspberry Pi</h4>
+                    <p>20 июня 2019 г.</p>
+                    </div>
+                    <button className='Dast_konter_dust_pro_dest'>Программирование</button>
+                </div>
+            </div>
+            <div className="sertifikat">
+                <img src={Start} alt="" />
+                <div className="button_text_df_blok_pitani_pro_Max">
+                    <div className="text_pro_max_gap_sos_lift_gr">
+                    <h4>Основы программирования на Raspberry Pi</h4>
+                    <p>20 июня 2019 г.</p>
+                    </div>
+                    <button className='Dast_konter_dust_pro_dest'>Программирование</button>
+                </div>
+            </div>
+            <div className="sertifikat">
+                <img src={Start} alt="" />
+                <div className="button_text_df_blok_pitani_pro_Max">
+                    <div className="text_pro_max_gap_sos_lift_gr">
+                    <h4>Основы программирования на Raspberry Pi</h4>
+                    <p>20 июня 2019 г.</p>
+                    </div>
+                    <button className='Dast_konter_dust_pro_dest'>Программирование</button>
+                </div>
+            </div>
+            <div className="sertifikat">
+                <img src={Start} alt="" />
+                <div className="button_text_df_blok_pitani_pro_Max">
+                    <div className="text_pro_max_gap_sos_lift_gr">
+                    <h4>Основы программирования на Raspberry Pi</h4>
+                    <p>20 июня 2019 г.</p>
+                    </div>
+                    <button className='Dast_konter_dust_pro_dest'>Программирование</button>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+
+    </div>)}
+    
     </div>
   )
 }

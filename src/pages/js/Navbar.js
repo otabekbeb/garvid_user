@@ -148,10 +148,10 @@ return (
     <li className='moto-menu-item'><a href="/blog">Blog</a></li>
     <li className='moto-menu-item'><a href="/ourteam">Our team</a></li>
     <li className='moto-menu-item'><a href="/contacts">Contacts</a></li>
-    <li className='moto-menu-item'><a href="/login">Log in</a></li>
     <li className='moto-menu-item'><a href="/teacher">Teacher</a></li>
+    <li className='moto-menu-item'><a href="/login">Log in</a></li>
 </ul>
-<div class="checkbox-con">
+<div class="checkbox-con" style={{left:"38vw"}}>
   <input id="checkbox" onClick={()=>{!document.querySelector("#checkbox").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "eng"));window.location.reload()}} type="checkbox"/>
 </div>
     </div>
@@ -206,8 +206,9 @@ return (
    <li><a href="/blog" className='tt'>Blog</a></li>
    <li><a href="/ourteam" className='tt'>our team</a></li>
    <li><a href="/contacts" className='tt'>Contacts</a></li>
-   <li><a href="/login" className='tt'>Login</a></li>
    <li><a href="/teacher" className='tt'>Teacher</a></li>
+   <li><a href="/login" className='tt'>Login</a></li>
+
    <div class="checkbox-con">
   <input id="checkbox2" onClick={()=>{!document.querySelector("#checkbox2").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "eng"));window.location.reload()}} type="checkbox"/>
 </div>
@@ -298,9 +299,10 @@ return (
     <li className='moto-menu-item'><a href="/blog">Блог</a></li>
     <li className='moto-menu-item'><a href="/ourteam">Наша команда</a></li>
     <li className='moto-menu-item'><a href="/contacts">Связь</a></li>
+    <li className='moto-menu-item'><a href="/teacher" >Учитель</a></li>
     <li className='moto-menu-item'><a href="/login">Регистрация</a></li>
 </ul>
-<div class="checkbox-con">
+<div class="checkbox-con" style={{left:"34vw"}}>
   <input id="checkbox" onClick={()=>{!document.querySelector("#checkbox").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "eng"));window.location.reload()}} type="checkbox"/>
 </div>
     </div>
@@ -356,6 +358,7 @@ return (
    <li><a href="/blog" className='tt'>Блог</a></li>
    <li><a href="/ourteam" className='tt'>Наша команда</a></li>
    <li><a href="/contacts" className='tt'>Связь</a></li>
+   <li><a href="/teacher" className='tt'>Учитель</a></li>
    <li><a href="/login" className='tt'>Регистрация</a></li>
    <div class="checkbox-con">
   <input id="checkbox2" onClick={()=>{!document.querySelector("#checkbox2").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "eng"));window.location.reload()}} type="checkbox"/>
