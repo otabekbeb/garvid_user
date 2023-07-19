@@ -97,6 +97,7 @@ cursor: pointer;
 .m_3chidiv{
         width: 25% ; 
         background-color: #fff;
+        padding: 10px;
     }
     
     .m_2chidiv{
@@ -169,4 +170,67 @@ cursor: pointer;
     }
     .m_about_comment{
         margin-top: 20px;
+    }
+
+    .course_price span{
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .course_price1 span{
+        font-size: 25px;
+        font-weight: 500;
+    }
+    .m_programmirovan{
+        background-color: #1DD1A1;
+        color: white;
+        width: 150px;
+        padding: 5px;
+        font-size: 13px;
+        margin-top: 20px;
+        margin-left: 20px;
+        border-radius: 5px;
+    }
+    .price_course{
+        display: flex;align-items: center;
+    }
+    .course_price p{
+        color: #9da7bb;
+        margin-top: 50px;
+        font-size: 11px;
+        line-height: 0px;
+    }
+    .course_price{
+        display: block;
+        margin-left: 20px;
+        width: 50%;
+    }
+    .course_price1 p{
+        color: #9da7bb;
+        margin-top: 50px;
+        font-size: 11px;
+        line-height: 0px;
+    }
+    .course_price1{
+        display: block;
+        margin-left: 20px;
+        width: 50%;
+    }
+    .course_price h2, .course_price1 h2{ 
+        font-weight: 550;
+    }
+    .m_3chidiv h6{
+        margin-top: 150px;
+        font-size: 15px;
+        font-weight: 550;
+        margin-left: 20px;
+    }
+    .m_course_button button{
+        width: 70%;
+        height: 40px;
+        background-color: #536DFD;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        margin-top: 30px;
+        margin-left: 15%;
     }
