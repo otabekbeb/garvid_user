@@ -10,6 +10,7 @@ import User from "./pages/js/user"
 import Mento from "./pages/js/Mentor"
 import Video from "./pages/js/Youtube1";
 import Contacts from "./pages/js/Contacts";
+import Allcourse from "./pages/js/Ourcourse"
 
 
 
@@ -32,6 +33,9 @@ export default function App() {
           <Route path="/mentor" element={<Mento />} />
           <Route path="/contacts" element={<Contacts/>} />
           <Route path="/video" element={<Video />} />
+          <Route path="/ourcourse" element={<Allcourse />} />
+          
+          
 
           {/* <Route index element={} />*/}
         </Routes>
