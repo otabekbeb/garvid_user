@@ -702,17 +702,19 @@ left: 15px;
   .mni-accordion-none1{
     background: linear-gradient(0deg, #F1F2F6, #F1F2F6),
 linear-gradient(0deg, rgba(157, 167, 187, 0.1), rgba(157, 167, 187, 0.1));
-height: 50px;
+height: auto;
 position: relative;
 right: 15px;
 width: 104.8%;
-border: 1px solid #9DA7BB1A
+border: 1px solid #9DA7BB1A;
+display: none;
   }
   
 .prover20chech-box-a2{
     display: flex;
-padding-top: 10px;
+padding-top: 8px;
 padding-left: 10px;
+
 }
 
 .prover20chech-box-a2 p{
@@ -732,4 +734,11 @@ left: 10px;
 left: 20px;
 top: 5px; 
 cursor: pointer;
+  }
+  .prover20chech-box-a2 input{
+    cursor: pointer;
+  }
+
+  .mni-buton-iikki-yo{
+    display: flex;
   }

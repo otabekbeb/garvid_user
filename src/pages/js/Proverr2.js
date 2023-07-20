@@ -23,13 +23,23 @@ function button() {
         }
     }
     function akkordion(){
-        var u= document.querySelector(".faq-text").style.display;
+        var u= document.querySelector(".mni-accordion-none1").style.display;
         if(u=="none"){
-        document.querySelector(".faq-text").style.display="block";
+        document.querySelector(".mni-accordion-none1").style.display="block";
         }else{
-           document.querySelector(".faq-text").style.display="none";
+           document.querySelector(".mni-accordion-none1").style.display="none";
         }
     }
+
+    function about2222() {
+        document.querySelector(".prover20chech-box-a span").style="";
+
+        }
+    
+        function aboutClose123122() {
+      
+            document.querySelector(".prover20chech-box-a span").style=""
+            }
 
 export default function Proverr2() {
     
@@ -239,8 +249,8 @@ dolor sit amet. . . .</p>
             <p className="spdfodsofdsf">Kurs bo’limlari:</p>
             <div className="mni-blocc-linee"></div>
             
-<div className="prover2-oxiri-total-kurss">
-<div className="prover20chech-box-a">
+<div className="prover2-oxiri-total-kurss"onMouseLeave={()=>aboutClose123122()}  >
+<div className="prover20chech-box-a" onMouseEnter={()=>about2222()} onClick={()=>akkordion()} >
     <input type="checkbox"/>
     <p>Введение в процесс программирования и установки</p>
     <span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
@@ -261,7 +271,17 @@ dolor sit amet. . . .</p>
         <p>Работа с простыми операциями в программе</p>
         <span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
     </div>
+    <div className="prover20chech-box-a2">
+        <input type="checkbox" />
+        <p>Работа с простыми операциями в программе</p>
+        <span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
+    </div>
 </div>
+<div className="mni-buton-iikki-yo">
+    <button>Покупка</button><button>150 000 сум</button>
+</div>
+
+
             </div>
         </div>
     </div>
