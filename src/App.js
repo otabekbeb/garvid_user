@@ -18,6 +18,7 @@ import Teacher from "./pages/js/Teacherpage";
 
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Proverr2 from './pages/js/Proverr2'
 export default function App() {
 
   return (
@@ -42,6 +43,9 @@ export default function App() {
           {/* <Route index element={} />*/}
         </Routes>
       </BrowserRouter>
+
+
+      <Proverr2/>
     </div>
   );
 }

@@ -136,7 +136,5 @@ return(
             <div className="m_3chidiv"></div>
         </div>
     </div>
-)
 
-
-}  
+)}
