@@ -91,9 +91,6 @@ export default function Navbar() {
         }
   }, []);
   
-    
-
-
 return (
     <div>
 
@@ -211,46 +208,8 @@ return (
    </div>
 
 </section>
-
-
-
-
-
-
       </div>):(
-
-
-
-
-
       <div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <section  onMouseLeave={() => menuul1()} className='navbar'>
     <div className="navbar-ul">
 <ul>

@@ -78,7 +78,7 @@ top: 8px;
 }
 .safiha-d p{
     position: relative;
-    top: 5px;
+    top: 3px !important;
     left: 4px;
 }
 @media (max-width:1434px) {
@@ -820,6 +820,7 @@ padding-left: 35px;
 }
 .sli-text{
     text-align: center;
+    padding: 0px 5px;
 }
 .sli-text h4{
     position: relative;
