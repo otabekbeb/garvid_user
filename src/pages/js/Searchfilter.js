@@ -76,21 +76,16 @@ export default function Searchfilter() {
                 </div>
               </div>
               <div className="filter_button">
-                {kursdata.map((item1) => {
-                  return (
-                    <>
+
+
                       {type.map((item2) => {
-                        if (item1.course_type === item2.id) {
                           return (
                             <div className="button_filter_kurs">
                               <div className="div_kurs">{item2.name}</div>
                             </div>
                           );
-                        }
                       })}
-                    </>
-                  );
-                })}
+                
               </div>
             </div>
           </div>

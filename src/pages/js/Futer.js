@@ -83,7 +83,7 @@ export default function Futer() {
             <div className="futer_container">
             <div className="futer_row">
     <div className="futer_col">
-    <ul><h4>Основной</h4>
+    <ul><h4>Главный</h4>
       <li>О проекте</li>
       <li>Курсы</li>
       <li>Наставникам</li>

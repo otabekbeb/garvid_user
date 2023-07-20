@@ -38,14 +38,14 @@ export default function Loginpage() {
         formdata.append("first_name", document.querySelector("#first_name").value)
         formdata.append("last_name", document.querySelector("#last_name").value)
         formdata.append("username", document.querySelector("#username").value)
-        formdata.append("image", null)
+        formdata.append("image", document.querySelector("#otashDolboeb").files[0])
         formdata.append("phone_number", document.querySelector("#phone_number").value)
         formdata.append("birthday", document.querySelector("#birthday").value)
         formdata.append("balance", 1)
         formdata.append("adress", document.querySelector("#adress").value)
         formdata.append("description", document.querySelector("#description").value)
 
-        axios.put(`${url}/auth/user/`, formdata, { headers: { 'Authorization': 'Bearer ' + sessionStorage.getItem("token") } }).then(res => {
+        axios.put(`${url}/auth/user/`, formdata, { headers: { 'Authorization': 'Bearer ' + localStorage.getItem("token") } }).then(res => {
             alert("ishladi")
         })
             .catch(err => {
@@ -190,7 +190,7 @@ export default function Loginpage() {
                                             Your photo
                                         </h2>
                                         <div className="profil1">
-                                            <input type="file" className="image" />
+                                            <input id="image" type="file" className="image22" />
 
 
                                         </div>
@@ -198,6 +198,7 @@ export default function Loginpage() {
                                             Upload a profile photo
 
                                         </h2>
+                                        <input id="otashDolboeb" type="file"/>
                                     </div>
                                 </div>
                             </div>
@@ -519,7 +520,7 @@ export default function Loginpage() {
                                             Ваш фото
                                         </h2>
                                         <div className="profil1">
-                                            <input type="file" className="image" />
+                                            <input id="image"type="file" className="image" />
 
 
                                         </div>

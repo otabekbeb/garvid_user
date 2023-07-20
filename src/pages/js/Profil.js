@@ -44,7 +44,7 @@ export default function Profil() {
   }
 
   useEffect(()=>{
-  axios.get(`${url}/auth/user/`,{ headers: { 'Authorization': 'Bearer ' + sessionStorage.getItem("token") }}).then(res=>{
+  axios.get(`${url}/auth/user/`,{ headers: { 'Authorization': 'Bearer ' + localStorage.getItem("token") }}).then(res=>{
     console.log(res.data);
     setData(res.data)
   }).catch((err) => {
@@ -57,7 +57,7 @@ export default function Profil() {
 
   function chiqish() {
     window.location="/"
-    sessionStorage.getItem("token",false)
+    localStorage.removeItem("token")
   }
 
   // function postUser(){
