@@ -284,10 +284,10 @@ function painModal8() {
               Tasks
               </p>
               <p onClick={() =>{videoBolim(3);painModal2() }} className="zadaniya2">
-              Guides
+            
               </p>
               <p onClick={() => {videoBolim(4);painModal3() }} className="zadaniya3">
-              Download
+              
               </p>
             </div>
           </div>
