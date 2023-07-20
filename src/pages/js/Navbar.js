@@ -31,27 +31,13 @@ function sa(){
     // meded
     function ochil1() {
         
-        var t=document.querySelector(".lll ul").style.display
-        var p=document.querySelector(".lll ul").style.opacity
-        if(t=="none"){
-            document.querySelector(".lll ul").style.display="block";
-            document.querySelector(".lll ul").style.opacity="1";
-            }else{
-               document.querySelector(".lll ul").style.display="none";
-               document.querySelector(".lll ul").style.opacity="0";
-            }
+        document.querySelector(".lll ul").classList.toggle("lllb")
         }
         function meded() {
         
-            var t=document.querySelector(".ffdul ").style.display
-            var p=document.querySelector(".ffdul").style.opacity
-            if(t=="none"){
-                document.querySelector(".ffdul").style.display="block";
-                document.querySelector(".ffdul").style.opacity="1";
-                }else{
-                   document.querySelector(".ffdul").style.display="none";
-                   document.querySelector(".ffdul").style.opacity="0";
-                }
+            document.querySelector(".ffdul ").classList.toggle("fffdull")
+            
+            
             }
         function menuul() {
             document.querySelector(".div1").style="display:block"
@@ -67,6 +53,7 @@ function sa(){
             
         }
         function menu2ul() {
+
             document.querySelector(".blog1").style="display:block"
         }
         function menu2ul12() {
@@ -125,15 +112,15 @@ return (
         <li ><a href="#" >FAQs</a></li>
     <div className="navbbar-line-hr"></div>
 
-     <div className="menu2" >
-     <p id='menu2pp'  onMouseEnter={() => menu2ul()} onMouseLeave={()=> menu2leave()}> <a href="#" className='zaib' >News <span id='menu2spanid'><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a> </p>
+     <div className="menu2"onMouseLeave={()=> menu2leave()} onMouseEnter={() => menu2ul()}>
+     <p id='menu2pp'  onMouseEnter={() => menu2ul()} > <a href="#" className='zaib' >News <span id='menu2spanid'><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a> </p>
      <div className="navbbar-line-hr"></div>
 
      <ul onMouseEnter={() => menu2ul()} onMouseLeave={()=> menu2leave1()} className='blog1'>
   
         <div className="navbbar-line-hr1"></div>
   
-        <li id='ded'><a href="/contacts">Connection </a></li>
+        <li id='ded'><a href="/contacts">Contact </a></li>
       
      </ul>
      
@@ -148,7 +135,7 @@ return (
     <li className='moto-menu-item'><a href="/blog">Blog</a></li>
     <li className='moto-menu-item'><a href="/ourteam">Our team</a></li>
     <li className='moto-menu-item'><a href="/contacts">Contacts</a></li>
-    <li className='moto-menu-item'><a href="/teacher">Teacher</a></li>
+    {/* <li className='moto-menu-item'><a href="/teacher">Teacher</a></li> */}
     <li className='moto-menu-item'><a href="/login">Log in</a></li>
 </ul>
 <div class="checkbox-con" style={{left:"38vw"}}>
@@ -206,10 +193,10 @@ return (
    <li><a href="/blog" className='tt'>Blog</a></li>
    <li><a href="/ourteam" className='tt'>our team</a></li>
    <li><a href="/contacts" className='tt'>Contacts</a></li>
-   <li><a href="/teacher" className='tt'>Teacher</a></li>
+   {/* <li><a href="/teacher" className='tt'>Teacher</a></li> */}
    <li><a href="/login" className='tt'>Login</a></li>
 
-   <div class="checkbox-con">
+   <div class="checkbox-con" style={{marginTop:"15px"}}>
   <input id="checkbox2" onClick={()=>{!document.querySelector("#checkbox2").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "eng"));window.location.reload()}} type="checkbox"/>
 </div>
 </ul>
@@ -284,7 +271,7 @@ return (
   
         <div className="navbbar-line-hr1"></div>
   
-        <li id='ded'><a href="/contacts">{state1 === "eng" ? "Connection" : "Связь"} </a></li>
+        <li id='ded'><a href="/contacts">{state1 === "eng" ? "Contact" : "Связь"} </a></li>
       
      </ul>
      
@@ -299,7 +286,7 @@ return (
     <li className='moto-menu-item'><a href="/blog">Блог</a></li>
     <li className='moto-menu-item'><a href="/ourteam">Наша команда</a></li>
     <li className='moto-menu-item'><a href="/contacts">Связь</a></li>
-    <li className='moto-menu-item'><a href="/teacher" >Учитель</a></li>
+    {/* <li className='moto-menu-item'><a href="/teacher" >Учитель</a></li> */}
     <li className='moto-menu-item'><a href="/login">Регистрация</a></li>
 </ul>
 <div class="checkbox-con" style={{left:"34vw"}}>
@@ -358,9 +345,9 @@ return (
    <li><a href="/blog" className='tt'>Блог</a></li>
    <li><a href="/ourteam" className='tt'>Наша команда</a></li>
    <li><a href="/contacts" className='tt'>Связь</a></li>
-   <li><a href="/teacher" className='tt'>Учитель</a></li>
+   {/* <li><a href="/teacher" className='tt'>Учитель</a></li> */}
    <li><a href="/login" className='tt'>Регистрация</a></li>
-   <div class="checkbox-con">
+   <div class="checkbox-con" style={{marginTop:"15px"}}>
   <input id="checkbox2" onClick={()=>{!document.querySelector("#checkbox2").checked?(localStorage.setItem("lang", "ru")):(localStorage.setItem("lang", "eng"));window.location.reload()}} type="checkbox"/>
 </div>
 </ul>

@@ -52,7 +52,7 @@ export default function Footer1() {
   <div className="qwe">
 <ul className='ry'>
   <li><a onClick={()=> window.location="/ourteam"} href="">Our team</a></li>
-  <li><a onClick={()=> window.location="/contact"} href="">Contacts</a></li>
+  <li><a onClick={()=> window.location="/contacts"} href="">Contacts</a></li>
   <li><a onClick={()=> window.location="/login"} href="">Log in</a></li>
 </ul>
 
@@ -121,7 +121,7 @@ export default function Footer1() {
   <div className="futer-mobil-block-ul1">
     <ul>
     <li><a onClick={()=> window.location="/ourteam"} href="">Our team</a></li>
-  <li><a onClick={()=> window.location="/contact"} href="">Contacts</a></li>
+  <li><a onClick={()=> window.location="/contacts"} href="">Contacts</a></li>
   <li><a onClick={()=> window.location="/login"} href="">Log in</a></li>
     </ul>
   </div>
@@ -240,19 +240,22 @@ export default function Footer1() {
 <div className="futer-block-mini">
   <div className="qwe">
 <ul className='ioguhofg'>
-  <li><a href="#">Архивы</a></li>
-  <li><a href="#">О нас</a></li>
-  <li><a href="#">Блог</a></li>
-  <li><a href="#">Связь</a></li>
+  <li><a href="/">Главный</a></li>
+  <li><a href="/about">О нас</a></li>
+  <li><a href="/servis">Услуги</a></li>
+  <li><a href="/blog">Блог</a></li>
+  
+  
 </ul>
 
 
   </div>
   <div className="qwe">
 <ul className='ry'>
-  <li><a href="#">Услуги</a></li>
-  <li><a href="#">Новости</a></li>
-  <li><a href="#">Наша команда</a></li>
+<li><a href="/ourteam">Наша команда</a></li>
+<li><a href="/contact">Связь</a></li>
+  <li><a href="/teacher">Учитель</a></li>
+  
 </ul>
 
 
@@ -309,19 +312,19 @@ export default function Footer1() {
 <div className="futer-mobil-block-text">
   <div className="futer-mobil-block-ul">
 <ul className='saidjaojd'>
-  <li><a href="#">О нас</a></li>
-  <li><a href="#">Блог</a></li>
-  <li><a href="#">Связь</a></li>
-  <li><a href="#">Архивы</a></li>
+<li><a href="/">Главный</a></li>
+  <li><a href="/about">О нас</a></li>
+  <li><a href="/servis">Услуги</a></li>
+  <li><a href="/blog">Блог</a></li>
 </ul>
 
 
   </div>
   <div className="futer-mobil-block-ul1">
     <ul>
-      <li><a href="#">Услуги</a></li>
-      <li><a href="#">Новости</a></li>
-      <li><a href="#">Наша команда</a></li>
+    <li><a href="/ourteam">Наша команда</a></li>
+<li><a href="/contact">Связь</a></li>
+  <li><a href="/teacher">Учитель</a></li>
     </ul>
   </div>
 </div>

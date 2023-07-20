@@ -13,6 +13,8 @@ import Contacts from "./pages/js/Contacts";
 import Loginpage from "./pages/js/Loginpage";
 import Prover from './pages/js/Prover'
 import Teacher from "./pages/js/Teacherpage";
+import Student from "./pages/js/Student";
+import Mentorcontact from "./pages/js/Mentorcontact";
 
 
 
@@ -38,7 +40,8 @@ export default function App() {
           <Route path="/video" element={<Video />} />
           <Route path="/prover" element={<Prover />} />
           <Route path="/teacher" element={<Teacher />} />
-
+          <Route path="/student" element={<Student />} />
+          <Route path="/mentorcontact" element={<Mentorcontact />} />
           {/* <Route index element={} />*/}
         </Routes>
       </BrowserRouter>
