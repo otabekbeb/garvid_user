@@ -2221,7 +2221,6 @@ display: none;
   color: white;
   margin: auto;
   position: relative;
-  left: 38vw;
  }
  @media (max-width:1789px) {
   .checkbox-con {

@@ -52,15 +52,15 @@ export default function Pdp() {
     }
 
     return (
-
+<div>
         <div>
             {state1==='eng'?(<div className="gray_blok">
                 <div className="fil_text_blok">
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} className='fromLeft'>Мои курсы</h1>{toggle===1?(<div className="fil_text_blok_kurs_lenght">{kursdata.length} штуки</div>):("")}</div>
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} className='fromLeft'>Мои усвоенные знания</h1>{toggle===2?(<div className="fil_text_blok_kurs_lenght">14 штуки</div>):("")}</div>
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} className='fromLeft'>Мои сертификаты</h1>{toggle===3?(<div className="fil_text_blok_kurs_lenght">24 штуки</div>):("")}</div>
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} className='fromLeft'>Мои подписки</h1>{toggle===4?(<div className="fil_text_blok_kurs_lenght">24 штуки</div>):("")}</div>
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} className='fromLeft'>Переписка</h1><div className="fil_text_blok_kurs_lenght">1 штуки</div></div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} className='fromLeft'>My courses</h1>{toggle===1?(<div className="fil_text_blok_kurs_lenght">{kursdata.length} pieces</div>):("")}</div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} className='fromLeft'>My learned knowledge</h1>{toggle===2?(<div className="fil_text_blok_kurs_lenght">14 pieces</div>):("")}</div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} className='fromLeft'>My certificates</h1>{toggle===3?(<div className="fil_text_blok_kurs_lenght">24 pieces</div>):("")}</div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} className='fromLeft'>My Subscriptions</h1>{toggle===4?(<div className="fil_text_blok_kurs_lenght">24 pieces</div>):("")}</div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} className='fromLeft'>Correspondence</h1><div className="fil_text_blok_kurs_lenght">1 pieces</div></div>
                 </div>
                 <div className="profil_blok_menu_size">
                     <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
@@ -100,6 +100,7 @@ export default function Pdp() {
             <div className={toggle === 3 ? "show-content" : "content"}><Sertifikat /> </div>
             <div className={toggle === 4 ? "show-content" : "content"}><Azo /></div>
             <div className={toggle === 5 ? "show-content" : "content"}><UserChat /></div>
+        </div>
         </div>
     )
 }

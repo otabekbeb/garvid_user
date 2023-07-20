@@ -10,7 +10,11 @@ import url from './Host'
 
 export default function Comment1() {
   const [comment,setComment]=useState([])
-  
+  const [state1, setState1] = React.useState();
+  useEffect(() => {
+    setState1(
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+    );},[]);
 
   useEffect(()=>{
     axios.get(`${url}/course/theme_comment/`,{headers:{"Authorization":"Bearer " + sessionStorage.getItem("token")}}).then(res=>{
@@ -38,7 +42,38 @@ export default function Comment1() {
   }
 
   return (
-    <div className='m_comment_kotta'> 
+    <div>
+    {state1==="eng"?(<div className='m_comment_kotta'> 
+    <div className="m_otdel_bgc">
+
+      {comment.map(item=>{
+        return(
+          <div className="m_comment">
+          <div className="m_comment_img">
+              <img src={item.image} alt="" />
+          </div>
+          <div className="m_comment_text">
+              <h4>Jonibek Akbarov</h4>
+              <p>{item.text}</p>
+              {/* <div className="m_comment_otvet"> 
+              <p><span><FiCornerUpLeft/></span>Ответить</p> 
+              </div> */}
+          </div>
+      </div>
+        )
+      })}
+
+
+
+            <div className="m_comment_yozish">
+              <p><BsFillChatFill/></p>
+              <textarea placeholder='Введите текст' id="chat_text"></textarea>
+            </div>
+            <div className="m_comment_button">
+              <button className='m_otmen'>Cancel</button>
+              <button onClick={()=>messagePost()} className='m_otpravit'>Send</button>
+              </div></div>
+    </div>):(<div className='m_comment_kotta'> 
     <div className="m_otdel_bgc">
 
       {comment.map(item=>{
@@ -68,6 +103,7 @@ export default function Comment1() {
               <button className='m_otmen'>Отменить</button>
               <button onClick={()=>messagePost()} className='m_otpravit'>Отправить</button>
               </div></div>
+    </div>)}
     </div>
   )
 }

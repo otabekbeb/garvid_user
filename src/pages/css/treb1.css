@@ -1,0 +1,33 @@
+
+.m_treb_small{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    padding: 5px;
+    gap: 10px;
+    font-size: 13px;border-radius: 5px;
+    margin-top: 20px;
+}
+.m_treb_small p{
+    margin-top: 13px;
+}
+.m_div_circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #1DD1A1;
+}
+.m_treb_big{
+    display: flex;
+    align-items: center;
+    gap: 93px;
+}
+.m_treb_big2{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.m_treb_small p{
+    color: #9da7bb;
+}
