@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import '../css/Loginpage.css'
 import axios from "axios";
 import url from "./Host"
+import Footer from "../js/Footer1"
 
 import Usernavbar from "../js/Usernavbar"
 
@@ -17,8 +18,9 @@ export default function Loginpage() {
     const [state1, setState1] = React.useState();
     useEffect(() => {
         setState1(
-          localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
-        );},[]);
+            localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+        );
+    }, []);
 
 
     const plus = () => {
@@ -387,7 +389,7 @@ export default function Loginpage() {
                             </div>
                         )}
                     </div>
-
+<Footer/>
 
                 </div>) : (<div className="katta12">
 
@@ -718,11 +720,12 @@ export default function Loginpage() {
                         )}
                     </div>
 
-
+<Footer/>
                 </div>)}
             </div>
 
 
+            
 
         </div>
     );

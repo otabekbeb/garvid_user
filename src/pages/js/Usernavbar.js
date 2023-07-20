@@ -81,14 +81,17 @@ export default function Navbar() {
                     <ul>
                     <li onClick={()=> window.location="/"} className='moto-menu-item'><a href="/">{state1 === "eng" ? "Home" : "Главный"}</a></li>
                         <li onClick={()=> window.location="/user"} className='moto-menu-item'><a href="/user">{state1 === "eng" ? "User" : "Пользователь"}</a></li>
-                        <li className='moto-menu-item'> <a href="">{state1 === "eng" ? "Student" : "Студент"}</a> </li>
-                        <li className='moto-menu-item'><a href="">{state1 === "eng" ? "Mentor" : "Наставник"}</a></li>
+                        <li className='moto-menu-item'> <a href="/student">{state1 === "eng" ? "Student" : "Студент"}</a> </li>
+                        <li className='moto-menu-item'><a href="/mentorcontact">{state1 === "eng" ? "Mentor" : "Наставник"}</a></li>
                         <li className='moto-menu-item'><a href="">{state1 === "eng" ? "Partner" : "Партнёр"}</a></li>
                         <li onClick={()=> window.location="/loginpage"} className='moto-menu-item'><a href="/loginpage">{state1 === "eng" ? "Profile editing" : "Редактировать профиль"}</a></li>
                     </ul>
-                    <div class="checkbox-con">
+                    {state1==="eng" ?(<div class="checkbox-con" style={{left:"42vw"}}>
                         <input id="checkbox" onClick={() => { !document.querySelector("#checkbox").checked ? (localStorage.setItem("lang", "ru")) : (localStorage.setItem("lang", "eng")); window.location.reload() }} type="checkbox" />
-                    </div>
+                    </div>):(<div class="checkbox-con"style={{left:"34vw"}} >
+                        <input id="checkbox" onClick={() => { !document.querySelector("#checkbox").checked ? (localStorage.setItem("lang", "ru")) : (localStorage.setItem("lang", "eng")); window.location.reload() }} type="checkbox" />
+                    </div>)}
+                    
                 </div>
                 <div className="media-navbar">
 

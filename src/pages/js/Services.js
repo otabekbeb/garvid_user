@@ -92,7 +92,7 @@ export default function Services() {
 <h4>Do you need help?</h4>
 <p>Contact us at FinExpert office closest to you or submit your business inquiry online.</p>
 
-<button>Connect with us</button>
+<button onClick={()=> window.location="/contacts"}>Connect with us</button>
 </div>
             <Swiper
         slidesPerView={1}
@@ -241,7 +241,7 @@ export default function Services() {
 <h4>Вам нужна помощь?</h4>
 <p>Свяжитесь с нами в FinExpert  ближайший к вам офис или отправьте бизнес-справка онлайн.</p>
 
-<button>Связаться с нами</button>
+<button onClick={()=> window.location="/contacts"}>Связаться с нами</button>
 </div>
             <Swiper
         slidesPerView={1}

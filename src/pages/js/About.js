@@ -112,7 +112,7 @@ export default function About() {
 <h4>Do you need help?</h4>
 <p>Contact us at FinExpert  <br /> office closest to you or <br />submit your business inquiry online.</p>
 
-<button>Connect with us</button>
+<button onClick={()=> window.location="/contacts"}>Connect with us</button>
 </div>
 
 <Swiper
@@ -416,7 +416,7 @@ export default function About() {
 <h4>Вам нужна помощь?</h4>
 <p>Свяжитесь с нами в FinExpert  <br /> ближайший к вам офис или <br /> отправьте бизнес-справка онлайн.</p>
 
-<button>Связаться с нами</button>
+<button onClick={()=> window.location="/contacts"}>Связаться с нами</button>
 </div>
 
 <Swiper

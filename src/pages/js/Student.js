@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
 
-import "../css/Contacts.css";
+import "../css/Teacherpage.css";
 import Footer1 from "./Footer1";
-import Navbar from "./Navbar";
+import Usernavbar from "./Usernavbar";
 import { MdEmail } from "react-icons/md";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
@@ -32,30 +32,10 @@ window.location.reload()
   return (
     <div>
       
-      <Navbar />
-      <div className="asd">
-    {/* <img src={abaut} alt="" /> */}
-   <div className="asd-block">
-   <h1>Contacts</h1>
-   <br />
-   <br className='rr' />
-  
-    <div className="mini"></div>
-   </div>
-</div>
-<div className="sahifa">
-<div className="sahifa-glav">
-<div className="safiha-p">
-    <h4><a href="#">Home  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
-</div>
-<div className="safiha-d">
-    <p id='tepaga'>Contact</p>
-</div>
-</div>
-</div>
+      <Usernavbar />
       <div className="contact">
         <div className="contact_left">
-          <h1 onClick={()=> window.location="/contacts"}> 
+          <h1 onClick={()=> window.location="/contacts"}>
             {state === "ru" ? "Связаться с нами" : "Connect with us"}
           </h1>
           <p className="contact_info">
@@ -93,11 +73,16 @@ window.location.reload()
           </div>
         </div>
         <div className="contact_right">
-          <div className="inputs_top">
+          <div id="inputs_top" className="inputs_top">
             <input
               type="text"
               className="contact_inp"
-              placeholder={state === "ru" ? "Имя*" : "Name*"}
+              placeholder={state === "ru" ? "Имя*" : "FirstName*"}
+            />
+            <input
+              type="text"
+              className="contact_inp"
+              placeholder={state === "ru" ? "Фамилия*" : "LastName*"}
             />
             <input
               type="text"
@@ -109,14 +94,16 @@ window.location.reload()
             <input
               type="text"
               className="contact_inp"
-              placeholder={state === "ru" ? "Телефон*" : "Telephone*"}
+              placeholder={state === "ru" ? "Телефон*" : "Phone Number*"}
+            />
+            <input
+              type="text"
+              className="contact_inp"
+              placeholder={state === "ru" ? "Страна*" : "Country*"}
             />
           </div>
-          <textarea
-            rows={10}
-            placeholder={state === "ru" ? "Сообщение*" : "Message*"}
-            className="contact_textarea"
-          ></textarea>
+          
+          
           <div className="inputs_bottom">
             <button onClick={()=>{dataPost()}} className="contact_btn">
               {state === "ru" ? "отправить" : "send"}

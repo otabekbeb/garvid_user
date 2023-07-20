@@ -35,7 +35,7 @@ window.location.reload()
       <Navbar />
       <div className="contact">
         <div className="contact_left">
-          <h1>
+          <h1 onClick={()=> window.location="/contacts"}>
             {state === "ru" ? "Связаться с нами" : "Connect with us"}
           </h1>
           <p className="contact_info">

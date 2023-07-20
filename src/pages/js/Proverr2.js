@@ -22,6 +22,24 @@ function button() {
            document.querySelector(".obmen-kategory-re").style.display="none";
         }
     }
+    function akkordion(){
+        var u= document.querySelector(".mni-accordion-none1").style.display;
+        if(u=="none"){
+        document.querySelector(".mni-accordion-none1").style.display="block";
+        }else{
+           document.querySelector(".mni-accordion-none1").style.display="none";
+        }
+    }
+
+    function about2222() {
+        document.querySelector(".prover20chech-box-a span").style="";
+
+        }
+    
+        function aboutClose123122() {
+      
+            document.querySelector(".prover20chech-box-a span").style=""
+            }
 
 export default function Proverr2() {
     
@@ -231,16 +249,39 @@ dolor sit amet. . . .</p>
             <p className="spdfodsofdsf">Kurs bo’limlari:</p>
             <div className="mni-blocc-linee"></div>
             
-
-            <div className="faq">
-                <div className="faq-item">
-                    <label  className="faq-title" for="faq_1">Lorem ipsum dolor sit amet.</label>
-                    <input className="faq-input" type="radio" name="faq" id="faq_1" />
-                    <div className="faq-text">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores officia a nobis!</p>
-                    </div>
-                </div>
+<div className="prover2-oxiri-total-kurss"onMouseLeave={()=>aboutClose123122()}  >
+<div className="prover20chech-box-a" onMouseEnter={()=>about2222()} onClick={()=>akkordion()} >
+    <input type="checkbox"/>
+    <p>Введение в процесс программирования и установки</p>
+    <span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
+</div>
+<div className="mni-kurs-narxi2">
+                <div className="mni-kurs-block1"><h5>Kurs narxi</h5>
+                <p>150.000  <span>UZS</span></p></div>
+                <div className="mni-kurs-block2"></div>
+                
+                <div className="mni-kurs-block1"><h5>Kurs hajmi</h5>
+                <p>38 soat</p></div>
+                <div className="mni-kurs-block2"></div>
             </div>
+</div>
+<div className="mni-accordion-none1">
+    <div className="prover20chech-box-a2">
+        <input type="checkbox" />
+        <p>Работа с простыми операциями в программе</p>
+        <span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
+    </div>
+    <div className="prover20chech-box-a2">
+        <input type="checkbox" />
+        <p>Работа с простыми операциями в программе</p>
+        <span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
+    </div>
+</div>
+<div className="mni-buton-iikki-yo">
+    <button>Покупка</button><button>150 000 сум</button>
+</div>
+
+
             </div>
         </div>
     </div>

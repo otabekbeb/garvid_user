@@ -1,12 +1,11 @@
 .contact {
     width: 70%;
     margin: 0 auto;
-    margin-top: 2%;
     display: flex;
     align-items: start;
     justify-content: space-between;
-    margin-bottom: 50px;
-    padding-top: 130px !important;
+    margin-bottom: 100px;
+    padding-top: 100px !important;
   }
   .contact_left {
     width: 40%;

@@ -588,12 +588,13 @@ color: #2E2E2E !important;
   }
   .prover2-oxiri-block-in{
     width: 330px;
-    height: 496px;
+    height: auto;
     border-radius: 0px 4px 4px 0px;
     box-shadow: 0px 2px 2px 0px #0000001A;
     background-color: #ffffff;
     padding-left: 15px;
     padding-top: 15px;
+    margin-bottom: 10px;
   }
   .prover2-oxiri-joy{
     padding-left: 10px;
@@ -646,6 +647,11 @@ text-align: left;
     display: flex;
     justify-content: space-between;
   }
+  .mni-kurs-narxi2{
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
   .spdfodsofdsf{
     font-family: SF Pro Display;
 font-size: 16px !important;
@@ -664,33 +670,75 @@ padding-top: 10px;
     right: 14px;
   }
 
-.faq{
-    width: 100%;
-    margin: 20px auto;
+.prover20chech-box-a{
+    display: flex;
+    padding-top: 10px;
+   
 }
-.faq-item{
-    border: 1px solid #b91125;
-    font-size: 14px;
+.prover20chech-box-a p{
+    font-family: SF Pro Display;
+font-size: 12px !important;
+line-height: 19px !important;
+letter-spacing: 0em !important;
+text-align: left;
+color: #2E2E2E;
+position: relative;
+left: 15px;
 }
-.faq-text{
-    display: none;
-    
-}
-.faq-title{
-    display: block;
+  .prover20chech-box-a input{
+    width: 20px !important;
+    height: 20px !important;
+    position: relative;
+    top: 1px;
     cursor: pointer;
-}
-.faq-input{
-    width: 0;
-    height: 0;
-    -webkit-appearance: none;
-    appearance: none;
-    position: absolute;
-}
+  }
+  .prover20chech-box-a span{
+    position: relative;
+    right: 10px;
+    cursor: pointer;
+    top: -2px;
+  }
 
-
-
-
-
-
+  .mni-accordion-none1{
+    background: linear-gradient(0deg, #F1F2F6, #F1F2F6),
+linear-gradient(0deg, rgba(157, 167, 187, 0.1), rgba(157, 167, 187, 0.1));
+height: auto;
+position: relative;
+right: 15px;
+width: 104.8%;
+border: 1px solid #9DA7BB1A;
+display: none;
+  }
   
+.prover20chech-box-a2{
+    display: flex;
+padding-top: 8px;
+padding-left: 10px;
+
+}
+
+.prover20chech-box-a2 p{
+    font-family: SF Pro Display;
+font-size: 12px !important;
+line-height: 19px !important;
+letter-spacing: 0em !important;
+text-align: left;
+color: #2E2E2E;
+position: relative;
+top: 8px;
+left: 10px;
+
+}
+.prover20chech-box-a2 span{
+    position: relative;
+left: 20px;
+top: 5px; 
+cursor: pointer;
+  }
+  .prover20chech-box-a2 input{
+    cursor: pointer;
+  }
+
+  .mni-buton-iikki-yo{
+    display: flex;
+  }
