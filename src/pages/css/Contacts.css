@@ -37,7 +37,7 @@
     margin-top: 30px;
   }
   .email_icon {
-    color: #0e7c7b;
+    color: #44bef1;
     font-size: 22px;
     margin-right: 8px;
   }
@@ -45,9 +45,11 @@
     font-size: 20px;
     font-weight: 800;
     color: #2c2c2c;
+    display: inline-block;
+    width: 170px;
   }
   .contact_tel span {
-    color: #0e7c7b;
+    color: #44bef1;
   }
   .contact_right {
     width: 50%;
@@ -76,6 +78,7 @@
   .contact_inp {
     width: 30%;
     height: 40px;
+    font-size: 14px;
   }
   .inputs_bottom {
     display: flex;
@@ -96,7 +99,7 @@
     user-select: none;
   }
   .container a {
-    color: #0e7c7b;
+    color: #44bef1;
   }
   /* Hide the browser's default checkbox */
   .container input {
@@ -126,7 +129,7 @@
   
   /* When the checkbox is checked, add a blue background */
   .container input:checked ~ .checkmark {
-    background-color: #0e7c7b;
+    background-color: #44bef1;
   }
   
   /* Create the checkmark/indicator (hidden when not checked) */
@@ -162,7 +165,7 @@
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    background-color: #0e7c7b;
+    background-color: #44bef1;
     border: none;
     padding: 0 15px;
     border-radius: 5px;

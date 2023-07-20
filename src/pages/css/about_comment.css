@@ -1,0 +1,75 @@
+.m_otsenka h1{
+    font-size: 70px;
+}
+.m_otsenka{
+    text-align: center;
+}
+.m_star_otsen p{
+    color: #FFC02E;
+    font-size: 30px;
+}
+.m_star_otsen{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: auto;
+}
+.m_about_us{
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+    padding: 10px;
+}
+.m_flex_line{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 500px;
+}
+.m_flex_line span{
+    color: #9da7bb;
+    margin-top: -3px;
+}
+.m_line_green{
+    width: 40%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #1DD1A1;
+}
+.m_line_blue{
+    width: 68%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #0085FF;
+}
+.m_line_yellow{
+    width: 25%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #FFC02E;
+}
+.m_line_red{
+    width: 5%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #D0021B;
+}
+.m_line_pink{
+    width: 1%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #F4144A;
+}
+
+.m_flex_line p{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 15px;
+}
+.m_diagnostic_otsm{
+    width: 60%;
+}

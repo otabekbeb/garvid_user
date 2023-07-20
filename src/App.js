@@ -11,11 +11,17 @@ import Mento from "./pages/js/Mentor"
 import Video from "./pages/js/Youtube1";
 import Contacts from "./pages/js/Contacts";
 import Allcourse from "./pages/js/Ourcourse"
+import Loginpage from "./pages/js/Loginpage";
+import Prover from './pages/js/Prover'
+import Teacher from "./pages/js/Teacherpage";
+import Student from "./pages/js/Student";
+import Mentorcontact from "./pages/js/Mentorcontact";
 
 
 
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Proverr2 from './pages/js/Proverr2'
 export default function App() {
 
   return (
@@ -23,6 +29,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/loginpage" element={<Loginpage />} />
           <Route path="/about" element={<About />} />
           <Route path="/servis" element={<Services />} />
           <Route path="/blog" element={<Blog />} />
@@ -37,9 +44,18 @@ export default function App() {
           
           
 
+          <Route path="/prover" element={<Prover />} />
+          <Route path="/Proverr2" element={<Proverr2 />} />
+          <Route path="/teacher" element={<Teacher />} />
+          <Route path="/student" element={<Student />} />
+          <Route path="/mentorcontact" element={<Mentorcontact />} />
           {/* <Route index element={} />*/}
         </Routes>
+      
       </BrowserRouter>
+
+
+   
     </div>
   );
 }

@@ -26,6 +26,15 @@
   align-items: center;
  
 }
+.media-ul ul li:hover{
+  background-color: #44bef1 !important;
+  cursor: pointer;
+}
+
+.ichi:hover{
+  background-color: #44bef1;
+  cursor: pointer;
+}
 #hh1 {
   display: none;
 }
@@ -81,13 +90,16 @@
 }
 .menu a {
   display: block;
-  color: #44bef1;
+  color: white;
   text-decoration: none;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   font-style: normal;
   text-decoration: none;
+}
+.menu a:hover{
+  color: rgb(68, 190, 241);
 }
 .moto-menu-item a {
   color: #ffffff;
@@ -191,12 +203,26 @@ position: fixed ;
   top: 7px;
 left: 170%;
 }
-
+#menu2spanid{
+  position: relative;
+  top: 7px;
+left: 240%;
+}
+#menu2pp{
+  position: relative;
+  right: 10px;
+}
 .menu2 p a {
   font-size: 14px;
 
 }
-
+@media (max-width:1085px) {
+  #menu2spanid{
+    position: relative;
+    top: 7px;
+  left: 190%;
+  }
+}
 .media-menu-navbar {
   display: none;
 }
@@ -262,6 +288,7 @@ left: 170%;
     background-color: #ffffff;
 position: relative;
 top: -20px;
+
     cursor: pointer;
   }
 
@@ -400,6 +427,9 @@ top: -20px;
     margin: 0;
     border: none;
   }
+}
+.llllul{
+  display: block;
 }
 .ffd ul li {
   text-decoration: none;
@@ -883,13 +913,11 @@ display: none;
   height: 100%;
   position: relative;
   left: -40px !important;
-  background-color: #44bef1;
-  color: white;
 } 
 .ichi li a {
 
   position: relative;
-  top: -5px !important;
+  /* top: -5px !important; */
   left: 40px !important;
 }
   .media-ul ul a {
@@ -914,6 +942,9 @@ display: none;
 .la {
   background-color: #44bef1 !important;
 
+}
+.tt{
+  color: black !important;
 }
 .laa {
   background-color: white !important;
@@ -1916,7 +1947,7 @@ position: fixed;
     top: -10px;
   } 
 }
-@media (max-width:821px) {
+@media (max-width:954px) {
   .moto-menu-item a {
     color: #ffffff;
     text-decoration: none;
@@ -2186,20 +2217,330 @@ display: none;
   position: fixed;
   } 
 }
+.fffdull{
+  display: block !important;
+}
+.llla{
+  display: none;
+}
+.lllb{
+  display: block !important;
+}
 .checkbox-con {
   margin: 10px;
   display: flex;
   align-items: center;
   color: white;
+  margin: auto;
+  position: relative;
  }
- 
+ @media (max-width:1789px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 36vw;
+   }
+ }
+ @media (max-width:1720px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 34vw;
+   }
+ }
+ @media (max-width:1657px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 32vw;
+   }
+ }
+ @media (max-width:1593px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 30vw;
+   }
+ }
+ @media (max-width:1536px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 28vw;
+   }
+ }
+ @media (max-width:1484px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 26vw;
+   }
+ }
+ @media (max-width:1184px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 24vw;
+   }
+ }
+ @media (max-width:1142px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 22vw;
+   }
+ }
+ @media (max-width:1114px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 20vw;
+   }
+ }
+ @media (max-width:1088px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 18vw;
+   }
+ }
+ @media (max-width:1060px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 16vw;
+   }
+ }
+ @media (max-width:1032px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 14vw;
+   }
+ }
+ @media (max-width:1008px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 13vw;
+   }
+ }
+ @media (max-width:996px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 12vw;
+   }
+ }
+ @media (max-width:984px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 11vw;
+   }
+ }
+ @media (max-width:974px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 10vw;
+   }
+ }
+ @media (max-width:964px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 9vw;
+   }
+ }
+ @media (max-width:954px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 19vw;
+   }
+ }
+ @media (max-width:920px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 17vw;
+   }
+ }
+ @media (max-width:900px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 16vw;
+   }
+  
+ }
+
+ @media (max-width:888px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 14vw;
+   }
+ }
+ @media (max-width:868px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 12vw;
+   }
+ }
+
+ @media (max-width:848px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 10vw;
+   }
+ }
+ @media (max-width:828px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 9vw;
+   }
+ }
+ @media (max-width:822px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 6vw;
+   }
+ }
+ @media (max-width:794px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 4vw;
+   }
+ }
+ @media (max-width:774px) {
+  .checkbox-con {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: auto;
+    position: relative;
+    left: 2vw;
+   }
+ }
  .checkbox-con input[type="checkbox"] {
   appearance: none;
   width: 64px;
   height: 35px;
   border: 2px solid #44bef1;
   border-radius: 20px;
-  background: #f1e1e1;
+  background: white;
   position: relative;
   box-sizing: border-box;
  }
@@ -2221,14 +2562,15 @@ display: none;
  .checkbox-con input[type="checkbox"]::after {
  content:"ru";
   position: absolute;
-  top: 3px;
+  top: 4px;
   font-size: 15px;
   left: 35px;
+  color: black;
  }
  
  .checkbox-con input[type="checkbox"]:checked {
   border: 2px solid #44bef1;
-  background: #e2f1e1;
+  background: white;
  }
  
  .checkbox-con input[type="checkbox"]:checked::before {
@@ -2242,8 +2584,9 @@ display: none;
   content: "eng";
   position: absolute;
   font-size: 15px;
-  top: 3px;
+  top: 4px;
   left: 4px;
+  color: black;
  }
  
  .checkbox-con label {

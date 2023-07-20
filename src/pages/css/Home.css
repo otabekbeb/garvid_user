@@ -34,6 +34,11 @@
     border-radius: 4px;
     transition: 0.5s;
 }
+@media(max-width:400px){
+    #sli11{
+        margin-bottom: 150px !important;
+    }
+}
 .button1{
     margin-left: 40px;
     font-family: 'Roboto', sans-serif;
@@ -79,9 +84,7 @@
     line-height: 1.7;
     letter-spacing: 0px;
 }
-.carousel-item{
-    margin-top: 3%;
-}
+
 .carusel h1{
     font-weight: 700;
     font-style: normal;
@@ -102,7 +105,7 @@
     flex-wrap: wrap;
     gap: 40px;
     justify-content: center;
-    width: 1300px;
+    width: 1400px;
     padding-top: 80px;
     text-align: center;
 }

@@ -1,161 +1,345 @@
-import React from "react";
-import "../css/mentorkurs.css";
+import React, { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { BiMenu } from "react-icons/bi";
 import { MdWindow } from "react-icons/md";
 import { TfiMenuAlt } from "react-icons/tfi";
 import Mon from "../img/Mon.png";
-import { AiOutlineStar } from "react-icons/ai";
+import { AiFillStar } from "react-icons/ai";
 import { HiArrowRight } from "react-icons/hi";
 import Rasp from "../img/Rasp.png";
-import { BsPlus, BsTrash3 } from "react-icons/bs";
-import { LuEdit } from "react-icons/lu";
-import deleteimg from "../img/Group 2.png"
-import {MdClose} from "react-icons/md"
-import "../css/deletModal.css"
+import { AiOutlineArrowRight } from "react-icons/ai";
+import { AiOutlinePlus } from "react-icons/ai";
+import { BsPlus } from "react-icons/bs";
+import { TbPointFilled } from "react-icons/tb";
+import "../css/Spiska.css";
+import "../css/Calibig.css";
+import WWW from "../img/WWW.png";
+import axios from "axios";
+import url from "./Host";
+export default function Searchfilter() {
+  const [kursdata, setKursdata] = useState([]);
+  const [type, settype] = useState([]);
+  const [state1, setState1] = React.useState();
 
-export default function Mentorkurs() {
-
-  function deleteModal(){
-    document.querySelector(".delete_big_div").style=" display: block;"
-
+  function Filter() {
+    document.querySelector(".filter_button").classList.toggle("filter");
   }
-  function deletClose(){
-    document.querySelector(".delete_big_div").style="display:none"
+  function windowModal() {
+    document.querySelector(".kurs_cards").style = "display:flex;transition:3s";
+    document.querySelector(".spiska_img_title_div").style = "display:none";
+  }
+  function menuModal() {
+    document.querySelector(".kurs_cards").style = "display:none";
+    document.querySelector(".spiska_img_title_div").style =
+      "display:block;transition:3s";
+  }
 
-   }
-   
-   function Filter (){
-    document.querySelector(".filter_button").classList.toggle("filter")
-}
-
+  useEffect(() => {
+    axios
+      .get(`${url}/course/main/`, { headers: { "Accept-Language": "en" } })
+      .then((res) => {
+        setKursdata(res.data);
+        axios
+          .get(`${url}/course/type/`, { headers: { "Accept-Language": "en" } })
+          .then((res) => {
+            settype(res.data);
+          });
+      });
+    setState1(
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+    );
+  }, []);
 
   return (
     <div>
-      <div className="delete_big_div">
-            <div className="delete_text_div">
-                <div className="delete_close_div"><MdClose onClick={()=>deletClose()} className="delete_icon"/></div>
-                <div className="delete_img_div"><img src={deleteimg} alt="" /></div>
-                <div className="delete_h1_div"><h1>Вы действительно хотите удалить курс ?</h1></div>
-                <div className="delete_p_div"><p>Если вы подтвердите удаление курса, ваш запрос будет обработан в течение 24 часов 
-и полностью удаляется из системы.</p></div>
-                <div className="delete_button_div"><button onClick={()=>deletClose()} >Отмена</button><button>Удалить</button></div>
+      {state1 === "eng" ? (<div>
+        <div className="Filter">
+          <div className="blur_blok">
+            <div className="inp_blok">
+              <input type="text" placeholder="Search among my courses" />
+              <CiSearch className="search" />
             </div>
-        </div>
-      <div className="Filter">
-        <div className="blur_blok">
-          <div className="inp_blok">
-            <input type="text" placeholder="Поиск среди моих курсов" />
-            <CiSearch className="search" />
+            <div className="blur">
+              <div className="icon_blok">
+                <div
+                  className="sel_blok"
+                  onClick={() => {
+                    Filter();
+                  }}
+                >
+                  <BiMenu className="menyu" />
+                  <h4>Filter</h4>
+                </div>
+                <div className="win_men">
+                  <MdWindow className="window" onClick={() => windowModal()} />
+                  <TfiMenuAlt className="manu" onClick={() => menuModal()} />
+                </div>
+              </div>
+              <div className="filter_button">
+                {kursdata.map((item1) => {
+                  return (
+                    <>
+                      {type.map((item2) => {
+                        if (item1.course_type === item2.id) {
+                          return (
+                            <div className="button_filter_kurs">
+                              <div className="div_kurs">{item2.name}</div>
+                            </div>
+                          );
+                        }
+                      })}
+                    </>
+                  );
+                })}
+              </div>
+            </div>
           </div>
-          <div className="blur">
-                    <div className="icon_blok">
-                        <div className="sel_blok" onClick={()=>{Filter()}}>
-                            <BiMenu className='menyu' />
-                            <h4>Фильтр</h4>
-                        </div>
-                        <div className="win_men">
-                            <MdWindow className='window' />
-                            <TfiMenuAlt className='manu' />
-                        </div>
-                    </div>
-                    <div className="filter_button">
-                        <div className="button_filter_kurs">
-                       <div className='div_kurs'>FrontEnd</div>
-                       <div className='div_kurs'>Backend</div>
-                       <div className='div_kurs'>Modx</div>
+        </div>
 
-                       </div>
+        <div className="kurs_cards">
+          {kursdata.map((item) => {
+            return (
+              <div className="kurs_card">
+                <button className="btn_das">Dasturlash</button>
+                {item.image === null ? (
+                  <div className="No_img">
+                    <h1>no picture</h1>
+                  </div>
+                ) : (
+                  <img src={item.image} />
+                )}
+                <div className="kurs_paddaing_auto">
+                  <h4>{item.name}</h4>
+                  <div className="star_card">
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_ib">
+                      <AiFillStar />
+                    </i>
+                    <p>
+                      4.1 <span>(524)</span>
+                    </p>
+                  </div>
+                  <div className="hajm">
+                    <h5>
+                      <p>Kurs hajmi</p>
+                      {item.planned_time}
+                    </h5>
+                    <h5>
+                      <p>Kurs narxi</p>
+                      {item.price}
+                    </h5>
+                  </div>
+                </div>
+                <button className="button_circle">
+                  <AiOutlineArrowRight
+                    onClick={() => {
+                      window.location = "/video";
+                      localStorage.setItem("course", item.id)
+                    }}
+                  />
+                </button>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* SPISKA */}
+
+        <div className="spiska_img_title_div">
+          {kursdata.map((item) => {
+            return (
+              <div className="Spiska_blok">
+                <div className="spiska">
+                  <div className="spiska_display_flex">
+                    <div className="spiska_img">
+                      {item.image === null ? (
+                        <div className="No_img1">
+                          <h1>no picture</h1>
+                        </div>
+                      ) : (
+                        <img src={item.image} alt="No img" />
+                      )}
                     </div>
+                    <div className="spiska_title_df">
+                      <div className="spiska_title">
+                        <h3>{item.name}</h3>
+                        <div className="star_icon_blok1">
+                          <AiFillStar className="gold" />
+                          <AiFillStar className="gold" />
+                          <AiFillStar className="gold" />
+                          <AiFillStar className="gold" />
+                          <AiFillStar />
+                          <div className="number">
+                            <h6>4.1 (524)</h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="left1_icon">
+                        <HiArrowRight />
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
+            );
+          })}
         </div>
-      </div>
-      <div className="cali_df">
-        <div className="cali">
-          <img src={Mon} alt="" />
-          <div className="mentor_text_kurs">
-            <div className="mentor_h1">AWS для разработчиков: балансировка нагрузки ECS и Multi-Regional</div>
-            <div className="mentor_size">
-            <div>
-            <div className="mentor_star"><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/><span>4.1</span><span>(524)</span></div>
-            <div className="mentor_soat_bolim">
-              <div className="mentor_soat">
-                <p>Размер курса</p>
-                <h1>38 часов</h1>
-              </div>
-              <div className="mentor_bolim">
-                <p>Разделы курса</p>
-                <h1>5 секций</h1>
-              </div>
+      </div>) : (<div>
+        <div className="Filter">
+          <div className="blur_blok">
+            <div className="inp_blok">
+              <input type="text" placeholder="Поиск среди моих курсов" />
+              <CiSearch className="search" />
             </div>
-            </div>
-            <div className="mentor_text_icon">
-            <div className="mentor_kurs_icon_edit"><LuEdit/></div>
-            <div onClick={()=>deleteModal()} className="mentor_kurs_icon_trash"><BsTrash3/></div>
-            <div className="mentor_kurs_icon_HiArrowRight"><HiArrowRight/></div>
-            </div>
-            </div>
-          </div>
-        </div>
-        <div className="cali">
-          <img src={Mon} alt="" />
-          <div className="mentor_text_kurs">
-            <div className="mentor_h1">AWS для разработчиков: балансировка нагрузки ECS и Multi-Regional</div>
-            <div className="mentor_size">
-            <div>
-            <div className="mentor_star"><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/><span>4.1</span><span>(524)</span></div>
-            <div className="mentor_soat_bolim">
-              <div className="mentor_soat">
-                <p>Размер курса</p>
-                <h1>38 часов</h1>
-              </div>
-              <div className="mentor_bolim">
-                <p>Разделы курса</p>
-                <h1>5 секций</h1>
-              </div>
-            </div>
-            </div>
-            <div className="mentor_text_icon">
-            <div className="mentor_kurs_icon_edit"><LuEdit/></div>
-            <div onClick={()=>deleteModal()} className="mentor_kurs_icon_trash"><BsTrash3/></div>
-            <div className="mentor_kurs_icon_HiArrowRight"><HiArrowRight/></div>
-            </div>
-            </div>
-          </div>
-        </div>
-        <div className="cali">
-          <img src={Mon} alt="" />
-          <div className="mentor_text_kurs">
-            <div className="mentor_h1">AWS для разработчиков: балансировка нагрузки ECS и Multi-Regional</div>
-            <div className="mentor_size">
-            <div>
-            <div className="mentor_star"><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/><AiOutlineStar/><span>4.1</span><span>(524)</span></div>
-            <div className="mentor_soat_bolim">
-              <div className="mentor_soat">
-                <p>Размер курса</p>
-                <h1>38 часов</h1>
-              </div>
-              <div className="mentor_bolim">
-                <p>Разделы курса</p>
-                <h1>5 секций</h1>
-              </div>
-            </div>
-            </div>
-            <div className="mentor_text_icon">
-            <div className="mentor_kurs_icon_edit"><LuEdit/></div>
-            <div onClick={()=>deleteModal()} className="mentor_kurs_icon_trash"><BsTrash3/></div>
-            <div className="mentor_kurs_icon_HiArrowRight"><HiArrowRight/></div>
-            </div>
-            </div>
-          </div>
-        </div>
-        <div className="cali1">
-                <div className="plus_blok">
-              <BsPlus className='plus_icon'/>
-                <h6>Yangi kurs qo’shish</h6>
+            <div className="blur">
+              <div className="icon_blok">
+                <div
+                  className="sel_blok"
+                  onClick={() => {
+                    Filter();
+                  }}
+                >
+                  <BiMenu className="menyu" />
+                  <h4>Фильтр</h4>
                 </div>
+                <div className="win_men">
+                  <MdWindow className="window" onClick={() => windowModal()} />
+                  <TfiMenuAlt className="manu" onClick={() => menuModal()} />
+                </div>
+              </div>
+              <div className="filter_button">
+                {kursdata.map((item1) => {
+                  return (
+                    <>
+                      {type.map((item2) => {
+                        if (item1.course_type === item2.id) {
+                          return (
+                            <div className="button_filter_kurs">
+                              <div className="div_kurs">{item2.name}</div>
+                            </div>
+                          );
+                        }
+                      })}
+                    </>
+                  );
+                })}
+              </div>
             </div>
-      </div>
+          </div>
+        </div>
+
+        <div className="kurs_cards">
+          {kursdata.map((item) => {
+            return (
+              <div className="kurs_card">
+                <button className="btn_das">Dasturlash</button>
+                {item.image === null ? (
+                  <div className="No_img">
+                    <h1>Нет изображение</h1>
+                  </div>
+                ) : (
+                  <img src={item.image} />
+                )}
+                <div className="kurs_paddaing_auto">
+                  <h4>{item.name}</h4>
+                  <div className="star_card">
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_ib">
+                      <AiFillStar />
+                    </i>
+                    <p>
+                      4.1 <span>(524)</span>
+                    </p>
+                  </div>
+                  <div className="hajm">
+                    <h5>
+                      <p>Kurs hajmi</p>
+                      {item.planned_time}
+                    </h5>
+                    <h5>
+                      <p>Kurs narxi</p>
+                      {item.price}
+                    </h5>
+                  </div>
+                </div>
+                <button className="button_circle">
+                  <AiOutlineArrowRight
+                    onClick={() => {
+                      window.location = "/video";
+                      localStorage.setItem("course", item.id)
+                    }}
+                  />
+                </button>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* SPISKA */}
+
+        <div className="spiska_img_title_div">
+          {kursdata.map((item) => {
+            return (
+              <div className="Spiska_blok">
+                <div className="spiska">
+                  <div className="spiska_display_flex">
+                    <div className="spiska_img">
+                      {item.image === null ? (
+                        <div className="No_img1">
+                          <h1>Нет изображение</h1>
+                        </div>
+                      ) : (
+                        <img src={item.image} alt="No img" />
+                      )}
+                    </div>
+                    <div className="spiska_title_df">
+                      <div className="spiska_title">
+                        <h3>{item.name}</h3>
+                        <div className="star_icon_blok1">
+                          <AiFillStar className="gold" />
+                          <AiFillStar className="gold" />
+                          <AiFillStar className="gold" />
+                          <AiFillStar className="gold" />
+                          <AiFillStar />
+                          <div className="number">
+                            <h6>4.1 (524)</h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="left1_icon">
+                        <HiArrowRight />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>)}
+
     </div>
   );
 }
