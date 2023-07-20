@@ -38,14 +38,16 @@ export default function App() {
           <Route path="/contacts" element={<Contacts/>} />
           <Route path="/video" element={<Video />} />
           <Route path="/prover" element={<Prover />} />
+          <Route path="/Proverr2" element={<Proverr2 />} />
           <Route path="/teacher" element={<Teacher />} />
 
           {/* <Route index element={} />*/}
         </Routes>
+      
       </BrowserRouter>
 
 
-      <Proverr2/>
+   
     </div>
   );
 }
