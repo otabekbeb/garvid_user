@@ -20,6 +20,7 @@ import Mentorcontact from "./pages/js/Mentorcontact";
 
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Proverr2 from './pages/js/Proverr2'
 export default function App() {
 
   return (
@@ -39,12 +40,17 @@ export default function App() {
           <Route path="/contacts" element={<Contacts/>} />
           <Route path="/video" element={<Video />} />
           <Route path="/prover" element={<Prover />} />
+          <Route path="/Proverr2" element={<Proverr2 />} />
           <Route path="/teacher" element={<Teacher />} />
           <Route path="/student" element={<Student />} />
           <Route path="/mentorcontact" element={<Mentorcontact />} />
           {/* <Route index element={} />*/}
         </Routes>
+      
       </BrowserRouter>
+
+
+   
     </div>
   );
 }

@@ -23,7 +23,7 @@ export default function Sertifikate() {
                     <h4>Raspberry Pi programming basics</h4>
                     <p>June 20, 2019</p>
                     </div>
-                    <button className='Dast_konter_dust_pro_dest'>Programming</button>
+                    <button className='Dast_konter_dust_pro_dest' >Programming</button>
                 </div>
             </div>
             <div className="sertifikat">
@@ -83,7 +83,7 @@ export default function Sertifikate() {
                     <h4>Основы программирования на Raspberry Pi</h4>
                     <p>20 июня 2019 г.</p>
                     </div>
-                    <button className='Dast_konter_dust_pro_dest'>Программирование</button>
+                    <button className='Dast_konter_dust_pro_dest' style={{fontSize:"10px"}}>Программирование</button>
                 </div>
             </div>
             <div className="sertifikat">
@@ -93,7 +93,7 @@ export default function Sertifikate() {
                     <h4>Основы программирования на Raspberry Pi</h4>
                     <p>20 июня 2019 г.</p>
                     </div>
-                    <button className='Dast_konter_dust_pro_dest'>Программирование</button>
+                    <button className='Dast_konter_dust_pro_dest' style={{fontSize:"10px"}}>Программирование</button>
                 </div>
             </div>
             <div className="sertifikat">
@@ -103,7 +103,7 @@ export default function Sertifikate() {
                     <h4>Основы программирования на Raspberry Pi</h4>
                     <p>20 июня 2019 г.</p>
                     </div>
-                    <button className='Dast_konter_dust_pro_dest'>Программирование</button>
+                    <button className='Dast_konter_dust_pro_dest' style={{fontSize:"10px"}}>Программирование</button>
                 </div>
             </div>
             <div className="sertifikat">
@@ -113,7 +113,7 @@ export default function Sertifikate() {
                     <h4>Основы программирования на Raspberry Pi</h4>
                     <p>20 июня 2019 г.</p>
                     </div>
-                    <button className='Dast_konter_dust_pro_dest'>Программирование</button>
+                    <button className='Dast_konter_dust_pro_dest' style={{fontSize:"10px"}}>Программирование</button>
                 </div>
             </div>
             <div className="sertifikat">
@@ -123,7 +123,7 @@ export default function Sertifikate() {
                     <h4>Основы программирования на Raspberry Pi</h4>
                     <p>20 июня 2019 г.</p>
                     </div>
-                    <button className='Dast_konter_dust_pro_dest'>Программирование</button>
+                    <button className='Dast_konter_dust_pro_dest' style={{fontSize:"10px"}}>Программирование</button>
                 </div>
             </div>
             
