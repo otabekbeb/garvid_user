@@ -141,6 +141,7 @@ export default function Login() {
                   <div className="login_small_input">
                     <BiLockAlt className="login_icon" />
                     <input className="password" placeholder={state1==="eng"?("Password"):("Пароль")} type="password" required />
+                    <div className="error">{state1==="eng"?("The password cannot be less than 8"):("Пароль не может быть меньше 8")}</div>
                   </div>
                   <div className="login_button_div">
                     <button type="button" onClick={()=>userModal()}>{state1==="eng"?("Registration"):("Регистрация")}</button>
