@@ -65,10 +65,13 @@ export default function Vazifa1() {
               <div className="m_line_w"></div>
               <div className="m_otpr">
             <p><AiOutlinePaperClip/></p>
-            <input type="text" placeholder='Отправка задачи'/>
+            <input type="text" placeholder='Отправка задачи' />
+            
               </div>
            </div>
-           <div className="m_but_otpr"><button>Send</button></div>
+           <div className="m_comment_button1">
+              <button className='m_otpravit'>Send</button>
+              </div>
         </div>
         </div>
     </div>):(<div className='m_vazifa_kotta'> 
@@ -111,10 +114,13 @@ export default function Vazifa1() {
               <div className="m_line_w"></div>
               <div className="m_otpr">
             <p><AiOutlinePaperClip/></p>
-            <input type="text" placeholder='Отправка задачи'/>
+              <input type="text" placeholder='Отправка задачи' />
               </div>
            </div>
-           <div className="m_but_otpr"><button>Отправить</button></div>
+           {/* <div className="m_but_otpr"><button>Отправить</button></div> */}
+           <div className="m_comment_button1">
+              <button className='m_otpravit'>Отправить</button>
+              </div>
         </div>
         </div>
     </div>)}

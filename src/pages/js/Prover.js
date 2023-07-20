@@ -212,7 +212,7 @@ return(
           culpa qui officia deserunt mollit anim id est laborum.
         </Accordion.Body>
       </Accordion.Item>
-    </Accordion>i
+    </Accordion>
                     </div>
                 </div>
                 <div className="m_course_button">

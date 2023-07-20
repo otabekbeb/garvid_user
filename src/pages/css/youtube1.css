@@ -926,6 +926,9 @@ width: 100%;
         cursor: pointer;
         color: #9DA7BB;
     } 
+    .navbar_otish{
+        display: none;
+    }
 }
 .navbar_yon{
     display: none;
