@@ -12,7 +12,6 @@ export default function Loginpage() {
   const [manzil, setManzil] = React.useState([]);
   const [adress, setAdress] = React.useState([]);
   const [adresput, setAdresput] = React.useState([]);
-  const [state, setState] = React.useState(localStorage.getItem('users'));
   const [loader, setLoader] = React.useState(2);
   const [state1, setState1] = React.useState();
   useEffect(() => {
@@ -24,7 +23,6 @@ export default function Loginpage() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
-        localStorage.setItem('users', res.data)
         document.querySelector("#first_name").value = res.data.first_name;
         document.querySelector("#last_name").value = res.data.last_name;
         document.querySelector("#username").value = res.data.username;
@@ -34,14 +32,16 @@ export default function Loginpage() {
         document.querySelector("#adress").value = res.data.adress;
         document.querySelector("#description").value = res.data.description;
         setUser(res.data);
-        localStorage.setItem('users', res.data)
-        document.querySelector("#first_name").value = state.first_name;
-        document.querySelector("#last_name").value = state.last_name;
-        document.querySelector("#username").value = state.username;
-        document.querySelector("#phone_number").value = state.phone_number;
-        document.querySelector("#birthday").value = state.birthday;
-        document.querySelector("#adress").value = state.adress;
-        document.querySelector("#description").value = state.description;
+        user.map(item=>{
+          document.querySelector("#first_name").value = item.first_name;
+          document.querySelector("#last_name").value = item.last_name;
+          document.querySelector("#username").value = item.username;
+          document.querySelector("#phone_number").value = item.phone_number;
+          document.querySelector("#birthday").value = item.birthday;
+          document.querySelector("#adress").value = item.adress;
+          document.querySelector("#description").value = item.description;
+        })
+
       });
 
   }, []);
@@ -86,6 +86,45 @@ export default function Loginpage() {
       });
   }
 
+  function button(){
+    axios
+    .get(`${url}/auth/user/`, {
+      headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+    })
+    .then((res) => {
+      document.querySelector("#first_name").value = res.data.first_name;
+      document.querySelector("#last_name").value = res.data.last_name;
+      document.querySelector("#username").value = res.data.username;
+      console.log(res.data);
+      document.querySelector("#phone_number").value = res.data.phone_number;
+      document.querySelector("#birthday").value = res.data.birthday;
+      document.querySelector("#adress").value = res.data.adress;
+      document.querySelector("#description").value = res.data.description;
+      setUser(res.data);
+        document.querySelector("#first_name").value = res.data.first_name;
+        document.querySelector("#last_name").value = res.data.last_name;
+        document.querySelector("#username").value = res.data.username;
+        document.querySelector("#phone_number").value = res.data.phone_number;
+        document.querySelector("#birthday").value = res.data.birthday;
+        document.querySelector("#adress").value = res.data.adress;
+        document.querySelector("#description").value = res.data.description;
+
+    });
+    setData(1);
+  }
+
+  function postPassword(){
+  var formdata = new FormData()
+  formdata.append("old_password",document.querySelector(".oldPassword").value)
+  formdata.append("new_password",document.querySelector(".passwordChange").value)
+
+    axios.put(`${url}/auth/change_password/`,formdata,{ headers: {Authorization:'Bearer ' + localStorage.getItem("token")}}).then(res=>{
+   alert("ishladi")
+  }).catch(err=>{
+    console.log(err);
+  })
+  }
+
   return (
     <div>
       <div>
@@ -101,7 +140,7 @@ export default function Loginpage() {
                     : { background: "white", color: "black", border: "none" }
                 }
                 onClick={() => {
-                  setData(1);
+                  button()
                 }}
               >
                 Account details
@@ -214,7 +253,7 @@ export default function Loginpage() {
                             <h2>Confirm new password</h2>
                             <input className="restPassword" type="password" />
                           </div>
-                          <button>Save</button>
+                          <button onClick={()=>postPassword()}>Save</button>
                         </div>
                       </div>
                     </div>
@@ -337,7 +376,7 @@ export default function Loginpage() {
                     : { background: "white", color: "black", border: "none" }
                 }
                 onClick={() => {
-                  setData(1);
+                  button()
                 }}
               >
                 Реквизиты счета
