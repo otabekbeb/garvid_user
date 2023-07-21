@@ -62,6 +62,7 @@ export default function Login() {
     window.location="/user"
     }).catch(err=>{
       console.log(err);
+     
       state1==="ru"?(alert("В базе нет такого логина или пароля")):(alert("There is no such username or password in the database"))
     })
   }
