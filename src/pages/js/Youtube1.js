@@ -129,6 +129,7 @@ function painModal8() {
             setTheme(res.data)
             console.log(res.data, 'cghtjk');
           }
+
         })
       });setState1(
         localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
@@ -236,7 +237,7 @@ function painModal8() {
                     <h1>{item.name}</h1>
                     <div className="margin_right">
                       <div className="line_height"></div>
-                          <p>{theme.length}</p>
+                          <p>{theme.length} уроки</p> 
                     </div>
                   </div>
                 </div>
@@ -247,22 +248,24 @@ function painModal8() {
                         <Accordion.Item eventKey="0">
                           <Accordion.Header>{item2.name}</Accordion.Header>
                           {theme.map(theme=>{
-                          return(
-                            <Accordion.Body>
-                            <div className="accordion_flex">
-                              <div className="accordion_img">
-                                <img src={theme.image} alt="" />
-                              </div>
-                              <div className="accordion_text">
-                                <h6>
-                                {theme.name}
-                                </h6>
-                                <p>
-                                </p>
-                              </div>
-                            </div>
-                          </Accordion.Body>
-                          )
+                            if (theme.subcategory==item2.id) {
+                              return(
+                                <Accordion.Body>
+                                <div className="accordion_flex">
+                                  <div className="accordion_img">
+                                    <img src={theme.image} alt="" />
+                                  </div>
+                                  <div className="accordion_text">
+                                    <h6>
+                                    {theme.name}
+                                    </h6>
+                                    <p>{theme.content}
+                                    </p>
+                                  </div>
+                                </div>
+                              </Accordion.Body>
+                              )
+                            }
                           })}
                         </Accordion.Item>
 

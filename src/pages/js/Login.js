@@ -18,7 +18,7 @@ export default function Login() {
 
   function userModal(){
     var formdata=new FormData()
-    if ((document.querySelector(".password").value).length>8) {
+    if ((document.querySelector(".password").value).length>=8) {
       formdata.append("username",document.querySelector(".name").value)
       formdata.append("email",document.querySelector(".email").value)
       formdata.append("password",document.querySelector(".password").value) 
@@ -33,7 +33,7 @@ export default function Login() {
     console.log(res);
     }).catch(err=>{
        console.log(err);
-       state1==="ru"?(alert("Введите полную информацию")):(alert("Enter full information"))
+       
     })
     
   }

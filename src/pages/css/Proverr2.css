@@ -1,9 +1,8 @@
 .prover2{
     width: 100%;
-    height: 100vh;
+    min-height: 52vw;
     background: #F1F2F6;
-    padding-left: 20px;
-    padding-top: 20px;
+    padding-top: 30px;
 }
 .prover2-mni-search button{
     border: none;
@@ -192,6 +191,14 @@ position: relative;
 left: 95px;
 top: 10px;
 }
+.prover3-linerr1{
+    width: 73.1%;
+    height: 1px;
+    background: #d5dae4;
+position: relative;
+left: 95px;
+top: 10px;
+}
 
 
 
@@ -307,6 +314,7 @@ margin-bottom: 30px;
 
 .prover2-kotta-men{
     display: flex;
+    justify-content: center;
   
 }
 .prover2-orta-joy iframe{
@@ -575,13 +583,13 @@ cursor: pointer;
 
   .text-kurs-haqida1 p{
     font-family: SF Pro Display;
-font-size: 16px !important;
-line-height: 23px !important;
-letter-spacing: 0em !important;
-
+font-size: 16px ;
+line-height: 23px ;
+letter-spacing: 0em ;
+width: 100% !important;
 text-align: left;
-margin-bottom: 10px !important;
-color: #2E2E2E !important;
+margin-bottom: 10px ;
+color: #2E2E2E ;
   }
   .text-kurs-haqida1{
     padding-top: 20px;
@@ -600,7 +608,7 @@ color: #2E2E2E !important;
     padding-left: 10px;
   }
   .mni-dasturlash-bloc{
-    width: 94px;
+    width: 140px;
 height: 22px;
 border-radius: 2px;
 background-color: #10C8A0;
@@ -959,3 +967,274 @@ padding-left: 3px;
     right: 20px;
     cursor: pointer;
 }
+.prover2-trebovaniya-block{
+    width: 238px !important;
+height: 40px !important;
+border-radius: 4px;
+background-color: #ffffff;
+}
+.prover2-mni-treboniya{
+   padding-top: 20px;
+   display: grid;
+   grid-template-columns: auto auto auto;
+}
+.span{
+    width: 10px !important;
+height: 10px !important;
+border-radius: 50% !important;
+background-color: #10C8A0 ;
+}
+.prover2-trebovaniya-block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.prover2-mni-treboniya p{
+    font-family: SF Pro Display;
+font-size: 14px !important;
+line-height: 19px !important;
+letter-spacing: 0em !important;
+text-align: center ;
+color: #9DA7BB;
+position: relative;
+top: 7px;
+left: 7px;
+}
+.prover2-trebovaniya-block2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 240px !important;
+height: 40px !important;
+border-radius: 4px;
+background-color: #ffffff;
+cursor: pointer;
+}
+.prover2-trebovaniya-block3{
+display: flex;
+align-items: center;
+justify-content: center;
+width: 215px !important;
+height: 40px !important;
+border-radius: 4px;
+background-color: #ffffff;
+cursor: pointer;
+}
+.prover2-trebovaniya-block4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 190px !important;
+height: 40px !important;
+border-radius: 4px;
+background-color: #ffffff;
+margin-top: 15px;
+cursor: pointer;
+}
+.prover2-trebovaniya-block5{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px !important;
+height: 40px !important;
+border-radius: 4px;
+background-color: #ffffff;
+margin-top: 15px;
+cursor: pointer;
+}
+.faq{
+    width: 100%;
+    margin: 20px auto;
+    background-color: #ffffff;
+}
+.faq-item{
+    box-shadow: 0px 2px 2px 0px #0000001A;
+margin-bottom: 5px;
+}
+.faq-text{
+    display: none;
+    padding: 10px 15px;
+    
+}
+.faq-title{
+    display: block;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+.faq-input{
+    appearance: none;
+-webkit-appearance: none;
+position: absolute;
+width: 0;
+height: 0;
+}
+.faq-input:checked ~ .faq-text{
+    display: block;
+}
+.text-kurs-haqida4{
+    padding-top: 20px;
+}
+.faq-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid #e6e7e9 ;
+}
+.faq-liner{
+    width: 1px;
+    height: 20px;
+    background-color: #c5c9d3;
+}
+
+#saopdsados{
+    position: relative;
+    right: 5px;
+}
+#fdfsdfdsdfsf{
+    position: relative;
+    left: 37px;
+}
+.faq-liner1{
+    width: 1px;
+    height: 20px;
+    background-color: #c5c9d3;
+    position: relative;
+    left:29px;
+}
+#wqeqweqweqw{
+    position: relative;
+    left: 8px;
+}
+.faq-text p{
+    position: relative;
+    left: 35px;
+}
+.text-media-none{
+    display: none;
+}
+.mni-grid-pas-media{
+    display: none;
+}
+    @media (max-width:1562px) {
+        .prover2-orta-joy iframe{
+            width: 750px !important;
+            height: 320px !important;
+        }
+        .prover2-orta-u button {
+            width: 78px !important;
+            height: 25px !important;
+            border-radius: 2px;
+            background-color: #ffffff;
+            border: none;
+            outline: none;
+            display: flex;
+            position: relative;
+            right: 3.3vw;
+        }
+        .radio-inputs {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 0.5rem;
+            background-color: #EEE;
+            box-sizing: border-box;
+            box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+            padding: 0.25rem;
+            width: 750px;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+        .text-media-flex{
+            display: none;
+        }
+        .text-media-none{
+            display: block;
+        }
+
+        .text-kurs-haqida1 p{
+            font-family: SF Pro Display;
+        font-size: 13px ;
+        line-height: 23px ;
+        letter-spacing: 0em ;
+        width: 100% !important;
+        text-align: left;
+        margin-bottom: 10px ;
+        color: #2E2E2E ;
+          }
+    } 
+@media (max-width:1498px) {
+    .prover2-orta-joy iframe{
+        width:900px !important;
+        height: 320px !important;
+    }
+    .radio-inputs {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 0.5rem;
+        background-color: #EEE;
+        box-sizing: border-box;
+        box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+        padding: 0.25rem;
+        width: 900px;
+        font-size: 14px;
+        margin-top: 30px;
+    }
+    .prover2-orta-u button {
+        width: 78px !important;
+        height: 25px !important;
+        border-radius: 2px;
+        background-color: #ffffff;
+        border: none;
+        outline: none;
+        display: flex;
+        position: relative;
+        left: 12.2vw;
+    }
+    .prover2-orta-joy-text h5 {
+        font-family: SF Pro Display;
+        font-size: 18px;
+        line-height: 29px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+
+    #prover5-info-block1{
+        display: none;
+    }
+    .prover3-linerr1{
+        display: none;
+    }
+.prover5-info-block1{
+    display: none;
+}
+.prover3-linerr1{
+    display: none;
+}
+    .prover2-oxiri-joy{
+        display: none;
+    }
+    .text-kurs-haqida1 p{
+        font-family: SF Pro Display;
+    font-size: 17px ;
+    line-height: 23px ;
+    letter-spacing: 0em ;
+    width: 100% !important;
+    text-align: left;
+    margin-bottom: 10px ;
+    color: #2E2E2E !important ;
+      }
+      .prover2{
+        width: 100%;
+        min-height: 55vw;
+        background: #F1F2F6;
+        padding-top: 30px;
+    }
+    .mni-grid-pas-media{
+        display: flex;
+    }
+}
+
+

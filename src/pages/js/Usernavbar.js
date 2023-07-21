@@ -372,7 +372,7 @@ export default function Navbar() {
                   {localStorage.getItem("token") ? (<a href="/user">{user.username}</a>) : (<a href="/login">Регистрация</a>)}
                 </li>
               </ul>
-              <div class="checkbox-con" style={{ left: "34vw" }}>
+              <div class="checkbox-con">
                 <input
                   id="checkbox"
                   onClick={() => {
