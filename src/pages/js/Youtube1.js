@@ -149,7 +149,11 @@ function painModal8() {
         <Usernavbar/>
       <div className="youtube_bgc">
         <div className="flex_youtube">
-          {theme.map((item) => {
+          {subcategory.map(subcategory=>{
+            return(
+<>
+{theme.map(item => {
+           if(subcategory.id==item.subcategory){
             return (
               <div className="youtube_kotta_img">
                 <div className="img_youtube_kotta">
@@ -220,6 +224,7 @@ function painModal8() {
                     </button>
                   </div>
                 </div>
+                <p>{item.content}</p>
                 <div className="post_ava">
                   <img src={img_ava} alt="" />
                   <h6>Muhammad Dzhumaev</h6>
@@ -227,7 +232,12 @@ function painModal8() {
                 </div>
               </div>
             );
+           }
           })}
+</>
+            )
+          })}
+
 
           {category.map((item) => {
             return (
@@ -245,7 +255,7 @@ function painModal8() {
                   {subcategory.map((item2) => {
                     if (item.id === item2.category) {
                       return (
-                        <Accordion.Item eventKey="0">
+                        <Accordion.Item eventKey="1">
                           <Accordion.Header>{item2.name}</Accordion.Header>
                           {theme.map(theme=>{
                             if (theme.subcategory==item2.id) {
@@ -417,6 +427,7 @@ function painModal8() {
                     </button>
                   </div>
                 </div>
+                <p>{item.content}</p>
                 <div className="post_ava">
                   <img src={img_ava} alt="" />
                   <h6>Мухаммад Джумаев</h6>
@@ -456,6 +467,7 @@ function painModal8() {
                                 {theme.name}
                                 </h6>
                                 <p>
+                                  {theme.content}
                                 </p>
                               </div>
                             </div>
