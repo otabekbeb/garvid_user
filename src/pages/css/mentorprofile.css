@@ -118,6 +118,8 @@
   color: #9DA7BB;
   font-size: 20px;
   margin-bottom: 0px;
+  display: flex;
+  align-items: center;
   }
   .profil_blok_ikki_sum{
     width: 200px;
