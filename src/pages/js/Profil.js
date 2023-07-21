@@ -30,11 +30,11 @@ export default function Profil() {
     formdata.append("image", document.querySelector("#userInput").files[0]);
    
     axios.put(`${url}/auth/user/`,formdata,{headers:{Authorization:"Bearer " +localStorage.getItem("token")}}).then(res=>{
-    alert("ishladi")
+    
     window.location.reload()
    })
    .catch(err=>{
-    console.log(err);
+    state1==="ru"?(alert("Ошибка изображения")):(alert("Image failed"))
    }) 
   }
   function userimgClose(){

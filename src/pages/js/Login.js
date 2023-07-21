@@ -33,7 +33,7 @@ export default function Login() {
     console.log(res);
     }).catch(err=>{
        console.log(err);
-       alert("Введите полную информацию")
+       state1==="ru"?(alert("Введите полную информацию")):(alert("Enter full information"))
     })
     
   }
@@ -43,11 +43,11 @@ export default function Login() {
   function userVeri(){
    
   axios.post(`${url}/auth/register/?verify_code=${name.target.value}&email=${email.target.value}`).then(res=>{
-    alert("Вы зарегистрировались")
+    state1==="ru"?(alert("Вы зарегистрировались")):(alert("You are registered"))
     setPage(1)  
   }).catch(err=>{
     console.log(err);
-    alert("Ошибка верификации ")
+    state1==="ru"?(alert("Ошибка верификации")):(alert("Verification error"))
   })
   }
 
@@ -62,7 +62,7 @@ export default function Login() {
     window.location="/user"
     }).catch(err=>{
       console.log(err);
-      alert("В базе нет такого логина или пароля")
+      state1==="ru"?(alert("В базе нет такого логина или пароля")):(alert("There is no such username or password in the database"))
     })
   }
 
@@ -102,8 +102,8 @@ export default function Login() {
         </div>):(
           <div className="login_db">
           <div className="login_i_register_button">
-            <button onClick={()=>setPage(1)}>{state1==="eng"?("Login"):("Авторизоваться")}</button>
-            <button onClick={()=>setPage(2)}>{state1==="eng"?("Registration"):("Регистрация")}</button>
+            <button onClick={()=>setPage(1)} style={page===1? {background:'#9cf'}:{background:'white',color:'black',border:'2px solid #9cf'}}>{state1==="eng"?("Login"):("Авторизоваться")}</button>
+            <button onClick={()=>setPage(2)} style={page===2? {background:'#9cf'}:{background:'white',color:'black',border:'2px solid #9cf'}}>{state1==="eng"?("Registration"):("Регистрация")}</button>
           </div>
           {page===1?(
           <div className="login_relative">
