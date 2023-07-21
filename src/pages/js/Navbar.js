@@ -1,7 +1,8 @@
 
-"use clint";
 import React, { useState, useEffect } from "react";
 import "../css/Navbar.css";
+import axios from "axios";
+import url from "./Host";
 
 function sa() {
   var o = document.querySelector(".media-ul").style.display;
@@ -24,7 +25,7 @@ function about2() {
 function aboutClose2() {
   document.querySelector(".ichi span").style = "transform: rotate(0deg);";
 }
-function ffd() {}
+function ffd() { }
 // meded
 function ochil1() {
   document.querySelector(".lll ul").classList.toggle("lllb");
@@ -61,6 +62,7 @@ function menu2leave1() {
 export default function Navbar() {
   const [state1, setState1] = React.useState();
   const [state, State] = React.useState(1);
+  const [user, setUser] = useState([])
 
   useEffect(() => {
     setState1(
@@ -76,6 +78,10 @@ export default function Navbar() {
     } else {
       document.querySelector("#checkbox2").checked = false;
     }
+
+    axios.get(`${url}/auth/user/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setUser(res.data)
+    })
   }, []);
 
   return (
@@ -83,6 +89,7 @@ export default function Navbar() {
       {state1 === "eng" ? (
         <div>
           <section onMouseLeave={() => menuul1()} className="navbar">
+
             <div className="navbar-ul">
               <ul>
                 <li className="moto-menu-item">
@@ -107,7 +114,7 @@ export default function Navbar() {
                       <div className="navbbar-line-hr"></div>
 
 
-<div
+                      <div
                         className="menu2"
                         onMouseLeave={() => menu2leave()}
                         onMouseEnter={() => menu2ul()}
@@ -155,12 +162,13 @@ export default function Navbar() {
                 <li className="moto-menu-item">
                   <a href="/contacts">Contacts</a>
                 </li>
-                {/* <li className='moto-menu-item'><a href="/teacher">Teacher</a></li> */}
+
+
                 <li className="moto-menu-item">
-                  {localStorage.getItem("token")?(<a href="/user">Salom</a>):(<a href="/login">Log in</a>)}
+                  {localStorage.getItem("token") ? (<a href="/user">{user.username}</a>) : (<a href="/login">Log in</a>)}
                 </li>
               </ul>
-              <div class="checkbox-con" style={{ left: "38vw" }}>
+              <div class="checkbox-con" >
                 <input
                   id="checkbox"
                   onClick={() => {
@@ -184,7 +192,7 @@ export default function Navbar() {
                 </div>
 
 
-{/* onMouseLeave={()=>aboutClose2()}  */}
+                {/* onMouseLeave={()=>aboutClose2()}  */}
                 <div className="media-ul">
                   <div className="dfdf">
                     <ul>
@@ -267,13 +275,11 @@ export default function Navbar() {
                       </li>
                       {/* <li><a href="/teacher" className='tt'>Teacher</a></li> */}
                       <li>
-                        <a href="/login" className="tt">
-                          Login
-                        </a>
+                        {localStorage.getItem("token") ? (<a href="/user" className="tt">{user.username}</a>) : (<a Login href="/login" className="tt">Login</a>)}
                       </li>
 
 
-<div class="checkbox-con" style={{ marginTop: "15px" }}>
+                      <div class="checkbox-con" style={{ marginTop: "15px" }}>
                         <input
                           id="checkbox2"
                           onClick={() => {
@@ -355,7 +361,7 @@ export default function Navbar() {
                 </div>
 
 
-<li className="moto-menu-item">
+                <li className="moto-menu-item">
                   {" "}
                   <a href="/servis">Услуги</a>{" "}
                 </li>
@@ -370,10 +376,10 @@ export default function Navbar() {
                 </li>
                 {/* <li className='moto-menu-item'><a href="/teacher" >Учитель</a></li> */}
                 <li className="moto-menu-item">
-                  {localStorage.getItem("token")?(<a href="/user">Profil</a>):(<a href="/login">Регистрация</a>)}
+                  {localStorage.getItem("token") ? (<a href="/user">{user.username}</a>) : (<a href="/login">Регистрация</a>)}
                 </li>
               </ul>
-              <div class="checkbox-con" style={{ left: "34vw" }}>
+              <div class="checkbox-con" >
                 <input
                   id="checkbox"
                   onClick={() => {
@@ -456,7 +462,7 @@ export default function Navbar() {
                           </div>
 
 
-<li className="ds">
+                          <li className="ds">
                             <a href="#">FAQs</a>
                           </li>
                         </ul>
@@ -483,8 +489,9 @@ export default function Navbar() {
                         </a>
                       </li>
                       {/* <li><a href="/teacher" className='tt'>Учитель</a></li> */}
+
                       <li>
-                     {localStorage.getItem("token")?(<a href="/user">Profil</a>):(<a href="/login" className="tt">Регистрация</a>)}
+                        {localStorage.getItem("token") ? (<a href="/user">{user.username}</a>) : (<a href="/login" className="tt">Регистрация</a>)}
                       </li>
                       <div class="checkbox-con" style={{ marginTop: "15px" }}>
                         <input

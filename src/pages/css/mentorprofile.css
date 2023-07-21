@@ -76,11 +76,13 @@
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    width: 45%;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
   }
   .user_img {
     width: 100%;
+    height: 100%;
     border-radius: 50%;
   }
   /* body{
@@ -116,6 +118,8 @@
   color: #9DA7BB;
   font-size: 20px;
   margin-bottom: 0px;
+  display: flex;
+  align-items: center;
   }
   .profil_blok_ikki_sum{
     width: 200px;

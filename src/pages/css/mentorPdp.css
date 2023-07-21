@@ -112,16 +112,19 @@
         cursor: pointer;
     }
     
-    .fromLeft:after {
+    /* .fromLeft:after {
         padding-bottom: 20px;
       display:block;
       content: '';
-      border-bottom: solid 3px #536DFD;
+      border-bottom: solid 2px #536DFD;
       transform: scaleX(0);  
       transition: transform 250ms ease-in-out;
     }
-    .fromLeft.fromLeft:hover:after{ transform: scaleX(1); transform-origin:   0% 50%; }
+    .fromLeft.fromLeft:hover:after{ transform: scaleX(1); transform-origin:   0% 50%; } */
     
+    .fromLeft:hover{
+        border-bottom: 2px solid #536DFD;
+      }
     
     
     

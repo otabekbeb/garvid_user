@@ -78,11 +78,11 @@ export default function Loginpage() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
-        alert("ishladi");
+        state1==="ru"?(alert("Введенная информация")):(alert("Entered information"))
         window.location.reload();
       })
       .catch((err) => {
-        alert("ishlamadi");
+        state1==="ru"?(alert("Информация введена не полностью")):(alert("The information was not fully entered"))
       });
   }
 
@@ -115,11 +115,47 @@ export default function Loginpage() {
 
   function postPassword(){
   var formdata = new FormData()
+  if (sessionStorage.getItem("password")===document.querySelector(".oldPassword").value) {
   formdata.append("old_password",document.querySelector(".oldPassword").value)
-  formdata.append("new_password",document.querySelector(".passwordChange").value)
+  const error=document.querySelectorAll(".error")
+  error[0].style="display:none"
+  document.querySelector(".oldPassword").style="border-color:#9cf;"  
+  }else{
+  const error=document.querySelectorAll(".error")
+  error[0].style="display:block"
+  document.querySelector(".oldPassword").style="border-color:red;"
+  }
+  if (document.querySelector(".passwordChange").value==document.querySelector(".restPassword").value) {
+    const error=document.querySelectorAll(".error")
+    error[2].style="display:none"
+    document.querySelector(".passwordChange").style="border-color:#9cf;"
+    document.querySelector(".restPassword").style="border-color:#9cf;"  
+    formdata.append("new_password",document.querySelector(".passwordChange").value)  
+  }else{
+    const error=document.querySelectorAll(".error")
+    error[2].style="display:block"
+    document.querySelector(".passwordChange").style="border-color:red;"
+    document.querySelector(".restPassword").style="border-color:red;"  
+  }
+  if (document.querySelector(".passwordChange").value<=8) {
+    const error=document.querySelectorAll(".error")
+    error[1].style="display:block"
+    document.querySelector(".passwordChange").style="border-color:red;"
+  }else{   
+    const error=document.querySelectorAll(".error")
+    error[1].style="display:none"
+    document.querySelector(".passwordChange").style="border-color:#9cf;" 
+    formdata.append("new_password",document.querySelector(".passwordChange").value) 
+  }
 
-    axios.put(`${url}/auth/change_password/`,formdata,{ headers: {Authorization:'Bearer ' + localStorage.getItem("token")}}).then(res=>{
-   alert("ishladi")
+
+  
+  
+
+    axios.put(`${url}/auth/change_password/`,formdata,{ headers: {Authorization:'Bearer ' + localStorage.getItem("token")}}).then(res=>{  
+      state1==="ru"?(alert("Пароль обновлен")):(alert("Password updated"))
+   sessionStorage.setItem("password",document.querySelector(".passwordChange").value)
+   window.location.reload()
   }).catch(err=>{
     console.log(err);
   })
@@ -248,11 +284,14 @@ export default function Loginpage() {
                           <div className="inpu1">
                             <h2>Old password</h2>
                             <input className="oldPassword" type="text" />
+                            <div className="error">Старый пароль ошибка, введите правильно</div>
                             <h2> New password</h2>
                             <input className="passwordChange" type="password" />
+                            <div className="error">{state1==="eng"?("The password cannot be less than 8"):("Пароль не может быть меньше 8")}</div>
                             <h2>Confirm new password</h2>
                             <input className="restPassword" type="password" />
                           </div>
+                          <div className="error">Новый пароль и повторяющийся пароль должны быть одинаковыми</div>
                           <button onClick={()=>postPassword()}>Save</button>
                         </div>
                       </div>

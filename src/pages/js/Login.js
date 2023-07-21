@@ -21,26 +21,19 @@ export default function Login() {
     if ((document.querySelector(".password").value).length>=8) {
       formdata.append("username",document.querySelector(".name").value)
       formdata.append("email",document.querySelector(".email").value)
-      formdata.append("password",document.querySelector(".password").value)
-      const NodeList=document.querySelectorAll(".error")
-      NodeList[2].style="display:none"
-      document.querySelector(".password").style="border-bottom:1px solid #9cf;"
-      setTimeout(() => {
-        setPage(4)
-      }, 1000);
-       
-    }
-    else{
+      formdata.append("password",document.querySelector(".password").value) 
+      setPage(4)
+    }else{
       const NodeList=document.querySelectorAll(".error")
       NodeList[2].style="display:block"
       document.querySelector(".password").style="border-bottom:1px solid red;"
     }
-
+    
     axios.post(`${url}/auth/register/`,formdata).then(res=>{
     console.log(res);
     }).catch(err=>{
        console.log(err);
-       alert("Введите полную информацию")
+       
     })
     
   }
@@ -50,11 +43,11 @@ export default function Login() {
   function userVeri(){
    
   axios.post(`${url}/auth/register/?verify_code=${name.target.value}&email=${email.target.value}`).then(res=>{
-    alert("Вы зарегистрировались")
+    state1==="ru"?(alert("Вы зарегистрировались")):(alert("You are registered"))
     setPage(1)  
   }).catch(err=>{
     console.log(err);
-    alert("Ошибка верификации ")
+    state1==="ru"?(alert("Ошибка верификации")):(alert("Verification error"))
   })
   }
 
@@ -64,11 +57,13 @@ export default function Login() {
     formdata.append("password",document.querySelector("#parol").value)
 
     axios.post(`${url}/auth/login/`,formdata).then(res=>{
+      sessionStorage.setItem("password",document.querySelector("#parol").value)
     localStorage.setItem("token",res.data.access)
     window.location="/user"
     }).catch(err=>{
       console.log(err);
-      alert("В базе нет такого логина или пароля")
+     
+      state1==="ru"?(alert("В базе нет такого логина или пароля")):(alert("There is no such username or password in the database"))
     })
   }
 
@@ -108,8 +103,8 @@ export default function Login() {
         </div>):(
           <div className="login_db">
           <div className="login_i_register_button">
-            <button onClick={()=>setPage(1)}>{state1==="eng"?("Login"):("Авторизоваться")}</button>
-            <button onClick={()=>setPage(2)}>{state1==="eng"?("Registration"):("Регистрация")}</button>
+            <button onClick={()=>setPage(1)} style={page===1? {background:'#9cf'}:{background:'white',color:'black',border:'2px solid #9cf'}}>{state1==="eng"?("Login"):("Авторизоваться")}</button>
+            <button onClick={()=>setPage(2)} style={page===2? {background:'#9cf'}:{background:'white',color:'black',border:'2px solid #9cf'}}>{state1==="eng"?("Registration"):("Регистрация")}</button>
           </div>
           {page===1?(
           <div className="login_relative">

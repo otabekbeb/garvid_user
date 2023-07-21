@@ -1,6 +1,5 @@
 .youtube_bgc{
     background-color: #F1F2F6;  
-    margin-top: 10px;
 }
 
 .flex_youtube{
@@ -319,7 +318,7 @@ color: #9DA7BB;
                     line-height: 16px;
                 }
                                 .accordion_img img {
-                                    width: 90px;
+                                    width: 100%;
                                 }
 }
 @media (max-width:1220px) {
@@ -384,7 +383,7 @@ color: #9DA7BB;
         font-size: 11px;
     }
     .accordion_img img{
-        width: 80px;
+        width: 100%;
     }
 }
 
@@ -479,7 +478,7 @@ color: #9DA7BB;
 }
 
 .accordion_img img {
-    width: 120px;
+    width: 100%;
 }
 
 .raspberry_pid h1 {
@@ -650,7 +649,7 @@ color: #9DA7BB;
             }
 
             .accordion_img img {
-                width: 100px;
+                width: 100%;
             }
 
             .raspberry_pid h1 {
@@ -711,7 +710,7 @@ color: #9DA7BB;
                     font-size: 11px !important;
     }
         .accordion_img img {
-            width: 85px;
+            width: 100%;
         }
         .accordion_text {
             margin-left: 5px;
@@ -726,7 +725,7 @@ color: #9DA7BB;
 
 
         .accordion_img img {
-            width: 90px;
+            width: 100%;
         }
         .accordion-button{
             font-size: 13px !important;
@@ -838,7 +837,7 @@ color: #9DA7BB;
         }
 
         .accordion_img img {
-            width: 75px;
+            width: 100%;
         }
 }
 @media (max-width:330px) {
@@ -854,7 +853,7 @@ color: #9DA7BB;
         }
 
         .accordion_img img {
-            width: 67px;
+            width: 100%;
         }
 }
 

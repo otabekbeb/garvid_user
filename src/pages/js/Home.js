@@ -393,15 +393,15 @@ never miss the aim</h1>
             <div className="contact_form_input_big_div_input">
                 <form action="">
                         <label>
-                    <p>Email</p>
+                    <p>Электронная почта</p>
                     <input type="email" name="" id="" required/>
                 </label>
                 <label>
-                    <p>First name</p>
+                    <p>Имя</p>
                     <input type="text" required/>
                 </label>
                 <label>
-                    <p>Second name</p>
+                    <p>Фамилия</p>
                     <input type="text" required/>
                 </label>
                 <button>Подписываться</button>
