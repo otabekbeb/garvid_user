@@ -40,7 +40,7 @@ export default function Services() {
 <div className="sahifa">
 <div className="sahifa-glav">
 <div className="safiha-p">
-    <h4><a href="#">Main  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
+    <h4><a href="/">Home<span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
 </div>
 <div className="safiha-d">
     <p id='tepaga'>Services</p>
@@ -92,7 +92,7 @@ export default function Services() {
 <h4>Do you need help?</h4>
 <p>Contact us at FinExpert office closest to you or submit your business inquiry online.</p>
 
-<button>Connect with us</button>
+<button onClick={()=> window.location="/contacts"}>Connect with us</button>
 </div>
             <Swiper
         slidesPerView={1}
@@ -241,7 +241,7 @@ export default function Services() {
 <h4>Вам нужна помощь?</h4>
 <p>Свяжитесь с нами в FinExpert  ближайший к вам офис или отправьте бизнес-справка онлайн.</p>
 
-<button>Связаться с нами</button>
+<button onClick={()=> window.location="/contacts"}>Связаться с нами</button>
 </div>
             <Swiper
         slidesPerView={1}
@@ -273,7 +273,7 @@ export default function Services() {
 
 </div>
 <div className="sli-text">
-<p>Привет, ребята! Вы решили мою проблема в кратчайшие сроки! <br /> Твой  услуги и забота о клиентах отлично!</p>
+<p>Привет, ребята! Вы решили мою проблема в кратчайшие сроки! <br /> Твой забота о клиентах отлично!</p>
 
 <strong>Луиза Смит</strong>
 <h4>(Генеральный директор и основатель)</h4>

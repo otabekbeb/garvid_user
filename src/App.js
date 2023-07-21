@@ -9,10 +9,13 @@ import Ourteam from './pages/js/Ourteam'
 import User from "./pages/js/user"
 import Mento from "./pages/js/Mentor"
 import Video from "./pages/js/Youtube1";
-import Contacts from "./pages/js/Contacts";    
+import Contacts from "./pages/js/Contacts";
+import Allcourse from "./pages/js/Ourcourse"
 import Loginpage from "./pages/js/Loginpage";
 import Prover from './pages/js/Prover'
 import Teacher from "./pages/js/Teacherpage";
+import Student from "./pages/js/Student";
+import Mentorcontact from "./pages/js/Mentorcontact";
 
 
 
@@ -37,10 +40,15 @@ export default function App() {
           <Route path="/mentor" element={<Mento />} />
           <Route path="/contacts" element={<Contacts/>} />
           <Route path="/video" element={<Video />} />
+          <Route path="/ourcourse" element={<Allcourse />} />
+          
+          
+
           <Route path="/prover" element={<Prover />} />
           <Route path="/Proverr2" element={<Proverr2 />} />
           <Route path="/teacher" element={<Teacher />} />
-
+          <Route path="/student" element={<Student />} />
+          <Route path="/mentorcontact" element={<Mentorcontact />} />
           {/* <Route index element={} />*/}
         </Routes>
       

@@ -41,7 +41,7 @@ export default function Services() {
 <div className="sahifa">
 <div className="sahifa-glav">
 <div className="safiha-p">
-    <h4><a href="#">Main  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
+    <h4><a href="/">Home  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
 </div>
 <div className="safiha-d">
     <p id='tepaga'>Our team</p>
@@ -142,7 +142,7 @@ export default function Services() {
 <h4>Do you need help?</h4>
 <p>Contact us at FinExpert office closest to you or submit your business inquiry online.</p>
 
-<button>Connect with us</button>
+<button onClick={()=> window.location="/contacts"}>Connect with us</button>
 </div>
             <Swiper
         slidesPerView={1}
@@ -216,7 +216,7 @@ export default function Services() {
 <div className="sahifa">
 <div className="sahifa-glav">
 <div className="safiha-p">
-    <h4><a href="#">Основной  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
+    <h4><a href="#">Главный  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
 </div>
 <div className="safiha-d">
     <p id='tepaga'>Наша команда</p>
@@ -317,7 +317,7 @@ export default function Services() {
 <h4>Do you need help?</h4>
 <p>Contact us at FinExpert office closest to you or submit your business inquiry online.</p>
 
-<button>Connect with us</button>
+<button onClick={()=> window.location="/contacts"}>Connect with us</button>
 </div>
             <Swiper
         slidesPerView={1}
@@ -336,10 +336,10 @@ export default function Services() {
 
 </div>
 <div className="sli-text">
-<p>Wow I'm so happy with you service. You managed to overcome my expectations! You guys are very efficient.</p>
+<p>Вау, я так доволен вашим обслуживанием. Вам удалось оправдать мои ожидания! Вы, ребята, очень эффективны.</p>
 
-<strong>Adam Watson</strong>
-<h4>(CEO and Founder)</h4>
+<strong>Адам Уотсон</strong>
+<h4>(генеральный директор и основатель)</h4>
 </div>
         </SwiperSlide>
         <SwiperSlide className='sli'>
@@ -349,10 +349,10 @@ export default function Services() {
 
 </div>
 <div className="sli-text">
-<p>Hi guys! You solved my problem in no time!<br />Your service and customer care is excellent!</p>
+<p>Привет, ребята! Вы решили мою проблему в кратчайшие сроки!<br />Ваше обслуживание о клиентах превосходны!</p>
 
-<strong>Louise Smith</strong>
-<h4>(CEO and Founder)</h4>
+<strong>Луиза Смит</strong>
+<h4>(генеральный директор и основатель)</h4>
 </div></SwiperSlide>
         <SwiperSlide className='sli'>
         <div className="sli-kurg-rasm">
@@ -361,10 +361,10 @@ export default function Services() {
 
 </div>
 <div className="sli-text">
-<p>Great organization!! Your quick response was a pleasant surprise for me. Thank you!</p>
+<p>Отличная организация!! Ваш быстрый ответ был для меня приятным сюрпризом. Спасибо!</p>
 
-<strong>Jack Walsh</strong>
-<h4>(CEO and Founder)</h4>
+<strong>Джек Уолш</strong>
+<h4>(генеральный директор и основатель)</h4>
 </div>
         </SwiperSlide>
 

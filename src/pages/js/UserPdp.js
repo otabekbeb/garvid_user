@@ -8,11 +8,7 @@ import Azo from "./Azo"
 
 import UserChat from "./userChat"
 
-// import Mon from '../img/Mon.png'
-// import { AiFillStar } from 'react-icons/ai'
-// import {HiArrowRight} from 'react-icons/hi'
-// import Rasp from '../img/Rasp.png'
-// import {BsPlus} from 'react-icons/bs'
+
 import { TiThMenu } from 'react-icons/ti'
 import axios from 'axios';
 import url from './Host';

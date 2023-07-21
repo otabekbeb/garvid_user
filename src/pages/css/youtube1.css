@@ -5,7 +5,7 @@
 
 .flex_youtube{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
     padding: 10px;
    
@@ -309,6 +309,7 @@ color: #9DA7BB;
 {margin: auto;
     margin-right: 0;
     display: flex;
+    align-items: center;
 }
 
 @media (max-width:1307px) {
@@ -925,6 +926,9 @@ width: 100%;
         cursor: pointer;
         color: #9DA7BB;
     } 
+    .navbar_otish{
+        display: none;
+    }
 }
 .navbar_yon{
     display: none;

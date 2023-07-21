@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import '../css/Contact.css'
 import Navbar from './Navbar'
+import Contacts from './Contacts'
 import Footer from './Footer1'
 import Images from './Images'
 export default function Contact() {
@@ -27,52 +28,14 @@ export default function Contact() {
 <div className="sahifa">
 <div className="sahifa-glav">
 <div className="safiha-p">
-    <h4><a href="#">Home  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
+    <h4><a href="/">Home  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
 </div>
 <div className="safiha-d">
-    <p id='tepaga'>About</p>
+    <p id='tepaga'>Contact</p>
 </div>
 </div>
 </div>
-<div className="asdfkja">
-<div className="katta">
-        <div className="container213">
-        <div className="left231">
-            <h1>Feedback form</h1>
-        <div className="inp">
-            <p className="pp" >Your name</p>
-            <input  className="inpp" type="text"/>
-            <p className="pp" >Your e-mail address</p>
-            <input className="inppp" type="email"/>
-             <p>Field is required</p> 
-            <p className="pp" >Telephone</p>
-            <input className="Phone" type="text"/>
-            <p className="pp" >Your message</p>
-            <input className="coment" type="text"/>
-        </div>
-        <div className="btn">
-            <button>submit for consideration</button>
-        </div>
-    </div>
 
-        <div className="right123">
-            <h1>Contact Information</h1>
-            <div className="p">
-                <h4>Address</h4>
-                <p>267 Park Avenue New York, NY 90210</p>
-                <h4>We are open</h4>
-                <p>Opening hours: 8.00-18.00 Mon-Sat</p>
-                <h4>Telephone</h4>
-                <p><span>(123) 45678910</span>, <span>(123) 45678901</span></p>
-                <h4>Email</h4>
-                <p><span>info@demolink.org</span></p>
-            </div>
-        </div>
-    </div>
-
-
-    </div>
-</div>
 <Images/>
 <Footer/>
 

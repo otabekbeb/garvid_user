@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 
 import "../css/Teacherpage.css";
 import Footer1 from "./Footer1";
-import Navbar from "./Navbar";
+import Usernavbar from "./Usernavbar";
 import { MdEmail } from "react-icons/md";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
@@ -32,7 +32,7 @@ window.location.reload()
   return (
     <div>
       
-      <Navbar />
+      <Usernavbar />
       <div className="contact">
         <div className="contact_left">
           <h1 onClick={()=> window.location="/contacts"}>

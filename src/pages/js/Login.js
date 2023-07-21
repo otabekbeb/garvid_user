@@ -18,13 +18,26 @@ export default function Login() {
 
   function userModal(){
     var formdata=new FormData()
-    formdata.append("username",document.querySelector(".name").value)
-    formdata.append("email",document.querySelector(".email").value)
-    formdata.append("password",document.querySelector(".password").value)
+    if ((document.querySelector(".password").value).length>=8) {
+      formdata.append("username",document.querySelector(".name").value)
+      formdata.append("email",document.querySelector(".email").value)
+      formdata.append("password",document.querySelector(".password").value)
+      const NodeList=document.querySelectorAll(".error")
+      NodeList[2].style="display:none"
+      document.querySelector(".password").style="border-bottom:1px solid #9cf;"
+      setTimeout(() => {
+        setPage(4)
+      }, 1000);
+       
+    }
+    else{
+      const NodeList=document.querySelectorAll(".error")
+      NodeList[2].style="display:block"
+      document.querySelector(".password").style="border-bottom:1px solid red;"
+    }
 
     axios.post(`${url}/auth/register/`,formdata).then(res=>{
     console.log(res);
-    setPage(4)
     }).catch(err=>{
        console.log(err);
        alert("Введите полную информацию")
@@ -51,7 +64,7 @@ export default function Login() {
     formdata.append("password",document.querySelector("#parol").value)
 
     axios.post(`${url}/auth/login/`,formdata).then(res=>{
-    sessionStorage.setItem("token",res.data.access)
+    localStorage.setItem("token",res.data.access)
     window.location="/user"
     }).catch(err=>{
       console.log(err);

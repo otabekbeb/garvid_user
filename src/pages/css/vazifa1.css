@@ -20,6 +20,7 @@
     padding-left: 30px;
     padding-right: 30px;
     border-radius: 5px;
+    display: none;
 }
 
 .scachat_kotta:hover{
@@ -93,11 +94,22 @@
     width: 100%;
     border: 1px solid #9DA7BB;
     border-radius: 5px;
+}
+
+.m_comment_button1{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.m_comment_button1 button{
+    color: #fff;
     margin-top: 30px;
 }
 .m_obsh_pas_div{
     width: 60%;
     margin-left: 10%;
+    padding-top: 30px;
+    height: auto;
 }
 .m_file_vazifa h5{
     font-size: 15px;

@@ -55,7 +55,7 @@ export default function Futer() {
         <div className="tolov_"><img src={tolov} alt="" /></div>
     <p>100011, Russia, Shaykhontokhur district,
     <br />Zargainar street, house 3B</p>
-    <button className='aloqa_btn'>
+    <button className='aloqa_btn' onClick={()=> window.location="/contacts"}>
     Connect with us</button>
     </ul>
    
@@ -83,7 +83,7 @@ export default function Futer() {
             <div className="futer_container">
             <div className="futer_row">
     <div className="futer_col">
-    <ul><h4>Основной</h4>
+    <ul><h4>Главный</h4>
       <li>О проекте</li>
       <li>Курсы</li>
       <li>Наставникам</li>
@@ -119,7 +119,7 @@ export default function Futer() {
         <div className="tolov_"><img src={tolov} alt="" /></div>
     <p>100011, г.Россия, Шайхонтохурский район,
     <br />ул.Заргайнар, дом 3Б</p>
-    <button className='aloqa_btn'>
+    <button onClick={()=> window.location="/contacts"} className='aloqa_btn'>
 Связаться с нами</button>
     </ul>
    

@@ -17,8 +17,8 @@ export default function Comment1() {
     );},[]);
 
   useEffect(()=>{
-    axios.get(`${url}/course/theme_comment/`,{headers:{"Authorization":"Bearer " + sessionStorage.getItem("token")}}).then(res=>{
-      axios.get(`${url}/auth/user/`,{headers:{"Authorization":"Bearer " + sessionStorage.getItem("token")}}).then(res1=>{
+    axios.get(`${url}/course/theme_comment/`,{headers:{"Authorization":"Bearer " + localStorage.getItem("token")}}).then(res=>{
+      axios.get(`${url}/auth/user/`,{headers:{"Authorization":"Bearer " + localStorage.getItem("token")}}).then(res1=>{
       if (res.user==res1.id) {
         setComment(res.data)
         console.log(res.data,"salommmmmm");

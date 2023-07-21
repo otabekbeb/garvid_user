@@ -44,7 +44,7 @@ export default function Profil() {
   }
 
   useEffect(()=>{
-  axios.get(`${url}/auth/user/`,{ headers: { 'Authorization': 'Bearer ' + sessionStorage.getItem("token") }}).then(res=>{
+  axios.get(`${url}/auth/user/`,{ headers: { 'Authorization': 'Bearer ' + localStorage.getItem("token") }}).then(res=>{
     console.log(res.data);
     setData(res.data)
   }).catch((err) => {
@@ -54,6 +54,11 @@ export default function Profil() {
     localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
   )
   },[])
+
+  function chiqish() {
+    window.location="/"
+    localStorage.removeItem("token")
+  }
 
   // function postUser(){
   //   var formdata=new FormData()
@@ -116,7 +121,7 @@ export default function Profil() {
             <div className='taxrirlash_modal_div'><BiCast className='taxrirlash_modal_icon'/><p>Notifications</p></div>
             <div className='taxrirlash_modal_div'><FiLifeBuoy className='taxrirlash_modal_icon'/><p>Help</p></div>
             <hr />
-            <div className='taxrirlash_modal_div'><FiLogOut className='taxrirlash_modal_icon'/><p>Exit</p></div>
+            <div className='taxrirlash_modal_div' onClick={()=>chiqish()} ><FiLogOut className='taxrirlash_modal_icon'/><p>Exit</p></div>
           </div>
           <div className="profil_blok_ikki_icon_taxriirlash_chat">
             <p>Today</p>
@@ -220,7 +225,7 @@ export default function Profil() {
             <div className='taxrirlash_modal_div'><BiCast className='taxrirlash_modal_icon'/><p>Уведомления</p></div>
             <div className='taxrirlash_modal_div'><FiLifeBuoy className='taxrirlash_modal_icon'/><p>Помощь</p></div>
             <hr />
-            <div className='taxrirlash_modal_div'><FiLogOut className='taxrirlash_modal_icon'/><p>Выход</p></div>
+            <div className='taxrirlash_modal_div' onClick={()=>chiqish()}><FiLogOut className='taxrirlash_modal_icon'/><p>Выход</p></div>
           </div>
           <div className="profil_blok_ikki_icon_taxriirlash_chat">
             <p>Bugun</p>

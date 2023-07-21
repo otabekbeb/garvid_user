@@ -33,9 +33,29 @@ window.location.reload()
     <div>
       
       <Navbar />
+      <div className="asd">
+    {/* <img src={abaut} alt="" /> */}
+   <div className="asd-block">
+   <h1>Contacts</h1>
+   <br />
+   <br className='rr' />
+  
+    <div className="mini"></div>
+   </div>
+</div>
+<div className="sahifa">
+<div className="sahifa-glav">
+<div className="safiha-p">
+    <h4><a href="/">{state === "ru" ?("Главный"):("Home")}  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
+</div>
+<div className="safiha-d">
+    <p id='tepaga'>{state === "ru" ?("Связь"):("Contact")}</p>
+</div>
+</div>
+</div>
       <div className="contact">
         <div className="contact_left">
-          <h1>
+          <h1 onClick={()=> window.location="/contacts"}> 
             {state === "ru" ? "Связаться с нами" : "Connect with us"}
           </h1>
           <p className="contact_info">

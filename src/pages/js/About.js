@@ -45,10 +45,10 @@ export default function About() {
 <div className="sahifa">
 <div className="sahifa-glav">
 <div className="safiha-p">
-    <h4><a href="#">Home  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
+    <h4><a href="/">Home  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
 </div>
 <div className="safiha-d">
-    <p id='tepaga'>About Us</p>
+    <p  id='tepaga'>About Us</p>
 </div>
 </div>
 </div>
@@ -112,7 +112,7 @@ export default function About() {
 <h4>Do you need help?</h4>
 <p>Contact us at FinExpert  <br /> office closest to you or <br />submit your business inquiry online.</p>
 
-<button>Connect with us</button>
+<button onClick={()=> window.location="/contacts"}>Connect with us</button>
 </div>
 
 <Swiper
@@ -416,7 +416,7 @@ export default function About() {
 <h4>Вам нужна помощь?</h4>
 <p>Свяжитесь с нами в FinExpert  <br /> ближайший к вам офис или <br /> отправьте бизнес-справка онлайн.</p>
 
-<button>Связаться с нами</button>
+<button onClick={()=> window.location="/contacts"}>Связаться с нами</button>
 </div>
 
 <Swiper
@@ -449,7 +449,7 @@ export default function About() {
 
 </div>
 <div className="sli-text">
-<p>Привет, ребята! Вы решили мою проблема в кратчайшие сроки! <br /> Твой  услуги и забота о клиентах отлично!</p>
+<p>Привет, ребята! Вы решили мою проблема в кратчайшие сроки! <br /> Твой  услуги о клиентах отлично!</p>
 
 <strong>Луиза Смит</strong>
 <h4>(Генеральный директор и основатель)</h4>
@@ -585,7 +585,7 @@ export default function About() {
 
 </div>
 <div className="sli-text">
-<p>Привет, ребята! Вы решили мою проблема в кратчайшие сроки! <br className='sdfsdf' /> Твой  услуги и забота о клиентах отлично!</p>
+<p>Привет, ребята! Вы решили мою проблема в кратчайшие сроки! <br className='sdfsdf' /> Твой забота о клиентах отлично!</p>
 
 <strong>Луиза Смит</strong>
 <h4>(Генеральный директор и основатель)</h4>
