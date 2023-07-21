@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from "react";
+import React, { useState } from "react";
 import '../css/Proverr2.css'
 import rasmww from '../img/WWW.png'
 import iphone from '../img/iphone.png'
@@ -7,6 +7,18 @@ import telegram from '../img/Telegram.png'
 import facebok from '../img/facebok.png'
 import Git from '../img/Git.png'
 import copy from '../img/copy.png'
+import munbay from '../img/Group 33.png'
+import iteen from '../img/Group 34.png'
+
+
+function onga(){
+document.querySelector(".mni-gridf1").classList.toggle("mni-gridf1-none")
+document.querySelector(".mni-gridf2").classList.toggle("mni-gridf2-none")
+
+
+document.querySelector(".mni-gridf1").classList.toggle("mni-gridf5-none")
+document.querySelector(".mni-gridf2").classList.toggle("mni-gridf6-none")
+}
 
 
 function button() {
@@ -41,7 +53,24 @@ function button() {
             document.querySelector(".prover20chech-box-a span").style=""
             }
 
+
+function kamentgo(){
+    document.querySelector(".text-kurs-haqida1").classList.toggle("popopo3")
+    document.querySelector(".text-kurs-haqida2").classList.toggle("popopo4")
+
+}
+
+
+
+
+
+
 export default function Proverr2() {
+    const [toggle,setToggle] =useState(1)
+    function okurse(id){
+    setToggle(id)
+
+    }
     
   return (
     <div>
@@ -156,8 +185,7 @@ dolor sit amet. . . .</p>
         </div>
         </div>
         <div className="prover2-orta-joy">
-        <iframe width="690" height="325" src="https://www.youtube.com/embed/yQb2VS-DCy0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
-
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/zalcSgxoL0U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <div className="prover2-orta-joy-text">
             <h5>Основы программирования на Raspberry Pi</h5>
             <div className="rating">
@@ -208,31 +236,69 @@ dolor sit amet. . . .</p>
         <div className="radio-inputs">
   <label className="radio">
     <input type="radio" name="radio" checked=""/>
-    <span className="name">О курсе</span>
+    <span className="name" onClick={()=>okurse(1)} >О курсе</span>
   </label>
   <label className="radio">
     <input type="radio" name="radio"/>
-    <span className="name">Комментарии</span>
+    <span className="name"  onClick={()=>okurse(2)} >Комментарии</span>
   </label>
       
   <label className="radio">
     <input type="radio" name="radio"/>
-    <span className="name">Требования</span>
+    <span className="name"  onClick={()=>okurse(3)} >Требования</span>
   </label>
   <label className="radio">
     <input type="radio" name="radio"/>
-    <span className="name">Чему вы научитесь</span>
+    <span className="name" onClick={()=>okurse(4)} >Чему вы научитесь</span>
   </label>
 </div>
         </div>
-        <div className="text-kurs-haqida1">
+
+        <div className={toggle===1?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida1">
             <p>Этот курс начинается с нуля, вам не нужно знать ни Angular 1, ни Angular 2! Angular 8 просто является  <br /> последней версией Angular 2.</p>
 
             <p >Присоединяйтесь к самому всестороннему и популярному курсу Angular на Udemy, потому что сейчас самое <br /> время начать! Этот курс охватывает все: от настройки до развертывания! Вы узнаете все о компонентах, <br /> директивах, службах, формах, Http-доступе, аутентификации, оптимизации приложения Angular с помощью <br /> модулей и автономной компиляции и многом другом — и в конце: вы узнаете, как развернуть приложение! <br /> Но это не все! Этот курс также покажет вам, как использовать Angular CLI, и представит полный проект, <br /> который позволит вам практиковать то, что вы узнали на протяжении всего курса!</p>
             <p>И если вы застряли, вы получите чрезвычайно быструю и дружелюбную поддержку - как через <br /> прямой обмен сообщениями, так и через  обсуждение. Даю слово! ;-)</p>
 
             <p>Абсолютно фантастическая серия уроков. Я не могу тебя отблагодарить. Качество первоклассное, <br /> а ваши презентационные навыки не имеют себе равных. Продолжайте в том же духе. Ты <br /> действительно крут!﻿ - Пол Уайтхаус</p>
-        </div>
+        </div></div>
+        <div className={toggle===2?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida1">
+            <div className="kamment-mni-df">
+                {/* <h5>Kurs reytingi</h5>
+                <div className="kommentttt-xaxa">
+                    <div className="komenttt-ichii">
+                        <h3>4.1</h3>
+                            <div className="yulduzlaaaaa1">
+                            <box-icon name='star' type='solid' color='#ecc918' ></box-icon>
+                            <box-icon name='star' type='solid' color='#ecc918' ></box-icon>
+                            <box-icon name='star' type='solid' color='#ecc918' ></box-icon>
+                            <box-icon name='star' type='solid' color='#ecc918' ></box-icon>
+                            <box-icon name='star' color='#ecc918' ></box-icon>
+                            </div>
+                            <p>Всего: 524 голоса</p>
+                    </div>
+                    <div className="progrees-mni-relou">
+                      <div className="progre-block-mni1"><box-icon name='star' color='#ecc918' ></box-icon><span>5</span><input type="range"  id="inpottt1" /></div>
+                      <div className="progre-block-mni1"><box-icon name='star' color='#ecc918' ></box-icon><span>4</span><input type="range"  id="inpottt2" /></div>
+                      <div className="progre-block-mni1"><box-icon name='star' color='#ecc918' ></box-icon><span>3</span><input type="range"  id="inpottt3" /></div>
+                      <div className="progre-block-mni1"><box-icon name='star' color='#ecc918' ></box-icon><span>2</span><input type="range"  id="inpottt4" /></div>
+                      <div className="progre-block-mni1"><box-icon name='star' color='#ecc918' ></box-icon><span>1</span><input type="range"  id="inpottt5" /></div>
+                    </div>
+                </div> */}
+                
+            </div>
+            
+            
+            
+            </div></div>
+        <div className={toggle===3?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida3">
+            
+            treboviniya
+            
+            </div></div>
+        <div className={toggle===4?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida4">chemu</div></div>
+        
+        
         </div>
         <div className="prover2-oxiri-joy">
             <div className="prover2-oxiri-block-in">
@@ -278,11 +344,35 @@ dolor sit amet. . . .</p>
     </div>
 </div>
 <div className="mni-buton-iikki-yo">
-    <button>Покупка</button><button>150 000 сум</button>
+    <button id="gbfdgfdgdfgdf">Покупка</button><div className="line-mni-but"></div><button >150 000 сум</button>
+</div>
+      
+            </div>
+      <div className="mni-krus-techer-swiper">
+<div className="boshqa-mentorla">
+    <h5>Boshqa Mentorlar</h5>
+    <div className="boshqa-mentorla-krugg1">
+        <div className="boshqa-kurglaaaaa1" onClick={()=>onga()}><box-icon name='right-arrow-alt' color='#536dfd' ></box-icon></div>
+    </div>
+</div>
+<div className="mni-swiper-grid">
+    <div className="mni-gridf1">
+<img src={munbay} alt="" />
+<img src={iteen} alt="" />
+<img src={munbay} alt="" />
+<img src={iteen} alt="" />
+    </div>
+    
+    <div className="mni-gridf2">
+<img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg" alt="" />
+<img src="https://bronk.club/uploads/posts/2023-02/1676935060_bronk-club-p-otkritki-prirodi-ochen-krasivie-krasivo-39.jpg" alt="" />
+<img src="https://funart.pro/uploads/posts/2021-03/thumbs/1617041574_9-p-oboi-krasivie-foto-prirodi-11.jpg" alt="" />
+<img src="https://cdn.forbes.ru/forbes-static/c/1040x549/new/2023/04/1GettyImages-183930658-kopia-643018c796355.webp" alt="" />
+
+    </div>
+</div>
 </div>
 
-
-            </div>
         </div>
     </div>
 </div>
