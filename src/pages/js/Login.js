@@ -104,7 +104,6 @@ export default function Login() {
             <button onClick={()=>setPage(1)}>{state1==="eng"?("Login"):("Авторизоваться")}</button>
             <button onClick={()=>setPage(2)}>{state1==="eng"?("Registration"):("Регистрация")}</button>
           </div>
-          
           {page===1?(
           <div className="login_relative">
             <img className="LoginImg" src={LoginImg} alt="" />

@@ -40,7 +40,7 @@ export default function Youtube1() {
   }
 
     function videoBolim(id) {
-      document.querySelector(".navbar_yon").style = "display:none;";
+      document.querySelector(".navbar_yon", ".navbar_none").style = "display:none;";
       setId(id);
     }
 
@@ -66,7 +66,7 @@ export default function Youtube1() {
     document.querySelector(".zadaniya3").style="border-bottom: 2px solid #536DFD; color: #2E2E2E;"
     document.querySelector(".zadaniya2").style="border-bottom: none; color: #9DA7BB;" 
     document.querySelector(".zadaniya1").style="border-bottom: none; color: #9DA7BB;" 
-    document.querySelector(".zadaniya2").style="border-bottom: none; color: #9DA7BB;"
+    document.querySelector(".zadaniya").style="border-bottom: none; color: #9DA7BB;"
   }
 
 //mediya
@@ -288,6 +288,9 @@ function painModal8() {
               </p>
               <p onClick={() => {videoBolim(4);painModal3() }} className="zadaniya3">
               
+
+
+              
               </p>
             </div>
           </div>
@@ -311,14 +314,14 @@ function painModal8() {
               <p onClick={() => {videoBolim(1);painModal5() }} className="zadaniya5">
                 Вопрос и ответ
               </p>
-              <p onClick={() => {videoBolim(2);painModal6() }} className="zadaniya6">
+              <p onClick={() => {videoBolim(1);painModal6() }} className="zadaniya6">
                 Задания
               </p>
               <p onClick={() => {videoBolim(3);painModal7() }} className="zadaniya7">
-                Руководства
+              
               </p>
               <p onClick={() => {videoBolim(4);painModal8() }} className="zadaniya8">
-                Скачать
+              
               </p>
             </div>
           </div>
@@ -476,10 +479,10 @@ function painModal8() {
                 Задания
               </p>
               <p onClick={() =>{videoBolim(3);painModal2() }} className="zadaniya2">
-                Руководства
+                
               </p>
               <p onClick={() => {videoBolim(4);painModal3() }} className="zadaniya3">
-                Скачать
+                
               </p>
             </div>
           </div>
@@ -507,10 +510,10 @@ function painModal8() {
                 Задания
               </p>
               <p onClick={() => {videoBolim(3);painModal7() }} className="zadaniya7">
-                Руководства
+             
               </p>
               <p onClick={() => {videoBolim(4);painModal8() }} className="zadaniya8">
-                Скачать
+               
               </p>
             </div>
           </div>
