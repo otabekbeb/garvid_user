@@ -18,19 +18,12 @@ export default function Login() {
 
   function userModal(){
     var formdata=new FormData()
-    if ((document.querySelector(".password").value).length>=8) {
+    if ((document.querySelector(".password").value).length>8) {
       formdata.append("username",document.querySelector(".name").value)
       formdata.append("email",document.querySelector(".email").value)
-      formdata.append("password",document.querySelector(".password").value)
-      const NodeList=document.querySelectorAll(".error")
-      NodeList[2].style="display:none"
-      document.querySelector(".password").style="border-bottom:1px solid #9cf;"
-      setTimeout(() => {
-        setPage(4)
-      }, 1000);
-       
-    }
-    else{
+      formdata.append("password",document.querySelector(".password").value) 
+      setPage(4)
+    }else{
       const NodeList=document.querySelectorAll(".error")
       NodeList[2].style="display:block"
       document.querySelector(".password").style="border-bottom:1px solid red;"

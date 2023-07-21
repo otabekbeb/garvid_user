@@ -706,7 +706,7 @@ height: auto;
 position: relative;
 right: 15px;
 width: 104.8%;
-border: 1px solid #9DA7BB1A;
+border: 1px solid #4d535e1a;
 display: none;
   }
   
@@ -742,3 +742,220 @@ cursor: pointer;
   .mni-buton-iikki-yo{
     display: flex;
   }
+  .mni-buton-iikki-yo button{
+    width: 130px !important;
+height: 40px !important;
+border-radius: 2px;
+background-color: #536DFD;
+color: white;
+border: none;
+outline: none;
+margin-bottom: 20px !important;
+transition: 0.5s all ease;
+  }
+  .line-mni-but{
+    border-left: 2px solid white;
+    width: 1px;
+    top: 6px;
+    height: 25px;
+    position: relative;
+  }
+  #gbfdgfdgdfgdf{
+    position: relative;
+    left: 4px;
+  }
+  .mni-buton-iikki-yo{
+    position: relative;
+    left: 13px;
+  }
+.mni-krus-techer-swiper{
+width: 330px;
+height: 410px;
+background-color: #ffffff;
+position: relative;
+top:30px;
+}
+.boshqa-mentorla{
+    display: flex;
+    padding: 15px;
+}
+.boshqa-mentorla h5{
+    font-family: SF Pro Display;
+font-size: 16px !important;
+line-height: 19px !important;
+letter-spacing: 0em !important;
+text-align: left;
+
+}
+.boshqa-mentorla-krugg1{
+    display: flex;
+}
+.boshqa-kurglaaaaa1{
+    width: 40px !important;
+height: 40px !important;
+border: 1px solid #d2d9e6;
+border-radius: 50%;
+gap: 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-right: 10px;
+cursor: pointer;
+}
+.boshqa-mentorla-krugg1{
+    position: relative;
+    left: 120px;
+}
+.boshqa-mentorla h5{
+    position: relative;
+    top: 10px;
+}
+.mni-gridf1{
+    width: 134px;
+height: 150px;
+border-radius: 4px;
+
+}
+.mni-gridf1 {
+    display: grid !important;
+    grid-template-columns: auto auto   !important;
+    gap: 15px !important;
+
+    padding-left: 17px !important;
+
+}
+.mni-gridf2 {
+    display: grid !important;
+    grid-template-columns: auto auto   !important;
+    gap: 10px !important;
+    padding-left: 17px !important;
+    display: none  !important;
+}
+.mni-gridf1-none{
+    display: none !important;
+}
+.mni-gridf2-none{
+    display: grid !important;
+    grid-template-columns: auto auto   !important;
+    gap: 15px !important;
+    padding-left: 17px !important;
+}
+.mni-gridf2 img{
+    width: 134px !important; 
+    height: 150px !important;
+    border-radius: 4px !important;
+}
+.mni-gridf3-none{
+    display: none !important;
+}
+.mni-gridf4-none{
+    display: grid !important;
+    grid-template-columns: auto auto   !important;
+    gap: 15px !important;
+    padding-left: 17px !important;
+}
+
+.mni-gridf5-none{
+    display: grid !important;
+
+}
+
+
+.mni-gridf5-none{
+    display: none !important;
+}
+.mni-gridf6-none{
+    display: grid !important;
+
+}
+
+
+.mni-gridf7-none{
+    display: none !important;
+}
+.mni-gridf8-none{
+    display: grid !important;
+
+}
+.text-kurs-haqida2{
+    display: none;
+}
+.text-kurs-haqida3{
+    display: block;
+}
+
+.popopo1{
+    display: none;
+}
+.popopo2{
+    display: block !important;
+}
+.popopo3{
+    display: none;
+}
+.popopo4{
+    display: block;
+}
+.kommentttt-xaxa{
+    width: 100%;
+    height: 243px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.komenttt-ichii h3{
+    font-family: SF Pro Display;
+font-size: 69px !important;
+line-height: 86px !important;
+letter-spacing: 0em !important;
+text-align: left;
+
+}
+.yulduzlaaaaa1{
+    display: flex;
+    position: relative;
+    top: -12px;
+    right: 10px;
+    cursor: pointer;
+}
+.komenttt-ichii p{
+    font-family: SF Pro Display;
+font-size: 11.5px !important;
+line-height: 14px !important;
+letter-spacing: 0em !important;
+text-align: left;
+padding-left: 3px;
+}
+#inpottt1{
+    width: 188px !important;
+    background-color: #1DD1A1 !important;
+    
+}
+.progrees-mni-relou input{
+    display: block !important;
+
+}
+.progre-block-mni1{
+    display: flex;
+}
+#inpottt2{
+    width: 400px !important;
+    background-color: #1DD1A1 !important;
+    
+}
+#inpottt3{
+    width: 123px !important;
+}
+#inpottt4{width: 52px !important;}
+#inpottt5{width: 30px !important;}
+.progrees-mni-relou span{
+    position: relative;
+    right: 10px;
+}
+.progrees-mni-relou box-icon{
+    position: relative;
+    right: 20px;
+    cursor: pointer;
+}

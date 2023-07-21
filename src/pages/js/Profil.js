@@ -116,7 +116,7 @@ export default function Profil() {
         <div className="profil_blok_ikki">
           <div className="profil_blok_ikki_text">
           <p>Current balance</p>
-          <div className="profil_blok_ikki_sum">
+          <div className="profil_blok_ikki_sum" >
             {data.balance===null?(<h1>0</h1>):(<div><h1>{data.balance}</h1><p>$</p></div>)}
           </div>
           <div className="profil_blok_ikki_button">
