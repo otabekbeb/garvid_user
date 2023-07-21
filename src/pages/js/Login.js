@@ -35,7 +35,7 @@ export default function Login() {
       NodeList[2].style="display:block"
       document.querySelector(".password").style="border-bottom:1px solid red;"
     }
-
+    
     axios.post(`${url}/auth/register/`,formdata).then(res=>{
     console.log(res);
     }).catch(err=>{
@@ -64,6 +64,7 @@ export default function Login() {
     formdata.append("password",document.querySelector("#parol").value)
 
     axios.post(`${url}/auth/login/`,formdata).then(res=>{
+      sessionStorage.setItem("password",document.querySelector("#parol").value)
     localStorage.setItem("token",res.data.access)
     window.location="/user"
     }).catch(err=>{

@@ -23,8 +23,19 @@ export default function Profil() {
   
 
   function userimgModal(){
-    document.querySelector(".user_img_hover").style="  position: absolute;bottom: 0;"
-    
+    document.querySelector(".user_img_hover").style="position: absolute;bottom: 0;"
+  }
+  function userImgPut(){
+    var formdata =new FormData()
+    formdata.append("image", document.querySelector("#userInput").files[0]);
+   
+    axios.put(`${url}/auth/user/`,formdata,{headers:{Authorization:"Bearer " +localStorage.getItem("token")}}).then(res=>{
+    alert("ishladi")
+    window.location.reload()
+   })
+   .catch(err=>{
+    console.log(err);
+   }) 
   }
   function userimgClose(){
     document.querySelector(".user_img_hover").style="  position: absolute;bottom: -100px;"
@@ -78,9 +89,9 @@ export default function Profil() {
        <div className="profil_size">
         <div className="profil_blok_bir">
           <div onMouseLeave={()=>userimgClose()} className='user_img_size'>
-          {data.image===null?(<img onMouseEnter={()=>userimgModal()} className='user_img' src={userNull} alt="" />):(<img onMouseEnter={()=>userimgModal()} className='user_img' src={data.image} alt="" />)}
+          {data.image===null?(<img onMouseEnter={()=>userimgModal()} className='user_img' src={userNull} alt="" />):(<img onMouseEnter={()=>userimgModal()} className='user_img' src={"https://baisan.onrender.com"+data.image} alt="" />)}
            <div className="user_img_hover">
-            <input id='userInput'  type="file" />
+            <input onChange={()=>userImgPut()} id='userInput'  type="file" />
           <MdOutlinePhotoCamera  className='user_hover_photo_icon'/>
         </div>
         </div>
@@ -184,7 +195,7 @@ export default function Profil() {
           <div onMouseLeave={()=>userimgClose()} className='user_img_size'>
           {data.image===null?(<img onMouseEnter={()=>userimgModal()} className='user_img' src={userNull} alt="" />):(<img onMouseEnter={()=>userimgModal()} className='user_img' src={data.image} alt="" />)}
            <div className="user_img_hover">
-            <input id='userInput'  type="file" />
+            <input onChange={()=>userImgPut()} id='userInput'  type="file" />
           <MdOutlinePhotoCamera  className='user_hover_photo_icon'/>
         </div>
         </div>

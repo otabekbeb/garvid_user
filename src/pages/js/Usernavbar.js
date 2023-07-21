@@ -114,7 +114,7 @@ export default function Navbar() {
                         <div className="media-ul">
                             <div className="dfdf">
                                 <ul>
-                                <li><a href="/user" className='tt'>{state1==="eng" ?("Home"):("Главный")}</a></li>
+                                <li><a href="/" className='tt'>{state1==="eng" ?("Home"):("Главный")}</a></li>
                                     <li><a href="/user" className='tt'>{state1==="eng" ?("User"):("Пользователь")}</a></li>
                                     <div className="media-kategory" onMouseLeave={() => aboutClose2()}  >
 
