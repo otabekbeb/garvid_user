@@ -78,11 +78,11 @@ export default function Loginpage() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
-        alert("ishladi");
+        state1==="ru"?(alert("Введенная информация")):(alert("Entered information"))
         window.location.reload();
       })
       .catch((err) => {
-        alert("ishlamadi");
+        state1==="ru"?(alert("Информация введена не полностью")):(alert("The information was not fully entered"))
       });
   }
 
@@ -152,8 +152,8 @@ export default function Loginpage() {
   
   
 
-    axios.put(`${url}/auth/change_password/`,formdata,{ headers: {Authorization:'Bearer ' + localStorage.getItem("token")}}).then(res=>{
-   alert("ishladi")
+    axios.put(`${url}/auth/change_password/`,formdata,{ headers: {Authorization:'Bearer ' + localStorage.getItem("token")}}).then(res=>{  
+      state1==="ru"?(alert("Пароль обновлен")):(alert("Password updated"))
    sessionStorage.setItem("password",document.querySelector(".passwordChange").value)
    window.location.reload()
   }).catch(err=>{
