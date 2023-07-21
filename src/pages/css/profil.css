@@ -118,9 +118,9 @@ font-size: 20px;
 margin-bottom: 0px;
 }
 .profil_blok_ikki_sum{
-  width: 250px;
+  width: 240px;
+  border: 1px solid red;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 .profil_blok_ikki_sum h1{
