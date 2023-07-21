@@ -152,7 +152,7 @@ export default function Loginpage() {
   
   
 
-    axios.put(`${url}/auth/change_password/`,formdata,{ headers: {Authorization:'Bearer ' + localStorage.getItem("token")}}).then(res=>{
+    axios.put(`${url}/auth/change_password/`,formdata,{ headers: {Authorization:'Bearer ' + localStorage.getItem("token")}}).then(res=>{  
       state1==="ru"?(alert("Пароль обновлен")):(alert("Password updated"))
    sessionStorage.setItem("password",document.querySelector(".passwordChange").value)
    window.location.reload()
