@@ -288,6 +288,9 @@ function painModal8() {
               </p>
               <p onClick={() => {videoBolim(4);painModal3() }} className="zadaniya3">
               
+
+
+              
               </p>
             </div>
           </div>
