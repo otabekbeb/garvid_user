@@ -62,7 +62,7 @@ export default function Login() {
     window.location="/user"
     }).catch(err=>{
       console.log(err);
-      alert("В базе нет такого логина или пароля")
+     
     })
   }
 

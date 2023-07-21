@@ -222,7 +222,7 @@ export default function Profil() {
           <p>Текущий баланс</p>
           <div className="profil_blok_ikki_sum">
             {data.balance===null?(<h1>0</h1>):(<div style={{display:'flex',gap:'5px',alignContent:'center'}}><h1>{data.balance}</h1><p>RUB</p></div>)}
-          </div>
+            </div>
           <div className="profil_blok_ikki_button">
             <button><BsActivity/></button><button>Пополнение баланса</button>
           </div>
