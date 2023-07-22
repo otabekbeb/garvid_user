@@ -129,6 +129,7 @@ function painModal8() {
             setTheme(res.data)
             console.log(res.data, 'cghtjk');
           }
+
         })
       });setState1(
         localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
@@ -148,7 +149,11 @@ function painModal8() {
         <Usernavbar/>
       <div className="youtube_bgc">
         <div className="flex_youtube">
-          {theme.map((item) => {
+          {subcategory.map(subcategory=>{
+            return(
+<>
+{theme.map(item => {
+           if(subcategory.id==item.subcategory){
             return (
               <div className="youtube_kotta_img">
                 <div className="img_youtube_kotta">
@@ -219,6 +224,7 @@ function painModal8() {
                     </button>
                   </div>
                 </div>
+                <p>{item.content}</p>
                 <div className="post_ava">
                   <img src={img_ava} alt="" />
                   <h6>Muhammad Dzhumaev</h6>
@@ -226,7 +232,12 @@ function painModal8() {
                 </div>
               </div>
             );
+           }
           })}
+</>
+            )
+          })}
+
 
           {category.map((item) => {
             return (
@@ -236,7 +247,7 @@ function painModal8() {
                     <h1>{item.name}</h1>
                     <div className="margin_right">
                       <div className="line_height"></div>
-                          <p>{theme.length}</p>
+                          <p>{theme.length} уроки</p> 
                     </div>
                   </div>
                 </div>
@@ -244,25 +255,27 @@ function painModal8() {
                   {subcategory.map((item2) => {
                     if (item.id === item2.category) {
                       return (
-                        <Accordion.Item eventKey="0">
+                        <Accordion.Item eventKey="1">
                           <Accordion.Header>{item2.name}</Accordion.Header>
                           {theme.map(theme=>{
-                          return(
-                            <Accordion.Body>
-                            <div className="accordion_flex">
-                              <div className="accordion_img">
-                                <img src={theme.image} alt="" />
-                              </div>
-                              <div className="accordion_text">
-                                <h6>
-                                {theme.name}
-                                </h6>
-                                <p>
-                                </p>
-                              </div>
-                            </div>
-                          </Accordion.Body>
-                          )
+                            if (theme.subcategory==item2.id) {
+                              return(
+                                <Accordion.Body>
+                                <div className="accordion_flex">
+                                  <div className="accordion_img">
+                                    <img src={theme.image} alt="" />
+                                  </div>
+                                  <div className="accordion_text">
+                                    <h6>
+                                    {theme.name}
+                                    </h6>
+                                    <p>{theme.content}
+                                    </p>
+                                  </div>
+                                </div>
+                              </Accordion.Body>
+                              )
+                            }
                           })}
                         </Accordion.Item>
 
@@ -414,6 +427,7 @@ function painModal8() {
                     </button>
                   </div>
                 </div>
+                <p>{item.content}</p>
                 <div className="post_ava">
                   <img src={img_ava} alt="" />
                   <h6>Мухаммад Джумаев</h6>
@@ -453,6 +467,7 @@ function painModal8() {
                                 {theme.name}
                                 </h6>
                                 <p>
+                                  {theme.content}
                                 </p>
                               </div>
                             </div>

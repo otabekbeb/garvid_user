@@ -9,7 +9,7 @@ import Git from '../img/Git.png'
 import copy from '../img/copy.png'
 import munbay from '../img/Group 33.png'
 import iteen from '../img/Group 34.png'
-
+import About_comment from '../js/About_comment'
 
 function onga(){
 document.querySelector(".mni-gridf1").classList.toggle("mni-gridf1-none")
@@ -163,7 +163,7 @@ dolor sit amet. . . .</p>
 dolor sit amet. . . .</p>
                     </div>
                 </div>
-                <div className="prover2-linerr1">
+                <div className="prover3-linerr1">
 
                 </div>
                 
@@ -185,8 +185,7 @@ dolor sit amet. . . .</p>
         </div>
         </div>
         <div className="prover2-orta-joy">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/zalcSgxoL0U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <div className="prover2-orta-joy-text">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VOyxvywZii0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>           <div className="prover2-orta-joy-text">
             <h5>Основы программирования на Raspberry Pi</h5>
             <div className="rating">
   <input type="radio" id="star5" name="rate" value="5"/>
@@ -206,7 +205,7 @@ dolor sit amet. . . .</p>
 <p>4.1</p><span>(524)</span>
 </div>
 <div className="prover2-orta-u">
-<button  onClick={()=>menuobmen()}><span><box-icon name='share-alt' type='solid' color='#9da7bb' ></box-icon></span><p>Обмен</p></button>
+<button  ><span><box-icon name='share-alt' type='solid' color='#9da7bb' ></box-icon></span><p>Обмен</p></button>
 </div>
         </div>
         <div className="prover2-profil-patpis">
@@ -216,7 +215,7 @@ dolor sit amet. . . .</p>
             <div className="prover2-profil-text-info">
                 <p>Muhammad Jumayev</p> <button onClick={()=> button()}  className="potpis"><p className="aa">Подписаться</p><p className="aaa">Отменить подписку</p></button>
             </div>
-            <div className="obmen-kategory-re">
+            {/* <div className="obmen-kategory-re">
                 <h5>URL-адрес курса:</h5>
               <form action="">
               <input type="url" />
@@ -227,7 +226,7 @@ dolor sit amet. . . .</p>
                 <img src={copy} alt="" />
               </div>
               </form>
-            </div>
+            </div> */}
         </div>
 
 
@@ -255,12 +254,23 @@ dolor sit amet. . . .</p>
         </div>
 
         <div className={toggle===1?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida1">
-            <p>Этот курс начинается с нуля, вам не нужно знать ни Angular 1, ни Angular 2! Angular 8 просто является  <br /> последней версией Angular 2.</p>
+<p>
+This course starts from scratch, you neither need to know Angular 1 nor Angular 2! Angular 8 simply is the latest <br /> version of Angular 2.
 
-            <p >Присоединяйтесь к самому всестороннему и популярному курсу Angular на Udemy, потому что сейчас самое <br /> время начать! Этот курс охватывает все: от настройки до развертывания! Вы узнаете все о компонентах, <br /> директивах, службах, формах, Http-доступе, аутентификации, оптимизации приложения Angular с помощью <br /> модулей и автономной компиляции и многом другом — и в конце: вы узнаете, как развернуть приложение! <br /> Но это не все! Этот курс также покажет вам, как использовать Angular CLI, и представит полный проект, <br /> который позволит вам практиковать то, что вы узнали на протяжении всего курса!</p>
-            <p>И если вы застряли, вы получите чрезвычайно быструю и дружелюбную поддержку - как через <br /> прямой обмен сообщениями, так и через  обсуждение. Даю слово! ;-)</p>
 
-            <p>Абсолютно фантастическая серия уроков. Я не могу тебя отблагодарить. Качество первоклассное, <br /> а ваши презентационные навыки не имеют себе равных. Продолжайте в том же духе. Ты <br /> действительно крут!﻿ - Пол Уайтхаус</p>
+Join the most comprehensive and popular Angular course on Udemy, because now is the <br /> time to get started!From Setup to Deployment, this course covers it all! You'll learn all about Components, <br /> Directives, Services, Forms, Http Access, Authentication, Optimizing an Angular App with Modules and Offline <br /> Compilation and much more - and in the end: You'll learn how to deploy an application!But that's not all! <br /> This course will also show you how to use the Angular CLI and feature a complete project, which allows you <br /> to practice the things learned throughout the course!
+
+And if you do get stuck, you benefit from an  <br />extremely fast and friendly support - both via direct messaging or discussion. You have my word! ;-) <br />
+
+Angular is one of the most modern, performance-efficient and powerful frontend frameworks you can <br /> learn as of today. It allows you to build great web apps which offer awesome user experiences! Learn <br /> <span id="prover5-info-block1">
+all the fundamentals you need to know to get started developing Angular <br /> applications right away.
+
+Hear what my students have to say
+
+Absolutely fantastic tutorial <br /> series. I cannot thank you enough. The quality is first class and your presentational skills are second to none. Keep <br /> up this excellent work. You really rock!﻿ - Paul Whitehouse
+</span>
+
+</p>
         </div></div>
         <div className={toggle===2?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida1">
             <div className="kamment-mni-df">
@@ -285,7 +295,7 @@ dolor sit amet. . . .</p>
                       <div className="progre-block-mni1"><box-icon name='star' color='#ecc918' ></box-icon><span>1</span><input type="range"  id="inpottt5" /></div>
                     </div>
                 </div> */}
-                
+                <About_comment/>
             </div>
             
             
@@ -293,26 +303,72 @@ dolor sit amet. . . .</p>
             </div></div>
         <div className={toggle===3?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida3">
             
-            treboviniya
+            <div className="prover2-mni-treboniya">
+                <div className="prover2-trebovaniya-block">
+                    <div className="span"></div>
+                    <p>Знание компьютерных уроков</p>
+                </div>
+                <div className="prover2-trebovaniya-block2">
+                    <div className="span"></div>
+                    <p>Интерес к программированию</p>
+                </div>
+                <div className="prover2-trebovaniya-block3">
+                    <div className="span"></div>
+                    <p>Элементарный английский</p>
+                </div>
+                <div className="prover2-trebovaniya-block4">
+                    <div className="span"></div>
+                    <p>Персональный ноутбук</p>
+                </div>
+                <div className="prover2-trebovaniya-block5">
+                    <div className="span"></div>
+                    <p>Базовая Java</p>
+                </div>
+            </div>
             
             </div></div>
-        <div className={toggle===4?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida4">chemu</div></div>
+        <div className={toggle===4?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida4">
+            
+            <h5>Содержание курса</h5>
+            <div className="faq">
+                <div className="faq-item">
+                <input type="checkbox" className="faq-input"  name="faq" id="faq_1"/>
+                    <div className="faq-div">
+                    <label htmlFor="faq_1" className="faq-title">1. Введение в процесс программирования и установки</label><span>12 видео</span><div className="faq-liner"></div><span>8 часов</span>
+                    </div>
+                    
+                    <div className="faq-text">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto obcaecati quidem explicabo sunt minima <br /> perspiciatis!</p>
+                    </div>
+                </div>
+                <div className="faq-item">
+                <input type="checkbox" className="faq-input"  name="faq" id="faq_2"/>
+                <div className="faq-div">
+                    <label htmlFor="faq_2" className="faq-title" id="saopdsados">2. Работа с простыми операциями в программе </label><span id="fdfsdfdsdfsf">8 видео</span><div className="faq-liner1"></div><span id="wqeqweqweqw">15 часов</span>
+                    </div>
+                    <div className="faq-text">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. jalod obcaecati quidem explicabo sunt minima <br /> perspiciatis!</p>
+                    </div>
+                </div>
+            </div>
+            
+            </div></div>
         
         
         </div>
         <div className="prover2-oxiri-joy">
             <div className="prover2-oxiri-block-in">
-            <div className="mni-dasturlash-bloc"><p>Dasturlash</p></div>
+            <div className="mni-dasturlash-bloc"><p>Программирование</p></div>
             <div className="mni-kurs-narxi">
-                <div className="mni-kurs-block1"><h5>Kurs narxi</h5>
-                <p>250.000 <span>UZS</span></p></div>
+                <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
+                <p>250.000 <span>RUB</span></p></div>
                 <div className="mni-kurs-block2"></div>
                 
                 <div className="mni-kurs-block1"><h5>Kurs hajmi</h5>
                 <p>38 soat</p></div>
                 <div className="mni-kurs-block2"></div>
             </div>
-            <p className="spdfodsofdsf">Kurs bo’limlari:</p>
+            <p className="spdfodsofdsf">Разделы курса:</p>
             <div className="mni-blocc-linee"></div>
             
 <div className="prover2-oxiri-total-kurss"onMouseLeave={()=>aboutClose123122()}  >
@@ -322,12 +378,12 @@ dolor sit amet. . . .</p>
     <span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
 </div>
 <div className="mni-kurs-narxi2">
-                <div className="mni-kurs-block1"><h5>Kurs narxi</h5>
-                <p>150.000  <span>UZS</span></p></div>
+                <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
+                <p>150.000  <span>RUB</span></p></div>
                 <div className="mni-kurs-block2"></div>
                 
-                <div className="mni-kurs-block1"><h5>Kurs hajmi</h5>
-                <p>38 soat</p></div>
+                <div className="mni-kurs-block1"><h5>Размер поля</h5>
+                <p>38 час</p></div>
                 <div className="mni-kurs-block2"></div>
             </div>
 </div>
@@ -374,7 +430,9 @@ dolor sit amet. . . .</p>
 </div>
 
         </div>
+        
     </div>
+  <div className="mni-grid-pas-media">ierhogrigrhghgeairhgpaeiirhrhgpeirhgiehrhgeiarhngkiidg</div>
 </div>
 
 

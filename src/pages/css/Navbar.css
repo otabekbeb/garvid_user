@@ -2723,3 +2723,11 @@
   cursor: pointer;
   user-select: none;
 }
+ 
+ 
+ @media (max-width:742px) {
+  .checkbox-con{
+    margin-left: -40px;
+   
+  }
+ }

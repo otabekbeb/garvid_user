@@ -96,7 +96,7 @@ export default function Navbar() {
                   <a href="/">Home</a>
                 </li>
 
-                <div className="menu" onMouseLeave={() => menuufolse()}>
+                <div className="menu" style={{display:'none'}} onMouseLeave={() => menuufolse()}>
                   <div className="menuu" onMouseEnter={() => menuul()}>
                     <p>
                       <a href="/about">About Us</a>
@@ -151,22 +151,18 @@ export default function Navbar() {
 
                 <li className="moto-menu-item">
                   {" "}
-                  <a href="/servis">Services</a>{" "}
+                  <a href="/servis">User</a>{" "}
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/blog">Blog</a>
+                  <a href="/student">Student</a>
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/ourteam">Our team</a>
+                  <a href="/teacher">Teacher</a>
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/contacts">Contacts</a>
+                  <a href="/loginpage">Edit profile</a>
                 </li>
 
-
-                <li className="moto-menu-item">
-                  {localStorage.getItem("token") ? (<a href="/user">{user.username}</a>) : (<a href="/login">Log in</a>)}
-                </li>
               </ul>
               <div class="checkbox-con">
                 <input
@@ -198,10 +194,10 @@ export default function Navbar() {
                     <ul>
                       <li>
                         <a href="/" className="tt">
-                          Main
+                          Home
                         </a>
                       </li>
-                      <div
+                      <div style={{display:'none'}}
                         className="media-kategory"
                         onMouseLeave={() => aboutClose2()}
                       >
@@ -253,31 +249,28 @@ export default function Navbar() {
                         </ul>
                       </div>
                       <li>
-                        <a href="/servis" className="tt">
-                          Services
+                        <a href="/user" className="tt">
+                          User
                         </a>
                       </li>
 
                       <li>
-                        <a href="/blog" className="tt">
-                          Blog
+                        <a href="/student" className="tt">
+                          student
                         </a>
                       </li>
                       <li>
-                        <a href="/ourteam" className="tt">
-                          our team
+                        <a href="/teacher" className="tt">
+                          Teacher
                         </a>
                       </li>
                       <li>
-                        <a href="/contacts" className="tt">
-                          Contacts
+                        <a href="/loginpage" className="tt">
+                          Edit profile
                         </a>
                       </li>
                      
-                      <li>
-                        {localStorage.getItem("token") ? (<a href="/user" className="tt">{user.username}</a>) : (<a Login href="/login" className="tt">Login</a>)}
-                      </li>
-
+                     
 
                       <div class="checkbox-con" style={{ marginTop: "15px" }}>
                         <input
@@ -411,7 +404,7 @@ export default function Navbar() {
                           Главный
                         </a>
                       </li>
-                      <div
+                      <div style={{display:'none'}}
                         className="media-kategory"
                         onMouseLeave={() => aboutClose2()}
                       >
