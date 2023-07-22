@@ -21,8 +21,14 @@ export default function Login() {
     if ((document.querySelector(".password").value).length>=8) {
       formdata.append("username",document.querySelector(".name").value)
       formdata.append("email",document.querySelector(".email").value)
-      formdata.append("password",document.querySelector(".password").value) 
-      setPage(4)
+      formdata.append("password",document.querySelector(".password").value)
+      const NodeList=document.querySelectorAll(".error")
+      NodeList[2].style="display:none"
+      document.querySelector(".password").style="border-bottom:1px solid #9cf;" 
+      setTimeout(() => {
+        setPage(4)  
+      }, 2000);
+      
     }else{
       const NodeList=document.querySelectorAll(".error")
       NodeList[2].style="display:block"
