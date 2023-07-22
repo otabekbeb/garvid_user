@@ -99,9 +99,6 @@ function painModal8() {
 
 
   useEffect(() => {
-    axios
-      .get(`${url}/course/category/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
-      .then((res) => {
         axios
           .get(`${url}/course/subcategory/`, {
             headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" },
@@ -114,7 +111,6 @@ function painModal8() {
           .then((res2) => {
             setMain(res2.data);
           });
-      });
       axios.get(`${url}/course/category/`,  { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res => {
         var aa = []
         res.data.map(item => {
@@ -124,20 +120,19 @@ function painModal8() {
         })
         setCategory(aa);
       })
-      axios.get(`${url}/course/theme/`, { headers: {"Accept-Language" : "en"} }).then(res => {
-        axios.get(`${url}/course/subcategory/`, { headers: {"Accept-Language" : "en"} }).then(res2 => {
+      axios.get(`${url}/course/theme/`, { headers: {"Accept-Language" : localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res => {
             setTheme(res.data)
-        })
-      });setState1(
+      });
+      setState1(
         localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
       )
 
-      // axios.get(`${url}/course/theme/`,  { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res => {
-      //   axios.get(`${url}/course/subcategory/`,  { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res2 => {
-      //       if (res.data.subcategory == res2.data.id) {
-      //         setTheme(res.data)
-      //       }
-      // })
+      axios.get(`${url}/course/theme/`,  { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res => {
+        axios.get(`${url}/course/subcategory/`,  { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res2 => {
+            if (res.data.subcategory == res2.data.id) {
+              console.log(res.data,"bilamn");
+            }
+      })})
 
       axios.get(`${url}/auth/user/`,{headers:{"Authorization":'Bearer ' + localStorage.getItem("token")}}).then(res=>{
         setUser(res.data)
@@ -151,12 +146,11 @@ function painModal8() {
         <Usernavbar/>
       <div className="youtube_bgc">
         <div className="flex_youtube">
-          {subcategory.map(subcategory=>{
+          {subcategory.map((subcategory)=>{
             return(
               <>
-              {theme.map(item => {
-                console.log(item,"ishlassin");
-              if (subcategory.id===item.subcategory) {
+              {theme.map((item) => {
+              if (item.subcategory==subcategory.id) {
                 return (
                   <div className="youtube_kotta_img">
                     <div className="img_youtube_kotta">
@@ -554,5 +548,5 @@ function painModal8() {
     </div>)}
     
     </div>
-  );
+  )
 }

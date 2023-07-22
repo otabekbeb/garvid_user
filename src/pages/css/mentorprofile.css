@@ -120,7 +120,7 @@
   margin-bottom: 0px;
   display: flex;
   align-items: center;
-  justify-content: center;
+
   }
   .profil_blok_ikki_sum{
     width: 200px;
@@ -361,6 +361,7 @@
       .profil_blok_ikki_text p{
         margin-bottom: 5px;
         font-size: 17px;
+        
       }
       .profil_blok_ikki_sum h1{
         font-size: 35px;
@@ -524,7 +525,7 @@
       font-size: 30px;
       }
       .profil_blok_ikki_sum{
-        width: 155px;
+        width: 110px;
         margin: auto;
       }
       .profil_blok_ikki_button{
