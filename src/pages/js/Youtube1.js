@@ -28,6 +28,7 @@ export default function Youtube1() {
   const [subcategory, setSubcategory] = useState([]);
   const [theme, setTheme] = useState([]);
   const [main, setMain] = useState([]);
+  const [user,setUser] =useState([])
   const [state1, setState1] = React.useState();
 
   function openModal() {
@@ -98,23 +99,23 @@ function painModal8() {
 
 
   useEffect(() => {
-    axios
-      .get(`${url}/course/category/`, { headers: { "Accept-Language": "en" } })
-      .then((res) => {
-        axios
-          .get(`${url}/course/subcategory/`, {
-            headers: { "Accept-Language": "en" },
+axios
+   .get(`${url}/course/category/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
+  .then((res) => {
+    const categoryFilter=res.data.filter(item=>item.course===parseInt(localStorage.getItem("course")))
+    setCategory(categoryFilter);
+      axios
+         .get(`${url}/course/subcategory/`, {
+           headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" },
+         })
+        .then((res1) => {
+          setSubcategory(res1.data)
+          axios.get(`${url}/course/theme/`,{ headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then((res2)=>{
+          setTheme(res2.data)
           })
-          .then((res1) => {
-            setSubcategory(res1.data);
-          });
-        axios
-          .get(`${url}/course/main/`, { headers: { "Accept-Language": "en" } })
-          .then((res2) => {
-            setMain(res2.data);
           });
       });
-      axios.get(`${url}/course/category/`,  { headers: { "Accept-Language": "en" } }).then(res => {
+      axios.get(`${url}/course/category/`,  { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res => {
         var aa = []
         res.data.map(item => {
           if (item.course == localStorage.getItem('course')) {
@@ -132,24 +133,33 @@ function painModal8() {
 
         })
       });setState1(
-        localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+        localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
       )
 
-      // axios.get(`${url}/course/theme/`,  { headers: { "Accept-Language": "en" } }).then(res => {
-      //   axios.get(`${url}/course/subcategory/`,  { headers: { "Accept-Language": "en" } }).then(res2 => {
+      // axios.get(`${url}/course/theme/`,  { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res => {
+      //   axios.get(`${url}/course/subcategory/`,  { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res2 => {
       //       if (res.data.subcategory == res2.data.id) {
       //         setTheme(res.data)
       //       }
       // })
+
+      axios.get(`${url}/auth/user/`,{headers:{"Authorization":'Bearer ' + localStorage.getItem("token")}}).then(res=>{
+        setUser(res.data)
+        console.log(user,"yordam")
+      })
   }, [])
 
   return (
     <div>
-      {state1==="eng" ?(<div>
+      {state1==="en" ?(<div>
         <Usernavbar/>
       <div className="youtube_bgc">
         <div className="flex_youtube">
-          {theme.map((item) => {
+          {subcategory.map(subcategory=>{
+            return(
+<>
+{theme.map(item => {
+           if(subcategory.id==item.subcategory){
             return (
               <div className="youtube_kotta_img">
                 <div className="img_youtube_kotta">
@@ -220,14 +230,20 @@ function painModal8() {
                     </button>
                   </div>
                 </div>
-                <div className="post_ava">
-                  <img src={img_ava} alt="" />
-                  <h6>Muhammad Dzhumaev</h6>
-                  <button>Subscribe</button>
-                </div>
+                <p>{item.content}</p>
+                    <div className="post_ava">
+                    <img src={"https://baisan.onrender.com"+user.image} alt="" />
+                    <h6>{user.username}</h6>
+                    <button>Subscribe</button>
+                  </div>
               </div>
             );
+           }
           })}
+</>
+            )
+          })}
+
 
           {category.map((item) => {
             return (
@@ -245,7 +261,7 @@ function painModal8() {
                   {subcategory.map((item2) => {
                     if (item.id === item2.category) {
                       return (
-                        <Accordion.Item eventKey="0">
+                        <Accordion.Item eventKey="1">
                           <Accordion.Header>{item2.name}</Accordion.Header>
                           {theme.map(theme=>{
                             if (theme.subcategory==item2.id) {
@@ -417,6 +433,7 @@ function painModal8() {
                     </button>
                   </div>
                 </div>
+                <p>{item.content}</p>
                 <div className="post_ava">
                   <img src={img_ava} alt="" />
                   <h6>Мухаммад Джумаев</h6>
@@ -456,6 +473,7 @@ function painModal8() {
                                 {theme.name}
                                 </h6>
                                 <p>
+                                  {theme.content}
                                 </p>
                               </div>
                             </div>

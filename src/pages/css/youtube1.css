@@ -118,6 +118,11 @@ margin-bottom: 20px;
     display: flex;
     align-items: center;
     margin-top: 10px;
+    width: 50px;
+}
+.post_ava img{
+    width: 100%;
+    border-radius: 50%;
 }
 .post_ava button{
     text-align: center;

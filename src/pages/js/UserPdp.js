@@ -24,7 +24,7 @@ export default function Pdp() {
             setKursData(res.data)
         })
         setState1(
-            localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+            localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
         );
     }, [])
 
@@ -50,7 +50,7 @@ export default function Pdp() {
     return (
         <div>
             <div>
-                {state1 === 'eng' ? (<div className="gray_blok">
+                {state1 === 'en' ? (<div className="gray_blok">
                     <div className="fil_text_blok">
                         <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle===1? {borderBottom:'2px solid #536DFD'}:{}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} pieces</div>) : ("")}</div>
                         <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle===2? {borderBottom:'2px solid #536DFD'}:{} }className='fromLeft'>My learned knowledge</h1>{toggle === 2 ? (<div className="fil_text_blok_kurs_lenght">14 pieces</div>) : ("")}</div>

@@ -120,6 +120,7 @@
   margin-bottom: 0px;
   display: flex;
   align-items: center;
+  justify-content: center;
   }
   .profil_blok_ikki_sum{
     width: 200px;
@@ -164,7 +165,7 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      margin-top: 10px;
+      margin-top: 20px;
       margin-bottom: 20px;
     }
     .profil_blok_ikki_icon{

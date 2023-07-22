@@ -17,14 +17,14 @@ export default function Youtube1() {
     const [state1, setState1] = React.useState();
     useEffect(() => {
       setState1(
-        localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+        localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
       );},[]);
       function videoBolim(id) {
         setId(id);
       }
 return(
     <div>
-        {state1==="eng" ?(<div>
+        {state1==="en" ?(<div>
         <div className="m_3div_kotta">
             <div className="m_1chidiv">
                 <div className="m_input_search">

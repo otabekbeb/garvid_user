@@ -12,12 +12,12 @@ export default function Bilim() {
     const [state1, setState1] = React.useState();
     useEffect(() => {
       setState1(
-        localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+        localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
       );},[]);
 
   return (
 <div>
-    {state1 ==="eng"?(<div>
+    {state1 ==="en"?(<div>
         <div className="program">
            <div className="ptogram_tutorial">
                <div className="html_code_tutoril">

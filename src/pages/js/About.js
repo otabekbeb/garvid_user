@@ -23,14 +23,14 @@ export default function About() {
   const [state1, setState1] = React.useState();
   useEffect(() => {
     setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );},[]);
   return (
 
     
-    <div>
+    <div className='abouut'>
       <Navbar/>
-      {state1==="eng" ?(
+      {state1==="en" ?(
       <div>
 <div className="asd">
     {/* <img src={abaut} alt="" /> */}

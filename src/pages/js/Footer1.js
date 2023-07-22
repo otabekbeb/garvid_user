@@ -5,11 +5,11 @@ export default function Footer1() {
   const [state1, setState1] = React.useState();
   useEffect(() => {
     setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );},[]);
   return (
     <div>
-     {state1==="eng" ?(
+     {state1==="en" ?(
       <div>
 
 
@@ -41,19 +41,19 @@ export default function Footer1() {
 <div className="futer-block-mini">
   <div className="qwe">
 <ul className='ioguhofg'>
-  <li><a onClick={()=> window.location="/"} href="">Home</a></li>
-  <li><a onClick={()=> window.location="/about"} href="">About Us</a></li>
-  <li><a onClick={()=> window.location="/servis"} href="">Services</a></li>
-  <li><a onClick={()=> window.location="/blog"} href="">Blog</a></li>
+  <li><a onClick={()=> window.location="/"} href="/">Home</a></li>
+  <li><a onClick={()=> window.location="/about"} href="/about">About Us</a></li>
+  <li><a onClick={()=> window.location="/servis"} href="/servis">Services</a></li>
+  <li><a onClick={()=> window.location="/blog"} href="/blog">Blog</a></li>
 </ul>
 
 
   </div>
   <div className="qwe">
 <ul className='ry'>
-  <li><a onClick={()=> window.location="/ourteam"} href="">Our team</a></li>
-  <li><a onClick={()=> window.location="/contacts"} href="">Contacts</a></li>
-  <li><a onClick={()=> window.location="/login"} href="">Log in</a></li>
+  <li><a onClick={()=> window.location="/ourteam"} href="/ourteam">Our team</a></li>
+  <li><a onClick={()=> window.location="/contacts"} href="/contacts">Contacts</a></li>
+  <li><a onClick={()=> window.location="/login"} href="/login">Log in</a></li>
 </ul>
 
 
@@ -110,19 +110,19 @@ export default function Footer1() {
 <div className="futer-mobil-block-text">
   <div className="futer-mobil-block-ul">
 <ul className='saidjaojd'>
-<li><a onClick={()=> window.location="/"} href="">Home</a></li>
-  <li><a onClick={()=> window.location="/about"} href="">About Us</a></li>
-  <li><a onClick={()=> window.location="/servis"} href="">Services</a></li>
-  <li><a onClick={()=> window.location="/blog"} href="">Blog</a></li>
+<li><a onClick={()=> window.location="/"} href="/">Home</a></li>
+  <li><a onClick={()=> window.location="/about"} href="/about">About Us</a></li>
+  <li><a onClick={()=> window.location="/servis"} href="/servis">Services</a></li>
+  <li><a onClick={()=> window.location="/blog"} href="/blog">Blog</a></li>
 </ul>
 
 
   </div>
   <div className="futer-mobil-block-ul1">
     <ul>
-    <li><a onClick={()=> window.location="/ourteam"} href="">Our team</a></li>
-  <li><a onClick={()=> window.location="/contacts"} href="">Contacts</a></li>
-  <li><a onClick={()=> window.location="/login"} href="">Log in</a></li>
+    <li><a onClick={()=> window.location="/ourteam"} href="/ourteam">Our team</a></li>
+  <li><a onClick={()=> window.location="/contacts"} href="/contacts">Contacts</a></li>
+  <li><a onClick={()=> window.location="/login"} href="/login">Log in</a></li>
     </ul>
   </div>
 </div>

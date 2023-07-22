@@ -17,7 +17,7 @@ export default function MentorPdp() {
     const [state1, setState1] = React.useState();
     useEffect(() => {
       setState1(
-        localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+        localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
       );},[]);
 
     function updatetoggle(id) {
@@ -40,7 +40,7 @@ export default function MentorPdp() {
 
   return (
     <div>
-        {state1==="eng" ?(<div>
+        {state1==="en" ?(<div>
             <div className="gray_blok">
                 <div className="fil_text_blok">
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} className='fromLeft'>My courses</h1>{toggle===1?(<div className="fil_text_blok_kurs_lenght">4 pieces</div>):("")}</div>

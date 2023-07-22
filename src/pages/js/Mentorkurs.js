@@ -36,23 +36,23 @@ export default function Searchfilter() {
 
   useEffect(() => {
     axios
-      .get(`${url}/course/main/`, { headers: { "Accept-Language": "en" } })
+      .get(`${url}/course/main/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
       .then((res) => {
         setKursdata(res.data);
         axios
-          .get(`${url}/course/type/`, { headers: { "Accept-Language": "en" } })
+          .get(`${url}/course/type/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
           .then((res) => {
             settype(res.data);
           });
       });
     setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
   }, []);
 
   return (
     <div>
-      {state1 === "eng" ? (<div>
+      {state1 === "en" ? (<div>
         <div className="Filter">
           <div className="blur_blok">
             <div className="inp_blok">

@@ -25,10 +25,16 @@ function about2() {
 function aboutClose2() {
   document.querySelector(".ichi span").style = "transform: rotate(0deg);";
 }
-function ffd() { }
+function iconhover() { 
+  document.querySelector(".ichi2 span").style="transform: rotate(180deg)"
+}
+function iconhover1() { 
+  document.querySelector(".ichi2 span").style="transform: rotate(0deg)"
+}
 // meded
 function ochil1() {
   document.querySelector(".lll ul").classList.toggle("lllb");
+  
 }
 function meded() {
   document.querySelector(".ffdul ").classList.toggle("fffdull");
@@ -66,7 +72,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
     if (localStorage.getItem("lang") !== "ru") {
       document.querySelector("#checkbox").checked = true;
@@ -86,7 +92,7 @@ export default function Navbar() {
 
   return (
     <div>
-      {state1 === "eng" ? (
+      {state1 === "en" ? (
         <div>
           <section onMouseLeave={() => menuul1()} className="navbar">
 
@@ -174,14 +180,14 @@ export default function Navbar() {
                   onClick={() => {
                     !document.querySelector("#checkbox").checked
                       ? localStorage.setItem("lang", "ru")
-                      : localStorage.setItem("lang", "eng");
+                      : localStorage.setItem("lang", "en");
                     window.location.reload();
                   }}
                   type="checkbox"
                 />
               </div>
             </div>
-            <div className="media-navbar">
+            <div className="media-navbar" style={{margin:"auto"}}>
               <div className="navbar-menu">
                 <div className="navbar-mediao-barr" onClick={() => sa()}>
                   <div className="bar-menu" id="sa">
@@ -198,7 +204,7 @@ export default function Navbar() {
                     <ul>
                       <li>
                         <a href="/" className="tt">
-                          Main
+                          Home
                         </a>
                       </li>
                       <div
@@ -225,7 +231,7 @@ export default function Navbar() {
                       </div>
                       <div className="ffd">
                         <ul className="ffdul">
-                          <div className="ichi2" onClick={() => ochil1()}>
+                          <div className="ichi2" onMouseEnter={()=> iconhover()} onMouseLeave={()=> iconhover1()} onClick={() => ochil1()}>
                             <li className="ds">
                               <a href="#">News</a>
                             </li>
@@ -285,7 +291,7 @@ export default function Navbar() {
                           onClick={() => {
                             !document.querySelector("#checkbox2").checked
                               ? localStorage.setItem("lang", "ru")
-                              : localStorage.setItem("lang", "eng");
+                              : localStorage.setItem("lang", "en");
                             window.location.reload();
                           }}
                           type="checkbox"
@@ -351,7 +357,7 @@ export default function Navbar() {
 
                           <li id="ded">
                             <a href="/contacts">
-                              {state1 === "eng" ? "Contact" : "Связь"}{" "}
+                              {state1 === "en" ? "Contact" : "Связь"}{" "}
                             </a>
                           </li>
                         </ul>
@@ -385,14 +391,14 @@ export default function Navbar() {
                   onClick={() => {
                     !document.querySelector("#checkbox").checked
                       ? localStorage.setItem("lang", "ru")
-                      : localStorage.setItem("lang", "eng");
+                      : localStorage.setItem("lang", "en");
                     window.location.reload();
                   }}
                   type="checkbox"
                 />
               </div>
             </div>
-            <div className="media-navbar">
+            <div className="media-navbar" style={{margin:"auto"}}>
               <div className="navbar-menu">
                 <div className="navbar-mediao-barr" onClick={() => sa()}>
                   <div className="bar-menu" id="sa">
@@ -499,7 +505,7 @@ export default function Navbar() {
                           onClick={() => {
                             !document.querySelector("#checkbox2").checked
                               ? localStorage.setItem("lang", "ru")
-                              : localStorage.setItem("lang", "eng");
+                              : localStorage.setItem("lang", "en");
                             window.location.reload();
                           }}
                           type="checkbox"
