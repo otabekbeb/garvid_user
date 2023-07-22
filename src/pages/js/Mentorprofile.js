@@ -14,7 +14,7 @@ export default function Mentorprofile() {
   const [state1, setState1] = React.useState();
   useEffect(() => {
     setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );},[]);
 
 
@@ -41,7 +41,7 @@ export default function Mentorprofile() {
 
   return (
     <div>
-      {state1==="eng" ?(<div>
+      {state1==="en" ?(<div>
       <div className="profil_size_df">
        <div className="profil_size">
         <div className="profil_blok_bir">

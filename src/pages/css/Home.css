@@ -387,7 +387,7 @@ background: #f7f7f7;
 .contact_form_input_big_div_input p{
     color: #333333;
     font-size: 14px;
-    line-height: 1.42857143;
+    line-height: 35px;
 }
 .contact_form_input_big_div button{
     background-color: #44bef1;
@@ -650,8 +650,30 @@ background: #f7f7f7;
         line-height: 1; 
     }
     .skills p{
-        font-size: 8px;
+        font-size: 12px;
         line-height: 1;
+    }
+}
+@media (max-width:529px) {
+    .body1 .images{
+        width: 100%;
+    height: 100px !important;
+    background-color: #f7f7f7;
+ position: relative;
+ top: 90px !important;
+    overflow: hidden;
+    
+    }
+}
+@media (max-width:529px) {
+    .body1 .images{
+        width: 100%;
+    height: 100px !important;
+    background-color: #f7f7f7;
+ position: relative;
+ top: 200px !important;
+    overflow: hidden;
+    
     }
 }
 .testimonial_cards{

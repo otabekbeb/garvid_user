@@ -9,11 +9,11 @@ export default function Futer() {
   const [state1, setState1] = React.useState();
   useEffect(() => {
     setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );},[]);
   return (
     <div>
-      {state1==="eng" ?(<div>
+      {state1==="en" ?(<div>
         <div className="line1"></div>
         <div className="futer_botom">
             <div className="futer_container">
@@ -83,7 +83,7 @@ export default function Futer() {
             <div className="futer_container">
             <div className="futer_row">
     <div className="futer_col">
-    <ul><h4>Основной</h4>
+    <ul><h4>Главный</h4>
       <li>О проекте</li>
       <li>Курсы</li>
       <li>Наставникам</li>

@@ -10,14 +10,14 @@ export default function Blog() {
     const [state1, setState1] = React.useState();
     useEffect(() => {
         setState1(
-          localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+          localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
         );
       }, []);
   return (
     
-    <div>
+    <div id='blooog'>
 <Navbar/>
-{state1 === "eng" ?(<div><div className="asd">
+{state1 === "en" ?(<div><div className="asd">
     {/* <img src={abaut} alt="" /> */}
    <div className="asd-block">
    <h1>Blog</h1>
@@ -30,7 +30,7 @@ export default function Blog() {
 <div className="sahifa">
 <div className="sahifa-glav">
 <div className="safiha-p">
-    <h4><a href="#">Home  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
+    <h4><a href="/">Home  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
 </div>
 <div className="safiha-d">
     <p id='tepaga'>Blog</p>

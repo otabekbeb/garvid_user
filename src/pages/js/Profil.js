@@ -23,8 +23,19 @@ export default function Profil() {
   
 
   function userimgModal(){
-    document.querySelector(".user_img_hover").style="  position: absolute;bottom: 0;"
+    document.querySelector(".user_img_hover").style="position: absolute;bottom: 0;"
+  }
+  function userImgPut(){
+    var formdata =new FormData()
+    formdata.append("image", document.querySelector("#userInput").files[0]);
+   
+    axios.put(`${url}/auth/user/`,formdata,{headers:{Authorization:"Bearer " +localStorage.getItem("token")}}).then(res=>{
     
+    window.location.reload()
+   })
+   .catch(err=>{
+    state1==="ru"?(alert("Ошибка изображения")):(alert("Image failed"))
+   }) 
   }
   function userimgClose(){
     document.querySelector(".user_img_hover").style="  position: absolute;bottom: -100px;"
@@ -44,20 +55,20 @@ export default function Profil() {
   }
 
   useEffect(()=>{
-  axios.get(`${url}/auth/user/`,{ headers: { 'Authorization': 'Bearer ' + sessionStorage.getItem("token") }}).then(res=>{
+  axios.get(`${url}/auth/user/`,{ headers: { 'Authorization': 'Bearer ' + localStorage.getItem("token") }}).then(res=>{
     console.log(res.data);
     setData(res.data)
   }).catch((err) => {
     console.log(err);
   });
   setState1(
-    localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+    localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
   )
   },[])
 
   function chiqish() {
     window.location="/"
-    sessionStorage.getItem("token",false)
+    localStorage.removeItem("token")
   }
 
   // function postUser(){
@@ -73,14 +84,14 @@ export default function Profil() {
 
   return (
     <div>
-      {state1==="eng" ?(<div>
+      {state1==="en" ?(<div>
       <div className="profil_size_df">
        <div className="profil_size">
         <div className="profil_blok_bir">
           <div onMouseLeave={()=>userimgClose()} className='user_img_size'>
-          {data.image===null?(<img onMouseEnter={()=>userimgModal()} className='user_img' src={userNull} alt="" />):(<img onMouseEnter={()=>userimgModal()} className='user_img' src={data.image} alt="" />)}
+          {data.image===null?(<img onMouseEnter={()=>userimgModal()} className='user_img' src={userNull} alt="" />):(<img onMouseEnter={()=>userimgModal()} className='user_img' src={"https://baisan.onrender.com"+data.image} alt="" />)}
            <div className="user_img_hover">
-            <input id='userInput'  type="file" />
+            <input onChange={()=>userImgPut()} id='userInput'  type="file" />
           <MdOutlinePhotoCamera  className='user_hover_photo_icon'/>
         </div>
         </div>
@@ -105,8 +116,8 @@ export default function Profil() {
         <div className="profil_blok_ikki">
           <div className="profil_blok_ikki_text">
           <p>Current balance</p>
-          <div className="profil_blok_ikki_sum">
-            {data.balance===null?(<h1>0</h1>):(<div><h1>{data.balance}</h1><p>$</p></div>)}
+          <div className="profil_blok_ikki_sum" >
+            {data.balance===null?(<h1>0</h1>):(<div style={{display:'flex',alignItems:'center',gap:'5px'}}><h1>{data.balance}</h1><p>$</p></div>)}
           </div>
           <div className="profil_blok_ikki_button">
             <button><BsActivity/></button><button>Balance replenishment</button>
@@ -182,9 +193,9 @@ export default function Profil() {
        <div className="profil_size">
         <div className="profil_blok_bir">
           <div onMouseLeave={()=>userimgClose()} className='user_img_size'>
-          {data.image===null?(<img onMouseEnter={()=>userimgModal()} className='user_img' src={userNull} alt="" />):(<img onMouseEnter={()=>userimgModal()} className='user_img' src={data.image} alt="" />)}
+          {data.image===null?(<img onMouseEnter={()=>userimgModal()} className='user_img' src={userNull} alt="" />):(<img onMouseEnter={()=>userimgModal()} className='user_img' src={"https://baisan.onrender.com"+data.image} alt="" />)}
            <div className="user_img_hover">
-            <input id='userInput'  type="file" />
+            <input onChange={()=>userImgPut()} id='userInput'  type="file" />
           <MdOutlinePhotoCamera  className='user_hover_photo_icon'/>
         </div>
         </div>
@@ -210,8 +221,8 @@ export default function Profil() {
           <div className="profil_blok_ikki_text">
           <p>Текущий баланс</p>
           <div className="profil_blok_ikki_sum">
-            {data.balance===null?(<h1>0</h1>):(<div><h1>{data.balance}</h1><p>RUB</p></div>)}
-          </div>
+            {data.balance===null?(<h1>0</h1>):(<div style={{display:'flex',gap:'5px',alignContent:'center'}}><h1>{data.balance}</h1><p>RUB</p></div>)}
+            </div>
           <div className="profil_blok_ikki_button">
             <button><BsActivity/></button><button>Пополнение баланса</button>
           </div>

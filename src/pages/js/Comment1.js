@@ -13,12 +13,12 @@ export default function Comment1() {
   const [state1, setState1] = React.useState();
   useEffect(() => {
     setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );},[]);
 
   useEffect(()=>{
-    axios.get(`${url}/course/theme_comment/`,{headers:{"Authorization":"Bearer " + sessionStorage.getItem("token")}}).then(res=>{
-      axios.get(`${url}/auth/user/`,{headers:{"Authorization":"Bearer " + sessionStorage.getItem("token")}}).then(res1=>{
+    axios.get(`${url}/course/theme_comment/`,{headers:{"Authorization":"Bearer " + localStorage.getItem("token")}}).then(res=>{
+      axios.get(`${url}/auth/user/`,{headers:{"Authorization":"Bearer " + localStorage.getItem("token")}}).then(res1=>{
       if (res.user==res1.id) {
         setComment(res.data)
         console.log(res.data,"salommmmmm");
@@ -43,7 +43,7 @@ export default function Comment1() {
 
   return (
     <div>
-    {state1==="eng"?(<div className='m_comment_kotta'> 
+    {state1==="en"?(<div className='m_comment_kotta'> 
     <div className="m_otdel_bgc">
 
       {comment.map(item=>{
@@ -75,7 +75,6 @@ export default function Comment1() {
               </div></div>
     </div>):(<div className='m_comment_kotta'> 
     <div className="m_otdel_bgc">
-
       {comment.map(item=>{
         return(
           <div className="m_comment">

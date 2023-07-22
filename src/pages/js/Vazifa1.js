@@ -13,25 +13,28 @@ export default function Vazifa1() {
   useEffect(()=>{
     axios.get(`${url}/course/theme_task/`,{headers:{"Accept-Language":"en"}}).then(res=>{
       console.log(res.data,"zor");
-      setTask(res.data)
+
       axios.get(`${url}/course/theme/`,{headers:{"Accept-Language":"en"}}).then(res1=>{
-        setTheme(res1.data)
+        if(res.data.course_theme==res1.data.id){
+        setTask(res.data)
+        console.log(res.data);
+        }
       })
     });
     setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     )
   },[])
 
   return (
     <div>
-      {state1==="eng" ?(<div className='m_vazifa_kotta'> 
+      {state1==="en" ?(<div className='m_vazifa_kotta'> 
         <div className="m_vazifa_scachat">
           {theme.map(item=>{
             return(
               <>
               {task.map(item1=>{
-              if (item.id===item1.course_theme) {
+              if (item1.course_theme===item.id) {
               return(
                 <div className="scachat_kotta">
                 <div className="m_zadaniya_s">
@@ -49,6 +52,9 @@ export default function Vazifa1() {
                </div>  
               )            
               }
+              else{
+                alert("ishlamadi")
+              }
               })}
               </>
             )
@@ -65,10 +71,13 @@ export default function Vazifa1() {
               <div className="m_line_w"></div>
               <div className="m_otpr">
             <p><AiOutlinePaperClip/></p>
-            <input type="text" placeholder='Отправка задачи'/>
+            <input type="text" placeholder='Отправка задачи' />
+            
               </div>
            </div>
-           <div className="m_but_otpr"><button>Send</button></div>
+           <div className="m_comment_button1">
+              <button className='m_otpravit'>Send</button>
+              </div>
         </div>
         </div>
     </div>):(<div className='m_vazifa_kotta'> 
@@ -111,10 +120,13 @@ export default function Vazifa1() {
               <div className="m_line_w"></div>
               <div className="m_otpr">
             <p><AiOutlinePaperClip/></p>
-            <input type="text" placeholder='Отправка задачи'/>
+              <input type="text" placeholder='Отправка задачи' />
               </div>
            </div>
-           <div className="m_but_otpr"><button>Отправить</button></div>
+           {/* <div className="m_but_otpr"><button>Отправить</button></div> */}
+           <div className="m_comment_button1">
+              <button className='m_otpravit'>Отправить</button>
+              </div>
         </div>
         </div>
     </div>)}

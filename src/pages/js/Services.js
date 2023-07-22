@@ -18,12 +18,12 @@ export default function Services() {
       const [state1, setState1] = React.useState();
   useEffect(() => {
     setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );},[]);
 
   return (
     <div>
-  {state1==="eng" ?(
+  {state1==="en" ?(
       <div>
   <div className='services_div'>
         <Navbar/>
@@ -40,7 +40,7 @@ export default function Services() {
 <div className="sahifa">
 <div className="sahifa-glav">
 <div className="safiha-p">
-    <h4><a href="#">Main  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
+    <h4><a href="/">Home<span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
 </div>
 <div className="safiha-d">
     <p id='tepaga'>Services</p>
@@ -273,7 +273,7 @@ export default function Services() {
 
 </div>
 <div className="sli-text">
-<p>Привет, ребята! Вы решили мою проблема в кратчайшие сроки! <br /> Твой  услуги и забота о клиентах отлично!</p>
+<p>Привет, ребята! Вы решили мою проблема в кратчайшие сроки! <br /> Твой забота о клиентах отлично!</p>
 
 <strong>Луиза Смит</strong>
 <h4>(Генеральный директор и основатель)</h4>

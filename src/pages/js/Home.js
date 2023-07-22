@@ -15,11 +15,11 @@ export default function Home() {
     const [state1, setState1] = React.useState();
     useEffect(() => {
       setState1(
-        localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+        localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
       );},[]);
     return (
 <div>
-        {state1==="eng" ?(<div> <div className='body1'>
+        {state1==="en" ?(<div> <div className='body1'>
             
         <Navbar />
 
@@ -393,15 +393,15 @@ never miss the aim</h1>
             <div className="contact_form_input_big_div_input">
                 <form action="">
                         <label>
-                    <p>Email</p>
+                    <p>Электронная почта</p>
                     <input type="email" name="" id="" required/>
                 </label>
                 <label>
-                    <p>First name</p>
+                    <p>Имя</p>
                     <input type="text" required/>
                 </label>
                 <label>
-                    <p>Second name</p>
+                    <p>Фамилия</p>
                     <input type="text" required/>
                 </label>
                 <button>Подписываться</button>
@@ -437,7 +437,7 @@ never miss the aim</h1>
 
 </div>
 <div className="sli-text">
-<p>Привет, ребята! Вы решили мою проблема в кратчайшие сроки! <br /> Твой  услуги и забота о клиентах отлично!</p>
+<p>Привет, ребята! Вы решили мою проблема в кратчайшие сроки! <br /> Твой  услуги о клиентах отлично!</p>
 
 <strong>Луиза Смит</strong>
 <h4>(Генеральный директор и основатель)</h4>

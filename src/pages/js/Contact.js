@@ -8,12 +8,12 @@ export default function Contact() {
     const [state1, setState1] = React.useState();
     useEffect(() => {
       setState1(
-        localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+        localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
       );},[]);
   return (
 
     <div>
-    {state1==="eng" ? (<div>
+    {state1==="en" ? (<div>
         <Navbar/>
         <div className="asd">
     {/* <img src={abaut} alt="" /> */}
@@ -28,7 +28,7 @@ export default function Contact() {
 <div className="sahifa">
 <div className="sahifa-glav">
 <div className="safiha-p">
-    <h4><a href="#">Home  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
+    <h4><a href="/">Home  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
 </div>
 <div className="safiha-d">
     <p id='tepaga'>Contact</p>

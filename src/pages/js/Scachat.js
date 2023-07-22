@@ -7,12 +7,12 @@ export default function Vazifa1() {
    const [state1, setState1] = React.useState();
   useEffect(() => {
     setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );},[]);
   return (
 
     <div>
-      {state1==="eng" ?(<div className='m_vazifa_kotta'> 
+      {state1==="en" ?(<div className='m_vazifa_kotta'> 
         <div className="m_vazifa_scachat">
        
            <div className="scachat_kotta">
