@@ -327,3 +327,9 @@
 .two21 i:hover{
     color: white;
 }
+@media (max-width:529px) {
+    .services_div .images{
+        margin-top: 0px !important;
+    
+    }
+}

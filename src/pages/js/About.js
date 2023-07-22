@@ -28,7 +28,7 @@ export default function About() {
   return (
 
     
-    <div>
+    <div className='abouut'>
       <Navbar/>
       {state1==="en" ?(
       <div>
