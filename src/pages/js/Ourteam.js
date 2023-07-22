@@ -19,12 +19,12 @@ export default function Services() {
       const [state1, setState1] = React.useState();
   useEffect(() => {
     setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );},[]);
 
   return (
-    <div>
-  {state1==="eng" ?(
+    <div className='ourteamm'>
+  {state1==="en" ?(
       <div>
   <div className='services_div'>
         <Navbar/>

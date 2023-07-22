@@ -62,7 +62,7 @@ export default function Profil() {
     console.log(err);
   });
   setState1(
-    localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+    localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
   )
   },[])
 
@@ -84,7 +84,7 @@ export default function Profil() {
 
   return (
     <div>
-      {state1==="eng" ?(<div>
+      {state1==="en" ?(<div>
       <div className="profil_size_df">
        <div className="profil_size">
         <div className="profil_blok_bir">

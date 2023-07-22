@@ -46,13 +46,13 @@ export default function Searchfilter() {
           });
       });
     setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
   }, []);
 
   return (
     <div>
-      {state1 === "eng" ? (<div>
+      {state1 === "en" ? (<div>
         <div className="Filter">
           <div className="blur_blok">
             <div className="inp_blok">

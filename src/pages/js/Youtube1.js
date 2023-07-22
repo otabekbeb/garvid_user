@@ -133,7 +133,7 @@ function painModal8() {
 
         })
       });setState1(
-        localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+        localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
       )
 
       // axios.get(`${url}/course/theme/`,  { headers: { "Accept-Language": "en" } }).then(res => {
@@ -151,7 +151,7 @@ function painModal8() {
 
   return (
     <div>
-      {state1==="eng" ?(<div>
+      {state1==="en" ?(<div>
         <Usernavbar/>
       <div className="youtube_bgc">
         <div className="flex_youtube">

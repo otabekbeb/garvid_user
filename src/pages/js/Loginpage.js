@@ -16,7 +16,7 @@ export default function Loginpage() {
   const [state1, setState1] = React.useState();
   useEffect(() => {
     setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
     axios
       .get(`${url}/auth/user/`, {
@@ -166,7 +166,7 @@ export default function Loginpage() {
       <div>
         <Usernavbar />
 
-        {state1 === "eng" ? (
+        {state1 === "en" ? (
           <div className="katta12">
             <div className="all-button">
               <button
@@ -287,7 +287,7 @@ export default function Loginpage() {
                             <div className="error">Старый пароль ошибка, введите правильно</div>
                             <h2> New password</h2>
                             <input className="passwordChange" type="password" />
-                            <div className="error">{state1==="eng"?("The password cannot be less than 8"):("Пароль не может быть меньше 8")}</div>
+                            <div className="error">{state1==="en"?("The password cannot be less than 8"):("Пароль не может быть меньше 8")}</div>
                             <h2>Confirm new password</h2>
                             <input className="restPassword" type="password" />
                           </div>
