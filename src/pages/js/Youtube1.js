@@ -99,20 +99,20 @@ function painModal8() {
 
 
   useEffect(() => {
-    axios
-      .get(`${url}/course/category/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
-      .then((res) => {
-        axios
-          .get(`${url}/course/subcategory/`, {
-            headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" },
+axios
+   .get(`${url}/course/category/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
+  .then((res) => {
+    const categoryFilter=res.data.filter(item=>item.course===parseInt(localStorage.getItem("course")))
+    setCategory(categoryFilter);
+      axios
+         .get(`${url}/course/subcategory/`, {
+           headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" },
+         })
+        .then((res1) => {
+          setSubcategory(res1.data)
+          axios.get(`${url}/course/theme/`,{ headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then((res2)=>{
+          setTheme(res2.data)
           })
-          .then((res1) => {
-            setSubcategory(res1.data);
-          });
-        axios
-          .get(`${url}/course/main/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
-          .then((res2) => {
-            setMain(res2.data);
           });
       });
       axios.get(`${url}/course/category/`,  { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res => {

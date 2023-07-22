@@ -9,7 +9,7 @@ import images6 from '../img/images6.png'
 
 export default function Images() {
   return (
-<header className='images'>
+<header id='imagees' className='images'>
 <div className="images-kotta">
     <div className="images-img">
         <img src={images1} alt="" />

@@ -49,14 +49,32 @@ export default function Searchfilter() {
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
   }, []);
-
+  function filter (id) {
+    axios
+    .get(`${url}/course/main/`, { headers: { "Accept-Language": "en" } })
+    .then((res) => {
+      const search = res.data.filter(item=>item.course_type===id)
+      setKursdata(search)
+    });
+  }
+  const searchInput = (event) => {
+    const searchRegex = new RegExp(`^${event.target.value}`, "i");
+    axios.get(`${url}/course/main/`,{ headers: { "Accept-Language": "en" } }).then(res=>{
+      const searchdata = res.data.filter((item) => {
+        return (
+          searchRegex.test(item.name) 
+        );
+      })
+      setKursdata(searchdata)
+    })
+  }
   return (
     <div>
       {state1 === "en" ? (<div>
         <div className="Filter">
           <div className="blur_blok">
             <div className="inp_blok">
-              <input type="text" placeholder="Search among my courses" />
+              <input onChange={()=>searchInput()} id="search" type="text" placeholder="Search among my courses" />
               <CiSearch className="search" />
             </div>
             <div className="blur">
@@ -81,7 +99,7 @@ export default function Searchfilter() {
                       {type.map((item2) => {
                           return (
                             <div className="button_filter_kurs">
-                              <div className="div_kurs">{item2.name}</div>
+                              <div onClick={()=>filter(item2.id)} className="div_kurs">{item2.name}</div>
                             </div>
                           );
                       })}
@@ -194,7 +212,7 @@ export default function Searchfilter() {
         <div className="Filter">
           <div className="blur_blok">
             <div className="inp_blok">
-              <input type="text" placeholder="Поиск среди моих курсов" />
+              <input onChange={searchInput} id="search" type="text" placeholder="Поиск среди моих курсов" />
               <CiSearch className="search" />
             </div>
             <div className="blur">
@@ -214,21 +232,13 @@ export default function Searchfilter() {
                 </div>
               </div>
               <div className="filter_button">
-                {kursdata.map((item1) => {
-                  return (
-                    <>
                       {type.map((item2) => {
-                        if (item1.course_type === item2.id) {
                           return (
                             <div className="button_filter_kurs">
-                              <div className="div_kurs">{item2.name}</div>
+                              <div onClick={()=>filter(item2.id)} className="div_kurs">{item2.name}</div>
                             </div>
                           );
-                        }
                       })}
-                    </>
-                  );
-                })}
               </div>
             </div>
           </div>
