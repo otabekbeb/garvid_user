@@ -75,7 +75,6 @@ export default function Comment1() {
               </div></div>
     </div>):(<div className='m_comment_kotta'> 
     <div className="m_otdel_bgc">
-
       {comment.map(item=>{
         return(
           <div className="m_comment">

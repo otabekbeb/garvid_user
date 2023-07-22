@@ -99,42 +99,58 @@ function painModal8() {
 
 
   useEffect(() => {
-    axios
-      .get(`${url}/course/category/`, { headers: { "Accept-Language": "en" } })
-      .then((res) => {
-        axios
-          .get(`${url}/course/subcategory/`, {
-            headers: { "Accept-Language": "en" },
+axios
+   .get(`${url}/course/category/`, { headers: { "Accept-Language": "en" } })
+  .then((res) => {
+    const categoryFilter=res.data.filter(item=>item.course===parseInt(localStorage.getItem("course")))
+    setCategory(categoryFilter);
+      axios
+         .get(`${url}/course/subcategory/`, {
+           headers: { "Accept-Language": "en" },
+         })
+        .then((res1) => {
+          setSubcategory(res1.data)
+          axios.get(`${url}/course/theme/`,{ headers: { "Accept-Language": "en" } }).then((res2)=>{
+          setTheme(res2.data)
           })
-          .then((res1) => {
-            setSubcategory(res1.data);
           });
-        axios
-          .get(`${url}/course/main/`, { headers: { "Accept-Language": "en" } })
-          .then((res2) => {
-            setMain(res2.data);
-          });
-      });
-      axios.get(`${url}/course/category/`,  { headers: { "Accept-Language": "en" } }).then(res => {
-        var aa = []
-        res.data.map(item => {
-          if (item.course == localStorage.getItem('course')) {
-            aa.push(item)
-          }
-        })
-        setCategory(aa);
-      })
-      axios.get(`${url}/course/theme/`, { headers: {"Accept-Language" : "en"} }).then(res => {
-        axios.get(`${url}/course/subcategory/`, { headers: {"Accept-Language" : "en"} }).then(res2 => {
-          if (res.data.subcategory == res2.data.id) {
-            setTheme(res.data)
-            console.log(res.data, 'cghtjk');
-          }
+  })
+    // axios
+    //   .get(`${url}/course/category/`, { headers: { "Accept-Language": "en" } })
+    //   .then((res) => {
+    //     axios
+    //       .get(`${url}/course/subcategory/`, {
+    //         headers: { "Accept-Language": "en" },
+    //       })
+    //       .then((res1) => {
+    //         setSubcategory(res1.data);
+    //       });
+    //     axios
+    //       .get(`${url}/course/main/`, { headers: { "Accept-Language": "en" } })
+    //       .then((res2) => {
+    //         setMain(res2.data);
+    //       });
+    //   });
+    //   axios.get(`${url}/course/category/`,  { headers: { "Accept-Language": "en" } }).then(res => {
+    //     var aa = []
+    //     res.data.map(item => {
+    //       if (item.course == localStorage.getItem('course')) {
+    //         aa.push(item)
+    //       }
+    //     })
+    //     setCategory(aa);
+    //   })
+    //   axios.get(`${url}/course/theme/`, { headers: {"Accept-Language" : "en"} }).then(res => {
+    //     axios.get(`${url}/course/subcategory/`, { headers: {"Accept-Language" : "en"} }).then(res2 => {
+    //       if (res.data.subcategory == res2.data.id) {
+    //         setTheme(res.data)
+    //         console.log(res.data, 'cghtjk');
+    //       }
 
-        })
-      });setState1(
-        localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
-      )
+    //     })
+    //   });setState1(
+    //     localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
+    //   )
 
       // axios.get(`${url}/course/theme/`,  { headers: { "Accept-Language": "en" } }).then(res => {
       //   axios.get(`${url}/course/subcategory/`,  { headers: { "Accept-Language": "en" } }).then(res2 => {
@@ -155,11 +171,11 @@ function painModal8() {
         <Usernavbar/>
       <div className="youtube_bgc">
         <div className="flex_youtube">
-          {subcategory.map(subcategory=>{
+          {/* {subcategory.map(subcategory=>{
             return(
 <>
 {theme.map(item => {
-           if(subcategory.id==item.subcategory){
+           if(subcategory.id===item.subcategory){
             return (
               <div className="youtube_kotta_img">
                 <div className="img_youtube_kotta">
@@ -242,7 +258,7 @@ function painModal8() {
           })}
 </>
             )
-          })}
+          })} */}
 
 
           {category.map((item) => {
@@ -451,7 +467,7 @@ function painModal8() {
                     <h1>{item.name}</h1>
                     <div className="margin_right">
                       <div className="line_height"></div>
-                          <p>{theme.length}</p>
+                          <p>{theme.length} </p>
                     </div>
                   </div>
                 </div>
@@ -460,25 +476,27 @@ function painModal8() {
                     if (item.id === item2.category) {
                       return (
                         <Accordion.Item eventKey="0">
-                          <Accordion.Header>{item2.name}</Accordion.Header>
+                          <Accordion.Header>{item2.name} </Accordion.Header>
                           {theme.map(theme=>{
-                          return(
-                            <Accordion.Body>
-                            <div className="accordion_flex">
-                              <div className="accordion_img">
-                                <img src={theme.image} alt="" />
-                              </div>
-                              <div className="accordion_text">
-                                <h6>
-                                {theme.name}
-                                </h6>
-                                <p>
-                                  {theme.content}
-                                </p>
-                              </div>
-                            </div>
-                          </Accordion.Body>
-                          )
+                            if (item2.id===theme.subcategory) {
+                              return(
+                                <Accordion.Body>
+                                <div className="accordion_flex">
+                                  <div className="accordion_img">
+                                    <img src={theme.image} alt="" />
+                                  </div>
+                                  <div className="accordion_text">
+                                    <h6>
+                                    {theme.name}
+                                    </h6>
+                                    <p>
+                                      {theme.content}
+                                    </p>
+                                  </div>
+                                </div>
+                              </Accordion.Body>
+                              ) 
+                            }
                           })}
                         </Accordion.Item>
 
