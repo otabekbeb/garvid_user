@@ -1589,7 +1589,7 @@ height: 0;
             border: none;
             outline: none;
             position: relative;
-            right: 35px;
+            right: 60px !important;
             background: none;
         top: 6px;
         
@@ -1619,11 +1619,10 @@ height: 0;
             padding-top: 30px;
         }
         .prover3-mni-search{
-display: block;
+display: flex;
+justify-content: center;
         }
-        .prover3-mni-search{
-            display: block;
-        }
+
         .prover3-mni-search button{
             border: none;
             outline: none;
@@ -1650,8 +1649,6 @@ width: 130px !important;
                 background-color: #ffffff;
                 padding-left: 15px;
                 padding-top: 5px;
-                position: relative;
-                left:60px !important;
             }
             .prover2-linerr1{
                 width: 90.4%;
@@ -1717,4 +1714,124 @@ width: 130px !important;
             .prover1-info-none-br{
                 display: none;
             }
+}
+
+@media (max-width:1100px) {
+    .prover2-orta-u button {
+        width: 78px !important;
+        height: 25px !important;
+        border-radius: 2px;
+        background-color: #ffffff;
+        border: none;
+        outline: none;
+        display: flex;
+        position: relative;
+        left: 18vw !important;
+    }
+}
+@media (max-width:1067px) {
+    .prover2-orta-u button {
+        width: 78px !important;
+        height: 25px !important;
+        border-radius: 2px;
+        background-color: #ffffff;
+        border: none;
+        outline: none;
+        display: flex;
+        position: relative;
+        left: 19vw !important;
+    }
+}
+@media (max-width:1017px) {
+    .prover2-orta-joy iframe{
+        width:800px !important;
+        height: 320px !important;
+    }
+
+
+    .radio-inputs {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 0.5rem;
+        background-color: #EEE;
+        box-sizing: border-box;
+        box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+        padding: 0.25rem;
+        width: 800px;
+        font-size: 14px;
+        margin-top: 30px;
+    }
+    .prover2-orta-u button {
+        width: 78px !important;
+        height: 25px !important;
+        border-radius: 2px;
+        background-color: #ffffff;
+        border: none;
+        outline: none;
+        display: flex;
+        position: relative;
+        left: 0vw !important;
+    }
+    .text-kurs-haqida1{
+        width: 800px !important;
+    }
+    .prover2-info-d{
+        border-radius: 5px;
+        width: 800px;
+        height: auto;
+        margin-top: 20px;
+        background-color: #ffffff;
+        padding-left: 15px;
+        padding-top: 5px;
+    }
+    .pddppdsd{
+        display: none;
+    }
+
+.mni-media-orta-filter{
+    width: 90px;
+    height: 30px;
+
+}
+
+.mni-krus-techer-swiper{
+    width:380px;
+    height: 410px;
+    background-color: #ffffff;position: relative;
+    left: 20px;
+    top: -0px !important;
+    }
+    .prover2-oxiri-block-in{
+        width: 380px;
+        height: auto;
+        border-radius: 0px 4px 4px 0px;
+        box-shadow: 0px 2px 2px 0px #0000001A;
+        background-color: #ffffff;
+        padding-left: 15px;
+        padding-top: 15px;
+        margin-bottom: 10px;
+        position: relative;
+        left: -15px !important;
+      }
+      .mni-gridf1 img{ 
+        width: 170px;
+    height: 150px;
+    border-radius: 4px;
+    
+    }
+    .mni-gridf2 img{ 
+        width: 170px;
+    height: 150px;
+    border-radius: 4px;
+    
+    }
+    .prover2-linerr1{
+        width: 87.9%;
+        height: 1px;
+        background: #d5dae4;
+    position: relative;
+    left: 95px;
+    top: 10px;
+    }
 }

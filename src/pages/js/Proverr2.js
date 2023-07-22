@@ -436,11 +436,12 @@ Absolutely fantastic tutorial <br className="poopoasd" /> series. I cannot thank
         <div className="mni-orta-kota-media">
         <div className="mni-media-orta-input">
         <form action="">
-           <input type="text" placeholder='Какой курс вы хотите изучать?' required /><button><box-icon name='search' color='#9da7bb' ></box-icon></button>
+           <input type="text" placeholder='Какой курс вы хотите изучать?' required /><button id="input-neposhlushni"><box-icon name='search' color='#9da7bb' ></box-icon></button>
            </form>
         </div>
-        <p></p>
-        <p></p>
+        <p className="pddppdsd"></p>
+        <p className="pddppdsd"></p>
+        
         <div className="mni-media-orta-filter">
         <box-icon name='chevron-down' color='#c5c9d3' ></box-icon>
         </div>
