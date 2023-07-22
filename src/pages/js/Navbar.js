@@ -25,10 +25,16 @@ function about2() {
 function aboutClose2() {
   document.querySelector(".ichi span").style = "transform: rotate(0deg);";
 }
-function ffd() { }
+function iconhover() { 
+  document.querySelector(".ichi2 span").style="transform: rotate(180deg)"
+}
+function iconhover1() { 
+  document.querySelector(".ichi2 span").style="transform: rotate(0deg)"
+}
 // meded
 function ochil1() {
   document.querySelector(".lll ul").classList.toggle("lllb");
+  
 }
 function meded() {
   document.querySelector(".ffdul ").classList.toggle("fffdull");
@@ -198,7 +204,7 @@ export default function Navbar() {
                     <ul>
                       <li>
                         <a href="/" className="tt">
-                          Main
+                          Home
                         </a>
                       </li>
                       <div
@@ -225,7 +231,7 @@ export default function Navbar() {
                       </div>
                       <div className="ffd">
                         <ul className="ffdul">
-                          <div className="ichi2" onClick={() => ochil1()}>
+                          <div className="ichi2" onMouseEnter={()=> iconhover()} onMouseLeave={()=> iconhover1()} onClick={() => ochil1()}>
                             <li className="ds">
                               <a href="#">News</a>
                             </li>
