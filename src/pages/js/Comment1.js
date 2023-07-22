@@ -13,7 +13,7 @@ export default function Comment1() {
   const [state1, setState1] = React.useState();
   useEffect(() => {
     setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );},[]);
 
   useEffect(()=>{
@@ -43,7 +43,7 @@ export default function Comment1() {
 
   return (
     <div>
-    {state1==="eng"?(<div className='m_comment_kotta'> 
+    {state1==="en"?(<div className='m_comment_kotta'> 
     <div className="m_otdel_bgc">
 
       {comment.map(item=>{

@@ -10,14 +10,14 @@ export default function Blog() {
     const [state1, setState1] = React.useState();
     useEffect(() => {
         setState1(
-          localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+          localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
         );
       }, []);
   return (
     
     <div>
 <Navbar/>
-{state1 === "eng" ?(<div><div className="asd">
+{state1 === "en" ?(<div><div className="asd">
     {/* <img src={abaut} alt="" /> */}
    <div className="asd-block">
    <h1>Blog</h1>

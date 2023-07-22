@@ -72,7 +72,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
     if (localStorage.getItem("lang") !== "ru") {
       document.querySelector("#checkbox").checked = true;
@@ -92,7 +92,7 @@ export default function Navbar() {
 
   return (
     <div>
-      {state1 === "eng" ? (
+      {state1 === "en" ? (
         <div>
           <section onMouseLeave={() => menuul1()} className="navbar">
 
@@ -180,7 +180,7 @@ export default function Navbar() {
                   onClick={() => {
                     !document.querySelector("#checkbox").checked
                       ? localStorage.setItem("lang", "ru")
-                      : localStorage.setItem("lang", "eng");
+                      : localStorage.setItem("lang", "en");
                     window.location.reload();
                   }}
                   type="checkbox"
@@ -291,7 +291,7 @@ export default function Navbar() {
                           onClick={() => {
                             !document.querySelector("#checkbox2").checked
                               ? localStorage.setItem("lang", "ru")
-                              : localStorage.setItem("lang", "eng");
+                              : localStorage.setItem("lang", "en");
                             window.location.reload();
                           }}
                           type="checkbox"
@@ -357,7 +357,7 @@ export default function Navbar() {
 
                           <li id="ded">
                             <a href="/contacts">
-                              {state1 === "eng" ? "Contact" : "Связь"}{" "}
+                              {state1 === "en" ? "Contact" : "Связь"}{" "}
                             </a>
                           </li>
                         </ul>
@@ -391,7 +391,7 @@ export default function Navbar() {
                   onClick={() => {
                     !document.querySelector("#checkbox").checked
                       ? localStorage.setItem("lang", "ru")
-                      : localStorage.setItem("lang", "eng");
+                      : localStorage.setItem("lang", "en");
                     window.location.reload();
                   }}
                   type="checkbox"
@@ -505,7 +505,7 @@ export default function Navbar() {
                           onClick={() => {
                             !document.querySelector("#checkbox2").checked
                               ? localStorage.setItem("lang", "ru")
-                              : localStorage.setItem("lang", "eng");
+                              : localStorage.setItem("lang", "en");
                             window.location.reload();
                           }}
                           type="checkbox"

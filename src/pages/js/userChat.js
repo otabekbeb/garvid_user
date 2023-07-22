@@ -19,7 +19,7 @@ export default function MentorChat() {
   const [state1, setState1] = React.useState();
   useEffect(() => {
     setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "eng"
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );},[]);
 
   function chatModal(img,name,time) {
@@ -118,7 +118,7 @@ export default function MentorChat() {
 
   return (
     <div>
-      {state1==="eng"? (<div className="Chat_background">
+      {state1==="en"? (<div className="Chat_background">
       <div className="yozishma_big_div">
         <div className="yozishma_big_div_size">
           <div className="yozishma_bolim_text_nik">
