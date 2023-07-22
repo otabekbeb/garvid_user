@@ -28,6 +28,7 @@ export default function Youtube1() {
   const [subcategory, setSubcategory] = useState([]);
   const [theme, setTheme] = useState([]);
   const [main, setMain] = useState([]);
+  const [user,setUser] =useState([])
   const [state1, setState1] = React.useState();
 
   function openModal() {
@@ -141,6 +142,11 @@ function painModal8() {
       //         setTheme(res.data)
       //       }
       // })
+
+      axios.get(`${url}/auth/user/`,{headers:{"Authorization":'Bearer ' + localStorage.getItem("token")}}).then(res=>{
+        setUser(res.data)
+        console.log(user,"yordam")
+      })
   }, [])
 
   return (
@@ -225,11 +231,11 @@ function painModal8() {
                   </div>
                 </div>
                 <p>{item.content}</p>
-                <div className="post_ava">
-                  <img src={img_ava} alt="" />
-                  <h6>Muhammad Dzhumaev</h6>
-                  <button>Subscribe</button>
-                </div>
+                    <div className="post_ava">
+                    <img src={"https://baisan.onrender.com"+user.image} alt="" />
+                    <h6>{user.username}</h6>
+                    <button>Subscribe</button>
+                  </div>
               </div>
             );
            }
