@@ -2602,7 +2602,9 @@
     left: 12vw;
   }
 }
-
+#checkbox{
+  margin-top: 5px;
+}
 @media (max-width:848px) {
   .checkbox-con {
     margin: 10px;
@@ -2728,6 +2730,5 @@
  @media (max-width:742px) {
   .checkbox-con{
     margin-left: -40px;
-   
-  }
+   }
  }

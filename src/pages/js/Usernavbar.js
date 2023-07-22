@@ -300,7 +300,7 @@ export default function Navbar() {
                   <a href="/">Главный</a>
                 </li>
 
-                <div className="menu" onMouseLeave={() => menuufolse()}>
+                <div style={{display:'none'}} className="menu" onMouseLeave={() => menuufolse()}>
                   <div className="menuu" onMouseEnter={() => menuul()}>
                     <p>
                       <a href="/about">О нас</a>
@@ -356,21 +356,20 @@ export default function Navbar() {
 
                 <li className="moto-menu-item">
                   {" "}
-                  <a href="/servis">Услуги</a>{" "}
+                  <a href="/user">Пользователь</a>{" "}
+                </li>
+                
+                <li className="moto-menu-item">
+                  <a href="/student">Ученик</a>
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/blog">Блог</a>
+                  <a href="/teacher">Учитель</a>
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/ourteam">Наша команда</a>
-                </li>
-                <li className="moto-menu-item">
-                  <a href="/contacts">Связь</a>
+                  <a href="/loginpage">Редактировать профиль</a>
                 </li>
                 {/* <li className='moto-menu-item'><a href="/teacher" >Учитель</a></li> */}
-                <li className="moto-menu-item">
-                  {localStorage.getItem("token") ? (<a href="/user">{user.username}</a>) : (<a href="/login">Регистрация</a>)}
-                </li>
+                
               </ul>
               <div class="checkbox-con">
                 <input
@@ -461,31 +460,29 @@ export default function Navbar() {
                         </ul>
                       </div>
                       <li>
-                        <a href="/servis" className="tt">
-                          Услуги
+                        <a href="/user" className="tt">
+                          Пользователь
                         </a>
                       </li>
 
                       <li>
-                        <a href="/blog" className="tt">
-                          Блог
+                        <a href="/student" className="tt">
+                          Ученик
                         </a>
                       </li>
                       <li>
-                        <a href="/ourteam" className="tt">
-                          Наша команда
+                        <a href="/teacher" className="tt">
+                          Учитель
                         </a>
                       </li>
                       <li>
-                        <a href="/contacts" className="tt">
-                          Связь
+                        <a href="/loginpage" className="tt">
+                          Редактировать профиль
                         </a>
                       </li>
                       {/* <li><a href="/teacher" className='tt'>Учитель</a></li> */}
 
-                      <li>
-                        {localStorage.getItem("token") ? (<a href="/user">{user.username}</a>) : (<a href="/login" className="tt">Регистрация</a>)}
-                      </li>
+                      
                       <div class="checkbox-con" style={{ marginTop: "15px" }}>
                         <input
                           id="checkbox2"
