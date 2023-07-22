@@ -36,11 +36,11 @@ export default function Searchfilter() {
 
   useEffect(() => {
     axios
-      .get(`${url}/course/main/`, { headers: { "Accept-Language": "en" } })
+      .get(`${url}/course/main/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
       .then((res) => {
         setKursdata(res.data);
         axios
-          .get(`${url}/course/type/`, { headers: { "Accept-Language": "en" } })
+          .get(`${url}/course/type/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
           .then((res) => {
             settype(res.data);
           });

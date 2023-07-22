@@ -100,22 +100,22 @@ function painModal8() {
 
   useEffect(() => {
     axios
-      .get(`${url}/course/category/`, { headers: { "Accept-Language": "en" } })
+      .get(`${url}/course/category/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
       .then((res) => {
         axios
           .get(`${url}/course/subcategory/`, {
-            headers: { "Accept-Language": "en" },
+            headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" },
           })
           .then((res1) => {
             setSubcategory(res1.data);
           });
         axios
-          .get(`${url}/course/main/`, { headers: { "Accept-Language": "en" } })
+          .get(`${url}/course/main/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
           .then((res2) => {
             setMain(res2.data);
           });
       });
-      axios.get(`${url}/course/category/`,  { headers: { "Accept-Language": "en" } }).then(res => {
+      axios.get(`${url}/course/category/`,  { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res => {
         var aa = []
         res.data.map(item => {
           if (item.course == localStorage.getItem('course')) {
@@ -136,8 +136,8 @@ function painModal8() {
         localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
       )
 
-      // axios.get(`${url}/course/theme/`,  { headers: { "Accept-Language": "en" } }).then(res => {
-      //   axios.get(`${url}/course/subcategory/`,  { headers: { "Accept-Language": "en" } }).then(res2 => {
+      // axios.get(`${url}/course/theme/`,  { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res => {
+      //   axios.get(`${url}/course/subcategory/`,  { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res2 => {
       //       if (res.data.subcategory == res2.data.id) {
       //         setTheme(res.data)
       //       }
