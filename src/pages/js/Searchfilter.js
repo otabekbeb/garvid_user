@@ -74,7 +74,7 @@ export default function Searchfilter() {
         <div className="Filter">
           <div className="blur_blok">
             <div className="inp_blok">
-              <input onChange={()=>searchInput()} id="search" type="text" placeholder="Search among my courses" />
+              <input onChange={searchInput} id="search" type="text" placeholder="Search among my courses" />
               <CiSearch className="search" />
             </div>
             <div className="blur">
