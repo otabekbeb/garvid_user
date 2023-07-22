@@ -30,7 +30,7 @@ window.location.reload()
     setstate(localStorage.getItem("lang"));
   }, []);
   return (
-    <div>
+    <div className="contactss">
       
       <Navbar />
       <div className="asd">

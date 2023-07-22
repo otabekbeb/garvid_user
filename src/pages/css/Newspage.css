@@ -1,0 +1,12 @@
+.newspage{
+    display: flex;
+    
+    align-items: center;
+}
+.newspage_cards{
+    width: 1000px !important;
+    margin-left: 20px;
+}
+.newspage_cards img{
+    width: 60%;
+}

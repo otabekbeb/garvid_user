@@ -220,8 +220,12 @@ grid-template-columns: auto auto auto;
     height: 100px !important;
     background-color: #f7f7f7;
  position: relative;
- top: 200px;
+ top: 0px;
     overflow: hidden;
     
     }
+    .images{
+        top: 0px !important;
+    }
+    
 }

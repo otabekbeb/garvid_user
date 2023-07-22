@@ -298,4 +298,11 @@
       height: 400px;
     }
   }
+
+  @media (max-width:529px) {
+    .contactss .futer{
+      padding-top: 0px !important;
+    }
+    
+}
   
