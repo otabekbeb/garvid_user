@@ -23,7 +23,7 @@ export default function Services() {
     );},[]);
 
   return (
-    <div>
+    <div className='ourteamm'>
   {state1==="en" ?(
       <div>
   <div className='services_div'>

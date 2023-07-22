@@ -187,7 +187,7 @@ export default function Navbar() {
                 />
               </div>
             </div>
-            <div className="media-navbar">
+            <div className="media-navbar" style={{margin:"auto"}}>
               <div className="navbar-menu">
                 <div className="navbar-mediao-barr" onClick={() => sa()}>
                   <div className="bar-menu" id="sa">
@@ -398,7 +398,7 @@ export default function Navbar() {
                 />
               </div>
             </div>
-            <div className="media-navbar">
+            <div className="media-navbar" style={{margin:"auto"}}>
               <div className="navbar-menu">
                 <div className="navbar-mediao-barr" onClick={() => sa()}>
                   <div className="bar-menu" id="sa">

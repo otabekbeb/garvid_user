@@ -15,7 +15,7 @@ export default function Blog() {
       }, []);
   return (
     
-    <div>
+    <div id='blooog'>
 <Navbar/>
 {state1 === "en" ?(<div><div className="asd">
     {/* <img src={abaut} alt="" /> */}
