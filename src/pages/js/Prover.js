@@ -10,7 +10,7 @@ import Treb from '../js/Treb1'
 import Accordion1 from '../js/Accordion1'
 import Accordion from 'react-bootstrap/Accordion';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import '../css/Proverr2.css'
 
 export default function Youtube1() {
     const [id, setId] = useState(1);

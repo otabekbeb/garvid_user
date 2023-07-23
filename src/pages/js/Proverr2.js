@@ -460,7 +460,7 @@ Absolutely fantastic tutorial <br className="poopoasd" /> series. I cannot thank
                 <button className='prover2-but-clas5'><p>#Бухгалтерский</p></button>
                 <button className='prover2-but-clas6'><p>#Здоровье</p></button>
                 <button className='prover2-but-clas7'><p>#Программирование</p></button>
-                <button className='prover2-but-clas7'><p>#питание</p></button>
+                <button className='prover2-but-clas6'><p>#питание</p></button>
             </div>
             <div className="prover2-info-youtube-f">
                 <p className='prover2-p-df'>Программирование</p>
@@ -628,7 +628,33 @@ dolor sit amet. . . .</p>
 </div>
 </div>
 
+  
+  </div>
+  <div className="lolipap-kptta-nomoylabtopomadim">
+  <div className="mni-krus-techer-swiper1">
+<div className="boshqa-mentorla">
+    <h5>Boshqa Mentorlar</h5>
+    <div className="boshqa-mentorla-krugg1">
+        <div className="boshqa-kurglaaaaa1" onClick={()=>onga()}><box-icon name='right-arrow-alt' color='#536dfd' ></box-icon></div>
+    </div>
+</div>
+<div className="mni-swiper-grid">
+    <div className="mni-gridf1">
+<img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/46f705111077375.5ffb645951e7c.jpg" alt="" />
+<img src="https://ag-spots-2020.o.auroraobjects.eu/2020/08/22/other/2880-1800-crop-bmw-m5-f90-competition-2021-c330122082020014437_1.jpg" alt="" />
+<img src="https://ag-spots-2020.o.auroraobjects.eu/2020/03/07/other/2880-1800-crop-bmw-m5-f90-competition-c490507032020171519_1.jpg" alt="" />
+<img src="https://ag-spots-2021.o.auroraobjects.eu/2021/01/17/bmw-m5-f90-competition-2021-c451117012021040035_1.jpg" alt="" />
+    </div>
     
+    <div className="mni-gridf2">
+<img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg" alt="" />
+<img src="https://bronk.club/uploads/posts/2023-02/1676935060_bronk-club-p-otkritki-prirodi-ochen-krasivie-krasivo-39.jpg" alt="" />
+<img src="https://funart.pro/uploads/posts/2021-03/thumbs/1617041574_9-p-oboi-krasivie-foto-prirodi-11.jpg" alt="" />
+<img src="https://cdn.forbes.ru/forbes-static/c/1040x549/new/2023/04/1GettyImages-183930658-kopia-643018c796355.webp" alt="" />
+
+    </div>
+</div>
+</div>
   </div>
 </div>
 
