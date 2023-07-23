@@ -285,3 +285,10 @@
     background-color: #44bef1;
     color: white;
 }
+
+@media (max-width:529px) {
+    #blooog .futer{
+        margin-top: 0px !important;
+        padding-top: 0px !important;
+    }
+}

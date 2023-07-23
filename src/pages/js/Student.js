@@ -101,6 +101,11 @@ window.location.reload()
               className="contact_inp"
               placeholder={state === "ru" ? "Страна*" : "Country*"}
             />
+            <input
+              type="text"
+              className="contact_inp"
+              placeholder={state === "ru" ? "Какой урок*" : "Which lesson*"}
+            />
           </div>
           
           

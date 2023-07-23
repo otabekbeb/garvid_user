@@ -99,22 +99,18 @@ function painModal8() {
 
 
   useEffect(() => {
-axios
-   .get(`${url}/course/category/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
-  .then((res) => {
-    const categoryFilter=res.data.filter(item=>item.course===parseInt(localStorage.getItem("course")))
-    setCategory(categoryFilter);
-      axios
-         .get(`${url}/course/subcategory/`, {
-           headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" },
-         })
-        .then((res1) => {
-          setSubcategory(res1.data)
-          axios.get(`${url}/course/theme/`,{ headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then((res2)=>{
-          setTheme(res2.data)
+        axios
+          .get(`${url}/course/subcategory/`, {
+            headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" },
           })
+          .then((res1) => {
+            setSubcategory(res1.data);
           });
-      });
+        axios
+          .get(`${url}/course/main/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
+          .then((res2) => {
+            setMain(res2.data);
+          });
       axios.get(`${url}/course/category/`,  { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res => {
         var aa = []
         res.data.map(item => {
@@ -124,24 +120,19 @@ axios
         })
         setCategory(aa);
       })
-      axios.get(`${url}/course/theme/`, { headers: {"Accept-Language" : "en"} }).then(res => {
-        axios.get(`${url}/course/subcategory/`, { headers: {"Accept-Language" : "en"} }).then(res2 => {
-          if (res.data.subcategory == res2.data.id) {
+      axios.get(`${url}/course/theme/`, { headers: {"Accept-Language" : localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res => {
             setTheme(res.data)
-            console.log(res.data, 'cghtjk');
-          }
-
-        })
-      });setState1(
+      });
+      setState1(
         localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
       )
 
-      // axios.get(`${url}/course/theme/`,  { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res => {
-      //   axios.get(`${url}/course/subcategory/`,  { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res2 => {
-      //       if (res.data.subcategory == res2.data.id) {
-      //         setTheme(res.data)
-      //       }
-      // })
+      axios.get(`${url}/course/theme/`,  { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res => {
+        axios.get(`${url}/course/subcategory/`,  { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res2 => {
+            if (res.data.subcategory == res2.data.id) {
+              console.log(res.data,"bilamn");
+            }
+      })})
 
       axios.get(`${url}/auth/user/`,{headers:{"Authorization":'Bearer ' + localStorage.getItem("token")}}).then(res=>{
         setUser(res.data)
@@ -155,25 +146,49 @@ axios
         <Usernavbar/>
       <div className="youtube_bgc">
         <div className="flex_youtube">
-          {subcategory.map(subcategory=>{
+          {subcategory.map((subcategory)=>{
             return(
-<>
-{theme.map(item => {
-           if(subcategory.id==item.subcategory){
-            return (
-              <div className="youtube_kotta_img">
-                <div className="img_youtube_kotta">
-                  <iframe
-                    src={item.links}
-                    title="W3Schools Free Online Web Tutorials"
-                  ></iframe>
-                </div>
-                <div className="flex_logig">
-                  <h1 className="raspberry_pi">{item.name}</h1>
-                  <div className="odtel_media_uchun">
-                    <h1>{item.name}</h1>
-                    <div className="flex_star_p">
-                      <div className="flex_star2">
+              <>
+              {theme.map((item) => {
+              if (item.subcategory==subcategory.id) {
+                return (
+                  <div className="youtube_kotta_img">
+                    <div className="img_youtube_kotta">
+                      <iframe
+                        src={item.links}
+                        title="W3Schools Free Online Web Tutorials"
+                      ></iframe>
+                    </div>
+                    <div className="flex_logig">
+                      <h1 className="raspberry_pi">{item.name}</h1>
+                      <div className="odtel_media_uchun">
+                        <h1>{item.name}</h1>
+                        <div className="flex_star_p">
+                          <div className="flex_star2">
+                            <p>
+                              <AiFillStar />
+                            </p>
+                            <p>
+                              <AiFillStar />
+                            </p>
+                            <p>
+                              <AiFillStar />
+                            </p>
+                            <p>
+                              <AiFillStar />
+                            </p>
+                          </div>
+                          <div className="flex_star12">
+                            <p>
+                              <AiFillStar />
+                            </p>
+                          </div>
+                          <p className="p_4_1_5245">
+                            4.1 <span>(524)</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex_star">
                         <p>
                           <AiFillStar />
                         </p>
@@ -187,62 +202,40 @@ axios
                           <AiFillStar />
                         </p>
                       </div>
-                      <div className="flex_star12">
+                      <div className="flex_star1">
                         <p>
                           <AiFillStar />
                         </p>
                       </div>
-                      <p className="p_4_1_5245">
+                      <p className="p_4_1_524">
                         4.1 <span>(524)</span>
                       </p>
+                      <div className="buttons_next_back">
+                        <button className="button_back">
+                          <BsChevronLeft />
+                          <p>Previous lesson</p>
+                        </button>
+                        <button>
+                          <p>Next lesson</p>
+                          <BsChevronRight />{" "}
+                        </button>
+                      </div>
                     </div>
+                    <p>{item.content}</p>
+                        <div className="post_ava">
+                        <img src={"https://baisan.onrender.com"+user.image} alt="" />
+                        <h6>{user.username}</h6>
+                        <button>Subscribe</button>
+                      </div>
                   </div>
-                  <div className="flex_star">
-                    <p>
-                      <AiFillStar />
-                    </p>
-                    <p>
-                      <AiFillStar />
-                    </p>
-                    <p>
-                      <AiFillStar />
-                    </p>
-                    <p>
-                      <AiFillStar />
-                    </p>
-                  </div>
-                  <div className="flex_star1">
-                    <p>
-                      <AiFillStar />
-                    </p>
-                  </div>
-                  <p className="p_4_1_524">
-                    4.1 <span>(524)</span>
-                  </p>
-                  <div className="buttons_next_back">
-                    <button className="button_back">
-                      <BsChevronLeft />
-                      <p>Previous lesson</p>
-                    </button>
-                    <button>
-                      <p>Next lesson</p>
-                      <BsChevronRight />{" "}
-                    </button>
-                  </div>
-                </div>
-                <p>{item.content}</p>
-                    <div className="post_ava">
-                    <img src={"https://baisan.onrender.com"+user.image} alt="" />
-                    <h6>{user.username}</h6>
-                    <button>Subscribe</button>
-                  </div>
-              </div>
-            );
-           }
-          })}
-</>
+                );
+              }
+           })}
+              </>
             )
           })}
+
+
 
 
           {category.map((item) => {
@@ -555,5 +548,5 @@ axios
     </div>)}
     
     </div>
-  );
+  )
 }

@@ -16,7 +16,8 @@ import Prover from './pages/js/Prover'
 import Teacher from "./pages/js/Teacherpage";
 import Student from "./pages/js/Student";
 import Mentorcontact from "./pages/js/Mentorcontact";
-
+import News from "./pages/js/News";
+import Newspage from "./pages/js/Newspage";
 
 
 import './App.css'
@@ -41,9 +42,8 @@ export default function App() {
           <Route path="/contacts" element={<Contacts/>} />
           <Route path="/video" element={<Video />} />
           <Route path="/ourcourse" element={<Allcourse />} />
-          
-          
-
+          <Route path="/news" element={<News />} />
+          <Route path="/newspage" element={<Newspage />} />
           <Route path="/prover" element={<Prover />} />
           <Route path="/Proverr2" element={<Proverr2 />} />
           <Route path="/teacher" element={<Teacher />} />

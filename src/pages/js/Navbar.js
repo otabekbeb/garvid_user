@@ -127,7 +127,7 @@ export default function Navbar() {
                       >
                         <p id="menu2pp" onMouseEnter={() => menu2ul()}>
                           {" "}
-                          <a href="#" className="zaib">
+                          <a href="/news" className="zaib">
                             News{" "}
                             <span id="menu2spanid">
                               <box-icon
@@ -233,7 +233,7 @@ export default function Navbar() {
                         <ul className="ffdul">
                           <div className="ichi2" onMouseEnter={()=> iconhover()} onMouseLeave={()=> iconhover1()} onClick={() => ochil1()}>
                             <li className="ds">
-                              <a href="#">News</a>
+                              <a href="news">News</a>
                             </li>
                             <span>
                               <box-icon
@@ -336,7 +336,7 @@ export default function Navbar() {
                           onMouseLeave={() => menu2leave()}
                         >
                           {" "}
-                          <a href="#" className="zaib">
+                          <a href="/news" className="zaib">
                             Новости{" "}
                             <span>
                               <box-icon
@@ -447,7 +447,7 @@ export default function Navbar() {
 
                           <div className="ichi2" onClick={() => ochil1()}>
                             <li className="ds">
-                              <a href="#">Новости</a>
+                              <a href="/news">Новости</a>
                             </li>
                             <span>
                               <box-icon

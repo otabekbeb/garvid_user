@@ -671,9 +671,12 @@ background: #f7f7f7;
     height: 100px !important;
     background-color: #f7f7f7;
  position: relative;
- top: 200px !important;
+ top: 90px !important;
     overflow: hidden;
     
+    }
+    .body1 .futer{
+        margin-top: 0px !important;
     }
 }
 .testimonial_cards{

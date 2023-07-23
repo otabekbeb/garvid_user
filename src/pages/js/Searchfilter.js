@@ -51,7 +51,7 @@ export default function Searchfilter() {
   }, []);
   function filter (id) {
     axios
-    .get(`${url}/course/main/`, { headers: { "Accept-Language": "en" } })
+    .get(`${url}/course/main/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
     .then((res) => {
       const search = res.data.filter(item=>item.course_type===id)
       setKursdata(search)
@@ -59,7 +59,7 @@ export default function Searchfilter() {
   }
   const searchInput = (event) => {
     const searchRegex = new RegExp(`^${event.target.value}`, "i");
-    axios.get(`${url}/course/main/`,{ headers: { "Accept-Language": "en" } }).then(res=>{
+    axios.get(`${url}/course/main/`,{ headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res=>{
       const searchdata = res.data.filter((item) => {
         return (
           searchRegex.test(item.name) 
@@ -74,7 +74,7 @@ export default function Searchfilter() {
         <div className="Filter">
           <div className="blur_blok">
             <div className="inp_blok">
-              <input onChange={()=>searchInput()} id="search" type="text" placeholder="Search among my courses" />
+              <input onChange={searchInput} id="search" type="text" placeholder="Search among my courses" />
               <CiSearch className="search" />
             </div>
             <div className="blur">

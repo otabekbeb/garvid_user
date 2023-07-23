@@ -30,11 +30,11 @@ export default function Comment1() {
   function messagePost(){
     // var formdata=new FormData()
     // formdata.append("text",document.querySelector("#chat_text").value)
-    // formdata.append("image",null)
-    // formdata.append("subcomment",null)
+    // formdata.append("image","https://www.google.com/imgres?imgurl=https%3A%2F%2Fodam.uz%2Fupload%2Fmedia%2Fposts%2F2019-11%2F30%2Fmiyamizni-aldab-qo-yishi-mumkin-bo-lgan-8-ta-rasm-sinchkovroq-bo-ling_1575125501-b.jpg&tbnid=c8Ci4d3mo8CuBM&vet=12ahUKEwiExpCMk6KAAxW5FBAIHSHfBhkQMygBegUIARDDAQ..i&imgrefurl=https%3A%2F%2Fodam.uz%2FQiziqarli%2Fmiyamizni-aldab-qo-yishi-mumkin-bo-lgan-8-ta-rasm--sinchkovroq-bo-ling&docid=AxsKlJNYCuyROM&w=780&h=440&q=rasm&ved=2ahUKEwiExpCMk6KAAxW5FBAIHSHfBhkQMygBegUIARDDAQ")
+    // formdata.append("subcomment","salom")
 
 
-    // axios.post(`${url}/course/theme_comment/`,formdata,{headers:{"Authorization":"Bearer " + sessionStorage.getItem("token")}}).then(res=>{
+    // axios.post(`${url}/course/theme_comment/`,formdata,{headers:{Authorization:"Bearer " + localStorage.getItem("token")}}).then(res=>{
     // alert("yozildi")
     // }).catch(err=>{
     //   alert("ishladddddd")
