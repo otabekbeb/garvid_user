@@ -16,10 +16,12 @@ import "../css/Calibig.css";
 import WWW from "../img/WWW.png";
 import axios from "axios";
 import url from "./Host";
+import Loader from './loader'
 export default function Searchfilter() {
   const [kursdata, setKursdata] = useState([]);
   const [type, settype] = useState([]);
   const [state1, setState1] = React.useState();
+  const [loader,setLoader] = useState(0)
 
   function Filter() {
     document.querySelector(".filter_button").classList.toggle("filter");
@@ -42,12 +44,14 @@ export default function Searchfilter() {
         axios
           .get(`${url}/course/type/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
           .then((res) => {
+            setLoader(1)
             settype(res.data);
           });
       });
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
+    
   }, []);
   function filter (id) {
     axios
@@ -69,8 +73,11 @@ export default function Searchfilter() {
     })
   }
   return (
-    <div>
-      {state1 === "en" ? (<div>
+    <>
+    {loader===1?(
+      <div>
+      {state1 === "en" ? (
+      <div>
         <div className="Filter">
           <div className="blur_blok">
             <div className="inp_blok">
@@ -99,7 +106,7 @@ export default function Searchfilter() {
                       {type.map((item2) => {
                           return (
                             <div className="button_filter_kurs">
-                              <div onClick={()=>filter(item2.id)} className="div_kurs">{item2.name}</div>
+                              {item2.name===null?(""):(<div onClick={()=>filter(item2.id)} className="div_kurs">{item2.name}</div>)}
                             </div>
                           );
                       })}
@@ -112,11 +119,11 @@ export default function Searchfilter() {
         <div className="kurs_cards">
           {kursdata.map((item) => {
             return (
-              <div className="kurs_card">
-                <button className="btn_das">Dasturlash</button>
+              <div onClick={()=>{window.location="/video";localStorage.setItem("course", item.id)}}  className="kurs_card">
+                <button className="btn_das">Programming</button>
                 {item.image === null ? (
                   <div className="No_img">
-                    <h1>no picture</h1>
+                    <h1>No picture</h1>
                   </div>
                 ) : (
                   <img src={item.image} />
@@ -145,11 +152,11 @@ export default function Searchfilter() {
                   </div>
                   <div className="hajm">
                     <h5>
-                      <p>Kurs hajmi</p>
+                      <p>Course size</p>
                       {item.planned_time}
                     </h5>
                     <h5>
-                      <p>Kurs narxi</p>
+                      <p>Course price</p>
                       {item.price}
                     </h5>
                   </div>
@@ -173,12 +180,12 @@ export default function Searchfilter() {
           {kursdata.map((item) => {
             return (
               <div className="Spiska_blok">
-                <div className="spiska">
+                <div onClick={()=>{window.location="/video";localStorage.setItem("course",item.id)}} className="spiska">
                   <div className="spiska_display_flex">
                     <div className="spiska_img">
                       {item.image === null ? (
                         <div className="No_img1">
-                          <h1>no picture</h1>
+                          <h1>No picture</h1>
                         </div>
                       ) : (
                         <img src={item.image} alt="No img" />
@@ -199,7 +206,7 @@ export default function Searchfilter() {
                         </div>
                       </div>
                       <div className="left1_icon">
-                        <HiArrowRight />
+                        <HiArrowRight onClick={()=>{window.location="/video";localStorage.setItem("course",item.id)}} />
                       </div>
                     </div>
                   </div>
@@ -208,7 +215,8 @@ export default function Searchfilter() {
             );
           })}
         </div>
-      </div>) : (<div>
+      </div>) : (
+      <div>
         <div className="Filter">
           <div className="blur_blok">
             <div className="inp_blok">
@@ -235,7 +243,7 @@ export default function Searchfilter() {
                       {type.map((item2) => {
                           return (
                             <div className="button_filter_kurs">
-                              <div onClick={()=>filter(item2.id)} className="div_kurs">{item2.name}</div>
+                            {item2.name===null?(""):(<div onClick={()=>filter(item2.id)} className="div_kurs">{item2.name}</div>)}  
                             </div>
                           );
                       })}
@@ -247,8 +255,11 @@ export default function Searchfilter() {
         <div className="kurs_cards">
           {kursdata.map((item) => {
             return (
-              <div className="kurs_card">
-                <button className="btn_das">Dasturlash</button>
+              <div onClick={() => {
+                window.location = "/video";
+                localStorage.setItem("course", item.id)
+              }} className="kurs_card">
+                <button style={{width:'auto',paddingLeft:'5px',paddingRight:'5px' }} className="btn_das">Программирование</button>
                 {item.image === null ? (
                   <div className="No_img">
                     <h1>Нет изображение</h1>
@@ -280,11 +291,11 @@ export default function Searchfilter() {
                   </div>
                   <div className="hajm">
                     <h5>
-                      <p>Kurs hajmi</p>
+                      <p>Размер курса</p>
                       {item.planned_time}
                     </h5>
                     <h5>
-                      <p>Kurs narxi</p>
+                      <p>Стоимость курса</p>
                       {item.price}
                     </h5>
                   </div>
@@ -308,7 +319,7 @@ export default function Searchfilter() {
           {kursdata.map((item) => {
             return (
               <div className="Spiska_blok">
-                <div className="spiska">
+                <div onClick={()=>{window.location="/video";localStorage.setItem("course",item.id)}} className="spiska">
                   <div className="spiska_display_flex">
                     <div className="spiska_img">
                       {item.image === null ? (
@@ -320,7 +331,7 @@ export default function Searchfilter() {
                       )}
                     </div>
                     <div className="spiska_title_df">
-                      <div className="spiska_title">
+                      <div  className="spiska_title">
                         <h3>{item.name}</h3>
                         <div className="star_icon_blok1">
                           <AiFillStar className="gold" />
@@ -334,7 +345,7 @@ export default function Searchfilter() {
                         </div>
                       </div>
                       <div className="left1_icon">
-                        <HiArrowRight />
+                        <HiArrowRight onClick={()=>{window.location="/video";localStorage.setItem("course",item.id)}} />
                       </div>
                     </div>
                   </div>
@@ -345,6 +356,7 @@ export default function Searchfilter() {
         </div>
       </div>)}
 
-    </div>
+    </div>):(<Loader/>)}
+    </>
   );
 }

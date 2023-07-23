@@ -3,6 +3,7 @@ import "../css/Loginpage.css";
 import axios from "axios";
 import url from "./Host";
 import Footer from "../js/Footer1";
+import Loader from "./loader"
 
 import Usernavbar from "../js/Usernavbar";
 
@@ -12,7 +13,7 @@ export default function Loginpage() {
   const [manzil, setManzil] = React.useState([]);
   const [adress, setAdress] = React.useState([]);
   const [adresput, setAdresput] = React.useState([]);
-  const [loader, setLoader] = React.useState(2);
+  const [loader, setLoader] = React.useState(0);
   const [state1, setState1] = React.useState();
   useEffect(() => {
     setState1(
@@ -40,10 +41,10 @@ export default function Loginpage() {
           document.querySelector("#birthday").value = item.birthday;
           document.querySelector("#adress").value = item.adress;
           document.querySelector("#description").value = item.description;
-        })
-
+        })   
       });
 
+        setLoader(1)
   }, []);
 
   const plus = () => {
@@ -163,6 +164,7 @@ export default function Loginpage() {
 
   return (
     <div>
+      {loader===1?(
       <div>
         <Usernavbar />
 
@@ -643,7 +645,8 @@ export default function Loginpage() {
             <Footer />
           </div>
         )}
-      </div>
+      </div>):(<Loader/>)}
+
     </div>
   );
 }

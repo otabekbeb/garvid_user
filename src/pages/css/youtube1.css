@@ -16,6 +16,7 @@
     width: 100%;
     border-radius: 50%;
 }
+
 .navbar_otish1 p:after {
     padding-bottom: 20px;
     display: block;
@@ -29,7 +30,7 @@
     transform-origin: 0% 50%;
   }
   .navbar_otish p:after {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     display: block;
     content: "";
     border-bottom: solid 3px #536dfd;
@@ -866,11 +867,12 @@ color: #9DA7BB;
     display: flex;align-items: center;justify-content: space-between;
     width: 600px ;
     padding: 10px;
+    height: 0;
     margin-top: 30px;
 }
 
 .navbar_otish{
-    width: 600px;
+    width: 400px;
     display: flex;
     align-items: center;
     justify-content: space-between;
