@@ -643,9 +643,7 @@ pre code {
     margin-left: auto;
 }
 
-.container-fluid {
-    padding-top: 100px !important;
-}
+
 
 @media (min-width: 576px) {
 
@@ -681,7 +679,8 @@ pre code {
     .container-md,
     .container-lg,
     .container-xl {
-        max-width: 1140px;
+        max-width: 1440px;
+        margin-top: 50px;
     }
 }
 
@@ -10861,11 +10860,19 @@ h6,
     list-style-type: none;
 }
 .themes{
-    display: flex;
     background-color: #323946;
-    text-align: center;
-    display: none !important;
+    margin-top: 50px;
+    padding: 15px;
 }
+
 .themes h3{
     color: white !important;
+    margin-bottom: 0px !important;
+    font-size: 20px;
+
+}
+.theme1{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
 }
