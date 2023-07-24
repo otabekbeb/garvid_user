@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import "../css/Teacherpage.css";
 import Footer1 from "./Footer1";
@@ -9,9 +9,11 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import axios from "axios";
+import Loader from "./loader"
 
 export default function Contact() {
   const [state, setstate] = React.useState();
+  const [loader,setLoader]=useState(0)
 const dataPost=()=>{
   var postdata={
     fullname:document.querySelectorAll('.contact_inp')[0].value,
@@ -28,10 +30,14 @@ window.location.reload()
 }
   useEffect(() => {
     setstate(localStorage.getItem("lang"));
+    setTimeout(() => {
+      setLoader(1)
+    }, 3000);
   }, []);
   return (
+    <>
+    {loader===1?(
     <div>
-      
       <Usernavbar />
       <div className="contact">
         <div className="contact_left">
@@ -118,6 +124,8 @@ window.location.reload()
       </div>
       
       <Footer1 />
-    </div>
+    </div>):(<Loader/>)}
+    </>
+
   );
 }

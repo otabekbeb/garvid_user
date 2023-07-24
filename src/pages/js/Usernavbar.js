@@ -151,7 +151,7 @@ export default function Navbar() {
 
                 <li className="moto-menu-item">
                   {" "}
-                  <a href="/servis">User</a>{" "}
+                  <a href="/user">User</a>{" "}
                 </li>
                 <li className="moto-menu-item">
                   <a href="/student">Student</a>

@@ -16,8 +16,8 @@
     width: 100%;
     border-radius: 50%;
 }
+
 .navbar_otish1 p:after {
-    padding-bottom: 20px;
     display: block;
     content: "";
     border-bottom: solid 3px #536dfd;
@@ -29,7 +29,7 @@
     transform-origin: 0% 50%;
   }
   .navbar_otish p:after {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     display: block;
     content: "";
     border-bottom: solid 3px #536dfd;
@@ -42,8 +42,8 @@
   }
   
 .youtube_kotta_img{
-    width: 60%;
-
+    width: 100%;
+    margin-bottom: 20px;
 }
 .img_youtube_kotta img{
     width: 99%;
@@ -111,6 +111,41 @@ margin-bottom: 20px;
     font-size: 10px;
     width:130px;
 }
+
+.swiper-button-prev{
+    position: absolute;
+    top: 83% !important;
+    left: 80% !important;
+    padding: 25px !important;
+    background-color: #fff !important;
+    color: #2E2E2E !important;
+    border-radius: 50% !important;
+    border: 1px solid #2E2E2E !important;
+    display: flex !important;
+    justify-content: center !important;
+
+}
+.swiper-button-next{
+    border-radius: 50% !important;
+    position: absolute;
+    display: flex !important;
+    justify-content: center !important;
+    top: 83% !important;
+    left: 90% !important;
+    color: #2E2E2E !important;
+    padding: 25px !important;
+    font-size: 10px !important;
+    background-color: #fff !important;
+    border: 1px solid #2E2E2E !important;
+}
+.swiper-button-prev:after{
+    font-size: 25px !important;
+}
+.swiper-button-next:after{
+    font-size: 25px !important;
+}
+
+
 .button_back{
     margin-right: 10px;  
 }
@@ -395,6 +430,9 @@ color: #9DA7BB;
 
 
 @media (max-width:1000px) {
+    .swiper{
+        width: 100% !important;
+    }
 .flex_youtube{
     display: block;
 }
@@ -550,6 +588,25 @@ color: #9DA7BB;
     margin-top: 4px;
 }
 @media (max-width:650px) {
+    .swiper-button-prev:after{
+        font-size: 15px !important;
+    }
+    .swiper-button-next:after{
+        font-size: 15px !important;
+    }
+    .swiper-button-prev{
+        top: 84% !important;
+        padding: 20px !important;
+        height: 30px !important;
+    }
+    .swiper-button-next{
+        top: 84% !important;
+        height: 30px !important;
+        padding: 20px !important;
+    }
+    .theme_content{
+        font-size: 13px;
+    }
     .buttons_next_back button {
             display: flex;
             align-items: center;
@@ -684,6 +741,22 @@ color: #9DA7BB;
 }
 
 @media (max-width:500px) {
+    .swiper-button-prev:after{
+        font-size: 12px !important;
+    }
+    .swiper-button-next:after{
+        font-size: 12px !important;
+    }
+    .swiper-button-prev{
+        top: 80% !important;
+        padding: 17px !important;
+        left: 72% !important;
+    }
+    .swiper-button-next{
+        left:85% !important;
+        top: 80% !important;
+        padding: 17px !important;
+    }
     .raspberry_pid h1 {
             font-size: 14px;
             line-height: 23px;
@@ -866,11 +939,12 @@ color: #9DA7BB;
     display: flex;align-items: center;justify-content: space-between;
     width: 600px ;
     padding: 10px;
-    margin-top: 30px;
+    height: 0;
+    margin-top: 0%;
 }
 
 .navbar_otish{
-    width: 600px;
+    width: 400px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -910,8 +984,8 @@ width: 100%;
 }
 
 .menu_navbar{
-    margin: auto;
-
+    margin-left: auto;
+    margin-right: 5px;
 }
 
 .navbar_yon{
@@ -919,8 +993,9 @@ width: 100%;
     padding: 10px;
     width: 100%;
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: 10px;
     position: absolute;
+    box-shadow: 0px 1px 1px 0px grey;
     height: 40vh;
 }
     .navbar_otish1{
@@ -953,9 +1028,39 @@ width: 100%;
     font-size: 18px;
     box-shadow: 0px 0px 5px #2E2E2E;
 }
+
 .navbar_block{
     display: none;
 }
 
+ .swiper {
+  width: 60%;
+  height: 100%;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
 
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mySwiper{
+    position: relative;
+    top: 0px !important;
+    right: 0px !important;
+}
+
+/* .swiper {
+  margin-left: auto;
+  margin-right: auto;
+} */
+.theme_content{
+    text-align: start !important;
+}
+.swiper-pagination-bullet{
+    display: none !important;
+}
 
