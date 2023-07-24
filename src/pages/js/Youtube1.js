@@ -175,7 +175,6 @@ export default function Youtube1() {
                 <Swiper
                   slidesPerView={1}
                   spaceBetween={30}
-                  // loop={true}
                   pagination={{
                     clickable: true,
                   }}
