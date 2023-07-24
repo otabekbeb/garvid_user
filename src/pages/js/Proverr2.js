@@ -306,7 +306,7 @@ Absolutely fantastic tutorial <br className="poopoasd" /> series. I cannot thank
             <div className="prover2-mni-treboniya">
                 <div className="prover2-trebovaniya-block">
                     <div className="span"></div>
-                    <p>Знание компьютерных уроков</p>
+                    <p>Знание компьютерных  уроков</p>
                 </div>
                 <div className="prover2-trebovaniya-block2">
                     <div className="span"></div>
@@ -338,7 +338,7 @@ Absolutely fantastic tutorial <br className="poopoasd" /> series. I cannot thank
                     </div>
                     
                     <div className="faq-text">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto obcaecati quidem explicabo sunt minima <br /> perspiciatis!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto obcaecati quidem explicabo sunt minima <br id="yoqaollllll" /> perspiciatis!</p>
                     </div>
                 </div>
                 <div className="faq-item">
@@ -347,7 +347,7 @@ Absolutely fantastic tutorial <br className="poopoasd" /> series. I cannot thank
                     <label htmlFor="faq_2" className="faq-title" id="saopdsados">2. Работа с простыми операциями в программе </label><span id="fdfsdfdsdfsf">8 видео</span><div className="faq-liner1"></div><span id="wqeqweqweqw">15 часов</span>
                     </div>
                     <div className="faq-text">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. jalod obcaecati quidem explicabo sunt minima <br /> perspiciatis!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. jalod obcaecati quidem explicabo sunt minima <br id="yoqaollllll" /> perspiciatis!</p>
                     </div>
                 </div>
             </div>
