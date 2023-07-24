@@ -1,12 +1,20 @@
 .newspage{
     display: flex;
-    
-    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 .newspage_cards{
-    width: 1000px !important;
+    display: block;
     margin-left: 20px;
+    color: black;
+    width: 700px;
 }
 .newspage_cards img{
-    width: 60%;
+    width: 100%;
+}
+.newspage1 .mb-3, .my-3{
+    width: 25%;
+}
+.newspage_cards a{
+    color: black !important;
 }

@@ -4,7 +4,9 @@ import { BiSearch } from 'react-icons/bi';
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { VscChromeClose } from 'react-icons/vsc'
 import { HiOutlineChevronUp } from "react-icons/hi"
-
+import { AiFillStar } from "react-icons/ai"
+import {AiOutlineArrowRight} from "react-icons/ai"
+import img from '../../pages/img/download.png'
 
 
 export default function Ourcourse() {
@@ -95,8 +97,147 @@ export default function Ourcourse() {
                             <HiOutlineChevronUp className='' />
                         </i>
                     </button>
-                    <div className="filter_card"></div>
+                    <div className="filter_card">
+                    <div className="filter_padding">
+                        <h5>Tartiblash turlari</h5>
+                        <p><input type="checkbox" name="" id="" /> Yangi kurslar</p>
+                        <p><input type="checkbox" name="" id="" /> Ko’p ko’rilganlar</p>
+                        <p><input type="checkbox" name="" id="" /> Eng baland narx</p>
+                        <p><input type="checkbox" name="" id="" /> Yangi kurslar</p>
+                        <p><input type="checkbox" name="" id="" /> Yangi kurslar</p>
+                        <p><input type="checkbox" name="" id="" /> Yangi kurslar</p>
+                    </div>
+                    <div className="filter_padding">
+                    <h5>Reyting bo’yicha</h5>
+                        <p><input type="checkbox" name="" id="" /> <div className="filter_star"><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar/></div> 5.0</p>
+                        <p><input type="checkbox" name="" id="" /> <div className="filter_star"><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar className='none_star'/></div> 4.0 dan yuqori</p>
+                        <p><input type="checkbox" name="" id="" /> <div className="filter_star"><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar className='none_star'/><AiFillStar className='none_star'/></div> 3.0 dan yuqori</p>
+                        <p><input type="checkbox" name="" id="" /> <div className="filter_star"><AiFillStar/><AiFillStar/><AiFillStar className='none_star'/><AiFillStar className='none_star'/><AiFillStar className='none_star'/></div> 2.0 dan past</p>
+                    </div>
+                    </div>
                 </div>
+
+
+
+
+                <div className="filter_kurs">
+              <div className="filter_course">
+                <img src={img} alt="" />
+                <div className="filter_card_padding">
+                  <h4>Raspberry Pi dasturlash <br />
+asoslari</h4>
+                  <div className="star_card">
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_ib">
+                      <AiFillStar />
+                    </i>
+                    <p>
+                      4.1 <span>(524)</span>
+                    </p>
+                  </div>
+                  <div className="hajm">
+                    <h5>
+                      <p>Course size</p>
+                    </h5>
+                    <h5>
+                      <p>Course price</p>
+                    </h5>
+                  </div>
+                </div>
+                <button className="button_circle">
+                  <AiOutlineArrowRight/>
+                </button>
+              </div>
+
+              <div className="filter_course">
+                <img src={img} alt="" />
+                <div className="filter_card_padding">
+                  <h4>Raspberry Pi dasturlash <br />
+asoslari</h4>
+                  <div className="star_card">
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_ib">
+                      <AiFillStar />
+                    </i>
+                    <p>
+                      4.1 <span>(524)</span>
+                    </p>
+                  </div>
+                  <div className="hajm">
+                    <h5>
+                      <p>Course size</p>
+                    </h5>
+                    <h5>
+                      <p>Course price</p>
+                    </h5>
+                  </div>
+                </div>
+                <button className="button_circle">
+                  <AiOutlineArrowRight/>
+                </button>
+              </div>
+
+              <div className="filter_course">
+                <img src={img} alt="" />
+                <div className="filter_card_padding">
+                  <h4>Raspberry Pi dasturlash <br />
+asoslari</h4>
+                  <div className="star_card">
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_i">
+                      <AiFillStar />
+                    </i>
+                    <i className="star_ib">
+                      <AiFillStar />
+                    </i>
+                    <p>
+                      4.1 <span>(524)</span>
+                    </p>
+                  </div>
+                  <div className="hajm">
+                    <h5>
+                      <p>Course size</p>
+                    </h5>
+                    <h5>
+                      <p>Course price</p>
+                    </h5>
+                  </div>
+                </div>
+                <button className="button_circle">
+                  <AiOutlineArrowRight/>
+                </button>
+              </div>
+        </div>
             </header>
 
         </div>
