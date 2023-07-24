@@ -175,13 +175,14 @@ export default function Youtube1() {
                 <Swiper
                   slidesPerView={1}
                   spaceBetween={30}
-                  loop={true}
+                  // loop={true}
                   pagination={{
                     clickable: true,
                   }}
                   navigation={true}
                   modules={[Pagination, Navigation]}
                   className="mySwiper"
+                  id='themeswiper'
                 >
                   {theme.map((item) => {
                     if (item.subcategory == localStorage.getItem("themeid")) {
@@ -307,7 +308,7 @@ export default function Youtube1() {
                                     localStorage.setItem("themeLength",key)
                                     return (
                                       <>
-                                        <Accordion.Body onClick={()=>{localStorage.setItem("themeid", item2.subcategory)}}>
+                                        <Accordion.Body onClick={()=>{localStorage.setItem("themeid", theme.id)}}>
                                           <div className="accordion_flex">
                                             <div className="accordion_img">
                                               <img src={theme.image} alt="" />
