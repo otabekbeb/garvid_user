@@ -1175,6 +1175,9 @@ height: 0;
           }
     } 
 @media (max-width:1498px) {
+    .prover20chech-box-a span{
+        display: none !important;
+    }
     .mni-blocc-linee {
         width: 102%;
         height: 1px;
@@ -1340,6 +1343,20 @@ height: 0;
             position: relative;
             left: -12px !important;
           }
+          .text-kurs-haqida1 p {
+            font-family: SF Pro Display;
+            font-size: 14px;
+            line-height: 23px;
+            letter-spacing: 0em;
+            width: 100% !important;
+            text-align: left;
+            margin-bottom: 10px;
+            color: #2E2E2E !important;
+        }
+        .m_otsenka h1 {
+            font-size: 50px;
+        }
+
 }
 @media (max-width:1333px) {
     .mni-krus-techer-swiper{
@@ -1436,6 +1453,15 @@ height: 0;
         }
 }
 @media (max-width:1227px) {
+    .faq-text{
+        width: 600px;
+    }
+    .prover2-mni-treboniya {
+        padding-top: 20px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        flex-wrap: wrap !important;
+    }
     .prover2{
         width: 100%;
         min-height: 110vw;
@@ -1507,6 +1533,9 @@ height: 0;
 }
 
 @media (max-width:1131px) {
+    .mni-orta-kota-media{
+        display: none !important;
+    }
     .prover2-mni-search{
         display: none;
     }
@@ -1514,8 +1543,15 @@ height: 0;
         width:1000px !important;
         height: 320px !important;
     }
-
-
+    .faq-text{
+        width: 100% !important;
+    }
+    .faq-text p{
+        padding-left: 25px;
+    }
+    #yoqaollllll{
+        display: none;
+    }
     .radio-inputs {
         position: relative;
         display: flex;
@@ -1754,8 +1790,12 @@ width: 130px !important;
         width:800px !important;
         height: 320px !important;
     }
-
-
+#yoqaollllll{
+    display: block !important;
+}
+.faq-text p{
+    padding-left: 0px;
+}
     .radio-inputs {
         position: relative;
         display: flex;
@@ -1847,7 +1887,11 @@ width: 130px !important;
         width:650px !important;
         height: 320px !important;
     }
-
+    .faq {
+        width: 650px;
+        margin: 20px auto;
+        background-color: #ffffff;
+    }
 
     .radio-inputs {
         position: relative;
@@ -1946,8 +1990,22 @@ border-radius: 4px;
         width:550px !important;
         height: 320px !important;
     }
-
-
+.faq-title{
+    font-size: 12px !important;
+}
+.faq-text p{
+    font-size: 12px !important;
+   position: relative;
+   left: 20px !important;
+}
+.faq-div span{
+    font-size: 12px !important;
+}
+    .faq {
+        width: 550px;
+        margin: 20px auto;
+        background-color: #ffffff;
+    }
     .radio-inputs {
         position: relative;
         display: flex;
@@ -2082,12 +2140,46 @@ border-radius: 4px;
     }
 }
 @media (max-width:628px) {
+    .faq-title{
+        font-size: 12px !important;
+    }
+    .faq-text p{
+        font-size: 12px !important;
+       position: relative;
+       left: 20px !important;
+    }
+    .faq-div span{
+        font-size: 12px !important;
+    }
+        .faq {
+            width: 480px;
+            margin: 20px auto;
+            background-color: #ffffff;
+        }
+
+    .prover2-mni-treboniya {
+        padding-top: 20px;
+        display: grid;
+        grid-template-columns: auto auto;
+        flex-wrap: wrap !important;
+    }
 
     .prover2-orta-joy iframe{
         width:480px !important;
         height: 320px !important;
     }
-
+    .prover2-trebovaniya-block3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 170px !important;
+        height: 40px !important;
+        border-radius: 4px;
+        background-color: #ffffff;
+        cursor: pointer;
+        position: relative;
+        top: 15px;
+    }
 
     .radio-inputs {
         position: relative;
@@ -2292,7 +2384,22 @@ border-radius: 4px;
         width:400px !important;
         height: 320px !important;
     }
-
+    .faq-title{
+        font-size: 10px !important;
+    }
+    .faq-text p{
+        font-size: 10px !important;
+       position: relative;
+       left: 20px !important;
+    }
+    .faq-div span{
+        font-size: 10px !important;
+    }
+        .faq {
+            width: 400px;
+            margin: 20px auto;
+            background-color: #ffffff;
+        }
 
     .radio-inputs {
         position: relative;
@@ -2382,5 +2489,491 @@ border-radius: 4px;
     }
     .mni-media-orta-filter{
         display: none;
+    }
+}
+@media (max-width:421px) {
+    .prover2-linerr1 {
+        width: 73.7% !important;
+        height: 1px;
+        background: #d5dae4;
+        position: relative;
+        left: 95px;
+        top: 10px;
+    }
+    .faq-title{
+        font-size: 9px !important;
+    }
+    .faq-text p{
+        font-size: 9px !important;
+       position: relative;
+       left: 20px !important;
+    }
+    .faq-div span{
+        font-size: 9px !important;
+    }
+        .faq {
+            width: 370px;
+            margin: 20px auto;
+            background-color: #ffffff;
+        }
+#fdfsdfdsdfsf{
+    position: relative;
+    left: 20px !important;
+}
+.faq-liner1{
+    position: relative;
+    left: 12px;
+}
+    .prover2-orta-joy iframe{
+        width:370px !important;
+        height: 320px !important;
+    }
+    .m_otsenka h1 {
+        font-size: 40px;
+    }
+    .text-kurs-haqida1 p {
+        font-family: SF Pro Display;
+        font-size: 10px;
+        line-height: 23px;
+        letter-spacing: 0em;
+        width: 100% !important;
+        text-align: left;
+        margin-bottom: 10px;
+        color: #2E2E2E !important;
+    }
+    .radio-inputs {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 0.5rem;
+        background-color: #EEE;
+        box-sizing: border-box;
+        box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+        padding: 0.25rem;
+        width: 370px;
+        font-size: 14px;
+        margin-top: 30px;
+    }
+    .text-kurs-haqida1{
+        width: 370px !important;
+    }
+    .prover2-orta-joy-reytin p {
+        font-family: SF Pro Display;
+        font-size: 12px;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+    
+
+.prover2-orta-joy-reytin span {
+    font-family: SF Pro Display;
+    font-size: 12px;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #9DA7BB;
+    position: relative;
+    left: 3px;
+}
+.rating {
+    padding-left: 13px;
+}
+.prover2-info-d {
+    border-radius: 5px;
+    width: 370px;
+    height: auto;
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding-left: 15px;
+    padding-top: 5px;
+}
+.prover2-oxiri-block-in {
+    width: 370px;
+    height: auto;
+    border-radius: 0px 4px 4px 0px;
+    box-shadow: 0px 2px 2px 0px #0000001A;
+    background-color: #ffffff;
+    padding-left: 15px;
+    padding-top: 15px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.mni-krus-techer-swiper1 {
+    width: 370px;
+    height: 410px;
+    background-color: #ffffff;
+    position: relative;
+    left: 0px;
+    top: -0px !important;
+}
+.mni-gridf1 img{ 
+    width: 160px;
+height: 150px;
+border-radius: 4px;
+
+}
+}
+@media (max-width:383px) {
+    .faq-title{
+        font-size: 9px !important;
+    }
+    .faq-text p{
+        font-size: 9px !important;
+       position: relative;
+       left: 20px !important;
+    }
+    .faq-div span{
+        font-size: 7px !important;
+    }
+        .faq {
+            width: 330px;
+            margin: 20px auto;
+            background-color: #ffffff;
+        }
+#fdfsdfdsdfsf{
+    position: relative;
+    left: 5px !important;
+}
+.faq-liner1{
+    position: relative;
+    left: 5px !important;
+}
+#wqeqweqweqw{
+    position: relative;
+    left: 3px !important;
+}
+    .prover2-orta-joy iframe{
+        width:330px !important;
+        height: 320px !important;
+    }
+.m_diagnostic_otsm{
+    position: relative;
+    right: 10px !important;
+}
+.text-kurs-haqida1 p {
+    font-family: SF Pro Display;
+    font-size: 8px;
+    line-height: 23px;
+    letter-spacing: 0em;
+    width: 100% !important;
+    text-align: left;
+    margin-bottom: 10px;
+    color: #2E2E2E !important;
+}
+    .radio-inputs {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 0.5rem;
+        background-color: #EEE;
+        box-sizing: border-box;
+        box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+        padding: 0.25rem;
+        width: 330px;
+        font-size: 14px;
+        margin-top: 30px;
+    }
+    .text-kurs-haqida1{
+        width: 330px !important;
+    }
+    .prover2-orta-joy-reytin p {
+        font-family: SF Pro Display;
+        font-size: 11px;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+    .prover2-orta-joy-text h5 {
+        font-family: SF Pro Display;
+        font-size: 10px;
+        line-height: 29px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+    .prover2-orta-joy-reytin span {
+        font-family: SF Pro Display;
+        font-size: 11px;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #9DA7BB;
+        position: relative;
+        left: 3px;
+    }
+    .prover2-info-d {
+        border-radius: 5px;
+        width: 330px;
+        height: auto;
+        margin-top: 20px;
+        background-color: #ffffff;
+        padding-left: 15px;
+        padding-top: 5px;
+    }
+    .prover2-info-filter button {
+        background: #F1F2F6;
+        width: 90px !important;
+    }
+    .prover2-linerr1 {
+        width: 70% !important;
+        height: 1px;
+        background: #d5dae4;
+        position: relative;
+        left: 95px;
+        top: 10px;
+    }
+    .prover2-oxiri-block-in {
+        width: 330px;
+        height: auto;
+        border-radius: 0px 4px 4px 0px;
+        box-shadow: 0px 2px 2px 0px #0000001A;
+        background-color: #ffffff;
+        padding-left: 15px;
+        padding-top: 15px;
+        margin-bottom: 10px;
+        position: relative;
+    }
+    .mni-krus-techer-swiper1 {
+        width: 330px;
+        height: 410px;
+        background-color: #ffffff;
+        position: relative;
+        left: 0px;
+        top: -0px !important;
+    }
+    .mni-gridf1 img{ 
+        width: 140px;
+    height: 150px;
+    border-radius: 4px;
+    
+    }
+}
+@media (max-width:340px) {
+    .prover2-orta-joy iframe{
+        width:310px !important;
+        height: 320px !important;
+    }
+    .faq-title{
+        font-size: 7px !important;
+    }
+    .faq-text p{
+        font-size: 9px !important;
+       position: relative;
+       left: 20px !important;
+    }
+    .faq-div span{
+        font-size: 7px !important;
+    }
+        .faq {
+            width: 310px;
+            margin: 20px auto;
+            background-color: #ffffff;
+        }
+#fdfsdfdsdfsf{
+    position: relative;
+    left: 5px !important;
+}
+.faq-liner1{
+    position: relative;
+    left: 5px !important;
+}
+#wqeqweqweqw{
+    position: relative;
+    left: 3px !important;
+}
+
+    .radio-inputs {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 0.5rem;
+        background-color: #EEE;
+        box-sizing: border-box;
+        box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+        padding: 0.25rem;
+        width: 310px;
+        font-size: 14px;
+        margin-top: 30px;
+    }
+    .text-kurs-haqida1{
+        width: 310px !important;
+    }
+    .prover2-orta-joy-reytin p {
+        font-family: SF Pro Display;
+        font-size: 10px;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+    .prover2-orta-joy-text h5 {
+        font-family: SF Pro Display;
+        font-size: 10px;
+        line-height: 29px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+    .prover2-orta-joy-reytin span {
+        font-family: SF Pro Display;
+        font-size: 10px;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #9DA7BB;
+        position: relative;
+        left: 3px;
+    }
+    .rating {
+        padding-left: 3px;
+    }
+    .prover2-info-d {
+        border-radius: 5px;
+        width: 310px;
+        height: auto;
+        margin-top: 20px;
+        background-color: #ffffff;
+        padding-left: 15px;
+        padding-top: 5px;
+    }
+    .prover2-info-filter2 button {
+        width:130px !important;
+        background: #F1F2F6;
+    }
+    .prover2-linerr1 {
+        width: 67.5% !important;
+        height: 1px;
+        background: #d5dae4;
+        position: relative;
+        left: 95px;
+        top: 10px;
+    }
+    .prover2-oxiri-block-in {
+        width: 310px;
+        height: auto;
+        border-radius: 0px 4px 4px 0px;
+        box-shadow: 0px 2px 2px 0px #0000001A;
+        background-color: #ffffff;
+        padding-left: 15px;
+        padding-top: 15px;
+        margin-bottom: 10px;
+        position: relative;
+    }
+    .mni-krus-techer-swiper1 {
+        width: 310px;
+        height: 410px;
+        background-color: #ffffff;
+        position: relative;
+        left: 0px;
+        top: -0px !important;
+    }
+    .mni-gridf1 img{ 
+        width: 130px;
+    height: 150px;
+    border-radius: 4px;
+    
+    }
+}
+@media (max-width:342px) {
+    .m_flex_line {
+        width: 200px !important;
+    }
+}
+@media (max-width:389px) {
+    .prover2-mni-treboniya p {
+        font-family: SF Pro Display;
+        font-size: 9px !important;
+        line-height: 19px !important;
+        letter-spacing: 0em !important;
+        text-align: center;
+        color: #9DA7BB;
+        position: relative;
+        top: 7px;
+        left: 7px;
+    }
+    .prover2-trebovaniya-block {
+        width: 160px !important;
+        height: 40px !important;
+        border-radius: 4px;
+        background-color: #ffffff;
+    }
+    .prover2-trebovaniya-block2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 160px !important;
+        height: 40px !important;
+        border-radius: 4px;
+        background-color: #ffffff;
+        cursor: pointer;
+    }
+    .prover2-trebovaniya-block3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 140px !important;
+        height: 40px !important;
+        border-radius: 4px;
+        background-color: #ffffff;
+        cursor: pointer;
+    }
+    .prover2-trebovaniya-block4 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 130px !important;
+        height: 40px !important;
+        border-radius: 4px;
+        background-color: #ffffff;
+        margin-top: 15px;
+        cursor: pointer;
+    }
+}
+@media (max-width:360px) {
+    .prover2-trebovaniya-block {
+        width: 140px !important;
+        height: 40px !important;
+        border-radius: 4px;
+        background-color: #ffffff;
+    }
+    .prover2-mni-treboniya p {
+        font-family: SF Pro Display;
+        font-size: 8px !important;
+        line-height: 19px !important;
+        letter-spacing: 0em !important;
+        text-align: center;
+        color: #9DA7BB;
+        position: relative;
+        top: 7px;
+        left: 7px;
+    }
+    .prover2-trebovaniya-block2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 140px !important;
+        height: 40px !important;
+        border-radius: 4px;
+        background-color: #ffffff;
+        cursor: pointer;
+    }
+    .prover2-trebovaniya-block3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 127px !important;
+        height: 40px !important;
+        border-radius: 4px;
+        background-color: #ffffff;
+        cursor: pointer;
+    }
+    .prover2-trebovaniya-block4 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 118px !important;
+        height: 40px !important;
+        border-radius: 4px;
+        background-color: #ffffff;
+        margin-top: 15px;
+        cursor: pointer;
     }
 }
