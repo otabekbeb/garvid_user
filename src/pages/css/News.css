@@ -170,7 +170,7 @@ a {
     background-color: transparent;
 }
 
-a:hover {
+.newss1 a:hover {
     color: #b38f00;
     text-decoration: underline;
 }
@@ -1851,6 +1851,9 @@ pre code {
 
 .table tbody+tbody {
     border-top: 2px solid #E4E7ED;
+}
+body{
+    background-color: white !important;
 }
 
 .table-sm th,

@@ -125,9 +125,9 @@ export default function Navbar() {
                         onMouseLeave={() => menu2leave()}
                         onMouseEnter={() => menu2ul()}
                       >
-                        <p id="menu2pp" onMouseEnter={() => menu2ul()}>
+                        <p onClick={()=> window.location="/news"} id="menu2pp" onMouseEnter={() => menu2ul()}>
                           {" "}
-                          <a href="/news" className="zaib">
+                          <a  className="zaib">
                             News{" "}
                             <span id="menu2spanid">
                               <box-icon
@@ -232,7 +232,7 @@ export default function Navbar() {
                       <div className="ffd">
                         <ul className="ffdul">
                           <div className="ichi2" onMouseEnter={()=> iconhover()} onMouseLeave={()=> iconhover1()} onClick={() => ochil1()}>
-                            <li className="ds">
+                            <li onClick={()=> window.location="/news"} className="ds">
                               <a href="news">News</a>
                             </li>
                             <span>
@@ -331,7 +331,7 @@ export default function Navbar() {
                       <div className="navbbar-line-hr"></div>
 
                       <div className="menu2">
-                        <p
+                        <p onClick={()=> window.location="/news"}
                           onMouseEnter={() => menu2ul()}
                           onMouseLeave={() => menu2leave()}
                         >
@@ -446,7 +446,7 @@ export default function Navbar() {
                           </li>
 
                           <div className="ichi2" onClick={() => ochil1()}>
-                            <li className="ds">
+                            <li onClick={()=> window.location="/news"} className="ds">
                               <a href="/news">Новости</a>
                             </li>
                             <span>

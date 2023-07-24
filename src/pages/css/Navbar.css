@@ -183,7 +183,7 @@
 }
 
 
-.menu ul a:hover {
+.menu ul p:hover a {
   color: #44bef1;
 }
 

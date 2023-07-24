@@ -27,6 +27,7 @@ import { Pagination } from 'swiper/modules';
 
 export default function News() {
     return (
+      <div>
       <div className='newss1'>
         <Navbar/>
         <meta charSet="utf-8" />
@@ -297,6 +298,6 @@ export default function News() {
           </div>
         </div>
         
-      </div>
+      </div></div>
     );
   }
