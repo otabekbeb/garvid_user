@@ -157,7 +157,7 @@ export default function Youtube1() {
       console.log(res.data,);
     })
     setIdtheme(localStorage.getItem("themeid"))
-    axios.get(`${url}/course/registed_course/`).then(res => {
+    axios.get(`${url}/auth/user/`).then(res => {
       setUser(res.data)
       setLoader(1)
     })
@@ -315,7 +315,7 @@ export default function Youtube1() {
                                     localStorage.setItem("themeLength",key)
                                     return (
                                       <>
-                                        <Accordion.Body >
+                                        <Accordion.Body style={{cursor:'pointer'}}>
                                           <div className="accordion_flex">
                                             <div className="accordion_img">
                                               <img src={theme.image} alt="" />
