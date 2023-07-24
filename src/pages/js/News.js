@@ -10,11 +10,24 @@ import new4 from "../img/news-700x435-4.jpg"
 import new5 from "../img/news-700x435-5.jpg"
 import Carousel from 'react-bootstrap/Carousel';
 import Navbar from './Navbar'
+
+
+
+// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+
+
+// import required modules
+import { Pagination } from 'swiper/modules';
 
 export default function News() {
     return (
-      <div>
+      <div className='newss1'>
         <Navbar/>
         <meta charSet="utf-8" />
         <title>BizNews - Free News Website Template</title>
@@ -40,16 +53,16 @@ export default function News() {
         
         <div className="container-fluid">
           <div className="row">
-            <div className="col-lg-7 px-0">
-              <Carousel className="owl-carousel main-carousel position-relative">
-                <Carousel.Item className="position-relative overflow-hidden" style={{height: '500px'}}>
-                  <img className="img-fluid h-100" src={news1} style={{objectFit: 'cover'}} />
+            <div  className="col-lg-7 px-0">
+              <Carousel  className="owl-carousel main-carousel position-relative">
+                <Carousel.Item  className="position-relative overflow-hidden" style={{height: '500px'}}>
+                  <img  className="img-fluid h-100" src={news1} style={{objectFit: 'cover'}} />
                   <div className="overlay">
                     <div className="mb-2">
                       <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href>Business</a>
                       <a className="text-white" href>Jan 01, 2045</a>
                     </div>
-                    <a className="h2 m-0 text-white text-uppercase font-weight-bold" href>Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
+                    <a  style={{cursor:"pointer"}} onClick={()=> window.location="/newspage"} className="h2 m-0 text-white text-uppercase font-weight-bold" href>Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
                   </div>
                 </Carousel.Item>
                 <Carousel.Item className="position-relative overflow-hidden" style={{height: '500px'}}>
@@ -76,7 +89,7 @@ export default function News() {
             </div>
             <div className="col-lg-5 px-0">
               <div className="row mx-0">
-                <div className="col-md-6 px-0">
+                <div onClick={()=> window.location="/newspage"} style={{cursor:"pointer"}}  className="col-md-6 px-0">
                   <div className="position-relative overflow-hidden" style={{height: '250px'}}>
                     <img className="img-fluid w-100 h-100" src={new1} style={{objectFit: 'cover'}} />
                     <div className="overlay">
@@ -88,7 +101,7 @@ export default function News() {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-6 px-0">
+                <div onClick={()=> window.location="/newspage"} style={{cursor:"pointer"}}  className="col-md-6 px-0">
                   <div className="position-relative overflow-hidden" style={{height: '250px'}}>
                     <img className="img-fluid w-100 h-100" src={new2} style={{objectFit: 'cover'}} />
                     <div className="overlay">
@@ -100,7 +113,7 @@ export default function News() {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-6 px-0">
+                <div onClick={()=> window.location="/newspage"} style={{cursor:"pointer"}}  className="col-md-6 px-0">
                   <div className="position-relative overflow-hidden" style={{height: '250px'}}>
                     <img className="img-fluid w-100 h-100" src={new3} style={{objectFit: 'cover'}} />
                     <div className="overlay">
@@ -112,7 +125,7 @@ export default function News() {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-6 px-0">
+                <div onClick={()=> window.location="/newspage"} style={{cursor:"pointer"}}  className="col-md-6 px-0">
                   <div className="position-relative overflow-hidden" style={{height: '250px'}}>
                     <img className="img-fluid w-100 h-100" src={new4} style={{objectFit: 'cover'}} />
                     <div className="overlay">
@@ -141,27 +154,27 @@ export default function News() {
                   <div className="bg-white border border-top-0 p-3">
                     <a href className="d-block w-100 text-white text-decoration-none mb-3" style={{background: '#39569E'}}>
                       <i className="fab fa-facebook-f text-center py-4 mr-3" style={{width: '65px', background: 'rgba(0, 0, 0, .2)'}} />
-                      <span className="font-weight-medium">12,345 Fans</span>
+                      <span className="font-weight-medium">Sports</span>
                     </a>
                     <a href className="d-block w-100 text-white text-decoration-none mb-3" style={{background: '#52AAF4'}}>
                       <i className="fab fa-twitter text-center py-4 mr-3" style={{width: '65px', background: 'rgba(0, 0, 0, .2)'}} />
-                      <span className="font-weight-medium">12,345 Followers</span>
+                      <span className="font-weight-medium">Musics</span>
                     </a>
                     <a href className="d-block w-100 text-white text-decoration-none mb-3" style={{background: '#0185AE'}}>
                       <i className="fab fa-linkedin-in text-center py-4 mr-3" style={{width: '65px', background: 'rgba(0, 0, 0, .2)'}} />
-                      <span className="font-weight-medium">12,345 Connects</span>
+                      <span className="font-weight-medium">Arts</span>
                     </a>
                     <a href className="d-block w-100 text-white text-decoration-none mb-3" style={{background: '#C8359D'}}>
                       <i className="fab fa-instagram text-center py-4 mr-3" style={{width: '65px', background: 'rgba(0, 0, 0, .2)'}} />
-                      <span className="font-weight-medium">12,345 Followers</span>
+                      <span className="font-weight-medium">Sports</span>
                     </a>
                     <a href className="d-block w-100 text-white text-decoration-none mb-3" style={{background: '#DC472E'}}>
                       <i className="fab fa-youtube text-center py-4 mr-3" style={{width: '65px', background: 'rgba(0, 0, 0, .2)'}} />
-                      <span className="font-weight-medium">12,345 Subscribers</span>
+                      <span className="font-weight-medium">Musics</span>
                     </a>
                     <a href className="d-block w-100 text-white text-decoration-none" style={{background: '#055570'}}>
                       <i className="fab fa-vimeo-v text-center py-4 mr-3" style={{width: '65px', background: 'rgba(0, 0, 0, .2)'}} />
-                      <span className="font-weight-medium">12,345 Followers</span>
+                      <span className="font-weight-medium">Arts</span>
                     </a>
                   </div>
                 </div>
@@ -175,7 +188,7 @@ export default function News() {
                       
                     </div>
                   </div>
-                  <div className="col-lg-6">
+                  <div onClick={()=> window.location="/newspage"} className="col-lg-6">
                     <div className="position-relative mb-3">
                       <img className="img-fluid w-100" src={new1} style={{objectFit: 'cover'}} />
                       <div className="bg-white border border-top-0 p-4">
@@ -187,20 +200,10 @@ export default function News() {
                         <p className="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
                           rebum clita rebum dolor stet amet justo</p>
                       </div>
-                      <div className="d-flex justify-content-between bg-white border border-top-0 p-4">
-                        <div className="d-flex align-items-center">
-                          <img className="rounded-circle mr-2" src="img/user.jpg" width={25} height={25} alt="" />
-                          <small>John Doe</small>
-                        </div>
-                        <div className="d-flex align-items-center">
-                          <small className="ml-3"><i className="far fa-eye mr-2" />12345</small>
-                          <small className="ml-3"><i className="far fa-comment mr-2" />123</small>
-                        </div>
-                      </div>
                     </div>
                   </div>
                   
-                  <div className="col-lg-6">
+                  <div onClick={()=> window.location="/newspage"} className="col-lg-6">
                     <div className="position-relative mb-3">
                       <img className="img-fluid w-100" src={new2} style={{objectFit: 'cover'}} />
                       <div className="bg-white border border-top-0 p-4">
@@ -211,16 +214,6 @@ export default function News() {
                         <a className="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href>Lorem ipsum dolor sit amet elit...</a>
                         <p className="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
                           rebum clita rebum dolor stet amet justo</p>
-                      </div>
-                      <div className="d-flex justify-content-between bg-white border border-top-0 p-4">
-                        <div className="d-flex align-items-center">
-                          <img className="rounded-circle mr-2" src="img/user.jpg" width={25} height={25} alt="" />
-                          <small>John Doe</small>
-                        </div>
-                        <div className="d-flex align-items-center">
-                          <small className="ml-3"><i className="far fa-eye mr-2" />12345</small>
-                          <small className="ml-3"><i className="far fa-comment mr-2" />123</small>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -242,7 +235,13 @@ export default function News() {
               <h4 className="m-0 text-uppercase font-weight-bold">Featured News</h4>
               <a >View all</a>
             </div>
-            <Swiper 
+            <Swiper  
+        spaceBetween={30}
+        centeredSlides={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
           className="owl-carousel news-carousel carousel-item-4 position-relative">
               <SwiperSlide className="position-relative overflow-hidden" style={{height: '300px'}}>
                 <img className="img-fluid h-100" src={new1} style={{objectFit: 'cover'}} />
