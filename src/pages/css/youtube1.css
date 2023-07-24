@@ -112,8 +112,8 @@ margin-bottom: 20px;
     width:130px;
 }
 
-#themeswiper.swiper-button-prev{
-    position: absolute;
+#themeswiper .swiper-button-prev{
+    position: absolute !important;
     top: 83% !important;
     left: 80% !important;
     padding: 25px !important;
@@ -125,9 +125,9 @@ margin-bottom: 20px;
     justify-content: center !important;
 
 }
-#themeswiper.swiper-button-next{
+#themeswiper .swiper-button-next{
     border-radius: 50% !important;
-    position: absolute;
+    position: absolute !important;
     display: flex !important;
     justify-content: center !important;
     top: 83% !important;
@@ -138,10 +138,10 @@ margin-bottom: 20px;
     background-color: #fff !important;
     border: 1px solid #2E2E2E !important;
 }
-#themeswiper.swiper-button-prev:after{
+#themeswiper .swiper-button-prev:after{
     font-size: 25px !important;
 }
-#themeswiper.swiper-button-next:after{
+#themeswiper .swiper-button-next:after{
     font-size: 25px !important;
 }
 
@@ -588,18 +588,18 @@ color: #9DA7BB;
     margin-top: 4px;
 }
 @media (max-width:650px) {
-    #themeswiper.swiper-button-prev:after{
+    #themeswiper .swiper-button-prev:after{
         font-size: 15px !important;
     }
     #themeswiper .swiper-button-next:after{
         font-size: 15px !important;
     }
-    #themeswiper.swiper-button-prev{
+    #themeswiper .swiper-button-prev{
         top: 84% !important;
         padding: 20px !important;
         height: 30px !important;
     }
-    #themeswiper.swiper-button-next{
+    #themeswiper .swiper-button-next{
         top: 84% !important;
         height: 30px !important;
         padding: 20px !important;
@@ -1060,7 +1060,14 @@ width: 100%;
 .theme_content{
     text-align: start !important;
 }
-.themeswiper .swiper-pagination-bullet{
+#themeswiper .swiper-pagination-bullet{
     display: none !important;
+}
+.mySwiper{
+    top: 0px !important;
+}
+.theme_video{
+    width: 60%;
+    height: 500px;
 }
 

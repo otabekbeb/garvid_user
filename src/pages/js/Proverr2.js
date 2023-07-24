@@ -234,7 +234,7 @@ dolor sit amet. . . .</p>
         <div className="pover2-tab-kategoryy">
         <div className="radio-inputs">
   <label className="radio">
-    <input type="radio" name="radio" checked=""/>
+    <input type="radio" name="radio"/>
     <span className="name" onClick={()=>okurse(1)} >О курсе</span>
   </label>
   <label className="radio">

@@ -37,7 +37,7 @@ export default function Youtube1() {
   const [user, setUser] = useState([])
   const [state1, setState1] = React.useState();
   const [loader, setLoader] = useState(0)
-  const [IDtheme, setIdtheme] = useState([])
+  const [IDtheme, setIdtheme] = useState()
 
   function openModal() {
     document.querySelector(".navbar_yon").classList.toggle("navbar_yon1")
@@ -156,6 +156,7 @@ export default function Youtube1() {
     axios.get(`${url}/auth/user/`, { headers: { "Authorization": 'Bearer ' + localStorage.getItem("token") } }).then(res => {
       console.log(res.data,);
     })
+    setIdtheme(localStorage.getItem("themeid"))
     axios.get(`${url}/course/registed_course/`).then(res => {
       setUser(res.data)
       setLoader(1)
@@ -184,17 +185,24 @@ export default function Youtube1() {
                   id='themeswiper'
                 >
                   {theme.map((item) => {
-                    if (item.subcategory == localStorage.getItem("themeid")) {
+                    if (item.subcategory == IDtheme) {
                       return (
                         <>
                       
                         <SwiperSlide>
                         <div className="youtube_kotta_img">
                           <div className="img_youtube_kotta">
-                            <iframe
+                          {item.video===null?(
+                          <iframe
                               src={item.links}
                               title="W3Schools Free Online Web Tutorials"
-                            ></iframe>
+                            ></iframe>):(<>
+                              {(item.video && item.links)?(                          <iframe
+                              src={item.links}
+                              title="W3Schools Free Online Web Tutorials"
+                            ></iframe>):(<><video className='theme_video' controls>
+                            <source src={item.video} type="video/mp4"/>
+                          </video></>)}  </>)} 
                           </div>
                           <div className="flex_logig">
                             <h1 className="raspberry_pi">{item.name}</h1>
@@ -307,7 +315,7 @@ export default function Youtube1() {
                                     localStorage.setItem("themeLength",key)
                                     return (
                                       <>
-                                        <Accordion.Body onClick={()=>{localStorage.setItem("themeid", theme.id)}}>
+                                        <Accordion.Body >
                                           <div className="accordion_flex">
                                             <div className="accordion_img">
                                               <img src={theme.image} alt="" />
