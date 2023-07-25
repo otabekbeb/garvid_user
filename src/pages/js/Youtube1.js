@@ -156,7 +156,6 @@ export default function Youtube1() {
     axios.get(`${url}/auth/user/`, { headers: { "Authorization": 'Bearer ' + localStorage.getItem("token") } }).then(res => {
       console.log(res.data,);
     })
-    setIdtheme(localStorage.getItem("themeid"))
     axios.get(`${url}/auth/user/`).then(res => {
       setUser(res.data)
       setLoader(1)
@@ -164,6 +163,7 @@ export default function Youtube1() {
 
 
   }, [])
+
 
   return (
     <>
@@ -185,7 +185,7 @@ export default function Youtube1() {
                   id='themeswiper'
                 >
                   {theme.map((item) => {
-                    if (item.subcategory == IDtheme) {
+                    if (localStorage.getItem("themeidsend")?(item.id==localStorage.getItem("themeidsend")):(item.subcategory==localStorage.getItem("themeid"))) {
                       return (
                         <>
                       
@@ -264,19 +264,14 @@ export default function Youtube1() {
                           return (
                             <>
                               {main.user.map(mainuser => {
-                                return (
-                                  <>
-                                    {user.map(user => {
-                                      if (mainuser === user.user.id) {
+                                      if (mainuser === user.id) {
                                         return (
                                           <div className="post_ava">
-                                            <h6>{user.user.username}</h6>
+                                            <h6>{user.username}</h6>
                                             {/* <button>Subscribe</button> */}
-                                          </div>)
+                                          </div>
+                                          )
                                       }
-                                    })}
-                                  </>
-                                )
                               })}
                             </>
                           )
@@ -316,7 +311,10 @@ export default function Youtube1() {
                                     return (
                                       <>
                                         <Accordion.Body style={{cursor:'pointer'}}>
-                                          <div className="accordion_flex">
+                                          <div style={{cursor:'pointer'}} onClick={()=>{
+                                            localStorage.setItem('themeidsend',theme.id)
+                                            window.location.reload()
+                                          }} className="accordion_flex">
                                             <div className="accordion_img">
                                               <img src={theme.image} alt="" />
                                             </div>
