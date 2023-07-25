@@ -42,9 +42,10 @@
   }
   
 .youtube_kotta_img{
-    width: 100%;
+    width: 60%;
     margin-bottom: 20px;
 }
+
 .img_youtube_kotta img{
     width: 99%;
     margin-top: 1px;
@@ -123,6 +124,7 @@ margin-bottom: 20px;
     border: 1px solid #2E2E2E !important;
     display: flex !important;
     justify-content: center !important;
+    /* display: none !important; */
 
 }
 #themeswiper .swiper-button-next{
@@ -137,6 +139,7 @@ margin-bottom: 20px;
     font-size: 10px !important;
     background-color: #fff !important;
     border: 1px solid #2E2E2E !important;
+    /* display: none !important; */
 }
 #themeswiper .swiper-button-prev:after{
     font-size: 25px !important;
@@ -1073,4 +1076,15 @@ width: 100%;
     width: 60%;
     height: 500px;
 }
+.theme_df{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.theme_button button{
+padding: 10px;
 
+}
+.theme_button{
+    gap: 10px;
+}

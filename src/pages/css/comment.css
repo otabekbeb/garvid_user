@@ -11,6 +11,12 @@
     width: 60%;
     padding: 20px;
 }
+#comment_file{
+    width: 25px;
+    z-index: 1000;
+    opacity: 0;
+    margin-left: 5px;
+}
 .m_comment{
 border-radius: 5px;
 display: flex;

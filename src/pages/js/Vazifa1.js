@@ -32,7 +32,6 @@ export default function Vazifa1() {
         <div className="m_vazifa_scachat">
               {task.map(item1=>{
               if (item1.course_theme===localStorage.getItem("themeidsend")) {
-                console.log(item1);
               return(
                 <div className="scachat_kotta">
                 <div className="m_zadaniya_s">
@@ -71,11 +70,8 @@ export default function Vazifa1() {
         </div>
     </div>):(<div className='m_vazifa_kotta'> 
         <div className="m_vazifa_scachat">
-          {theme.map(item=>{
-            return(
-              <>
               {task.map(item1=>{
-              if (item.id===item1.course_theme) {
+              if (localStorage.getItem("themeidsend")===item1.course_theme) {
               return(
                 <div className="scachat_kotta">
                 <div className="m_zadaniya_s">
@@ -94,9 +90,7 @@ export default function Vazifa1() {
               )            
               }
               })}
-              </>
-            )
-          })}
+
 
 
 

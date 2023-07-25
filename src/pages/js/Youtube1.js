@@ -37,7 +37,7 @@ export default function Youtube1() {
   const [user, setUser] = useState([])
   const [state1, setState1] = React.useState();
   const [loader, setLoader] = useState(0)
-  const [IDtheme, setIdtheme] = useState()
+  const [IDtheme, setIdtheme] = useState({})
 
   function openModal() {
     document.querySelector(".navbar_yon").classList.toggle("navbar_yon1")
@@ -156,11 +156,11 @@ export default function Youtube1() {
     axios.get(`${url}/auth/user/`, { headers: { "Authorization": 'Bearer ' + localStorage.getItem("token") } }).then(res => {
       console.log(res.data,);
     })
-    axios.get(`${url}/auth/user/`).then(res => {
+    axios.get(`${url}/auth/user/`,{ headers: { "Authorization": 'Bearer ' + localStorage.getItem("token") } }).then(res => {
       setUser(res.data)
       setLoader(1)
     })
-
+    setIdtheme(localStorage.getItem("themeid"))
 
   }, [])
 
@@ -173,23 +173,13 @@ export default function Youtube1() {
             <Usernavbar />
             <div className="youtube_bgc">
               <div className="flex_youtube">
-                <Swiper
-                  slidesPerView={1}
-                  spaceBetween={30}
-                  pagination={{
-                    clickable: true,
-                  }}
-                  navigation={true}
-                  modules={[Pagination, Navigation]}
-                  className="mySwiper"
-                  id='themeswiper'
-                >
-                  {theme.map((item) => {
-                    if (localStorage.getItem("themeidsend")?(item.id==localStorage.getItem("themeidsend")):(item.subcategory==localStorage.getItem("themeid"))) {
+
+                  {theme.map(item => {
+                    if (localStorage.getItem("themeidsend")?(item.id==localStorage.getItem("themeidsend")):(item.id==localStorage.getItem("themeid"))) {
                       return (
                         <>
                       
-                        <SwiperSlide>
+
                         <div className="youtube_kotta_img">
                           <div className="img_youtube_kotta">
                           {item.video===null?(
@@ -197,13 +187,14 @@ export default function Youtube1() {
                               src={item.links}
                               title="W3Schools Free Online Web Tutorials"
                             ></iframe>):(<>
-                              {(item.video && item.links)?(                          <iframe
+                              {(item.video && item.links)?(<iframe
                               src={item.links}
                               title="W3Schools Free Online Web Tutorials"
                             ></iframe>):(<><video className='theme_video' controls>
                             <source src={item.video} type="video/mp4"/>
                           </video></>)}  </>)} 
                           </div>
+                          <div className="theme_df">
                           <div className="flex_logig">
                             <h1 className="raspberry_pi">{item.name}</h1>
                             <div className="odtel_media_uchun">
@@ -252,39 +243,35 @@ export default function Youtube1() {
                                 <AiFillStar />
                               </p>
                             </div>
+
                             <p className="p_4_1_524">
                               4.1 <span>(524)</span>
                             </p>
                           </div>
-
+                          </div>
                           <p className='theme_content'>{item.content}</p>
 
                           {
-                        main.map(main => {
-                          return (
-                            <>
-                              {main.user.map(mainuser => {
-                                      if (mainuser === user.id) {
+                        [main[0]].map(main => {
                                         return (
+                                          <div className="theme_df">
                                           <div className="post_ava">
-                                            <h6>{user.username}</h6>
+                                            <img src={main.author.image} alt="" />
+                                            <h6>{main.author.username}</h6>
                                             {/* <button>Subscribe</button> */}
                                           </div>
-                                          )
-                                      }
-                              })}
-                            </>
-                          )
+                                          </div>
+                                          )                                   
                         })
                         }
                           </div>
-                        </SwiperSlide>
+
                          
                        </>
                       );
                     }
                   })}
-                </Swiper>
+
 
                 {category.map((item) => {
                   return (
@@ -306,8 +293,8 @@ export default function Youtube1() {
                                 <Accordion.Header>{item2.name}</Accordion.Header>
                                 {theme.map((theme,key) => {
                                   if (theme.subcategory == item2.id) {
-                                    localStorage.setItem("themeid", theme.subcategory)
-                                    localStorage.setItem("themeLength",key)
+                                    localStorage.setItem("themeid", theme[0])
+                                    localStorage.setItem("themeLength",key+1)
                                     return (
                                       <>
                                         <Accordion.Body style={{cursor:'pointer'}}>

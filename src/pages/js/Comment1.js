@@ -11,6 +11,8 @@ import url from './Host'
 export default function Comment1() {
   const [comment,setComment]=useState([])
   const [state1, setState1] = React.useState();
+  const [user,setUser]=useState([])
+
   useEffect(() => {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
@@ -25,20 +27,22 @@ export default function Comment1() {
       }
       })
     })
+    axios.get(`${url}/auth/user/`,{headers:{"Authorization":"Bearer " + localStorage.getItem("token")}}).then(res=>{
+      setUser(res.data)
+    })
   },[])
 
   function messagePost(){
-    // var formdata=new FormData()
-    // formdata.append("text",document.querySelector("#chat_text").value)
-    // formdata.append("image","https://www.google.com/imgres?imgurl=https%3A%2F%2Fodam.uz%2Fupload%2Fmedia%2Fposts%2F2019-11%2F30%2Fmiyamizni-aldab-qo-yishi-mumkin-bo-lgan-8-ta-rasm-sinchkovroq-bo-ling_1575125501-b.jpg&tbnid=c8Ci4d3mo8CuBM&vet=12ahUKEwiExpCMk6KAAxW5FBAIHSHfBhkQMygBegUIARDDAQ..i&imgrefurl=https%3A%2F%2Fodam.uz%2FQiziqarli%2Fmiyamizni-aldab-qo-yishi-mumkin-bo-lgan-8-ta-rasm--sinchkovroq-bo-ling&docid=AxsKlJNYCuyROM&w=780&h=440&q=rasm&ved=2ahUKEwiExpCMk6KAAxW5FBAIHSHfBhkQMygBegUIARDDAQ")
-    // formdata.append("subcomment","salom")
+    var formdata=new FormData()
+    formdata.append("text",document.querySelector("#chat_text").value)
+    formdata.append("image",document.querySelector("#comment_file").files[0])
+    formdata.append("subcomment",JSON.stringify(document.querySelector("#chat_text").value))
 
-
-    // axios.post(`${url}/course/theme_comment/`,formdata,{headers:{Authorization:"Bearer " + localStorage.getItem("token")}}).then(res=>{
-    // alert("yozildi")
-    // }).catch(err=>{
-    //   alert("ishladddddd")
-    // })
+    axios.post(`${url}/course/theme_comment/`,formdata,{headers:{"Authorization":"Bearer " + localStorage.getItem("token")}}).then(res=>{
+    alert("yozildi")
+    }).catch(err=>{
+      alert("ishladddddd")
+    })
   }
 
   return (
@@ -50,10 +54,10 @@ export default function Comment1() {
         return(
           <div className="m_comment">
           <div className="m_comment_img">
-              <img src={item.image} alt="" />
+              <img src={"https://baisan.onrender.com"+item.user.image} alt="" />
           </div>
           <div className="m_comment_text">
-              <h4>Jonibek Akbarov</h4>
+              <h4>{item.user.username}</h4>
               <p>{item.text}</p>
               {/* <div className="m_comment_otvet"> 
               <p><span><FiCornerUpLeft/></span>Ответить</p> 
@@ -66,6 +70,7 @@ export default function Comment1() {
 
 
             <div className="m_comment_yozish">
+              <input type="file" id='comment_file' />
               <p><BsFillChatFill/></p>
               <textarea placeholder='Введите текст' id="chat_text"></textarea>
             </div>
