@@ -24,12 +24,22 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Pagination } from 'swiper/modules';
+import axios from 'axios'
+import url from './Host'
 
 export default function News() {
+   const [base,setBase] = useState([])
+
+   useEffect(()=>{
+    axios.get(`${url}/knowladge_base/knowladgebase/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res=>{
+      setBase(res.data)
+    })
+   },[])
+   
     return (
-      <div>
+      <div><Navbar/>
       <div className='newss1'>
-        <Navbar/>
+        
         <meta charSet="utf-8" />
         <title>BizNews - Free News Website Template</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -51,97 +61,44 @@ export default function News() {
         {/* Navbar End */}
         {/* Main News Slider Start */}
         
-        
-        <div className="container-fluid">
-          <div className="row">
-            <div  className="col-lg-7 px-0">
-              <Carousel  className="owl-carousel main-carousel position-relative">
-                <Carousel.Item  className="position-relative overflow-hidden" style={{height: '500px'}}>
-                  <img  className="img-fluid h-100" src={news1} style={{objectFit: 'cover'}} />
-                  <div className="overlay">
-                    <div className="mb-2">
-                      <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href>Business</a>
-                      <a className="text-white" href>Jan 01, 2045</a>
-                    </div>
-                    <a  style={{cursor:"pointer"}} onClick={()=> window.location="/newspage"} className="h2 m-0 text-white text-uppercase font-weight-bold" href>Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
-                  </div>
-                </Carousel.Item>
-                <Carousel.Item className="position-relative overflow-hidden" style={{height: '500px'}}>
-                  <img className="img-fluid h-100" src={news2} style={{objectFit: 'cover'}} />
-                  <div className="overlay">
-                    <div className="mb-2">
-                      <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href>Business</a>
-                      <a className="text-white" href>Jan 01, 2045</a>
-                    </div>
-                    <a className="h2 m-0 text-white text-uppercase font-weight-bold" href>Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
-                  </div>
-                </Carousel.Item>
-                <Carousel.Item className="position-relative overflow-hidden" style={{height: '500px'}}>
-                  <img className="img-fluid h-100" src={news3} style={{objectFit: 'cover'}} />
-                  <div className="overlay">
-                    <div className="mb-2">
-                      <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href>Business</a>
-                      <a className="text-white" href>Jan 01, 2045</a>
-                    </div>
-                    <a className="h2 m-0 text-white text-uppercase font-weight-bold" href>Lorem ipsum dolor sit amet elit. Proin vitae porta diam...</a>
-                  </div>
-                </Carousel.Item>
-              </Carousel>
-            </div>
-            <div className="col-lg-5 px-0">
-              <div className="row mx-0">
-                <div onClick={()=> window.location="/newspage"} style={{cursor:"pointer"}}  className="col-md-6 px-0">
-                  <div className="position-relative overflow-hidden" style={{height: '250px'}}>
-                    <img className="img-fluid w-100 h-100" src={new1} style={{objectFit: 'cover'}} />
+        {base.map(item=>{
+          return(
+            <div className="container-fluid">
+            <div className="row">
+              <div  className="col-lg-7 px-0">
+                <Carousel  className="owl-carousel main-carousel position-relative">
+                  <Carousel.Item  className="position-relative overflow-hidden" style={{height: '500px'}}>
+                    <img  className="img-fluid h-100" src={item.image} style={{objectFit: 'cover'}} />
                     <div className="overlay">
                       <div className="mb-2">
                         <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href>Business</a>
-                        <a className="text-white" href><small>Jan 01, 2045</small></a>
+                        <a className="text-white" href>Jan 01, 2045</a>
                       </div>
-                      <a className="h6 m-0 text-white text-uppercase font-weight-semi-bold" href>Lorem ipsum dolor sit amet elit...</a>
+                      <a  style={{cursor:"pointer"}} onClick={()=> window.location="/newspage"} className="h2 m-0 text-white text-uppercase font-weight-bold" href>{item.name}</a>
                     </div>
-                  </div>
-                </div>
-                <div onClick={()=> window.location="/newspage"} style={{cursor:"pointer"}}  className="col-md-6 px-0">
-                  <div className="position-relative overflow-hidden" style={{height: '250px'}}>
-                    <img className="img-fluid w-100 h-100" src={new2} style={{objectFit: 'cover'}} />
-                    <div className="overlay">
-                      <div className="mb-2">
-                        <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href>Business</a>
-                        <a className="text-white" href><small>Jan 01, 2045</small></a>
+                  </Carousel.Item>
+                </Carousel>
+              </div>
+              <div className="col-lg-5 px-0">
+                <div className="row mx-0">
+                  <div onClick={()=> window.location="/newspage"} style={{cursor:"pointer"}}  className="col-md-6 px-0">
+                    <div className="position-relative overflow-hidden" style={{height: '250px'}}>
+                      <img className="img-fluid w-100 h-100" src={item.image} style={{objectFit: 'cover'}} />
+                      <div className="overlay">
+                        <div className="mb-2">
+                          <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href>Business</a>
+                          <a className="text-white" href><small>Jan 01, 2045</small></a>
+                        </div>
+                        <a className="h6 m-0 text-white text-uppercase font-weight-semi-bold" href>{item.name}</a>
                       </div>
-                      <a className="h6 m-0 text-white text-uppercase font-weight-semi-bold" href>Lorem ipsum dolor sit amet elit...</a>
-                    </div>
-                  </div>
-                </div>
-                <div onClick={()=> window.location="/newspage"} style={{cursor:"pointer"}}  className="col-md-6 px-0">
-                  <div className="position-relative overflow-hidden" style={{height: '250px'}}>
-                    <img className="img-fluid w-100 h-100" src={new3} style={{objectFit: 'cover'}} />
-                    <div className="overlay">
-                      <div className="mb-2">
-                        <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href>Business</a>
-                        <a className="text-white" href><small>Jan 01, 2045</small></a>
-                      </div>
-                      <a className="h6 m-0 text-white text-uppercase font-weight-semi-bold" href>Lorem ipsum dolor sit amet elit...</a>
-                    </div>
-                  </div>
-                </div>
-                <div onClick={()=> window.location="/newspage"} style={{cursor:"pointer"}}  className="col-md-6 px-0">
-                  <div className="position-relative overflow-hidden" style={{height: '250px'}}>
-                    <img className="img-fluid w-100 h-100" src={new4} style={{objectFit: 'cover'}} />
-                    <div className="overlay">
-                      <div className="mb-2">
-                        <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href>Business</a>
-                        <a className="text-white" href><small>Jan 01, 2045</small></a>
-                      </div>
-                      <a className="h6 m-0 text-white text-uppercase font-weight-semi-bold" href>Lorem ipsum dolor sit amet elit...</a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+          )
+        })}
         
         <div className="container-fluid">
           <div className="container">
