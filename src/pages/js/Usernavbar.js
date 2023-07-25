@@ -162,6 +162,9 @@ export default function Navbar() {
                 <li className="moto-menu-item">
                   <a href="/loginpage">Edit profile</a>
                 </li>
+                <li className="moto-menu-item">
+                  <a href="/Ourcourse">Courses</a>
+                </li>
 
               </ul>
               <div class="checkbox-con">
@@ -269,6 +272,11 @@ export default function Navbar() {
                           Edit profile
                         </a>
                       </li>
+                      <li>
+                        <a href="/Ourcourse" className="tt">
+                          Courses
+                        </a>
+                      </li>
                      
                      
 
@@ -367,6 +375,9 @@ export default function Navbar() {
                 </li>
                 <li className="moto-menu-item">
                   <a href="/loginpage">Редактировать профиль</a>
+                </li>
+                <li className="moto-menu-item">
+                  <a href="/Ourcourse">Курсы</a>
                 </li>
                 {/* <li className='moto-menu-item'><a href="/teacher" >Учитель</a></li> */}
                 
@@ -478,6 +489,11 @@ export default function Navbar() {
                       <li>
                         <a href="/loginpage" className="tt">
                           Редактировать профиль
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/Ourcourse" className="tt">
+                          Курсы
                         </a>
                       </li>
                       {/* <li><a href="/teacher" className='tt'>Учитель</a></li> */}

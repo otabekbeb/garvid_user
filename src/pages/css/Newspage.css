@@ -11,10 +11,18 @@
 }
 .newspage_cards img{
     width: 100%;
+    margin-bottom: 25px;
 }
-.newspage1 .mb-3, .my-3{
-    width: 25%;
-}
+
 .newspage_cards a{
     color: black !important;
+}
+.newspage_p{
+    width: 35%;
+    padding: 15px;
+    padding-top: 0;
+}
+.newspage_p p{
+    line-height: 28px;
+font-size: 19px;
 }

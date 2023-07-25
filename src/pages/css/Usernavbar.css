@@ -20,7 +20,9 @@
 .menu {
   position: relative;
 }
-
+.navbar a:hover{
+  text-decoration: none !important;
+}
 .menu p {
   display: flex;
   font-size: 15px;
