@@ -7,6 +7,8 @@ import { HiOutlineChevronUp } from "react-icons/hi"
 import { AiFillStar } from "react-icons/ai"
 import {AiOutlineArrowRight} from "react-icons/ai"
 import img from '../../pages/img/download.png'
+import Usernavbar from '../js/Usernavbar'
+import Futer from '../js/Futer'
 
 
 export default function Ourcourse() {
@@ -27,6 +29,7 @@ export default function Ourcourse() {
     }
     return (
         <div>
+          <Usernavbar/>
             <div className="gray_navbar">
                 <div className="course_inp">
                     <h1>Bizning kurslar</h1>
@@ -239,7 +242,7 @@ asoslari</h4>
               </div>
         </div>
             </header>
-
+<futer/>
         </div>
     )
 }
