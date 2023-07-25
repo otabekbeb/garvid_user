@@ -3,7 +3,7 @@ import "../css/mentorPdp.css"
 import Mentorkurs from "./Mentorkurs"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Yozishma from './MentorChat'
-import Sertifikat from './Sertifikate'
+import Sertifikat from './Workforteach'
 import Azo from "./Azo"
 // import Mon from '../img/Mon.png'
 // import { AiFillStar } from 'react-icons/ai'
