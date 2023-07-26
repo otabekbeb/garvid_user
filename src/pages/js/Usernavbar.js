@@ -25,10 +25,16 @@ function about2() {
 function aboutClose2() {
   document.querySelector(".ichi span").style = "transform: rotate(0deg);";
 }
-function ffd() { }
+function iconhover() { 
+  document.querySelector(".ichi2 span").style="transform: rotate(180deg)"
+}
+function iconhover1() { 
+  document.querySelector(".ichi2 span").style="transform: rotate(0deg)"
+}
 // meded
 function ochil1() {
   document.querySelector(".lll ul").classList.toggle("lllb");
+  
 }
 function meded() {
   document.querySelector(".ffdul ").classList.toggle("fffdull");
@@ -63,8 +69,25 @@ export default function Navbar() {
   const [state1, setState1] = React.useState();
   const [state, State] = React.useState(1);
   const [user, setUser] = useState([])
+  const googleTranslateElementInit = () => {
+    new window.google.translate.TranslateElement(
+      {
+        pageLanguage: "en",
+        autoDisplay: false
+      },
+      "google_translate_element"
+    );
+  };
+
 
   useEffect(() => {
+    var addScript = document.createElement("script");
+    addScript.setAttribute(
+      "src",
+      "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    );
+    document.body.appendChild(addScript);
+    window.googleTranslateElementInit = googleTranslateElementInit;
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
@@ -81,7 +104,8 @@ export default function Navbar() {
 
     axios.get(`${url}/auth/user/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setUser(res.data)
-    })
+    });
+    
   }, []);
 
   return (
@@ -89,14 +113,14 @@ export default function Navbar() {
       {state1 === "en" ? (
         <div>
           <section onMouseLeave={() => menuul1()} className="navbar">
-            
+            <div className="section_navbar">
             <div className="navbar-ul">
               <ul>
                 <li className="moto-menu-item">
                   <a href="/">Home</a>
                 </li>
 
-                <div className="menu" style={{display:'none'}} onMouseLeave={() => menuufolse()}>
+                <div style={{display:"none"}} className="menu" onMouseLeave={() => menuufolse()}>
                   <div className="menuu" onMouseEnter={() => menuul()}>
                     <p>
                       <a href="/about">About Us</a>
@@ -108,8 +132,8 @@ export default function Navbar() {
                       </span>
                     </p>
                     <ul onMouseLeave={() => menuul1()}>
-                      <li>
-                        <a href="#">FAQs</a>
+                      <li className="faqcolor">
+                        <a className="faqscolor" href="#">FAQs</a>
                       </li>
                       <div className="navbbar-line-hr"></div>
 
@@ -119,9 +143,9 @@ export default function Navbar() {
                         onMouseLeave={() => menu2leave()}
                         onMouseEnter={() => menu2ul()}
                       >
-                        <p id="menu2pp" onMouseEnter={() => menu2ul()}>
+                        <p  onClick={()=> window.location="/news"} id="menu2pp" onMouseEnter={() => menu2ul()}>
                           {" "}
-                          <a href="#" className="zaib">
+                          <a  className="zaib">
                             News{" "}
                             <span id="menu2spanid">
                               <box-icon
@@ -140,8 +164,8 @@ export default function Navbar() {
                         >
                           <div className="navbbar-line-hr1"></div>
 
-                          <li id="ded">
-                            <a href="/contacts">Contact </a>
+                          <li onClick={()=> window.location="contacts"} id="ded">
+                            <a id="contactcolor" href="/contacts">Contact </a>
                           </li>
                         </ul>
                       </div>
@@ -154,34 +178,27 @@ export default function Navbar() {
                   <a href="/user">User</a>{" "}
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/student">Student</a>
-                </li>
-                <li className="moto-menu-item">
                   <a href="/teacher">Teacher</a>
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/loginpage">Edit profile</a>
+                  <a href="/student">Student</a>
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/Ourcourse">Courses</a>
+                  <a href="/Loginpage">Edit profile</a>
+                </li>
+                <li className="moto-menu-item">
+                  <a href="/ourcourse">Courses</a>
                 </li>
 
+
+                <li className="moto-menu-item">
+                  {localStorage.getItem("token") ? (<a href="/user">{user.username}</a>) : (<a href="/login">Log in</a>)}
+                </li>
               </ul>
-              <div class="checkbox-con">
-                <input
-                  id="checkbox"
-                  onClick={() => {
-                    !document.querySelector("#checkbox").checked
-                      ? localStorage.setItem("lang", "ru")
-                      : localStorage.setItem("lang", "en");
-                    window.location.reload();
-                  }}
-                  type="checkbox"
-                />
-              </div>
+              <div id="google_translate_element"></div>
             </div>
             <div className="media-navbar" style={{margin:"auto"}}>
-              <div className="navbar-menu" >
+              <div className="navbar-menu">
                 <div className="navbar-mediao-barr" onClick={() => sa()}>
                   <div className="bar-menu" id="sa">
                     <div className="wone"></div>
@@ -191,8 +208,8 @@ export default function Navbar() {
                 </div>
 
 
-              
-     <div className="media-ul">
+                {/* onMouseLeave={()=>aboutClose2()}  */}
+                <div className="media-ul">
                   <div className="dfdf">
                     <ul>
                       <li>
@@ -200,7 +217,7 @@ export default function Navbar() {
                           Home
                         </a>
                       </li>
-                      <div style={{display:'none'}}
+                      <div style={{display:"none"}}
                         className="media-kategory"
                         onMouseLeave={() => aboutClose2()}
                       >
@@ -224,9 +241,9 @@ export default function Navbar() {
                       </div>
                       <div className="ffd">
                         <ul className="ffdul">
-                          <div className="ichi2" onClick={() => ochil1()}>
-                            <li className="ds">
-                              <a href="#">News</a>
+                          <div className="ichi2" onMouseEnter={()=> iconhover()} onMouseLeave={()=> iconhover1()} onClick={() => ochil1()}>
+                            <li onClick={()=> window.location="/news"} className="ds">
+                              <a href="news">News</a>
                             </li>
                             <span>
                               <box-icon
@@ -258,13 +275,13 @@ export default function Navbar() {
                       </li>
 
                       <li>
-                        <a href="/student" className="tt">
-                          student
+                        <a href="/teacher" className="tt">
+                          Teacher
                         </a>
                       </li>
                       <li>
-                        <a href="/teacher" className="tt">
-                          Teacher
+                        <a href="/student" className="tt">
+                          Student
                         </a>
                       </li>
                       <li>
@@ -273,29 +290,22 @@ export default function Navbar() {
                         </a>
                       </li>
                       <li>
-                        <a href="/Ourcourse" className="tt">
+                        <a href="/ourcourse" className="tt">
                           Courses
                         </a>
                       </li>
-                     
-                     
+                      {/* <li><a href="/teacher" className='tt'>Teacher</a></li> */}
+                      <li>
+                        {localStorage.getItem("token") ? (<a href="/user" className="tt">{user.username}</a>) : (<a Login href="/login" className="tt">Login</a>)}
+                      </li>
 
-                      <div class="checkbox-con" style={{ marginTop: "15px" }}>
-                        <input
-                          id="checkbox2"
-                          onClick={() => {
-                            !document.querySelector("#checkbox2").checked
-                              ? localStorage.setItem("lang", "ru")
-                              : localStorage.setItem("lang", "en");
-                            window.location.reload();
-                          }}
-                          type="checkbox"
-                        />
-                      </div>
+
+                      <div id="google_translate_element"></div>
                     </ul>
                   </div>
-                </div> 
+                </div>
               </div>
+            </div>
             </div>
           </section>
         </div>
@@ -308,7 +318,7 @@ export default function Navbar() {
                   <a href="/">Главный</a>
                 </li>
 
-                <div style={{display:'none'}} className="menu" onMouseLeave={() => menuufolse()}>
+                <div className="menu" onMouseLeave={() => menuufolse()}>
                   <div className="menuu" onMouseEnter={() => menuul()}>
                     <p>
                       <a href="/about">О нас</a>
@@ -326,12 +336,12 @@ export default function Navbar() {
                       <div className="navbbar-line-hr"></div>
 
                       <div className="menu2">
-                        <p
+                        <p onClick={()=> window.location="/news"}
                           onMouseEnter={() => menu2ul()}
                           onMouseLeave={() => menu2leave()}
                         >
                           {" "}
-                          <a href="#" className="zaib">
+                          <a href="/news" className="zaib">
                             Новости{" "}
                             <span>
                               <box-icon
@@ -351,8 +361,8 @@ export default function Navbar() {
                           <div className="navbbar-line-hr1"></div>
 
                           <li id="ded">
-                            <a href="/contacts">
-                              {state1 === "en" ? "Contact" : "Связь"}{" "}
+                            <a id="contactcolor" href="/contacts">
+                              {state1 === "en" ? "Contact1" : "Связь"}{" "}
                             </a>
                           </li>
                         </ul>
@@ -364,25 +374,23 @@ export default function Navbar() {
 
                 <li className="moto-menu-item">
                   {" "}
-                  <a href="/user">Пользователь</a>{" "}
-                </li>
-                
-                <li className="moto-menu-item">
-                  <a href="/student">Ученик</a>
+                  <a href="/servis">Услуги</a>{" "}
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/teacher">Учитель</a>
+                  <a href="/blog">Блог</a>
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/loginpage">Редактировать профиль</a>
+                  <a href="/ourteam">Наша команда</a>
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/Ourcourse">Курсы</a>
+                  <a href="/contacts">Связь</a>
                 </li>
                 {/* <li className='moto-menu-item'><a href="/teacher" >Учитель</a></li> */}
-                
+                <li className="moto-menu-item">
+                  {localStorage.getItem("token") ? (<a href="/user">{user.username}</a>) : (<a href="/login">Регистрация</a>)}
+                </li>
               </ul>
-              <div class="checkbox-con">
+              <div class="checkbox-con" >
                 <input
                   id="checkbox"
                   onClick={() => {
@@ -395,7 +403,7 @@ export default function Navbar() {
                 />
               </div>
             </div>
-            <div className="media-navbar"  style={{margin:"auto"}}>
+            <div className="media-navbar" style={{margin:"auto"}}>
               <div className="navbar-menu">
                 <div className="navbar-mediao-barr" onClick={() => sa()}>
                   <div className="bar-menu" id="sa">
@@ -414,7 +422,7 @@ export default function Navbar() {
                           Главный
                         </a>
                       </li>
-                      <div style={{display:'none'}}
+                      <div
                         className="media-kategory"
                         onMouseLeave={() => aboutClose2()}
                       >
@@ -443,8 +451,8 @@ export default function Navbar() {
                           </li>
 
                           <div className="ichi2" onClick={() => ochil1()}>
-                            <li className="ds">
-                              <a href="#">Новости</a>
+                            <li onClick={()=> window.location="/news"} className="ds">
+                              <a href="/news">Новости</a>
                             </li>
                             <span>
                               <box-icon
@@ -471,34 +479,31 @@ export default function Navbar() {
                         </ul>
                       </div>
                       <li>
-                        <a href="/user" className="tt">
-                          Пользователь
+                        <a href="/servis" className="tt">
+                          Услуги
                         </a>
                       </li>
 
                       <li>
-                        <a href="/student" className="tt">
-                          Ученик
+                        <a href="/blog" className="tt">
+                          Блог
                         </a>
                       </li>
                       <li>
-                        <a href="/teacher" className="tt">
-                          Учитель
+                        <a href="/ourteam" className="tt">
+                          Наша команда
                         </a>
                       </li>
                       <li>
-                        <a href="/loginpage" className="tt">
-                          Редактировать профиль
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/Ourcourse" className="tt">
-                          Курсы
+                        <a href="/contacts" className="tt">
+                          Связь
                         </a>
                       </li>
                       {/* <li><a href="/teacher" className='tt'>Учитель</a></li> */}
 
-                      
+                      <li>
+                        {localStorage.getItem("token") ? (<a href="/user">{user.username}</a>) : (<a href="/login" className="tt">Регистрация</a>)}
+                      </li>
                       <div class="checkbox-con" style={{ marginTop: "15px" }}>
                         <input
                           id="checkbox2"
@@ -519,6 +524,7 @@ export default function Navbar() {
           </section>
         </div>
       )}
+
       <div
         className="div1"
         onMouseEnter={() => menu2ul12()}
