@@ -13,7 +13,7 @@ function sa() {
   }
   // document.querySelector(".media-ul").style.display="flex";
   document.querySelector(".bar-menu").classList.toggle("la");
-  document.querySelector(".wone").classList.toggle("laa");
+  document.querySelector(".wone").classList.toggle("laa");  
   document.querySelector(".wone1").classList.toggle("laa");
   document.querySelector(".wone2").classList.toggle("laa");
 }
