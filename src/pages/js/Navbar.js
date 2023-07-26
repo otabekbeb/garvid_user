@@ -69,8 +69,25 @@ export default function Navbar() {
   const [state1, setState1] = React.useState();
   const [state, State] = React.useState(1);
   const [user, setUser] = useState([])
+  const googleTranslateElementInit = () => {
+    new window.google.translate.TranslateElement(
+      {
+        pageLanguage: "en",
+        autoDisplay: false
+      },
+      "google_translate_element"
+    );
+  };
+
 
   useEffect(() => {
+    var addScript = document.createElement("script");
+    addScript.setAttribute(
+      "src",
+      "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    );
+    document.body.appendChild(addScript);
+    window.googleTranslateElementInit = googleTranslateElementInit;
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
@@ -115,8 +132,8 @@ export default function Navbar() {
                       </span>
                     </p>
                     <ul onMouseLeave={() => menuul1()}>
-                      <li>
-                        <a href="#">FAQs</a>
+                      <li className="faqcolor">
+                        <a className="faqscolor" href="#">FAQs</a>
                       </li>
                       <div className="navbbar-line-hr"></div>
 
@@ -126,7 +143,7 @@ export default function Navbar() {
                         onMouseLeave={() => menu2leave()}
                         onMouseEnter={() => menu2ul()}
                       >
-                        <p onClick={()=> window.location="/news"} id="menu2pp" onMouseEnter={() => menu2ul()}>
+                        <p  onClick={()=> window.location="/news"} id="menu2pp" onMouseEnter={() => menu2ul()}>
                           {" "}
                           <a  className="zaib">
                             News{" "}
@@ -147,8 +164,8 @@ export default function Navbar() {
                         >
                           <div className="navbbar-line-hr1"></div>
 
-                          <li id="ded">
-                            <a href="/contacts">Contact </a>
+                          <li onClick={()=> window.location="contacts"} id="ded">
+                            <a id="contactcolor" href="/contacts">Contact </a>
                           </li>
                         </ul>
                       </div>
@@ -175,18 +192,7 @@ export default function Navbar() {
                   {localStorage.getItem("token") ? (<a href="/user">{user.username}</a>) : (<a href="/login">Log in</a>)}
                 </li>
               </ul>
-              <div class="checkbox-con" >
-                <input
-                  id="checkbox"
-                  onClick={() => {
-                    !document.querySelector("#checkbox").checked
-                      ? localStorage.setItem("lang", "ru")
-                      : localStorage.setItem("lang", "en");
-                    window.location.reload();
-                  }}
-                  type="checkbox"
-                />
-              </div>
+              <div id="google_translate_element"></div>
             </div>
             <div className="media-navbar" style={{margin:"auto"}}>
               <div className="navbar-menu">
@@ -357,8 +363,8 @@ export default function Navbar() {
                           <div className="navbbar-line-hr1"></div>
 
                           <li id="ded">
-                            <a href="/contacts">
-                              {state1 === "en" ? "Contact" : "Связь"}{" "}
+                            <a id="contactcolor" href="/contacts">
+                              {state1 === "en" ? "Contact1" : "Связь"}{" "}
                             </a>
                           </li>
                         </ul>

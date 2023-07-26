@@ -79,7 +79,7 @@ export default function News() {
                     {basetype.map(item=>{
                       return(
                         <>
-                        {item.name==null?(""):(<><a  className="d-block w-100 text-white text-decoration-none mb-3" style={{background: '#52AAF4'}}>
+                        {item.name==null?(""):(<><a  className="d-block w-100 text-white text-decoration-none mb-3" style={{background: '#52AAF4',cursor:"pointer"}}>
                         <i className="fab fa-twitter text-center py-4 mr-3" style={{width: '65px', background: 'rgba(0, 0, 0, .2)'}} />
                         <span className="font-weight-medium">{item.name}</span>
                       </a></>)}
