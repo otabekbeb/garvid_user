@@ -292,18 +292,7 @@ export default function Navbar() {
                       </li>
 
 
-                      <div class="checkbox-con" style={{ marginTop: "15px" }}>
-                        <input
-                          id="checkbox2"
-                          onClick={() => {
-                            !document.querySelector("#checkbox2").checked
-                              ? localStorage.setItem("lang", "ru")
-                              : localStorage.setItem("lang", "en");
-                            window.location.reload();
-                          }}
-                          type="checkbox"
-                        />
-                      </div>
+                      <div id="google_translate_element"></div>
                     </ul>
                   </div>
                 </div>
