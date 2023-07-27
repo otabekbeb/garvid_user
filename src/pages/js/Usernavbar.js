@@ -191,9 +191,9 @@ export default function Navbar() {
                 </li>
 
 
-                <li className="moto-menu-item">
+                {/* <li className="moto-menu-item">
                   {localStorage.getItem("token") ? (<a href="/user">{user.username}</a>) : (<a href="/login">Log in</a>)}
-                </li>
+                </li> */}
               </ul>
               <div id="google_translate_element"></div>
             </div>
@@ -295,9 +295,9 @@ export default function Navbar() {
                         </a>
                       </li>
                       {/* <li><a href="/teacher" className='tt'>Teacher</a></li> */}
-                      <li>
+                      {/* <li>
                         {localStorage.getItem("token") ? (<a href="/user" className="tt">{user.username}</a>) : (<a Login href="/login" className="tt">Login</a>)}
-                      </li>
+                      </li> */}
 
 
                       <div id="google_translate_element"></div>
@@ -501,9 +501,9 @@ export default function Navbar() {
                       </li>
                       {/* <li><a href="/teacher" className='tt'>Учитель</a></li> */}
 
-                      <li>
+                      {/* <li>
                         {localStorage.getItem("token") ? (<a href="/user">{user.username}</a>) : (<a href="/login" className="tt">Регистрация</a>)}
-                      </li>
+                      </li> */}
                       <div class="checkbox-con" style={{ marginTop: "15px" }}>
                         <input
                           id="checkbox2"
