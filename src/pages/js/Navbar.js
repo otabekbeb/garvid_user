@@ -70,7 +70,7 @@ export default function Navbar() {
   const [state1, setState1] = React.useState();
   const [state, State] = React.useState(1);
   const [user, setUser] = useState([])
-  const activeLink = "";
+  const activeLink = " bg-blue-100 text-black ";
   const normalLink = ""
 
   const googleTranslateElementInit = () => {
