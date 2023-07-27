@@ -18,6 +18,7 @@ import axios from "axios";
 import url from "./Host";
 import Edit from './Edit';
 import Delete from './Delete';
+import Groupimg from '../img/Group 2.png'
 export default function Searchfilter() {
   const [kursdata, setKursdata] = useState([]);
   const [type, settype] = useState([]);
@@ -25,6 +26,9 @@ export default function Searchfilter() {
 
   function Filter() {
     document.querySelector(".filter_button").classList.toggle("filter");
+  }
+  function close(){
+    document.querySelector(".delete_card").style="display:none"
   }
   function windowModal() {
     document.querySelector(".kurs_cards").style = "display:flex;transition:3s";
@@ -37,7 +41,7 @@ export default function Searchfilter() {
   }
 
   function udalit() {
-    document.querySelector(".delete_card").classList.toggle("tgl");
+   document.querySelector(".delete_card").style="display:flex"
 }
 
 
@@ -307,7 +311,16 @@ export default function Searchfilter() {
                         <Delete/>{" "}
                         </i>
                   </button>
-                  <div className="delete_card"></div>
+                  <div className="delete_card">
+                    <div className="delete_padding">
+                      <img src={Groupimg} alt="" />
+                      <h4>Вы правда хотите удалить?</h4>
+                      <div className="delete_btns">
+                      <button onClick={() => close()} className="delete_btn_no">Нет</button>
+                      <button className="delete_btn_yes">Да</button>
+                      </div>
+                    </div>
+                  </div>
 
                 <button className="button_circle">
                   <AiOutlineArrowRight
