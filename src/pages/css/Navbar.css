@@ -298,7 +298,7 @@ right: 32px;
   display: none;
 }
 
-@media (max-width: 770px) {
+@media (max-width: 850px) {
   
 
   .navbar-ul {
@@ -358,7 +358,7 @@ margin-top: 10px !important;
   }
 }
 
-@media (min-width: 770px) {
+@media (min-width: 850px) {
   .media-navbar {
     display: none !important;
     align-items: center !important;
@@ -773,7 +773,7 @@ body{
      display: none;
    }
 
-   @media (max-width: 770px) {
+   @media (max-width: 850px) {
      .navbar-ul {
        display: none;
      }
@@ -838,7 +838,7 @@ body{
      }
    }
 
-   @media (min-width: 770px) {
+   @media (min-width: 850px) {
      .media-navbar {
        display: none !important;
        align-items: center !important;
@@ -1430,7 +1430,7 @@ color: white;
   display: none;
 }
 
-@media (max-width: 770px) {
+@media (max-width: 850px) {
   .navbar-ul {
     display: none;
   }
@@ -1494,7 +1494,7 @@ color: white;
   }
 }
 
-@media (min-width: 770px) {
+@media (min-width: 850px) {
   .media-navbar {
     display: none !important;
     align-items: center !important;
@@ -3236,7 +3236,7 @@ color: rgba(var(--bs--rgb),var(--bs-text-opacity)) !important;;
   }
 }
 
-@media (max-width:769px) {
+@media (max-width:850px) {
   .checkbox-con {
     margin-left: -40px;
   }

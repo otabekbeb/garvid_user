@@ -189,7 +189,7 @@
     display: none;
 }
 
-@media (max-width:770px) {
+@media (max-width:850px) {
     .navbar-mediao-barr {
         position: relative;
     }
@@ -268,7 +268,7 @@
     }
 }
 
-@media (min-width:770px) {
+@media (min-width:850px) {
 
     .media-navbar {
         display: none !important;
@@ -3084,7 +3084,7 @@ justify-content: center; */
     }
 }
 
-@media (max-width:770px) {
+@media (max-width:850px) {
     .asd-block {
         position: relative;
         left: -1%;
