@@ -137,42 +137,36 @@ export default function Navbar() {
                         ></box-icon>
                       </span>
                     </p>
-                    <ul onMouseLeave={() => menuul1()}>
+                    <ul>
                       <li className="faqcolor">
                         <NavLink to="/faqs" className={({isActive})=>isActive?activeLink: normalLink}><a className="faqscolor">FAQs</a></NavLink>
                       </li>
+                      <div className="navbbar-line-hr"></div>
+                      <li onClick={()=> window.location="contacts"} id="ded">
+                            <a id="contactcolor" href="/contacts">Contact </a>
+                          </li>
                       <div className="navbbar-line-hr"></div>
 
 
                       <div
                         className="menu2"
-                        onMouseLeave={() => menu2leave()}
-                        onMouseEnter={() => menu2ul()}
+
                       >
-                        <p  onClick={()=> window.location="#"} id="menu2pp" onMouseEnter={() => menu2ul()}>
+                        <p  onClick={()=> window.location="#"} id="menu2pp" >
                           {" "}
                           <a  className="zaib">
                             News{" "}
-                            <span id="menu2spanid">
-                              <box-icon
-                                name="chevron-right"
-                                color="#44bef1"
-                              ></box-icon>
-                            </span>
                           </a>{" "}
                         </p>
                         <div className="navbbar-line-hr"></div>
 
                         <ul
-                          onMouseEnter={() => menu2ul()}
-                          onMouseLeave={() => menu2leave1()}
+
                           className="blog1"
                         >
                           <div className="navbbar-line-hr1"></div>
 
-                          <li onClick={()=> window.location="contacts"} id="ded">
-                            <a id="contactcolor" href="/contacts">Contact </a>
-                          </li>
+                       
                         </ul>
                       </div>
                     </ul>
