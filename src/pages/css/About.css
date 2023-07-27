@@ -189,7 +189,7 @@
     display: none;
 }
 
-@media (max-width:770px) {
+@media (max-width:830px) {
     .navbar-mediao-barr {
         position: relative;
     }
@@ -268,7 +268,7 @@
     }
 }
 
-@media (min-width:770px) {
+@media (min-width:830px) {
 
     .media-navbar {
         display: none !important;
@@ -2127,7 +2127,7 @@ justify-content: center; */
     }
 }
 
-@media (max-width:800px) {
+@media (max-width:830px) {
     .about-header-block-text p {
         font-weight: 300;
         font-style: normal;
@@ -3170,7 +3170,7 @@ justify-content: center; */
     }
 }
 
-@media (max-width:770px) {
+@media (max-width:830px) {
     .asd-block {
         position: relative;
         left: -1%;

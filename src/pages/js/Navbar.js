@@ -318,7 +318,7 @@ export default function Navbar() {
                 <div className="menu" onMouseLeave={() => menuufolse()}>
                   <div className="menuu" onMouseEnter={() => menuul()}>
                     <p>
-                      <a href="/about">О нас</a>
+                      <a  href="/about">О нас</a>
                       <span>
                         <box-icon
                           name="chevron-down"
@@ -370,7 +370,7 @@ export default function Navbar() {
 
 
                 <li className="moto-menu-item">
-                  {" "}
+                  {" "}e
                   <a href="/servis">Услуги</a>{" "}
                 </li>
                 <li className="moto-menu-item">

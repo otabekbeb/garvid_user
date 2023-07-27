@@ -53,7 +53,7 @@
     display: flex;
 }
 #google_translate_element select{
-    width: 100% !important;
+    width: 100%;
 }
 .goog-te-gadget{
     height: 17px !important;
