@@ -1005,7 +1005,7 @@
     position: relative;
     border: 2px solid #44bef1;
     background-color: #ffffff;
-    top: -13px;
+    top: -8px;
     display: none;
 
   }
@@ -2813,6 +2813,10 @@ padding:6px 8px
   body {
     overflow-x: hidden;
   }
+  #sa{
+    position: relative;
+    top: -5px !important;
+  }
 }
 
 @media (max-width:665px) {
@@ -2867,3 +2871,4 @@ padding:6px 8px
     left: -20px;
   }
 }
+
