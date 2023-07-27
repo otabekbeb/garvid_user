@@ -13,6 +13,9 @@ import axios from 'axios';
 import url from './Host';
 
 
+
+
+
 export default function Ourcourse() {
   const [main,setMain]=useState([])
 
@@ -175,6 +178,7 @@ types</h5>
                       </h5>
                     </div>
                   </div>
+                  
                   <button className="button_circle">
                     <AiOutlineArrowRight onClick={()=>{window.location="/proverr2";localStorage.setItem("filtrid",item.id)}}/>
                   </button>
