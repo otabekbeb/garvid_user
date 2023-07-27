@@ -24,7 +24,7 @@
 }
 #serviscards {
     width: 300px;
-    height: 370px;
+    /* height: 370px; */
     margin: 20px;
 }
 .cards img {
@@ -127,6 +127,11 @@
         width: 1400px;
         display: flex;
         flex-wrap: wrap;
+    }
+}
+@media(max-width:400px){
+    .box{
+        padding: 0px;
     }
 }
 @media (max-width: 1235px){
@@ -306,7 +311,7 @@
 } */
 @media(max-width:600px){
     .cards{
-        width: 100%;
+        width: 100% !important;
         max-width: 100%;
     }
 }

@@ -8,10 +8,10 @@
     cursor: pointer;
 }
 body{
-    margin-top: 70px;
+    margin-top:30px;
 }
 @media(max-width:1034px){
     body{
-        margin-top: 50px;
+        margin-top: 10px;
     }
 }

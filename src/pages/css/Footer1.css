@@ -965,7 +965,7 @@ font-family: unset;
     .futer{
         width: 100%;
         background: #323946;
-    height: 990px;
+    height: 990px !important;
        
         padding-top: 40px;
         overflow: hidden;
