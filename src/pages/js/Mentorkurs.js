@@ -36,6 +36,11 @@ export default function Searchfilter() {
       "display:block;transition:3s";
   }
 
+  function udalit() {
+    document.querySelector(".delete_card").classList.toggle("tgl");
+}
+
+
   useEffect(() => {
     axios
       .get(`${url}/course/main/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
@@ -293,12 +298,17 @@ export default function Searchfilter() {
                     </h5>
                   </div>
                 </div>
-                <div className='edit_icon'>
+                <button className='edit_icon'>
                     <Edit/>
-                  </div>
-                  <div className="delete_icon">
-                    <Delete/>
-                  </div>
+                  </button>
+                  <button onClick={() => udalit()} className="delete_icon">
+                  
+                        <i>
+                        <Delete/>{" "}
+                        </i>
+                  </button>
+                  <div className="delete_card"></div>
+
                 <button className="button_circle">
                   <AiOutlineArrowRight
                     onClick={() => {

@@ -112,7 +112,7 @@ Health</li>
                     <button className="curs_filter" onClick={() => filter()}>
                         Filter{" "}
                         <i>
-                            <HiOutlineChevronUp className='' />
+                            <HiOutlineChevronUp />
                         </i>
                     </button>
                     <div className="filter_card">
