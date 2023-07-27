@@ -76,7 +76,9 @@ function openModal2(){
                  <input type="file" /> 
                 </div><br />
                 <div className="m_input_bilmafim">
-                <input type="text" placeholder='Lasson name'/> <br />
+                    <select name="" id="select1">
+                        <option value="">Otash bilad</option>
+                    </select>
                 <textarea placeholder='Description' name="" id="" cols="30" rows="10"></textarea> <br />
                 <div className="a_button_for_end"><button>Добавить</button></div>
                 </div>
@@ -89,10 +91,12 @@ function openModal2(){
                  <div className="m_input_file_dobavit">  
                  <div className="a_input_file12"> Изменить изоброжение </div> 
                  <input type="file" /> 
-                </div><br />
+                </div>
                 <div className="m_input_bilmafim">
-                <input type="text" placeholder='Edit lasson name'/> <br />
-                <textarea placeholder='Edid description' name="" id="" cols="30" rows="10"></textarea> <br />
+                <select name="" id="select1">
+                        <option value="">Otash bilad</option>
+                    </select>
+                <textarea placeholder='Edid description' name="" id="" cols="30" rows="10"></textarea> 
                 <div className="a_button_for_end"><button>Изменить</button></div>
                 </div>
                 </div>
@@ -102,8 +106,7 @@ function openModal2(){
                 <div className="m_clouse_x" onClick={()=>clouseModal2()}>x</div>
                     <div className="for_center">
                 <img src={sertifikat} alt="" />
-            <h4>Name</h4>
-            <h5>Вы действительно хотите удалить Namgreeregee этот урок</h5>
+            <p>Вы действительно хотите удалить Namgreeregee этот урок</p>
             <div className="a_delete_button">
                 <button className="a_delete_yes">Да</button> <button className='a_delete_no' onClick={()=>clouseModal2()}>Нет</button>
             </div>
