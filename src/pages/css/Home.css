@@ -515,10 +515,17 @@ background: #f7f7f7;
     font-size: 1.4vw;
     height:40px;
 }
+.contact_form_input_big{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
 }
 @media (max-width:767px) {
     .contact_form_input_big img{
-        margin-top: 10px;
+        margin-top: 30px;
+    }
+    .contact_form_input_big{
+        padding-bottom: 0px;
     }
     #carousel_c{
         top: 190px !important;
@@ -748,5 +755,18 @@ background: #f7f7f7;
     .sli1{
         max-width: 100%;
         width: 100%;
+    }
+}
+@media(max-width:800px){
+    .carousel-caption h1{
+        width: 100%;
+    }
+    .carusel p{
+        width: 100%;
+    }
+}
+@media(max-width:400px){
+    .Homepage .images{
+        margin-top: -200px !important;
     }
 }
