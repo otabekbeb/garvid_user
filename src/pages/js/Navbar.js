@@ -149,7 +149,7 @@ export default function Navbar() {
                         onMouseLeave={() => menu2leave()}
                         onMouseEnter={() => menu2ul()}
                       >
-                        <p  onClick={()=> window.location="/news"} id="menu2pp" onMouseEnter={() => menu2ul()}>
+                        <p  onClick={()=> window.location="#"} id="menu2pp" onMouseEnter={() => menu2ul()}>
                           {" "}
                           <a  className="zaib">
                             News{" "}
