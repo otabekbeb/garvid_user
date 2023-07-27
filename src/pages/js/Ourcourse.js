@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "../css/Ourcourse.css"
 import { BiSearch } from 'react-icons/bi';
 import { GiHamburgerMenu } from 'react-icons/gi'
@@ -9,9 +9,12 @@ import {AiOutlineArrowRight} from "react-icons/ai"
 import img from '../../pages/img/download.png'
 import Usernavbar from '../js/Usernavbar'
 import Futer from '../js/Futer'
+import axios from 'axios';
+import url from './Host';
 
 
 export default function Ourcourse() {
+  const [main,setMain]=useState([])
 
     function filter() {
         document.querySelector(".filter_card").classList.toggle("togl");
@@ -27,6 +30,13 @@ export default function Ourcourse() {
         document.querySelector(".bar_clone").style = "display:none !important;"
         document.querySelector(".bar").style = "display:block !important;"
     }
+    
+    useEffect(()=>{
+      axios.get(`${url}/course/main/`).then(res=>{
+        setMain(res.data)
+      })
+    },[])
+
     return (
         <div>
           <Usernavbar/>
@@ -128,123 +138,52 @@ types</h5>
 
 
                 <div className="filter_kurs">
-              <div className="filter_course">
-                <img src={img} alt="" />
-                <div className="filter_card_padding">
-                  <h4>Raspberry Pi programming <br />
-                  basics</h4>
-                  <div className="star_card">
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_ib">
-                      <AiFillStar />
-                    </i>
-                    <p>
-                      4.1 <span>(524)</span>
-                    </p>
+               {main.map(item=>{
+                return(
+                  <div className="filter_course" onClick={()=>{window.location="/proverr2";localStorage.setItem("filtrid",item.id)}}>
+                  <img src={item.image} alt="" />
+                  <div className="filter_card_padding">
+                    <h4>{item.name}</h4>
+                    <div className="star_card">
+                      <i className="star_i">
+                        <AiFillStar />
+                      </i>
+                      <i className="star_i">
+                        <AiFillStar />
+                      </i>
+                      <i className="star_i">
+                        <AiFillStar />
+                      </i>
+                      <i className="star_i">
+                        <AiFillStar />
+                      </i>
+                      <i className="star_ib">
+                        <AiFillStar />
+                      </i>
+                      <p>
+                        4.1 <span>(524)</span>
+                      </p>
+                    </div>
+                    <div className="hajm">
+                      <h5>
+                        <p>Course size</p>
+                        <h5>{item.planned_time}</h5>
+                      </h5>
+                      <h5>
+                        <p>Course price</p>
+                        <h5>{item.price}</h5>
+                      </h5>
+                    </div>
                   </div>
-                  <div className="hajm">
-                    <h5>
-                      <p>Course size</p>
-                    </h5>
-                    <h5>
-                      <p>Course price</p>
-                    </h5>
-                  </div>
+                  <button className="button_circle">
+                    <AiOutlineArrowRight onClick={()=>{window.location="/proverr2";localStorage.setItem("filtrid",item.id)}}/>
+                  </button>
                 </div>
-                <button className="button_circle">
-                  <AiOutlineArrowRight/>
-                </button>
-              </div>
+                )
+               })}
 
-              <div className="filter_course">
-                <img src={img} alt="" />
-                <div className="filter_card_padding">
-                  <h4>Raspberry Pi programming <br />
-basics</h4>
-                  <div className="star_card">
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_ib">
-                      <AiFillStar />
-                    </i>
-                    <p>
-                      4.1 <span>(524)</span>
-                    </p>
-                  </div>
-                  <div className="hajm">
-                    <h5>
-                      <p>Course size</p>
-                    </h5>
-                    <h5>
-                      <p>Course price</p>
-                    </h5>
-                  </div>
-                </div>
-                <button className="button_circle">
-                  <AiOutlineArrowRight/>
-                </button>
-              </div>
 
-              <div className="filter_course">
-                <img src={img} alt="" />
-                <div className="filter_card_padding">
-                  <h4>Raspberry Pi programming <br />
-basics</h4>
-                  <div className="star_card">
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_ib">
-                      <AiFillStar />
-                    </i>
-                    <p>
-                      4.1 <span>(524)</span>
-                    </p>
-                  </div>
-                  <div className="hajm">
-                    <h5>
-                      <p>Course size</p>
-                    </h5>
-                    <h5>
-                      <p>Course price</p>
-                    </h5>
-                  </div>
-                </div>
-                <button className="button_circle">
-                  <AiOutlineArrowRight/>
-                </button>
-              </div>
-        </div>
+               </div>
             </header>
 <futer/>
         </div>
