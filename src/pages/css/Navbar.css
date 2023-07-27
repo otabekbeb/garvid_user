@@ -2796,7 +2796,9 @@
      left: 4px;
      color: black;
    }
-
+.text-black{
+  color: rgba(var(--bs--rgb),var(--bs-text-opacity)) !important;;
+}
    .checkbox-con label {
      margin-left: 10px;
      cursor: pointer;
