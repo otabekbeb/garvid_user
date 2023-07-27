@@ -113,7 +113,7 @@ export default function Navbar() {
       {state1 === "en" ? (
         <div>
           <section onMouseLeave={() => menuul1()} className="navbar">
-
+            <div className="section_navbar">
             <div className="navbar-ul">
               <ul>
                 <li className="moto-menu-item">
@@ -305,6 +305,7 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           </section>
         </div>
