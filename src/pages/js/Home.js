@@ -32,7 +32,7 @@ export default function Home() {
                     alt="First slide"
                 />
                 <Carousel.Caption id="carousel_c">
-                <h1>Solutions that <br />
+                <h1>Solutions that 
 never miss the aim</h1>
 
                     <div className="buttons">

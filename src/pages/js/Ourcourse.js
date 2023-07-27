@@ -42,23 +42,25 @@ export default function Ourcourse() {
           <Usernavbar/>
             <div className="gray_navbar">
                 <div className="course_inp">
-                    <h1>Bizning kurslar</h1>
+                    <h1>Our courses</h1>
                     <div className="df_inp">
-                        <input type="text" name="" id="" placeholder='Qanday kurs o’rganmoqchisiz ?' />
+                        <input type="text" name="" id="" placeholder='What course do you want to study?' />
                         <i><BiSearch /></i>
                     </div>
                 </div>
                 <div className="nav_tab">
                     <ul className='nav_menu'>
-                        <li className='nav_item'>Barchasi</li>
-                        <li className='nav_item'>Dasturlash</li>
-                        <li className='nav_item'>Dizayn</li>
+                        <li className='nav_item'>Everything</li>
+                        <li className='nav_item'>Programming</li>
+                        <li className='nav_item'>Design</li>
                         <li className='nav_item'>Marketing</li>
-                        <li className='nav_item'>Biznes</li>
-                        <li className='nav_item'>Salomatlik</li>
-                        <li className='nav_item'>Menejment</li>
-                        <li className='nav_item'>Buxgalteriya</li>
-                        <li className='nav_item'>Xavfsizlik</li>
+                        <li className='nav_item'>Business</li>
+                        <li className='nav_item'>
+
+Health</li>
+                        <li className='nav_item'>Management</li>
+                        <li className='nav_item'>Accounting</li>
+                        <li className='nav_item'>Security</li>
                     </ul>
                     <div className="burger">
                         <GiHamburgerMenu onClick={() => menuModal()} className='bar' />
@@ -67,23 +69,23 @@ export default function Ourcourse() {
                     <ul className='burger_media'>
                         <div className="burger_media_big_div">
                         <div className='burger_media_div'>
-                        <li className='block_item'>Barchasi</li>
-                        <li className='block_item'>Dasturlash</li>
-                        <li className='block_item'>Dizayn</li>
+                        <li className='block_item'>Everything</li>
+                        <li className='block_item'>Programming</li>
+                        <li className='block_item'>Design</li>
                         <li className='block_item'>Marketing</li>
-                        <li className='block_item'>Biznes</li>
-                        <li className='block_item'>Salomatlik</li>
-                        <li className='block_item'>Menejment</li>
-                        <li className='block_item'>Buxgalteriya</li>
-                        <li className='block_item'>Xavfsizlik</li>
+                        <li className='block_item'>Business</li>
+                        <li className='block_item'>Health</li>
+                        <li className='block_item'>Management</li>
+                        <li className='block_item'>Accounting</li>
+                        <li className='block_item'>Security</li>
                         </div>
                         <div className='burger_media_div'>
-                        <li className="block_item">Barchasi</li>
-                        <li className="block_item">Game dashturlash</li>
-                        <li className="block_item">Web dasturlash</li>
-                        <li className="block_item">Desktop dasturlash</li>
-                        <li className="block_item">Desktop dasturlash</li>
-                        <li className="block_item">Mobil dasturlash</li>
+                        <li className="block_item">Everything</li>
+                        <li className="block_item">Game programming</li>
+                        <li className="block_item">Web programming</li>
+                        <li className="block_item">Desktop programming</li>
+                        <li className="block_item">Desktop programming</li>
+                        <li className="block_item">Mobil programming</li>
                         </div>
                         </div>
                     </ul>
@@ -94,12 +96,12 @@ export default function Ourcourse() {
             <header className="curs">
                 <nav className="nav_ul">
                     <ul className="bottom_ul">
-                        <li className="bottom_li">Barchasi</li>
+                        <li className="bottom_li">Everything</li>
                         <li className="bottom_li">Game dashturlash</li>
-                        <li className="bottom_li">Web dasturlash</li>
-                        <li className="bottom_li">Desktop dasturlash</li>
-                        <li className="bottom_li">Desktop dasturlash</li>
-                        <li className="bottom_li">Mobil dasturlash</li>
+                        <li className="bottom_li">Web programming</li>
+                        <li className="bottom_li">Desktop programming</li>
+                        <li className="bottom_li">Desktop programming</li>
+                        <li className="bottom_li">Mobil programming</li>
                     </ul>
                 </nav>
                 <div className="bottom_line"></div>
@@ -112,20 +114,22 @@ export default function Ourcourse() {
                     </button>
                     <div className="filter_card">
                     <div className="filter_padding">
-                        <h5>Tartiblash turlari</h5>
-                        <p><input type="checkbox" name="" id="" /> Yangi kurslar</p>
-                        <p><input type="checkbox" name="" id="" /> Ko’p ko’rilganlar</p>
-                        <p><input type="checkbox" name="" id="" /> Eng baland narx</p>
-                        <p><input type="checkbox" name="" id="" /> Yangi kurslar</p>
-                        <p><input type="checkbox" name="" id="" /> Yangi kurslar</p>
-                        <p><input type="checkbox" name="" id="" /> Yangi kurslar</p>
+                        <h5>Sorting 
+
+types</h5>
+                        <p><input type="checkbox" name="" id="" /> New courses</p>
+                        <p><input type="checkbox" name="" id="" /> Most viewed</p>
+                        <p><input type="checkbox" name="" id="" /> The highest price</p>
+                        <p><input type="checkbox" name="" id="" /> New courses</p>
+                        <p><input type="checkbox" name="" id="" /> New courses</p>
+                        <p><input type="checkbox" name="" id="" /> New courses</p>
                     </div>
                     <div className="filter_padding">
-                    <h5>Reyting bo’yicha</h5>
+                    <h5>By rating</h5>
                         <p><input type="checkbox" name="" id="" /> <div className="filter_star"><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar/></div> 5.0</p>
-                        <p><input type="checkbox" name="" id="" /> <div className="filter_star"><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar className='none_star'/></div> 4.0 dan yuqori</p>
-                        <p><input type="checkbox" name="" id="" /> <div className="filter_star"><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar className='none_star'/><AiFillStar className='none_star'/></div> 3.0 dan yuqori</p>
-                        <p><input type="checkbox" name="" id="" /> <div className="filter_star"><AiFillStar/><AiFillStar/><AiFillStar className='none_star'/><AiFillStar className='none_star'/><AiFillStar className='none_star'/></div> 2.0 dan past</p>
+                        <p><input type="checkbox" name="" id="" /> <div className="filter_star"><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar className='none_star'/></div> Above 4.0</p>
+                        <p><input type="checkbox" name="" id="" /> <div className="filter_star"><AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar className='none_star'/><AiFillStar className='none_star'/></div> Above 3.0</p>
+                        <p><input type="checkbox" name="" id="" /> <div className="filter_star"><AiFillStar/><AiFillStar/><AiFillStar className='none_star'/><AiFillStar className='none_star'/><AiFillStar className='none_star'/></div>Above 2.0</p>
                     </div>
                     </div>
                 </div>

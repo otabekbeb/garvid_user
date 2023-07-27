@@ -426,7 +426,7 @@
     }
 }
 
-.menu2 ul a:hover {
+.menu2 ul:hover {
     color: #1aa1dc;
 }
 
