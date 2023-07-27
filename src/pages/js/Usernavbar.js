@@ -113,14 +113,14 @@ export default function Navbar() {
       {state1 === "en" ? (
         <div>
           <section onMouseLeave={() => menuul1()} className="navbar">
-
+            <div className="section_navbar">
             <div className="navbar-ul">
               <ul>
                 <li className="moto-menu-item">
                   <a href="/">Home</a>
                 </li>
 
-                <div className="menu" onMouseLeave={() => menuufolse()}>
+                <div style={{display:"none"}} className="menu" onMouseLeave={() => menuufolse()}>
                   <div className="menuu" onMouseEnter={() => menuul()}>
                     <p>
                       <a href="/about">About Us</a>
@@ -175,16 +175,19 @@ export default function Navbar() {
 
                 <li className="moto-menu-item">
                   {" "}
-                  <a href="/servis">Services</a>{" "}
+                  <a href="/user">User</a>{" "}
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/blog">Blog</a>
+                  <a href="/teacher">Teacher</a>
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/ourteam">Our team</a>
+                  <a href="/student">Student</a>
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/contacts">Contacts</a>
+                  <a href="/Loginpage">Edit profile</a>
+                </li>
+                <li className="moto-menu-item">
+                  <a href="/ourcourse">Courses</a>
                 </li>
 
 
@@ -214,7 +217,7 @@ export default function Navbar() {
                           Home
                         </a>
                       </li>
-                      <div
+                      <div style={{display:"none"}}
                         className="media-kategory"
                         onMouseLeave={() => aboutClose2()}
                       >
@@ -266,24 +269,29 @@ export default function Navbar() {
                         </ul>
                       </div>
                       <li>
-                        <a href="/servis" className="tt">
-                          Services
+                        <a href="/user" className="tt">
+                          User
                         </a>
                       </li>
 
                       <li>
-                        <a href="/blog" className="tt">
-                          Blog
+                        <a href="/teacher" className="tt">
+                          Teacher
                         </a>
                       </li>
                       <li>
-                        <a href="/ourteam" className="tt">
-                          our team
+                        <a href="/student" className="tt">
+                          Student
                         </a>
                       </li>
                       <li>
-                        <a href="/contacts" className="tt">
-                          Contacts
+                        <a href="/loginpage" className="tt">
+                          Edit profile
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/ourcourse" className="tt">
+                          Courses
                         </a>
                       </li>
                       {/* <li><a href="/teacher" className='tt'>Teacher</a></li> */}
@@ -292,22 +300,12 @@ export default function Navbar() {
                       </li>
 
 
-                      <div class="checkbox-con" style={{ marginTop: "15px" }}>
-                        <input
-                          id="checkbox2"
-                          onClick={() => {
-                            !document.querySelector("#checkbox2").checked
-                              ? localStorage.setItem("lang", "ru")
-                              : localStorage.setItem("lang", "en");
-                            window.location.reload();
-                          }}
-                          type="checkbox"
-                        />
-                      </div>
+                      <div id="google_translate_element"></div>
                     </ul>
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           </section>
         </div>
