@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "../css/Navbar.css";
 import axios from "axios";
 import url from "./Host";
+import { NavLink } from "react-router-dom";
 
 function sa() {
   var o = document.querySelector(".media-ul").style.display;
@@ -69,6 +70,9 @@ export default function Navbar() {
   const [state1, setState1] = React.useState();
   const [state, State] = React.useState(1);
   const [user, setUser] = useState([])
+  const activeLink = " bg-blue-100 text-black ";
+  const normalLink = ""
+
   const googleTranslateElementInit = () => {
     new window.google.translate.TranslateElement(
       {
@@ -105,6 +109,8 @@ export default function Navbar() {
     axios.get(`${url}/auth/user/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setUser(res.data)
     });
+
+    
     
   }, []);
 
@@ -117,13 +123,13 @@ export default function Navbar() {
             <div className="navbar-ul">
               <ul>
                 <li className="moto-menu-item">
-                  <a href="/">Home</a>
+                  <NavLink to="/" className={({isActive})=>isActive?activeLink: normalLink}><a>Home</a></NavLink>
                 </li>
 
                 <div className="menu" onMouseLeave={() => menuufolse()}>
                   <div className="menuu" onMouseEnter={() => menuul()}>
                     <p>
-                      <a href="/about">About Us</a>
+                    <NavLink to="/about" className={({isActive})=>isActive?activeLink: normalLink}><a>About us</a></NavLink>
                       <span>
                         <box-icon
                           name="chevron-down"
@@ -131,42 +137,36 @@ export default function Navbar() {
                         ></box-icon>
                       </span>
                     </p>
-                    <ul onMouseLeave={() => menuul1()}>
+                    <ul>
                       <li className="faqcolor">
-                        <a className="faqscolor" href="#">FAQs</a>
+                        <NavLink to="/faqs" className={({isActive})=>isActive?activeLink: normalLink}><a className="faqscolor">FAQs</a></NavLink>
                       </li>
+                      <div className="navbbar-line-hr"></div>
+                      <li onClick={()=> window.location="contacts"} id="ded">
+                            <a id="contactcolor" href="/contacts">Contact </a>
+                          </li>
                       <div className="navbbar-line-hr"></div>
 
 
                       <div
                         className="menu2"
-                        onMouseLeave={() => menu2leave()}
-                        onMouseEnter={() => menu2ul()}
+
                       >
-                        <p  onClick={()=> window.location="/news"} id="menu2pp" onMouseEnter={() => menu2ul()}>
+                        <p  onClick={()=> window.location="#"} id="menu2pp" >
                           {" "}
                           <a  className="zaib">
                             News{" "}
-                            <span id="menu2spanid">
-                              <box-icon
-                                name="chevron-right"
-                                color="#44bef1"
-                              ></box-icon>
-                            </span>
                           </a>{" "}
                         </p>
                         <div className="navbbar-line-hr"></div>
 
                         <ul
-                          onMouseEnter={() => menu2ul()}
-                          onMouseLeave={() => menu2leave1()}
+
                           className="blog1"
                         >
                           <div className="navbbar-line-hr1"></div>
 
-                          <li onClick={()=> window.location="contacts"} id="ded">
-                            <a id="contactcolor" href="/contacts">Contact </a>
-                          </li>
+                       
                         </ul>
                       </div>
                     </ul>
@@ -175,16 +175,16 @@ export default function Navbar() {
 
                 <li className="moto-menu-item">
                   {" "}
-                  <a href="/servis">Services</a>{" "}
+                  <NavLink to="/servis" className={({isActive})=>isActive?activeLink: normalLink}><a>Services</a>{" "}</NavLink>
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/blog">Blog</a>
+                <NavLink to="/blog" className={({isActive})=>isActive?activeLink: normalLink}><a>Blog</a>{" "}</NavLink>
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/ourteam">Our team</a>
+                <NavLink to="/ourteam" className={({isActive})=>isActive?activeLink: normalLink}><a>Our team</a>{" "}</NavLink>
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/contacts">Contacts</a>
+                <NavLink to="/contacts" className={({isActive})=>isActive?activeLink: normalLink}><a>Contacts</a>{" "}</NavLink>
                 </li>
 
 
@@ -209,7 +209,7 @@ export default function Navbar() {
                 <div className="media-ul">
                   <div className="dfdf">
                     <ul>
-                      <li>
+                      <li onClick={()=> window.location="/"}>
                         <a href="/" className="tt">
                           Home
                         </a>
@@ -223,8 +223,8 @@ export default function Navbar() {
                           onMouseEnter={() => about2()}
                           onClick={() => meded()}
                         >
-                          <li>
-                            <a href="/about" className="tt">
+                          <li onClick={()=> window.location="/about"}>
+                            <a href="/" className="tt">
                               About Us
                             </a>
                           </li>{" "}
@@ -251,11 +251,11 @@ export default function Navbar() {
                           </div>
                           <div className="lll">
                             <ul>
-                              <li className="lll1">
-                                <a href="/blog">Blog</a>
+                              <li onClick={()=> window.location="/blog"} className="lll1">
+                                <a href="/">Blog</a>
                               </li>
-                              <li className="lll2">
-                                <a href="/contacts">Contacts</a>
+                              <li onClick={()=> window.location="/contacts"} className="lll2">
+                                <a href="/">Contacts</a>
                               </li>
                             </ul>
                           </div>
@@ -265,23 +265,23 @@ export default function Navbar() {
                           </li>
                         </ul>
                       </div>
-                      <li>
-                        <a href="/servis" className="tt">
+                      <li onClick={()=> window.location="/servis"}>
+                        <a href="/" className="tt">
                           Services
                         </a>
                       </li>
 
-                      <li>
-                        <a href="/blog" className="tt">
+                      <li onClick={()=> window.location="/blog"}>
+                        <a href="/" className="tt">
                           Blog
                         </a>
                       </li>
-                      <li>
-                        <a href="/ourteam" className="tt">
+                      <li onClick={()=> window.location="/ourteam"}>
+                        <a href="/" className="tt">
                           our team
                         </a>
                       </li>
-                      <li>
+                      <li onClick={()=> window.location="/contacts"}>
                         <a href="/contacts" className="tt">
                           Contacts
                         </a>
@@ -408,7 +408,7 @@ export default function Navbar() {
                 <div className="media-ul">
                   <div className="dfdf">
                     <ul>
-                      <li>
+                      <li onClick={()=> window.location="/"}>
                         <a href="/" className="tt">
                           Главный
                         </a>

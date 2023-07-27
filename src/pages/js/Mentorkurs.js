@@ -16,6 +16,9 @@ import "../css/Calibig.css";
 import WWW from "../img/WWW.png";
 import axios from "axios";
 import url from "./Host";
+import Edit from './Edit';
+import Delete from './Delete';
+import Groupimg from '../img/Group 2.png'
 export default function Searchfilter() {
   const [kursdata, setKursdata] = useState([]);
   const [type, settype] = useState([]);
@@ -23,6 +26,9 @@ export default function Searchfilter() {
 
   function Filter() {
     document.querySelector(".filter_button").classList.toggle("filter");
+  }
+  function close(){
+    document.querySelector(".delete_card").style="display:none"
   }
   function windowModal() {
     document.querySelector(".kurs_cards").style = "display:flex;transition:3s";
@@ -33,6 +39,11 @@ export default function Searchfilter() {
     document.querySelector(".spiska_img_title_div").style =
       "display:block;transition:3s";
   }
+
+  function udalit() {
+   document.querySelector(".delete_card").style="display:flex"
+}
+
 
   useEffect(() => {
     axios
@@ -52,7 +63,8 @@ export default function Searchfilter() {
 
   return (
     <div>
-      {state1 === "en" ? (<div>
+      {state1 === "en" ? (
+      <div>
         <div className="Filter">
           <div className="blur_blok">
             <div className="inp_blok">
@@ -141,6 +153,12 @@ export default function Searchfilter() {
                     </h5>
                   </div>
                 </div>
+                <div className='edit_icon'>
+                    <Edit/>
+                  </div>
+                  <div className="delete_icon">
+                    <Delete/>
+                  </div>
                 <button className="button_circle">
                   <AiOutlineArrowRight
                     onClick={() => {
@@ -284,6 +302,26 @@ export default function Searchfilter() {
                     </h5>
                   </div>
                 </div>
+                <button className='edit_icon'>
+                    <Edit/>
+                  </button>
+                  <button onClick={() => udalit()} className="delete_icon">
+                  
+                        <i>
+                        <Delete/>{" "}
+                        </i>
+                  </button>
+                  <div className="delete_card">
+                    <div className="delete_padding">
+                      <img src={Groupimg} alt="" />
+                      <h4>Вы правда хотите удалить?</h4>
+                      <div className="delete_btns">
+                      <button onClick={() => close()} className="delete_btn_no">Нет</button>
+                      <button className="delete_btn_yes">Да</button>
+                      </div>
+                    </div>
+                  </div>
+
                 <button className="button_circle">
                   <AiOutlineArrowRight
                     onClick={() => {

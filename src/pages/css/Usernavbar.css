@@ -176,15 +176,7 @@
   color: #44bef1;
 }
 
-.div1 {
-  position: absolute;
-  width: 120px;
-  height: 92px;
-  top: 130px;
-  left: 30%;
-  display: none;
-  position: fixed;
-}
+
 
 .menu2 p {
   width: 100%;
@@ -273,10 +265,7 @@
 }
 
 @media (max-width: 770px) {
-  .div1 {
-    display: none !important;
-    position: fixed;
-  }
+ 
 
   .navbar-ul {
     display: none;
@@ -1200,28 +1189,13 @@
     top: -15px;
   }
 
-  .div1 {
-    position: absolute;
-    width: 120px;
-    height: 92px;
-    top: 100px;
-    left: 30%;
-    display: none;
-    position: fixed;
-  }
+
+
 
 }
 
 @media (max-width:1810px) {
-  .div1 {
-    position: absolute;
-    width: 120px;
-    height: 92px;
-    top: 90px !important;
-    left: 30%;
-    display: none;
-    position: fixed;
-  }
+
 }
 
 @media (max-width:1810px) {
@@ -1238,15 +1212,7 @@
     top: -15px;
   }
 
-  .div1 {
-    position: absolute;
-    width: 120px;
-    height: 92px;
-    top: 130px;
-    left: 30%;
-    display: none;
-    position: fixed;
-  }
+
 }
 
 @media (max-width:1784px) {
@@ -1353,15 +1319,6 @@
     top: -15px;
   }
 
-  .div1 {
-    position: absolute;
-    width: 120px;
-    height: 92px;
-    top: 130px;
-    left: 32%;
-    display: none;
-    position: fixed;
-  }
 }
 
 @media (max-width:1556px) {
@@ -1571,15 +1528,7 @@
     left: 5vw !important;
   }
 
-  .div1 {
-    position: absolute;
-    width: 120px;
-    height: 92px;
-    top: 130px;
-    left: 26%;
-    display: none;
-    position: fixed;
-  }
+
 
   .menu2 ul {
     position: absolute;
@@ -1755,15 +1704,6 @@
     top: -15px;
   }
 
-  .div1 {
-    position: absolute;
-    width: 120px;
-    height: 92px;
-    top: 130px;
-    left: 28%;
-    display: none;
-    position: fixed;
-  }
 }
 
 @media (max-width:1096px) {
@@ -1881,15 +1821,7 @@
     right: 33px;
   }
 
-  .div1 {
-    position: absolute;
-    width: 120px;
-    height: 92px;
-    top: 100px;
-    left: 25%;
-    display: none;
-    position: fixed;
-  }
+
 }
 
 @media (max-width:1047px) {
@@ -1942,15 +1874,6 @@
     top: -10px;
   }
 
-  .div1 {
-    position: absolute;
-    width: 120px;
-    height: 92px;
-    top: 90px;
-    left: 25%;
-    display: none;
-    position: fixed;
-  }
 }
 
 @media (max-width:1016px) {
@@ -2215,26 +2138,11 @@
     top: -15px;
   }
 
-  .div1 {
-    position: absolute;
-    width: 120px;
-    height: 92px;
-    top: 120px;
-    position: fixed;
-    display: none;
-  }
+
 }
 
 @media (max-width:1085px) {
-  .div1 {
-    position: absolute;
-    width: 120px;
-    height: 92px;
-    top: 100px;
-    left: 20%;
-    display: none;
-    position: fixed;
-  }
+ 
 
   .menu2 ul {
     position: absolute;
@@ -2259,29 +2167,11 @@
 }
 
 @media (max-width:1670px) {
-  .div1 {
-    position: absolute;
-    width: 120px;
-    height: 92px;
-    top: 100px;
-    left: 31%;
-    display: none;
-    position: fixed;
-  }
+  
 }
 
 
-@media (max-width:1086px) {
-  .div1 {
-    position: absolute;
-    width: 120px;
-    height: 92px;
-    top: 80px;
-    left: 20%;
-    display: none;
-    position: fixed;
-  }
-}
+
 
 .checkbox-con {
   margin: 10px;

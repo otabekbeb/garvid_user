@@ -1,0 +1,93 @@
+.delete_icon{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #9DA7BB;
+    border-radius: 50%;
+    background: white;
+    color: #536DFD;
+    right: 32px;
+    bottom: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+.delete_icon:hover {
+    border: 1px solid #536DFD;
+    background: #536DFD;
+    color: white;
+}
+.delete_card{
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(255, 255, 255, 0.4);
+display: none;
+justify-content: center;
+z-index: 1000000000000000000000 !important;
+}
+/* .tgl{
+    z-index: 10000000000;
+    position: fixed;
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 50px;
+    background:rgba(242, 242, 242, 0.625) !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+} */
+.delete_padding{
+    margin: auto;
+    width: 600px;
+    height: 350px;
+    border-radius: 10px;
+    background-color: white;
+}
+.delete_padding img{
+    margin: auto;
+    display: flex;
+    margin-top: 30px;
+    width: 250px;
+    height: 190px;
+}
+.delete_padding h4{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.delete_btn_no{
+    width: 150px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background: red;
+    transition: 0.2s;
+}
+.delete_btn_no:hover{
+    background: rgba(255, 0, 0, 0.556);
+}
+.delete_btn_yes{
+    width: 150px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background: #10C8A0;
+    transition: 0.2s;
+}
+.delete_btn_yes:hover{
+    background: #10c8a0ae;
+}
+.delete_btns{
+    margin-top: 20px;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+}

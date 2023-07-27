@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../css/comment.css'
 import {FiCornerUpLeft} from 'react-icons/fi'
-import {BsFillChatFill} from 'react-icons/bs'
+import {FcFile} from 'react-icons/fc'
 import img_comment from '../img/Ellipse.jpg'
 import img_comment1 from '../img/Ellipse.png'
 import axios from 'axios'
@@ -71,7 +71,7 @@ export default function Comment1() {
 
             <div className="m_comment_yozish">
               <input type="file" id='comment_file' />
-              <p><BsFillChatFill/></p>
+              <p><FcFile/></p>
               <textarea placeholder='Введите текст' id="chat_text"></textarea>
             </div>
             <div className="m_comment_button">
@@ -100,7 +100,7 @@ export default function Comment1() {
 
 
             <div className="m_comment_yozish">
-              <p><BsFillChatFill/></p>
+              <p><FcFile/></p>
               <textarea placeholder='Введите текст' id="chat_text"></textarea>
             </div>
             <div className="m_comment_button">

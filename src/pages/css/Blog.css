@@ -257,7 +257,7 @@
     }
     @media(max-width:400px){
         #min-cards{
-            margin-bottom: 80px;
+            margin-bottom: 160px;
         }
     }
     .category h3:hover {
