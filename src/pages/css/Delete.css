@@ -1,0 +1,21 @@
+.delete_icon{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #9DA7BB;
+    border-radius: 50%;
+    background: white;
+    color: #536DFD;
+    right: 32px;
+    bottom: 105px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+.delete_icon:hover {
+    border: 1px solid #536DFD;
+    background: #536DFD;
+    color: white;
+}

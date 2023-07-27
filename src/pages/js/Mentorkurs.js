@@ -16,6 +16,8 @@ import "../css/Calibig.css";
 import WWW from "../img/WWW.png";
 import axios from "axios";
 import url from "./Host";
+import Edit from './Edit';
+import Delete from './Delete';
 export default function Searchfilter() {
   const [kursdata, setKursdata] = useState([]);
   const [type, settype] = useState([]);
@@ -52,7 +54,8 @@ export default function Searchfilter() {
 
   return (
     <div>
-      {state1 === "en" ? (<div>
+      {state1 === "en" ? (
+      <div>
         <div className="Filter">
           <div className="blur_blok">
             <div className="inp_blok">
@@ -141,6 +144,12 @@ export default function Searchfilter() {
                     </h5>
                   </div>
                 </div>
+                <div className='edit_icon'>
+                    <Edit/>
+                  </div>
+                  <div className="delete_icon">
+                    <Delete/>
+                  </div>
                 <button className="button_circle">
                   <AiOutlineArrowRight
                     onClick={() => {
@@ -284,6 +293,12 @@ export default function Searchfilter() {
                     </h5>
                   </div>
                 </div>
+                <div className='edit_icon'>
+                    <Edit/>
+                  </div>
+                  <div className="delete_icon">
+                    <Delete/>
+                  </div>
                 <button className="button_circle">
                   <AiOutlineArrowRight
                     onClick={() => {

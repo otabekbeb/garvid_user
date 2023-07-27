@@ -363,7 +363,6 @@ line-height: normal;
 
 .filter_course:hover {
     cursor: pointer;
-    color: rgba(83, 109, 253, 1);
     box-shadow: 0px 12px 45px 0px rgba(83, 109, 253, 0.25);
 }
 
@@ -426,18 +425,18 @@ line-height: normal;
 
 .button_circle {
     position: absolute;
-    width: 42px;
-    height: 42px;
+    width: 35px;
+    height: 35px;
     border: 1px solid #9DA7BB;
     border-radius: 50%;
     background: white;
     color: #536DFD;
     right: 32px;
-    bottom: 32px;
+    bottom: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 18px;
     transition: all 0.3s;
 }
 .button_circle:hover {
@@ -469,11 +468,9 @@ line-height: normal;
     }
     
     .button_circle{
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
         font-size: 17px;
-        right: 20px;
-        bottom: 25px;
     }
     .star_card{
         margin-top: 20px;
@@ -486,10 +483,31 @@ line-height: normal;
     .hajm h5{
         font-size: 13px;
     }
-    .button_circle{
-        bottom: 25px;
-    }
+    
 }
 .filter_card_padding{
     padding: 10px 20px 20px 20px;
+}
+@media (max-width:700px) {
+    .edit_icon{
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
+        right: 20px;
+        bottom: 50px;
+    }
+    .delete_icon{
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
+        right: 20px;
+        bottom: 90px;
+    }
+    .button_circle{
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
+        right: 20px;
+        bottom: 12px;
+    }
 }
