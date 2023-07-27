@@ -80,7 +80,7 @@ export default function Proverr2() {
             setMain(res.data)
         })
     },[])
-    
+   
   return (
     <div>
 <div className="prover2">
