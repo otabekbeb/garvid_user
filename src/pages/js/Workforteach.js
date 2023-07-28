@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useEffect,useState} from 'react'
 import '../css/workforteach.css'
 import {AiOutlineEdit,AiOutlineDelete} from 'react-icons/ai'
 import sertifikat from '../img/Sertifikat.png'
+import axios from 'axios'
 
 export default function Workforteach() {
 function openModal(){
@@ -20,8 +21,10 @@ function openModal2(){
 }function clouseModal2() {
     document.querySelector(".m_delete_tepadan2").style="display:none"
 }
+
   return (
     <div>
+        
          <div className="m_dobavit_kurs">
             <button onClick={()=>openModal()}>Добавить задачу</button>
         </div>
@@ -112,7 +115,7 @@ function openModal2(){
             </div>
             </div>
             </div>
-            </div>
+            </div> 
        </div>
   )
 }
