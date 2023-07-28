@@ -1567,7 +1567,7 @@ color: white;
   }
 
   .media-ul {
-    width: 100% !important;
+    /* width: 100% !important; */
     overflow: hidden;
     position: relative;
     border: 2px solid #44bef1;
@@ -3306,7 +3306,7 @@ color: rgba(var(--bs--rgb),var(--bs-text-opacity)) !important;;
 
 @media (max-width:320px) {
   .dfdf ul li {
-    width: 115% !important;
+    width: 116% !important;
 
   }
 }
