@@ -7,10 +7,10 @@ import Usernavbar from "./Usernavbar"
 export default function user() {
   return (
     <div>
-      <Usernavbar/>
-    <Profil/>
-    <Pdp/>
-    <Futer/>
+      <Usernavbar />
+      <Profil />
+      <Pdp />
+      <Futer />
     </div>
   )
 }

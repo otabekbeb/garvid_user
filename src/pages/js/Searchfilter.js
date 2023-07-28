@@ -95,10 +95,10 @@ export default function Searchfilter() {
                   <BiMenu className="menyu" />
                   <h4>Filter</h4>
                 </div>
-                <div className="win_men">
+                {/* <div className="win_men">
                   <MdWindow className="window" onClick={() => windowModal()} />
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
-                </div>
+                </div> */}
               </div>
               <div className="filter_button">
 
@@ -176,7 +176,7 @@ export default function Searchfilter() {
 
         {/* SPISKA */}
 
-        <div className="spiska_img_title_div">
+        {/* <div className="spiska_img_title_div">
           {kursdata.map((item) => {
             return (
               <div className="Spiska_blok">
@@ -214,7 +214,7 @@ export default function Searchfilter() {
               </div>
             );
           })}
-        </div>
+        </div> */}
       </div>) : (
       <div>
         <div className="Filter">
@@ -315,7 +315,7 @@ export default function Searchfilter() {
 
         {/* SPISKA */}
 
-        <div className="spiska_img_title_div">
+        {/* <div className="spiska_img_title_div">
           {kursdata.map((item) => {
             return (
               <div className="Spiska_blok">
@@ -353,7 +353,7 @@ export default function Searchfilter() {
               </div>
             );
           })}
-        </div>
+        </div> */}
       </div>)}
 
     </div>):(<Loader/>)}

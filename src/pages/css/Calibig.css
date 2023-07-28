@@ -8,17 +8,20 @@
     margin-bottom: 50px;
     margin-top: 5%;
     position: relative;
+    /* display: none; */
 }
 
 .foto {
     width: 100%;
 
 }
-.kurs_card img{
+
+.kurs_card img {
     width: 100%;
     height: 270px;
 }
-.No_img{
+
+.No_img {
     width: 100%;
     display: flex;
     height: 270px;
@@ -26,16 +29,19 @@
     background-color: #dbdbdb;
     opacity: 0.6;
 }
-.No_img:hover{
+
+.No_img:hover {
     opacity: 1;
 }
-.No_img h1{
+
+.No_img h1 {
     color: black;
     font-size: 20px;
     margin: auto;
     font-weight: 700;
 }
-.No_img1{
+
+.No_img1 {
     width: 100%;
     display: flex;
     height: 100%;
@@ -43,10 +49,12 @@
     background-color: #dbdbdb;
     opacity: 0.6;
 }
-.No_img1:hover{
+
+.No_img1:hover {
     opacity: 1;
 }
-.No_img1 h1{
+
+.No_img1 h1 {
     color: black;
     font-size: 15px;
     margin: auto;
@@ -73,8 +81,8 @@
 .kurs_card .btn_das {
     position: absolute;
     z-index: 1;
-         padding-left: 10px;
-         padding-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     height: 26px;
     top: 24px;
     left: 24px;
@@ -187,59 +195,72 @@
     display: flex;
     justify-content: center;
 }
+
 @media (max-width:700px) {
     .win_men {
         display: none !important;
     }
 }
+
 @media (max-width:370px) {
-    .kurs_card{
+    .kurs_card {
         width: 100%;
     }
-    .kurs_card img{
+
+    .kurs_card img {
         width: 100%;
     }
-    .kurs_card h4{
+
+    .kurs_card h4 {
         width: 100%;
         font-size: 12px;
     }
-    .kurs_card h5{
+
+    .kurs_card h5 {
         font-size: 13px;
     }
-    .hajm p{
+
+    .hajm p {
         font-size: 10px;
     }
-    .kurs_card1{
-        width: 300px;  
+
+    .kurs_card1 {
+        width: 300px;
     }
-    
-    .button_circle{
+
+    .button_circle {
         width: 40px;
         height: 40px;
         font-size: 17px;
         right: 20px;
         bottom: 25px;
     }
-    .kurs_card .btn_das{
+
+    .kurs_card .btn_das {
         width: 100px;
         height: 22px;
         font-size: 14px;
     }
-    .star_card{
+
+    .star_card {
         margin-top: 20px;
     }
 }
+
 @media (max-width:330px) {
-    .hajm{
+    .hajm {
         width: 90%;
     }
-    .hajm h5{
+
+    .hajm h5 {
         font-size: 13px;
     }
-    .button_circle{
+
+    .button_circle {
         bottom: 25px;
     }
 }
-.kurs_paddaing_auto{
+
+.kurs_paddaing_auto {
     padding: 10px 20px 20px 20px;
 }
