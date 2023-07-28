@@ -173,7 +173,7 @@ export default function Navbar() {
                   </div>
                 </div>
 
-                <li className="moto-menu-item">
+                <li onClick={()=>{localStorage.removeItem("themeid");localStorage.removeItem("themeidsend")}} className="moto-menu-item">
                   {" "}
                   <a href="/user">User</a>{" "}
                 </li>

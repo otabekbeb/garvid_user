@@ -19,7 +19,6 @@ import Mentorcontact from "./pages/js/Mentorcontact";
 import News from "./pages/js/News";
 import Newspage from "./pages/js/Newspage";
 
-
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Proverr2 from './pages/js/Proverr2'
