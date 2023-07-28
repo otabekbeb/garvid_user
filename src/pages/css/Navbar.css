@@ -360,6 +360,7 @@ margin-top: 10px !important;
 
 @media (min-width: 850px) {
   .media-navbar {
+    width: 100% !important;
     display: none !important;
     align-items: center !important;
     justify-content: center !important;
@@ -840,6 +841,7 @@ body{
 
    @media (min-width: 850px) {
      .media-navbar {
+      width: 100%;
        display: none !important;
        align-items: center !important;
        justify-content: center !important;
@@ -1459,6 +1461,7 @@ color: white;
   }
 
   .media-navbar {
+    width: 100%;
     display: flex;
     align-items: center !important;
     justify-content: center !important;
@@ -1496,6 +1499,7 @@ color: white;
 
 @media (min-width: 850px) {
   .media-navbar {
+    width: 100%;
     display: none !important;
     align-items: center !important;
     justify-content: center !important;
@@ -1563,7 +1567,7 @@ color: white;
   }
 
   .media-ul {
-    width: 96vw;
+    width: 100% !important;
     overflow: hidden;
     position: relative;
     border: 2px solid #44bef1;

@@ -186,6 +186,7 @@
 }
 
 .media-navbar {
+    width: 100%;
     display: none;
 }
 
@@ -228,6 +229,7 @@
     }
 
     .media-navbar {
+        width: 100%;
         display: flex;
         align-items: center !important;
         justify-content: center !important;
@@ -271,6 +273,7 @@
 @media (min-width:850px) {
 
     .media-navbar {
+        width: 100%;
         display: none !important;
         align-items: center !important;
         justify-content: center !important;

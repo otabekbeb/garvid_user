@@ -14,6 +14,7 @@ import axios from "axios";
 import Futer from "./Futer"
 import Navbar from "./Usernavbar"
 import url from "./Host"
+import Noimg from "../img/download.png"
 
 function onga(){
 document.querySelector(".mni-gridf1").classList.toggle("mni-gridf1-none")
@@ -71,10 +72,12 @@ function kamentgo(){
 
 
 export default function Proverr2() {
-    const [toggle,setToggle] =useState(1)
-    const [main,setMain] = useState([])
-    const [type,setType] =useState([])
-    const [main1,setMain1] =useState([])
+    const [toggle, setToggle] = useState(1)
+    const [main, setMain] = useState([])
+    const [type, setType] = useState([])
+    const [main1, setMain1] = useState([])
+    const [subcategory, setSubcategory] = useState([])
+    const [theme,setTheme] =useState([])
 
     function okurse(id){
     setToggle(id)
@@ -89,19 +92,68 @@ export default function Proverr2() {
         axios.get(`${url}/course/type/`,{headers:{"Authorization":"en"}}).then(res=>{
             setType(res.data)
         })
-    },[])
-
-    function typeFilter(){
-        axios.get(`${url}/course/type/`,{headers:{"Authorization":"en"}}).then(res=>{
-            axios.get(`${url}/course/main/`).then(res1=>{
-                res1.data.map(item1=>{
-                    const typeFilter=res.data.filter(item=>item.id===item1.course_type)
-                    console.log(typeFilter,"salom");
-                    setMain1(typeFilter)
+        axios.get(`${url}/course/category/`, { headers: { "Authorization": "en" } }).then(res=>{
+            axios.get(`${url}/course/subcategory/`, { headers: { "Authorization": "en" } }).then(res1=>{
+                axios.get(`${url}/course/theme/`, { headers: { "Authorization": "en" } }).then(res2=>{
+                const category=res.data.filter(item=>item.course==localStorage.getItem("filtrid"))
+                // console.log(category,"ishladi");
+                category.map(item=>{
+                    const subcategory=res1.data.filter(subcategory=>subcategory.category==item.id)
+                    // console.log(subcategory,"ishladi");
+                    setSubcategory(subcategory)
+                })
+                setTheme(res2.data)
                 })
             })
         })
+
+    },[])
+    function typeFilter(id) {
+        axios.get(`${url}/course/type/`, { headers: { "Authorization": "en" } }).then(res => {
+            axios.get(`${url}/course/main/`, { headers: { "Authorization": "en" } }).then(res1 => {
+                const typeFilter = res1.data.filter(item => item.course_type == id)
+                setMain1(typeFilter)
+            })
+        })
     }
+    function typeFilterAll() {
+        axios.get(`${url}/course/main/`, { headers: { "Authorization": "en" } }).then(res => {
+            setMain1(res.data)
+        })
+    }
+
+    // function typeFilter(){
+    //     axios.get(`${url}/course/type/`,{headers:{"Authorization":"en"}}).then(res=>{
+    //         axios.get(`${url}/course/main/`).then(res1=>{
+    //             res1.data.map(item1=>{
+    //                 const typeFilter=res.data.filter(item=>item.id===item1.course_type)
+    //                 console.log(typeFilter,"salom");
+    //                 setMain1(typeFilter)
+    //             })
+    //         })
+    //     })
+    // }
+    const searchFilter = (event) => {
+        const search = new RegExp(`^${event.target.value}`, "i")
+        axios.get(`${url}/course/main/`, { headers: { "Authorization": "en" } }).then(res => {
+            const searchdata = res.data.filter(item => {
+                return (
+                    search.test(item.name)
+                )
+            })
+            setMain1(searchdata)
+        })}
+
+
+        function buyCourse(id){
+            var formdata=new FormData()
+            formdata.append("course",id)
+    
+            axios.post(`${url}/course/registed_course/`,formdata,{headers:{"Authorization":"Bearer " + localStorage.getItem("token")}}).then(res=>{
+            console.log(res.data,"bilaman");
+                alert("ishladi")
+            })
+        }
    
   return (
     <div>
@@ -112,13 +164,15 @@ export default function Proverr2() {
 
         <div className="prover2-mni-search">
            <form action="">
-           <input type="text" placeholder='Какой курс вы хотите изучать?' required /><button><box-icon name='search' color='#9da7bb' ></box-icon></button>
+           <input onChange={searchFilter} type="text" placeholder='Какой курс вы хотите изучать?' required /><button><box-icon name='search' color='#9da7bb' ></box-icon></button>
            </form>
         <div className="prover2-info-d"><div className="prover2-info-filter">
+        <button onClick={()=>typeFilterAll()} className='prover2-but-clas'><p>#Barchasi</p></button>
 {type.map(item=>{
     return(
     <>
-        {item.name==null?(""):(<button onClick={()=>typeFilter()} className='prover2-but-clas'><p>#{item.name}</p></button>)}
+        
+        {item.name==null?(""):(<button onClick={()=>typeFilter(item.id)} className='prover2-but-clas'><p>#{item.name}</p></button>)}
     </>
     )
 })}
@@ -132,14 +186,14 @@ export default function Proverr2() {
                     <>
                     <div className="prover2-info-block1">
                                        <div className="prover2-info-block1-img">
-                                           <img src={item.image} alt="" />
+                                           {item.image==null?(<img src={Noimg} alt="" />):(<img src={item.image} alt="" />)}
                                        </div>
                                        <div className="prover2-info-block1-text">
-                                           <h5>{item.name}</h5>
-                   <p>{item.description}</p>
-                                       </div>
+                                           {item.name==null?(<h5>Name</h5>):(<h5>{item.name}</h5>)}
+                                        {item.description==null?(<p>Destcription</p>):(<p>{item.description}</p>)}
+                                       <div className="prover2-linerr1"></div></div>
                                    </div>
-                                   <div className="prover2-linerr1"></div>
+                                   
                                        </>
                    )
                 })}
@@ -293,24 +347,37 @@ export default function Proverr2() {
         })}
         <div className={toggle===4?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida4">
         <h5>Содержание курса</h5>
-        {main.map((item,key)=>{
-            return(
-                <div className="faq">
-                    <div className="faq-item">
-                    <input type="checkbox" className="faq-input"  name="faq" id="faq_1"/>
-                        <div className="faq-div">
-                        <label htmlFor="faq_1" className="faq-title">{1+key}.{item.name}</label><span>12 видео</span><div className="faq-liner"></div><span>{item.planned_time} часов</span>
-                        </div>
-                        
-                        <div className="faq-text">
-                            <p>{item.description}</p>
-                        </div>
-                    </div>
-                </div>
-                
-                
-            )
-        })}
+        {theme.map((item, key) => {
+                        return(
+                            <>
+                            {subcategory.map(sub=>{
+                                if (sub.id==item.subcategory) {
+                                    return (
+                                        <div className="faq">
+                                            <div className="faq-item">
+                                                <input type="checkbox" className="faq-input" name="faq" id="faq_1" />
+                                                <div className="faq-div">
+                                                     <label htmlFor="faq_1" className="faq-title">{1 + key}.{item.name==null?(<>Name</>):(<>{item.name}</>)}</label>
+                                                    <p>{item.content}</p>
+                                                
+                                                </div>
+        
+                                                {/* <div className="faq-text">
+                                                <div className="faq-liner"></div>
+                                                <span>{localStorage.getItem("planned_time")} часов</span>
+                                                <span>{1+key} видео</span>
+                                                    <p>{item.content}</p>
+                                                </div> */}
+                                            </div>
+                                        </div>
+        
+        
+                                    )
+                                }
+                            })}
+                            </> 
+                        )
+                        })}
         </div>
 </div>
 </div>
@@ -413,11 +480,13 @@ export default function Proverr2() {
         <div className="prover3-search-joy">
         <div className="prover3-mni-search">
            <div className="prover2-info-d"><div className="prover2-info-filter">
+           <button onClick={()=>typeFilterAll()} className='prover2-but-clas'><p>#Barchasi</p></button>
             {type.map(item=>{
                 return(
-                    
-                    <button onClick={()=>typeFilter()} className='prover2-but-clas'><p>#{item.name}</p></button>
-                     
+                    <>
+
+                    <button onClick={()=>typeFilter(item.id)} className='prover2-but-clas'><p>#{item.name}</p></button>
+                   </>  
                 )
             })} </div>
                                 <div className="prover2-info-youtube-f">

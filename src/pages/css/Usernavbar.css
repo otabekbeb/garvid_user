@@ -262,6 +262,7 @@
 
 .media-navbar {
   display: none;
+  width: 100% !important;
 }
 
 @media (max-width: 770px) {

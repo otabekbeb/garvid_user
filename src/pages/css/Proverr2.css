@@ -93,6 +93,7 @@ left: 30px !important;
 .prover2-info-filter{
     padding-top: 6px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding-bottom: 20px;
     padding-right: 15px;
@@ -178,14 +179,18 @@ font-weight: 600;
 .prover2-info-block1{
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 .prover2-info-block1-text{
     padding-left: 15px !important;
+    display: block;
+    width: 100%;
 }
 .prover2-info-block1-text h5{
 font-size: 14px !important;
 line-height: 17px !important;
 letter-spacing: 0em !important;
+margin-bottom: 6px;
 position: relative;
 top:10px;
 }
@@ -204,7 +209,7 @@ top: 10px;
     height: 1px;
     background: #d5dae4;
 position: relative;
-left: 95px;
+/* left: 95px; */
 top: 10px;
 }
 .prover3-linerr1{
@@ -212,7 +217,8 @@ top: 10px;
     height: 1px;
     background: #d5dae4;
 position: relative;
-left: 95px;
+/* left: 95px; */
+display: none;
 top: 10px;
 }
 
@@ -1097,7 +1103,7 @@ height: 0;
 .faq-div{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: start;
     border: 1px solid #e6e7e9 ;
 }
 .faq-liner{
@@ -1312,7 +1318,7 @@ height: 0;
         
         }
         .mni-buton-iikki-yo button {
-            width: 40% !important;
+            width: 50% !important;
             height: 40px !important;
             border-radius: 2px;
             background-color: #536DFD;
@@ -2127,7 +2133,7 @@ display: none;
     top: -0px !important;
 }
 .lolipap-kptta-nomoylabtopomadim{
-    display: flex;
+    display: none;
     justify-content: center;
 }
 .mni-gridf1 img{ 
