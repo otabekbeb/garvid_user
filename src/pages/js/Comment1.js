@@ -21,10 +21,14 @@ export default function Comment1() {
   useEffect(()=>{
     axios.get(`${url}/course/theme_comment/`,{headers:{"Authorization":"Bearer " + localStorage.getItem("token")}}).then(res=>{
       axios.get(`${url}/auth/user/`,{headers:{"Authorization":"Bearer " + localStorage.getItem("token")}}).then(res1=>{
-      if (res.user==res1.id) {
-        setComment(res.data)
-        console.log(res.data,"salommmmmm");
-      }
+      // if (res.user==res1.id) {
+      //   setComment(res.data)
+      //   console.log(res.data,"salommmmmm");
+      // }
+      const filter = res.data.filter(item=>item.user.id==res1.data.id)
+      console.log(filter,"bliman");
+      console.log(res.data,"bilamanzior");
+      setComment(res.data)
       })
     })
     axios.get(`${url}/auth/user/`,{headers:{"Authorization":"Bearer " + localStorage.getItem("token")}}).then(res=>{
@@ -36,7 +40,8 @@ export default function Comment1() {
     var formdata=new FormData()
     formdata.append("text",document.querySelector("#chat_text").value)
     formdata.append("image",document.querySelector("#comment_file").files[0])
-    formdata.append("subcomment",JSON.stringify(document.querySelector("#chat_text").value))
+    formdata.append("subcomment",document.querySelector("#chat_text").value)
+    formdata.append("user",localStorage.getItem("token"))
 
     axios.post(`${url}/course/theme_comment/`,formdata,{headers:{"Authorization":"Bearer " + localStorage.getItem("token")}}).then(res=>{
     alert("yozildi")

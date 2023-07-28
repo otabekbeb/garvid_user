@@ -8,6 +8,9 @@
   top: 0;
   transition: 0.5s;
 }
+.navbar-menu{
+  width: 100% !important;
+}
 
 .navbar-ul ul {
   display: flex;
@@ -262,6 +265,7 @@
 
 .media-navbar {
   display: none;
+  width: 100% !important;
 }
 
 @media (max-width: 770px) {
