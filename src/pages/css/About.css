@@ -189,7 +189,11 @@
     display: none;
 }
 
+<<<<<<< HEAD
 @media (max-width:830px) {
+=======
+@media (max-width:850px) {
+>>>>>>> 20e8d58c35785d0e196f3132d34feff3138ecb63
     .navbar-mediao-barr {
         position: relative;
     }
@@ -268,7 +272,7 @@
     }
 }
 
-@media (min-width:830px) {
+@media (min-width:850px) {
 
     .media-navbar {
         display: none !important;
@@ -3170,7 +3174,11 @@ justify-content: center; */
     }
 }
 
+<<<<<<< HEAD
 @media (max-width:830px) {
+=======
+@media (max-width:850px) {
+>>>>>>> 20e8d58c35785d0e196f3132d34feff3138ecb63
     .asd-block {
         position: relative;
         left: -1%;

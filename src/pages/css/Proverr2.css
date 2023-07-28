@@ -3,6 +3,8 @@
     min-height: 52vw;
     background: #F1F2F6;
     padding-top: 30px;
+    display: flex;
+    justify-content: center;
 }
 body{
     overflow-x: hidden !important;
@@ -44,7 +46,8 @@ background: #ffffff;
     padding-top: 5px;
 }
 .prover2-info-filter button{
-    width: 70px;
+    width: auto !important;
+    padding: 0px 5px 5px 5px;
 height: 25px;
 border-radius: 4px;
 background: #F1F2F6;
@@ -89,6 +92,10 @@ left: 30px !important;
 }
 .prover2-info-filter{
     padding-top: 6px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    padding-right: 15px;
 }
 .prover2-info-filter button:hover{
     background-color:  #536DFD;
@@ -109,7 +116,7 @@ width: 100%;
 height: 100%;
 }
 .prover2-info-filter2 button{
-    width: 70px;
+    width: auto !important;
 height: 25px;
 border-radius: 4px;
 background: #F1F2F6;
@@ -148,7 +155,10 @@ left: 20px !important;
 }
 
 .prover2-info-youtube-f{
-    padding-top: 22px;
+    width: 94%;
+    margin-top: 22px;
+    padding: 10px;
+    background-color: #fff;
 }
 .prover2-p-df{
     font-family: SF Pro Display;
@@ -160,13 +170,14 @@ font-weight: 600;
 }
 .prover2-info-block1-img img{
     width: 80px !important;
-    height: 80px !important;
+    /* height: 80px !important; */
     border-radius: 4px!important;
     background-size: 100% 100%;
     cursor: pointer;
 }
 .prover2-info-block1{
     display: flex;
+    align-items: center;
 }
 .prover2-info-block1-text{
     padding-left: 15px !important;
