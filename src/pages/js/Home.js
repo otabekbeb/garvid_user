@@ -18,7 +18,7 @@ export default function Home() {
         localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
       );},[]);
     return (
-<div className='Homepage'>
+<div>
         {state1==="en" ?(<div> <div className='body1'>
             
         <Navbar />

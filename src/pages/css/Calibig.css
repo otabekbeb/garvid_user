@@ -73,7 +73,8 @@
 .kurs_card .btn_das {
     position: absolute;
     z-index: 1;
-    width: 130px;
+         padding-left: 10px;
+         padding-right: 10px;
     height: 26px;
     top: 24px;
     left: 24px;

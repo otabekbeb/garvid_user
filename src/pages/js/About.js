@@ -59,9 +59,9 @@ export default function About() {
     <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-about-img.jpg" alt="" />
     <div className="about-header-block-text">
       <h2 id='uityty'>Do the right things at the right time.</h2>
-      <p>Welcome to the leading company in the market! Our success is due to the highest quality of customer service.  We can meet the requirements of even the most capricious clients; there are no difficult tasks for us! Thank you for your choice! Our   the company boasts a reputation as a reliable partner known throughout the world. We pride ourselves on uncompromising  quality</p>
+      <p>Welcome to the leading company in the market! Our success is due to the highest quality of customer service. <br className='pogos'/> We can meet the requirements of even the most capricious clients; there are no difficult tasks for us! Thank you for your choice! Our  <br className='pogos' /> the company boasts a reputation as a reliable partner known throughout the world. We pride ourselves on uncompromising <br /> quality</p>
       <div className="about-header-addelna">
-        <p>Thank you for visiting our site! You are in the right place! We are focused on providing comprehensive solutions and services to customers around the world. Putting the interests of our clients first, we make every effort to exceed your expectations.</p>
+        <p>Thank you for visiting our site! You are in the right place! We are focused on providing comprehensive <br className='pogos' /> solutions and services to customers around the world. Putting the interests of our clients first, we make every effort to<br className='pogos' /> exceed your expectations.</p>
       </div>
       <div className="about-header-df">
         <div className="about-header-blcos1">
@@ -132,7 +132,7 @@ export default function About() {
 
 </div>
 <div className="sli-text">
-<p>Wow I'm so happy with you service. You managed to overcome  my expectations! You guys are very efficient.</p>
+<p>Wow I'm so happy with you <br />service. You managed to overcome<br /> my expectations! You guys are very efficient.</p>
 
 <strong>Adam Watson</strong>
 <h4>(CEO and Founder)</h4>
@@ -145,7 +145,7 @@ export default function About() {
 
 </div>
 <div className="sli-text">
-<p>Hi guys! You solved my problem in no time!Your service and customer care is excellent!</p>
+<p>Hi guys! You solved my problem in no time!<br />Your service and customer care is excellent!</p>
 
 <strong>Louise Smith</strong>
 <h4>(CEO and Founder)</h4>
