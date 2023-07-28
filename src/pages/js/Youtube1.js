@@ -174,12 +174,11 @@ export default function Youtube1() {
             <div className="youtube_bgc">
               <div className="flex_youtube">
 
-                  {theme.map(item => {
-                    if (localStorage.getItem("themeidsend")?(item.id==localStorage.getItem("themeidsend")):(item.id==localStorage.getItem("themeid"))) {
+                  {theme.map((item,key) => {
+                    if (localStorage.getItem("themeidsend")?(item.id==localStorage.getItem("themeidsend")):(key==localStorage.getItem("themeid"))) {
                       return (
                         <>
-                      
-
+                        
                         <div className="youtube_kotta_img">
                           <div className="img_youtube_kotta">
                           {item.video===null?(
@@ -293,7 +292,7 @@ export default function Youtube1() {
                                 <Accordion.Header>{item2.name}</Accordion.Header>
                                 {theme.map((theme,key) => {
                                   if (theme.subcategory == item2.id) {
-                                    localStorage.setItem("themeid", theme[0])
+                                    localStorage.setItem("themeid",0)
                                     localStorage.setItem("themeLength",key+1)
                                     return (
                                       <>

@@ -44,7 +44,7 @@ export default function Mentorprofile() {
       {state1==="en" ?(<div>
       <div className="profil_size_df">
        <div className="profil_size">
-        <div className="profil_blok_bir">
+        <div className="profil_blok_bir1">
           <div onMouseLeave={()=>userimgClose()} className='user_img_size'>
           <img onMouseEnter={()=>userimgModal()} className='user_img' src={Use_img} alt="" />
            <div className="user_img_hover">
@@ -52,7 +52,7 @@ export default function Mentorprofile() {
           <MdOutlinePhotoCamera  className='user_hover_photo_icon'/>
         </div>
         </div>
-           <div className="blok_bir_text_mentor">
+           <div className="blok_bir_text_mentor1">
             <h1>Muhammad Dzhumaev</h1>
             <p>Java Tutor, Python</p>
             <button>Mentor</button>
@@ -62,7 +62,7 @@ export default function Mentorprofile() {
         <div className="profil_blok_ikki">
           <div className="profil_blok_ikki_text">
           <p>Current balance</p>
-          <div className="profil_blok_ikki_sum">
+          <div className="profil_blok_ikki_sum1">
             <h1>1 350 000</h1><p>UZS</p>
           </div>
           <div className="profil_blok_ikki_button">
@@ -136,7 +136,7 @@ export default function Mentorprofile() {
     </div>):(<div>
       <div className="profil_size_df">
        <div className="profil_size">
-        <div className="profil_blok_bir">
+        <div className="profil_blok_bir1">
           <div onMouseLeave={()=>userimgClose()} className='user_img_size'>
           <img onMouseEnter={()=>userimgModal()} className='user_img' src={Use_img} alt="" />
            <div className="user_img_hover">
@@ -144,7 +144,7 @@ export default function Mentorprofile() {
           <MdOutlinePhotoCamera  className='user_hover_photo_icon'/>
         </div>
         </div>
-           <div className="blok_bir_text_mentor">
+           <div className="blok_bir_text_mentor1">
             <h1>Мухаммад Джумаев</h1>
             <p>Наставник по Java, Python</p>
             <button>Наставник</button>
@@ -154,7 +154,7 @@ export default function Mentorprofile() {
         <div className="profil_blok_ikki">
           <div className="profil_blok_ikki_text">
           <p>Текущий баланс</p>
-          <div className="profil_blok_ikki_sum">
+          <div className="profil_blok_ikki_sum1">
             <h1>1 350 000</h1><p>UZS</p>
           </div>
           <div className="profil_blok_ikki_button">
