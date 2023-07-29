@@ -1,3 +1,4 @@
+
 .navbar {
   width: 100%;
   height: 70px;
@@ -294,6 +295,7 @@ right: 32px;
   top: -10px !important;
 }
 
+
 .media-navbar {
   display: none;
 }
@@ -538,7 +540,7 @@ margin-top: 10px !important;
      margin-left: 82vw;
    }
 
-   .sam {
+.sam {
      position: relative;
      left: 20px;
      font-family: "Roboto", sans-serif;
@@ -758,7 +760,7 @@ body{
        position: absolute;
        width: 180px;
 
-       left: 170px;
+left: 170px;
        background: #ffffff;
        list-style: none;
        text-align: left;
@@ -974,7 +976,8 @@ body{
     display: none;
   }
 
-  .safiha-p a {
+Akbar Iteen, [28.07.2023 17:44]
+.safiha-p a {
     color: #333;
     text-decoration: none;
     border-bottom-width: 0px;
@@ -1239,7 +1242,6 @@ color: white;
   align-items: self-end;
   justify-content: center;
 }
-
 .menuu li {
   position: relative;
   display: flex;
@@ -2226,7 +2228,6 @@ color: white;
     top: -15px;
   }
 }
-
 @media (max-width:1201px) {
   .menu2 ul {
     position: absolute;
@@ -2458,8 +2459,7 @@ color: white;
   .menu2 ul {
     position: absolute;
     width: 120px !important;
-
-    transition: 0.4s;
+transition: 0.4s;
     margin-top: 14px !important;
     background: #ffffff;
     list-style: none;
@@ -2687,7 +2687,6 @@ left: 20vw !important;
     top: -10px;
   }
 }
-
 @media (max-width:804px) {
   .menu2 ul {
     position: absolute;

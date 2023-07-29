@@ -70,7 +70,7 @@ export default function Navbar() {
   const [state1, setState1] = React.useState();
   const [state, State] = React.useState(1);
   const [user, setUser] = useState([])
-  const activeLink = " bg-blue-100 text-black ";
+  const activeLink = "";
   const normalLink = ""
 
   const googleTranslateElementInit = () => {
@@ -126,7 +126,8 @@ export default function Navbar() {
                   <NavLink to="/" className={({isActive})=>isActive?activeLink: normalLink}><a>Home</a></NavLink>
                 </li>
 
-                <div className="menu" onMouseLeave={() => menuufolse()}>
+
+<div className="menu" onMouseLeave={() => menuufolse()}>
                   <div className="menuu" onMouseEnter={() => menuul()}>
                     <p>
                     <NavLink to="/about" className={({isActive})=>isActive?activeLink: normalLink}><a>About us</a></NavLink>
@@ -205,7 +206,7 @@ export default function Navbar() {
                 </div>
 
 
-                {/* onMouseLeave={()=>aboutClose2()}  */}
+{/* onMouseLeave={()=>aboutClose2()}  */}
                 <div className="media-ul">
                   <div className="dfdf">
                     <ul>
@@ -292,7 +293,7 @@ export default function Navbar() {
                       </li>
 
 
-                      <div id="google_translate_element"></div>
+<div id="google_translate_element"></div>
                     </ul>
                   </div>
                 </div>
@@ -363,7 +364,7 @@ export default function Navbar() {
                 </div>
 
 
-                <li className="moto-menu-item">
+<li className="moto-menu-item">
                   {" "}
                   <a href="/servis">Услуги</a>{" "}
                 </li>
@@ -441,7 +442,8 @@ export default function Navbar() {
                             <a href="#">Архивы</a>
                           </li>
 
-                          <div className="ichi2" onClick={() => ochil1()}>
+
+<div className="ichi2" onClick={() => ochil1()}>
                             <li onClick={()=> window.location="/news"} className="ds">
                               <a href="/news">Новости</a>
                             </li>

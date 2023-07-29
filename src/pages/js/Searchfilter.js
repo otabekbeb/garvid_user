@@ -30,11 +30,11 @@ export default function Searchfilter() {
     document.querySelector(".kurs_cards").style = "display:flex;transition:3s";
     document.querySelector(".spiska_img_title_div").style = "display:none";
   }
-  function menuModal() {
-    document.querySelector(".kurs_cards").style = "display:none";
-    document.querySelector(".spiska_img_title_div").style =
-      "display:block;transition:3s";
-  }
+  // function menuModal() {
+  //   document.querySelector(".kurs_cards").style = "display:none";
+  //   document.querySelector(".spiska_img_title_div").style =
+  //     "display:block;transition:3s";
+  // }
 
   useEffect(() => {
     axios
@@ -95,10 +95,10 @@ export default function Searchfilter() {
                   <BiMenu className="menyu" />
                   <h4>Filter</h4>
                 </div>
-                <div className="win_men">
+                {/* <div className="win_men">
                   <MdWindow className="window" onClick={() => windowModal()} />
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
-                </div>
+                </div> */}
               </div>
               <div className="filter_button">
 
@@ -176,7 +176,7 @@ export default function Searchfilter() {
 
         {/* SPISKA */}
 
-        <div className="spiska_img_title_div">
+        {/* <div className="spiska_img_title_div">
           {kursdata.map((item) => {
             return (
               <div className="Spiska_blok">
@@ -214,7 +214,7 @@ export default function Searchfilter() {
               </div>
             );
           })}
-        </div>
+        </div> */}
       </div>) : (
       <div>
         <div className="Filter">
@@ -234,10 +234,10 @@ export default function Searchfilter() {
                   <BiMenu className="menyu" />
                   <h4>Фильтр</h4>
                 </div>
-                <div className="win_men">
+                {/* <div className="win_men">
                   <MdWindow className="window" onClick={() => windowModal()} />
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
-                </div>
+                </div> */}
               </div>
               <div className="filter_button">
                       {type.map((item2) => {
@@ -315,7 +315,7 @@ export default function Searchfilter() {
 
         {/* SPISKA */}
 
-        <div className="spiska_img_title_div">
+        {/* <div className="spiska_img_title_div">
           {kursdata.map((item) => {
             return (
               <div className="Spiska_blok">
@@ -353,7 +353,7 @@ export default function Searchfilter() {
               </div>
             );
           })}
-        </div>
+        </div> */}
       </div>)}
 
     </div>):(<Loader/>)}

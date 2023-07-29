@@ -296,7 +296,7 @@ border: none;
 .futer-block-pass button{
     height: 50px;
     border: none;
-    width: 90px;
+    width: auto;
     background-color: #44bef1;
     color: white;
 border-top-right-radius: 5px;
@@ -310,7 +310,7 @@ cursor: pointer;
     .futer-block-pass button{
         height: 50px;
         border: none;
-        width: 75px;
+        width: auto;
         background-color: #44bef1;
         color: white;
     border-top-right-radius: 5px;
@@ -460,7 +460,7 @@ cursor: pointer;
     .futer-block-pass button {
         height: 45px;
         border: none;
-        width: 70px;
+        width: auto;
         background-color: #44bef1;
         color: white;
         border-top-right-radius: 5px;
@@ -609,7 +609,7 @@ cursor: pointer;
 .futer-block-pass button {
     height: 45px;
     border: none;
-    width: 70px;
+    width: auto;
     background-color: #44bef1;
     color: white;
     border-top-right-radius: 5px;
@@ -897,11 +897,12 @@ font-family: unset;
     margin-top: 15px;
 }
 .futer-mobil-button button{
-    width: 110px;
+    width: auto;
     height: 40px;
     border-radius: 5px;
     border: none;
     outline: none;
+    padding: 10px;
     cursor: pointer;
     background-color: #44bef1;
     font-family: 'Roboto', sans-serif;
@@ -1061,7 +1062,7 @@ font-family: unset;
     .futer-block-pass button {
         height: 45px;
         border: none;
-        width: 70px;
+        width: auto;
         background-color: #44bef1;
         color: white;
         border-top-right-radius: 5px;
@@ -1092,4 +1093,34 @@ top: -1px;
         overflow: hidden !important;
         
     }
+}
+@media (max-width:520px) {
+    .futer-cen p{
+        font-size: 15px;
+    }
+}
+@media (max-width:413px) {
+    .futer-cen p{
+        font-size: 13px;
+    }
+}
+@media (max-width:373px) {
+    .futer-nobil-ichi {
+        display: flex;
+        gap: 5px;
+        position: relative;
+        top: 5px;
+        left: 20%;
+    }
+}
+.futer-block-pass button {
+    height: 50px;
+    border: none;
+    width: auto;
+padding: 10px;
+    background-color: #44bef1;
+    color: white;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
 }

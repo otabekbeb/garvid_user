@@ -9,9 +9,9 @@ function sa() {
   if (o == "flex") {
     document.querySelector(".media-ul").style.display = "none";
   } else {
-    document.querySelector(".media-ul").style.display = "flex";
+    document.querySelector(".media-ul").style.display = "flex"
   }
-  // document.querySelector(".media-ul").style.display="flex";
+  // document.querySelector(".media-ul").style="width:100%;"
   document.querySelector(".bar-menu").classList.toggle("la");
   document.querySelector(".wone").classList.toggle("laa");
   document.querySelector(".wone1").classList.toggle("laa");
@@ -173,7 +173,7 @@ export default function Navbar() {
                   </div>
                 </div>
 
-                <li className="moto-menu-item">
+                <li onClick={()=>{localStorage.removeItem("themeid");localStorage.removeItem("themeidsend")}} className="moto-menu-item">
                   {" "}
                   <a href="/user">User</a>{" "}
                 </li>
@@ -189,16 +189,14 @@ export default function Navbar() {
                 <li className="moto-menu-item">
                   <a href="/ourcourse">Courses</a>
                 </li>
-
-
-                <li className="moto-menu-item">
+                {/* <li className="moto-menu-item">
                   {localStorage.getItem("token") ? (<a href="/user">{user.username}</a>) : (<a href="/login">Log in</a>)}
-                </li>
+                </li> */}
               </ul>
               <div id="google_translate_element"></div>
             </div>
-            <div className="media-navbar" style={{margin:"auto"}}>
-              <div className="navbar-menu">
+            <div   className="media-navbar" style={{margin:"auto",width:'100%'}}>
+              <div style={{width:'100%'}} className="navbar-menu">
                 <div className="navbar-mediao-barr" onClick={() => sa()}>
                   <div className="bar-menu" id="sa">
                     <div className="wone"></div>
@@ -209,7 +207,7 @@ export default function Navbar() {
 
 
                 {/* onMouseLeave={()=>aboutClose2()}  */}
-                <div className="media-ul">
+                <div style={{width:'100%'}} className="media-ul">
                   <div className="dfdf">
                     <ul>
                       <li>
@@ -294,13 +292,11 @@ export default function Navbar() {
                           Courses
                         </a>
                       </li>
-                      {/* <li><a href="/teacher" className='tt'>Teacher</a></li> */}
-                      <li>
-                        {localStorage.getItem("token") ? (<a href="/user" className="tt">{user.username}</a>) : (<a Login href="/login" className="tt">Login</a>)}
-                      </li>
-
-
                       <div id="google_translate_element"></div>
+                      {/* <li><a href="/teacher" className='tt'>Teacher</a></li> */}
+                      {/* <li>
+                        {localStorage.getItem("token") ? (<a href="/user" className="tt">{user.username}</a>) : (<a Login href="/login" className="tt">Login</a>)}
+                      </li> */}
                     </ul>
                   </div>
                 </div>
@@ -403,8 +399,8 @@ export default function Navbar() {
                 />
               </div>
             </div>
-            <div className="media-navbar" style={{margin:"auto"}}>
-              <div className="navbar-menu">
+            <div   className="media-navbar" style={{margin:"auto",width:'100%'}}>
+              <div style={{width:'100%'}}  className="navbar-menu">
                 <div className="navbar-mediao-barr" onClick={() => sa()}>
                   <div className="bar-menu" id="sa">
                     <div className="wone"></div>
@@ -501,9 +497,9 @@ export default function Navbar() {
                       </li>
                       {/* <li><a href="/teacher" className='tt'>Учитель</a></li> */}
 
-                      <li>
+                      {/* <li>
                         {localStorage.getItem("token") ? (<a href="/user">{user.username}</a>) : (<a href="/login" className="tt">Регистрация</a>)}
-                      </li>
+                      </li> */}
                       <div class="checkbox-con" style={{ marginTop: "15px" }}>
                         <input
                           id="checkbox2"
