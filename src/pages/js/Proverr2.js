@@ -106,6 +106,10 @@ export default function Proverr2() {
                 })
             })
         })
+        axios.get(`${url}/course/registed_course/`,{headers:{"Authorization":"Bearer " + localStorage.getItem("token")}}).then(res=>{
+            console.log(res.data,"bilaman");
+                alert("ishladi")
+            })
 
     },[])
     function typeFilter(id) {

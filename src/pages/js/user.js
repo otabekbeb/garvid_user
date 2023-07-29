@@ -11,6 +11,7 @@ export default function user() {
       <Pdp />
       <Futer />
       
+
     </div>
   )
 }
