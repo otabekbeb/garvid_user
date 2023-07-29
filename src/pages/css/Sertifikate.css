@@ -1,108 +1,178 @@
-.cards_sertifikat{
+.cards_sertifikat {
     width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 5%;
-    
+
 }
-.sertifikat{
-    width: 430px;
+
+@media (max-width:1096px) {
+    .card_sertifikat {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.sertifikat {
+    width: 460px;
     height: auto;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
-.sertifikat img{
-width: 100%;
+
+.sertifikat img {
+    width: 100%;
 }
-.card_sertifikat{
+
+.card_sertifikat {
     width: 86%;
     display: grid;
     margin-left: 5%;
     grid-template-columns: auto auto auto;
     gap: 30px;
     padding-bottom: 100px;
- 
+
 }
-.text_pro_max_gap_sos_lift_gr h4{
-    font-size: 15px;
+
+.text_pro_max_gap_sos_lift_gr h4 {
+    font-size: 13px;
     padding-top: 10px;
 }
-.Dast_konter_dust_pro_dest{
-    width: 100px;
-    background-color: green;
+
+.Dast_konter_dust_pro_dest {
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #44bef1;
     color: #fff;
     align-items: center;
     height: 30px;
     border: none;
+
     border-radius: 2px;
 }
-.button_text_df_blok_pitani_pro_Max{
+
+.button_text_df_blok_pitani_pro_Max {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
+
 @media (max-width:1544px) {
-    .card_sertifikat{
-        width: 80% !important;
+    .card_sertifikat {
+        width: 80% ;
         display: grid;
         margin-left: -1%;
-        grid-template-columns: auto auto ;
+        grid-template-columns: auto auto;
         gap: 50px;
 
-    }  
+    }
 }
-@media (max-width:1036px) {
-    .card_sertifikat{
-        width: 80% !important;
-        display: grid;
-        margin-left: 30%;
-        grid-template-columns: auto  ;
-        gap: 50px;
 
-    } 
+@media (max-width:1014px) {
+    .sertifikat {
+        width: 350px;
+        height: 320px;
+    }
+
+    .sertifikat img {
+        height: 200px;
+    }
+
+    .button_text_df_blok_pitani_pro_Max {
+        flex-direction: column;
+    }
+}
+
+@media (max-width:776px) {
+    .card_sertifikat {
+        width: 100% ;
+        display: grid;
+        grid-template-columns: auto;
+        gap: 50px;
+    }
+    .sertifikat{
+        width: 100%;
+    }
+   
+
+}
+@media (max-width:501px) {
+    .sertifikat{
+        width: 100% ;
+    }
+    .card_sertifikat {
+        width: 100% !important ;
+        display: grid;
+        grid-template-columns: auto;
+        gap: 50px;
+    }
+    .button_text_df_blok_pitani_pro_Max{
+        width: 100%;
+    }
+    .text_pro_max_gap_sos_lift_gr{
+        width: 90%;
+        
+    }
 }
 @media (max-width:772px) {
-    .card_sertifikat{
-        width: 80% !important;
+    .card_sertifikat {
+        width: 80% ;
         justify-content: center !important;
-       margin: auto !important;
+        margin: auto !important;
 
-    }  
+    }
+}
+@media (max-width:393px) {
+    .sertifikat{
+        width: 60%;
+    }
 }
 
-@media (max-width:502px) {
-    .sertifikat{
-        width: 290px !important;
+@media (max-width:326px) {
+    .sertifikat {
+        width: 250px;
+        height: auto
     }
-    .Dast_konter_dust_pro_dest{
-        width: 100px;
+
+    .Dast_konter_dust_pro_dest {
+        width: 80px;
+        margin-top: 10%;
         font-size: 15px !important;
-    }    
-    .text_pro_max_gap_sos_lift_gr{
-      width: 50%;  
     }
+
+    .text_pro_max_gap_sos_lift_gr {
+        width: 50%;
+
+    }
+
+    .text_pro_max_gap_sos_lift_gr p {
+        font-size: 13px;
+    }
+
+    .text_pro_max_gap_sos_lift_gr h4 {
+        font-size: 14px;
+    }
+}
+@media (max-width:392px) {
+    .sertifikat{
+        width: 90%;
+        margin: auto    ;
+    }
+}
+@media (max-width:351px) {
     .text_pro_max_gap_sos_lift_gr p{
-        font-size: 13px ;
+        font-size: 12px;
     }
 }
 @media (max-width:326px) {
+    .text_pro_max_gap_sos_lift_gr{
+        width: 90%;
+    }
     .sertifikat{
-        width: 250px !important;
-        height: auto
+        height: 370px;
     }
     .Dast_konter_dust_pro_dest{
-        width:80px;
-        margin-top: 10%;
-        font-size: 15px !important;
-    }    
-    .text_pro_max_gap_sos_lift_gr{
-      width: 50%; 
-
-    }
-    .text_pro_max_gap_sos_lift_gr p{
-        font-size: 13px ;
-    }
-    .text_pro_max_gap_sos_lift_gr h4{
-        font-size: 14px ;
+        width: 70%;
     }
 }

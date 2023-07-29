@@ -1,25 +1,29 @@
-.program{
+.program {
     width: 100%;
-display: flex;
-justify-content: center;
+    display: flex;
+    justify-content: center;
+
 }
-.ptogram_tutorial{
+
+.ptogram_tutorial {
     width: 83%;
     display: grid;
     margin-top: 30px;
-    grid-template-columns: auto auto auto  auto auto ;
+    grid-template-columns: auto auto auto auto auto;
     padding-bottom: 100px;
 }
-.html_div{
+
+.html_div {
     width: 100px !important;
     height: 100px !important;
-    border-radius: 50% !important; 
+    border-radius: 50% !important;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.html_red{
+
+.html_red {
 
     width: 85px;
     height: 85px;
@@ -29,7 +33,8 @@ justify-content: center;
     justify-content: center;
     align-items: center;
 }
-.sp_red{
+
+.sp_red {
     width: 85px;
     height: 85px;
     background-color: #24d3ada8;
@@ -39,21 +44,31 @@ justify-content: center;
     align-items: center;
 }
 
-.html_red img{
+.html_red img {
     width: 50px;
-    height: 50px ;
+    height: 50px;
 }
-.html_code_tutoril{
+
+.html_code_tutoril {
     width: 300px;
     margin-top: 10%;
     display: flex;
     justify-content: space-around;
 }
-.text_html p{
+
+.text_html p {
     width: 170px;
     opacity: 0.5;
 }
-.sas_red{
+.text_html h3 {
+    font-size: 18px !important;
+}
+
+.text_html p {
+    font-size: 13px !important;
+}
+
+.sas_red {
     width: 85px;
     height: 85px;
     background-color: #eb7eb377;
@@ -62,89 +77,111 @@ justify-content: center;
     justify-content: center;
     align-items: center;
 }
-.bootstrap_red{
+
+.bootstrap_red {
     width: 85px;
     height: 85px;
-    background-color:  #563D7C;
+    background-color: #563D7C;
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
 }
-.git_red{
+
+.git_red {
     width: 85px;
     height: 85px;
-    background-color:#df5e4b94;
+    background-color: #df5e4b94;
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;  
-} 
-.react_bootstrap{
+    align-items: center;
+}
+
+.react_bootstrap {
     font-size: 20px;
 }
+
 @media (max-width:1640px) {
-    .ptogram_tutorial{
+    .ptogram_tutorial {
         width: 83%;
         display: grid;
         margin-top: 30px;
-        grid-template-columns: auto auto auto  ;
+        grid-template-columns: auto auto auto;
     }
 }
+
 @media (max-width:984px) {
-    .ptogram_tutorial{
+    .ptogram_tutorial {
         width: 83%;
         display: grid;
         margin-top: 30px;
-        grid-template-columns: auto auto  ;
-        margin:auto;
+        grid-template-columns: auto auto;
+        margin: auto;
     }
+    .text_html h3 {
+        font-size: 16px !important;
+    }
+    
+    .text_html p {
+        font-size: 13px !important;
+    }
+    
 }
+
 @media (max-width:756px) {
-    .sp_red{
+    .sp_red {
         width: 70px;
         height: 70px;
         border-radius: 50%;
     }
-    .git_red{
+
+    .git_red {
         width: 70px;
         height: 70px;
         border-radius: 50%;
     }
-    .bootstrap_red{
+
+    .bootstrap_red {
         width: 70px;
         height: 70px;
         border-radius: 50%;
     }
-    .sas_red{
+
+    .sas_red {
         width: 70px;
         height: 70px;
         border-radius: 50%;
     }
-    .html_red{
+
+    .html_red {
         width: 70px;
         height: 70px;
         border-radius: 50%;
     }
-    .html_div{
+
+    .html_div {
         width: 80px !important;
         height: 80px !important;
         border-radius: 50% !important;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
 }
+
 @media (max-width:654px) {
-    .text_html h3{
+    .text_html h3 {
         font-size: 17px !important;
     }
-    .text_html p{
+
+    .text_html p {
         font-size: 13px !important;
     }
-        .ptogram_tutorial{
+
+    .ptogram_tutorial {
         width: 83%;
         display: grid;
         margin-top: 30px;
-            justify-content: center !important;
-        grid-template-columns: auto   ;
+        justify-content: center !important;
+        grid-template-columns: auto;
     }
 }
