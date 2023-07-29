@@ -81,11 +81,11 @@
     margin-left: 390px;
     width: 150px;
     height: 30px;
-    background-color: #10C8A0;
+    background-color: #44bef1;
     color: white;
     border-radius: 3px;
-    transition: .2s ease-in-out;
+    transition: .2s ease;
 }
 .edit_inside_btn:hover{
-    background: #10c8a0ae;
+    background-color: #44bdf1b7;
 }
