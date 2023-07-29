@@ -139,9 +139,9 @@ export default function Navbar() {
                       </span>
                     </p>
                     <ul>
-                      <li className="faqcolor">
-                        <NavLink to="/faqs" className={({isActive})=>isActive?activeLink: normalLink}><a className="faqscolor">FAQs</a></NavLink>
-                      </li>
+                    <li onClick={()=> window.location="#"} id="ded">
+                            <a id="contactcolor" href="/">FAQ </a>
+                          </li>
                       <div className="navbbar-line-hr"></div>
                       <li onClick={()=> window.location="contacts"} id="ded">
                             <a id="contactcolor" href="/contacts">Contact </a>
