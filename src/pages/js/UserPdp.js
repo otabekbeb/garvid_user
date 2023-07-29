@@ -52,11 +52,11 @@ export default function Pdp() {
             <div>
                 {state1 === 'en' ? (<div className="gray_blok">
                     <div className="fil_text_blok">
-                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle===1? {borderBottom:'2px solid #536DFD'}:{}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} pieces</div>) : ("")}</div>
-                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle===2? {borderBottom:'2px solid #536DFD'}:{} }className='fromLeft'>My learned knowledge</h1>{toggle === 2 ? (<div className="fil_text_blok_kurs_lenght">14 pieces</div>) : ("")}</div>
-                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle===3? {borderBottom:'2px solid #536DFD'}:{} }className='fromLeft'>My certificates</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
-                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle===4? {borderBottom:'2px solid #536DFD'}:{} }className='fromLeft'>My Subscriptions</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
-                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle===5? {borderBottom:'2px solid #536DFD'}:{} }className='fromLeft'>Correspondence</h1><div className="fil_text_blok_kurs_lenght">1 pieces</div></div>
+                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle===1? {borderBottom:'2px solid #44bef1'}:{}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} pieces</div>) : ("")}</div>
+                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle===2? {borderBottom:'2px solid #44bef1'}:{} }className='fromLeft'>My learned knowledge</h1>{toggle === 2 ? (<div className="fil_text_blok_kurs_lenght">14 pieces</div>) : ("")}</div>
+                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle===3? {borderBottom:'2px solid #44bef1'}:{} }className='fromLeft'>My certificates</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
+                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle===4? {borderBottom:'2px solid #44bef1'}:{} }className='fromLeft'>My Subscriptions</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
+                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle===5? {borderBottom:'2px solid #44bef1'}:{} }className='fromLeft'>Correspondence</h1><div className="fil_text_blok_kurs_lenght">1 pieces</div></div>
                     </div>
                     <div className="profil_blok_menu_size">
                         <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
@@ -71,11 +71,11 @@ export default function Pdp() {
                     </div>
                 </div>) : (<div className="gray_blok">
                     <div className="fil_text_blok">
-                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle===1? {borderBottom:'2px solid #536DFD',}:{}} className='fromLeft'>Мои курсы</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} штуки</div>) : ("")}</div>
-                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle===2? {borderBottom:'2px solid #536DFD'}:{}}  className='fromLeft'>Мои усвоенные знания</h1>{toggle === 2 ? (<div className="fil_text_blok_kurs_lenght">14 штуки</div>) : ("")}</div>
-                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle===3? {borderBottom:'2px solid #536DFD'}:{}}  className='fromLeft'>Мои сертификаты</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">24 штуки</div>) : ("")}</div>
-                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle===4? {borderBottom:'2px solid #536DFD'}:{}}  className='fromLeft'>Мои подписки</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">24 штуки</div>) : ("")}</div>
-                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle===5? {borderBottom:'2px solid #536DFD'}:{}}  className='fromLeft'>Переписка</h1><div className="fil_text_blok_kurs_lenght">1 штуки</div></div>
+                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle===1? {borderBottom:'2px solid #44bef1',}:{}} className='fromLeft'>Мои курсы</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} штуки</div>) : ("")}</div>
+                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle===2? {borderBottom:'2px solid #44bef1'}:{}}  className='fromLeft'>Мои усвоенные знания</h1>{toggle === 2 ? (<div className="fil_text_blok_kurs_lenght">14 штуки</div>) : ("")}</div>
+                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle===3? {borderBottom:'2px solid #44bef1'}:{}}  className='fromLeft'>Мои сертификаты</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">24 штуки</div>) : ("")}</div>
+                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle===4? {borderBottom:'2px solid #44bef1'}:{}}  className='fromLeft'>Мои подписки</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">24 штуки</div>) : ("")}</div>
+                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle===5? {borderBottom:'2px solid #44bef1'}:{}}  className='fromLeft'>Переписка</h1><div className="fil_text_blok_kurs_lenght">1 штуки</div></div>
                     </div>
                     <div className="profil_blok_menu_size">
                         <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />

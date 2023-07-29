@@ -11,6 +11,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
 import { TbPointFilled } from "react-icons/tb";
+import { GrFormClose} from 'react-icons/gr';
 import "../css/Spiska.css";
 import "../css/Calibig.css";
 import WWW from "../img/WWW.png";
@@ -27,9 +28,7 @@ export default function Searchfilter() {
   function Filter() {
     document.querySelector(".filter_button").classList.toggle("filter");
   }
-  function close(){
-    document.querySelector(".delete_card").style="display:none"
-  }
+  
   function windowModal() {
     document.querySelector(".kurs_cards").style = "display:flex;transition:3s";
     document.querySelector(".spiska_img_title_div").style = "display:none";
@@ -40,8 +39,19 @@ export default function Searchfilter() {
       "display:block;transition:3s";
   }
 
+  function close(){
+    document.querySelector(".delete_card").style="display:none"
+  }
+
   function udalit() {
-   document.querySelector(".delete_card").style="display:flex"
+   document.querySelector(".delete_card").style="display:flex !important" 
+}
+
+function dabavit() {
+  document.querySelector(".edit_card").style="display:flex !important" 
+}
+function nazat(){
+  document.querySelector(".edit_card").style="display:none"
 }
 
 
@@ -153,11 +163,60 @@ export default function Searchfilter() {
                     </h5>
                   </div>
                 </div>
-                <div className='edit_icon'>
+                <div className='edit_icon' onClick={() => dabavit()}>
                     <Edit/>
                   </div>
-                  <div className="delete_icon">
-                    <Delete/>
+
+                  <div className="edit_card">
+                    <div className="edit_padding">
+
+                    <button onClick={() => nazat()} className="close_btn">
+                   <i><GrFormClose/></i>
+                </button>
+                <hr />
+                      <div className="edit_inside">
+                    <label htmlFor="">Name:</label>
+                    <input type="text"/>
+                </div>
+                <hr />
+                <div className="edit_inside">
+                  <label htmlFor="">Description:</label>
+                  <textarea name="" id="" cols="40" rows="10"></textarea>
+                </div>
+                <hr />
+                <div className="edit_inside">
+                  <label htmlFor="">Price:</label>
+                  <input type="number" className="inp_numbr"/>
+                </div>
+                <hr />
+                <div className="edit_inside">
+                  <label htmlFor="">Planned time:</label>
+                  <input type="number" className="inp_numbr"/>
+                </div>
+                <hr />
+                <div className="edit_inside">
+                  <label htmlFor="">Image:</label>
+                  <input type="file" className="inp_img"/>
+                </div>
+                <hr />
+                <button>Send</button>
+                    </div>
+                  </div>
+
+                  <button onClick={() => udalit()} className="delete_icon">
+                        <i>
+                        <Delete/>
+                        </i>
+                  </button>
+                  <div className="delete_card">
+                    <div className="delete_padding">
+                      <img src={Groupimg} alt="" />
+                      <h4>Вы правда хотите удалить?</h4>
+                      <div className="delete_btns">
+                      <button onClick={() => close()} className="delete_btn_no">Нет</button>
+                      <button className="delete_btn_yes">Да</button>
+                      </div>
+                    </div>
                   </div>
                 <button className="button_circle">
                   <AiOutlineArrowRight
@@ -170,6 +229,9 @@ export default function Searchfilter() {
               </div>
             );
           })}
+          <div className="dashed">
+              <i><AiOutlinePlus/></i>
+          </div>
         </div>
 
         {/* SPISKA */}
@@ -305,10 +367,10 @@ export default function Searchfilter() {
                 <button className='edit_icon'>
                     <Edit/>
                   </button>
-                  <button onClick={() => udalit()} className="delete_icon">
                   
+                  <button onClick={() => udalit()} className="delete_icon">
                         <i>
-                        <Delete/>{" "}
+                        <Delete/>
                         </i>
                   </button>
                   <div className="delete_card">
@@ -333,6 +395,10 @@ export default function Searchfilter() {
               </div>
             );
           })}
+          <div className="dashed">
+            <i><AiOutlinePlus/></i>
+            <h4>Добавлять</h4>
+          </div>
         </div>
 
         {/* SPISKA */}
