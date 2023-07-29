@@ -2,12 +2,12 @@
     position: absolute;
     width: 35px;
     height: 35px;
-    border: 1px solid #9DA7BB;
+    border: 1px solid #44bef1;
     border-radius: 50%;
     background: white;
     color: #44bef1;
     right: 32px;
-    bottom: 55px;
+    bottom: 73px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,37 +33,32 @@
 .edit_padding{
     margin: auto;
     position: relative;
-    padding: 20px 30px;
+    padding: 20px 30px !important;
     display: block;
     gap: 20px;
-    width: 700px;
+    width: 600px;
     height: auto;
     border-radius: 10px;
     background-color: white;
     padding: 10px;
-    box-shadow:  0 0 10px black;
+    box-shadow:  0 10px 40px #a3a5a654;
 }
 .edit_card hr{
     background-color: black;
 }
 .edit_inside{
     width: 100%;
-    display: flex;
+    display: block;
     margin-bottom: 10px;
 }
-.edit_inside textarea{
-    border-radius: 3px;
-    border: 1px solid #9DA7BB;
-    vertical-align: top;
-}
 .edit_inside input{
+    width: 100%;
     padding-left: 5px;
     border-radius: 3px;
     color: black;
     border: 1px solid #9DA7BB;
 }
 .edit_inside label{
-    width: 40%;
     color: black;
     padding-left: 10px;
 }
@@ -75,9 +70,22 @@
 }
 .close_btn{
     position: absolute;
-    top: 0px;
+    top: 5px;
     line-height: 20px;
     right: 5px;
     font-size: 30px;
     background-color: rgba(255, 255, 255, 0);
+}
+.edit_inside_btn{
+    /* padding: 5px 10px; */
+    margin-left: 390px;
+    width: 150px;
+    height: 30px;
+    background-color: #10C8A0;
+    color: white;
+    border-radius: 3px;
+    transition: .2s ease-in-out;
+}
+.edit_inside_btn:hover{
+    background: #10c8a0ae;
 }

@@ -19,6 +19,7 @@ import Mentorcontact from "./pages/js/Mentorcontact";
 import News from "./pages/js/News";
 import Newspage from "./pages/js/Newspage";
 import Studentpage from './pages/js/Studentpage'
+import LoginpageMentor from './pages/js/LoginpageMentor'
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Proverr2 from './pages/js/Proverr2'
@@ -30,6 +31,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/loginpage" element={<Loginpage />} />
+          <Route path="/loginpageMentor" element={<LoginpageMentor />} />
           <Route path="/about" element={<About />} />
           <Route path="/servis" element={<Services />} />
           <Route path="/blog" element={<Blog />} />

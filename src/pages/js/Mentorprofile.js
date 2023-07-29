@@ -73,11 +73,12 @@ export default function Mentorprofile() {
           <BsFillBellFill onMouseEnter={()=>taxrirlashChadModal()} className='profil_blok_ikki_icon_bir' />
           <BsThreeDots  onMouseEnter={()=>taxrirlashModal()} className='profil_blok_ikki_icon_ikki' />
           <div className="profil_blok_ikki_icon_texrirlash_modal">
-            <div className='taxrirlash_modal_div'><FiEdit className='taxrirlash_modal_icon' /><p>Edit profile</p></div>
+            <div onClick={() =>
+              window.location="/loginpageMentor"} className='taxrirlash_modal_div'><FiEdit className='taxrirlash_modal_icon' /><p>Edit profile</p></div>
             <div className='taxrirlash_modal_div'><BiCast className='taxrirlash_modal_icon'/><p>Notifications</p></div>
             <div className='taxrirlash_modal_div'><FiLifeBuoy className='taxrirlash_modal_icon'/><p>Help</p></div>
             <hr />
-            <div className='taxrirlash_modal_div'><FiLogOut className='taxrirlash_modal_icon'/><p>Exit</p></div>
+            <div className='taxrirlash_modal_div' onClick={()=>{window.location="/";localStorage.removeItem("token")}}><FiLogOut className='taxrirlash_modal_icon'/><p>Exit</p></div>
           </div>
           <div className="profil_blok_ikki_icon_taxriirlash_chat">
             <p>Today</p>

@@ -1,7 +1,7 @@
 import React from 'react'
 import MentorProfil from "./Mentorprofile"
 import MentorPdp from "./MentorPdp"
-import Futer from "./Futer"
+import Futer from "./Footer1"
 import Usernavbar from './Usernavbar'
 export default function Mentor() {
   return (

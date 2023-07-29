@@ -29,15 +29,15 @@ export default function Searchfilter() {
     document.querySelector(".filter_button").classList.toggle("filter");
   }
   
-  function windowModal() {
-    document.querySelector(".kurs_cards").style = "display:flex;transition:3s";
-    document.querySelector(".spiska_img_title_div").style = "display:none";
-  }
-  function menuModal() {
-    document.querySelector(".kurs_cards").style = "display:none";
-    document.querySelector(".spiska_img_title_div").style =
-      "display:block;transition:3s";
-  }
+  // function windowModal() {
+  //   document.querySelector(".kurs_cards").style = "display:flex;transition:3s";
+  //   document.querySelector(".spiska_img_title_div").style = "display:none";
+  // }
+  // function menuModal() {
+  //   document.querySelector(".kurs_cards").style = "display:none";
+  //   document.querySelector(".spiska_img_title_div").style =
+  //     "display:block;transition:3s";
+  // }
 
   function close(){
     document.querySelector(".delete_card").style="display:none"
@@ -92,10 +92,10 @@ function nazat(){
                   <BiMenu className="menyu" />
                   <h4>Filter</h4>
                 </div>
-                <div className="win_men">
+                {/* <div className="win_men">
                   <MdWindow className="window" onClick={() => windowModal()} />
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
-                </div>
+                </div> */}
               </div>
               <div className="filter_button">
                 {kursdata.map((item1) => {
@@ -173,33 +173,27 @@ function nazat(){
                     <button onClick={() => nazat()} className="close_btn">
                    <i><GrFormClose/></i>
                 </button>
-                <hr />
                       <div className="edit_inside">
                     <label htmlFor="">Name:</label>
                     <input type="text"/>
                 </div>
-                <hr />
                 <div className="edit_inside">
                   <label htmlFor="">Description:</label>
-                  <textarea name="" id="" cols="40" rows="10"></textarea>
+                  <input type="text" />
                 </div>
-                <hr />
                 <div className="edit_inside">
                   <label htmlFor="">Price:</label>
                   <input type="number" className="inp_numbr"/>
                 </div>
-                <hr />
                 <div className="edit_inside">
                   <label htmlFor="">Planned time:</label>
                   <input type="number" className="inp_numbr"/>
                 </div>
-                <hr />
                 <div className="edit_inside">
                   <label htmlFor="">Image:</label>
                   <input type="file" className="inp_img"/>
                 </div>
-                <hr />
-                <button>Send</button>
+                <button className="edit_inside_btn">Send</button>
                     </div>
                   </div>
 
@@ -236,7 +230,7 @@ function nazat(){
 
         {/* SPISKA */}
 
-        <div className="spiska_img_title_div">
+        {/* <div className="spiska_img_title_div">
           {kursdata.map((item) => {
             return (
               <div className="Spiska_blok">
@@ -274,7 +268,7 @@ function nazat(){
               </div>
             );
           })}
-        </div>
+        </div> */}
       </div>) : (<div>
         <div className="Filter">
           <div className="blur_blok">
@@ -293,10 +287,10 @@ function nazat(){
                   <BiMenu className="menyu" />
                   <h4>Фильтр</h4>
                 </div>
-                <div className="win_men">
+                {/* <div className="win_men">
                   <MdWindow className="window" onClick={() => windowModal()} />
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
-                </div>
+                </div> */}
               </div>
               <div className="filter_button">
                 {kursdata.map((item1) => {
@@ -403,7 +397,7 @@ function nazat(){
 
         {/* SPISKA */}
 
-        <div className="spiska_img_title_div">
+        {/* <div className="spiska_img_title_div">
           {kursdata.map((item) => {
             return (
               <div className="Spiska_blok">
@@ -441,7 +435,7 @@ function nazat(){
               </div>
             );
           })}
-        </div>
+        </div> */}
       </div>)}
 
     </div>
