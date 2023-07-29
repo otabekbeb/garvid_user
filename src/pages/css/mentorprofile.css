@@ -67,7 +67,7 @@
   } */
   .profil_size_df{
   width: 100%;
-  margin-top: 80px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   box-shadow: 0px 2px 2px 0px #0000001A;
@@ -166,7 +166,7 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      margin-top: 20px;
+      margin-top: 40px;
       margin-bottom: 20px;
     }
     .profil_blok_ikki_icon{
@@ -308,7 +308,7 @@
         width: 89% !important;
       }
       .user_img_size{
-      width: 42%;
+      width: none !important;
       }
       .blok_bir_icon{
         width: 70%;

@@ -444,11 +444,11 @@ line-height: normal;
     background: #44bef1;
     color: white;
 }
-@media (max-width:700px) {
+/* @media (max-width:700px) {
     .win_men {
         display: none !important;
     }
-}
+} */
 @media (max-width:370px) {
     .filter_course{
         width: 100%;

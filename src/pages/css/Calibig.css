@@ -195,11 +195,11 @@
     justify-content: center;
 }
 
-@media (max-width:700px) {
+/* @media (max-width:700px) {
     .win_men {
         display: none !important;
     }
-}
+} */
 
 @media (max-width:370px) {
     .kurs_card {

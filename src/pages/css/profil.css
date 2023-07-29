@@ -302,7 +302,7 @@ cursor: pointer;
       width: 89% !important;
     }
     .user_img_size{
-    width: 42%;
+    width: none !important;
     }
     .blok_bir_icon{
       width: 70%;
@@ -520,9 +520,6 @@ cursor: pointer;
     }
     .profil_blok_ikki_sum h1{
     font-size:25px;
-    }
-    .user_img{
-    height: 35vw !important;
     }
     .blok_bir_text h1{
       font-size:27px;
