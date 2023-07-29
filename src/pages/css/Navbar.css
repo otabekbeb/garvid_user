@@ -909,7 +909,7 @@ left: 170px;
      }
 
      .media-ul {
-       width: 96vw;
+       width: 100% !important;
        overflow: hidden;
        position: relative;
        border: 2px solid #44bef1;

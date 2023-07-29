@@ -207,7 +207,7 @@ export default function Navbar() {
 
 
 {/* onMouseLeave={()=>aboutClose2()}  */}
-                <div style={{width:'100% !important'}} className="media-ul">
+                <div  className="media-ul">
                   <div className="dfdf">
                     <ul>
                       <li onClick={()=> window.location="/"}>
@@ -406,7 +406,7 @@ export default function Navbar() {
                 </div>
 
                 {/* onMouseLeave={()=>aboutClose2()}  */}
-                <div style={{width:'100% !important'}} className="media-ul">
+                <div  className="media-ul">
                   <div className="dfdf">
                     <ul>
                       <li onClick={()=> window.location="/"}>
