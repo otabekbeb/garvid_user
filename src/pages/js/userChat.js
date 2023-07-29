@@ -122,6 +122,9 @@ export default function MentorChat() {
       <div className="yozishma_big_div">
         <div className="yozishma_big_div_size">
           <div className="yozishma_bolim_text_nik">
+            <div className="yozishma_bolim_text_nik_search">
+              <input type="text" />
+            </div>
           {data.map(item=>{
             return(
               <div
