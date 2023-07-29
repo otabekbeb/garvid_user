@@ -17,7 +17,7 @@ import Sertifikat from './Workforteach'
 import Azo from "./Azo"
 import Usernavbar from './Usernavbar'
 import { TiThMenu } from 'react-icons/ti'
-        
+import Futer from "./Footer1"
 export default function Mentor() {
   const [state1, setState1] = React.useState();
   useEffect(() => {

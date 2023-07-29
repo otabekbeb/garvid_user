@@ -221,7 +221,7 @@ export default function Bilim() {
                        <img src={Bootstrap} alt="" />
                    </div>  
                </div>
-               <div className="text_html">
+               <div className="text_html1">
                <h3>Bootstrap</h3>
                <p>Лорем ипсум долар сит аметб консектур</p>
                </div>

@@ -14,7 +14,14 @@ export default function Sertifikate() {
         <div className="cards_sertifikat">
             <div className="card_sertifikat">
             <div className="sertifikat">
-                <img src={Sertifikat} alt="" />
+                <img src={Start} alt="" />
+                <div className="button_text_df_blok_pitani_pro_Max">
+                    <div className="text_pro_max_gap_sos_lift_gr">
+                    <h4>Raspberry Pi programming basics</h4>
+                    <p>June 20, 2019</p>
+                    </div>
+                    <button className='Dast_konter_dust_pro_dest' >Programming</button>
+                </div>  
             </div>
             <div className="sertifikat">
                 <img src={Start} alt="" />
