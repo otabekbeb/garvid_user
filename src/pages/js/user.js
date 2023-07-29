@@ -10,7 +10,7 @@ export default function user() {
       <Usernavbar />
       <Profil />
       <Pdp />
-      <Futer />
+      <Futer /> 
     </div>
   )
 }
