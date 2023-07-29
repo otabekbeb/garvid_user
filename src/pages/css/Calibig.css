@@ -169,8 +169,8 @@
 }
 
 .button_circle:hover {
-    border: 1px solid #536DFD;
-    background: #536DFD;
+    border: 1px solid #44bef1;
+    background: #44bef1;
     color: white;
 }
 
@@ -267,4 +267,22 @@
 
 .kurs_paddaing_auto {
     padding: 10px 20px 20px 20px;
+}
+.dashed{
+    width: 350px;
+    height: 420px;
+    border: 2px dashed #9DA7BB;
+    border-radius: 4px;
+}
+.dashed i{
+    margin-top: 190px;
+    display: flex;
+    font-size: 40px;
+    color: #9DA7BB;
+    justify-content: center;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+.edit_card{
+    display: none;
 }

@@ -5,6 +5,7 @@ import '../css/Edit.css'
 
 export default function Edit() {
   return (
-    <div><FiEdit/></div>
+    <div><FiEdit/>
+    </div>
   )
 }

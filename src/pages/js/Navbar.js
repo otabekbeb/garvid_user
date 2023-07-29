@@ -139,9 +139,9 @@ export default function Navbar() {
                       </span>
                     </p>
                     <ul>
-                      <li className="faqcolor">
-                        <NavLink to="/faqs" className={({isActive})=>isActive?activeLink: normalLink}><a className="faqscolor">FAQs</a></NavLink>
-                      </li>
+                    <li onClick={()=> window.location="#"} id="ded">
+                            <a id="contactcolor" href="/">FAQ </a>
+                          </li>
                       <div className="navbbar-line-hr"></div>
                       <li onClick={()=> window.location="contacts"} id="ded">
                             <a id="contactcolor" href="/contacts">Contact </a>
@@ -195,8 +195,8 @@ export default function Navbar() {
               </ul>
               <div id="google_translate_element"></div>
             </div>
-            <div className="media-navbar" style={{margin:"auto"}}>
-              <div className="navbar-menu">
+            <div className="media-navbar" style={{margin:"auto",width:'100%'}}>
+              <div style={{width:'100%'}} className="navbar-menu">
                 <div className="navbar-mediao-barr" onClick={() => sa()}>
                   <div className="bar-menu" id="sa">
                     <div className="wone"></div>
@@ -207,7 +207,7 @@ export default function Navbar() {
 
 
 {/* onMouseLeave={()=>aboutClose2()}  */}
-                <div className="media-ul">
+                <div  className="media-ul">
                   <div className="dfdf">
                     <ul>
                       <li onClick={()=> window.location="/"}>
@@ -395,8 +395,8 @@ export default function Navbar() {
                 />
               </div>
             </div>
-            <div className="media-navbar" style={{margin:"auto"}}>
-              <div className="navbar-menu">
+            <div className="media-navbar" style={{margin:"auto",width:'100%'}}>
+              <div style={{width:'100%'}} className="navbar-menu">
                 <div className="navbar-mediao-barr" onClick={() => sa()}>
                   <div className="bar-menu" id="sa">
                     <div className="wone"></div>
@@ -406,7 +406,7 @@ export default function Navbar() {
                 </div>
 
                 {/* onMouseLeave={()=>aboutClose2()}  */}
-                <div className="media-ul">
+                <div  className="media-ul">
                   <div className="dfdf">
                     <ul>
                       <li onClick={()=> window.location="/"}>
