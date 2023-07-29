@@ -89,3 +89,17 @@
 .edit_inside_btn:hover{
     background-color: #44bdf1b7;
 }
+@media (max-width:630px) {
+    .edit_padding{
+        width: 400px;
+    }
+    .edit_inside_btn{
+        margin: auto;
+        width: 100% ;
+    }
+}
+@media (max-width:410px) {
+    .edit_padding{
+        width: 95%;
+    }
+}
