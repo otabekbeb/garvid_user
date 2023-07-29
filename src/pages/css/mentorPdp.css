@@ -62,15 +62,19 @@
     }
     
     .sel_blok {
-        width: 100px;
+        padding-left: 10px ;
+        padding-right: 10px;
         height: 40px;
         border-radius: 5px;
-        border: 2px solid rgba(128, 128, 128, 0.507);
+        border: 2px solid #44bef1;
         display: flex;
         justify-content: space-around;
         align-items: center !important;
     }
-    
+    .sel_blok:hover{
+        cursor: pointer;
+        scale: 1.1;
+    }
     .sel_blok h4 {
         font-size: 15px;
         font-weight: 500;
