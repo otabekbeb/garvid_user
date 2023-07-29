@@ -123,7 +123,7 @@
     .fromLeft.fromLeft:hover:after{ transform: scaleX(1); transform-origin:   0% 50%; } */
     
     .fromLeft:hover{
-        border-bottom: 2px solid #536DFD;
+        border-bottom: 2px solid #44bef1;
       }
     
     
