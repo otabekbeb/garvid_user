@@ -19,6 +19,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import istok_img from "../img/istockphoto-1321436405-612x612.jpg";
 
 import { BiBorderBottom, BiTime } from 'react-icons/bi'
 
@@ -161,7 +162,8 @@ export default function Youtube1() {
       setLoader(1)
     })
     setIdtheme(localStorage.getItem("themeid"))
-
+    // localStorage.removeItem("themeid");
+    // localStorage.removeItem("themeidsend")
   }, [])
 
 
@@ -296,7 +298,7 @@ export default function Youtube1() {
                                     localStorage.setItem("themeLength",key+1)
                                     return (
                                       <>
-                                        <Accordion.Body style={{cursor:'pointer'}}>
+                                      <Accordion.Body style={{cursor:'pointer'}}>
                                           <div style={{cursor:'pointer'}} onClick={()=>{
                                             localStorage.setItem('themeidsend',theme.id)
                                             window.location.reload()
@@ -313,9 +315,23 @@ export default function Youtube1() {
                                             </div>
                                           </div>
                                         </Accordion.Body>
-                                      </>
+                                        </>
                                     )
+                                  }else{
+                                    alert("server")
+                                      // return(
+                                      // <div className="m_else_bosa_div">
+                                      //   <div className="a_else_block">
+                                      //     <img src={istok_img} alt="" />
+                                      //     <h2>Ошибка сервера. Попроббуйтте снова</h2>
+                                      //     </div>
+                                        
+                                      // </div>
+                                      // )
                                   }
+                                  
+                                
+
                                 })}
                               </Accordion.Item>
 

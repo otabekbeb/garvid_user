@@ -1088,3 +1088,19 @@ padding: 10px;
 .theme_button{
     gap: 10px;
 }
+
+
+.m_else_bosa_div{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 100 !important;
+    background-color: #fff;
+    color: #2E2E2E;
+}
