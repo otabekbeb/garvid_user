@@ -430,9 +430,9 @@ line-height: normal;
     border: 1px solid #9DA7BB;
     border-radius: 50%;
     background: white;
-    color: #536DFD;
+    color: #44bef1;
     right: 32px;
-    bottom: 10px;
+    bottom: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -440,8 +440,8 @@ line-height: normal;
     transition: all 0.3s;
 }
 .button_circle:hover {
-    border: 1px solid #536DFD;
-    background: #536DFD;
+    border: 1px solid #44bef1;
+    background: #44bef1;
     color: white;
 }
 @media (max-width:700px) {

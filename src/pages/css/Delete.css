@@ -5,9 +5,9 @@
     border: 1px solid #9DA7BB;
     border-radius: 50%;
     background: white;
-    color: #536DFD;
+    color: #44bef1;
     right: 32px;
-    bottom: 90px;
+    bottom: 95px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,8 +15,8 @@
     transition: all 0.3s;
 }
 .delete_icon:hover {
-    border: 1px solid #536DFD;
-    background: #536DFD;
+    border: 1px solid #44bef1;
+    background: #44bef1;
     color: white;
 }
 .delete_card{
@@ -30,18 +30,6 @@ display: none;
 justify-content: center;
 z-index: 1000000000000000000000 !important;
 }
-/* .tgl{
-    z-index: 10000000000;
-    position: fixed;
-    display: flex !important;
-    flex-wrap: wrap;
-    gap: 50px;
-    background:rgba(242, 242, 242, 0.625) !important;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0; 
-} */
 .delete_padding{
     margin: auto;
     width: 600px;
