@@ -18,7 +18,7 @@ import Student from "./pages/js/Student";
 import Mentorcontact from "./pages/js/Mentorcontact";
 import News from "./pages/js/News";
 import Newspage from "./pages/js/Newspage";
-
+import Studentpage from './pages/js/Studentpage'
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Proverr2 from './pages/js/Proverr2'
@@ -48,6 +48,7 @@ export default function App() {
           <Route path="/teacher" element={<Teacher />} />
           <Route path="/student" element={<Student />} />
           <Route path="/mentorcontact" element={<Mentorcontact />} />
+          <Route path="/Studentpage" element={<Studentpage />} />
           {/* <Route index element={} />*/}
         </Routes>
       

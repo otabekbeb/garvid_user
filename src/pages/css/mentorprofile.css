@@ -137,6 +137,7 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 10px;
+  background-color: #fff;
   
   }
   .profil_blok_ikki_button button:nth-child(1){
@@ -145,8 +146,8 @@
   border: 0;
   width: 50px;
   height: 40px;
-  border-radius: 2px;
-  background-color: #536DFD;
+  border-radius: 2px; 
+  background: #44bef1;
   cursor: pointer;
   }
   .profil_blok_ikki_button button:nth-child(2){
@@ -156,7 +157,7 @@
     width: 190px;
     height: 40px;
     border-radius: 2px;
-    background-color: #536DFD;
+    background: #44bef1;
     cursor: pointer;
     }
     .profil_size{
