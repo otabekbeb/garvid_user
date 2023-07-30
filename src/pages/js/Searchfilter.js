@@ -26,6 +26,9 @@ export default function Searchfilter() {
   function Filter() {
     document.querySelector(".filter_button").classList.toggle("filter");
   }
+  function filter1() {
+    document.querySelector(".filter_button").style="display:none !important"
+  }
   function windowModal() {
     document.querySelector(".kurs_cards").style = "display:flex;transition:3s";
     document.querySelector(".spiska_img_title_div").style = "display:none";
@@ -71,7 +74,7 @@ export default function Searchfilter() {
       })
       setKursdata(searchdata)
     })
-  }
+  }    
   return (
     <>
     {loader===1?(
@@ -100,16 +103,16 @@ export default function Searchfilter() {
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
                 </div> */}
               </div>
-              <div className="filter_button">
+              <div onMouseLeave={()=>filter1()} className="filter_button">
 
 
-                      {type.map((item2) => {
-                          return (
-                            <div className="button_filter_kurs">
-                              {item2.name===null?(""):(<div onClick={()=>filter(item2.id)} className="div_kurs">{item2.name}</div>)}
-                            </div>
-                          );
-                      })}
+     {type.map((item2) => {
+         return (
+           <div className="button_filter_kurs">
+             {item2.name===null?(""):(<div onClick={()=>filter(item2.id)} className="div_kurs">{item2.name}</div>)}
+           </div>
+         );
+     })}
                 
               </div>
             </div>
@@ -239,7 +242,7 @@ export default function Searchfilter() {
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
                 </div> */}
               </div>
-              <div className="filter_button">
+              <div onMouseLeave={()=>filter1()} className="filter_button">
                       {type.map((item2) => {
                           return (
                             <div className="button_filter_kurs">

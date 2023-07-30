@@ -62,7 +62,7 @@
     width: 100px;
     height: 40px;
     border-radius: 5px;
-    border: 2px solid #44bef1;
+    border: 2px solid rgba(128, 128, 128, 0.438);
     display: flex;
     justify-content: space-around;
     align-items: center !important;
@@ -73,7 +73,7 @@
     font-weight: 500;
     align-items: center !important;
     margin-top: 5px;
-   
+
 }
 
 .menyu {
@@ -127,9 +127,9 @@
     transform-origin: 0% 50%;
 } */
 
-.fromLeft:hover{
+.fromLeft:hover {
     border-bottom: 2px solid #536DFD;
-  }
+}
 
 
 
@@ -160,7 +160,7 @@
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     font-size: 10px;
-    color: #536DFD;
+    color:#44bef1 !important;
 }
 
 
@@ -228,7 +228,7 @@
         width: 100% !important;
     }
 
- 
+
 }
 
 @media (max-width:860px) {
@@ -302,7 +302,7 @@
     justify-content: space-around;
     margin-bottom: 50px !important;
     margin-top: 5%;
-    
+
     gap: 20px;
 }
 
@@ -317,10 +317,10 @@
     position: absolute;
     right: 30%;
     top: 120% !important;
-    color:black;
+    color: black;
     --g: 4px;
     /* the gap */
-    --b: 5px;    
+    --b: 5px;
     /* border thickness*/
     border: 3px solid #34b1e6;
     /* the color */
@@ -332,7 +332,7 @@
         var(--_g1) var(--_p, 125%) 100%, var(--_g2) 100% var(--_p, 25%);
     background-size: 200% var(--b), var(--b) 200%;
     cursor: pointer;
-   
+
     transition: .3s;
     display: none;
     position: absolute;
@@ -739,13 +739,14 @@
         font-size: 10px;
 
     }
-    .cali{
+
+    .cali {
         width: 100% !important;
     }
-   
+
     .left_icon {
         width: 40px !important;
-        height: 40px !important; 
+        height: 40px !important;
         border-radius: 50px;
         font-size: 20px !important;
         color: rgba(0, 0, 255, 0.747);
