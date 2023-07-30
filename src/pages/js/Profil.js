@@ -70,6 +70,13 @@ export default function Profil() {
     window.location="/"
     localStorage.removeItem("token")
   }
+  function notificationModal(){
+    document.querySelector(".profil_notifacation_size").style="position: fixed;right:0px;"
+    document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style="display:none"
+  }
+  function notificationClose(){
+    document.querySelector(".profil_notifacation_size").style="position: fixed;right:-100%;"
+  }
 
   // function postUser(){
   //   var formdata=new FormData()
@@ -129,7 +136,7 @@ export default function Profil() {
           <div className="profil_blok_ikki_icon_texrirlash_modal">
             <div onClick={() =>
               window.location="/loginpage"} className='taxrirlash_modal_div'><FiEdit className='taxrirlash_modal_icon' /><p>Edit profile</p></div>
-            <div className='taxrirlash_modal_div'><BiCast className='taxrirlash_modal_icon'/><p>Notifications</p></div>
+            <div onClick={()=>notificationModal()} className='taxrirlash_modal_div'><BiCast className='taxrirlash_modal_icon'/><p>Notifications</p></div>
             <div className='taxrirlash_modal_div'><FiLifeBuoy className='taxrirlash_modal_icon'/><p>Help</p></div>
             <hr />
             <div className='taxrirlash_modal_div' onClick={()=>chiqish()} ><FiLogOut className='taxrirlash_modal_icon'/><p>Exit</p></div>
@@ -186,6 +193,9 @@ export default function Profil() {
 
 
           </div>
+        </div>
+        <div  className="profil_notifacation_size">
+          <div onClick={()=>notificationClose()} className="profil_notifacation_size_close">x</div>
         </div>
         </div> 
       </div>):(<div>
