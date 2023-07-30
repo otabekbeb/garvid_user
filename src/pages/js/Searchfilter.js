@@ -77,7 +77,7 @@ export default function Searchfilter() {
     <>
     {loader===1?(
       <div>
-      {state1 === "en" ? (
+
       <div>
         <div className="Filter">
           <div className="blur_blok">
@@ -216,146 +216,7 @@ export default function Searchfilter() {
             );
           })}
         </div> */}
-      </div>) : (
-      <div>
-        <div className="Filter">
-          <div className="blur_blok">
-            <div className="inp_blok">
-              <input onChange={searchInput} id="search" type="text" placeholder="Поиск среди моих курсов" />
-              <CiSearch className="search" />
-            </div>
-            <div className="blur">
-              <div className="icon_blok">
-                <div
-                  className="sel_blok"
-                  onClick={() => {
-                    Filter();
-                  }}
-                >
-                  <BiMenu className="menyu" />
-                  <h4>Фильтр</h4>
-                </div>
-                {/* <div className="win_men">
-                  <MdWindow className="window" onClick={() => windowModal()} />
-                  <TfiMenuAlt className="manu" onClick={() => menuModal()} />
-                </div> */}
-              </div>
-              <div onMouseLeave={()=>filter1()} className="filter_button">
-                      {type.map((item2) => {
-                          return (
-                            <div className="button_filter_kurs">
-                            {item2.name===null?(""):(<div onClick={()=>filter(item2.id)} className="div_kurs">{item2.name}</div>)}  
-                            </div>
-                          );
-                      })}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="kurs_cards">
-          {kursdata.map((item) => {
-            return (
-              <div onClick={() => {
-                window.location = "/video";
-                localStorage.setItem("course", item.id)
-              }} className="kurs_card">
-                <button style={{width:'auto',paddingLeft:'5px',paddingRight:'5px' }} className="btn_das">Программирование</button>
-                {item.image === null ? (
-                  <div className="No_img">
-                    <h1>Нет изображение</h1>
-                  </div>
-                ) : (
-                  <img src={item.image} />
-                )}
-                <div className="kurs_paddaing_auto">
-                  <h4>{item.name}</h4>
-                  <div className="star_card">
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_ib">
-                      <AiFillStar />
-                    </i>
-                    <p>
-                      4.1 <span>(524)</span>
-                    </p>
-                  </div>
-                  <div className="hajm">
-                    <h5>
-                      <p>Размер курса</p>
-                      {item.planned_time}
-                    </h5>
-                    <h5>
-                      <p>Стоимость курса</p>
-                      {item.price}
-                    </h5>
-                  </div>
-                </div>
-                <button className="button_circle">
-                  <AiOutlineArrowRight
-                    onClick={() => {
-                      window.location = "/video";
-                      localStorage.setItem("course", item.id)
-                    }}
-                  />
-                </button>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* SPISKA */}
-
-        {/* <div className="spiska_img_title_div">
-          {kursdata.map((item) => {
-            return (
-              <div className="Spiska_blok">
-                <div onClick={()=>{window.location="/video";localStorage.setItem("course",item.id)}} className="spiska">
-                  <div className="spiska_display_flex">
-                    <div className="spiska_img">
-                      {item.image === null ? (
-                        <div className="No_img1">
-                          <h1>Нет изображение</h1>
-                        </div>
-                      ) : (
-                        <img src={item.image} alt="No img" />
-                      )}
-                    </div>
-                    <div className="spiska_title_df">
-                      <div  className="spiska_title">
-                        <h3>{item.name}</h3>
-                        <div className="star_icon_blok1">
-                          <AiFillStar className="gold" />
-                          <AiFillStar className="gold" />
-                          <AiFillStar className="gold" />
-                          <AiFillStar className="gold" />
-                          <AiFillStar />
-                          <div className="number">
-                            <h6>4.1 (524)</h6>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="left1_icon">
-                        <HiArrowRight onClick={()=>{window.location="/video";localStorage.setItem("course",item.id)}} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div> */}
-      </div>)}
+      </div>
 
     </div>):(<Loader/>)}
     </>

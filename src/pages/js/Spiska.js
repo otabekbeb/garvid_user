@@ -11,7 +11,8 @@ export default function Spiska() {
     );},[]);
     return (
         <div>
-            {state1==="en" ?(<div>
+
+            <div>
             <div className="spiska_img_title_div">
             <div className="Spiska_blok">
                 <div className="spiska">
@@ -134,130 +135,7 @@ export default function Spiska() {
                 </div>
             </div>
             </div>
-        </div>):(<div>
-            <div className="spiska_img_title_div">
-            <div className="Spiska_blok">
-                <div className="spiska">
-                    <div className="spiska_display_flex">
-                        <div className="spiska_img">
-                            <img src={WWW} alt="" />
-                        </div>
-                        <div className="spiska_title_df">
-                        <div className="spiska_title">
-                            <h3>AWS для разработчиков: ECS
-                                и межрегиональные нагрузки
-                                балансировка</h3>
-                            <div className="star_icon_blok">
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar />
-                                <div className="number">
-                                    <h6>4.1 (524)</h6>
-                                </div>
-                            </div>
-                           
-                        </div>
-                        <div className="left_icon">
-                                    <HiArrowRight />
-                                </div>
-                                </div>
-                    </div>
-                </div>
-            </div>
-            <div className="Spiska_blok">
-                <div className="spiska">
-                    <div className="spiska_display_flex">
-                        <div className="spiska_img">
-                            <img src={WWW} alt="" />
-                        </div>
-                        <div className="spiska_title_df">
-                        <div className="spiska_title">
-                            <h3>AWS для разработчиков: ECS
-                                и межрегиональные нагрузки
-                                балансировка</h3>
-                            <div className="star_icon_blok">
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar />
-                                <div className="number">
-                                    <h6>4.1 (524)</h6>
-                                </div>
-                            </div>
-                           
-                        </div>
-                        <div className="left_icon">
-                                    <HiArrowRight />
-                                </div>
-                                </div>
-                    </div>
-                </div>
-            </div>
-            <div className="Spiska_blok">
-                <div className="spiska">
-                    <div className="spiska_display_flex">
-                        <div className="spiska_img">
-                            <img src={WWW} alt="" />
-                        </div>
-                        <div className="spiska_title_df">
-                        <div className="spiska_title">
-                            <h3>AWS для разработчиков: ECS
-                                и межрегиональные нагрузки
-                                балансировка</h3>
-                            <div className="star_icon_blok">
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar />
-                                <div className="number">
-                                    <h6>4.1 (524)</h6>
-                                </div>
-                            </div>
-                           
-                        </div>
-                        <div className="left_icon">
-                                    <HiArrowRight />
-                                </div>
-                                </div>
-                    </div>
-                </div>
-            </div>
-            <div className="Spiska_blok">
-                <div className="spiska">
-                    <div className="spiska_display_flex">
-                        <div className="spiska_img">
-                            <img src={WWW} alt="" />
-                        </div>
-                        <div className="spiska_title_df">
-                        <div className="spiska_title">
-                            <h3>AWS для разработчиков: ECS
-                                и межрегиональные нагрузки
-                                балансировка</h3>
-                            <div className="star_icon_blok">
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar className='gold' />
-                                <AiFillStar />
-                                <div className="number">
-                                    <h6>4.1 (524)</h6>
-                                </div>
-                            </div>
-                           
-                        </div>
-                        <div className="left_icon">
-                                    <HiArrowRight />
-                                </div>
-                                </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>)}
+        </div>
         
         </div>
     )

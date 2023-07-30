@@ -108,30 +108,7 @@ export default function Youtube1() {
 
 
   useEffect(() => {
-    axios
-      .get(`${url}/course/subcategory/`, {
-        headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" },
-      })
-      .then((res1) => {
-        setSubcategory(res1.data);
-      });
-    axios
-      .get(`${url}/course/main/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
-      .then((res2) => {
-        setMain(res2.data);
-      });
-    axios.get(`${url}/course/category/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res => {
-      var aa = []
-      res.data.map(item => {
-        if (item.course == localStorage.getItem('course')) {
-          aa.push(item)
-        }
-      })
-      setCategory(aa);
-    })
-    axios.get(`${url}/course/theme/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res => {
-      setTheme(res.data)
-    });
+
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     )
@@ -154,13 +131,13 @@ export default function Youtube1() {
 
     // })})
 
-    axios.get(`${url}/auth/user/`, { headers: { "Authorization": 'Bearer ' + localStorage.getItem("token") } }).then(res => {
-      console.log(res.data,);
-    })
-    axios.get(`${url}/auth/user/`,{ headers: { "Authorization": 'Bearer ' + localStorage.getItem("token") } }).then(res => {
-      setUser(res.data)
-      setLoader(1)
-    })
+    // axios.get(`${url}/auth/user/`, { headers: { "Authorization": 'Bearer ' + localStorage.getItem("token") } }).then(res => {
+    //   console.log(res.data,);
+    // })
+    // axios.get(`${url}/auth/user/`,{ headers: { "Authorization": 'Bearer ' + localStorage.getItem("token") } }).then(res => {
+    //   setUser(res.data)
+    //   setLoader(1)
+    // })
     setIdtheme(localStorage.getItem("themeid"))
     // localStorage.removeItem("themeid");
     // localStorage.removeItem("themeidsend")
@@ -171,19 +148,15 @@ export default function Youtube1() {
     <>
       {loader === 1 ? (
         <div>
-          {state1 === "en" ? (<div>
+          <div>
             <Usernavbar />
             <div className="youtube_bgc">
               <div className="flex_youtube">
 
-                  {theme.map((item,key) => {
-                    if (localStorage.getItem("themeidsend")?(item.id==localStorage.getItem("themeidsend")):(key==localStorage.getItem("themeid"))) {
-                      return (
-                        <>
-                        
+
                         <div className="youtube_kotta_img">
                           <div className="img_youtube_kotta">
-                          {item.video===null?(
+                          {/* {item.video===null?(
                           <iframe
                               src={item.links}
                               title="W3Schools Free Online Web Tutorials"
@@ -193,13 +166,13 @@ export default function Youtube1() {
                               title="W3Schools Free Online Web Tutorials"
                             ></iframe>):(<><video className='theme_video' controls>
                             <source src={item.video} type="video/mp4"/>
-                          </video></>)}  </>)} 
+                          </video></>)}  </>)}  */}
                           </div>
                           <div className="theme_df">
                           <div className="flex_logig">
-                            <h1 className="raspberry_pi">{item.name}</h1>
+                            <h1 className="raspberry_pi">ges</h1>
                             <div className="odtel_media_uchun">
-                              <h1>{item.name}</h1>
+                              <h1>sgr</h1>
                               <div className="flex_star_p">
                                 <div className="flex_star2">
                                   <p>
@@ -250,98 +223,66 @@ export default function Youtube1() {
                             </p>
                           </div>
                           </div>
-                          <p className='theme_content'>{item.content}</p>
+                          <p className='theme_content'>adwwa</p>
 
-                          {
+                          {/* {
                         [main[0]].map(main => {
-                                        return (
+                                        return ( */}
                                           <div className="theme_df">
                                           <div className="post_ava">
-                                            <img src={main.author.image} alt="" />
-                                            <h6>{main.author.username}</h6>
+                                            {/* <img src={main.author.image} alt="" /> */}
+                                            <h6>awdwaw</h6>
                                             {/* <button>Subscribe</button> */}
                                           </div>
                                           </div>
-                                          )                                   
+                                          {/* )                                   
                         })
-                        }
+                        } */}
                           </div>
 
                          
-                       </>
+                       {/* </>
                       );
                     }
-                  })}
+                  })} */}
 
-
+{/* 
                 {category.map((item) => {
-                  return (
+                  return ( */}
                     <div className="youtube_kichkina">
                       <div className="odelniy_oyna_tepa">
                         <div className="raspberry_pid">
-                          <h1>{item.name}</h1>
+                          <h1>WDDDW</h1>
                           <div className="margin_right">
                             <div className="line_height"></div>
-                            <p>{localStorage.getItem("themeLength")} уроки</p>
+                            <p>2 уроки</p>
                           </div>
                         </div>
                       </div>
                       <Accordion defaultActiveKey="0">
-                        {subcategory.map((item2,key) => {
-                          if (item.id === item2.category) {
-                            return (
-                              <Accordion.Item eventKey={0+key}>
-                                <Accordion.Header>{item2.name}</Accordion.Header>
-                                {theme.map((theme,key) => {
-                                  if (theme.subcategory == item2.id) {
-                                    localStorage.setItem("themeid",0)
-                                    localStorage.setItem("themeLength",key+1)
-                                    return (
-                                      <>
+                              <Accordion.Item eventKey={0+1}>
+                                <Accordion.Header>adwda</Accordion.Header>
+
                                       <Accordion.Body style={{cursor:'pointer'}}>
-                                          <div style={{cursor:'pointer'}} onClick={()=>{
-                                            localStorage.setItem('themeidsend',theme.id)
-                                            window.location.reload()
-                                          }} className="accordion_flex">
+                                          <div style={{cursor:'pointer'}} className="accordion_flex">
                                             <div className="accordion_img">
-                                              <img src={theme.image} alt="" />
+                                              {/* <img src={theme.image} alt="" /> */}
                                             </div>
                                             <div className="accordion_text">
                                               <h6>
-                                                {theme.name}
+                                               dawwawa
                                               </h6>
-                                              <p>{theme.content}
+                                              <p>dwadad
                                               </p>
                                             </div>
                                           </div>
                                         </Accordion.Body>
-                                        </>
-                                    )
-                                  }else{
-                                    alert("server")
-                                      // return(
-                                      // <div className="m_else_bosa_div">
-                                      //   <div className="a_else_block">
-                                      //     <img src={istok_img} alt="" />
-                                      //     <h2>Ошибка сервера. Попроббуйтте снова</h2>
-                                      //     </div>
-                                        
-                                      // </div>
-                                      // )
-                                  }
-                                  
-                                
-
-                                })}
+                                      
                               </Accordion.Item>
 
-                            );
-                          }
-                        })}
                       </Accordion>
                     </div>
-                  );
-                })}
+ 
               </div>
               <div className="navbar_video">
                 <div className="navbar_none">
@@ -408,201 +349,7 @@ export default function Youtube1() {
                 <Scachat />
               </div>
             </div>
-          </div>) : (<div>
-            <Usernavbar />
-            <div className="youtube_bgc">
-              <div className="flex_youtube">
-                {theme.map((item) => {
-                  return (
-                    <div className="youtube_kotta_img">
-                      <div className="img_youtube_kotta">
-                        <iframe
-                          src={item.links}
-                          title="W3Schools Free Online Web Tutorials"
-                        ></iframe>
-                      </div>
-                      <div className="flex_logig">
-                        <h1 className="raspberry_pi">{item.name}</h1>
-                        <div className="odtel_media_uchun">
-                          <h1>{item.name}</h1>
-                          <div className="flex_star_p">
-                            <div className="flex_star2">
-                              <p>
-                                <AiFillStar />
-                              </p>
-                              <p>
-                                <AiFillStar />
-                              </p>
-                              <p>
-                                <AiFillStar />
-                              </p>
-                              <p>
-                                <AiFillStar />
-                              </p>
-                            </div>
-                            <div className="flex_star12">
-                              <p>
-                                <AiFillStar />
-                              </p>
-                            </div>
-                            <p className="p_4_1_5245">
-                              4.1 <span>(524)</span>
-                            </p>
-                          </div>
-                        </div>
-                        <div className="flex_star">
-                          <p>
-                            <AiFillStar />
-                          </p>
-                          <p>
-                            <AiFillStar />
-                          </p>
-                          <p>
-                            <AiFillStar />
-                          </p>
-                          <p>
-                            <AiFillStar />
-                          </p>
-                        </div>
-                        <div className="flex_star1">
-                          <p>
-                            <AiFillStar />
-                          </p>
-                        </div>
-                        <p className="p_4_1_524">
-                          4.1 <span>(524)</span>
-                        </p>
-                        <div className="buttons_next_back">
-                          <button className="button_back">
-                            <BsChevronLeft />
-                            <p>Предыдущий урок</p>
-                          </button>
-                          <button>
-                            <p>Следующий урок </p>
-                            <BsChevronRight />{" "}
-                          </button>
-                        </div>
-                      </div>
-                      <p>{item.content}</p>
-                      <div className="post_ava">
-                        <img src={img_ava} alt="" />
-                        <h6>Мухаммад Джумаев</h6>
-                        {/* <button>Подписаться</button> */}
-                      </div>
-                    </div>
-                  );
-                })}
-
-                {category.map((item) => {
-                  return (
-                    <div className="youtube_kichkina">
-                      <div className="odelniy_oyna_tepa">
-                        <div className="raspberry_pid">
-                          <h1>{item.name}</h1>
-                          <div className="margin_right">
-                            <div className="line_height"></div>
-                            <p>{theme.length}</p>
-                          </div>
-                        </div>
-                      </div>
-                      <Accordion defaultActiveKey="0">
-                        {subcategory.map((item2) => {
-                          if (item.id === item2.category) {
-                            return (
-                              <Accordion.Item eventKey="0">
-                                <Accordion.Header>{item2.name}</Accordion.Header>
-                                {theme.map(theme => {
-                                  return (
-                                    <Accordion.Body>
-                                      <div className="accordion_flex">
-                                        <div className="accordion_img">
-                                          <img src={theme.image} alt="" />
-                                        </div>
-                                        <div className="accordion_text">
-                                          <h6>
-                                            {theme.name}
-                                          </h6>
-                                          <p>
-                                            {theme.content}
-                                          </p>
-                                        </div>
-                                      </div>
-                                    </Accordion.Body>
-                                  )
-                                })}
-                              </Accordion.Item>
-
-                            );
-                          }
-                        })}
-                      </Accordion>
-                    </div>
-                  );
-                })}
-              </div>
-              <div className="navbar_video">
-                <div className="navbar_none">
-                  <div className="navbar_otish">
-                    <p onClick={() => { videoBolim(1); painModal() }} className="zadaniya">
-                      Вопрос и ответ
-                    </p>
-                    <p onClick={() => { videoBolim(2); painModal1() }} className="zadaniya1">
-                      Задания
-                    </p>
-                    <p onClick={() => { videoBolim(3); painModal2() }} className="zadaniya2">
-
-                    </p>
-                    <p onClick={() => { videoBolim(4); painModal3() }} className="zadaniya3">
-
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="navbar_block">
-                <div
-                  className="menu_navbar"
-                  onClick={() => {
-                    openModal();
-                  }}
-                >
-                  <TiThMenu />
-                </div>
-                <div
-                  className="navbar_yon"
-                  onMouseLeave={() => {
-                    closeModal();
-                  }}
-                >
-                  <div className="navbar_otish1">
-                    <p onClick={() => { videoBolim(1); painModal5() }} className="zadaniya5">
-                      Вопрос и ответ
-                    </p>
-                    <p onClick={() => { videoBolim(2); painModal6() }} className="zadaniya6">
-                      Задания
-                    </p>
-                    <p onClick={() => { videoBolim(3); painModal7() }} className="zadaniya7">
-
-                    </p>
-                    <p onClick={() => { videoBolim(4); painModal8() }} className="zadaniya8">
-
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className={id === 1 ? "show-content" : "content"}>
-                <Comment />
-              </div>
-              <div className={id === 2 ? "show-content" : "content"}>
-                <Vazifa />
-              </div>
-              <div className={id === 3 ? "show-content" : "content"}>
-                <Qollamalar />
-              </div>
-              <div className={id === 4 ? "show-content" : "content"}>
-                <Scachat />
-              </div>
-            </div>
-          </div>)}
+          </div>
 
         </div>) : (<Loader />)}
     </>
