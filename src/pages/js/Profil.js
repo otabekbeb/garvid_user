@@ -92,19 +92,24 @@ export default function Profil() {
   return (
     <div>
 
-      <div>
       <div className="profil_size_df">
        <div className="profil_size">
         <div className="profil_blok_bir">
           <div onMouseLeave={()=>userimgClose()} className='user_img_size'>
-          {data.image===null?(<img onMouseEnter={()=>userimgModal()} className='user_img' src={userNull} alt="" />):(<img onMouseEnter={()=>userimgModal()} className='user_img' src={"https://baisan.onrender.com"+data.image} alt="" />)}
+            {data.map(item=>{
+              return <>{item.image===null?(<img onMouseEnter={()=>userimgModal()} className='user_img' src={userNull} alt="" />):(<img onMouseEnter={()=>userimgModal()} className='user_img' src={"https://markazback2.onrender.com/"+item.image} alt="" />)}</>
+            })}     
            <div className="user_img_hover">
             <input onChange={()=>userImgPut()} id='userInput'  type="file" />
           <MdOutlinePhotoCamera  className='user_hover_photo_icon'/>
         </div>
         </div>
            <div className="blok_bir_text">
-            <h1>{data.username}</h1>
+           {data.map(item=>{
+            return<h1>{item.username}</h1>
+           })}
+
+
             <button>Regular user</button>
             <p>My signs</p>
             <div className="blok_bir_icon">
@@ -125,7 +130,12 @@ export default function Profil() {
           <div className="profil_blok_ikki_text">
           <p>Current balance</p>
           <div className="profil_blok_ikki_sum" >
-            {data.balance===null?(<h1>0</h1>):(<div style={{display:'flex',alignItems:'center',gap:'5px'}}><h1>{data.balance}</h1><p>$</p></div>)}
+   {data.map(item=>{
+    return<>
+            {item.balance===null?(<h1>0</h1>):(<div style={{display:'flex',alignItems:'center',gap:'5px'}}><h1>{item.balance}</h1><p>$</p></div>)}
+    </>
+    
+   })}
           </div>
           <div className="profil_blok_ikki_button">
             <button><BsActivity/></button><button>Balance replenishment</button>
@@ -201,6 +211,6 @@ export default function Profil() {
         </div> 
       </div>
     
-      </div>
+
   )
 }
