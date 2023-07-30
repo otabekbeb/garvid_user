@@ -49,10 +49,10 @@ export default function Login() {
     formdata.append("password",document.querySelector('.password').value)
 
     axios.post(`${url}/auth/register`,formdata).then(res=>{
-      console.log(res);
+      console.log(res.data);
       setPage(4)
     }).catch(err=>{
-      alert("in server problem")
+      alert("Что-то пошло не так попробуйте снова")
     })
   }
 
@@ -69,11 +69,14 @@ export default function Login() {
   formdata.append('code',document.querySelector("#verifak").value)
 
   axios.post(`${url}/auth/verify`,formdata).then(res=>{
-    setPage(1)
     console.log(res.data);
-    window.location.reload() 
+      alert("Вы успешно зарегистрировались")
+          localStorage.setItem("token",res.data.access)
+    window.location="/user"
+
   }).catch(err=>{
-    alert("problem")
+         alert("Что-то пошло не так попробуйте снова")
+
   })
   }
 
@@ -84,10 +87,15 @@ export default function Login() {
 
     axios.post(`${url}/auth/login/`,formdata).then(res=>{
       sessionStorage.setItem("password",document.querySelector("#parol").value)
-    localStorage.setItem("token",res.data.access)
+      alert("Вы успешно вошли в аккаунт")
+      localStorage.setItem("token",res.data.access)
     window.location="/user"
+     
+
     }).catch(err=>{
+      alert("Что-то пошло не так попробуйте снова")
       console.log(err);
+      
      
       state1==="ru"?(alert("В базе нет такого логина или пароля")):(alert("There is no such username or password in the database"))
     })
