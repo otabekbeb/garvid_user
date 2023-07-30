@@ -308,7 +308,6 @@
 
 .filter_button {
     width: 250px;
-    display: none;
     overflow-y: scroll;
     margin-bottom: 20px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -332,7 +331,6 @@
         var(--_g1) var(--_p, 125%) 100%, var(--_g2) 100% var(--_p, 25%);
     background-size: 200% var(--b), var(--b) 200%;
     cursor: pointer;
-   
     transition: .3s;
     display: none;
     position: absolute;
@@ -357,7 +355,7 @@
 }
 
 .filter {
-    display: block !important;
+    display: block ;
 }
 
 .filter_button:hover {

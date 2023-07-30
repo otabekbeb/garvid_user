@@ -26,7 +26,15 @@ export default function Searchfilter() {
   const [state1, setState1] = React.useState();
 
   function Filter() {
-    document.querySelector(".filter_button").classList.toggle("filter");
+    var a=document.querySelector(".filter_button").style.display
+    if (a==="none") {
+      document.querySelector(".filter_button").style="display:block "
+    }else{
+      document.querySelector(".filter_button").style="display:none "
+    }
+  }
+  function filter1() {
+    document.querySelector(".filter_button").style="display:none !important"
   }
   
   // function windowModal() {
@@ -64,6 +72,8 @@ function dashed_nazat(){
 
 
   useEffect(() => {
+    
+    document.querySelector(".filter_button").style="display:none"
     axios
       .get(`${url}/course/main/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
       .then((res) => {
@@ -105,7 +115,7 @@ function dashed_nazat(){
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
                 </div> */}
               </div>
-              <div className="filter_button">
+              <div onMouseLeave={()=>filter1()}  className="filter_button">
                 {kursdata.map((item1) => {
                   return (
                     <>
@@ -329,7 +339,7 @@ function dashed_nazat(){
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
                 </div> */}
               </div>
-              <div className="filter_button">
+              <div onMouseLeave={()=>filter1()}  className="filter_button">
                 {kursdata.map((item1) => {
                   return (
                     <>

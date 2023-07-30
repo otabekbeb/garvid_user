@@ -179,8 +179,12 @@
 .menu ul li {
   width: 100%;
   padding: 5px;
+  padding-left: 18px;
   position: relative;
   left: -37px;
+}
+.menu ul li:hover{
+  color: #44bef1;
 }
 
 .menu2 li a span {

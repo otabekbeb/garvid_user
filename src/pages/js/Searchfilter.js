@@ -26,6 +26,9 @@ export default function Searchfilter() {
   function Filter() {
     document.querySelector(".filter_button").classList.toggle("filter");
   }
+  function filter1() {
+    document.querySelector(".filter_button").style="display:none"
+  }
   function windowModal() {
     document.querySelector(".kurs_cards").style = "display:flex;transition:3s";
     document.querySelector(".spiska_img_title_div").style = "display:none";
@@ -100,7 +103,7 @@ export default function Searchfilter() {
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
                 </div> */}
               </div>
-              <div className="filter_button">
+              <div onMouseLeave={()=>filter1()}  className="filter_button">
 
 
                       {type.map((item2) => {
@@ -239,7 +242,7 @@ export default function Searchfilter() {
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
                 </div> */}
               </div>
-              <div className="filter_button">
+              <div onMouseLeave={()=>filter1()} className="filter_button">
                       {type.map((item2) => {
                           return (
                             <div className="button_filter_kurs">

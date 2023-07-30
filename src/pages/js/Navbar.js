@@ -82,8 +82,6 @@ export default function Navbar() {
       "google_translate_element"
     );
   };
-
-
   useEffect(() => {
     var addScript = document.createElement("script");
     addScript.setAttribute(
@@ -92,6 +90,11 @@ export default function Navbar() {
     );
     document.body.appendChild(addScript);
     window.googleTranslateElementInit = googleTranslateElementInit;
+  }, []);
+
+
+  useEffect(() => {
+
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
