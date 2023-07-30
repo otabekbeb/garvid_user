@@ -17,6 +17,8 @@ import WWW from "../img/WWW.png";
 import axios from "axios";
 import url from "./Host";
 import Loader from './loader'
+import img_for_null from '../img/download.png'
+
 export default function Searchfilter() {
   const [kursdata, setKursdata] = useState([]);
   const [type, settype] = useState([]);
@@ -50,7 +52,12 @@ export default function Searchfilter() {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
-
+        axios.get(`${url}/api/course`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+          setKursdata(res.data)
+          console.log(res.data);
+        }).catch(err=>{
+          console.log(err);
+        })
 
     setLoader(1)
   }, []);
@@ -114,20 +121,18 @@ export default function Searchfilter() {
             </div>
           </div>
         </div>
-
-        <div className="kurs_cards">
+          {kursdata.map(item=>{
+            return  <div className="kurs_cards">
 
               <div   className="kurs_card">
                 <button className="btn_das">Programming</button>
-                {/* {item.image === null ? (
-                  <div className="No_img">
-                    <h1>No picture</h1>
-                  </div>
-                ) : ( */}
-                  <img src={Rasp} />
-                {/* // )} */}
+                {item.image === null ? (
+                 <img src={img_for_null} alt="" />
+                ) : (
+                  <img src={item.image} />
+                 )}
                 <div className="kurs_paddaing_auto">
-                  <h4>dwadwadwadwwa</h4>
+                  <h4>{item.name}</h4>
                   <div className="star_card">
                     <i className="star_i">
                       <AiFillStar />
@@ -151,11 +156,11 @@ export default function Searchfilter() {
                   <div className="hajm">
                     <h5>
                       <p>Course size</p>
-                      2122
+                      {item.planned_time}h
                     </h5>
                     <h5>
                       <p>Course price</p>
-                      1232313
+                      {item.price}$
                     </h5>
                   </div>
                 </div>
@@ -166,6 +171,8 @@ export default function Searchfilter() {
               </div>
 
         </div>
+          })}
+       
 
         {/* SPISKA */}
 
