@@ -49,7 +49,7 @@ export default function Login() {
     formdata.append("password",document.querySelector('.password').value)
 
     axios.post(`${url}/auth/register`,formdata).then(res=>{
-      console.log(res.data);
+      console.log(res);
       setPage(4)
     }).catch(err=>{
       alert("in server problem")
@@ -66,7 +66,7 @@ export default function Login() {
   //   console.log(err);
   // })\
 
-  formdata.append('code',name)
+  formdata.append('code',document.querySelector("#verifak").value)
 
   axios.post(`${url}/auth/verify`,formdata).then(res=>{
     setPage(1)
@@ -91,6 +91,19 @@ export default function Login() {
      
       state1==="ru"?(alert("В базе нет такого логина или пароля")):(alert("There is no such username or password in the database"))
     })
+
+    // var formdata=new FormData()
+    // formdata.append("email",document.querySelector("#email").value)
+    // formdata.append("password",document.querySelector("#password").value)
+    // axios.post(`${url}/auth/login`,formdata).then(res=>{
+    //   // sessionStorage.setItem("password",document.querySelector("#parol").value)
+    //   // localStorage.setItem("token",res.data.access)
+    //   window.location="/user"
+    // }).catch(err=>{
+    //   console.log(err);
+     
+    //   alert("В базе нет такого логина или пароля")
+    // })
   }
 
 
@@ -118,7 +131,7 @@ export default function Login() {
             <p>{state1==="en"?("Code sent to your email"):("Код отправлен на вашу электронную почту")}</p>
             <div className="royhat_small_input">
               <FiMail className="login_icon" />
-              <input   placeholder="Верификация"  onChange={setName}  type="number" required/>
+              <input   placeholder="Верификация"  id="verifak" type="number" required/>
             </div>
             <div className="login_button_div">
             <button type="button" onClick={()=>userVeri()}>{state1==="en"?("Verification"):("Верификация")}</button>
