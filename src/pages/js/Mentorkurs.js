@@ -74,16 +74,8 @@ function dashed_nazat(){
   useEffect(() => {
     
     document.querySelector(".filter_button").style="display:none"
-    axios
-      .get(`${url}/course/main/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
-      .then((res) => {
-        setKursdata(res.data);
-        axios
-          .get(`${url}/course/type/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
-          .then((res) => {
-            settype(res.data);
-          });
-      });
+
+
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
@@ -91,7 +83,7 @@ function dashed_nazat(){
 
   return (
     <div>
-      {state1 === "en" ? (
+
       <div>
         <div className="Filter">
           <div className="blur_blok">
@@ -116,40 +108,29 @@ function dashed_nazat(){
                 </div> */}
               </div>
               <div onMouseLeave={()=>filter1()}  className="filter_button">
-                {kursdata.map((item1) => {
-                  return (
-                    <>
-                      {type.map((item2) => {
-                        if (item1.course_type === item2.id) {
-                          return (
+
                             <div className="button_filter_kurs">
-                              <div className="div_kurs">{item2.name}</div>
+                              <div className="div_kurs">dawdawdd</div>
                             </div>
-                          );
-                        }
-                      })}
-                    </>
-                  );
-                })}
+
               </div>
             </div>
           </div>
         </div>
 
         <div className="kurs_cards">
-          {kursdata.map((item) => {
-            return (
+
               <div className="kurs_card">
                 <button className="btn_das">Dasturlash</button>
-                {item.image === null ? (
+                {/* {item.image === null ? (
                   <div className="No_img">
                     <h1>no picture</h1>
                   </div>
                 ) : (
                   <img src={item.image} />
-                )}
+                )} */}
                 <div className="kurs_paddaing_auto">
-                  <h4>{item.name}</h4>
+                  <h4>dawda</h4>
                   <div className="star_card">
                     <i className="star_i">
                       <AiFillStar />
@@ -173,11 +154,11 @@ function dashed_nazat(){
                   <div className="hajm">
                     <h5>
                       <p>Kurs hajmi</p>
-                      {item.planned_time}
+                     dawadad
                     </h5>
                     <h5>
                       <p>Kurs narxi</p>
-                      {item.price}
+                     dwadad
                     </h5>
                   </div>
                 </div>
@@ -232,15 +213,14 @@ function dashed_nazat(){
                   </div>
                 <button className="button_circle">
                   <AiOutlineArrowRight
-                    onClick={() => {
-                      window.location = "/video";
-                      localStorage.setItem("course", item.id)
-                    }}
+                    // onClick={() => {
+                    //   window.location = "/video";
+                    //   localStorage.setItem("course", item.id)
+                    // }}
                   />
                 </button>
               </div>
-            );
-          })}
+
           <div className="dashed" onClick={() => dashed()}>
               <i><AiOutlinePlus/></i>
           </div>
@@ -316,174 +296,7 @@ function dashed_nazat(){
             );
           })}
         </div> */}
-      </div>) : (<div>
-        <div className="Filter">
-          <div className="blur_blok">
-            <div className="inp_blok">
-              <input type="text" placeholder="Поиск среди моих курсов" />
-              <CiSearch className="search" />
-            </div>
-            <div className="blur">
-              <div className="icon_blok">
-                <div
-                  className="sel_blok"
-                  onClick={() => {
-                    Filter();
-                  }}
-                >
-                  <BiMenu className="menyu" />
-                  <h4>Фильтр</h4>
-                </div>
-                {/* <div className="win_men">
-                  <MdWindow className="window" onClick={() => windowModal()} />
-                  <TfiMenuAlt className="manu" onClick={() => menuModal()} />
-                </div> */}
-              </div>
-              <div onMouseLeave={()=>filter1()}  className="filter_button">
-                {kursdata.map((item1) => {
-                  return (
-                    <>
-                      {type.map((item2) => {
-                        if (item1.course_type === item2.id) {
-                          return (
-                            <div className="button_filter_kurs">
-                              <div className="div_kurs">{item2.name}</div>
-                            </div>
-                          );
-                        }
-                      })}
-                    </>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="kurs_cards">
-          {kursdata.map((item) => {
-            return (
-              <div className="kurs_card">
-                <button className="btn_das">Dasturlash</button>
-                {item.image === null ? (
-                  <div className="No_img">
-                    <h1>Нет изображение</h1>
-                  </div>
-                ) : (
-                  <img src={item.image} />
-                )}
-                <div className="kurs_paddaing_auto">
-                  <h4>{item.name}</h4>
-                  <div className="star_card">
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_ib">
-                      <AiFillStar />
-                    </i>
-                    <p>
-                      4.1 <span>(524)</span>
-                    </p>
-                  </div>
-                  <div className="hajm">
-                    <h5>
-                      <p>Kurs hajmi</p>
-                      {item.planned_time}
-                    </h5>
-                    <h5>
-                      <p>Kurs narxi</p>
-                      {item.price}
-                    </h5>
-                  </div>
-                </div>
-                <button className='edit_icon'>
-                    <Edit/>
-                  </button>
-                  
-                  <button onClick={() => udalit()} className="delete_icon">
-                        <i>
-                        <Delete/>
-                        </i>
-                  </button>
-                  <div className="delete_card">
-                    <div className="delete_padding">
-                      <img src={Groupimg} alt="" />
-                      <h4>Вы правда хотите удалить?</h4>
-                      <div className="delete_btns">
-                      <button onClick={() => close()} className="delete_btn_no">Нет</button>
-                      <button className="delete_btn_yes">Да</button>
-                      </div>
-                    </div>
-                  </div>
-
-                <button className="button_circle">
-                  <AiOutlineArrowRight
-                    onClick={() => {
-                      window.location = "/video";
-                      localStorage.setItem("course", item.id)
-                    }}
-                  />
-                </button>
-              </div>
-            );
-          })}
-          <div className="dashed">
-            <i><AiOutlinePlus/></i>
-            <h4>Добавлять</h4>
-          </div>
-        </div>
-
-        {/* SPISKA */}
-
-        {/* <div className="spiska_img_title_div">
-          {kursdata.map((item) => {
-            return (
-              <div className="Spiska_blok">
-                <div className="spiska">
-                  <div className="spiska_display_flex">
-                    <div className="spiska_img">
-                      {item.image === null ? (
-                        <div className="No_img1">
-                          <h1>Нет изображение</h1>
-                        </div>
-                      ) : (
-                        <img src={item.image} alt="No img" />
-                      )}
-                    </div>
-                    <div className="spiska_title_df">
-                      <div className="spiska_title">
-                        <h3>{item.name}</h3>
-                        <div className="star_icon_blok1">
-                          <AiFillStar className="gold" />
-                          <AiFillStar className="gold" />
-                          <AiFillStar className="gold" />
-                          <AiFillStar className="gold" />
-                          <AiFillStar />
-                          <div className="number">
-                            <h6>4.1 (524)</h6>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="left1_icon">
-                        <HiArrowRight />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div> */}
-      </div>)}
+      </div>
 
     </div>
   );

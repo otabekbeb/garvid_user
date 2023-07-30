@@ -27,7 +27,8 @@ export default function News() {
 
         <div className='newspage1'>
             <Navbar />
-            {state1 === "en" ? (<div>
+
+            <div>
                 <div className="newspage">
                 <div className="col-lg-4">
                 {/* Social Follow Start */}
@@ -66,46 +67,7 @@ export default function News() {
               })}
 
                 </div>
-            </div>) : (<div>
-                <div className="newspage">
-                <div className="col-lg-4">
-                {/* Social Follow Start */}
-                <div className="mb-3">
-                  <div className="section-title mb-0">
-                    <h4 className="m-0 text-uppercase font-weight-bold">Themes</h4>
-                  </div>
-                  <div className="bg-white border border-top-0 p-3">
-                    {basetype.map(item=>{
-                      return(
-                        <>
-                        {item.name==null?(""):(<><a href className="d-block w-100 text-white text-decoration-none mb-3" style={{background: '#52AAF4'}}>
-                        <i className="fab fa-twitter text-center py-4 mr-3" style={{width: '65px', background: 'rgba(0, 0, 0, .2)'}} />
-                        <span className="font-weight-medium">{item.name}</span>
-                      </a></>)}
-                      </>
-                      )
-                    })}
-                  </div>
-                </div>
-              </div>
-              {base.map((item,key)=>{
-                if (key==localStorage.getItem("baseId")) {
-                  return(
-                    <>
-                    <div className="newspage_cards">
-                        <img src={item.image} alt="" />
-                        <a className="h2 m-0 text-white text-uppercase font-weight-bold" href>{item.name}</a>
-                    </div>
-                    <div className="newspage_p">
-                        <p>{item.description}</p>
-                    </div>
-                    </>
-                  )
-                }
-              })}
-
-                </div>
-            </div>)}
+            </div>
 
 
             <Footer />

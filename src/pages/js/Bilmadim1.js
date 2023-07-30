@@ -12,7 +12,8 @@ export default function Vazifa1() {
     );},[]);
   return (
     <div>
-    {state1==="en"?(<div className='m_vazifa_kotta'> 
+
+    <div className='m_vazifa_kotta'> 
     <div className="m_vazifa_scachat">
    
        <div className="scachat_kotta">
@@ -47,42 +48,7 @@ export default function Vazifa1() {
 
        
     </div>
-</div>):(<div className='m_vazifa_kotta'> 
-<div className="m_vazifa_scachat">
-
-   <div className="scachat_kotta">
-    <div className="m_zadaniya_s">
-        <div className="m_scachat"><BsArrowDownShort /></div>
-        <div className="m_title_scac">
-           <h5>Задачи по переменным.txt</h5>
-        <p >5.1 MB | 25.06.2019</p></div>
-       
-    </div>
-   </div>
-   <div className="scachat_kotta">
-    <div className="m_zadaniya_s">
-        <div className="m_scachat"><BsArrowDownShort /></div>
-        <div className="m_title_scac">
-           <h5>Книга по JAVA.pdf</h5>
-        <p >4.1 MB | 25.06.2019</p></div>
-       
-    </div>
-   </div>
-   <div className="scachat_kotta">
-    <div className="m_zadaniya_s">
-        <div className="m_scachat"><BsArrowDownShort /></div>
-        <div className="m_title_scac">
-           <h5>Последовательность данных.docx</h5>
-        <p >7.1 MB | 25.06.2019</p></div>
-       
-    </div>
-   </div>
-
-
-
-   
 </div>
-</div>)}
     </div>
   )
 }
