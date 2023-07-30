@@ -109,7 +109,7 @@ export default function Navbar() {
       document.querySelector("#checkbox2").checked = false;
     }
 
-    axios.get(`${url}/auth/user/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.get(`${url}/auth/oneuser`, { headers: { "Authorization":  "Bearer " + localStorage.getItem("token") } }).then(res => {
       setUser(res.data)
     });
 
@@ -192,9 +192,11 @@ export default function Navbar() {
                 </li>
 
 
-                <li className="moto-menu-item">
-                  {localStorage.getItem("token") ? (<a href="/user">{user.username}</a>) : (<a href="/login">Log in</a>)}
-                </li>
+                {user.map(item=>{
+                   return <li>
+                      {localStorage.getItem("token") ? (<a href="/user">{item.username}</a>) : (<a href="/login" className="tt">Log in</a>)}
+                    </li>
+                      })}
               </ul>
               <div id="google_translate_element"></div>
             </div>
@@ -291,9 +293,11 @@ export default function Navbar() {
                         </a>
                       </li>
                       {/* <li><a href="/teacher" className='tt'>Teacher</a></li> */}
-                      <li>
-                        {localStorage.getItem("token") ? (<a href="/user" className="tt">{user.username}</a>) : (<a Login href="/login" className="tt">Login</a>)}
-                      </li>
+                      {user.map(item=>{
+                  return  <li>
+                      {localStorage.getItem("token") ? (<a href="/user">{item.username}</a>) : (<a href="/login" className="tt">Log in</a>)}
+                    </li>
+                      })}
 
 
 <div id="google_translate_element"></div>
@@ -381,9 +385,11 @@ export default function Navbar() {
                   <a href="/contacts">Связь</a>
                 </li>
                 {/* <li className='moto-menu-item'><a href="/teacher" >Учитель</a></li> */}
-                <li className="moto-menu-item">
-                  {localStorage.getItem("token") ? (<a href="/user">{user.username}</a>) : (<a href="/login">Регистрация</a>)}
-                </li>
+                {user.map(item=>{
+                  return  <li>
+                      {localStorage.getItem("token") ? (<a href="/user">{item.username}</a>) : (<a href="/login" className="tt">Регистрация</a>)}
+                    </li>
+                      })}
               </ul>
               <div class="checkbox-con" >
                 <input
@@ -496,10 +502,11 @@ export default function Navbar() {
                         </a>
                       </li>
                       {/* <li><a href="/teacher" className='tt'>Учитель</a></li> */}
-
-                      <li>
-                        {localStorage.getItem("token") ? (<a href="/user">{user.username}</a>) : (<a href="/login" className="tt">Регистрация</a>)}
-                      </li>
+                      {user.map(item=>{
+                   return <li>
+                      {localStorage.getItem("token") ? (<a href="/user">{item.username}</a>) : (<a href="/login" className="tt">Регистрация</a>)}
+                    </li>
+                      })}
                       <div class="checkbox-con" style={{ marginTop: "15px" }}>
                         <input
                           id="checkbox2"

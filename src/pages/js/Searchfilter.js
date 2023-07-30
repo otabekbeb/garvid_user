@@ -46,21 +46,11 @@ export default function Searchfilter() {
 
   useEffect(() => {
     document.querySelector(".filter_button").style="display:none"
-    axios
-      .get(`${url}/course/main/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
-      .then((res) => {
-        setKursdata(res.data);
-        axios
-          .get(`${url}/course/type/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
-          .then((res) => {
-            setLoader(1)
-            settype(res.data);
-          });
-      });
+
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
-    
+    setLoader(1)
   }, []);
   function filter (id) {
     axios
@@ -83,7 +73,7 @@ export default function Searchfilter() {
   }
   return (
     <>
-    {loader===0?(
+    {loader===1?(
       <div>
       {state1 === "en" ? (
       <div>
