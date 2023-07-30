@@ -193,7 +193,7 @@ export default function Bilim() {
        </div>):(<div>
         <div className="program">
            <div className="ptogram_tutorial">
-               <div className="html_code_tutoril">
+               <div className="хз    ">
                <div className="html_div">
                    <div className="html_red">
                        <img src={Htmlimg} alt="" />

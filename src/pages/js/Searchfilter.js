@@ -24,10 +24,15 @@ export default function Searchfilter() {
   const [loader,setLoader] = useState(0)
 
   function Filter() {
-    document.querySelector(".filter_button").classList.toggle("filter");
+    var a=document.querySelector(".filter_button").style.display
+    if (a==="none") {
+      document.querySelector(".filter_button").style="display:block "
+    }else{
+      document.querySelector(".filter_button").style="display:none "
+    }
   }
   function filter1() {
-    document.querySelector(".filter_button").style="display:none"
+    document.querySelector(".filter_button").style="display:none !important"
   }
   function windowModal() {
     document.querySelector(".kurs_cards").style = "display:flex;transition:3s";
@@ -40,6 +45,7 @@ export default function Searchfilter() {
   // }
 
   useEffect(() => {
+    document.querySelector(".filter_button").style="display:none"
     axios
       .get(`${url}/course/main/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
       .then((res) => {
