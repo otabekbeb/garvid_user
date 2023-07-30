@@ -33,11 +33,13 @@ export default function News() {
    const [base,setBase] = useState([])
    const [basetype,setBasetype] = useState([])
    useEffect(()=>{
-    axios.get(`${url}/knowladgebase/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res=>{
+    axios.get(`${url}/api/knowladge`).then(res=>{
       setBase(res.data)
+      console.log(res.data,"bb");
     });
-    axios.get(`${url}/base_theme/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res=>{
+    axios.get(`${url}/api/base_theme`).then(res=>{
       setBasetype(res.data)
+      console.log(res.data,"bbb");
     });
    },[])
    

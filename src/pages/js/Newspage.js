@@ -12,17 +12,16 @@ export default function News() {
     const [state1, setState1] = React.useState();
     const [base,setBase] = useState([])
     const [basetype,setBasetype] = useState([])
-    useEffect(() => {
-        setState1(
-            localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
-        );
-        axios.get(`${url}/knowladge_base/knowladgebase/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res=>{
-          setBase(res.data)
-        });
-        axios.get(`${url}/knowladge_base/basetheme/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res=>{
-          setBasetype(res.data)
-        });
-    }, []);
+    useEffect(()=>{
+      axios.get(`${url}/api/knowladge`).then(res=>{
+        setBase(res.data)
+        console.log(res.data,"bb");
+      });
+      axios.get(`${url}/api/base_theme`).then(res=>{
+        setBasetype(res.data)
+        console.log(res.data,"bbb");
+      });
+     },[])
     return (
 
         <div className='newspage1'>
