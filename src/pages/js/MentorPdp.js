@@ -19,6 +19,7 @@ export default function MentorPdp() {
       setState1(
         localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
       );},[]);
+      
 
     function updatetoggle(id) {
         setToggle(id)

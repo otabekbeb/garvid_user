@@ -24,7 +24,7 @@ export default function Mentor() {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );},[]);
-
+    
 
     function userimgModal(){
         document.querySelector(".user_img_hover").style="  position: absolute;bottom: 0;"

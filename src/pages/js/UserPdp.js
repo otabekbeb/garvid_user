@@ -27,6 +27,7 @@ export default function Pdp() {
             localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
         );
     }, [])
+    
 
 
     function updatetoggle(id) {
