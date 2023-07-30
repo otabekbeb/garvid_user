@@ -24,24 +24,28 @@ export default function Loginpage() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
-        document.querySelector("#first_name").value = res.data.first_name;
-        document.querySelector("#last_name").value = res.data.last_name;
-        document.querySelector("#username").value = res.data.username;
-        console.log(res.data);
-        document.querySelector("#phone_number").value = res.data.phone_number;
-        document.querySelector("#birthday").value = res.data.birthday;
-        document.querySelector("#adress").value = res.data.adress;
-        document.querySelector("#description").value = res.data.description;
+        res.data.map(item=>{
+          document.querySelector("#first_name").value = item.username;
+          document.querySelector("#last_name").value = item.last_name;
+          document.querySelector("#username").value = item.email;
+          console.log(item);
+          document.querySelector("#phone_number").value = item.phone_number;
+          document.querySelector("#birthday").value = item.date_joined.slice(0,10);
+          document.querySelector("#adress").value = item.address;
+          document.querySelector("#description").value = item.description;
+        })
         setUser(res.data);
         user.map(item=>{
-          document.querySelector("#first_name").value = item.first_name;
+          document.querySelector("#first_name").value = item.username;
           document.querySelector("#last_name").value = item.last_name;
-          document.querySelector("#username").value = item.username;
+          document.querySelector("#username").value = item.email;
+          console.log(item);
           document.querySelector("#phone_number").value = item.phone_number;
-          document.querySelector("#birthday").value = item.birthday;
-          document.querySelector("#adress").value = item.adress;
+          document.querySelector("#birthday").value = item.date_joined.slice(0,10);
+          document.querySelector("#adress").value = item.address;
           document.querySelector("#description").value = item.description;
         })   
+        console.log(res.data,"aaa");
       });
 
         setLoader(1)
@@ -197,7 +201,7 @@ export default function Loginpage() {
                             />
                           </div>
                           <div className="input1">
-                            <h2>Nickname</h2>
+                            <h2>Email</h2>
 
                             <input
                               type="text"
@@ -222,14 +226,20 @@ export default function Loginpage() {
                         </div>
                       </div>
                     </div>
-                    <div className="profil">
+                    {user.map(item=>{
+                      return(
+                        <div className="profil">
                       <h2>Your photo</h2>
                       <div className="profil1">
                         <input id="img" type="file" />
-                        <img src={"https://baisan.onrender.com"+user.image} alt="" />
+                        <img src={item.image} alt="" />
+                        <link rel="stylesheet" href={item.image} />
                       </div>
                       <h2 className="bb1">Upload a profile photo</h2>
                     </div>
+                      )
+                    })}
+                    
                   </div>
                 </div>
               ) : (
