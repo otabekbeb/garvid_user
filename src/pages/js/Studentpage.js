@@ -18,12 +18,18 @@ import Azo from "./Azo"
 import Usernavbar from './Usernavbar'
 import { TiThMenu } from 'react-icons/ti'
 import Futer from "./Footer1"
+import axios from 'axios'
+import url from './Host'
 export default function Mentor() {
   const [state1, setState1] = React.useState();
+  const [studets, setstudents] = React.useState();
   useEffect(() => {
-    setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
-    );},[]);
+    axios.get(`${url}/auth/students`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
+      setstudents(res.data)
+      console.log(res.data);
+    })
+  }, [])
+  
     
 
     function userimgModal(){
