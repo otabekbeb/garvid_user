@@ -24,9 +24,9 @@ export default function Mentor() {
   const [state1, setState1] = React.useState();
   const [studets, setstudents] = React.useState();
   useEffect(() => {
-    axios.get(`${url}/auth/students`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
+    axios.get(`${url}/auth/oneuser`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
       setstudents(res.data)
-      console.log(res.data);
+      console.log(res.data,"aa");
     })
   }, [])
   
@@ -90,11 +90,16 @@ export default function Mentor() {
           <MdOutlinePhotoCamera  className='user_hover_photo_icon'/>
         </div>
         </div>
-           <div className="blok_bir_text_mentor1">
-            <h1>Muhammad Dzhumaev1</h1>
+        {setstudents.map(item=>{
+          return(
+            <div className="blok_bir_text_mentor1">
+            <h1>{item.username}</h1>
             <p>Java Tutor, Python</p>
-            <button>Mentor</button>
+            <button>Mentor1</button>
            </div>
+          )
+        })}
+           
         </div>
         
         <div className="profil_blok_ikki">
