@@ -91,19 +91,25 @@ export default function Profil() {
 
   return (
     <div>
-      {state1==="en" ?(<div>
+
       <div className="profil_size_df">
        <div className="profil_size">
         <div className="profil_blok_bir">
           <div onMouseLeave={()=>userimgClose()} className='user_img_size'>
-          {data.image===null?(<img onMouseEnter={()=>userimgModal()} className='user_img' src={userNull} alt="" />):(<img onMouseEnter={()=>userimgModal()} className='user_img' src={"https://baisan.onrender.com"+data.image} alt="" />)}
+            {data.map(item=>{
+              return <>{item.image===null?(<img onMouseEnter={()=>userimgModal()} className='user_img' src={userNull} alt="" />):(<img onMouseEnter={()=>userimgModal()} className='user_img' src={"https://markazback2.onrender.com/"+item.image} alt="" />)}</>
+            })}     
            <div className="user_img_hover">
             <input onChange={()=>userImgPut()} id='userInput'  type="file" />
           <MdOutlinePhotoCamera  className='user_hover_photo_icon'/>
         </div>
         </div>
            <div className="blok_bir_text">
-            <h1>{data.username}</h1>
+           {data.map(item=>{
+            return<h1>{item.username}</h1>
+           })}
+
+
             <button>Regular user</button>
             <p>My signs</p>
             <div className="blok_bir_icon">
@@ -124,7 +130,12 @@ export default function Profil() {
           <div className="profil_blok_ikki_text">
           <p>Current balance</p>
           <div className="profil_blok_ikki_sum" >
-            {data.balance===null?(<h1>0</h1>):(<div style={{display:'flex',alignItems:'center',gap:'5px'}}><h1>{data.balance}</h1><p>$</p></div>)}
+   {data.map(item=>{
+    return<>
+            {item.balance===null?(<h1>0</h1>):(<div style={{display:'flex',alignItems:'center',gap:'5px'}}><h1>{item.balance}</h1><p>$</p></div>)}
+    </>
+    
+   })}
           </div>
           <div className="profil_blok_ikki_button">
             <button><BsActivity/></button><button>Balance replenishment</button>
@@ -198,112 +209,8 @@ export default function Profil() {
           <div onClick={()=>notificationClose()} className="profil_notifacation_size_close">x</div>
         </div>
         </div> 
-      </div>):(<div>
-      <div className="profil_size_df">
-       <div className="profil_size">
-        <div className="profil_blok_bir">
-          <div onMouseLeave={()=>userimgClose()} className='user_img_size'>
-          {data.image===null?(<img onMouseEnter={()=>userimgModal()} className='user_img' src={userNull} alt="" />):(<img onMouseEnter={()=>userimgModal()} className='user_img' src={"https://baisan.onrender.com"+data.image} alt="" />)}
-           <div className="user_img_hover">
-            <input onChange={()=>userImgPut()} id='userInput'  type="file" />
-          <MdOutlinePhotoCamera  className='user_hover_photo_icon'/>
-        </div>
-        </div>
-           <div className="blok_bir_text">
-            <h1>{data.username}</h1>
-            <button>Обычный пользователь</button>
-            <p>Мои знаки</p>
-            <div className="blok_bir_icon">
-            <div className="blok_bir_icon_img1">
-            <img className='raketa_img' src={icon_img} alt="" />
-            </div>
-            <div className="blok_bir_icon_img2">
-            <img className='miya_img' src={icon_img1} alt="" />
-            </div>
-            <div className="blok_bir_icon_img3">
-            <img className='medal_img' src={icon_img2} alt="" />
-            </div>
-            </div>
-           </div>
-        </div>
-        
-        <div className="profil_blok_ikki">
-          <div className="profil_blok_ikki_text">
-          <p>Текущий баланс</p>
-          <div className="profil_blok_ikki_sum">
-            {data.balance===null?(<h1>0</h1>):(<div style={{display:'flex',gap:'5px',alignContent:'center'}}><h1>{data.balance}</h1><p>RUB</p></div>)}
-            </div>
-          <div className="profil_blok_ikki_button">
-            <button><BsActivity/></button><button>Пополнение баланса</button>
-          </div>
-          </div>
-          <div onMouseLeave={()=>taxrirlashClose()} className="profil_blok_ikki_icon">
-          <BsFillBellFill onMouseEnter={()=>taxrirlashChadModal()} className='profil_blok_ikki_icon_bir' />
-          <BsThreeDots  onMouseEnter={()=>taxrirlashModal()} className='profil_blok_ikki_icon_ikki' />
-          <div className="profil_blok_ikki_icon_texrirlash_modal">
-            <div onClick={() =>
-              window.location="/loginpage"} className='taxrirlash_modal_div'><FiEdit className='taxrirlash_modal_icon' /><p>Редактировать профиль</p></div>
-            <div className='taxrirlash_modal_div'><BiCast className='taxrirlash_modal_icon'/><p>Уведомления</p></div>
-            <div className='taxrirlash_modal_div'><FiLifeBuoy className='taxrirlash_modal_icon'/><p>Помощь</p></div>
-            <hr />
-            <div className='taxrirlash_modal_div' onClick={()=>chiqish()}><FiLogOut className='taxrirlash_modal_icon'/><p>Выход</p></div>
-          </div>
-          <div className="profil_blok_ikki_icon_taxriirlash_chat">
-            <p>Bugun</p>
-            <div className="taxrirlash_chad">
-              <div className="taxrirlash_chad_img_size">
-              <img src={chadimg} alt="" />
-              </div>
-               <div className="taxrirlash_chad_size">
-              <div className="taxrirlash_chad_vaqt">
-                <h1>Дженни Фокс</h1><div className='taxrirlash_chad_vaqt_soat'><TbPointFilled className='chad_set'/><p>19:22</p></div>
-              </div>
-              <div className="taxrirlash_chad_text">
-                <p>Lorem ipsum dolor sit.</p>
-              </div>
-              </div>
-            </div>
-            <div className="taxrirlash_chad">
-              <div className="taxrirlash_chad_img_size">
-              <img src={chadimg} alt="" />
-              </div>
-               <div className="taxrirlash_chad_size">
-              <div className="taxrirlash_chad_vaqt">
-                <h1>Дженни Фокс</h1><div className='taxrirlash_chad_vaqt_soat'><TbPointFilled className='chad_set'/><p>19:22</p></div>
-              </div>
-              <div className="taxrirlash_chad_text">
-                <p>Lorem ipsum dolor sit.</p>
-              </div>
-              </div>
-            </div>
-            <p>06.08.2019</p>
-            <div className="taxrirlash_chad">
-              <div className="taxrirlash_chad_img_size">
-              <img src={chadimg} alt="" />
-              </div>
-               <div className="taxrirlash_chad_size">
-              <div className="taxrirlash_chad_vaqt">
-                <h1>Дженни Фокс</h1><div className='taxrirlash_chad_vaqt_soat'><TbPointFilled className='chad_set'/><p>19:22</p></div>
-              </div>
-              <div className="taxrirlash_chad_text">
-                <p>Lorem ipsum dolor sit.</p>
-              </div>
-              </div>
-            </div>
-             
-             <div className="taxrirlash_chad_barchasini">
-              <p>Посмотреть все<AiOutlineRight/></p>
-             </div>
-            </div>
-          </div>
-
-
-
-          </div>
-        </div>
-        </div> 
-      </div>)}
-    
       </div>
+    
+
   )
 }
