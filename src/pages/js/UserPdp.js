@@ -20,7 +20,7 @@ export default function Pdp() {
     const [state1, setState1] = React.useState();
 
     useEffect(() => {
-        axios.get(`${url}/course/main/`).then(res => {
+        axios.get(`${url}/api/course`).then(res => {
             setKursData(res.data)
         })
         setState1(

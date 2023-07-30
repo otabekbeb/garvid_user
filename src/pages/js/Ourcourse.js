@@ -10,6 +10,7 @@ import img from '../../pages/img/download.png'
 import Usernavbar from '../js/Usernavbar'
 import Futer from '../js/Futer'
 import axios from 'axios';
+import Anime from "../img/download.png"
 import url from './Host';
 
 
@@ -35,9 +36,8 @@ export default function Ourcourse() {
     }
     
     useEffect(()=>{
-      axios.get(`${url}/course/main/`).then(res=>{
-        setMain(res.data)
-      })
+
+
     },[])
 
     return (
@@ -141,12 +141,11 @@ types</h5>
 
 
                 <div className="filter_kurs">
-               {main.map(item=>{
-                return(
-                  <div className="filter_course" onClick={()=>{window.location="/proverr2";localStorage.setItem("filtrid",item.id)}}>
-                  <img src={item.image} alt="" />
+
+                  <div className="filter_course" >
+                  <img src={Anime} alt="" />
                   <div className="filter_card_padding">
-                    <h4>{item.name}</h4>
+                    <h4>akbar</h4>
                     <div className="star_card">
                       <i className="star_i">
                         <AiFillStar />
@@ -170,21 +169,20 @@ types</h5>
                     <div className="hajm">
                       <h5>
                         <p>Course size</p>
-                        <h5>{item.planned_time}</h5>
+                        <h5>1111</h5>
                       </h5>
                       <h5>
                         <p>Course price</p>
-                        <h5>{item.price}</h5>
+                        <h5>1212</h5>
                       </h5>
                     </div>
                   </div>
                   
                   <button className="button_circle">
-                    <AiOutlineArrowRight onClick={()=>{window.location="/proverr2";localStorage.setItem("filtrid",item.id)}}/>
+                    <AiOutlineArrowRight />
                   </button>
                 </div>
-                )
-               })}
+
 
 
                </div>

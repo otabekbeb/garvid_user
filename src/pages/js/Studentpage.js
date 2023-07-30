@@ -18,12 +18,18 @@ import Azo from "./Azo"
 import Usernavbar from './Usernavbar'
 import { TiThMenu } from 'react-icons/ti'
 import Futer from "./Footer1"
+import axios from 'axios'
+import url from './Host'
 export default function Mentor() {
   const [state1, setState1] = React.useState();
+  const [students, setStudents] = React.useState([]);
   useEffect(() => {
-    setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
-    );},[]);
+    axios.get(`${url}/auth/oneuser`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
+      setStudents(res.data)
+      console.log(res.data,"aa");
+    })
+  }, [])
+  
     
 
     function userimgModal(){
@@ -73,34 +79,46 @@ export default function Mentor() {
   return (
     <div>
        <Usernavbar />
-        {state1==="en" ?(<div>
+
+        <div>
       <div className="profil_size_df">
        <div className="profil_size">
+        {students.map(item=>{
+          return(
         <div className="profil_blok_bir1">
           <div onMouseLeave={()=>userimgClose()} className='user_img_size'>
-          <img onMouseEnter={()=>userimgModal()} className='user_img' src={Use_img} alt="" />
+          <img onMouseEnter={()=>userimgModal()} className='user_img' src={item.image} alt="" />
            <div className="user_img_hover">
             <input type="file" />
           <MdOutlinePhotoCamera  className='user_hover_photo_icon'/>
         </div>
         </div>
-           <div className="blok_bir_text_mentor1">
-            <h1>Muhammad Dzhumaev1</h1>
+        
+            <div className="blok_bir_text_mentor1">
+            <h1>{item.username}</h1>
             <p>Java Tutor, Python</p>
-            <button>Mentor</button>
+            <button>Mentor1</button>
            </div>
-        </div>
+          
+           
+        </div>)
+        })}
         
         <div className="profil_blok_ikki">
-          <div className="profil_blok_ikki_text">
+          {students.map(item=>{
+          return(
+<div className="profil_blok_ikki_text">
           <p>Current balance</p>
           <div className="profil_blok_ikki_sum1">
-            <h1>1 350 000</h1><p>UZS</p>
+            <h1>{item.balance}</h1><p>UZS</p>
           </div>
           <div className="profil_blok_ikki_button">
             <button><BsActivity/></button><button>Balance replenishment</button>
           </div>
           </div>
+          )
+        })}
+          
           <div onMouseLeave={()=>taxrirlashClose()} className="profil_blok_ikki_icon">
           <BsFillBellFill onMouseEnter={()=>taxrirlashChadModal()} className='profil_blok_ikki_icon_bir' />
           <BsThreeDots  onMouseEnter={()=>taxrirlashModal()} className='profil_blok_ikki_icon_ikki' />
@@ -165,100 +183,8 @@ export default function Mentor() {
           </div>
         </div>
         </div> 
-    </div>):(<div>
-      <div className="profil_size_df">
-       <div className="profil_size">
-        <div className="profil_blok_bir1">
-          <div onMouseLeave={()=>userimgClose()} className='user_img_size'>
-          <img onMouseEnter={()=>userimgModal()} className='user_img' src={Use_img} alt="" />
-           <div className="user_img_hover">
-            <input type="file" />
-          <MdOutlinePhotoCamera  className='user_hover_photo_icon'/>
-        </div>
-        </div>
-           <div className="blok_bir_text_mentor1">
-            <h1>Мухаммад Джумаев</h1>
-            <p>Наставник по Java, Python</p>
-            <button>Наставник</button>
-           </div>
-        </div>
-        
-        <div className="profil_blok_ikki">
-          <div className="profil_blok_ikki_text">
-          <p>Текущий баланс</p>
-          <div className="profil_blok_ikki_sum1">
-            <h1>1 350 000</h1><p>UZS</p>
-          </div>
-          <div className="profil_blok_ikki_button">
-            <button><BsActivity/></button><button>Пополнение баланса</button>
-          </div>
-          </div>
-          <div onMouseLeave={()=>taxrirlashClose()} className="profil_blok_ikki_icon">
-          <BsFillBellFill onMouseEnter={()=>taxrirlashChadModal()} className='profil_blok_ikki_icon_bir' />
-          <BsThreeDots  onMouseEnter={()=>taxrirlashModal()} className='profil_blok_ikki_icon_ikki' />
-          <div className="profil_blok_ikki_icon_texrirlash_modal">
-            <div className='taxrirlash_modal_div'><FiEdit className='taxrirlash_modal_icon' /><p>Редактировать профиль</p></div>
-            <div className='taxrirlash_modal_div'><BiCast className='taxrirlash_modal_icon'/><p>Уведомления</p></div>
-            <div className='taxrirlash_modal_div'><FiLifeBuoy className='taxrirlash_modal_icon'/><p>Помощь</p></div>
-            <hr />
-            <div className='taxrirlash_modal_div'><FiLogOut className='taxrirlash_modal_icon'/><p>Выход</p></div>
-          </div>
-          <div className="profil_blok_ikki_icon_taxriirlash_chat">
-            <p>Bugun</p>
-            <div className="taxrirlash_chad">
-              <div className="taxrirlash_chad_img_size">
-              <img src={chadimg} alt="" />
-              </div>
-               <div className="taxrirlash_chad_size">
-              <div className="taxrirlash_chad_vaqt">
-                <h1>Дженни Фокс</h1><div className='taxrirlash_chad_vaqt_soat'><TbPointFilled className='chad_set'/><p>19:22</p></div>
-              </div>
-              <div className="taxrirlash_chad_text">
-                <p>Lorem ipsum dolor sit.</p>
-              </div>
-              </div>
-            </div>
-            <div className="taxrirlash_chad">
-              <div className="taxrirlash_chad_img_size">
-              <img src={chadimg} alt="" />
-              </div>
-               <div className="taxrirlash_chad_size">
-              <div className="taxrirlash_chad_vaqt">
-                <h1>Дженни Фокс</h1><div className='taxrirlash_chad_vaqt_soat'><TbPointFilled className='chad_set'/><p>19:22</p></div>
-              </div>
-              <div className="taxrirlash_chad_text">
-                <p>Lorem ipsum dolor sit.</p>
-              </div>
-              </div>
-            </div>
-            <p>06.08.2019</p>
-            <div className="taxrirlash_chad">
-              <div className="taxrirlash_chad_img_size">
-              <img src={chadimg} alt="" />
-              </div>
-               <div className="taxrirlash_chad_size">
-              <div className="taxrirlash_chad_vaqt">
-                <h1>Дженни Фокс</h1><div className='taxrirlash_chad_vaqt_soat'><TbPointFilled className='chad_set'/><p>19:22</p></div>
-              </div>
-              <div className="taxrirlash_chad_text">
-                <p>Lorem ipsum dolor sit.</p>
-              </div>
-              </div>
-            </div>
-             
-             <div className="taxrirlash_chad_barchasini">
-              <p>Посмотреть все<AiOutlineRight/></p>
-             </div>
-            </div>
-          </div>
-
-
-
-          </div>
-        </div>
-        </div> 
-    </div>)}
-    {state1==="en" ?(<div>
+    </div>
+    <div>
             <div className="gray_blok">
                 <div className="fil_text_blok">
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} className='fromLeft'>My courses</h1>{toggle===1?(<div className="fil_text_blok_kurs_lenght">4 pieces</div>):("")}</div>
@@ -283,32 +209,7 @@ export default function Mentor() {
             <div className={toggle === 3 ? "show-content" : "content"}><Sertifikat /></div>
             <div className={toggle === 4 ? "show-content" : "content"}><Azo/></div>
 
-    </div>):(<div>
-            <div className="gray_blok">
-                <div className="fil_text_blok">
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} className='fromLeft'>Мои курсы</h1>{toggle===1?(<div className="fil_text_blok_kurs_lenght">4 штуки</div>):("")}</div>
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} className='fromLeft'>Переписка</h1><div className="fil_text_blok_kurs_lenght">14 штуки</div></div>
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} className='fromLeft'>Задачи</h1>{toggle===3?(<div className="fil_text_blok_kurs_lenght">24 штуки</div>):("")}</div>
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} className='fromLeft'>Мои подписчики</h1>{toggle===4?(<div className="fil_text_blok_kurs_lenght">24 штуки</div>):("")}</div>
-                </div>
-                <div className="profil_blok_menu_size">
-                    <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
-                    <TiThMenu onClick={() => menuModalClone()} className='profil_blok_menu_clone' />
-                </div>
-                <div className="profil_modal_media">
-                    <h1 onClick={() => updatetoggle(1)} className='fromMenu'>Мои курсы</h1>
-                    <h1 onClick={() => updatetoggle(2)} className='fromMenu'>Переписка</h1>
-                    <h1 onClick={() => updatetoggle(3)} className='fromMenu'>Задачи</h1>
-                    <h1 onClick={() => updatetoggle(4)} className='fromMenu'>Мои подписчики</h1>
-                </div>
-            </div>
-
-            <div className={toggle === 1 ? "show-content" : "content"}><Mentorkurs /></div>
-            <div className={toggle === 2 ? "show-content" : "content"}><Yozishma /></div>
-            <div className={toggle === 3 ? "show-content" : "content"}><Sertifikat /></div>
-            <div className={toggle === 4 ? "show-content" : "content"}><Azo/></div>
-
-    </div>)}
+    </div>
     <Futer />
     </div>
   )
