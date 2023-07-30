@@ -55,7 +55,7 @@ export default function Profil() {
   }
 
   useEffect(()=>{
-  axios.get(`${url}/auth/user/`,{ headers: { 'Authorization': 'Bearer ' + localStorage.getItem("token") }}).then(res=>{
+  axios.get(`${url}/auth/oneuser/`,{ headers: { 'Authorization': 'Bearer ' + localStorage.getItem("token") }}).then(res=>{
     console.log(res.data);
     setData(res.data)
   }).catch((err) => {

@@ -83,7 +83,7 @@ export default function Searchfilter() {
   }
   return (
     <>
-    {loader===1?(
+    {loader===0?(
       <div>
       {state1 === "en" ? (
       <div>
