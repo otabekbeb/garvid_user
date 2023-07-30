@@ -19,6 +19,8 @@
 .kurs_card img {
     width: 100%;
     height: 270px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .No_img {
@@ -65,7 +67,7 @@
     position: relative;
     width: 350px;
     height: auto;
-    border-radius: 4px;
+    border-radius: 5px;
     background: var(--white, #FFF);
     /* blue shadow 2 */
     box-shadow: 0px 4px 20px 0px rgba(1, 102, 144, 0.10);
@@ -149,6 +151,7 @@
     color: black;
     font-size: 18px;
     font-weight: 700;
+    line-height: 25px;
 }
 
 .button_circle {

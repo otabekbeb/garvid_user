@@ -174,7 +174,7 @@ cursor: pointer;
     font-size: 40px;
     border-radius: 50%;
     color: #9DA7BB;
-    background-color: #cfd5e2;
+    background-color: #9DA7BB33;
     cursor: pointer;
   }
   .profil_blok_ikki_icon_ikki{
@@ -182,7 +182,7 @@ cursor: pointer;
     font-size: 40px;
     border-radius: 50%;
     color: #9DA7BB;
-    background-color: #cfd5e2;
+    background-color: #9DA7BB33;
     cursor: pointer;
   }
   .profil_blok_ikki{
@@ -285,7 +285,7 @@ cursor: pointer;
     cursor: pointer;
   }
   .taxrirlash_chad_barchasini p{
-  color: #536DFD;
+  color: #44bef1 !important;
   font-size: 12px;
   display: flex;
   gap: 5px;
@@ -399,7 +399,7 @@ cursor: pointer;
           font-size: 25px;
           border-radius: 50%;
           color: #9DA7BB;
-          background-color: #cfd5e2;
+          background-color: #9DA7BB33;
           cursor: pointer;
         }
         .profil_blok_ikki_icon_bir{
@@ -407,7 +407,7 @@ cursor: pointer;
           font-size: 25px;
           border-radius: 50%;
           color: #9DA7BB;
-          background-color: #cfd5e2;
+          background-color: #9DA7BB33;
           cursor: pointer;
         }
         .profil_blok_ikki_icon{
@@ -545,3 +545,36 @@ cursor: pointer;
     top: 0;
     bottom: 0;
   }
+  .profil_Help_size{
+    transition: 1s;
+    width: 320px;
+    background-color: #fff;
+    box-shadow: 0px 2px 2px 0px;
+    position: fixed;
+    right: -100%;
+    z-index: 999999999999999999999999999999999 !important;
+    top: 0;
+    bottom: 0;
+  }
+  .closei{
+    width: 35px;
+    height: 35px;
+    color:#44bef1 !important;
+    margin-top: 20px;
+  }
+  .closei:hover{
+    cursor: pointer;
+    color: red !important;
+  }
+  .Admin{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+  }
+   .hello_admin{
+    margin-top: 15px;
+   }
+   .number{
+    margin-top: 20px;
+   }
+  

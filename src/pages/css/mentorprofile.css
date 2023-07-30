@@ -180,7 +180,7 @@
       font-size: 40px;
       border-radius: 50%;
       color: #9DA7BB;
-      background-color: #cfd5e2;
+      background-color: #9DA7BB50;
       cursor: pointer;
     }
     .profil_blok_ikki_icon_ikki{
@@ -188,7 +188,7 @@
       font-size: 40px;
       border-radius: 50%;
       color: #9DA7BB;
-      background-color: #cfd5e2;
+      background-color: #9DA7BB33;
       cursor: pointer;
     }
     .profil_blok_ikki{
@@ -402,7 +402,7 @@
             font-size: 25px;
             border-radius: 50%;
             color: #9DA7BB;
-            background-color: #cfd5e2;
+            background-color: #9DA7BB33;
             cursor: pointer;
           }
           .profil_blok_ikki_icon_bir{
@@ -410,7 +410,7 @@
             font-size: 25px;
             border-radius: 50%;
             color: #9DA7BB;
-            background-color: #cfd5e2;
+            background-color: #9DA7BB50;
             cursor: pointer;
           }
           .profil_blok_ikki_icon{

@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react'
 import Use_img from "../img/Ellipse.jpg"
 import icon_img from "../img/start-up.png"
@@ -82,7 +83,7 @@ export default function Profil() {
   //   var formdata=new FormData()
   //   formdata.append("image",document.querySelector("#userInput").value)
 
-  //   axios.put(`${url}/auth/user/`,formdata,{ headers: { 'Authorization': 'Bearer ' + sessionStorage.getItem("token") }}).then(res=>{
+  //   axios.put(${url}/auth/user/,formdata,{ headers: { 'Authorization': 'Bearer ' + sessionStorage.getItem("token") }}).then(res=>{
   //     alert("ishladi")
   //   }).catch(err=>{
   //     alert("ishlamadi")
@@ -92,7 +93,8 @@ export default function Profil() {
   return (
     <div>
 
-      <div className="profil_size_df">
+
+<div className="profil_size_df">
        <div className="profil_size">
         <div className="profil_blok_bir">
           <div onMouseLeave={()=>userimgClose()} className='user_img_size'>
@@ -175,7 +177,9 @@ export default function Profil() {
               <div className="taxrirlash_chad_vaqt">
                 <h1>Jenny Fox</h1><div className='taxrirlash_chad_vaqt_soat'><TbPointFilled className='chad_set'/><p>19:22</p></div>
               </div>
-              <div className="taxrirlash_chad_text">
+
+
+<div className="taxrirlash_chad_text">
                 <p>Lorem ipsum dolor sit.</p>
               </div>
               </div>
