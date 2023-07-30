@@ -534,3 +534,14 @@ cursor: pointer;
     }
   
   }
+  .profil_notifacation_size{
+    transition: 1s;
+    width: 320px;
+    background-color: #fff;
+    box-shadow: 0px 2px 2px 0px;
+    position: fixed;
+    right: -100%;
+    z-index: 999999999999999999999999999999999 !important;
+    top: 0;
+    bottom: 0;
+  }
