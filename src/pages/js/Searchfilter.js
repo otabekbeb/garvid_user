@@ -51,28 +51,28 @@ export default function Searchfilter() {
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
 
-    axios.ger(`${url}`)
+
     setLoader(1)
   }, []);
-  function filter (id) {
-    axios
-    .get(`${url}/api/course`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
-    .then((res) => {
-      const search = res.data.filter(item=>item.course_type===id)
-      setKursdata(search)
-    });
-  }
-  const searchInput = (event) => {
-    const searchRegex = new RegExp(`^${event.target.value}`, "i");
-    axios.get(`${url}/api/course`,{ headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res=>{
-      const searchdata = res.data.filter((item) => {
-        return (
-          searchRegex.test(item.name) 
-        );
-      })
-      setKursdata(searchdata)
-    })
-  }
+  // function filter (id) {
+  //   axios
+  //   .get(`${url}/api/course`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
+  //   .then((res) => {
+  //     const search = res.data.filter(item=>item.course_type===id)
+  //     setKursdata(search)
+  //   });
+  // }
+  // const searchInput = (event) => {
+  //   const searchRegex = new RegExp(`^${event.target.value}`, "i");
+  //   axios.get(`${url}/api/course`,{ headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res=>{
+  //     const searchdata = res.data.filter((item) => {
+  //       return (
+  //         searchRegex.test(item.name) 
+  //       );
+  //     })
+  //     setKursdata(searchdata)
+  //   })
+  // }
   return (
     <>
     {loader===1?(
@@ -82,7 +82,7 @@ export default function Searchfilter() {
         <div className="Filter">
           <div className="blur_blok">
             <div className="inp_blok">
-              <input onChange={searchInput} id="search" type="text" placeholder="Search among my courses" />
+              <input  id="search" type="text" placeholder="Search among my courses" />
               <CiSearch className="search" />
             </div>
             <div className="blur">
@@ -104,13 +104,11 @@ export default function Searchfilter() {
               <div onMouseLeave={()=>filter1()}  className="filter_button">
 
 
-                      {type.map((item2) => {
-                          return (
+
                             <div className="button_filter_kurs">
-                              {item2.name===null?(""):(<div onClick={()=>filter(item2.id)} className="div_kurs">{item2.name}</div>)}
+                              {/* {item2.name===null?(""):(<div onClick={()=>filter(item2.id)} className="div_kurs">{item2.name}</div>)} */}
                             </div>
-                          );
-                      })}
+
                 
               </div>
             </div>
@@ -118,19 +116,18 @@ export default function Searchfilter() {
         </div>
 
         <div className="kurs_cards">
-          {kursdata.map((item) => {
-            return (
-              <div onClick={()=>{window.location="/video";localStorage.setItem("course", item.id)}}  className="kurs_card">
+
+              <div   className="kurs_card">
                 <button className="btn_das">Programming</button>
-                {item.image === null ? (
+                {/* {item.image === null ? (
                   <div className="No_img">
                     <h1>No picture</h1>
                   </div>
-                ) : (
-                  <img src={item.image} />
-                )}
+                ) : ( */}
+                  <img src={Rasp} />
+                {/* // )} */}
                 <div className="kurs_paddaing_auto">
-                  <h4>{item.name}</h4>
+                  <h4>dwadwadwadwwa</h4>
                   <div className="star_card">
                     <i className="star_i">
                       <AiFillStar />
@@ -154,25 +151,20 @@ export default function Searchfilter() {
                   <div className="hajm">
                     <h5>
                       <p>Course size</p>
-                      {item.planned_time}
+                      2122
                     </h5>
                     <h5>
                       <p>Course price</p>
-                      {item.price}
+                      1232313
                     </h5>
                   </div>
                 </div>
                 <button className="button_circle">
                   <AiOutlineArrowRight
-                    onClick={() => {
-                      window.location = "/video";
-                      localStorage.setItem("course", item.id)
-                    }}
                   />
                 </button>
               </div>
-            );
-          })}
+
         </div>
 
         {/* SPISKA */}

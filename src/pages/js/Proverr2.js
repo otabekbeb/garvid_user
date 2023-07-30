@@ -119,7 +119,7 @@ export default function Proverr2() {
 
                         <div className="prover2-mni-search">
                             <form action="">
-                                <input onChange={searchFilter} type="text" placeholder='Какой курс вы хотите изучать?' required /><button><box-icon name='search' color='#9da7bb' ></box-icon></button>
+                                <input  type="text" placeholder='Какой курс вы хотите изучать?' required /><button><box-icon name='search' color='#9da7bb' ></box-icon></button>
                             </form>
                             <div className="prover2-info-d"><div className="prover2-info-filter">
                                 <button onClick={() => typeFilterAll()} className='prover2-but-clas'><p>#Barchasi</p></button>
@@ -155,8 +155,8 @@ export default function Proverr2() {
 
                     {/* <iframe width="560" height="315" src={item.image} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>     */}
                     <div className="prover2-orta-joy-text">
-                        <img src={item.image} alt="" />
-                        <h5>{item.name}</h5>
+                        {/* <img src={item.image} alt="" /> */}
+                        <h5>fsefsf</h5>
                         <div className="rating">
                             <input type="radio" id="star5" name="rate" value="5" />
                             <label for="star5" title="text"></label>
@@ -180,10 +180,10 @@ export default function Proverr2() {
                     </div>
                     <div className="prover2-profil-patpis">
                         <div className="prover2-profil-img">
-                            <img src={item.author.image} alt="" />
+                            {/* <img src={item.author.image} alt="" /> */}
                         </div>
                         <div className="prover2-profil-text-info">
-                            <p>{item.author.username}</p> <button onClick={() => button()} className="potpis"><p className="aa">Подписаться</p><p className="aaa">Отменить подписку</p></button>
+                            <p>fsefsffsfe</p> <button onClick={() => button()} className="potpis"><p className="aa">Подписаться</p><p className="aaa">Отменить подписку</p></button>
                         </div>
                         {/* <div className="obmen-kategory-re">
                         <h5>URL-адрес курса:</h5>
@@ -294,8 +294,8 @@ export default function Proverr2() {
                             <div className="faq-item">
                                 <input type="checkbox" className="faq-input" name="faq" id="faq_1" />
                                 <div className="faq-div">
-                                    <label htmlFor="faq_1" className="faq-title">{1 + key}.{item.name == null ? (<>Name</>) : (<>{item.name}</>)}</label>
-                                    <p>{item.content}</p>
+                                    <label htmlFor="faq_1" className="faq-title">fawdad</label>
+                                    <p>efssef</p>
 
                                 </div>
 
@@ -519,7 +519,7 @@ export default function Proverr2() {
                                 <div className="mni-gridf2">
                                     <img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg" alt="" />
                                     <img src="https://bronk.club/uploads/posts/2023-02/1676935060_bronk-club-p-otkritki-prirodi-ochen-krasivie-krasivo-39.jpg" alt="" />
-                                    <img src="https://funart.pro/uploads/posts/2021-03/thumbs/1617041574_9-p-oboi-krasivie-foto-prirodi-11.jpg" alt="" />
+                                    <img src="http{1 + 1}.{item.name == null ? (<>Name</>) : (<>{item.name}</>)}s://funart.pro/uploads/posts/2021-03/thumbs/1617041574_9-p-oboi-krasivie-foto-prirodi-11.jpg" alt="" />
                                     <img src="https://cdn.forbes.ru/forbes-static/c/1040x549/new/2023/04/1GettyImages-183930658-kopia-643018c796355.webp" alt="" />
 
                                 </div>

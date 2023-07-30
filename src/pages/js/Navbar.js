@@ -98,16 +98,7 @@ export default function Navbar() {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
-    if (localStorage.getItem("lang") !== "ru") {
-      document.querySelector("#checkbox").checked = true;
-    } else {
-      document.querySelector("#checkbox").checked = false;
-    }
-    if (localStorage.getItem("lang") !== "ru") {
-      document.querySelector("#checkbox2").checked = true;
-    } else {
-      document.querySelector("#checkbox2").checked = false;
-    }
+
 
     axios.get(`${url}/auth/oneuser`, { headers: { "Authorization":  "Bearer " + localStorage.getItem("token") } }).then(res => {
       setUser(res.data)
@@ -119,7 +110,7 @@ export default function Navbar() {
 
   return (
     <div>
-      {state1 === "en" ? (
+
         <div>
           <section onMouseLeave={() => menuul1()} className="navbar">
 
@@ -192,11 +183,12 @@ export default function Navbar() {
                 </li>
 
 
-                {user.map(item=>{
-                   return <li>
-                      {localStorage.getItem("token") ? (<a href="/user">{item.username}</a>) : (<a href="/login" className="tt">Log in</a>)}
+                
+                   <li>
+                      {localStorage.getItem("token") ? (user.map(item=>{return<a href="/user">{item.username}</a> })) : (<a href="/login" className="tt">Log in</a>)}
                     </li>
-                      })}
+                      
+                      
               </ul>
               <div id="google_translate_element"></div>
             </div>
@@ -293,11 +285,11 @@ export default function Navbar() {
                         </a>
                       </li>
                       {/* <li><a href="/teacher" className='tt'>Teacher</a></li> */}
-                      {user.map(item=>{
-                  return  <li>
-                      {localStorage.getItem("token") ? (<a href="/user">{item.username}</a>) : (<a href="/login" className="tt">Log in</a>)}
+
+                    <li>
+                      {localStorage.getItem("token") ? (user.map(item=>{return<a href="/user">{item.username}</a> })) : (<a href="/login" className="tt">Log in</a>)}
                     </li>
-                      })}
+
 
 
 <div id="google_translate_element"></div>
@@ -308,225 +300,7 @@ export default function Navbar() {
             </div>
           </section>
         </div>
-      ) : (
-        <div>
-          <section onMouseLeave={() => menuul1()} className="navbar">
-            <div className="navbar-ul">
-              <ul>
-                <li className="moto-menu-item">
-                  <a href="/">Главный</a>
-                </li>
 
-                <div className="menu" onMouseLeave={() => menuufolse()}>
-                  <div className="menuu" onMouseEnter={() => menuul()}>
-                    <p>
-                      <a href="/about">О нас</a>
-                      <span>
-                        <box-icon
-                          name="chevron-down"
-                          color="#44bef1"
-                        ></box-icon>
-                      </span>
-                    </p>
-                    <ul onMouseLeave={() => menuul1()}>
-                      <li>
-                        <a href="#">FAQs</a>
-                      </li>
-                      <div className="navbbar-line-hr"></div>
-
-                      <div className="menu2">
-                        <p onClick={()=> window.location="/news"}
-                          onMouseEnter={() => menu2ul()}
-                          onMouseLeave={() => menu2leave()}
-                        >
-                          {" "}
-                          <a href="/news" className="zaib">
-                            Новости{" "}
-                            <span>
-                              <box-icon
-                                name="chevron-right"
-                                color="#44bef1"
-                              ></box-icon>
-                            </span>
-                          </a>{" "}
-                        </p>
-                        <div className="navbbar-line-hr"></div>
-
-                        <ul
-                          onMouseEnter={() => menu2ul()}
-                          onMouseLeave={() => menu2leave1()}
-                          className="blog1"
-                        >
-                          <div className="navbbar-line-hr1"></div>
-
-                          <li id="ded">
-                            <a id="contactcolor" href="/contacts">
-                              {state1 === "en" ? "Contact1" : "Связь"}{" "}
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </ul>
-                  </div>
-                </div>
-
-
-<li className="moto-menu-item">
-                  {" "}
-                  <a href="/servis">Услуги</a>{" "}
-                </li>
-                <li className="moto-menu-item">
-                  <a href="/blog">Блог</a>
-                </li>
-                <li className="moto-menu-item">
-                  <a href="/ourteam">Наша команда</a>
-                </li>
-                <li className="moto-menu-item">
-                  <a href="/contacts">Связь</a>
-                </li>
-                {/* <li className='moto-menu-item'><a href="/teacher" >Учитель</a></li> */}
-                {user.map(item=>{
-                  return  <li>
-                      {localStorage.getItem("token") ? (<a href="/user">{item.username}</a>) : (<a href="/login" className="tt">Регистрация</a>)}
-                    </li>
-                      })}
-              </ul>
-              <div class="checkbox-con" >
-                <input
-                  id="checkbox"
-                  onClick={() => {
-                    !document.querySelector("#checkbox").checked
-                      ? localStorage.setItem("lang", "ru")
-                      : localStorage.setItem("lang", "en");
-                    window.location.reload();
-                  }}
-                  type="checkbox"
-                />
-              </div>
-            </div>
-            <div className="media-navbar" style={{margin:"auto",width:'100%'}}>
-              <div style={{width:'100%'}} className="navbar-menu">
-                <div className="navbar-mediao-barr" onClick={() => sa()}>
-                  <div className="bar-menu" id="sa">
-                    <div className="wone"></div>
-                    <div className="wone1"></div>
-                    <div className="wone2"></div>
-                  </div>
-                </div>
-
-                {/* onMouseLeave={()=>aboutClose2()}  */}
-                <div  className="media-ul">
-                  <div className="dfdf">
-                    <ul>
-                      <li onClick={()=> window.location="/"}>
-                        <a href="/" className="tt">
-                          Главный
-                        </a>
-                      </li>
-                      <div
-                        className="media-kategory"
-                        onMouseLeave={() => aboutClose2()}
-                      >
-                        <div
-                          className="ichi"
-                          onMouseEnter={() => about2()}
-                          onClick={() => meded()}
-                        >
-                          <li>
-                            <a href="/about" className="tt">
-                              О нас
-                            </a>
-                          </li>{" "}
-                          <span id="sdfdsfsd">
-                            <box-icon
-                              name="chevron-down"
-                              color="black"
-                            ></box-icon>
-                          </span>
-                        </div>
-                      </div>
-                      <div className="ffd">
-                        <ul className="ffdul">
-                          <li className="ds">
-                            <a href="#">Архивы</a>
-                          </li>
-
-
-<div className="ichi2" onClick={() => ochil1()}>
-                            <li onClick={()=> window.location="/news"} className="ds">
-                              <a href="/news">Новости</a>
-                            </li>
-                            <span>
-                              <box-icon
-                                name="chevron-down"
-                                color="#989da2"
-                              ></box-icon>
-                            </span>
-                          </div>
-                          <div className="lll">
-                            <ul>
-                              <li className="lll1">
-                                <a href="/blog">Блог</a>
-                              </li>
-                              <li className="lll2">
-                                <a href="/contacts">Контакты</a>
-                              </li>
-                            </ul>
-                          </div>
-
-
-                          <li className="ds">
-                            <a href="#">FAQs</a>
-                          </li>
-                        </ul>
-                      </div>
-                      <li>
-                        <a href="/servis" className="tt">
-                          Услуги
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="/blog" className="tt">
-                          Блог
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/ourteam" className="tt">
-                          Наша команда
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/contacts" className="tt">
-                          Связь
-                        </a>
-                      </li>
-                      {/* <li><a href="/teacher" className='tt'>Учитель</a></li> */}
-                      {user.map(item=>{
-                   return <li>
-                      {localStorage.getItem("token") ? (<a href="/user">{item.username}</a>) : (<a href="/login" className="tt">Регистрация</a>)}
-                    </li>
-                      })}
-                      <div class="checkbox-con" style={{ marginTop: "15px" }}>
-                        <input
-                          id="checkbox2"
-                          onClick={() => {
-                            !document.querySelector("#checkbox2").checked
-                              ? localStorage.setItem("lang", "ru")
-                              : localStorage.setItem("lang", "en");
-                            window.location.reload();
-                          }}
-                          type="checkbox"
-                        />
-                      </div>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      )}
 
       <div
         className="div1"

@@ -74,7 +74,7 @@ function dashed_nazat(){
   useEffect(() => {
     
     document.querySelector(".filter_button").style="display:none"
-    axios
+
 
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
@@ -108,40 +108,29 @@ function dashed_nazat(){
                 </div> */}
               </div>
               <div onMouseLeave={()=>filter1()}  className="filter_button">
-                {kursdata.map((item1) => {
-                  return (
-                    <>
-                      {type.map((item2) => {
-                        if (item1.course_type === item2.id) {
-                          return (
+
                             <div className="button_filter_kurs">
-                              <div className="div_kurs">{item2.name}</div>
+                              <div className="div_kurs">dawdawdd</div>
                             </div>
-                          );
-                        }
-                      })}
-                    </>
-                  );
-                })}
+
               </div>
             </div>
           </div>
         </div>
 
         <div className="kurs_cards">
-          {kursdata.map((item) => {
-            return (
+
               <div className="kurs_card">
                 <button className="btn_das">Dasturlash</button>
-                {item.image === null ? (
+                {/* {item.image === null ? (
                   <div className="No_img">
                     <h1>no picture</h1>
                   </div>
                 ) : (
                   <img src={item.image} />
-                )}
+                )} */}
                 <div className="kurs_paddaing_auto">
-                  <h4>{item.name}</h4>
+                  <h4>dawda</h4>
                   <div className="star_card">
                     <i className="star_i">
                       <AiFillStar />
@@ -165,11 +154,11 @@ function dashed_nazat(){
                   <div className="hajm">
                     <h5>
                       <p>Kurs hajmi</p>
-                      {item.planned_time}
+                     dawadad
                     </h5>
                     <h5>
                       <p>Kurs narxi</p>
-                      {item.price}
+                     dwadad
                     </h5>
                   </div>
                 </div>
@@ -224,15 +213,14 @@ function dashed_nazat(){
                   </div>
                 <button className="button_circle">
                   <AiOutlineArrowRight
-                    onClick={() => {
-                      window.location = "/video";
-                      localStorage.setItem("course", item.id)
-                    }}
+                    // onClick={() => {
+                    //   window.location = "/video";
+                    //   localStorage.setItem("course", item.id)
+                    // }}
                   />
                 </button>
               </div>
-            );
-          })}
+
           <div className="dashed" onClick={() => dashed()}>
               <i><AiOutlinePlus/></i>
           </div>

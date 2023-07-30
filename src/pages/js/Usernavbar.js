@@ -91,16 +91,6 @@ export default function Navbar() {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
-    if (localStorage.getItem("lang") !== "ru") {
-      document.querySelector("#checkbox").checked = true;
-    } else {
-      document.querySelector("#checkbox").checked = false;
-    }
-    if (localStorage.getItem("lang") !== "ru") {
-      document.querySelector("#checkbox2").checked = true;
-    } else {
-      document.querySelector("#checkbox2").checked = false;
-    }
 
 
     
