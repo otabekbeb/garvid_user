@@ -22,10 +22,10 @@ import axios from 'axios'
 import url from './Host'
 export default function Mentor() {
   const [state1, setState1] = React.useState();
-  const [studets, setstudents] = React.useState();
+  const [students, setStudents] = React.useState([]);
   useEffect(() => {
     axios.get(`${url}/auth/oneuser`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
-      setstudents(res.data)
+      setStudents(res.data)
       console.log(res.data,"aa");
     })
   }, [])
@@ -83,36 +83,42 @@ export default function Mentor() {
         <div>
       <div className="profil_size_df">
        <div className="profil_size">
+        {students.map(item=>{
+          return(
         <div className="profil_blok_bir1">
           <div onMouseLeave={()=>userimgClose()} className='user_img_size'>
-          <img onMouseEnter={()=>userimgModal()} className='user_img' src={Use_img} alt="" />
+          <img onMouseEnter={()=>userimgModal()} className='user_img' src={item.image} alt="" />
            <div className="user_img_hover">
             <input type="file" />
           <MdOutlinePhotoCamera  className='user_hover_photo_icon'/>
         </div>
         </div>
-        {setstudents.map(item=>{
-          return(
+        
             <div className="blok_bir_text_mentor1">
             <h1>{item.username}</h1>
             <p>Java Tutor, Python</p>
             <button>Mentor1</button>
            </div>
-          )
-        })}
+          
            
-        </div>
+        </div>)
+        })}
         
         <div className="profil_blok_ikki">
-          <div className="profil_blok_ikki_text">
+          {students.map(item=>{
+          return(
+<div className="profil_blok_ikki_text">
           <p>Current balance</p>
           <div className="profil_blok_ikki_sum1">
-            <h1>1 350 000</h1><p>UZS</p>
+            <h1>{item.balance}</h1><p>UZS</p>
           </div>
           <div className="profil_blok_ikki_button">
             <button><BsActivity/></button><button>Balance replenishment</button>
           </div>
           </div>
+          )
+        })}
+          
           <div onMouseLeave={()=>taxrirlashClose()} className="profil_blok_ikki_icon">
           <BsFillBellFill onMouseEnter={()=>taxrirlashChadModal()} className='profil_blok_ikki_icon_bir' />
           <BsThreeDots  onMouseEnter={()=>taxrirlashModal()} className='profil_blok_ikki_icon_ikki' />
