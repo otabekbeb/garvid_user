@@ -153,7 +153,7 @@ export default function Proverr2() {
                 </div>
                 <div className="prover2-orta-joy">
 
-                    {/* <iframe width="560" height="315" src={item.image} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>     */}
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/zhu0zu7O4XI?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>   
                     <div className="prover2-orta-joy-text">
                         {/* <img src={item.image} alt="" /> */}
                         <h5>fsefsf</h5>
@@ -309,8 +309,9 @@ export default function Proverr2() {
                             </div>
                         </div>
                     </div>
-
-                        <div className="prover2-oxiri-joy">
+                    </div>
+                    </div>
+                    <div className="prover2-oxiri-joy">
                             <div className="prover2-oxiri-block-in">
                                 <div className="mni-dasturlash-bloc"><p>Программирование</p></div>
                                 <div className="mni-kurs-narxi">
@@ -380,9 +381,6 @@ export default function Proverr2() {
                                     </div>
                                 </div>
                             </div>
-
-                        </div>
-
 
                     </div>
                     <div className="mni-orta-bloxk-mediaa">
@@ -526,9 +524,8 @@ export default function Proverr2() {
                             </div>
                         </div>
                     </div>
-                    <Futer />
                 </div>
             </div>
-        </div>
+
     )
 }
