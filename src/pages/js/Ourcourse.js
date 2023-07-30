@@ -19,6 +19,7 @@ import url from './Host';
 
 export default function Ourcourse() {
   const [main,setMain]=useState([])
+  const [kursdata, setKursdata] = useState([]);
 
     function filter() {
         document.querySelector(".filter_card").classList.toggle("togl");
@@ -36,7 +37,12 @@ export default function Ourcourse() {
     }
     
     useEffect(()=>{
-
+      axios.get(`${url}/api/course`, {headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+        setKursdata(res.data)
+        console.log(res.data);
+      }).catch(err=>{
+        console.log(err);
+      })
 
     },[])
 
@@ -141,11 +147,15 @@ types</h5>
 
 
                 <div className="filter_kurs">
-
-                  <div className="filter_course" >
-                  <img src={Anime} alt="" />
+        {kursdata.map(item=>{
+          return(
+               <div onClick={()=>{window.location="/proverr2";localStorage.setItem("courseid",item.id)}} className="filter_course" >
+                 {item.image === null ? 
+                 ( <img src={Anime} alt="" />)
+                 :
+                 (<img src={item.image} />)}
                   <div className="filter_card_padding">
-                    <h4>akbar</h4>
+                    <h4> {item.name}</h4>
                     <div className="star_card">
                       <i className="star_i">
                         <AiFillStar />
@@ -169,19 +179,22 @@ types</h5>
                     <div className="hajm">
                       <h5>
                         <p>Course size</p>
-                        <h5>1111</h5>
+                        <h5>{item.planned_time}h</h5>
                       </h5>
                       <h5>
                         <p>Course price</p>
-                        <h5>1212</h5>
+                        <h5> {item.price}$</h5>
                       </h5>
                     </div>
                   </div>
                   
                   <button className="button_circle">
-                    <AiOutlineArrowRight />
+                    <AiOutlineArrowRight onClick={()=>{window.location="/proverr2";localStorage.setItem("courseid",item.id)}} />
                   </button>
                 </div>
+          )
+        })}
+               
 
 
 

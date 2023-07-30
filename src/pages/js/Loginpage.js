@@ -68,14 +68,14 @@ export default function Loginpage() {
     );
     formdata.append("birthday", document.querySelector("#birthday").value);
     formdata.append("balance", 100000);
-    formdata.append("adress", document.querySelector("#adress").value);
+    formdata.append("address", document.querySelector("#adress").value);
     formdata.append(
       "description",
       document.querySelector("#description").value
     );
 
     axios
-      .put(`${url}/auth/oneuser/`, formdata, {
+      .put(`${url}/auth/users`, formdata, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
@@ -102,14 +102,15 @@ export default function Loginpage() {
       document.querySelector("#adress").value = res.data.adress;
       document.querySelector("#description").value = res.data.description;
       setUser(res.data);
-        document.querySelector("#first_name").value = res.data.first_name;
-        document.querySelector("#last_name").value = res.data.last_name;
-        document.querySelector("#username").value = res.data.username;
-        document.querySelector("#phone_number").value = res.data.phone_number;
-        document.querySelector("#birthday").value = res.data.birthday;
-        document.querySelector("#adress").value = res.data.adress;
-        document.querySelector("#description").value = res.data.description;
-
+      user.map(item=>{
+        document.querySelector("#first_name").value = item.first_name;
+        document.querySelector("#last_name").value = item.last_name;
+        document.querySelector("#username").value = item.username;
+        document.querySelector("#phone_number").value = item.phone_number;
+        document.querySelector("#birthday").value = item.birthday;
+        document.querySelector("#adress").value = item.adress;
+        document.querySelector("#description").value = item.description;
+      }) 
     });
     setData(1);
   }

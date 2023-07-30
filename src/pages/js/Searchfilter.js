@@ -61,7 +61,7 @@ export default function Searchfilter() {
     }).catch(err=>{
       alert("err")
     })
-        axios.get(`${url}/api/course`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+        axios.get(`${url}/api/course`, {headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
           setKursdata(res.data)
           console.log(res.data);
         }).catch(err=>{
@@ -73,25 +73,26 @@ export default function Searchfilter() {
   }, []);
 
   
-  // function filter (id) {
-  //   axios
-  //   .get(`${url}/api/course`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
-  //   .then((res) => {
-  //     const search = res.data.filter(item=>item.course_type===id)
-  //     setKursdata(search)
-  //   });
-  // }
-  // const searchInput = (event) => {
-  //   const searchRegex = new RegExp(`^${event.target.value}`, "i");
-  //   axios.get(`${url}/api/course`,{ headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } }).then(res=>{
-  //     const searchdata = res.data.filter((item) => {
-  //       return (
-  //         searchRegex.test(item.name) 
-  //       );
-  //     })
-  //     setKursdata(searchdata)
-  //   })
-  // }
+  function filter (id) {
+    axios
+    .get(`${url}/api/course`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}})
+    .then((res) => {
+      const search = res.data.filter(item=>item.course_type===id)
+      setKursdata(search)
+    });
+  }
+  const searchInput = (event) => {
+    const searchRegex = new RegExp(`^${event.target.value}`, "i");
+    axios.get(`${url}/api/course`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+      const searchdata = res.data.filter((item) => {
+        return (
+          searchRegex.test(item.name) 
+        );
+      })
+      setKursdata(searchdata)
+    })
+
+  }
   return (
     <>
     {loader===1?(
@@ -101,7 +102,7 @@ export default function Searchfilter() {
         <div className="Filter">
           <div className="blur_blok">
             <div className="inp_blok">
-              <input  id="search" type="text" placeholder="Search among my courses" />
+              <input onChange={searchInput} id="search" type="text" placeholder="Search among my courses" />
               <CiSearch className="search" />
             </div>
             <div className="blur">
@@ -126,7 +127,7 @@ export default function Searchfilter() {
 {courstype.map(item=>{
   return(
     <div className="button_filter_kurs">
-    {item.name===null?(""):(<div  className="div_kurs">{item.name}</div>)}
+    {item.name===null?(""):(<div onClick={()=>filter(item.id)} className="div_kurs">{item.name}</div>)}
   </div>
   )
 })}
@@ -136,11 +137,10 @@ export default function Searchfilter() {
               </div>
             </div>
           </div>
-        </div>
+        </div><div className="kurs_cards">
           {kursdata.map(item=>{
-            return  <div className="kurs_cards">
-
-              <div   className="kurs_card">
+            return(  
+            <div   className="kurs_card">
                 <button className="btn_das">Programming</button>
                 {item.image === null ? (
                  <img src={img_for_null} alt="" />
@@ -185,9 +185,10 @@ export default function Searchfilter() {
                   />
                 </button>
               </div>
-
-        </div>
+)
+        
           })}
+          </div>
        
 
         {/* SPISKA */}

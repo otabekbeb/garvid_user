@@ -79,14 +79,19 @@ export default function Proverr2() {
     const [subcategory, setSubcategory] = useState([])
     const [theme, setTheme] = useState([])
 
+
     function okurse(id) {
         setToggle(id)
 
     }
 
     useEffect(() => {
-
-
+        axios.get(`${url}/api/cours_types`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+                console.log(res.data);
+                setType(res.data)
+            }).catche(err => {
+                alert("problem")
+            })
     }, [])
     function typeFilter(id) {
 
@@ -119,13 +124,19 @@ export default function Proverr2() {
 
                         <div className="prover2-mni-search">
                             <form action="">
-                                <input  type="text" placeholder='Какой курс вы хотите изучать?' required /><button><box-icon name='search' color='#9da7bb' ></box-icon></button>
+                                <input type="text" placeholder='Какой курс вы хотите изучать?' required /><button><box-icon name='search' color='#9da7bb' ></box-icon></button>
                             </form>
                             <div className="prover2-info-d"><div className="prover2-info-filter">
+                               
                                 <button onClick={() => typeFilterAll()} className='prover2-but-clas'><p>#Barchasi</p></button>
 
-
-                                {/* {item.name==null?(""):(<button onClick={()=>typeFilter(item.id)} className='prover2-but-clas'><p>#{item.name}</p></button>)} */}
+                                {type.map(item=>{
+                                    return(
+                                        <>
+   {item.name==null?(""):(<button onClick={()=>typeFilter(item.id)} className='prover2-but-clas'><p>#{item.name}</p></button>)}                                       
+   </> )
+                                })}
+                               
 
                             </div></div>
 
@@ -153,7 +164,7 @@ export default function Proverr2() {
                 </div>
                 <div className="prover2-orta-joy">
 
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/zhu0zu7O4XI?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>   
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/zhu0zu7O4XI?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     <div className="prover2-orta-joy-text">
                         {/* <img src={item.image} alt="" /> */}
                         <h5>fsefsf</h5>
@@ -310,21 +321,21 @@ export default function Proverr2() {
                         </div>
                     </div>
                     </div>
-                    </div>
-                    <div className="prover2-oxiri-joy">
-                            <div className="prover2-oxiri-block-in">
-                                <div className="mni-dasturlash-bloc"><p>Программирование</p></div>
-                                <div className="mni-kurs-narxi">
-                                    <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
-                                        <p>13213231<span>RUB</span></p></div>
-                                    <div className="mni-kurs-block2"></div>
+                </div>
+                <div className="prover2-oxiri-joy">
+                    <div className="prover2-oxiri-block-in">
+                        <div className="mni-dasturlash-bloc"><p>Программирование</p></div>
+                        <div className="mni-kurs-narxi">
+                            <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
+                                <p>13213231<span>RUB</span></p></div>
+                            <div className="mni-kurs-block2"></div>
 
-                                    <div className="mni-kurs-block1"><h5>Kurs hajmi</h5>
-                                        <p>2132 soat</p></div>
-                                    <div className="mni-kurs-block2"></div>
-                                </div>
-                                <p className="spdfodsofdsf">efaez</p>
-                                {/* <div className="prover2-oxiri-total-kurss"onMouseLeave={()=>aboutClose123122()}  >
+                            <div className="mni-kurs-block1"><h5>Kurs hajmi</h5>
+                                <p>2132 soat</p></div>
+                            <div className="mni-kurs-block2"></div>
+                        </div>
+                        <p className="spdfodsofdsf">efaez</p>
+                        {/* <div className="prover2-oxiri-total-kurss"onMouseLeave={()=>aboutClose123122()}  >
 <div className="prover20chech-box-a" onMouseEnter={()=>about2222()} onClick={()=>akkordion()} >
     <input type="checkbox"/>
     <p>Введение в процесс программирования и установки</p>
@@ -340,7 +351,7 @@ export default function Proverr2() {
                 <div className="mni-kurs-block2"></div>
             </div>
 </div> */}
-                                {/* <div className="mni-accordion-none1">
+                        {/* <div className="mni-accordion-none1">
     <div className="prover20chech-box-a2">
         <input type="checkbox" />
         <p>Работа с простыми операциями в программе</p>
@@ -352,97 +363,97 @@ export default function Proverr2() {
         <span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
     </div>
 </div> */}
-                                <div className="mni-buton-iikki-yo">
-                                    <button id="gbfdgfdgdfgdf">Покупка</button><div className="line-mni-but"></div><button >213312 сум</button>
-                                </div>
-
-                            </div>
-                            <div className="mni-krus-techer-swiper">
-                                <div className="boshqa-mentorla">
-                                    <h5>Boshqa Mentorlar</h5>
-                                    <div className="boshqa-mentorla-krugg1">
-                                        <div className="boshqa-kurglaaaaa1" onClick={() => onga()}><box-icon name='right-arrow-alt' color='#536dfd' ></box-icon></div>
-                                    </div>
-                                </div>
-                                <div className="mni-swiper-grid">
-                                    <div className="mni-gridf1">
-                                        <img src={munbay} alt="" />
-                                        <img src={iteen} alt="" />
-                                        <img src={munbay} alt="" />
-                                        <img src={iteen} alt="" />
-                                    </div>
-
-                                    <div className="mni-gridf2">
-                                        <img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg" alt="" />
-                                        <img src="https://bronk.club/uploads/posts/2023-02/1676935060_bronk-club-p-otkritki-prirodi-ochen-krasivie-krasivo-39.jpg" alt="" />
-                                        <img src="https://funart.pro/uploads/posts/2021-03/thumbs/1617041574_9-p-oboi-krasivie-foto-prirodi-11.jpg" alt="" />
-                                        <img src="https://cdn.forbes.ru/forbes-static/c/1040x549/new/2023/04/1GettyImages-183930658-kopia-643018c796355.webp" alt="" />
-
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="mni-buton-iikki-yo">
+                            <button id="gbfdgfdgdfgdf">Покупка</button><div className="line-mni-but"></div><button >213312 сум</button>
+                        </div>
 
                     </div>
-                    <div className="mni-orta-bloxk-mediaa">
-                        <div className="mni-orta-kota-media">
-                            <div className="mni-media-orta-input">
-                                <form action="">
-                                    <input type="text" placeholder='Какой курс вы хотите изучать?' required /><button id="input-neposhlushni"><box-icon name='search' color='#9da7bb' ></box-icon></button>
-                                </form>
+                    <div className="mni-krus-techer-swiper">
+                        <div className="boshqa-mentorla">
+                            <h5>Boshqa Mentorlar</h5>
+                            <div className="boshqa-mentorla-krugg1">
+                                <div className="boshqa-kurglaaaaa1" onClick={() => onga()}><box-icon name='right-arrow-alt' color='#536dfd' ></box-icon></div>
                             </div>
-                            <p className="pddppdsd"></p>
-                            <p className="pddppdsd"></p>
-
-                            <div className="mni-media-orta-filter">
-                                <box-icon name='chevron-down' color='#c5c9d3' ></box-icon>
-                            </div>
-
                         </div>
-                        <div className="prover3-search-joy">
-                            <div className="prover3-mni-search">
-                                <div className="prover2-info-d"><div className="prover2-info-filter">
-                                    <button onClick={() => typeFilterAll()} className='prover2-but-clas'><p>#Barchasi</p></button>
+                        <div className="mni-swiper-grid">
+                            <div className="mni-gridf1">
+                                <img src={munbay} alt="" />
+                                <img src={iteen} alt="" />
+                                <img src={munbay} alt="" />
+                                <img src={iteen} alt="" />
+                            </div>
+
+                            <div className="mni-gridf2">
+                                <img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg" alt="" />
+                                <img src="https://bronk.club/uploads/posts/2023-02/1676935060_bronk-club-p-otkritki-prirodi-ochen-krasivie-krasivo-39.jpg" alt="" />
+                                <img src="https://funart.pro/uploads/posts/2021-03/thumbs/1617041574_9-p-oboi-krasivie-foto-prirodi-11.jpg" alt="" />
+                                <img src="https://cdn.forbes.ru/forbes-static/c/1040x549/new/2023/04/1GettyImages-183930658-kopia-643018c796355.webp" alt="" />
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div className="mni-orta-bloxk-mediaa">
+                    <div className="mni-orta-kota-media">
+                        <div className="mni-media-orta-input">
+                            <form action="">
+                                <input type="text" placeholder='Какой курс вы хотите изучать?' required /><button id="input-neposhlushni"><box-icon name='search' color='#9da7bb' ></box-icon></button>
+                            </form>
+                        </div>
+                        <p className="pddppdsd"></p>
+                        <p className="pddppdsd"></p>
+
+                        <div className="mni-media-orta-filter">
+                            <box-icon name='chevron-down' color='#c5c9d3' ></box-icon>
+                        </div>
+
+                    </div>
+                    <div className="prover3-search-joy">
+                        <div className="prover3-mni-search">
+                            <div className="prover2-info-d"><div className="prover2-info-filter">
+                                <button onClick={() => typeFilterAll()} className='prover2-but-clas'><p>#Barchasi</p></button>
 
 
-                                    <button onClick={() => typeFilter()} className='prover2-but-clas'><p>#seffs</p></button>
-                                </div>
-                                    <div className="prover2-info-youtube-f">
-                                        <p className='prover2-p-df'>Программирование</p>
+                                <button onClick={() => typeFilter()} className='prover2-but-clas'><p>#seffs</p></button>
+                            </div>
+                                <div className="prover2-info-youtube-f">
+                                    <p className='prover2-p-df'>Программирование</p>
 
-                                        <div className="prover2-info-block1">
-                                            <div className="prover2-info-block1-img">
-                                                {/* <img src={item.image} alt="" /> */}
-                                            </div>
-                                            <div className="prover2-info-block1-text">
-                                                <h5>awdwad</h5>
-                                                <p>rgsgrs</p>
-                                            </div>
+                                    <div className="prover2-info-block1">
+                                        <div className="prover2-info-block1-img">
+                                            {/* <img src={item.image} alt="" /> */}
                                         </div>
-                                        <div className="prover2-linerr1"></div>
-
+                                        <div className="prover2-info-block1-text">
+                                            <h5>awdwad</h5>
+                                            <p>rgsgrs</p>
+                                        </div>
                                     </div>
+                                    <div className="prover2-linerr1"></div>
 
                                 </div>
+
                             </div>
                         </div>
                     </div>
-                    <div className="mni-grid-pas-media">
+                </div>
+                <div className="mni-grid-pas-media">
 
-                        <div className="prover2-oxiri-block-in">
-                            <div className="mni-dasturlash-bloc"><p>Программирование</p></div>
-                            <div className="mni-kurs-narxi">
-                                <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
-                                    <p>waddwa <span>RUB</span></p></div>
-                                <div className="mni-kurs-block2"></div>
+                    <div className="prover2-oxiri-block-in">
+                        <div className="mni-dasturlash-bloc"><p>Программирование</p></div>
+                        <div className="mni-kurs-narxi">
+                            <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
+                                <p>waddwa <span>RUB</span></p></div>
+                            <div className="mni-kurs-block2"></div>
 
-                                <div className="mni-kurs-block1"><h5>Kurs hajmi</h5>
-                                    <p>adadw soat</p></div>
-                                <div className="mni-kurs-block2"></div>
-                            </div>
-                            <p className="spdfodsofdsf">dawdw</p>
-                            {/* <div className="mni-blocc-linee"></div> */}
+                            <div className="mni-kurs-block1"><h5>Kurs hajmi</h5>
+                                <p>adadw soat</p></div>
+                            <div className="mni-kurs-block2"></div>
+                        </div>
+                        <p className="spdfodsofdsf">dawdw</p>
+                        {/* <div className="mni-blocc-linee"></div> */}
 
-                            {/* <div className="prover2-oxiri-total-kurss"onMouseLeave={()=>aboutClose123122()}  >
+                        {/* <div className="prover2-oxiri-total-kurss"onMouseLeave={()=>aboutClose123122()}  >
 <div className="prover20chech-box-a" onMouseEnter={()=>about2222()} onClick={()=>akkordion()} >
     <input type="checkbox"/>
     <p>Введение в процесс программирования и установки</p>
@@ -470,62 +481,62 @@ export default function Proverr2() {
         <span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
     </div>
 </div> */}
-                            <div className="mni-buton-iikki-yo">
-                                <button id="gbfdgfdgdfgdf">Покупка</button>
-                                <div className="line-mni-but"></div>
-                                <button >dwawdaсум</button>
-                            </div>
-
-                        </div>
-                        <div className="mni-krus-techer-swiper">
-                            <div className="boshqa-mentorla">
-                                <h5>Boshqa Mentorlar</h5>
-                                <div className="boshqa-mentorla-krugg1">
-                                    <div className="boshqa-kurglaaaaa1" onClick={() => onga()}><box-icon name='right-arrow-alt' color='#536dfd' ></box-icon></div>
-                                </div>
-                            </div>
-
-                            <div className="mni-swiper-grid">
-                                <div className="mni-gridf1">
-                                    {/* <img src={item.author.image} alt="" /> */}
-                                </div>
-
-                                <div className="mni-gridf2">
-                                    {/* <img src={item.author.image} alt="" /> */}
-                                </div>
-                            </div>
-
+                        <div className="mni-buton-iikki-yo">
+                            <button id="gbfdgfdgdfgdf">Покупка</button>
+                            <div className="line-mni-but"></div>
+                            <button >dwawdaсум</button>
                         </div>
 
                     </div>
-                    <div className="lolipap-kptta-nomoylabtopomadim">
-                        <div className="mni-krus-techer-swiper1">
-                            <div className="boshqa-mentorla">
-                                <h5>Boshqa Mentorlar</h5>
-                                <div className="boshqa-mentorla-krugg1">
-                                    <div className="boshqa-kurglaaaaa1" onClick={() => onga()}><box-icon name='right-arrow-alt' color='#536dfd' ></box-icon></div>
-                                </div>
+                    <div className="mni-krus-techer-swiper">
+                        <div className="boshqa-mentorla">
+                            <h5>Boshqa Mentorlar</h5>
+                            <div className="boshqa-mentorla-krugg1">
+                                <div className="boshqa-kurglaaaaa1" onClick={() => onga()}><box-icon name='right-arrow-alt' color='#536dfd' ></box-icon></div>
                             </div>
-                            <div className="mni-swiper-grid">
-                                <div className="mni-gridf1">
-                                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/46f705111077375.5ffb645951e7c.jpg" alt="" />
-                                    <img src="https://ag-spots-2020.o.auroraobjects.eu/2020/08/22/other/2880-1800-crop-bmw-m5-f90-competition-2021-c330122082020014437_1.jpg" alt="" />
-                                    <img src="https://ag-spots-2020.o.auroraobjects.eu/2020/03/07/other/2880-1800-crop-bmw-m5-f90-competition-c490507032020171519_1.jpg" alt="" />
-                                    <img src="https://ag-spots-2021.o.auroraobjects.eu/2021/01/17/bmw-m5-f90-competition-2021-c451117012021040035_1.jpg" alt="" />
-                                </div>
+                        </div>
 
-                                <div className="mni-gridf2">
-                                    <img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg" alt="" />
-                                    <img src="https://bronk.club/uploads/posts/2023-02/1676935060_bronk-club-p-otkritki-prirodi-ochen-krasivie-krasivo-39.jpg" alt="" />
-                                    <img src="http{1 + 1}.{item.name == null ? (<>Name</>) : (<>{item.name}</>)}s://funart.pro/uploads/posts/2021-03/thumbs/1617041574_9-p-oboi-krasivie-foto-prirodi-11.jpg" alt="" />
-                                    <img src="https://cdn.forbes.ru/forbes-static/c/1040x549/new/2023/04/1GettyImages-183930658-kopia-643018c796355.webp" alt="" />
+                        <div className="mni-swiper-grid">
+                            <div className="mni-gridf1">
+                                {/* <img src={item.author.image} alt="" /> */}
+                            </div>
 
-                                </div>
+                            <div className="mni-gridf2">
+                                {/* <img src={item.author.image} alt="" /> */}
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div className="lolipap-kptta-nomoylabtopomadim">
+                    <div className="mni-krus-techer-swiper1">
+                        <div className="boshqa-mentorla">
+                            <h5>Boshqa Mentorlar</h5>
+                            <div className="boshqa-mentorla-krugg1">
+                                <div className="boshqa-kurglaaaaa1" onClick={() => onga()}><box-icon name='right-arrow-alt' color='#536dfd' ></box-icon></div>
+                            </div>
+                        </div>
+                        <div className="mni-swiper-grid">
+                            <div className="mni-gridf1">
+                                <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/46f705111077375.5ffb645951e7c.jpg" alt="" />
+                                <img src="https://ag-spots-2020.o.auroraobjects.eu/2020/08/22/other/2880-1800-crop-bmw-m5-f90-competition-2021-c330122082020014437_1.jpg" alt="" />
+                                <img src="https://ag-spots-2020.o.auroraobjects.eu/2020/03/07/other/2880-1800-crop-bmw-m5-f90-competition-c490507032020171519_1.jpg" alt="" />
+                                <img src="https://ag-spots-2021.o.auroraobjects.eu/2021/01/17/bmw-m5-f90-competition-2021-c451117012021040035_1.jpg" alt="" />
+                            </div>
+
+                            <div className="mni-gridf2">
+                                <img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg" alt="" />
+                                <img src="https://bronk.club/uploads/posts/2023-02/1676935060_bronk-club-p-otkritki-prirodi-ochen-krasivie-krasivo-39.jpg" alt="" />
+                                <img src="http{1 + 1}.{item.name == null ? (<>Name</>) : (<>{item.name}</>)}s://funart.pro/uploads/posts/2021-03/thumbs/1617041574_9-p-oboi-krasivie-foto-prirodi-11.jpg" alt="" />
+                                <img src="https://cdn.forbes.ru/forbes-static/c/1040x549/new/2023/04/1GettyImages-183930658-kopia-643018c796355.webp" alt="" />
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
     )
 }
