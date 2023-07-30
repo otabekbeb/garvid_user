@@ -54,6 +54,14 @@ function nazat(){
   document.querySelector(".edit_card").style="display:none"
 }
 
+function dashed() {
+  document.querySelector("#edit_card").style="display:flex !important" 
+}
+
+function dashed_nazat(){
+  document.querySelector("#edit_card").style="display:none"
+}
+
 
   useEffect(() => {
     axios
@@ -223,9 +231,38 @@ function nazat(){
               </div>
             );
           })}
-          <div className="dashed">
+          <div className="dashed" onClick={() => dashed()}>
               <i><AiOutlinePlus/></i>
           </div>
+          <div id="edit_card" className="edit_card" >
+                    <div className="edit_padding">
+
+                    <button onClick={() => dashed_nazat()} className="close_btn">
+                   <i><GrFormClose/></i>
+                </button>
+                      <div className="edit_inside">
+                    <label htmlFor="">Name:</label>
+                    <input type="text"/>
+                </div>
+                <div className="edit_inside">
+                  <label htmlFor="">Description:</label>
+                  <input type="text" />
+                </div>
+                <div className="edit_inside">
+                  <label htmlFor="">Price:</label>
+                  <input type="number" className="inp_numbr"/>
+                </div>
+                <div className="edit_inside">
+                  <label htmlFor="">Planned time:</label>
+                  <input type="number" className="inp_numbr"/>
+                </div>
+                <div className="edit_inside">
+                  <label htmlFor="">Image:</label>
+                  <input type="file" className="inp_img"/>
+                </div>
+                <button className="edit_inside_btn">Send</button>
+                    </div>
+                  </div>
         </div>
 
         {/* SPISKA */}

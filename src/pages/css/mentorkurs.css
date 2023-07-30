@@ -616,3 +616,88 @@
 .tgl{
 display: block;
 }
+
+/* .dashed_card{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    display: none;
+    justify-content: center;
+    z-index: 1000000000000000000000 !important;
+}
+.dashed_padding{
+    margin: auto;
+    position: absolute;
+    padding: 20px 30px !important;
+    display: block;
+    gap: 20px;
+    width: 600px;
+    height: auto;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+    box-shadow:  0 10px 40px #a3a5a654;
+} */
+.edit_card hr{
+    background-color: black;
+}
+.edit_inside{
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+.edit_inside input{
+    width: 100%;
+    padding-left: 5px;
+    border-radius: 3px;
+    color: black;
+    border: 1px solid #9DA7BB;
+}
+.edit_inside label{
+    color: black;
+    padding-left: 10px;
+}
+.inp_numbr{
+    padding-right: 5px;
+}
+.inp_img{
+    border: none !important;
+}
+.close_btn{
+    position: absolute;
+    top: 5px;
+    line-height: 20px;
+    right: 5px;
+    font-size: 30px;
+    background-color: rgba(255, 255, 255, 0);
+}
+.edit_inside_btn{
+    /* padding: 5px 10px; */
+    margin-left: 390px;
+    width: 150px;
+    height: 30px;
+    background-color: #44bef1;
+    color: white;
+    border-radius: 3px;
+    transition: .2s ease;
+}
+.edit_inside_btn:hover{
+    background-color: #44bdf1b7;
+}
+@media (max-width:630px) {
+    .edit_padding{
+        width: 400px;
+    }
+    .edit_inside_btn{
+        margin: auto;
+        width: 100% ;
+    }
+}
+@media (max-width:410px) {
+    .edit_padding{
+        width: 95%;
+    }
+}
