@@ -20,6 +20,8 @@ import Loader from './loader'
 import img_for_null from '../img/download.png'
 
 export default function Searchfilter() {
+  const [courstype,setCoursetype] = useState([])
+
   const [kursdata, setKursdata] = useState([]);
   const [type, settype] = useState([]);
   const [state1, setState1] = React.useState();
@@ -52,6 +54,13 @@ export default function Searchfilter() {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
+
+    axios.get(`${url}/api/cours_types`,{headers:{"Authorization":"Bearer " + localStorage.getItem("token")}}).then(res=>{
+      setCoursetype(res.data)
+      console.log(res.data);
+    }).catch(err=>{
+      alert("err")
+    })
         axios.get(`${url}/api/course`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
           setKursdata(res.data)
           console.log(res.data);
@@ -59,8 +68,11 @@ export default function Searchfilter() {
           console.log(err);
         })
 
+    
     setLoader(1)
   }, []);
+
+  
   // function filter (id) {
   //   axios
   //   .get(`${url}/api/course`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
@@ -111,10 +123,14 @@ export default function Searchfilter() {
               <div onMouseLeave={()=>filter1()}  className="filter_button">
 
 
+{courstype.map(item=>{
+  return(
+    <div className="button_filter_kurs">
+    {item.name===null?(""):(<div  className="div_kurs">{item.name}</div>)}
+  </div>
+  )
+})}
 
-                            <div className="button_filter_kurs">
-                              {/* {item2.name===null?(""):(<div onClick={()=>filter(item2.id)} className="div_kurs">{item2.name}</div>)} */}
-                            </div>
 
                 
               </div>
