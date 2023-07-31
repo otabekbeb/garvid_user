@@ -93,6 +93,11 @@ export default function Searchfilter() {
     })
 
   }
+
+
+  function VideogaOtish() {
+    window.location="/video"
+  }
   return (
     <>
     {loader===1?(
@@ -131,13 +136,10 @@ export default function Searchfilter() {
   </div>
   )
 })}
-
-
-                
               </div>
             </div>
           </div>
-        </div><div className="kurs_cards">
+        </div><div className="kurs_cards" onClick={()=>VideogaOtish()}>
           {kursdata.map(item=>{
             return(  
             <div   className="kurs_card">
@@ -180,7 +182,7 @@ export default function Searchfilter() {
                     </h5>
                   </div>
                 </div>
-                <button className="button_circle">
+                <button className="button_circle"  onClick={()=>VideogaOtish()}>
                   <AiOutlineArrowRight
                   />
                 </button>

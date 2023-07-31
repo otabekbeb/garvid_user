@@ -58,7 +58,11 @@ export default function Login() {
     formdata.append("email",document.querySelector("#email").value)
     formdata.append("password",document.querySelector("#parol").value)
 
-    axios.post(`${url}/auth/login/`,formdata).then(res=>{
+
+// wait otaw
+
+
+    axios.post(`${url}/auth/login`,formdata).then(res=>{
       sessionStorage.setItem("password",document.querySelector("#parol").value)
       alert("Вы успешно вошли в аккаунт")
       localStorage.setItem("token",res.data.access)
@@ -68,9 +72,6 @@ export default function Login() {
     }).catch(err=>{
       alert("Что-то пошло не так попробуйте снова")
       console.log(err);
-      
-     
-      state1==="ru"?(alert("В базе нет такого логина или пароля")):(alert("There is no such username or password in the database"))
     })
 
   }
