@@ -26,6 +26,7 @@ export default function Searchfilter() {
   const [type, settype] = useState([]);
   const [state1, setState1] = React.useState();
   const [courstype,setCoursetype] = useState([])
+  const [courseId,setCourseId] =useState()
 
   function Filter() {
     var a=document.querySelector(".filter_button").style.display
@@ -57,7 +58,9 @@ export default function Searchfilter() {
    document.querySelector(".delete_card").style="display:flex !important" 
 }
 
-function dabavit() {
+function dabavit(id) {
+  setCourseId(id)
+  console.log(courseId);
   document.querySelector(".edit_card").style="display:flex !important" 
 }
 function nazat(){
@@ -89,7 +92,14 @@ function dashed_nazat(){
     })
         axios.get(`${url}/api/course`, {headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
           setKursdata(res.data)
-          console.log(res.data);
+          if (courseId==res.data.id) {
+            res.data.map(item=>{
+              document.querySelector("#name").value=item.name
+              document.querySelector("#destcription").value=item.description
+              document.querySelector("#price").value=item.price
+              document.querySelector("#planned_time").value=item.planned_time
+            })
+          }
         }).catch(err=>{
           console.log(err);
         })
@@ -175,7 +185,7 @@ function dashed_nazat(){
                     </h5>
                   </div>
                 </div>
-                <div className='edit_icon' onClick={() => dabavit()}>
+                <div className='edit_icon' onClick={() => dabavit(item.id)}>
                     <Edit/>
                   </div>
 
@@ -187,23 +197,23 @@ function dashed_nazat(){
                 </button>
                       <div className="edit_inside">
                     <label htmlFor="">Name:</label>
-                    <input type="text"/>
+                    <input id="name" type="text"/>
                 </div>
                 <div className="edit_inside">
                   <label htmlFor="">Description:</label>
-                  <input type="text" />
+                  <input id="destcription" type="text" />
                 </div>
                 <div className="edit_inside">
                   <label htmlFor="">Price:</label>
-                  <input type="number" className="inp_numbr"/>
+                  <input id="price" type="number" className="inp_numbr"/>
                 </div>
                 <div className="edit_inside">
                   <label htmlFor="">Planned time:</label>
-                  <input type="number" className="inp_numbr"/>
+                  <input id="planned_time" type="number" className="inp_numbr"/>
                 </div>
                 <div className="edit_inside">
                   <label htmlFor="">Image:</label>
-                  <input type="file" className="inp_img"/>
+                  <input id="image" type="file" className="inp_img"/>
                 </div>
                 <button className="edit_inside_btn">Send</button>
                     </div>
