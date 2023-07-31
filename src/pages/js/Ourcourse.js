@@ -20,6 +20,7 @@ import url from './Host';
 export default function Ourcourse() {
   const [main,setMain]=useState([])
   const [kursdata, setKursdata] = useState([]);
+  // const [course, courSee] = useState([]);
 
     function filter() {
         document.querySelector(".filter_card").classList.toggle("togl");
