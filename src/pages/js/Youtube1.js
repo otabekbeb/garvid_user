@@ -28,6 +28,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios'
 import url from "./Host"
+import err from '../img/istockphoto-1321436405-612x612.jpg'
 
 export default function Youtube1() {
   const [id, setId] = useState(1);
@@ -108,6 +109,12 @@ export default function Youtube1() {
 
 
   useEffect(() => {
+    axios.get(`${url}/api/course_data_category/course/:courseid`,{headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+      console.log(res.data);
+    }).catch(err=>{
+      document.querySelector(".a_err_boganda").style="display: flex;justify-content: center;align-items: center;"
+      
+    })
 
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
@@ -143,9 +150,20 @@ export default function Youtube1() {
     // localStorage.removeItem("themeidsend")
   }, [])
 
+  function ModalCatchBolsa() {
+    window.location="/user"
+  }
+
 
   return (
     <>
+    <div className="a_err_boganda">
+      <div className="a_err_bolsa_block">
+      <img src={err} alt="" />
+     <h3> Что-то произошло сервером мы уже испровляем это.</h3>
+     <h3> Можете попробовать попойже</h3>
+    <button onClick={()=>ModalCatchBolsa()}>вернуться назад</button>
+    </div></div>
       {loader === 0 ? (
         <div>
           <div>
