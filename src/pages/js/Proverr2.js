@@ -13,6 +13,7 @@ import iteen from '../img/Group 34.png'
 import About_comment from '../js/About_comment'
 import axios  from "axios";
 import url from "./Host";
+import img_for_null from '../img/download.png'
 
 function onga(){
 document.querySelector(".mni-gridf1").classList.toggle("mni-gridf1-none")
@@ -119,39 +120,47 @@ console.log(res.data)
 return(
     <div className="prover2-info-block1">
     <div className="prover2-info-block1-img">
-        <img src={item1.image} alt="" />
+    {item1.image === null ? (
+                 <img src={img_for_null} alt="" />
+                ) : (
+                  <img src={item1.image} />
+                 )}
     </div>
     <div className="prover2-info-block1-text">
         <h5>{item1.name}</h5>
 <p>{item1.description}</p>
+<hr />
     </div>
 </div>
 )
 })}
-
+{/* 
                 <div className="prover2-linerr1">
 
-</div>
+</div> */}
 
             </div>
             
            </div>
         </div>
         </div>
-        <div className="prover2-orta-joy">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VOyxvywZii0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>           <div className="prover2-orta-joy-text">
-            <h5>Основы программирования на Raspberry Pi</h5>
-            <div className="rating">
-  <input type="radio" id="star5" name="rate" value="5"/>
-  <label for="star5" title="text"></label>
-  <input type="radio" id="star4" name="rate" value="4"/>
-  <label for="star4" title="text"></label>
-  <input checked="" type="radio" id="star3" name="rate" value="3"/>
-  <label for="star3" title="text"></label>
-  <input type="radio" id="star2" name="rate" value="2"/>
-  <label for="star2" title="text"></label>
-  <input type="radio" id="star1" name="rate" value="1"/>
-  <label for="star1" title="text"></label>
+       
+        
+
+    <div className="prover2-orta-joy">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/FrmOVPEG0g8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>              <div className="prover2-orta-joy-text">
+        <h5>Основы программирования на Raspberry Pi</h5>
+        <div className="rating">
+<input type="radio" id="star5" name="rate" value="5"/>
+<label for="star5" title="text"></label>
+<input type="radio" id="star4" name="rate" value="4"/>
+<label for="star4" title="text"></label>
+<input checked="" type="radio" id="star3" name="rate" value="3"/>
+<label for="star3" title="text"></label>
+<input type="radio" id="star2" name="rate" value="2"/>
+<label for="star2" title="text"></label>
+<input type="radio" id="star1" name="rate" value="1"/>
+<label for="star1" title="text"></label>
 
 
 </div>
@@ -159,53 +168,53 @@ return(
 <p>4.1</p><span>(524)</span>
 </div>
 
-        </div>
-        <div className="prover2-profil-patpis">
-            <div className="prover2-profil-img">
+    </div>
+    <div className="prover2-profil-patpis">
+        <div className="prover2-profil-img">
 <img src={profil} alt="" />
-            </div>
-            <div className="prover2-profil-text-info">
-                <p>Muhammad Jumayev</p> <button onClick={()=> button()}  className="potpis"><p className="aa">Подписаться</p><p className="aaa">Отменить подписку</p></button>
-            </div>
-            {/* <div className="obmen-kategory-re">
-                <h5>URL-адрес курса:</h5>
-              <form action="">
-              <input type="url" />
-              <div className="obmen-set-internet">
-                <img src={telegram} alt="" />
-                <img src={facebok} alt="" />
-                <img src={Git} alt="" />
-                <img src={copy} alt="" />
-              </div>
-              </form>
-            </div> */}
         </div>
+        <div className="prover2-profil-text-info">
+            <p>Muhammad Jumayev</p> <button onClick={()=> button()}  className="potpis"><p className="aa">Подписаться</p><p className="aaa">Отменить подписку</p></button>
+        </div>
+        {/* <div className="obmen-kategory-re">
+            <h5>URL-адрес курса:</h5>
+          <form action="">
+          <input type="url" />
+          <div className="obmen-set-internet">
+            <img src={telegram} alt="" />
+            <img src={facebok} alt="" />
+            <img src={Git} alt="" />
+            <img src={copy} alt="" />
+          </div>
+          </form>
+        </div> */}
+    </div>
 
 
 
-        <div className="pover2-tab-kategoryy">
-        <div className="radio-inputs">
-  <label className="radio">
-    <input type="radio" name="radio"/>
-    <span className="name" onClick={()=>okurse(1)} >О курсе</span>
-  </label>
-  <label className="radio">
-    <input type="radio" name="radio"/>
-    <span className="name"  onClick={()=>okurse(2)} >Комментарии</span>
-  </label>
-      
-  <label className="radio">
-    <input type="radio" name="radio"/>
-    <span className="name"  onClick={()=>okurse(3)} >Требования</span>
-  </label>
-  <label className="radio">
-    <input type="radio" name="radio"/>
-    <span className="name" onClick={()=>okurse(4)} >Чему вы научитесь</span>
-  </label>
+    <div className="pover2-tab-kategoryy">
+    <div className="radio-inputs">
+<label className="radio">
+<input type="radio" name="radio"/>
+<span className="name" onClick={()=>okurse(1)} >О курсе</span>
+</label>
+<label className="radio">
+<input type="radio" name="radio"/>
+<span className="name"  onClick={()=>okurse(2)} >Комментарии</span>
+</label>
+  
+<label className="radio">
+<input type="radio" name="radio"/>
+<span className="name"  onClick={()=>okurse(3)} >Требования</span>
+</label>
+<label className="radio">
+<input type="radio" name="radio"/>
+<span className="name" onClick={()=>okurse(4)} >Чему вы научитесь</span>
+</label>
 </div>
-        </div>
+    </div>
 
-        <div className={toggle===1?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida1">
+    <div className={toggle===1?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida1">
 <p>
 This course starts from scratch, you neither need to know Angular 1 nor Angular 2! Angular 8 simply is the latest <br className="poopoasd" /> version of Angular 2.
 
@@ -224,93 +233,96 @@ Absolutely fantastic tutorial <br className="poopoasd" /> series. I cannot thank
 
 
 </p>
+    </div></div>
+    <div className={toggle===2?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida1">
+        <div className="kamment-mni-df">
+            {/* <h5>Kurs reytingi</h5>
+            <div className="kommentttt-xaxa">
+                <div className="komenttt-ichii">
+                    <h3>4.1</h3>
+                        <div className="yulduzlaaaaa1">
+                        <box-icon name='star' type='solid' color='#ecc918' ></box-icon>
+                        <box-icon name='star' type='solid' color='#ecc918' ></box-icon>
+                        <box-icon name='star' type='solid' color='#ecc918' ></box-icon>
+                        <box-icon name='star' type='solid' color='#ecc918' ></box-icon>
+                        <box-icon name='star' color='#ecc918' ></box-icon>
+                        </div>
+                        <p>Всего: 524 голоса</p>
+                </div>
+                <div className="progrees-mni-relou">
+                  <div className="progre-block-mni1"><box-icon name='star' color='#ecc918' ></box-icon><span>5</span><input type="range"  id="inpottt1" /></div>
+                  <div className="progre-block-mni1"><box-icon name='star' color='#ecc918' ></box-icon><span>4</span><input type="range"  id="inpottt2" /></div>
+                  <div className="progre-block-mni1"><box-icon name='star' color='#ecc918' ></box-icon><span>3</span><input type="range"  id="inpottt3" /></div>
+                  <div className="progre-block-mni1"><box-icon name='star' color='#ecc918' ></box-icon><span>2</span><input type="range"  id="inpottt4" /></div>
+                  <div className="progre-block-mni1"><box-icon name='star' color='#ecc918' ></box-icon><span>1</span><input type="range"  id="inpottt5" /></div>
+                </div>
+            </div> */}
+            <About_comment/>
+        </div>
+        
+        
+        
         </div></div>
-        <div className={toggle===2?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida1">
-            <div className="kamment-mni-df">
-                {/* <h5>Kurs reytingi</h5>
-                <div className="kommentttt-xaxa">
-                    <div className="komenttt-ichii">
-                        <h3>4.1</h3>
-                            <div className="yulduzlaaaaa1">
-                            <box-icon name='star' type='solid' color='#ecc918' ></box-icon>
-                            <box-icon name='star' type='solid' color='#ecc918' ></box-icon>
-                            <box-icon name='star' type='solid' color='#ecc918' ></box-icon>
-                            <box-icon name='star' type='solid' color='#ecc918' ></box-icon>
-                            <box-icon name='star' color='#ecc918' ></box-icon>
-                            </div>
-                            <p>Всего: 524 голоса</p>
-                    </div>
-                    <div className="progrees-mni-relou">
-                      <div className="progre-block-mni1"><box-icon name='star' color='#ecc918' ></box-icon><span>5</span><input type="range"  id="inpottt1" /></div>
-                      <div className="progre-block-mni1"><box-icon name='star' color='#ecc918' ></box-icon><span>4</span><input type="range"  id="inpottt2" /></div>
-                      <div className="progre-block-mni1"><box-icon name='star' color='#ecc918' ></box-icon><span>3</span><input type="range"  id="inpottt3" /></div>
-                      <div className="progre-block-mni1"><box-icon name='star' color='#ecc918' ></box-icon><span>2</span><input type="range"  id="inpottt4" /></div>
-                      <div className="progre-block-mni1"><box-icon name='star' color='#ecc918' ></box-icon><span>1</span><input type="range"  id="inpottt5" /></div>
-                    </div>
-                </div> */}
-                <About_comment/>
+    <div className={toggle===3?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida3">
+        
+        <div className="prover2-mni-treboniya">
+            <div className="prover2-trebovaniya-block">
+                <div className="span"></div>
+                <p>Знание компьютерных  уроков</p>
             </div>
-            
-            
-            
-            </div></div>
-        <div className={toggle===3?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida3">
-            
-            <div className="prover2-mni-treboniya">
-                <div className="prover2-trebovaniya-block">
-                    <div className="span"></div>
-                    <p>Знание компьютерных  уроков</p>
+            <div className="prover2-trebovaniya-block2">
+                <div className="span"></div>
+                <p>Интерес к программированию</p>
+            </div>
+            <div className="prover2-trebovaniya-block3">
+                <div className="span"></div>
+                <p>Элементарный английский</p>
+            </div>
+            <div className="prover2-trebovaniya-block4">
+                <div className="span"></div>
+                <p>Персональный ноутбук</p>
+            </div>
+            <div className="prover2-trebovaniya-block5">
+                <div className="span"></div>
+                <p>Базовая Java</p>
+            </div>
+        </div>
+        
+        </div></div>
+    <div className={toggle===4?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida4">
+        
+        <h5>Содержание курса</h5>
+        <div className="faq">
+            <div className="faq-item">
+            <input type="checkbox" className="faq-input"  name="faq" id="faq_1"/>
+                <div className="faq-div">
+                <label htmlFor="faq_1" className="faq-title">1. Введение в процесс программирования и установки</label>
                 </div>
-                <div className="prover2-trebovaniya-block2">
-                    <div className="span"></div>
-                    <p>Интерес к программированию</p>
-                </div>
-                <div className="prover2-trebovaniya-block3">
-                    <div className="span"></div>
-                    <p>Элементарный английский</p>
-                </div>
-                <div className="prover2-trebovaniya-block4">
-                    <div className="span"></div>
-                    <p>Персональный ноутбук</p>
-                </div>
-                <div className="prover2-trebovaniya-block5">
-                    <div className="span"></div>
-                    <p>Базовая Java</p>
+                
+                <div className="faq-text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto obcaecati quidem explicabo sunt minima <br id="yoqaollllll" /> perspiciatis!</p>
                 </div>
             </div>
-            
-            </div></div>
-        <div className={toggle===4?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida4">
-            
-            <h5>Содержание курса</h5>
-            <div className="faq">
-                <div className="faq-item">
-                <input type="checkbox" className="faq-input"  name="faq" id="faq_1"/>
-                    <div className="faq-div">
-                    <label htmlFor="faq_1" className="faq-title">1. Введение в процесс программирования и установки</label><span>12 видео</span><div className="faq-liner"></div><span>8 часов</span>
-                    </div>
-                    
-                    <div className="faq-text">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto obcaecati quidem explicabo sunt minima <br id="yoqaollllll" /> perspiciatis!</p>
-                    </div>
-                </div>
 
 
 <div className="faq-item">
-                <input type="checkbox" className="faq-input"  name="faq" id="faq_2"/>
-                <div className="faq-div">
-                    <label htmlFor="faq_2" className="faq-title" id="saopdsados">2. Работа с простыми операциями в программе </label><span id="fdfsdfdsdfsf">8 видео</span><div className="faq-liner1"></div><span id="wqeqweqweqw">15 часов</span>
-                    </div>
-                    <div className="faq-text">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. jalod obcaecati quidem explicabo sunt minima <br id="yoqaollllll" /> perspiciatis!</p>
-                    </div>
+            <input type="checkbox" className="faq-input"  name="faq" id="faq_2"/>
+            <div className="faq-div">
+                <label htmlFor="faq_2" className="faq-title" id="saopdsados">2. Работа с простыми операциями в программе </label>
+                </div>
+                <div className="faq-text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. jalod obcaecati quidem explicabo sunt minima <br id="yoqaollllll" /> perspiciatis!</p>
                 </div>
             </div>
-            
-            </div></div>
-        
-        
         </div>
+        
+        </div></div>
+    
+    
+    </div>
+
+       
+
         <div className="prover2-oxiri-joy">
             <div className="prover2-oxiri-block-in">
             <div className="mni-dasturlash-bloc"><p>Программирование</p></div>
