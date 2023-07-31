@@ -20,6 +20,7 @@ import url from './Host';
 export default function Ourcourse() {
   const [main,setMain]=useState([])
   const [kursdata, setKursdata] = useState([]);
+  const [kurscategory, setKurscategory] = useState([]);
 
     function filter() {
         document.querySelector(".filter_card").classList.toggle("togl");
@@ -39,7 +40,13 @@ export default function Ourcourse() {
     useEffect(()=>{
       axios.get(`${url}/api/course`, {headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
         setKursdata(res.data)
-        console.log(res.data);
+        console.log(res.data,);
+      }).catch(err=>{
+        console.log(err);
+      })
+      axios.get(`${url}/api/course_data_category`, {headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+        setKurscategory(res.data)
+        console.log(res.data,"mm");
       }).catch(err=>{
         console.log(err);
       })
