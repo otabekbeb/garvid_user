@@ -7,7 +7,18 @@
     /* align-items: center; */
     justify-content: space-between;
     padding: 10px;
+    margin-top: 70px;
    
+}
+@media (max-width:1034px) {
+    .flex_youtube{
+        display: flex;
+        /* align-items: center; */
+        justify-content: space-between;
+        padding: 10px;
+        margin-top: 50px ;
+       
+    }
 }
 .accordion_img{
     width: 10%;
