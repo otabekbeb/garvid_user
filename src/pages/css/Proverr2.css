@@ -3,8 +3,7 @@
     min-height: 52vw;
     background: #F1F2F6;
     padding-top: 30px;
-    display: flex;
-    justify-content: center;
+
 }
 body{
     overflow-x: hidden !important;
@@ -112,7 +111,7 @@ line-height: 17px;
 letter-spacing: 0em;
 color:  #9DA7BB;
 text-align: center;
-padding-top: 4px;
+padding: 5px;
 width: 100%;
 height: 100%;
 }
@@ -131,7 +130,9 @@ transition: 0.4s all;
     border-radius: 4px;
 }
 .prover2-info-filter2{
-    padding-top: 15px;
+display: flex;
+align-items: center;
+justify-content: space-around;
 }
 .prover2-but-clas6{
     width: 88px !important;
@@ -206,12 +207,12 @@ position: relative;
 top: 10px;
 }
 .prover2-linerr1{
-    width: 73.1%;
+    width: 100%;
     height: 1px;
     background: #d5dae4;
 position: relative;
 /* left: 95px; */
-top: 10px;
+top: -5px;
 }
 .prover3-linerr1{
     width: 73.1%;
