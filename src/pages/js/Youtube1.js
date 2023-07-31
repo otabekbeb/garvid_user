@@ -146,7 +146,7 @@ export default function Youtube1() {
 
   return (
     <>
-      {loader === 1 ? (
+      {loader === 0 ? (
         <div>
           <div>
             <Usernavbar />

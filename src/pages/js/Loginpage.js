@@ -24,31 +24,31 @@ export default function Loginpage() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
-        res.data.map(item=>{
+        res.data.map(item => {
           document.querySelector("#first_name").value = item.username;
           document.querySelector("#last_name").value = item.last_name;
           document.querySelector("#username").value = item.email;
           console.log(item);
           document.querySelector("#phone_number").value = item.phone_number;
-          document.querySelector("#birthday").value = item.date_joined.slice(0,10);
+          document.querySelector("#birthday").value = item.date_joined.slice(0, 10);
           document.querySelector("#adress").value = item.address;
           document.querySelector("#description").value = item.description;
         })
         setUser(res.data);
-        user.map(item=>{
+        user.map(item => {
           document.querySelector("#first_name").value = item.username;
           document.querySelector("#last_name").value = item.last_name;
           document.querySelector("#username").value = item.email;
           console.log(item);
           document.querySelector("#phone_number").value = item.phone_number;
-          document.querySelector("#birthday").value = item.date_joined.slice(0,10);
+          document.querySelector("#birthday").value = item.date_joined.slice(0, 10);
           document.querySelector("#adress").value = item.address;
           document.querySelector("#description").value = item.description;
-        })   
-        console.log(res.data,"aaa");
+        })
+        console.log(res.data, "aaa");
       });
 
-        setLoader(1)
+    setLoader(1)
   }, []);
 
   const plus = () => {
@@ -60,74 +60,74 @@ export default function Loginpage() {
     }
   };
 
-  function putUser() {
+  function putUser(id) {
     var formdata = new FormData();
-    formdata.append("first_name", document.querySelector("#first_name").value);
+    formdata.append("username", document.querySelector("#first_name").value);
     formdata.append("last_name", document.querySelector("#last_name").value);
-    formdata.append("username", document.querySelector("#username").value);
+    formdata.append("email", document.querySelector("#username").value);
     formdata.append("image", document.querySelector("#img").files[0]);
     formdata.append(
       "phone_number",
       document.querySelector("#phone_number").value
     );
-    formdata.append("birthday", document.querySelector("#birthday").value);
-    formdata.append("balance", 100000);
     formdata.append("address", document.querySelector("#adress").value);
     formdata.append(
       "description",
       document.querySelector("#description").value
     );
 
-    axios
-      .put(`${url}/auth/users`, formdata, {
+    axios.put(`${url}/auth/oneuser/${id}`, formdata, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
-        state1==="ru"?(alert("Введенная информация")):(alert("Entered information"))
+        state1 === "ru" ? (alert("Введенная информация")) : (alert("Entered information"))
         window.location.reload();
       })
       .catch((err) => {
-        state1==="ru"?(alert("Информация введена не полностью")):(alert("The information was not fully entered"))
+        state1 === "ru" ? (alert("Информация введена не полностью")) : (alert("The information was not fully entered"))
       });
   }
 
-  function button(){
+  function button() {
     axios
-    .get(`${url}/auth/oneuser/`, {
-      headers: { Authorization: "Bearer " + localStorage.getItem("token") },
-    })
-    .then((res) => {
-      document.querySelector("#first_name").value = res.data.first_name;
-      document.querySelector("#last_name").value = res.data.last_name;
-      document.querySelector("#username").value = res.data.username;
-      console.log(res.data);
-      document.querySelector("#phone_number").value = res.data.phone_number;
-      document.querySelector("#birthday").value = res.data.birthday;
-      document.querySelector("#adress").value = res.data.adress;
-      document.querySelector("#description").value = res.data.description;
-      setUser(res.data);
-      user.map(item=>{
-        document.querySelector("#first_name").value = item.first_name;
-        document.querySelector("#last_name").value = item.last_name;
-        document.querySelector("#username").value = item.username;
-        document.querySelector("#phone_number").value = item.phone_number;
-        document.querySelector("#birthday").value = item.birthday;
-        document.querySelector("#adress").value = item.adress;
-        document.querySelector("#description").value = item.description;
-      }) 
-    });
+      .get(`${url}/auth/oneuser/`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        res.data.map(item => {
+          document.querySelector("#first_name").value = item.username;
+          document.querySelector("#last_name").value = item.last_name;
+          document.querySelector("#username").value = item.email;
+          console.log(item);
+          document.querySelector("#phone_number").value = item.phone_number;
+          document.querySelector("#birthday").value = item.date_joined.slice(0, 10);
+          document.querySelector("#adress").value = item.address;
+          document.querySelector("#description").value = item.description;
+        })
+        setUser(res.data);
+        user.map(item => {
+          document.querySelector("#first_name").value = item.username;
+          document.querySelector("#last_name").value = item.last_name;
+          document.querySelector("#username").value = item.email;
+          console.log(item);
+          document.querySelector("#phone_number").value = item.phone_number;
+          document.querySelector("#birthday").value = item.date_joined.slice(0, 10);
+          document.querySelector("#adress").value = item.address;
+          document.querySelector("#description").value = item.description;
+        })
+      });
     setData(1);
   }
 
-  function postPassword(){
+  function postPassword() {
 
   }
 
   return (
     <div>
-      {loader===1?(
-      <div>
-        <Usernavbar />
+      {loader === 1 ? (
+        <div>
+          <Usernavbar />
 
           <div className="katta12">
             <div className="all-button">
@@ -222,24 +222,25 @@ export default function Loginpage() {
                           </div>
                         </div>
                         <div className="inputs111">
-                          <button onClick={() => putUser()}>Keeping</button>
+                          {user.map(item=>{
+                          return<button onClick={() => putUser(item.id)}>Keeping</button>   
+                          })}
                         </div>
                       </div>
                     </div>
-                    {user.map(item=>{
-                      return(
+                    {user.map(item => {
+                      return (
                         <div className="profil">
-                      <h2>Your photo</h2>
-                      <div className="profil1">
-                        <input id="img" type="file" />
-                        <img src={item.image} alt="" />
-                        <link rel="stylesheet" href={item.image} />
-                      </div>
-                      <h2 className="bb1">Upload a profile photo</h2>
-                    </div>
+                          <h2>Your photo</h2>
+                          <div className="profil1">
+                            <input id="img" type="file" />
+                            <img src={item.image} alt="" />
+                          </div>
+                          <h2 className="bb1">Upload a profile photo</h2>
+                        </div>
                       )
                     })}
-                    
+
                   </div>
                 </div>
               ) : (
@@ -255,12 +256,12 @@ export default function Loginpage() {
                             <div className="error">Старый пароль ошибка, введите правильно</div>
                             <h2> New password</h2>
                             <input className="passwordChange" type="password" />
-                            <div className="error">{state1==="en"?("The password cannot be less than 8"):("Пароль не может быть меньше 8")}</div>
+                            <div className="error">{state1 === "en" ? ("The password cannot be less than 8") : ("Пароль не может быть меньше 8")}</div>
                             <h2>Confirm new password</h2>
                             <input className="restPassword" type="password" />
                           </div>
                           <div className="error">Новый пароль и повторяющийся пароль должны быть одинаковыми</div>
-                          <button onClick={()=>postPassword()}>Save</button>
+                          <button onClick={() => postPassword()}>Save</button>
                         </div>
                       </div>
                     </div>
@@ -373,8 +374,8 @@ export default function Loginpage() {
             </div>
             <Footer />
           </div>
-        
-      </div>):(<Loader/>)}
+
+        </div>) : (<Loader />)}
 
     </div>
   );

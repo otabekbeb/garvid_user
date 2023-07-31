@@ -20,10 +20,12 @@ import url from "./Host";
 import Edit from './Edit';
 import Delete from './Delete';
 import Groupimg from '../img/Group 2.png'
+import img_for_null from '../img/download.png'
 export default function Searchfilter() {
   const [kursdata, setKursdata] = useState([]);
   const [type, settype] = useState([]);
   const [state1, setState1] = React.useState();
+  const [courstype,setCoursetype] = useState([])
 
   function Filter() {
     var a=document.querySelector(".filter_button").style.display
@@ -37,15 +39,15 @@ export default function Searchfilter() {
     document.querySelector(".filter_button").style="display:none !important"
   }
   
-  // function windowModal() {
-  //   document.querySelector(".kurs_cards").style = "display:flex;transition:3s";
-  //   document.querySelector(".spiska_img_title_div").style = "display:none";
-  // }
-  // function menuModal() {
-  //   document.querySelector(".kurs_cards").style = "display:none";
-  //   document.querySelector(".spiska_img_title_div").style =
-  //     "display:block;transition:3s";
-  // }
+  function windowModal() {
+    document.querySelector(".kurs_cards").style = "display:flex;transition:3s";
+    document.querySelector(".spiska_img_title_div").style = "display:none";
+  }
+  function menuModal() {
+    document.querySelector(".kurs_cards").style = "display:none";
+    document.querySelector(".spiska_img_title_div").style =
+      "display:block;transition:3s";
+  }
 
   function close(){
     document.querySelector(".delete_card").style="display:none"
@@ -79,6 +81,18 @@ function dashed_nazat(){
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
+    axios.get(`${url}/api/cours_types`,{headers:{"Authorization":"Bearer " + localStorage.getItem("token")}}).then(res=>{
+      setCoursetype(res.data)
+      console.log(res.data);
+    }).catch(err=>{
+      alert("err")
+    })
+        axios.get(`${url}/api/course`, {headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+          setKursdata(res.data)
+          console.log(res.data);
+        }).catch(err=>{
+          console.log(err);
+        })
   }, []);
 
   return (
@@ -119,18 +133,17 @@ function dashed_nazat(){
         </div>
 
         <div className="kurs_cards">
-
+        {kursdata.map(item=>{
+          return(  
               <div className="kurs_card">
                 <button className="btn_das">Dasturlash</button>
-                {/* {item.image === null ? (
-                  <div className="No_img">
-                    <h1>no picture</h1>
-                  </div>
+                {item.image === null ? (
+                  <img src={img_for_null} />
                 ) : (
                   <img src={item.image} />
-                )} */}
+                )}
                 <div className="kurs_paddaing_auto">
-                  <h4>dawda</h4>
+                  <h4>{item.name}</h4>
                   <div className="star_card">
                     <i className="star_i">
                       <AiFillStar />
@@ -158,7 +171,7 @@ function dashed_nazat(){
                     </h5>
                     <h5>
                       <p>Kurs narxi</p>
-                     dwadad
+                      {item.planned_time}h
                     </h5>
                   </div>
                 </div>
@@ -220,7 +233,8 @@ function dashed_nazat(){
                   />
                 </button>
               </div>
-
+          )
+        })}
           <div className="dashed" onClick={() => dashed()}>
               <i><AiOutlinePlus/></i>
           </div>

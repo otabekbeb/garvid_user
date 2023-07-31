@@ -36,10 +36,13 @@ export default function News() {
     axios.get(`${url}/api/knowladge`).then(res=>{
       setBase(res.data)
       console.log(res.data,"bb");
-    });
-    axios.get(`${url}/api/base_theme`).then(res=>{
-      setBasetype(res.data)
-      console.log(res.data,"bbb");
+      axios.get(`${url}/api/base_theme`).then(res1=>{
+        setBasetype(res1.data)
+
+        const type = res.data.filter(item=>item.base_id==localStorage.getItem("BaseType"))
+          setBase(type)
+
+      });
     });
    },[])
    
@@ -81,7 +84,7 @@ export default function News() {
                     {basetype.map(item=>{
                       return(
                         <>
-                        {item.name==null?(""):(<><a  className="d-block w-100 text-white text-decoration-none mb-3" style={{background: '#52AAF4',cursor:"pointer"}}>
+                        {item.name==null?(""):(<><a onClick={()=>{localStorage.setItem("BaseType",item.id);window.location.reload()}} href className="d-block w-100 text-white text-decoration-none mb-3" style={{background: '#52AAF4'}}>
                         <i className="fab fa-twitter text-center py-4 mr-3" style={{width: '65px', background: 'rgba(0, 0, 0, .2)'}} />
                         <span className="font-weight-medium">{item.name}</span>
                       </a></>)}
@@ -95,7 +98,7 @@ export default function News() {
                 <Swiper style={{cursor:"pointer"}} onClick={()=> {window.location="/newspage"}} navigation={true} modules={[Navigation]} className="owl-carousel main-carousel position-relative">
                   {base.map((item,key)=>{
                     return(
-                      <SwiperSlide  className="position-relative overflow-hidden" style={{height: '500px'}}>
+                      <SwiperSlide onClick={()=> {window.location="/newspage";localStorage.setItem("baseId",key)}} className="position-relative overflow-hidden" style={{height: '500px'}}>
                       <img  className="img-fluid h-100" src={item.image} style={{objectFit: 'cover'}} />
                       <div className="overlay">
                         <div className="mb-2">
