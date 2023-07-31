@@ -20,10 +20,13 @@ import url from "./Host";
 import Edit from './Edit';
 import Delete from './Delete';
 import Groupimg from '../img/Group 2.png'
+import img_for_null from '../img/download.png'
 export default function Searchfilter() {
   const [kursdata, setKursdata] = useState([]);
   const [type, settype] = useState([]);
   const [state1, setState1] = React.useState();
+  const [courstype,setCoursetype] = useState([])
+  const [courseId,setCourseId] =useState()
 
   function Filter() {
     var a=document.querySelector(".filter_button").style.display
@@ -37,15 +40,15 @@ export default function Searchfilter() {
     document.querySelector(".filter_button").style="display:none !important"
   }
   
-  // function windowModal() {
-  //   document.querySelector(".kurs_cards").style = "display:flex;transition:3s";
-  //   document.querySelector(".spiska_img_title_div").style = "display:none";
-  // }
-  // function menuModal() {
-  //   document.querySelector(".kurs_cards").style = "display:none";
-  //   document.querySelector(".spiska_img_title_div").style =
-  //     "display:block;transition:3s";
-  // }
+  function windowModal() {
+    document.querySelector(".kurs_cards").style = "display:flex;transition:3s";
+    document.querySelector(".spiska_img_title_div").style = "display:none";
+  }
+  function menuModal() {
+    document.querySelector(".kurs_cards").style = "display:none";
+    document.querySelector(".spiska_img_title_div").style =
+      "display:block;transition:3s";
+  }
 
   function close(){
     document.querySelector(".delete_card").style="display:none"
@@ -55,7 +58,9 @@ export default function Searchfilter() {
    document.querySelector(".delete_card").style="display:flex !important" 
 }
 
-function dabavit() {
+function dabavit(id) {
+  setCourseId(id)
+  console.log(courseId);
   document.querySelector(".edit_card").style="display:flex !important" 
 }
 function nazat(){
@@ -79,6 +84,25 @@ function dashed_nazat(){
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
+    axios.get(`${url}/api/cours_types`,{headers:{"Authorization":"Bearer " + localStorage.getItem("token")}}).then(res=>{
+      setCoursetype(res.data)
+      console.log(res.data);
+    }).catch(err=>{
+      alert("err")
+    })
+        axios.get(`${url}/api/course`, {headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+          setKursdata(res.data)
+          if (courseId==res.data.id) {
+            res.data.map(item=>{
+              document.querySelector("#name").value=item.name
+              document.querySelector("#destcription").value=item.description
+              document.querySelector("#price").value=item.price
+              document.querySelector("#planned_time").value=item.planned_time
+            })
+          }
+        }).catch(err=>{
+          console.log(err);
+        })
   }, []);
 
   return (
@@ -119,18 +143,17 @@ function dashed_nazat(){
         </div>
 
         <div className="kurs_cards">
-
+        {kursdata.map(item=>{
+          return(  
               <div className="kurs_card">
                 <button className="btn_das">Dasturlash</button>
-                {/* {item.image === null ? (
-                  <div className="No_img">
-                    <h1>no picture</h1>
-                  </div>
+                {item.image === null ? (
+                  <img src={img_for_null} />
                 ) : (
                   <img src={item.image} />
-                )} */}
+                )}
                 <div className="kurs_paddaing_auto">
-                  <h4>dawda</h4>
+                  <h4>{item.name}</h4>
                   <div className="star_card">
                     <i className="star_i">
                       <AiFillStar />
@@ -158,11 +181,11 @@ function dashed_nazat(){
                     </h5>
                     <h5>
                       <p>Kurs narxi</p>
-                     dwadad
+                      {item.planned_time}h
                     </h5>
                   </div>
                 </div>
-                <div className='edit_icon' onClick={() => dabavit()}>
+                <div className='edit_icon' onClick={() => dabavit(item.id)}>
                     <Edit/>
                   </div>
 
@@ -174,23 +197,23 @@ function dashed_nazat(){
                 </button>
                       <div className="edit_inside">
                     <label htmlFor="">Name:</label>
-                    <input type="text"/>
+                    <input id="name" type="text"/>
                 </div>
                 <div className="edit_inside">
                   <label htmlFor="">Description:</label>
-                  <input type="text" />
+                  <input id="destcription" type="text" />
                 </div>
                 <div className="edit_inside">
                   <label htmlFor="">Price:</label>
-                  <input type="number" className="inp_numbr"/>
+                  <input id="price" type="number" className="inp_numbr"/>
                 </div>
                 <div className="edit_inside">
                   <label htmlFor="">Planned time:</label>
-                  <input type="number" className="inp_numbr"/>
+                  <input id="planned_time" type="number" className="inp_numbr"/>
                 </div>
                 <div className="edit_inside">
                   <label htmlFor="">Image:</label>
-                  <input type="file" className="inp_img"/>
+                  <input id="image" type="file" className="inp_img"/>
                 </div>
                 <button className="edit_inside_btn">Send</button>
                     </div>
@@ -220,7 +243,8 @@ function dashed_nazat(){
                   />
                 </button>
               </div>
-
+          )
+        })}
           <div className="dashed" onClick={() => dashed()}>
               <i><AiOutlinePlus/></i>
           </div>

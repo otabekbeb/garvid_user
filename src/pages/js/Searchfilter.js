@@ -93,6 +93,12 @@ export default function Searchfilter() {
     })
 
   }
+
+
+  function VideogaOtish(id) {
+    localStorage.setItem("abbas",id)
+    window.location="/video"
+  }
   return (
     <>
     {loader===1?(
@@ -131,16 +137,13 @@ export default function Searchfilter() {
   </div>
   )
 })}
-
-
-                
               </div>
             </div>
           </div>
-        </div><div className="kurs_cards">
+        </div><div className="kurs_cards" >
           {kursdata.map(item=>{
             return(  
-            <div   className="kurs_card">
+            <div  onClick={()=>VideogaOtish(item.id)} className="kurs_card">
                 <button className="btn_das">Programming</button>
                 {item.image === null ? (
                  <img src={img_for_null} alt="" />
@@ -180,7 +183,7 @@ export default function Searchfilter() {
                     </h5>
                   </div>
                 </div>
-                <button className="button_circle">
+                <button className="button_circle"  onClick={()=>VideogaOtish(item.id)}>
                   <AiOutlineArrowRight
                   />
                 </button>

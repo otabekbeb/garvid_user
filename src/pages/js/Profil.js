@@ -99,7 +99,7 @@ export default function Profil() {
         <div className="profil_blok_bir">
           <div onMouseLeave={()=>userimgClose()} className='user_img_size'>
             {data.map(item=>{
-              return <>{item.image===null?(<img onMouseEnter={()=>userimgModal()} className='user_img' src={userNull} alt="" />):(<img onMouseEnter={()=>userimgModal()} className='user_img' src={"https://markazback2.onrender.com/"+item.image} alt="" />)}</>
+              return <>{item.image===null?(<img onMouseEnter={()=>userimgModal()} className='user_img' src={userNull} alt="" />):(<img onMouseEnter={()=>userimgModal()} className='user_img' src={item.image} alt="" />)}</>
             })}     
            <div className="user_img_hover">
             <input onChange={()=>userImgPut()} id='userInput'  type="file" />
