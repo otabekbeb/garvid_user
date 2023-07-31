@@ -658,7 +658,7 @@ display: block;
 }
 .edit_inside label{
     color: black;
-    padding-left: 10px;
+    /* padding-left: 10px; */
 }
 .inp_numbr{
     padding-right: 5px;
