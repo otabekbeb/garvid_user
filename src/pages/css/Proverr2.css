@@ -180,6 +180,7 @@ font-weight: 600;
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 .prover2-info-block1-text{
     padding-left: 15px !important;

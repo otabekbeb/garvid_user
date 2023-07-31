@@ -15,6 +15,7 @@ import Futer from "./Futer"
 import Navbar from "./Usernavbar"
 import url from "./Host"
 import Noimg from "../img/download.png"
+import person from '../img/2815428.png'
 
 function onga() {
     document.querySelector(".mni-gridf1").classList.toggle("mni-gridf1-none")
@@ -78,6 +79,7 @@ export default function Proverr2() {
     const [main1, setMain1] = useState([])
     const [subcategory, setSubcategory] = useState([])
     const [theme, setTheme] = useState([])
+    const [stateimg, setStateimmg] = useState([])
 
 
     function okurse(id) {
@@ -87,30 +89,52 @@ export default function Proverr2() {
 
     useEffect(() => {
         axios.get(`${url}/api/cours_types`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-                console.log(res.data);
-                setType(res.data)
-            }).catche(err => {
-                alert("problem")
-            })
+            setType(res.data)
+            console.log(res.data);
+        }).catch(err => {
+            alert("Что-то произошло сервером, попробойте снова")
+        })
+
+        axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+            setMain(res.data)
+            console.log(res.data);
+        }).catch(err => {
+            alert("Что-то произошло сервером, попробойте снова")
+        })
+
+        axios.get(`${url}/auth/teachers`, {headers:{Authorization : `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+            setStateimmg(res.data)
+            console.log(res.data);
+        }).catch(err=>{
+            alert("Что-то произошло сервером, попробойте снова")
+        })
     }, [])
     function typeFilter(id) {
-
+    axios.get(`${url}/api/course`,{headers:{"Authorization":"Bearer"+localStorage.getItem("token")}}).then(res=>{
+    const courseFilter=res.data.filter(item=>item.course_type==id)
+    setMain(courseFilter)
+    })
     }
     function typeFilterAll() {
-
+        axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+            setMain(res.data)
+            console.log(res.data);
+        }).catch(err => {
+            alert("Что-то произошло сервером, попробойте снова")
+        })
     }
 
 
-    // const searchFilter = (event) => {
-    //     const search = new RegExp(`^${event.target.value}`, "i")
-    //     axios.get(`${url}/course/main/`, { headers: { "Authorization": "en" } }).then(res => {
-    //         const searchdata = res.data.filter(item => {
-    //             return (
-    //                 search.test(item.name)
-    //             )
-    //         })
-    //         setMain1(searchdata)
-    //     })}
+    const searchFilter = (event) => {
+        const search = new RegExp(`^${event.target.value}`, "i")
+        axios.get(`${url}/api/course`, { headers: { "Authorization": "Bearer " +localStorage.getItem("token") } }).then(res => {
+            const searchdata = res.data.filter(item => {
+                return (
+                    search.includes(item.name)
+                )
+            })
+            setMain(searchdata)
+        })}
 
 
 
@@ -124,35 +148,39 @@ export default function Proverr2() {
 
                         <div className="prover2-mni-search">
                             <form action="">
-                                <input type="text" placeholder='Какой курс вы хотите изучать?' required /><button><box-icon name='search' color='#9da7bb' ></box-icon></button>
+                                <input onChange={searchFilter} type="text" placeholder='Какой курс вы хотите изучать?' required /><button><box-icon name='search' color='#9da7bb' ></box-icon></button>
                             </form>
                             <div className="prover2-info-d"><div className="prover2-info-filter">
-                               
+
                                 <button onClick={() => typeFilterAll()} className='prover2-but-clas'><p>#Barchasi</p></button>
 
-                                {type.map(item=>{
-                                    return(
+                                {type.map(item => {
+                                    return (
                                         <>
-   {item.name==null?(""):(<button onClick={()=>typeFilter(item.id)} className='prover2-but-clas'><p>#{item.name}</p></button>)}                                       
-   </> )
+                                            {item.name == null ? ("") : (<button onClick={() => typeFilter(item.id)} className='prover2-but-clas'><p>#{item.name}</p></button>)}
+                                        </>)
                                 })}
-                               
+
 
                             </div></div>
 
 
                             <div className="prover2-info-youtube-f">
                                 <p className='prover2-p-df'>Программирование</p>
-
+                                {main.map(item=>{
+                            return(
                                 <div className="prover2-info-block1">
                                     <div className="prover2-info-block1-img">
-                                        {/* {item.image==null?(<img src={Noimg} alt="" />):(<img src={item.image} alt="" />)} */}
+                                         {item.image==null?(<img src={Noimg} alt="" />):(<img src={item.image} alt="" />)}
                                     </div>
                                     <div className="prover2-info-block1-text">
-                                        {/* {item.name==null?(<h5>Name</h5>):(<h5>{item.name}</h5>)} */}
-                                        {/* {item.description==null?(<p>Destcription</p>):(<p>{item.description}</p>)} */}
+                                        {item.name==null?(<h5>Name</h5>):(<h5>{item.name}</h5>)} 
+                                        {item.description==null?(<p>Destcription</p>):(<p>{item.description}</p>)}
                                         <div className="prover2-linerr1"></div></div>
                                 </div>
+                            )
+                                })}
+                                
 
 
 
@@ -376,20 +404,16 @@ export default function Proverr2() {
                             </div>
                         </div>
                         <div className="mni-swiper-grid">
-                            <div className="mni-gridf1">
-                                <img src={munbay} alt="" />
-                                <img src={iteen} alt="" />
-                                <img src={munbay} alt="" />
-                                <img src={iteen} alt="" />
+                            {stateimg.map(item=>{
+                            return(<>   <div className="mni-gridf1">
+                                {item.image===null ?(<img src={person} alt="" />):( <img src={item.image} alt="" />)}
                             </div>
 
                             <div className="mni-gridf2">
-                                <img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg" alt="" />
-                                <img src="https://bronk.club/uploads/posts/2023-02/1676935060_bronk-club-p-otkritki-prirodi-ochen-krasivie-krasivo-39.jpg" alt="" />
-                                <img src="https://funart.pro/uploads/posts/2021-03/thumbs/1617041574_9-p-oboi-krasivie-foto-prirodi-11.jpg" alt="" />
-                                <img src="https://cdn.forbes.ru/forbes-static/c/1040x549/new/2023/04/1GettyImages-183930658-kopia-643018c796355.webp" alt="" />
-
-                            </div>
+                            {item.image===null ?(<img src={person} alt="" />):( <img src={item.image} alt="" />)}
+                            </div> </>) 
+                            })}
+                            
                         </div>
                     </div>
 
