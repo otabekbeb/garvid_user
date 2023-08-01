@@ -251,7 +251,7 @@ export default function Youtube1() {
                       <div className="a_err_bolsa_block">
                         <img src={err} alt="" />
                         <h3>
-                          Что-то произошло сервером мы уже испровляем это.
+                          Что-то произошло сервером, мы уже испровляем это.
                         </h3>
                         <h3> Можете попробовать попойже</h3>
                         <button onClick={() => ModalCatchBolsa()}>
