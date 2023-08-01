@@ -49,7 +49,7 @@ export default function Searchfilter() {
   // }
 
   useEffect(() => {
-    document.querySelector(".filter_button").style="display:none"
+    
 
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
@@ -61,15 +61,16 @@ export default function Searchfilter() {
     }).catch(err=>{
       alert("err")
     })
-        axios.get(`${url}/api/course`, {headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+    axios.get(`${url}/api/course`, {headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
           setKursdata(res.data)
+          setLoader(0)
           console.log(res.data);
-        }).catch(err=>{
+    }).catch(err=>{
           console.log(err);
-        })
+    })
 
     
-    setLoader(1)
+    
   }, []);
 
   
@@ -95,7 +96,7 @@ export default function Searchfilter() {
   }
   return (
     <>
-    {loader===1?(
+    {loader===0?(
       <div>
 
       <div>
@@ -140,7 +141,7 @@ export default function Searchfilter() {
         </div><div className="kurs_cards">
           {kursdata.map(item=>{
             return(  
-            <div   className="kurs_card">
+            <div onClick={()=>{window.location="video";localStorage.setItem("abbas",item.id)}}  className="kurs_card">
                 <button className="btn_das">Programming</button>
                 {item.image === null ? (
                  <img src={img_for_null} alt="" />
@@ -181,8 +182,7 @@ export default function Searchfilter() {
                   </div>
                 </div>
                 <button className="button_circle">
-                  <AiOutlineArrowRight
-                  />
+                  <AiOutlineArrowRight onClick={()=>{window.location="video";localStorage.setItem("abbas",item.id)}}/>
                 </button>
               </div>
 )

@@ -1,12 +1,20 @@
 import React, { useState,useEffect } from 'react'
 import '../css/Footer1.css'
+import axios from 'axios';
+import url from './Host';
 
 export default function Footer1() {
   const [state1, setState1] = React.useState();
+  const [user,setUser] = useState([])
+
   useEffect(() => {
-    setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
-    );},[]);
+    setState1(localStorage.getItem("lang") ? localStorage.getItem("lang") : "en");
+   
+    axios.get(`${url}/auth/oneuser`, { headers: { "Authorization":  "Bearer " + localStorage.getItem("token") } }).then(res=>{
+      setUser(res.data) 
+    })
+
+  },[]);
   return (
     <div>
 
@@ -53,7 +61,7 @@ export default function Footer1() {
 <ul className='ry'>
   <li><a onClick={()=> window.location="/ourteam"} href="/ourteam">Our team</a></li>
   <li><a onClick={()=> window.location="/contacts"} href="/contacts">Contacts</a></li>
-  <li><a onClick={()=> window.location="/login"} href="/login">Log in</a></li>
+  <li>{localStorage.getItem("token")?(user.map(item=>{return<a onClick={()=> window.location="/user"} href="/user">{item.username}</a>})):(<a onClick={()=> window.location="/login"} href="/login">Log in</a>)}</li>
 </ul>
 
 
@@ -122,7 +130,7 @@ export default function Footer1() {
     <ul>
     <li><a onClick={()=> window.location="/ourteam"} href="/ourteam">Our team</a></li>
   <li><a onClick={()=> window.location="/contacts"} href="/contacts">Contacts</a></li>
-  <li><a onClick={()=> window.location="/login"} href="/login">Log in</a></li>
+    <li>{localStorage.getItem("token")?(user.map(item=>{return<a onClick={()=> window.location="/user"} href="/user">{item.username}</a>})):(<a onClick={()=> window.location="/login"} href="/login">Log in</a>)} </li>
     </ul>
   </div>
 </div>
