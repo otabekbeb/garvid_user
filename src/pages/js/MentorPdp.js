@@ -45,10 +45,10 @@ export default function MentorPdp() {
         <div>
             <div className="gray_blok">
                 <div className="fil_text_blok">
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} className='fromLeft'>My courses</h1>{toggle===1?(<div className="fil_text_blok_kurs_lenght" >4 pieces</div>):("")}</div>
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} className='fromLeft'>Correspondence</h1><div className="fil_text_blok_kurs_lenght">14 pieces</div></div>
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} className='fromLeft'>Tasks</h1>{toggle===3?(<div className="fil_text_blok_kurs_lenght">24 pieces</div>):("")}</div>
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} className='fromLeft'>My subscribers</h1>{toggle===4?(<div className="fil_text_blok_kurs_lenght">24 pieces</div>):("")}</div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle===1? {borderBottom:'2px solid #44bef1'}:{}} className='fromLeft'>My courses</h1>{toggle===1?(<div className="fil_text_blok_kurs_lenght" >4 pieces</div>):("")}</div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle===2? {borderBottom:'2px solid #44bef1'}:{}} className='fromLeft'>Correspondence</h1><div className="fil_text_blok_kurs_lenght">14 pieces</div></div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle===3? {borderBottom:'2px solid #44bef1'}:{}} className='fromLeft'>Tasks</h1>{toggle===3?(<div className="fil_text_blok_kurs_lenght">24 pieces</div>):("")}</div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle===4? {borderBottom:'2px solid #44bef1'}:{}} className='fromLeft'>My subscribers</h1>{toggle===4?(<div className="fil_text_blok_kurs_lenght">24 pieces</div>):("")}</div>
                 </div>
                 <div className="profil_blok_menu_size">
                     <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
