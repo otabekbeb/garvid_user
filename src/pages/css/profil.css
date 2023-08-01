@@ -2,15 +2,18 @@
   display: block;
   width: 200px;
 }
+
 .blok_bir_text h1 {
   font-size: 20px;
 }
+
 .blok_bir_icon {
   width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .blok_bir_text button {
   background-color: #f1f2f6;
   width: 200px;
@@ -21,6 +24,7 @@
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
 }
+
 .blok_bir_icon_img1 {
   padding: 6px;
   padding-top: 4px;
@@ -28,10 +32,12 @@
   width: 40px;
   border-radius: 50%;
   border: 2px solid white;
-  background-color: #FF004D33 !important;
   box-shadow: 0px 4px 8px 5px #0000001a;
   cursor: pointer;
+  color: #fff;
+  background-color: #44bef1 !important;
 }
+
 .blok_bir_icon_img2 {
   padding: 6px;
   padding-top: 4px;
@@ -39,21 +45,34 @@
   width: 40px;
   border-radius: 50%;
   border: 2px solid white;
-  background-color: #FFC02E2a !important;
   box-shadow: 0px 4px 8px 5px #0000001a;
   cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  border-radius: 40px;
+  color: #fff;
+  vertical-align: middle;
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, .25);
 }
-.blok_bir_icon_img3 {
+
+.youtube {
   padding: 6px;
   padding-top: 4px;
   text-align: center;
   width: 40px;
   border-radius: 50%;
   border: 2px solid white;
-  background-color: #536DFD33 !important;
   box-shadow: 0px 4px 8px 5px #0000001a;
   cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  border-radius: 40px;
+  color: #fff;
+  background-color: red;
 }
+
 .profil_blok_bir {
   width: 400px;
   display: flex;
@@ -61,17 +80,19 @@
   align-items: center;
   flex-wrap: wrap;
 }
+
 /* .profil_size_df{
   display: flex;
   align-items: center;
   justify-content: center;
 } */
-.profil_size_df{
-width: 100%;
-display: flex;
-justify-content: center;
-box-shadow: 0px 2px 2px 0px #0000001A;
+.profil_size_df {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 2px 2px 0px #0000001A;
 }
+
 .user_img_size {
   position: relative;
   overflow: hidden;
@@ -79,11 +100,13 @@ box-shadow: 0px 2px 2px 0px #0000001A;
   width: 45%;
   border-radius: 50%;
 }
+
 .user_img {
   width: 100%;
   border-radius: 50%;
   height: 150px !important;
 }
+
 /* body{
     background-color: black;
 } */
@@ -99,52 +122,60 @@ box-shadow: 0px 2px 2px 0px #0000001A;
   bottom: -100px;
   transition: .4s;
 }
-.user_img_hover input{
-z-index: 1;
-width: 30px;
-position: absolute;
-top: 8px;
-opacity: 0;
-cursor: pointer;
+
+.user_img_hover input {
+  z-index: 1;
+  width: 30px;
+  position: absolute;
+  top: 8px;
+  opacity: 0;
+  cursor: pointer;
 }
+
 .user_hover_photo_icon {
   margin-top: 3px;
   font-size: 30px;
   color: white;
   cursor: pointer;
 }
-.profil_blok_ikki_text p{
-color: #9DA7BB;
-font-size: 20px;
-margin-bottom: 0px;
+
+.profil_blok_ikki_text p {
+  color: #9DA7BB;
+  font-size: 20px;
+  margin-bottom: 0px;
 }
-.profil_blok_ikki_sum{
+
+.profil_blok_ikki_sum {
   width: 240px;
   display: flex;
   align-items: center;
 }
-.profil_blok_ikki_sum h1{
+
+.profil_blok_ikki_sum h1 {
   font-size: 45px;
 }
-.profil_blok_ikki_button{
+
+.profil_blok_ikki_button {
   width: 250px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
 
 }
-.profil_blok_ikki_button button:nth-child(1){
-font-size: 20px;
-color: white;
-border: 0;
-width: 50px;
-height: 40px;
-border-radius: 2px;
-background-color: #536DFD;
-cursor: pointer;
+
+.profil_blok_ikki_button button:nth-child(1) {
+  font-size: 20px;
+  color: white;
+  border: 0;
+  width: 50px;
+  height: 40px;
+  border-radius: 2px;
+  background-color: #536DFD;
+  cursor: pointer;
 }
-.profil_blok_ikki_button button:nth-child(2){
+
+.profil_blok_ikki_button button:nth-child(2) {
   font-size: 16px;
   color: white;
   border: 0;
@@ -153,428 +184,524 @@ cursor: pointer;
   border-radius: 2px;
   background-color: #536DFD;
   cursor: pointer;
-  }
-  .profil_size{
-    width: 80% !important;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-  .profil_blok_ikki_icon{
-    display: flex;
-    justify-content: space-between;
-    width: 100px;
-    position: relative;
-  }
-  .profil_blok_ikki_icon_bir{
-    padding: 10px;
-    font-size: 40px;
-    border-radius: 50%;
-    color: #9DA7BB;
-    background-color: #9DA7BB33;
-    cursor: pointer;
-  }
-  .profil_blok_ikki_icon_ikki{
-    padding: 10px;
-    font-size: 40px;
-    border-radius: 50%;
-    color: #9DA7BB;
-    background-color: #9DA7BB33;
-    cursor: pointer;
-  }
-  .profil_blok_ikki{
-    width: 400px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  .profil_blok_ikki_icon_texrirlash_modal{
-    width:300px;
-    background-color: white;
-    padding-top: 15px;
-    position: absolute;
-    top: 40px;
-    right: 15px;
-    z-index: 10;
-    display: none;
-    border-radius: 4px;
-    box-shadow: 0px 2px 2px 0px #0715652E;
-  }
-  .taxrirlash_modal_div{
-    width: 100%;
-    display: inline-flex;
-    gap: 10px;
-    font-size: 20px;
-    cursor: pointer;
-    margin-left: 15px;
-  }
-  .taxrirlash_modal_div p{
-    font-size: 20px;
-  }
-  .taxrirlash_modal_icon{
-    color: #9DA7BB;
-    margin-top: 4px;
-    font-size: 25px;
-  }
-  .profil_blok_ikki_icon_taxriirlash_chat{
-    width: 300px;
-    background-color: white;
-    border-radius: 4px;
-    box-shadow: 0px 2px 2px 0px #0715652E;
-    padding-left: 15px;
-    padding-top: 10px;
-    position: absolute;
-    top: 40px;
-    right: 75px;
-    z-index: 10;
-    display: none;
-  }
-  .taxrirlash_chad img{
-    width: 100%;
-  }
-  .taxrirlash_chad_img_size{
-    width: 25%;
-    padding: 5px;
-    box-shadow: 0px 2px 2px 0px #0715652E;
-    border-radius: 50%;
-  }
-  .taxrirlash_chad_vaqt h1{
+}
+
+.profil_size {
+  width: 80% !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.profil_blok_ikki_icon {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  position: relative;
+}
+
+.profil_blok_ikki_icon_bir {
+  padding: 10px;
+  font-size: 40px;
+  border-radius: 50%;
+  color: #9DA7BB;
+  background-color: #9DA7BB33;
+  cursor: pointer;
+}
+
+.profil_blok_ikki_icon_ikki {
+  padding: 10px;
+  font-size: 40px;
+  border-radius: 50%;
+  color: #9DA7BB;
+  background-color: #9DA7BB33;
+  cursor: pointer;
+}
+
+.profil_blok_ikki {
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.profil_blok_ikki_icon_texrirlash_modal {
+  width: 300px;
+  background-color: white;
+  padding-top: 15px;
+  position: absolute;
+  top: 40px;
+  right: 15px;
+  z-index: 10;
+  display: none;
+  border-radius: 4px;
+  box-shadow: 0px 2px 2px 0px #0715652E;
+}
+
+.taxrirlash_modal_div {
+  width: 100%;
+  display: inline-flex;
+  gap: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.taxrirlash_modal_div p {
+  font-size: 20px;
+}
+
+.taxrirlash_modal_icon {
+  color: #9DA7BB;
+  margin-top: 4px;
+  font-size: 25px;
+}
+
+.profil_blok_ikki_icon_taxriirlash_chat {
+  width: 300px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0px 2px 2px 0px #0715652E;
+  padding-left: 15px;
+  padding-top: 10px;
+  position: absolute;
+  top: 40px;
+  right: 75px;
+  z-index: 10;
+  display: none;
+}
+
+.taxrirlash_chad img {
+  width: 100%;
+}
+
+.taxrirlash_chad_img_size {
+  width: 25%;
+  padding: 5px;
+  box-shadow: 0px 2px 2px 0px #0715652E;
+  border-radius: 50%;
+}
+
+.taxrirlash_chad_vaqt h1 {
   font-size: 15px;
-  }
-  .taxrirlash_chad_vaqt{
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-  }
-  .taxrirlash_chad_vaqt_soat{
-    display: flex;
-  }
-  .taxrirlash_chad_vaqt_soat{
-    font-size: 11px;
-  }
-  .taxrirlash_chad_size{
-    display: block;
-    width: 70%;
-  }
-  .profil_blok_ikki_icon_taxriirlash_chat p{
-    margin-bottom: auto;
-  }
-  .taxrirlash_chad{
-    width: 100%;
-    display: inline-flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  .taxrirlash_chad_vaqt_soat .chad_set{
-   color: green;
-   margin-top:2.5px;
-  }
-  .taxrirlash_chad_text p{
-    font-size: 13px;
-    margin-top: -5px;
-  }
-  .taxrirlash_chad_barchasini{
-    display: flex;
-    justify-content: end;
-    margin-bottom: 5px;
-    margin-right: 10px;
-    cursor: pointer;
-  }
-  .taxrirlash_chad_barchasini p{
+}
+
+.taxrirlash_chad_vaqt {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.taxrirlash_chad_vaqt_soat {
+  display: flex;
+}
+
+.taxrirlash_chad_vaqt_soat {
+  font-size: 11px;
+}
+
+.taxrirlash_chad_size {
+  display: block;
+  width: 70%;
+}
+
+.profil_blok_ikki_icon_taxriirlash_chat p {
+  margin-bottom: auto;
+}
+
+.taxrirlash_chad {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.taxrirlash_chad_vaqt_soat .chad_set {
+  color: green;
+  margin-top: 2.5px;
+}
+
+.taxrirlash_chad_text p {
+  font-size: 13px;
+  margin-top: -5px;
+}
+
+.taxrirlash_chad_barchasini {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.taxrirlash_chad_barchasini p {
   color: #44bef1 !important;
   font-size: 12px;
   display: flex;
   gap: 5px;
   align-items: center;
+}
+
+
+
+
+
+
+@media (max-width:1000px) {
+  .profil_size {
+    width: 89% !important;
   }
 
-
-
-
-
-
-  @media (max-width:1000px) {
-    .profil_size{
-      width: 89% !important;
-    }
-    .user_img_size{
+  .user_img_size {
     width: none !important;
-    }
-    .blok_bir_icon{
-      width: 70%;
-    }
-    .blok_bir_text h1{
-      font-size: 17px;
-    }
-    .blok_bir_text button{
-      font-size: 12px;
-      width: 170px;
-    }
-    .blok_bir_text p{
-      font-size: 13px;
-    }
-    .blok_bir_icon_img1 {
-      padding: 2px;
-      padding-left: 1px;
-      padding-top: 3px;
-      padding-bottom: 5px;
-      text-align: center;
-      width: 35px;
-      border-radius: 50%;
-      border: 2px solid white;
-      background-color: #d1426db0;
-      cursor: pointer;
-    }
-    .blok_bir_icon_img2 {
-      padding: 2px;
-      padding-left: 3px;
-      padding-top: 3px;
-      padding-bottom: 5px;
-      text-align: center;
-      width: 35px;
-      border-radius: 50%;
-      border: 2px solid white;
-      background-color: rgba(236, 236, 19, 0.329);
-      cursor: pointer;
-    }
-    .blok_bir_icon_img3 {
-      padding: 2px;
-      padding-left: 3px;
-      padding-top: 3px;
-      padding-bottom: 5px;
-      text-align: center;
-      width: 35px;
-      border-radius: 50%;
-      border: 2px solid white;
-      background-color: rgba(84, 84, 248, 0.377);
-      cursor: pointer;
-    }
-    .profil_blok_ikki_text p{
-      margin-bottom: 5px;
-      font-size: 17px;
-    }
-    .profil_blok_ikki_sum h1{
-      font-size: 35px;
-    }
-    .profil_blok_ikki_sum p{
-      font-size: 15px;
-    }
-    .profil_blok_ikki_sum{
-      width: 190px;
-    }
-    .profil_blok_ikki_button button:nth-child(1){
-      font-size: 15px;
-      color: white;
-      border: 0;
-      width: 40px;
-      height: 30px;
-      border-radius: 2px;
-      background-color: #536DFD;
-      cursor: pointer;
-      }
-      .profil_blok_ikki_button button:nth-child(2){
-        font-size: 13px;
-        color: white;
-        border: 0;
-        width: 150px;
-        height: 30px;
-        border-radius: 2px;
-        background-color: #536DFD;
-        cursor: pointer;
-        }
-        .profil_blok_ikki_button{
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 10px;
-          margin-top: 27px;
-        }
-        .profil_blok_ikki_icon_ikki{
-          padding: 5px;
-          font-size: 25px;
-          border-radius: 50%;
-          color: #9DA7BB;
-          background-color: #9DA7BB33;
-          cursor: pointer;
-        }
-        .profil_blok_ikki_icon_bir{
-          padding: 5px;
-          font-size: 25px;
-          border-radius: 50%;
-          color: #9DA7BB;
-          background-color: #9DA7BB33;
-          cursor: pointer;
-        }
-        .profil_blok_ikki_icon{
-          width: 60px;
-          margin-top: 5px;
-        }
-        .profil_blok_ikki{
-          width: 260px;
-          display: flex;
-          justify-content: space-between;
-        }
-        .profil_blok_bir{
-        width: 355px;
-        display: flex;
-        justify-content: space-between;
-        }
-        .profil_blok_ikki_icon_texrirlash_modal{
-          padding: 0;
-          width: 210px;
-          position: absolute;
-          right: 8px;
-          top: 25px;
-        }
-        .profil_blok_ikki_icon_texrirlash_modal hr{
-        margin: 0 !important;
-        }
-        .taxrirlash_modal_div p{
-          font-size: 15px;
-        }
-        .taxrirlash_modal_div{
-          margin-left: 7px;
-          margin-top: 5px;
-          gap: 5px;
-        }
-        .taxrirlash_modal_icon{
-          font-size: 15px;
-        }
-        .profil_blok_ikki_icon_taxriirlash_chat{
-          width: 200px;
-          position: absolute;
-          top: 25px;
-          right: 45px;
-        }
-        .taxrirlash_chad_text{
-          text-align: left;
-        }
-        .taxrirlash_chad_vaqt h1{
-          font-size: 11px;
-        }
-        .taxrirlash_chad_vaqt_soat{
-          font-size: 8px;
-        }
-        .taxrirlash_chad_vaqt_soat .chad_set{
-          margin-top: 1px;
-        }
-        .profil_blok_ikki_icon_taxriirlash_chat p{
-          font-size: 8px;
-        }
-        .taxrirlash_chad_img_size{
-          padding: 3px;
-        }
-
   }
 
-  @media (max-width:700px) {
-    .profil_blok_ikki_text p {
-      justify-content: center;
-    }
-    .profil_blok_bir{
-      width: 100%;
-      text-align: center;
-      display: flex;
-      justify-content: space-around;
-    }
-    .profil_blok_ikki{
-      width: 100%;
-      text-align: center;
-      display: flex;
-      justify-content: space-around;
-    }
-    .profil_blok_ikki_icon{
-      width: 60px;
-      display: flex;
-      justify-content: space-between;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
-    .blok_bir_text{
-      width: 100%;
-      margin-top: 20px;
-    }
-    .blok_bir_icon{
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-    .profil_size_df{
-      position: relative;
-    }
-    .user_hover_photo_icon{
-      margin-top:1%;
-      font-size: 5vw;
-    }
-    .profil_blok_ikki_sum p{
-      margin-bottom: 0;
-      font-size: 10px;
-    }
-    .profil_blok_ikki_sum h1{
-    font-size:25px;
-    }
-    .blok_bir_text h1{
-      font-size:27px;
-      margin-bottom: 20px ;
-      }
-    .profil_blok_ikki_sum{
-      width: 110px;
-      margin: auto;
-    }
-    .profil_blok_ikki_button{
-      margin-top: 5px;
-    }
-  
+  .blok_bir_icon {
+    width: 70%;
   }
-  .profil_notifacation_size{
-    transition: 1s;
-    width: 320px;
-    background-color: #fff;
-    box-shadow: 0px 2px 2px 0px;
-    position: fixed;
-    right: -100%;
-    z-index: 999999999999999999999999999999999 !important;
-    top: 0;
-    bottom: 0;
+
+  .blok_bir_text h1 {
+    font-size: 17px;
   }
-  .profil_Help_size{
-    transition: 1s;
-    width: 320px;
-    background-color: #fff;
-    box-shadow: 0px 2px 2px 0px;
-    position: fixed;
-    right: -100%;
-    z-index: 999999999999999999999999999999999 !important;
-    top: 0;
-    bottom: 0;
+
+  .blok_bir_text button {
+    font-size: 12px;
+    width: 170px;
   }
-  .closei{
+
+  .blok_bir_text p {
+    font-size: 13px;
+  }
+
+  .blok_bir_icon_img1 {
+    padding: 2px;
+    padding-left: 1px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    text-align: center;
     width: 35px;
-    height: 35px;
-    color:#44bef1 !important;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+  }
+
+  .blok_bir_icon_img2 {
+    padding: 2px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    text-align: center;
+    width: 35px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: rgba(236, 236, 19, 0.329);
+    cursor: pointer;
+  }
+
+  .profil_blok_ikki_text p {
+    margin-bottom: 5px;
+    font-size: 17px;
+  }
+
+  .profil_blok_ikki_sum h1 {
+    font-size: 35px;
+  }
+
+  .profil_blok_ikki_sum p {
+    font-size: 15px;
+  }
+
+  .profil_blok_ikki_sum {
+    width: 190px;
+  }
+
+  .profil_blok_ikki_button button:nth-child(1) {
+    font-size: 15px;
+    color: white;
+    border: 0;
+    width: 40px;
+    height: 30px;
+    border-radius: 2px;
+    background-color: #536DFD;
+    cursor: pointer;
+  }
+
+  .profil_blok_ikki_button button:nth-child(2) {
+    font-size: 13px;
+    color: white;
+    border: 0;
+    width: 150px;
+    height: 30px;
+    border-radius: 2px;
+    background-color: #536DFD;
+    cursor: pointer;
+  }
+
+  .profil_blok_ikki_button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 27px;
+  }
+
+  .profil_blok_ikki_icon_ikki {
+    padding: 5px;
+    font-size: 25px;
+    border-radius: 50%;
+    color: #9DA7BB;
+    background-color: #9DA7BB33;
+    cursor: pointer;
+  }
+
+  .profil_blok_ikki_icon_bir {
+    padding: 5px;
+    font-size: 25px;
+    border-radius: 50%;
+    color: #9DA7BB;
+    background-color: #9DA7BB33;
+    cursor: pointer;
+  }
+
+  .profil_blok_ikki_icon {
+    width: 60px;
+    margin-top: 5px;
+  }
+
+  .profil_blok_ikki {
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .profil_blok_bir {
+    width: 355px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .profil_blok_ikki_icon_texrirlash_modal {
+    padding: 0;
+    width: 210px;
+    position: absolute;
+    right: 8px;
+    top: 25px;
+  }
+
+  .profil_blok_ikki_icon_texrirlash_modal hr {
+    margin: 0 !important;
+  }
+
+  .taxrirlash_modal_div p {
+    font-size: 15px;
+  }
+
+  .taxrirlash_modal_div {
+    margin-left: 7px;
+    margin-top: 5px;
+    gap: 5px;
+  }
+
+  .taxrirlash_modal_icon {
+    font-size: 15px;
+  }
+
+  .profil_blok_ikki_icon_taxriirlash_chat {
+    width: 200px;
+    position: absolute;
+    top: 25px;
+    right: 45px;
+  }
+
+  .taxrirlash_chad_text {
+    text-align: left;
+  }
+
+  .taxrirlash_chad_vaqt h1 {
+    font-size: 11px;
+  }
+
+  .taxrirlash_chad_vaqt_soat {
+    font-size: 8px;
+  }
+
+  .taxrirlash_chad_vaqt_soat .chad_set {
+    margin-top: 1px;
+  }
+
+  .profil_blok_ikki_icon_taxriirlash_chat p {
+    font-size: 8px;
+  }
+
+  .taxrirlash_chad_img_size {
+    padding: 3px;
+  }
+
+}
+
+@media (max-width:700px) {
+  .profil_blok_ikki_text p {
+    justify-content: center;
+  }
+
+  .profil_blok_bir {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .profil_blok_ikki {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .profil_blok_ikki_icon {
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .blok_bir_text {
+    width: 100%;
     margin-top: 20px;
   }
-  .closei:hover{
-    cursor: pointer;
-    color: red !important;
+
+  .blok_bir_icon {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
   }
-  .Admin{
-    width: 90%;
-    height: 100%;
+
+  .profil_size_df {
+    position: relative;
+  }
+
+  .user_hover_photo_icon {
+    margin-top: 1%;
+    font-size: 5vw;
+  }
+
+  .profil_blok_ikki_sum p {
+    margin-bottom: 0;
+    font-size: 10px;
+  }
+
+  .profil_blok_ikki_sum h1 {
+    font-size: 25px;
+  }
+
+  .blok_bir_text h1 {
+    font-size: 27px;
+    margin-bottom: 20px;
+  }
+
+  .profil_blok_ikki_sum {
+    width: 110px;
     margin: auto;
   }
-   .hello_admin{
-    margin-top: 15px;
-   }
-   .number{
-    margin-top: 20px;
-   }
-  
+
+  .profil_blok_ikki_button {
+    margin-top: 5px;
+  }
+
+}
+
+.profil_notifacation_size {
+  transition: 1s;
+  width: 320px;
+  background-color: #fff;
+  box-shadow: 0px 2px 2px 0px;
+  position: fixed;
+  right: -100%;
+  z-index: 999999999999999999999999999999999 !important;
+  top: 0;
+  bottom: 0;
+}
+
+.profil_Help_size {
+  transition: 1s;
+  width: 320px;
+  background-color: #fff;
+  box-shadow: 0px 2px 2px 0px;
+  position: fixed;
+  right: -100%;
+  z-index: 999999999999999999999999999999999 !important;
+  top: 0;
+  bottom: 0;
+}
+
+.closei {
+  width: 30px;
+  height: 30px;
+  margin-top: 20px;
+  position: absolute;
+  right: 10px;
+}
+
+.closei:hover {
+  cursor: pointer;
+}
+.profil_notifacation_size_close{
+  width: 90%;
+  height: 60px;
+  margin: auto;
+  position: relative;
+}
+.Admin {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+}
+
+.hello_admin {
+  margin-top: 15px;
+}
+
+.number {
+  margin-top: 20px;
+}
+
+.admin_div {
+  width: 90%;
+  height:80px;
+  border: 1px solid #fff;
+  margin: 20px auto;
+  overflow: hidden;
+  padding-left: 10px;
+  box-shadow: 1px 1px 5px #44bef1;
+  border-radius: 5px;
+}
+
+.admin {
+  width: 90%;
+  margin: 20px auto;
+
+}
+
+.number {
+  margin: 30px auto;
+  width: 90%;
+}
+.number p {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.517);
+}
+.number h5{
+  margin-top: -10px;
+}
+
+
+
