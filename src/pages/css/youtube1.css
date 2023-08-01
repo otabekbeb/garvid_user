@@ -28,15 +28,32 @@
     width: 100%;
     border-radius: 50%;
 }
+.db{
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 200;
+    background-color: #fff;
+    padding: 5px;
+
+}
 .a_err_boganda{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-display: none;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     z-index: 200;
     background-color: #fff;
+    padding: 5px;
 }
 .a_err_bolsa_block{
     text-align: center;
@@ -48,6 +65,42 @@ display: none;
     color: white;
     background-color: #44bef1;
 }
+@media (max-width:700px) {
+    .a_err_bolsa_block h3{
+        font-size: 20px;
+    }
+}
+@media (max-width:550px) {
+    .a_err_bolsa_block h3{
+        font-size: 15px;
+    }.a_err_bolsa_block button{
+        height: 35px;
+        width: 150px;
+        border-radius: 5px;
+        font-size: 13px;
+        color: white;
+        background-color: #44bef1;
+    }
+    .a_err_bolsa_block img{
+        width: 100%;
+    }
+}
+@media (max-width:410px) {
+    .a_err_bolsa_block h3{
+        font-size: 11px;
+    }.a_err_bolsa_block button{
+        height: 25px;
+        width: 120px;
+        border-radius: 5px;
+        font-size: 10px;
+        color: white;
+        background-color: #44bef1;
+    }
+    .a_err_bolsa_block img{
+        width: 100%;
+    }
+}
+
 .navbar_otish1 p:after {
     display: block;
     content: "";
