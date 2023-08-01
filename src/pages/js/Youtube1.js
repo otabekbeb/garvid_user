@@ -57,7 +57,7 @@ export default function Youtube1() {
 
   function painModal() {
     document.querySelector(".zadaniya").style =
-      "border-bottom: 2px solid #536DFD; color: #2E2E2E;";
+      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya1").style =
       "border-bottom: none; color: #9DA7BB;";
     document.querySelector(".zadaniya2").style =
@@ -67,7 +67,7 @@ export default function Youtube1() {
   }
   function painModal1() {
     document.querySelector(".zadaniya1").style =
-      "border-bottom: 2px solid #536DFD; color: #2E2E2E;";
+      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya").style =
       "border-bottom: none; color: #9DA7BB;";
     document.querySelector(".zadaniya2").style =
@@ -77,7 +77,7 @@ export default function Youtube1() {
   }
   function painModal2() {
     document.querySelector(".zadaniya2").style =
-      "border-bottom: 2px solid #536DFD; color: #2E2E2E;";
+      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya1").style =
       "border-bottom: none; color: #9DA7BB;";
     document.querySelector(".zadaniya1").style =
@@ -87,7 +87,7 @@ export default function Youtube1() {
   }
   function painModal3() {
     document.querySelector(".zadaniya3").style =
-      "border-bottom: 2px solid #536DFD; color: #2E2E2E;";
+      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya2").style =
       "border-bottom: none; color: #9DA7BB;";
     document.querySelector(".zadaniya1").style =
@@ -100,7 +100,7 @@ export default function Youtube1() {
 
   function painModal5() {
     document.querySelector(".zadaniya5").style =
-      "border-bottom: 2px solid #536DFD; color: #2E2E2E;";
+      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya6").style =
       "border-bottom: none; color: #9DA7BB;";
     document.querySelector(".zadaniya7").style =
@@ -110,7 +110,7 @@ export default function Youtube1() {
   }
   function painModal6() {
     document.querySelector(".zadaniya6").style =
-      "border-bottom: 2px solid #536DFD; color: #2E2E2E;";
+      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya5").style =
       "border-bottom: none; color: #9DA7BB;";
     document.querySelector(".zadaniya7").style =
@@ -120,7 +120,7 @@ export default function Youtube1() {
   }
   function painModal7() {
     document.querySelector(".zadaniya7").style =
-      "border-bottom: 2px solid #536DFD; color: #2E2E2E;";
+      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya6").style =
       "border-bottom: none; color: #9DA7BB;";
     document.querySelector(".zadaniya5").style =
@@ -130,7 +130,7 @@ export default function Youtube1() {
   }
   function painModal8() {
     document.querySelector(".zadaniya8").style =
-      "border-bottom: 2px solid #536DFD; color: #2E2E2E;";
+      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya6").style =
       "border-bottom: none; color: #9DA7BB;";
     document.querySelector(".zadaniya7").style =
