@@ -185,15 +185,15 @@ export default function Youtube1() {
                 <div className="youtube_kotta_img">
                   <div className="img_youtube_kotta">
                     <iframe
-                      src={main.video}
+                      src={main?(""):(<>{main.video}</>)}
                       title="W3Schools Free Online Web Tutorials"
                     ></iframe>
                   </div>
                   <div className="theme_df">
                     <div className="flex_logig">
-                      <h1 className="raspberry_pi">{main.name}</h1>
+                      <h1 className="raspberry_pi">{main?(""):(<>{main.name}</>)}</h1>
                       <div className="odtel_media_uchun">
-                        <h1>{main.name}</h1>
+                        <h1>{main.name===null?(""):(<>{main.name}</>)}</h1>
                         {/* <div className="flex_star_p">
                         <div className="flex_star2">
                           <p>
@@ -244,18 +244,17 @@ export default function Youtube1() {
                     </p> */}
                     </div>
                   </div>
-                  <p className="theme_content">{main.content}</p>
+                  <p className="theme_content">{main?(""):(<>{main.content}</>)}</p>
                 </div>
                 <div className="youtube_kichkina">
                   {category.map((item, key) => {
                    return(
                     <>
-                    {item.theme==null? (
+                    {item? (
                       <div className="a_err_boganda">
                         <div className="a_err_bolsa_block">
                           <img src={err} alt="" />
                           <h3>
-                            {" "}
                             Что-то произошло сервером мы уже испровляем это.
                           </h3>
                           <h3> Можете попробовать попойже</h3>
