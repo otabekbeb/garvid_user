@@ -562,3 +562,13 @@ line-height: normal;
         gap: 20px;
     }
 }
+
+.filter_course:hover .filter_card_padding h4{ 
+color: #44bef1;
+}
+.filter_course:hover .filter_card_padding h5{ 
+    color: #44bef1;
+    }
+    .filter_course:hover .filter_card_padding p{ 
+        color: #44bef1;
+        }
