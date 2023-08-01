@@ -22,7 +22,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import istok_img from "../img/istockphoto-1321436405-612x612.jpg";
 
 import { BiBorderBottom, BiTime } from "react-icons/bi";
-
+import Footer1 from "./Footer1"
 import "../css/youtube1.css";
 import Accordion from "react-bootstrap/Accordion";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -406,6 +406,7 @@ export default function Youtube1() {
       ) : (
         <Loader />
       )}
+      <Footer1/>
     </div>
   );
 }
