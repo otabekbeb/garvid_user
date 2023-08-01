@@ -2,10 +2,10 @@
     position: absolute;
     width: 35px;
     height: 35px;
-    border: 1px solid #44bef1;
+    border: 1px solid red;
     border-radius: 50%;
     background: white;
-    color: #44bef1;
+    color: red;
     right: 32px;
     bottom: 113px;
     display: flex;
@@ -15,8 +15,8 @@
     transition: all 0.3s;
 }
 .delete_icon:hover {
-    border: 1px solid #44bef1;
-    background: #44bef1;
+    border: 1px solid red;
+    background: red;
     color: white;
 }
 .delete_card{
@@ -46,6 +46,7 @@ z-index: 1000000000000000000000 !important;
     height: 190px;
 }
 .delete_padding h4{
+    font-size: 18px;
     margin-top: 10px;
     display: flex;
     justify-content: center;

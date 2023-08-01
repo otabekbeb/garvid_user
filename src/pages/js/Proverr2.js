@@ -89,7 +89,7 @@ console.log(res.data)
             alert("xato")
         })
 
-        axios.get(`${url}/api/course`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+        axios.get(`${url}/api/course`,{headers:{Authorization : ` Bearer ${localStorage.getItem("token")}`}}).then(res=>{
             jalodData(res.data)
             filTerrdata(res.data)
             console.log(res.data)
@@ -107,8 +107,8 @@ axios.get(`${url}/auth/teachers`,{headers:{Authorization :  `Bearer ${localStora
     },[])
 
     const Filter = (event) => {
-        const searchRegex = new RegExp(`^${event.target.value}`, "i");
-        axios.get(`${url}/api/course`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+        const searchRegex = new RegExp(`^${event.target.value}, "i"`);
+        axios.get(`${url}/api/course` , {headers: {Authorization : ` Bearer ${localStorage.getItem("token")}`}}).then(res=>{
           const searchdata1 = res.data.filter((item) => {
             return (
               searchRegex.test(item.name) 
@@ -119,7 +119,8 @@ axios.get(`${url}/auth/teachers`,{headers:{Authorization :  `Bearer ${localStora
     
       }
 
-  return (
+
+return (
     <div>
 <div className="prover2">
     <div className="prover2-kotta-men">
@@ -219,10 +220,9 @@ return(
                       </form>
                     </div> */}
                 </div>
-            
-            
-            
-                <div className="pover2-tab-kategoryy">
+
+
+<div className="pover2-tab-kategoryy">
                 <div className="radio-inputs">
             <label className="radio">
             <input type="radio" name="radio"/>
@@ -290,7 +290,9 @@ return(
                             <div className="span"></div>
                             <p>Интерес к программированию</p>
                         </div>
-                        <div className="prover2-trebovaniya-block3">
+
+
+<div className="prover2-trebovaniya-block3">
                             <div className="span"></div>
                             <p>Элементарный английский</p>
                         </div>
@@ -365,6 +367,7 @@ return(
             
 {/* <div className="prover2-oxiri-total-kurss"onMouseLeave={()=>aboutClose123122()}  >
 
+
 <div className="mni-kurs-narxi2">
                 <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
                 <p>150.000  <span>RUB</span></p></div>
@@ -388,7 +391,7 @@ return(
     </div>
 </div>
 <div className="mni-buton-iikki-yo">
-    <button id="gbfdgfdgdfgdf">Покупка</button><div className="line-mni-but"></div><button >150 000 сум</button>
+    <button id="gbfdgfdgdfgdf">Покупка</button><div className="line-mni-but"></div><button >{item.price} RUB</button>
 </div>
       
             </div>
@@ -454,82 +457,42 @@ return(
         <box-icon name='chevron-down' color='#c5c9d3' ></box-icon>
         </div>
 
-        </div>
+
+</div>
         <div className="prover3-search-joy">
         <div className="prover3-mni-search">
            <div className="prover2-info-d">
-            <div className="prover2-info-filter">
-          <button className='prover2-but-clas'><p>#Дизайн</p></button>
-          <button className='prover2-but-clas2'><p>#Маркетинг</p></button>
-          <button className='prover2-but-clas3'><p>#Бизнес</p></button>
-          <button className='prover2-but-clas4'><p>#Интернет</p></button>
-            </div>
+         
             <div className="prover2-info-filter2">
-                <button className='prover2-but-clas5'><p>#Бухгалтерский</p></button>
-                <button className='prover2-but-clas6'><p>#Здоровье</p></button>
-                <button className='prover2-but-clas7'><p>#Программирование</p></button>
-                <button className='prover2-but-clas6'><p>#питание</p></button>
+            {data.map((item=>{
+    return(
+        <button><p>#{item.name}</p></button>
+    )
+}))}
             </div>
             <div className="prover2-info-youtube-f">
                 <p className='prover2-p-df'>Программирование</p>
-                <div className="prover2-info-block1">
-                    <div className="prover2-info-block1-img">
-                        <img src={rasmww} alt="" />
-                    </div>
-                    <div className="prover2-info-block1-text">
-                        <h5>Создание RESTful API <br className="prover1-info-none-br" />
-практические задания на</h5>
-<p>Lorem ipsum dolor sit amet, consectetur <br />
-dolor sit amet. . . .</p>
-                    </div>
-                </div>
-                <div className="prover2-linerr1">
-
-                </div>
-                <div className="prover3-info-block1">
-                    <div className="prover3-info-block1-img">
-                        <img src={rasmww} alt="" />
-                    </div>
-                    <div className="prover3-info-block1-text">
-                       <h5>AWS для разработчиков:  <br className="prover1-info-none-br" />
-ECS и мультирегиональные<br className="prover1-info-none-br" /> перевозки. . .</h5>
-<p>Lorem ipsum dolor sit amet, consectetur <br />
-dolor sit amet. . . .</p>
-                    </div>
-                </div>
-                <div className="prover2-linerr1">
-
-                </div>
-
-                <div className="prover4-info-block1">
-                    <div className="prover4-info-block1-img">
-                        <img src={iphone} alt="" />
-                    </div>
-                    <div className="prover4-info-block1-text">
-                       <h5>Программирование на iOS <br className="prover1-info-none-br" />
-курсы</h5>
-<p>Lorem ipsum dolor sit amet, consectetur <br />
-dolor sit amet. . . .</p>
-                    </div>
-                </div>
-                <div className="prover2-linerr1">
-
-                </div>
-                <div className="prover4-info-block1">
-                    <div className="prover4-info-block1-img">
-                        <img src={iphone} alt="" />
-                    </div>
-                    <div className="prover4-info-block1-text">
-                       <h5>Программирование на iOS <br className="prover1-info-none-br" />
-курсы</h5>
-<p>Lorem ipsum dolor sit amet, consectetur <br />
-dolor sit amet. . . .</p>
-                    </div>
-                </div>
-                <div className="prover2-linerr1">
 
 
+{dusha.map(item1=>{
+return(
+    <div className="prover4-info-block1">
+    <div className="prover2-info-block1-img">
+    {item1.image === null ? (
+                 <img src={img_for_null} alt="" />
+                ) : (
+                  <img src={item1.image} />
+                 )}
+    </div>
+    <div className="prover2-info-block1-text">
+        <h5>{item1.name}</h5>
+<p>{item1.description}</p>
+<hr />
+    </div>
 </div>
+)
+})}
+{/*                
                 <div className="prover4-info-block1">
                     <div className="prover4-info-block1-img">
                         <img src={iphone} alt="" />
@@ -543,19 +506,10 @@ dolor sit amet. . . .</p>
                 </div>
                 <div className="prover3-linerr1">
 
-                </div>
+
+</div> */}
                 
-                <div className="prover5-info-block1">
-                    <div className="prover5-info-block1-img">
-                        <img src={rasmww} alt="" />
-                    </div>
-                    <div className="prover5-info-block1-text">
-                        <h5>Создание RESTful API <br className="prover1-info-none-br" />
-практические задания на</h5>
-<p>Lorem ipsum dolor sit amet, consectetur <br />
-dolor sit amet. . . .</p>
-                    </div>
-                </div>
+            
 
             </div>
             
@@ -563,84 +517,107 @@ dolor sit amet. . . .</p>
         </div>
         </div>
     </div>
-  <div className="mni-grid-pas-media">
 
-  <div className="prover2-oxiri-block-in">
-            <div className="mni-dasturlash-bloc"><p>Программирование</p></div>
-            <div className="mni-kurs-narxi">
-                <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
-                <p>250.000 <span>RUB</span></p></div>
-                <div className="mni-kurs-block2"></div>
+    {/* kereka */}
+{jalod.map(item=>{
+    if(item.id==localStorage.getItem("courseid")){
+      return(
+        <div className="mni-grid-pas-media">
+
+        <div className="prover2-oxiri-block-in">
+                  <div className="mni-dasturlash-bloc"><p>{item.name}</p></div>
+                  <div className="mni-kurs-narxi">
+                      <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
+                      <p>{item.price} <span>RUB</span></p></div>
+                      <div className="mni-kurs-block2"></div>
+                      
+                      <div className="mni-kurs-block1"><h5>Kurs hajmi</h5>
+                      <p>{item.planned_time} час</p></div>
+                      <div className="mni-kurs-block2"></div>
+                  </div>
+                  <p className="spdfodsofdsf">Разделы курса:</p>
                 
-                <div className="mni-kurs-block1"><h5>Kurs hajmi</h5>
-                <p>38 soat</p></div>
-                <div className="mni-kurs-block2"></div>
-            </div>
-            <p className="spdfodsofdsf">Разделы курса:</p>
-            <div className="mni-blocc-linee"></div>
+                  
+       <div className="prover2-oxiri-total-kurss"onMouseLeave={()=>aboutClose123122()}  >
+      <div className="prover20chech-box-a" onMouseEnter={()=>about2222()} onClick={()=>akkordion()} >
+          <input type="checkbox"/>
+          <p>Введение в процесс программирования и установки</p>
+          <span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
+      </div>
+      <div className="mni-kurs-narxi2">
+                      <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
+                      <p>150.000  <span>RUB</span></p></div>
+                      <div className="mni-kurs-block2"></div>
+                      
+                      <div className="mni-kurs-block1"><h5>Размер поля</h5>
+                      <p>38 час</p></div>
+                      <div className="mni-kurs-block2"></div>
+                  </div>
+      </div> 
+       <div className="mni-accordion-none1">
+          <div className="prover20chech-box-a2">
+              <input type="checkbox" />
+              <p>Работа с простыми операциями в программе</p>
+              <span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
+          </div>
+          <div className="prover20chech-box-a2">
+              <input type="checkbox" />
+              <p>Работа с простыми операциями в программе</p>
+              <span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
+          </div>
+      </div> 
+      <div className="mni-buton-iikki-yo">
+          <button id="gbfdgfdgdfgdf">Покупка</button><div className="line-mni-but"></div><button >{item.price} RUB</button>
+      </div>
             
-<div className="prover2-oxiri-total-kurss"onMouseLeave={()=>aboutClose123122()}  >
-<div className="prover20chech-box-a" onMouseEnter={()=>about2222()} onClick={()=>akkordion()} >
-    <input type="checkbox"/>
-    <p>Введение в процесс программирования и установки</p>
-    <span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
-</div>
-<div className="mni-kurs-narxi2">
-                <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
-                <p>150.000  <span>RUB</span></p></div>
-                <div className="mni-kurs-block2"></div>
-                
-                <div className="mni-kurs-block1"><h5>Размер поля</h5>
-                <p>38 час</p></div>
-                <div className="mni-kurs-block2"></div>
-            </div>
-</div>
-<div className="mni-accordion-none1">
-    <div className="prover20chech-box-a2">
-        <input type="checkbox" />
-        <p>Работа с простыми операциями в программе</p>
-        <span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
-    </div>
-    <div className="prover20chech-box-a2">
-        <input type="checkbox" />
-        <p>Работа с простыми операциями в программе</p>
-        <span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
-    </div>
-</div>
-<div className="mni-buton-iikki-yo">
-    <button id="gbfdgfdgdfgdf">Покупка</button><div className="line-mni-but"></div><button >150 000 сум</button>
-</div>
-      
-            </div>
-      <div className="mni-krus-techer-swiper">
-<div className="boshqa-mentorla">
-    <h5>Boshqa Mentorlar</h5>
-    <div className="boshqa-mentorla-krugg1">
-        <div className="boshqa-kurglaaaaa1" onClick={()=>onga()}><box-icon name='right-arrow-alt' color='#536dfd' ></box-icon></div>
-    </div>
-</div>
+                  </div>
+            <div className="mni-krus-techer-swiper">
+      <div className="boshqa-mentorla">
+          <h5>Boshqa Mentorlar</h5>
+          <div className="boshqa-mentorla-krugg1">
+              <div className="boshqa-kurglaaaaa1" onClick={()=>onga()}><box-icon name='right-arrow-alt' color='#536dfd' ></box-icon></div>
+          </div>
+      </div>
+      {ticher.map(item1=>{
+        return(
+
+
 <div className="mni-swiper-grid">
     <div className="mni-gridf1">
-<img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/46f705111077375.5ffb645951e7c.jpg" alt="" />
-<img src="https://ag-spots-2020.o.auroraobjects.eu/2020/08/22/other/2880-1800-crop-bmw-m5-f90-competition-2021-c330122082020014437_1.jpg" alt="" />
+    {item1.image === null ? (
+                 <img src={img_for_null} alt="" />
+                ) : (
+                  <img src={item1.image } />
+                 )}
+             
 
-
-<img src="https://ag-spots-2020.o.auroraobjects.eu/2020/03/07/other/2880-1800-crop-bmw-m5-f90-competition-c490507032020171519_1.jpg" alt="" />
-<img src="https://ag-spots-2021.o.auroraobjects.eu/2021/01/17/bmw-m5-f90-competition-2021-c451117012021040035_1.jpg" alt="" />
     </div>
     
     <div className="mni-gridf2">
-<img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg" alt="" />
-<img src="https://bronk.club/uploads/posts/2023-02/1676935060_bronk-club-p-otkritki-prirodi-ochen-krasivie-krasivo-39.jpg" alt="" />
-<img src="https://funart.pro/uploads/posts/2021-03/thumbs/1617041574_9-p-oboi-krasivie-foto-prirodi-11.jpg" alt="" />
-<img src="https://cdn.forbes.ru/forbes-static/c/1040x549/new/2023/04/1GettyImages-183930658-kopia-643018c796355.webp" alt="" />
+    {item1.image === null ? (
+                 <img src={img_for_null} alt="" />
+                ) : (
+                  <img src={item1.image} />
+                 )}
+             
 
     </div>
 </div>
-</div>
+           
+        )
+    })}
+      </div>
+      
+        
+        </div>
+      )
+    }
+})}
 
-  
-  </div>
+
+
+
+
   <div className="lolipap-kptta-nomoylabtopomadim">
   <div className="mni-krus-techer-swiper1">
 <div className="boshqa-mentorla">
@@ -668,8 +645,6 @@ dolor sit amet. . . .</p>
 </div>
   </div>
 </div>
-
-
 
     </div>
   )

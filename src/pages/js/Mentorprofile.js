@@ -9,6 +9,7 @@ import {FiEdit,FiLifeBuoy,FiLogOut} from "react-icons/fi"
 import {TbPointFilled} from "react-icons/tb"
 import {AiOutlineRight} from "react-icons/ai"
 import chadimg from "../img/Ellipse.jpg"
+import { GrClose } from 'react-icons/gr'
 
 export default function Mentorprofile() {
   const [state1, setState1] = React.useState();
@@ -38,7 +39,16 @@ export default function Mentorprofile() {
         document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style="display:block;"
         document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style="display:none;"
       }
-
+      function notificationModal() {
+        document.querySelector(".profil_notifacation_size").style =
+          "position: fixed;right:0px;";
+        document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
+          "display:none";
+      }
+      function notificationClose() {
+        document.querySelector(".profil_notifacation_size").style =
+          "position: fixed;right:-100%;";
+      }
   return (
     <div>
 
@@ -76,7 +86,7 @@ export default function Mentorprofile() {
           <div className="profil_blok_ikki_icon_texrirlash_modal">
             <div onClick={() =>
               window.location="/loginpageMentor"} className='taxrirlash_modal_div'><FiEdit className='taxrirlash_modal_icon' /><p>Edit profile</p></div>
-            <div className='taxrirlash_modal_div'><BiCast className='taxrirlash_modal_icon'/><p>Notifications</p></div>
+            <div className='taxrirlash_modal_div'  onClick={() => notificationModal()}><BiCast className='taxrirlash_modal_icon'/><p>Notifications</p></div>
             <div className='taxrirlash_modal_div'><FiLifeBuoy className='taxrirlash_modal_icon'/><p>Help</p></div>
             <hr />
             <div className='taxrirlash_modal_div' onClick={()=>{window.location="/";localStorage.removeItem("token")}}><FiLogOut className='taxrirlash_modal_icon'/><p>Exit</p></div>
@@ -135,6 +145,21 @@ export default function Mentorprofile() {
           </div>
         </div>
         </div> 
+        <div className="profil_notifacation_size">
+        <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
+          <div className="admin">
+            <h4>Sms</h4>
+          </div>
+          <div className="admin_div">
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, inventore.
+          </div>
+          <div className="admin_div">
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, inventore.
+          </div>
+          <div className="admin_div">
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, inventore.
+          </div>
+        </div>
     </div>
     
     </div>

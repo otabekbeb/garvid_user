@@ -1,0 +1,50 @@
+.bigd{ 
+  width: 300px; 
+  height: 350px; 
+  background-color: rgb(188, 111, 207); 
+  margin:auto; 
+padding-left: 23px; 
+padding-top: 20px; 
+margin-top: 99px; 
+border-radius: 50px; 
+} 
+ 
+.mini input{ 
+  width: 33%; 
+  height: 29px; 
+  border-radius: 10px; 
+  border: none; 
+ 
+} 
+.mini button{ 
+  width: 23%; 
+  height: 29px; 
+  border: none; 
+  border-radius:45px; 
+  margin-left: 8px; 
+} 
+ 
+ 
+.mini1 input{ 
+  width: 33%; 
+  height: 29px; 
+  border-radius: 10px; 
+  border: none; 
+ 
+} 
+.mini1 button{ 
+  width: 23%; 
+  height: 29px; 
+  border: none; 
+  border-radius:45px; 
+  margin-left: 8px; 
+}
+
+
+
+
+
+   
+        
+
+

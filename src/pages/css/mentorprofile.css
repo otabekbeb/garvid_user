@@ -22,7 +22,8 @@
   }
   .blok_bir_icon_img1 {
     padding: 6px;
-    padding-top: 4px;
+    height: 40px;
+    padding-top: 5px;
     text-align: center;
     width: 40px;
     border-radius: 50%;
@@ -33,7 +34,8 @@
   }
   .blok_bir_icon_img2 {
     padding: 6px;
-    padding-top: 4px;
+    height: 40px;
+    padding-top: 5px;
     text-align: center;
     width: 40px;
     border-radius: 50%;

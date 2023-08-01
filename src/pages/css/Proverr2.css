@@ -1,3 +1,4 @@
+
 .prover2{
     width: 100% !important;
     min-height: 52vw;
@@ -155,6 +156,7 @@ left: 20px !important;
 .prover2-info-filter2 p:hover{
     color: white;
 }
+
 
 .prover2-info-youtube-f{
     width: 94%;
@@ -359,9 +361,6 @@ text-align: left;
 }
 
 
-
-
-
 .rating:not(:checked) > input {
     position: absolute;
     appearance: none;
@@ -560,10 +559,6 @@ top:5px;
 cursor: pointer;
     height: 33px !important;
 }
-
-
-
-
 
 
 .radio-inputs {
@@ -772,7 +767,8 @@ cursor: pointer;
     cursor: pointer;
   }
 
-  .mni-buton-iikki-yo{
+
+.mni-buton-iikki-yo{
     display: flex;
   }
   .mni-buton-iikki-yo button{
@@ -803,7 +799,7 @@ transition: 0.5s all ease;
   }
 .mni-krus-techer-swiper{
 width: 330px;
-height: 430px;
+height: 410px;
 background-color: #ffffff;
 position: relative;
 top:30px;
@@ -849,12 +845,7 @@ height: 150px;
 border-radius: 4px;
 
 }
-.mni-gridf2{
-    width: 134px;
-height: 150px;
-border-radius: 4px;
 
-}
 .mni-gridf1 {
     display: grid !important;
     grid-template-columns: auto auto   !important;
@@ -880,7 +871,9 @@ border-radius: 4px;
     padding-left: 17px !important;
 }
 .mni-gridf2 img{
-width: 100%;
+    width: 134px !important; 
+    height: 150px !important;
+    border-radius: 4px !important;
 }
 .mni-gridf3-none{
     display: none !important;
@@ -972,6 +965,7 @@ padding-left: 3px;
 }
 .progrees-mni-relou input{
     display: block !important;
+
 
 }
 .progre-block-mni1{
@@ -1118,6 +1112,7 @@ height: 0;
     background-color: #c5c9d3;
 }
 
+
 #saopdsados{
     position: relative;
     right: 5px;
@@ -1149,9 +1144,6 @@ height: 0;
 }
 .mni-orta-bloxk-mediaa{
     display: none;
-}
-.mni-gridf1 img{
-    width: 100%;
 }
     @media (max-width:1562px) {
         .prover2-orta-joy iframe{
@@ -1247,7 +1239,8 @@ height: 0;
         text-align: left;
     }
 
-    #prover5-info-block1{
+
+#prover5-info-block1{
         display: none;
     }
     .prover3-linerr1{
@@ -1294,7 +1287,7 @@ height: 0;
         height: auto;
         border-radius: 0px 4px 4px 0px;
         box-shadow: 0px 2px 2px 0px #0000001A;
-        background-color: hsl(0, 0%, 100%);
+        background-color: #ffffff;
         padding-left: 15px;
         padding-top: 15px;
         margin-bottom: 10px;
@@ -1382,6 +1375,7 @@ height: 0;
         .m_otsenka h1 {
             font-size: 50px;
         }
+
 
 }
 @media (max-width:1333px) {
@@ -1494,7 +1488,7 @@ height: 0;
         background: #F1F2F6;
         padding-top: 30px;
     }
-    .prover2-orta-joy iframeimg{
+    .prover2-orta-joy iframe{
         width:700px !important;
         height: 320px !important;
     }
@@ -1539,7 +1533,9 @@ height: 0;
             box-shadow: 0px 2px 2px 0px #0000001A;
             background-color: #ffffff;
             padding-left: 15px;
-            padding-top: 15px;
+
+
+padding-top: 15px;
             margin-bottom: 10px;
             position: relative;
             left: -15px !important;
@@ -1702,7 +1698,8 @@ justify-content: center;
         
         }
 
-        .prover2-info-filter button{
+
+.prover2-info-filter button{
         background: #F1F2F6;
 width: 130px !important;
         }
@@ -1784,6 +1781,7 @@ width: 130px !important;
                 display: none;
             }
 }
+
 
 @media (max-width:1100px) {
     .prover2-orta-u button {
@@ -1919,7 +1917,8 @@ width: 130px !important;
         background-color: #ffffff;
     }
 
-    .radio-inputs {
+
+.radio-inputs {
         position: relative;
         display: flex;
         flex-wrap: wrap;
@@ -1962,7 +1961,7 @@ width: 130px !important;
         padding-left: 15px;
         padding-top: 5px;
     }
-    .prover2-info-filter2 {
+    /* .prover2-info-filter2 {
         display:flow-root;
  gap: 20px !important;
     }
@@ -1970,7 +1969,7 @@ width: 130px !important;
         display: flow-root;
         gap: 20px !important;
 
-   }
+   } */
    .prover2-linerr1 {
     width: 85.2%;
     height: 1px;
@@ -2098,7 +2097,9 @@ border-radius: 4px;
     position: relative;
     left: 20px !important;
     }
-    .prover2-but-clas6{
+
+
+.prover2-but-clas6{
         width: 88px !important;
     height: 25px !important;
     border-radius: 4px;
@@ -2207,7 +2208,8 @@ border-radius: 4px;
         top: 15px;
     }
 
-    .radio-inputs {
+
+.radio-inputs {
         position: relative;
         display: flex;
         flex-wrap: wrap;
@@ -2300,8 +2302,6 @@ border-radius: 4px;
         width: 300px !important;
     }
 }
-
-
 
 
 @media (max-width:821px) {
@@ -2427,7 +2427,8 @@ border-radius: 4px;
             background-color: #ffffff;
         }
 
-    .radio-inputs {
+
+.radio-inputs {
         position: relative;
         display: flex;
         flex-wrap: wrap;
@@ -2590,7 +2591,7 @@ border-radius: 4px;
         letter-spacing: 0em;
         text-align: left;
     }
-    
+
 
 .prover2-orta-joy-reytin span {
     font-family: SF Pro Display;
@@ -2775,7 +2776,9 @@ border-radius: 4px;
     }
 }
 @media (max-width:340px) {
-    .prover2-orta-joy iframe{
+
+
+.prover2-orta-joy iframe{
         width:310px !important;
         height: 320px !important;
     }
@@ -2944,7 +2947,9 @@ border-radius: 4px;
     .prover2-trebovaniya-block4 {
         display: flex;
         align-items: center;
-        justify-content: center;
+
+
+justify-content: center;
         width: 130px !important;
         height: 40px !important;
         border-radius: 4px;
@@ -3002,4 +3007,10 @@ border-radius: 4px;
         margin-top: 15px;
         cursor: pointer;
     }
+}
+.asdasda img{
+    width: 100px;
+}
+.lasdsadsad img{
+    width: 200px;
 }

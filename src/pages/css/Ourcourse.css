@@ -492,6 +492,16 @@ line-height: normal;
         margin-top: 20px;
     }
 }
+ .filter_course img{
+        width: 100%;
+        height: 300px;
+    }
+    .filter_course{
+        overflow: hidden;
+    }
+    .filter_course:hover img{
+        scale: 1.03;
+    }
 @media (max-width:330px) {
     .hajm{
         width: 90%;
@@ -527,3 +537,38 @@ line-height: normal;
         bottom: 12px;
     }
 }
+
+
+.curs_filter{
+    width: 200px;
+    height: 35px;
+    font-size: 18px;
+}
+@media (max-width:400px) {
+    .curs_filter{
+        width: 100%;
+        margin-left: 0 !important;
+        height: 35px;
+        font-size: 20px;
+    } 
+    .curs_cards{
+        padding: 25px;
+    }
+    .togl {
+        padding: 17px 34px;
+        width: 92%;
+        position: absolute;
+        margin-left: -10px;
+        gap: 20px;
+    }
+}
+
+.filter_course:hover .filter_card_padding h4{ 
+color: #44bef1;
+}
+.filter_course:hover .filter_card_padding h5{ 
+    color: #44bef1;
+    }
+    .filter_course:hover .filter_card_padding p{ 
+        color: #44bef1;
+        }
