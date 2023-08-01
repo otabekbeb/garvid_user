@@ -17,7 +17,7 @@ import Teacher from "./pages/js/Teacherpage";
 import Student from "./pages/js/Student";
 import Mentorcontact from "./pages/js/Mentorcontact";
 import News from "./pages/js/News";
-import Newspage from "./pages/js/Newspage";
+import Newspage from "./pages/js/Newspage";   
 import Studentpage from './pages/js/Studentpage'
 import LoginpageMentor from './pages/js/LoginpageMentor'
 import Help  from './pages/js/Help'

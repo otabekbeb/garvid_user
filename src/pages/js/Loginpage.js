@@ -13,7 +13,7 @@ export default function Loginpage() {
   const [manzil, setManzil] = React.useState([]);
   const [adress, setAdress] = React.useState([]);
   const [adresput, setAdresput] = React.useState([]);
-  const [loader, setLoader] = React.useState(0);
+  const [loader, setLoader] = React.useState(1);
   const [state1, setState1] = React.useState();
   useEffect(() => {
     setState1(
@@ -138,7 +138,7 @@ export default function Loginpage() {
               <button
                 style={
                   data === 1
-                    ? { background: "#536DFD", color: "white", border: "none" }
+                    ? { background: " #44bef1 ", color: "white", border: "none" }
                     : { background: "white", color: "black", border: "none" }
                 }
                 onClick={() => {
@@ -151,7 +151,7 @@ export default function Loginpage() {
               <button
                 style={
                   data === 2
-                    ? { background: "#536DFD", color: "white", border: "none" }
+                    ? { background: " #44bef1", color: "white", border: "none" }
                     : { background: "white", color: "black", border: "none" }
                 }
                 onClick={() => {

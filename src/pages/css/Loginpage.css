@@ -159,12 +159,12 @@ display: none;
 }
 
 #cb1 {
-  accent-color: #536DFD;
+  accent-color:  #44bef1;
   border: none;
 }
 
 .check2:hover {
-  color: #536DFD;
+  color:  #44bef1;
 }
 
 .inputs111 h2 {
@@ -194,7 +194,7 @@ display: none;
 .inputs111 button {
   width: 100%;
   height: 50px;
-  background-color: #536DFD;
+  background-color:  #44bef1;
   font-size: 17px;
   margin-top: 40px;
   border-radius: 10px;
@@ -210,7 +210,7 @@ display: none;
   margin-left: 11%;
 
   margin-left: 30px;
-  color: #536DFD;
+  color:  #44bef1;
 }
 
 .profil1 {
@@ -416,7 +416,7 @@ display: none;
 .change button {
   width: 120px;
   height: 50px;
-  background-color: #536DFD;
+  background-color:  #44bef1;
   font-size: 17px;
   margin-top: 40px;
   border-radius: 10px;
@@ -469,7 +469,7 @@ display: none;
 .all-button button {
   width: 250px;
   height: 50px;
-  background-color: #536DFD;
+  background-color:  #44bef1;
   font-size: 18px;
   margin-top: 4%;
   border-radius: 10px;
@@ -485,7 +485,7 @@ display: none;
   .all-button button {
     width: 30%;
     height: 60px;
-    background-color: #536DFD;
+    background-color:  #44bef1;
     font-size: 3vw;
     margin-top: 40px;
     border-radius: 10px;
@@ -529,7 +529,7 @@ display: none;
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background-color: #536DFD;
+  background-color:  #44bef1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -553,7 +553,7 @@ display: none;
 }
 
 .buttons11 button:hover {
-  border: 1px solid #536DFD;
+  border: 1px solid  #44bef1;
 }
 
 #a1a {
@@ -900,7 +900,7 @@ display: none;
 }
 
 .dele1 {
-  color: #536DFD;
+  color:  #44bef1;
   cursor: pointer;
   font-size: 18px;
   font-weight: 500;
