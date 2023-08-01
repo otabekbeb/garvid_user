@@ -184,8 +184,8 @@ export default function Navbar() {
 
 
                 
-                   <li>
-                      {localStorage.getItem("token") ? (user.map(item=>{return<a href="/user">{item.username}</a> })) : (<a href="/login" className="tt">Log in</a>)}
+                   <li className="moto-menu-item">
+                      {localStorage.getItem("token") ? (user.map(item=>{return<a href="/user">{item.username}</a> })) : (<a href="/login" >Log in</a>)}
                     </li>
                       
                       
@@ -285,9 +285,8 @@ export default function Navbar() {
                         </a>
                       </li>
                       {/* <li><a href="/teacher" className='tt'>Teacher</a></li> */}
-
-                    <li>
-                      {localStorage.getItem("token") ? (user.map(item=>{return<a href="/user">{item.username}</a> })) : (<a href="/login" className="tt">Log in</a>)}
+                    <li >
+                      {localStorage.getItem("token") ? (user.map(item=>{return(<a href="/user" className="tt">{item.username}</a>) })) : (<a href="/login" className="tt">Log in</a>)}
                     </li>
 
 
