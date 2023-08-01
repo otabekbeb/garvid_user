@@ -33,6 +33,7 @@ export default function Loginpage() {
           document.querySelector("#birthday").value = item.date_joined.slice(0, 10);
           document.querySelector("#adress").value = item.address;
           document.querySelector("#description").value = item.description;
+          
         })
         setUser(res.data);
         user.map(item => {
@@ -44,11 +45,13 @@ export default function Loginpage() {
           document.querySelector("#birthday").value = item.date_joined.slice(0, 10);
           document.querySelector("#adress").value = item.address;
           document.querySelector("#description").value = item.description;
+          
         })
         console.log(res.data, "aaa");
+        setLoader(1)
       });
 
-    setLoader(1)
+    
   }, []);
 
   const plus = () => {
@@ -114,6 +117,7 @@ export default function Loginpage() {
           document.querySelector("#birthday").value = item.date_joined.slice(0, 10);
           document.querySelector("#adress").value = item.address;
           document.querySelector("#description").value = item.description;
+          
         })
       });
     setData(1);

@@ -39,7 +39,7 @@ export default function Youtube1() {
   const [main, setMain] = useState([]);
   const [user, setUser] = useState([]);
   const [state1, setState1] = React.useState();
-  const [loader, setLoader] = useState(0);
+  const [loader, setLoader] = useState(1);
   const [IDtheme, setIdtheme] = useState({});
 
   function openModal() {
@@ -149,6 +149,7 @@ export default function Youtube1() {
         setMain(res.data.one);
         setCategory(res.data.all);
         console.log(res.data);
+        setLoader(0)
       })
       .catch((err) => {
         console.log(err);
@@ -249,7 +250,7 @@ export default function Youtube1() {
                   {category.map((item, key) => {
                    return(
                     <>
-                    {item.theme? (
+                    {item.theme==null? (
                       <div className="a_err_boganda">
                         <div className="a_err_bolsa_block">
                           <img src={err} alt="" />
@@ -264,7 +265,7 @@ export default function Youtube1() {
                         </div>
                       </div>
                     ) : (
-                          <Accordion defaultActiveKey="0">
+                         <Accordion defaultActiveKey="0">
                             <Accordion.Item eventKey={0 + key}>
                               <Accordion.Header>{item.name}</Accordion.Header>
                               {item.theme.map((item2) => {
