@@ -13,9 +13,12 @@ import { TbPointFilled } from "react-icons/tb";
 import { AiOutlineRight } from "react-icons/ai";
 import chadimg from "../img/Ellipse.jpg";
 import axios from "axios";
+import { GrClose } from 'react-icons/gr'
 import url from "./Host";
 import userNull from "../img/149071.png";
-
+import {BiLogoTelegram} from 'react-icons/bi'
+import { FaYoutube } from 'react-icons/fa'
+import {RiInstagramFill} from 'react-icons/ri'
 export default function Profil() {
   const [data, setData] = useState([]);
   const [state1, setState1] = React.useState();
@@ -155,13 +158,13 @@ export default function Profil() {
               <p>My signs</p>
               <div className="blok_bir_icon">
                 <div className="blok_bir_icon_img1">
-                  <img className="raketa_img" src={icon_img} alt="" />
+                  <BiLogoTelegram/>
                 </div>
                 <div className="blok_bir_icon_img2">
-                  <img className="miya_img" src={icon_img1} alt="" />
+                  <RiInstagramFill/>
                 </div>
-                <div className="blok_bir_icon_img3">
-                  <img className="medal_img" src={icon_img2} alt="" />
+                <div className="youtube">
+                  <FaYoutube />
                 </div>
               </div>
             </div>
@@ -303,11 +306,18 @@ export default function Profil() {
           </div>
         </div>
         <div className="profil_notifacation_size">
-          <div
-            onClick={() => notificationClose()}
-            className="profil_notifacation_size_close"
-          >
-            x
+        <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
+          <div className="admin">
+            <h4>Sms</h4>
+          </div>
+          <div className="admin_div">
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, inventore.
+          </div>
+          <div className="admin_div">
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, inventore.
+          </div>
+          <div className="admin_div">
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, inventore.
           </div>
         </div>
       </div>
