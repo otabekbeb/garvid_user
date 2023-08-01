@@ -1,5 +1,6 @@
 .youtube_bgc{
     background-color: #F1F2F6;  
+    margin-bottom:50px;
 }
 
 .flex_youtube{
@@ -50,7 +51,7 @@ display: none;
 .navbar_otish1 p:after {
     display: block;
     content: "";
-    border-bottom: solid 3px #536dfd;
+    border-bottom: solid 3px #44bef1;
     transform: scaleX(0);
     transition: transform 250ms ease-in-out;
   }
@@ -62,7 +63,7 @@ display: none;
     padding-bottom: 10px;
     display: block;
     content: "";
-    border-bottom: solid 3px #536dfd;
+    border-bottom: solid 3px #44bef1;
     transform: scaleX(0);
     transition: transform 250ms ease-in-out;
   }

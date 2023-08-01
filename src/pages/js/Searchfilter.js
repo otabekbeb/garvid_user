@@ -141,7 +141,7 @@ export default function Searchfilter() {
         </div><div className="kurs_cards">
           {kursdata.map(item=>{
             return(  
-            <div onClick={()=>{window.location="video";localStorage.setItem("abbas",item.id)}}  className="kurs_card">
+            <div onClick={()=>{window.location="/video";localStorage.setItem("abbas",item.id)}}  className="kurs_card">
                 <button className="btn_das">Programming</button>
                 {item.image === null ? (
                  <img src={img_for_null} alt="" />

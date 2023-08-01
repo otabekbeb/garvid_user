@@ -12,6 +12,7 @@ import Futer from '../js/Futer'
 import axios from 'axios';
 import Anime from "../img/download.png"
 import url from './Host';
+import Footer1 from "./Footer1"
 
 
 
@@ -207,7 +208,7 @@ types</h5>
 
                </div>
             </header>
-<futer/>
+<Footer1/>
         </div>
     )
 }
