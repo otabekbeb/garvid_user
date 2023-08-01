@@ -18,6 +18,7 @@ import axios from "axios";
 import url from "./Host";
 import Loader from './loader'
 import img_for_null from '../img/download.png'
+import img_prover  from '../img/istockphoto-1321436405-612x612.jpg'
 
 export default function Searchfilter() {
   const [courstype,setCoursetype] = useState([])
