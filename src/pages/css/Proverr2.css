@@ -849,6 +849,7 @@ height: 150px;
 border-radius: 4px;
 
 }
+
 .mni-gridf1 {
     display: grid !important;
     grid-template-columns: auto auto   !important;
@@ -1955,7 +1956,7 @@ width: 130px !important;
         padding-left: 15px;
         padding-top: 5px;
     }
-    .prover2-info-filter2 {
+    /* .prover2-info-filter2 {
         display:flow-root;
  gap: 20px !important;
     }
@@ -1963,7 +1964,7 @@ width: 130px !important;
         display: flow-root;
         gap: 20px !important;
 
-   }
+   } */
    .prover2-linerr1 {
     width: 85.2%;
     height: 1px;
@@ -2995,4 +2996,10 @@ border-radius: 4px;
         margin-top: 15px;
         cursor: pointer;
     }
+}
+.asdasda img{
+    width: 100px;
+}
+.lasdsadsad img{
+    width: 200px;
 }

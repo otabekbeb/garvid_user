@@ -1124,3 +1124,12 @@ padding: 5px;
     border-bottom-right-radius: 5px;
     cursor: pointer;
 }
+@media (max-width:518px) {
+    .futer {
+        width: 100%;
+        background: #323946;
+        height: 1020px !important;
+        padding-top: 90px;
+        overflow: hidden !important;
+    }
+}
