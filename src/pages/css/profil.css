@@ -30,6 +30,7 @@
   padding-top: 4px;
   text-align: center;
   width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 2px solid white;
   box-shadow: 0px 4px 8px 5px #0000001a;
@@ -59,9 +60,10 @@
 
 .youtube {
   padding: 6px;
-  padding-top: 4px;
+  padding-top: 5px;
   text-align: center;
   width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 2px solid white;
   box-shadow: 0px 4px 8px 5px #0000001a;
@@ -380,7 +382,6 @@
   .blok_bir_icon_img1 {
     padding: 2px;
     padding-left: 1px;
-    padding-top: 3px;
     padding-bottom: 5px;
     text-align: center;
     width: 35px;

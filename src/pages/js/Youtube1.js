@@ -57,7 +57,7 @@ export default function Youtube1() {
 
   function painModal() {
     document.querySelector(".zadaniya").style =
-      "border-bottom: 2px solid #536DFD; color: #2E2E2E;";
+      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya1").style =
       "border-bottom: none; color: #9DA7BB;";
     document.querySelector(".zadaniya2").style =
@@ -67,7 +67,7 @@ export default function Youtube1() {
   }
   function painModal1() {
     document.querySelector(".zadaniya1").style =
-      "border-bottom: 2px solid #536DFD; color: #2E2E2E;";
+      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya").style =
       "border-bottom: none; color: #9DA7BB;";
     document.querySelector(".zadaniya2").style =
@@ -77,7 +77,7 @@ export default function Youtube1() {
   }
   function painModal2() {
     document.querySelector(".zadaniya2").style =
-      "border-bottom: 2px solid #536DFD; color: #2E2E2E;";
+      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya1").style =
       "border-bottom: none; color: #9DA7BB;";
     document.querySelector(".zadaniya1").style =
@@ -87,7 +87,7 @@ export default function Youtube1() {
   }
   function painModal3() {
     document.querySelector(".zadaniya3").style =
-      "border-bottom: 2px solid #536DFD; color: #2E2E2E;";
+      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya2").style =
       "border-bottom: none; color: #9DA7BB;";
     document.querySelector(".zadaniya1").style =
@@ -100,7 +100,7 @@ export default function Youtube1() {
 
   function painModal5() {
     document.querySelector(".zadaniya5").style =
-      "border-bottom: 2px solid #536DFD; color: #2E2E2E;";
+      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya6").style =
       "border-bottom: none; color: #9DA7BB;";
     document.querySelector(".zadaniya7").style =
@@ -110,7 +110,7 @@ export default function Youtube1() {
   }
   function painModal6() {
     document.querySelector(".zadaniya6").style =
-      "border-bottom: 2px solid #536DFD; color: #2E2E2E;";
+      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya5").style =
       "border-bottom: none; color: #9DA7BB;";
     document.querySelector(".zadaniya7").style =
@@ -120,7 +120,7 @@ export default function Youtube1() {
   }
   function painModal7() {
     document.querySelector(".zadaniya7").style =
-      "border-bottom: 2px solid #536DFD; color: #2E2E2E;";
+      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya6").style =
       "border-bottom: none; color: #9DA7BB;";
     document.querySelector(".zadaniya5").style =
@@ -130,7 +130,7 @@ export default function Youtube1() {
   }
   function painModal8() {
     document.querySelector(".zadaniya8").style =
-      "border-bottom: 2px solid #536DFD; color: #2E2E2E;";
+      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya6").style =
       "border-bottom: none; color: #9DA7BB;";
     document.querySelector(".zadaniya7").style =
@@ -146,15 +146,15 @@ export default function Youtube1() {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
-        setMain(res.data.one);
+        setMain(res.data.one?res.data.one:[]);
         setCategory(res.data.all);
         console.log(res.data);
         setLoader(0)
       })
       .catch((err) => {
-        console.log(err);
-        document.querySelector(".a_err_boganda").style =
-          "display: flex;justify-content: center;align-items: center;";
+        // console.log(err);
+        // document.querySelector(".a_err_boganda").style =
+        //   "display: flex;justify-content: center;align-items: center;";
       });
 
     setState1(
@@ -182,18 +182,19 @@ export default function Youtube1() {
             <Usernavbar />
             <div className="youtube_bgc">
               <div className="flex_youtube">
-                <div className="youtube_kotta_img">
+
+              <div className="youtube_kotta_img">
                   <div className="img_youtube_kotta">
                     <iframe
-                      src={main?(""):(<>{main.video}</>)}
+                      src={main.video}
                       title="W3Schools Free Online Web Tutorials"
                     ></iframe>
                   </div>
                   <div className="theme_df">
                     <div className="flex_logig">
-                      <h1 className="raspberry_pi">{main?(""):(<>{main.name}</>)}</h1>
+                      <h1 className="raspberry_pi">{main.name}</h1>
                       <div className="odtel_media_uchun">
-                        <h1>{main.name===null?(""):(<>{main.name}</>)}</h1>
+                        <h1>{main.name}</h1>
                         {/* <div className="flex_star_p">
                         <div className="flex_star2">
                           <p>
@@ -244,27 +245,27 @@ export default function Youtube1() {
                     </p> */}
                     </div>
                   </div>
-                  <p className="theme_content">{main?(""):(<>{main.content}</>)}</p>
+                  <p className="theme_content">{main.content}</p>
                 </div>
+                <div className={main==""?"db":"a_err_boganda"}>
+                      <div className="a_err_bolsa_block">
+                        <img src={err} alt="" />
+                        <h3>
+                          Что-то произошло сервером, мы уже испровляем это.
+                        </h3>
+                        <h3> Можете попробовать попойже</h3>
+                        <button onClick={() => ModalCatchBolsa()}>
+                          вернуться назад
+                        </button>
+                      </div>
+                    </div>
+
                 <div className="youtube_kichkina">
                   {category.map((item, key) => {
                    return(
                     <>
-                    {item? (
-                      <div className="a_err_boganda">
-                        <div className="a_err_bolsa_block">
-                          <img src={err} alt="" />
-                          <h3>
-                            Что-то произошло сервером мы уже испровляем это.
-                          </h3>
-                          <h3> Можете попробовать попойже</h3>
-                          <button onClick={() => ModalCatchBolsa()}>
-                            вернуться назад
-                          </button>
-                        </div>
-                      </div>
-                    ) : (
-                         <Accordion defaultActiveKey="0">
+
+                          <Accordion>
                             <Accordion.Item eventKey={0 + key}>
                               <Accordion.Header>{item.name}</Accordion.Header>
                               {item.theme.map((item2) => {
@@ -293,7 +294,20 @@ export default function Youtube1() {
                               })}
                             </Accordion.Item>
                           </Accordion>
-                    )}
+
+                      {/* <div className="a_err_boganda">
+                      <div className="a_err_bolsa_block">
+                        <img src={err} alt="" />
+                        <h3>
+                          Что-то произошло сервером мы уже испровляем это.
+                        </h3>
+                        <h3> Можете попробовать попойже</h3>
+                        <button onClick={() => ModalCatchBolsa()}>
+                          вернуться назад
+                        </button>
+                      </div>
+                    </div> */}
+
                   </>
                    )
                   })}
