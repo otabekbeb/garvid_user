@@ -11,7 +11,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
 import { TbPointFilled } from "react-icons/tb";
-import { GrFormClose} from 'react-icons/gr';
+import { GrFormClose } from 'react-icons/gr';
 import "../css/Spiska.css";
 import "../css/Calibig.css";
 import WWW from "../img/WWW.png";
@@ -25,21 +25,22 @@ export default function Searchfilter() {
   const [kursdata, setKursdata] = useState([]);
   const [type, settype] = useState([]);
   const [state1, setState1] = React.useState();
-  const [courstype,setCoursetype] = useState([])
-  const [courseId,setCourseId] =useState()
+  const [courstype, setCoursetype] = useState([])
+  const [CourseId, setCourseId] = useState()
+
 
   function Filter() {
-    var a=document.querySelector(".filter_button").style.display
-    if (a==="none") {
-      document.querySelector(".filter_button").style="display:block "
-    }else{
-      document.querySelector(".filter_button").style="display:none "
+    var a = document.querySelector(".filter_button").style.display
+    if (a === "none") {
+      document.querySelector(".filter_button").style = "display:block "
+    } else {
+      document.querySelector(".filter_button").style = "display:none "
     }
   }
   function filter1() {
-    document.querySelector(".filter_button").style="display:none !important"
+    document.querySelector(".filter_button").style = "display:none !important"
   }
-  
+
   function windowModal() {
     document.querySelector(".kurs_cards").style = "display:flex;transition:3s";
     document.querySelector(".spiska_img_title_div").style = "display:none";
@@ -50,59 +51,73 @@ export default function Searchfilter() {
       "display:block;transition:3s";
   }
 
-  function close(){
-    document.querySelector(".delete_card").style="display:none"
+  function close() {
+    document.querySelector(".delete_card").style = "display:none"
   }
 
   function udalit() {
-   document.querySelector(".delete_card").style="display:flex !important" 
-}
+    document.querySelector(".delete_card").style = "display:flex !important"
+  }
 
-function dabavit(id) {
-  setCourseId(id)
-  console.log(courseId);
-  document.querySelector(".edit_card").style="display:flex !important" 
-}
-function nazat(){
-  document.querySelector(".edit_card").style="display:none"
-}
+  function dabavit(id) {
+    setCourseId(id)
+    document.querySelector(".edit_card").style = "display:flex !important"
+    setTimeout(() => {
+      axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+        setKursdata(res.data)
+        const filter = res.data.filter(item => item.id == id)
+        document.querySelector("#name").value = filter[0].name
+        document.querySelector("#destcription").value = filter[0].description
+        document.querySelector("#price").value = filter[0].price
+        document.querySelector("#planned_time").value = filter[0].planned_time
+      }).catch(err => {
+        console.log(err);
+      })
+    }, 10);
 
-function dashed() {
-  document.querySelector("#edit_card").style="display:flex !important" 
-}
+  }
+  function nazat() {
+    document.querySelector(".edit_card").style = "display:none"
+  }
 
-function dashed_nazat(){
-  document.querySelector("#edit_card").style="display:none"
-}
+  function dashed() {
+    document.querySelector("#edit_card").style = "display:flex !important"
+  }
+
+  function dashed_nazat() {
+    document.querySelector("#edit_card").style = "display:none"
+  }
+
+  function putCourse(){
+    var formdata=new FormData()
+    formdata.append("")
+
+
+    axios.put(`${url}/api/course`).then(res=>{
+
+    })
+  }
 
 
   useEffect(() => {
-    
-    document.querySelector(".filter_button").style="display:none"
+
+    document.querySelector(".filter_button").style = "display:none"
 
 
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
-    axios.get(`${url}/api/cours_types`,{headers:{"Authorization":"Bearer " + localStorage.getItem("token")}}).then(res=>{
+    axios.get(`${url}/api/cours_types`, { headers: { "Authorization": "Bearer " + localStorage.getItem("token") } }).then(res => {
       setCoursetype(res.data)
       console.log(res.data);
-    }).catch(err=>{
+    }).catch(err => {
       alert("err")
     })
-        axios.get(`${url}/api/course`, {headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
-          setKursdata(res.data)
-          if (courseId==res.data.id) {
-            res.data.map(item=>{
-              document.querySelector("#name").value=item.name
-              document.querySelector("#destcription").value=item.description
-              document.querySelector("#price").value=item.price
-              document.querySelector("#planned_time").value=item.planned_time
-            })
-          }
-        }).catch(err=>{
-          console.log(err);
-        })
+    axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+      setKursdata(res.data)
+    }).catch(err => {
+      console.log(err);
+    })
   }, []);
 
   return (
@@ -131,11 +146,11 @@ function dashed_nazat(){
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
                 </div> */}
               </div>
-              <div onMouseLeave={()=>filter1()}  className="filter_button">
+              <div onMouseLeave={() => filter1()} className="filter_button">
 
-                            <div className="button_filter_kurs">
-                              <div className="div_kurs">dawdawdd</div>
-                            </div>
+                <div className="button_filter_kurs">
+                  <div className="div_kurs">dawdawdd</div>
+                </div>
 
               </div>
             </div>
@@ -143,8 +158,8 @@ function dashed_nazat(){
         </div>
 
         <div className="kurs_cards">
-        {kursdata.map(item=>{
-          return(  
+          {kursdata.map(item => {
+            return (
               <div className="kurs_card">
                 <button className="btn_das">Dasturlash</button>
                 {item.image === null ? (
@@ -177,7 +192,7 @@ function dashed_nazat(){
                   <div className="hajm">
                     <h5>
                       <p>Kurs hajmi</p>
-                     dawadad
+                      dawadad
                     </h5>
                     <h5>
                       <p>Kurs narxi</p>
@@ -186,97 +201,97 @@ function dashed_nazat(){
                   </div>
                 </div>
                 <div className='edit_icon' onClick={() => dabavit(item.id)}>
-                    <Edit/>
-                  </div>
+                  <Edit />
+                </div>
 
-                  <div className="edit_card">
-                    <div className="edit_padding">
+                <div className="edit_card">
+                  <div className="edit_padding">
 
                     <button onClick={() => nazat()} className="close_btn">
-                   <i><GrFormClose/></i>
-                </button>
-                      <div className="edit_inside">
-                    <label htmlFor="">Name:</label>
-                    <input id="name" type="text"/>
-                </div>
-                <div className="edit_inside">
-                  <label htmlFor="">Description:</label>
-                  <input id="destcription" type="text" />
-                </div>
-                <div className="edit_inside">
-                  <label htmlFor="">Price:</label>
-                  <input id="price" type="number" className="inp_numbr"/>
-                </div>
-                <div className="edit_inside">
-                  <label htmlFor="">Planned time:</label>
-                  <input id="planned_time" type="number" className="inp_numbr"/>
-                </div>
-                <div className="edit_inside">
-                  <label htmlFor="">Image:</label>
-                  <input id="image" type="file" className="inp_img"/>
-                </div>
-                <button className="edit_inside_btn">Send</button>
+                      <i><GrFormClose /></i>
+                    </button>
+                    <div className="edit_inside">
+                      <label htmlFor="">Name:</label>
+                      <input id="name" type="text" />
                     </div>
+                    <div className="edit_inside">
+                      <label htmlFor="">Description:</label>
+                      <input id="destcription" type="text" />
+                    </div>
+                    <div className="edit_inside">
+                      <label htmlFor="">Price:</label>
+                      <input id="price" type="number" className="inp_numbr" />
+                    </div>
+                    <div className="edit_inside">
+                      <label htmlFor="">Planned time:</label>
+                      <input id="planned_time" type="number" className="inp_numbr" />
+                    </div>
+                    <div className="edit_inside">
+                      <label htmlFor="">Image:</label>
+                      <input id="image" type="file" className="inp_img" />
+                    </div>
+                    <button className="edit_inside_btn">Send</button>
                   </div>
+                </div>
 
-                  <button onClick={() => udalit()} className="delete_icon">
-                        <i>
-                        <Delete/>
-                        </i>
-                  </button>
-                  <div className="delete_card">
-                    <div className="delete_padding">
-                      <img src={Groupimg} alt="" />
-                      <h4>Вы правда хотите удалить?</h4>
-                      <div className="delete_btns">
+                <button onClick={() => udalit()} className="delete_icon">
+                  <i>
+                    <Delete />
+                  </i>
+                </button>
+                <div className="delete_card">
+                  <div className="delete_padding">
+                    <img src={Groupimg} alt="" />
+                    <h4>Вы правда хотите удалить?</h4>
+                    <div className="delete_btns">
                       <button onClick={() => close()} className="delete_btn_no">Нет</button>
                       <button className="delete_btn_yes">Да</button>
-                      </div>
                     </div>
                   </div>
+                </div>
                 <button className="button_circle">
                   <AiOutlineArrowRight
-                    // onClick={() => {
-                    //   window.location = "/video";
-                    //   localStorage.setItem("course", item.id)
-                    // }}
+                  // onClick={() => {
+                  //   window.location = "/video";
+                  //   localStorage.setItem("course", item.id)
+                  // }}
                   />
                 </button>
               </div>
-          )
-        })}
+            )
+          })}
           <div className="dashed" onClick={() => dashed()}>
-              <i><AiOutlinePlus/></i>
+            <i><AiOutlinePlus /></i>
           </div>
           <div id="edit_card" className="edit_card" >
-                    <div className="edit_padding">
+            <div className="edit_padding">
 
-                    <button onClick={() => dashed_nazat()} className="close_btn">
-                   <i><GrFormClose/></i>
-                </button>
-                      <div className="edit_inside">
-                    <label htmlFor="">Name:</label>
-                    <input type="text"/>
-                </div>
-                <div className="edit_inside">
-                  <label htmlFor="">Description:</label>
-                  <input type="text" />
-                </div>
-                <div className="edit_inside">
-                  <label htmlFor="">Price:</label>
-                  <input type="number" className="inp_numbr"/>
-                </div>
-                <div className="edit_inside">
-                  <label htmlFor="">Planned time:</label>
-                  <input type="number" className="inp_numbr"/>
-                </div>
-                <div className="edit_inside">
-                  <label htmlFor="">Image:</label>
-                  <input type="file" className="inp_img"/>
-                </div>
-                <button className="edit_inside_btn">Send</button>
-                    </div>
-                  </div>
+              <button onClick={() => dashed_nazat()} className="close_btn">
+                <i><GrFormClose /></i>
+              </button>
+              <div className="edit_inside">
+                <label htmlFor="">Name:</label>
+                <input type="text" />
+              </div>
+              <div className="edit_inside">
+                <label htmlFor="">Description:</label>
+                <input type="text" />
+              </div>
+              <div className="edit_inside">
+                <label htmlFor="">Price:</label>
+                <input type="number" className="inp_numbr" />
+              </div>
+              <div className="edit_inside">
+                <label htmlFor="">Planned time:</label>
+                <input type="number" className="inp_numbr" />
+              </div>
+              <div className="edit_inside">
+                <label htmlFor="">Image:</label>
+                <input type="file" className="inp_img" />
+              </div>
+              <button className="edit_inside_btn">Send</button>
+            </div>
+          </div>
         </div>
 
         {/* SPISKA */}
