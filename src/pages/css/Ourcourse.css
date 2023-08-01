@@ -494,6 +494,13 @@ line-height: normal;
 }
  .filter_course img{
         width: 100%;
+        height: 300px;
+    }
+    .filter_course{
+        overflow: hidden;
+    }
+    .filter_course:hover img{
+        scale: 1.03;
     }
 @media (max-width:330px) {
     .hajm{
