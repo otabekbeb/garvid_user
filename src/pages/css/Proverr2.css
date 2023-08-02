@@ -1,7 +1,7 @@
 
 .prover2{
     width: 100% !important;
-    min-height: 52vw;
+    height: 50vw;
     background: #F1F2F6;
     padding-top: 30px;
 
@@ -10,6 +10,7 @@ body{
     overflow-x: hidden !important;
       background: #F1F2F6 !important;
       width: 100%;
+      
 }
 .prover2-mni-search button{
     border: none;
@@ -3020,3 +3021,77 @@ justify-content: center;
 .lasdsadsad img{
     width: 200px;
 }
+
+/* @media (max-width:1135px) {
+    
+.prover2{
+    width: 100% !important;
+    min-height: 140vw !important;
+    background: #F1F2F6;
+    padding-top: 30px;
+
+}
+}
+@media (max-width:1020px) {
+    .prover2{
+        width: 100% !important;
+        min-height: 160vw !important;
+        background: #F1F2F6;
+        padding-top: 30px;
+    
+    }
+}
+@media (max-width:910px) {
+    .prover2{
+        width: 100% !important;
+        min-height: 180vw !important;
+        background: #F1F2F6;
+        padding-top: 30px;
+    
+    }
+}
+@media (max-width:815px) {
+    .prover2{
+        width: 100% !important;
+        min-height: 200vw !important;
+        background: #F1F2F6;
+        padding-top: 30px;
+    
+    }
+}
+@media (max-width:727px) {
+    .prover2{
+        width: 100% !important;
+        height: 220vw !important;
+        background: #F1F2F6;
+        padding-top: 30px;
+    
+    }
+}
+@media (max-width:644px) {
+    .prover2{
+        width: 100% !important;
+        height: 240vw !important;
+        background: #F1F2F6;
+        padding-top: 30px;
+    
+    }
+}
+@media (max-width:582px) {
+    .prover2{
+        width: 100% !important;
+        height: 260vw !important;
+        background: #F1F2F6;
+        padding-top: 30px;
+    
+    }
+}
+@media (max-width:540px) {
+    .prover2{
+        width: 100% !important;
+        height: 280vw !important;
+        background: #F1F2F6;
+        padding-top: 30px;
+    
+    }
+} */
