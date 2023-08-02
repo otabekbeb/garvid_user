@@ -508,9 +508,6 @@ line-height: normal;
     .filter_course{
         overflow: hidden;
     }
-    .filter_course:hover img{
-        scale: 1.03;
-    }
 @media (max-width:330px) {
     .hajm{
         width: 90%;
