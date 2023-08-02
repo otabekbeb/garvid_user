@@ -151,7 +151,7 @@ export default function Loginpage() {
               <button
                 style={
                   data === 2
-                    ? { background: " #44bef1", color: "white", border: "none" }
+                    ? { background: " #44bef1 ", color: "white", border: "none" }
                     : { background: "white", color: "black", border: "none" }
                 }
                 onClick={() => {
