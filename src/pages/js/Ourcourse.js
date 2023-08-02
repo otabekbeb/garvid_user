@@ -25,7 +25,13 @@ export default function Ourcourse() {
   const [filter1, setFilter1] = useState([])
 
     function filter() {
-        document.querySelector(".filter_card").classList.toggle("togl");
+      var b=document.querySelector(".filter_card").style.display
+      if (b==="none") {
+        document.querySelector(".filter_card").style.display="flex"
+      }else{
+        document.querySelector(".filter_card").style.display="none"
+      }
+        // document.querySelector(".filter_card").classList.toggle("togl");
     }
 
     function menuModal() {
@@ -38,6 +44,16 @@ export default function Ourcourse() {
         document.querySelector(".bar_clone").style = "display:none !important;"
         document.querySelector(".bar").style = "display:block !important;"
     }
+    function filterclosed() {
+      document.querySelector(".filter_card").style="display:none !important"
+    }
+    function filter11 (id) {
+      axios
+      .get(`${url}/api/course`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}})
+      .then((res) => {
+        const search = res.data.filter(item=>item.course_type===id)
+        setKursdata(search)
+      });}
     const searchfilter1 = (event) => {
       const searchRegex = new RegExp(`^${event.target.value}`, "i");
       axios.get(`${url}/api/course`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
@@ -139,10 +155,10 @@ Health</li>
             <header className="curs">
                 <nav className="nav_ul">
                     <ul className="bottom_ul">
-                      <li className="bottom_li">Everything</li>
+                      <li style={{cursor:"pointer"}} className="bottom_li">Everything</li>
                       {kurscategory.map(item=>{
                         return(
-                          <li className="bottom_li">{item.name}</li>
+                          <li style={{cursor:"pointer"}} className="bottom_li">{item.name}</li>
                         )
                       })}
                         
@@ -157,14 +173,14 @@ Health</li>
                             <HiOutlineChevronUp />
                         </i>
                     </button>
-                    <div className="filter_card">
+                    <div onMouseLeave={()=>filterclosed()} className="filter_card">
                     <div className="filter_padding">
                         <h5>Sorting 
 
 types</h5>
                         {filter1.map(item=>{
                           return(
-                            <p ><input type="checkbox" name="" id="" />{item.name}</p>
+                            <p style={{cursor:"pointer"}} onClick={()=>filter11(item.id)}>{item.name}</p>
                           )
                         })}
                         

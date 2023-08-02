@@ -271,6 +271,11 @@ line-height: normal;
     display: none;
     z-index: 1;
     transition: all 0.2s ease;
+    position: absolute;
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 17px 0px 18px 24px;
 }
 @media (max-width:500px) {
     .togl{
@@ -363,9 +368,13 @@ line-height: normal;
 
 .filter_course:hover {
     cursor: pointer;
-    box-shadow: 0px 12px 45px 0px rgba(83, 109, 253, 0.25);
 }
-
+.nav_item{
+    cursor: pointer;
+}
+.block_item{
+    cursor: pointer;
+}
 .filter_course h4 {
     width: 100%;
     display: flex;
@@ -563,12 +572,3 @@ line-height: normal;
     }
 }
 
-.filter_course:hover .filter_card_padding h4{ 
-color: #44bef1;
-}
-.filter_course:hover .filter_card_padding h5{ 
-    color: #44bef1;
-    }
-    .filter_course:hover .filter_card_padding p{ 
-        color: #44bef1;
-        }
