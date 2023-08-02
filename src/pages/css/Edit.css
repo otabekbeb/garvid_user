@@ -53,7 +53,8 @@
 }
 .edit_inside input{
     width: 100%;
-    padding-left: 5px;
+    height: 30px;
+    padding-left: 10px;
     border-radius: 3px;
     color: black;
     border: 1px solid #9DA7BB;

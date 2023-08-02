@@ -42,7 +42,6 @@ export default function Login() {
   formdata.append('code',document.querySelector("#verifak").value)
 
   axios.post(`${url}/auth/verify`,formdata).then(res=>{
-    console.log(res.data);
       alert("Вы успешно зарегистрировались")
           localStorage.setItem("token",res.data.access)
     window.location="/user"
