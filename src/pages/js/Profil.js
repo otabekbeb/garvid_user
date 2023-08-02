@@ -51,7 +51,7 @@ export default function Profil() {
         console.log(err);
       });
       axios
-      .get(`${url}/auth/oneuser/`, {
+      .get(`${url}/auth/oneuser`, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
@@ -135,7 +135,7 @@ export default function Profil() {
         <div className="profil_size">
           <div className="profil_blok_bir">
             <div onMouseLeave={() => userimgClose()} className="user_img_size">
-              {data.map((item) => {
+              {data.map(item => {
                 return (
                   <>
                     {item.image === null ? (
@@ -149,7 +149,7 @@ export default function Profil() {
                       <img
                         onMouseEnter={() => userimgModal()}
                         className="user_img"
-                        src={item.image}
+                        src={item.image.includes("http")?item.image:`${url}/${item.image}`}
                         alt=""
                       />
                     )}
@@ -236,7 +236,7 @@ export default function Profil() {
               />
               <div className="profil_blok_ikki_icon_texrirlash_modal">
                 <div
-                  onClick={() => (window.location = "/loginpage")}
+                  onClick={() => (window.location = "/editprofile")}
                   className="taxrirlash_modal_div"
                 >
                   <FiEdit className="taxrirlash_modal_icon" />

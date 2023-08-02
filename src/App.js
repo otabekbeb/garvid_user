@@ -11,7 +11,7 @@ import Mento from "./pages/js/Mentor"
 import Video from "./pages/js/Youtube1";
 import Contacts from "./pages/js/Contacts";
 import Allcourse from "./pages/js/Ourcourse"
-import Loginpage from "./pages/js/Loginpage";
+import Editprofile from "./pages/js/Loginpage";
 import Prover from './pages/js/Prover'
 import Teacher from "./pages/js/Teacherpage";
 import Student from "./pages/js/Student";
@@ -33,7 +33,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/loginpage" element={<Loginpage />} />
+          <Route path="/editprofile" element={<Editprofile />} />
           <Route path="/loginpageMentor" element={<LoginpageMentor />} />
           <Route path="/about" element={<About />} />
           <Route path="/servis" element={<Services />} />
