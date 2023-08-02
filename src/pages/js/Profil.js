@@ -199,7 +199,7 @@ export default function Profil() {
                 <button>
                   <BsActivity />
                 </button>
-                <button>Balance replenishment</button>
+                <button onClick={()=>  window.location="/oplata"}>Balance replenishment</button>
               </div>
             </div>
             <div

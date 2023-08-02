@@ -25,9 +25,9 @@ export default function Searchfilter() {
   const [kursdata, setKursdata] = useState([]);
   const [type, settype] = useState([]);
   const [state1, setState1] = React.useState();
-  const [courstype, setCoursetype] = useState([])
-  const [CourseId, setCourseId] = useState()
-
+  const [courstype, setCoursetype] = useState([]);
+  const [CourseId, setCourseId] = useState();
+  const [delete1, setDelete1] = useState([]);
 
   function Filter() {
     var a = document.querySelector(".filter_button").style.display
@@ -95,6 +95,14 @@ export default function Searchfilter() {
 
     axios.put(`${url}/api/course`).then(res=>{
 
+    })
+  }
+  function deleteclose(id) {
+    axios.delete(`${url}/api/course/${id}`,{ headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res=>{
+      alert("ishladi")
+      window.location.reload()
+    }).catch(err=>{
+      alert("xato")
     })
   }
 

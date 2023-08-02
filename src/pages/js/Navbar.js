@@ -132,6 +132,7 @@ export default function Navbar() {
                         ></box-icon>
                       </span>
                     </p>
+                    
                     <ul>
                     <li onClick={()=> window.location="#"} id="ded">
                             <a id="contactcolor" href="/">FAQ </a>
