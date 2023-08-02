@@ -845,13 +845,18 @@ height: 150px;
 border-radius: 4px;
 
 }
+.mni-gridf1 img{
+    width: 134px !important; 
+    height: 150px !important;
+    border-radius: 4px !important;
+}
 
 .mni-gridf1 {
     display: grid !important;
     grid-template-columns: auto auto   !important;
-    gap: 15px !important;
-
+    gap: 10px !important;
     padding-left: 17px !important;
+ 
 
 }
 .mni-gridf2 {
@@ -860,6 +865,7 @@ border-radius: 4px;
     gap: 10px !important;
     padding-left: 17px !important;
     display: none  !important;
+    
 }
 .mni-gridf1-none{
     display: none !important;
