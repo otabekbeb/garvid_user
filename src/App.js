@@ -24,6 +24,8 @@ import Help  from './pages/js/Help'
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Proverr2 from './pages/js/Proverr2'
+import Oplata from './pages/js/Oplata'
+
 export default function App() {
 
   return (
@@ -53,9 +55,11 @@ export default function App() {
           <Route path="/student" element={<Student />} />
           <Route path="/mentorcontact" element={<Mentorcontact />} />
           <Route path="/Studentpage" element={<Studentpage />} />
+          <Route path="/Oplata" element={ <Oplata/>} />
+          
           {/* <Route index element={} />*/}
         </Routes>
-      
+     
       </BrowserRouter>
 
 

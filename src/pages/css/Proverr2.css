@@ -344,7 +344,7 @@ margin-bottom: 30px;
     overflow: hidden;
   
 }
-.prover2-orta-joy iframe{
+.prover2-orta-joy .saas{
     width: 800px !important;
     height: 320px !important;
 }
@@ -1152,7 +1152,7 @@ height: 0;
     display: none;
 }
     @media (max-width:1562px) {
-        .prover2-orta-joy iframe{
+        .prover2-orta-joy .saas{
             width: 750px !important;
             height: 320px !important;
         }
@@ -1209,7 +1209,7 @@ height: 0;
         position: relative;
         right: 14px;
     }
-    .prover2-orta-joy iframe{
+    .prover2-orta-joy .saas{
         width:900px !important;
         height: 320px !important;
     }
@@ -1406,7 +1406,7 @@ height: 0;
           }
 }
 @media (max-width:1315px) {
-    .prover2-orta-joy iframe{
+    .prover2-orta-joy .saas{
         width:800px !important;
         height: 320px !important;
     }
@@ -1494,7 +1494,7 @@ height: 0;
         background: #F1F2F6;
         padding-top: 30px;
     }
-    .prover2-orta-joy iframe{
+    .prover2-orta-joy .saas{
         width:700px !important;
         height: 320px !important;
     }
@@ -1567,7 +1567,7 @@ padding-top: 15px;
     .prover2-mni-search{
         display: none;
     }
-    .prover2-orta-joy iframe{
+    .prover2-orta-joy .saas{
         width:1000px !important;
         height: 320px !important;
     }
@@ -1816,7 +1816,7 @@ width: 130px !important;
     }
 }
 @media (max-width:1017px) {
-    .prover2-orta-joy iframe{
+    .prover2-orta-joy .saas{
         width:800px !important;
         height: 320px !important;
     }
@@ -1913,7 +1913,7 @@ width: 130px !important;
     }
 }
 @media (max-width:820px) {
-    .prover2-orta-joy iframe{
+    .prover2-orta-joy .saas{
         width:650px !important;
         height: 320px !important;
     }
@@ -2017,7 +2017,7 @@ border-radius: 4px;
 }
 @media (max-width:665px) {
     
-    .prover2-orta-joy iframe{
+    .prover2-orta-joy .saas{
         width:550px !important;
         height: 320px !important;
     }
@@ -2197,7 +2197,7 @@ border-radius: 4px;
         flex-wrap: wrap !important;
     }
 
-    .prover2-orta-joy iframe{
+    .prover2-orta-joy .saas{
         width:480px !important;
         height: 320px !important;
     }
@@ -2412,7 +2412,7 @@ border-radius: 4px;
 }
 @media (max-width:507px) {
     
-    .prover2-orta-joy iframe{
+    .prover2-orta-joy .saas{
         width:400px !important;
         height: 320px !important;
     }
@@ -2557,7 +2557,7 @@ border-radius: 4px;
     position: relative;
     left: 12px;
 }
-    .prover2-orta-joy iframe{
+    .prover2-orta-joy .saas{
         width:370px !important;
         height: 320px !important;
     }
@@ -2676,7 +2676,7 @@ border-radius: 4px;
     position: relative;
     left: 3px !important;
 }
-    .prover2-orta-joy iframe{
+    .prover2-orta-joy .saas{
         width:330px !important;
         height: 320px !important;
     }
@@ -2784,7 +2784,7 @@ border-radius: 4px;
 @media (max-width:340px) {
 
 
-.prover2-orta-joy iframe{
+.prover2-orta-joy .saas{
         width:310px !important;
         height: 320px !important;
     }
