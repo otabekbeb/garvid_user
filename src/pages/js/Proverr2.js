@@ -114,18 +114,18 @@ axios.get(`${url}/auth/oneuser`,{headers:{Authorization :  `Bearer ${localStorag
     alert("malumot xato keldi")
 })
 
-axios.get(`${url}/api/mycourse/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
-    myData(res.data)
-    console.log(res.data,)
-}).catch(err=>{
- 
-})
+
 
 
     },[])
-
+ // axios.get(`${url}/api/mycourse/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+        //     myData(res.data)
+        //     console.log(res.data,)
+        //     alert("siz kurs sotib oldingiz")
+        // }).catch(err=>{
+        //  alert("balans yetarli mas")
+        // })
     function coursid(){
-    
         axios.post(`${url}/api/course/register/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
             coursData(res.data)
             console.log(res.data)
