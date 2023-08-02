@@ -191,11 +191,14 @@
   width: 100%;
   height: 100%;
 }
-
+.zaib{
+  position: relative;
+  top: -5px;
+}
 #menu2pp:hover .zaib {
   color: #44bef1;
 }
-#contactcolor:hover{
+#contactcolor :hover{
   color: #44bef1;
 }
 
@@ -3327,3 +3330,30 @@ color: rgba(var(--bs--rgb),var(--bs-text-opacity)) !important;;
 }
 
 @media (max-width:1438px) {}
+
+.user-name-media{
+  text-align: center;
+  width: 5%;
+  height: 100%;
+
+  margin: auto;
+}
+@media (max-width:1466px) {
+  .user-name-media{
+    text-align: center;
+    width: 7% !important;
+    height: 100%;
+  
+    margin: auto;
+  }
+}
+
+@media (max-width:1170px) {
+  .user-name-media{
+    text-align: center;
+    width: 9% !important;
+    height: 100%;
+  
+    margin: auto;
+  }
+}
