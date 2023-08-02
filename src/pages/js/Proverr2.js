@@ -115,7 +115,7 @@ axios.get(`${url}/auth/oneuser`,{headers:{Authorization :  `Bearer ${localStorag
 
 axios.get(`${url}/api/mycourse/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
     myData(res.data)
-    console.log(res.data)
+    console.log(res.data,)
 }).catch(err=>{
  
 })
@@ -205,11 +205,7 @@ return(
         if(item.id==localStorage.getItem("courseid")){
             return(
                 <div className="prover2-orta-joy">
-                <iframe width="560" height="315" src={item.image === null ? (
-                 <img src={img_for_null1} alt="" />
-                ) : (
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fGsS1ammXZY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>       
-          )} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen alt="rasm yo"></iframe> 
+<img className="saas" src={item.image} alt="" />
                 
                              <div className="prover2-orta-joy-text">
             <h5>{item.name}</h5>

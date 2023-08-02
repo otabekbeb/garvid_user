@@ -195,6 +195,9 @@
 #menu2pp:hover .zaib {
   color: #44bef1;
 }
+#contactcolor:hover{
+  color: #44bef1;
+}
 
 .faqcolor:hover .faqscolor {
   color: #44bef1;
@@ -250,7 +253,8 @@
 
 #menu2pp {
 position: relative;
-right: 32px;
+right: 25px;
+top: 5px;
 }
 
 .menu2 p a {
