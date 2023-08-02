@@ -9,7 +9,7 @@ import {FiEdit,FiLifeBuoy,FiLogOut} from "react-icons/fi"
 import {TbPointFilled} from "react-icons/tb"
 import {AiOutlineRight} from "react-icons/ai"
 import chadimg from "../img/Ellipse.jpg"
-
+import '../css/Studentpage.css'
 import Mentorkurs from "./Mentorkurs"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Yozishma from './MentorChat'
@@ -77,7 +77,7 @@ export default function Mentor() {
           document.querySelector(".profil_blok_menu").style="display:block;"
       }
   return (
-    <div>
+    <div className='studentpagess'>
        <Usernavbar />
 
         <div>
