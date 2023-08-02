@@ -231,7 +231,7 @@ export default function Profil() {
                 </div>
                 <div className="taxrirlash_modal_div">
                   <FiLifeBuoy className="taxrirlash_modal_icon" />
-                  <p>Help</p>
+                  <p onClick={()=>  window.location="/Help"}>Help</p>
                 </div>
                 <hr />
                 <div className="taxrirlash_modal_div" onClick={() => chiqish()}>

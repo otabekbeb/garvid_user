@@ -111,16 +111,7 @@ Health</li>
 
 
             <header className="curs">
-                <nav className="nav_ul">
-                    <ul className="bottom_ul">
-                        <li className="bottom_li">Everything</li>
-                        <li className="bottom_li">Game dashturlash</li>
-                        <li className="bottom_li">Web programming</li>
-                        <li className="bottom_li">Desktop programming</li>
-                        <li className="bottom_li">Desktop programming</li>
-                        <li className="bottom_li">Mobil programming</li>
-                    </ul>
-                </nav>
+              
                 <div className="bottom_line"></div>
                 <div className="curs_cards">
                     <button className="curs_filter" onClick={() => filter()}>
