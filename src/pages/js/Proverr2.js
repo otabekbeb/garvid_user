@@ -14,6 +14,7 @@ import About_comment from '../js/About_comment'
 import axios  from "axios";
 import url from "./Host";
 import img_for_null1 from '../img/download.png'
+import Usernavbar from '../js/Usernavbar'
 
 function onga(){
 document.querySelector(".mni-gridf1").classList.toggle("mni-gridf1-none")
@@ -73,7 +74,7 @@ export default function Proverr2() {
     const [toggle,setToggle] =useState(1)
     const [data, setData] = useState([]);
     const [jalod, jalodData] = useState([]);
-    const [dusha, filTerrdata] = useState([]);
+    const [dusha, filTerrdata1] = useState([]);
     const [ticher, ticherData] = useState([]);
     const [cours, coursData] = useState([]);
     const [mycousr, myData] = useState([]);
@@ -93,7 +94,7 @@ console.log(res.data)
 
         axios.get(`${url}/api/course`,{headers:{Authorization : ` Bearer ${localStorage.getItem("token")}`}}).then(res=>{
             jalodData(res.data)
-            filTerrdata(res.data)
+            filTerrdata1(res.data)
             console.log(res.data)
         }).catch(err=>{
             alert('hato')
@@ -134,32 +135,39 @@ axios.get(`${url}/api/mycourse/${localStorage.getItem("courseid")}`,{headers:{Au
         })
    
     }
-    
-    
+  
+    function filter (id) {
+        axios
+        .get(`${url}/api/course`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}})
+        .then((res) => {
+          const search = res.data.filter(item=>item.course_type===id)
+          filTerrdata1(search)
+        });
+      }
 
-    const Filter = (event) => {
-        const searchRegex = new RegExp(`^${event.target.value}, "i"`);
-        axios.get(`${url}/api/course` , {headers: {Authorization : ` Bearer ${localStorage.getItem("token")}`}}).then(res=>{
-          const searchdata1 = res.data.filter((item) => {
+      const Filter = (event) => {
+        const searchRegex = new RegExp(`^${event.target.value}`, "i");
+        axios.get(`${url}/api/course`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+          const searchdata = res.data.filter((item) => {
             return (
               searchRegex.test(item.name) 
             );
           })
-          filTerrdata(searchdata1)
+          filTerrdata1(searchdata)
         })
     
       }
 
-
 return (
     <div>
+<Usernavbar/>
 
 <div className="prover2">
     <div className="prover2-kotta-men">
         <div className="prover2-search-joy">
         <div className="prover2-mni-search">
            <form action="">
-           <input type="text" placeholder='Какой курс вы хотите изучать?' onChange={Filter}  required /><button><box-icon name='search' color='#9da7bb' ></box-icon></button>
+           <input type="text" placeholder='Какой курс вы хотите изучать?' onClick={()=>filter()}  onChange={Filter}  required /><button><box-icon name='search' color='#9da7bb' ></box-icon></button>
            </form>
            <div className="prover2-info-d">
             <div className="prover2-info-filter2">
@@ -439,21 +447,14 @@ return(
            
           <div className="mni-swiper-grid">
     <div className="mni-gridf1">
-    {item1.image === null ? (
-                 <img src={img_for_null1} alt="" />
-                ) : (
-                  <img src={item1.image } />
-                 )}
+        <img src={item1.image} alt="" />
+    
              
 
     </div>
     
     <div className="mni-gridf2">
-    {item1.image === null ? (
-                 <img src={img_for_null1} alt="" />
-                ) : (
-                  <img src={item1.image} />
-                 )}
+    <img src={item1.image} alt="" />
              
 
     </div>

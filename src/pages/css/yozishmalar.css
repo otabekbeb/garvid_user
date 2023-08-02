@@ -15,6 +15,7 @@
 .javob_berish_img img{
     width: 50px;
     height: 50px;
+    padding-top: -10px;
     border-radius: 50%;
     
 }
@@ -574,7 +575,7 @@ margin-bottom: 0 !important;
 
 .yozishma_bolim_text_nik_search{
     width: 100%;
-    height: 45px;
+    height: 50px;
     border-bottom: 1px solid #e2e2e2;
 }
 .yozishma_bolim_text_nik_search input{

@@ -182,15 +182,15 @@
     margin-right: -30px;
 }
 }
-
+.nazad_left_div:hover{
+    color: #44bef1;
+}
 .nazad:hover {
-    color: gold;
     cursor: pointer;
 }
 
 .nazad_left_div:hover {
     cursor: pointer;
-    color: gold;
 }
 
 .nazad_left_div {

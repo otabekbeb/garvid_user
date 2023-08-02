@@ -26,7 +26,6 @@
 }
 .accordion_img img{
     width: 100%;
-    border-radius: 50%;
 }
 .db{
     display: flex;
@@ -891,6 +890,7 @@ color: #9DA7BB;
 
         .accordion_img img {
             width: 100%;
+            border-radius: 10px;
         }
         .accordion-button{
             font-size: 13px !important;
