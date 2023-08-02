@@ -13,7 +13,7 @@ import iteen from '../img/Group 34.png'
 import About_comment from '../js/About_comment'
 import axios  from "axios";
 import url from "./Host";
-import img_for_null from '../img/download.png'
+import img_for_null1 from '../img/download.png'
 
 function onga(){
 document.querySelector(".mni-gridf1").classList.toggle("mni-gridf1-none")
@@ -75,7 +75,9 @@ export default function Proverr2() {
     const [jalod, jalodData] = useState([]);
     const [dusha, filTerrdata] = useState([]);
     const [ticher, ticherData] = useState([]);
-
+    const [cours, coursData] = useState([]);
+    const [mycousr, myData] = useState([]);
+    const [oneuser, oneData] = useState([]);
 
     function okurse(id){
     setToggle(id)
@@ -104,7 +106,36 @@ axios.get(`${url}/auth/teachers`,{headers:{Authorization :  `Bearer ${localStora
     alert("techirri malumoti xato keldi")
 })
        
+axios.get(`${url}/auth/oneuser`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+    oneData(res.data)
+    console.log(res.data)
+}).catch(err=>{
+    alert("malumot xato keldi")
+})
+
+axios.get(`${url}/api/mycourse/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+    myData(res.data)
+    console.log(res.data)
+}).catch(err=>{
+ 
+})
+
+
     },[])
+
+    function coursid(){
+    
+        axios.post(`${url}/api/course/register/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+            coursData(res.data)
+            console.log(res.data)
+            alert("siz kurs sotib oldiz")
+        }).catch(err=>{
+            alert("balans ytarli mas yoki server blan xato")
+        })
+   
+    }
+    
+    
 
     const Filter = (event) => {
         const searchRegex = new RegExp(`^${event.target.value}, "i"`);
@@ -122,6 +153,7 @@ axios.get(`${url}/auth/teachers`,{headers:{Authorization :  `Bearer ${localStora
 
 return (
     <div>
+
 <div className="prover2">
     <div className="prover2-kotta-men">
         <div className="prover2-search-joy">
@@ -144,7 +176,7 @@ return(
     <div className="prover2-info-block1">
     <div className="prover2-info-block1-img">
     {item1.image === null ? (
-                 <img src={img_for_null} alt="" />
+                 <img src={img_for_null1} alt="" />
                 ) : (
                   <img src={item1.image} />
                  )}
@@ -174,7 +206,7 @@ return(
             return(
                 <div className="prover2-orta-joy">
                 <iframe width="560" height="315" src={item.image === null ? (
-                 <img src={img_for_null} alt="" />
+                 <img src={img_for_null1} alt="" />
                 ) : (
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fGsS1ammXZY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>       
           )} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen alt="rasm yo"></iframe> 
@@ -390,7 +422,7 @@ return(
         <span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
     </div>
 </div>
-<div className="mni-buton-iikki-yo">
+<div className="mni-buton-iikki-yo" onClick={()=>coursid()}>
     <button id="gbfdgfdgdfgdf">Покупка</button><div className="line-mni-but"></div><button >{item.price} RUB</button>
 </div>
       
@@ -412,7 +444,7 @@ return(
           <div className="mni-swiper-grid">
     <div className="mni-gridf1">
     {item1.image === null ? (
-                 <img src={img_for_null} alt="" />
+                 <img src={img_for_null1} alt="" />
                 ) : (
                   <img src={item1.image } />
                  )}
@@ -422,7 +454,7 @@ return(
     
     <div className="mni-gridf2">
     {item1.image === null ? (
-                 <img src={img_for_null} alt="" />
+                 <img src={img_for_null1} alt="" />
                 ) : (
                   <img src={item1.image} />
                  )}
@@ -479,7 +511,7 @@ return(
     <div className="prover4-info-block1">
     <div className="prover2-info-block1-img">
     {item1.image === null ? (
-                 <img src={img_for_null} alt="" />
+                 <img src={img_for_null1} alt="" />
                 ) : (
                   <img src={item1.image} />
                  )}
@@ -585,7 +617,7 @@ dolor sit amet. . . .</p>
 <div className="mni-swiper-grid">
     <div className="mni-gridf1">
     {item1.image === null ? (
-                 <img src={img_for_null} alt="" />
+                 <img src={img_for_null1} alt="" />
                 ) : (
                   <img src={item1.image } />
                  )}
@@ -595,7 +627,7 @@ dolor sit amet. . . .</p>
     
     <div className="mni-gridf2">
     {item1.image === null ? (
-                 <img src={img_for_null} alt="" />
+                 <img src={img_for_null1} alt="" />
                 ) : (
                   <img src={item1.image} />
                  )}
