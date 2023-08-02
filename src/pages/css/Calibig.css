@@ -24,9 +24,7 @@
 .kurs_card:hover .kurs_paddaing_auto p{
     color: #44bef1;
 } */
-.kurs_card:hover img{
-    scale: 1.03;
-}
+
 .kurs_card{
    overflow: hidden;
 }
