@@ -120,14 +120,45 @@ export default function Searchfilter() {
     })
   }, []);
 
+  function filter (id) {
+    axios
+    .get(`${url}/api/course`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}})
+    .then((res) => {
+      const search = res.data.filter(item=>item.course_type===id)
+      setKursdata(search)
+    });
+  }
+  const searchInput = (event) => {
+    const searchRegex = new RegExp(`^${event.target.value}`, "i");
+    axios.get(`${url}/api/course`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+      const searchdata = res.data.filter((item) => {
+        return (
+          searchRegex.test(item.name) 
+        );
+      })
+      setKursdata(searchdata)
+    })
+
+  }
+
+  function deleteData (key) {
+    axios.delete(`https://markazback2.onrender.com/api/course/${key}`, {headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}}).then(res =>{
+      alert('malumot ochirildi')
+      window.location.reload()
+    }).catch(err=>{
+      console.log(err);
+    })
+    
+  }
+
   return (
     <div>
 
       <div>
-        <div className="Filter">
+      <div className="Filter">
           <div className="blur_blok">
             <div className="inp_blok">
-              <input type="text" placeholder="Search among my courses" />
+              <input onChange={searchInput} id="search" type="text" placeholder="Search among my courses" />
               <CiSearch className="search" />
             </div>
             <div className="blur">
@@ -146,12 +177,19 @@ export default function Searchfilter() {
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
                 </div> */}
               </div>
-              <div onMouseLeave={() => filter1()} className="filter_button">
+              <div onMouseLeave={()=>filter1()}  className="filter_button">
 
-                <div className="button_filter_kurs">
-                  <div className="div_kurs">dawdawdd</div>
-                </div>
 
+{courstype.map(item=>{
+  return(
+    <div className="button_filter_kurs">
+    {item.name===null?(""):(<div onClick={()=>filter(item.id)} className="div_kurs">{item.name}</div>)}
+  </div>
+  )
+})}
+
+
+                
               </div>
             </div>
           </div>
@@ -245,7 +283,7 @@ export default function Searchfilter() {
                     <h4>Вы правда хотите удалить?</h4>
                     <div className="delete_btns">
                       <button onClick={() => close()} className="delete_btn_no">Нет</button>
-                      <button className="delete_btn_yes">Да</button>
+                      <button className="delete_btn_yes" onClick={()=> deleteData(item.id)}>Да</button>
                     </div>
                   </div>
                 </div>
