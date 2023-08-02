@@ -22,6 +22,7 @@ export default function Ourcourse() {
   const [main,setMain]=useState([])
   const [kursdata, setKursdata] = useState([]);
   const [kurscategory, setKurscategory] = useState([]);
+  const [filter1, setFilter1] = useState([])
 
     function filter() {
         document.querySelector(".filter_card").classList.toggle("togl");
@@ -37,6 +38,26 @@ export default function Ourcourse() {
         document.querySelector(".bar_clone").style = "display:none !important;"
         document.querySelector(".bar").style = "display:block !important;"
     }
+    const searchfilter1 = (event) => {
+      const searchRegex = new RegExp(`^${event.target.value}`, "i");
+      axios.get(`${url}/api/course`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+        const searchdata = res.data.filter((item) => {
+          return (
+            searchRegex.test(item.name) 
+          );
+        })
+        setKursdata(searchdata)
+      })
+  
+    }
+    // function filter2 (id) {
+    //   axios
+    //   .get(`${url}/api/cours_types`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}})
+    //   .then((res) => {
+    //     const search = res.data.filter(item=>item.course_type===id)
+    //     setFilter1(search)
+    //   });
+    // }
     
     useEffect(()=>{
       axios.get(`${url}/api/course`, {headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
@@ -51,6 +72,11 @@ export default function Ourcourse() {
       }).catch(err=>{
         console.log(err);
       })
+      axios.get(`${url}/api/cours_types`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+        setFilter1(res.data)
+      }).catch(err => {
+        console.log("err");
+      });
 
     },[])
 
@@ -61,7 +87,7 @@ export default function Ourcourse() {
                 <div className="course_inp">
                     <h1>Our courses</h1>
                     <div className="df_inp">
-                        <input type="text" name="" id="" placeholder='What course do you want to study?' />
+                        <input onChange={searchfilter1} type="text" name="" id="" placeholder='What course do you want to study?' />
                         <i><BiSearch /></i>
                     </div>
                 </div>
@@ -113,12 +139,14 @@ Health</li>
             <header className="curs">
                 <nav className="nav_ul">
                     <ul className="bottom_ul">
-                        <li className="bottom_li">Everything</li>
-                        <li className="bottom_li">Game dashturlash</li>
-                        <li className="bottom_li">Web programming</li>
-                        <li className="bottom_li">Desktop programming</li>
-                        <li className="bottom_li">Desktop programming</li>
-                        <li className="bottom_li">Mobil programming</li>
+                      <li className="bottom_li">Everything</li>
+                      {kurscategory.map(item=>{
+                        return(
+                          <li className="bottom_li">{item.name}</li>
+                        )
+                      })}
+                        
+                        
                     </ul>
                 </nav>
                 <div className="bottom_line"></div>
@@ -134,12 +162,13 @@ Health</li>
                         <h5>Sorting 
 
 types</h5>
-                        <p><input type="checkbox" name="" id="" /> New courses</p>
-                        <p><input type="checkbox" name="" id="" /> Most viewed</p>
-                        <p><input type="checkbox" name="" id="" /> The highest price</p>
-                        <p><input type="checkbox" name="" id="" /> New courses</p>
-                        <p><input type="checkbox" name="" id="" /> New courses</p>
-                        <p><input type="checkbox" name="" id="" /> New courses</p>
+                        {filter1.map(item=>{
+                          return(
+                            <p ><input type="checkbox" name="" id="" />{item.name}</p>
+                          )
+                        })}
+                        
+                        
                     </div>
                     <div className="filter_padding">
                     <h5>By rating</h5>
