@@ -144,16 +144,13 @@ export default function Navbar() {
                       <div className="navbbar-line-hr"></div>
 
 
-                      <div
-                        className="menu2"
-
-                      >
-                        <p  onClick={()=> window.location="#"} id="menu2pp" >
+                     
+                        <li  onClick={()=> window.location="#"} id="menu2pp" >
                           {" "}
                           <a  className="zaib">
                             News{" "}
                           </a>{" "}
-                        </p>
+                        </li>
                         <div className="navbbar-line-hr"></div>
 
                         <ul
@@ -164,7 +161,7 @@ export default function Navbar() {
 
                        
                         </ul>
-                      </div>
+                    
                     </ul>
                   </div>
                 </div>
@@ -185,12 +182,15 @@ export default function Navbar() {
 
 
                 
-                   <li className="moto-menu-item">
-                      {localStorage.getItem("token") ? (user.map(item=>{return<a href="/user">{item.username}</a> })) : (<a href="/login" >Log in</a>)}
-                    </li>
+                  
                       
                       
               </ul>
+             <div className="user-name-media">
+             <li className="moto-menu-item">
+                      {localStorage.getItem("token") ? (user.map(item=>{return<a href="/user">{item.username}</a> })) : (<a href="/login" >Log in</a>)}
+                    </li>
+             </div>
               <div id="google_translate_element"></div>
             </div>
             <div className="media-navbar" style={{margin:"auto",width:'100%'}}>

@@ -238,11 +238,11 @@ export default function Searchfilter() {
                   <div className="hajm">
                     <h5>
                       <p>Kurs hajmi</p>
-                      dawadad
+                      {item.planned_time}h
                     </h5>
                     <h5>
                       <p>Kurs narxi</p>
-                      {item.planned_time}h
+                      {item.price}$
                     </h5>
                   </div>
                 </div>
