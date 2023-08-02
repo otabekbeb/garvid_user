@@ -15,7 +15,7 @@
     width: 100%;
 
 }
-.kurs_card:hover .kurs_paddaing_auto h4{
+/* .kurs_card:hover .kurs_paddaing_auto h4{
     color: #44bef1;
 }
 .kurs_card:hover .kurs_paddaing_auto h5{
@@ -23,7 +23,7 @@
 }
 .kurs_card:hover .kurs_paddaing_auto p{
     color: #44bef1;
-}
+} */
 .kurs_card:hover img{
     scale: 1.03;
 }
