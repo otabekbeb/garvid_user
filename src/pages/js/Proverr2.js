@@ -14,6 +14,7 @@ import About_comment from '../js/About_comment'
 import axios  from "axios";
 import url from "./Host";
 import img_for_null1 from '../img/download.png'
+import Usernavbar from '../js/Usernavbar'
 
 function onga(){
 document.querySelector(".mni-gridf1").classList.toggle("mni-gridf1-none")
@@ -113,18 +114,18 @@ axios.get(`${url}/auth/oneuser`,{headers:{Authorization :  `Bearer ${localStorag
     alert("malumot xato keldi")
 })
 
-axios.get(`${url}/api/mycourse/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
-    myData(res.data)
-    console.log(res.data,)
-}).catch(err=>{
- 
-})
+
 
 
     },[])
-
+ // axios.get(`${url}/api/mycourse/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+        //     myData(res.data)
+        //     console.log(res.data,)
+        //     alert("siz kurs sotib oldingiz")
+        // }).catch(err=>{
+        //  alert("balans yetarli mas")
+        // })
     function coursid(){
-    
         axios.post(`${url}/api/course/register/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
             coursData(res.data)
             console.log(res.data)
@@ -159,6 +160,7 @@ axios.get(`${url}/api/mycourse/${localStorage.getItem("courseid")}`,{headers:{Au
 
 return (
     <div>
+<Usernavbar/>
 
 <div className="prover2">
     <div className="prover2-kotta-men">
@@ -445,11 +447,14 @@ return(
            
           <div className="mni-swiper-grid">
     <div className="mni-gridf1">
-    {item1.image === null ? (
+<div className="asdasdsadasdsa">
+{item1.image === null ? (
                  <img src={img_for_null1} alt="" />
                 ) : (
-                  <img src={item1.image } />
+                  <img src={item1.image} />
                  )}
+    
+</div>
              
 
     </div>

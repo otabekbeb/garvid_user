@@ -29,7 +29,15 @@ export default function Profil() {
   }
   function userImgPut(id) {
     var formdata = new FormData();
+
     formdata.append("image", document.querySelector("#userInput").files[0]);
+    formdata.append("address", data[0].address);
+    formdata.append("description", data[0].description);
+    formdata.append("email", data[0].email);
+    formdata.append("last_name", data[0].last_name);
+    formdata.append("phone_number", data[0].phone_number);
+    formdata.append("username", data[0].username);
+
 
     axios
       .put(`${url}/auth/oneuser/${id}`, formdata, {
@@ -37,9 +45,21 @@ export default function Profil() {
       })
       .then((res) => {
         window.location.reload();
+        // alert("ishladi")
       })
       .catch((err) => {
-        state1 === "ru" ? alert("Ошибка изображения") : alert("Image failed");
+        console.log(err);
+      });
+      axios
+      .get(`${url}/auth/oneuser`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   }
   function userimgClose() {
@@ -92,6 +112,7 @@ export default function Profil() {
       "position: fixed;right:0px;";
     document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
       "display:none";
+
   }
   function notificationClose() {
     document.querySelector(".profil_notifacation_size").style =
@@ -115,7 +136,7 @@ export default function Profil() {
         <div className="profil_size">
           <div className="profil_blok_bir">
             <div onMouseLeave={() => userimgClose()} className="user_img_size">
-              {data.map((item) => {
+              {data.map(item => {
                 return (
                   <>
                     {item.image === null ? (
@@ -129,7 +150,7 @@ export default function Profil() {
                       <img
                         onMouseEnter={() => userimgModal()}
                         className="user_img"
-                        src={item.image}
+                        src={item.image.includes("http")?item.image:`${url}/${item.image}`}
                         alt=""
                       />
                     )}
@@ -155,7 +176,7 @@ export default function Profil() {
               })}
 
               <button>Regular user</button>
-              <p>My signs</p>
+              <p>My social networks :</p>
               <div className="blok_bir_icon">
                 <div className="blok_bir_icon_img1">
                   <BiLogoTelegram/>
@@ -231,7 +252,7 @@ export default function Profil() {
                 </div>
                 <div className="taxrirlash_modal_div">
                   <FiLifeBuoy className="taxrirlash_modal_icon" />
-                  <p onClick={()=>  window.location="/Help"}>Help</p>
+                  <p onClick={()=>  window.location="/help"}>Help</p>
                 </div>
                 <hr />
                 <div className="taxrirlash_modal_div" onClick={() => chiqish()}>

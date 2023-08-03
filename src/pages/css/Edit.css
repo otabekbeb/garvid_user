@@ -30,6 +30,17 @@
     justify-content: center;
     z-index: 1000000000000000000000 !important;
 }
+.edit_card2{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.62);
+    display: none;
+    justify-content: center;
+    z-index: 1000000000000000000000 !important;
+}
 .edit_padding{
     margin: auto;
     position: relative;
@@ -58,15 +69,21 @@
     border-radius: 3px;
     color: black;
     border: 1px solid #9DA7BB;
+    outline: none;
 }
 .edit_inside label{
     color: black;
     /* padding-left: 10px; */
 }
+.imagePost{
+    border: none !important;
+    padding-left: 0px !important;
+}
 .inp_numbr{
     padding-right: 5px;
 }
 .inp_img{
+    padding-left: 0px !important;
     border: none !important;
 }
 .close_btn{

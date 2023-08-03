@@ -23,7 +23,7 @@ export default function Mentorprofile() {
 
     useEffect (()=>{
       axios.get(`${url}/auth/oneuser`, {headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}}).then(res=>{
-        console.log(res.data);
+        // console.log(res.data);
         setbase(res.data)
       }).catch(err=>{
         console.log('err');
@@ -101,7 +101,8 @@ export default function Mentorprofile() {
                  <div onClick={() =>
                    window.location="/loginpageMentor"} className='taxrirlash_modal_div'><FiEdit className='taxrirlash_modal_icon' /><p>Edit profile</p></div>
                  <div className='taxrirlash_modal_div'  onClick={() => notificationModal()}><BiCast className='taxrirlash_modal_icon'/><p>Notifications</p></div>
-                 <div className='taxrirlash_modal_div'><FiLifeBuoy className='taxrirlash_modal_icon'/><p>Help</p></div>
+                 <div onClick={() =>
+                   window.location="/Help"} className='taxrirlash_modal_div'><FiLifeBuoy className='taxrirlash_modal_icon'/><p>Help</p></div>
                  <hr />
                  <div className='taxrirlash_modal_div' onClick={()=>{window.location="/";localStorage.removeItem("token")}}><FiLogOut className='taxrirlash_modal_icon'/><p>Exit</p></div>
                </div>
