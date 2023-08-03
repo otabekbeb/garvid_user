@@ -32,6 +32,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Proverr2 from './pages/js/Proverr2'
 import Oplata from './pages/js/Oplata'
 import Help_chat from './pages/js/Help_chat'
+import FollowCard from './pages/js/FollowCard'
 export default function App() {
 
   return (
@@ -69,6 +70,7 @@ export default function App() {
           <Route path="/Help_Mentor" element={<Help_Mentor />} />
           <Route path="/Student_Help" element={<Student_Help />} />
           <Route path="/Help_chat" element={<Help_chat />} />
+          <Route path="/FollowCard" element={<FollowCard/>} />
 
           {/* <Route index element={} />*/}
         </Routes>

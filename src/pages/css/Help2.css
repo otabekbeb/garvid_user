@@ -29,8 +29,9 @@
 }
 
 .nazad_bt {
-    width: 300px;
+    width: 80px;
     height: 30px;
+   margin-right: 55px;
     background-color: #fff;
 }
 
