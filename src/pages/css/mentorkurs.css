@@ -666,6 +666,9 @@ display: block;
 .inp_img{
     border: none !important;
 }
+.select_Post{
+  border: 2px solid black !important;
+}
 .close_btn{
     position: absolute;
     top: 5px;

@@ -284,7 +284,8 @@
 }
 .dashed{
     width: 350px;
-    height: 420px;
+    min-height: 420px;
+    height: auto;
     border: 2px dashed #9DA7BB;
     border-radius: 4px;
 }
