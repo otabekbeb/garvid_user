@@ -43,7 +43,7 @@ export default function App() {
           <Route path="/loginpageMentor" element={<LoginpageMentor />} />
           <Route path="/about" element={<About />} />
           <Route path="/servis" element={<Services />} />
-          <Route path="/Help" element={<Help />} />
+          <Route path="/help" element={<Help />} />
           <Route path="/userhelp" element={<UserHelp />} />
           <Route path="/USer_help2" element={<UserHelp2 />} />
           <Route path="/USer_help3" element={<UserHelp3 />} />
