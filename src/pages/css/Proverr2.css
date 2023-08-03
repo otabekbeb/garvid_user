@@ -1,7 +1,8 @@
 
 .prover2{
     width: 100% !important;
-    height: 50vw;
+    height: 55vw;
+    max-width: 100%;
     background: #F1F2F6;
     padding-top: 30px;
 
@@ -135,6 +136,7 @@ transition: 0.4s all;
 display: flex;
 align-items: center;
 justify-content: space-around;
+flex-wrap: wrap;
 }
 .prover2-but-clas6{
     width: 88px !important;
@@ -343,6 +345,7 @@ margin-bottom: 30px;
     display: flex;
     justify-content: center;
     overflow: hidden;
+    margin-top: 40px;
   
 }
 .prover2-orta-joy .saas{
@@ -840,33 +843,35 @@ cursor: pointer;
     position: relative;
     top: 10px;
 }
-.mni-gridf1{
-    width: 134px;
-height: 150px;
+.mni-gridf1 img{
+    width: 50px;
+height: 50px;
+border-radius: 4px;
+/* display: flex;
+justify-content: space-around; */
+}
+.mni-gridf2 img{
+    width: 50px;
+height: 50px;
 border-radius: 4px;
 
 }
-.mni-gridf1 img{
-    width: 134px !important; 
-    height: 150px !important;
-    border-radius: 4px !important;
+.asdasdsadasdsa img{
+    display: flex !important;
+
 }
 
+
 .mni-gridf1 {
-    display: grid !important;
-    grid-template-columns: auto auto   !important;
+
     gap: 10px !important;
     padding-left: 17px !important;
  
-
 }
 .mni-gridf2 {
-    display: grid !important;
-    grid-template-columns: auto auto   !important;
     gap: 10px !important;
     padding-left: 17px !important;
     display: none  !important;
-    
 }
 .mni-gridf1-none{
     display: none !important;
@@ -1200,6 +1205,15 @@ height: 0;
           }
     } 
 @media (max-width:1498px) {
+    .prover2{
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100%;
+        background: #F1F2F6;
+        padding-top: 30px;
+    
+    }
+
     .prover20chech-box-a span{
         display: none !important;
     }
@@ -1272,26 +1286,20 @@ height: 0;
     margin-bottom: 10px ;
     color: #2E2E2E !important ;
       }
-      .prover2{
-        width: 100%;
-        min-height: 55vw;
-        background: #F1F2F6;
-        padding-top: 30px;
-    }
+
     .mni-grid-pas-media{
         display: flex;
         margin-top: 35px;
         justify-content: center;
-    }
-    .prover2{
-        width: 100%;
-        min-height: 94vw;
         background: #F1F2F6;
-        padding-top: 30px;
+        width: 100%;
+        height: 100%;
+
     }
+
     .prover2-oxiri-block-in{
         width: 640px;
-        height: auto;
+        height: 410px ;
         border-radius: 0px 4px 4px 0px;
         box-shadow: 0px 2px 2px 0px #0000001A;
         background-color: #ffffff;
@@ -1315,14 +1323,12 @@ height: 0;
             justify-content: space-between !important;
         }
         .mni-gridf1 img{ 
-            width: 270px;
-        height: 150px;
+           
         border-radius: 4px;
         
         }
         .mni-gridf2 img{ 
-            width: 300px;
-        height: 150px;
+          
         border-radius: 4px;
         
         }
@@ -1461,23 +1467,16 @@ height: 0;
             left: -15px !important;
           }
           .mni-gridf1 img{ 
-            width: 240px;
-        height: 150px;
+           
         border-radius: 4px;
         
         }
         .mni-gridf2 img{ 
-            width: 240px;
-        height: 150px;
+           
         border-radius: 4px;
         
         }
-        .prover2{
-            width: 100%;
-            min-height: 100vw;
-            background: #F1F2F6;
-            padding-top: 30px;
-        }
+
 }
 @media (max-width:1227px) {
     .faq-text{
@@ -1489,12 +1488,7 @@ height: 0;
         grid-template-columns: auto auto auto;
         flex-wrap: wrap !important;
     }
-    .prover2{
-        width: 100%;
-        min-height: 110vw;
-        background: #F1F2F6;
-        padding-top: 30px;
-    }
+
     .prover2-orta-joy .saas{
         width:700px !important;
         height: 320px !important;
@@ -1547,21 +1541,12 @@ padding-top: 15px;
             position: relative;
             left: -15px !important;
           }
-          .mni-gridf1 img{ 
-            width: 220px;
-        height: 150px;
-        border-radius: 4px;
-        
-        }
-        .mni-gridf2 img{ 
-            width: 240px;
-        height: 150px;
-        border-radius: 4px;
-        
-        }
+
 }
 
 @media (max-width:1131px) {
+    
+
     .mni-orta-kota-media{
         display: none !important;
     }
@@ -1634,7 +1619,7 @@ padding-top: 15px;
             position: relative;
             left: -15px !important;
           }
-          .mni-gridf1 img{ 
+          /* .mni-gridf1 img{ 
             width: 210px;
         height: 150px;
         border-radius: 4px;
@@ -1645,7 +1630,7 @@ padding-top: 15px;
         height: 150px;
         border-radius: 4px;
         
-        }
+        } */
         .mni-orta-bloxk-mediaa{
             display: block;
           margin-top: 20px;
@@ -1684,12 +1669,7 @@ padding-top: 15px;
         .mni-media-orta-filter box-icon{
             cursor: pointer;
         }
-        .prover2{
-            width: 100%;
-            min-height: 115vw;
-            background: #F1F2F6;
-            padding-top: 30px;
-        }
+ 
         .prover3-mni-search{
 display: flex;
 justify-content: center;
@@ -1738,6 +1718,7 @@ width: 130px !important;
             .prover2-info-filter2{
                 display: flex;
                 justify-content: space-around;
+                flex-wrap: wrap;
             }
 
 
@@ -1893,14 +1874,14 @@ width: 130px !important;
         left: -15px !important;
       }
       .mni-gridf1 img{ 
-        width: 170px;
-    height: 150px;
+    width: 50px;
+    height: 50px;
     border-radius: 4px;
     
     }
     .mni-gridf2 img{ 
-        width: 170px;
-    height: 150px;
+        width: 50px;
+        height: 50px;
     border-radius: 4px;
     
     }
@@ -2007,8 +1988,7 @@ width: 130px !important;
 }
 
 .mni-gridf1 img{ 
-    width: 125px;
-height: 150px;
+   
 border-radius: 4px;
 
 }
@@ -2515,12 +2495,7 @@ border-radius: 4px;
         left: 0px;
         top: -0px !important;
     }
-    .mni-gridf1 img{ 
-        width: 170px;
-    height: 150px;
-    border-radius: 4px;
-    
-    }
+
     .mni-media-orta-filter{
         display: none;
     }
@@ -2641,12 +2616,7 @@ border-radius: 4px;
     left: 0px;
     top: -0px !important;
 }
-.mni-gridf1 img{ 
-    width: 160px;
-height: 150px;
-border-radius: 4px;
 
-}
 }
 @media (max-width:383px) {
     .faq-title{
@@ -2775,12 +2745,7 @@ border-radius: 4px;
         left: 0px;
         top: -0px !important;
     }
-    .mni-gridf1 img{ 
-        width: 140px;
-    height: 150px;
-    border-radius: 4px;
-    
-    }
+
 }
 @media (max-width:340px) {
 
@@ -3094,4 +3059,40 @@ justify-content: center;
         padding-top: 30px;
     
     }
+} */
+/* @media (max-width:1071px) {
+    .prover2{
+        width: 100% !important;
+        height: 140vw !important;
+        background: #F1F2F6;
+        padding-top: 30px;
+    
+    }
+}
+@media (max-width:990px) {
+    .prover2{
+        width: 100% !important;
+        height: 150vw !important;
+        background: #F1F2F6;
+        padding-top: 30px;
+    
+    }
+}
+@media (max-width:930px) {
+    .prover2{
+        width: 100% !important;
+        height: 160vw !important;
+        background: #F1F2F6;
+        padding-top: 30px;
+    
+    }
+}
+@media (max-width:870px) {
+    .prover2{
+        width: 100% !important;
+        height: 170vw !important;
+        background: #F1F2F6;
+        padding-top: 30px;
+    
+    } 
 } */

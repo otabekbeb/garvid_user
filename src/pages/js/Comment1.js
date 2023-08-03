@@ -6,6 +6,7 @@ import img_comment from '../img/Ellipse.jpg'
 import img_comment1 from '../img/Ellipse.png'
 import axios from 'axios'
 import url from './Host'
+import person from '../img/149071.png'
 
 
 export default function Comment1() {
@@ -13,14 +14,24 @@ export default function Comment1() {
   const [state1, setState1] = React.useState();
   const [user,setUser]=useState([])
 
-  useEffect(() => {
-    setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
-    );},[]);
+  // useEffect(() => {
+  //   setState1(
+  //     localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
+  //   );},[]);
 
   useEffect(()=>{
-
-  },[])
+    axios.get(`${url}/course_theme_comment `, {
+      headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}
+    })
+    .then(res=>{
+      setComment(res.data)
+      console.log(res.data);
+      
+    })
+    .catch(err=>{
+      alert(err )
+    })
+  },[])  
 
   function messagePost(){
 
@@ -32,19 +43,22 @@ export default function Comment1() {
     <div className='m_comment_kotta'> 
     <div className="m_otdel_bgc">
 
-
+      {/* {comment.map(item=>{ */}
           <div className="m_comment">
           <div className="m_comment_img">
-              {/* <img src={"https://baisan.onrender.com"+item.user.image} alt="" /> */}
+            {/* {item.image===null?(<img src={person} alt="" />):(<img src={item.image} alt="" />)} */}
+              <img src={person} alt="" />
           </div>
           <div className="m_comment_text">
-              <h4>faad</h4>
-              <p>awddwad</p>
-              {/* <div className="m_comment_otvet"> 
+              <h4>sdasdas</h4>
+              <p>wsefwrg</p>
+              <div className="m_comment_otvet"> 
               <p><span><FiCornerUpLeft/></span>Ответить</p> 
-              </div> */}
+              </div>
           </div>
       </div>
+       {/* })}  */}
+
 
 
 

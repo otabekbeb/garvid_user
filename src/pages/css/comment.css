@@ -23,7 +23,8 @@ display: flex;
 gap: 20px;
 }
 .m_comment_otvet p{
-    color: #536DFD;
+    cursor:pointer;
+    color: #44bef1;
     display: flex;
     align-items: center;
     gap: 10px;

@@ -447,14 +447,24 @@ return(
            
           <div className="mni-swiper-grid">
     <div className="mni-gridf1">
-        <img src={item1.image} alt="" />
+<div className="asdasdsadasdsa">
+{item1.image === null ? (
+                 <img src={img_for_null1} alt="" />
+                ) : (
+                  <img src={item1.image} />
+                 )}
     
+</div>
              
 
     </div>
     
     <div className="mni-gridf2">
-    <img src={item1.image} alt="" />
+    {item1.image === null ? (
+                 <img src={img_for_null1} alt="" />
+                ) : (
+                  <img src={item1.image} />
+                 )}
              
 
     </div>
