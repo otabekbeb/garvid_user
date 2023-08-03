@@ -4,8 +4,9 @@ import Futer from "./Footer1"
 import Usernavbar from './Usernavbar'
 import { FaUserCircle } from 'react-icons/fa'
 import { BsChatLeftDots } from 'react-icons/bs'
-import { FiYoutube } from 'react-icons/fi'
+import { PiStudentDuotone } from 'react-icons/pi'
 import {AiOutlineLeft} from 'react-icons/ai'
+import Accordion from 'react-bootstrap/Accordion';
 function yobobqol(){
   document.querySelector(".user_help").style=`display:none`
   document.querySelector(".malumot_div").style="display:block"
@@ -50,19 +51,19 @@ export default function Help() {
           <div className="user_icon">
             <FaUserCircle />
           </div>
-          <h4>User </h4>
+          <h4>User page</h4>
         </div>
         <div className="user_div" onClick={()=>yobobqol1()}>
           <div className="user_icon">
             <FaUserCircle />
           </div>
-          <h4>Mentor </h4>
+          <h4>Mentor page</h4>
         </div>
         <div className="user_div" onClick={()=>yobobqol2()}>
           <div className="user_icon">
-            <FiYoutube />
+            <PiStudentDuotone />
           </div>
-          <h4> Youtube</h4>
+          <h4> Student</h4>
         </div>
         <div className="user_div" onClick={()=>yobobqol3()}>
           <div className="user_icon">
@@ -79,77 +80,61 @@ export default function Help() {
     <AiOutlineLeft /> <p className='nazad'>Hазад</p>
     </div>
       <div className="malumot">
-        <div className="title_profil">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, esse?</p>
-        </div>
-        <div className="title_profil">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, esse?</p>
-        </div>
-        <div className="title_profil">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, esse?</p>
-        </div>
-        <div className="title_profil">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, esse?</p>
-        </div>
+      <Accordion defaultActiveKey="0">
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>Accordion Item #1</Accordion.Header>
+        <Accordion.Body>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="1">
+        <Accordion.Header>Accordion Item #2</Accordion.Header>
+        <Accordion.Body>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+    <Accordion defaultActiveKey="0">
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>Accordion Item #1</Accordion.Header>
+        <Accordion.Body>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="1">
+        <Accordion.Header>Accordion Item #2</Accordion.Header>
+        <Accordion.Body>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
       </div>
     </div>
-    <div className="malumot_div">
-    <div className="nazad_left_div" onClick={()=>orqaga2()}>
-    <AiOutlineLeft /> <p className='nazad'>Hазад</p>
-    </div>
-      <div className="malumot">
-        <div className="title_profil">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, esse?</p>
-        </div>
-        <div className="title_profil">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, esse?</p>
-        </div>
-        <div className="title_profil">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, esse?</p>
-        </div>
-        <div className="title_profil">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, esse?</p>
-        </div>
-      </div>
-    </div>   
-    <div className="malumot_div">
-    <div className="nazad_left_div" onClick={()=>orqaga2()}>
-    <AiOutlineLeft /> <p className='nazad'>Hазад</p>
-    </div>
-      <div className="malumot">
-        <div className="title_profil">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, esse?</p>
-        </div>
-        <div className="title_profil">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, esse?</p>
-        </div>
-        <div className="title_profil">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, esse?</p>
-        </div>
-        <div className="title_profil">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, esse?</p>
-        </div>
-      </div>
-    </div>
-    <div className="malumot_div">
-    <div className="nazad_left_div" onClick={()=>orqaga2()}>
-    <AiOutlineLeft /> <p className='nazad'>Hазад</p>
-    </div>
-      <div className="malumot">
-        <div className="title_profil">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, esse?</p>
-        </div>
-        <div className="title_profil">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, esse?</p>
-        </div>
-        <div className="title_profil">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, esse?</p>
-        </div>
-        <div className="title_profil">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, esse?</p>
-        </div>
-      </div>
-    </div>
+    
     </div>
       <Futer />
     </div>

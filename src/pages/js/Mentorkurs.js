@@ -27,6 +27,7 @@ export default function Searchfilter() {
   const [state1, setState1] = React.useState();
   const [courstype, setCoursetype] = useState([]);
   const [CourseId, setCourseId] = useState();
+  const [deleteId,setDeleteId]=useState()
   const [delete1, setDelete1] = useState([]);
 
   function Filter() {
@@ -55,7 +56,8 @@ export default function Searchfilter() {
     document.querySelector(".delete_card").style = "display:none"
   }
 
-  function udalit() {
+  function udalit(id) {
+    setDeleteId(id)
     document.querySelector(".delete_card").style = "display:flex !important"
   }
 
@@ -80,28 +82,115 @@ export default function Searchfilter() {
     document.querySelector(".edit_card").style = "display:none"
   }
 
-  function dashed() {
-    document.querySelector("#edit_card").style = "display:flex !important"
+
+  function dashed_nazat2() {
+    document.querySelector(".edit_card2").style = "display:none;"
   }
+  function dashedOpen() {
+    document.querySelector(".edit_card").style = "display:flex;"
+  }
+
+  function dashedOpen2() {
+    document.querySelector('.edit_card2').style = 'display: flex;'
+  }
+
+  function dashed() {
+    // alert('hjkl')
+    var name = document.querySelector('.name').value
+    var description = document.querySelector('.description').value
+    var price = document.querySelector('.price').value
+    var planed_time = document.querySelector('.planed_time').value
+    var image = document.querySelector('.image').files[0]
+    var formdata = new FormData()
+    formdata.append("name", name)
+    formdata.append("description", description)
+    formdata.append("price", price)
+    formdata.append("planed_time", planed_time)
+    formdata.append("image", image)
+    axios.post(`${url}/api/course/`, formdata, { headers: { "Authorization": "Bearer " + localStorage.getItem("token") } }).then(res => {
+      alert("Добавлена информация")
+      console.log('success');
+    })
+      .catch(err => {
+        console.log(err);
+        // alert("Это адрес электронной почты или имя, пароль введен")
+      })
+  }
+
+
+  function postformentor() {
+    // // alert('hjkl')
+    // var name = document.querySelector('.namePost').value
+    // var description = document.querySelector('.descriptionPost').value
+    // var price = document.querySelector('.pricePost').value
+    // var planed_time = document.querySelector('.planed_timePost').value
+    // // var course_type = document.querySelector('.course_typePost').value
+    // // var author = document.querySelector('.authorPost').value
+    // var image = document.querySelector('.imagePost').files[0]
+    // var formdata = new FormData()
+    // formdata.append("name", name)
+    // formdata.append("description", description)
+    // formdata.append("price", price)
+    // formdata.append("planed_time", planed_time)
+    // // formdata.append("course_type", course_type)
+    // // formdata.append("author", author)
+    // formdata.append("image", image)
+    // axios.post(`${url}/api/course/`, formdata, { headers: { "Authorization": "Bearer " + localStorage.getItem("token") } }).then(res => {
+    //   alert("Добавлена информация")
+    //   console.log('success');
+    // })
+    //   .catch(err => {
+    //     console.log(err);
+    //     // alert("Это адрес электронной почты или имя, пароль введен")
+    //   })
+
+    var formdata = new FormData()
+
+    formdata.append("name", document.querySelector(".namePost").value)
+    formdata.append("description", document.querySelector(".descriptionPost").value)
+    formdata.append("price", document.querySelector(".pricePost").value)
+    formdata.append("planned_time", document.querySelector(".planned_timePost").value)
+    formdata.append("image", document.querySelector(".imagePost").files[0])
+    formdata.append("course_type", 12)
+    formdata.append("author", 2)
+    // formdata.append("course_type", 12)
+
+
+
+    
+
+
+    axios.post(`${url}/api/course`, formdata, {
+      headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}
+    }).then(res=>{
+      alert("success")
+    }).catch(err=>{
+      alert(err)
+    })
+  }
+ 
+   function dashed2 (){
+     
+   }
 
   function dashed_nazat() {
     document.querySelector("#edit_card").style = "display:none"
   }
 
-  function putCourse(){
-    var formdata=new FormData()
+  function putCourse() {
+    var formdata = new FormData()
     formdata.append("")
 
 
-    axios.put(`${url}/api/course`).then(res=>{
+    axios.put(`${url}/api/course`).then(res => {
 
     })
   }
-  function deleteclose(id) {
-    axios.delete(`${url}/api/course/${id}`,{ headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res=>{
+  function deleteclose() {
+    axios.delete(`${url}/api/course/${deleteId}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
       alert("ishladi")
       window.location.reload()
-    }).catch(err=>{
+    }).catch(err => {
       alert("xato")
     })
   }
@@ -110,8 +199,6 @@ export default function Searchfilter() {
   useEffect(() => {
 
     document.querySelector(".filter_button").style = "display:none"
-
-
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
@@ -128,20 +215,20 @@ export default function Searchfilter() {
     })
   }, []);
 
-  function filter (id) {
+  function filter(id) {
     axios
-    .get(`${url}/api/course`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}})
-    .then((res) => {
-      const search = res.data.filter(item=>item.course_type===id)
-      setKursdata(search)
-    });
+      .get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })
+      .then((res) => {
+        const search = res.data.filter(item => item.course_type === id)
+        setKursdata(search)
+      });
   }
   const searchInput = (event) => {
     const searchRegex = new RegExp(`^${event.target.value}`, "i");
-    axios.get(`${url}/api/course`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+    axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
       const searchdata = res.data.filter((item) => {
         return (
-          searchRegex.test(item.name) 
+          searchRegex.test(item.name)
         );
       })
       setKursdata(searchdata)
@@ -149,21 +236,22 @@ export default function Searchfilter() {
 
   }
 
-  function deleteData (key) {
-    axios.delete(`https://markazback2.onrender.com/api/course/${key}`, {headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}}).then(res =>{
-      alert('malumot ochirildi')
-      window.location.reload()
-    }).catch(err=>{
-      console.log(err);
-    })
-    
+  function deleteData(id) {
+    console.log(id);
+    // axios.delete(`https://markazback2.onrender.com/api/course/${key}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+    //   alert('malumot ochirildi')
+    //   window.location.reload()
+    // }).catch(err => {
+    //   console.log(err);
+    // })
+
   }
 
   return (
     <div>
 
       <div>
-      <div className="Filter">
+        <div className="Filter">
           <div className="blur_blok">
             <div className="inp_blok">
               <input onChange={searchInput} id="search" type="text" placeholder="Search among my courses" />
@@ -185,19 +273,19 @@ export default function Searchfilter() {
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
                 </div> */}
               </div>
-              <div onMouseLeave={()=>filter1()}  className="filter_button">
+              <div onMouseLeave={() => filter1()} className="filter_button">
 
 
-{courstype.map(item=>{
-  return(
-    <div className="button_filter_kurs">
-    {item.name===null?(""):(<div onClick={()=>filter(item.id)} className="div_kurs">{item.name}</div>)}
-  </div>
-  )
-})}
+                {courstype.map(item => {
+                  return (
+                    <div className="button_filter_kurs">
+                      {item.name === null ? ("") : (<div onClick={() => filter(item.id)} className="div_kurs">{item.name}</div>)}
+                    </div>
+                  )
+                })}
 
 
-                
+
               </div>
             </div>
           </div>
@@ -276,11 +364,11 @@ export default function Searchfilter() {
                       <label htmlFor="">Image:</label>
                       <input id="image" type="file" className="inp_img" />
                     </div>
-                    <button className="edit_inside_btn">Send</button>
+                    <button className="edit_inside_btn" onClick={() => dashed()}>Send</button>
                   </div>
                 </div>
 
-                <button onClick={() => udalit()} className="delete_icon">
+                <button onClick={() => udalit(item.id)} className="delete_icon">
                   <i>
                     <Delete />
                   </i>
@@ -291,7 +379,7 @@ export default function Searchfilter() {
                     <h4>Вы правда хотите удалить?</h4>
                     <div className="delete_btns">
                       <button onClick={() => close()} className="delete_btn_no">Нет</button>
-                      <button className="delete_btn_yes" onClick={()=> deleteData(item.id)}>Да</button>
+                      <button className="delete_btn_yes" onClick={() => deleteclose()}>Да</button>
                     </div>
                   </div>
                 </div>
@@ -306,38 +394,48 @@ export default function Searchfilter() {
               </div>
             )
           })}
-          <div className="dashed" onClick={() => dashed()}>
+
+          <div className="dashed" onClick={() => dashedOpen2()}>
             <i><AiOutlinePlus /></i>
           </div>
-          <div id="edit_card" className="edit_card" >
+          <div className="edit_card2" style={{ display: 'none' }}>
             <div className="edit_padding">
-
-              <button onClick={() => dashed_nazat()} className="close_btn">
+            
+              <button onClick={() => dashed_nazat2()} className="close_btn">
                 <i><GrFormClose /></i>
               </button>
               <div className="edit_inside">
                 <label htmlFor="">Name:</label>
-                <input type="text" />
+                <input className="namePost" type="text"  id=""/>
               </div>
               <div className="edit_inside">
                 <label htmlFor="">Description:</label>
-                <input type="text" />
+                <input className="descriptionPost" type="text" />
               </div>
               <div className="edit_inside">
                 <label htmlFor="">Price:</label>
-                <input type="number" className="inp_numbr" />
+                <input className="pricePost" type="number" />
               </div>
               <div className="edit_inside">
                 <label htmlFor="">Planned time:</label>
-                <input type="number" className="inp_numbr" />
+                <input className="planned_timePost" type="number" />
+              {/* <div className="edit_inside">
+                <label htmlFor="">course_type:</label>
+                <input className="course_typePost" type="text" />
+              </div>
+              <div className="edit_inside">
+                <label htmlFor="">author:</label>
+                <input className="authorPost" type="text" />
+              </div> */}
               </div>
               <div className="edit_inside">
                 <label htmlFor="">Image:</label>
-                <input type="file" className="inp_img" />
+                <input className="imagePost" type="file" />
               </div>
-              <button className="edit_inside_btn">Send</button>
+              <button className="edit_inside_btn" onClick={() => {postformentor()}}>Send</button>
             </div>
           </div>
+
         </div>
 
         {/* SPISKA */}
