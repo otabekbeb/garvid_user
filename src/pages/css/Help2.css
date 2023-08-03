@@ -1,4 +1,4 @@
-.big_svl{
+.big_svl {
     width: 50%;
     height: 300px;
     margin: auto;
@@ -40,4 +40,55 @@
 
 .text_mod:hover {
     color: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width:1131px) {
+    .mod_svg {
+        width: 100%;
+    }
+
+    .big_svl {
+        width: 60%;
+    }
+}
+@media (max-width:908px) {
+    .big.svl{
+        margin-top: 10%;
+    }
+}
+@media (max-width:883px) {
+    .mod_svg{
+        width: 100%;
+        font-size: 15px;
+    }
+    .big_svl{
+        width: 70%;
+    }
+}
+@media (max-width:720px) {
+    .big_svl{
+        width: 80%;
+        height: 300px;
+
+    }
+    .text_mod{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+@media (max-width:661px) {
+    .big_svl{
+        width: 90%;
+        height: 400px;
+    }
+}
+@media (max-width:501px) {
+    .mod_svg{
+        margin-top: 30px;
+    }
+}
+@media (max-width:340px) {
+    .text_mod{
+        font-size: 14px;
+    }
 }

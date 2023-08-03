@@ -1,7 +1,7 @@
 .big_svl1{
     
         width: 50%;
-        height: 300px;
+        height: 400px;
         margin:auto;
         margin-top: 10%;
     
@@ -17,4 +17,48 @@
 }
 .text_mod1{
     padding-left: 1%;
+    padding-left: 10px ;
+    padding-right: 10px;
+    
+}
+@media (max-width:1225px) {
+    .big_svl1{
+        width: 60%;
+    }
+    .mod_svg1{
+        width: 100%;
+    }
+}
+
+@media (max-width:947px) {
+    .big_svl1{
+        width: 80%;
+    }
+}
+@media (max-width:947px) {
+    .big_svl1{
+        height: 500px;
+        width: 80%;
+    }
+}
+@media (max-width:682px) {
+    .big_svl1{
+        margin-top: 20%;
+    }
+}
+@media (max-width:585px) {
+    .text_mod1{
+       font-size: 15px;
+    }
+    .big_svl1{
+        width: 90%;
+    }
+}
+@media (max-width:354px) {
+ .big_svl1{
+    height: 700px;
+ }  
+ .text_mod1{
+    font-size: 13px;
+ } 
 }

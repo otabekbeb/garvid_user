@@ -364,6 +364,7 @@
 
   .blok_bir_icon {
     width: 70%;
+    border:1px solid red;
   }
 
   .blok_bir_text h1 {
@@ -384,7 +385,8 @@
     padding-left: 1px;
     padding-bottom: 5px;
     text-align: center;
-    width: 35px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: 2px solid white;
     cursor: pointer;
@@ -680,6 +682,8 @@
   height:80px;
   border: 1px solid #fff;
   margin: 20px auto;
+  padding-right: 10px;
+  padding-top: 5px;
   overflow: hidden;
   padding-left: 10px;
   box-shadow: 1px 1px 5px #44bef1;

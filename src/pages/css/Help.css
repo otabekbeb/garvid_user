@@ -5,9 +5,11 @@
 }
 
 .user_help {
-    width: 70%;
-    height: 400px;
+    width: 100%;
+    height: auto;
+    
     margin: auto;
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -15,15 +17,26 @@
 }
 
 .user_help1 {
-    width: 100%;
-
+    width: 70%;
     margin: auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    /* flex-wrap: wrap; */
     margin-top: -5px;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
-
+@media (max-width:930px) {
+    .user_help1{
+        flex-wrap: wrap;
+    }
+}
+@media (max-width:663px) {
+    .user_help{
+        flex-wrap: nowrap;
+    }
+}
 .user_div {
     width: 230px;
     height: 250px;
@@ -43,83 +56,27 @@
     color: rgba(0, 0, 0, 0.649);
 }
 
-@media (max-width:1024px) {
-    .user_help {
-        width: 90%;
-    }
-}
-
-@media (max-width:782px) {
-    .user_icon {
-        width: 100px;
-        font-size: 80px;
-    }
-
+@media (max-width:816px) {
     .Savol {
         margin-top: 15%;
     }
-
-    .user_help {
-        width: 100%;
-    }
-
 }
 
-@media (max-width:650px) {
-    .user_help {
-        flex-wrap: wrap;
-    }
-}
-
-@media (max-width:650px) {
-    .user_div {
-        margin-top: -2%;
-    }
-}
-
-@media (max-width:1249px) {
+@media (max-width:489px) {
     .Savol {
-        margin-top: 20%;
+        font-size: 20px;
+        margin-top: 30%;
     }
 }
 
-@media (max-width:661px) {
-    .user_help1 {
-        flex-wrap: wrap;
-    }
-
-    .user_div {
-        height: auto;
-    }
-}
-
-@media (max-width:650px) {
-    .user_help1 {
-
-        margin-top: 40px;
-    }
-
-    .user_div {
-        height: 200px;
-    }
-}
-
-@media (max-width:460px) {
-    .user_help {
-        height: auto;
-    }
-}
-
-@media (max-width:392px) {
+@media (max-width:384px) {
     .Savol {
         font-size: 20px;
     }
 }
-@media (max-width:922px) {
-    .user_help {
-        width: 100%;
-    }
-    .user_help1{
-        width: 100%;
+
+@media (max-width:366px) {
+    .Savol {
+        font-size: 17px;
     }
 }
