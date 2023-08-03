@@ -4,6 +4,7 @@ import {AiOutlineLeft} from 'react-icons/ai'
 export default function User_help2() {
   return (
     <div>
+          <h4 className='Savol'>Answers to frequently asked questions</h4>
            <div className="big_svl1">
                 <div className="orqaga1">
                     <div className="orqaga_icon">

@@ -4,7 +4,7 @@ import "../css/Navbar.css";
 import axios from "axios";
 import url from "./Host";
 import { NavLink } from "react-router-dom";
-
+import {BsFillPersonFill} from "react-icons/bs"
 function sa() {
   var o = document.querySelector(".media-ul").style.display;
   if (o == "flex") {
@@ -188,6 +188,7 @@ export default function Navbar() {
               </ul>
              <div className="user-name-media">
              <li className="moto-menu-item">
+              <BsFillPersonFill/>
                       {localStorage.getItem("token") ? (user.map(item=>{return<a href="/user">{item.username}</a> })) : (<a href="/login" >Log in</a>)}
                     </li>
              </div>

@@ -321,7 +321,8 @@
     /* the gap */
     --b: 5px;
     /* border thickness*/
-    border: 3px solid #34b1e6;
+   border: 1px solid #44bef1;
+   box-shadow: #44bef1 0px 0px 10px 0px;
     /* the color */
     padding: calc(var(--g) + var(--b));
     --_g1: repeating-linear-gradient(90deg, var(--_c)) repeat-x;
