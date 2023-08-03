@@ -114,18 +114,18 @@ axios.get(`${url}/auth/oneuser`,{headers:{Authorization :  `Bearer ${localStorag
     alert("malumot xato keldi")
 })
 
-axios.get(`${url}/api/mycourse/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
-    myData(res.data)
-    console.log(res.data,)
-}).catch(err=>{
- 
-})
+
 
 
     },[])
-
+ // axios.get(`${url}/api/mycourse/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+        //     myData(res.data)
+        //     console.log(res.data,)
+        //     alert("siz kurs sotib oldingiz")
+        // }).catch(err=>{
+        //  alert("balans yetarli mas")
+        // })
     function coursid(){
-    
         axios.post(`${url}/api/course/register/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
             coursData(res.data)
             console.log(res.data)
@@ -447,14 +447,24 @@ return(
            
           <div className="mni-swiper-grid">
     <div className="mni-gridf1">
-        <img src={item1.image} alt="" />
+<div className="asdasdsadasdsa">
+{item1.image === null ? (
+                 <img src={img_for_null1} alt="" />
+                ) : (
+                  <img src={item1.image} />
+                 )}
     
+</div>
              
 
     </div>
     
     <div className="mni-gridf2">
-    <img src={item1.image} alt="" />
+    {item1.image === null ? (
+                 <img src={img_for_null1} alt="" />
+                ) : (
+                  <img src={item1.image} />
+                 )}
              
 
     </div>

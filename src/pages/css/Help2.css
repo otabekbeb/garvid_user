@@ -1,0 +1,94 @@
+.big_svl {
+    width: 50%;
+    height: 300px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.mod_svg {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border: 1px solid rgba(154, 153, 153, 0.473);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.text_mod {
+
+    border-bottom: 1px solid rgba(183, 183, 183, 0.473);
+    padding-left: 1%;
+    margin-top: 20px;
+    color: black;
+}
+
+.orqaga_icon {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100px;
+}
+
+.nazad_bt {
+    width: 300px;
+    height: 30px;
+    background-color: #fff;
+}
+
+.nazad_bt:hover {
+    color: #44bef1;
+}
+
+.text_mod:hover {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width:1131px) {
+    .mod_svg {
+        width: 100%;
+    }
+
+    .big_svl {
+        width: 60%;
+    }
+}
+@media (max-width:908px) {
+    .big.svl{
+        margin-top: 10%;
+    }
+}
+@media (max-width:883px) {
+    .mod_svg{
+        width: 100%;
+        font-size: 15px;
+    }
+    .big_svl{
+        width: 70%;
+    }
+}
+@media (max-width:720px) {
+    .big_svl{
+        width: 80%;
+        height: 300px;
+
+    }
+    .text_mod{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+@media (max-width:661px) {
+    .big_svl{
+        width: 90%;
+        height: 400px;
+    }
+}
+@media (max-width:501px) {
+    .mod_svg{
+        margin-top: 30px;
+    }
+}
+@media (max-width:340px) {
+    .text_mod{
+        font-size: 14px;
+    }
+}
