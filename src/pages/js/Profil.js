@@ -44,8 +44,8 @@ export default function Profil() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
-        // window.location.reload();
-        alert("ishladi")
+        window.location.reload();
+        // alert("ishladi")
       })
       .catch((err) => {
         console.log(err);
@@ -112,6 +112,7 @@ export default function Profil() {
       "position: fixed;right:0px;";
     document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
       "display:none";
+
   }
   function notificationClose() {
     document.querySelector(".profil_notifacation_size").style =
@@ -175,7 +176,7 @@ export default function Profil() {
               })}
 
               <button>Regular user</button>
-              <p>My signs</p>
+              <p>My social networks :</p>
               <div className="blok_bir_icon">
                 <div className="blok_bir_icon_img1">
                   <BiLogoTelegram/>
