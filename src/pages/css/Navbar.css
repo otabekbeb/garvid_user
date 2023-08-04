@@ -2658,8 +2658,12 @@ left: 20vw !important;
     text-decoration: none;
     transition: 0.4s;
     font-size: 12px;
+    align-items: center;
   }
-
+#asdasddasdasasdsa{
+  position: relative;
+  top: 4px;
+}
   .sahifa-glav {
     display: flex;
     padding: 10px 0;

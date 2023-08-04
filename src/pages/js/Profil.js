@@ -110,13 +110,16 @@ export default function Profil() {
   function notificationModal() {
     document.querySelector(".profil_notifacation_size").style =
       "position: fixed;right:0px;";
+
     document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
       "display:none";
+      document.querySelector(".profil-qora-qiladi").style="display:block"
 
   }
   function notificationClose() {
     document.querySelector(".profil_notifacation_size").style =
       "position: fixed;right:-100%;";
+      document.querySelector(".profil-qora-qiladi").style="display:none"
   }
 
   // function postUser(){
@@ -327,20 +330,50 @@ export default function Profil() {
           </div>
         </div>
         <div className="profil_notifacation_size">
-        <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
-          <div className="admin">
+          {/* <div className="admin">
             <h4>Sms</h4>
-          </div>
-          <div className="admin_div">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, inventore.
-          </div>
-          <div className="admin_div">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, inventore.
-          </div>
-          <div className="admin_div">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, inventore.
-          </div>
+            <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
+
+          </div> */}
+<div className="div-admin-sms">
+  <h5>SMS</h5>
+  <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
+</div>
+<div className="sms-insta">
+<div className="sms-insto-bb1">
+    <div className="sms-insta-block">
+    <div className="sms-img">
+      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
+    </div>
+<div className="sms-kotta-pas">
+<div className="sms-text-tepa"><p>boxodirov_025 •  now <span><box-icon type='solid' name='bell-ring'></box-icon></span></p></div>
+    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
+</div>
+  </div>
+
+  <div className="sms-insta-block">
+    <div className="sms-img">
+      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
+    </div>
+<div className="sms-kotta-pas">
+<div className="sms-text-tepa"><p>boxodirov_025 •  now <span><box-icon type='solid' name='bell-ring'></box-icon></span></p></div>
+    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
+</div>
+  </div>
+
+    <div className="sms-insta-block">
+    <div className="sms-img">
+      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
+    </div>
+<div className="sms-kotta-pas">
+<div className="sms-text-tepa"><p>boxodirov_025 •  now <span><box-icon type='solid' name='bell-ring'></box-icon></span></p></div>
+    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
+</div>
+  </div>
+</div>
+</div>
         </div>
+        <div className="profil-qora-qiladi"></div>
       </div>
     </div>
   );

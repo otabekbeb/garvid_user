@@ -188,11 +188,11 @@ export default function Navbar() {
               </ul>
              <div className="user-name-media">
              
-             <li className="moto-menu-item">
+             <li id="pasasas" className="moto-menu-item">
             
             <span id="user-cionnaxuy"><BsFillPersonFill/></span>
             
-                      {localStorage.getItem("token") ? (user.map(item=>{return<a href="/user">{item.username}</a> })) : (<a href="/login" >Log in</a>)}
+                      {localStorage.getItem("token") ? (user.map(item=>{return<a id="asdasddasdasasdsa" href="/user">{item.username}</a> })) : (<a href="/login" >Log in</a>)}
                     </li>
              </div>
               <div id="google_translate_element"></div>
