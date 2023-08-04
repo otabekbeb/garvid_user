@@ -260,12 +260,12 @@ export default function Navbar() {
                       </li>
 
                       <li>
-                        <a href="/teacher" className="tt">
+                        <a href="/teacherpage" className="tt">
                           Teacher
                         </a>
                       </li>
                       <li>
-                        <a href="/student" className="tt">
+                        <a href="/studentpage" className="tt">
                           Student
                         </a>
                       </li>
