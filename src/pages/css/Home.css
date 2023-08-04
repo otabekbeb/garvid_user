@@ -521,7 +521,7 @@ background: #f7f7f7;
         margin-top: 10px;
     }
     #carousel_c{
-        top: 190px !important;
+        top: 200px !important;
     }
     .carousel-control-next, .carousel-control-prev{
         width: 30px !important;
@@ -591,9 +591,14 @@ background: #f7f7f7;
     .carousel-caption h1{
         font-size: 24px;
         line-height: 1.1;
+        width: 100%;
+    }
+    .carousel-caption{
+        top: 190px !important;
     }
     .carusel p{
         font-size: 15px;
+        width: 100%;
     }
     .contact_form_input_big{
         flex-direction: column;

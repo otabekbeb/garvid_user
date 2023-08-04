@@ -118,8 +118,7 @@
   font-style: normal;
   text-decoration: none;
 }
-
-.blog1:hover #contactcolor {
+ #contactcolor:hover {
   color: rgb(68, 190, 241);
 }
 
@@ -3328,7 +3327,7 @@ color: rgba(var(--bs--rgb),var(--bs-text-opacity)) !important;;
     left: -20px;
   }
 }
-
+/* 
 @media (max-width:1438px) {}
 
 .user-name-media{
@@ -3356,4 +3355,18 @@ color: rgba(var(--bs--rgb),var(--bs-text-opacity)) !important;;
   
     margin: auto;
   }
+} */
+.user-name-media{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 20px !important;
+  height: 100%;
+  width: 15vw;
+text-align: center !important;
+position: relative;
+top: 5px;
+}
+#user-cionnaxuy{
+padding-right: 10px;
 }

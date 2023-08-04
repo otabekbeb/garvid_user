@@ -187,8 +187,11 @@ export default function Navbar() {
                       
               </ul>
              <div className="user-name-media">
+             
              <li className="moto-menu-item">
-              <BsFillPersonFill/>
+            
+            <span id="user-cionnaxuy"><BsFillPersonFill/></span>
+            
                       {localStorage.getItem("token") ? (user.map(item=>{return<a href="/user">{item.username}</a> })) : (<a href="/login" >Log in</a>)}
                     </li>
              </div>

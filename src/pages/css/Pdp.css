@@ -321,8 +321,7 @@
     /* the gap */
     --b: 5px;
     /* border thickness*/
-   border: 1px solid #44bef1;
-   box-shadow: #44bef1 0px 0px 10px 0px;
+    border: 1px solid #9DA7BB;
     /* the color */
     padding: calc(var(--g) + var(--b));
     --_g1: repeating-linear-gradient(90deg, var(--_c)) repeat-x;
@@ -352,7 +351,7 @@
 
 .div_kurs {
     width: 90%;
-    border-bottom: 1px solid #1a94f8;
+    border-bottom: 1px solid #9DA7BB;
     margin: 15px auto;
 }
 

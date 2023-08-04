@@ -88,22 +88,25 @@ export default function MentorChat() {
       name:"002",
       img:Anime,
       time:"23:10",
+      count:2
     },
     {
       name:"Abdurahm",
       img:ImgChat,
       time:"23:10",
+      count:2
     },
     {
       name:"Jonibek",
       img:ImgChatt,
       time:"6:10",
+      count:2
     },
     {
       name:"Otabek",
       img:YozishmaUserImg,
       time:"13:10",
-      
+      count:1
     }
   ]
 
@@ -138,7 +141,7 @@ export default function MentorChat() {
                 </div>
               <div className="yozishma_bolim_text_nik_text_qongiroq">
                 <div className="yozishma_bolim_text_nik_text_qongiroq_vaqti">{item.time}</div>
-                <div className="yozishma_bolim_text_nik_text_qongiroq_bildir">2</div>
+                <div className="yozishma_bolim_text_nik_text_qongiroq_bildir">{item.count}</div>
               </div>
             </div>
             )

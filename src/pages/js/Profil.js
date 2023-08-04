@@ -129,6 +129,10 @@ export default function Profil() {
   //     alert("ishlamadi")
   //   })
   // }
+  
+  function openNotification() {
+    document.querySelector(".yon_notification_all").style="right:0%;"
+  }
 
   return (
     <div>
@@ -342,6 +346,8 @@ export default function Profil() {
           </div>
         </div>
       </div>
+
+      
     </div>
   );
 }
