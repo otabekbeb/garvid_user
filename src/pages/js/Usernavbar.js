@@ -165,7 +165,7 @@ export default function Navbar() {
                   <a href="/user">User</a>{" "}
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/teacherpage">Teacher</a>
+                  <a href="/teacher">Teacher</a>
                 </li>
                 <li className="moto-menu-item">
                   <a href="/studentpage">Student</a>
@@ -260,7 +260,7 @@ export default function Navbar() {
                       </li>
 
                       <li>
-                        <a href="/teacherpage" className="tt">
+                        <a href="/teacher" className="tt">
                           Teacher
                         </a>
                       </li>
