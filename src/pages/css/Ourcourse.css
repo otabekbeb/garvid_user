@@ -272,7 +272,6 @@ line-height: normal;
     z-index: 1;
     transition: all 0.2s ease;
     position: absolute;
-    display: flex !important;
     flex-wrap: wrap;
     gap: 50px;
     padding: 17px 0px 18px 24px;

@@ -248,7 +248,7 @@ export default function Mentor() {
             <div className="gray_blok">
                 <div className="fil_text_blok">
                   
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} className='fromLeft'>My courses</h1>{toggle===1?(<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("courselenght")} pieces</div>):("")}</div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} className='fromLeft'>My courses</h1>{toggle===1?(<div className="fil_text_blok_kurs_lenght">2 pieces</div>):("")}</div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} className='fromLeft'>Correspondence</h1><div className="fil_text_blok_kurs_lenght">14 pieces</div></div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} className='fromLeft'>Tasks</h1>{toggle===3?(<div className="fil_text_blok_kurs_lenght">24 pieces</div>):("")}</div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} className='fromLeft'>My subscribers</h1>{toggle===4?(<div className="fil_text_blok_kurs_lenght">24 pieces</div>):("")}</div>
@@ -300,7 +300,6 @@ export default function Mentor() {
         </div>
 
         <div className="kurs_cards">
-          {localStorage.setItem("courselenght",kursdata.length)}
           {kursdata.map(item => {
             return (
               <div className="kurs_card">

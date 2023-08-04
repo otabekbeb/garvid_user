@@ -27,6 +27,7 @@ import UserHelp3 from './pages/js/User_help3'
 import UserHelp4 from './pages/js/User_help4'
 import Help_Mentor from './pages/js/Help_Mentor'
 import Student_Help from './pages/js/Student_Help'
+import Teacher_profil from './pages/js/Teacher_profil'
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Proverr2 from './pages/js/Proverr2'
@@ -70,7 +71,8 @@ export default function App() {
           <Route path="/Help_Mentor" element={<Help_Mentor />} />
           <Route path="/Student_Help" element={<Student_Help />} />
           <Route path="/Help_chat" element={<Help_chat />} />
-          <Route path="/FollowCard" element={<FollowCard/>} />
+          <Route path="/FollowCard" element={<FollowCard />} />
+          <Route path="/Teacher_profil" element={<Teacher_profil />} />
 
           {/* <Route index element={} />*/}
         </Routes>

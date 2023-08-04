@@ -145,7 +145,7 @@ export default function Navbar() {
 
 
                      
-                        <li  onClick={()=> window.location="#"} id="menu2pp" >
+                        <li  onClick={()=> window.location="/news"} id="menu2pp" >
                           {" "}
                           <a  className="zaib">
                             News{" "}
@@ -227,7 +227,7 @@ export default function Navbar() {
                           onClick={() => meded()}
                         >
                           <li onClick={()=> window.location="/about"}>
-                            <a href="/" className="tt">
+                            <a  className="tt">
                               About Us
                             </a>
                           </li>{" "}
@@ -243,7 +243,7 @@ export default function Navbar() {
                         <ul className="ffdul">
                           <div className="ichi2" onMouseEnter={()=> iconhover()} onMouseLeave={()=> iconhover1()} onClick={() => ochil1()}>
                             <li onClick={()=> window.location="/news"} className="ds">
-                              <a href="news">News</a>
+                              <a >News</a>
                             </li>
                             <span>
                               <box-icon
@@ -255,10 +255,10 @@ export default function Navbar() {
                           <div className="lll">
                             <ul>
                               <li onClick={()=> window.location="/blog"} className="lll1">
-                                <a href="/">Blog</a>
+                                <a >Blog</a>
                               </li>
                               <li onClick={()=> window.location="/contacts"} className="lll2">
-                                <a href="/">Contacts</a>
+                                <a >Contacts</a>
                               </li>
                             </ul>
                           </div>
@@ -269,23 +269,23 @@ export default function Navbar() {
                         </ul>
                       </div>
                       <li onClick={()=> window.location="/servis"}>
-                        <a href="/" className="tt">
+                        <a className="tt">
                           Services
                         </a>
                       </li>
 
                       <li onClick={()=> window.location="/blog"}>
-                        <a href="/" className="tt">
+                        <a className="tt">
                           Blog
                         </a>
                       </li>
                       <li onClick={()=> window.location="/ourteam"}>
-                        <a href="/" className="tt">
+                        <a className="tt">
                           our team
                         </a>
                       </li>
                       <li onClick={()=> window.location="/contacts"}>
-                        <a href="/contacts" className="tt">
+                        <a className="tt">
                           Contacts
                         </a>
                       </li>

@@ -424,6 +424,9 @@ background: #f7f7f7;
     font-size: 12px;
     line-height: 1.4;
    }
+   
+   .contact_form_input_big img{
+    padding-top: 100px;}
    .card_about_us_ikki_p{
     font-size: 12px;
     line-height: 1.4;
@@ -519,6 +522,8 @@ background: #f7f7f7;
 @media (max-width:767px) {
     .contact_form_input_big img{
         margin-top: 10px;
+        display: flex;
+        margin: auto;
     }
     #carousel_c{
         top: 200px !important;
@@ -605,6 +610,7 @@ background: #f7f7f7;
     }
     .contact_form_input_big{
         display: block;
+        padding-top: 50px;
     }
     .contact_form_input_big_div h1{
         font-size: 30px;
