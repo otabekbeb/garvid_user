@@ -27,6 +27,9 @@ export default function Profil() {
     document.querySelector(".user_img_hover").style =
       "position: absolute;bottom: 0;";
   }
+  function nonefunc() {
+    document.querySelector(".profil-qora-qiladi").style="display:none"
+  }
   function userImgPut(id) {
     var formdata = new FormData();
 
@@ -377,7 +380,7 @@ export default function Profil() {
 </div>
 </div>
         </div>
-        <div className="profil-qora-qiladi"></div>
+        <div onClick={()=>nonefunc()} className="profil-qora-qiladi"></div>
       </div>
 
       
