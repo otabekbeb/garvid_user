@@ -1133,3 +1133,12 @@ padding: 5px;
         overflow: hidden !important;
     }
 }
+@media (max-width:366px) {
+    .futer {
+        width: 100%;
+        background: #323946;
+        height: 1040px !important;
+        padding-top: 90px;
+        overflow: hidden !important;
+    }
+}

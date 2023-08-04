@@ -13,6 +13,7 @@ export default function FollowCard() {
                     <h5 className='Name'>Alex_Abbasov</h5 >
                     <button onClick={()=>folowcolor()} className='followButton1' >subscribe</button>
                 </div>
+                
             </div>
         </div>
     )

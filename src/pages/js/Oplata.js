@@ -14,27 +14,27 @@ export default function Oplata() {
 
   <div className="separator">
     <hr className="line"/>
-    <p>или оплатить с помощью кредитной карты</p>
+    <p>or pay with a credit card</p>
     <hr className="line"/>
   </div>
   <div className="credit-card-info--form">
     <div className="input_container">
-      <label for="password_field" className="input_label">Полное имя владельца карты</label>
+      <label for="password_field" className="input_label">Full name of the cardholder</label>
       <input id="password_field" className="input_field" type="text" name="input-name" title="Inpit title" placeholder="Enter your full name"/>
     </div>
     <div className="input_container">
-      <label for="password_field" className="input_label">номер карты</label>
+      <label for="password_field" className="input_label">card number</label>
       <input id="password_field" className="input_field" type="number" name="input-name" title="Inpit title" placeholder="0000 0000 0000 0000"/>
     </div>
     <div className="input_container">
-      <label for="password_field" className="input_label">Срок годности / CVV</label>
+      <label for="password_field" className="input_label">Expiration date / CVV</label>
       <div className="split">
       <input id="password_field" className="input_field" type="text" name="input-name" title="Expiry Date" placeholder="01/23"/>
       <input id="password_field" className="input_field" type="number" name="cvv" title="CVV" placeholder="CVV"/>
     </div>
     </div>
   </div>
-    <button className="purchase--btn" type='button'>Пополнить баланс</button>
+    <button className="purchase--btn" type='button'>Top up your balance</button>
 </form>
 </div>
 </div>

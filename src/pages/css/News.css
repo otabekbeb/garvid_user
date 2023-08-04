@@ -10513,6 +10513,7 @@ a.text-dark:focus {
 
 .text-decoration-none {
     text-decoration: none !important;
+    cursor: pointer;
 }
 
 .text-break {

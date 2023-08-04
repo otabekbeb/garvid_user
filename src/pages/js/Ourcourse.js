@@ -76,6 +76,7 @@ export default function Ourcourse() {
     // }
     
     useEffect(()=>{
+      document.querySelector(".filter_card").style="display:none"
       axios.get(`${url}/api/course`, {headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
         setKursdata(res.data)
         console.log(res.data,);

@@ -84,6 +84,9 @@ export default function Proverr2() {
     setToggle(id)
 
     }
+
+
+
     useEffect(()=>{
         axios.get(`${url}/api/cours_types`).then(res=>{
 setData(res.data)
@@ -109,6 +112,7 @@ axios.get(`${url}/auth/teachers`,{headers:{Authorization :  `Bearer ${localStora
        
 axios.get(`${url}/auth/oneuser`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
     oneData(res.data)
+    
     console.log(res.data)
 }).catch(err=>{
     alert("malumot xato keldi")
@@ -126,7 +130,7 @@ axios.get(`${url}/auth/oneuser`,{headers:{Authorization :  `Bearer ${localStorag
         //  alert("balans yetarli mas")
         // })
     function coursid(){
-        axios.post(`${url}/api/course/register/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+        axios.post(`${url}/api/course/${localStorage.getItem("courseid")}/register/${oneuser[0].id}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
             coursData(res.data)
             console.log(res.data)
             alert("siz kurs sotib oldiz")
@@ -439,7 +443,7 @@ return(
 <div className="boshqa-mentorla">
     <h5>Boshqa Mentorlar</h5>
     <div className="boshqa-mentorla-krugg1">
-        <div className="boshqa-kurglaaaaa1" onClick={()=>onga()}><box-icon name='right-arrow-alt' color='#536dfd' ></box-icon></div>
+        <div className="boshqa-kurglaaaaa1" onClick={()=>onga()}><box-icon name='right-arrow-alt' color='#44bef1 ' ></box-icon></div>
     </div>
 </div>
 {ticher.map(item1=>{
