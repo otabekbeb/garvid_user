@@ -165,10 +165,10 @@ export default function Navbar() {
                   <a href="/user">User</a>{" "}
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/teacher">Teacher</a>
+                  <a href="/teacherpage">Teacher</a>
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/student">Student</a>
+                  <a href="/studentpage">Student</a>
                 </li>
                 <li className="moto-menu-item">
                   <a href="/loginpage">Edit profile</a>
