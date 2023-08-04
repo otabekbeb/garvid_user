@@ -747,6 +747,7 @@ justify-content: flex-start;
 padding-left: 20px;
 cursor: pointer;
 margin-bottom: 20px;
+max-width: 100%;
 }
 .sms-img img{
   width: 35px;
@@ -835,15 +836,15 @@ font-weight: 500;
     width: 100%;
     height: 100%;
   margin-left: 10vw;
-  }
+  } 
 }
-@media (max-width:335px) {
+ @media (max-width:335px) {
   .sms-insta{
     width: 100%;
     height: 100%;
   margin-left: 15vw;
   }
-}
+} 
 
 @media (max-width:950px) {
   .sms-text-pas{
