@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { FaUserCircle } from 'react-icons/fa'
 import { PiStudentDuotone } from 'react-icons/pi'
 import { BsChatLeftDots } from 'react-icons/bs'
@@ -10,6 +11,7 @@ export default function Help() {
   return (
     <div>
       <Usernavbar />
+
 
       <div className="bos">
         <h1 className='Savol'>Answers to frequently asked questions</h1>
@@ -57,6 +59,11 @@ export default function Help() {
 
 
       </div>
+
+
+   
+      
+
 
       <Futer />
     </div>

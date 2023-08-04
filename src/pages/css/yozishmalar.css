@@ -1,6 +1,5 @@
-
-.yozishma_small_text_div_chat{
-    width:100%;
+.yozishma_small_text_div_chat {
+    width: 100%;
     display: blok;
     gap: 10px;
     margin-top: 20px;
@@ -12,72 +11,86 @@
     padding: 10px;
     position: relative;
 }
-.javob_berish_img img{
+
+.javob_berish_img img {
     width: 50px;
     height: 50px;
     padding-top: -10px;
     border-radius: 50%;
-    
+
 }
-.javob_chat_div_beruvchi h1{
+
+.javob_chat_div_beruvchi h1 {
     font-size: 16px;
     margin-bottom: 0;
 }
-.javob_chat_div_beruvchi{
+
+.javob_chat_div_beruvchi {
     display: block;
-    border-left: 3px solid  #44bef1 ;
+    border-left: 3px solid #44bef1;
     padding-left: 10px;
 }
-.javob_chat_div_beruvchi p{
+
+.javob_chat_div_beruvchi p {
     font-size: 13px;
     margin-bottom: 0;
 }
-.javob_chat_ikki_beruvchi h1{
+
+.javob_chat_ikki_beruvchi h1 {
     font-size: 16px;
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
-.javob_berish_ikki{
+
+.javob_berish_ikki {
     position: absolute;
     bottom: 40px;
     left: 0;
     right: 0;
-    background-color:#fff;
-    border-top:1px solid #e2e2e2;
+    background-color: #fff;
+    border-top: 1px solid #e2e2e2;
     width: 100%;
     transition: 4s;
     padding-left: 10px;
     display: none;
 }
-.javob_chat_ikki_beruvchi{
+
+.javob_chat_ikki_beruvchi {
     display: block;
     padding-left: 10px;
-    border-left: 3px solid  #44bef1 ;
+    border-left: 3px solid #44bef1;
     margin-top: 10px;
 }
-.javob_chat_ikki_beruvchi p{
+
+.javob_chat_ikki_beruvchi p {
     font-size: 13px;
     margin-bottom: 0;
 }
-.yozishma_small_text_div{
+
+.yozishma_small_text_div {
     padding: 20px;
     padding-left: 40px;
     width: 100%;
     height: 545px;
     overflow-y: scroll;
 }
-.yozishma_small_text_div::-webkit-scrollbar{
+
+.yozishma_small_text_div::-webkit-scrollbar {
     width: 10px;
 }
-.yozishma_bolim_text_nik::-webkit-scrollbar{
+
+.yozishma_bolim_text_nik::-webkit-scrollbar {
     width: 10px;
 }
-.yozishma_small_text_div_text h1{
+
+.yozishma_small_text_div_text h1 {
     font-size: 20px;
 }
-.yozishma_small_text_div_text p{
+
+.yozishma_small_text_div_text p {
     width: 100%;
 }
-.yozishma_small_text_div_text_javob_sozi{
+
+.yozishma_small_text_div_text_javob_sozi {
     margin-top: 10px;
     font-size: 15px;
     display: flex;
@@ -86,20 +99,24 @@
     align-items: stretch;
     gap: 10px;
     cursor: pointer;
-    color:  #44bef1 ;
+    color: #44bef1;
 }
-.yozishma_small_text_div_text_javob_sozi .javob_sozi{
-font-size: 13px;
-margin-top: 4px;
+
+.yozishma_small_text_div_text_javob_sozi .javob_sozi {
+    font-size: 13px;
+    margin-top: 4px;
 }
-.javob_sozi_big{
+
+.javob_sozi_big {
     display: flex;
     gap: 5px;
 }
-.yozishma_vaqt_soat_kun span{
+
+.yozishma_vaqt_soat_kun span {
     color: rgba(157, 167, 187, 1);
 }
-.yozishma_small_xabar_div input{
+
+.yozishma_small_xabar_div input {
     width: 100%;
     height: 40px;
     padding-left: 37px;
@@ -110,7 +127,7 @@ margin-top: 4px;
     border-top: 1px solid #e2e2e2;
 }
 
-.chat_file_smile_link_file{
+.chat_file_smile_link_file {
     position: absolute;
     top: 5px;
     width: 0px !important;
@@ -119,21 +136,25 @@ margin-top: 4px;
     z-index: 1;
     cursor: pointer !important;
 }
-.yozishma_small_xabar_div{
+
+.yozishma_small_xabar_div {
     position: relative;
 }
-.yozishma_small_div{
+
+.yozishma_small_div {
     display: block;
     border: 1px solid #e2e2e2;
     border-top-right-radius: 10px;
     background-color: #fff;
     border-bottom-right-radius: 10px;
 }
-.yozishma_big_div_size{
+
+.yozishma_big_div_size {
     width: 1400px;
     display: flex;
 }
-.yozishma_bolim_text_nik_text{
+
+.yozishma_bolim_text_nik_text {
     width: 100%;
     display: flex;
     gap: 5px;
@@ -142,15 +163,18 @@ margin-top: 4px;
     margin-top: 5%;
     cursor: pointer;
 }
-.yozishma_bolim_text_nik_text_ism_p h1{
+
+.yozishma_bolim_text_nik_text_ism_p h1 {
     font-size: 20px;
 }
-.yozishma_bolim_text_nik_text img{
+
+.yozishma_bolim_text_nik_text img {
     width: 70px;
     height: 70px;
     border-radius: 50%;
 }
-.yozishma_bolim_text_nik{
+
+.yozishma_bolim_text_nik {
     padding: 10px;
     width: 60%;
     height: 650px;
@@ -160,10 +184,12 @@ margin-top: 4px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
-.yozishma_bolim_text_nik_text_ism_p{
+
+.yozishma_bolim_text_nik_text_ism_p {
     width: 100%;
 }
-.yozishma_big_div{
+
+.yozishma_big_div {
     display: flex;
     justify-content: center;
     margin-top: 4%;
@@ -171,209 +197,257 @@ margin-top: 4px;
     padding: 20px;
 
 }
-.Chat_background{
+
+.Chat_background {
     width: 100%;
     padding-top: 30px;
     padding-bottom: 30px;
-    background-color: #f6f6f6; 
+    background-color: #f6f6f6;
 }
 
-.chat_file_smile_link{
-position: absolute;
-top: 10px;
-font-size: 20px;
-left:20px;
-cursor: pointer;
-}
-.chat_file_smile_smile{
+.chat_file_smile_link {
     position: absolute;
     top: 10px;
     font-size: 20px;
-    left:10px;
+    left: 20px;
     cursor: pointer;
 }
+
+.chat_file_smile_smile {
+    position: absolute;
+    top: 10px;
+    font-size: 20px;
+    left: 10px;
+    cursor: pointer;
+}
+
 @media (max-width:1400px) {
-    .yozishma_small_div{
+    .yozishma_small_div {
         width: 99%;
         /* display: none; */
     }
-    .yozishma_bolim_text_nik{
+
+    .yozishma_bolim_text_nik {
         width: 100%;
         display: block;
     }
-    .yozishma_bolim_text_nik_text{
+
+    .yozishma_bolim_text_nik_text {
         margin-top: 0px !important;
         margin-bottom: 3%;
     }
-    .yozishma_bolim_text_nik_text_ism_p h1{
+
+    .yozishma_bolim_text_nik_text_ism_p h1 {
         font-size: 20px;
     }
 }
+
 @media (max-width:1000px) {
-    .yozishma_bolim_text_nik_text img{
+    .yozishma_bolim_text_nik_text img {
         width: 40px;
         height: 40px;
-        }
-        .yozishma_bolim_text_nik_text_ism_p h1{
-            font-size: 1.7vw;
-            margin-bottom: 0;
-        }
-        .yozishma_bolim_text_nik_text_ism_p p{
-            font-size: 1.5vw;
-            margin-bottom: 0;
-        }
-        .yozishma_bolim_text_nik_text_ism_p{
-            padding-bottom: -5px;
-        }
-        .yozishma_bolim_text_nik_text_qongiroq_bildir{
-            border-radius: 50%;
-            width: 15px !important;
-            font-size: 10px;
-        }
-        .yozishma_bolim_text_nik_text_qongiroq{
-            padding-top: 3px;
-        }
-        .yozishma_bolim_text_nik_text_qongiroq_vaqti{
-            font-size: 10px !important;
+    }
 
-        }
-        .yozishma_small_text_div_text p{
-            font-size: 1.5vw;
-        }
-        .javob_chat_div_beruvchi h1{
+    .yozishma_bolim_text_nik_text_ism_p h1 {
         font-size: 1.7vw;
-        }
-        .javob_chat_div_beruvchi p{
-            font-size: 1.5vw;
-        }
-        .javob_chat_div_beruvchi{
-        border-left: 1px solid  #44bef1 ;
-        }
-        .javob_sozi{
-            font-size: 1.5vw !important;
-            margin-top: 3% !important;
-        }
-        .yozishma_vaqt_soat_kun span{
-            font-size: 1.5vw !important;
-            margin-top: -2px !important;
-        }
-        .yozishma_small_text_div_text_javob_sozi{
-            align-items: baseline;
-            height: 15px;
-        }
-        .javob_berish_blok_text h1{
-            font-size: 1.7vw !important;
-        }
-        .javob_berish_blok_text p{
-            font-size: 1.5vw !important;
-        }
+        margin-bottom: 0;
+    }
+
+    .yozishma_bolim_text_nik_text_ism_p p {
+        font-size: 1.5vw;
+        margin-bottom: 0;
+    }
+
+    .yozishma_bolim_text_nik_text_ism_p {
+        padding-bottom: -5px;
+    }
+
+    .yozishma_bolim_text_nik_text_qongiroq_bildir {
+        border-radius: 50%;
+        width: 15px !important;
+        font-size: 10px;
+    }
+
+    .yozishma_bolim_text_nik_text_qongiroq {
+        padding-top: 3px;
+    }
+
+    .yozishma_bolim_text_nik_text_qongiroq_vaqti {
+        font-size: 10px !important;
+
+    }
+
+    .yozishma_small_text_div_text p {
+        font-size: 1.5vw;
+    }
+
+    .javob_chat_div_beruvchi h1 {
+        font-size: 1.7vw;
+    }
+
+    .javob_chat_div_beruvchi p {
+        font-size: 1.5vw;
+    }
+
+    .javob_chat_div_beruvchi {
+        border-left: 1px solid #44bef1;
+    }
+
+    .javob_sozi {
+        font-size: 1.5vw !important;
+        margin-top: 3% !important;
+    }
+
+    .yozishma_vaqt_soat_kun span {
+        font-size: 1.5vw !important;
+        margin-top: -2px !important;
+    }
+
+    .yozishma_small_text_div_text_javob_sozi {
+        align-items: baseline;
+        height: 15px;
+    }
+
+    .javob_berish_blok_text h1 {
+        font-size: 1.7vw !important;
+    }
+
+    .javob_berish_blok_text p {
+        font-size: 1.5vw !important;
+    }
 }
+
 @media (max-width:700px) {
-    .yozishma_bolim_text_nik_text_ism_p h1{
+    .yozishma_bolim_text_nik_text_ism_p h1 {
         font-size: 17px;
     }
-    .yozishma_bolim_text_nik_text_ism_p p{
+
+    .yozishma_bolim_text_nik_text_ism_p p {
         font-size: 15px;
     }
-    .yozishma_bolim_text_nik_text img{
-     width: 50px;
-     height: 50px;   
+
+    .yozishma_bolim_text_nik_text img {
+        width: 50px;
+        height: 50px;
     }
-    .yozishma_small_text_div_text p{
-    font-size: 15px;
+
+    .yozishma_small_text_div_text p {
+        font-size: 15px;
     }
-    .javob_sozi{
+
+    .javob_sozi {
         font-size: 15px !important;
     }
-    .yozishma_vaqt_soat_kun span{
+
+    .yozishma_vaqt_soat_kun span {
         font-size: 15px !important;
     }
-    .yozishma_small_text_div_text_javob_sozi{
+
+    .yozishma_small_text_div_text_javob_sozi {
         align-items: stretch;
         height: 20px;
     }
-    .javob_chat_div_beruvchi h1{
-    font-size: 15px;
-    }
-    .javob_chat_div_beruvchi p{
+
+    .javob_chat_div_beruvchi h1 {
         font-size: 15px;
     }
-    .yozishma_telegram_profil{
+
+    .javob_chat_div_beruvchi p {
+        font-size: 15px;
+    }
+
+    .yozishma_telegram_profil {
         padding-left: 10px !important;
         gap: 10px !important;
     }
-    .javob_berish_blok_text h1{
+
+    .javob_berish_blok_text h1 {
         font-size: 15px !important;
     }
-    .javob_berish_blok_text p{
+
+    .javob_berish_blok_text p {
         font-size: 13px !important;
     }
-    .chat_yoq_payt{
+
+    .chat_yoq_payt {
         display: none !important;
     }
-    .chat_gap_text_div{
+
+    .chat_gap_text_div {
         display: block !important;
     }
 }
-.smile_blok{
+
+.smile_blok {
     position: absolute;
     top: -450px;
     left: 0px;
     display: block;
 }
-.smile_none{
+
+.smile_none {
     display: none;
 }
 
-@media(min-width:1400px){
-    .yozishma_small_div{
+@media(min-width:1400px) {
+    .yozishma_small_div {
         display: block !important;
     }
-    .yozishma_bolim_text_nik{
+
+    .yozishma_bolim_text_nik {
         display: block !important;
     }
-    .yoq{
+
+    .yoq {
         display: none !important;
 
     }
 }
 
-@media(min-width:700px){
-    .yoq1{
+@media(min-width:700px) {
+    .yoq1 {
         display: none !important;
     }
-    .yozishma_bolim_text_nik{
+
+    .yozishma_bolim_text_nik {
         width: 400px;
     }
-    .yozishma_small_div{
-    width: 100%;
+
+    .yozishma_small_div {
+        width: 100%;
     }
-    .yoq{
+
+    .yoq {
         display: none;
     }
+
     /* .yozishma_small_div{
         display: block !important;
     } */
-    
-    
+
+
 }
-@media(max-width:700px){
-    .yozishma_bolim_text_nik{
-        display: none; 
+
+@media(max-width:700px) {
+    .yozishma_bolim_text_nik {
+        display: none;
     }
+
     /* .yozishma_small_div{
         display: block !important;
-    } */    
-    .yoq{
+    } */
+    .yoq {
         display: none !important;
     }
-    .yozishma_small_text_div{
+
+    .yozishma_small_text_div {
         padding: 5px;
         padding-left: 15px;
     }
 
 }
-.yozishma_telegram_profil{
+
+.yozishma_telegram_profil {
     width: 100%;
     display: flex;
     align-items: center;
@@ -381,81 +455,94 @@ cursor: pointer;
     padding-left: 20px;
     border-bottom: 1px solid #e2e2e2;
 }
-.telegram_pro_img_text img{
+
+.telegram_pro_img_text img {
     width: 40px !important;
     height: 40px !important;
     border-radius: 50% !important;
 }
-.telegram_pro_img_text{
+
+.telegram_pro_img_text {
     width: 100%;
-    display: flex !important; 
+    display: flex !important;
     align-items: center !important;
     gap: 5px;
 }
-.telegram_pro_text{
+
+.telegram_pro_text {
     margin-top: 10px !important;
     display: block !important;
 }
-.telegram_pro_text h1{
-font-size: 15px !important;
-margin-bottom: 0 !important;
+
+.telegram_pro_text h1 {
+    font-size: 15px !important;
+    margin-bottom: 0 !important;
 }
-.telegram_pro_text p{
+
+.telegram_pro_text p {
     font-size: 12px !important;
     margin-top: 0 !important;
 }
-.telegram_plane{
+
+.telegram_plane {
     position: absolute;
     right: 10px;
     top: 10px;
     font-size: 20px;
     cursor: pointer;
 }
-.javob_berish{
+
+.javob_berish {
     position: absolute;
     bottom: 40px;
     left: 0;
     right: 0;
-    background-color:#fff;
-    border-top:1px solid #e2e2e2;
+    background-color: #fff;
+    border-top: 1px solid #e2e2e2;
     width: 100%;
     padding-left: 10px;
     display: none;
     transition: 4s;
 }
-.javob_berish_img{
+
+.javob_berish_img {
     position: absolute;
     bottom: 40px;
     left: 0;
     right: 0;
-    background-color:rgba(213 220 233) ;
-    box-shadow: 1px 0px 0px 1px  #44bef1 ;
+    background-color: rgba(213 220 233);
+    box-shadow: 1px 0px 0px 1px #44bef1;
     width: 100%;
     display: none;
     padding-top: 5px;
     padding-bottom: 5px;
-    transition: 4s;  
+    transition: 4s;
 
 }
-.javob_berish_img_div{
+
+.javob_berish_img_div {
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-left: 1%;
 }
-.javob_berish_blok_text h1{
+
+.javob_berish_blok_text h1 {
     font-size: 18px;
     margin-bottom: 0;
 }
-.javob_berish_div_fill{
-    color:  #44bef1 ;
+
+.javob_berish_div_fill {
+    color: #44bef1;
     font-size: 20px;
 }
-.javob_berish_blok_text p{
+
+.javob_berish_blok_text p {
     font-size: 15px;
     margin-bottom: 0;
 }
-.javob_berish_div{
+
+.javob_berish_div {
     width: 100%;
     display: flex;
     align-items: center;
@@ -464,6 +551,7 @@ margin-bottom: 0 !important;
     padding-right: 10px;
     padding-top: 5px;
 }
+
 /* @media (max-width:400px) {
     .smile_blok{
         position: absolute;
@@ -472,14 +560,16 @@ margin-bottom: 0 !important;
         display: block;
     }
 } */
-.Javob{
+.Javob {
     text-decoration: none;
-    color:  #44bef1 ;
+    color: #44bef1;
 }
-.yozishma_bolim_text_nik_text_qongiroq{
+
+.yozishma_bolim_text_nik_text_qongiroq {
     display: block;
 }
-.yozishma_bolim_text_nik_text_qongiroq_bildir{
+
+.yozishma_bolim_text_nik_text_qongiroq_bildir {
     background-color: #44bef1;
     border-radius: 50%;
     width: 25px;
@@ -487,37 +577,44 @@ margin-bottom: 0 !important;
     text-align: center;
     margin-left: auto;
 }
-.yozishma_bolim_text_nik_text_qongiroq_vaqti{
+
+.yozishma_bolim_text_nik_text_qongiroq_vaqti {
     font-size: 15px;
     padding-bottom: 5px;
 }
-.yozishma_small_text_div_ptichka{
+
+.yozishma_small_text_div_ptichka {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 60px;
-    
+
 }
-.yozishma_small_text_div_ptichka .ptichka_chat{
+
+.yozishma_small_text_div_ptichka .ptichka_chat {
     color: green;
     font-size: 15px;
 }
-.yozishma_small_text_div_ptichka .edit_chat{
+
+.yozishma_small_text_div_ptichka .edit_chat {
     color: grey;
     font-size: 15px;
     cursor: pointer;
 }
-.edit_chat_hover_relative{
+
+.edit_chat_hover_relative {
     position: relative;
     display: flex;
     align-items: center;
 }
-.edit_chat_hover_ikki_relative{
+
+.edit_chat_hover_ikki_relative {
     position: relative;
     display: flex;
     align-items: center;
 }
-.edit_chat_hover_ikki{
+
+.edit_chat_hover_ikki {
     position: absolute;
     right: -12px;
     top: -20px;
@@ -529,7 +626,7 @@ margin-bottom: 0 !important;
     display: none;
 }
 
-.edit_chat_hover{
+.edit_chat_hover {
     position: absolute;
     right: -12px;
     top: -20px;
@@ -540,7 +637,8 @@ margin-bottom: 0 !important;
     box-shadow: 1px 1px 10px 2px rgb(218, 218, 218);
     display: none;
 }
-.edit_chat_hover_ikki{
+
+.edit_chat_hover_ikki {
     position: absolute;
     padding: 5px;
     font-size: 8px;
@@ -548,18 +646,21 @@ margin-bottom: 0 !important;
     border-radius: 4px;
     box-shadow: 1px 1px 10px 5px rgb(218, 218, 218);
     display: none;
-    
-    
+
+
 }
-.chat_yoq_payt{
+
+.chat_yoq_payt {
     display: flex;
     justify-content: center;
-    margin-top:250px;
+    margin-top: 250px;
 }
-.chat_gap_text_div{
+
+.chat_gap_text_div {
     display: none;
 }
-.chat_yoq_payt p{
+
+.chat_yoq_payt p {
     border: 1px solid #e2e2e2;
     padding: 5px;
     padding-left: 10px;
@@ -567,22 +668,25 @@ margin-bottom: 0 !important;
     border-radius: 15px;
     font-size: 1.2vw;
 }
-.javob_berish_ikki_db{
+
+.javob_berish_ikki_db {
     display: block;
 }
-.yozishma_bolim_text_nik{
-    position:  relative !important;
+
+.yozishma_bolim_text_nik {
+    position: relative !important;
 }
 
-.yozishma_bolim_text_nik_search{
+.yozishma_bolim_text_nik_search {
     width: 100%;
     height: 50px;
     border-bottom: 1px solid #e2e2e2;
 }
-.yozishma_bolim_text_nik_search input{
+
+.yozishma_bolim_text_nik_search input {
     outline-color: #44bef1;
     width: 100%;
     height: 35px;
     padding-left: 10px;
-    border: 1px solid #e2e2e2;  
+    border: 1px solid #e2e2e2;
 }

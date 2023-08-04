@@ -439,7 +439,7 @@ return(
 <div className="boshqa-mentorla">
     <h5>Boshqa Mentorlar</h5>
     <div className="boshqa-mentorla-krugg1">
-        <div className="boshqa-kurglaaaaa1" onClick={()=>onga()}><box-icon name='right-arrow-alt' color='#536dfd' ></box-icon></div>
+        <div className="boshqa-kurglaaaaa1" onClick={()=>onga()}><box-icon name='right-arrow-alt' color='#44bef1 ' ></box-icon></div>
     </div>
 </div>
 {ticher.map(item1=>{
