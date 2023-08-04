@@ -92,6 +92,7 @@ export default function Profil() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
+        localStorage.setItem("page_user",JSON.stringify(res.data))
         console.log(res.data);
         setData(res.data);
       })

@@ -149,6 +149,7 @@ export default function Youtube1() {
         setMain(res.data.one?res.data.one:[]);
         setCategory(res.data.all);
         console.log(res.data);
+        localStorage.setItem("page_video",JSON.stringify(res.data.one?res.data.one:[]))
         setLoader(0)
       })
       .catch((err) => {

@@ -9,64 +9,99 @@ import url from './Host'
 import person from '../img/149071.png'
 import { MdClose } from "react-icons/md";
 import "../css/yozishmalar.css";
-
+import {AiOutlineDelete}from "react-icons/ai"
 
 
 
 export default function Comment1() {
   const [comment,setComment]=useState([])
   const [state1, setState1] = React.useState();
+
   const [user,setUser]=useState([])
+  const [oneuser,setoneuser]=useState([])
 
   // useEffect(() => {
   //   setState1(
   //     localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
   //   );},[]);
 
-  // useEffect(()=>{
-  //   axios.get(`${url}/course_theme_comment `, {
-  //     headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}
-  //   })
+  // useEffect((id)=>{
+
+
+  //   axios.get(`${url}/api/course_theme_comment/${id}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
   //   .then(res=>{
   //     setComment(res.data)
   //     console.log(res.data);
-      
   //   })
   //   .catch(err=>{
-  //     alert(err )
+  //     alert("error")
   //   })
   // },[])  
 
+useEffect(()=>{
+  axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+    headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+  .then(res=>{
+    setComment(res.data)
+    console.log(res.data);
+  })
+  .catch(err=>{
+  })
+
+
+
+axios.get(`${url}/auth/oneuser`,{
+  headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+}).then(res=>{
+setoneuser(res.data)
+console.log(res.data,"salom");
+})
+},[])
+
+
   function messagePost(id){
     var formdata = new FormData()
-
     formdata.append("text",document.querySelector("#chat_text").value)
     formdata.append("image",document.querySelector("#comment_file").files[0])
-    formdata.append("theme",comment[0].theme)
-    formdata.append("subcomment", comment[0].subcomment)
-    formdata.append("user",comment[0].user)
+    formdata.append("user_id", oneuser[0].id)
+    formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id)
+    formdata.append("subcomment", 0)
 
-
-    axios.post(`${url}/course_theme_comment`, formdata, {
+    axios.post(`${url}/api/course_theme_comment/`, formdata, {
       headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}
     })
     .then(res=>{
+      
       console.log(res.data);
     })
     .catch(err=>{
       alert("error")
     })
 
-    axios.get(`${url}/course_theme_comment/${id}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+    axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+      headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
     .then(res=>{
+
       setComment(res.data)
-      console.log(res.data);
+      console.log(res.data,'hey');
     })
     .catch(err=>{
       alert("error")
     })
   }
 
+  function deleteComment() {
+    axios.delete(`${url}/api/course_theme_comment/${}`, {
+      headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}, 
+
+    })
+    .then(res=>[
+      alert("Вы успешно удалили свой комментарий")
+    ])
+    .catch(err=>{
+      alert(err)
+    })
+  }
 
   return (
     <div>
@@ -74,20 +109,42 @@ export default function Comment1() {
     <div className='m_comment_kotta'> 
     <div className="m_otdel_bgc">
 
-      {comment.map(item=>{
+      {comment.map(item => {
+        return(
           <div className="m_comment">
           <div className="m_comment_img">
-            {item.image===null?(<img src={person} alt="" />):(<img src={item.image} alt="" />)}
-              <img src={person} alt="" />
+          {
+            oneuser.map(item2 => {
+              return(
+                <>
+            {item2.image==null?(<img src={person} alt="" />):(
+            <img src={item2.image.includes("http")?item2.image:`${url}/${item2.image}`} alt="" />)}
+</>
+              )
+            })
+          }
+              {/* <img src={person} alt="" /> */}
+            
           </div>
           <div className="m_comment_text">
-              <h4>sdasdas</h4>
-              <p>wsefwrg</p>
+          {
+            oneuser.map(item1 => {
+              return(
+                <h5>{item1.username}</h5>
+              )
+            })
+          }
+              <img src={item.image.includes("http")?item.image:`${url}/${item.image}`} alt="" />
+              <p>{item.text}</p>
               <div className="m_comment_otvet"> 
               <p><span><FiCornerUpLeft/></span>Ответить</p> 
+              {oneuser.id===item.user_id?(""):(
+              <p className='m_comment_delete' onClick={()=>deleteComment()}><span><AiOutlineDelete/></span>удалить</p>)}
+              
               </div>
           </div>
       </div>
+        )
        })}  
 
 
