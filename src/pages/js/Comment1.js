@@ -16,6 +16,7 @@ import {AiOutlineDelete}from "react-icons/ai"
 export default function Comment1() {
   const [comment,setComment]=useState([])
   const [state1, setState1] = React.useState();
+  const [deleteId1,setDeleteId1]=useState()
 
   const [user,setUser]=useState([])
   const [oneuser,setoneuser]=useState([])
@@ -90,18 +91,21 @@ console.log(res.data,"salom");
     })
   }
 
-  function deleteComment(key) {
-    axios.delete(`${url}/api/course_theme_comment/${key}`, {
-      headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}, 
-
-    })
+  function deleteComment(id) {
+    axios
+    .delete(`${url}/api/course_theme_comment/${id}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
     .then(res=>[
-      alert("Вы успешно удалили свой комментарий")
+      alert("Вы успешно удалили свой комментарий"),
+      // window.location.reload()
     ])
     .catch(err=>{
-      alert(err)
+      alert("Вы не смогли удалить комментарий, попробуйте снова.")
     })
   }
+
+
+  function cencelModal() {
+    document.querySelector("#chat_text").value.style="display:none;"  }
 
   return (
     <div>
@@ -138,8 +142,18 @@ console.log(res.data,"salom");
               <p>{item.text}</p>
               <div className="m_comment_otvet"> 
               <p><span><FiCornerUpLeft/></span>Ответить</p> 
-              {oneuser.id===item.user_id?(""):(
-              <p className='m_comment_delete' onClick={()=>deleteComment()}><span><AiOutlineDelete/></span>удалить</p>)}
+              {oneuser.map(item5=>{
+                return(
+                  <>
+                  {item5.id==item.user_id?(
+              <p className='m_comment_delete' onClick={()=>deleteComment(item.id)}><span><AiOutlineDelete/></span>удалить</p>):
+              ("")
+              }
+                </>
+                )
+                
+              })}
+            
               
               </div>
           </div>
@@ -169,7 +183,7 @@ console.log(res.data,"salom");
               <textarea placeholder='Введите текст' id="chat_text"></textarea>
             </div>
             <div className="m_comment_button">
-              <button className='m_otmen'>Cancel</button>
+              <button className='m_otmen' onClick={()=>cencelModal()}>Cancel</button>
               <button onClick={()=>messagePost()} className='m_otpravit'>Send</button>
               </div></div>
     </div>

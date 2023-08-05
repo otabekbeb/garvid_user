@@ -67,11 +67,12 @@ export default function Profil() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
+          alert("Вы успешно изменили фото профиля.")
         window.location.reload();
-        // alert("ishladi")
+      
       })
       .catch((err) => {
-        console.log(err);
+        alert("Что-то пошло не так, попробуйте снова.")
       });
     axios
       .get(`${url}/auth/oneuser`, {
