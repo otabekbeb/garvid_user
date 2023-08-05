@@ -1,56 +1,77 @@
 import React, { useEffect, useState } from "react";
-import Use_img from "../img/Ellipse.jpg";
-import icon_img from "../img/start-up.png";
-import icon_img1 from "../img/Vector.svg";
-import icon_img2 from "../img/medal.svg";
-import "../css/profil.css";
-import Pdp from "./UserPdp";
+// import Use_img from "../img/Ellipse.jpg";
+// import icon_img from "../img/start-up.png";
+// import icon_img1 from "../img/Vector.svg";
+// import icon_img2 from "../img/medal.svg";
+
+// import Pdp from "./UserPdp";
+import Usernavbar from "./Usernavbar"
 import { MdOutlinePhotoCamera } from "react-icons/md";
 import { BsActivity, BsFillBellFill, BsThreeDots } from "react-icons/bs";
 import { BiCast } from "react-icons/bi";
 import { FiEdit, FiLifeBuoy, FiLogOut } from "react-icons/fi";
 import { TbPointFilled } from "react-icons/tb";
 import { AiOutlineRight } from "react-icons/ai";
+import { TiThMenu } from 'react-icons/ti'
 import chadimg from "../img/Ellipse.jpg";
 import axios from "axios";
-import { GrClose } from "react-icons/gr";
+import { GrClose } from 'react-icons/gr'
 import url from "./Host";
 import userNull from "../img/149071.png";
-import { BiLogoTelegram } from "react-icons/bi";
-import { FaYoutube } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
+import { BiLogoTelegram } from 'react-icons/bi'
+import { FaYoutube } from 'react-icons/fa'
+import { RiInstagramFill } from 'react-icons/ri'
+import "../css/profil.css";
+import Filtr from "./Searchfilter"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Bilim from './Bilim'
+import Sertifikat from './Sertifikate'
+import Azo from "./Azo"
+import Futer from "./Footer1"
+import UserChat from "./userChat"
+import '../css/TeacherProfil.css'
+
+
+
 export default function Profil() {
   const [data, setData] = useState([]);
   const [state1, setState1] = React.useState();
+  const [toggle, setToggle] = useState(1)
+  const [kursdata, setKursData] = useState([])
+
   useEffect(() => {
-    console.log("hello");
-    axios
-      .get("https://markazback2.onrender.com/auth/teachers", {
-        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
-      })
-      .then((res) => {
-        axios
-          .get("https://markazback2.onrender.com/api/follow/", {
-            headers: {
-              Authorization: "Bearer " + localStorage.getItem("token"),
-            },
-          })
-          .then((res2) => {
-            if (res.data.id === res2.topuser) {
-              console.log(res2.data)
-            }
-          });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+    axios.get(`${url}/api/course`).then(res => {
+      setKursData(res.data)
+    })
+    setState1(
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
+    );
+  }, [])
+
+
+
+  function updatetoggle(id) {
+    setToggle(id)
+    document.querySelector(".profil_modal_media").style = "display:none;"
+    document.querySelector(".profil_blok_menu_clone").style = "display:none !important;"
+    document.querySelector(".profil_blok_menu").style = "display:block;"
+  }
+
+  function menuModal() {
+    document.querySelector(".profil_modal_media").style = "display:block;"
+    document.querySelector(".profil_blok_menu").style = "display:none !important;"
+    document.querySelector(".profil_blok_menu_clone").style = "display:block;"
+  }
+  function menuModalClone() {
+    document.querySelector(".profil_modal_media").style = "display:none;"
+    document.querySelector(".profil_blok_menu_clone").style = "display:none !important;"
+    document.querySelector(".profil_blok_menu").style = "display:block;"
+  }
 
   function userimgModal() {
     document.querySelector(".user_img_hover").style =
       "position: absolute;bottom: 0;";
   }
-
   function userImgPut(id) {
     var formdata = new FormData();
 
@@ -62,17 +83,17 @@ export default function Profil() {
     formdata.append("phone_number", data[0].phone_number);
     formdata.append("username", data[0].username);
 
+
     axios
       .put(`${url}/auth/oneuser/${id}`, formdata, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
-          alert("Вы успешно изменили фото профиля.")
         window.location.reload();
-      
+        // alert("ishladi")
       })
       .catch((err) => {
-        alert("Что-то пошло не так, попробуйте снова.")
+        console.log(err);
       });
     axios
       .get(`${url}/auth/oneuser`, {
@@ -116,7 +137,6 @@ export default function Profil() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
-        localStorage.setItem("page_user", JSON.stringify(res.data));
         console.log(res.data);
         setData(res.data);
       })
@@ -135,34 +155,25 @@ export default function Profil() {
   function notificationModal() {
     document.querySelector(".profil_notifacation_size").style =
       "position: fixed;right:0px;";
-
     document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
       "display:none";
-    document.querySelector(".profil-qora-qiladi").style = "display:block";
+      document.querySelector(".profil-qora-qiladi").style = "display:block";
+
   }
   function notificationClose() {
     document.querySelector(".profil_notifacation_size").style =
       "position: fixed;right:-100%;";
-    document.querySelector(".profil-qora-qiladi").style = "display:none";
+      document.querySelector(".profil-qora-qiladi").style = "display:none";
   }
 
-  // function postUser(){
-  //   var formdata=new FormData()
-  //   formdata.append("image",document.querySelector("#userInput").value)
-
-  //   axios.put(${url}/auth/user/,formdata,{ headers: { 'Authorization': 'Bearer ' + sessionStorage.getItem("token") }}).then(res=>{
-  //     alert("ishladi")
-  //   }).catch(err=>{
-  //     alert("ishlamadi")
-  //   })
-  // }
 
   function openNotification() {
-    document.querySelector(".yon_notification_all").style = "right:0%;";
+    document.querySelector(".yon_notification_all").style = "right:0%;"
   }
 
   return (
     <div>
+      <Usernavbar />
       <div className="profil_size_df">
         <div className="profil_size">
           <div className="profil_blok_bir">
@@ -262,7 +273,7 @@ export default function Profil() {
             </div>
             <div
               onMouseLeave={() => taxrirlashClose()}
-              className="profil_blok_ikki_icon" 
+              className="profil_blok_ikki_icon"
             >
               <BsFillBellFill
                 onMouseEnter={() => taxrirlashChadModal()}
@@ -270,7 +281,7 @@ export default function Profil() {
               />
               <BsThreeDots
                 onMouseEnter={() => taxrirlashModal()}
-                className="profil_blok_ikki_icon_ikki" 
+                className="profil_blok_ikki_icon_ikki"
               />
               <div className="profil_blok_ikki_icon_texrirlash_modal">
                 <div
@@ -370,43 +381,43 @@ export default function Profil() {
 
           </div> */}
 
-<div className="div-admin-sms">
-  <h5>SMS</h5>
-  <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
-</div>
-<div className="sms-insta">
-<div className="sms-insto-bb1">
-    <div className="sms-insta-block">
-    <div className="sms-img">
-      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
-    </div>
-<div className="sms-kotta-pas">
-<div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
-    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
-</div>
-  </div>
+          <div className="div-admin-sms">
+            <h5>SMS</h5>
+            <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
+          </div>
+          <div className="sms-insta">
+            <div className="sms-insto-bb1">
+              <div className="sms-insta-block">
+                <div className="sms-img">
+                  <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
+                </div>
+                <div className="sms-kotta-pas">
+                  <div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
+                  <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
+                </div>
+              </div>
 
-  <div className="sms-insta-block">
-    <div className="sms-img">
-      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
-    </div>
-<div className="sms-kotta-pas">
-<div className="sms-text-tepa"><p>boxodirov_025 </p><p></p></div>
-    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
-</div>
-  </div>
+              <div className="sms-insta-block">
+                <div className="sms-img">
+                  <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
+                </div>
+                <div className="sms-kotta-pas">
+                  <div className="sms-text-tepa"><p>boxodirov_025 </p><p></p></div>
+                  <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
+                </div>
+              </div>
 
-    <div className="sms-insta-block">
-    <div className="sms-img">
-      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
-    </div>
-<div className="sms-kotta-pas">
-<div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
-    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
-</div>
-  </div>
-</div>
-</div>
+              <div className="sms-insta-block">
+                <div className="sms-img">
+                  <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
+                </div>
+                <div className="sms-kotta-pas">
+                  <div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
+                  <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className="div-admin-sms">
             <h5>SMS</h5>
@@ -489,6 +500,54 @@ export default function Profil() {
         </div>
         <div className="profil-qora-qiladi"></div>
       </div>
+      <div>
+        {state1 === 'en' ? (<div className="gray_blok">
+          <div className="fil_text_blok">
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} pieces</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My learned knowledge</h1>{toggle === 2 ? (<div className="fil_text_blok_kurs_lenght">14 pieces</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My certificates</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My Subscriptions</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
+
+          </div>
+          <div className="profil_blok_menu_size">
+            <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
+            <TiThMenu onClick={() => menuModalClone()} className='profil_blok_menu_clone' />
+          </div>
+          <div className="profil_modal_media">
+            <h1 onClick={() => updatetoggle(1)} className='fromMenu'>My Courses</h1>
+            <h1 onClick={() => updatetoggle(2)} className='fromMenu'>My acquired knowledge</h1>
+            <h1 onClick={() => updatetoggle(3)} className='fromMenu'>My Certificates</h1>
+            <h1 onClick={() => updatetoggle(4)} className='fromMenu'>My Subscriptions</h1>
+            <h1 onClick={() => updatetoggle(5)} className='fromMenu'>Correspondence</h1>
+          </div>
+        </div>) : (<div className="gray_blok">
+          <div className="fil_text_blok">
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: '2px solid #44bef1', } : {}} className='fromLeft'>Мои курсы</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} штуки</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Мои усвоенные знания</h1>{toggle === 2 ? (<div className="fil_text_blok_kurs_lenght">14 штуки</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Мои сертификаты</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">24 штуки</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Мои подписки</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">24 штуки</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Переписка</h1><div className="fil_text_blok_kurs_lenght">1 штуки</div></div>
+          </div>
+          <div className="profil_blok_menu_size">
+            <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
+            <TiThMenu onClick={() => menuModalClone()} className='profil_blok_menu_clone' />
+          </div>
+          <div className="profil_modal_media">
+            <h1 onClick={() => updatetoggle(1)} className='fromMenu'>Мои курсы</h1>
+            <h1 onClick={() => updatetoggle(2)} className='fromMenu'>Мои усвоенные знания</h1>
+            <h1 onClick={() => updatetoggle(3)} className='fromMenu'>Мои сертификаты</h1>
+            <h1 onClick={() => updatetoggle(4)} className='fromMenu'>Мои подписки</h1>
+            <h1 onClick={() => updatetoggle(5)} className='fromMenu'>Переписка</h1>
+          </div>
+        </div>)}
+
+
+        <div className={toggle === 1 ? "show-content" : "content"}><Filtr /></div>
+        <div className={toggle === 2 ? "show-content" : "content"}><Bilim /></div>
+        <div className={toggle === 3 ? "show-content" : "content"}><Sertifikat /> </div>
+        <div className={toggle === 4 ? "show-content" : "content"}><Azo /></div>
+      </div>
+      <Futer />
     </div>
   );
 }

@@ -22,12 +22,14 @@ import Studentpage from './pages/js/Studentpage'
 import LoginpageMentor from './pages/js/LoginpageMentor'
 import Help from './pages/js/Help'
 import UserHelp from './pages/js/UserHelp'
-import UserHelp2 from './pages/js/User_help2'
+import UserHelp1 from './pages/js/User_Help1'
+import UserHelp2 from './pages/js/User_help2'  
 import UserHelp3 from './pages/js/User_help3'
 import UserHelp4 from './pages/js/User_help4'
-import Help_Mentor from './pages/js/Help_Mentor'
+import StudentHelp4 from './pages/js/StudentHelp4'
+import MentorHelp from './pages/js/MentorHelp'
 import Student_Help from './pages/js/Student_Help'
-import Teacher_profil from './pages/js/Teacher_profil'
+import TeacherProfil from './pages/js/TeacherProfil'
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Proverr2 from './pages/js/Proverr2'
@@ -47,9 +49,11 @@ export default function App() {
           <Route path="/servis" element={<Services />} />
           <Route path="/help" element={<Help />} />
           <Route path="/userhelp" element={<UserHelp />} />
+          <Route path="/USer_help1" element={<UserHelp1 />} />
           <Route path="/USer_help2" element={<UserHelp2 />} />
           <Route path="/USer_help3" element={<UserHelp3 />} />
-          <Route path="/USer_help4 " element={<UserHelp4 />} />
+          <Route path="/USer_help4" element={<UserHelp4 />} />
+          <Route path="/StudentHelp4 " element={<StudentHelp4 />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/ourteam" element={<Ourteam />} />
           <Route path="/contact" element={<Contact />} />
@@ -68,11 +72,11 @@ export default function App() {
           <Route path="/mentorcontact" element={<Mentorcontact />} />
           <Route path="/Studentpage" element={<Studentpage />} />
           <Route path="/Oplata" element={<Oplata />} />
-          <Route path="/Help_Mentor" element={<Help_Mentor />} />
+          <Route path="/MentorHelp" element={<MentorHelp />} />
           <Route path="/Student_Help" element={<Student_Help />} />
           <Route path="/Help_chat" element={<Help_chat />} />
           <Route path="/FollowCard" element={<FollowCard />} />
-          <Route path="/Teacher_profil" element={<Teacher_profil />} />
+          <Route path="/TeacherProfil" element={<TeacherProfil />} />
 
           {/* <Route index element={} />*/}
         </Routes>

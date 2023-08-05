@@ -4,7 +4,12 @@ import Futer from "./Footer1"
 import Usernavbar from './Usernavbar' 
 import axios from 'axios'
 import url from './Host'
+
 // import { help } from 'mathjs'
+
+
+// import { help } from 'mathjs'
+
 export default function Help_Mentor() {
   const [help,setHelp] = useState([])
   useEffect(() => {
@@ -17,18 +22,18 @@ export default function Help_Mentor() {
     }, [])
   return (
     <div>
-          <Usernavbar />
-        <h2 className='Savol'>Answers to frequently asked questions</h2>
-            <div className="big_svl">
-                <div className="orqaga">
-                    <div className="orqaga_icon">
-                       <a href="/Help"><button className='nazad_bt'>   <AiOutlineLeft /> back</button></a>
-                    </div>
-                </div>
-                <div className="mod_svg">
+      <Usernavbar />
+      <h2 className='Savol'>Answers to frequently asked questions</h2>
+      <div className="big_svl">
+        <div className="orqaga">
+          <div className="orqaga_icon">
+            <a href="/Help"><button className='nazad_bt'>   <AiOutlineLeft /> back</button></a>
+          </div>
+        </div>
+        <div className="mod_svg">
                   {help.map(item=>{
                     return(
-                      <a href="/User_help2" style={{color:'black'}}>
+                      <a href="/User_help3" style={{color:'black'}}>
                    <div className="text_mod">
                         <p>{item.title}</p>
                     </div>
@@ -38,7 +43,7 @@ export default function Help_Mentor() {
                    
                   
                 </div>
-            </div>
+      </div>
       <Futer />
     </div>
   )

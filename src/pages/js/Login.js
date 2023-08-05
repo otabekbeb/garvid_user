@@ -26,10 +26,9 @@ export default function Login() {
     formdata.append("password",document.querySelector('.password').value)
 
     axios.post(`${url}/auth/register`,formdata).then(res=>{
-      console.log(res.data);
       setPage(4)
     }).catch(err=>{
-      alert("Что-то пошло не так попробуйте снова")
+      alert("Уже есть пользователь с таким именем или эмаилом")
     })
   }
 
@@ -47,7 +46,7 @@ export default function Login() {
     window.location="/user"
 
   }).catch(err=>{
-         alert("Что-то пошло не так попробуйте снова")
+         alert("Вы неправильно ввели код, попробуйте снова")
 
   })
   }

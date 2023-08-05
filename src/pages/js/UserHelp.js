@@ -29,7 +29,7 @@ export default function UserHelp() {
                 <div className="mod_svg">
                     {help.map(item=>{
                         return(
-                        <a href="/User_help2" style={{color:'black'}}>
+                        <a href="/User_help1" style={{color:'black'}}>
                    <div className="text_mod">
                         <p>{item.title}</p>
                     </div>
