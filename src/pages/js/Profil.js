@@ -353,7 +353,7 @@ export default function Profil() {
       <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
     </div>
 <div className="sms-kotta-pas">
-<div className="sms-text-tepa"><p>boxodirov_025 •  now <span><box-icon type='solid' name='bell-ring'></box-icon></span></p></div>
+<div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
     <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
 </div>
   </div>
@@ -363,7 +363,7 @@ export default function Profil() {
       <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
     </div>
 <div className="sms-kotta-pas">
-<div className="sms-text-tepa"><p>boxodirov_025 •  now <span><box-icon type='solid' name='bell-ring'></box-icon></span></p></div>
+<div className="sms-text-tepa"><p>boxodirov_025 </p><p></p></div>
     <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
 </div>
   </div>
@@ -373,7 +373,7 @@ export default function Profil() {
       <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
     </div>
 <div className="sms-kotta-pas">
-<div className="sms-text-tepa"><p>boxodirov_025 •  now <span><box-icon type='solid' name='bell-ring'></box-icon></span></p></div>
+<div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
     <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
 </div>
   </div>
