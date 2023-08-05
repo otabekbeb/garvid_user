@@ -26,7 +26,7 @@ function Chat({ socket, email, room }) {
   useEffect(() => {
     socket.on("receive_message", (data) => {
       setMessageList((list) => [...list, data]);
-      // socket.emit("join_room", { email, room });
+      socket.emit("join_room", { email, room });
     });
   }, [socket]);
   useEffect(() => {
