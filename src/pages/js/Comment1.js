@@ -96,7 +96,7 @@ console.log(res.data,"salom");
     .delete(`${url}/api/course_theme_comment/${id}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
     .then(res=>[
       alert("Вы успешно удалили свой комментарий"),
-      // window.location.reload()
+      window.location.reload()
     ])
     .catch(err=>{
       alert("Вы не смогли удалить комментарий, попробуйте снова.")
