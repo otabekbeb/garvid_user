@@ -232,7 +232,7 @@ export default function Profil() {
             </div>
             <div
               onMouseLeave={() => taxrirlashClose()}
-              className="profil_blok_ikki_icon"
+              className="profil_blok_ikki_icon" 
             >
               <BsFillBellFill
                 onMouseEnter={() => taxrirlashChadModal()}
@@ -240,7 +240,7 @@ export default function Profil() {
               />
               <BsThreeDots
                 onMouseEnter={() => taxrirlashModal()}
-                className="profil_blok_ikki_icon_ikki"
+                className="profil_blok_ikki_icon_ikki" 
               />
               <div className="profil_blok_ikki_icon_texrirlash_modal">
                 <div

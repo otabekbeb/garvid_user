@@ -4,7 +4,7 @@ import { AiOutlineLeft } from 'react-icons/ai'
 import Futer from "./Footer1"
 import Usernavbar from './Usernavbar' 
 
-export default function UserHelp() {    
+export default function UserHelp() {
     return (
         <div>
       <Usernavbar />
@@ -16,17 +16,17 @@ export default function UserHelp() {
                     </div>
                 </div>
                 <div className="mod_svg">
-                   <a href="/User_help2" style={{color:'black'}}>
+                   <a href="/User_help3" style={{color:'black'}}>
                    <div className="text_mod">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, doloremque.</p>
                     </div>
                    </a>
-                   <a href="/User_help2" style={{color:'black'}}>
+                   <a href="/User_help3" style={{color:'black'}}>
                    <div className="text_mod">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, aperiam.</p>
                     </div>
                    </a>
-                   <a href="/User_help2" style={{color:'black'}}>
+                   <a href="/User_help3" style={{color:'black'}}>
                    <div className="text_mod">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, sint.</p>
                     </div>

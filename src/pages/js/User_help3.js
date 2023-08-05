@@ -7,7 +7,7 @@ export default function User_help2() {
            <div className="big_svl1">
                 <div className="orqaga1">
                     <div className="orqaga_icon">
-                       <a href="/UserHelp"><button className='nazad_bt'>   <AiOutlineLeft /> Hазад</button></a>
+                       <a href="/MentorHelp"><button className='nazad_bt'>   <AiOutlineLeft /> Hазад</button></a>
                     </div>
                 </div>
                 <div className="mod_svg1">
