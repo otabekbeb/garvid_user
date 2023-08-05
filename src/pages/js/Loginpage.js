@@ -84,7 +84,7 @@ export default function Loginpage() {
       })
       .then((res) => {
         state1 === "ru" ? (alert("Введенная информация")) : (alert("Entered information"))
-        window.location.reload();
+        window.location="/user";
       })
       .catch((err) => {
         state1 === "ru" ? (alert("Информация введена не полностью")) : (alert("The information was not fully entered"))
