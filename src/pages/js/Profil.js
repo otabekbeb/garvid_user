@@ -262,7 +262,7 @@ export default function Profil() {
             </div>
             <div
               onMouseLeave={() => taxrirlashClose()}
-              className="profil_blok_ikki_icon"
+              className="profil_blok_ikki_icon" 
             >
               <BsFillBellFill
                 onMouseEnter={() => taxrirlashChadModal()}
@@ -270,7 +270,7 @@ export default function Profil() {
               />
               <BsThreeDots
                 onMouseEnter={() => taxrirlashModal()}
-                className="profil_blok_ikki_icon_ikki"
+                className="profil_blok_ikki_icon_ikki" 
               />
               <div className="profil_blok_ikki_icon_texrirlash_modal">
                 <div
@@ -369,6 +369,45 @@ export default function Profil() {
             <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
 
           </div> */}
+
+<div className="div-admin-sms">
+  <h5>SMS</h5>
+  <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
+</div>
+<div className="sms-insta">
+<div className="sms-insto-bb1">
+    <div className="sms-insta-block">
+    <div className="sms-img">
+      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
+    </div>
+<div className="sms-kotta-pas">
+<div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
+    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
+</div>
+  </div>
+
+  <div className="sms-insta-block">
+    <div className="sms-img">
+      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
+    </div>
+<div className="sms-kotta-pas">
+<div className="sms-text-tepa"><p>boxodirov_025 </p><p></p></div>
+    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
+</div>
+  </div>
+
+    <div className="sms-insta-block">
+    <div className="sms-img">
+      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
+    </div>
+<div className="sms-kotta-pas">
+<div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
+    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
+</div>
+  </div>
+</div>
+</div>
+
           <div className="div-admin-sms">
             <h5>SMS</h5>
             <div
