@@ -67,11 +67,12 @@ export default function Profil() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
+          alert("Вы успешно изменили фото профиля.")
         window.location.reload();
-        // alert("ishladi")
+      
       })
       .catch((err) => {
-        console.log(err);
+        alert("Что-то пошло не так, попробуйте снова.")
       });
     axios
       .get(`${url}/auth/oneuser`, {
@@ -368,6 +369,45 @@ export default function Profil() {
             <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
 
           </div> */}
+
+<div className="div-admin-sms">
+  <h5>SMS</h5>
+  <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
+</div>
+<div className="sms-insta">
+<div className="sms-insto-bb1">
+    <div className="sms-insta-block">
+    <div className="sms-img">
+      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
+    </div>
+<div className="sms-kotta-pas">
+<div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
+    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
+</div>
+  </div>
+
+  <div className="sms-insta-block">
+    <div className="sms-img">
+      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
+    </div>
+<div className="sms-kotta-pas">
+<div className="sms-text-tepa"><p>boxodirov_025 </p><p></p></div>
+    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
+</div>
+  </div>
+
+    <div className="sms-insta-block">
+    <div className="sms-img">
+      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
+    </div>
+<div className="sms-kotta-pas">
+<div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
+    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
+</div>
+  </div>
+</div>
+</div>
+
           <div className="div-admin-sms">
             <h5>SMS</h5>
             <div
