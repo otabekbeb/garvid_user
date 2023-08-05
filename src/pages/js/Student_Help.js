@@ -51,6 +51,7 @@ export default function Help_Mentor() {
                   
                 </div>
             </div>
+            </div>
           </a>
           <a href="/StudentHelp4" style={{ color: 'black' }}>
             <div className="text_mod">
