@@ -26,21 +26,9 @@ export default function Help_Mentor() {
           </div>
         </div>
         <div className="mod_svg">
-          <a href="/StudentHelp4" style={{ color: 'black' }}>
-            <div className="text_mod">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, doloremque.</p>
-          <Usernavbar />
-        <h2 className='Savol'>Answers to frequently asked questions</h2>
-            <div className="big_svl">
-                <div className="orqaga">
-                    <div className="orqaga_icon">
-                       <a href="/Help"><button className='nazad_bt'>   <AiOutlineLeft /> back</button></a>
-                    </div>
-                </div>
-                <div className="mod_svg">
                   {help.map(item=>{
                     return(
-                      <a href="/User_help2" style={{color:'black'}}>
+                      <a href="/User_help3" style={{color:'black'}}>
                    <div className="text_mod">
                         <p>{item.title}</p>
                     </div>
@@ -50,20 +38,6 @@ export default function Help_Mentor() {
                    
                   
                 </div>
-            </div>
-            </div>
-          </a>
-          <a href="/StudentHelp4" style={{ color: 'black' }}>
-            <div className="text_mod">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, aperiam.</p>
-            </div>
-          </a>
-          <a href="/StudentHelp4" style={{ color: 'black' }}>
-            <div className="text_mod">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, sint.</p>
-            </div>
-          </a>
-        </div>
       </div>
       <Futer />
     </div>
