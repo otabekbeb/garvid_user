@@ -23,7 +23,7 @@ export default function Help() {
         <h1 className='Savol'>Answers to frequently asked questions</h1>
         <div className="user_help">
           <div className="user_help1">
-            <a href="/userhelp">
+            <a href="/userhelp">  
               <div className="user_div"  >
                 <div className="user_icon">
                   <FaUserCircle />
@@ -31,7 +31,7 @@ export default function Help() {
                 <h4>User</h4>
               </div>
             </a>
-            <a href="/Help_Mentor">
+            <a href="/MentorHelp">
               <div className="user_div"  >
                 <div className="user_icon">
                   <FaUserCircle />

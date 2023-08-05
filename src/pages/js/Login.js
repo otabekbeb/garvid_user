@@ -69,8 +69,7 @@ export default function Login() {
      
 
     }).catch(err=>{
-      alert("Что-то пошло не так попробуйте снова")
-      console.log(err);
+      alert("Пароль или логин неправилный. Попробуйте снова")
     })
 
   }
