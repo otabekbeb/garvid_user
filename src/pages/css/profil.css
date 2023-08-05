@@ -632,6 +632,7 @@
   z-index:9999999 !important;
   top: 0;
   bottom: 0;
+  max-width: 100%;
 }
 .profil-qora-qiladi{
   position: absolute;
@@ -744,11 +745,10 @@ height: auto;
   display: flex;
   text-align: center;
   align-items: center;
-justify-content: flex-start;
 padding-left: 20px;
 cursor: pointer;
 margin-bottom: 20px;
-max-width: 100%;
+max-width: 100% !important;
 }
 .sms-img img{
   width: 35px;
