@@ -90,8 +90,8 @@ console.log(res.data,"salom");
     })
   }
 
-  function deleteComment() {
-    axios.delete(`${url}/api/course_theme_comment/${}`, {
+  function deleteComment(key) {
+    axios.delete(`${url}/api/course_theme_comment/${key}`, {
       headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}, 
 
     })

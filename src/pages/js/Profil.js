@@ -13,21 +13,44 @@ import { TbPointFilled } from "react-icons/tb";
 import { AiOutlineRight } from "react-icons/ai";
 import chadimg from "../img/Ellipse.jpg";
 import axios from "axios";
-import { GrClose } from 'react-icons/gr'
+import { GrClose } from "react-icons/gr";
 import url from "./Host";
 import userNull from "../img/149071.png";
-import {BiLogoTelegram} from 'react-icons/bi'
-import { FaYoutube } from 'react-icons/fa'
-import {RiInstagramFill} from 'react-icons/ri'
+import { BiLogoTelegram } from "react-icons/bi";
+import { FaYoutube } from "react-icons/fa";
+import { RiInstagramFill } from "react-icons/ri";
 export default function Profil() {
   const [data, setData] = useState([]);
   const [state1, setState1] = React.useState();
+  useEffect(() => {
+    console.log("hello");
+    axios
+      .get("https://markazback2.onrender.com/auth/teachers", {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        axios
+          .get("https://markazback2.onrender.com/api/follow/", {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token"),
+            },
+          })
+          .then((res2) => {
+            if (res.data.id === res2.topuser) {
+              console.log(res2.data)
+            }
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   function userimgModal() {
     document.querySelector(".user_img_hover").style =
       "position: absolute;bottom: 0;";
   }
-  
+
   function userImgPut(id) {
     var formdata = new FormData();
 
@@ -38,7 +61,6 @@ export default function Profil() {
     formdata.append("last_name", data[0].last_name);
     formdata.append("phone_number", data[0].phone_number);
     formdata.append("username", data[0].username);
-
 
     axios
       .put(`${url}/auth/oneuser/${id}`, formdata, {
@@ -51,7 +73,7 @@ export default function Profil() {
       .catch((err) => {
         console.log(err);
       });
-      axios
+    axios
       .get(`${url}/auth/oneuser`, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
@@ -93,7 +115,7 @@ export default function Profil() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
-        localStorage.setItem("page_user",JSON.stringify(res.data))
+        localStorage.setItem("page_user", JSON.stringify(res.data));
         console.log(res.data);
         setData(res.data);
       })
@@ -115,13 +137,12 @@ export default function Profil() {
 
     document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
       "display:none";
-      document.querySelector(".profil-qora-qiladi").style="display:block"
-
+    document.querySelector(".profil-qora-qiladi").style = "display:block";
   }
   function notificationClose() {
     document.querySelector(".profil_notifacation_size").style =
       "position: fixed;right:-100%;";
-      document.querySelector(".profil-qora-qiladi").style="display:none"
+    document.querySelector(".profil-qora-qiladi").style = "display:none";
   }
 
   // function postUser(){
@@ -134,9 +155,9 @@ export default function Profil() {
   //     alert("ishlamadi")
   //   })
   // }
-  
+
   function openNotification() {
-    document.querySelector(".yon_notification_all").style="right:0%;"
+    document.querySelector(".yon_notification_all").style = "right:0%;";
   }
 
   return (
@@ -145,7 +166,7 @@ export default function Profil() {
         <div className="profil_size">
           <div className="profil_blok_bir">
             <div onMouseLeave={() => userimgClose()} className="user_img_size">
-              {data.map(item => {
+              {data.map((item) => {
                 return (
                   <>
                     {item.image === null ? (
@@ -159,7 +180,11 @@ export default function Profil() {
                       <img
                         onMouseEnter={() => userimgModal()}
                         className="user_img"
-                        src={item.image.includes("http")?item.image:`${url}/${item.image}`}
+                        src={
+                          item.image.includes("http")
+                            ? item.image
+                            : `${url}/${item.image}`
+                        }
                         alt=""
                       />
                     )}
@@ -188,10 +213,10 @@ export default function Profil() {
               <p>My social networks :</p>
               <div className="blok_bir_icon">
                 <div className="blok_bir_icon_img1">
-                  <BiLogoTelegram/>
+                  <BiLogoTelegram />
                 </div>
                 <div className="blok_bir_icon_img2">
-                  <RiInstagramFill/>
+                  <RiInstagramFill />
                 </div>
                 <div className="youtube">
                   <FaYoutube />
@@ -229,7 +254,9 @@ export default function Profil() {
                 <button>
                   <BsActivity />
                 </button>
-                <button onClick={()=>  window.location="/oplata"}>Balance replenishment</button>
+                <button onClick={() => (window.location = "/oplata")}>
+                  Balance replenishment
+                </button>
               </div>
             </div>
             <div
@@ -261,7 +288,7 @@ export default function Profil() {
                 </div>
                 <div className="taxrirlash_modal_div">
                   <FiLifeBuoy className="taxrirlash_modal_icon" />
-                  <p onClick={()=>  window.location="/help"}>Help</p>
+                  <p onClick={() => (window.location = "/help")}>Help</p>
                 </div>
                 <hr />
                 <div className="taxrirlash_modal_div" onClick={() => chiqish()}>
@@ -341,43 +368,84 @@ export default function Profil() {
             <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
 
           </div> */}
-<div className="div-admin-sms">
-  <h5>SMS</h5>
-  <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
-</div>
-<div className="sms-insta">
-<div className="sms-insto-bb1">
-    <div className="sms-insta-block">
-    <div className="sms-img">
-      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
-    </div>
-<div className="sms-kotta-pas">
-<div className="sms-text-tepa"><p>boxodirov_025 •  now <span><box-icon type='solid' name='bell-ring'></box-icon></span></p></div>
-    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
-</div>
-  </div>
+          <div className="div-admin-sms">
+            <h5>SMS</h5>
+            <div
+              onClick={() => notificationClose()}
+              className="profil_notifacation_size_close"
+            >
+              <GrClose className="closei" />
+            </div>
+          </div>
+          <div className="sms-insta">
+            <div className="sms-insto-bb1">
+              <div className="sms-insta-block">
+                <div className="sms-img">
+                  <img
+                    src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png"
+                    alt=""
+                  />
+                </div>
+                <div className="sms-kotta-pas">
+                  <div className="sms-text-tepa">
+                    <p>
+                      boxodirov_025 • now{" "}
+                      <span>
+                        <box-icon type="solid" name="bell-ring"></box-icon>
+                      </span>
+                    </p>
+                  </div>
+                  <div className="sms-text-pas">
+                    <p>Sent an sms to: Salom</p>
+                  </div>
+                </div>
+              </div>
 
-  <div className="sms-insta-block">
-    <div className="sms-img">
-      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
-    </div>
-<div className="sms-kotta-pas">
-<div className="sms-text-tepa"><p>boxodirov_025 •  now <span><box-icon type='solid' name='bell-ring'></box-icon></span></p></div>
-    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
-</div>
-  </div>
+              <div className="sms-insta-block">
+                <div className="sms-img">
+                  <img
+                    src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png"
+                    alt=""
+                  />
+                </div>
+                <div className="sms-kotta-pas">
+                  <div className="sms-text-tepa">
+                    <p>
+                      boxodirov_025 • now{" "}
+                      <span>
+                        <box-icon type="solid" name="bell-ring"></box-icon>
+                      </span>
+                    </p>
+                  </div>
+                  <div className="sms-text-pas">
+                    <p>Sent an sms to: Salom</p>
+                  </div>
+                </div>
+              </div>
 
-    <div className="sms-insta-block">
-    <div className="sms-img">
-      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
-    </div>
-<div className="sms-kotta-pas">
-<div className="sms-text-tepa"><p>boxodirov_025 •  now <span><box-icon type='solid' name='bell-ring'></box-icon></span></p></div>
-    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
-</div>
-  </div>
-</div>
-</div>
+              <div className="sms-insta-block">
+                <div className="sms-img">
+                  <img
+                    src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png"
+                    alt=""
+                  />
+                </div>
+                <div className="sms-kotta-pas">
+                  <div className="sms-text-tepa">
+                    <p>
+                      boxodirov_025 • now{" "}
+                      <span>
+                        <box-icon type="solid" name="bell-ring"></box-icon>
+                      </span>
+                    </p>
+                  </div>
+                  <div className="sms-text-pas">
+                    <p>Sent an sms to: Salom</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="profil-qora-qiladi"></div>
       </div>

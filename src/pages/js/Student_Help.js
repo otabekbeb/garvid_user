@@ -4,7 +4,7 @@ import Futer from "./Footer1"
 import Usernavbar from './Usernavbar' 
 import axios from 'axios'
 import url from './Host'
-import { help } from 'mathjs'
+// import { help } from 'mathjs'
 export default function Help_Mentor() {
   const [help,setHelp] = useState([])
   useEffect(() => {
