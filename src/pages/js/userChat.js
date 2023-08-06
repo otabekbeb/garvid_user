@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "../css/yozishmalar.css";
 import YozishmaUserImg from "../img/Ellipse.jpg";
 import FollowCard from '../js/FollowCard'
+import Chat from "./Chat"
 import {
   BsArrow90DegLeft,
   BsArrowLeft,
@@ -14,41 +15,83 @@ import { MdClose } from "react-icons/md";
 import Anime from "../img/png-transparent-anime-desktop-manga-television-show-anime-black-hair-manga-human.png"
 import ImgChat from "../img/Ellipse 3.png"
 import ImgChatt from "../img/Ellipse 2.4.png"
-
+import tgimg from "../img/photo_2023-06-25_22-19-50 (2).jpg"
+import axios from "axios";
+import io from "socket.io-client";
+const socket = io.connect("http://localhost:5000");
 export default function MentorChat() {
   const [page, setPage] = useState()
   const [state1, setState1] = React.useState();
+  const [rooms, setRooms] = useState([]);
+  const [room, setRoom] = useState("");
+  const [email, setEmail] = useState("");
   useEffect(() => {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
+    axios
+    .get("http://localhost:5000/auth/oneuser", {
+      headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+    })
+    .then((res1) => {
+      console.log(res1.data);
+      // alert(res1.data[0].email)
+      let email = res1.data[0].email
+      socket.emit("authenticate", { email });
+      setEmail(email)
+      // alert("ishladi")
+          //     socket.emit("authenticate", { email });
+    //         const getRooms = async () => {
+      socket.emit("get_rooms", { email });
+    })
+    .catch((err) => {
+      // alert("ishlamadi")
+    });
+    // alert(socket.id)
+    // alert(email)
+    // alert("zn")
+    // const getRooms = async () => {
+    //   socket.emit("get_rooms", { email });
+    // };
+    // getRooms()
   }, []);
-
-  function chatModal(img, name, time) {
-
+  useEffect(() => {
+    socket.on("load_rooms", (data) => {
+      setRooms(data);
+    });
+  }, [socket]);
+  // useEffect(() => {
+  //   socket.on("receive_message", (data) => {
+  //     setMessageList((list) => [...list, data]);
+  //   });
+  // }, [socket]);
+  // useEffect(() => {
+  //   socket.on("load_messages", (data) => {
+  //     setMessageList(data);
+  //   });
+  // }, [socket]);
+  function chatModal(room) {
+    setRoom(room);
+    socket.emit("join_room", { email, room });
     document.querySelector(".yozishma_small_div").style = "display:block;"
-    document.querySelector(".yozishma_bolim_text_nik").style = "display:none"
-    document.querySelector(".yoq1").style = "display:block;"
-    document.querySelector(".yoq").style = "display:flex ;"
-    document.querySelector(".javob_berish").style = "display:none;"
+    // document.querySelector(".yozishma_bolim_text_nik").style = "display:none"
+    // document.querySelector(".yoq1").style = "display:block;"
+    // document.querySelector(".yoq").style = "display:flex ;"
+    // document.querySelector(".javob_berish").style = "display:none;"
     document.querySelector(".chat_gap_text_div").style = "display:block;"
     document.querySelector(".chat_yoq_payt").style = "display:none;"
 
-    var abj = {
-      img: img,
-      name: name,
-      time: time,
-    }
+//     var abj = item
+    
 
-    var tush = []
-    tush.push(abj)
-    tush.map(item => {
-      document.querySelector('.telegram_pro_img_text').innerHTML = `
-    <img style="width: 40px !important;height: 40px !important;border-radius: 50% !important;" src='${item.img}' alt="" />
-    <div style="margin-top: 10px !important;display: block !important;" className="telegram_pro_text">
-    <h1 style="font-size: 15px !important;margin-bottom: 0 !important;" >${item.name}</h1>
-    <p style="font-size: 12px !important;margin-top: 0 !important;">${item.time}</p></div>`
-    })
+//     var tush = []
+//     tush.push(abj)
+//     tush.map(item => {
+//       document.querySelector('.telegram_pro_img_text').innerHTML = `
+//     <div style="margin-top: 10px !important;display: block !important;" className="telegram_pro_text">
+//     <h1 style="font-size: 15px !important;margin-bottom: 0 !important;" >${item}yyyyy</h1>
+// `
+//     })
   }
   function Chatnone() {
     document.querySelector(".yozishma_bolim_text_nik").style = "display:block;"
@@ -127,39 +170,55 @@ export default function MentorChat() {
               <div className="yozishma_bolim_text_nik_search">
                 <input type="text" placeholder='Search... ' />
               </div>
-              {data.map(item => {
-                return (
-                  <div
-                    onClick={() => chatModal(item.img, item.name, item.time)}
-                    className="yozishma_bolim_text_nik_text"
-                  >
-                    <img id="img" src={item.img} alt="" />
-                    <div className="yozishma_bolim_text_nik_text_ism_p">
-                      <h1 id="name">{item.name}</h1>
-                      <p>Hi</p>
-                    </div>
-                    <div className="yozishma_bolim_text_nik_text_qongiroq">
-                      <div className="yozishma_bolim_text_nik_text_qongiroq_vaqti">{item.time}</div>
-                      <div className="yozishma_bolim_text_nik_text_qongiroq_bildir">2</div>
-                    </div>
-                  </div>
-                )
+              {/* <p>{socket.id}</p> */}
+              {rooms.map((item) => {
+                let a=item
+                if (a!==null) {
+                   const [email1, email2] = a.split("_");
+//  // determine which part to display
+ const displayName = email1 === email ? email2 : email1; 
+ return (
+  <div
+  key={item}
+    onClick={() => chatModal(item)}
+    className="yozishma_bolim_text_nik_text"
+  >
+    {/* <img id="img" src={item.img} alt="" /> */}
+    <div className="yozishma_bolim_text_nik_text_ism_p">
+      <div className="tg_img">
+        <img src={tgimg} alt="" />
+      </div>
+      <h1 id="name">{displayName}</h1>
+      {/* <p>Hi</p> */}
+    </div>
+    <div className="yozishma_bolim_text_nik_text_qongiroq">
+      {/* <div className="yozishma_bolim_text_nik_text_qongiroq_vaqti">{item.time}</div> */}
+      {/* <div className="yozishma_bolim_text_nik_text_qongiroq_bildir">2</div> */}
+    </div>
+  </div>
+)
+                }
+//  const [email1, email2] = item.split("_");
+//  // determine which part to display
+//  const displayName = email1 === email ? email2 : email1;
+
               })}
             </div>
 
             <div className="yozishma_small_div">
               <div className="chat_gap_text_div">
-                <div className="yozishma_telegram_profil">
+                <Chat socket={socket} room={room} email={email}/>
+                {/* <div className="yozishma_telegram_profil">
                   <BsArrowLeft className="yoq" onClick={() => Chatnone()} />
                   <BsArrowLeft className="yoq1" onClick={() => ChatClose()} />
 
-                  {[data[0]].map(item => {
+                  {[rooms[0]].map(item => {
                     return (
                       <div className="telegram_pro_img_text">
-                        <img src={item.img} alt="" />
+
                         <div className="telegram_pro_text">
-                          <h1>{item.name}</h1>
-                          <p>{item.time}</p>
+                          <h1>{item}</h1>
+                          <p>dddddddd</p>
                         </div>
                       </div>
                     )
@@ -233,7 +292,8 @@ export default function MentorChat() {
                     <LiaTelegramPlane className="telegram_plane" />
                   </div>
                   <input placeholder="Введите текст" id="smile_input" type="text" />
-                </div>
+                </div> */}
+                {/* <p>d</p> */}
               </div>
               <div className="chat_yoq_payt">
                 <p>Select a chat to start messaging</p>

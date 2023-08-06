@@ -128,8 +128,8 @@ export default function Searchfilter() {
 
 {courstype.map(item=>{
   return(
-    <div className="button_filter_kurs">
-    {item.name===null?(""):(<div onClick={()=>filter(item.id)} className="div_kurs">{item.name}</div>)}
+    <div className="button_filter_kurs" >
+    {item.name===null?(""):(<div onClick={()=>filter(item.id)} className="div_kurs" style={{paddingBottom:'5px'}}>{item.name}</div>)}
   </div>
   )
 })}

@@ -22,8 +22,10 @@ import Studentpage from './pages/js/Studentpage'
 import LoginpageMentor from './pages/js/LoginpageMentor'
 import Help from './pages/js/Help'
 import UserHelp from './pages/js/UserHelp'
-import UserHelp2 from './pages/js/User_help2'
+import UserHelp1 from './pages/js/User_Help1'
+import UserHelp2 from './pages/js/User_help2'  
 import UserHelp3 from './pages/js/User_help3'
+import UserHelp4 from './pages/js/User_help4'
 import StudentHelp4 from './pages/js/StudentHelp4'
 import MentorHelp from './pages/js/MentorHelp'
 import Student_Help from './pages/js/Student_Help'
@@ -47,8 +49,10 @@ export default function App() {
           <Route path="/servis" element={<Services />} />
           <Route path="/help" element={<Help />} />
           <Route path="/userhelp" element={<UserHelp />} />
+          <Route path="/USer_help1" element={<UserHelp1 />} />
           <Route path="/USer_help2" element={<UserHelp2 />} />
           <Route path="/USer_help3" element={<UserHelp3 />} />
+          <Route path="/USer_help4" element={<UserHelp4 />} />
           <Route path="/StudentHelp4 " element={<StudentHelp4 />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/ourteam" element={<Ourteam />} />
@@ -80,7 +84,7 @@ export default function App() {
       </BrowserRouter>
 
 
-
+    
     </div>
   );
 }
