@@ -304,6 +304,7 @@ export default function MentorChat() {
           </div>
         </div>
       </div>
+      
 <FollowCard/>
     </div>
   );
