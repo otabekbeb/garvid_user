@@ -26,6 +26,7 @@ export default function MentorChat() {
   const [room, setRoom] = useState("");
   const [email, setEmail] = useState("");
   const [modal, setModal] = useState(false);
+  const [users, setUsers] = useState([]);
   useEffect(() => {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
@@ -48,6 +49,21 @@ export default function MentorChat() {
       .catch((err) => {
         // alert("ishlamadi")
       });
+      axios
+      .get("https://markazback2.onrender.com/auth/allusers", {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res1) => {
+        setUsers(res1.data);
+        // // alert(res1.data[0].email)
+        // let email = res1.data[0].email;
+        // socket.emit("authenticate", { email });
+        // setEmail(email);
+        // // alert("ishladi")
+        // //     socket.emit("authenticate", { email });
+        // //         const getRooms = async () => {
+        // socket.emit("get_rooms", { email });
+      })
     // alert(socket.id)
     // alert(email)
     // alert("zn")
@@ -55,12 +71,50 @@ export default function MentorChat() {
     //   socket.emit("get_rooms", { email });
     // };
     // getRooms()
+    
   }, []);
   useEffect(() => {
     socket.on("load_rooms", (data) => {
       setRooms(data);
     });
   }, [socket]);
+  useEffect(() => {
+    socket.on("new_private_room", (data) => {
+      setRooms((prevRooms) => [...prevRooms, data.roomName]);
+      alert(`Новая приватная комната создана: ${data.roomName}`);
+    });
+  }, [socket]);
+  const createPrivateRoom = (otheremail) => {
+    // let email2="piyoz@gmail.com"
+    socket.emit("create_private_room", {
+      email1: email,
+      email2: otheremail,
+    });
+    socket.emit("get_rooms", { email });
+    socket.on("load_rooms", (data) => {
+      setRooms(data);
+    });
+    // getRooms();
+    // getUsers();
+
+
+  };
+  const handleInputChange = (event) => {
+    // setSearch(event.target.value);
+    const searchRegex = new RegExp(`^${event.target.value}`, "i");
+    axios.get("https://markazback2.onrender.com/auth/allusers", {
+      headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+    }).then((res) => {
+      const searchdata = res.data.filter((item) => {
+        return (
+          searchRegex.test(item.username) ||
+          searchRegex.test(item.email) 
+        );
+      });
+
+      setUsers(searchdata);
+    });
+  };
   // useEffect(() => {
   //   socket.on("receive_message", (data) => {
   //     setMessageList((list) => [...list, data]);
@@ -176,16 +230,21 @@ if (modal===false) {
         <div className="yozishma_big_div">
         <div className="openModelAddChat" >
           <p style={{display:"flex",justifyContent:"center"}}>viberite polzvatekya s kotorim xotite nachat obshatsya</p>
-          <input/>
+          <input onChange={handleInputChange}/>
           <div className="userList">
+            {users.map((item)=>{
+              return(
+                <div               onClick={() => createPrivateRoom(item.email)} className="userDiv" >{item.username}</div>
+              )
+            })}
+            {/* <div className="userDiv" >user</div>
             <div className="userDiv" >user</div>
             <div className="userDiv" >user</div>
             <div className="userDiv" >user</div>
             <div className="userDiv" >user</div>
             <div className="userDiv" >user</div>
             <div className="userDiv" >user</div>
-            <div className="userDiv" >user</div>
-            <div className="userDiv" >user</div>
+            <div className="userDiv" >user</div> */}
           </div>
           </div>
           <div className="yozishma_big_div_size">
