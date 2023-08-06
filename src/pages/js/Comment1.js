@@ -10,11 +10,12 @@ import person from '../img/149071.png'
 import { MdClose } from "react-icons/md";
 import "../css/yozishmalar.css";
 import {AiOutlineDelete}from "react-icons/ai"
-
+import {CgClose} from "react-icons/cg"
 
 
 export default function Comment1() {
   const [comment,setComment]=useState([])
+  const [comment2,setComment2]=useState([])
   const [state1, setState1] = React.useState();
   const [deleteId1,setDeleteId1]=useState()
 
@@ -72,8 +73,9 @@ console.log(res.data,"salom");
       headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}
     })
     .then(res=>{
-      
-      console.log(res.data);
+      window.location.reload()
+    document.querySelector("#chat_text").style=""
+
     })
     .catch(err=>{
       alert("error")
@@ -96,16 +98,24 @@ console.log(res.data,"salom");
     .delete(`${url}/api/course_theme_comment/${id}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
     .then(res=>[
       alert("Вы успешно удалили свой комментарий"),
-      window.location.reload()
+      window.location.reload(),
+    
     ])
     .catch(err=>{
       alert("Вы не смогли удалить комментарий, попробуйте снова.")
     })
   }
 
-
+  function OpenotvetMadal(item) {
+    document.querySelector(".commetn_otvet_kaytarish").style="display: flex; "
+setComment2(item)
+  }
+  function CloseotvetMadal() {
+    document.querySelector(".commetn_otvet_kaytarish").style="display: none;"
+  }
   function cencelModal() {
-    document.querySelector("#chat_text").value.style="display:none;"  }
+    document.querySelector("#chat_text").style=""
+  }
 
   return (
     <div>
@@ -127,7 +137,6 @@ console.log(res.data,"salom");
               )
             })
           }
-              {/* <img src={person} alt="" /> */}
             
           </div>
           <div className="m_comment_text">
@@ -141,12 +150,12 @@ console.log(res.data,"salom");
               <img src={item.image.includes("http")?item.image:`${url}/${item.image}`} alt="" />
               <p>{item.text}</p>
               <div className="m_comment_otvet"> 
-              <p><span><FiCornerUpLeft/></span>Ответить</p> 
+              <p onClick={()=>OpenotvetMadal(item)}><span><FiCornerUpLeft/></span>Ответить</p> 
               {oneuser.map(item5=>{
                 return(
                   <>
                   {item5.id==item.user_id?(
-              <p className='m_comment_delete' onClick={()=>deleteComment(item.id)}><span><AiOutlineDelete/></span>удалить</p>):
+              <p className='m_comment_delete' onClick={()=>{deleteComment(item.id)}}><span><AiOutlineDelete/></span>удалить</p>):
               ("")
               }
                 </>
@@ -164,18 +173,48 @@ console.log(res.data,"salom");
 
 
 
-       {/* <div id="Javob" className="javob_berish">
-                    <div className="javob_berish_div">
-                      <div className="javob_berish_blok_text">
-                        <h1>Turaev Jafarbek</h1>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div className="javob_berish_div_fill">
-                        <MdClose onClick={() => javobClose()} />
-                      </div>
+      
+                  <div className="commetn_otvet_kaytarish">
+                  <div className="m_comment_img1">
+          {
+            oneuser.map(item2 => {
+              return(
+                <>
+            {item2.image==null?(<img src={person} alt="" />):(
+            <img src={item2.image.includes("http")?item2.image:`${url}/${item2.image}`} alt="" />)}
+</>
+              )
+            })
+          }
+            
+          </div>
+                    <div className="comment_otvet_block">
+                    {
+            oneuser.map(item1 => {
+              return(
+                <h6>{item1.username}</h6>
+              )
+            })
+          }
+                      {/* <p>{comment2.text.length>80?(comment2.text.slice(0,80)):(comment2.text.slice(0,80))}</p> */}
+                      {(()=>{
+                        if (comment2.text.length>=1) {
+                          if (comment2.text.length>20) {
+                            return<p>{comment2.text.slice(0,20)}...</p>
+                          }else{
+                            return<p>{comment2.text}</p>
+                          }  
+                        }else{
+                          
+                        }
+
+                      })()}
                     </div>
-                  </div> */}
-                  
+                
+                  <span onClick={()=>{CloseotvetMadal()}}><CgClose/></span>
+                  </div>
+
+
             <div className="m_comment_yozish">
               <input type="file" id='comment_file' />
               <p><FcFile/></p>
@@ -183,8 +222,8 @@ console.log(res.data,"salom");
               <textarea placeholder='Введите текст' id="chat_text"></textarea>
             </div>
             <div className="m_comment_button">
-              <button className='m_otmen' onClick={()=>cencelModal()}>Cancel</button>
-              <button onClick={()=>messagePost()} className='m_otpravit'>Send</button>
+              <button className='m_otmen' onClick={()=>{cencelModal()}}>Cancel</button>
+              <button onClick={(event)=>{ messagePost(); cencelModal()}} className='m_otpravit'>Send</button>
               </div></div>
     </div>
     </div>
