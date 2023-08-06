@@ -142,34 +142,7 @@ setComment2(item)
             
           </div>
           <div className="m_comment_text">
-                <div className="comment_otvet_block">
-                {
-        oneuser.map(item1 => {
-          return(
-            <h6>{item1.username}</h6>
-          )
-        })
-      }
-                  {/* <p>{comment2.text.length>15?(comment2.text.slice(0,15)):(comment2.text)}</p> */}
-                    {/* {(()=>{
-      
-                        if (comment2.length>0) {
-                          if (comment2.text.length>0) {
-                            if (comment2.text.length>15) {
-                              return<p>{comment2.text.slice(0,15)}...</p>
-                            }else{
-                              return<p>dd</p>
-                            }  
-                          }else{
-                            
-                          }             
-                        }
-      
               
-
-                  })()}    */}
-                 {/* <p>{comment2.text}</p> */ } 
-                </div>
           {
             oneuser.map(item1 => {
               return(
@@ -220,7 +193,7 @@ setComment2(item)
           }
             
           </div>
-                    <div className="comment_otvet_block">
+                    <div className="comment_otvet_block" id='comment_tushish'>
                     {
             oneuser.map(item1 => {
               return(
@@ -229,19 +202,20 @@ setComment2(item)
             })
           }
                       {/* <p>{comment2.text.length>80?(comment2.text.slice(0,80)):(comment2.text.slice(0,80))}</p> */}
-                        {/* {(()=>{
-                        if (comment2.text.length>=1) {
-                          if (comment2.text.length>15) {
-                            return<p>{comment2.text.slice(0,20)}...</p>
-                          }else{
-                            return<p>{comment2.text}</p>
-                          }  
-                        }else{
+                        {(()=>{
+                            if (comment2.text>=1) {
+                              if (comment2.text>15) {
+                                return<p>{comment2.text.slice(0,20)}...</p>
+                              }else{
+                                return<p>{comment2.text}</p>
+                              }  
+                            }else{
+                              
+                            }    
                           
-                        }
 
-                      })()}   */}
-                      <p>{comment2.text}</p>
+                      })()}  
+                      {/* <p>{comment2.text}</p> */}
                     </div>
                 
                   <span id='closeModal' onClick={()=>{CloseotvetMadal()}}><CgClose/></span>
