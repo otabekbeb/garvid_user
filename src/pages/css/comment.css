@@ -47,6 +47,12 @@ gap: 20px;
     border-radius: 50%;
 }
 
+.m_comment_img1 img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
 .m_comment_yozish p{
     color: #9DA7BB;
     position: absolute;
@@ -72,7 +78,7 @@ border-radius: 5px;
 width: 70%;
 height: 110px;
 margin-top: 30px;
-border: 1px solid #9DA7BB;
+border: 1px solid #9DA7BB50;
 height: auto;
 }
 .m_comment_button button{
@@ -107,6 +113,33 @@ height: auto;
     font-size: 20px;
 }
 
+.commetn_otvet_kaytarish{
+    width: 70%;
+    height: 60px;
+    position: relative;
+    top: 30px;
+    border: 1px solid #9DA7BB50;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom: none;
+    display: none;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+}
+.commetn_otvet_kaytarish span{
+    display: flex;
+    align-items: center;
+    color: #44bef1;
+}
+
+.comment_otvet_block h6{
+    line-height: 0px;
+    margin-top: 20px;
+}
+.comment_otvet_block p{
+    font-size: 13px;
+}
 @media (max-width:1000px) {
     .m_otdel_bgc{
         background-color: #fff;
