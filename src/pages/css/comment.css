@@ -35,12 +35,18 @@ gap: 20px;
     border-radius: 5px;
     user-select: none;
 }
+.m_otvet_comment:active a{
+    color: #fff;
+}
 .m_comment_delete{ 
     cursor:pointer;
     color: red !important;
     display: flex;
     align-items: center;
     gap: 5px;
+}
+.m_otvet_comment a{
+    color: #44bef1;
 }
 .m_comment_delete:active{
     background-color: #ff0000 !important;
@@ -146,7 +152,7 @@ height: auto;
 }
 
 .comment_otvet_block h6{
-    line-height: 0px;
+    line-height: 10px;
     margin-top: 20px;
 }
 .comment_otvet_block p{
