@@ -86,7 +86,7 @@ console.log(res.data,"salom");
     .then(res=>{
 
       setComment(res.data)
-      console.log(res.data,'hey');
+      console.log(res.data,);
     })
     .catch(err=>{
       alert("error")
@@ -150,7 +150,7 @@ setComment2(item)
               <img src={item.image.includes("http")?item.image:`${url}/${item.image}`} alt="" />
               <p>{item.text}</p>
               <div className="m_comment_otvet"> 
-              <p onClick={()=>OpenotvetMadal(item)}><span><FiCornerUpLeft/></span>Ответить</p> 
+              <p className='m_otvet_comment' onClick={()=>OpenotvetMadal(item)}><span><FiCornerUpLeft/></span>Ответить</p> 
               {oneuser.map(item5=>{
                 return(
                   <>
@@ -197,7 +197,7 @@ setComment2(item)
             })
           }
                       {/* <p>{comment2.text.length>80?(comment2.text.slice(0,80)):(comment2.text.slice(0,80))}</p> */}
-                      {(()=>{
+                        {(()=>{
                         if (comment2.text.length>=1) {
                           if (comment2.text.length>20) {
                             return<p>{comment2.text.slice(0,20)}...</p>
@@ -208,14 +208,15 @@ setComment2(item)
                           
                         }
 
-                      })()}
+                      })()}  
+                      {/* <p>{comment2.text}</p> */}
                     </div>
                 
-                  <span onClick={()=>{CloseotvetMadal()}}><CgClose/></span>
+                  <span id='closeModal' onClick={()=>{CloseotvetMadal()}}><CgClose/></span>
                   </div>
 
 
-            <div className="m_comment_yozish">
+            <div className="m_comment_yozish" id='comment_tushish'>
               <input type="file" id='comment_file' />
               <p><FcFile/></p>
               

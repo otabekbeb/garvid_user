@@ -60,14 +60,12 @@ export default function Searchfilter() {
       setCoursetype(res.data)
       console.log(res.data);
     }).catch(err=>{
-      alert("err")
     })
     axios.get(`${url}/api/course`, {headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
           setKursdata(res.data)
           setLoader(0)
           console.log(res.data);
     }).catch(err=>{
-          console.log(err);
     })
 
     
