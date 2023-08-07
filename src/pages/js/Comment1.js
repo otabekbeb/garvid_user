@@ -11,6 +11,7 @@ import { MdClose } from "react-icons/md";
 import "../css/yozishmalar.css";
 import {AiOutlineDelete}from "react-icons/ai"
 import {CgClose} from "react-icons/cg"
+import anonim from '../img/anonim-user.png'
 
 
 export default function Comment1() {
@@ -133,9 +134,11 @@ setComment2(item)
             oneuser.map(item2 => {
               return(
                 <>
-            {item2.image==null?(<img src={person} alt="" />):(
-            <img src={item2.image.includes("http")?item2.image:`${url}/${item2.image}`} alt="" />)}
-</>
+            {/* {item2.image==null?(<img src={person} alt="" />):(
+            <img src={item2.image.includes("http")?item2.image:`${url}/${item2.image}`} alt="" />)} */}
+           {item.oneuser?item.oneuser.image.includes("http")?item.oneuser.image:`${url}/${item.oneuser.image}`:
+            <img src={anonim} alt="" />}
+           </>
               )
             })
           }
@@ -143,18 +146,14 @@ setComment2(item)
           </div>
           <div className="m_comment_text">
               
-          {
-            oneuser.map(item1 => {
-              return(
+         
 
-                <h5>{item1.username}</h5>
-              )
-            })
-          }
+                <h5>{item.oneuser?item.oneuser.username:"Anonim User"}</h5>
+            
               <img src={item.image.includes("http")?item.image:`${url}/${item.image}`} alt="" />
               <p>{item.text}</p>
               <div className="m_comment_otvet"> 
-<p  className='m_otvet_comment' onClick={()=>OpenotvetMadal(item)}><span><FiCornerUpLeft/></span><a href="#comment_tushish">Ответить</a></p> 
+<p  className='m_otvet_comment' onClick={()=>OpenotvetMadal(item)}><span><FiCornerUpLeft/></span><a href="#comment_down">Ответить</a></p> 
   
               {oneuser.map(item5=>{
                 return(
@@ -187,13 +186,13 @@ setComment2(item)
                 <>
             {item2.image==null?(<img src={person} alt="" />):(
             <img src={item2.image.includes("http")?item2.image:`${url}/${item2.image}`} alt="" />)}
-</>
+                </>
               )
             })
           }
             
           </div>
-                    <div className="comment_otvet_block" id='comment_tushish'>
+                    <div className="comment_otvet_block" id='comment_down'>
                     {
             oneuser.map(item1 => {
               return(
@@ -201,28 +200,15 @@ setComment2(item)
               )
             })
           }
-                      {/* <p>{comment2.text.length>80?(comment2.text.slice(0,80)):(comment2.text.slice(0,80))}</p> */}
-                        {(()=>{
-                            if (comment2.text>=1) {
-                              if (comment2.text>15) {
-                                return<p>{comment2.text.slice(0,20)}...</p>
-                              }else{
-                                return<p>{comment2.text}</p>
-                              }  
-                            }else{
-                              
-                            }    
-                          
-
-                      })()}  
-                      {/* <p>{comment2.text}</p> */}
+                      {/* <p>{comment2.text>15?(<>{comment2.text}</>):(<>{comment2.text.slice(0,15)}...</>)}</p> */}
+                        
                     </div>
                 
                   <span id='closeModal' onClick={()=>{CloseotvetMadal()}}><CgClose/></span>
                   </div>
 
 
-            <div className="m_comment_yozish" id='comment_tushish'>
+            <div className="m_comment_yozish">
               <input type="file" id='comment_file' />
               <p><FcFile/></p>
               

@@ -194,6 +194,9 @@
     font-size: 25px;
     color: lightgray;
   }
+  .react-scroll-to-bottom--css-fbpci-1tj0vk3{
+    bottom: 20px !important;
+  }
   
   .chat-window .chat-footer button:hover {
     color: black;
