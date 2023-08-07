@@ -35,12 +35,19 @@ function Chat({ socket, email, room }) {
   useEffect(() => {
     socket.on("receive_message", (data) => {
       setMessageList((list) => [...list, data]);
-      socket.emit("join_room", { email, room });
+      socket.on("load_messages", (data) => {
+        setMessageList(data);
+        console.log(data,"load messages");
+      });
+      // socket.emit("join_room", { email, room });
+      console.log(data," receive_message");
+      console.log(messageList,"usestate");
     });
   }, [socket]);
   useEffect(() => {
     socket.on("load_messages", (data) => {
       setMessageList(data);
+      console.log(data,"load messages");
     });
   }, [socket]);
 
