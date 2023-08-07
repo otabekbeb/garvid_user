@@ -43,8 +43,8 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/loginpage" element={<Loginpage />} />
-          <Route path="/loginpageMentor" element={<LoginpageMentor />} />
+          <Route path="/editprofil" element={<Loginpage />} />
+          <Route path="/editprofilmentor" element={<LoginpageMentor />} />
           <Route path="/about" element={<About />} />
           <Route path="/servis" element={<Services />} />
           <Route path="/help" element={<Help />} />
@@ -84,7 +84,7 @@ export default function App() {
       </BrowserRouter>
 
 
-     0
+     
     </div>
   );
 }
