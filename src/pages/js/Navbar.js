@@ -72,10 +72,12 @@ function ochilnavbar(){
   left: 0%;`
   document.querySelector(".navbar-qoraaa").style=`display:block`
 }
-function yopilqora(){
+
+function yopilqora1(){
   document.querySelector(".navbar-glav-medias").style=`position: relative;
   left: 100%`
-  document.querySelector(".navbar-qoraaa").style=`display:none`
+  document.querySelector(".navbar-qoraaa").style=`display:none !important`
+
 }
 
 export default function Navbar() {
@@ -84,7 +86,9 @@ export default function Navbar() {
   const [user, setUser] = useState([])
   const activeLink = "";
   const normalLink = ""
+  const [MobileMenu,setMobileMenu]= useState(false)
 
+  
   const googleTranslateElementInit = () => {
     new window.google.translate.TranslateElement(
       {
@@ -322,8 +326,8 @@ export default function Navbar() {
              <div className="navbar-media-img-joy">
               <img src={garvrd} alt="" id="avbar-media-img-joyimg" />
              </div>
-             <div className="navbar-media-katalog-joy" onClick={()=>ochilnavbar()} >
-             <box-icon name='menu-alt-right' color='white' ></box-icon>
+             <div className="navbar-media-katalog-joy" onClick={()=>setMobileMenu(!MobileMenu)} >
+             {MobileMenu ?<div className="box-icon-togirladim1"  onClick={()=>yopilqora1()}><box-icon name='x' color='white' ></box-icon></div>:<div className="box-icon-togirladim" onClick={()=>ochilnavbar()}><box-icon name='menu-alt-right' color='white' ></box-icon></div>}
              </div>
             </div>
           </section>
@@ -345,15 +349,14 @@ export default function Navbar() {
         
 <div className="navbar-media-left-ul">
     <ul >
-  <div className="navbar-box-icons">  <span><box-icon name='home' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar">Home</li></div>
-  <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='user'></box-icon></span> <li id="surul-navbar">About us</li>  </div> 
-  <div className="navbar-box-icons"><span><box-icon name='news' color='#323946' ></box-icon></span> <li id="surul-navbar">News</li>  </div> 
- <div className="navbar-box-icons">   <span><box-icon name='contact' type='solid' color='#323946' ></box-icon></span> <li id="surul-navbar">Contacts</li>  </div>
-    <div className="navbar-box-icons"><span><box-icon name='chat' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar">FAQs</li>  </div>
-   <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='wrench'></box-icon></span><li id="surul-navbar">Services</li></div> 
-   <div className="navbar-box-icons"><span><box-icon name='message-alt-detail' color='#323946' ></box-icon></span><li id="surul-navbar">Blog</li></div> 
-   <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='group'></box-icon></span> <li id="surul-navbar">our team</li></div>
-   <div className="navbar-box-icons"><span><box-icon name='contact' type='solid' color='#323946' ></box-icon></span> <li id="surul-navbar">Contacts</li></div>
+  <div className="navbar-box-icons">  <span><box-icon name='home' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar" onClick={()=>window.location="/"}>Home</li></div>
+  <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='user'></box-icon></span> <li id="surul-navbar" onClick={()=> window.location="/About"}>About us</li>  </div> 
+  <div className="navbar-box-icons"><span><box-icon name='news' color='#323946' ></box-icon></span> <li id="surul-navbar" onClick={()=> window.location="/News"}>News</li>  </div> 
+ <div className="navbar-box-icons">   <span><box-icon name='contact' type='solid' color='#323946' ></box-icon></span> <li id="surul-navbar" onClick={()=> window.location="/contacts"}>Contacts</li>  </div>
+    <div className="navbar-box-icons"><span><box-icon name='chat' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar" >FAQs</li>  </div>
+   <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='wrench'></box-icon></span><li id="surul-navbar" onClick={()=> window.location="/servis"}>Services</li></div> 
+   <div className="navbar-box-icons"><span><box-icon name='message-alt-detail' color='#323946' ></box-icon></span><li id="surul-navbar" onClick={()=> window.location="/blog"}>Blog</li></div> 
+   <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='group'></box-icon></span> <li id="surul-navbar" onClick={()=> window.location="/ourteam"}>our team</li></div>
    <div className="navbar-box-icons"><span><box-icon name='user' color='#323946' ></box-icon></span><li id="surul-navbar">  {localStorage.getItem("token") ? (user.map(item=>{return( <a href="/user" id="osdsodsdd" className="323946">{item.username}</a>) })) : (<a href="/login" className="tt">Log in</a>)}</li></div>
    </ul>
 
@@ -363,7 +366,7 @@ export default function Navbar() {
         </div>
  
  </div>
- <div className="navbar-qoraaa" onClick={()=>yopilqora()}>
+ <div className="navbar-qoraaa" >
   
   </div>
     </div>

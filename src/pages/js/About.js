@@ -326,5 +326,6 @@ export default function About() {
 <Images/>
 <Footer/>
     </div>
+    
   )
 }
