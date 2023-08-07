@@ -55,12 +55,21 @@
 #google_translate_element select{
     width: 100%;
 }
+#google_translate_element1 select{
+    width: 100%;
+    display: none !important;
+}
 .goog-te-gadget{
     height: 17px !important;
 }
 #google_translate_element{
     overflow: hidden;
     width: 200px !important;
+}
+#google_translate_element1{
+    overflow: hidden;
+    width: 200px !important;
+    display: none !important;
 }
 .button:hover{
     background-color: #00000000;
@@ -360,6 +369,8 @@ background: #f7f7f7;
     padding-top: 40px;
     padding-bottom: 30px;
     max-width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 .contact_form_input_big{
     gap: 20px;
@@ -424,9 +435,6 @@ background: #f7f7f7;
     font-size: 12px;
     line-height: 1.4;
    }
-   
-   .contact_form_input_big img{
-    padding-top: 100px;}
    .card_about_us_ikki_p{
     font-size: 12px;
     line-height: 1.4;
@@ -436,8 +444,8 @@ background: #f7f7f7;
     line-height: 1.4;
    }
    .card_about_us_ikki_button{
-    width: 80px;
-    height: 30px;
+    width: 100px;
+    height: 40px;
     font-size: 12px;
    }
    .facts h1{
@@ -760,4 +768,21 @@ background: #f7f7f7;
         max-width: 100%;
         width: 100%;
     }
+}
+#text1{
+    width: 100%;
+    background-color: #f4f7f9;
+    outline: none;
+    padding: 13px 17px;
+    color: #4d4d4d;
+    height: 170px;
+    font-size: 15px;
+}
+.girl{
+    margin-top: 230px;
+}
+@media(max-width:1140px){
+    .girl {
+        margin-top: 320px;
+      }
 }
