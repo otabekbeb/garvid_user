@@ -72,7 +72,7 @@
   }
   .chat-window .chat-header p {
     display: block;
-    padding: 0 1em 0 2em;
+    padding-left: 15px;
     color: black;
     font-weight: 700;
     line-height: 45px;
@@ -177,7 +177,7 @@
     border: 0;
     padding: 0 0.7em;
     font-size: 1em;
-    border-right: 1px dotted #607d8b;
+    border-right: 2px solid #e2e2e2;
   
     outline: none;
     font-family: "Open Sans", sans-serif;
@@ -187,8 +187,7 @@
     border: 0;
     display: grid;
     place-items: center;
-    cursor: pointer;
-    flex: 5%;
+    cursor: pointer;width: 100px;
     height: 100%;
     background: transparent;
     outline: none;
@@ -206,4 +205,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
+  }
+  #back_icons{
+    font-size: 22px;
+    margin-left: 15px;
   }

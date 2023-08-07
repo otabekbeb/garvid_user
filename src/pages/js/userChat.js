@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import "../css/yozishmalar.css";
 import YozishmaUserImg from "../img/Ellipse.jpg";
 import FollowCard from "../js/FollowCard";
+import { IoArrowBackOutline } from 'react-icons/io';
 import Chat from "./Chat";
+
 import {
   BsArrow90DegLeft,
   BsArrowLeft,
@@ -85,6 +87,7 @@ export default function MentorChat() {
     });
   }, [socket]);
   const createPrivateRoom = (otheremail) => {
+    window.location.reload()
     // let email2="piyoz@gmail.com"
     socket.emit("create_private_room", {
       email1: email,
@@ -128,6 +131,7 @@ export default function MentorChat() {
   function chatModal(room) {
     setRoom(room);
     socket.emit("join_room", { email, room });
+    document.querySelector(".yozishma_bolim_text_nik").style = "display:none;";
     document.querySelector(".yozishma_small_div").style = "display:block;";
     // document.querySelector(".yozishma_bolim_text_nik").style = "display:none"
     // document.querySelector(".yoq1").style = "display:block;"
@@ -191,15 +195,13 @@ export default function MentorChat() {
     document.querySelector(".edit_chat_hover_ikki").style =
       "display:none;scale: 0.4;transition: 2s;";
   }
+  function back1() {
+    document.querySelector(".yozishma_bolim_text_nik").style="display:block"
+    document.querySelector(".openModelAddChat").style="display:none"
+  }
 function openModelAddChat() {
-  // document.querySelector(".openModelAddChat").style="display:block"
-if (modal===false) {
-   document.querySelector(".openModelAddChat").style="display:block" 
-   setModal(true)
-}else{
-  document.querySelector(".openModelAddChat").style="display:none" 
-  setModal(false)
-}
+  document.querySelector(".yozishma_bolim_text_nik").style="display:none !important"
+  document.querySelector(".openModelAddChat").style="display:block"
 }
   var data = [
     {
@@ -228,13 +230,17 @@ if (modal===false) {
     <div>
       <div className="Chat_background">
         <div className="yozishma_big_div">
-        <div className="openModelAddChat" >
-          <p style={{display:"flex",justifyContent:"center"}}>viberite polzvatekya s kotorim xotite nachat obshatsya</p>
-          <input onChange={handleInputChange}/>
+        
+          <div className="yozishma_big_div_size">
+          <div className="openModelAddChat" >
+            <div className="back_search">
+            <i id="back_icons" onClick={() => back1()} class='bx bx-arrow-back'></i>
+          <p className="vibor" style={{display:"flex",justifyContent:"center"}}>select the user you want to chat with</p></div>
+          <input placeholder="Search..." className="vibor_search" onChange={handleInputChange}/>
           <div className="userList">
             {users.map((item)=>{
               return(
-                <div               onClick={() => createPrivateRoom(item.email)} className="userDiv" >{item.username}</div>
+                <div style={{cursor:"pointer",display:"flex"}} onClick={() => createPrivateRoom(item.email)} className="userDiv" ><div className="tg_img" style={{marginRight:"10px"}}><img style={{height:"100%"}} src={tgimg} alt="" /></div>{item.username}</div>
               )
             })}
             {/* <div className="userDiv" >user</div>
@@ -247,15 +253,14 @@ if (modal===false) {
             <div className="userDiv" >user</div> */}
           </div>
           </div>
-          <div className="yozishma_big_div_size">
             <div className="yozishma_bolim_text_nik">
               <div className="yozishma_bolim_text_nik_search">
                 <input type="text" placeholder="Search... " />
-                              <button className="btnChatAdd" onClick={()=>openModelAddChat()} >dobavit noviy chat</button>
+                              <button className="btnChatAdd" onClick={()=>openModelAddChat()} >+</button>
               </div>
               {/* <p>{socket.id}</p> */}
 
-              <div>
+              <div className="telegram_kirish">
               {rooms.map((item) => {
                 let a = item;
                 if (a !== null) {
@@ -263,7 +268,7 @@ if (modal===false) {
                   //  // determine which part to display
                   const displayName = email1 === email ? email2 : email1;
                   return (
-                    <div
+                    <div 
                       key={item}
                       onClick={() => chatModal(item)}
                       className="yozishma_bolim_text_nik_text"
@@ -273,7 +278,7 @@ if (modal===false) {
                         <div className="tg_img">
                           <img src={tgimg} alt="" />
                         </div>
-                        <h1 id="name">{displayName}</h1>
+                        <h1 id="name">{displayName.slice(0,-10)}</h1>
                         {/* <p>Hi</p> */}
                       </div>
                       <div className="yozishma_bolim_text_nik_text_qongiroq">

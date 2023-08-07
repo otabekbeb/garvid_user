@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from "react";
-import ScrollToBottom from "react-scroll-to-bottom"; 
+import ScrollToBottom from "react-scroll-to-bottom";
 import "../css/Chat.css"
+import { IoArrowBackOutline } from 'react-icons/io';
+import tgimg from "../img/photo_2023-06-25_22-19-50 (2).jpg";
+
+
+function back() {
+  document.querySelector(".yozishma_bolim_text_nik").style = "display:block"
+  document.querySelector(".yozishma_small_div").style = "display:none"
+}
+
 function Chat({ socket, email, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
@@ -34,22 +43,26 @@ function Chat({ socket, email, room }) {
       setMessageList(data);
     });
   }, [socket]);
-  
+
   return (
     <div className="chat-window">
       <div className="chat-header">
-      <p>
-  {(() => {
-    if (!email) {
-      return "foydalanuvchini tanlang";
-    }
-    // split the room into two parts
-    const [email1, email2] = room.split("_");
-    // determine which part to display
-    const displayName = email1 === email ? email2 : email1;
-    return displayName;
-  })()}
-</p>
+        <i id="back_icons" onClick={() => back()} class='bx bx-arrow-back'></i>
+        <div style={{marginLeft:"15px"}} className="tg_img">
+          <img style={{height:"100%"}} src={tgimg} alt="" />
+        </div>
+        <p>
+          {(() => {
+            if (!email) {
+              return "foydalanuvchini tanlang";
+            }
+            // split the room into two parts
+            const [email1, email2] = room.split("_");
+            // determine which part to display
+            const displayName = email1 === email ? email2 : email1;
+            return displayName.slice(0,-10);
+          })()}
+        </p>
 
 
 
@@ -67,7 +80,7 @@ function Chat({ socket, email, room }) {
                     <p>{messageContent.message}</p> <p id="time">{messageContent.time}</p>
                   </div>
                   <div className="message-meta">
-                   
+
                   </div>
                 </div>
               </div>
@@ -87,7 +100,7 @@ function Chat({ socket, email, room }) {
             event.key === "Enter" && sendMessage();
           }}
         />
-        <button onClick={sendMessage}><i style={{fontSize:"25px"}} class='bx bx-send'></i></button>
+        <button onClick={sendMessage}><i style={{ fontSize: "25px" }} class='bx bx-send'></i></button>
       </div>
     </div>
   );
