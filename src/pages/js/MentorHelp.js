@@ -27,9 +27,9 @@ export default function UserHelp() {
                     </div>
                 </div>
                 <div className="mod_svg">
-                  {help.map(item=>{
+                  {help.map((item,key)=>{
                     return(
-                      <a href="/User_help2" style={{color:'black'}}>
+                      <a onClick={()=> {window.location="/User_help2";localStorage.setItem("helpId",key)}}  style={{color:'black'}}>
                    <div className="text_mod">
                         <p>{item.title}</p>
                     </div>

@@ -39,19 +39,22 @@ export default function User_help2() {
                         <a href="/UserHelp"><button className='nazad_bt'>   <AiOutlineLeft /> back</button></a>
                     </div>
                 </div>
-                {help.map(item => {
-                    return (
-                        <div className="mod_svg1">
-                            <div className="text_mod1">
-                                <p>{item.description}
-                                </p>
+                {help.map((item,key)=> {
+                    if(key==localStorage.getItem("helpId")){
+                        return (
+                            <div className="mod_svg1">
+                                <div className="text_mod1">
+                                    <p>{item.description}
+                                    </p>
+                                </div>
+                                <div className="like_div">
+                                    <BiSolidLike className='like1' onClick={() => like()} />
+                                    <BiSolidDislike className='like2' onClick={() => liken()} />
+                                </div>
                             </div>
-                            <div className="like_div">
-                                <BiSolidLike className='like1' onClick={() => like()} />
-                                <BiSolidDislike className='like2' onClick={() => liken()} />
-                            </div>
-                        </div>
-                    )
+                        )
+                    }
+                    
                 })}
 
             </div>
