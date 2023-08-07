@@ -4,6 +4,9 @@ import axios from "axios";
 import url from "./Host";
 import garvrd from '../img/Remove-bg.ai_1691307426758.png'
 import teacher from '../img/oqtuvchi.png'
+import Student from '../img/student.jpg'
+import Edit from '../img/Edit.png'
+import Curs from '../img/Curs.png'
 
 function sa() {
   var o = document.querySelector(".media-ul").style.display;
@@ -26,16 +29,16 @@ function about2() {
 function aboutClose2() {
   document.querySelector(".ichi span").style = "transform: rotate(0deg);";
 }
-function iconhover() { 
-  document.querySelector(".ichi2 span").style="transform: rotate(180deg)"
+function iconhover() {
+  document.querySelector(".ichi2 span").style = "transform: rotate(180deg)"
 }
-function iconhover1() { 
-  document.querySelector(".ichi2 span").style="transform: rotate(0deg)"
+function iconhover1() {
+  document.querySelector(".ichi2 span").style = "transform: rotate(0deg)"
 }
 // meded
 function ochil1() {
   document.querySelector(".lll ul").classList.toggle("lllb");
-  
+
 }
 function meded() {
   document.querySelector(".ffdul ").classList.toggle("fffdull");
@@ -66,16 +69,16 @@ function menu2leave1() {
   document.querySelector(".blog1").style = "display:none";
   document.querySelector(".menu ul").style = "display:none";
 }
-function ochilnavbar(){
-  document.querySelector(".navbar-glav-medias").style=`position: relative;
+function ochilnavbar() {
+  document.querySelector(".navbar-glav-medias").style = `position: relative;
   left: 0%;`
-  document.querySelector(".navbar-qoraaa").style=`display:block`
+  document.querySelector(".navbar-qoraaa").style = `display:block`
 }
 
-function yopilqora1(){
-  document.querySelector(".navbar-glav-medias").style=`position: relative;
+function yopilqora1() {
+  document.querySelector(".navbar-glav-medias").style = `position: relative;
   left: 100%`
-  document.querySelector(".navbar-qoraaa").style=`display:none !important`
+  document.querySelector(".navbar-qoraaa").style = `display:none !important`
 
 }
 
@@ -84,7 +87,7 @@ export default function Navbar() {
   const [state1, setState1] = React.useState();
   const [state, State] = React.useState(1);
   const [user, setUser] = useState([])
-   const [MobileMenu,setMobileMenu]= useState(false)
+  const [MobileMenu, setMobileMenu] = useState(false)
   const googleTranslateElementInit = () => {
     new window.google.translate.TranslateElement(
       {
@@ -109,22 +112,22 @@ export default function Navbar() {
     );
 
 
-    
+
   }, []);
 
   return (
     <div>
 
-        <div>
-          <section onMouseLeave={() => menuul1()} className="navbar">
-            <div className="section_navbar">
+      <div>
+        <section onMouseLeave={() => menuul1()} className="navbar">
+          <div className="section_navbar">
             <div className="navbar-ul">
               <ul>
                 <li className="moto-menu-item">
                   <a href="/">Home</a>
                 </li>
 
-                <div style={{display:"none"}} className="menu" onMouseLeave={() => menuufolse()}>
+                <div style={{ display: "none" }} className="menu" onMouseLeave={() => menuufolse()}>
                   <div className="menuu" onMouseEnter={() => menuul()}>
                     <p>
                       <a href="/about">About Us</a>
@@ -147,9 +150,9 @@ export default function Navbar() {
                         onMouseLeave={() => menu2leave()}
                         onMouseEnter={() => menu2ul()}
                       >
-                        <p  onClick={()=> window.location="/news"} id="menu2pp" onMouseEnter={() => menu2ul()}>
+                        <p onClick={() => window.location = "/news"} id="menu2pp" onMouseEnter={() => menu2ul()}>
                           {" "}
-                          <a  className="zaib">
+                          <a className="zaib">
                             News{" "}
                             <span id="menu2spanid">
                               <box-icon
@@ -168,7 +171,7 @@ export default function Navbar() {
                         >
                           <div className="navbbar-line-hr1"></div>
 
-                          <li onClick={()=> window.location="contacts"} id="ded">
+                          <li onClick={() => window.location = "contacts"} id="ded">
                             <a id="contactcolor" href="/contacts">Contact </a>
                           </li>
                         </ul>
@@ -177,7 +180,7 @@ export default function Navbar() {
                   </div>
                 </div>
 
-                <li  className="moto-menu-item">
+                <li className="moto-menu-item">
                   {" "}
                   <a href="/user">User</a>{" "}
                 </li>
@@ -188,7 +191,7 @@ export default function Navbar() {
                   <a href="/studentpage">Student</a>
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/loginpage">Edit profile</a>
+                  <a href="/editprofil">Edit profile</a>
                 </li>
                 <li className="moto-menu-item">
                   <a href="/ourcourse">Courses</a>
@@ -199,7 +202,7 @@ export default function Navbar() {
               </ul>
               <div id="google_translate_element"></div>
             </div>
-            <div className="media-navbar" style={{margin:"auto",width:'100%'}}>
+            <div className="media-navbar" style={{ margin: "auto", width: '100%' }}>
               {/* <div style={{width:'100%'}} className="navbar-menu">
                 <div className="navbar-mediao-barr" onClick={() => sa()}>
                   <div className="bar-menu" id="sa">
@@ -211,7 +214,7 @@ export default function Navbar() {
 
 
 {/* onMouseLeave={()=>aboutClose2()}  */}
-                {/* <div  className="media-ul">
+              {/* <div  className="media-ul">
                   <div className="dfdf">
                     <ul>
                       <li onClick={()=> window.location="/"}>
@@ -303,17 +306,17 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>  */}
-             <div className="navbar-media-img-joy">
-              <img src={garvrd} alt="" id="avbar-media-img-joyimg" />
-             </div>
-             <div className="navbar-media-katalog-joy" onClick={()=>setMobileMenu(!MobileMenu)} >
-             {MobileMenu ?<div className="box-icon-togirladim1"  onClick={()=>yopilqora1()}><box-icon name='x' color='white' ></box-icon></div>:<div className="box-icon-togirladim" onClick={()=>ochilnavbar()}><box-icon name='menu-alt-right' color='white' ></box-icon></div>}
-             </div>
+              <div className="navbar-media-img-joy">
+                <img src={garvrd} alt="" id="avbar-media-img-joyimg" />
+              </div>
+              <div className="navbar-media-katalog-joy" onClick={() => setMobileMenu(!MobileMenu)} >
+                {MobileMenu ? <div className="box-icon-togirladim1" onClick={() => yopilqora1()}><box-icon name='x' color='white' ></box-icon></div> : <div className="box-icon-togirladim" onClick={() => ochilnavbar()}><box-icon name='menu-alt-right' color='white' ></box-icon></div>}
+              </div>
             </div>
-            </div>
-          </section>
-        </div>
-        <div
+          </div>
+        </section>
+      </div>
+      <div
         className="div1"
         onMouseEnter={() => menu2ul12()}
         onMouseLeave={() => menu2leave1()}
@@ -323,29 +326,31 @@ export default function Navbar() {
           <div className="navbar-tepaga-krug"></div>
         </a>
       </div>
- <div className="navbar-glav-medias">
- <div className="navbar-media-left">
-        
-<div className="navbar-media-left-ul">
-    <ul >
-  <div className="navbar-box-icons">  <span><box-icon name='home' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar" onClick={()=> window.location="/"}>Home</li></div>
-  <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='user'></box-icon></span> <li id="surul-navbar" onClick={()=> window.location="/user"}>User</li>  </div> 
-  <div className="navbar-box-icons"><span ><img src={teacher} style={{width:"30px"}} alt="" /></span> <li id="surul-navbar" onClick={()=> window.location="/teacher"}>Teacher</li>  </div> 
- <div className="navbar-box-icons">   <span><box-icon name='contact' type='solid' color='#323946' ></box-icon></span> <li id="surul-navbar" onClick={()=> window.location="/studentpage"}>Student</li>  </div>
-    <div className="navbar-box-icons"><span><box-icon name='chat' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar" onClick={()=> window.location="/loginpage"}>Edit profile</li>  </div>
-   <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='wrench'></box-icon></span><li id="surul-navbar"  onClick={()=> window.location="/ourcourse"}>Courses</li></div> 
-   <div className="navbar-box-icons"><span><box-icon name='user' color='#323946' ></box-icon></span><li id="surul-navbar">  {localStorage.getItem("token") ? (user.map(item=>{return( <a href="/user" id="osdsodsdd" className="323946">{item.username}</a>) })) : (<a href="/login" className="tt">Log in</a>)}</li></div>
-   </ul>
+      <div className="navbar-glav-medias">
+        <div className="navbar-media-left">
 
-</div>
+          <div className="navbar-media-left-ul">
+            <ul >
+              <div className="navbar-box-icons">  <span><box-icon name='home' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar" onClick={() => window.location = "/"}>Home</li></div>
+              <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946' name='user'></box-icon></span> <li id="surul-navbar" onClick={() => window.location = "/user"}>User</li>  </div>
+              <div className="navbar-box-icons"><span ><img src={teacher} style={{ width: "30px" }} alt="" /></span> <li id="surul-navbar" onClick={() => window.location = "/teacher"}>Teacher</li>  </div>
+              <div className="navbar-box-icons">   <span><img src={Student} style={{ width: "30px" }} alt="" /></span> <li id="surul-navbar" onClick={() => window.location = "/studentpage"}>Student</li>  </div>
+              <div className="navbar-box-icons"><span><img src={Edit} style={{ width: "30px" }} alt="" /></span><li id="surul-navbar" onClick={() => window.location = "/loginpage"}>Edit profile</li>  </div>
+              <div className="navbar-box-icons"><span><img src={Curs} style={{ width: "30px" }} alt="" /></span><li id="surul-navbar" onClick={() => window.location = "/ourcourse"}>Courses</li></div>
 
-        
+
+              <div className="navbar-box-icons"><span><box-icon name='user' color='#323946' ></box-icon></span><li id="surul-navbar">  {localStorage.getItem("token") ? (user.map(item => { return (<a href="/user" id="osdsodsdd" className="323946">{item.username}</a>) })) : (<a href="/login" className="tt">Log in</a>)}</li></div>
+            </ul>
+
+          </div>
+
+
         </div>
- 
- </div>
- <div className="navbar-qoraaa">
-  
-  </div>
+
+      </div>
+      <div className="navbar-qoraaa">
+
+      </div>
     </div>
   );
 }

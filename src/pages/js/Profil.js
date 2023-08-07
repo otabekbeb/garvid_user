@@ -73,9 +73,14 @@ export default function Profil() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
-          alert("Вы успешно изменили фото профиля.")
-        window.location.reload();
-      
+        axios
+        .get(`${url}/auth/oneuser`, {
+          headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+        })
+        .then((res) => {
+          console.log(res.data);
+          setData(res.data);
+        })
       })
       .catch((err) => {
         alert("Что-то пошло не так, попробуйте снова.")
@@ -280,7 +285,7 @@ export default function Profil() {
               />
               <div className="profil_blok_ikki_icon_texrirlash_modal">
                 <div
-                  onClick={() => (window.location = "/loginpage")}
+                  onClick={() => (window.location = "/editprofil")}
                   className="taxrirlash_modal_div"
                 >
                   <FiEdit className="taxrirlash_modal_icon" />
