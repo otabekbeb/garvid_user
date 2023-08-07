@@ -16,7 +16,7 @@ import anonim from '../img/anonim-user.png'
 
 export default function Comment1() {
   const [comment,setComment]=useState([])
-  const [comment2,setComment2]=useState([])
+  const [comment2,setComment2]=useState()
   const [page, setPage]=useState(4)
   const [state1, setState1] = React.useState();
   const [deleteId1,setDeleteId1]=useState()
@@ -76,12 +76,18 @@ console.log(res.data,"salom");
       headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}
     })
     .then(res=>{
-      window.location.reload()
+      axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+        headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+      .then(res=>{
+  
+        setComment(res.data)
+        console.log(res.data,);
+      })
     document.querySelector("#chat_text").value=""
 
     })
     .catch(err=>{
-      alert("error")
+      alert("Нельзя писать больше 50 символов")
     })
 
     axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
@@ -92,7 +98,6 @@ console.log(res.data,"salom");
       console.log(res.data,);
     })
     .catch(err=>{
-      alert("error")
     })
   }
 
@@ -100,10 +105,22 @@ console.log(res.data,"salom");
     axios
     .delete(`${url}/api/course_theme_comment/${id}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
     .then(res=>[
-      alert("Вы успешно удалили свой комментарий"),
-      window.location.reload(),
-    
+      alert("Вы действительно хотите удалить свой комментарий"),
+      axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+        headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+      .then(res=>{
+  
+        setComment(res.data)
+        console.log(res.data,);
+      })
     ])
+    axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+      headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+    .then(res=>{
+
+      setComment(res.data)
+      console.log(res.data,);
+    })
     .catch(err=>{
       alert("Вы не смогли удалить комментарий, попробуйте снова.")
     })
@@ -112,6 +129,8 @@ console.log(res.data,"salom");
   function OpenotvetMadal(item) {
     document.querySelector(".commetn_otvet_kaytarish").style="display: flex; "
 setComment2(item)
+
+
   }
   function CloseotvetMadal() {
     document.querySelector(".commetn_otvet_kaytarish").style="display: none;"
@@ -136,8 +155,8 @@ setComment2(item)
                 <>
             {/* {item2.image==null?(<img src={person} alt="" />):(
             <img src={item2.image.includes("http")?item2.image:`${url}/${item2.image}`} alt="" />)} */}
-           {item.oneuser?item.oneuser.image.includes("http")?item.oneuser.image:`${url}/${item.oneuser.image}`:
-            <img src={anonim} alt="" />}
+            <img src={item.oneuser?item.oneuser.image.includes("http")?item.oneuser.image:`${url}/${item.oneuser.image}`:
+            <img src={anonim} alt="" />} alt="" />
            </>
               )
             })
@@ -151,9 +170,9 @@ setComment2(item)
                 <h5>{item.oneuser?item.oneuser.username:"Anonim User"}</h5>
             
               <img src={item.image.includes("http")?item.image:`${url}/${item.image}`} alt="" />
-              <p>{item.text}</p>
+              <p className='m_comment_text1505'>{item.text}</p>
               <div className="m_comment_otvet"> 
-<p  className='m_otvet_comment' onClick={()=>OpenotvetMadal(item)}><span><FiCornerUpLeft/></span><a href="#comment_down">Ответить</a></p> 
+<p  className='m_otvet_comment' onClick={()=>OpenotvetMadal(item.text)}><span><FiCornerUpLeft/></span><a href="#comment_down">Ответить</a></p> 
   
               {oneuser.map(item5=>{
                 return(
@@ -184,8 +203,8 @@ setComment2(item)
             oneuser.map(item2 => {
               return(
                 <>
-            {item2.image==null?(<img src={person} alt="" />):(
-            <img src={item2.image.includes("http")?item2.image:`${url}/${item2.image}`} alt="" />)}
+             <img src={comment.oneuser?comment.oneuser.image.includes("http")?comment.oneuser.image:`${url}/${comment.oneuser.image}`:
+            <img src={anonim} alt="" />} alt="" />
                 </>
               )
             })
@@ -196,11 +215,13 @@ setComment2(item)
                     {
             oneuser.map(item1 => {
               return(
-                <h6>{item1.username}</h6>
+                <h6>{comment.item1?comment.item1.username:"Anonim User"}</h6>
               )
             })
           }
-                      {/* <p>{comment2.text>15?(<>{comment2.text}</>):(<>{comment2.text.slice(0,15)}...</>)}</p> */}
+
+                <p>{comment2?(<>{comment2.slice(0,15)}...</>):(<>{comment2}</>)}</p>
+
                         
                     </div>
                 
