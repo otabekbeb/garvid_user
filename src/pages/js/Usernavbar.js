@@ -188,7 +188,7 @@ export default function Navbar() {
                   <a href="/studentpage">Student</a>
                 </li>
                 <li className="moto-menu-item">
-                  <a href="/loginpage">Edit profile</a>
+                  <a href="/editprofil">Edit profile</a>
                 </li>
                 <li className="moto-menu-item">
                   <a href="/ourcourse">Courses</a>
@@ -332,7 +332,7 @@ export default function Navbar() {
   <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='user'></box-icon></span> <li id="surul-navbar" onClick={()=> window.location="/user"}>User</li>  </div> 
   <div className="navbar-box-icons"><span ><img src={teacher} style={{width:"30px"}} alt="" /></span> <li id="surul-navbar" onClick={()=> window.location="/teacher"}>Teacher</li>  </div> 
  <div className="navbar-box-icons">   <span><box-icon name='contact' type='solid' color='#323946' ></box-icon></span> <li id="surul-navbar" onClick={()=> window.location="/studentpage"}>Student</li>  </div>
-    <div className="navbar-box-icons"><span><box-icon name='chat' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar" onClick={()=> window.location="/loginpage"}>Edit profile</li>  </div>
+    <div className="navbar-box-icons"><span><box-icon name='chat' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar" onClick={()=> window.location="/editprofil"}>Edit profile</li>  </div>
    <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='wrench'></box-icon></span><li id="surul-navbar"  onClick={()=> window.location="/ourcourse"}>Courses</li></div> 
    <div className="navbar-box-icons"><span><box-icon name='user' color='#323946' ></box-icon></span><li id="surul-navbar">  {localStorage.getItem("token") ? (user.map(item=>{return( <a href="/user" id="osdsodsdd" className="323946">{item.username}</a>) })) : (<a href="/login" className="tt">Log in</a>)}</li></div>
    </ul>

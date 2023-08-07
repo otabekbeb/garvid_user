@@ -285,7 +285,7 @@ export default function Profil() {
               />
               <div className="profil_blok_ikki_icon_texrirlash_modal">
                 <div
-                  onClick={() => (window.location = "/loginpage")}
+                  onClick={() => (window.location = "/editprofil")}
                   className="taxrirlash_modal_div"
                 >
                   <FiEdit className="taxrirlash_modal_icon" />
