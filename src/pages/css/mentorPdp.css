@@ -460,6 +460,9 @@
         justify-content: end;
         align-items: center;
     }
+    .profil_blok_menu_size:hover{
+        cursor: pointer;
+    }
     .profil_blok_menu_clone {
         /* display: block !important; */
         padding: 10px;
