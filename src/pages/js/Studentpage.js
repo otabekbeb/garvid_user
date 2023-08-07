@@ -119,11 +119,16 @@ export default function Mentor() {
           "position: fixed;right:0px;";
         document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
           "display:none";
+            document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
+      "display:none";
+    document.querySelector(".profil-qora-qiladi").style = "display:block";
     
       }
       function notificationClose() {
         document.querySelector(".profil_notifacation_size").style =
           "position: fixed;right:-100%;";
+          
+    document.querySelector(".profil-qora-qiladi").style = "display:none";
       }
     
   return (
@@ -450,6 +455,7 @@ export default function Mentor() {
            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, inventore.
           </div>
         </div>
+        <div className="profil-qora-qiladi"></div>
     <Futer />
     </div>
   )
