@@ -255,7 +255,7 @@ function openModelAddChat() {
           </div>
             <div className="yozishma_bolim_text_nik">
               <div className="yozishma_bolim_text_nik_search">
-                <input type="text" placeholder="Search... " />
+                <input onChange={handleInputChange} type="text" placeholder="Search... " />
                               <button className="btnChatAdd" onClick={()=>openModelAddChat()} >+</button>
               </div>
               {/* <p>{socket.id}</p> */}
