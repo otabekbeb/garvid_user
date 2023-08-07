@@ -223,15 +223,15 @@ font-size: 13px;
 
 .m_clouse_x{
     cursor: pointer;
-    font-size: 18px;
+    font-size: 24px;
     position: absolute;
-    top: 0px;right: 5px;
+    top: -5px;right: 2px;
     z-index: 200;
 }
 
 .m_zadachi_dobavit  button{
     color: #fff  ;
-    background-color: #536DFD;
+    background-color: #44bef1;
     width: 150px;
     height: 30px;
     border-radius: 5px;
