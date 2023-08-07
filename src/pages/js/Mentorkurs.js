@@ -22,6 +22,9 @@ import Delete from './Delete';
 import Groupimg from '../img/Group 2.png'
 import img_for_null from '../img/download.png'
 import Form from 'react-bootstrap/Form';
+import { BsChevronDown } from "react-icons/bs"
+
+
 
 export default function Searchfilter() {
   const [kursdata, setKursdata] = useState([]);
@@ -29,7 +32,7 @@ export default function Searchfilter() {
   const [state1, setState1] = React.useState();
   const [courstype, setCoursetype] = useState([]);
   const [CourseId, setCourseId] = useState();
-  const [deleteId,setDeleteId]=useState()
+  const [deleteId, setDeleteId] = useState()
   const [delete1, setDelete1] = useState([]);
 
   function Filter() {
@@ -129,48 +132,48 @@ export default function Searchfilter() {
     formdata.append("price", document.querySelector(".pricePost").value)
     formdata.append("planned_time", document.querySelector(".planned_timePost").value)
     formdata.append("image", document.querySelector(".imagePost").files[0])
-    formdata.append("course_type", 12)
-    formdata.append("author", 12)
+    formdata.append("course_type", document.querySelector(".selectPost").value)
+    formdata.append("author", localStorage.getItem("oneuser"))
 
 
     axios.post(`${url}/api/course`, formdata, {
-      headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}
-    }).then(res=>{
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    }).then(res => {
       alert("success")
       window.location.reload()
-    }).catch(err=>{
+    }).catch(err => {
       alert(err)
     })
   }
 
 
- function dashed(id){
-  var formdata = new FormData()
-  formdata.append("name", document.querySelector(".nameInp").value)
-  formdata.append("description", document.querySelector(".description").value)
-  formdata.append("price", document.querySelector(".inp_numbr1").value)
-  formdata.append("planned_time", document.querySelector(".inp_numbr").value)
-  formdata.append("image", document.querySelector(".inp_img").files[0])
-  formdata.append("course_type", 12)
-  formdata.append("author", 12)
+  function dashed(id) {
+    var formdata = new FormData()
+    formdata.append("name", document.querySelector(".nameInp").value)
+    formdata.append("description", document.querySelector(".description").value)
+    formdata.append("price", document.querySelector(".inp_numbr1").value)
+    formdata.append("planned_time", document.querySelector(".inp_numbr").value)
+    formdata.append("image", document.querySelector(".inp_img").files[0])
+    formdata.append("course_type", document.querySelector(".select_opt").value)
+    formdata.append("author", localStorage.getItem("oneuser"))
 
-  axios.put(`${url}/api/course/${id}`, formdata, {
-    headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}
-  }).then(res=>{
-    alert("success")
-    window.location.reload()
-  }).catch(err=>{
-    alert(err)
-  })
-  axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-    setKursdata(res.data)
-  }).catch(err => {
-    console.log(err);
-  })
- }
+    axios.put(`${url}/api/course/${id}`, formdata, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    }).then(res => {
+      alert("success")
+      window.location.reload()
+    }).catch(err => {
+      alert(err)
+    })
+    axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+      setKursdata(res.data)
+    }).catch(err => {
+      console.log(err);
+    })
+  }
 
   //  function dashed2 (){
-     
+
   //  }
 
   function dashed_nazat() {
@@ -194,6 +197,7 @@ export default function Searchfilter() {
       alert("xato")
     })
   }
+
 
 
   useEffect(() => {
@@ -236,16 +240,22 @@ export default function Searchfilter() {
 
   }
 
-  function deleteData(id) {
-    console.log(id);
-    // axios.delete(`https://markazback2.onrender.com/api/course/${key}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-    //   alert('malumot ochirildi')
-    //   window.location.reload()
-    // }).catch(err => {
-    //   console.log(err);
-    // })
+  // function deleteData(id) {
+  //   console.log(id);
+  //   // axios.delete(`https://markazback2.onrender.com/api/course/${key}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+  //   //   alert('malumot ochirildi')
+  //   //   window.location.reload()
+  //   // }).catch(err => {
+  //   //   console.log(err);
+  //   // })
 
-  }
+  // }
+
+  // function drop_toggle() {
+  //   document.querySelector(".dropdown_list").classList.toggle("myStyle");
+  // }
+
+
 
   return (
     <div>
@@ -294,7 +304,7 @@ export default function Searchfilter() {
         <div className="kurs_cards">
           {kursdata.map(item => {
             return (
-              <div  className="kurs_card">
+              <div className="kurs_card">
                 <button className="btn_das">Dasturlash</button>
                 {item.image === null ? (
                   <img src={img_for_null} />
@@ -361,6 +371,12 @@ export default function Searchfilter() {
                       <input id="planned_time" type="number" className="inp_numbr" />
                     </div>
                     <div className="edit_inside">
+                      <label htmlFor="">Course type:</label>
+                      <Form.Select className="select_opt" aria-label="Default select example">
+                        {courstype.map(item => { return <option value={item.id}>{item.name}</option> })}
+                      </Form.Select>
+                    </div>
+                    <div className="edit_inside">
                       <label htmlFor="">Image:</label>
                       <input id="image" type="file" className="inp_img" />
                     </div>
@@ -385,10 +401,10 @@ export default function Searchfilter() {
                 </div>
                 <button className="button_circle">
                   <AiOutlineArrowRight
-                  onClick={() => {
-                    window.location = "/video";
-                    localStorage.setItem("abbas", item.id)
-                  }}
+                    onClick={() => {
+                      window.location = "/video";
+                      localStorage.setItem("abbas", item.id)
+                    }}
                   />
                 </button>
               </div>
@@ -400,13 +416,13 @@ export default function Searchfilter() {
           </div>
           <div className="edit_card2" style={{ display: 'none' }}>
             <div className="edit_padding">
-            
+
               <button onClick={() => dashed_nazat2()} className="close_btn">
                 <i><GrFormClose /></i>
               </button>
               <div className="edit_inside">
                 <label htmlFor="">Name:</label>
-                <input className="namePost" type="text"  id=""/>
+                <input className="namePost" type="text" id="" />
               </div>
               <div className="edit_inside">
                 <label htmlFor="">Description:</label>
@@ -420,25 +436,17 @@ export default function Searchfilter() {
                 <label htmlFor="">Planned time:</label>
                 <input className="planned_timePost" type="number" />
               </div>
-              {/* <div className="edit_inside">
+              <div className="edit_inside">
                 <label htmlFor="">Course type:</label>
-                <Form.Select className="select_Post" aria-label="Default select example">
-                  <option>Open this select menu</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                <Form.Select className="selectPost" aria-label="Default select example">
+                  {courstype.map(item => { return <option value={item.id}>{item.name}</option> })}
                 </Form.Select>
               </div>
-              <div className="edit_inside">
-                <label htmlFor="">Author:</label>
-                <input className="authorPost" type="text" />
-              </div> */}
-              
               <div className="edit_inside">
                 <label htmlFor="">Image:</label>
                 <input className="imagePost" type="file" />
               </div>
-              <button className="edit_inside_btn" onClick={() => {postformentor()}}>Send</button>
+              <button className="edit_inside_btn" onClick={() => { postformentor() }}>Send</button>
             </div>
           </div>
 

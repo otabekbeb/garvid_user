@@ -130,7 +130,7 @@ export default function Loginpage() {
               <button
                 style={
                   data === 1
-                    ? { background: "#536DFD", color: "white", border: "none" }
+                    ? { background: "#44bef1", color: "white", border: "none" }
                     : { background: "white", color: "black", border: "none" }
                 }
                 onClick={() => {
@@ -143,7 +143,7 @@ export default function Loginpage() {
               <button
                 style={
                   data === 2
-                    ? { background: "#536DFD", color: "white", border: "none" }
+                    ? { background: "#44bef1", color: "white", border: "none" }
                     : { background: "white", color: "black", border: "none" }
                 }
                 onClick={() => {
