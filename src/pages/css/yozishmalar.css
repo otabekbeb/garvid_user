@@ -173,11 +173,13 @@
 .yozishma_bolim_text_nik_text img {
     height: 100%;
 }
-.tg_img{
+
+.tg_img {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    display: flex;justify-content: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
     overflow: hidden;
 }
@@ -186,13 +188,16 @@
     padding: 10px;
     width: 60%;
     height: 650px;
-    overflow-y: scroll;
     border: 1px solid #e2e2e2;
     background-color: #fff;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
-
+.telegram_kirish{
+    
+    overflow-y: scroll;
+    height: 570px;
+}
 .yozishma_bolim_text_nik_text_ism_p {
     width: 100%;
     display: flex;
@@ -231,34 +236,65 @@
 }
 
 
-.openModelAddChat{
-    width: 600px;
-    height: 200px;
-display: none;
-position: absolute;
-background-color: rgb(249, 246, 246);
-top: 26%;
-left: 4%;
-z-index: 10000;
-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
--webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-}
-.btnChatAdd{
+.openModelAddChat {
     width: 100%;
-    background: #44bef1;
+    height: 650px;
+    display: none;
+    background-color: white;
+    z-index: 10000;
+    border-radius: 10px;
 }
-.userList{
- border: 1px solid gray;
-    height: 100px;
+
+.btnChatAdd {
+    width: 40px;
+    background: #44bef1;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userList {
+    height: 510px;
     overflow: scroll;
     overflow-x: hidden;
-    margin-top: 2%;
+    margin-top: 20px;
 }
-.userDiv{
+
+.userDiv {
     width: 100%;
-    height: 30px;
-    padding: 2%;
+    align-items: self-end;
+    margin-top: 10px;
+    padding-left: 15px;
+    border-bottom: 1px solid #e2e2e2;
+    padding-bottom: 10px;
+}
+.back_search{
+    display: flex;
+    margin-top: 25px;
+}
+.vibor{
+    margin: auto;
+padding-right: 35px;
+width: 300px;
+text-align: center;
+}
+.vibor_search{
+    outline: none;
+    border: 1px solid #e2e2e2;
+    padding-left: 12px;
+    margin: auto;
+    display: flex;
+    margin-top: 20px;
+    border-radius: 4px;
+height: 35px;
+width: 94%;
 }
 @media (max-width:1400px) {
     .yozishma_small_div {
@@ -282,10 +318,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 @media (max-width:1000px) {
-    .yozishma_bolim_text_nik_text img {
-        width: 40px;
-        height: 40px;
-    }
+
 
     .yozishma_bolim_text_nik_text_ism_p h1 {
         font-size: 1.7vw;
@@ -356,7 +389,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     }
 }
 
-@media (max-width:700px) {
+/* @media (max-width:700px) {
     .yozishma_bolim_text_nik_text_ism_p h1 {
         font-size: 17px;
     }
@@ -415,7 +448,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     .chat_gap_text_div {
         display: block !important;
     }
-}
+} */
 
 .smile_blok {
     position: absolute;
@@ -427,29 +460,43 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 .smile_none {
     display: none;
 }
-
 @media(min-width:1400px) {
     .yozishma_small_div {
         display: block !important;
     }
-
-    .yozishma_bolim_text_nik {
-        display: block !important;
-    }
+    
 
     .yoq {
         display: none !important;
 
     }
 }
-
+.Chat_background ::-webkit-scrollbar {
+    width: 1px;
+    opacity: 0;
+  }
 @media(min-width:700px) {
     .yoq1 {
         display: none !important;
     }
-
+    .openModelAddChat{
+        width: 450px;
+    }
+    .openModelAddChat{
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    .yozishma_bolim_text_nik{
+        display: block !important;
+    }
+    .chat-header #back_icons{
+        display: none;
+    }
+    .vibor{
+        padding-right: 20px;
+    }
     .yozishma_bolim_text_nik {
-        width: 400px;
+        width: 450px;
     }
 
     .yozishma_small_div {
@@ -469,7 +516,32 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 
 @media(max-width:700px) {
     .yozishma_bolim_text_nik {
-        display: none;
+        display: block;
+    }
+    .chat-window .chat-footer input {
+        border-bottom-left-radius: 10px;
+    }
+    .chat-window .chat-footer{
+        border-bottom-right-radius: 10px;
+    }
+    .chat-window .chat-footer {
+    border-bottom-left-radius: 10px;
+    }
+    .yozishma_bolim_text_nik_text_ism_p h1{
+        font-size: 15px;
+    }
+    .yozishma_bolim_text_nik{
+        border-radius: 10px;
+    }
+    .yozishma_small_div{
+        border-radius: 10px;
+    }
+    .yozishma_small_div {
+        display: none
+    }
+
+    .yozishma_bolim_text_nik {
+        width: 100%;
     }
 
     /* .yozishma_small_div{
@@ -719,7 +791,6 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 .yozishma_bolim_text_nik_search {
     width: 100%;
     height: 50px;
-    border-bottom: 1px solid #e2e2e2;
 }
 
 .yozishma_bolim_text_nik_search input {
@@ -728,4 +799,8 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     height: 35px;
     padding-left: 10px;
     border: 1px solid #e2e2e2;
+    border-radius: 5px;
+}
+@media(min-width:700px){
+
 }
