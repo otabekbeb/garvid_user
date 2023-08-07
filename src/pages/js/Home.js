@@ -186,13 +186,17 @@ never miss the aim</h1>
                         <p>Second name</p>
                         <input type="text" required/>
                     </label>
+                    <label>
+                        <p>Message</p>
+                        <textarea name="" id="text1" cols="30" rows="10"></textarea>
+                    </label>
                     <button>Subscribe</button>
                     </form>
             
                 </div>
                 
             </div>
-            <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2019/07/mt-0514-home-image-2.png" alt="" />
+            <img className="girl" src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2019/07/mt-0514-home-image-2.png" alt="" />
         </div>
         <div className="Testimonial">
             <center><h1>Testimonials</h1></center>
