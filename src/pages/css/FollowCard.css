@@ -1,15 +1,20 @@
+
 .followcards {
     width: 100%;
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
     padding: 20px;
+    padding-bottom: 20px;
     justify-content: center;
     align-items: center;
+    background-color: #f6f6f6;
+    /* border: 1px solid red; */
 }
 .followcard{
     width: 210px;
     text-align: center;
+    background-color: #fff;
     height: 250px;
     border: 1px solid rgba(60, 60, 60, 0.303);
 }
@@ -29,10 +34,13 @@
 .yangi{
     color: rgba(37, 36, 36, 0.441);
 }
-.followcard button{
+.followButton1 {
     width: 130px;
     margin-top: 10%;
     color: #fff;
     height: 30px;
     background-color: #44bef1;
+}
+.followButton2{
+    background-color: gray;
 }

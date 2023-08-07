@@ -1,10 +1,21 @@
-import React from 'react'
+import { useState,useEffect } from 'react'
 import '../css/Help2.css'
 import { AiOutlineLeft } from 'react-icons/ai'
 import Futer from "./Footer1"
 import Usernavbar from './Usernavbar' 
+import axios from 'axios'
+import url from './Host'
 
 export default function UserHelp() {
+    const [help,setHelp] = useState([])
+    useEffect(() => {
+        axios.get(`${url}/api/help`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+          setHelp(res.data)
+          console.log(res.data)
+      }).catch(err=>{
+          alert("malumot xato keldi")
+      })
+      }, [])
     return (
         <div>
       <Usernavbar />
@@ -16,21 +27,19 @@ export default function UserHelp() {
                     </div>
                 </div>
                 <div className="mod_svg">
-                   <a href="/User_help2" style={{color:'black'}}>
+                    {help.map((item,key)=>{
+                        
+                           return(
+                        <a onClick={()=> {window.location="/User_help1";localStorage.setItem("helpId",key)}} style={{color:'black'}}>
                    <div className="text_mod">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, doloremque.</p>
+                        <p>{item.title}</p>
                     </div>
-                   </a>
-                   <a href="/User_help2" style={{color:'black'}}>
-                   <div className="text_mod">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, aperiam.</p>
-                    </div>
-                   </a>
-                   <a href="/User_help2" style={{color:'black'}}>
-                   <div className="text_mod">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, sint.</p>
-                    </div>
-                   </a>
+                   </a>) 
+                        
+                        
+                    })}
+                   
+                   
                 </div>
             </div>
       <Futer />

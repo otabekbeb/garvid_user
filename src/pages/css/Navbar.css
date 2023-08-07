@@ -310,71 +310,12 @@ top: 5px;
   display: none;
 }
 
-@media (max-width: 850px) {
-  
-
-  .navbar-ul {
-    display: none;
-  }
-
-  .navbar {
-    width: 100%;
-    height: 65px;
-    background-color: #323946;
-    padding-top: 15px;
-  }
-
-  .bar-menu {
-    width: 40px;
-    height: 40px;
-    background-color: #ffffff;
-margin-top: 10px !important;
-    cursor: pointer;
-  }
-
-
-  .media-navbar {
-    display: flex;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .wone {
-    width: 60%;
-    height: 3px;
-    background-color: #44bef1;
-    position: relative;
-    top: 10px;
-    margin-top: 5px;
-    margin-left: 20%;
-  }
-
-  .wone1 {
-    width: 60%;
-    height: 3px;
-    background-color: #44bef1;
-    position: relative;
-    top: 9px;
-    margin-top: 5px;
-    margin-left: 20%;
-  }
-
-  .wone2 {
-    width: 60%;
-    height: 3px;
-    background-color: #44bef1;
-    position: relative;
-    top: 8px;
-    margin-top: 5px;
-    margin-left: 20%;
-  }
-}
 
 @media (min-width: 850px) {
   .media-navbar {
     display: none !important;
-    align-items: center !important;
-    justify-content: center !important;
+ align-items: center !important;
+    justify-content: space-between !important;
   }
 
   .navbar-ul {
@@ -785,77 +726,9 @@ left: 170px;
      display: none;
    }
 
-   @media (max-width: 850px) {
-     .navbar-ul {
-       display: none;
-     }
-
-     .navbar {
-       width: 100%;
-       height: 60px;
-       background-color: #323946;
-       padding-top: 15px;
-     }
-
-     .bar-menu {
-       width: 40px;
-       height: 40px;
-       background-color: #ffffff;
-       position: relative;
-       left: 0;
-
-
-     }
-
-     .bar-menu box-icon {
-       width: 100%;
-       height: 100%;
-       color: red !important;
-     }
-
-     .media-navbar {
-       display: flex;
-       align-items: center !important;
-       justify-content: center !important;
-     }
-
-     .wone {
-       width: 60%;
-       height: 3px;
-       background-color: #44bef1;
-       position: relative;
-       top: 10px;
-       margin-top: 5px;
-       margin-left: 20%;
-     }
-
-     .wone1 {
-       width: 60%;
-       height: 3px;
-       background-color: #44bef1;
-       position: relative;
-       top: 9px;
-       margin-top: 5px;
-       margin-left: 20%;
-     }
-
-     .wone2 {
-       width: 60%;
-       height: 3px;
-       background-color: #44bef1;
-       position: relative;
-       top: 8px;
-       margin-top: 5px;
-       margin-left: 20%;
-     }
-   }
-
+  
    @media (min-width: 850px) {
-     .media-navbar {
-       display: none !important;
-       align-items: center !important;
-       justify-content: center !important;
-     }
+ 
 
      .navbar-ul {
        display: flex;
@@ -1453,7 +1326,7 @@ color: white;
     background-color: #323946;
     padding-top: 15px;
   }
-
+/* 
   .bar-menu {
     width: 40px;
     height: 40px;
@@ -1462,7 +1335,7 @@ color: white;
     left: 0;
 
 
-  }
+  } */
 
   .bar-menu box-icon {
     width: 100%;
@@ -1470,13 +1343,8 @@ color: white;
     color: red !important;
   }
 
-  .media-navbar {
-    display: flex;
-    align-items: center !important;
-    justify-content: center !important;
-  }
 
-  .wone {
+  /* .wone {
     width: 60%;
     height: 3px;
     background-color: #44bef1;
@@ -1503,18 +1371,21 @@ color: white;
     top: 8px;
     margin-top: 5px;
     margin-left: 20%;
-  }
+  } */
 }
 
 @media (min-width: 850px) {
   .media-navbar {
     display: none !important;
-    align-items: center !important;
+
     justify-content: center !important;
   }
 
-  .navbar-ul {
-    display: flex;
+  .navbar-media-left {
+    display: none !important;
+  }
+  .navbar-qoraaa{
+    display: none !important;
   }
 }
 
@@ -2658,8 +2529,12 @@ left: 20vw !important;
     text-decoration: none;
     transition: 0.4s;
     font-size: 12px;
+    align-items: center;
   }
-
+#asdasddasdasasdsa{
+  position: relative;
+  top: 4px;
+}
   .sahifa-glav {
     display: flex;
     padding: 10px 0;
@@ -3369,4 +3244,207 @@ top: 5px;
 }
 #user-cionnaxuy{
 padding-right: 10px;
+}
+.navbar-media-left{
+  width: 400px;
+  height: 120vw;
+  background-color: white;
+  box-shadow: 2px 2px 5px 5px rgba(129, 127, 127, 0.61);
+  position: absolute;
+  z-index: 10000;
+  position: fixed;
+  transition: 0.4s;
+  padding-top: 60px;
+}
+.navbar-glav-medias{
+  display: flex;
+  justify-content: end;
+  transition: 0.4s;
+  position: relative;
+ left: 420px;
+}
+.navbar-media-left ul{
+  text-decoration: none;
+
+}
+.navbar-media-left ul li{
+padding-top: 8px;
+padding-left: 30px;
+}
+.navbar-media-left ul li a{
+  text-decoration: none !important;
+  list-style: none !important;
+}
+
+.navbar-qoraaa{
+  width: 100%;
+  height: 120vw;
+  background-color: rgba(247, 244, 244, 0.377);
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+  backdrop-filter: blur(10px);
+  position: fixed;
+  display: none;
+}
+.navbar-media-left-ul ul li{
+  text-decoration: none !important;
+  list-style: none !important;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 1.2;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    border-radius: 0;
+    cursor: pointer;
+    transition: 0.4s;
+    padding-left: 10px;
+}
+.navbar-media-left-ul ul li:hover{
+  color: #44bef1;
+}
+.navbar-box-icons{
+  display: flex;
+  margin-top: 10px;
+}
+.surul-navbar{
+  padding-left: 40px !important;
+}
+#osdsodsdd{
+  text-decoration: none !important;
+  list-style: none !important;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 1.2;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    border-radius: 0;
+    cursor: pointer;
+    transition: 0.4s;
+    color: rgb(43, 41, 41) !important;
+}
+#osdsodsdd:hover{
+  color: #44bef1 !important;
+}
+@media (max-width:814px) {
+  .navbar-qoraaa{
+    width: 100%;
+    height: 150vw;
+    background-color: rgba(247, 244, 244, 0.377);
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    display: none;
+  }
+  .navbar-media-left{
+    width: 400px;
+    height: 150vw;
+    background-color: white;
+    box-shadow: 2px 2px 5px 5px rgba(129, 127, 127, 0.61);
+    position: absolute;
+    z-index: 10000;
+    position: fixed;
+    transition: 0.4s;
+    padding-top: 60px;
+  }
+}
+@media (max-width:655px) {
+  .navbar-qoraaa{
+    width: 100%;
+    height: 180vw;
+    background-color: rgba(247, 244, 244, 0.377);
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    display: none;
+  }
+  .navbar-media-left{
+    width: 400px;
+    height: 180vw;
+    background-color: white;
+    box-shadow: 2px 2px 5px 5px rgba(129, 127, 127, 0.61);
+    position: absolute;
+    z-index: 10000;
+    position: fixed;
+    transition: 0.4s;
+    padding-top: 60px;
+  }
+}
+@media (max-width:550px) {
+  .navbar-qoraaa{
+    width: 100%;
+    height: 220vw;
+    background-color: rgba(247, 244, 244, 0.377);
+    position: absolute;
+    top: 0;
+    z-index: 9999;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    display: none;
+  }
+  .navbar-media-left{
+    width: 400px;
+    height: 220vw;
+    background-color: white;
+    box-shadow: 2px 2px 5px 5px rgba(129, 127, 127, 0.61);
+    position: absolute;
+    z-index: 10000;
+    position: fixed;
+    transition: 0.4s;
+    padding-top: 60px;
+  }
+}
+@media (max-width:502px) {
+  .navbar-media-left{
+    width: 100%;
+    height: 220vw;
+    background-color: white;
+    box-shadow: 2px 2px 5px 5px rgba(129, 127, 127, 0.61);
+    position: absolute;
+    z-index: 10000;
+    position: fixed;
+    transition: 0.4s;
+    padding-top: 60px;
+  
+  }
+  .navbar-glav-medias{
+    display: flex;
+    justify-content: end;
+    transition: 0.4s;
+    position: relative;
+   left: 505px;
+  
+  }
+}
+@media (max-width:440px) {
+  .navbar-media-left{
+    width: 100%;
+    height: 260vw;
+    background-color: white;
+    box-shadow: 2px 2px 5px 5px rgba(129, 127, 127, 0.61);
+    position: absolute;
+    z-index: 10000;
+    position: fixed;
+    transition: 0.4s;
+    padding-top: 60px;
+  }
+}
+@media (max-width:375px) {
+  .navbar-media-left{
+    width: 100%;
+    height: 310vw;
+    background-color: white;
+    box-shadow: 2px 2px 5px 5px rgba(129, 127, 127, 0.61);
+    position: absolute;
+    z-index: 10000;
+    position: fixed;
+    transition: 0.4s;
+    padding-top: 60px;
+  }
 }

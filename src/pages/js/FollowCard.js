@@ -3,7 +3,7 @@ import '../css/FollowCard.css'
 
 export default function FollowCard() {
    function folowcolor(){
-    document.querySelector('.followButton1').style = 'background-color:gray'
+    document.querySelector('.followButton1').classList.toggle("followButton2")
    }
     return (
         <div>
@@ -13,6 +13,8 @@ export default function FollowCard() {
                     <h5 className='Name'>Alex_Abbasov</h5 >
                     <button onClick={()=>folowcolor()} className='followButton1' >subscribe</button>
                 </div>
+                
+                
             </div>
         </div>
     )

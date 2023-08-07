@@ -60,14 +60,12 @@ export default function Searchfilter() {
       setCoursetype(res.data)
       console.log(res.data);
     }).catch(err=>{
-      alert("err")
     })
     axios.get(`${url}/api/course`, {headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
           setKursdata(res.data)
           setLoader(0)
           console.log(res.data);
     }).catch(err=>{
-          console.log(err);
     })
 
     
@@ -128,8 +126,8 @@ export default function Searchfilter() {
 
 {courstype.map(item=>{
   return(
-    <div className="button_filter_kurs">
-    {item.name===null?(""):(<div onClick={()=>filter(item.id)} className="div_kurs">{item.name}</div>)}
+    <div className="button_filter_kurs" >
+    {item.name===null?(""):(<div onClick={()=>filter(item.id)} className="div_kurs" style={{paddingBottom:'5px'}}>{item.name}</div>)}
   </div>
   )
 })}

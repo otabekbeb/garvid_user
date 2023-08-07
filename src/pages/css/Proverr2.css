@@ -1,5 +1,4 @@
-
-.prover2{
+.prover2 {
     width: 100% !important;
     height: 55vw;
     max-width: 100%;
@@ -7,38 +6,44 @@
     padding-top: 30px;
 
 }
-body{
+
+body {
     overflow-x: hidden !important;
-      background: #F1F2F6 !important;
-      width: 100%;
-      
+    background: #F1F2F6 !important;
+    width: 100%;
+
 }
-.prover2-mni-search button{
+
+.prover2-mni-search button {
     border: none;
     outline: none;
     position: relative;
     right: 35px;
     background: none;
-top: 6px;
+    top: 6px;
 
 }
-.prover2-mni-search input{
+
+.prover2-mni-search input {
     width: 370px;
-height: 43px;
-outline: none;
-border: none;
-border-radius: 5px;
-background: #ffffff;
+    height: 43px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: #ffffff;
 }
-.prover2-mni-search input[placeholder]{
+
+.prover2-mni-search input[placeholder] {
 
     font-size: 13px;
     padding-left: 20px;
 }
-::placeholder{
-  color: #9DA7BB;
+
+::placeholder {
+    color: #9DA7BB;
 }
-.prover2-info-d{
+
+.prover2-info-d {
     border-radius: 5px;
     width: 370px;
     height: auto;
@@ -47,52 +52,58 @@ background: #ffffff;
     padding-left: 15px;
     padding-top: 5px;
 }
-.prover2-info-filter button{
+
+.prover2-info-filter button {
     width: auto !important;
     padding: 0px 5px 5px 5px;
-height: 25px;
-border-radius: 4px;
-background: #F1F2F6;
-position: relative;
-left: 0px;
-transition: 0.4s all;
+    height: 25px;
+    border-radius: 4px;
+    background: #F1F2F6;
+    position: relative;
+    left: 0px;
+    transition: 0.4s all;
 }
+
 .prover2-info-filter p {
     font-family: SF Pro Display;
-font-size: 14px;
-line-height: 17px;
-letter-spacing: 0em;
-color:  #9DA7BB;
-text-align: center;
-padding-top: 4px;
-width: 100% ;
-height: 100% ;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0em;
+    color: #9DA7BB;
+    text-align: center;
+    padding-top: 4px;
+    width: 100%;
+    height: 100%;
 }
-.prover2-but-clas2{
+
+.prover2-but-clas2 {
     width: 87px !important;
-height: 25px !important;
-border-radius: 4px;
-background: #F1F2F6;
-position: relative;
-left: 8px !important;
+    height: 25px !important;
+    border-radius: 4px;
+    background: #F1F2F6;
+    position: relative;
+    left: 8px !important;
 }
-.prover2-but-clas3{
+
+.prover2-but-clas3 {
     width: 67px !important;
-height: 25px !important;
-border-radius: 4px;
-background: #F1F2F6;
-position: relative;
-left: 17px !important;
+    height: 25px !important;
+    border-radius: 4px;
+    background: #F1F2F6;
+    position: relative;
+    left: 17px !important;
 }
-.prover2-but-clas4{
+
+.prover2-but-clas4 {
     width: 90px !important;
-height: 25px !important;
-border-radius: 4px;
-background: #F1F2F6;
-position: relative;
-left: 30px !important;
+    height: 25px !important;
+    border-radius: 4px;
+    background: #F1F2F6;
+    position: relative;
+    left: 30px !important;
 }
-.prover2-info-filter{
+
+.prover2-info-filter {
     padding-top: 6px;
     display: flex;
     flex-wrap: wrap;
@@ -100,467 +111,528 @@ left: 30px !important;
     padding-bottom: 20px;
     padding-right: 15px;
 }
-.prover2-info-filter button:hover{
-    background-color:  #536DFD;
- 
+
+.prover2-info-filter button:hover {
+    background-color: #44bef1 ;
+
 }
-.prover2-info-filter p:hover{
+
+.prover2-info-filter p:hover {
     color: white;
 }
+
 .prover2-info-filter2 p {
     font-family: SF Pro Display;
-font-size: 13px;
-line-height: 17px;
-letter-spacing: 0em;
-color:  #9DA7BB;
-text-align: center;
-padding: 5px;
-width: 100%;
-height: 100%;
+    font-size: 13px;
+    line-height: 17px;
+    letter-spacing: 0em;
+    color: #9DA7BB;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
 }
-.prover2-info-filter2 button{
-    width: auto !important;
-height: 25px;
-border-radius: 4px;
-background: #F1F2F6;
-position: relative;
-left: 0px;
-transition: 0.4s all;
+
+.prover2-info-filter2 button {
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 25px;
+    border-radius: 4px;
+    background: #F1F2F6;
+    position: relative;
+    margin-bottom: 10px;
+    left: 0px;
+    transition: 0.4s all;
 }
-.prover2-but-clas5{
+
+.prover2-but-clas5 {
     width: 101px !important;
     height: 25px !important;
     border-radius: 4px;
 }
-.prover2-info-filter2{
-display: flex;
-align-items: center;
-justify-content: space-around;
-flex-wrap: wrap;
+
+.prover2-info-filter2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
-.prover2-but-clas6{
+
+.prover2-but-clas6 {
     width: 88px !important;
-height: 25px !important;
-border-radius: 4px;
-position: relative;
-left: 10px !important;
+    height: 25px !important;
+    border-radius: 4px;
+    position: relative;
+    left: 10px !important;
 }
-.prover2-but-clas7{
-    width: 135px !important; 
-height: 25px !important;
-border-radius: 4px;
-position: relative;
-left: 20px !important;
+
+.prover2-but-clas7 {
+    width: 135px !important;
+    height: 25px !important;
+    border-radius: 4px;
+    position: relative;
+    left: 20px !important;
 }
-.prover2-info-filter2 button:hover{
-    background-color:  #536DFD;
- 
+
+.prover2-info-filter2 button:hover {
+    background-color: #44bef1 ;
+
 }
-.prover2-info-filter2 p:hover{
+
+.prover2-info-filter2 p:hover {
     color: white;
 }
 
 
-.prover2-info-youtube-f{
+.prover2-info-youtube-f {
     width: 94%;
     margin-top: 22px;
     padding: 10px;
     background-color: #fff;
 }
-.prover2-p-df{
+
+.prover2-p-df {
     font-family: SF Pro Display;
-font-size: 14px;
-line-height: 14px;
-letter-spacing: 0em;
-text-align: left;
-font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
+    font-weight: 600;
 }
-.prover2-info-block1-img img{
+
+.prover2-info-block1-img img {
     width: 80px !important;
     /* height: 80px !important; */
-    border-radius: 4px!important;
+    border-radius: 4px !important;
     background-size: 100% 100%;
     cursor: pointer;
 }
-.prover2-info-block1{
+
+.prover2-info-block1 {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
     cursor: pointer;
 }
-.prover2-info-block1-text{
+
+.prover2-info-block1-text {
     padding-left: 15px !important;
     display: block;
     width: 100%;
 }
-.prover2-info-block1-text h5{
-font-size: 14px !important;
-line-height: 17px !important;
-letter-spacing: 0em !important;
-margin-bottom: 6px;
-position: relative;
-top:10px;
+
+.prover2-info-block1-text h5 {
+    font-size: 14px !important;
+    line-height: 17px !important;
+    letter-spacing: 0em !important;
+    margin-bottom: 6px;
+    position: relative;
+    top: 10px;
 }
-.prover2-info-block1-text p{
+
+.prover2-info-block1-text p {
     font-family: SF Pro Display;
-font-size: 12px !important;
-line-height: 14px !important;
-letter-spacing: 0em !important;
-text-align: left;
-color:  #606060;
-position: relative;
-top: 10px;
+    font-size: 12px !important;
+    line-height: 14px !important;
+    letter-spacing: 0em !important;
+    text-align: left;
+    color: #606060;
+    position: relative;
+    top: 10px;
 }
-.prover2-linerr1{
+
+.prover2-linerr1 {
     width: 100%;
     height: 1px;
     background: #d5dae4;
-position: relative;
-/* left: 95px; */
-top: -5px;
+    position: relative;
+    /* left: 95px; */
+    top: -5px;
 }
-.prover3-linerr1{
+
+.prover3-linerr1 {
     width: 73.1%;
     height: 1px;
     background: #d5dae4;
-position: relative;
-/* left: 95px; */
-display: none;
-top: 10px;
+    position: relative;
+    /* left: 95px; */
+    display: none;
+    top: 10px;
 }
 
 
 
-.prover3-info-block1-img img{
+.prover3-info-block1-img img {
     width: 80px !important;
     height: 90px !important;
-    border-radius: 4px!important;
+    border-radius: 4px !important;
     background-size: 100% 100%;
     cursor: pointer;
     position: relative;
     top: 9px;
 }
-.prover3-info-block1{
+
+.prover3-info-block1 {
     display: flex;
 }
-.prover3-info-block1-text{
+
+.prover3-info-block1-text {
     padding-left: 15px !important;
 }
-.prover3-info-block1-text h5{
-font-size: 13px !important;
-line-height: 17px !important;
-letter-spacing: 0em !important;
-position: relative;
-top:13px;
+
+.prover3-info-block1-text h5 {
+    font-size: 13px !important;
+    line-height: 17px !important;
+    letter-spacing: 0em !important;
+    position: relative;
+    top: 13px;
 }
-.prover3-info-block1-text p{
+
+.prover3-info-block1-text p {
     font-family: SF Pro Display;
-font-size: 12px !important;
-line-height: 14px !important;
-letter-spacing: 0em !important;
-text-align: left;
-color:  #606060;
-position: relative;
-top: 12px;
+    font-size: 12px !important;
+    line-height: 14px !important;
+    letter-spacing: 0em !important;
+    text-align: left;
+    color: #606060;
+    position: relative;
+    top: 12px;
 }
-.prover3-info-block1{
+
+.prover3-info-block1 {
     padding-top: 25px;
 }
 
 
 
-.prover4-info-block1-img img{
+.prover4-info-block1-img img {
     width: 80px !important;
     height: 80px !important;
-    border-radius: 4px!important;
+    border-radius: 4px !important;
     background-size: 100% 100%;
     cursor: pointer;
 }
-.prover4-info-block1{
+
+.prover4-info-block1 {
     display: flex;
 }
-.prover4-info-block1-text{
+
+.prover4-info-block1-text {
     padding-left: 15px !important;
 }
-.prover4-info-block1-text h5{
-font-size: 14px !important;
-line-height: 17px !important;
-letter-spacing: 0em !important;
-position: relative;
-top:10px;
+
+.prover4-info-block1-text h5 {
+    font-size: 14px !important;
+    line-height: 17px !important;
+    letter-spacing: 0em !important;
+    position: relative;
+    top: 10px;
 }
-.prover4-info-block1-text p{
+
+.prover4-info-block1-text p {
     font-family: SF Pro Display;
-font-size: 12px !important;
-line-height: 14px !important;
-letter-spacing: 0em !important;
-text-align: left;
-color:  #606060;
-position: relative;
-top: 10px;
+    font-size: 12px !important;
+    line-height: 14px !important;
+    letter-spacing: 0em !important;
+    text-align: left;
+    color: #606060;
+    position: relative;
+    top: 10px;
 }
-.prover4-info-block1{
+
+.prover4-info-block1 {
     padding-top: 25px;
 }
 
 
 
 
-.prover5-info-block1-img img{
+.prover5-info-block1-img img {
     width: 80px !important;
     height: 80px !important;
-    border-radius: 4px!important;
+    border-radius: 4px !important;
     background-size: 100% 100%;
     cursor: pointer;
 }
-.prover5-info-block1{
+
+.prover5-info-block1 {
     display: flex;
 }
-.prover5-info-block1-text{
+
+.prover5-info-block1-text {
     padding-left: 15px !important;
 }
-.prover5-info-block1-text h5{
-font-size: 14px !important;
-line-height: 17px !important;
-letter-spacing: 0em !important;
-position: relative;
-top:10px;
+
+.prover5-info-block1-text h5 {
+    font-size: 14px !important;
+    line-height: 17px !important;
+    letter-spacing: 0em !important;
+    position: relative;
+    top: 10px;
 }
-.prover5-info-block1-text p{
+
+.prover5-info-block1-text p {
     font-family: SF Pro Display;
-font-size: 12px !important;
-line-height: 14px !important;
-letter-spacing: 0em !important;
-text-align: left;
-color:  #606060;
-position: relative;
-top: 10px;
-margin-bottom: 30px;
+    font-size: 12px !important;
+    line-height: 14px !important;
+    letter-spacing: 0em !important;
+    text-align: left;
+    color: #606060;
+    position: relative;
+    top: 10px;
+    margin-bottom: 30px;
 }
-.prover5-info-block1{
+
+.prover5-info-block1 {
     padding-top: 25px;
 }
 
-.prover2-kotta-men{
+.prover2-kotta-men {
     display: flex;
     justify-content: center;
     overflow: hidden;
     margin-top: 40px;
-  
+
 }
-.prover2-orta-joy .saas{
+
+.prover2-orta-joy .saas {
     width: 800px !important;
     height: 320px !important;
 }
-.prover2-orta-joy-text h5{
+
+.prover2-orta-joy-text h5 {
     font-family: SF Pro Display;
-font-size: 22px;
-line-height: 29px;
-letter-spacing: 0em;
-text-align: left;
+    font-size: 22px;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
 
 }
-.prover2-orta-joy-text{
+
+.prover2-orta-joy-text {
     display: flex;
 }
 
 
-.rating:not(:checked) > input {
+.rating:not(:checked)>input {
     position: absolute;
     appearance: none;
-  }
-  
-  .rating:not(:checked) > label {
+}
+
+.rating:not(:checked)>label {
     float: right;
     cursor: pointer;
     font-size: 20px;
     color: #666;
-  }
-  
-  .rating:not(:checked) > label:before {
-    content: '★';
-  }
-  
-  .rating > input:checked + label:hover,
-  .rating > input:checked + label:hover ~ label,
-  .rating > input:checked ~ label:hover,
-  .rating > input:checked ~ label:hover ~ label,
-  .rating > label:hover ~ input:checked ~ label {
-    color: #e58e09;
-  }
-  
-  .rating:not(:checked) > label:hover,
-  .rating:not(:checked) > label:hover ~ label {
-    color: #ff9e0b;
-  }
-  
-  .rating > input:checked ~ label {
-    color: #ffa723;
-  }
-  .rating{
-    padding-left: 15px;
-  }
-  .prover2-orta-joy-reytin p{
-    font-family: SF Pro Display;
-font-size: 14px;
-line-height: 17px;
-letter-spacing: 0em;
-text-align: left;
+}
 
-  }
-  .prover2-orta-joy-reytin{
+.rating:not(:checked)>label:before {
+    content: '★';
+}
+
+.rating>input:checked+label:hover,
+.rating>input:checked+label:hover~label,
+.rating>input:checked~label:hover,
+.rating>input:checked~label:hover~label,
+.rating>label:hover~input:checked~label {
+    color: #e58e09;
+}
+
+.rating:not(:checked)>label:hover,
+.rating:not(:checked)>label:hover~label {
+    color: #ff9e0b;
+}
+
+.rating>input:checked~label {
+    color: #ffa723;
+}
+
+.rating {
+    padding-left: 15px;
+}
+
+.prover2-orta-joy-reytin p {
+    font-family: SF Pro Display;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.prover2-orta-joy-reytin {
     display: flex;
     position: relative;
     top: 8px;
     left: 5px;
-  }
-  .prover2-orta-joy-reytin span{
-    font-family: SF Pro Display;
-font-size: 14px;
-line-height: 17px;
-letter-spacing: 0em;
-text-align: left;
-color: #9DA7BB;
-position: relative;
-left: 3px;
-  }
-.prover2-orta-u{
-position: relative;
-left: 125px;
-top: 5px;
 }
-.prover2-orta-u button{
+
+.prover2-orta-joy-reytin span {
+    font-family: SF Pro Display;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #9DA7BB;
+    position: relative;
+    left: 3px;
+}
+
+.prover2-orta-u {
+    position: relative;
+    left: 125px;
+    top: 5px;
+}
+
+.prover2-orta-u button {
     width: 78px !important;
-height: 25px !important;
-border-radius: 2px;
-background-color: #ffffff;
-border: none;
-outline: none;
-display: flex;
-position: relative;
+    height: 25px !important;
+    border-radius: 2px;
+    background-color: #ffffff;
+    border: none;
+    outline: none;
+    display: flex;
+    position: relative;
 
 }
-.prover2-orta-u box-icon{
+
+.prover2-orta-u box-icon {
     width: 15px;
     height: 15px;
     position: relative;
     left: 10px;
     top: 2px;
 }
-.prover2-orta-u p{
+
+.prover2-orta-u p {
     font-family: SF Pro Display;
-font-size: 12px !important;
-line-height: 14px !important;
-letter-spacing: 0em !important;
-text-align: left;
-color: #2E2E2E;
-position: relative;
-top: 5px;
-left: 15px;
+    font-size: 12px !important;
+    line-height: 14px !important;
+    letter-spacing: 0em !important;
+    text-align: left;
+    color: #2E2E2E;
+    position: relative;
+    top: 5px;
+    left: 15px;
 }
-.prover2-profil-img img{
+
+.prover2-profil-img img {
     width: 28px;
     height: 28px;
     cursor: pointer;
 }
-.prover2-profil-patpis{
+
+.prover2-profil-patpis {
     display: flex;
 }
-.prover2-profil-text-info{
+
+.prover2-profil-text-info {
     display: flex;
 }
-.prover2-profil-text-info p{
+
+.prover2-profil-text-info p {
     font-family: SF Pro Display;
-font-size: 14px;
-line-height: 17px;
-letter-spacing: 0em;
-text-align: left;
-color: #595858;
-position: relative;
-top: 6px;
-left: 10px;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #595858;
+    position: relative;
+    top: 6px;
+    left: 10px;
 }
-.potpis{
+
+.potpis {
     content: bos;
     width: 100px;
     height: 25px;
-     border: none;
-     background-color: red;
-     outline: none;
-     position: relative;
-     left: 20px;
+    border: none;
+    background-color: red;
+    outline: none;
+    position: relative;
+    left: 20px;
 }
-.aaa{
+
+.aaa {
     display: none;
     color: white !important;
     font-family: SF Pro Display;
-font-size: 12px !important;
-line-height: 14px !important;
-letter-spacing: 0em !important;
-position: relative;
-left: 10px;
+    font-size: 12px !important;
+    line-height: 14px !important;
+    letter-spacing: 0em !important;
+    position: relative;
+    left: 10px;
 }
-.bbb{
+
+.bbb {
     display: flex;
 }
-.aa{
+
+.aa {
     display: flex;
     color: white !important;
     font-family: SF Pro Display;
-font-size: 12px !important;
-line-height: 14px !important;
-letter-spacing: 0em !important; 
-position: relative;
-left: 12px;
+    font-size: 12px !important;
+    line-height: 14px !important;
+    letter-spacing: 0em !important;
+    position: relative;
+    left: 12px;
 }
-.bb{
+
+.bb {
     display: none;
 }
-.potpis1{
+
+.potpis1 {
     width: 130px;
     background-color: #9DA7BB;
     height: 25px;
 }
-.obmen-kategory-re{
+
+.obmen-kategory-re {
     width: 189px;
-height: 133px;
-border-radius: 4px;
-background-color: #ffffff;
-position: fixed;
-right: 707px;
-box-shadow: 0px 5px 10px 0px #CACBCC80;
-padding-left: 10px;
-padding-top: 10px;
-display: none;
-z-index: 100;
+    height: 133px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    position: fixed;
+    right: 707px;
+    box-shadow: 0px 5px 10px 0px #CACBCC80;
+    padding-left: 10px;
+    padding-top: 10px;
+    display: none;
+    z-index: 100;
 }
-.obmen-kategory-re h5{
+
+.obmen-kategory-re h5 {
     font-family: SF Pro Display;
-font-size: 14px !important;
-line-height: 17px  !important;
-letter-spacing: 0em !important;
-text-align: left;
+    font-size: 14px !important;
+    line-height: 17px !important;
+    letter-spacing: 0em !important;
+    text-align: left;
 
 }
-.obmen-kategory-re input{
+
+.obmen-kategory-re input {
     width: 156px !important;
-height: 22px !important;
-border-radius: 2px;
-border: none;
-outline: none;
-border: 0.5px solid #0000001A;
-position: relative;
-top:5px;
+    height: 22px !important;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    border: 0.5px solid #0000001A;
+    position: relative;
+    top: 5px;
 }
-.obmen-set-internet{
+
+.obmen-set-internet {
     display: flex;
     position: relative;
     top: 25px;
-    gap:6px !important;
+    gap: 6px !important;
 }
-.obmen-set-internet img{
+
+.obmen-set-internet img {
     width: 33px !important;
-cursor: pointer;
+    cursor: pointer;
     height: 33px !important;
 }
 
@@ -577,48 +649,51 @@ cursor: pointer;
     width: 800px;
     font-size: 14px;
     margin-top: 30px;
-  }
-  
-  .radio-inputs .radio {
+}
+
+.radio-inputs .radio {
     flex: 1 1 auto;
     text-align: center;
-  }
-  
-  .radio-inputs .radio input {
+}
+
+.radio-inputs .radio input {
     display: none;
-  }
-  
-  .radio-inputs .radio .name {
+}
+
+.radio-inputs .radio .name {
     display: flex;
     cursor: pointer;
     align-items: center;
+    margin-top: 10px;
     justify-content: center;
     border-radius: 0.5rem;
     border: none;
     padding: .5rem 0;
     color: rgba(51, 65, 85, 1);
     transition: all .15s ease-in-out;
-  }
-  
-  .radio-inputs .radio input:checked + .name {
+}
+
+.radio-inputs .radio input:checked+.name {
     background-color: #fff;
     font-weight: 600;
-  }
+}
 
-  .text-kurs-haqida1 p{
+.text-kurs-haqida1 p {
     font-family: SF Pro Display;
-font-size: 16px ;
-line-height: 23px ;
-letter-spacing: 0em ;
-width: 100% !important;
-text-align: left;
-margin-bottom: 10px ;
-color: #2E2E2E ;
-  }
-  .text-kurs-haqida1{
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: 0em;
+    width: 100% !important;
+    text-align: left;
+    margin-bottom: 10px;
+    color: #2E2E2E;
+}
+
+.text-kurs-haqida1 {
     padding-top: 20px;
-  }
-  .prover2-oxiri-block-in{
+}
+
+.prover2-oxiri-block-in {
     width: 330px;
     height: auto;
     border-radius: 0px 4px 4px 0px;
@@ -627,236 +702,265 @@ color: #2E2E2E ;
     padding-left: 15px;
     padding-top: 15px;
     margin-bottom: 10px;
-  }
-  .prover2-oxiri-joy{
+}
+
+.prover2-oxiri-joy {
     padding-left: 10px;
-  }
-  .mni-dasturlash-bloc{
+}
+
+.mni-dasturlash-bloc {
     width: 140px;
-height: 22px;
-border-radius: 2px;
-background-color: #10C8A0;
-color: white;
-cursor: pointer;
-  }
-  .mni-dasturlash-bloc p{
+    height: 22px;
+    border-radius: 2px;
+    background-color: #44bef1 ;
+    color: white;
+    cursor: pointer;
+}
+
+.mni-dasturlash-bloc p {
     font-family: SF Pro Display;
-font-size: 14px !important;
-line-height: 17px !important;
-letter-spacing: 0em !important;
-text-align: center;
-padding-top: 3px;
-  }
-  .mni-kurs-block1 h5{
+    font-size: 14px !important;
+    line-height: 17px !important;
+    letter-spacing: 0em !important;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.mni-kurs-block1 h5 {
     font-family: SF Pro Display;
-font-size: 12px !important;
-line-height: 14px !important;
-letter-spacing: 0em !important;
-text-align: left;
-color: #9DA7BB;
-position: relative;
-top: 7px  !important;
-  }
-  .mni-kurs-block1 p{
-font-family: SF Pro Display;
-font-size: 24px !important;
-line-height: 29px !important;
-letter-spacing: 0em !important;
-text-align: left;
-color: #2E2E2E;
-  }
-  .mni-kurs-block1 span{
+    font-size: 12px !important;
+    line-height: 14px !important;
+    letter-spacing: 0em !important;
+    text-align: left;
+    color: #9DA7BB;
+    position: relative;
+    top: 7px !important;
+}
+
+.mni-kurs-block1 p {
     font-family: SF Pro Display;
-font-size: 13px !important;
-line-height: 17px !important;
-letter-spacing: 0em !important;
-text-align: left;
+    font-size: 24px !important;
+    line-height: 29px !important;
+    letter-spacing: 0em !important;
+    text-align: left;
+    color: #2E2E2E;
+}
+
+.mni-kurs-block1 span {
+    font-family: SF Pro Display;
+    font-size: 13px !important;
+    line-height: 17px !important;
+    letter-spacing: 0em !important;
+    text-align: left;
 
 
-  }
-  .mni-kurs-narxi{
+}
+
+.mni-kurs-narxi {
     padding-top: 25px;
     display: flex;
     justify-content: space-between;
-  }
-  .mni-kurs-narxi2{
+}
+
+.mni-kurs-narxi2 {
     padding-top: 5px;
     display: flex;
     justify-content: space-between;
-  }
-  .spdfodsofdsf{
+}
+
+.spdfodsofdsf {
     font-family: SF Pro Display;
-font-size: 16px !important;
-line-height: 19px !important;
-letter-spacing: 0em !important;
-text-align: left;
-color: #2E2E2E;
-font-weight: 600;
-padding-top: 10px;
-  }
-  .mni-blocc-linee{
+    font-size: 16px !important;
+    line-height: 19px !important;
+    letter-spacing: 0em !important;
+    text-align: left;
+    color: #2E2E2E;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+.mni-blocc-linee {
     width: 105%;
     height: 1px;
     background-color: #d2d7e0;
     position: relative;
     right: 14px;
-  }
+}
 
-.prover20chech-box-a{
+.prover20chech-box-a {
     display: flex;
     padding-top: 10px;
-   
+
 }
-.prover20chech-box-a p{
+
+.prover20chech-box-a p {
     font-family: SF Pro Display;
-font-size: 12px !important;
-line-height: 19px !important;
-letter-spacing: 0em !important;
-text-align: left;
-color: #2E2E2E;
-position: relative;
-left: 15px;
+    font-size: 12px !important;
+    line-height: 19px !important;
+    letter-spacing: 0em !important;
+    text-align: left;
+    color: #2E2E2E;
+    position: relative;
+    left: 15px;
 }
-  .prover20chech-box-a input{
+
+.prover20chech-box-a input {
     width: 20px !important;
     height: 20px !important;
     position: relative;
     top: 1px;
     cursor: pointer;
-  }
-  .prover20chech-box-a span{
+}
+
+.prover20chech-box-a span {
     position: relative;
     right: 10px;
     cursor: pointer;
     top: -2px;
-  }
+}
 
-  .mni-accordion-none1{
+.mni-accordion-none1 {
     background: linear-gradient(0deg, #F1F2F6, #F1F2F6),
-linear-gradient(0deg, rgba(157, 167, 187, 0.1), rgba(157, 167, 187, 0.1));
-height: auto;
-position: relative;
-right: 15px;
-width: 104.8%;
-border: 1px solid #4d535e1a;
-display: none;
-  }
-  
-.prover20chech-box-a2{
-    display: flex;
-padding-top: 8px;
-padding-left: 10px;
-
-}
-
-.prover20chech-box-a2 p{
-    font-family: SF Pro Display;
-font-size: 12px !important;
-line-height: 19px !important;
-letter-spacing: 0em !important;
-text-align: left;
-color: #2E2E2E;
-position: relative;
-top: 8px;
-left: 10px;
-
-}
-.prover20chech-box-a2 span{
+        linear-gradient(0deg, rgba(157, 167, 187, 0.1), rgba(157, 167, 187, 0.1));
+    height: auto;
     position: relative;
-left: 20px;
-top: 5px; 
-cursor: pointer;
-  }
-  .prover20chech-box-a2 input{
-    cursor: pointer;
-  }
+    right: 15px;
+    width: 104.8%;
+    border: 1px solid #4d535e1a;
+    display: none;
+}
 
-
-.mni-buton-iikki-yo{
+.prover20chech-box-a2 {
     display: flex;
-  }
-  .mni-buton-iikki-yo button{
+    padding-top: 8px;
+    padding-left: 10px;
+
+}
+
+.prover20chech-box-a2 p {
+    font-family: SF Pro Display;
+    font-size: 12px !important;
+    line-height: 19px !important;
+    letter-spacing: 0em !important;
+    text-align: left;
+    color: #2E2E2E;
+    position: relative;
+    top: 8px;
+    left: 10px;
+
+}
+
+.prover20chech-box-a2 span {
+    position: relative;
+    left: 20px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.prover20chech-box-a2 input {
+    cursor: pointer;
+}
+
+
+.mni-buton-iikki-yo {
+    display: flex;
+}
+
+.mni-buton-iikki-yo button {
     width: 130px !important;
-height: 40px !important;
-border-radius: 2px;
-background-color: #536DFD;
-color: white;
-border: none;
-outline: none;
-margin-bottom: 20px !important;
-transition: 0.5s all ease;
-  }
-  .line-mni-but{
+    height: 40px !important;
+    border-radius: 2px;
+    background-color: #44bef1 ;
+    color: white;
+    border: none;
+    outline: none;
+    margin-bottom: 20px !important;
+    transition: 0.5s all ease;
+}
+
+.line-mni-but {
     border-left: 2px solid white;
     width: 1px;
     top: 6px;
     height: 25px;
     position: relative;
-  }
-  #gbfdgfdgdfgdf{
+}
+
+#gbfdgfdgdfgdf {
     position: relative;
     left: 4px;
-  }
-  .mni-buton-iikki-yo{
+}
+
+.mni-buton-iikki-yo {
     position: relative;
     left: 13px;
-  }
-.mni-krus-techer-swiper{
-width: 330px;
-height: 410px;
-background-color: #ffffff;
-position: relative;
-top:30px;
 }
-.boshqa-mentorla{
+
+.mni-krus-techer-swiper {
+    width: 330px;
+    height: 410px;
+    background-color: #ffffff;
+    position: relative;
+    top: 30px;
+}
+
+.boshqa-mentorla {
     display: flex;
     padding: 15px;
 }
-.boshqa-mentorla h5{
+
+.boshqa-mentorla h5 {
     font-family: SF Pro Display;
-font-size: 16px !important;
-line-height: 19px !important;
-letter-spacing: 0em !important;
-text-align: left;
+    font-size: 16px !important;
+    line-height: 19px !important;
+    letter-spacing: 0em !important;
+    text-align: left;
 
 }
-.boshqa-mentorla-krugg1{
+
+.boshqa-mentorla-krugg1 {
     display: flex;
 }
-.boshqa-kurglaaaaa1{
+
+.boshqa-kurglaaaaa1 {
     width: 40px !important;
-height: 40px !important;
-border: 1px solid #d2d9e6;
-border-radius: 50%;
-gap: 20px;
-display: flex;
-align-items: center;
-justify-content: center;
-margin-right: 10px;
-cursor: pointer;
+    height: 40px !important;
+    border: 1px solid #d2d9e6;
+    border-radius: 50%;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    cursor: pointer;
 }
-.boshqa-mentorla-krugg1{
+
+.boshqa-mentorla-krugg1 {
     position: relative;
     left: 120px;
 }
-.boshqa-mentorla h5{
+
+.boshqa-mentorla h5 {
     position: relative;
     top: 10px;
 }
-.mni-gridf1 img{
+
+.mni-gridf1 img {
     width: 50px;
-height: 50px;
-border-radius: 4px;
-/* display: flex;
+    height: 50px;
+    border-radius: 4px;
+    /* display: flex;
 justify-content: space-around; */
 }
-.mni-gridf2 img{
+
+.mni-gridf2 img {
     width: 50px;
-height: 50px;
-border-radius: 4px;
+    height: 50px;
+    border-radius: 4px;
 
 }
-.asdasdsadasdsa img{
+
+.asdasdsadasdsa img {
     display: flex !important;
 
 }
@@ -866,79 +970,93 @@ border-radius: 4px;
 
     gap: 10px !important;
     padding-left: 17px !important;
- 
+
 }
+
 .mni-gridf2 {
     gap: 10px !important;
     padding-left: 17px !important;
-    display: none  !important;
-}
-.mni-gridf1-none{
     display: none !important;
 }
-.mni-gridf2-none{
+
+.mni-gridf1-none {
+    display: none !important;
+}
+
+.mni-gridf2-none {
     display: grid !important;
-    grid-template-columns: auto auto   !important;
+    grid-template-columns: auto auto !important;
     gap: 15px !important;
     padding-left: 17px !important;
 }
-.mni-gridf2 img{
-    width: 134px !important; 
+
+.mni-gridf2 img {
+    width: 134px !important;
     height: 150px !important;
     border-radius: 4px !important;
 }
-.mni-gridf3-none{
+
+.mni-gridf3-none {
     display: none !important;
 }
-.mni-gridf4-none{
+
+.mni-gridf4-none {
     display: grid !important;
-    grid-template-columns: auto auto   !important;
+    grid-template-columns: auto auto !important;
     gap: 15px !important;
     padding-left: 17px !important;
 }
 
-.mni-gridf5-none{
+.mni-gridf5-none {
     display: grid !important;
 
 }
 
 
-.mni-gridf5-none{
+.mni-gridf5-none {
     display: none !important;
 }
-.mni-gridf6-none{
+
+.mni-gridf6-none {
     display: grid !important;
 
 }
 
 
-.mni-gridf7-none{
+.mni-gridf7-none {
     display: none !important;
 }
-.mni-gridf8-none{
+
+.mni-gridf8-none {
     display: grid !important;
 
 }
-.text-kurs-haqida2{
+
+.text-kurs-haqida2 {
     display: none;
 }
-.text-kurs-haqida3{
+
+.text-kurs-haqida3 {
     display: block;
 }
 
-.popopo1{
+.popopo1 {
     display: none;
 }
-.popopo2{
+
+.popopo2 {
     display: block !important;
 }
-.popopo3{
+
+.popopo3 {
     display: none;
 }
-.popopo4{
+
+.popopo4 {
     display: block;
 }
-.kommentttt-xaxa{
+
+.kommentttt-xaxa {
     width: 100%;
     height: 243px;
     background-color: #ffffff;
@@ -947,276 +1065,323 @@ border-radius: 4px;
     align-items: center;
     justify-content: space-around;
 }
-.komenttt-ichii h3{
+
+.komenttt-ichii h3 {
     font-family: SF Pro Display;
-font-size: 69px !important;
-line-height: 86px !important;
-letter-spacing: 0em !important;
-text-align: left;
+    font-size: 69px !important;
+    line-height: 86px !important;
+    letter-spacing: 0em !important;
+    text-align: left;
 
 }
-.yulduzlaaaaa1{
+
+.yulduzlaaaaa1 {
     display: flex;
     position: relative;
     top: -12px;
     right: 10px;
     cursor: pointer;
 }
-.komenttt-ichii p{
+
+.komenttt-ichii p {
     font-family: SF Pro Display;
-font-size: 11.5px !important;
-line-height: 14px !important;
-letter-spacing: 0em !important;
-text-align: left;
-padding-left: 3px;
+    font-size: 11.5px !important;
+    line-height: 14px !important;
+    letter-spacing: 0em !important;
+    text-align: left;
+    padding-left: 3px;
 }
-#inpottt1{
+
+#inpottt1 {
     width: 188px !important;
     background-color: #1DD1A1 !important;
-    
+
 }
-.progrees-mni-relou input{
+
+.progrees-mni-relou input {
     display: block !important;
 
 
 }
-.progre-block-mni1{
+
+.progre-block-mni1 {
     display: flex;
 }
-#inpottt2{
+
+#inpottt2 {
     width: 400px !important;
     background-color: #1DD1A1 !important;
-    
+
 }
-#inpottt3{
+
+#inpottt3 {
     width: 123px !important;
 }
-#inpottt4{width: 52px !important;}
-#inpottt5{width: 30px !important;}
-.progrees-mni-relou span{
+
+#inpottt4 {
+    width: 52px !important;
+}
+
+#inpottt5 {
+    width: 30px !important;
+}
+
+.progrees-mni-relou span {
     position: relative;
     right: 10px;
 }
-.progrees-mni-relou box-icon{
+
+.progrees-mni-relou box-icon {
     position: relative;
     right: 20px;
     cursor: pointer;
 }
-.prover2-trebovaniya-block{
+
+.prover2-trebovaniya-block {
     width: 238px !important;
-height: 40px !important;
-border-radius: 4px;
-background-color: #ffffff;
+    height: 40px !important;
+    border-radius: 4px;
+    background-color: #ffffff;
 }
-.prover2-mni-treboniya{
-   padding-top: 20px;
-   display: grid;
-   grid-template-columns: auto auto auto;
-   flex-wrap: wrap;
+
+.prover2-mni-treboniya {
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    flex-wrap: wrap;
 }
-.span{
+
+.span {
     width: 10px !important;
-height: 10px !important;
-border-radius: 50% !important;
-background-color: #10C8A0 ;
+    height: 10px !important;
+    border-radius: 50% !important;
+    background-color: #44bef1;
 }
-.prover2-trebovaniya-block{
+
+.prover2-trebovaniya-block {
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
 }
 
-.prover2-mni-treboniya p{
+.prover2-mni-treboniya p {
     font-family: SF Pro Display;
-font-size: 14px !important;
-line-height: 19px !important;
-letter-spacing: 0em !important;
-text-align: center ;
-color: #9DA7BB;
-position: relative;
-top: 7px;
-left: 7px;
+    font-size: 14px !important;
+    line-height: 19px !important;
+    letter-spacing: 0em !important;
+    text-align: center;
+    color: #9DA7BB;
+    position: relative;
+    top: 7px;
+    left: 7px;
 }
-.prover2-trebovaniya-block2{
+
+.prover2-trebovaniya-block2 {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 240px !important;
-height: 40px !important;
-border-radius: 4px;
-background-color: #ffffff;
-cursor: pointer;
+    height: 40px !important;
+    border-radius: 4px;
+    background-color: #ffffff;
+    cursor: pointer;
 }
-.prover2-trebovaniya-block3{
-display: flex;
-align-items: center;
-justify-content: center;
-width: 215px !important;
-height: 40px !important;
-border-radius: 4px;
-background-color: #ffffff;
-cursor: pointer;
+
+.prover2-trebovaniya-block3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 215px !important;
+    height: 40px !important;
+    border-radius: 4px;
+    background-color: #ffffff;
+    cursor: pointer;
 }
-.prover2-trebovaniya-block4{
+
+.prover2-trebovaniya-block4 {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 190px !important;
-height: 40px !important;
-border-radius: 4px;
-background-color: #ffffff;
-margin-top: 15px;
-cursor: pointer;
+    height: 40px !important;
+    border-radius: 4px;
+    background-color: #ffffff;
+    margin-top: 15px;
+    cursor: pointer;
 }
-.prover2-trebovaniya-block5{
+
+.prover2-trebovaniya-block5 {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 150px !important;
-height: 40px !important;
-border-radius: 4px;
-background-color: #ffffff;
-margin-top: 15px;
-cursor: pointer;
+    height: 40px !important;
+    border-radius: 4px;
+    background-color: #ffffff;
+    margin-top: 15px;
+    cursor: pointer;
 }
-.faq{
+
+.faq {
     width: 100%;
     margin: 20px auto;
     background-color: #ffffff;
 }
-.faq-item{
+
+.faq-item {
     box-shadow: 0px 2px 2px 0px #0000001A;
-margin-bottom: 5px;
+    margin-bottom: 5px;
 }
-.faq-text{
+
+.faq-text {
     display: none;
     padding: 10px 15px;
-    
+
 }
-.faq-title{
+
+.faq-title {
     display: block;
     cursor: pointer;
     padding: 10px 15px;
 }
-.faq-input{
+
+.faq-input {
     appearance: none;
--webkit-appearance: none;
-position: absolute;
-width: 0;
-height: 0;
+    -webkit-appearance: none;
+    position: absolute;
+    width: 0;
+    height: 0;
 }
-.faq-input:checked ~ .faq-text{
+
+.faq-input:checked~.faq-text {
     display: block;
 }
-.text-kurs-haqida4{
+
+.text-kurs-haqida4 {
     padding-top: 20px;
 }
-.faq-div{
+
+.faq-div {
     display: flex;
     align-items: center;
     justify-content: start;
-    border: 1px solid #e6e7e9 ;
+    border: 1px solid #e6e7e9;
 }
-.faq-liner{
+
+.faq-liner {
     width: 1px;
     height: 20px;
     background-color: #c5c9d3;
 }
 
 
-#saopdsados{
+#saopdsados {
     position: relative;
     right: 5px;
 }
-#fdfsdfdsdfsf{
+
+#fdfsdfdsdfsf {
     position: relative;
     left: 37px;
 }
-.faq-liner1{
+
+.faq-liner1 {
     width: 1px;
     height: 20px;
     background-color: #c5c9d3;
     position: relative;
-    left:29px;
+    left: 29px;
 }
-#wqeqweqweqw{
+
+#wqeqweqweqw {
     position: relative;
     left: 8px;
 }
-.faq-text p{
+
+.faq-text p {
     position: relative;
     left: 35px;
 }
-.text-media-none{
-    display: none;
-}
-.mni-grid-pas-media{
-    display: none;
-}
-.mni-orta-bloxk-mediaa{
-    display: none;
-}
-    @media (max-width:1562px) {
-        .prover2-orta-joy .saas{
-            width: 750px !important;
-            height: 320px !important;
-        }
-        .prover2-orta-u button {
-            width: 78px !important;
-            height: 25px !important;
-            border-radius: 2px;
-            background-color: #ffffff;
-            border: none;
-            outline: none;
-            display: flex;
-            position: relative;
-            right: 3.3vw;
-        }
-        .radio-inputs {
-            position: relative;
-            display: flex;
-            flex-wrap: wrap;
-            border-radius: 0.5rem;
-            background-color: #EEE;
-            box-sizing: border-box;
-            box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
-            padding: 0.25rem;
-            width: 750px;
-            font-size: 14px;
-            margin-top: 30px;
-        }
-        .text-media-flex{
-            display: none;
-        }
-        .text-media-none{
-            display: block;
-        }
 
-        .text-kurs-haqida1 p{
-            font-family: SF Pro Display;
-        font-size: 13px ;
-        line-height: 23px ;
-        letter-spacing: 0em ;
+.text-media-none {
+    display: none;
+}
+
+.mni-grid-pas-media {
+    display: none;
+}
+
+.mni-orta-bloxk-mediaa {
+    display: none;
+}
+
+@media (max-width:1562px) {
+    .prover2-orta-joy .saas {
+        width: 750px !important;
+        height: 320px !important;
+    }
+
+    .prover2-orta-u button {
+        width: 78px !important;
+        height: 25px !important;
+        border-radius: 2px;
+        background-color: #ffffff;
+        border: none;
+        outline: none;
+        display: flex;
+        position: relative;
+        right: 3.3vw;
+    }
+
+    .radio-inputs {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 0.5rem;
+        background-color: #EEE;
+        box-sizing: border-box;
+        box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+        padding: 0.25rem;
+        width: 750px;
+        font-size: 14px;
+        margin-top: 30px;
+    }
+
+    .text-media-flex {
+        display: none;
+    }
+
+    .text-media-none {
+        display: block;
+    }
+
+    .text-kurs-haqida1 p {
+        font-family: SF Pro Display;
+        font-size: 13px;
+        line-height: 23px;
+        letter-spacing: 0em;
         width: 100% !important;
         text-align: left;
-        margin-bottom: 10px ;
-        color: #2E2E2E ;
-          }
-    } 
+        margin-bottom: 10px;
+        color: #2E2E2E;
+    }
+}
+
 @media (max-width:1498px) {
-    .prover2{
+    .prover2 {
         width: 100% !important;
         height: auto !important;
         max-width: 100%;
         background: #F1F2F6;
         padding-top: 30px;
-    
+
     }
 
-    .prover20chech-box-a span{
+    .prover20chech-box-a span {
         display: none !important;
     }
+
     .mni-blocc-linee {
         width: 102%;
         height: 1px;
@@ -1224,10 +1389,12 @@ height: 0;
         position: relative;
         right: 14px;
     }
-    .prover2-orta-joy .saas{
-        width:900px !important;
+
+    .prover2-orta-joy .saas {
+        width: 900px !important;
         height: 320px !important;
     }
+
     .radio-inputs {
         position: relative;
         display: flex;
@@ -1241,6 +1408,7 @@ height: 0;
         font-size: 14px;
         margin-top: 30px;
     }
+
     .prover2-orta-u button {
         width: 78px !important;
         height: 25px !important;
@@ -1252,6 +1420,7 @@ height: 0;
         position: relative;
         left: 12.2vw;
     }
+
     .prover2-orta-joy-text h5 {
         font-family: SF Pro Display;
         font-size: 18px;
@@ -1261,33 +1430,38 @@ height: 0;
     }
 
 
-#prover5-info-block1{
+    #prover5-info-block1 {
         display: none;
     }
-    .prover3-linerr1{
-        display: none;
-    }
-.prover5-info-block1{
-    display: none;
-}
-.prover3-linerr1{
-    display: none;
-}
-    .prover2-oxiri-joy{
-        display: none;
-    }
-    .text-kurs-haqida1 p{
-        font-family: SF Pro Display;
-    font-size: 17px ;
-    line-height: 23px ;
-    letter-spacing: 0em ;
-    width: 100% !important;
-    text-align: left;
-    margin-bottom: 10px ;
-    color: #2E2E2E !important ;
-      }
 
-    .mni-grid-pas-media{
+    .prover3-linerr1 {
+        display: none;
+    }
+
+    .prover5-info-block1 {
+        display: none;
+    }
+
+    .prover3-linerr1 {
+        display: none;
+    }
+
+    .prover2-oxiri-joy {
+        display: none;
+    }
+
+    .text-kurs-haqida1 p {
+        font-family: SF Pro Display;
+        font-size: 17px;
+        line-height: 23px;
+        letter-spacing: 0em;
+        width: 100% !important;
+        text-align: left;
+        margin-bottom: 10px;
+        color: #2E2E2E !important;
+    }
+
+    .mni-grid-pas-media {
         display: flex;
         margin-top: 35px;
         justify-content: center;
@@ -1297,126 +1471,145 @@ height: 0;
 
     }
 
-    .prover2-oxiri-block-in{
+    .prover2-oxiri-block-in {
         width: 640px;
-        height: 410px ;
+        height: 410px;
         border-radius: 0px 4px 4px 0px;
         box-shadow: 0px 2px 2px 0px #0000001A;
         background-color: #ffffff;
         padding-left: 15px;
         padding-top: 15px;
         margin-bottom: 10px;
-      }
-      .mni-krus-techer-swiper{
-        width:650px;
+    }
+
+    .mni-krus-techer-swiper {
+        width: 650px;
         height: 410px;
-        background-color: #ffffff;position: relative;
+        background-color: #ffffff;
+        position: relative;
         left: 20px;
         top: -0px !important;
-        }
-        .boshqa-mentorla-krugg1{
-            position: relative;
-            left: 0;
-        }
-        .boshqa-mentorla{
-            display: flex;
-            justify-content: space-between !important;
-        }
-        .mni-gridf1 img{ 
-           
+    }
+
+    .boshqa-mentorla-krugg1 {
+        position: relative;
+        left: 0;
+    }
+
+    .boshqa-mentorla {
+        display: flex;
+        justify-content: space-between !important;
+    }
+
+    .mni-gridf1 img {
+
         border-radius: 4px;
-        
-        }
-        .mni-gridf2 img{ 
-          
+
+    }
+
+    .mni-gridf2 img {
+
         border-radius: 4px;
-        
-        }
-        .mni-buton-iikki-yo button {
-            width: 50% !important;
-            height: 40px !important;
-            border-radius: 2px;
-            background-color: #536DFD;
-            color: white;
-            border: none;
-            outline: none;
-            margin-bottom: 20px !important;
-            transition: 0.5s all ease;
-        }
-        .mni-buton-iikki-yo{
-            position: relative;
-            left:0;
-          }
-          .mni-buton-iikki-yo{
-            display: flex;
-            justify-content: center;
-            position: relative;
-            left: -15px !important;
-          }
+
+    }
+
+    .mni-buton-iikki-yo button {
+        width: 50% !important;
+        height: 40px !important;
+        border-radius: 2px;
+        background-color: #44bef1 ;
+        color: white;
+        border: none;
+        outline: none;
+        margin-bottom: 20px !important;
+        transition: 0.5s all ease;
+    }
+
+    .mni-buton-iikki-yo {
+        position: relative;
+        left: 0;
+    }
+
+    .mni-buton-iikki-yo {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        left: -15px !important;
+    }
 
 }
+
 @media (max-width:1351px) {
-    .mni-krus-techer-swiper{
-        width:630px;
+    .mni-krus-techer-swiper {
+        width: 630px;
         height: 410px;
-        background-color: #ffffff;position: relative;
+        background-color: #ffffff;
+        position: relative;
         left: 20px;
         top: -0px !important;
-        }
-        .prover2-oxiri-block-in{
-            width: 640px;
-            height: auto;
-            border-radius: 0px 4px 4px 0px;
-            box-shadow: 0px 2px 2px 0px #0000001A;
-            background-color: #ffffff;
-            padding-left: 15px;
-            padding-top: 15px;
-            margin-bottom: 10px;
-            position: relative;
-            left: -12px !important;
-          }
-          .text-kurs-haqida1 p {
-            font-family: SF Pro Display;
-            font-size: 14px;
-            line-height: 23px;
-            letter-spacing: 0em;
-            width: 100% !important;
-            text-align: left;
-            margin-bottom: 10px;
-            color: #2E2E2E !important;
-        }
-        .m_otsenka h1 {
-            font-size: 50px;
-        }
+    }
+
+    .prover2-oxiri-block-in {
+        width: 640px;
+        height: auto;
+        border-radius: 0px 4px 4px 0px;
+        box-shadow: 0px 2px 2px 0px #0000001A;
+        background-color: #ffffff;
+        padding-left: 15px;
+        padding-top: 15px;
+        margin-bottom: 10px;
+        position: relative;
+        left: -12px !important;
+    }
+
+    .text-kurs-haqida1 p {
+        font-family: SF Pro Display;
+        font-size: 14px;
+        line-height: 23px;
+        letter-spacing: 0em;
+        width: 100% !important;
+        text-align: left;
+        margin-bottom: 10px;
+        color: #2E2E2E !important;
+    }
+
+    .m_otsenka h1 {
+        font-size: 50px;
+    }
 
 
 }
+
 @media (max-width:1333px) {
-    .mni-krus-techer-swiper{
-        width:620px;
+    .mni-krus-techer-swiper {
+        width: 620px;
         height: 410px;
-        background-color: #ffffff;position: relative;
+        background-color: #ffffff;
+        position: relative;
         left: 20px;
         top: -0px !important;
-        }
-        .prover2-oxiri-block-in{
-            width: 640px;
-            height: auto;
-            border-radius: 0px 4px 4px 0px;
-            box-shadow: 0px 2px 2px 0px #0000001A;
-            background-color: #ffffff;
-            padding-left: 15px;
-            padding-top: 15px;
-            margin-bottom: 10px;
-            position: relative;
-            left: -15px !important;
-          }
+    }
+
+    .prover2-oxiri-block-in {
+        width: 640px;
+        height: auto;
+        border-radius: 0px 4px 4px 0px;
+        box-shadow: 0px 2px 2px 0px #0000001A;
+        background-color: #ffffff;
+        padding-left: 15px;
+        padding-top: 15px;
+        margin-bottom: 10px;
+        position: relative;
+        left: -15px !important;
+    }
 }
+
 @media (max-width:1315px) {
-    .prover2-orta-joy .saas{
-        width:800px !important;
+    .prover2-orta-joy .saas {
+        width: 800px !important;
         height: 320px !important;
     }
+
     .radio-inputs {
         position: relative;
         display: flex;
@@ -1430,6 +1623,7 @@ height: 0;
         font-size: 14px;
         margin-top: 30px;
     }
+
     .prover2-orta-u button {
         width: 78px !important;
         height: 25px !important;
@@ -1441,47 +1635,56 @@ height: 0;
         position: relative;
         left: 6.1vw !important;
     }
-    .text-kurs-haqida1{
+
+    .text-kurs-haqida1 {
         width: 800px !important;
     }
-    .poopoasd{
+
+    .poopoasd {
         display: none;
     }
-    .mni-krus-techer-swiper{
-        width:580px;
+
+    .mni-krus-techer-swiper {
+        width: 580px;
         height: 410px;
-        background-color: #ffffff;position: relative;
+        background-color: #ffffff;
+        position: relative;
         left: 20px;
         top: -0px !important;
-        }
-        .prover2-oxiri-block-in{
-            width: 580px;
-            height: auto;
-            border-radius: 0px 4px 4px 0px;
-            box-shadow: 0px 2px 2px 0px #0000001A;
-            background-color: #ffffff;
-            padding-left: 15px;
-            padding-top: 15px;
-            margin-bottom: 10px;
-            position: relative;
-            left: -15px !important;
-          }
-          .mni-gridf1 img{ 
-           
+    }
+
+    .prover2-oxiri-block-in {
+        width: 580px;
+        height: auto;
+        border-radius: 0px 4px 4px 0px;
+        box-shadow: 0px 2px 2px 0px #0000001A;
+        background-color: #ffffff;
+        padding-left: 15px;
+        padding-top: 15px;
+        margin-bottom: 10px;
+        position: relative;
+        left: -15px !important;
+    }
+
+    .mni-gridf1 img {
+
         border-radius: 4px;
-        
-        }
-        .mni-gridf2 img{ 
-           
+
+    }
+
+    .mni-gridf2 img {
+
         border-radius: 4px;
-        
-        }
+
+    }
 
 }
+
 @media (max-width:1227px) {
-    .faq-text{
+    .faq-text {
         width: 600px;
     }
+
     .prover2-mni-treboniya {
         padding-top: 20px;
         display: grid;
@@ -1489,10 +1692,11 @@ height: 0;
         flex-wrap: wrap !important;
     }
 
-    .prover2-orta-joy .saas{
-        width:700px !important;
+    .prover2-orta-joy .saas {
+        width: 700px !important;
         height: 320px !important;
     }
+
     .radio-inputs {
         position: relative;
         display: flex;
@@ -1506,6 +1710,7 @@ height: 0;
         font-size: 14px;
         margin-top: 30px;
     }
+
     .prover2-orta-u button {
         width: 78px !important;
         height: 25px !important;
@@ -1517,55 +1722,65 @@ height: 0;
         position: relative;
         left: -1.5vw !important;
     }
-    .text-kurs-haqida1{
+
+    .text-kurs-haqida1 {
         width: 700px !important;
     }
-    .mni-krus-techer-swiper{
-        width:520px;
+
+    .mni-krus-techer-swiper {
+        width: 520px;
         height: 410px;
-        background-color: #ffffff;position: relative;
+        background-color: #ffffff;
+        position: relative;
         left: 20px;
         top: -0px !important;
-        }
-        .prover2-oxiri-block-in{
-            width: 540px;
-            height: auto;
-            border-radius: 0px 4px 4px 0px;
-            box-shadow: 0px 2px 2px 0px #0000001A;
-            background-color: #ffffff;
-            padding-left: 15px;
+    }
+
+    .prover2-oxiri-block-in {
+        width: 540px;
+        height: auto;
+        border-radius: 0px 4px 4px 0px;
+        box-shadow: 0px 2px 2px 0px #0000001A;
+        background-color: #ffffff;
+        padding-left: 15px;
 
 
-padding-top: 15px;
-            margin-bottom: 10px;
-            position: relative;
-            left: -15px !important;
-          }
+        padding-top: 15px;
+        margin-bottom: 10px;
+        position: relative;
+        left: -15px !important;
+    }
 
 }
 
 @media (max-width:1131px) {
-    
 
-    .mni-orta-kota-media{
+
+    .mni-orta-kota-media {
         display: none !important;
     }
-    .prover2-mni-search{
+
+    .prover2-mni-search {
         display: none;
     }
-    .prover2-orta-joy .saas{
-        width:1000px !important;
+
+    .prover2-orta-joy .saas {
+        width: 1000px !important;
         height: 320px !important;
     }
-    .faq-text{
+
+    .faq-text {
         width: 100% !important;
     }
-    .faq-text p{
+
+    .faq-text p {
         padding-left: 25px;
     }
-    #yoqaollllll{
+
+    #yoqaollllll {
         display: none;
     }
+
     .radio-inputs {
         position: relative;
         display: flex;
@@ -1579,6 +1794,7 @@ padding-top: 15px;
         font-size: 14px;
         margin-top: 30px;
     }
+
     .prover2-orta-u button {
         width: 78px !important;
         height: 25px !important;
@@ -1590,9 +1806,11 @@ padding-top: 15px;
         position: relative;
         left: 17.6vw !important;
     }
-    .text-kurs-haqida1{
+
+    .text-kurs-haqida1 {
         width: 1000px !important;
     }
+
     .prover2-orta-joy-text h5 {
         font-family: SF Pro Display;
         font-size: 22px;
@@ -1600,26 +1818,30 @@ padding-top: 15px;
         letter-spacing: 0em;
         text-align: left;
     }
-    .mni-krus-techer-swiper{
-        width:480px;
+
+    .mni-krus-techer-swiper {
+        width: 480px;
         height: 410px;
-        background-color: #ffffff;position: relative;
+        background-color: #ffffff;
+        position: relative;
         left: 20px;
         top: -0px !important;
-        }
-        .prover2-oxiri-block-in{
-            width: 490px;
-            height: auto;
-            border-radius: 0px 4px 4px 0px;
-            box-shadow: 0px 2px 2px 0px #0000001A;
-            background-color: #ffffff;
-            padding-left: 15px;
-            padding-top: 15px;
-            margin-bottom: 10px;
-            position: relative;
-            left: -15px !important;
-          }
-          /* .mni-gridf1 img{ 
+    }
+
+    .prover2-oxiri-block-in {
+        width: 490px;
+        height: auto;
+        border-radius: 0px 4px 4px 0px;
+        box-shadow: 0px 2px 2px 0px #0000001A;
+        background-color: #ffffff;
+        padding-left: 15px;
+        padding-top: 15px;
+        margin-bottom: 10px;
+        position: relative;
+        left: -15px !important;
+    }
+
+    /* .mni-gridf1 img{ 
             width: 210px;
         height: 150px;
         border-radius: 4px;
@@ -1631,28 +1853,30 @@ padding-top: 15px;
         border-radius: 4px;
         
         } */
-        .mni-orta-bloxk-mediaa{
-            display: block;
-          margin-top: 20px;
-          overflow: hidden !important;
-        }
-        .mni-orta-kota-media{
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-        }
+    .mni-orta-bloxk-mediaa {
+        display: block;
+        margin-top: 20px;
+        overflow: hidden !important;
+    }
 
-        .mni-media-orta-input button{
-            border: none;
-            outline: none;
-            position: relative;
-            right: 60px !important;
-            background: none;
+    .mni-orta-kota-media {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .mni-media-orta-input button {
+        border: none;
+        outline: none;
+        position: relative;
+        right: 60px !important;
+        background: none;
         top: 6px;
-        
-        }
-        .mni-media-orta-input input{
-            width: 370px;
+
+    }
+
+    .mni-media-orta-input input {
+        width: 370px;
         height: 43px;
         outline: none;
         border: none;
@@ -1660,114 +1884,127 @@ padding-top: 15px;
         background: #ffffff;
         position: relative;
         right: 25px;
-        }
-        .mni-media-orta-input input[placeholder]{
+    }
 
-            font-size: 13px;
-            padding-left: 20px;
-        }
-        .mni-media-orta-filter box-icon{
-            cursor: pointer;
-        }
- 
-        .prover3-mni-search{
-display: flex;
-justify-content: center;
-        }
+    .mni-media-orta-input input[placeholder] {
 
-        .prover3-mni-search button{
-            border: none;
-            outline: none;
-            position: relative;
-            right: 40px !important;
-            background: none;
+        font-size: 13px;
+        padding-left: 20px;
+    }
+
+    .mni-media-orta-filter box-icon {
+        cursor: pointer;
+    }
+
+    .prover3-mni-search {
+        display: flex;
+        justify-content: center;
+    }
+
+    .prover3-mni-search button {
+        border: none;
+        outline: none;
+        position: relative;
+        right: 40px !important;
+        background: none;
         top: 6px;
-        
-        }
+
+    }
 
 
-.prover2-info-filter button{
+    .prover2-info-filter button {
         background: #F1F2F6;
-width: 130px !important;
-        }
-        .prover2-info-filter2 button{
-            background: #F1F2F6;
-    
-            }
-            .prover2-info-d{
-                border-radius: 5px;
-                width: 1000px;
-                height: auto;
-                margin-top: 20px;
-                background-color: #ffffff;
-                padding-left: 15px;
-                padding-top: 5px;
-            }
-            .prover2-linerr1{
-                width: 90.4%;
-                height: 1px;
-                background: #d5dae4;
-            position: relative;
-            left: 95px;
-            top: 10px;
-            }
-            .prover2-info-filter{
-                display: flex;
-                justify-content: space-around;
-            }
-            .prover2-info-filter2{
-                display: flex;
-                justify-content: space-around;
-                flex-wrap: wrap;
-            }
+        width: 130px !important;
+    }
+
+    .prover2-info-filter2 button {
+        background: #F1F2F6;
+
+    }
+
+    .prover2-info-d {
+        border-radius: 5px;
+        width: 1000px;
+        height: auto;
+        margin-top: 20px;
+        background-color: #ffffff;
+        padding-left: 15px;
+        padding-top: 5px;
+    }
+
+    .prover2-linerr1 {
+        width: 90.4%;
+        height: 1px;
+        background: #d5dae4;
+        position: relative;
+        left: 95px;
+        top: 10px;
+    }
+
+    .prover2-info-filter {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .prover2-info-filter2 {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
 
 
-            .prover2-but-clas2{
-                width: 150px !important;
-            height: 25px !important;
-            border-radius: 4px;
-            background: #F1F2F6;
-            position: relative;
-            left: 8px !important;
-            }
-            .prover2-but-clas3{
-                width: 150px !important;
-            height: 25px !important;
-            border-radius: 4px;
-            background: #F1F2F6;
-            position: relative;
-            left: 17px !important;
-            }
-            .prover2-but-clas4{
-                width: 150px !important;
-            height: 25px !important;
-            border-radius: 4px;
-            background: #F1F2F6;
-            position: relative;
-            left: 30px !important;
-            }
-            .prover2-but-clas5{
-                width: 141px !important;
-                height: 25px !important;
-                border-radius: 4px;
-            }
-            .prover2-but-clas6{
-                width: 120px !important;
-            height: 25px !important;
-            border-radius: 4px;
-            position: relative;
-            left: 10px !important;
-            }
-            .prover2-but-clas7{
-                width: 150px !important; 
-            height: 25px !important;
-            border-radius: 4px;
-            position: relative;
-            left: 20px !important;
-            }
-            .prover1-info-none-br{
-                display: none;
-            }
+    .prover2-but-clas2 {
+        width: 150px !important;
+        height: 25px !important;
+        border-radius: 4px;
+        background: #F1F2F6;
+        position: relative;
+        left: 8px !important;
+    }
+
+    .prover2-but-clas3 {
+        width: 150px !important;
+        height: 25px !important;
+        border-radius: 4px;
+        background: #F1F2F6;
+        position: relative;
+        left: 17px !important;
+    }
+
+    .prover2-but-clas4 {
+        width: 150px !important;
+        height: 25px !important;
+        border-radius: 4px;
+        background: #F1F2F6;
+        position: relative;
+        left: 30px !important;
+    }
+
+    .prover2-but-clas5 {
+        width: 141px !important;
+        height: 25px !important;
+        border-radius: 4px;
+    }
+
+    .prover2-but-clas6 {
+        width: 120px !important;
+        height: 25px !important;
+        border-radius: 4px;
+        position: relative;
+        left: 10px !important;
+    }
+
+    .prover2-but-clas7 {
+        width: 150px !important;
+        height: 25px !important;
+        border-radius: 4px;
+        position: relative;
+        left: 20px !important;
+    }
+
+    .prover1-info-none-br {
+        display: none;
+    }
 }
 
 
@@ -1784,6 +2021,7 @@ width: 130px !important;
         left: 18vw !important;
     }
 }
+
 @media (max-width:1067px) {
     .prover2-orta-u button {
         width: 78px !important;
@@ -1797,17 +2035,21 @@ width: 130px !important;
         left: 19vw !important;
     }
 }
+
 @media (max-width:1017px) {
-    .prover2-orta-joy .saas{
-        width:800px !important;
+    .prover2-orta-joy .saas {
+        width: 800px !important;
         height: 320px !important;
     }
-#yoqaollllll{
-    display: block !important;
-}
-.faq-text p{
-    padding-left: 0px;
-}
+
+    #yoqaollllll {
+        display: block !important;
+    }
+
+    .faq-text p {
+        padding-left: 0px;
+    }
+
     .radio-inputs {
         position: relative;
         display: flex;
@@ -1821,6 +2063,7 @@ width: 130px !important;
         font-size: 14px;
         margin-top: 30px;
     }
+
     .prover2-orta-u button {
         width: 78px !important;
         height: 25px !important;
@@ -1832,10 +2075,12 @@ width: 130px !important;
         position: relative;
         left: 0vw !important;
     }
-    .text-kurs-haqida1{
+
+    .text-kurs-haqida1 {
         width: 800px !important;
     }
-    .prover2-info-d{
+
+    .prover2-info-d {
         border-radius: 5px;
         width: 800px;
         height: auto;
@@ -1844,24 +2089,27 @@ width: 130px !important;
         padding-left: 15px;
         padding-top: 5px;
     }
-    .pddppdsd{
+
+    .pddppdsd {
         display: none;
     }
 
-.mni-media-orta-filter{
-    width: 90px;
-    height: 30px;
+    .mni-media-orta-filter {
+        width: 90px;
+        height: 30px;
 
-}
-
-.mni-krus-techer-swiper{
-    width:380px;
-    height: 410px;
-    background-color: #ffffff;position: relative;
-    left: 20px;
-    top: -0px !important;
     }
-    .prover2-oxiri-block-in{
+
+    .mni-krus-techer-swiper {
+        width: 380px;
+        height: 410px;
+        background-color: #ffffff;
+        position: relative;
+        left: 20px;
+        top: -0px !important;
+    }
+
+    .prover2-oxiri-block-in {
         width: 380px;
         height: auto;
         border-radius: 0px 4px 4px 0px;
@@ -1872,33 +2120,38 @@ width: 130px !important;
         margin-bottom: 10px;
         position: relative;
         left: -15px !important;
-      }
-      .mni-gridf1 img{ 
-    width: 50px;
-    height: 50px;
-    border-radius: 4px;
-    
     }
-    .mni-gridf2 img{ 
+
+    .mni-gridf1 img {
         width: 50px;
         height: 50px;
-    border-radius: 4px;
-    
+        border-radius: 4px;
+
     }
-    .prover2-linerr1{
+
+    .mni-gridf2 img {
+        width: 50px;
+        height: 50px;
+        border-radius: 4px;
+
+    }
+
+    .prover2-linerr1 {
         width: 87.9%;
         height: 1px;
         background: #d5dae4;
-    position: relative;
-    left: 95px;
-    top: 10px;
+        position: relative;
+        left: 95px;
+        top: 10px;
     }
 }
+
 @media (max-width:820px) {
-    .prover2-orta-joy .saas{
-        width:650px !important;
+    .prover2-orta-joy .saas {
+        width: 650px !important;
         height: 320px !important;
     }
+
     .faq {
         width: 650px;
         margin: 20px auto;
@@ -1906,7 +2159,7 @@ width: 130px !important;
     }
 
 
-.radio-inputs {
+    .radio-inputs {
         position: relative;
         display: flex;
         flex-wrap: wrap;
@@ -1919,6 +2172,7 @@ width: 130px !important;
         font-size: 14px;
         margin-top: 30px;
     }
+
     .prover2-orta-u button {
         width: 78px !important;
         height: 25px !important;
@@ -1930,9 +2184,11 @@ width: 130px !important;
         position: relative;
         left: -1vw !important;
     }
-    .text-kurs-haqida1{
+
+    .text-kurs-haqida1 {
         width: 650px !important;
     }
+
     .prover2-orta-joy-text h5 {
         font-family: SF Pro Display;
         font-size: 15px;
@@ -1940,6 +2196,7 @@ width: 130px !important;
         letter-spacing: 0em;
         text-align: left;
     }
+
     .prover2-info-d {
         border-radius: 5px;
         width: 650px;
@@ -1949,6 +2206,7 @@ width: 130px !important;
         padding-left: 15px;
         padding-top: 5px;
     }
+
     /* .prover2-info-filter2 {
         display:flow-root;
  gap: 20px !important;
@@ -1958,66 +2216,75 @@ width: 130px !important;
         gap: 20px !important;
 
    } */
-   .prover2-linerr1 {
-    width: 85.2%;
-    height: 1px;
-    background: #d5dae4;
-    position: relative;
-    left: 95px;
-    top: 10px;
-}
-.mni-krus-techer-swiper {
-    width: 305px;
-    height: 410px;
-    background-color: #ffffff;
-    position: relative;
-    left: 20px;
-    top: -0px !important;
-}
-.prover2-oxiri-block-in {
-    width: 305px;
-    height: auto;
-    border-radius: 0px 4px 4px 0px;
-    box-shadow: 0px 2px 2px 0px #0000001A;
-    background-color: #ffffff;
-    padding-left: 15px;
-    padding-top: 15px;
-    margin-bottom: 10px;
-    position: relative;
-    left: -15px !important;
+    .prover2-linerr1 {
+        width: 85.2%;
+        height: 1px;
+        background: #d5dae4;
+        position: relative;
+        left: 95px;
+        top: 10px;
+    }
+
+    .mni-krus-techer-swiper {
+        width: 305px;
+        height: 410px;
+        background-color: #ffffff;
+        position: relative;
+        left: 20px;
+        top: -0px !important;
+    }
+
+    .prover2-oxiri-block-in {
+        width: 305px;
+        height: auto;
+        border-radius: 0px 4px 4px 0px;
+        box-shadow: 0px 2px 2px 0px #0000001A;
+        background-color: #ffffff;
+        padding-left: 15px;
+        padding-top: 15px;
+        margin-bottom: 10px;
+        position: relative;
+        left: -15px !important;
+    }
+
+    .mni-gridf1 img {
+
+        border-radius: 4px;
+
+    }
 }
 
-.mni-gridf1 img{ 
-   
-border-radius: 4px;
-
-}
-}
-.lolipap-kptta-nomoylabtopomadim{
+.lolipap-kptta-nomoylabtopomadim {
     display: none;
 }
+
 @media (max-width:665px) {
-    
-    .prover2-orta-joy .saas{
-        width:550px !important;
+
+    .prover2-orta-joy .saas {
+        width: 550px !important;
         height: 320px !important;
     }
-.faq-title{
-    font-size: 12px !important;
-}
-.faq-text p{
-    font-size: 12px !important;
-   position: relative;
-   left: 20px !important;
-}
-.faq-div span{
-    font-size: 12px !important;
-}
+
+    .faq-title {
+        font-size: 12px !important;
+    }
+
+    .faq-text p {
+        font-size: 12px !important;
+        position: relative;
+        left: 20px !important;
+    }
+
+    .faq-div span {
+        font-size: 12px !important;
+    }
+
     .faq {
         width: 550px;
         margin: 20px auto;
         background-color: #ffffff;
     }
+
     .radio-inputs {
         position: relative;
         display: flex;
@@ -2031,6 +2298,7 @@ border-radius: 4px;
         font-size: 14px;
         margin-top: 30px;
     }
+
     .prover2-orta-u button {
         width: 78px !important;
         height: 25px !important;
@@ -2042,9 +2310,11 @@ border-radius: 4px;
         position: relative;
         left: -7vw !important;
     }
-    .text-kurs-haqida1{
+
+    .text-kurs-haqida1 {
         width: 550px !important;
     }
+
     .prover2-orta-joy-text h5 {
         font-family: SF Pro Display;
         font-size: 12px;
@@ -2052,6 +2322,7 @@ border-radius: 4px;
         letter-spacing: 0em;
         text-align: left;
     }
+
     .prover2-info-d {
         border-radius: 5px;
         width: 550px;
@@ -2061,6 +2332,7 @@ border-radius: 4px;
         padding-left: 15px;
         padding-top: 5px;
     }
+
     .prover2-linerr1 {
         width: 82.5% !important;
         height: 1px;
@@ -2069,77 +2341,89 @@ border-radius: 4px;
         left: 95px;
         top: 10px;
     }
+
     .prover2-info-filter button {
         background: #F1F2F6;
         width: 100px !important;
     }
+
     .prover2-info-filter2 button {
-     width: 110px ;
+        width: 110px;
         background: #F1F2F6;
     }
-    .prover2-but-clas7{
-        width: 120px !important; 
-    height: 25px !important;
-    border-radius: 4px;
-    position: relative;
-    left: 20px !important;
+
+    .prover2-but-clas7 {
+        width: 120px !important;
+        height: 25px !important;
+        border-radius: 4px;
+        position: relative;
+        left: 20px !important;
     }
 
 
-.prover2-but-clas6{
+    .prover2-but-clas6 {
         width: 88px !important;
-    height: 25px !important;
-    border-radius: 4px;
-    position: relative;
-    left: 10px !important;
+        height: 25px !important;
+        border-radius: 4px;
+        position: relative;
+        left: 10px !important;
     }
-    .prover2-but-clas7{
-        width: 135px !important; 
-    height: 25px !important;
-    border-radius: 4px;
-    position: relative;
-    left: 20px !important;
-    }
-.prover2-but-clas6{
-    display: none;
-}
-.mni-krus-techer-swiper{
-display: none;
-}
-.prover2-oxiri-block-in {
-    width: 550px;
-    height: auto;
-    border-radius: 0px 4px 4px 0px;
-    box-shadow: 0px 2px 2px 0px #0000001A;
-    background-color: #ffffff;
-    padding-left: 15px;
-    padding-top: 15px;
-    margin-bottom: 10px;
-    position: relative;
-    left: 0px !important;
-}
-.mni-krus-techer-swiper1{
-    display: block;
-}
-.mni-krus-techer-swiper1 {
-    width: 550px;
-    height: 410px;
-    background-color: #ffffff;
-    position: relative;
-    left: 0px;
-    top: -0px !important;
-}
-.lolipap-kptta-nomoylabtopomadim{
-    display: none;
-    justify-content: center;
-}
-.mni-gridf1 img{ 
-    width: 220px;
-height: 150px;
-border-radius: 4px;
 
+    .prover2-but-clas7 {
+        width: 135px !important;
+        height: 25px !important;
+        border-radius: 4px;
+        position: relative;
+        left: 20px !important;
+    }
+
+    .prover2-but-clas6 {
+        display: none;
+    }
+
+    .mni-krus-techer-swiper {
+        display: none;
+    }
+
+    .prover2-oxiri-block-in {
+        width: 550px;
+        height: auto;
+        border-radius: 0px 4px 4px 0px;
+        box-shadow: 0px 2px 2px 0px #0000001A;
+        background-color: #ffffff;
+        padding-left: 15px;
+        padding-top: 15px;
+        margin-bottom: 10px;
+        position: relative;
+        left: 0px !important;
+    }
+
+    .mni-krus-techer-swiper1 {
+        display: block;
+    }
+
+    .mni-krus-techer-swiper1 {
+        width: 550px;
+        height: 410px;
+        background-color: #ffffff;
+        position: relative;
+        left: 0px;
+        top: -0px !important;
+    }
+
+    .lolipap-kptta-nomoylabtopomadim {
+        display: none;
+        justify-content: center;
+    }
+
+    .mni-gridf1 img {
+        width: 220px;
+        height: 150px;
+        border-radius: 4px;
+
+    }
 }
-}
+
 @media (max-width:637px) {
     .prover2-orta-u button {
         width: 78px !important;
@@ -2153,23 +2437,27 @@ border-radius: 4px;
         left: -7.6vw !important;
     }
 }
+
 @media (max-width:628px) {
-    .faq-title{
+    .faq-title {
         font-size: 12px !important;
     }
-    .faq-text p{
+
+    .faq-text p {
         font-size: 12px !important;
-       position: relative;
-       left: 20px !important;
+        position: relative;
+        left: 20px !important;
     }
-    .faq-div span{
+
+    .faq-div span {
         font-size: 12px !important;
     }
-        .faq {
-            width: 480px;
-            margin: 20px auto;
-            background-color: #ffffff;
-        }
+
+    .faq {
+        width: 480px;
+        margin: 20px auto;
+        background-color: #ffffff;
+    }
 
     .prover2-mni-treboniya {
         padding-top: 20px;
@@ -2178,10 +2466,11 @@ border-radius: 4px;
         flex-wrap: wrap !important;
     }
 
-    .prover2-orta-joy .saas{
-        width:480px !important;
+    .prover2-orta-joy .saas {
+        width: 480px !important;
         height: 320px !important;
     }
+
     .prover2-trebovaniya-block3 {
         display: flex;
         align-items: center;
@@ -2196,7 +2485,7 @@ border-radius: 4px;
     }
 
 
-.radio-inputs {
+    .radio-inputs {
         position: relative;
         display: flex;
         flex-wrap: wrap;
@@ -2209,6 +2498,7 @@ border-radius: 4px;
         font-size: 14px;
         margin-top: 30px;
     }
+
     .prover2-orta-u button {
         width: 78px !important;
         height: 25px !important;
@@ -2220,9 +2510,11 @@ border-radius: 4px;
         position: relative;
         left: -16vw !important;
     }
-    .text-kurs-haqida1{
+
+    .text-kurs-haqida1 {
         width: 480px !important;
     }
+
     .prover2-orta-joy-text h5 {
         font-family: SF Pro Display;
         font-size: 12px;
@@ -2230,6 +2522,7 @@ border-radius: 4px;
         letter-spacing: 0em;
         text-align: left;
     }
+
     .prover2-info-d {
         border-radius: 5px;
         width: 550px;
@@ -2239,16 +2532,19 @@ border-radius: 4px;
         padding-left: 15px;
         padding-top: 5px;
     }
-    .rating:not(:checked) > label {
+
+    .rating:not(:checked)>label {
         float: right;
         cursor: pointer;
         font-size: 15px;
         color: #666;
     }
-    .rating{
+
+    .rating {
         position: relative;
         top: 4px;
     }
+
     .prover2-info-d {
         border-radius: 5px;
         width: 480px;
@@ -2258,6 +2554,7 @@ border-radius: 4px;
         padding-left: 15px;
         padding-top: 5px;
     }
+
     .prover2-linerr1 {
         width: 79.7% !important;
         height: 1px;
@@ -2266,6 +2563,7 @@ border-radius: 4px;
         left: 95px;
         top: 10px;
     }
+
     .prover2-oxiri-block-in {
         width: 480px;
         height: auto;
@@ -2277,6 +2575,7 @@ border-radius: 4px;
         margin-bottom: 10px;
         position: relative;
     }
+
     .mni-krus-techer-swiper1 {
         width: 480px;
         height: 410px;
@@ -2285,7 +2584,8 @@ border-radius: 4px;
         left: 0px;
         top: -0px !important;
     }
-    .m_flex_line{
+
+    .m_flex_line {
         width: 300px !important;
     }
 }
@@ -2298,6 +2598,7 @@ border-radius: 4px;
         border-radius: 4px;
         background-color: #ffffff;
     }
+
     .prover2-mni-treboniya p {
         font-family: SF Pro Display;
         font-size: 11px !important;
@@ -2309,6 +2610,7 @@ border-radius: 4px;
         top: 7px;
         left: 7px;
     }
+
     .prover2-trebovaniya-block2 {
         display: flex;
         align-items: center;
@@ -2319,6 +2621,7 @@ border-radius: 4px;
         background-color: #ffffff;
         cursor: pointer;
     }
+
     .prover2-trebovaniya-block3 {
         display: flex;
         align-items: center;
@@ -2329,6 +2632,7 @@ border-radius: 4px;
         background-color: #ffffff;
         cursor: pointer;
     }
+
     .prover2-trebovaniya-block4 {
         display: flex;
         align-items: center;
@@ -2340,6 +2644,7 @@ border-radius: 4px;
         margin-top: 15px;
         cursor: pointer;
     }
+
     .prover2-trebovaniya-block5 {
         display: flex;
         align-items: center;
@@ -2352,6 +2657,7 @@ border-radius: 4px;
         cursor: pointer;
     }
 }
+
 @media (max-width:570px) {
     .prover2-orta-u button {
         width: 78px !important;
@@ -2365,6 +2671,7 @@ border-radius: 4px;
         left: -17vw !important;
     }
 }
+
 @media (max-width:542px) {
     .prover2-orta-u button {
         width: 78px !important;
@@ -2378,6 +2685,7 @@ border-radius: 4px;
         left: -18vw !important;
     }
 }
+
 @media (max-width:511px) {
     .prover2-orta-u button {
         width: 78px !important;
@@ -2391,31 +2699,36 @@ border-radius: 4px;
         left: -19vw !important;
     }
 }
+
 @media (max-width:507px) {
-    
-    .prover2-orta-joy .saas{
-        width:400px !important;
+
+    .prover2-orta-joy .saas {
+        width: 400px !important;
         height: 320px !important;
     }
-    .faq-title{
+
+    .faq-title {
         font-size: 10px !important;
     }
-    .faq-text p{
+
+    .faq-text p {
         font-size: 10px !important;
-       position: relative;
-       left: 20px !important;
+        position: relative;
+        left: 20px !important;
     }
-    .faq-div span{
+
+    .faq-div span {
         font-size: 10px !important;
     }
-        .faq {
-            width: 400px;
-            margin: 20px auto;
-            background-color: #ffffff;
-        }
+
+    .faq {
+        width: 400px;
+        margin: 20px auto;
+        background-color: #ffffff;
+    }
 
 
-.radio-inputs {
+    .radio-inputs {
         position: relative;
         display: flex;
         flex-wrap: wrap;
@@ -2428,12 +2741,15 @@ border-radius: 4px;
         font-size: 14px;
         margin-top: 30px;
     }
+
     .prover2-orta-u button {
-    display: none !important;
+        display: none !important;
     }
-    .text-kurs-haqida1{
+
+    .text-kurs-haqida1 {
         width: 400px !important;
     }
+
     .prover2-orta-joy-text h5 {
         font-family: SF Pro Display;
         font-size: 12px;
@@ -2441,6 +2757,7 @@ border-radius: 4px;
         letter-spacing: 0em;
         text-align: left;
     }
+
     .prover2-info-d {
         border-radius: 5px;
         width: 400px;
@@ -2450,6 +2767,7 @@ border-radius: 4px;
         padding-left: 15px;
         padding-top: 5px;
     }
+
     .radio-inputs .radio .name {
         display: flex;
         cursor: pointer;
@@ -2462,6 +2780,7 @@ border-radius: 4px;
         transition: all .15s ease-in-out;
         font-size: 10px;
     }
+
     .prover2-linerr1 {
         width: 75% !important;
         height: 1px;
@@ -2470,12 +2789,14 @@ border-radius: 4px;
         left: 95px;
         top: 10px;
     }
-    .prover2-but-clas4{
+
+    .prover2-but-clas4 {
         position: relative;
         top: 10vw !important;
         right: 20px !important;
         display: none;
     }
+
     .prover2-oxiri-block-in {
         width: 400px;
         height: auto;
@@ -2487,6 +2808,7 @@ border-radius: 4px;
         margin-bottom: 10px;
         position: relative;
     }
+
     .mni-krus-techer-swiper1 {
         width: 400px;
         height: 410px;
@@ -2496,10 +2818,11 @@ border-radius: 4px;
         top: -0px !important;
     }
 
-    .mni-media-orta-filter{
+    .mni-media-orta-filter {
         display: none;
     }
 }
+
 @media (max-width:421px) {
     .prover2-linerr1 {
         width: 73.7% !important;
@@ -2509,37 +2832,46 @@ border-radius: 4px;
         left: 95px;
         top: 10px;
     }
-    .faq-title{
+
+    .faq-title {
         font-size: 9px !important;
     }
-    .faq-text p{
+
+    .faq-text p {
         font-size: 9px !important;
-       position: relative;
-       left: 20px !important;
+        position: relative;
+        left: 20px !important;
     }
-    .faq-div span{
+
+    .faq-div span {
         font-size: 9px !important;
     }
-        .faq {
-            width: 370px;
-            margin: 20px auto;
-            background-color: #ffffff;
-        }
-#fdfsdfdsdfsf{
-    position: relative;
-    left: 20px !important;
-}
-.faq-liner1{
-    position: relative;
-    left: 12px;
-}
-    .prover2-orta-joy .saas{
-        width:370px !important;
+
+    .faq {
+        width: 370px;
+        margin: 20px auto;
+        background-color: #ffffff;
+    }
+
+    #fdfsdfdsdfsf {
+        position: relative;
+        left: 20px !important;
+    }
+
+    .faq-liner1 {
+        position: relative;
+        left: 12px;
+    }
+
+    .prover2-orta-joy .saas {
+        width: 370px !important;
         height: 320px !important;
     }
+
     .m_otsenka h1 {
         font-size: 40px;
     }
+
     .text-kurs-haqida1 p {
         font-family: SF Pro Display;
         font-size: 10px;
@@ -2550,6 +2882,7 @@ border-radius: 4px;
         margin-bottom: 10px;
         color: #2E2E2E !important;
     }
+
     .radio-inputs {
         position: relative;
         display: flex;
@@ -2563,9 +2896,11 @@ border-radius: 4px;
         font-size: 14px;
         margin-top: 30px;
     }
-    .text-kurs-haqida1{
+
+    .text-kurs-haqida1 {
         width: 370px !important;
     }
+
     .prover2-orta-joy-reytin p {
         font-family: SF Pro Display;
         font-size: 12px;
@@ -2575,96 +2910,111 @@ border-radius: 4px;
     }
 
 
-.prover2-orta-joy-reytin span {
-    font-family: SF Pro Display;
-    font-size: 12px;
-    line-height: 17px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: #9DA7BB;
-    position: relative;
-    left: 3px;
-}
-.rating {
-    padding-left: 13px;
-}
-.prover2-info-d {
-    border-radius: 5px;
-    width: 370px;
-    height: auto;
-    margin-top: 20px;
-    background-color: #ffffff;
-    padding-left: 15px;
-    padding-top: 5px;
-}
-.prover2-oxiri-block-in {
-    width: 370px;
-    height: auto;
-    border-radius: 0px 4px 4px 0px;
-    box-shadow: 0px 2px 2px 0px #0000001A;
-    background-color: #ffffff;
-    padding-left: 15px;
-    padding-top: 15px;
-    margin-bottom: 10px;
-    position: relative;
-}
-.mni-krus-techer-swiper1 {
-    width: 370px;
-    height: 410px;
-    background-color: #ffffff;
-    position: relative;
-    left: 0px;
-    top: -0px !important;
-}
+    .prover2-orta-joy-reytin span {
+        font-family: SF Pro Display;
+        font-size: 12px;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: #9DA7BB;
+        position: relative;
+        left: 3px;
+    }
+
+    .rating {
+        padding-left: 13px;
+    }
+
+    .prover2-info-d {
+        border-radius: 5px;
+        width: 370px;
+        height: auto;
+        margin-top: 20px;
+        background-color: #ffffff;
+        padding-left: 15px;
+        padding-top: 5px;
+    }
+
+    .prover2-oxiri-block-in {
+        width: 370px;
+        height: auto;
+        border-radius: 0px 4px 4px 0px;
+        box-shadow: 0px 2px 2px 0px #0000001A;
+        background-color: #ffffff;
+        padding-left: 15px;
+        padding-top: 15px;
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    .mni-krus-techer-swiper1 {
+        width: 370px;
+        height: 410px;
+        background-color: #ffffff;
+        position: relative;
+        left: 0px;
+        top: -0px !important;
+    }
 
 }
+
 @media (max-width:383px) {
-    .faq-title{
+    .faq-title {
         font-size: 9px !important;
     }
-    .faq-text p{
+
+    .faq-text p {
         font-size: 9px !important;
-       position: relative;
-       left: 20px !important;
+        position: relative;
+        left: 20px !important;
     }
-    .faq-div span{
+
+    .faq-div span {
         font-size: 7px !important;
     }
-        .faq {
-            width: 330px;
-            margin: 20px auto;
-            background-color: #ffffff;
-        }
-#fdfsdfdsdfsf{
-    position: relative;
-    left: 5px !important;
-}
-.faq-liner1{
-    position: relative;
-    left: 5px !important;
-}
-#wqeqweqweqw{
-    position: relative;
-    left: 3px !important;
-}
-    .prover2-orta-joy .saas{
-        width:330px !important;
+
+    .faq {
+        width: 330px;
+        margin: 20px auto;
+        background-color: #ffffff;
+    }
+
+    #fdfsdfdsdfsf {
+        position: relative;
+        left: 5px !important;
+    }
+
+    .faq-liner1 {
+        position: relative;
+        left: 5px !important;
+    }
+
+    #wqeqweqweqw {
+        position: relative;
+        left: 3px !important;
+    }
+
+    .prover2-orta-joy .saas {
+        width: 330px !important;
         height: 320px !important;
     }
-.m_diagnostic_otsm{
-    position: relative;
-    right: 10px !important;
-}
-.text-kurs-haqida1 p {
-    font-family: SF Pro Display;
-    font-size: 8px;
-    line-height: 23px;
-    letter-spacing: 0em;
-    width: 100% !important;
-    text-align: left;
-    margin-bottom: 10px;
-    color: #2E2E2E !important;
-}
+
+    .m_diagnostic_otsm {
+        position: relative;
+        right: 10px !important;
+    }
+
+    .text-kurs-haqida1 p {
+        font-family: SF Pro Display;
+        font-size: 8px;
+        line-height: 23px;
+        letter-spacing: 0em;
+        width: 100% !important;
+        text-align: left;
+        margin-bottom: 10px;
+        color: #2E2E2E !important;
+    }
+
     .radio-inputs {
         position: relative;
         display: flex;
@@ -2678,9 +3028,11 @@ border-radius: 4px;
         font-size: 14px;
         margin-top: 30px;
     }
-    .text-kurs-haqida1{
+
+    .text-kurs-haqida1 {
         width: 330px !important;
     }
+
     .prover2-orta-joy-reytin p {
         font-family: SF Pro Display;
         font-size: 11px;
@@ -2688,6 +3040,7 @@ border-radius: 4px;
         letter-spacing: 0em;
         text-align: left;
     }
+
     .prover2-orta-joy-text h5 {
         font-family: SF Pro Display;
         font-size: 10px;
@@ -2695,6 +3048,7 @@ border-radius: 4px;
         letter-spacing: 0em;
         text-align: left;
     }
+
     .prover2-orta-joy-reytin span {
         font-family: SF Pro Display;
         font-size: 11px;
@@ -2705,6 +3059,7 @@ border-radius: 4px;
         position: relative;
         left: 3px;
     }
+
     .prover2-info-d {
         border-radius: 5px;
         width: 330px;
@@ -2714,10 +3069,12 @@ border-radius: 4px;
         padding-left: 15px;
         padding-top: 5px;
     }
+
     .prover2-info-filter button {
         background: #F1F2F6;
         width: 90px !important;
     }
+
     .prover2-linerr1 {
         width: 70% !important;
         height: 1px;
@@ -2726,6 +3083,7 @@ border-radius: 4px;
         left: 95px;
         top: 10px;
     }
+
     .prover2-oxiri-block-in {
         width: 330px;
         height: auto;
@@ -2737,6 +3095,7 @@ border-radius: 4px;
         margin-bottom: 10px;
         position: relative;
     }
+
     .mni-krus-techer-swiper1 {
         width: 330px;
         height: 410px;
@@ -2747,41 +3106,49 @@ border-radius: 4px;
     }
 
 }
+
 @media (max-width:340px) {
 
 
-.prover2-orta-joy .saas{
-        width:310px !important;
+    .prover2-orta-joy .saas {
+        width: 310px !important;
         height: 320px !important;
     }
-    .faq-title{
+
+    .faq-title {
         font-size: 7px !important;
     }
-    .faq-text p{
+
+    .faq-text p {
         font-size: 9px !important;
-       position: relative;
-       left: 20px !important;
+        position: relative;
+        left: 20px !important;
     }
-    .faq-div span{
+
+    .faq-div span {
         font-size: 7px !important;
     }
-        .faq {
-            width: 310px;
-            margin: 20px auto;
-            background-color: #ffffff;
-        }
-#fdfsdfdsdfsf{
-    position: relative;
-    left: 5px !important;
-}
-.faq-liner1{
-    position: relative;
-    left: 5px !important;
-}
-#wqeqweqweqw{
-    position: relative;
-    left: 3px !important;
-}
+
+    .faq {
+        width: 310px;
+        margin: 20px auto;
+        background-color: #ffffff;
+    }
+
+    #fdfsdfdsdfsf {
+        position: relative;
+        left: 5px !important;
+    }
+
+    .faq-liner1 {
+        position: relative;
+        left: 5px !important;
+    }
+
+    #wqeqweqweqw {
+        position: relative;
+        left: 3px !important;
+    }
 
     .radio-inputs {
         position: relative;
@@ -2796,9 +3163,11 @@ border-radius: 4px;
         font-size: 14px;
         margin-top: 30px;
     }
-    .text-kurs-haqida1{
+
+    .text-kurs-haqida1 {
         width: 310px !important;
     }
+
     .prover2-orta-joy-reytin p {
         font-family: SF Pro Display;
         font-size: 10px;
@@ -2806,6 +3175,7 @@ border-radius: 4px;
         letter-spacing: 0em;
         text-align: left;
     }
+
     .prover2-orta-joy-text h5 {
         font-family: SF Pro Display;
         font-size: 10px;
@@ -2813,6 +3183,7 @@ border-radius: 4px;
         letter-spacing: 0em;
         text-align: left;
     }
+
     .prover2-orta-joy-reytin span {
         font-family: SF Pro Display;
         font-size: 10px;
@@ -2823,9 +3194,11 @@ border-radius: 4px;
         position: relative;
         left: 3px;
     }
+
     .rating {
         padding-left: 3px;
     }
+
     .prover2-info-d {
         border-radius: 5px;
         width: 310px;
@@ -2835,10 +3208,12 @@ border-radius: 4px;
         padding-left: 15px;
         padding-top: 5px;
     }
+
     .prover2-info-filter2 button {
-        width:130px !important;
+        width: 130px !important;
         background: #F1F2F6;
     }
+
     .prover2-linerr1 {
         width: 67.5% !important;
         height: 1px;
@@ -2847,6 +3222,7 @@ border-radius: 4px;
         left: 95px;
         top: 10px;
     }
+
     .prover2-oxiri-block-in {
         width: 310px;
         height: auto;
@@ -2858,6 +3234,7 @@ border-radius: 4px;
         margin-bottom: 10px;
         position: relative;
     }
+
     .mni-krus-techer-swiper1 {
         width: 310px;
         height: 410px;
@@ -2866,18 +3243,21 @@ border-radius: 4px;
         left: 0px;
         top: -0px !important;
     }
-    .mni-gridf1 img{ 
+
+    .mni-gridf1 img {
         width: 130px;
-    height: 150px;
-    border-radius: 4px;
-    
+        height: 150px;
+        border-radius: 4px;
+
     }
 }
+
 @media (max-width:342px) {
     .m_flex_line {
         width: 200px !important;
     }
 }
+
 @media (max-width:389px) {
     .prover2-mni-treboniya p {
         font-family: SF Pro Display;
@@ -2890,12 +3270,14 @@ border-radius: 4px;
         top: 7px;
         left: 7px;
     }
+
     .prover2-trebovaniya-block {
         width: 160px !important;
         height: 40px !important;
         border-radius: 4px;
         background-color: #ffffff;
     }
+
     .prover2-trebovaniya-block2 {
         display: flex;
         align-items: center;
@@ -2906,6 +3288,7 @@ border-radius: 4px;
         background-color: #ffffff;
         cursor: pointer;
     }
+
     .prover2-trebovaniya-block3 {
         display: flex;
         align-items: center;
@@ -2916,12 +3299,13 @@ border-radius: 4px;
         background-color: #ffffff;
         cursor: pointer;
     }
+
     .prover2-trebovaniya-block4 {
         display: flex;
         align-items: center;
 
 
-justify-content: center;
+        justify-content: center;
         width: 130px !important;
         height: 40px !important;
         border-radius: 4px;
@@ -2930,6 +3314,7 @@ justify-content: center;
         cursor: pointer;
     }
 }
+
 @media (max-width:360px) {
     .prover2-trebovaniya-block {
         width: 140px !important;
@@ -2937,6 +3322,7 @@ justify-content: center;
         border-radius: 4px;
         background-color: #ffffff;
     }
+
     .prover2-mni-treboniya p {
         font-family: SF Pro Display;
         font-size: 8px !important;
@@ -2948,6 +3334,7 @@ justify-content: center;
         top: 7px;
         left: 7px;
     }
+
     .prover2-trebovaniya-block2 {
         display: flex;
         align-items: center;
@@ -2958,6 +3345,7 @@ justify-content: center;
         background-color: #ffffff;
         cursor: pointer;
     }
+
     .prover2-trebovaniya-block3 {
         display: flex;
         align-items: center;
@@ -2968,6 +3356,7 @@ justify-content: center;
         background-color: #ffffff;
         cursor: pointer;
     }
+
     .prover2-trebovaniya-block4 {
         display: flex;
         align-items: center;
@@ -2980,10 +3369,12 @@ justify-content: center;
         cursor: pointer;
     }
 }
-.asdasda img{
+
+.asdasda img {
     width: 100px;
 }
-.lasdsadsad img{
+
+.lasdsadsad img {
     width: 200px;
 }
 

@@ -1,5 +1,5 @@
   .m_comment_text p{
-    width: 80%;
+    width: 100%;
     font-size: 15px;
 }
 .m_comment_kotta{
@@ -27,6 +27,36 @@ gap: 20px;
     color: #44bef1;
     display: flex;
     align-items: center;
+    gap: 5px;
+}
+.m_otvet_comment:active{
+    color: #fff;
+    background-color: #44bef1;
+    border-radius: 5px;
+    user-select: none;
+}
+.m_otvet_comment:active a{
+    color: #fff;
+}
+.m_comment_delete{ 
+    cursor:pointer;
+    color: red !important;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.m_otvet_comment a{
+    color: #44bef1;
+}
+.m_comment_delete:active{
+    background-color: #ff0000 !important;
+    color: #fff !important;
+    border-radius: 5px;
+    user-select: none;
+}
+.m_comment_otvet{
+    display: flex;
+    align-items: center;
     gap: 10px;
 }
 .m_comment_img img{
@@ -34,6 +64,13 @@ gap: 20px;
     height: 40px;
     border-radius: 50%;
 }
+
+.m_comment_img1 img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
 .m_comment_yozish p{
     color: #9DA7BB;
     position: absolute;
@@ -59,7 +96,7 @@ border-radius: 5px;
 width: 70%;
 height: 110px;
 margin-top: 30px;
-border: 1px solid #9DA7BB;
+border: 1px solid #9DA7BB50;
 height: auto;
 }
 .m_comment_button button{
@@ -89,9 +126,38 @@ height: auto;
     border: none;
 }
 .m_comment_text h4{
-    font-weight: 500;
+    /* font-weight: 500; */
+    color: black;
+    font-size: 20px;
 }
 
+.commetn_otvet_kaytarish{
+    width: 70%;
+    height: 60px;
+    position: relative;
+    top: 30px;
+    border: 1px solid #9DA7BB50;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom: none;
+    display: none;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+}
+#closeModal{
+    margin: auto;
+    margin-right: 0px;
+    color: #44bef1;
+}
+
+.comment_otvet_block h6{
+    line-height: 10px;
+    margin-top: 20px;
+}
+.comment_otvet_block p{
+    font-size: 13px;
+}
 @media (max-width:1000px) {
     .m_otdel_bgc{
         background-color: #fff;
@@ -114,6 +180,9 @@ height: auto;
         width: 80%;
         margin-top: 30px;
         }
+        .commetn_otvet_kaytarish{
+            width: 80%;
+        }
 }
 @media (max-width:600px) {
     .m_comment_text p{
@@ -128,6 +197,9 @@ height: auto;
         border-radius: 5px;
         width: 100%;
         margin-top: 30px;
+        }
+        .commetn_otvet_kaytarish{
+            width: 100%;
         }
         .m_comment_button{
             width: 100%;

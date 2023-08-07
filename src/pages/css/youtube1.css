@@ -21,6 +21,11 @@
        
     }
 }
+
+.m_comment_text img{
+    width: 50%;
+    border-radius: 5px;
+}
 .accordion_img{
     width: 10%;
 }

@@ -13,13 +13,15 @@ import '../css/Studentpage.css'
 import { GrFormClose } from 'react-icons/gr';
 import Mentorkurs from "./Mentorkurs"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Yozishma from './MentorChat'
+import UserChat from "./userChat"
 import Sertifikat from './Workforteach'
 import Azo from "./Azo"
 import Usernavbar from './Usernavbar'
 import { TiThMenu } from 'react-icons/ti'
 import Futer from "./Footer1"
 import axios from 'axios'
+import { GrClose } from 'react-icons/gr'
+
 import url from './Host'
 import { AiFillStar } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
@@ -31,7 +33,8 @@ export default function Mentor() {
   const [state1, setState1] = React.useState();
   const [students, setStudents] = React.useState([]);
   const [kursdata, setKursdata] = useState([]);
-  const [courses, setCourses] = useState([])
+  const [courses, setCourses] = useState([]);
+  const [user,setUser] =useState([])
   useEffect(() => {
     axios.get(`${url}/auth/oneuser`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
       setStudents(res.data)
@@ -112,6 +115,37 @@ export default function Mentor() {
           document.querySelector(".profil_blok_menu_clone").style="display:none !important;"
           document.querySelector(".profil_blok_menu").style="display:block;"
       }
+      function notificationModal() {
+        document.querySelector(".profil_notifacation_size").style =
+          "position: fixed;right:0px;";
+        document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
+          "display:none";
+            document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
+      "display:none";
+    document.querySelector(".profil-qora-qiladi").style = "display:block";
+    
+      }
+      function notificationClose() {
+        document.querySelector(".profil_notifacation_size").style =
+          "position: fixed;right:-100%;";
+          
+    document.querySelector(".profil-qora-qiladi").style = "display:none";
+      }
+      function notificationModal() {
+        document.querySelector(".profil_notifacation_size").style =
+          "position: fixed;right:0px;";
+    
+        document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
+          "display:none";
+        document.querySelector(".profil-qora-qiladi").style = "display:block";
+      }
+      function notificationClose() {
+        document.querySelector(".profil_notifacation_size").style =
+          "position: fixed;right:-100%;";
+        document.querySelector(".profil-qora-qiladi").style = "display:none";
+      }
+    
+    
   return (
     <div className='studentpagess'>
        <Usernavbar />
@@ -150,8 +184,11 @@ export default function Mentor() {
             <h1>{item.balance}</h1><p>UZS</p>
           </div>
           <div className="profil_blok_ikki_button">
-            <button><BsActivity/></button><button>Balance replenishment</button>
-          </div>
+                <button>
+                  <BsActivity />
+                </button>
+                <button onClick={()=>  window.location="/oplata"}>Balance replenishment</button>
+              </div>
           </div>
           )
         })}
@@ -161,8 +198,14 @@ export default function Mentor() {
           <BsThreeDots  onMouseEnter={()=>taxrirlashModal()} className='profil_blok_ikki_icon_ikki' />
           <div className="profil_blok_ikki_icon_texrirlash_modal">
             <div className='taxrirlash_modal_div'><FiEdit className='taxrirlash_modal_icon' /><p>Edit profile</p></div>
-            <div className='taxrirlash_modal_div'><BiCast className='taxrirlash_modal_icon'/><p>Notifications</p></div>
-            <div className='taxrirlash_modal_div'><FiLifeBuoy className='taxrirlash_modal_icon'/><p>Help</p></div>
+            <div
+                  onClick={() => notificationModal()}
+                  className="taxrirlash_modal_div"
+                >
+                  <BiCast className="taxrirlash_modal_icon" />
+                  <p>Notifications</p>
+                </div>
+          <a href="/Help" style={{color:"black"}}>  <div className='taxrirlash_modal_div'><FiLifeBuoy className='taxrirlash_modal_icon'/><p>Help</p></div></a>
             <hr />
             <div className='taxrirlash_modal_div'><FiLogOut className='taxrirlash_modal_icon'/><p>Exit</p></div>
           </div>
@@ -407,11 +450,102 @@ export default function Mentor() {
           })}
         </div> */}
       </div></div>
-            <div className={toggle === 2 ? "show-content" : "content"}><Yozishma /></div>
+            <div className={toggle === 2 ? "show-content" : "content"}><UserChat /></div>
             <div className={toggle === 3 ? "show-content" : "content"}><Sertifikat /></div>
             <div className={toggle === 4 ? "show-content" : "content"}><Azo/></div>
 
     </div>
+
+    <div className="profil_notifacation_size">
+          {/* <div className="admin">
+            <h4>Sms</h4>
+            <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
+
+          </div> */}
+
+<div className="div-admin-sms">
+  <h5>SMS</h5>
+  <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
+</div>
+<div className="sms-insta">
+<div className="sms-insto-bb1">
+    <div className="sms-insta-block">
+    <div className="sms-img">
+      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
+    </div>
+<div className="sms-kotta-pas">
+<div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
+    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
+</div>
+  </div>
+
+  <div className="sms-insta-block">
+    <div className="sms-img">
+      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
+    </div>
+<div className="sms-kotta-pas">
+<div className="sms-text-tepa"><p>boxodirov_025 </p><p></p></div>
+    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
+</div>
+  </div>
+
+    <div className="sms-insta-block">
+    <div className="sms-img">
+      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
+    </div>
+<div className="sms-kotta-pas">
+<div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
+    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
+</div>
+  </div>
+</div>
+</div>
+
+          <div className="div-admin-sms">
+            <h5>SMS</h5>
+            <div
+              onClick={() => notificationClose()}
+              className="profil_notifacation_size_close"
+            >
+              <GrClose className="closei" />
+            </div>
+          </div>
+          <div className="sms-insta">
+            <div className="sms-insto-bb1">
+              
+
+              {user.map(item=>{
+                return(
+                  <div className="sms-insta-block">
+                <div className="sms-img">
+                  <img
+                    src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png"
+                    alt=""
+                  />
+                </div>
+                
+                <div className="sms-kotta-pas">
+                  <div className="sms-text-tepa">
+                    <p>
+                      boxodirov_025 • now{" "}
+                      <span>
+                        <box-icon type="solid" name="bell-ring"></box-icon>
+                      </span>
+                    </p>
+                  </div>
+                  <div className="sms-text-pas">
+                    <p>Sent an sms to: Salom</p>
+                  </div>
+                </div>
+              </div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+        <div className="profil-qora-qiladi"></div>
+
+
     <Futer />
     </div>
   )

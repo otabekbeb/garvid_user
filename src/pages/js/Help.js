@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState,useEffect } from 'react'
 import { FaUserCircle } from 'react-icons/fa'
 import { PiStudentDuotone } from 'react-icons/pi'
 import { BsChatLeftDots } from 'react-icons/bs'
@@ -6,16 +6,24 @@ import '../css/Help.css'
 import Futer from "./Footer1"
 import Usernavbar from './Usernavbar'
 
+import axios from 'axios'
+import url from './Host'
+
 export default function Help() {
+
+
+
+
   return (
     <div>
       <Usernavbar />
+
 
       <div className="bos">
         <h1 className='Savol'>Answers to frequently asked questions</h1>
         <div className="user_help">
           <div className="user_help1">
-            <a href="/userhelp">
+            <a href="/userhelp">  
               <div className="user_div"  >
                 <div className="user_icon">
                   <FaUserCircle />
@@ -23,7 +31,7 @@ export default function Help() {
                 <h4>User</h4>
               </div>
             </a>
-            <a href="/Help_Mentor">
+            <a href="/MentorHelp">
               <div className="user_div"  >
                 <div className="user_icon">
                   <FaUserCircle />
@@ -57,6 +65,11 @@ export default function Help() {
 
 
       </div>
+
+
+   
+      
+
 
       <Futer />
     </div>
