@@ -24,6 +24,9 @@ export default function Mentorprofile() {
     useEffect (()=>{
       axios.get(`${url}/auth/oneuser`, {headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}}).then(res=>{
         // console.log(res.data);
+        res.data.map(item=>{
+          localStorage.setItem("oneuser",item.id)
+        })
         setbase(res.data)
       }).catch(err=>{
         console.log('err');

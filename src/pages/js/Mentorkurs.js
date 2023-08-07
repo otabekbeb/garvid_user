@@ -133,7 +133,7 @@ export default function Searchfilter() {
     formdata.append("planned_time", document.querySelector(".planned_timePost").value)
     formdata.append("image", document.querySelector(".imagePost").files[0])
     formdata.append("course_type", document.querySelector(".selectPost").value)
-    formdata.append("author", document.querySelector(".authorPost").value)
+    formdata.append("author", localStorage.getItem("oneuser"))
 
 
     axios.post(`${url}/api/course`, formdata, {
@@ -154,8 +154,8 @@ export default function Searchfilter() {
     formdata.append("price", document.querySelector(".inp_numbr1").value)
     formdata.append("planned_time", document.querySelector(".inp_numbr").value)
     formdata.append("image", document.querySelector(".inp_img").files[0])
-    formdata.append("course_type", 12)
-    formdata.append("author", 12)
+    formdata.append("course_type", document.querySelector(".select_opt").value)
+    formdata.append("author", localStorage.getItem("oneuser"))
 
     axios.put(`${url}/api/course/${id}`, formdata, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
@@ -371,6 +371,12 @@ export default function Searchfilter() {
                       <input id="planned_time" type="number" className="inp_numbr" />
                     </div>
                     <div className="edit_inside">
+                      <label htmlFor="">Course type:</label>
+                      <Form.Select className="select_opt" aria-label="Default select example">
+                        {courstype.map(item => { return <option value={item.id}>{item.name}</option> })}
+                      </Form.Select>
+                    </div>
+                    <div className="edit_inside">
                       <label htmlFor="">Image:</label>
                       <input id="image" type="file" className="inp_img" />
                     </div>
@@ -433,29 +439,9 @@ export default function Searchfilter() {
               <div className="edit_inside">
                 <label htmlFor="">Course type:</label>
                 <Form.Select className="selectPost" aria-label="Default select example">
-                  <option>Open this select menu</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                  {courstype.map(item => { return <option value={item.id}>{item.name}</option> })}
                 </Form.Select>
-                {/* <div className="form_group">
-                  <div className="dropdown">
-                    <button className="dropdown_btn" onclick={() => drop_toggle()}>Select <BsChevronDown className="select_btn_icon" /></button>
-                    <ul className="dropdown_list">
-                      <li className="dropdown_list_item" data-value="one">one</li>
-                      <li className="dropdown_list_item" data-value="two">two</li>
-                      <li className="dropdown_list_item" data-value="three">three</li>
-                      <li className="dropdown_list_item" data-value="four">four</li>
-                    </ul>
-                  </div>
-
-                </div> */}
               </div>
-              <div className="edit_inside">
-                <label htmlFor="">Author:</label>
-                <input className="authorPost" type="text" />
-              </div>
-
               <div className="edit_inside">
                 <label htmlFor="">Image:</label>
                 <input className="imagePost" type="file" />
