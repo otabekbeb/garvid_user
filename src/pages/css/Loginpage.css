@@ -980,7 +980,7 @@ display: none;
 }
 
 .loader {
-  height: 100% !important;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
