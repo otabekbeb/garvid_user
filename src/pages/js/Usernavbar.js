@@ -69,10 +69,12 @@ function ochilnavbar(){
   left: 0%;`
   document.querySelector(".navbar-qoraaa").style=`display:block`
 }
-function yopilqora(){
+
+function yopilqora1(){
   document.querySelector(".navbar-glav-medias").style=`position: relative;
   left: 100%`
-  document.querySelector(".navbar-qoraaa").style=`display:none`
+  document.querySelector(".navbar-qoraaa").style=`display:none !important`
+
 }
 
 
@@ -80,6 +82,7 @@ export default function Navbar() {
   const [state1, setState1] = React.useState();
   const [state, State] = React.useState(1);
   const [user, setUser] = useState([])
+   const [MobileMenu,setMobileMenu]= useState(false)
   const googleTranslateElementInit = () => {
     new window.google.translate.TranslateElement(
       {
@@ -301,8 +304,8 @@ export default function Navbar() {
              <div className="navbar-media-img-joy">
               <img src={garvrd} alt="" id="avbar-media-img-joyimg" />
              </div>
-             <div className="navbar-media-katalog-joy" onClick={()=>ochilnavbar()} >
-             <box-icon name='menu-alt-right' color='white' ></box-icon>
+             <div className="navbar-media-katalog-joy" onClick={()=>setMobileMenu(!MobileMenu)} >
+             {MobileMenu ?<div className="box-icon-togirladim1"  onClick={()=>yopilqora1()}><box-icon name='x' color='white' ></box-icon></div>:<div className="box-icon-togirladim" onClick={()=>ochilnavbar()}><box-icon name='menu-alt-right' color='white' ></box-icon></div>}
              </div>
             </div>
             </div>
@@ -323,12 +326,12 @@ export default function Navbar() {
         
 <div className="navbar-media-left-ul">
     <ul >
-  <div className="navbar-box-icons">  <span><box-icon name='home' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar">Home</li></div>
-  <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='user'></box-icon></span> <li id="surul-navbar">User</li>  </div> 
-  <div className="navbar-box-icons"><span><box-icon name='news' color='#323946' ></box-icon></span> <li id="surul-navbar">Teacher</li>  </div> 
- <div className="navbar-box-icons">   <span><box-icon name='contact' type='solid' color='#323946' ></box-icon></span> <li id="surul-navbar">Student</li>  </div>
-    <div className="navbar-box-icons"><span><box-icon name='chat' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar">Edit profile</li>  </div>
-   <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='wrench'></box-icon></span><li id="surul-navbar">Courses</li></div> 
+  <div className="navbar-box-icons">  <span><box-icon name='home' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar" onClick={()=> window.location="/"}>Home</li></div>
+  <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='user'></box-icon></span> <li id="surul-navbar" onClick={()=> window.location="/user"}>User</li>  </div> 
+  <div className="navbar-box-icons"><span><box-icon name='news' color='#323946' ></box-icon></span> <li id="surul-navbar" onClick={()=> window.location="/teacher"}>Teacher</li>  </div> 
+ <div className="navbar-box-icons">   <span><box-icon name='contact' type='solid' color='#323946' ></box-icon></span> <li id="surul-navbar" onClick={()=> window.location="/studentpage"}>Student</li>  </div>
+    <div className="navbar-box-icons"><span><box-icon name='chat' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar" onClick={()=> window.location="/loginpage"}>Edit profile</li>  </div>
+   <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='wrench'></box-icon></span><li id="surul-navbar"  onClick={()=> window.location="/ourcourse"}>Courses</li></div> 
    <div className="navbar-box-icons"><span><box-icon name='user' color='#323946' ></box-icon></span><li id="surul-navbar">  {localStorage.getItem("token") ? (user.map(item=>{return( <a href="/user" id="osdsodsdd" className="323946">{item.username}</a>) })) : (<a href="/login" className="tt">Log in</a>)}</li></div>
    </ul>
 
@@ -338,7 +341,7 @@ export default function Navbar() {
         </div>
  
  </div>
- <div className="navbar-qoraaa" onClick={()=>yopilqora()}>
+ <div className="navbar-qoraaa">
   
   </div>
     </div>
