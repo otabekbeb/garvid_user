@@ -3,6 +3,8 @@ import "../css/Navbar.css";
 import axios from "axios";
 import url from "./Host";
 import garvrd from '../img/Remove-bg.ai_1691307426758.png'
+import teacher from '../img/oqtuvchi.png'
+
 function sa() {
   var o = document.querySelector(".media-ul").style.display;
   if (o == "flex") {
@@ -328,7 +330,7 @@ export default function Navbar() {
     <ul >
   <div className="navbar-box-icons">  <span><box-icon name='home' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar" onClick={()=> window.location="/"}>Home</li></div>
   <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='user'></box-icon></span> <li id="surul-navbar" onClick={()=> window.location="/user"}>User</li>  </div> 
-  <div className="navbar-box-icons"><span><box-icon name='news' color='#323946' ></box-icon></span> <li id="surul-navbar" onClick={()=> window.location="/teacher"}>Teacher</li>  </div> 
+  <div className="navbar-box-icons"><span ><img src={teacher} style={{width:"30px"}} alt="" /></span> <li id="surul-navbar" onClick={()=> window.location="/teacher"}>Teacher</li>  </div> 
  <div className="navbar-box-icons">   <span><box-icon name='contact' type='solid' color='#323946' ></box-icon></span> <li id="surul-navbar" onClick={()=> window.location="/studentpage"}>Student</li>  </div>
     <div className="navbar-box-icons"><span><box-icon name='chat' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar" onClick={()=> window.location="/loginpage"}>Edit profile</li>  </div>
    <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='wrench'></box-icon></span><li id="surul-navbar"  onClick={()=> window.location="/ourcourse"}>Courses</li></div> 
