@@ -99,6 +99,7 @@ export default function Navbar() {
     );
   };
 
+
     useEffect(() => {
     var addScript = document.createElement("script");
     addScript.setAttribute(
@@ -108,9 +109,6 @@ export default function Navbar() {
     document.body.appendChild(addScript);
     window.googleTranslateElementInit = googleTranslateElementInit;
   }, []);
-
-
-
 
   
 
@@ -359,6 +357,7 @@ export default function Navbar() {
    <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='group'></box-icon></span> <li id="surul-navbar" onClick={()=> window.location="/ourteam"}>our team</li></div>
    <div className="navbar-box-icons"><span><box-icon name='user' color='#323946' ></box-icon></span><li id="surul-navbar">  {localStorage.getItem("token") ? (user.map(item=>{return( <a href="/user" id="osdsodsdd" className="323946">{item.username}</a>) })) : (<a href="/login" className="tt">Log in</a>)}</li></div>
    </ul>
+
 
 </div>
 

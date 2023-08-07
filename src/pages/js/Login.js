@@ -129,6 +129,9 @@ export default function Login() {
                   <BiLockAlt className="login_icon" />
                   <input placeholder={state1==="en"?("Password"):("Пароль")} id="parol" type="password" required/>
                 </div>
+                <div className="parol-esdan-chiqdi">
+                  <a href="">Забыл пароль ?</a>
+                </div>
                 <div className="login_button_div">
                  <button type="button"  onClick={()=>userAvto()} >{state1==="en"?("Login"):("Авторизоваться")}</button>
                 </div>
