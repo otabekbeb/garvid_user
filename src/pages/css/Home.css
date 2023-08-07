@@ -55,12 +55,21 @@
 #google_translate_element select{
     width: 100%;
 }
+#google_translate_element1 select{
+    width: 100%;
+    display: none !important;
+}
 .goog-te-gadget{
     height: 17px !important;
 }
 #google_translate_element{
     overflow: hidden;
     width: 200px !important;
+}
+#google_translate_element1{
+    overflow: hidden;
+    width: 200px !important;
+    display: none !important;
 }
 .button:hover{
     background-color: #00000000;
