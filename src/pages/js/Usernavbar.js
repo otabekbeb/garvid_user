@@ -4,6 +4,9 @@ import axios from "axios";
 import url from "./Host";
 import garvrd from '../img/Remove-bg.ai_1691307426758.png'
 import teacher from '../img/oqtuvchi.png'
+import Student from '../img/student.jpg'
+import Edit from '../img/Edit.png'
+import Curs from '../img/Curs.png'
 
 function sa() {
   var o = document.querySelector(".media-ul").style.display;
@@ -331,9 +334,9 @@ export default function Navbar() {
   <div className="navbar-box-icons">  <span><box-icon name='home' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar" onClick={()=> window.location="/"}>Home</li></div>
   <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='user'></box-icon></span> <li id="surul-navbar" onClick={()=> window.location="/user"}>User</li>  </div> 
   <div className="navbar-box-icons"><span ><img src={teacher} style={{width:"30px"}} alt="" /></span> <li id="surul-navbar" onClick={()=> window.location="/teacher"}>Teacher</li>  </div> 
- <div className="navbar-box-icons">   <span><box-icon name='contact' type='solid' color='#323946' ></box-icon></span> <li id="surul-navbar" onClick={()=> window.location="/studentpage"}>Student</li>  </div>
-    <div className="navbar-box-icons"><span><box-icon name='chat' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar" onClick={()=> window.location="/loginpage"}>Edit profile</li>  </div>
-   <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='wrench'></box-icon></span><li id="surul-navbar"  onClick={()=> window.location="/ourcourse"}>Courses</li></div> 
+ <div className="navbar-box-icons">   <span><img src={Student} style={{width:"30px"}} alt="" /></span> <li id="surul-navbar" onClick={()=> window.location="/studentpage"}>Student</li>  </div>
+    <div className="navbar-box-icons"><span><img src={Edit} style={{width:"30px"}} alt="" /></span><li id="surul-navbar" onClick={()=> window.location="/loginpage"}>Edit profile</li>  </div>
+   <div className="navbar-box-icons"><span><img src={Curs } style={{width:"30px"}} alt="" /></span><li id="surul-navbar"  onClick={()=> window.location="/ourcourse"}>Courses</li></div> 
    <div className="navbar-box-icons"><span><box-icon name='user' color='#323946' ></box-icon></span><li id="surul-navbar">  {localStorage.getItem("token") ? (user.map(item=>{return( <a href="/user" id="osdsodsdd" className="323946">{item.username}</a>) })) : (<a href="/login" className="tt">Log in</a>)}</li></div>
    </ul>
 
