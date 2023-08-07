@@ -5,6 +5,7 @@ import axios from "axios";
 import url from "./Host";
 import { NavLink } from "react-router-dom";
 import {BsFillPersonFill} from "react-icons/bs"
+import garvrd from '../img/Remove-bg.ai_1691307426758.png'
 function sa() {
   var o = document.querySelector(".media-ul").style.display;
   if (o == "flex") {
@@ -66,6 +67,17 @@ function menu2leave1() {
   document.querySelector(".blog1").style = "display:none";
   document.querySelector(".menu ul").style = "display:none";
 }
+function ochilnavbar(){
+  document.querySelector(".navbar-glav-medias").style=`position: relative;
+  left: 0%;`
+  document.querySelector(".navbar-qoraaa").style=`display:block`
+}
+function yopilqora(){
+  document.querySelector(".navbar-glav-medias").style=`position: relative;
+  left: 100%`
+  document.querySelector(".navbar-qoraaa").style=`display:none`
+}
+
 export default function Navbar() {
   const [state1, setState1] = React.useState();
   const [state, State] = React.useState(1);
@@ -82,7 +94,8 @@ export default function Navbar() {
       "google_translate_element"
     );
   };
-  useEffect(() => {
+
+    useEffect(() => {
     var addScript = document.createElement("script");
     addScript.setAttribute(
       "src",
@@ -92,6 +105,10 @@ export default function Navbar() {
     window.googleTranslateElementInit = googleTranslateElementInit;
   }, []);
 
+
+
+
+  
 
   useEffect(() => {
 
@@ -103,11 +120,11 @@ export default function Navbar() {
     axios.get(`${url}/auth/oneuser`, { headers: { "Authorization":  "Bearer " + localStorage.getItem("token") } }).then(res => {
       setUser(res.data)
     });
-
-    
-    
   }, []);
 
+  
+  
+  
   return (
     <div>
 
@@ -196,9 +213,10 @@ export default function Navbar() {
                     </li>
              </div>
               <div id="google_translate_element"></div>
+          
             </div>
             <div className="media-navbar" style={{margin:"auto",width:'100%'}}>
-              <div style={{width:'100%'}} className="navbar-menu">
+              {/* <div style={{width:'100%'}} className="navbar-menu">
                 <div className="navbar-mediao-barr" onClick={() => sa()}>
                   <div className="bar-menu" id="sa">
                     <div className="wone"></div>
@@ -209,7 +227,7 @@ export default function Navbar() {
 
 
 {/* onMouseLeave={()=>aboutClose2()}  */}
-                <div  className="media-ul">
+                {/* <div  className="media-ul">
                   <div className="dfdf">
                     <ul>
                       <li onClick={()=> window.location="/"}>
@@ -289,7 +307,7 @@ export default function Navbar() {
                           Contacts
                         </a>
                       </li>
-                      {/* <li><a href="/teacher" className='tt'>Teacher</a></li> */}
+                      
                     <li >
                       {localStorage.getItem("token") ? (user.map(item=>{return(<a href="/user" className="tt">{item.username}</a>) })) : (<a href="/login" className="tt">Log in</a>)}
                     </li>
@@ -300,7 +318,13 @@ export default function Navbar() {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </div>  */}
+             <div className="navbar-media-img-joy">
+              <img src={garvrd} alt="" id="avbar-media-img-joyimg" />
+             </div>
+             <div className="navbar-media-katalog-joy" onClick={()=>ochilnavbar()} >
+             <box-icon name='menu-alt-right' color='white' ></box-icon>
+             </div>
             </div>
           </section>
         </div>
@@ -316,6 +340,32 @@ export default function Navbar() {
           <div className="navbar-tepaga-krug"></div>
         </a>
       </div>
+ <div className="navbar-glav-medias">
+ <div className="navbar-media-left">
+        
+<div className="navbar-media-left-ul">
+    <ul >
+  <div className="navbar-box-icons">  <span><box-icon name='home' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar">Home</li></div>
+  <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='user'></box-icon></span> <li id="surul-navbar">About us</li>  </div> 
+  <div className="navbar-box-icons"><span><box-icon name='news' color='#323946' ></box-icon></span> <li id="surul-navbar">News</li>  </div> 
+ <div className="navbar-box-icons">   <span><box-icon name='contact' type='solid' color='#323946' ></box-icon></span> <li id="surul-navbar">Contacts</li>  </div>
+    <div className="navbar-box-icons"><span><box-icon name='chat' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar">FAQs</li>  </div>
+   <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='wrench'></box-icon></span><li id="surul-navbar">Services</li></div> 
+   <div className="navbar-box-icons"><span><box-icon name='message-alt-detail' color='#323946' ></box-icon></span><li id="surul-navbar">Blog</li></div> 
+   <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='group'></box-icon></span> <li id="surul-navbar">our team</li></div>
+   <div className="navbar-box-icons"><span><box-icon name='contact' type='solid' color='#323946' ></box-icon></span> <li id="surul-navbar">Contacts</li></div>
+   <div className="navbar-box-icons"><span><box-icon name='user' color='#323946' ></box-icon></span><li id="surul-navbar">  {localStorage.getItem("token") ? (user.map(item=>{return( <a href="/user" id="osdsodsdd" className="323946">{item.username}</a>) })) : (<a href="/login" className="tt">Log in</a>)}</li></div>
+   </ul>
+
+</div>
+
+        
+        </div>
+ 
+ </div>
+ <div className="navbar-qoraaa" onClick={()=>yopilqora()}>
+  
+  </div>
     </div>
   );
 }
