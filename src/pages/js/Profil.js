@@ -49,7 +49,6 @@ export default function Profil() {
         setUser(res.data)
         console.log(res.data,"aaa")
     }).catch(err=>{
-        alert("malumot xato keldi")
     })
   }, []);
 

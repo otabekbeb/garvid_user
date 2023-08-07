@@ -39,8 +39,9 @@ export default function User_help2() {
             <a href="/help_chat"><button className='nazad_bt'>   <AiOutlineLeft /> back</button></a>
           </div>
         </div>
-        {help.map(item=>{
-          return(
+        {help.map((item,key)=>{
+          if(key==localStorage.getItem("helpId")){
+            return(
             <div className="mod_svg1">
           <div className="text_mod1">
             <p>{item.description}
@@ -52,6 +53,8 @@ export default function User_help2() {
           </div>
         </div>
           )
+          }
+          
         })}
         
       </div>

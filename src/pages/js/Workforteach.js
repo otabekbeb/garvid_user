@@ -5,7 +5,7 @@ import sertifikat from '../img/Sertifikat.png'
 import axios from 'axios'
 import { MdDeleteOutline } from "react-icons/md"
 import Groupimg from '../img/Group 2.png'
-import { GrClose } from 'react-icons/gr'
+import { GrFormClose } from 'react-icons/gr'
 
 export default function Workforteach() {
     function openModal() {
@@ -76,7 +76,7 @@ export default function Workforteach() {
             <div className="m_zadacha_tepadan">
 
                 <div className="m_zadachi_dobavit">
-                    <div className="m_clouse_x" onClick={() => clouseModal()}>x</div>
+                    <div className="m_clouse_x" onClick={() => clouseModal()}><GrFormClose/></div>
                     <div className="m_input_file_dobavit">
                         <div className="a_input_file12"> Добавить изоброжение </div>
                         <input type="file" />
@@ -93,7 +93,7 @@ export default function Workforteach() {
             <div className="m_zadacha_tepadan1">
 
                 <div className="m_zadachi_dobavit">
-                    <div className="m_clouse_x" onClick={() => clouseModal1()}><GrClose/></div>
+                    <div className="m_clouse_x" onClick={() => clouseModal1()}><GrFormClose/></div>
                     <div className="m_input_file_dobavit">
                         <div className="a_input_file12"> Изменить изоброжение </div>
                         <input type="file" />

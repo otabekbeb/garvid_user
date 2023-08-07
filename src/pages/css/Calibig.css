@@ -309,6 +309,7 @@
     height: auto;
     border: 2px dashed #9DA7BB;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .dashed i {
@@ -317,10 +318,116 @@
     font-size: 40px;
     color: #9DA7BB;
     justify-content: center;
-    cursor: pointer;
+
     transition: .3s ease-in-out;
 }
 
 .edit_card {
     display: none;
+}
+/* 
+.dropdown{
+    position: relative;
+}
+
+.dropdown_btn{
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: left;
+
+    background-color: white;
+    border: 1px solid #9DA7BB;
+    border-radius: 3px;
+    height: 30px;
+
+    padding: auto;
+    padding-left: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.dropdown_btn::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: rotate(50%);
+    pointer-events: none;
+}
+
+.dropdown_btn:focus{
+    outline: none;
+    box-shadow: 0px 0px 0px 3px rgba(94, 98, 104, 0.16);
+}
+
+.dropdown_list{
+    display: none;
+
+    position: absolute;
+    left: 0;
+    top: 40px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    background-color: white;
+    box-shadow: 0px 4px 20px 0px rgba(1, 102, 144, 0.10);
+    overflow: hidden;
+
+    border-radius: 3px;
+    width: 100%;
+
+    z-index: 12312345678912345;
+}
+.myStyle{
+    position: absolute;
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 17px 0px 18px 24px;
+} 
+
+.dropdown_list--visible{
+    display: block;
+}
+
+.dropdown_list_item{
+    margin: 0;
+    padding: 0;
+    border: 1px solid #9DA7BB;
+    padding: auto;
+    padding-left: 10px;
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+    border-bottom: 0px;
+}
+
+.dropdown_list_item:first-child{
+    border-radius: 5px 5px 0 0;
+}
+
+.dropdown_list_item:last-child{
+    border-radius: 0 0 5px 5px;
+    border-bottom: 1px solid #9DA7BB;
+}
+.dropdown_list_item:hover{
+    background: rgba(0, 0, 0, 0.075);
+} */
+.selectPost{
+    padding-top: 2px !important;
+    padding-left: 10px !important;
+    height: 30px;
+    border-radius: 3px;
+    border: 1px solid #9DA7BB !important;
+}
+.selectPost:focus{
+    box-shadow: 0px 0px 0px 3px #44bdf15f;
+}
+.selectPost option{
+    border-bottom: 1px solid #9DA7BB !important;
 }
