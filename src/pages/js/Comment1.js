@@ -147,6 +147,7 @@ setComment2(item)
 
       {comment.map(item => {
         return(
+        <div className='for_scroll'>
           <div className="m_comment">
           <div className="m_comment_img">
           {
@@ -189,6 +190,7 @@ setComment2(item)
               
               </div>
           </div>
+      </div>
       </div>
         )
        })}  
