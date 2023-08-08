@@ -4,3 +4,22 @@
 .studentpagess .edit_icon{
     display: none;
 }
+.profil_blok_bir1 {
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .profil_blok_ikki_sum1{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .profil_blok_ikki_sum1 h1{
+    margin-bottom: 0px;
+  }
+  .blok_bir_text_mentor1 h1{
+    font-size: 27px;
+  }

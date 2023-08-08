@@ -261,10 +261,18 @@
 }
 
 .userList {
-    height: 510px;
+    height: 500px;
     overflow: scroll;
     overflow-x: hidden;
     margin-top: 20px;
+}
+@media(max-width:600px){
+    .message-content p{
+        font-size: 15px;
+    }
+    .yozishma_big_div{
+        padding: 5px;
+    }
 }
 
 .userDiv {
@@ -472,8 +480,8 @@ width: 94%;
     }
 }
 .Chat_background ::-webkit-scrollbar {
-    width: 1px;
-    opacity: 0;
+    width: 1px !important;
+    opacity: 0 !important;
   }
 @media(min-width:700px) {
     .yoq1 {
