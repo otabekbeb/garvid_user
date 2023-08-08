@@ -178,7 +178,7 @@ Health</li>
                     <div className="filter_padding">
                         <h5>Sorting 
 
-types</h5>
+types</h5><p style={{cursor:"pointer"}} onClick={()=> {window.location.reload()}}>All</p>
                         {filter1.map(item=>{
                           return(
                             <p style={{cursor:"pointer"}} onClick={()=>filter11(item.id)}>{item.name}</p>

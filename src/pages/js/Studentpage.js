@@ -168,7 +168,7 @@ export default function Mentor() {
             <div className="blok_bir_text_mentor1">
             <h1>{item.username}</h1>
             <p>Java Tutor, Python</p>
-            <button>Mentor1</button>
+            <button>Student</button>
            </div>
           
            
@@ -181,7 +181,7 @@ export default function Mentor() {
 <div className="profil_blok_ikki_text">
           <p>Current balance</p>
           <div className="profil_blok_ikki_sum1">
-            <h1>{item.balance}</h1><p>UZS</p>
+            <h1>{item.balance}</h1><p>$</p>
           </div>
           <div className="profil_blok_ikki_button">
                 <button>
