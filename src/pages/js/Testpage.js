@@ -32,11 +32,28 @@ document.querySelector(".block-bir-variant2 p").style=`background-color: rgb(98,
 export default function Testpage() {
     const [page,setpage]= useState(1)
 const [counter , setCounter]= React.useState(59)
+const [counter1 , setCounter1]= React.useState(70)
+const[loading,setloading]= useState(false)
+
+useEffect(()=>{
+    setloading(true);
+    setTimeout(()=>{
+        setloading(false);
+    },8000);
+},[])
+
 React.useEffect(()=>{
     const timer =
     counter > 0 &&  setInterval(()=>setCounter(counter - 1),1000);
     return()=> clearInterval(timer);
 },[counter])
+
+React.useEffect(()=>{
+    const timer1 =
+    counter1 > 0 &&  setInterval(()=>setCounter1(counter1 - 1),1000);
+    return()=> clearInterval(timer1);
+},[counter1])
+
   return (
     <div>
         <Navbar/>
@@ -56,7 +73,7 @@ React.useEffect(()=>{
 <div className="test-center">
 <div className="tepa-sanidi-test">
 <div className="tepa-tepa-zaibal">
-<h6>Question <span>1</span> of <span>10</span></h6>
+<h6>Question <span>1</span> of <span>2</span></h6>
 </div>
 <div className="tepa-time">
 <box-icon name='timer'></box-icon> <span id='timer-yebat'>00:{counter}</span>
@@ -81,10 +98,42 @@ React.useEffect(()=>{
                 <p>yoqol3</p>
             </div>
         </div>
-        <div className="buttob-next"><button>Next</button></div>
+        <div className="buttob-next"><button onClick={()=>setpage(3)}>Next</button></div>
     </div>
 </div>
-    </div> ):(<div></div>)
+    </div> ):(page==3?(<div>
+        <div className="test-center">
+<div className="tepa-sanidi-test">
+<div className="tepa-tepa-zaibal">
+<h6>Question <span>2</span> of <span>2</span></h6>
+</div>
+<div className="tepa-time">
+<box-icon name='timer'></box-icon> <span id='timer-yebat'>00:{counter1}</span>
+</div>
+</div>
+</div>
+<div className="test-center">
+<div className="tepa-line"></div>
+</div>
+        <div className="test-center-margin">
+    <div className="test-variant">
+        <h3>test-variant2</h3>
+        <h5>test-variant2</h5>
+        <div className="varianlaa">
+            <div className="block-bir-variant" id='spspspsps' onClick={()=>openTest()}>
+                <p >sur</p>
+            </div>
+            <div className="block-bir-variant1"  onClick={()=>openTest1()}>
+                <p>sur2</p>
+            </div>
+            <div className="block-bir-variant2"  onClick={()=>openTest2()}>
+                <p>sur3</p>
+            </div>
+        </div>
+        <div className="buttob-next"><button onClick={()=>setpage(4)}>Next</button></div>
+    </div>
+</div>
+    </div>):(setpage==4?(<div>aasdasdasda</div>):(<div></div>)))
 )
 }
 </div>
