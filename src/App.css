@@ -15,11 +15,11 @@ body{
         margin-top: 10px;
     }
 }
-<<<<<<< Updated upstream
+
 #text{
     display: none !important;
 }
-=======
+
 /* width */
 ::-webkit-scrollbar {
     width: 0px;
@@ -39,4 +39,3 @@ body{
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
->>>>>>> Stashed changes
