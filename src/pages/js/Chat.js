@@ -10,9 +10,11 @@ function back() {
   document.querySelector(".yozishma_small_div").style = "display:none"
 }
 
+
 function Chat({ socket, email, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
+  const [theme,setTheme] = useState(localStorage.getItem("back"))
 
   const sendMessage = async () => {
     if (currentMessage !== "") {
@@ -31,8 +33,36 @@ function Chat({ socket, email, room }) {
       setCurrentMessage("");
     }
   };
-
+  function send1(){
+    if (theme=="sun") {
+      document.querySelector(".chat-window .chat-footer button").style = "color:black";
+    }else{
+      document.querySelector(".chat-window .chat-footer button").style = "color:white";
+    }
+    if (theme=="sun") {
+      document.querySelector(".chat-window .chat-footer button").style = "background:white";
+    }else{
+      document.querySelector(".chat-window .chat-footer button").style = "background:black";
+    }
+  }
+  function send2(){
+    if (theme=="sun") {
+      document.querySelector(".chat-window .chat-footer button").style = "color:white";
+    }else{
+      document.querySelector(".chat-window .chat-footer button").style = "color:black";
+    }
+    if (theme=="sun") {
+      document.querySelector(".chat-window .chat-footer button").style = "background:white";
+    }else{
+      document.querySelector(".chat-window .chat-footer button").style = "background:black";
+    }
+  }
   useEffect(() => {
+    if (theme=="sun") {
+      document.querySelector(".chat-window .chat-header p").style = "color:black";
+    }else{
+      document.querySelector(".chat-window .chat-header p").style = "color:white";
+    }
     socket.on("receive_message", (data) => {
       setMessageList((list) => [...list, data]);
       socket.on("load_messages", (data) => {
@@ -84,7 +114,9 @@ function Chat({ socket, email, room }) {
               >
                 <div>
                   <div className="message-content">
-                    <p>{messageContent.message}</p> <p id="time">{messageContent.time}</p>
+                    <p>{messageContent.message}</p> 
+                    <div className="timee"><p id="time">{messageContent.time}</p></div>
+                    
                   </div>
                   <div className="message-meta">
 
@@ -107,7 +139,7 @@ function Chat({ socket, email, room }) {
             event.key === "Enter" && sendMessage();
           }}
         />
-        <button onClick={sendMessage}><i style={{ fontSize: "25px" }} class='bx bx-send'></i></button>
+        <button onMouseLeave={()=>send2()} onMouseEnter={()=>send1()} onClick={sendMessage}><i style={{ fontSize: "25px" }} class='bx bx-send'></i></button>
       </div>
     </div>
   );

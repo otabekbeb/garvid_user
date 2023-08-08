@@ -145,11 +145,23 @@
     justify-content: flex-end;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 0px;
+    padding: 5px;
+    padding-left: 10px;
+
   }
   #time{
     font-size: 10px;
-    margin-top: 20px;
-    margin-left: 15px;
+    padding-top: 20px;
+    margin: auto;
+      margin-right: auto;
+    display: flex;
+    margin-right: 0px;
+    width: 30px;
+  }
+  .timee{
+    width: 40px;
+    margin: auto;
+    margin-bottom: 0px;
   }
   #you .message-meta {
     justify-content: flex-end;
@@ -181,7 +193,7 @@
     padding: 0 0.7em;
     font-size: 1em;
     border-right: 2px solid #e2e2e2;
-  
+    color: gray;
     outline: none;
     font-family: "Open Sans", sans-serif;
   }
@@ -197,13 +209,8 @@
     font-size: 25px;
     color: lightgray;
   }
-  .react-scroll-to-bottom--css-fbpci-1tj0vk3{
-    bottom: 20px !important;
-  }
+
   
-  .chat-window .chat-footer button:hover {
-    color: black;
-  }
   .hide {
     opacity: 0 !important;
   }
@@ -215,4 +222,5 @@
   #back_icons{
     font-size: 22px;
     margin-left: 15px;
+    margin-right: 10px;
   }

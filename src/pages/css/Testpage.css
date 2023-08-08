@@ -1,0 +1,196 @@
+.letsgo-test{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40vw;
+
+}
+.test-ichi{
+    margin: auto;
+    width: 50vw;
+    height: 450px;
+    text-align: center;
+    background: #ededed;
+    padding-top: 20px;
+}
+.ichi-text-test h4{
+    padding-top: 10px;
+}
+.ichi-text-test button{
+    font-size: 20px;
+    text-shadow: rgba(0, 0, 0, 0.2) 0px -1px 1px;
+    background-color: rgb(154, 173, 48);
+    border-color: rgb(154, 173, 48);
+    padding: 5px 20px;
+    color: white;
+    margin-top: 20px;
+   
+}
+.tepa-sanidi-test{
+    width: 90%;
+    height: 50px;
+background-color: white;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.test-center{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.tepa-tepa-zaibal h6{
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #444 !important;
+    font-weight: 120 !important;
+    font-weight: 700 !important;
+    padding-top: 5px;
+    cursor: pointer;
+}
+.tepa-time{
+    display: flex;
+    align-items: center;
+    padding-right: 1vw;
+    gap: 10px ;
+}
+.tepa-tepa-zaibal{
+    display: flex;
+    align-items: center;
+    padding-left: 1vw;
+    gap: 10px ;
+  
+}
+#timer-yebat{
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #444 !important;
+    font-weight: 120 !important;
+    font-weight: 700 !important;
+    
+}
+.tepa-line{
+    width: 90%;
+    height: 2px;
+    background-color: rgb(180, 178, 178);
+
+}
+.test-center-margin{
+    margin: auto;
+    width: 90%;
+    height: 355px;
+    background-color: white;
+}
+.test-variant{
+  padding: 20px;
+}
+.test-variant h5{
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 34px;
+    letter-spacing: normal;
+}
+.test-variant{
+    text-align: left;
+}
+.block-bir-variant{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.5s;
+}
+.block-bir-variant p{
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #444 ;
+    font-weight: 120 !important;
+    font-weight: 700 !important;
+    text-align: left;
+    color: #071018;
+    padding: 10px;
+    max-height: 50%;
+    font-weight: 300;
+    width: 100%;
+    cursor: pointer;
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+/* .block-bir-variant p:hover{
+    background-color: #3a99ad;
+    transition: background-color 0.5s;
+    color: #fff ;
+} */
+.buttob-next button{
+    float: right;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    font-weight: 600;
+    font-size: 18px;
+    padding: 7px;
+    text-align: center;
+    min-width: 110px;
+    background-color: rgb(98, 177, 204);
+    border-color: rgb(98, 177, 204);
+    color: white;
+
+}
+.block-bir-variant1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.5s;
+}
+.block-bir-variant1 p{
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #444 ;
+    font-weight: 120 !important;
+    font-weight: 700 !important;
+    text-align: left;
+    color: #071018;
+    padding: 10px;
+    max-height: 50%;
+    font-weight: 300;
+    width: 100%;
+    cursor: pointer;
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+/* .block-bir-variant1 p:hover{
+    background-color: #3a99ad;
+    transition: background-color 0.5s;
+    color: #fff ;
+} */
+.block-bir-variant2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.5s;
+}
+.block-bir-variant2 p{
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #444 ;
+    font-weight: 120 !important;
+    font-weight: 700 !important;
+    text-align: left;
+    color: #071018;
+    padding: 10px;
+    max-height: 50%;
+    font-weight: 300;
+    width: 100%;
+    cursor: pointer;
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+/* .block-bir-variant2 p:hover{
+    background-color: #3a99ad;
+    transition: background-color 0.5s;
+    color: #fff ;
+} */

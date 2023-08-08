@@ -19,7 +19,7 @@ export default function Comment1() {
   const [comment2,setComment2]=useState()
   const [page, setPage]=useState(4)
   const [state1, setState1] = React.useState();
-  const [deleteId1,setDeleteId1]=useState()
+  const [dobavit,setDobavit]=useState([])
 
   const [user,setUser]=useState([])
   const [oneuser,setoneuser]=useState([])
@@ -84,7 +84,13 @@ console.log(res.data,"salom");
         console.log(res.data,);
       })
     document.querySelector("#chat_text").value=""
+    document.querySelector(".commetn_otvet_kaytarish").style="display: none;"
 
+    var otvet = localStorage.getItem("key")
+    axios.get(`${url}/api/course_theme_comment/${otvet}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+    .then(res=>{
+      setDobavit(res.data)
+    })
     })
     .catch(err=>{
       alert("Нельзя писать больше 50 символов")
@@ -119,17 +125,19 @@ console.log(res.data,"salom");
     .then(res=>{
 
       setComment(res.data)
-      console.log(res.data,);
+      console.log(res.data);
     })
     .catch(err=>{
       alert("Вы не смогли удалить комментарий, попробуйте снова.")
     })
   }
 
-  function OpenotvetMadal(item) {
+  function OpenotvetMadal(item,key) {
+   
     document.querySelector(".commetn_otvet_kaytarish").style="display: flex; "
 setComment2(item)
-
+console.log(key);
+localStorage.setItem("key", key)
 
   }
   function CloseotvetMadal() {
@@ -144,10 +152,30 @@ setComment2(item)
 
     <div className='m_comment_kotta'> 
     <div className="m_otdel_bgc">
-
+<div className='for_scroll'>
       {comment.map(item => {
-        return(
+        return(<>
+        {dobavit.map(item1=>{
+return(<>
+                 <div className="for_answer_tag">
+                 <div className="for_img_and_username">
+                 <img src={item.oneuser?item.oneuser.image.includes("http")?item.oneuser.image:`${url}/${item.oneuser.image}`:
+                   <img src={anonim} alt="" />} alt="" />
+                   </div>
+                   
+                   <div className="for_text_and_username">
+                   <h6>Вы ответили {item.oneuser?item.oneuser.username:"Anonim User"}  
+                   </h6>
+                 <p>{item1.text}</p></div>
+                   </div>
+           
+</>)
+        })}
+           
+              
+         
           <div className="m_comment">
+           
           <div className="m_comment_img">
           {
             oneuser.map(item2 => {
@@ -172,7 +200,7 @@ setComment2(item)
               <img src={item.image.includes("http")?item.image:`${url}/${item.image}`} alt="" />
               <p className='m_comment_text1505'>{item.text}</p>
               <div className="m_comment_otvet"> 
-<p  className='m_otvet_comment' onClick={()=>OpenotvetMadal(item.text)}><span><FiCornerUpLeft/></span><a href="#comment_down">Ответить</a></p> 
+              <p  className='m_otvet_comment' onClick={()=>OpenotvetMadal(item.text,item.id)}><span><FiCornerUpLeft/></span><a href="#comment_down">Ответить</a></p> 
   
               {oneuser.map(item5=>{
                 return(
@@ -190,10 +218,11 @@ setComment2(item)
               </div>
           </div>
       </div>
+      </>
         )
        })}  
 
-
+</div>
 
 
       
@@ -213,14 +242,15 @@ setComment2(item)
           </div>
                     <div className="comment_otvet_block" id='comment_down'>
                     {
-            oneuser.map(item1 => {
+            comment.map(item1 => {
               return(
-                <h6>{comment.item1?comment.item1.username:"Anonim User"}</h6>
+                <h6>{item1.oneuser?item1.oneuser.username:"Anonim User"}</h6>
+
               )
             })
           }
 
-                <p>{comment2?(<>{comment2.slice(0,15)}...</>):(<>{comment2}</>)}</p>
+                <p>{comment2>15?(<>{comment2.slice(0,15)}...</>):(<>{comment2}</>)}</p>
 
                         
                     </div>
