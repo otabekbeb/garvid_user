@@ -145,6 +145,7 @@
     justify-content: flex-end;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 0px;
+    background-color:skyblue;
   }
   #time{
     font-size: 10px;
