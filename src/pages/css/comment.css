@@ -30,6 +30,10 @@ gap: 20px;
     overflow: hidden;
     overflow-y: scroll;
 }
+.m_otdel_bgc ::-webkit-scrollbar {
+    width: 0px;
+    opacity: 0;
+  }
 .m_comment_otvet p{
     cursor:pointer;
     color: #44bef1;
