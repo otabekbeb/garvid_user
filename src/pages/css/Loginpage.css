@@ -242,6 +242,7 @@ display: none;
   left: 0px;
   position: absolute;
   width: 180px;
+  cursor: pointer;
   height: 240px;
   opacity: 0;
   font-family: 'Mulish', sans-serif !important;
