@@ -2,9 +2,36 @@ import React,{useState,useEffect} from 'react'
 import '../css/Testpage.css'
 import Navbar from './Navbar'
 
+function openTest(){
+    document.querySelector(".block-bir-variant1 p").style=`   background-color: #fcfcfc;
+    border: 1px solid #ccc;`
+    document.querySelector(".block-bir-variant2 p").style=`
+background-color: #fcfcfc;
+border: 1px solid #ccc;
+`
+    document.querySelector(".block-bir-variant p").style=` background-color: rgb(98, 177, 204);color: white;`
+}
+function openTest1(){
+    document.querySelector(".block-bir-variant2 p").style=`   background-color: #fcfcfc;
+    border: 1px solid #ccc;`
+    document.querySelector(".block-bir-variant p").style=`   background-color: #fcfcfc;
+    border: 1px solid #ccc;`
+    document.querySelector(".block-bir-variant1 p").style=`background-color: rgb(98, 177, 204);color: white;
+    
+    `
+}
+function openTest2(){
+document.querySelector(".block-bir-variant1 p").style=`
+background-color: #fcfcfc;
+border: 1px solid #ccc;
+`
+document.querySelector(".block-bir-variant2 p").style=`background-color: rgb(98, 177, 204);color: white;
+    
+`
+}
 export default function Testpage() {
     const [page,setpage]= useState(1)
-const [counter , setCounter]= React.useState(40)
+const [counter , setCounter]= React.useState(59)
 React.useEffect(()=>{
     const timer =
     counter > 0 &&  setInterval(()=>setCounter(counter - 1),1000);
@@ -44,13 +71,13 @@ React.useEffect(()=>{
         <h3>test-variant</h3>
         <h5>test-variant</h5>
         <div className="varianlaa">
-            <div className="block-bir-variant">
-                <p>yoqol</p>
+            <div className="block-bir-variant" id='spspspsps' onClick={()=>openTest()}>
+                <p >yoqol</p>
             </div>
-            <div className="block-bir-variant">
+            <div className="block-bir-variant1"  onClick={()=>openTest1()}>
                 <p>yoqol2</p>
             </div>
-            <div className="block-bir-variant">
+            <div className="block-bir-variant2"  onClick={()=>openTest2()}>
                 <p>yoqol3</p>
             </div>
         </div>
