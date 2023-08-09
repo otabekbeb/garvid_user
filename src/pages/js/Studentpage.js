@@ -172,7 +172,7 @@ export default function Mentor() {
           
           })
           .catch((err) => {
-            alert("Что-то пошло не так, попробуйте снова.")
+            Swal.fire("Что-то пошло не так, попробуйте снова.")
           });
         axios
           .get(`${url}/auth/oneuser`, {

@@ -83,7 +83,7 @@ export default function Profil() {
         })
       })
       .catch((err) => {
-        alert("Что-то пошло не так, попробуйте снова.")
+        Swal.fire("Что-то пошло не так, попробуйте снова.")
       });
     axios
       .get(`${url}/auth/oneuser`, {
@@ -162,9 +162,9 @@ export default function Profil() {
   //   formdata.append("image",document.querySelector("#userInput").value)
 
   //   axios.put(${url}/auth/user/,formdata,{ headers: { 'Authorization': 'Bearer ' + sessionStorage.getItem("token") }}).then(res=>{
-  //     alert("ishladi")
+  //     Swal.fire("ishladi")
   //   }).catch(err=>{
-  //     alert("ishlamadi")
+  //     Swal.fire("ishlamadi")
   //   })
   // }
 

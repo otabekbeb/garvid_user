@@ -24,22 +24,22 @@ export default function Pdp() {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
-    // alert(socket.id);
-    // alert("zm")
+    // Swal.fire(socket.id);
+    // Swal.fire("zm")
     // axios
     //   .get("http://localhost:5000/auth/oneuser", {
     //     headers: { Authorization: "Bearer " + localStorage.getItem("token") },
     //   })
     //   .then((res1) => {
     //     console.log(res1.data);
-    //     // alert(res1.data[0].email)
+    //     // Swal.fire(res1.data[0].email)
     //     let email = res1.data[0].email
     //     socket.emit("authenticate", { email });
     //     setEmail(email)
-    //     // alert("ishladi")
+    //     // Swal.fire("ishladi")
     //   })
     //   .catch((err) => {
-    //     // alert("ishlamadi")
+    //     // Swal.fire("ishlamadi")
     //   });
   }, []);
 

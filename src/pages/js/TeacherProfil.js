@@ -90,7 +90,7 @@ export default function Profil() {
       })
       .then((res) => {
         window.location.reload();
-        // alert("ishladi")
+        // Swal.fire("ishladi")
       })
       .catch((err) => {
         console.log(err);
