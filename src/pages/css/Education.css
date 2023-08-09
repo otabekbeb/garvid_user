@@ -1,357 +1,637 @@
-/* .search_big_div {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
 
-.search_big_div input {
-    width: 180px;
-    height: 40px;
-    border: 0.5px solid rgb(190, 190, 190);
-    outline: 0.5px solid rgb(247, 247, 247);
-    border-radius: 5px;
-    padding-left: 30px;
-    padding-top: 15px;
-    opacity: 0.6;
-    color: black;
-    padding-bottom: 15px;
-}
-
-.search_big_div input:focus {
-    transition: 0.4s;
-    box-shadow: 0px 0px 5px 0px #085aff;
-}
-
-.search_big_div .search {
-    position: absolute;
-    opacity: 10;
-    color: rgb(0, 0, 0);
-    right: 155px;
-
-}
-
-.position {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2%;
-}
-
-.position button {
-    width: 100%;
-    height: 35px;
-    border-radius: 5px;
-    cursor: pointer;
-    border: 1px solid #1890ff;
-
-    transition: 0.4s;
-}
-
-.position button:hover {
-    background-color: #1890ff;
-    color: #fff;
-}
-
-.position_notification {
-    background-color: #ff4d4f;
-    color: #fff;
-    border: 0;
-    width: 190px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-.exit_button button{
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #1890ff;
-    color: #1890ff;
-    background-color: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.4s;  
-}
-.malumot_big_div p{
-margin-bottom: 0px;
-font-size: 19px;
-}
-.exit_button button:hover{
-    background-color: #1890ff;
-    color: #fff;
-}
-.malumot_big_div{
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    gap: 20px;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.malumot_big_div input{
-width: 250px;
-border: 1px solid grey;
-border-radius: 5px;
-height: 40px;
-outline: none;
-}
-.malumot_big_div select{
-    width: 250px;
-    border: 1px solid grey;
-    border-radius: 5px;
-    height: 40px;
-    outline: none;
-}
-.edication_card{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-.edication_card_{
-    
-    border-radius: 15px;
-    width: 400px;
-    padding: 20px;
-    background-color:#fff;
-    box-shadow:0px 5px 10px 0px rgb(172, 172, 172);
-}
-.edication_card_button{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    gap: 10px;
-}
-.edication_card_ span{
-    width: 100% !important;
-}
-.edication_card_button button:nth-child(1){
-    cursor: pointer;border-radius: 50%;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    border: 1px solid #1890ff;
-    color: #1890ff;
-    display: flex;
-    justify-content: center;
-}
-.edication_card_button button:nth-child(1):hover{
-    background-color: #1890ff;
-    color: #fff;
-}
-.edication_card_date{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 0.4;
-}
-
-.edication_card_date p{
-    color: black;
-}
-    .edication_card_button button:nth-child(2){
-    cursor: pointer;
-    border-radius: 50%;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    border: 1px solid #ff4d4f;
-    color: #ff4d4f;
-    display: flex;
-    justify-content: center;
-}
-.edication_card_button button:nth-child(2):hover{
-    background-color: #ff4d4f;
-    color: #fff;
-}
-
-@media (max-width:1500px) {
-    .edication_card_{
-    width: 320px;
-    padding: 15px;
-    }
-    .edication_card_ p{
-        font-size: 13px;
+    .user_post_button {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border: 1px solid #44bef1;
+        color: #44bef1;
+        background-color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.4s;
     }
 
-    .position_button{
-        width: 200px !important;
+    .user_post_button_ban {
+        width: 140px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #44bef1;
+        color: #44bef1;
+        background-color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.4s;
     }
-    .search_big_div .search {
-        top: 10px;
+    .user_post_button_ban:hover {
+        background-color: #44bef1;
+        color: white;
     }
 
-    .user_post_button:nth-child(1) {
-        font-size: 12px !important;
-        padding-left: 6px;
-        padding-right: 6px;
-        padding-top: 2px;
-        padding-bottom: 2px;
-        margin-bottom: 5px;
+    .user_post_button_bandan_olish{
+        width: 140px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ff4d4f;
+        color: #ff4d4f;
+        background-color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.4s;
+    }
+    .user_post_button_bandan_olish:hover {
+        background-color: #ff4d4f;
+        color: white;
+    }
+    .user_post_button:hover {
+        background-color: #44bef1;
+        color: white;
     }
 
     .user_post_button:nth-child(2) {
-        font-size: 12px !important;
-        padding-left: 6px;
-        padding-right: 6px;
-        padding-top: 2px;
-        padding-bottom: 2px;
-        margin-bottom: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ff4d4f;
+        color: #ff4d4f;
+        background-color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.4s;
+    }
+
+    .user_post_button:hover:nth-child(2) {
+        background-color: #ff4d4f;
+        color: white;
+    }
+
+    .Modaldiv {
+        background: rgba(0, 0, 0, .6);
+        z-index: 1000000000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .postUserModal_div {
+        width: 650px;
+        height: auto !important;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 0px 40px #a3a5a654;
+        backdrop-filter: 100px;
+    }
+
+    .postUserModal_div label p {
+        margin-bottom: 0;
+    }
+
+    .postUserModal_div label .description {
+        width: 100%;
+        padding: 5px;
+        padding-bottom: 140px;
+        border-radius: 4px;
+        border: 1px solid rgb(182, 182, 182);
+        outline-color: #6db9ff;
+    }
+
+    .postUserModal_div_label input {
+        width: 300px;
+        height: 35px;
+        padding-left: 5px;
+        border-radius: 4px;
+        outline-color: #6db9ff;
+        border: 1px solid rgb(182, 182, 182);
+    }
+    .div_img_upload{
+        width: 300px;
+        height: 35px;
+        border: 1px dashed #6db9ff;
+        cursor: pointer;
+        border-radius: 4px;
+        position: absolute;
+        display: flex;
+        z-index: 0;
+        top: 24px;
+        color: #6db9ff;
+        justify-content: center;
+        align-items: center;
+    }
+    .div_img_upload p{
+        display: flex;
+        gap: 5px;
+        align-items: center;
+    }
+    .image{
+        position: relative;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    select {
+        width: 300px;
+        height: 35px;
+        padding-left: 5px;
+        border-radius: 4px;
+        border: 1px solid grey;
+        outline-color: #6db9ff;
+        outline-color: gery;
+    }
+
+    .postUserModal_div_label {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: auto auto;
+    }
+
+    .postUserModal_div_icon {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+    }
+
+    .postUserModal_div_icon .icon {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        margin-top: -10px;
+        margin-right: -10px;
+    }
+    .postUserModal_div_button button {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #44bef1;
+        color: #44bef1;
+        background-color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.4s;
+    }
+
+    .postUserModal_div_button {
+        text-align: end;
+        margin-top: 10px;
+    }
+
+    .postUserModal_div_button button:hover {
+        background-color: #44bef1;
+        color: white;
+    }
+
+    .deleteModal {
+        background: rgba(0, 0, 0, .6);
+        z-index: 1000000000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+    .position_button{
+        width: 250px;
+    }
+
+    .deleteModal_div {
+        width: 400px;
+        height: auto !important;
+        text-align: center;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 0px 40px #a3a5a654;
+        backdrop-filter: 100px;
+    }
+
+    .deleteModal_div img {
+        width: 60%;
+        height: auto;
+        max-width: 100% !important;
+    }
+
+    .deleteModal_div button {
+        width: 120px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        margin-bottom: 10px;
+        border: 1px solid #44bef1;
+        color: #44bef1;
+        background-color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.4s;
+    }
+    .user_post_button_malumot{
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-bottom: 20px !important;
+        margin-top: 10px;
+        border: 1px solid #44bef1;
+        color: #44bef1;
+        background-color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.4s; 
+    }
+    .user_post_button_malumot:hover {
+        background-color: #44bef1;
+        color: #fff
+    }
+
+    .deleteModal_div button:hover {
+        background-color: #44bef1;
+        color: #fff
+    }
+
+    .deleteModal_div p {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: black;
+    }
+
+    .deleteButton_div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .deleteButton_div button:nth-child(2) {
+        color: red;
+        border: 1px solid red;
+    }
+
+    .deleteButton_div button:nth-child(2):hover {
+        background-color: red;
+        color: #fff;
+    }
+
+    .search_big_div {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-inline: 5%;
+        width: 90%;
+        margin-bottom: 10px;
     }
 
     .search_big_div input {
-        height: 25px;
-        padding-left: 25px;
-        width: 140px;
-        margin-bottom: 10px;
+        width: 200px;
+        height: 35px;
+        border: 0.5px solid rgb(190, 190, 190);
+        outline: 0.5px solid rgb(247, 247, 247);
+        border-radius: 5px;
+        padding-left: 35px;
+        padding-top: 15px;
+        opacity: 0.5;
+        color: black;
+        padding-bottom: 15px;
+    }
+    
+    .search_big_div input:focus {
+        box-shadow: 0px 0px 5px 1px #44bef1;
+    }
+
+    .search_big_div input:focus {
+        transition: 0.4s;
+        box-shadow: 0px 0px 5px 0px #085aff;
     }
 
     .search_big_div .search {
         position: absolute;
-        right: 120px;
-        bottom: 15px;
+        color: rgb(0, 0, 0);
+        right: 174px;
+        font-size: 16px;
     }
 
+    .position {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2%;
+    }
 
-}
-@media (max-width:1638px) {
+    .position button {
+        width: 100%;
+        height: 35px;
+        border-radius: 5px;
+        cursor: pointer;
+        border: 1px solid #44bef1;
+
+        transition: 0.4s;
+    }
+
+    .position button:hover {
+        background-color: #44bef1;
+        color: #fff;
+    }
+    .position_notification {
+        background-color: #ff4d4f;
+        color: #fff;
+        border: 0;
+        width: 190px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .eyes_bigdiv{
+        position: relative;
+    }
+    #eyes{
+        position: absolute;
+        top: 40px;
+        right: 10px;
+        cursor: pointer;
+        width: 25px;
+    }
+    .news_page{
+        display: flex;
+        gap: 10px;
+    }
+    .news_page img{
+    width: 50% !important;
+    max-width: 100%;
+    margin-top: 20px;
+    }
+    .div_course_white_list_big_name{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 1%;
+
+    }
+    .div_course_white_list_big{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding-left: 15px;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        padding-right: 15px;
+        background-color: #fff;
+        box-shadow:0px 2px 5px 0px rgba(0, 0, 0, 0.395);
+    }
+    .div_course_white_list_big_div_button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5%;
+    }
+    .exit_button button{
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+        margin-left: 100px;
+        border: 1px solid #44bef1;
+        color: #44bef1;
+        background-color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.4s;  
+    }
+    .malumot_big_div p{
+    margin-bottom: 0px;
+    font-size: 19px;
+    }
+    .exit_button button:hover{
+        background-color: #44bef1;
+        color: #fff;
+    }
     .malumot_big_div{
-        grid-template-columns: auto auto auto auto;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
     }
-} */
-
-
-
-
-.search_big_div{
-    position: relative;
-    display: flex;
-    width: auto;
-    justify-content: space-between;
-    margin-inline: 5vw;
-}
-.user_post_button{
-    width: auto;
-    height: auto;
-    padding: 2px 15px;
+    .malumot_big_div input{
+    width: 250px;
+    border: 1px solid gray;
     border-radius: 5px;
-    color: #44bef1;
-    background-color: white;
-    border: 2px solid #44bef1;
-    transition: all .2s ease;
-}
-.user_post_button:hover{
-    color: white;
-    background-color: #44bef1;
-}
+    height: 40px;
+    outline: none;
+    }
+    .malumot_big_div select{
+        width: 250px;
+        border: 1px solid gray;
+        border-radius: 5px;
+        height: 40px;
+        outline: none;
+    }
+    .edication_card{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        margin-inline: 40px;
+        gap: 20px;
+    }
+    .edication_card_{
+        position: relative;
+        border-radius: 15px;
+        width: 400px;
+        min-height: 200px;
+        padding: 20px;
+        background-color:#fff;
+        box-shadow:  0 10px 40px #a3a5a654;
+        transition: all .3s ease;
+    }
+    .edication_card_:hover{
+        box-shadow: 0px 12px 35px 0px #44bdf13e;
+        cursor: pointer;
+    }
+    .edication_card_ h1{
+        color: black;
+        font-size: 32px !important;
+        font-weight: 550;
+    }
+    .edication_card_button{
+        width: 200px;
+        display: flex;
+        align-items: center;
+        bottom: 20px;
+        gap: 10px;
+        margin-right: -200px !important;
+    }
+    .edication_card_ span{
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .edication_card_button button{
+        cursor: pointer;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        padding-top: 8px;
+        font-size: 18px;
+        border: 1px solid #44bef1;
+        color: #44bef1;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        transition: all .3s ease;
+    }
+    .edication_card_button button:hover{
+        background-color: #44bef1;
+        color: #fff;
+    }
+    .edication_card_date{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        opacity: 0.4;
+    }
 
-.search_big_div input {
-    width: 200px;
-    height: 35px;
-    border: 0.5px solid rgb(190, 190, 190);
-    outline: 0.5px solid rgb(247, 247, 247);
-    border-radius: 5px;
-    padding-left: 35px;
-    padding-top: 15px;
-    opacity: 0.5;
-    color: black;
-    padding-bottom: 15px;
-}
+    .edication_card_date p{
+        color: #9DA7BB;
+        font-size: 14px;
+        font-weight: 400;
+    }
+        .edication_card_button button:nth-child(3){
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        padding-top: 8px;
+        font-size: 18px;
+        border: 1px solid #ff4d4f;
+        color: #ff4d4f;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        transition: all .3s ease;
+    }
+    .edication_card_button button:nth-child(3):hover{
+        background-color: #ff4d4f;
+        color: #fff;
+    }
 
-.search_big_div input:focus {
-    box-shadow: 0px 0px 5px 1px #44bef1;
-}
+    @media (max-width:1500px) {
+        .edication_card_{
+        width: 320px;
+        padding: 15px;
+        }
+        .edication_card_ p{
+            font-size: 13px;
+        }
+        .position_button{
+            width: 200px !important;
+        }
 
-.search_big_div .search {
-    position: absolute;
-    color: rgb(0, 0, 0);
-    top: 10px;
-    right: 174px;
-    font-size: 16px;
-}
-.edication_card{
-    margin-top: 30px;
-    margin-inline: 3vw;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-.edication_card_{
-    position: relative;
-    border-radius: 15px;
-    width: 400px;
-    min-height: 200px;
-    padding: 20px;
-    background-color:#fff;
-    transition:all .2s ease;
-    box-shadow: 0px 4px 20px 0px rgba(1, 102, 144, 0.10);
-}
-.edication_card_:hover{
-    box-shadow: 0px 12px 35px 0px #44bdf13e;
-    cursor: pointer;
-}
-.edication_card_button{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    bottom: 20px;
-    right: 20px;
-}
-.edication_card_ span{
-    width: 100% !important;
-}
-.edication_card_button button:nth-child(1){
-    cursor: pointer;
-    border-radius: 50%;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    border: 1px solid #44bef1;
-    color: #44bef1;
-    display: flex;
-    justify-content: center;
-}
-.edication_card_button button:nth-child(1):hover{
-    background-color: #44bef1;
-    color: #fff;
-}
-.edication_card_date{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .malumot_big_div input{
+            width: 200px;
+            border: 1px solid grey;
+            border-radius: 5px;
+            height: 30px;
+            outline: none;
+            }
+            .malumot_big_div{
+                display: flex !important; 
+            }
+            .malumot_big_div p{
+                margin-bottom: 0px;
+                font-size: 13px;
+                }
+            .malumot_big_div select{
+                width: 200px;
+                border: 1px solid grey;
+                border-radius: 5px;
+                height: 30px;
+                outline: none;
+            }
 
-.edication_card_date p{
-    font-size: 13px;
-    font-weight: 500;
-    color: #9DA7BB;
-}
-.edication_card_button button:nth-child(2){
-    cursor: pointer;
-    border-radius: 50%;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    border: 1px solid #ff4d4f;
-    color: #ff4d4f;
-    display: flex;
-    justify-content: center;
-}
-.edication_card_button button:nth-child(2):hover{
-    background-color: #ff4d4f;
-    color: #fff;
-}
+        .exit_button button{
+            font-size: 12px !important;
+            padding-left: 6px;
+            padding-right: 6px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            margin-bottom: 5px;
+        }
+        .user_post_button_malumot{
+            font-size: 12px !important;
+            padding-left: 6px;
+            padding-right: 6px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            margin-bottom: 5px;
+        }
+        .user_post_button_bandan_olish{
+            width: 90px;
+            font-size: 12px !important;
+            padding-left: 6px;
+            padding-right: 6px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            margin-bottom: 5px;
+        }
+        .user_post_button_ban{
+            width: 90px;
+            font-size: 12px !important;
+            padding-left: 6px;
+            padding-right: 6px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            margin-bottom: 5px;
+        }
 
-.edication_card_button button{
-    width: 35px;
-    height: 35px;
-    padding-top: 8.5px !important;
-    background-color: white;
-    transition:all .2s ease;
-    font-size: 18px;
-}
+
+        .user_post_button:nth-child(2) {
+            font-size: 12px !important;
+            padding-left: 6px;
+            padding-right: 6px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            margin-bottom: 5px;
+        }
+
+        .position_notification {
+            background-color: #ff4d4f;
+            color: #fff;
+            border: 0;
+            width: 100px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 5px;
+        }
+        .edication_card_date{
+            line-height: 10px;
+            flex-wrap: wrap;
+        }
+        .edication_card_date p{
+            font-size: 12px !important;
+        }
+    }
+    @media (max-width:1638px) {
+        .malumot_big_div{
+            grid-template-columns: auto auto auto auto;
+        }
+    }
