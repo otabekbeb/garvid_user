@@ -28,17 +28,17 @@ export default function MentorChat() {
       })
       .then((res1) => {
         console.log(res1.data);
-        // alert(res1.data[0].email)
+        // Swal.fire(res1.data[0].email)
         let email = res1.data[0].email;
         socket.emit("authenticate", { email });
         setEmail(email);
-        // alert("ishladi")
+        // Swal.fire("ishladi")
         //     socket.emit("authenticate", { email });
         //         const getRooms = async () => {
         socket.emit("get_rooms", { email });
       })
       .catch((err) => {
-        // alert("ishlamadi")
+        // Swal.fire("ishlamadi")
       });
       axios
       .get("https://markazback2.onrender.com/auth/allusers", {
@@ -46,18 +46,18 @@ export default function MentorChat() {
       })
       .then((res1) => {
         setUsers(res1.data);
-        // // alert(res1.data[0].email)
+        // // Swal.fire(res1.data[0].email)
         // let email = res1.data[0].email;
         // socket.emit("authenticate", { email });
         // setEmail(email);
-        // // alert("ishladi")
+        // // Swal.fire("ishladi")
         // //     socket.emit("authenticate", { email });
         // //         const getRooms = async () => {
         // socket.emit("get_rooms", { email });
       })
-    // alert(socket.id)
-    // alert(email)
-    // alert("zn")
+    // Swal.fire(socket.id)
+    // Swal.fire(email)
+    // Swal.fire("zn")
     // const getRooms = async () => {
     //   socket.emit("get_rooms", { email });
     // };
@@ -72,7 +72,7 @@ export default function MentorChat() {
   useEffect(() => {
     socket.on("new_private_room", (data) => {
       setRooms((prevRooms) => [...prevRooms, data.roomName]);
-      alert(`Новая приватная комната создана: ${data.roomName}`);
+      Swal.fire(`Новая приватная комната создана: ${data.roomName}`);
     });
   }, [socket]);
   const createPrivateRoom = (otheremail) => {

@@ -11,7 +11,7 @@ export default function Help_Mentor() {
         setHelp(res.data)
         console.log(res.data)
     }).catch(err=>{
-        alert("malumot xato keldi")
+        Swal.fire("malumot xato keldi")
     })
     }, [])
   return (

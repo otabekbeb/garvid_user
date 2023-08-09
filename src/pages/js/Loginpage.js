@@ -83,11 +83,11 @@ export default function Loginpage() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
-        state1 === "ru" ? (alert("Введенная информация")) : (alert("Entered information"))
+        state1 === "ru" ? (Swal.fire("Введенная информация")) : (Swal.fire("Entered information"))
         window.location="/user";
       })
       .catch((err) => {
-        state1 === "ru" ? (alert("Информация введена не полностью")) : (alert("The information was not fully entered"))
+        state1 === "ru" ? (Swal.fire("Информация введена не полностью")) : (Swal.fire("The information was not fully entered"))
       });
   }
 
@@ -378,7 +378,7 @@ export default function Loginpage() {
             </div>
             <Footer />
           </div>
-
+                    
         </div>) : (<Loader />)}
 
     </div>

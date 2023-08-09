@@ -13,7 +13,7 @@ export default function UserHelp() {
           setHelp(res.data)
           console.log(res.data)
       }).catch(err=>{
-          alert("malumot xato keldi")
+          Swal.fire("malumot xato keldi")
       })
       }, [])
     return (

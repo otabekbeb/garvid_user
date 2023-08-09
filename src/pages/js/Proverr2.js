@@ -92,7 +92,7 @@ export default function Proverr2() {
 setData(res.data)
 console.log(res.data)
         }).catch(err=>{
-            alert("xato")
+            Swal.fire("xato")
         })
 
         axios.get(`${url}/api/course`,{headers:{Authorization : ` Bearer ${localStorage.getItem("token")}`}}).then(res=>{
@@ -100,14 +100,14 @@ console.log(res.data)
             filTerrdata1(res.data)
             console.log(res.data)
         }).catch(err=>{
-            alert('hato')
+            Swal.fire('hato')
         })
 
 axios.get(`${url}/auth/teachers`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
     ticherData(res.data)
     console.log(res.data)
 }).catch(err=>{
-    alert("techirri malumoti xato keldi")
+    Swal.fire("techirri malumoti xato keldi")
 })
        
 axios.get(`${url}/auth/oneuser`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
@@ -115,7 +115,7 @@ axios.get(`${url}/auth/oneuser`,{headers:{Authorization :  `Bearer ${localStorag
     
     console.log(res.data)
 }).catch(err=>{
-    alert("malumot xato keldi")
+    Swal.fire("malumot xato keldi")
 })
 
 
@@ -125,17 +125,17 @@ axios.get(`${url}/auth/oneuser`,{headers:{Authorization :  `Bearer ${localStorag
  // axios.get(`${url}/api/mycourse/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
         //     myData(res.data)
         //     console.log(res.data,)
-        //     alert("siz kurs sotib oldingiz")
+        //     Swal.fire("siz kurs sotib oldingiz")
         // }).catch(err=>{
-        //  alert("balans yetarli mas")
+        //  Swal.fire("balans yetarli mas")
         // })
     function coursid(){
         axios.post(`${url}/api/course/${localStorage.getItem("courseid")}/register/${oneuser[0].id}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
             coursData(res.data)
             console.log(res.data)
-            alert("siz kurs sotib oldiz")
+            Swal.fire("siz kurs sotib oldiz")
         }).catch(err=>{
-            alert("balans ytarli mas yoki server blan xato")
+            Swal.fire("balans ytarli mas yoki server blan xato")
         })
    
     }
