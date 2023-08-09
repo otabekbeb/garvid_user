@@ -328,7 +328,7 @@ export default function Youtube1() {
                       }}
                       className="zadaniya"
                     >
-                      Question and answer
+                      Comments
                     </p>
                     <p
                       onClick={() => {
@@ -379,7 +379,7 @@ export default function Youtube1() {
                       }}
                       className="zadaniya5"
                     >
-                      Вопрос и ответ
+                     Крмментарии
                     </p>
                     <p
                       onClick={() => {

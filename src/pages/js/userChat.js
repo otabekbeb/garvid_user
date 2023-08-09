@@ -1,22 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../css/yozishmalar.css";
-import YozishmaUserImg from "../img/Ellipse.jpg";
 import FollowCard from "../js/FollowCard";
-import { IoArrowBackOutline } from 'react-icons/io';
 import Chat from "./Chat";
-
-import {
-  BsArrow90DegLeft,
-  BsArrowLeft,
-  BsCheck,
-  BsCheckAll,
-} from "react-icons/bs";
-import { MdEdit, MdDeleteForever } from "react-icons/md";
-import { LiaTelegramPlane } from "react-icons/lia";
-import { MdClose } from "react-icons/md";
-import Anime from "../img/png-transparent-anime-desktop-manga-television-show-anime-black-hair-manga-human.png";
-import ImgChat from "../img/Ellipse 3.png";
-import ImgChatt from "../img/Ellipse 2.4.png";
 import tgimg from "../img/photo_2023-06-25_22-19-50 (2).jpg";
 import axios from "axios";
 import io from "socket.io-client";
@@ -27,9 +12,14 @@ export default function MentorChat() {
   const [rooms, setRooms] = useState([]);
   const [room, setRoom] = useState("");
   const [email, setEmail] = useState("");
-  const [modal, setModal] = useState(false);
   const [users, setUsers] = useState([]);
+  const [theme,setTheme] = useState(localStorage.getItem("back"))
   useEffect(() => {
+    if(localStorage.getItem("back")!=="sun"){
+      document.querySelector("#checkbox2").checked=true
+      }else{
+        document.querySelector("#checkbox2").checked=false
+      };
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
@@ -39,17 +29,17 @@ export default function MentorChat() {
       })
       .then((res1) => {
         console.log(res1.data);
-        // alert(res1.data[0].email)
+        // Swal.fire(res1.data[0].email)
         let email = res1.data[0].email;
         socket.emit("authenticate", { email });
         setEmail(email);
-        // alert("ishladi")
+        // Swal.fire("ishladi")
         //     socket.emit("authenticate", { email });
         //         const getRooms = async () => {
         socket.emit("get_rooms", { email });
       })
       .catch((err) => {
-        // alert("ishlamadi")
+        // Swal.fire("ishlamadi")
       });
       axios
       .get("https://markazback2.onrender.com/auth/allusers", {
@@ -57,18 +47,18 @@ export default function MentorChat() {
       })
       .then((res1) => {
         setUsers(res1.data);
-        // // alert(res1.data[0].email)
+        // // Swal.fire(res1.data[0].email)
         // let email = res1.data[0].email;
         // socket.emit("authenticate", { email });
         // setEmail(email);
-        // // alert("ishladi")
+        // // Swal.fire("ishladi")
         // //     socket.emit("authenticate", { email });
         // //         const getRooms = async () => {
         // socket.emit("get_rooms", { email });
       })
-    // alert(socket.id)
-    // alert(email)
-    // alert("zn")
+    // Swal.fire(socket.id)
+    // Swal.fire(email)
+    // Swal.fire("zn")
     // const getRooms = async () => {
     //   socket.emit("get_rooms", { email });
     // };
@@ -83,7 +73,7 @@ export default function MentorChat() {
   useEffect(() => {
     socket.on("new_private_room", (data) => {
       setRooms((prevRooms) => [...prevRooms, data.roomName]);
-      alert(`Новая приватная комната создана: ${data.roomName}`);
+      Swal.fire(`Новая приватная комната создана: ${data.roomName}`);
     });
   }, [socket]);
   const createPrivateRoom = (otheremail) => {
@@ -118,113 +108,60 @@ export default function MentorChat() {
       setUsers(searchdata);
     });
   };
-  // useEffect(() => {
-  //   socket.on("receive_message", (data) => {
-  //     setMessageList((list) => [...list, data]);
-  //   });
-  // }, [socket]);
-  // useEffect(() => {
-  //   socket.on("load_messages", (data) => {
-  //     setMessageList(data);
-  //   });
-  // }, [socket]);
   function chatModal(room) {
     setRoom(room);
     socket.emit("join_room", { email, room });
     document.querySelector(".yozishma_bolim_text_nik").style = "display:none;";
+    if (theme=="sun") {
+      document.querySelector(".yozishma_bolim_text_nik").style = "background:white";
+    }else{
+      document.querySelector(".yozishma_bolim_text_nik").style = "background:black";
+    }
+    if (theme=="sun") {
+      document.querySelector(".chat-body").style = "background:white";
+    }else{
+      document.querySelector(".chat-body").style = "background:black";
+    }
+    if (theme=="sun") {
+      document.querySelector(".chat-header").style = "background:white";
+    }else{
+      document.querySelector(".chat-header").style = "background:black";
+    }
+    if (theme=="sun") {
+      document.querySelector(".chat-window .chat-footer input").style = "background:white";
+    }else{
+      document.querySelector(".chat-window .chat-footer input").style = "background:black";
+    }
+    if (theme=="sun") {
+      document.querySelector(".chat-window .chat-footer button").style = "background:white";
+    }else{
+      document.querySelector(".chat-window .chat-footer button").style = "background:black";
+    }
+
     document.querySelector(".yozishma_small_div").style = "display:block;";
-    // document.querySelector(".yozishma_bolim_text_nik").style = "display:none"
-    // document.querySelector(".yoq1").style = "display:block;"
-    // document.querySelector(".yoq").style = "display:flex ;"
-    // document.querySelector(".javob_berish").style = "display:none;"
     document.querySelector(".chat_gap_text_div").style = "display:block;";
     document.querySelector(".chat_yoq_payt").style = "display:none;";
-
-    //     var abj = item
-
-    //     var tush = []
-    //     tush.push(abj)
-    //     tush.map(item => {
-    //       document.querySelector('.telegram_pro_img_text').innerHTML = `
-    //     <div style="margin-top: 10px !important;display: block !important;" className="telegram_pro_text">
-    //     <h1 style="font-size: 15px !important;margin-bottom: 0 !important;" >${item}yyyyy</h1>
-    // `
-    //     })
-  }
-  function Chatnone() {
-    document.querySelector(".yozishma_bolim_text_nik").style = "display:block;";
-    document.querySelector(".yoq").style = "display:none";
-  }
-  function ChatClose() {
-    document.querySelector(".yozishma_bolim_text_nik").style = "display:block;";
-    document.querySelector(".yozishma_small_div").style = "display:none;";
-    document.querySelector(".yoq1").style = "display:none";
   }
 
-  function javobModal() {
-    document.querySelector(".javob_berish").style = "display:block;";
-    document.querySelector(".javob_berish_ikki").style = "display:none;";
-  }
-  function javobClose() {
-    document.querySelector(".javob_berish").style = "display:none;";
-  }
-  function javobBerishModal() {
-    document.querySelector(".javob_berish_ikki").style = "display:block;";
-    document.querySelector(".javob_berish").style = "display:none;";
-  }
-  function javobBerishClose() {
-    document.querySelector(".javob_berish_ikki").style = "display:none;";
-  }
-  function edit_chat_hoverModal() {
-    document.querySelector(".edit_chat_hover").style =
-      "display:block;scale: 1;transition: 10s;";
-    document.querySelector(".edit_chat_hover_ikki").style =
-      "display:none;scale: 0.4;transition: 2s;";
-  }
-  function edit_chat_hoverClose() {
-    document.querySelector(".edit_chat_hover").style =
-      "display:none;scale: 0.4;transition: 2s;";
-  }
-  function edit_chat_ikki_hoverModal() {
-    document.querySelector(".edit_chat_hover_ikki").style =
-      "display:block;scale: 1;transition: 10s;";
-    document.querySelector(".edit_chat_hover").style =
-      "display:none;scale: 0.4;transition: 2s;";
-  }
-  function edit_chat_ikki_hoverClose() {
-    document.querySelector(".edit_chat_hover_ikki").style =
-      "display:none;scale: 0.4;transition: 2s;";
-  }
   function back1() {
     document.querySelector(".yozishma_bolim_text_nik").style="display:block"
     document.querySelector(".openModelAddChat").style="display:none"
+    if (theme=="sun") {
+      document.querySelector(".yozishma_bolim_text_nik").style = "background:white;color:black";
+    }else{
+      document.querySelector(".yozishma_bolim_text_nik").style = "background:black;color:white";
+    }
   }
 function openModelAddChat() {
   document.querySelector(".yozishma_bolim_text_nik").style="display:none !important"
-  document.querySelector(".openModelAddChat").style="display:block"
+  document.querySelector(".openModelAddChat").style="display:block !important"
+  if (theme=="sun") {
+    document.querySelector(".openModelAddChat").style = "background:white;color:black;display:block";
+  }else{
+    document.querySelector(".openModelAddChat").style = "background:black;color:white;display:block";
+  }
 }
-  var data = [
-    {
-      name: "002",
-      img: Anime,
-      time: "23:10",
-    },
-    {
-      name: "Abdurahm",
-      img: ImgChat,
-      time: "23:10",
-    },
-    {
-      name: "Jonibek",
-      img: ImgChatt,
-      time: "6:10",
-    },
-    {
-      name: "Otabek",
-      img: YozishmaUserImg,
-      time: "13:10",
-    },
-  ];
+
 
   return (
     <div>
@@ -243,29 +180,27 @@ function openModelAddChat() {
                 <div style={{cursor:"pointer",display:"flex"}} onClick={() => createPrivateRoom(item.email)} className="userDiv" ><div className="tg_img" style={{marginRight:"10px"}}><img style={{height:"100%"}} src={tgimg} alt="" /></div>{item.username}</div>
               )
             })}
-            {/* <div className="userDiv" >user</div>
-            <div className="userDiv" >user</div>
-            <div className="userDiv" >user</div>
-            <div className="userDiv" >user</div>
-            <div className="userDiv" >user</div>
-            <div className="userDiv" >user</div>
-            <div className="userDiv" >user</div>
-            <div className="userDiv" >user</div> */}
           </div>
           </div>
-            <div className="yozishma_bolim_text_nik">
+            <div style={theme=="sun"?{background:"white",color:"black"}:{background:"black",color:"white"}} className="yozishma_bolim_text_nik">
               <div className="yozishma_bolim_text_nik_search">
-                <input onChange={handleInputChange} type="text" placeholder="Search... " />
+                <input style={theme=="sun"?{background:"white"}:{background:"black"}} id="searchss" onChange={handleInputChange} type="text" placeholder="Search... " />
+                <label class="switch" >
+  <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="#ffd43b"><circle r="5" cy="12" cx="12"></circle><path d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"></path></g></svg></span>
+  <span class="moon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path></svg></span>   
+  <input id="checkbox2" onClick={()=>{!document.querySelector("#checkbox2").checked?(localStorage.setItem("back", "sun")):(localStorage.setItem("back", "moon"));window.location.reload()}} type="checkbox" class="input"/>
+  <span class="slider"></span>
+</label>
                               <button className="btnChatAdd" onClick={()=>openModelAddChat()} >+</button>
               </div>
-              {/* <p>{socket.id}</p> */}
+
 
               <div className="telegram_kirish">
               {rooms.map((item) => {
                 let a = item;
                 if (a !== null) {
                   const [email1, email2] = a.split("_");
-                  //  // determine which part to display
+           
                   const displayName = email1 === email ? email2 : email1;
                   return (
                     <div 
@@ -273,121 +208,29 @@ function openModelAddChat() {
                       onClick={() => chatModal(item)}
                       className="yozishma_bolim_text_nik_text"
                     >
-                      {/* <img id="img" src={item.img} alt="" /> */}
                       <div className="yozishma_bolim_text_nik_text_ism_p">
                         <div className="tg_img">
                           <img src={tgimg} alt="" />
                         </div>
-                        <h1 id="name">{displayName.slice(0,-10)}</h1>
-                        {/* <p>Hi</p> */}
+                        <h1 style={theme=="sun"?{color:"black"}:{color:"white"}} id="name">{displayName.slice(0,-10)}</h1>
+                  
                       </div>
                       <div className="yozishma_bolim_text_nik_text_qongiroq">
-                        {/* <div className="yozishma_bolim_text_nik_text_qongiroq_vaqti">{item.time}</div> */}
-                        {/* <div className="yozishma_bolim_text_nik_text_qongiroq_bildir">2</div> */}
                       </div>
                     </div>
                   );
                 }
-                //  const [email1, email2] = item.split("_");
-                //  // determine which part to display
-                //  const displayName = email1 === email ? email2 : email1;
               })}
               </div>
               
             </div>
 
-            <div className="yozishma_small_div">
+            <div style={theme=="sun"?{background:"white"}:{background:"black"}} className="yozishma_small_div">
               <div className="chat_gap_text_div">
                 <Chat socket={socket} room={room} email={email} />
-                {/* <div className="yozishma_telegram_profil">
-                  <BsArrowLeft className="yoq" onClick={() => Chatnone()} />
-                  <BsArrowLeft className="yoq1" onClick={() => ChatClose()} />
-
-                  {[rooms[0]].map(item => {
-                    return (
-                      <div className="telegram_pro_img_text">
-
-                        <div className="telegram_pro_text">
-                          <h1>{item}</h1>
-                          <p>dddddddd</p>
-                        </div>
-                      </div>
-                    )
-                  })}
-
-                </div>
-                <div className="yozishma_small_text_div">
-
-                  <div className="yozishma_small_text_div_chat">
-
-                    <div className="yozishma_small_text_div_text">
-                      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum iste harum tempora dolores fugit quidem necessitatibus totam doloribus eligendi aperiam architecto consequatur enim exercitationem reprehenderit mollitia, voluptatibus vitae. Illo, eligendi.</p>
-                      <div className="yozishma_small_text_div_text_javob_sozi">
-                        <div
-                          onClick={() => javobModal()}
-                          className="javob_sozi_big"
-                        >
-                          <BsArrow90DegLeft className="javob_sozi" />
-                          <p>
-                            <a className="Javob" href="#Javob">
-                              Reply
-                            </a>
-                          </p>
-                        </div>
-                        <div className="yozishma_small_text_div_ptichka">
-                          <div className="edit_chat_hover_relative">
-                            <div className="edit_chat_hover">
-                              Delete
-                            </div>
-                            <MdDeleteForever onMouseLeave={() => edit_chat_hoverClose()} onMouseEnter={() => edit_chat_hoverModal()} className="edit_chat" />
-                          </div>
-                          <div className="edit_chat_hover_ikki_relative">
-                            <div className="edit_chat_hover_ikki">
-                              Edit
-                            </div>
-                            <MdEdit onMouseLeave={() => edit_chat_ikki_hoverClose()} onMouseEnter={() => edit_chat_ikki_hoverModal()} className="edit_chat" />
-                          </div>
-                          <BsCheckAll className="ptichka_chat" />
-                          <BsCheck className="ptichka_chat" />
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-
-                </div>
-                <div className="yozishma_small_xabar_div">
-                  <div id="Javob" className="javob_berish">
-                    <div className="javob_berish_div">
-                      <div className="javob_berish_blok_text">
-                        <h1>Turaev Jafarbek</h1>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div className="javob_berish_div_fill">
-                        <MdClose onClick={() => javobClose()} />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="javob_berish_ikki">
-                    <div className="javob_berish_div">
-                      <div className="javob_berish_blok_text">
-                        <h1>Turaev Jafarbek</h1>
-                        <p>Lorem ipsum dolor sit.</p>
-                      </div>
-                      <div className="javob_berish_div_fill">
-                        <MdClose onClick={() => javobBerishClose()} />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="chat_file_smile">
-                    <LiaTelegramPlane className="telegram_plane" />
-                  </div>
-                  <input placeholder="Введите текст" id="smile_input" type="text" />
-                </div> */}
-                {/* <p>d</p> */}
               </div>
               <div className="chat_yoq_payt">
-                <p>Select a chat to start messaging</p>
+                <p style={theme=="sun"?{color:"black"}:{color:"white"}}>Select a chat to start messaging</p>
               </div>
             </div>
           </div>

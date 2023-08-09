@@ -4,17 +4,42 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap'); */
-#checkbox{
-    cursor: pointer;
+#checkbox {
+  cursor: pointer;
 }
-body{
-    margin-top:30px;
+body {
+  margin-top: 30px;
 }
-@media(max-width:1034px){
-    body{
-        margin-top: 10px;
-    }
+@media (max-width: 1034px) {
+  body {
+    margin-top: 10px;
+  }
 }
-#text{
-    display: none !important;
+
+#text {
+  display: none !important;
+}
+
+/* width */
+.Chat_background ::-webkit-scrollbar {
+  width: 0px;
+  opacity: 0;
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

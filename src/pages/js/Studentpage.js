@@ -14,6 +14,7 @@ import { GrFormClose } from 'react-icons/gr';
 import Mentorkurs from "./Mentorkurs"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UserChat from "./userChat"
+import Education from "./Education"
 import Sertifikat from './Workforteach'
 import Azo from "./Azo"
 import Usernavbar from './Usernavbar'
@@ -55,7 +56,7 @@ export default function Mentor() {
   }, [])
   
   function dashed() {
-    document.querySelector("#edit_card").style = "display:flex !important"
+    
   }
   function Filter() {
     var a = document.querySelector(".filter_button").style.display
@@ -144,7 +145,47 @@ export default function Mentor() {
           "position: fixed;right:-100%;";
         document.querySelector(".profil-qora-qiladi").style = "display:none";
       }
+      function userImgPut(id) {
+        var formdata = new FormData();
     
+        formdata.append("image", document.querySelector("#userInput").files[0]);
+        formdata.append("address", students[0].address);
+        formdata.append("description", students[0].description);
+        formdata.append("email", students[0].email);
+        formdata.append("last_name", students[0].last_name);
+        formdata.append("phone_number", students[0].phone_number);
+        formdata.append("username", students[0].username);
+    
+        axios
+          .put(`${url}/auth/oneuser/${id}`, formdata, {
+            headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+          })
+          .then((res) => {
+            axios
+      .get(`${url}/auth/oneuser`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setStudents(res.data);
+      })
+          
+          })
+          .catch((err) => {
+            Swal.fire("Что-то пошло не так, попробуйте снова.")
+          });
+        axios
+          .get(`${url}/auth/oneuser`, {
+            headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+          })
+          .then((res) => {
+            console.log(res.data);
+            setStudents(res.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
     
   return (
     <div className='studentpagess'>
@@ -157,10 +198,28 @@ export default function Mentor() {
           return(
         <div className="profil_blok_bir1">
           <div onMouseLeave={()=>userimgClose()} className='user_img_size'>
-            {item.image === null? (<img onMouseEnter={()=>userimgModal()} className='user_img' src={img_for_null} alt="" />):(<img onMouseEnter={()=>userimgModal()} className='user_img' src={item.image} alt="" />)}
+          {item.image === null ? (
+                      <img
+                        onMouseEnter={() => userimgModal()}
+                        className="user_img"
+                        src={img_for_null}
+                        alt=""
+                      />
+                    ) : (
+                      <img
+                        onMouseEnter={() => userimgModal()}
+                        className="user_img"
+                        src={
+                          item.image.includes("http")
+                            ? item.image
+                            : `${url}/${item.image}`
+                        }
+                        alt=""
+                      />
+                    )}
           
            <div className="user_img_hover">
-            <input type="file" />
+            <input id="userInput" onChange={() => userImgPut(item.id)} type="file" />
           <MdOutlinePhotoCamera  className='user_hover_photo_icon'/>
         </div>
         </div>
@@ -168,7 +227,7 @@ export default function Mentor() {
             <div className="blok_bir_text_mentor1">
             <h1>{item.username}</h1>
             <p>Java Tutor, Python</p>
-            <button>Mentor1</button>
+            <button>Student</button>
            </div>
           
            
@@ -181,7 +240,7 @@ export default function Mentor() {
 <div className="profil_blok_ikki_text">
           <p>Current balance</p>
           <div className="profil_blok_ikki_sum1">
-            <h1>{item.balance}</h1><p>UZS</p>
+            <h1>{item.balance}</h1><p>$</p>
           </div>
           <div className="profil_blok_ikki_button">
                 <button>
@@ -268,7 +327,8 @@ export default function Mentor() {
             <div className="gray_blok">
                 <div className="fil_text_blok">
                   
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} className='fromLeft'>My courses</h1>{toggle===1?(<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("courselenght")} pieces</div>):("")}</div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} className='fromLeft'>My courses</h1>{toggle===1?(<div className="fil_text_blok_kurs_lenght">14 pieces</div>):("")}</div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(0)} className='fromLeft'>Education</h1>{toggle===1?(<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("courselenght")} pieces</div>):("")}</div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} className='fromLeft'>Correspondence</h1><div className="fil_text_blok_kurs_lenght">14 pieces</div></div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} className='fromLeft'>Tasks</h1>{toggle===3?(<div className="fil_text_blok_kurs_lenght">24 pieces</div>):("")}</div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} className='fromLeft'>My subscribers</h1>{toggle===4?(<div className="fil_text_blok_kurs_lenght">24 pieces</div>):("")}</div>
@@ -451,6 +511,7 @@ export default function Mentor() {
         </div> */}
       </div></div>
             <div className={toggle === 2 ? "show-content" : "content"}><UserChat /></div>
+            <div className={toggle === 0 ? "show-content" : "content"}><Education /></div>
             <div className={toggle === 3 ? "show-content" : "content"}><Sertifikat /></div>
             <div className={toggle === 4 ? "show-content" : "content"}><Azo/></div>
 

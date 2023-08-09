@@ -9,9 +9,8 @@ import axios from "axios";
 import url from "./Host";
 import { type } from "@testing-library/user-event/dist/type";
 import Navbar from "./Navbar";
-import { FcGoogle } from 'react-icons/fc'
-import { AiFillTwitterCircle } from 'react-icons/ai'
-import { FaFacebook } from 'react-icons/fa'
+import Swal from "sweetalert2";
+
 export default function Login() {
   const [page, setPage] = useState(1)
   const [email, setEmail] = useState()
@@ -29,8 +28,8 @@ export default function Login() {
 
     axios.post(`${url}/auth/register`, formdata).then(res => {
       setPage(4)
-    }).catch(err => {
-      alert("Уже есть пользователь с таким именем или эмаилом")
+    }).catch(err=>{
+      Swal.fire("Уже есть пользователь с таким именем или эмаилом")
     })
   }
 
@@ -42,13 +41,13 @@ export default function Login() {
 
     formdata.append('code', document.querySelector("#verifak").value)
 
-    axios.post(`${url}/auth/verify`, formdata).then(res => {
-      alert("Вы успешно зарегистрировались")
-      localStorage.setItem("token", res.data.access)
-      window.location = "/user"
+  axios.post(`${url}/auth/verify`,formdata).then(res=>{
+      Swal.fire("Вы успешно зарегистрировались")
+          localStorage.setItem("token",res.data.access)
+    window.location="/user"
 
-    }).catch(err => {
-      alert("Вы неправильно ввели код, попробуйте снова")
+  }).catch(err=>{
+         Swal.fire("Вы неправильно ввели код, попробуйте снова")
 
     })
   }
@@ -62,15 +61,16 @@ export default function Login() {
     // wait otaw
 
 
-    axios.post(`${url}/auth/login`, formdata).then(res => {
-      sessionStorage.setItem("password", document.querySelector("#parol").value)
-      alert("Вы успешно вошли в аккаунт")
-      localStorage.setItem("token", res.data.access)
-      window.location = "/user"
+    axios.post(`${url}/auth/login`,formdata).then(res=>{
+      sessionStorage.setItem("password",document.querySelector("#parol").value)
+      Swal.fire("Вы успешно вошли в аккаунт")
+      localStorage.setItem("token",res.data.access)
+    window.location="/user"
+     
 
-
-    }).catch(err => {
-      alert("Пароль или логин неправилный. Попробуйте снова")
+    }).catch(err=>{
+      Swal.fire('Пароль или логин неправилный. Попробуйте снова')
+      // Swal.fire("Пароль или логин неправилный. Попробуйте снова")
     })
 
   }
@@ -85,7 +85,7 @@ export default function Login() {
     );
   }, []);
 
-
+     
   return (
     <div>
       <Navbar />
