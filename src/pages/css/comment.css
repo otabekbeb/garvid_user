@@ -323,6 +323,7 @@ height: auto;
 
 .comment_otevet_all{
     height: 450px;
+    min-height: 10px;
     overflow: hidden;
     overflow-y: scroll;
 }

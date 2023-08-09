@@ -53,7 +53,7 @@ console.log(res.data,"salom");
   function messagePost(id){
 
     var formdata = new FormData()
-    formdata.append("text",document.querySelector("#chat_text").value)
+    formdata.append("text", document.querySelector("#chat_text").value)
     formdata.append("image",document.querySelector("#comment_file").files[0])
     formdata.append("user_id", oneuser[0].id)
     formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id)
@@ -349,7 +349,7 @@ return(<>
                 return(
                   <>
                   {item5.id==item32.user_id?(
-              <p className='m_comment_delete'
+              <p className='m_comment_delete1'
                onClick={()=>{deleteComment1(item32.id)}}>
                 <span><AiOutlineDelete/></span>удалить</p>):
               ("")
