@@ -5,6 +5,7 @@ import Futer from "./Footer1"
 import Usernavbar from './Usernavbar' 
 import axios from 'axios'
 import url from './Host'
+import Swal from "sweetalert2";
 
 export default function UserHelp() {
     const [help,setHelp] = useState([])

@@ -4,6 +4,7 @@ import FollowCard from "../js/FollowCard";
 import Chat from "./Chat";
 import tgimg from "../img/photo_2023-06-25_22-19-50 (2).jpg";
 import axios from "axios";
+import Swal from "sweetalert2"; 
 import io from "socket.io-client";
 const socket = io.connect("https://markazback2.onrender.com");
 export default function MentorChat() {

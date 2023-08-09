@@ -75,7 +75,7 @@ import { MdClose } from "react-icons/md";
 import "../css/yozishmalar.css";
 import {AiOutlineDelete}from "react-icons/ai"
 import {CgClose} from "react-icons/cg"
-
+import Swal from "sweetalert2"; 
 
 export default function Comment1() {
   const [comment,setComment]=useState([])

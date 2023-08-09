@@ -3,6 +3,7 @@ import { AiOutlineLeft } from 'react-icons/ai'
 import Futer from "./Footer1"
 import Usernavbar from './Usernavbar' 
 import axios from 'axios'
+import Swal from "sweetalert2";
 import url from './Host'
 export default function Help_Mentor() {
   const [help,setHelp] = useState([])

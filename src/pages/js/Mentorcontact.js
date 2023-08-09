@@ -8,6 +8,7 @@ import { MdEmail } from "react-icons/md";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import Swal from "sweetalert2";
 import axios from "axios";
 
 export default function Contact() {

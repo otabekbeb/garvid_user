@@ -6,6 +6,7 @@ import img_comment from '../img/Ellipse.jpg'
 import img_comment1 from '../img/Ellipse.png'
 import axios from 'axios'
 import url from './Host'
+import Swal from "sweetalert2";
 import person from '../img/149071.png'
 import { MdClose } from "react-icons/md";
 import "../css/yozishmalar.css";

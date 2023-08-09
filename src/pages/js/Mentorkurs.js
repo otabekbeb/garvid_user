@@ -12,6 +12,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
 import { TbPointFilled } from "react-icons/tb";
 import { GrFormClose } from 'react-icons/gr';
+import Swal from "sweetalert2"; 
 import "../css/Spiska.css";
 import "../css/Calibig.css";
 import WWW from "../img/WWW.png";

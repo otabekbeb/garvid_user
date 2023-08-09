@@ -11,7 +11,7 @@ import { FaInstagram } from "react-icons/fa";
 import axios from "axios";
 import Loader from "./loader"
 import { useState } from "react";
-
+import Swal from "sweetalert2"; 
 export default function Contact() {
   const [state, setstate] = React.useState()
   const [loader,setLoader] = useState(0)

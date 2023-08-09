@@ -7,6 +7,7 @@ import { AiOutlineLeft } from 'react-icons/ai'
 import { BiSolidDislike } from 'react-icons/bi'
 import axios from 'axios'
 import url from './Host'
+import Swal from "sweetalert2"; 
 export default function User_help2() {
   function like() {
     document.querySelector('.like1').style = "color:#44bef1"

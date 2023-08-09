@@ -19,6 +19,7 @@ import userNull from "../img/149071.png";
 import { BiLogoTelegram } from "react-icons/bi";
 import { FaYoutube } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
+import Swal from "sweetalert2"; 
 export default function Profil() {
   const [data, setData] = useState([]);
   const [state1, setState1] = React.useState();
