@@ -15,7 +15,7 @@ import axios  from "axios";
 import url from "./Host";
 import img_for_null1 from '../img/download.png'
 import Usernavbar from '../js/Usernavbar'
-
+import Swal from "sweetalert2"; 
 function onga(){
 document.querySelector(".mni-gridf1").classList.toggle("mni-gridf1-none")
 document.querySelector(".mni-gridf2").classList.toggle("mni-gridf2-none")

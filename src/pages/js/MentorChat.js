@@ -4,6 +4,7 @@ import YozishmaUserImg from "../img/Ellipse.jpg";
 import FollowCard from "../js/FollowCard";
 import { IoArrowBackOutline } from 'react-icons/io';
 import Chat from "./Chat";
+import Swal from "sweetalert2";
 
 import {
   BsArrow90DegLeft,

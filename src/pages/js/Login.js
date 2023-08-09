@@ -9,7 +9,12 @@ import axios from "axios";
 import url from "./Host";
 import { type } from "@testing-library/user-event/dist/type";
 import Navbar from "./Navbar";
+import { FcGoogle } from 'react-icons/fc'
+import { AiFillTwitterCircle } from 'react-icons/ai'
+import { FaFacebook } from 'react-icons/fa'
+
 import Swal from "sweetalert2";
+
 
 export default function Login() {
   const [page, setPage] = useState(1)

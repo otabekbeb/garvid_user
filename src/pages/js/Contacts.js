@@ -9,6 +9,8 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import axios from "axios";
+import Swal from "sweetalert2";
+
 
 export default function Contact() {
   const [state, setstate] = React.useState();

@@ -4,6 +4,7 @@ import axios from "axios";
 import url from "./Host";
 import Footer from "../js/Footer1";
 import Loader from "./loader"
+import Swal from "sweetalert2";
 
 import Usernavbar from "../js/Usernavbar";
 
