@@ -26,7 +26,7 @@ export default function User_help2() {
             setHelp(res.data)
             console.log(res.data)
         }).catch(err => {
-            Swal.fire("malumot xato keldi")
+           alert("malumot xato keldi")
         })
     }, [])
     return (
