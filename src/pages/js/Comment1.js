@@ -86,12 +86,13 @@ console.log(res.data,"salom");
     document.querySelector("#chat_text").value=""
     document.querySelector(".commetn_otvet_kaytarish").style="display: none;"
 
-    var otvet = localStorage.getItem("key")
-    axios.get(`${url}/api/course_theme_comment/${otvet}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
-    .then(res=>{
-      setDobavit(res.data)
-    })
-    })
+    // var otvet = localStorage.getItem("key")
+    // axios.get(`${url}/api/course_theme_comment/${otvet}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+    // .then(res=>{
+    //   setDobavit(res.data)
+    // })
+    }
+    )
     .catch(err=>{
       alert("Нельзя писать больше 50 символов")
     })
@@ -136,17 +137,20 @@ console.log(res.data,"salom");
    
     document.querySelector(".commetn_otvet_kaytarish").style="display: flex; "
 setComment2(item)
-console.log(key);
-localStorage.setItem("key", key)
+// console.log(key);
+// localStorage.setItem("key", key)
 
   }
   function CloseotvetMadal() {
-    document.querySelector(".commetn_otvet_kaytarish").style="display: none;"
+    document.querySelector(".otevet_comment_otdel_oyna").style="display: none;"
   }
   function cencelModal() {
     document.querySelector("#chat_text").value=""
   }
-
+function openModalOtvet() {
+  document.querySelector(".otevet_comment_otdel_oyna").style="display:flex"
+  document.querySelector(".m_otdel_bgc").style="display:none"
+}
   return (
     <div>
 
@@ -155,7 +159,7 @@ localStorage.setItem("key", key)
 <div className='for_scroll'>
       {comment.map(item => {
         return(<>
-        {dobavit.map(item1=>{
+        {/* {dobavit.map(item1=>{
 return(<>
                  <div className="for_answer_tag">
                  <div className="for_img_and_username">
@@ -170,7 +174,7 @@ return(<>
                    </div>
            
 </>)
-        })}
+        })} */}
            
               
          
@@ -200,7 +204,10 @@ return(<>
               <img src={item.image.includes("http")?item.image:`${url}/${item.image}`} alt="" />
               <p className='m_comment_text1505'>{item.text}</p>
               <div className="m_comment_otvet"> 
-              <p  className='m_otvet_comment' onClick={()=>OpenotvetMadal(item.text,item.id)}><span><FiCornerUpLeft/></span><a href="#comment_down">Ответить</a></p> 
+              <p  className='m_otvet_comment' 
+              // onClick={()=>OpenotvetMadal(item.text,item.id)}
+              onClick={()=>{openModalOtvet()}}
+              ><span><FiCornerUpLeft/></span><a href="#comment_down">Ответить</a></p> 
   
               {oneuser.map(item5=>{
                 return(
@@ -226,7 +233,7 @@ return(<>
 
 
       
-                  <div className="commetn_otvet_kaytarish">
+                  {/* <div className="commetn_otvet_kaytarish">
                   <div className="m_comment_img1">
           {
             oneuser.map(item2 => {
@@ -256,10 +263,11 @@ return(<>
                     </div>
                 
                   <span id='closeModal' onClick={()=>{CloseotvetMadal()}}><CgClose/></span>
-                  </div>
+                  </div> */}
 
 
-            <div className="m_comment_yozish">
+
+                  <div className="m_comment_yozish">
               <input type="file" id='comment_file' />
               <p><FcFile/></p>
               
@@ -268,7 +276,30 @@ return(<>
             <div className="m_comment_button">
               <button className='m_otmen' onClick={()=>{cencelModal()}}>Cancel</button>
               <button onClick={(event)=>{ messagePost(); cencelModal()}} className='m_otpravit'>Send</button>
-              </div></div>
+              </div>
+            </div>
+
+
+
+            <div className="otevet_comment_otdel_oyna">
+                  <p  className='m_otvet_comment_back' 
+              ><span><FiCornerUpLeft/></span>Назад</p> 
+                    <div className="comment_otevet_all">
+                      {comment.map(item=>{
+                        <p>{item.text}</p>
+                      })}
+                    </div>
+                    <div className="m_comment_yozish">
+              <input type="file" id='comment_file' />
+              <p><FcFile/></p>
+              
+              <textarea placeholder='Введите текст' id="chat_text"></textarea>
+            </div>
+            <div className="m_comment_button">
+              <button className='m_otmen' onClick={()=>{cencelModal()}}>Cancel</button>
+              <button onClick={(event)=>{ messagePost(); cencelModal()}} className='m_otpravit'>Send</button>
+              </div>
+                  </div>
     </div>
     </div>
   )
