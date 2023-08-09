@@ -25,10 +25,37 @@ document.querySelector(".block-bir-variant1 p").style=`
 background-color: #fcfcfc;
 border: 1px solid #ccc;
 `
-document.querySelector(".block-bir-variant2 p").style=`background-color: rgb(98, 177, 204);color: white;
-    
-`
+document.querySelector(".block-bir-variant2 p").style=`background-color: rgb(98, 177, 204);color: white;`
 }
+
+function openTest3(){
+  document.querySelector(".block-bir-variant3 p").style=`background-color: rgb(98, 177, 204);color: white;`
+  document.querySelector(".block-bir-variant4 p").style=`background-color: #fcfcfc;
+  border: 1px solid #ccc;`
+  document.querySelector(".block-bir-variant5 p").style=`background-color: #fcfcfc;
+  border: 1px solid #ccc;`
+
+}
+
+function openTest4(){
+
+    document.querySelector(".block-bir-variant4 p").style=`background-color: rgb(98, 177, 204);color: white;`
+    document.querySelector(".block-bir-variant3 p").style=`background-color: #fcfcfc;
+    border: 1px solid #ccc;`
+    document.querySelector(".block-bir-variant5 p").style=`background-color: #fcfcfc;
+    border: 1px solid #ccc;`
+
+}
+function openTest5(){
+    document.querySelector(".block-bir-variant5 p").style=`background-color: rgb(98, 177, 204);color: white;`
+    document.querySelector(".block-bir-variant4 p").style=`background-color: #fcfcfc;
+    border: 1px solid #ccc;`
+    document.querySelector(".block-bir-variant3 p").style=`background-color: #fcfcfc;
+    border: 1px solid #ccc;`
+
+}
+
+
 export default function Testpage() {
     const [page,setpage]= useState(1)
 const [counter , setCounter]= React.useState(59)
@@ -39,7 +66,7 @@ useEffect(()=>{
     setloading(true);
     setTimeout(()=>{
         setloading(false);
-    },8000);
+    },20000);
 },[])
 
 React.useEffect(()=>{
@@ -120,20 +147,20 @@ React.useEffect(()=>{
         <h3>test-variant2</h3>
         <h5>test-variant2</h5>
         <div className="varianlaa">
-            <div className="block-bir-variant" id='spspspsps' onClick={()=>openTest()}>
+            <div className="block-bir-variant3" onClick={()=>openTest3()}>
                 <p >sur</p>
             </div>
-            <div className="block-bir-variant1"  onClick={()=>openTest1()}>
+            <div className="block-bir-variant4"  onClick={()=>openTest4()}>
                 <p>sur2</p>
             </div>
-            <div className="block-bir-variant2"  onClick={()=>openTest2()}>
+            <div className="block-bir-variant5"  onClick={()=>openTest5()}>
                 <p>sur3</p>
             </div>
         </div>
-        <div className="buttob-next"><button onClick={()=>setpage(4)}>Next</button></div>
+        <div className="buttob-next"><button onClick={()=>window.location="/Testloader"}>Next</button></div>
     </div>
 </div>
-    </div>):(setpage==4?(<div>aasdasdasda</div>):(<div></div>)))
+    </div>):(page==4?(<div></div>):(<div></div>)))
 )
 }
 </div>
