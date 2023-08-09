@@ -12,6 +12,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
 import { TbPointFilled } from "react-icons/tb";
 import { GrFormClose } from 'react-icons/gr';
+import Swal from "sweetalert2"; 
 import "../css/Spiska.css";
 import "../css/Calibig.css";
 import WWW from "../img/WWW.png";
@@ -100,7 +101,7 @@ export default function Searchfilter() {
   }
 
   // function dashed() {
-  //   // alert('hjkl')
+  //   // Swal.fire('hjkl')
   //   var name = document.querySelector('.name').value
   //   var description = document.querySelector('.description').value
   //   var price = document.querySelector('.price').value
@@ -114,12 +115,12 @@ export default function Searchfilter() {
   //   formdata.append("image", image)
 
   //   axios.post(`${url}/api/course/`, formdata, { headers: { "Authorization": "Bearer " + localStorage.getItem("token") } }).then(res => {
-  //     alert("Добавлена информация")
+  //     Swal.fire("Добавлена информация")
   //     console.log('success');
   //   })
   //     .catch(err => {
   //       console.log(err);
-  //       // alert("Это адрес электронной почты или имя, пароль введен")
+  //       // Swal.fire("Это адрес электронной почты или имя, пароль введен")
   //     })
   // }
 
@@ -139,10 +140,10 @@ export default function Searchfilter() {
     axios.post(`${url}/api/course`, formdata, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
     }).then(res => {
-      alert("success")
+      Swal.fire("success")
       window.location.reload()
     }).catch(err => {
-      alert(err)
+      Swal.fire(err)
     })
   }
 
@@ -160,10 +161,10 @@ export default function Searchfilter() {
     axios.put(`${url}/api/course/${id}`, formdata, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
     }).then(res => {
-      alert("success")
+      Swal.fire("success")
       window.location.reload()
     }).catch(err => {
-      alert(err)
+      Swal.fire(err)
     })
     axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
       setKursdata(res.data)
@@ -191,10 +192,10 @@ export default function Searchfilter() {
   }
   function deleteclose() {
     axios.delete(`${url}/api/course/${deleteId}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-      alert("ishladi")
+      Swal.fire("ishladi")
       window.location.reload()
     }).catch(err => {
-      alert("xato")
+      Swal.fire("xato")
     })
   }
 
@@ -210,7 +211,7 @@ export default function Searchfilter() {
       setCoursetype(res.data)
       console.log(res.data);
     }).catch(err => {
-      alert("err")
+      Swal.fire("err")
     })
     axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
       setKursdata(res.data)
@@ -243,7 +244,7 @@ export default function Searchfilter() {
   // function deleteData(id) {
   //   console.log(id);
   //   // axios.delete(`https://markazback2.onrender.com/api/course/${key}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-  //   //   alert('malumot ochirildi')
+  //   //   Swal.fire('malumot ochirildi')
   //   //   window.location.reload()
   //   // }).catch(err => {
   //   //   console.log(err);

@@ -22,7 +22,7 @@ import { TiThMenu } from 'react-icons/ti'
 import Futer from "./Footer1"
 import axios from 'axios'
 import { GrClose } from 'react-icons/gr'
-
+import Swal from "sweetalert2"; 
 import url from './Host'
 import { AiFillStar } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
@@ -172,7 +172,7 @@ export default function Mentor() {
           
           })
           .catch((err) => {
-            alert("Что-то пошло не так, попробуйте снова.")
+            Swal.fire("Что-то пошло не так, попробуйте снова.")
           });
         axios
           .get(`${url}/auth/oneuser`, {

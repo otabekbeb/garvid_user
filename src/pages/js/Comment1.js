@@ -6,6 +6,7 @@ import img_comment from '../img/Ellipse.jpg'
 import img_comment1 from '../img/Ellipse.png'
 import axios from 'axios'
 import url from './Host'
+import Swal from "sweetalert2";
 import person from '../img/149071.png'
 import { MdClose } from "react-icons/md";
 import "../css/yozishmalar.css";
@@ -38,7 +39,7 @@ export default function Comment1() {
   //     console.log(res.data);
   //   })
   //   .catch(err=>{
-  //     alert("error")
+  //     Swal.fire("error")
   //   })
   // },[])  
 
@@ -94,7 +95,7 @@ console.log(res.data,"salom");
     }
     )
     .catch(err=>{
-      alert("Нельзя писать больше 50 символов")
+      Swal.fire("Нельзя писать больше 50 символов")
     })
 
     axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
@@ -112,7 +113,7 @@ console.log(res.data,"salom");
     axios
     .delete(`${url}/api/course_theme_comment/${id}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
     .then(res=>[
-      alert("Вы действительно хотите удалить свой комментарий"),
+      Swal.fire("Вы действительно хотите удалить свой комментарий"),
       axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
         headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
       .then(res=>{
@@ -129,7 +130,7 @@ console.log(res.data,"salom");
       console.log(res.data);
     })
     .catch(err=>{
-      alert("Вы не смогли удалить комментарий, попробуйте снова.")
+      Swal.fire("Вы не смогли удалить комментарий, попробуйте снова.")
     })
   }
 

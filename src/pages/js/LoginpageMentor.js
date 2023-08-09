@@ -4,6 +4,7 @@ import axios from "axios";
 import url from "./Host";
 import Footer from "../js/Footer1";
 import Loader from "./loader"
+import Swal from "sweetalert2";
 
 import Usernavbar from "../js/Usernavbar";
 
@@ -79,11 +80,11 @@ export default function Loginpage() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
-        state1==="ru"?(alert("Введенная информация")):(alert("Entered information"))
+        state1==="ru"?(Swal.fire("Введенная информация")):(Swal.fire("Entered information"))
         window.location.reload();
       })
       .catch((err) => {
-        state1==="ru"?(alert("Информация введена не полностью")):(alert("The information was not fully entered"))
+        state1==="ru"?(Swal.fire("Информация введена не полностью")):(Swal.fire("The information was not fully entered"))
       });
   }
 

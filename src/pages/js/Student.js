@@ -11,7 +11,7 @@ import { FaInstagram } from "react-icons/fa";
 import axios from "axios";
 import Loader from "./loader"
 import { useState } from "react";
-
+import Swal from "sweetalert2"; 
 export default function Contact() {
   const [state, setstate] = React.useState()
   const [loader,setLoader] = useState(0)
@@ -23,10 +23,10 @@ const dataPost=()=>{
     message:document.querySelector('.contact_textarea').value
   }
   axios.post("http://127.0.0.1:8000/auth/user_connect_with/",postdata).then(res=>{
-state==="ru"?(alert("Информация отправлена, дождитесь звонка оператора")):(alert("Information sent, wait for a call from the operator"))
+state==="ru"?(Swal.fire("Информация отправлена, дождитесь звонка оператора")):(Swal.fire("Information sent, wait for a call from the operator"))
 window.location.reload()
   }).catch(err=>{
-    state==="ru"?(alert("Проверить информацию,Не удалось отправить")):(alert("Check information, Failed to send"))
+    state==="ru"?(Swal.fire("Проверить информацию,Не удалось отправить")):(Swal.fire("Check information, Failed to send"))
   })
 }
   useEffect(() => {

@@ -19,10 +19,11 @@ import userNull from "../img/149071.png";
 import { BiLogoTelegram } from "react-icons/bi";
 import { FaYoutube } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
+import Swal from "sweetalert2"; 
 export default function Profil() {
   const [data, setData] = useState([]);
   const [state1, setState1] = React.useState();
-  const [user,setUser] =useState([])
+  const [user, setUser] = useState([])
   useEffect(() => {
     console.log("hello");
     axios
@@ -45,10 +46,10 @@ export default function Profil() {
       .catch((err) => {
         console.log(err);
       });
-      axios.get(`${url}/notification/`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
-        setUser(res.data)
-        console.log(res.data,"aaa")
-    }).catch(err=>{
+    axios.get(`${url}/notification/`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+      setUser(res.data)
+      console.log(res.data, "aaa")
+    }).catch(err => {
     })
   }, []);
 
@@ -74,16 +75,16 @@ export default function Profil() {
       })
       .then((res) => {
         axios
-        .get(`${url}/auth/oneuser`, {
-          headers: { Authorization: "Bearer " + localStorage.getItem("token") },
-        })
-        .then((res) => {
-          console.log(res.data);
-          setData(res.data);
-        })
+          .get(`${url}/auth/oneuser`, {
+            headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+          })
+          .then((res) => {
+            console.log(res.data);
+            setData(res.data);
+          })
       })
       .catch((err) => {
-        alert("Что-то пошло не так, попробуйте снова.")
+        Swal.fire("Что-то пошло не так, попробуйте снова.")
       });
     axios
       .get(`${url}/auth/oneuser`, {
@@ -162,9 +163,9 @@ export default function Profil() {
   //   formdata.append("image",document.querySelector("#userInput").value)
 
   //   axios.put(${url}/auth/user/,formdata,{ headers: { 'Authorization': 'Bearer ' + sessionStorage.getItem("token") }}).then(res=>{
-  //     alert("ishladi")
+  //     Swal.fire("ishladi")
   //   }).catch(err=>{
-  //     alert("ishlamadi")
+  //     Swal.fire("ishlamadi")
   //   })
   // }
 
@@ -273,7 +274,7 @@ export default function Profil() {
             </div>
             <div
               onMouseLeave={() => taxrirlashClose()}
-              className="profil_blok_ikki_icon" 
+              className="profil_blok_ikki_icon"
             >
               <BsFillBellFill
                 onMouseEnter={() => taxrirlashChadModal()}
@@ -281,7 +282,7 @@ export default function Profil() {
               />
               <BsThreeDots
                 onMouseEnter={() => taxrirlashModal()}
-                className="profil_blok_ikki_icon_ikki" 
+                className="profil_blok_ikki_icon_ikki"
               />
               <div className="profil_blok_ikki_icon_texrirlash_modal">
                 <div
@@ -381,43 +382,43 @@ export default function Profil() {
 
           </div> */}
 
-<div className="div-admin-sms">
-  <h5>SMS</h5>
-  <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
-</div>
-<div className="sms-insta">
-<div className="sms-insto-bb1">
-    <div className="sms-insta-block">
-    <div className="sms-img">
-      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
-    </div>
-<div className="sms-kotta-pas">
-<div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
-    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
-</div>
-  </div>
+          <div className="div-admin-sms">
+            <h5>SMS</h5>
+            <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
+          </div>
+          <div className="sms-insta">
+            <div className="sms-insto-bb1">
+              <div className="sms-insta-block">
+                <div className="sms-img">
+                  <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
+                </div>
+                <div className="sms-kotta-pas">
+                  <div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
+                  <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
+                </div>
+              </div>
 
-  <div className="sms-insta-block">
-    <div className="sms-img">
-      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
-    </div>
-<div className="sms-kotta-pas">
-<div className="sms-text-tepa"><p>boxodirov_025 </p><p></p></div>
-    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
-</div>
-  </div>
+              <div className="sms-insta-block">
+                <div className="sms-img">
+                  <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
+                </div>
+                <div className="sms-kotta-pas">
+                  <div className="sms-text-tepa"><p>boxodirov_025 </p><p></p></div>
+                  <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
+                </div>
+              </div>
 
-    <div className="sms-insta-block">
-    <div className="sms-img">
-      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
-    </div>
-<div className="sms-kotta-pas">
-<div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
-    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
-</div>
-  </div>
-</div>
-</div>
+              <div className="sms-insta-block">
+                <div className="sms-img">
+                  <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
+                </div>
+                <div className="sms-kotta-pas">
+                  <div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
+                  <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div className="div-admin-sms">
             <h5>SMS</h5>
@@ -430,32 +431,32 @@ export default function Profil() {
           </div>
           <div className="sms-insta">
             <div className="sms-insto-bb1">
-              
 
-              {user.map(item=>{
-                return(
+
+              {user.map(item => {
+                return (
                   <div className="sms-insta-block">
-                <div className="sms-img">
-                  <img
-                    src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png"
-                    alt=""
-                  />
-                </div>
-                
-                <div className="sms-kotta-pas">
-                  <div className="sms-text-tepa">
-                    <p>
-                      boxodirov_025 • now{" "}
-                      <span>
-                        <box-icon type="solid" name="bell-ring"></box-icon>
-                      </span>
-                    </p>
+                    <div className="sms-img">
+                      <img
+                        src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png"
+                        alt=""
+                      />
+                    </div>
+
+                    <div className="sms-kotta-pas">
+                      <div className="sms-text-tepa">
+                        <p>
+                          boxodirov_025 • now{" "}
+                          <span>
+                            <box-icon type="solid" name="bell-ring"></box-icon>
+                          </span>
+                        </p>
+                      </div>
+                      <div className="sms-text-pas">
+                        <p>Sent an sms to: Salom</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="sms-text-pas">
-                    <p>Sent an sms to: Salom</p>
-                  </div>
-                </div>
-              </div>
                 )
               })}
             </div>

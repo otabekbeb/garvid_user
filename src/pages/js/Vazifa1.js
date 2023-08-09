@@ -75,7 +75,7 @@ import { MdClose } from "react-icons/md";
 import "../css/yozishmalar.css";
 import {AiOutlineDelete}from "react-icons/ai"
 import {CgClose} from "react-icons/cg"
-
+import Swal from "sweetalert2"; 
 
 export default function Comment1() {
   const [comment,setComment]=useState([])
@@ -101,7 +101,7 @@ export default function Comment1() {
   //     console.log(res.data);
   //   })
   //   .catch(err=>{
-  //     alert("error")
+  //     Swal.fire("error")
   //   })
   // },[])  
 
@@ -144,7 +144,7 @@ console.log(res.data,"salom");
 
     })
     .catch(err=>{
-      alert("error")
+      Swal.fire("error")
     })
 
     axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
@@ -155,7 +155,7 @@ console.log(res.data,"salom");
       console.log(res.data,);
     })
     .catch(err=>{
-      alert("error")
+      Swal.fire("error")
     })
   }
 
@@ -163,12 +163,12 @@ console.log(res.data,"salom");
     axios
     .delete(`${url}/api/course_theme_comment/${id}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
     .then(res=>[
-      alert("Вы успешно удалили свой комментарий"),
+      Swal.fire("Вы успешно удалили свой комментарий"),
       window.location.reload(),
     
     ])
     .catch(err=>{
-      alert("Вы не смогли удалить комментарий, попробуйте снова.")
+      Swal.fire("Вы не смогли удалить комментарий, попробуйте снова.")
     })
   }
 

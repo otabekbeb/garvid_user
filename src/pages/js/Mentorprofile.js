@@ -19,6 +19,7 @@ import userNull from "../img/149071.png";
 import { BiLogoTelegram } from "react-icons/bi";
 import { FaYoutube } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
+import Swal from "sweetalert2"; 
 export default function Profil() {
   const [data, setData] = useState([]);
   const [state1, setState1] = React.useState();
@@ -83,7 +84,7 @@ export default function Profil() {
         })
       })
       .catch((err) => {
-        alert("Что-то пошло не так, попробуйте снова.")
+        Swal.fire("Что-то пошло не так, попробуйте снова.")
       });
     axios
       .get(`${url}/auth/oneuser`, {
@@ -162,9 +163,9 @@ export default function Profil() {
   //   formdata.append("image",document.querySelector("#userInput").value)
 
   //   axios.put(${url}/auth/user/,formdata,{ headers: { 'Authorization': 'Bearer ' + sessionStorage.getItem("token") }}).then(res=>{
-  //     alert("ishladi")
+  //     Swal.fire("ishladi")
   //   }).catch(err=>{
-  //     alert("ishlamadi")
+  //     Swal.fire("ishlamadi")
   //   })
   // }
 

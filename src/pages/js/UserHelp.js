@@ -5,7 +5,7 @@ import Futer from "./Footer1"
 import Usernavbar from './Usernavbar' 
 import axios from 'axios'
 import url from './Host'
-
+import Swal from "sweetalert2"; 
 export default function UserHelp() {
     const [help,setHelp] = useState([])
     useEffect(() => {
@@ -13,7 +13,7 @@ export default function UserHelp() {
           setHelp(res.data)
           console.log(res.data)
       }).catch(err=>{
-          alert("malumot xato keldi")
+          Swal.fire("malumot xato keldi")
       })
       }, [])
     return (

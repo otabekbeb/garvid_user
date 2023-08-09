@@ -34,34 +34,34 @@ function Chat({ socket, email, room }) {
     }
   };
   function send1(){
-    if (theme=="sun") {
-      document.querySelector(".chat-window .chat-footer button").style = "color:black";
-    }else{
+    if (theme=="moon") {
       document.querySelector(".chat-window .chat-footer button").style = "color:white";
-    }
-    if (theme=="sun") {
-      document.querySelector(".chat-window .chat-footer button").style = "background:white";
     }else{
+      document.querySelector(".chat-window .chat-footer button").style = "color:black";
+    }
+    if (theme=="moon") {
       document.querySelector(".chat-window .chat-footer button").style = "background:black";
+    }else{
+      document.querySelector(".chat-window .chat-footer button").style = "background:white";
     }
   }
   function send2(){
-    if (theme=="sun") {
-      document.querySelector(".chat-window .chat-footer button").style = "color:white";
-    }else{
+    if (theme=="moon") {
       document.querySelector(".chat-window .chat-footer button").style = "color:black";
-    }
-    if (theme=="sun") {
-      document.querySelector(".chat-window .chat-footer button").style = "background:white";
     }else{
+      document.querySelector(".chat-window .chat-footer button").style = "color:white";
+    }
+    if (theme=="moon") {
       document.querySelector(".chat-window .chat-footer button").style = "background:black";
+    }else{
+      document.querySelector(".chat-window .chat-footer button").style = "background:white";
     }
   }
   useEffect(() => {
-    if (theme=="sun") {
-      document.querySelector(".chat-window .chat-header p").style = "color:black";
-    }else{
+    if (theme=="moon") {
       document.querySelector(".chat-window .chat-header p").style = "color:white";
+    }else{
+      document.querySelector(".chat-window .chat-header p").style = "color:black";
     }
     socket.on("receive_message", (data) => {
       setMessageList((list) => [...list, data]);
@@ -88,7 +88,7 @@ function Chat({ socket, email, room }) {
         <div style={{marginLeft:"15px"}} className="tg_img">
           <img style={{height:"100%"}} src={tgimg} alt="" />
         </div>
-        <p>
+        <p >
           {(() => {
             if (!email) {
               return "foydalanuvchini tanlang";
