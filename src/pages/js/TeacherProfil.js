@@ -157,13 +157,13 @@ export default function Profil() {
       "position: fixed;right:0px;";
     document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
       "display:none";
-      document.querySelector(".profil-qora-qiladi").style = "display:block";
+    document.querySelector(".profil-qora-qiladi").style = "display:block";
 
   }
   function notificationClose() {
     document.querySelector(".profil_notifacation_size").style =
       "position: fixed;right:-100%;";
-      document.querySelector(".profil-qora-qiladi").style = "display:none";
+    document.querySelector(".profil-qora-qiladi").style = "display:none";
   }
 
 
@@ -239,8 +239,8 @@ export default function Profil() {
 
           <div className="profil_blok_ikki">
             <div className="profil_blok_ikki_text">
-              <p>Current balance</p>
-              <div className="profil_blok_ikki_sum">
+              <p className="yutub_text">Youtube</p>
+              {/* <div className="profil_blok_ikki_sum">
                 {data.map((item) => {
                   return (
                     <>
@@ -261,13 +261,13 @@ export default function Profil() {
                     </>
                   );
                 })}
-              </div>
-              <div className="profil_blok_ikki_button">
-                <button>
+              </div> */}
+              <div className="followin_div">
+                {/* <button>
                   <BsActivity />
-                </button>
-                <button onClick={() => (window.location = "/oplata")}>
-                  Balance replenishment
+                </button> */}
+                <button className="Following" onClick={() => (window.location = "/oplata")}>
+                  Subscribe
                 </button>
               </div>
             </div>
@@ -275,13 +275,13 @@ export default function Profil() {
               onMouseLeave={() => taxrirlashClose()}
               className="profil_blok_ikki_icon"
             >
-              <BsFillBellFill
+              {/* <BsFillBellFill
                 onMouseEnter={() => taxrirlashChadModal()}
                 className="profil_blok_ikki_icon_bir"
-              />
+              /> */}
               <BsThreeDots
                 onMouseEnter={() => taxrirlashModal()}
-                className="profil_blok_ikki_icon_ikki"
+                className="follow_ringtong "
               />
               <div className="profil_blok_ikki_icon_texrirlash_modal">
                 <div

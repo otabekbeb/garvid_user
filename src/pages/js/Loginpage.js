@@ -378,7 +378,7 @@ export default function Loginpage() {
             </div>
             <Footer />
           </div>
-
+                    
         </div>) : (<Loader />)}
 
     </div>

@@ -7,6 +7,7 @@ export default function FollowCard() {
    }
     return (
         <div>
+            {/* <input type="text" placeholder='Search...' /> */}
             <div className="followcards">
                 <div className="followcard">
                     <img className='jony_foto' src="https://cdn-edge.kwork.ru/files/avatar/big/17/11487504-1.jpg" alt="" />
