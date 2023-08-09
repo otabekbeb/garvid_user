@@ -36,7 +36,10 @@ import Proverr2 from './pages/js/Proverr2'
 import Oplata from './pages/js/Oplata'
 import Help_chat from './pages/js/Help_chat'
 import FollowCard from './pages/js/FollowCard'
+import Testpage from './pages/js/Testpage'
+import Testloader from './pages/js/Testloader'
 import Education from './pages/js/Education'
+
 export default function App() {
 
   return (
@@ -78,7 +81,10 @@ export default function App() {
           <Route path="/Help_chat" element={<Help_chat />} />
           <Route path="/FollowCard" element={<FollowCard />} />
           <Route path="/TeacherProfil" element={<TeacherProfil />} />
+          <Route path="/Testpage" element={<Testpage />} />
+          <Route path="/Testloader" element={<Testloader />} />
           <Route path="/education" element={<Education />} />
+
 
           {/* <Route index element={} />*/}
         </Routes>

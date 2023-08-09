@@ -82,7 +82,7 @@
   }
   
   .chat-window .chat-body {
-    height: calc(650px - (45px + 70px));
+    height: calc(100vh - (45px + 70px));
     border: 1px solid #e2e2e2;
     border-left: 0px;
     background: #fff;
@@ -223,4 +223,14 @@
     font-size: 22px;
     margin-left: 15px;
     margin-right: 10px;
+  }
+  .telegram_menu{
+    display: none;
+    position: fixed;
+    left: 10px;
+    width: 410px;
+    height: 500px;
+    background: black;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
   }
