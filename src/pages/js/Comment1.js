@@ -17,7 +17,8 @@ import anonim from '../img/anonim-user.png'
 
 export default function Comment1() {
   const [comment,setComment]=useState([])
-  const [comment2,setComment2]=useState()
+  const [comment2,setComment2]=useState([])
+
   const [page, setPage]=useState(4)
   const [state1, setState1] = React.useState();
   const [dobavit,setDobavit]=useState([])
@@ -25,23 +26,8 @@ export default function Comment1() {
   const [user,setUser]=useState([])
   const [oneuser,setoneuser]=useState([])
 
-  // useEffect(() => {
-  //   setState1(
-  //     localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
-  //   );},[]);
-
-  // useEffect((id)=>{
 
 
-  //   axios.get(`${url}/api/course_theme_comment/${id}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
-  //   .then(res=>{
-  //     setComment(res.data)
-  //     console.log(res.data);
-  //   })
-  //   .catch(err=>{
-  //     Swal.fire("error")
-  //   })
-  // },[])  
 
 useEffect(()=>{
   axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
@@ -109,17 +95,57 @@ console.log(res.data,"salom");
     })
   }
 
+  function otvetPost(id){
+
+    var formdata = new FormData()
+    formdata.append("text",document.querySelector("#chat_text1").value)
+    formdata.append("image",document.querySelector("#comment_file1").files[0])
+    formdata.append("user_id", oneuser[0].id)
+    formdata.append("theme", JSON.parse(localStorage.getItem("page_video1")).id)
+    formdata.append("subcomment", 0)
+
+    axios.post(`${url}/api/course_theme_comment/`, formdata, {
+      headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}
+    })
+    .then(res=>{
+      axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video1")).id}`, {
+        headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+      .then(res=>{
+        setComment2(res.data)
+      })
+    document.querySelector("#chat_text1").value=""
+
+    // var otvet = localStorage.getItem("key")
+    // axios.get(`${url}/api/course_theme_comment/${otvet}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+    // .then(res=>{
+    //   setDobavit(res.data)
+    // })
+    //  setComment2(res.data)
+    }
+    )
+    .catch(err=>{
+      Swal.fire("Нельзя писать больше 50 символов")
+    })
+
+    axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+      headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+    .then(res=>{
+
+      setComment2(res.data)
+    })
+    .catch(err=>{
+    })
+  }
+
   function deleteComment(id) {
     axios
     .delete(`${url}/api/course_theme_comment/${id}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
     .then(res=>[
-      Swal.fire("Вы действительно хотите удалить свой комментарий"),
       axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
         headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
       .then(res=>{
   
         setComment(res.data)
-        console.log(res.data,);
       })
     ])
     axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
@@ -127,7 +153,28 @@ console.log(res.data,"salom");
     .then(res=>{
 
       setComment(res.data)
-      console.log(res.data);
+    })
+    .catch(err=>{
+      Swal.fire("Вы не смогли удалить комментарий, попробуйте снова.")
+    })
+  }
+
+  function deleteComment1(id) {
+    axios
+    .delete(`${url}/api/course_theme_comment/${id}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+    .then(res=>[
+      axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+        headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+      .then(res=>{
+  
+        setComment2(res.data)
+      })
+    ])
+    axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+      headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+    .then(res=>{
+
+      setComment2(res.data)
     })
     .catch(err=>{
       Swal.fire("Вы не смогли удалить комментарий, попробуйте снова.")
@@ -137,7 +184,7 @@ console.log(res.data,"salom");
   function OpenotvetMadal(item,key) {
    
     document.querySelector(".commetn_otvet_kaytarish").style="display: flex; "
-setComment2(item)
+// setComment2(item)
 // console.log(key);
 // localStorage.setItem("key", key)
 
@@ -147,10 +194,15 @@ setComment2(item)
   }
   function cencelModal() {
     document.querySelector("#chat_text").value=""
+    document.querySelector("#chat_text1").value=""
   }
-function openModalOtvet() {
-  document.querySelector(".otevet_comment_otdel_oyna").style="display:flex"
+function openModalOtvet11() {
+  document.querySelector(".otevet_comment_otdel_oyna").style="display: block"
   document.querySelector(".m_otdel_bgc").style="display:none"
+}
+function closeModalOtvet11() {
+  document.querySelector(".m_otdel_bgc").style="display: block"
+  document.querySelector(".otevet_comment_otdel_oyna ").style="display:none !important"
 }
   return (
     <div>
@@ -207,8 +259,8 @@ return(<>
               <div className="m_comment_otvet"> 
               <p  className='m_otvet_comment' 
               // onClick={()=>OpenotvetMadal(item.text,item.id)}
-              onClick={()=>{openModalOtvet()}}
-              ><span><FiCornerUpLeft/></span><a href="#comment_down">Ответить</a></p> 
+              onClick={()=>{openModalOtvet11()}}
+              ><span><FiCornerUpLeft/></span>Ответить</p> 
   
               {oneuser.map(item5=>{
                 return(
@@ -276,7 +328,7 @@ return(<>
             </div>
             <div className="m_comment_button">
               <button className='m_otmen' onClick={()=>{cencelModal()}}>Cancel</button>
-              <button onClick={(event)=>{ messagePost(); cencelModal()}} className='m_otpravit'>Send</button>
+              <button onClick={(event)=>{ messagePost()}} className='m_otpravit'>Send</button>
               </div>
             </div>
 
@@ -284,21 +336,42 @@ return(<>
 
             <div className="otevet_comment_otdel_oyna">
                   <p  className='m_otvet_comment_back' 
-              ><span><FiCornerUpLeft/></span>Назад</p> 
+                  onClick={()=>{closeModalOtvet11()}}>
+                    <span><FiCornerUpLeft/></span>Назад</p> 
                     <div className="comment_otevet_all">
-                      {comment.map(item=>{
-                        <p>{item.text}</p>
+                      
+                      {comment2.map(item32=>{
+                        return(<><img src={item32.oneuser?item32.oneuser.image.includes("http")?item32.oneuser.image:`${url}/${item32.oneuser.image}`:
+                        <img src={anonim} alt="" />} alt="" />
+                         <h5>{item32.oneuser?item32.oneuser.username:"Anonim User"}</h5>
+                           <p>{item32.text}</p>
+                           {oneuser.map(item5=>{
+                return(
+                  <>
+                  {item5.id==item32.user_id?(
+              <p className='m_comment_delete'
+               onClick={()=>{deleteComment1(item32.id)}}>
+                <span><AiOutlineDelete/></span>удалить</p>):
+              ("")
+              }
+                </>
+                )
+                
+              })}
+                           </>
+                        )
+                       
                       })}
                     </div>
                     <div className="m_comment_yozish">
-              <input type="file" id='comment_file' />
+              <input type="file" id='comment_file1' />
               <p><FcFile/></p>
               
-              <textarea placeholder='Введите текст' id="chat_text"></textarea>
+              <textarea placeholder='Введите текст' id="chat_text1"></textarea>
             </div>
             <div className="m_comment_button">
               <button className='m_otmen' onClick={()=>{cencelModal()}}>Cancel</button>
-              <button onClick={(event)=>{ messagePost(); cencelModal()}} className='m_otpravit'>Send</button>
+              <button onClick={(event)=>{ otvetPost()}} className='m_otpravit'>Send</button>
               </div>
                   </div>
     </div>
