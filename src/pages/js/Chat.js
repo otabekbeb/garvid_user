@@ -34,31 +34,31 @@ function Chat({ socket, email, room }) {
     }
   };
   function send1(){
-    if (theme=="sun") {
-      document.querySelector(".chat-window .chat-footer button").style = "color:black";
-    }else{
+    if (theme=="moon") {
       document.querySelector(".chat-window .chat-footer button").style = "color:white";
-    }
-    if (theme=="sun") {
-      document.querySelector(".chat-window .chat-footer button").style = "background:white";
     }else{
+      document.querySelector(".chat-window .chat-footer button").style = "color:black";
+    }
+    if (theme=="moon") {
       document.querySelector(".chat-window .chat-footer button").style = "background:black";
+    }else{
+      document.querySelector(".chat-window .chat-footer button").style = "background:white";
     }
   }
   function send2(){
-    if (theme=="sun") {
-      document.querySelector(".chat-window .chat-footer button").style = "color:white";
-    }else{
+    if (theme=="moon") {
       document.querySelector(".chat-window .chat-footer button").style = "color:black";
-    }
-    if (theme=="sun") {
-      document.querySelector(".chat-window .chat-footer button").style = "background:white";
     }else{
+      document.querySelector(".chat-window .chat-footer button").style = "color:white";
+    }
+    if (theme=="moon") {
       document.querySelector(".chat-window .chat-footer button").style = "background:black";
+    }else{
+      document.querySelector(".chat-window .chat-footer button").style = "background:white";
     }
   }
   useEffect(() => {
-    if (theme=="sun") {
+    if (theme=="moon") {
       document.querySelector(".chat-window .chat-header p").style = "color:black";
     }else{
       document.querySelector(".chat-window .chat-header p").style = "color:white";
