@@ -23,7 +23,7 @@ import LoginpageMentor from './pages/js/LoginpageMentor'
 import Help from './pages/js/Help'
 import UserHelp from './pages/js/UserHelp'
 import UserHelp1 from './pages/js/User_Help1'
-import UserHelp2 from './pages/js/User_help2'  
+import UserHelp2 from './pages/js/User_help2'
 import UserHelp3 from './pages/js/User_help3'
 import UserHelp4 from './pages/js/User_help4'
 import StudentHelp4 from './pages/js/StudentHelp4'
@@ -38,6 +38,8 @@ import Help_chat from './pages/js/Help_chat'
 import FollowCard from './pages/js/FollowCard'
 import Testpage from './pages/js/Testpage'
 import Testloader from './pages/js/Testloader'
+import Education from './pages/js/Education'
+
 export default function App() {
 
   return (
@@ -81,6 +83,8 @@ export default function App() {
           <Route path="/TeacherProfil" element={<TeacherProfil />} />
           <Route path="/Testpage" element={<Testpage />} />
           <Route path="/Testloader" element={<Testloader />} />
+          <Route path="/education" element={<Education />} />
+
 
           {/* <Route index element={} />*/}
         </Routes>
@@ -88,7 +92,7 @@ export default function App() {
       </BrowserRouter>
 
 
-     
+
     </div>
   );
 }
