@@ -13,12 +13,13 @@
     width: 60%;
     padding: 20px;
 }
-#comment_file{
+#comment_file, #comment_file1{
     width: 25px;
     z-index: 1000;
     opacity: 0;
     margin-left: 5px;
 }
+
 .m_comment{
 border-radius: 5px;
 display: flex;
@@ -322,12 +323,12 @@ height: auto;
 
 .comment_otevet_all{
     height: 450px;
+    min-height: 10px;
     overflow: hidden;
     overflow-y: scroll;
 }
 .otevet_comment_otdel_oyna{
     width: 1px;
-    opacity: 0;
     display: none;
     background-color: #fff;
     width: 60%;
@@ -335,4 +336,8 @@ height: auto;
 }
 .m_otvet_comment_back{
     color: #44bef1;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    left: 0;
 }

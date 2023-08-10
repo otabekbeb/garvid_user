@@ -59,9 +59,9 @@ function Chat({ socket, email, room }) {
   }
   useEffect(() => {
     if (theme=="moon") {
-      document.querySelector(".chat-window .chat-header p").style = "color:black";
-    }else{
       document.querySelector(".chat-window .chat-header p").style = "color:white";
+    }else{
+      document.querySelector(".chat-window .chat-header p").style = "color:black";
     }
     socket.on("receive_message", (data) => {
       setMessageList((list) => [...list, data]);
@@ -88,7 +88,7 @@ function Chat({ socket, email, room }) {
         <div style={{marginLeft:"15px"}} className="tg_img">
           <img style={{height:"100%"}} src={tgimg} alt="" />
         </div>
-        <p>
+        <p >
           {(() => {
             if (!email) {
               return "foydalanuvchini tanlang";

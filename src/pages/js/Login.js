@@ -50,7 +50,6 @@ export default function Login() {
       Swal.fire("Вы успешно зарегистрировались")
           localStorage.setItem("token",res.data.access)
     window.location="/user"
-
   }).catch(err=>{
          Swal.fire("Вы неправильно ввели код, попробуйте снова")
 
