@@ -1,44 +1,126 @@
 import React from 'react'
 import '../css/Aplata.css'
-
-import Footer1 from './Footer1'
-import Navbar2 from './Usernavbar'
+import Navbar from './Navbar'
+import Footer1 from '../js/Footer1'
+import Usernavbar from '../js/Usernavbar'
 
 export default function Oplata() {
   return (
     <div>
-<Navbar2/>
-<div className="oplata">
-<div className="modal21">
-<form className="form21">
+<Usernavbar/>
 
-  <div className="separator">
-    <hr className="line"/>
-    <p>or pay with a credit card</p>
-    <hr className="line"/>
-  </div>
-  <div className="credit-card-info--form">
-    <div className="input_container">
-      <label for="password_field" className="input_label">Full name of the cardholder</label>
-      <input id="password_field" className="input_field" type="text" name="input-name" title="Inpit title" placeholder="Enter your full name"/>
+<div class="container2">
+
+        <form action="#">
+
+            <div class="row">
+
+                <div class="col">
+                    <h3 class="title">Billing Address</h3>
+
+                    <div class="inputBox1">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" placeholder="Enter your full name" required/>
+                    </div>
+
+                    <div class="inputBox1">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" placeholder="Enter email address" required/>
+                    </div>
+
+                    <div class="inputBox1">
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" placeholder="Enter address" required/>
+                    </div>
+
+                    <div class="inputBox1">
+                        <label for="city">City:</label>
+                        <input type="text" id="city" placeholder="Enter city" required/>
+                    </div>
+
+                    <div class="flex">
+
+                        <div class="inputBox1">
+                            <label for="state">State:</label>
+                            <input type="text" id="state" placeholder="Enter state" required/>
+                        </div>
+
+                        <div class="inputBox1">
+                            <label for="zip">Zip Code:</label>
+                            <input type="number" id="zip" placeholder="123 456" required/>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <h3 class="title">Payment</h3>
+
+                    <div class="inputBox1">
+                        <label for="name">Card Accepted:</label>
+                        <img src="https://i.ibb.co/X38b5PF/card-img.png" alt=""/>
+                    </div>
+
+                    <div class="inputBox1">
+                        <label for="cardName">Name On Card:</label>
+                        <input type="text" id="cardName" placeholder="Enter card name" required/>
+                    </div>
+
+                    <div class="inputBox1">
+                        <label for="cardNum">Credit Card Number:</label>
+                        <input type="text" id="cardNum" placeholder="1111-2222-3333-4444" maxlength="19" required/>
+                    </div>
+
+                    <div class="inputBox1">
+                        <label for="">Exp Month:</label>
+                        <select name="" id="">
+                            <option value="">Choose month</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                    </div>
+
+
+                    <div class="flex1">
+                        <div class="inputBox1">
+                            <label for="">Exp Year:</label>
+                            <select name="" id="">
+                                <option value="">Choose Year</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                            </select>
+                        </div> 
+
+                        <div class="inputBox1">
+                            <label for="cvv">CVV</label>
+                            <input type="number" id="cvv" placeholder="1234" required/>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <input type="submit" value="Proceed to Checkout" class="submit_btn"/>
+        </form>
+
     </div>
-    <div className="input_container">
-      <label for="password_field" className="input_label">card number</label>
-      <input id="password_field" className="input_field" type="number" name="input-name" title="Inpit title" placeholder="0000 0000 0000 0000"/>
-    </div>
-    <div className="input_container">
-      <label for="password_field" className="input_label">Expiration date / CVV</label>
-      <div className="split">
-      <input id="password_field" className="input_field" type="text" name="input-name" title="Expiry Date" placeholder="01/23"/>
-      <input id="password_field" className="input_field" type="number" name="cvv" title="CVV" placeholder="CVV"/>
-    </div>
-    </div>
-  </div>
-    <button className="purchase--btn" type='button'>Top up your balance</button>
-</form>
-</div>
-</div>
+
 <Footer1/>
+
     </div>
   )
 }

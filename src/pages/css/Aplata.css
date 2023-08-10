@@ -1,228 +1,103 @@
-.modal21 {
-    width: fit-content;
-    height: fit-content;
-    background: #FFFFFF;
-    box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 26px;
-  
-    width: 50%;
-  }
-  
-  .form21 {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .payment--options {
-    width: calc(100% - 40px);
-    display: grid;
-    grid-template-columns: 33% 34% 33%;
-    gap: 20px;
-    padding: 10px;
-  }
-  
-  .payment--options button {
-    height: 55px;
-    background: #F2F2F2;
-    border-radius: 11px;
-    padding: 0;
-    border: 0;
-    outline: none;
-  }
-  
-  .payment--options button svg {
-    height: 18px;
-  }
-  
-  .payment--options button:last-child svg {
-    height: 22px;
-  }
-  
-  .separator {
-    width: calc(100% - 20px);
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    gap: 10px;
-    color: #8B8E98;
-    margin: 0 10px;
-  }
-  
-  .separator > p {
-    word-break: keep-all;
-    display: block;
-    text-align: center;
-    font-weight: 600;
-    font-size: 11px;
-    margin: auto;
-  }
-  
-  .separator .line {
-    display: inline-block;
-    width: 100%;
-    height: 1px;
-    border: 0;
-    background-color: #e8e8e8;
-    margin: auto;
-  }
-  
-  .credit-card-info--form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .input_container {
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  
-  .split {
-    display: grid;
-    grid-template-columns: 4fr 2fr;
-    gap: 15px;
-  }
-  
-  .split input {
-    width: 100%;
-  }
-  
-  .input_label {
-    font-size: 10px;
-    color: #8B8E98;
-    font-weight: 600;
-  }
-  
-  .input_field {
-    width: auto;
-    height: 40px;
-    padding: 0 0 0 16px;
-    border-radius: 9px;
-    outline: none;
-    background-color: #F2F2F2;
-    border: 1px solid #e5e5e500;
-    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
-  }
-  
-  .input_field:focus {
-    border: 1px solid transparent;
-    box-shadow: 0px 0px 0px 2px #242424;
-    background-color: transparent;
-  }
-  
-  .purchase--btn {
-    height: 55px;
-    background: #F2F2F2;
-    border-radius: 11px;
-    border: 0;
-    outline: none;
-    color: #ffffff;
-    font-size: 13px;
-    font-weight: 700;
-    background-color: #44bef1 !important;
-    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
-  }
-  
-  .purchase--btn:hover {
-    box-shadow: 0px 0px 0px 2px #FFFFFF, 0px 0px 0px 4px #0000003a;
-  }
-  
-  /* Reset input number styles */
-  .input_field::-webkit-outer-spin-button,
-  .input_field::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+*{
     margin: 0;
-  }
-  
-  .input_field[type=number] {
-    -moz-appearance: textfield;
-  }
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+}
 
-  .oplata{
+.container2{
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 40vw;
-  }
+    align-items: center;
+    min-height: 100vh;
+    padding: 25px;
+ background-color: rgb(226, 226, 226);
+}
 
-  @media (max-width:1351px) {
-    .oplata{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 50vw;
-    }
-  }
-  @media (max-width:1015px) {
-    .oplata{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 60vw;
-    }
-  }
-  @media (max-width:860px) {
-    .modal21 {
-      width: fit-content;
-      height: fit-content;
-      background: #FFFFFF;
-      box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
-      border-radius: 26px;
-    
-      width: 90%;
-    }
-    .oplata{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 70vw;
-    }
-  }
-  @media (max-width:730px) {
-    .oplata{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 90vw;
-    }
-  }
-  @media (max-width:570px) {
-    .oplata{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 110vw;
-    }
-  }
-  @media (max-width:490px) {
-    .modal21 {
-      width: fit-content;
-      height: fit-content;
-      background: #FFFFFF;
-      box-shadow: 0px 187px 75px rgba(238, 235, 235, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
-      border-radius: 26px;
-    
-      width: 90%;
-      position: relative;
-      top: 60px;
-    }
-  }
-  @media (max-width:370px) {
-    .oplata{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 110vw;
-    }
-  }
+.container2 form {
+    width: 700px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.container2 form .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.container2 form .row .col{
+    flex: 1 1 250px;
+}
+
+.col .title{
+    font-size: 20px;
+    color: #5e8f94;
+    padding-bottom: 5px;
+}
+
+.col .inputBox1{
+    margin: 15px 0;
+}
+
+.col .inputBox1 label{
+    margin-bottom: 10px;
+    display: block;
+}
+
+.col .inputBox1 input, .col .inputBox1 select{
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    font-size: 15px;
+}
+
+.col .inputBox1 input:focus, .col .inputBox1 select:focus{
+    border: 1px solid #000;
+}
+
+.col .flex1{
+    display: flex;
+    gap: 15px;
+}
+
+.col .flex1 .inputBox1{
+    flex: 1 1;
+    margin-top: 5px;
+}
+
+.col .inputBox1 img{
+    height: 34px;
+    margin-top: 5px;
+    filter: drop-shadow(0 0 1px #000);
+}
+
+.container2 form .submit_btn{
+    width: 100%;
+    padding: 12px;
+    font-size: 17px;
+    background: #5e8f94;
+    color: #fff;
+    margin-top: 5px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.container2 form .submit_btn:hover{
+    background: #73B5BD;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+    display: none;
+}
+.inputBox1 img{
+  cursor: pointer;
+}
