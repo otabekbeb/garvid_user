@@ -487,25 +487,7 @@ justify-content: space-between;
 }
 }
 
-
-@media (max-width:1680px) {
-    
-.loader-suka{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 70vw;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: rgba(88, 88, 88, 0.445);
-    backdrop-filter: blur(10px);
-    position: fixed;
-    z-index: 1000;
-   }
-}   @media (max-width:1680px) {
-    
+@media (max-width:1696px) {
     .loader-suka{
         display: flex;
         align-items: center;
@@ -520,5 +502,196 @@ justify-content: space-between;
         position: fixed;
         z-index: 1000;
        }
-    }
-    
+}
+@media (max-width:1561px) {
+    .loader-suka{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 75vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: rgba(88, 88, 88, 0.445);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        z-index: 1000;
+       }
+}
+@media (max-width:1128px) {
+    .loader-suka{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 80vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: rgba(88, 88, 88, 0.445);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        z-index: 1000;
+       }
+}
+@media (max-width:1065px) {
+    .loader-suka{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 90vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: rgba(88, 88, 88, 0.445);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        z-index: 1000;
+       }
+}
+@media (max-width:950px) {
+    .loader-suka{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: rgba(88, 88, 88, 0.445);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        z-index: 1000;
+       }
+}
+@media (max-width:867px) {
+    .loader-suka{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 110vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: rgba(88, 88, 88, 0.445);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        z-index: 1000;
+       }
+}
+@media (max-width:785px) {
+    .loader-suka{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 120vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: rgba(88, 88, 88, 0.445);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        z-index: 1000;
+       }
+}
+@media (max-width:725px) {
+    .loader-suka{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 140vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: rgba(88, 88, 88, 0.445);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        z-index: 1000;
+       }
+}
+@media (max-width:618px) {
+    .loader-suka{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 160vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: rgba(88, 88, 88, 0.445);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        z-index: 1000;
+       }
+}
+@media (max-width:545px) {
+    .loader-suka{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 200vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: rgba(88, 88, 88, 0.445);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        z-index: 1000;
+       }
+}
+@media (max-width:435px) {
+    .loader-suka{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 230vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: rgba(88, 88, 88, 0.445);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        z-index: 1000;
+       }
+}
+@media (max-width:380px) {
+    .loader-suka{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 250vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: rgba(88, 88, 88, 0.445);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        z-index: 1000;
+       }
+}
+@media (max-width:355px) {
+    .loader-suka{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 270vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: rgba(88, 88, 88, 0.445);
+        backdrop-filter: blur(10px);
+        position: fixed;
+        z-index: 1000;
+       }
+}

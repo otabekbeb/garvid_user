@@ -37,7 +37,6 @@ export default function Testloader() {
 <button onClick={()=>window.location="/Testpage"}>Retry</button>
 </div>
 
-
       </div>)}
 
  
