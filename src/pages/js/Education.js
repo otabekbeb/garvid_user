@@ -5,7 +5,8 @@ import axios from "axios"
 import URL from "./Edurl"
 import { BsSearch } from "react-icons/bs"
 import { MdDeleteOutline, MdPlayLesson } from "react-icons/md"
-import close from "../img/photo_2023-08-09_02-30-22.jpg"
+// import close from "../img/photo_2023-08-09_02-30-22.jpg"
+import { GrClose } from "react-icons/gr"
 import deleteImg from "../img/Group 2.png"
 import "../css/Education.css"
 
@@ -157,7 +158,7 @@ export default function Edication() {
 
       <div id="EducationdeleteModal" className="deleteModal">
         <div className="deleteModal_div">
-          <div className="postUserModal_div_icon"><img src={close} className="icon" onClick={() => deleteEducationClose()} /></div>
+          {/* <div className="postUserModal_div_icon"><img src={close} className="icon" onClick={() => deleteEducationClose()} /></div> */}
           <img src={deleteImg} alt="" />
           <p>Вы хотите удалить это образование</p>
           <div className="deleteButton_div">
@@ -167,9 +168,9 @@ export default function Edication() {
         </div>
       </div>
       <div id="EducationpostModal" className="Modaldiv">
-        <div style={{ width: '340px' }} className="postUserModal_div">
-          <div className="postUserModal_div_icon"><img src={close} className="icon" onClick={() => postEducationClose()} /></div>
-          <div className="postUserModal_div_label" style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <div  className="postUserModal_div">
+          <div className="postUserModal_div_icon"><GrClose className="icon" onClick={() => postEducationClose()} /></div>
+          <div className="postUserModal_div_label" >
             <label htmlFor="">
               <p>Имя</p>
               <input id="Educationusername" placeholder="Имя пользователя" type="text" />
@@ -182,20 +183,21 @@ export default function Edication() {
               <p>Конечная дата</p>
               <input id="Educationend_date" type="date" />
             </label>
-          </div>
-          <label htmlFor="">
+            <label htmlFor="">
             <p>Описание</p>
-            <input id="Educationdescription" placeholder="Описание" className="description" type="text" />
+            <input id="Educationdescription" className="description" placeholder="Описание" type="text" />
           </label>
+          </div>
+          
           <div className="postUserModal_div_button">
             <button onClick={() => postEducation()}>Отправить</button>
           </div>
         </div>
       </div>
       <div id="EducationputModal" className="Modaldiv">
-        <div style={{ width: '340px' }} className="postUserModal_div">
-          <div className="postUserModal_div_icon"><img src={close} className="icon" onClick={() => putEducationClose()} /></div>
-          <div className="postUserModal_div_label" style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <div className="postUserModal_div">
+          <div className="postUserModal_div_icon"><GrClose className="icon" onClick={() => putEducationClose()} /></div>
+          <div className="postUserModal_div_label" >
             <label htmlFor="">
               <p>Имя</p>
               <input id="Educationusername" type="text" />
@@ -208,11 +210,12 @@ export default function Edication() {
               <p>Конечная дата</p>
               <input id="Educationend_date" type="date" />
             </label>
-          </div>
-          <label htmlFor="">
+            <label htmlFor="">
             <p>Описание</p>
             <input id="Educationdescription" className="description" type="text" />
           </label>
+          </div>
+          
           <div className="postUserModal_div_button">
             <button onClick={() => putEducation()}>Редактировать</button>
           </div>
