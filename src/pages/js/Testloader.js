@@ -31,7 +31,7 @@ export default function Testloader() {
         <h2>25 <span>%</span> </h2>
     </div>
     <div className="rezultat-text">
-    <box-icon type='solid' name='bar-chart-alt-2' color="#444"></box-icon><p><span>5</span> out of <span>3</span> points</p>
+    <box-icon type='solid' name='bar-chart-alt-2' color="#444"></box-icon><p><span>2</span> out of <span>2</span> points</p>
     </div>
 </div>
 <button onClick={()=>window.location="/Testpage"}>Retry</button>
