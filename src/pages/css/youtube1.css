@@ -1056,6 +1056,7 @@ color: #9DA7BB;
 @media (max-width:1200px) {
     .navbar_otish{
         font-size: 15px;
+        margin-top: 40px;
     }
 }
 @media (max-width:1000px) {

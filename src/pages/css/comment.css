@@ -27,7 +27,7 @@ gap: 20px;
 }
 
 .for_scroll{
-    height: 450px;
+    min-height: 100px;
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -178,6 +178,29 @@ height: auto;
         width: 100%;
         padding: 20px;
     }
+    .otevet_comment_otdel_oyna{
+        display: none;
+        background-color: #fff;
+        width: 100% !important;
+        padding: 20px;
+    }
+    .view_all_otdel_oyna{
+        height: auto;
+        min-height: 100px;
+        width: 100% !important;
+        display: none;
+        background-color: #fff;
+        padding: 20px;
+    }
+    .AiOutlineComment{
+        position: relative;
+        left: 20% !important;
+        color: #44bef1;
+        user-select: none;
+    }
+    .comment_view_all{
+        right: 15px !important;
+    }
     .m_comment_tex1{
         width: 60%;
     }
@@ -322,13 +345,13 @@ height: auto;
 }
 
 .comment_otevet_all{
-    height: 450px;
+    height: 100px;
     min-height: 10px;
     overflow: hidden;
     overflow-y: scroll;
 }
 .otevet_comment_otdel_oyna{
-    width: 1px;
+    
     display: none;
     background-color: #fff;
     width: 60%;
@@ -340,4 +363,78 @@ height: auto;
     position: relative;
     top: 0;
     left: 0;
+    user-select: none;
+}
+
+.comment_otevet_all img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.df_div_comment_page{
+    display: flex;
+    gap: 20px;
+}
+
+.div_class_tugadi{
+    display: block;
+}
+
+.m_comment_delete1{ 
+    cursor:pointer;
+    color: red !important;
+    gap: 5px;
+    text-align: center;
+}
+.m_comment_delete1:active{
+    background-color: #ff0000 !important;
+    color: #fff !important;
+    border-radius: 5px;
+    user-select: none;
+}
+
+.comment_view_all{
+    position: absolute;
+    color: #44bef1;
+    text-decoration: underline;
+    cursor: pointer;
+    right: 0;
+}
+.view_all_otdel_oyna{
+    height: auto;
+    min-height: 100px;
+    width: 60%;
+    display: none;
+    background-color: #fff;
+    padding: 20px;
+}
+.img_person_veiw_all img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.flex_view_all{
+    display: flex;
+    gap: 20px;
+}
+.df_all_com{
+    display: flex;align-items: center;
+}
+.AiOutlineComment{
+    position: relative;
+    left: 35%;
+    color: #44bef1;
+    user-select: none;
+}
+@media (max-width:1200px) {
+    .m_otdel_bgc{
+        margin-top: 30px;
+    }
+    .otevet_comment_otdel_oyna{
+        margin-top: 30px;
+    }
+    .view_all_otdel_oyna{
+     margin-top: 30px;
+    }
 }
