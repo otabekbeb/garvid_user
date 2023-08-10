@@ -8,6 +8,12 @@ function openTest(){
     document.querySelector(".block-bir-variant2 p").style=`
 background-color: #fcfcfc;
 border: 1px solid #ccc;
+
+`
+document.querySelector(".block-bir-variant2 p").style=`
+background-color: #fcfcfc;
+border: 1px solid #ccc;
+
 `
     document.querySelector(".block-bir-variant p").style=` background-color: rgb(98, 177, 204);color: white;`
 }
@@ -22,6 +28,11 @@ function openTest1(){
 }
 function openTest2(){
 document.querySelector(".block-bir-variant1 p").style=`
+background-color: #fcfcfc;
+border: 1px solid #ccc;
+
+`
+document.querySelector(".block-bir-variant p").style=`
 background-color: #fcfcfc;
 border: 1px solid #ccc;
 `
