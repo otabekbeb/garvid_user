@@ -54,16 +54,13 @@ export default function Testloader() {
             </div>
           </div>
 
+
 </div>
-
-
-
 
         </div>
 
       </div>
-      <Footer1 />
 
-    </div>
+  
   )
 }
