@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 import person from '../img/149071.png'
 import { MdClose } from "react-icons/md";
 import "../css/yozishmalar.css";
-import {AiOutlineDelete}from "react-icons/ai"
+import {AiOutlineComment, AiOutlineDelete}from "react-icons/ai"
 import {CgClose} from "react-icons/cg"
 import anonim from '../img/anonim-user.png'
 
@@ -71,7 +71,8 @@ console.log(res.data,"salom");
         console.log(res.data,);
       })
     document.querySelector("#chat_text").value=""
-    document.querySelector(".commetn_otvet_kaytarish").style="display: none;"
+    document.querySelector(".for_scroll").style="height:400px"
+    // document.querySelector(".commetn_otvet_kaytarish").style="display: none;"
 
     // var otvet = localStorage.getItem("key")
     // axios.get(`${url}/api/course_theme_comment/${otvet}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
@@ -114,13 +115,8 @@ console.log(res.data,"salom");
         setComment2(res.data)
       })
     document.querySelector("#chat_text1").value=""
+    document.querySelector(".comment_otevet_all").style="height:400px"
 
-    // var otvet = localStorage.getItem("key")
-    // axios.get(`${url}/api/course_theme_comment/${otvet}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
-    // .then(res=>{
-    //   setDobavit(res.data)
-    // })
-    //  setComment2(res.data)
     }
     )
     .catch(err=>{
@@ -204,13 +200,28 @@ function closeModalOtvet11() {
   document.querySelector(".m_otdel_bgc").style="display: block"
   document.querySelector(".otevet_comment_otdel_oyna ").style="display:none !important"
 }
+function openViewall() {
+  document.querySelector(".view_all_otdel_oyna").style="display: block"
+  document.querySelector(".m_otdel_bgc").style="display:none"
+}
+
+function closeViewall() {
+  document.querySelector(".m_otdel_bgc").style="display: block"
+  document.querySelector(".view_all_otdel_oyna ").style="display:none !important"
+}
   return (
     <div>
 
     <div className='m_comment_kotta'> 
+    
+
     <div className="m_otdel_bgc">
+      <div className="comment_view_all" onClick={()=>{openViewall()}}>
+      <p>view all <AiOutlineComment/></p>
+    </div>
 <div className='for_scroll'>
-      {comment.map(item => {
+
+   {comment.map(item => {
         return(<>
         {/* {dobavit.map(item1=>{
 return(<>
@@ -280,7 +291,8 @@ return(<>
       </div>
       </>
         )
-       })}  
+       })}
+       
 
 </div>
 
@@ -334,15 +346,20 @@ return(<>
 
 
 
-            <div className="otevet_comment_otdel_oyna">
+            <div className="otevet_comment_otdel_oyna"> 
                   <p  className='m_otvet_comment_back' 
                   onClick={()=>{closeModalOtvet11()}}>
-                    <span><FiCornerUpLeft/></span>Назад</p> 
+                    <span><FiCornerUpLeft/></span>Back</p> 
                     <div className="comment_otevet_all">
                       
                       {comment2.map(item32=>{
-                        return(<><img src={item32.oneuser?item32.oneuser.image.includes("http")?item32.oneuser.image:`${url}/${item32.oneuser.image}`:
+                        
+                        return(<>
+                        <div className="df_div_comment_page"><img src={item32.oneuser?item32.oneuser.image.includes("http")?item32.oneuser.image:`${url}/${item32.oneuser.image}`:
                         <img src={anonim} alt="" />} alt="" />
+                        <div className="div_class_tugadi">
+
+                       
                          <h5>{item32.oneuser?item32.oneuser.username:"Anonim User"}</h5>
                            <p>{item32.text}</p>
                            {oneuser.map(item5=>{
@@ -353,16 +370,16 @@ return(<>
                onClick={()=>{deleteComment1(item32.id)}}>
                 <span><AiOutlineDelete/></span>удалить</p>):
               ("")
-              }
+              } 
                 </>
                 )
                 
-              })}
+              })} </div> </div>
                            </>
                         )
                        
                       })}
-                    </div>
+                    </div> 
                     <div className="m_comment_yozish">
               <input type="file" id='comment_file1' />
               <p><FcFile/></p>
@@ -374,7 +391,45 @@ return(<>
               <button onClick={(event)=>{ otvetPost()}} className='m_otpravit'>Send</button>
               </div>
                   </div>
-    </div>
+
+                  
+                  <div className="view_all_otdel_oyna">
+                    <div className="df_all_com">
+                      <p  className='m_otvet_comment_back' 
+                  onClick={()=>{closeViewall()}}>
+                    <span><FiCornerUpLeft/></span>Back</p> 
+                    <p className='AiOutlineComment'>View all comment <AiOutlineComment/></p></div>
+                  
+                    {comment.map(item=>{
+                      return(
+                        <>    
+                        <div className="flex_view_all">
+                          <div className="img_person_veiw_all">
+                            <img src={item.oneuser?item.oneuser.image.includes("http")?item.oneuser.image:`${url}/${item.oneuser.image}`:
+            <img src={anonim} alt="" />} alt="" />
+                          </div>
+                             
+                 <div className="m_comment_text">
+              
+         
+
+              <h5>{item.oneuser?item.oneuser.username:"Anonim User"}</h5>
+          
+            <img src={item.image.includes("http")?item.image:`${url}/${item.image}`} alt="" />
+            <p className='m_comment_text1505'>{item.text}</p>
+            <div className="m_comment_otvet"> 
+            <p  className='m_otvet_comment' 
+            // onClick={()=>OpenotvetMadal(item.text,item.id)}
+            onClick={()=>{openModalOtvet11()}}
+            ><span><FiCornerUpLeft/></span>Ответить</p>            
+            </div>
+        </div></div></>
+                      ) 
+               
+                    })}
+                 
+                 </div>
+                  </div>
     </div>
   )
 }

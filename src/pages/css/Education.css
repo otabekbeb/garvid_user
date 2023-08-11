@@ -70,7 +70,7 @@
     }
 
     .Modaldiv {
-        background: rgba(0, 0, 0, .6);
+        background-color: rgba(0, 0, 0, 0.62);
         z-index: 1000000000;
         position: fixed;
         top: 0;
@@ -83,12 +83,9 @@
     }
 
     .postUserModal_div {
-        width: 650px;
+        width: 500px;
         height: auto !important;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 20px;
         border-radius: 5px;
         background-color: #fff;
         box-shadow: 0 0px 40px #a3a5a654;
@@ -97,21 +94,21 @@
 
     .postUserModal_div label p {
         margin-bottom: 0;
+        line-height: 30px;
+    }
+    .postUserModal_div label{
+        display: block;
     }
 
-    .postUserModal_div label .description {
-        width: 100%;
-        padding: 5px;
-        padding-bottom: 140px;
-        border-radius: 4px;
-        border: 1px solid rgb(182, 182, 182);
-        outline-color: #6db9ff;
+    .postUserModal_div_label label{
+        display: block;
     }
 
     .postUserModal_div_label input {
-        width: 300px;
+        width: 100%;
         height: 35px;
         padding-left: 5px;
+        padding-right: 5px;
         border-radius: 4px;
         outline-color: #6db9ff;
         border: 1px solid rgb(182, 182, 182);
@@ -152,9 +149,9 @@
     }
 
     .postUserModal_div_label {
-        display: grid;
+        display: block;
+        margin-top: -10px;
         gap: 10px;
-        grid-template-columns: auto auto;
     }
 
     .postUserModal_div_icon {
@@ -165,11 +162,12 @@
 
     .postUserModal_div_icon .icon {
         cursor: pointer;
-        width: 30px;
-        height: 30px;
+        width: 20px;
         margin-top: -10px;
         margin-right: -10px;
-    }
+    } 
+
+
     .postUserModal_div_button button {
         padding-left: 15px;
         padding-right: 15px;
@@ -211,11 +209,11 @@
     }
 
     .deleteModal_div {
-        width: 400px;
+        width: 450px;
         height: auto !important;
         text-align: center;
         padding: 20px;
-        border-radius: 5px;
+        border-radius: 10px;
         background-color: #fff;
         box-shadow: 0 0px 40px #a3a5a654;
         backdrop-filter: 100px;
@@ -447,18 +445,18 @@
     }
     .edication_card{
         display: flex;
-        justify-content: space-around;
-        align-items: center;
+        justify-content: space-between;
+        align-items:baseline;
         flex-wrap: wrap;
         margin-top: 40px;
-        margin-inline: 40px;
-        gap: 20px;
+        margin-inline: 80px;
+        gap: 30px;
     }
     .edication_card_{
         position: relative;
         border-radius: 15px;
         width: 400px;
-        min-height: 200px;
+        min-height: 180px;
         padding: 20px;
         background-color:#fff;
         box-shadow:  0 10px 40px #a3a5a654;
@@ -470,16 +468,14 @@
     }
     .edication_card_ h1{
         color: black;
-        font-size: 32px !important;
+        font-size: 30px !important;
         font-weight: 550;
     }
     .edication_card_button{
-        width: 200px;
         display: flex;
         align-items: center;
-        bottom: 20px;
+justify-content: flex-end;
         gap: 10px;
-        margin-right: -200px !important;
     }
     .edication_card_ span{
         font-size: 16px;
@@ -511,7 +507,7 @@
     }
 
     .edication_card_date p{
-        color: #9DA7BB;
+        color: var(--seriy, #4a4c53);
         font-size: 14px;
         font-weight: 400;
     }
@@ -536,7 +532,7 @@
 
     @media (max-width:1500px) {
         .edication_card_{
-        width: 320px;
+        width: 350px;
         padding: 15px;
         }
         .edication_card_ p{
@@ -633,5 +629,14 @@
     @media (max-width:1638px) {
         .malumot_big_div{
             grid-template-columns: auto auto auto auto;
+        }
+    }
+    @media (max-width:1270px) {
+        .edication_card{
+            justify-content: space-evenly !important;
+            margin-inline: 40px;
+        }
+        .edication_card_{
+            width: 320px;
         }
     }
