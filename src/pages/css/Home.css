@@ -54,6 +54,7 @@
 }
 #google_translate_element select{
     width: 100%;
+height: auto;
 }
 #google_translate_element1 select{
     width: 100%;

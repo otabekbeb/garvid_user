@@ -10,6 +10,7 @@ import UserChat from "./userChat";
 import { TiThMenu } from "react-icons/ti";
 import axios from "axios";
 import url from "./Host";
+import Testpage from '../js/Testpage'
 
 // const socket = io.connect("http://localhost:5000");
 export default function Pdp() {
@@ -119,6 +120,22 @@ export default function Pdp() {
                   }
                   className="fromLeft"
                 >
+                  Test
+                </h1>
+                {toggle === 3 ? (
+                  ""
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className="fil_text_blok_soz">
+                <h1
+                  onClick={() => updatetoggle(3)}
+                  style={
+                    toggle === 3 ? { borderBottom: "2px solid #44bef1" } : {}
+                  }
+                  className="fromLeft"
+                >
                   My certificates
                 </h1>
                 {toggle === 3 ? (
@@ -174,12 +191,15 @@ export default function Pdp() {
                 My acquired knowledge
               </h1>
               <h1 onClick={() => updatetoggle(3)} className="fromMenu">
-                My Certificates
+                test
               </h1>
               <h1 onClick={() => updatetoggle(4)} className="fromMenu">
-                My Subscriptions
+                My Certificates
               </h1>
               <h1 onClick={() => updatetoggle(5)} className="fromMenu">
+                My Subscriptions
+              </h1>
+              <h1 onClick={() => updatetoggle(6)} className="fromMenu">
                 Correspondence
               </h1>
             </div>
@@ -303,15 +323,19 @@ export default function Pdp() {
           <Bilim />
         </div>
         <div className={toggle === 3 ? "show-content" : "content"}>
-          <Sertifikat />{" "}
+          <Testpage />{" "}
         </div>
         <div className={toggle === 4 ? "show-content" : "content"}>
-          <Azo />
+          <Sertifikat />{" "}
         </div>
         <div className={toggle === 5 ? "show-content" : "content"}>
+          <Azo />
+        </div>
+        <div className={toggle === 6 ? "show-content" : "content"}>
           <UserChat/>
         </div>
       </div>
     </div>
   );
 }
+

@@ -1,7 +1,5 @@
 import React,{useState,useEffect} from 'react'
 import '../css/Testpage.css'
-import Navbar from './Navbar'
-
 function openTest(){
     document.querySelector(".block-bir-variant1 p").style=`   background-color: #fcfcfc;
     border: 1px solid #ccc;`
@@ -94,7 +92,7 @@ React.useEffect(()=>{
 
   return (
     <div>
-        <Navbar/>
+        
 <div className="letsgo-test">
 <div className="test-ichi">
 {page==1?(<div>

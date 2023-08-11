@@ -960,9 +960,7 @@ justify-content: space-around; */
 
 }
 
-.asdasdsadasdsa img {
-    display: flex !important;
-
+.asdasdsadasdsa  {
 }
 
 
@@ -970,7 +968,11 @@ justify-content: space-around; */
 
     gap: 10px !important;
     padding-left: 17px !important;
-
+  
+}
+.mni-swiper-grid .mni-gridf1{
+    display: grid !important;
+    grid-template-columns: auto auto auto !important;
 }
 
 .mni-gridf2 {

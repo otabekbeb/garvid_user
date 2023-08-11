@@ -311,7 +311,7 @@ top: 5px;
 }
 
 
-@media (min-width: 850px) {
+@media (min-width: 915px) {
   .media-navbar {
     display: none !important;
  align-items: center !important;
@@ -727,7 +727,7 @@ left: 170px;
    }
 
   
-   @media (min-width: 850px) {
+   @media (min-width: 915px) {
  
 
      .navbar-ul {
@@ -1374,7 +1374,7 @@ color: white;
   } */
 }
 
-@media (min-width: 850px) {
+@media (min-width: 915px) {
   .media-navbar {
     display: none !important;
 
@@ -2689,7 +2689,7 @@ div#goog-gt- {
   color: #fff;
   border: none;
   border-radius: 3px;
-  padding: 6px 8px
+  padding: 6px 8px;
 }
 
 .navbar-tepaga-krug {
@@ -3447,7 +3447,4 @@ padding-left: 30px;
     transition: 0.4s;
     padding-top: 60px;
   }
-}
-@media (max-width:503px) {
-  
 }
