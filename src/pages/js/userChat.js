@@ -156,11 +156,11 @@ export default function MentorChat() {
       document.querySelector(".bx-dots-vertical-rounded").style = "color:black";
     }
     if (theme=="moon") {
-      document.querySelector(".telegram_menu").style="left:-570px"
-    document.querySelector("#telegram_menu").style="left:10px;background:rgb(33,33,33)"
+      document.querySelector(".telegram_menu1").style="left:-570px;background:rgb(33,33,33)"
+    document.querySelector("#telegram_menu").style="left:10px"
     }else{
-      document.querySelector(".telegram_menu").style="left:-570px"
-    document.querySelector("#telegram_menu").style="left:10px;background:white"
+      document.querySelector(".telegram_menu1").style="left:-570px;background:white"
+    document.querySelector("#telegram_menu").style="left:10px"
     }
   }
   function telegrammenu() {
@@ -195,10 +195,10 @@ export default function MentorChat() {
       document.querySelector(".bx-dots-vertical-rounded").style = "color:black";
     }
     if (theme=="moon") {
-      document.querySelector(".telegram_menu").style="left:10px;background:rgb(33,33,33)"
+      document.querySelector(".telegram_menu1").style="left:10px;background:rgb(33,33,33)"
     document.querySelector("#telegram_menu").style="left:-570px"
     }else{
-      document.querySelector(".telegram_menu").style="left:10px;background:white"
+      document.querySelector(".telegram_menu1").style="left:10px;background:white"
     document.querySelector("#telegram_menu").style="left:-570px"
     }
   }
@@ -214,7 +214,7 @@ export default function MentorChat() {
     if (theme=="moon") {
       document.querySelector(".yozishma_bolim_text_nik").style = "background:rgb(33,33,33)";
     }else{
-      document.querySelector(".yozishma_bolim_text_nik").style = "background:white";
+      document.querySelector(".yozishma_bolim_text_nik").style = "background:#dbdbdb";
     }
     if (theme=="moon") {
       document.querySelector(".chat-body").style = "background:url('https://blog.1a23.com/wp-content/uploads/sites/2/2020/02/Desktop.png')";
@@ -229,7 +229,7 @@ export default function MentorChat() {
     if (theme=="moon") {
       document.querySelector(".chat-window .chat-footer input").style = "background:rgb(33,33,33)";
     }else{
-      document.querySelector(".chat-window .chat-footer input").style = "background:white";
+      document.querySelector(".chat-window .chat-footer input").style = "background:#ecebeb";
     }
     if (theme=="moon") {
       document.querySelector("#telegram_menu").style = "color:white";
@@ -279,7 +279,7 @@ export default function MentorChat() {
     if (theme=="moon") {
       document.querySelector(".yozishma_bolim_text_nik").style = "background:rgb(33,33,33);color:white";
     }else{
-      document.querySelector(".yozishma_bolim_text_nik").style = "background:white;color:black";
+      document.querySelector(".yozishma_bolim_text_nik").style = "background:#dbdbdb;color:black";
     }
   }
 function openModelAddChat() {
@@ -317,8 +317,8 @@ function tg_imagess_close() {
             })}
           </div>
           </div>
-            <div style={theme=="moon"?{background:"rgb(33,33,33)",color:"white"}:{background:"white",color:"black"}} className="yozishma_bolim_text_nik">
-              <div className="telegram_menu">
+            <div style={theme=="moon"?{background:"rgb(33,33,33)",color:"white"}:{background:"#dbdbdb",color:"black"}} className="yozishma_bolim_text_nik">
+              <div className="telegram_menu1">
                 <div className="tg_header">
                   <div className="left_tg">
               <i  onClick={()=>telegram_close()} class='bx bx-left-arrow-alt'></i>

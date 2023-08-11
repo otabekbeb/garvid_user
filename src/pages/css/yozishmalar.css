@@ -164,7 +164,7 @@
     display: flex;
     gap: 5px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #e2e2e2;
+    border-bottom: 1px solid #00000014;
     margin-top: 5%;
     cursor: pointer;
 }
@@ -173,6 +173,7 @@
     margin-top: 5px;
     margin-left: 8px;
     font-size: 15px;
+    font-weight: 700;
 }
 
 .yozishma_bolim_text_nik_text img {
@@ -807,7 +808,7 @@ width: 94%;
     justify-content: center;
     align-items: center;
     height: 100%;
-    background: url("https://blog.1a23.com/wp-content/uploads/sites/2/2020/02/Desktop.png");
+    background-color: #FFF;
 }
 .yozishma_bolim_text_nik_search {
     width: 100%;
@@ -828,6 +829,7 @@ label{
     border: 1px solid #e2e2e2;
     border-radius: 5px;
     margin-left: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 @media(min-width:700px){
 
@@ -940,6 +942,6 @@ label{
   .input:checked + .slider:before {
     transform: translateX(30px);
   }
-  .telegram_menu{
+  .telegram_menu1{
 
   }
