@@ -101,3 +101,13 @@ input::-webkit-outer-spin-button{
 .inputBox1 img{
   cursor: pointer;
 }
+@media (max-width:590px) {
+    .container2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 150vh !important;
+        padding: 30px;
+     background-color: rgb(226, 226, 226);
+    }
+}

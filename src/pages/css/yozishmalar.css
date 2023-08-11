@@ -145,9 +145,9 @@
 .yozishma_small_div {
     display: block;
     border: 1px solid #e2e2e2;
-    border-top-right-radius: 10px;
+    /* border-top-right-radius: 10px; */
     background-color: #fff;
-    border-bottom-right-radius: 10px;
+    /* border-bottom-right-radius: 10px; */
 }
 
 .yozishma_big_div_size {
@@ -170,7 +170,7 @@
 }
 
 .yozishma_bolim_text_nik_text_ism_p h1 {
-    margin-top: 25px;
+    margin-top: 5px;
     margin-left: 8px;
     font-size: 15px;
 }
@@ -195,8 +195,8 @@
     height: 650px;
     border: 1px solid #e2e2e2;
     background-color: #fff;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    /* border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; */
 }
 .telegram_kirish{
     
@@ -249,7 +249,7 @@
     display: none;
     background-color: white;
     z-index: 10000;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 .btnChatAdd {
@@ -495,7 +495,7 @@ width: 94%;
         display: none !important;
     }
     .openModelAddChat{
-        width: 450px;
+        width: 550px;
     }
     .openModelAddChat{
         border-top-right-radius: 0px;
@@ -807,6 +807,7 @@ width: 94%;
     justify-content: center;
     align-items: center;
     height: 100%;
+    background: url("https://blog.1a23.com/wp-content/uploads/sites/2/2020/02/Desktop.png");
 }
 .yozishma_bolim_text_nik_search {
     width: 100%;

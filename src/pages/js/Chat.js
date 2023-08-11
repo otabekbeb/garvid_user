@@ -40,7 +40,7 @@ function Chat({ socket, email, room }) {
       document.querySelector(".chat-window .chat-footer button").style = "color:black";
     }
     if (theme=="moon") {
-      document.querySelector(".chat-window .chat-footer button").style = "background:black";
+      document.querySelector(".chat-window .chat-footer button").style = "background:rgb(33,33,33)";
     }else{
       document.querySelector(".chat-window .chat-footer button").style = "background:white";
     }
@@ -52,7 +52,7 @@ function Chat({ socket, email, room }) {
       document.querySelector(".chat-window .chat-footer button").style = "color:white";
     }
     if (theme=="moon") {
-      document.querySelector(".chat-window .chat-footer button").style = "background:black";
+      document.querySelector(".chat-window .chat-footer button").style = "background:rgb(33,33,33)";
     }else{
       document.querySelector(".chat-window .chat-footer button").style = "background:white";
     }

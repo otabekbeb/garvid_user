@@ -170,7 +170,9 @@ export default function Profil() {
   function openNotification() {
     document.querySelector(".yon_notification_all").style = "right:0%;"
   }
-
+function follow () {
+  document.querySelector(".Following").classList.toggle("following2")
+}
   return (
     <div>
       <Usernavbar />
@@ -266,7 +268,7 @@ export default function Profil() {
                 {/* <button>
                   <BsActivity />
                 </button> */}
-                <button className="Following" onClick={() => (window.location = "/oplata")}>
+                <button className="Following" onClick={() => follow()}>
                   Subscribe
                 </button>
               </div>
@@ -279,7 +281,7 @@ export default function Profil() {
                 onMouseEnter={() => taxrirlashChadModal()}
                 className="profil_blok_ikki_icon_bir"
               /> */}
-              <BsThreeDots
+               <BsThreeDots
                 onMouseEnter={() => taxrirlashModal()}
                 className="follow_ringtong "
               />
