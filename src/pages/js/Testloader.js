@@ -17,13 +17,25 @@ export default function Testloader() {
 
   return (
     <div>
-      <Navbar />
-      <div className="letsgo-test" >
-        <div className="test-ichi1">
-          <div>
+         <Navbar/>
+<div className="letsgo-test" >
+<div className="test-ichi1">
+<div>
+ 
+    <div>
+      {loading?((<div className='loader-suka'><span class="loader1"></span></div>)):(<div>
 
-            <div>
-              {loading ? ((<div className='loader-suka'><span class="loader"></span></div>)) : (<div>
+<div className="butonn-la">
+<div className="asaloriza">
+<div className="ruzultat-foiz">
+        <h2>25 <span>%</span> </h2>
+    </div>
+    <div className="rezultat-text">
+    <box-icon type='solid' name='bar-chart-alt-2' color="#444"></box-icon><p><span>2</span> out of <span>2</span> points</p>
+    </div>
+</div>
+<button onClick={()=>window.location="/Testpage"}>Retry</button>
+</div>
 
                 <div className="butonn-la">
                   <div className="asaloriza">

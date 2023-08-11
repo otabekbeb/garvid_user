@@ -211,7 +211,7 @@ justify-content: space-between;
  z-index: 1000;
 }
 
-.loader {
+.loader1 {
     color: #fff;
     font-size: 10px;
     width: 1em;
@@ -694,4 +694,273 @@ justify-content: space-between;
         position: fixed;
         z-index: 1000;
        }
+}
+
+
+
+
+
+.block-bir-variant4{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.5s;
+}
+.block-bir-variant4 p{
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #444 ;
+    font-weight: 120 !important;
+    font-weight: 700 !important;
+    text-align: left;
+    color: #071018;
+    padding: 10px;
+    max-height: 50%;
+    font-weight: 300;
+    width: 100%;
+    cursor: pointer;
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.block-bir-variant5{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.5s;
+}
+.block-bir-variant5 p{
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #444 ;
+    font-weight: 120 !important;
+    font-weight: 700 !important;
+    text-align: left;
+    color: #071018;
+    padding: 10px;
+    max-height: 50%;
+    font-weight: 300;
+    width: 100%;
+    cursor: pointer;
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.block-bir-variant6{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.5s;
+}
+.block-bir-variant6 p{
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #444 ;
+    font-weight: 120 !important;
+    font-weight: 700 !important;
+    text-align: left;
+    color: #071018;
+    padding: 10px;
+    max-height: 50%;
+    font-weight: 300;
+    width: 100%;
+    cursor: pointer;
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.block-bir-variant7{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.5s;
+}
+.block-bir-variant7 p{
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #444 ;
+    font-weight: 120 !important;
+    font-weight: 700 !important;
+    text-align: left;
+    color: #071018;
+    padding: 10px;
+    max-height: 50%;
+    font-weight: 300;
+    width: 100%;
+    cursor: pointer;
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.block-bir-variant8{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.5s;
+}
+.block-bir-variant8 p{
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #444 ;
+    font-weight: 120 !important;
+    font-weight: 700 !important;
+    text-align: left;
+    color: #071018;
+    padding: 10px;
+    max-height: 50%;
+    font-weight: 300;
+    width: 100%;
+    cursor: pointer;
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.block-bir-variant9{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.5s;
+}
+.block-bir-variant9 p{
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #444 ;
+    font-weight: 120 !important;
+    font-weight: 700 !important;
+    text-align: left;
+    color: #071018;
+    padding: 10px;
+    max-height: 50%;
+    font-weight: 300;
+    width: 100%;
+    cursor: pointer;
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.block-bir-variant10{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.5s;
+}
+.block-bir-variant10 p{
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #444 ;
+    font-weight: 120 !important;
+    font-weight: 700 !important;
+    text-align: left;
+    color: #071018;
+    padding: 10px;
+    max-height: 50%;
+    font-weight: 300;
+    width: 100%;
+    cursor: pointer;
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.block-bir-variant11{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.5s;
+}
+.block-bir-variant11 p{
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #444 ;
+    font-weight: 120 !important;
+    font-weight: 700 !important;
+    text-align: left;
+    color: #071018;
+    padding: 10px;
+    max-height: 50%;
+    font-weight: 300;
+    width: 100%;
+    cursor: pointer;
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.block-bir-variant12{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.5s;
+}
+.block-bir-variant12 p{
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #444 ;
+    font-weight: 120 !important;
+    font-weight: 700 !important;
+    text-align: left;
+    color: #071018;
+    padding: 10px;
+    max-height: 50%;
+    font-weight: 300;
+    width: 100%;
+    cursor: pointer;
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.block-bir-variant13{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.5s;
+}
+.block-bir-variant13 p{
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #444 ;
+    font-weight: 120 !important;
+    font-weight: 700 !important;
+    text-align: left;
+    color: #071018;
+    padding: 10px;
+    max-height: 50%;
+    font-weight: 300;
+    width: 100%;
+    cursor: pointer;
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.block-bir-variant14{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.5s;
+}
+.block-bir-variant14 p{
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #444 ;
+    font-weight: 120 !important;
+    font-weight: 700 !important;
+    text-align: left;
+    color: #071018;
+    padding: 10px;
+    max-height: 50%;
+    font-weight: 300;
+    width: 100%;
+    cursor: pointer;
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
