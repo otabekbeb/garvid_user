@@ -99,7 +99,14 @@
 .Following .span-mother2 span:nth-child(6) {
   transition: .7s;
 }
-
+.follow_ringtong{
+  padding: 10px;
+  font-size: 40px;
+  border-radius: 50%;
+  color: #9DA7BB;
+  background-color: #9DA7BB33;
+  cursor: pointer;
+}
 @media (max-width:1000px) {
   .Following {
     width: 150px;
@@ -133,4 +140,8 @@
     cursor: pointer;
     margin-top: 20px;
   }
+}
+.following2{
+  background-color: gray;
+  
 }
