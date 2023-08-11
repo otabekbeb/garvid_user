@@ -73,7 +73,8 @@
     color: black;
     position: relative;
     cursor: pointer;
-    /* border-top-right-radius: 10px; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;    /* border-top-right-radius: 10px; */
+    border-bottom: 1px solid #00000014;
     
   }
   .chat-window .chat-header p {
@@ -86,7 +87,6 @@
   
   .chat-window .chat-body {
     height: calc(100vh - (45px + 70px));
-    border: 1px solid #e2e2e2;
     border-left: 0px;
     background: #fff;
     background: url("https://blog.1a23.com/wp-content/uploads/sites/2/2020/02/Desktop.png");
@@ -227,7 +227,7 @@
     margin-left: 15px;
     margin-right: 10px;
   }
-  .telegram_menu{
+  .telegram_menu1{
     position: fixed;
     left: -570px;
     width: 300px;

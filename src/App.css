@@ -21,7 +21,7 @@ body {
 }
 
 /* width */
-.Chat_background ::-webkit-scrollbar {
+.Chat_background::-webkit-scrollbar {
   width: 0px;
   opacity: 0;
 }
