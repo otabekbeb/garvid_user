@@ -104,8 +104,13 @@ export default function Profil() {
   }
 
   function taxrirlashModal() {
-    document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
-      "display:block;";
+  
+    var a=document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style.display
+    if (a==="none") {
+      document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style="display:block "
+    }else{
+      document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style="display:none "
+    }
     document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style =
       "display:none;";
   }
@@ -116,6 +121,13 @@ export default function Profil() {
       "display:none;";
   }
   function taxrirlashChadModal() {
+    var s=document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style.display
+    if (s==="none") {
+      document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style="display:block "
+    }else{
+      document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style="display:none "
+    }
+    
     document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style =
       "display:block;";
     document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
@@ -280,11 +292,11 @@ export default function Profil() {
               className="profil_blok_ikki_icon"
             >
               <BsFillBellFill
-                onMouseEnter={() => taxrirlashChadModal()}
+                onClick={() => taxrirlashChadModal()}
                 className="profil_blok_ikki_icon_bir"
               />
               <BsThreeDots
-                onMouseEnter={() => taxrirlashModal()}
+                onClick={() => taxrirlashModal()}
                 className="profil_blok_ikki_icon_ikki"
               />
               <div className="profil_blok_ikki_icon_texrirlash_modal">
