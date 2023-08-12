@@ -94,7 +94,7 @@
   }
   
   .chat-window .chat-body {
-    height: calc(500px - (45px + 70px));
+    height: calc(600px - (45px + 70px));
     border-left: 0px;
     background: #fff;
     background: url("https://web.telegram.org/a/chat-bg-pattern-dark.ad38368a9e8140d0ac7d.png");
@@ -103,7 +103,7 @@
   }
   .chat-window .chat-body .message-container {
     width: 100%;
-    height: 100%;
+    height: 460px;
     overflow-y: scroll;
     overflow-x: hidden;
   }
@@ -368,6 +368,7 @@
     opacity: 0;
     z-index: 100;
   }
+  
   .edit_profilees button{
     display: none !important;
   }
@@ -406,10 +407,9 @@
     right: 23px;
     display: none;
     cursor: pointer;
+    border: 1px solid white;
   }
-  .exitopen1{
-    display: flex;
-  }
+
   
   .savename{
       width: 40px;
