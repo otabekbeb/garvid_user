@@ -1,72 +1,9 @@
-// import React, { useEffect, useState } from 'react'
-// import '../css/vazifa1.css'
-// import {BsCheck2, BsArrowDownShort} from 'react-icons/bs'
-// import {AiOutlineFileText, AiOutlinePaperClip} from 'react-icons/ai'
-// import axios from 'axios'
-// import url from './Host'
-
-// export default function Vazifa1() {
-//   const [task,setTask]=useState([])
-//   const [theme,setTheme]=useState([])
-//   const [state1, setState1] = React.useState();
-
-//   useEffect(()=>{
-
-//     setState1(
-//       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
-//     )
-//   },[])
-
-//   return (
-//     <div>
-// <div className='m_vazifa_kotta'> 
-//         <div className="m_vazifa_scachat">
-
-//                 <div className="scachat_kotta">
-//                 <div className="m_zadaniya_s">
-//                   <input type="checkbox" id='checkbox1'/>
-//                     <div className="m_scachat"><BsArrowDownShort /></div>
-//                     <div className="m_title_scac">
-//                        <h5>fgafeae</h5>
-//                     <p >5.1 MB | 25.06.2019</p></div>
-                   
-//                 </div>
-//                <div className='checed_vazifa'>
-//                 <h5>Submitted file</h5>
-//                 <div className="chec_proveren"><BsCheck2/></div>
-//                </div>
-//                </div>  
-
-//             <div className="m_obsh_pas_div">
-//            <div className="otpr_dz_file">
-//               <div className="m_file_vazifa">
-//                 <p><AiOutlineFileText/></p>
-//                 <h5>Task: General tasks for the first section</h5>
-//               </div>
-//               <div className="m_line_w"></div>
-//               <div className="m_otpr">
-//             <p><AiOutlinePaperClip/></p>
-//             <input type="text" placeholder='Отправка задачи' />
-            
-//               </div>
-//            </div>
-//            <div className="m_comment_button1">
-//               <button className='m_otpravit'>Send</button>
-//               </div>
-//         </div>
-//         </div>
-//     </div>
-//     </div>
-//   )
-// }
-
-
 
 import React, { useEffect, useState } from 'react'
-import '../css/comment.css'
+import '../css/vazifa1.css'
 import {FiCornerUpLeft} from 'react-icons/fi'
 import {FcFile} from 'react-icons/fc'
-import img_comment from '../img/Ellipse.jpg'
+import img_comment from '../img/Sertifikat.png'
 import img_comment1 from '../img/Ellipse.png'
 import axios from 'axios'
 import url from './Host'
@@ -78,117 +15,104 @@ import {CgClose} from "react-icons/cg"
 import Swal from "sweetalert2"; 
 
 export default function Comment1() {
-  const [comment,setComment]=useState([])
-  const [comment2,setComment2]=useState([])
-  const [page, setPage]=useState(4)
-  const [state1, setState1] = React.useState();
-  const [deleteId1,setDeleteId1]=useState()
+  // const [comment,setComment]=useState([])
+  // const [comment2,setComment2]=useState([])
+  // const [page, setPage]=useState(4)
+  // const [state1, setState1] = React.useState();
+  // const [deleteId1,setDeleteId1]=useState()
 
-  const [user,setUser]=useState([])
-  const [oneuser,setoneuser]=useState([])
+  // const [user,setUser]=useState([])
+  // const [oneuser,setoneuser]=useState([])
 
-  // useEffect(() => {
-  //   setState1(
-  //     localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
-  //   );},[]);
-
-  // useEffect((id)=>{
-
-
-  //   axios.get(`${url}/api/course_theme_comment/${id}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
-  //   .then(res=>{
-  //     setComment(res.data)
-  //     console.log(res.data);
-  //   })
-  //   .catch(err=>{
-  //     Swal.fire("error")
-  //   })
-  // },[])  
+  const [teacherwork, setTeacherwork]=useState([])
 
 useEffect(()=>{
-  axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+  axios.get(`${url}/api/course_theme_task/${JSON.parse(localStorage.getItem("page_video")).id}`, {
     headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
   .then(res=>{
-    setComment(res.data)
-    console.log(res.data);
+    setTeacherwork(res.data)
+    console.log(res.data,"jimmy");
   })
   .catch(err=>{
   })
 
 
 
-axios.get(`${url}/auth/oneuser`,{
-  headers: { Authorization: "Bearer " + localStorage.getItem("token") },
-}).then(res=>{
-setoneuser(res.data)
-console.log(res.data,"salom");
-})
+// axios.get(`${url}/auth/oneuser`,{
+//   headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+// }).then(res=>{
+// setoneuser(res.data)
+// console.log(res.data,"salom");
+// })
 },[])
 
 
-  function messagePost(id){
+  // function themePost(id){
 
-    var formdata = new FormData()
-    formdata.append("text",document.querySelector("#chat_text").value)
-    formdata.append("image",document.querySelector("#comment_file").files[0])
-    formdata.append("user_id", oneuser[0].id)
-    formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id)
-    formdata.append("subcomment", 0)
+  //   var formdata = new FormData()
+  //   formdata.append("content",document.querySelector("#chat_text12").value)
+  //   formdata.append("image",document.querySelector("#comment_file").files[0])
+  //   formdata.append("course_theme", JSON.parse(localStorage.getItem("page_video")).id)
 
-    axios.post(`${url}/api/course_theme_comment/`, formdata, {
-      headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}
-    })
-    .then(res=>{
-      window.location.reload()
-    document.querySelector("#chat_text").value=""
+  //   axios.post(`${url}/api/course_theme_task`, formdata, {
+  //     headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}
+  //   })
+  //   .then(res=>{
+  //     axios.get(`${url}/api/course_theme_task/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+  //       headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+  //     .then(res=>{
+  
+  //       setComment(res.data)
+  //       console.log(res.data, "print hello");
+  //     })
+  //   document.querySelector("#chat_text12").value=""
 
-    })
-    .catch(err=>{
-      Swal.fire("error")
-    })
+  //   })
+  //   .catch(err=>{
+  //     Swal.fire("error")
+  //   })
 
-    axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
-      headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
-    .then(res=>{
+  //   axios.get(`${url}/api/course_theme_task/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+  //     headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+  //   .then(res=>{
 
-      setComment(res.data)
-      console.log(res.data,);
-    })
-    .catch(err=>{
-      Swal.fire("error")
-    })
-  }
+  //     setComment(res.data)
+  //     console.log(res.data,);
+  //   })
+  //   .catch(err=>{
+  //   })
+  // }
 
-  function deleteComment(id) {
-    axios
-    .delete(`${url}/api/course_theme_comment/${id}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
-    .then(res=>[
-      Swal.fire("Вы успешно удалили свой комментарий"),
-      window.location.reload(),
-    
-    ])
-    .catch(err=>{
-      Swal.fire("Вы не смогли удалить комментарий, попробуйте снова.")
-    })
-  }
+  // function deleteComment(id) {
+  //   axios
+  //   .delete(`${url}/api/course_theme_task/${id}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+  //   .then(res=>{
+  //     axios.get(`${url}/api/course_theme_task/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+  //       headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
+  //     .then(res=>{
+  
+  //       setComment(res.data)
+  //       console.log(res.data,);
+  //     })
+  // })
+  //   .catch(err=>{
+  //     Swal.fire("Вы не смогли удалить комментарий, попробуйте снова.")
+  //   })
+  // }
 
-  function OpenotvetMadal(item) {
-    document.querySelector(".commetn_otvet_kaytarish").style="display: flex; "
-setComment2(item)
-  }
-  function CloseotvetMadal() {
-    document.querySelector(".commetn_otvet_kaytarish").style="display: none;"
-  }
-  function cencelModal() {
-    document.querySelector("#chat_text").value=""
-  }
+
+
+  // function cencelModal() {
+  //   document.querySelector("#chat_text12").value=""
+  // }
 
   return (
     <div>
 
     <div className='m_comment_kotta'> 
     <div className="m_otdel_bgc">
-    {oneuser.id==comment.user_id?(
+
+    {/* {oneuser.id==comment.user_id?(
     <>{comment.map(item => {
         return(
           <div className="m_comment">
@@ -216,7 +140,7 @@ setComment2(item)
             })
           }
               <img src={item.image.includes("http")?item.image:`${url}/${item.image}`} alt="" />
-              <p>{item.text}</p>
+              <p>{item.content}</p>
               <div className="m_comment_otvet"> 
               {oneuser.map(item5=>{
                 return(
@@ -235,40 +159,39 @@ setComment2(item)
           </div>
       </div>
         )
-       })} </>):("")}
+       })} </>):("")} */}
        
-
+        {teacherwork.map(item=>{
+          return(
+            <div className='task_div_big'>
+              <img src={item.image} alt="" /> <p> 
+              {item.content}
+              </p>
+           
+            </div>
+          )
+        
+        })}
 
 
 
       
-                  <div className="commetn_otvet_kaytarish">
-                  <div className="m_comment_img1">
-          {
-            oneuser.map(item2 => {
-              return(
-                <>
-            {item2.image==null?(<img src={person} alt="" />):(
-            <img src={item2.image.includes("http")?item2.image:`${url}/${item2.image}`} alt="" />)}
-                </>
-              )
-            })
-          }
-            
-          </div>
-                  <span id='closeModal' onClick={()=>{CloseotvetMadal()}}><CgClose/></span>
-                  </div>
+                  
 
 
             <div className="m_comment_yozish">
-              <input type="file" id='comment_file' />
-              <p><FcFile/></p>
+              {/* <input type="file" id='comment_file' />
+              <p><FcFile/></p> */}
               
-              <textarea placeholder='Введите текст' id="chat_text"></textarea>
+              <textarea placeholder='Введите ответ на задания' id="chat_text12"></textarea>
             </div>
             <div className="m_comment_button">
-              <button className='m_otmen' onClick={()=>{cencelModal()}}>Cancel</button>
-              <button onClick={(event)=>{ messagePost(); cencelModal()}} className='m_otpravit'>Send</button>
+              <button className='m_otmen'
+              //  onClick={()=>{cencelModal()}}
+              >Cancel</button>
+              <button 
+              // onClick={(event)=>{ themePost(); cencelModal()}} 
+              className='m_otpravit'>Send</button>
               </div></div>
     </div>
     </div>
