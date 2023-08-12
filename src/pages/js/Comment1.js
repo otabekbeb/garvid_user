@@ -80,7 +80,7 @@ console.log(res.data,"salom");
     }
     )
     .catch(err=>{
-      Swal.fire("Нельзя писать больше 300 символов")
+      Swal.fire("Error")
     })
 
     axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
