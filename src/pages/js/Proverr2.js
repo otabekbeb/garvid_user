@@ -17,6 +17,7 @@ import img_for_null1 from '../img/download.png'
 import Usernavbar from '../js/Usernavbar'
 import Swal from "sweetalert2"; 
 import "../css/loader.css"
+import Footer1 from '../js/Footer1'
 function onga(){
 document.querySelector(".mni-gridf1").classList.toggle("mni-gridf1-none")
 document.querySelector(".mni-gridf2").classList.toggle("mni-gridf2-none")
@@ -81,6 +82,7 @@ export default function Proverr2() {
     const [mycousr, myData] = useState([]);
     const [oneuser, oneData] = useState([]);
      const [loading, setloading] = useState()
+     const [kurshaqida, setKurs] = useState({})
 
     function okurse(id){
     setToggle(id)
@@ -90,6 +92,15 @@ export default function Proverr2() {
 
 
     useEffect(()=>{
+        
+        // axios.get(`${url}/api/course_data_category/course/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{ 
+        //     setKurs(res.data.one ,"salommmmm")
+        //     console.log(res.data.one)
+        //     // Swal.fire("you have purchased a course")
+        // }).catch(err=>{
+        //     Swal.fire("The balance is insufficient or the server has an error1")
+        // })
+        
         axios.get(`${url}/api/cours_types`).then(res=>{
 setData(res.data)
 console.log(res.data)
@@ -143,34 +154,34 @@ axios.get(`${url}/auth/oneuser`,{headers:{Authorization :  `Bearer ${localStorag
         axios.post(`${url}/api/course/${localStorage.getItem("courseid")}/register/${oneuser[0].id}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
             coursData(res.data)
             console.log(res.data)
-            Swal.fire("siz kurs sotib oldiz")
+            Swal.fire("you have purchased a course")
         }).catch(err=>{
-            Swal.fire("balans ytarli mas yoki server blan xato")
+            Swal.fire("The balance is insufficient or the server has an error")
         })
-   
+        
     }
-  
+
     function filter (id) {
         axios
         .get(`${url}/api/course`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}})
         .then((res) => {
-          const search = res.data.filter(item=>item.course_type===id)
-          filTerrdata1(search)
+            const search = res.data.filter(item=>item.course_type===id)
+            filTerrdata1(search)
         });
-      }
+        }
 
-      const Filter = (event) => {
+        const Filter = (event) => {
         const searchRegex = new RegExp(`^${event.target.value}`, "i");
         axios.get(`${url}/api/course`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
-          const searchdata = res.data.filter((item) => {
+            const searchdata = res.data.filter((item) => {
             return (
-              searchRegex.test(item.name) 
+                searchRegex.test(item.name) 
             );
-          })
-          filTerrdata1(searchdata)
+            })
+            filTerrdata1(searchdata)
         })
     
-      }
+        }
 
 return (
     <div>
@@ -215,7 +226,7 @@ return(
     <div className="prover2-info-block1-text">
         <h5>{item1.name}</h5>
 <p>{item1.description}</p>
-<hr />
+<hr class="prover2-hr" />
     </div>
 </div>
 )
@@ -366,14 +377,15 @@ return(
                     </div>
                     
                     </div></div>
-                <div className={toggle===4?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida4">
+                 
+                                        <div className={toggle===4?"text-kurs-haqida3":"text-kurs-haqida2"}><div className="text-kurs-haqida4">
                     
                     <h5>Содержание курса</h5>
                     <div className="faq">
                         <div className="faq-item">
                         <input type="checkbox" className="faq-input"  name="faq" id="faq_1"/>
                             <div className="faq-div">
-                            <label htmlFor="faq_1" className="faq-title">1. Введение в процесс программирования и установки</label>
+                            <label htmlFor="faq_1" className="faq-title">{item.name}</label>
                             </div>
                             
                             <div className="faq-text">
@@ -394,6 +406,9 @@ return(
                     </div>
                     
                     </div></div>
+                   
+                    
+
                 
                 
                 </div>
@@ -460,7 +475,7 @@ return(
 
       <div className="mni-krus-techer-swiper">
 <div className="boshqa-mentorla">
-    <h5>Boshqa Mentorlar</h5>
+    <h5>Другие наставники</h5>
     <div className="boshqa-mentorla-krugg1">
         <div className="boshqa-kurglaaaaa1" onClick={()=>onga()}><box-icon name='right-arrow-alt' color='#44bef1 ' ></box-icon></div>
     </div>
@@ -593,7 +608,7 @@ dolor sit amet. . . .</p>
                       <p>{item.price} <span>RUB</span></p></div>
                       <div className="mni-kurs-block2"></div>
                       
-                      <div className="mni-kurs-block1"><h5>Kurs hajmi</h5>
+                      <div className="mni-kurs-block1"><h5>Размер поля</h5>
                       <p>{item.planned_time} час</p></div>
                       <div className="mni-kurs-block2"></div>
                   </div>
@@ -683,7 +698,7 @@ dolor sit amet. . . .</p>
   <div className="lolipap-kptta-nomoylabtopomadim">
   <div className="mni-krus-techer-swiper1">
 <div className="boshqa-mentorla">
-    <h5>Boshqa Mentorlar</h5>
+    <h5>Другие наставники</h5>
     <div className="boshqa-mentorla-krugg1">
         <div className="boshqa-kurglaaaaa1" onClick={()=>onga()}><box-icon name='right-arrow-alt' color='#536dfd' ></box-icon></div>
     </div>
@@ -710,7 +725,7 @@ dolor sit amet. . . .</p>
 
 
 
-
+<Footer1/>
 
     </div>
   )

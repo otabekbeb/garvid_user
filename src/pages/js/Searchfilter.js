@@ -62,15 +62,16 @@ export default function Searchfilter() {
       console.log(res.data);
     }).catch(err=>{
     })
+
+
+
     axios.get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
           setKursdata(res.data)
           setLoader(0)
           console.log(res.data);
     }).catch(err=>{
+      
     })
-
-    
-    
   }, []);
 
   
@@ -87,7 +88,7 @@ export default function Searchfilter() {
     axios.get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
       const searchdata = res.data.filter((item) => {
         return (
-          searchRegex.test(item.name) 
+          searchRegex.test(item.name)
         );
       })
       setKursdata(searchdata)
