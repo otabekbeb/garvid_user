@@ -28,7 +28,7 @@ gap: 20px;
 
 .for_scroll{
     width: 1px;
-    min-height: 100px;
+    height: 350px;
     width: 100%;
     overflow: hidden;
     overflow-y: scroll;
@@ -69,6 +69,7 @@ gap: 20px;
     border-radius: 5px;
     user-select: none;
 }
+
 .m_comment_otvet{
     width: 150px;
     display: flex;
@@ -200,9 +201,7 @@ height: auto;
         color: #44bef1;
         user-select: none;
     }
-    .comment_view_all{
-        right: 15px !important;
-    }
+    
     .m_comment_tex1{
         width: 60%;
     }
@@ -347,13 +346,12 @@ height: auto;
 }
 
 .comment_otevet_all{
-    height: 100px;
-    min-height: 10px;
+    height: 350px;
     overflow: hidden;
     overflow-y: scroll;
 }
 .otevet_comment_otdel_oyna{
-    
+    width: 1px;
     display: none;
     background-color: #fff;
     width: 60%;
@@ -397,15 +395,41 @@ height: auto;
 }
 
 .comment_view_all{
-    position: absolute;
     color: #44bef1;
     text-decoration: underline;
     cursor: pointer;
+    position: absolute;
     right: 0;
+    width: 50%;
+}
+@media (max-width:1000px) {
+    .comment_view_all{
+        width: 15%;
+    }
+}
+@media (max-width:750px) {
+    .comment_view_all{
+        width: 18%;
+    }
+}
+@media (max-width:600px) {
+    .comment_view_all{
+        width: 23%;
+    }
+}
+@media (max-width:480px) {
+    .comment_view_all{
+        width: 28%;
+    }
+}
+@media (max-width: 360px) {
+    .comment_view_all{
+        width: 32%;
+    }
 }
 .view_all_otdel_oyna{
     height: auto;
-    min-height: 100px;
+    height: 350px;
     width: 60%;
     display: none;
     background-color: #fff;
@@ -438,5 +462,35 @@ height: auto;
     }
     .view_all_otdel_oyna{
      margin-top: 30px;
+    }
+}
+
+
+
+.for_no_comment{
+    border: 1px solid #9DA7BB50;
+    border-radius: 10px;
+    width: 66%;
+    margin-left: 15%;
+    text-align: center;
+    height: 35px;
+    padding: 5px;
+    position: relative;
+    top: 175px;
+}
+@media (max-width:400px) {
+    .for_no_comment{
+        border: 1px solid #9DA7BB50;
+        border-radius: 10px;
+        width: 100%;
+        margin-left: 0px;
+        text-align: center;
+        height: 35px;
+        padding: 5px;
+        position: relative;
+        top: 175px;
+    }
+    .m_comment_kotta{
+        padding: 3px;
     }
 }
