@@ -75,6 +75,9 @@ export default function Login() {
       }else if(res.data.position==1){
         window.location="/user"
       }
+      else if(res.data.position==4){
+        window.location="/studentall"
+      }
      
 
     }).catch(err=>{

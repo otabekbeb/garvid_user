@@ -98,7 +98,10 @@ export default function Mentor() {
         setState1(
           localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
         );},[]);
-  
+  function exitss() {
+    window.location="/"
+    localStorage.removeItem("token")
+  }
       function updatetoggle(id) {
           setToggle(id)
           document.querySelector(".profil_modal_media").style="display:none;"
@@ -266,7 +269,7 @@ export default function Mentor() {
                 </div>
           <a href="/Help" style={{color:"black"}}>  <div className='taxrirlash_modal_div'><FiLifeBuoy className='taxrirlash_modal_icon'/><p>Help</p></div></a>
             <hr />
-            <div className='taxrirlash_modal_div'><FiLogOut className='taxrirlash_modal_icon'/><p>Exit</p></div>
+            <div onClick={()=>exitss()} className='taxrirlash_modal_div'><FiLogOut className='taxrirlash_modal_icon'/><p>Exit</p></div>
           </div>
           <div className="profil_blok_ikki_icon_taxriirlash_chat">
             <p>Today</p>

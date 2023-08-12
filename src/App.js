@@ -18,7 +18,7 @@ import Student from "./pages/js/Student";
 import Mentorcontact from "./pages/js/Mentorcontact";
 import News from "./pages/js/News";
 import Newspage from "./pages/js/Newspage";
-import Studentpage from './pages/js/Studentpage'
+import StudentAll from './pages/js/StudentAll'
 import LoginpageMentor from './pages/js/LoginpageMentor'
 import Help from './pages/js/Help'
 import UserHelp from './pages/js/UserHelp'
@@ -74,7 +74,7 @@ export default function App() {
           <Route path="/teacher" element={<Teacher />} />
           <Route path="/student" element={<Student />} />
           <Route path="/mentorcontact" element={<Mentorcontact />} />
-          <Route path="/Studentpage" element={<Studentpage />} />
+          <Route path="/studentall" element={<StudentAll />} />
           <Route path="/Oplata" element={<Oplata />} />
           <Route path="/MentorHelp" element={<MentorHelp />} />
           <Route path="/Student_Help" element={<Student_Help />} />
