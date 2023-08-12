@@ -82,3 +82,8 @@ border: 0px;
         margin-bottom: 1px;
     }
 }
+.azo_bolgan_katta{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
