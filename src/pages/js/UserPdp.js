@@ -130,29 +130,13 @@ export default function Pdp() {
               </div>
               <div className="fil_text_blok_soz">
                 <h1
-                  onClick={() => updatetoggle(3)}
-                  style={
-                    toggle === 3 ? { borderBottom: "2px solid #44bef1" } : {}
-                  }
-                  className="fromLeft"
-                >
-                  My certificates
-                </h1>
-                {toggle === 3 ? (
-                  <div className="fil_text_blok_kurs_lenght">24 pieces</div>
-                ) : (
-                  ""
-                )}
-              </div>
-              <div className="fil_text_blok_soz">
-                <h1
                   onClick={() => updatetoggle(4)}
                   style={
                     toggle === 4 ? { borderBottom: "2px solid #44bef1" } : {}
                   }
                   className="fromLeft"
                 >
-                  My Subscriptions
+                  My certificates
                 </h1>
                 {toggle === 4 ? (
                   <div className="fil_text_blok_kurs_lenght">24 pieces</div>
@@ -165,6 +149,22 @@ export default function Pdp() {
                   onClick={() => updatetoggle(5)}
                   style={
                     toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}
+                  }
+                  className="fromLeft"
+                >
+                  My Subscriptions
+                </h1>
+                {toggle === 5 ? (
+                  <div className="fil_text_blok_kurs_lenght">24 pieces</div>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className="fil_text_blok_soz">
+                <h1
+                  onClick={() => updatetoggle(6)}
+                  style={
+                    toggle === 6 ? { borderBottom: "2px solid #44bef1" } : {}
                   }
                   className="fromLeft"
                 >

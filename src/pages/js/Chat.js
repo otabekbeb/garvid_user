@@ -6,7 +6,7 @@ import tgimg from "../img/photo_2023-06-25_22-19-50 (2).jpg";
 
 
 function back() {
-  document.querySelector(".yozishma_bolim_text_nik").style = "display:block"
+  document.querySelector(".yozishma_bolim_text_nik").style = "display:block;background:#dbdbdb"
   document.querySelector(".yozishma_small_div").style = "display:none"
 }
 
