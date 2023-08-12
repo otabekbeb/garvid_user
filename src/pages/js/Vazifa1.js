@@ -27,11 +27,11 @@ export default function Comment1() {
   const [teacherwork, setTeacherwork]=useState([])
 
 useEffect(()=>{
-  axios.get(`${url}/api/course_theme_task/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+  axios.get(`${url}/api/course_theme_task`, {
     headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
   .then(res=>{
     setTeacherwork(res.data)
-    console.log(res.data,"jimmy");
+    console.log(res.data);
   })
   .catch(err=>{
   })
