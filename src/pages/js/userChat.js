@@ -587,7 +587,6 @@ function hover_menu_close() {
                           {item.image === null ? (
                             <div className="tg_image">
                             <img
-                              
                               src={userNull}
                               alt=""
                             /></div>

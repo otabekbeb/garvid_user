@@ -368,6 +368,7 @@
     opacity: 0;
     z-index: 100;
   }
+  
   .edit_profilees button{
     display: none !important;
   }
