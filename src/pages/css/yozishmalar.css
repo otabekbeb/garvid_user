@@ -321,6 +321,8 @@ text-align: center;
     border-radius: 4px;
 height: 35px;
 width: 94%;
+border: 1px solid #e2e2e2;
+box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 @media (max-width:1400px) {
     .yozishma_small_div {
@@ -826,6 +828,7 @@ width: 94%;
     height: 50px;
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 /* justify-content: space-between; */
 }
 label{
