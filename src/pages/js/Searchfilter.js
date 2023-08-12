@@ -28,6 +28,7 @@ export default function Searchfilter() {
   const [state1, setState1] = React.useState();
   const [loader,setLoader] = useState(1)
 
+
   function Filter() {
     var a=document.querySelector(".filter_button").style.display
     if (a==="none") {
@@ -50,7 +51,7 @@ export default function Searchfilter() {
   // }
 
   useEffect(() => {
-    
+
 
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
@@ -61,21 +62,22 @@ export default function Searchfilter() {
       console.log(res.data);
     }).catch(err=>{
     })
-    axios.get(`${url}/api/course`, {headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+
+
+
+    axios.get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
           setKursdata(res.data)
           setLoader(0)
           console.log(res.data);
     }).catch(err=>{
+      
     })
-
-    
-    
   }, []);
 
   
   function filter (id) {
     axios
-    .get(`${url}/api/course`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}})
+    .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}})
     .then((res) => {
       const search = res.data.filter(item=>item.course_type===id)
       setKursdata(search)
@@ -83,10 +85,10 @@ export default function Searchfilter() {
   }
   const searchInput = (event) => {
     const searchRegex = new RegExp(`^${event.target.value}`, "i");
-    axios.get(`${url}/api/course`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+    axios.get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
       const searchdata = res.data.filter((item) => {
         return (
-          searchRegex.test(item.name) 
+          searchRegex.test(item.name)
         );
       })
       setKursdata(searchdata)

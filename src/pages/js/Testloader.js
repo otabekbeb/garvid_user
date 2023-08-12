@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../css/Testpage.css'
-import Navbar from './Navbar'
-import Footer1 from '../js/Footer1.js'
+
 
 
 export default function Testloader() {
@@ -17,7 +16,7 @@ export default function Testloader() {
 
   return (
     <div>
-         <Navbar/>
+         
 <div className="letsgo-test" >
 <div className="test-ichi1">
 <div>
@@ -56,12 +55,12 @@ export default function Testloader() {
           </div>
 
 
-
+</div>
 
         </div>
 
       </div>
-      <Footer1 />
-    </div>
+
+  
   )
 }

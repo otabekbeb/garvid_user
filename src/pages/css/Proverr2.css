@@ -709,8 +709,10 @@ body {
 }
 
 .mni-dasturlash-bloc {
-    width: 140px;
-    height: 22px;
+    width: 50%;
+    max-width: 150px;
+
+    height: 23px;
     border-radius: 2px;
     background-color: #44bef1 ;
     color: white;
@@ -960,9 +962,7 @@ justify-content: space-around; */
 
 }
 
-.asdasdsadasdsa img {
-    display: flex !important;
-
+.asdasdsadasdsa  {
 }
 
 
@@ -970,7 +970,11 @@ justify-content: space-around; */
 
     gap: 10px !important;
     padding-left: 17px !important;
-
+  
+}
+.mni-swiper-grid .mni-gridf1{
+    display: grid !important;
+    grid-template-columns: auto auto auto !important;
 }
 
 .mni-gridf2 {
@@ -1467,7 +1471,7 @@ justify-content: space-around; */
         justify-content: center;
         background: #F1F2F6;
         width: 100%;
-        height: 100%;
+        height: 100vh !important ;
 
     }
 
@@ -1551,7 +1555,7 @@ justify-content: space-around; */
 
     .prover2-oxiri-block-in {
         width: 640px;
-        height: auto;
+        height: 410px;
         border-radius: 0px 4px 4px 0px;
         box-shadow: 0px 2px 2px 0px #0000001A;
         background-color: #ffffff;
@@ -1592,7 +1596,7 @@ justify-content: space-around; */
 
     .prover2-oxiri-block-in {
         width: 640px;
-        height: auto;
+        height: 410px;
         border-radius: 0px 4px 4px 0px;
         box-shadow: 0px 2px 2px 0px #0000001A;
         background-color: #ffffff;
@@ -1655,7 +1659,7 @@ justify-content: space-around; */
 
     .prover2-oxiri-block-in {
         width: 580px;
-        height: auto;
+        height: 410px;
         border-radius: 0px 4px 4px 0px;
         box-shadow: 0px 2px 2px 0px #0000001A;
         background-color: #ffffff;
@@ -1738,7 +1742,7 @@ justify-content: space-around; */
 
     .prover2-oxiri-block-in {
         width: 540px;
-        height: auto;
+        height: 410px;
         border-radius: 0px 4px 4px 0px;
         box-shadow: 0px 2px 2px 0px #0000001A;
         background-color: #ffffff;
@@ -1830,7 +1834,7 @@ justify-content: space-around; */
 
     .prover2-oxiri-block-in {
         width: 490px;
-        height: auto;
+        height: 410px;
         border-radius: 0px 4px 4px 0px;
         box-shadow: 0px 2px 2px 0px #0000001A;
         background-color: #ffffff;
@@ -2111,7 +2115,7 @@ justify-content: space-around; */
 
     .prover2-oxiri-block-in {
         width: 380px;
-        height: auto;
+        height: 410px;
         border-radius: 0px 4px 4px 0px;
         box-shadow: 0px 2px 2px 0px #0000001A;
         background-color: #ffffff;
@@ -2236,7 +2240,7 @@ justify-content: space-around; */
 
     .prover2-oxiri-block-in {
         width: 305px;
-        height: auto;
+        height: 410px;
         border-radius: 0px 4px 4px 0px;
         box-shadow: 0px 2px 2px 0px #0000001A;
         background-color: #ffffff;
@@ -2348,7 +2352,6 @@ justify-content: space-around; */
     }
 
     .prover2-info-filter2 button {
-        width: 110px;
         background: #F1F2F6;
     }
 
@@ -2387,7 +2390,7 @@ justify-content: space-around; */
 
     .prover2-oxiri-block-in {
         width: 550px;
-        height: auto;
+        height: 410px;
         border-radius: 0px 4px 4px 0px;
         box-shadow: 0px 2px 2px 0px #0000001A;
         background-color: #ffffff;
@@ -2566,7 +2569,7 @@ justify-content: space-around; */
 
     .prover2-oxiri-block-in {
         width: 480px;
-        height: auto;
+        height: 410px;
         border-radius: 0px 4px 4px 0px;
         box-shadow: 0px 2px 2px 0px #0000001A;
         background-color: #ffffff;
@@ -2799,7 +2802,7 @@ justify-content: space-around; */
 
     .prover2-oxiri-block-in {
         width: 400px;
-        height: auto;
+        height: 410px;
         border-radius: 0px 4px 4px 0px;
         box-shadow: 0px 2px 2px 0px #0000001A;
         background-color: #ffffff;
@@ -2937,7 +2940,7 @@ justify-content: space-around; */
 
     .prover2-oxiri-block-in {
         width: 370px;
-        height: auto;
+        height: 410px;
         border-radius: 0px 4px 4px 0px;
         box-shadow: 0px 2px 2px 0px #0000001A;
         background-color: #ffffff;
@@ -3086,7 +3089,7 @@ justify-content: space-around; */
 
     .prover2-oxiri-block-in {
         width: 330px;
-        height: auto;
+        height: 410px;
         border-radius: 0px 4px 4px 0px;
         box-shadow: 0px 2px 2px 0px #0000001A;
         background-color: #ffffff;
@@ -3225,7 +3228,7 @@ justify-content: space-around; */
 
     .prover2-oxiri-block-in {
         width: 310px;
-        height: auto;
+        height: 410px;
         border-radius: 0px 4px 4px 0px;
         box-shadow: 0px 2px 2px 0px #0000001A;
         background-color: #ffffff;
@@ -3487,3 +3490,7 @@ justify-content: space-around; */
     
     } 
 } */
+.prover2-hr{
+    background-color: rgb(153, 149, 149);
+    height: 2px;
+}

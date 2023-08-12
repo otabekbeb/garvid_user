@@ -129,6 +129,9 @@ export default function Profil() {
       })
       .then((res) => {
         localStorage.setItem("page_user", JSON.stringify(res.data));
+        res.data.map(item=>{
+          localStorage.setItem("OneuserId",item.id)
+        })
         console.log(res.data);
         setData(res.data);
       })
