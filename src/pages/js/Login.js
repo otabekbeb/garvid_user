@@ -69,7 +69,12 @@ export default function Login() {
       sessionStorage.setItem("password",document.querySelector("#parol").value)
       Swal.fire("Вы успешно вошли в аккаунт")
       localStorage.setItem("token",res.data.access)
-    window.location="/user"
+      localStorage.setItem("position",res.data.position)
+      if (res.data.position==2) {
+        window.location="/mentor"
+      }else if(res.data.position==1){
+        window.location="/user"
+      }
      
 
     }).catch(err=>{
