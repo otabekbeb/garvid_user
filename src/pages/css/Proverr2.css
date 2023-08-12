@@ -709,8 +709,10 @@ body {
 }
 
 .mni-dasturlash-bloc {
-    width: 140px;
-    height: 22px;
+    width: 50%;
+    max-width: 150px;
+
+    height: 23px;
     border-radius: 2px;
     background-color: #44bef1 ;
     color: white;
@@ -960,9 +962,7 @@ justify-content: space-around; */
 
 }
 
-.asdasdsadasdsa img {
-    display: flex !important;
-
+.asdasdsadasdsa  {
 }
 
 
@@ -970,7 +970,11 @@ justify-content: space-around; */
 
     gap: 10px !important;
     padding-left: 17px !important;
-
+  
+}
+.mni-swiper-grid .mni-gridf1{
+    display: grid !important;
+    grid-template-columns: auto auto auto !important;
 }
 
 .mni-gridf2 {
@@ -2348,7 +2352,6 @@ justify-content: space-around; */
     }
 
     .prover2-info-filter2 button {
-        width: 110px;
         background: #F1F2F6;
     }
 

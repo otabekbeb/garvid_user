@@ -198,10 +198,7 @@ export default function Navbar() {
                 <li className="moto-menu-item">
                 <NavLink to="/contacts" className={({isActive})=>isActive?activeLink: normalLink}><a>Contacts</a>{" "}</NavLink>
                 </li>
-                <li className="moto-menu-item">
-                <NavLink to="/testpage" className={({isActive})=>isActive?activeLink: normalLink}><a>Test</a>{" "}</NavLink>
-                </li>
-
+             
                 
                   
                       
@@ -357,7 +354,6 @@ export default function Navbar() {
    <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='wrench'></box-icon></span><li id="surul-navbar" onClick={()=> window.location="/servis"}>Services</li></div> 
    <div className="navbar-box-icons"><span><box-icon name='message-alt-detail' color='#323946' ></box-icon></span><li id="surul-navbar" onClick={()=> window.location="/blog"}>Blog</li></div> 
    <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='group'></box-icon></span> <li id="surul-navbar" onClick={()=> window.location="/ourteam"}>our team</li></div>
-   <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946'  name='group'></box-icon></span> <li id="surul-navbar" onClick={()=> window.location="/testpage"}>Test</li></div>
    <div className="navbar-box-icons"><span><box-icon name='user' color='#323946' ></box-icon></span><li id="surul-navbar">  {localStorage.getItem("token") ? (user.map(item=>{return( <a href="/user" id="osdsodsdd" className="323946">{item.username}</a>) })) : (<a href="/login" className="tt">Log in</a>)}</li></div>
    </ul>
 
