@@ -7,6 +7,10 @@ import axios from "axios";
 import Swal from "sweetalert2"; 
 import io from "socket.io-client";
 import profimg from "../img/Rectangle.png"
+import userNull from "../img/149071.png";
+import url from '../js/Host'
+import {RxExit} from 'react-icons/rx'
+
 import {BsMoonStars} from "react-icons/bs"
 const socket = io.connect("https://markazback2.onrender.com");
 export default function MentorChat() {
@@ -16,8 +20,17 @@ export default function MentorChat() {
   const [room, setRoom] = useState("");
   const [email, setEmail] = useState("");
   const [users, setUsers] = useState([]);
+  const [chats, setChats] = useState([]);
+  const [nameput, Tgnameput] = useState([])
+
   const [theme,setTheme] = useState(localStorage.getItem("back"))
   useEffect(() => {
+    if (theme=="moon") {
+      document.querySelector(".chat_yooq").style="left:-570px;background:#0F0F0F"
+      }else{
+        document.querySelector(".chat_yooq").style="left:-570px;background:white"
+      }
+    
     if(localStorage.getItem("back")!=="moon"){
       document.querySelector("#checkbox2").checked=false
       }else{
@@ -73,6 +86,23 @@ export default function MentorChat() {
     });
   }, [socket]);
   useEffect(() => {
+    axios
+      .get(`${url}/auth/oneuser/`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        res.data.map(item=>{
+          document.querySelector("#tg_name").value=item.username
+          document.querySelector("#tg_number").value=item.phone_number
+          document.querySelector("#tg_email").value=item.email
+        })
+        localStorage.setItem("page_user", JSON.stringify(res.data));
+        console.log(res.data);
+        setChats(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     socket.on("new_private_room", (data) => {
       setRooms((prevRooms) => [...prevRooms, data.roomName]);
       Swal.fire(`Новая приватная комната создана: ${data.roomName}`);
@@ -110,11 +140,28 @@ export default function MentorChat() {
       setUsers(searchdata);
     });
   };
+  function Exit() {
+    window.location = "/";
+    localStorage.removeItem("token");
+  }
+  function Exitopen() {
+    document.querySelector(".exitopen").classList.toggle("exitopen1")
+  }
   function pencil() {
     if (theme=="moon") {
-      document.querySelector(".pencil").style="left:10px;background:rgb(33,33,33)"
+      document.querySelector(".bx-pencil").style = "color:white";
     }else{
-      document.querySelector(".pencil").style="left:10px;background:white"
+      document.querySelector(".bx-pencil").style = "color:black";
+    }
+    if (theme=="moon") {
+      document.querySelector(".left_pen p").style = "color:white";
+    }else{
+      document.querySelector(".left_pen p").style = "color:black";
+    }
+    if (theme=="moon") {
+      document.querySelector(".pencil").style="left:0px;background:rgb(33,33,33)"
+    }else{
+      document.querySelector(".pencil").style="left:0px;background:white"
     }
   }
   function pencil_close() {
@@ -157,10 +204,15 @@ export default function MentorChat() {
     }
     if (theme=="moon") {
       document.querySelector(".telegram_menu1").style="left:-570px;background:rgb(33,33,33)"
-    document.querySelector("#telegram_menu").style="left:10px"
+    document.querySelector("#telegram_menu").style="left:10px;color:white"
     }else{
       document.querySelector(".telegram_menu1").style="left:-570px;background:white"
-    document.querySelector("#telegram_menu").style="left:10px"
+    document.querySelector("#telegram_menu").style="left:10px;color:black"
+    }
+    if (theme=="moon") {
+      document.querySelector(".yozishma_small_div").style = "background:rgb(15, 15, 15)";
+    }else{
+      document.querySelector(".yozishma_small_div").style = "background:white";
     }
   }
   function telegrammenu() {
@@ -196,10 +248,15 @@ export default function MentorChat() {
     }
     if (theme=="moon") {
       document.querySelector(".telegram_menu1").style="left:10px;background:rgb(33,33,33)"
-    document.querySelector("#telegram_menu").style="left:-570px"
+    document.querySelector("#telegram_menu").style="left:-570px;color:white"
     }else{
       document.querySelector(".telegram_menu1").style="left:10px;background:white"
-    document.querySelector("#telegram_menu").style="left:-570px"
+    document.querySelector("#telegram_menu").style="left:-570px;color:black"
+    }
+    if (theme=="moon") {
+      document.querySelector(".yozishma_small_div").style = "background:rgb(15, 15, 15)";
+    }else{
+      document.querySelector(".yozishma_small_div").style = "background:white";
     }
   }
   function chatModal(room) {
@@ -207,17 +264,27 @@ export default function MentorChat() {
     socket.emit("join_room", { email, room });
     document.querySelector(".yozishma_bolim_text_nik").style = "display:none;";
     if (theme=="moon") {
+      document.querySelector(".yozishma_small_div").style = "background:rgb(15, 15, 15);display:block";
+    }else{
+      document.querySelector(".yozishma_small_div").style = "background:white;display:block";
+    }
+    if (theme=="moon") {
       document.querySelector(".chat-window .chat-footer button").style = "background:rgb(33,33,33)";
     }else{
       document.querySelector(".chat-window .chat-footer button").style = "background:white";
     }
     if (theme=="moon") {
-      document.querySelector(".yozishma_bolim_text_nik").style = "background:rgb(33,33,33)";
+      document.querySelector(".yozishma_bolim_text_nik").style = "background:rgb(33,33,33);display:none";
     }else{
-      document.querySelector(".yozishma_bolim_text_nik").style = "background:#dbdbdb";
+      document.querySelector(".yozishma_bolim_text_nik").style = "background:#dbdbdb;display:none";
     }
     if (theme=="moon") {
-      document.querySelector(".chat-body").style = "background:url('https://blog.1a23.com/wp-content/uploads/sites/2/2020/02/Desktop.png')";
+      document.querySelector("#telegram_menu").style = "color:white";
+    }else{
+      document.querySelector("#telegram_menu").style = "color:black";
+    }
+    if (theme=="moon") {
+      document.querySelector(".chat-body").style = "background:#0F0F0F";
     }else{
       document.querySelector(".chat-body").style = "background:white";
     }
@@ -266,20 +333,24 @@ export default function MentorChat() {
     }else{
       document.querySelector(".bx-dots-vertical-rounded").style = "color:black";
     }
+    if (theme=="moon") {
+      document.querySelector(".left_pen p").style = "color:white";
+    }else{
+      document.querySelector(".left_pen p").style = "color:black";
+    }
 
 
-    document.querySelector(".yozishma_small_div").style = "display:block;";
+    
     document.querySelector(".chat_gap_text_div").style = "display:block;";
     document.querySelector(".chat_yooq").style = "display:none;";
   }
 
   function back1() {
-    document.querySelector(".yozishma_bolim_text_nik").style="display:block"
     document.querySelector(".openModelAddChat").style="display:none"
     if (theme=="moon") {
-      document.querySelector(".yozishma_bolim_text_nik").style = "background:rgb(33,33,33);color:white";
+      document.querySelector(".yozishma_bolim_text_nik").style = "background:rgb(33,33,33);color:white;display:block";
     }else{
-      document.querySelector(".yozishma_bolim_text_nik").style = "background:#dbdbdb;color:black";
+      document.querySelector(".yozishma_bolim_text_nik").style = "background:#dbdbdb;color:black;display:block";
     }
   }
 function openModelAddChat() {
@@ -288,7 +359,7 @@ function openModelAddChat() {
   if (theme=="moon") {
     document.querySelector(".openModelAddChat").style = "background:rgb(33,33,33);color:white;display:block";
   }else{
-    document.querySelector(".openModelAddChat").style = "background:white;color:black;display:block";
+    document.querySelector(".openModelAddChat").style = "background:#dbdbdb;color:black;display:block";
   }
 }
 function tg_imagess() {
@@ -296,6 +367,139 @@ function tg_imagess() {
 }
 function tg_imagess_close() {
   document.querySelector(".foto_tg").style="bottom:-60px"
+}
+function userImgPut(id) {
+  var formdata = new FormData();
+
+  formdata.append("image", document.querySelector("#userInput1").files[0]);
+  formdata.append("address", chats[0].address);
+  formdata.append("description", chats[0].description);
+  formdata.append("email", chats[0].email);
+  formdata.append("last_name", chats[0].last_name);
+  formdata.append("phone_number", chats[0].phone_number);
+  formdata.append("username", chats[0].username);
+
+  axios
+    .put(`${url}/auth/oneuser/${id}`, formdata, {
+      headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+    })
+    .then((res) => {
+      axios
+        .get(`${url}/auth/oneuser`, {
+          headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+        })
+        .then((res) => {
+          console.log(res.data);
+          setChats(res.data);
+        })
+    })
+    .catch((err) => {
+      Swal.fire("Что-то пошло не так, попробуйте снова.")
+    });
+  axios
+    .get(`${url}/auth/oneuser`, {
+      headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+    })
+    .then((res) => {
+      console.log(res.data);
+      setChats(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+function putname(id) {
+  
+  var formdata = new FormData();
+  formdata.append("username", document.querySelector("#tg_name").value);
+  formdata.append("last_name", chats[0].last_name);
+  formdata.append("email", document.querySelector("#tg_email").value);
+  formdata.append("image", chats[0].image);
+  formdata.append("phone_number", document.querySelector("#tg_number").value );
+  formdata.append("address",chats[0].address);
+  formdata.append("description",chats[0].description);
+
+  axios.put(`${url}/auth/oneuser/${id}`, formdata, {
+      headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+    })
+    .then((res) => {
+      state1 === "ru" ? (Swal.fire("Введенная информация")) : (Swal.fire("Entered information"))
+      window.location="/user";
+    })
+    .catch((err) => {
+      state1 === "ru" ? (Swal.fire("Информация введена не полностью")) : (Swal.fire("The information was not fully entered"))
+    });
+
+}
+function hover_pen() {
+  if(theme=="moon"){
+    document.querySelector(".bx-pencil").style="background:dimgray;color:white"
+  }else{
+    document.querySelector(".bx-pencil").style="background:gainsboro;color:black"
+  }
+}
+function hover_pen_close() {
+  if(theme=="moon"){
+    document.querySelector(".bx-pencil").style="background:none;color:white"
+  }else{
+    document.querySelector(".bx-pencil").style="background:none;color:black"
+  }
+}
+function hover_back() {
+  if(theme=="moon"){
+    document.querySelector(".bx-left-arrow-alt").style="background:dimgray;color:white"
+  }else{
+    document.querySelector(".bx-left-arrow-alt").style="background:gainsboro;color:black"
+  }
+}
+function hover_back_close() {
+  if(theme=="moon"){
+    document.querySelector(".bx-left-arrow-alt").style="background:none;color:white"
+  }else{
+    document.querySelector(".bx-left-arrow-alt").style="background:none;color:black"
+  }
+}
+function hover_back1() {
+  if(theme=="moon"){
+    document.querySelector("#arrow").style="background:dimgray;color:white"
+  }else{
+    document.querySelector("#arrow").style="background:gainsboro;color:black"
+  }
+}
+function hover_back_close1() {
+  if(theme=="moon"){
+    document.querySelector("#arrow").style="background:none;color:white"
+  }else{
+    document.querySelector("#arrow").style="background:none;color:black"
+  }
+}
+function hover_rounded() {
+  if(theme=="moon"){
+    document.querySelector(".bx-dots-vertical-rounded").style="background:dimgray;color:white"
+  }else{
+    document.querySelector(".bx-dots-vertical-rounded").style="background:gainsboro;color:black"
+  }
+}
+function hover_rounded_close1() {
+  if(theme=="moon"){
+    document.querySelector(".bx-dots-vertical-rounded").style="background:none;color:white"
+  }else{
+    document.querySelector(".bx-dots-vertical-rounded").style="background:none;color:black"
+  }
+}
+function hover_menu() {
+  if(theme=="moon"){
+    document.querySelector("#telegram_menu").style="background:dimgray;color:white"
+  }else{
+    document.querySelector("#telegram_menu").style="background:gainsboro;color:black"
+  }
+}
+function hover_menu_close() {
+  if(theme=="moon"){
+    document.querySelector("#telegram_menu").style="background:none;color:white"
+  }else{
+    document.querySelector("#telegram_menu").style="background:none;color:black"
+  }
 }
 
   return (
@@ -321,29 +525,86 @@ function tg_imagess_close() {
               <div className="telegram_menu1">
                 <div className="tg_header">
                   <div className="left_tg">
-              <i  onClick={()=>telegram_close()} class='bx bx-left-arrow-alt'></i>
+              <i onMouseLeave={()=>hover_back_close()} onMouseEnter={()=>hover_back()}  onClick={()=>telegram_close()} class='bx bx-left-arrow-alt'></i>
               <p>Settings</p></div>
               <div className="right_tg">
-              <i onClick={()=>pencil()} class='bx bx-pencil'></i>
+              <i onMouseEnter={()=>hover_pen()} onMouseLeave={()=>hover_pen_close()} onClick={()=>pencil()} class='bx bx-pencil'></i>
               <div className="pencil">
                 <div className="left_pen">
-                  <i  onClick={()=>pencil_close()} class='bx bx-left-arrow-alt'></i>
+                  <i onMouseLeave={()=>hover_back_close1()} onMouseEnter={()=>hover_back1()}   onClick={()=>pencil_close()} id="arrow" class='bx bx-left-arrow-alt'></i>
                   <p>change profile</p>
                   </div>
                   <div className="edit_profilees">
                     <div onMouseEnter={()=>tg_imagess()} onMouseLeave={()=>tg_imagess_close()} className="tg_imagess">
-                      <img src={profimg} alt="" />
-                      <input style={{cursor:"pointer"}} type="file" className="tg_input" />
+                      {chats.map(item=>{
+                        return(
+                          <>
+                          {item.image === null ? (
+                            <img
+                            onMouseLeave={()=> tg_imagess_close}
+                              onMouseEnter={() => tg_imagess()}
+                              className="user_img"
+                              src={userNull}
+                              alt=""
+                            />
+                          ) : (
+                            <img
+                            onMouseLeave={()=> tg_imagess_close}
+                            onMouseEnter={() => tg_imagess()}                              className="user_img"
+                              src={
+                                item.image.includes("http")
+                                  ? item.image
+                                  : `${url}/${item.image}`
+                              }
+                              alt=""
+                            />
+                          )}<input id="userInput1" onChange={() => userImgPut(item.id)} style={{cursor:"pointer"}} type="file" className="tg_input" />
+                        </>)
+                      })}
+                      
                       <div style={{cursor:"pointer"}} className="foto_tg"><i style={{cursor:"pointer"}} class='bx bx-camera'></i></div>
                     </div>
                   </div>
-                  <input style={theme=="moon"?{background:"rgb(33,33,33)",color:"white"}:{background:"white",color:"black"}} className="tgs_inp" type="text" placeholder="Name"/>
+                  <input style={theme=="moon"?{background:"rgb(33,33,33)",color:"white"}:{background:"white",color:"black"}} id="tg_name" className="tgs_inp" type="text" placeholder="Name"/>
+                  <input style={theme=="moon"?{background:"rgb(33,33,33)",color:"white"}:{background:"white",color:"black"}} id="tg_number" className="tgs_inp" type="text" placeholder="Number"/>
+                  <input style={theme=="moon"?{background:"rgb(33,33,33)",color:"white"}:{background:"white",color:"black"}} id="tg_email" className="tgs_inp" type="text" placeholder="Email"/>
+
+                  {chats.map(item=>{
+                    return(
+                       <div onClick={()=> putname(item.id)} className="savename"><i id="tgs_i" class='bx bx-check'></i></div>  
+                    )
+                  })} 
+                             
                   </div>
-              <i class='bx bx-dots-vertical-rounded'></i>
+              <i onMouseLeave={()=>hover_rounded_close1()} onMouseEnter={()=>hover_rounded()}  onClick={()=>Exitopen()} class='bx bx-dots-vertical-rounded'></i>
+              <div style={theme=="moon"?{background:"rgb(33,33,33)",color:"white"}:{background:"white",color:"black"}}  onClick={()=>Exit()} className="exitopen"><RxExit/><p style={{marginLeft:"15px"}}>Exit</p></div>
               </div>
               </div>
-                <div className="tg_images">
-                <img src={profimg} alt="" /></div>
+                
+              {chats.map(item=>{
+                        return(
+                          <>
+                          {item.image === null ? (
+                            <div className="tg_image">
+                            <img
+                              
+                              src={userNull}
+                              alt=""
+                            /></div>
+                          ) : (
+                            <div className="tg_images">
+                            <img
+                                                  
+                              src={
+                                item.image.includes("http")
+                                  ? item.image
+                                  : `${url}/${item.image}`
+                              }
+                              alt=""
+                            /></div>
+                          )}
+                        </>)
+                      })}
                 <div className="for_theme">
                   <div className="theme_icons">
                   <BsMoonStars className="theme_iconss"/>
@@ -357,7 +618,7 @@ function tg_imagess_close() {
 </label></div>
               </div>
               <div className="yozishma_bolim_text_nik_search">
-              <i style={{fontSize:"25px"}} onClick={()=>telegrammenu()} id="telegram_menu" class='bx bx-menu'></i>
+              <i onMouseLeave={()=>hover_menu_close()} onMouseEnter={()=>hover_menu()}  style={{fontSize:"25px"}} onClick={()=>telegrammenu()} id="telegram_menu" class='bx bx-menu'></i>
                 <input style={theme=="moon"?{background:"rgb(33,33,33)"}:{background:"white"}} id="searchss" onChange={handleInputChange} type="text" placeholder="Search... " />
                 
                               <button className="btnChatAdd" onClick={()=>openModelAddChat()} >+</button>
