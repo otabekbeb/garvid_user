@@ -115,7 +115,9 @@ border: none;
 .login_button_div button:active {
 scale: 1.1;
 }
-
+.login_button_div button:hover{
+  background-color: #9cf;
+}
 .login_button_div input p {
   margin-bottom: 0;
   color: white;
