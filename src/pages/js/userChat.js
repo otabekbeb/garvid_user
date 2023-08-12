@@ -145,14 +145,7 @@ export default function MentorChat() {
       setUsers(searchdata);
     });
   };
-  function exits() {
-    // if(theme=="moon"){
-    //   document.querySelector(".exitopen").style="display:none ;background:rgb(33,33,33);color:white;border:1px solid white"
-    // }else{
-    //   document.querySelector(".exitopen").style="display:none;background:white;color:black;border:1px solid black"
-    }
-    
-  }
+  
   function Exit() {
     window.location = "/";
     localStorage.removeItem("token");
@@ -542,7 +535,7 @@ function hover_menu_close() {
           </div>
           </div>
             <div style={theme=="moon"?{background:"rgb(33,33,33)",color:"white"}:{background:"#dbdbdb",color:"black"}} className="yozishma_bolim_text_nik">
-              <div onMouseLeave={()=>exits()} className="telegram_menu1">
+              <div  className="telegram_menu1">
                 <div className="tg_header">
                   <div className="left_tg">
               <i onMouseLeave={()=>hover_back_close()} onMouseEnter={()=>hover_back()}  onClick={()=>telegram_close()} class='bx bx-left-arrow-alt'></i>
