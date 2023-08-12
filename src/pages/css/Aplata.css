@@ -66,6 +66,7 @@
 .col .flex1{
     display: flex;
     gap: 15px;
+    
 }
 
 .col .flex1 .inputBox1{
