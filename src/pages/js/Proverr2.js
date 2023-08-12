@@ -16,6 +16,7 @@ import url from "./Host";
 import img_for_null1 from '../img/download.png'
 import Usernavbar from '../js/Usernavbar'
 import Swal from "sweetalert2"; 
+import "../css/loader.css"
 function onga(){
 document.querySelector(".mni-gridf1").classList.toggle("mni-gridf1-none")
 document.querySelector(".mni-gridf2").classList.toggle("mni-gridf2-none")
@@ -79,6 +80,7 @@ export default function Proverr2() {
     const [cours, coursData] = useState([]);
     const [mycousr, myData] = useState([]);
     const [oneuser, oneData] = useState([]);
+     const [loading, setloading] = useState()
 
     function okurse(id){
     setToggle(id)
@@ -92,7 +94,7 @@ export default function Proverr2() {
 setData(res.data)
 console.log(res.data)
         }).catch(err=>{
-            Swal.fire("xato")
+            Swal.fire("Something Happened By The Server, We Are Already Fixing It.You can try Popeye")
         })
 
         axios.get(`${url}/api/course`,{headers:{Authorization : ` Bearer ${localStorage.getItem("token")}`}}).then(res=>{
@@ -100,14 +102,14 @@ console.log(res.data)
             filTerrdata1(res.data)
             console.log(res.data)
         }).catch(err=>{
-            Swal.fire('hato')
+            Swal.fire('Something Happened By The Server, We Are Already Fixing It.You can try Popeye')
         })
 
 axios.get(`${url}/auth/teachers`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
     ticherData(res.data)
     console.log(res.data)
 }).catch(err=>{
-    Swal.fire("techirri malumoti xato keldi")
+    Swal.fire("Something Happened By The Server, We Are Already Fixing It.You can try Popeye")
 })
        
 axios.get(`${url}/auth/oneuser`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
@@ -115,13 +117,21 @@ axios.get(`${url}/auth/oneuser`,{headers:{Authorization :  `Bearer ${localStorag
     
     console.log(res.data)
 }).catch(err=>{
-    Swal.fire("malumot xato keldi")
+    Swal.fire("Something Happened By The Server, We Are Already Fixing It.You can try Popeye")
 })
 
 
 
 
     },[])
+    useEffect(() => {
+        setloading(true);
+        setTimeout(() => {
+          setloading(false);
+        }, 5000);
+      }, [])
+    
+
  // axios.get(`${url}/api/mycourse/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
         //     myData(res.data)
         //     console.log(res.data,)
@@ -166,7 +176,16 @@ return (
     <div>
 <Usernavbar/>
 
-<div className="prover2">
+{loading?((   <div>
+        <div className="loader">  <div class="book">
+    <div class="book__pg-shadow"></div>
+    <div class="book__pg"></div>
+    <div class="book__pg book__pg--2"></div>
+    <div class="book__pg book__pg--3"></div>
+    <div class="book__pg book__pg--4"></div>
+    <div class="book__pg book__pg--5"></div>
+  </div></div>
+    </div>)):((<div className="prover2">
     <div className="prover2-kotta-men">
         <div className="prover2-search-joy">
         <div className="prover2-mni-search">
@@ -609,7 +628,7 @@ dolor sit amet. . . .</p>
               <span><box-icon name='chevron-down' color='#989da2' ></box-icon></span>
           </div>
       </div> 
-      <div className="mni-buton-iikki-yo">
+      <div className="mni-buton-iikki-yo" onClick={()=>coursid()}>
           <button id="gbfdgfdgdfgdf">Покупка</button><div className="line-mni-but"></div><button >{item.price} RUB</button>
       </div>
             
@@ -687,7 +706,9 @@ dolor sit amet. . . .</p>
 </div>
 </div>
   </div>
-</div>
+</div>))}
+
+
 
 
 

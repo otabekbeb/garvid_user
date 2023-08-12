@@ -249,10 +249,10 @@ export default function Pdp() {
                   }
                   className="fromLeft"
                 >
-                  Мои сертификаты
+                  Test
                 </h1>
                 {toggle === 3 ? (
-                  <div className="fil_text_blok_kurs_lenght">24 штуки</div>
+                  ""
                 ) : (
                   ""
                 )}
