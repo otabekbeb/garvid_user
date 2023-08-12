@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    transition: all 0.3s;
+    transition: all 0.2s ease;
 }
 .delete_icon:hover {
     border: 1px solid red;
