@@ -218,9 +218,9 @@
     width: 100%;
     display: flex;
 }
-.openModelAddChat{
+/* .openModelAddChat{
     height: 100vh !important;
-}
+} */
 .yozishma_big_div {
     display: flex;
     justify-content: center;
@@ -279,7 +279,7 @@
 }
 
 .userList {
-    height: 550px;
+    height: 490px;
     overflow: scroll;
     overflow-x: hidden;
     margin-top: 20px;
@@ -321,6 +321,8 @@ text-align: center;
     border-radius: 4px;
 height: 35px;
 width: 94%;
+border: 1px solid #e2e2e2;
+box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 @media (max-width:1400px) {
     .yozishma_small_div {
@@ -527,7 +529,7 @@ width: 94%;
 
     .yozishma_small_div {
         width: 100%;
-        background-color: #0F0F0F;
+        /* background-color: #0F0F0F; */
     }
 
     .yoq {
@@ -826,6 +828,7 @@ width: 94%;
     height: 50px;
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 /* justify-content: space-between; */
 }
 label{

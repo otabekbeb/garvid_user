@@ -81,6 +81,11 @@ export default function MentorChat() {
     
   }, []);
   useEffect(() => {
+    if (theme=="moon") {
+      document.querySelector(".vibor_search").style = "background:rgb(33, 33, 33)";
+    }else{
+      document.querySelector(".vibor_search").style = "background:white";
+    }
     socket.on("load_rooms", (data) => {
       setRooms(data);
     });
@@ -140,14 +145,21 @@ export default function MentorChat() {
       setUsers(searchdata);
     });
   };
+  
   function Exit() {
     window.location = "/";
     localStorage.removeItem("token");
   }
   function Exitopen() {
-    document.querySelector(".exitopen").classList.toggle("exitopen1")
+    var a=document.querySelector(".exitopen").style.display
+    if(a=="none"){
+      document.querySelector(".exitopen").style.display="flex"
+    }else{
+      document.querySelector(".exitopen").style.display="none"
+    }
   }
   function pencil() {
+    document.querySelector(".exitopen").style="display:none !important"
     if (theme=="moon") {
       document.querySelector(".bx-pencil").style = "color:white";
     }else{
@@ -172,6 +184,7 @@ export default function MentorChat() {
     }
   }
   function telegram_close() {
+    document.querySelector(".exitopen").style="display:none"
     if (theme=="moon") {
       document.querySelector(".chat-window .chat-footer button").style = "background:rgb(33,33,33)";
     }else{
@@ -522,7 +535,7 @@ function hover_menu_close() {
           </div>
           </div>
             <div style={theme=="moon"?{background:"rgb(33,33,33)",color:"white"}:{background:"#dbdbdb",color:"black"}} className="yozishma_bolim_text_nik">
-              <div className="telegram_menu1">
+              <div  className="telegram_menu1">
                 <div className="tg_header">
                   <div className="left_tg">
               <i onMouseLeave={()=>hover_back_close()} onMouseEnter={()=>hover_back()}  onClick={()=>telegram_close()} class='bx bx-left-arrow-alt'></i>
@@ -577,7 +590,7 @@ function hover_menu_close() {
                              
                   </div>
               <i onMouseLeave={()=>hover_rounded_close1()} onMouseEnter={()=>hover_rounded()}  onClick={()=>Exitopen()} class='bx bx-dots-vertical-rounded'></i>
-              <div style={theme=="moon"?{background:"rgb(33,33,33)",color:"white"}:{background:"white",color:"black"}}  onClick={()=>Exit()} className="exitopen"><RxExit/><p style={{marginLeft:"15px"}}>Exit</p></div>
+              <div style={theme=="moon"?{background:"rgb(33,33,33)",color:"white",border:"1px solid white"}:{background:"white",color:"black",border:"1px solid black"}}  onClick={()=>Exit()} className="exitopen"><RxExit/><p style={{marginLeft:"15px"}}>Exit</p></div>
               </div>
               </div>
                 
@@ -642,9 +655,10 @@ function hover_menu_close() {
                           <img src={tgimg} alt="" />
                         </div>
                         <h1 style={theme=="moon"?{color:"white"}:{color:"black"}} id="name">{displayName.slice(0,-10)}</h1>
-                  
+                        
                       </div>
                       <div className="yozishma_bolim_text_nik_text_qongiroq">
+                      <h1>{a.position}</h1>
                       </div>
                     </div>
                   );
