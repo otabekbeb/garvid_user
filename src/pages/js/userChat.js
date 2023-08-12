@@ -25,6 +25,11 @@ export default function MentorChat() {
 
   const [theme,setTheme] = useState(localStorage.getItem("back"))
   useEffect(() => {
+    if(theme=="moon"){
+      document.querySelector(".exitopen").style="display:none;background:rgb(33,33,33);color:white;border:1px solid white"
+    }else{
+      document.querySelector(".exitopen").style="display:none;background:white;color:black;border:1px solid black"
+    }
     if (theme=="moon") {
       document.querySelector(".chat_yooq").style="left:-570px;background:#0F0F0F"
       }else{

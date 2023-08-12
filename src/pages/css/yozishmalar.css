@@ -155,8 +155,11 @@
     display: flex;
     /* position: fixed;
     height: 100vh;
+    
     z-index: 111111111111; */
+    border-radius: 10px;
     top: 0px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 .yozishma_bolim_text_nik_text {
@@ -326,7 +329,7 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 @media (max-width:1400px) {
     .yozishma_small_div {
-        width: 99%;
+        width: 100%;
         /* display: none; */
     }
 
@@ -488,9 +491,18 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 .smile_none {
     display: none;
 }
+.yozishma_small_div {
+    
+    border-radius: 10px;
+}
+.yozishma_bolim_text_nik{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
 @media(min-width:1400px) {
     .yozishma_small_div {
         display: block !important;
+        border-radius: 10px;
     }
     
 
@@ -546,6 +558,12 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 @media(max-width:700px) {
     .yozishma_bolim_text_nik {
         display: block;
+    }
+    .openModelAddChat{
+        border-radius: 10px;
+    }
+    .chat-window .chat-header{
+        border-top-left-radius: 10px;
     }
     .chat-window .chat-footer input {
         border-bottom-left-radius: 10px;
@@ -821,6 +839,9 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     justify-content: center;
     align-items: center;
     height: 100%;
+    /* border-radius: 10px; */
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     background-color: #FFF;
 }
 .yozishma_bolim_text_nik_search {
