@@ -309,13 +309,14 @@
     }
     
     .search_big_div input:focus {
+        transition: 0.2s;
         box-shadow: 0px 0px 5px 1px #44bef1;
     }
 
-    .search_big_div input:focus {
+    /* .search_big_div input:focus {
         transition: 0.2s;
         box-shadow: 0px 0px 5px 0px #085aff;
-    }
+    } */
 
     .search_big_div .search {
         position: absolute;
@@ -445,9 +446,9 @@
     }
     .edication_card{
         display: flex;
-        justify-content: space-between;
+        /* justify-content: space-around; */
         align-items:baseline;
-        flex-wrap: wrap;
+        flex-flow: wrap;
         margin-top: 40px;
         margin-inline: 80px;
         gap: 30px;
