@@ -3501,3 +3501,89 @@ justify-content: space-around; */
     background-color: rgb(153, 149, 149);
     height: 2px;
 }
+
+.buy_course_prover{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: #000000cc;
+    backdrop-filter: blur(10px);
+    z-index: 200 !important;
+    display: none;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+.buy_image_prove img{
+    width: 35%;
+}
+.buy_image_prove{
+    padding: 10px;
+    text-align: center;
+    display: block;
+    width: 50%;
+    background-color: #fff;
+    z-index: 200;
+    border-radius: 10px;
+    margin-top: 100px;
+}
+.buy_button_prover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+.MdCloseProver{
+    color: #fff;
+    position: absolute ;
+    top: 60px;right: 10px;
+    z-index: 200 !important;
+}
+
+.buy_no_prover{
+    color: black;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #44bef1;
+    background-color: #fff;
+}
+.buy_yes_prover{
+    color: black;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #44bef1;
+    background-color: #fff;
+}
+.text_prover_buy{
+    margin-top: 10px;
+}
+.buy_yes_prover:hover{
+    border: none;
+    background-color: #44bef1;
+    color:white;
+}
+.buy_no_prover:hover{
+    border: none;
+    background-color: #44bef1;
+    color:white;
+}
+
+@media (max-width:750px) {
+    .buy_image_prove img{
+        width: 35%;
+    }
+    .buy_image_prove{
+        padding: 10px;
+        text-align: center;
+        display: block;
+        width: 99%;
+        background-color: #fff;
+        z-index: 200;
+        margin-top: 80px !important;
+    } 
+}
+

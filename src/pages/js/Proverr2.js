@@ -18,16 +18,15 @@ import Usernavbar from '../js/Usernavbar'
 import Swal from "sweetalert2"; 
 import "../css/loader.css"
 import Footer1 from '../js/Footer1'
+import buyimg from '../img/2282281.png'
+import {MdClose} from 'react-icons/md'
+
 function onga(){
 document.querySelector(".mni-gridf1").classList.toggle("mni-gridf1-none")
 document.querySelector(".mni-gridf2").classList.toggle("mni-gridf2-none")
-
-
 document.querySelector(".mni-gridf1").classList.toggle("mni-gridf5-none")
 document.querySelector(".mni-gridf2").classList.toggle("mni-gridf6-none")
 }
-
-
 function button() {
         document.querySelector(".aaa").classList.toggle("bbb")
         document.querySelector(".aa").classList.toggle("bb")
@@ -68,10 +67,6 @@ function kamentgo(){
 }
 
 
-
-
-
-
 export default function Proverr2() {
     const [toggle,setToggle] =useState(1)
     const [data, setData] = useState([]);
@@ -102,8 +97,8 @@ export default function Proverr2() {
         // })
         
         axios.get(`${url}/api/cours_types`).then(res=>{
-setData(res.data)
-console.log(res.data)
+        setData(res.data)
+        console.log(res.data)
         }).catch(err=>{
             Swal.fire("Something Happened By The Server, We Are Already Fixing It.You can try Popeye")
         })
@@ -116,31 +111,31 @@ console.log(res.data)
             Swal.fire('Something Happened By The Server, We Are Already Fixing It.You can try Popeye')
         })
 
-axios.get(`${url}/auth/teachers`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
-    ticherData(res.data)
-    console.log(res.data)
-}).catch(err=>{
-    Swal.fire("Something Happened By The Server, We Are Already Fixing It.You can try Popeye")
-})
+        axios.get(`${url}/auth/teachers`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+        ticherData(res.data)
+        console.log(res.data)
+        }).catch(err=>{
+        Swal.fire("Something Happened By The Server, We Are Already Fixing It.You can try Popeye")
+        })
        
-axios.get(`${url}/auth/oneuser`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
-    oneData(res.data)
+        axios.get(`${url}/auth/oneuser`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+        oneData(res.data)
     
-    console.log(res.data)
-}).catch(err=>{
-    Swal.fire("Something Happened By The Server, We Are Already Fixing It.You can try Popeye")
-})
+        console.log(res.data)
+        }).catch(err=>{
+        Swal.fire("Something Happened By The Server, We Are Already Fixing It.You can try Popeye")
+        })
 
 
 
 
-    },[])
-    useEffect(() => {
+        },[])
+        useEffect(() => {
         setloading(true);
         setTimeout(() => {
           setloading(false);
         }, 5000);
-      }, [])
+        }, [])
     
 
  // axios.get(`${url}/api/mycourse/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
@@ -150,18 +145,22 @@ axios.get(`${url}/auth/oneuser`,{headers:{Authorization :  `Bearer ${localStorag
         // }).catch(err=>{
         //  Swal.fire("balans yetarli mas")
         // })
-    function coursid(){
-        axios.post(`${url}/api/course/${localStorage.getItem("courseid")}/register/${oneuser[0].id}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
-            coursData(res.data)
-            console.log(res.data)
-            Swal.fire("you have purchased a course")
-        }).catch(err=>{
-            Swal.fire("The balance is insufficient or the server has an error")
-        })
-        
-    }
-
-    function filter (id) {
+        function coursid(){
+            document.querySelector('.buy_course_prover').style="display: flex !important;"
+        }
+        function closeBuyPage(){
+            document.querySelector('.buy_course_prover').style="display: none !important;"
+        }
+            function Buycourse() {
+                axios.post(`${url}/api/course/${localStorage.getItem("courseid")}/register/${oneuser[0].id}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
+                    coursData(res.data)
+                    console.log(res.data)
+                    Swal.fire("you have purchased a course")
+                }).catch(err=>{
+                    Swal.fire("The balance is insufficient or an error has occurred on the server. Try again")
+                }) 
+            }
+        function filter (id) {
         axios
         .get(`${url}/api/course`, {headers: {Authorization : `Bearer ${localStorage.getItem("token")}`}})
         .then((res) => {
@@ -417,10 +416,7 @@ return(
        })}
 
 
-       
-
-
-                        
+                
                         <div className="prover2-oxiri-joy">
                         {jalod.map(item=>{
                 if(item.id==localStorage.getItem("courseid")){
@@ -721,7 +717,29 @@ dolor sit amet. . . .</p>
 </div>
 </div>
   </div>
+  {jalod.map(itme12=>{
+    if (itme12.id==localStorage.getItem("courseid")) {
+      return(
+    <div className="buy_course_prover">
+        <h1 onClick={()=>{closeBuyPage()}} className="MdCloseProver"><MdClose/></h1>
+    <div className="buy_image_prove">
+        <img src={buyimg} alt="" />
+        <div className="text_prover_buy">
+           <h5>Вы хотите купить "{itme12.name}" этот курс</h5>
+        </div>
+        <div className="buy_button_prover">
+        <button className="buy_no_prover" onClick={()=>{closeBuyPage()}}>Нет</button>
+        <button className="buy_yes_prover" onClick={()=>{Buycourse()}}>ДА</button>
+    </div>
+    </div>
+  
+</div>
+)  
+    }
+
+})}
 </div>))}
+
 
 
 

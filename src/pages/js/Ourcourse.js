@@ -4,8 +4,7 @@ import { BiSearch } from 'react-icons/bi';
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { VscChromeClose } from 'react-icons/vsc'
 import { HiOutlineChevronUp } from "react-icons/hi"
-import { AiFillStar } from "react-icons/ai"
-import {AiOutlineArrowRight} from "react-icons/ai"
+import {AiOutlineArrowRight,AiOutlineDown,AiFillStar} from "react-icons/ai"
 import img from '../../pages/img/download.png'
 import Usernavbar from '../js/Usernavbar'
 import Futer from '../js/Futer'
@@ -13,7 +12,6 @@ import axios from 'axios';
 import Anime from "../img/download.png"
 import url from './Host';
 import Footer1 from "./Footer1"
-
 
 
 
@@ -28,8 +26,10 @@ export default function Ourcourse() {
       var b=document.querySelector(".filter_card").style.display
       if (b==="none") {
         document.querySelector(".filter_card").style.display="flex"
+        document.querySelector(".curs_filter1505").style=" transform: rotate(180deg);"
       }else{
         document.querySelector(".filter_card").style.display="none"
+        document.querySelector(".curs_filter1505").style=" transform: rotate(0deg);"
       }
         // document.querySelector(".filter_card").classList.toggle("togl");
     }
@@ -170,8 +170,8 @@ Health</li>
                 <div className="curs_cards">
                     <button className="curs_filter" onClick={() => filter()}>
                         Filter{" "}
-                        <i>
-                            <HiOutlineChevronUp />
+                        <i >
+                            <AiOutlineDown className='curs_filter1505'/>
                         </i>
                     </button>
                     <div onMouseLeave={()=>filterclosed()} className="filter_card">
