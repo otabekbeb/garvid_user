@@ -61,17 +61,19 @@ export default function Searchfilter() {
       setCoursetype(res.data)
       console.log(res.data);
     }).catch(err=>{
+      
     })
 
 
 
     axios.get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
           setKursdata(res.data)
-          setLoader(0)
           console.log(res.data);
     }).catch(err=>{
       
     })
+    setLoader(0)
+
   }, []);
 
   

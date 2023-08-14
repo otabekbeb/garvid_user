@@ -1,4 +1,4 @@
-
+ 
 import React, { useEffect, useState } from 'react'
 import '../css/vazifa1.css'
 import {FiCornerUpLeft} from 'react-icons/fi'
