@@ -20,8 +20,8 @@
 .ichi-text-test button{
     font-size: 20px;
     text-shadow: rgba(0, 0, 0, 0.2) 0px -1px 1px;
-    background-color: rgb(154, 173, 48);
-    border-color: rgb(154, 173, 48);
+    background-color: #44bef1;
+    border-color: #44bef1;
     padding: 5px 20px;
     color: white;
     margin-top: 20px;
@@ -282,8 +282,8 @@ justify-content: space-between;
 .butonn-la button{
         font-size: 20px;
         text-shadow: rgba(0, 0, 0, 0.2) 0px -1px 1px;
-        background-color: rgb(154, 173, 48);
-        border-color: rgb(154, 173, 48);
+        background-color: #44bef1;
+        border-color: #44bef1;
         padding: 5px 20px;
         color: white;
         
@@ -478,8 +478,8 @@ justify-content: space-between;
     .butonn-la button{
         font-size: 20px;
         text-shadow: rgba(0, 0, 0, 0.2) 0px -1px 1px;
-        background-color: rgb(154, 173, 48);
-        border-color: rgb(154, 173, 48);
+        background-color: #44bef1;
+        border-color: #44bef1;
         padding: 5px 20px;
         color: white;
        margin-top: 20px;

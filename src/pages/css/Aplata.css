@@ -84,7 +84,7 @@
     width: 100%;
     padding: 12px;
     font-size: 17px;
-    background: #5e8f94;
+    background: #44bef1;
     color: #fff;
     margin-top: 5px;
     cursor: pointer;
@@ -92,7 +92,7 @@
 }
 
 .container2 form .submit_btn:hover{
-    background: #73B5BD;
+    background: #44bef1;
 }
 
 input::-webkit-inner-spin-button,
