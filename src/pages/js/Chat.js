@@ -5,10 +5,7 @@ import { IoArrowBackOutline } from 'react-icons/io';
 import tgimg from "../img/photo_2023-06-25_22-19-50 (2).jpg";
 
 
-function back() {
-  document.querySelector(".yozishma_bolim_text_nik").style = "display:block;background:#dbdbdb"
-  document.querySelector(".yozishma_small_div").style = "display:none"
-}
+
 
 
 function Chat({ socket, email, room }) {
@@ -56,7 +53,14 @@ function Chat({ socket, email, room }) {
     }else{
       document.querySelector(".chat-window .chat-footer button").style = "background:white";
     }
+  }function back() {
+  if (theme=="moon") {
+    document.querySelector(".yozishma_bolim_text_nik").style = "background:rgb(33,33,33);color:white;display:block";
+  }else{
+    document.querySelector(".yozishma_bolim_text_nik").style = "background:#dbdbdb;color:black;display:block";
   }
+  document.querySelector(".yozishma_small_div").style = "display:none"
+}
   useEffect(() => {
     if (theme=="moon") {
       document.querySelector(".chat-window .chat-header p").style = "color:white";
@@ -84,7 +88,7 @@ function Chat({ socket, email, room }) {
   return (
     <div className="chat-window">
       <div className="chat-header">
-        <i id="back_icons" onClick={() => back()} class='bx bx-arrow-back'></i>
+        <i  style={theme=="moon"?{color:"white"}:{color:"black"}} id="back_icons" onClick={() => back()} class='bx bx-arrow-back'></i>
         <div style={{marginLeft:"15px"}} className="tg_img">
           <img style={{height:"100%"}} src={tgimg} alt="" />
         </div>

@@ -158,7 +158,12 @@ export default function MentorChat() {
   function Exitopen() {
     var a=document.querySelector(".exitopen").style.display
     if(a=="none"){
-      document.querySelector(".exitopen").style.display="flex"
+      if(theme=="moon"){
+        document.querySelector(".exitopen").style="display:flex;background:rgb(33,33,33);color:white;border:1px solid white"
+      }else{
+        document.querySelector(".exitopen").style="display:flex;background:white;color:black;border:1px solid black"
+      }
+     
     }else{
       document.querySelector(".exitopen").style.display="none"
     }
@@ -660,7 +665,7 @@ function hover_menu_close() {
            
                   const displayName = email1 === email ? email2 : email1;
                   return (
-                    <div 
+                    <div style={theme=="moon"?{borderBottom:"1px solid #e2e2e2"}:{borderBottom:"1px solid #00000014"}}
                       key={item}
                       onClick={() => chatModal(item)}
                       className="yozishma_bolim_text_nik_text"
