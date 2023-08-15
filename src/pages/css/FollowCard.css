@@ -38,6 +38,7 @@
 .followButton1 {
     width: 130px;
     margin-top: 10%;
+    z-index: 6269;
     color: #fff;
     height: 30px;
     background-color: #44bef1;
@@ -45,3 +46,4 @@
 .followButton2{
     background-color: gray;
 }
+
