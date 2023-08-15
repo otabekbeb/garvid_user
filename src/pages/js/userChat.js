@@ -700,6 +700,7 @@ function hover_menu_close() {
           </div>
         </div>
       </div>
+      
       <FollowCard />
     </div>
   );

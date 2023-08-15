@@ -1,9 +1,8 @@
-
 .followcards {
     width: 100%;
+    height:auto;
     display: flex;
     gap: 30px;
-    margin-top: -50px;
     flex-wrap: wrap;
     padding: 20px;
     padding-bottom: 20px;
@@ -12,29 +11,50 @@
     background-color: #f6f6f6;
     /* border: 1px solid red; */
 }
-.followcard{
+
+.inpf {
+    width: 75%;
+    height: auto;
+    background-color: #f6f6f6;
+    margin: auto;
+
+
+}
+
+.inpser{
+    width: 100%;
+    height: 70px;
+    background-color: #f6f6f6;
+}
+
+.followcard {
     width: 210px;
     text-align: center;
     background-color: #fff;
     height: 250px;
     border: 1px solid rgba(60, 60, 60, 0.303);
 }
-.jony_foto{
+
+.jony_foto {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     padding: 10px;
 }
-.Name{
+
+.Name {
     color: #44bef1;
 }
-.tuman{
+
+.tuman {
     font-weight: 700;
     font-size: 15px;
 }
-.yangi{
+
+.yangi {
     color: rgba(37, 36, 36, 0.441);
 }
+
 .followButton1 {
     width: 130px;
     margin-top: 10%;
@@ -43,7 +63,29 @@
     height: 30px;
     background-color: #44bef1;
 }
-.followButton2{
+
+.followButton2 {
     background-color: gray;
 }
 
+.input {
+    padding: 10px;
+    width: 120px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 1px  gray;
+    font-size: 18px;
+    transition: width 0.3s;
+    font-family: Consolas,monaco,monospace;
+  }
+  
+  .input:focus {
+    outline: 1px solid #44bef1;
+    box-shadow: none;
+    width: 230px;
+  }
+  
+  .input::placeholder {
+    color: #44bef1;
+  }
