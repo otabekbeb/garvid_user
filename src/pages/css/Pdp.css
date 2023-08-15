@@ -117,7 +117,7 @@
     padding-bottom: 20px;
     display: block;
     content: '';
-    border-bottom: solid 3px #536DFD;
+    border-bottom: solid 3px #44bef1;
     transform: scaleX(0);
     transition: transform 250ms ease-in-out;
 }
@@ -128,7 +128,7 @@
 } */
 
 .fromLeft:hover {
-    border-bottom: 2px solid #536DFD;
+    border-bottom: 2px solid #44bef1;
 }
 
 
@@ -204,7 +204,7 @@
         height: 50px !important;
         border-radius: 50px;
         font-size: 20px;
-        color: rgba(0, 0, 255, 0.747);
+        color: #44bef1;
         border: 1px solid gray;
         text-align: center;
         align-items: center !important;
@@ -344,8 +344,8 @@
     outline: none;
     width: 90%;
     margin-top: 10px;
-    border-bottom: 2px solid #1a94f8;
-    color: #1a94f8;
+    border-bottom: 2px solid #44bef1;
+    color: #44bef1;
 
 }
 
@@ -452,7 +452,7 @@
     height: 50px;
     border-radius: 50px;
     font-size: 25px;
-    color: rgba(0, 0, 255, 0.747);
+    color: #44bef1;
     border: 1px solid gray;
     text-align: center;
     align-items: center !important;
@@ -461,7 +461,7 @@
 }
 
 .left_icon:hover {
-    background-color: rgba(0, 0, 255, 0.575);
+    background-color: #44bef1;
     color: #fff !important;
 }
 
@@ -472,7 +472,7 @@
 }
 
 .text_blok h3:hover {
-    color: rgba(0, 0, 255, 0.747);
+    color: #44bef1;
     cursor: pointer;
 }
 
@@ -514,7 +514,7 @@
 
 .nuqta {
     font-size: 20px;
-    color: rgba(0, 0, 255, 0.747);
+    color: #44bef1;
 }
 
 .profil_modal_media {
@@ -674,12 +674,15 @@
         padding-top: 15px;
         padding-left: 15px;
     }
-
+    .profil_modal_media h1:hover{
+        cursor: pointer;
+    }
     .fromMenu:after {
         padding-bottom: 10px;
         display: block;
+        width: 170px;
         content: '';
-        border-bottom: solid 3px #536DFD;
+        border-bottom: solid 3px #44bef1;
         transform: scaleX(0);
         transition: transform 250ms ease-in-out;
     }
@@ -748,7 +751,7 @@
         height: 40px !important;
         border-radius: 50px;
         font-size: 20px !important;
-        color: rgba(0, 0, 255, 0.747);
+        color: #44bef1;
         border: 1px solid gray;
         text-align: center;
         align-items: center !important;
