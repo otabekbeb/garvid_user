@@ -326,6 +326,7 @@ height: 35px;
 width: 94%;
 border: 1px solid #e2e2e2;
 box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+color: gray;
 }
 @media (max-width:1400px) {
     .yozishma_small_div {
@@ -865,6 +866,7 @@ label{
     border-radius: 5px;
     margin-left: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    color: gray;
 }
 @media(min-width:700px){
 
