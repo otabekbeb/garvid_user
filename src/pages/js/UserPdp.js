@@ -205,7 +205,7 @@ export default function Pdp() {
             </div>
           </div>
         ) : (
-          <div className="gray_blok">
+          <div className="gray_blok"> 
             <div className="fil_text_blok">
               <div className="fil_text_blok_soz">
                 <h1
@@ -332,7 +332,7 @@ export default function Pdp() {
           <Azo />
         </div>
         <div className={toggle === 6 ? "show-content" : "content"}>
-          <UserChat/>
+          <UserChat />
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@ export default function FollowCard() {
     return (
         <div>
           
-            <div classNme="followcards">
+            <div className="followcards">
               {follow.map(item=>{
                 return(
                   <a href="/TeacherProfil">
