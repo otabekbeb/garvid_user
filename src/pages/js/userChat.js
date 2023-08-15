@@ -164,6 +164,11 @@ export default function MentorChat() {
     }
   }
   function pencil() {
+    if(theme=="moon"){
+      document.querySelector(".exitopen").style="display:none;background:rgb(33,33,33);color:white;border:1px solid white"
+    }else{
+      document.querySelector(".exitopen").style="display:none;background:white;color:black;border:1px solid black"
+    }
     document.querySelector(".exitopen").style="display:none !important"
     if (theme=="moon") {
       document.querySelector(".bx-pencil").style = "color:white";
@@ -182,6 +187,11 @@ export default function MentorChat() {
     }
   }
   function pencil_close() {
+    if(theme=="moon"){
+      document.querySelector(".exitopen").style="display:none;background:rgb(33,33,33);color:white;border:1px solid white"
+    }else{
+      document.querySelector(".exitopen").style="display:none;background:white;color:black;border:1px solid black"
+    }
     if (theme=="moon") {
     document.querySelector(".pencil").style="left:-570px;background:rgb(33,33,33)"
     }else{

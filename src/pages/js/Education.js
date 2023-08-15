@@ -9,6 +9,7 @@ import { MdDeleteOutline, MdPlayLesson } from "react-icons/md"
 import { GrClose } from "react-icons/gr"
 import deleteImg from "../img/Group 2.png"
 import "../css/Education.css"
+import url from './Host'
 
 
 
@@ -24,7 +25,7 @@ export default function Edication() {
 
 
   useEffect(() => {
-    axios.get(`${URL}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setEdication(res.data)
     })
   }, [])
