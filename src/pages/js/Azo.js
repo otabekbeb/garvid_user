@@ -6,11 +6,12 @@ import url from './Host'
 
 export default function Azo() {
     const [follow, setFollow] = useState([])
+    const [following,setFollowing] = useState(localStorage.getItem("OneuserId"))
     function folowcolor1(key) {
         document.querySelectorAll('.followButton1')[key].classList.toggle("followButton3")
       }
     useEffect(() => {
-        axios.get(`${url}/auth/teachers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+        axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
           setFollow(res.data)
         })
       }, [])
@@ -34,8 +35,10 @@ export default function Azo() {
               
                 <div className="followcards1">
                     {follow.map((item,key) => {
+                       if(following==item.topuser){ 
                         return (
-                            <a>
+                            
+ <a>
                                 <div className="followcard1">
                                     <a href="/TeacherProfil">
                                         {item.image === null ? (<h1>No signaL</h1>) : (<img className='jony_foto' src={item.image} alt="" />)}
@@ -45,7 +48,9 @@ export default function Azo() {
                                     <button onClick={() => folowcolor1(key)} className='followButton1' >subscribe</button>
                                 </div>
                             </a>
-                        )
+                            
+                           
+                        )}
                     })}
 
 
