@@ -400,12 +400,12 @@ export default function Searchfilter() {
                     </div>
                   </div>
                 </div>
-                <button className="button_circle">
-                  <AiOutlineArrowRight
-                    onClick={() => {
+                <button className="button_circle"  onClick={() => {
                       window.location = "/video";
                       localStorage.setItem("abbas", item.id)
-                    }}
+                    }}>
+                  <AiOutlineArrowRight
+                   
                   />
                 </button>
               </div>

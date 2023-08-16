@@ -59,6 +59,8 @@ console.log(res.data,"salom");
     formdata.append("user_id", oneuser[0].id)
     formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id)
     formdata.append("subcomment", subcoment)
+    formdata.append("task_commnet_id", 0)
+    
     axios.post(`${url}/api/course_theme_comment/`, formdata, {
       headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}
     })
@@ -107,6 +109,7 @@ console.log(res.data,"salom");
       headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}
     })
     .then(res=>{
+      window.location.reload()
       axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video1")).id}`, {
         headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
       .then(res=>{
@@ -156,14 +159,15 @@ console.log(res.data,"salom");
   function deleteComment1(id) {
     axios
     .delete(`${url}/api/course_theme_comment/${id}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
-    .then(res=>[
+    .then(res=>{
+      window.location.reload()
       axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
         headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
       .then(res=>{
   
         setComment2(res.data)
       })
-    ])
+  })
     axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
       headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
     .then(res=>{

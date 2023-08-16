@@ -168,8 +168,15 @@ export default function Youtube1() {
     );
   }, []);
 
-  function ModalCatchBolsa() {
-    window.location = "/user";
+  function ModalCatchBolsa() 
+  { if (localStorage.getItem("position")==2) {
+    window.location="/mentor"
+  }else if(localStorage.getItem("position")==1){
+    window.location="/user"
+  }
+  else if(localStorage.getItem("position")==4){
+    window.location="/studentall"
+  }
   }
 
   return (
