@@ -188,8 +188,8 @@ export default function Searchfilter() {
 
 
     axios.put(`${url}/api/course`).then(res => {
-
     })
+
   }
   function deleteclose() {
     axios.delete(`${url}/api/course/${deleteId}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {

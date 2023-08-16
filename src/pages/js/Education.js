@@ -119,6 +119,8 @@ export default function Edication() {
     setPage(1)
   }
 
+  
+
   return (
     <div>
       {page == 1 ? (
@@ -135,6 +137,7 @@ export default function Edication() {
           </div>
           <div className="edication_card">
             {edication.map(item => {
+              localStorage.setItem("educationLength",edication.length)
               return (
                 <div className="edication_card_">
                   <h1>{item.education_name}</h1>
