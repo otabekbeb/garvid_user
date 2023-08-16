@@ -6,8 +6,8 @@ import url from './Host'
 
 export default function Azo() {
     const [follow, setFollow] = useState([])
-    function folowcolor() {
-        document.querySelector('.followButton1').classList.toggle("followButton2")
+    function folowcolor1(key) {
+        document.querySelectorAll('.followButton1')[key].classList.toggle("followButton3")
       }
     useEffect(() => {
         axios.get(`${url}/auth/teachers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
@@ -33,7 +33,7 @@ export default function Azo() {
            
               
                 <div className="followcards1">
-                    {follow.map(item => {
+                    {follow.map((item,key) => {
                         return (
                             <a>
                                 <div className="followcard1">
@@ -42,7 +42,7 @@ export default function Azo() {
 
                                         <h5 className='Name'>{item.username}</h5 >
                                     </a>
-                                    <button onClick={() => folowcolor()} className='followButton1' >subscribe</button>
+                                    <button onClick={() => folowcolor1(key)} className='followButton1' >subscribe</button>
                                 </div>
                             </a>
                         )

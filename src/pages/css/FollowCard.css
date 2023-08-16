@@ -55,7 +55,7 @@
     color: rgba(37, 36, 36, 0.441);
 }
 
-.followButton1 {
+.followButton5 {
     width: 130px;
     margin-top: 10%;
     z-index: 6269;
@@ -64,7 +64,7 @@
     background-color: #44bef1;
 }
 
-.followButton2 {
+.followButton4 {
     background-color: gray;
 }
 
