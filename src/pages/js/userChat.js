@@ -534,6 +534,29 @@ function hover_menu_close() {
     document.querySelector("#telegram_menu").style="background:none;color:black"
   }
 }
+function hovers(key) {
+  if(theme=="moon"){
+    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:black;border-radius:10px"
+  }else{
+    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:white;border-radius:10px"
+  }
+}
+
+function hovers1(key) {
+  if(theme=="moon"){
+    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:none"
+  }else{
+    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:none"
+  }
+}
+function onclicks(key) {
+  if(theme=="moon"){
+    document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:black !important;border-radius:10px"
+  }else{
+    document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:white !important;border-radius:10px"
+  }
+}
+
 
   return (
     <div>
@@ -658,16 +681,19 @@ function hover_menu_close() {
 
 
               <div className="telegram_kirish">
-              {rooms.map((item) => {
+              {rooms.map((item,key) => {
                 let a = item;
                 if (a !== null) {
                   const [email1, email2] = a.split("_");
            
                   const displayName = email1 === email ? email2 : email1;
                   return (
+                    <div className="yozishma_bolim_text_nik_text1">
                     <div style={theme=="moon"?{borderBottom:"1px solid #e2e2e2"}:{borderBottom:"1px solid #00000014"}}
                       key={item}
-                      onClick={() => chatModal(item)}
+                      onClick={() => {chatModal(item);onclicks(key)}}
+                      onMouseEnter={()=>hovers(key)}
+                      onMouseLeave={()=>hovers1(key)}
                       className="yozishma_bolim_text_nik_text"
                     >
                       <div className="yozishma_bolim_text_nik_text_ism_p">
@@ -680,7 +706,7 @@ function hover_menu_close() {
                       <div className="yozishma_bolim_text_nik_text_qongiroq">
                       <h1>{a.position}</h1>
                       </div>
-                    </div>
+                    </div></div>
                   );
                 }
               })}
