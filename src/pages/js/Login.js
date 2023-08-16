@@ -33,7 +33,7 @@ export default function Login() {
 
     axios.post(`${url}/auth/register`, formdata).then(res => {
       setPage(4)
-    }).catch(err=>{
+    }).catch(err => {
       Swal.fire("Уже есть пользователь с таким именем или эмаилом")
     })
   }
@@ -46,12 +46,12 @@ export default function Login() {
 
     formdata.append('code', document.querySelector("#verifak").value)
 
-  axios.post(`${url}/auth/verify`,formdata).then(res=>{
+    axios.post(`${url}/auth/verify`, formdata).then(res => {
       Swal.fire("Вы успешно зарегистрировались")
-          localStorage.setItem("token",res.data.access)
-    window.location="/user"
-  }).catch(err=>{
-         Swal.fire("Вы неправильно ввели код, попробуйте снова")
+      localStorage.setItem("token", res.data.access)
+      window.location = "/user"
+    }).catch(err => {
+      Swal.fire("Вы неправильно ввели код, попробуйте снова")
 
     })
   }
@@ -65,22 +65,22 @@ export default function Login() {
     // wait otaw
 
 
-    axios.post(`${url}/auth/login`,formdata).then(res=>{
-      sessionStorage.setItem("password",document.querySelector("#parol").value)
+    axios.post(`${url}/auth/login`, formdata).then(res => {
+      sessionStorage.setItem("password", document.querySelector("#parol").value)
       Swal.fire("Вы успешно вошли в аккаунт")
-      localStorage.setItem("token",res.data.access)
-      localStorage.setItem("position",res.data.position)
-      if (res.data.position==2) {
-        window.location="/mentor"
-      }else if(res.data.position==1){
-        window.location="/user" 
+      localStorage.setItem("token", res.data.access)
+      localStorage.setItem("position", res.data.position)
+      if (res.data.position == 2) {
+        window.location = "/mentor"
+      } else if (res.data.position == 1) {
+        window.location = "/user"
       }
-      else if(res.data.position==4){
-        window.location="/studentall"
+      else if (res.data.position == 4) {
+        window.location = "/studentall"
       }
-     
 
-    }).catch(err=>{
+
+    }).catch(err => {
       Swal.fire('Пароль или логин неправилный. Попробуйте снова')
       // Swal.fire("Пароль или логин неправилный. Попробуйте снова")
     })
@@ -97,7 +97,7 @@ export default function Login() {
     );
   }, []);
 
-     
+
   return (
     <div>
       <Navbar />
@@ -169,19 +169,19 @@ export default function Login() {
                       <div className="login_small_div_input">
                         <h1>{state1 === "en" ? ("Registration") : ("Регистрация")}</h1>
                         <div className="login_small_input">
-                          <AiOutlineUser className="login_icon" />
-                          <input className="name" placeholder={state1 === "en" ? ("Name") : ("Имя")} type="text" required />
-                          <div className="error">{state1 === "en" ? ("It's already in use") : ("Это уже используется")}</div>
-                        </div>
-                        <div className="login_small_input">
-                          <FiMail className="login_icon" />
-                          <input onChange={setEmail} className="email" placeholder={state1 === "en" ? ("Email") : ("Электронная почта")} type="text" required />
+                          < FiMail className="login_icon" />
+                          <input className="name" placeholder={state1 === "en" ? ("Email") : ("Email")} type="text" required />
                           <div className="error">{state1 === "en" ? ("It's already in use") : ("Это уже используется")}</div>
                         </div>
                         <div className="login_small_input">
                           <BiLockAlt className="login_icon" />
                           <input className="password" placeholder={state1 === "en" ? ("Password") : ("Пароль")} type="password" required />
                           <div className="error">{state1 === "en" ? ("The password cannot be less than 8") : ("Пароль не может быть меньше 8")}</div>
+                        </div>
+                        <div className="login_small_input">
+                          < AiOutlineUser className="login_icon" />
+                          <input onChange={setEmail} className="email" placeholder={state1 === "en" ? ("Name") : ("Имя")} type="text" required />
+                          <div className="error">{state1 === "en" ? ("It's already in use") : ("Это уже используется")}</div>
                         </div>
                         <div className="login_button_div">
                           <button type="button" onClick={() => userModal()}>{state1 === "en" ? ("Registration") : ("Регистрация")}</button>

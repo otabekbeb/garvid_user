@@ -126,7 +126,17 @@ export default function Navbar() {
 
   
   
-  
+  function UserTeacherStudent() {
+    if ( localStorage.getItem("position") == 2) {
+      window.location = "/mentor"
+    } else if ( localStorage.getItem("position") == 1) {
+      window.location = "/user"
+    }
+    else if ( localStorage.getItem("position") == 4) {
+      window.location = "/studentall"
+    }
+
+  }
   return (
     <div>
 
@@ -210,7 +220,11 @@ export default function Navbar() {
             
             <span id="user-cionnaxuy"><BsFillPersonFill/></span>
             
-                      {localStorage.getItem("token") ? (user.map(item=>{return<a id="asdasddasdasasdsa" href="/user">{item.username}</a> })) : (<a href="/login" >Log in</a>)}
+                      {localStorage.getItem("token") ? (
+                        user.map(item=>{return<a id="asdasddasdasasdsa"     
+                        onClick={()=>{UserTeacherStudent()}}
+                  >{item.username}</a> }))
+                         : (<a href="/login" >Log in</a>)}
                     </li>
              </div>
               <div id="google_translate_element"></div>

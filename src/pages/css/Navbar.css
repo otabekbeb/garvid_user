@@ -2517,7 +2517,9 @@ left: 20vw !important;
     top: -10px;
   }
 }
-
+#asdasddasdasasdsa:hover{
+color: #44bef1;
+}
 @media (max-width:954px) {
   .moto-menu-item a {
     color: #ffffff;

@@ -56,10 +56,7 @@
     }
     
     .icon_blok {
-        width: 200px;
-        align-items: center;
-        display: flex;
-        justify-content: space-around;
+        justify-content: end;
     }
     
     .sel_blok {
