@@ -104,6 +104,8 @@ console.log(res.data,"salom");
     formdata.append("user_id", oneuser[0].id)
     formdata.append("theme", JSON.parse(localStorage.getItem("page_video1")).id)
     formdata.append("subcomment", subcoment )
+    formdata.append("task_commnet_id", 0)
+    
 
     axios.post(`${url}/api/course_theme_comment/`, formdata, {
       headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}
