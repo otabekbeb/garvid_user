@@ -25,6 +25,7 @@ export default function Profil() {
   const [data, setData] = useState([]);
   const [state1, setState1] = React.useState();
   const [natlifikation,setNatlifikation] = React.useState([]);
+  const [userid,setOneuserId] = useState(localStorage.getItem("OneuserId"))
   
   useEffect(() => {
     console.log("hello");
@@ -405,16 +406,20 @@ export default function Profil() {
           </div>
           <div className="sms-insta">
             <div className="sms-insto-bb1">
-
-                  <div className="sms-insta-block">
+                {natlifikation.map(item=>{
+                  return(
+                    <div className="sms-insta-block">
                   <div className="sms-img">
-                    <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
+                   {item.user_id===userid ?(<img src="" alt="" />):(<img src="" alt="" />)}
                   </div>
                   <div className="sms-kotta-pas">
-                    <div className="sms-text-tepa"><p>{natlifikation.name} </p><p></p></div>
-                    <div className="sms-text-pas"><p>{natlifikation.line}</p></div>
+                    <div className="sms-text-tepa"><p>{item.title} </p><p></p></div>
+                    <div className="sms-text-pas"><p>Sent an sms to: {item.description}</p></div>
                   </div>
                 </div>
+                  )
+                })}
+                  
 
           
 
