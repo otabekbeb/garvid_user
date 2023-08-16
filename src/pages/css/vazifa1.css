@@ -30,3 +30,12 @@
     margin-top: 20px;
 
 }
+
+.div_img_class_over img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.div_class_tugadi{
+    margin-top: 10px;
+}
