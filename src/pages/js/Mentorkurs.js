@@ -35,6 +35,7 @@ export default function Searchfilter() {
   const [CourseId, setCourseId] = useState();
   const [deleteId, setDeleteId] = useState()
   const [delete1, setDelete1] = useState([]);
+  const [oneuser, setOneuser] = useState([])
 
   function Filter() {
     var a = document.querySelector(".filter_button").style.display
@@ -312,11 +313,13 @@ export default function Searchfilter() {
             return (
               <div className="kurs_card">
                 <button className="btn_das">Dasturlash</button>
-                {item.image === null ? (
+                {/* {item.image === null ? (
                   <img src={img_for_null} />
                 ) : (
                   <img src={item.image} />
-                )}
+                )} */}
+                 <img src={item.oneuser?item.oneuser.image.includes("http")?item.oneuser.image:`${url}/${item.oneuser.image}`:
+            <img src={img_for_null} alt="" />} alt="" />
                 <div className="kurs_paddaing_auto">
                   <h4>{item.name}</h4>
                   <div className="star_card">

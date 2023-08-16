@@ -27,7 +27,7 @@ export default function Searchfilter() {
   const [type, settype] = useState([]);
   const [state1, setState1] = React.useState();
   const [loader,setLoader] = useState(1)
-
+  const [oneuser, setOneuser] = useState([])
 
   function Filter() {
     var a=document.querySelector(".filter_button").style.display
@@ -146,11 +146,13 @@ export default function Searchfilter() {
             return(  
             <div onClick={()=>{window.location="/video";localStorage.setItem("abbas",item.id)}}  className="kurs_card">
                 <button className="btn_das">Programming</button>
-                {item.image === null ? (
+                {/* {item.image === null ? (
                  <img src={img_for_null} alt="" />
                 ) : (
                   <img src={item.image} />
-                 )}
+                 )} */}
+                 <img src={item.oneuser?item.oneuser.image.includes("http")?item.oneuser.image:`${url}/${item.oneuser.image}`:
+            <img src={img_for_null} alt="" />} alt="" />
                 <div className="kurs_paddaing_auto">
                   <h4>{item.name}</h4>
                   <div className="star_card">

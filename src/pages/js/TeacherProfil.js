@@ -241,7 +241,7 @@ function follow () {
 
           <div className="profil_blok_ikki">
             <div className="profil_blok_ikki_text">
-              <p className="yutub_text">Youtube</p>
+              {/* <p className="yutub_text">Youtube</p> */}
               {/* <div className="profil_blok_ikki_sum">
                 {data.map((item) => {
                   return (
@@ -273,107 +273,7 @@ function follow () {
                 </button>
               </div>
             </div>
-            <div
-              onMouseLeave={() => taxrirlashClose()}
-              className="profil_blok_ikki_icon"
-            >
-              {/* <BsFillBellFill
-                onMouseEnter={() => taxrirlashChadModal()}
-                className="profil_blok_ikki_icon_bir"
-              /> */}
-               <BsThreeDots
-                onMouseEnter={() => taxrirlashModal()}
-                className="follow_ringtong "
-              />
-              <div className="profil_blok_ikki_icon_texrirlash_modal">
-                <div
-                  onClick={() => (window.location = "/editprofil")}
-                  className="taxrirlash_modal_div"
-                >
-                  <FiEdit className="taxrirlash_modal_icon" />
-                  <p>Edit profile</p>
-                </div>
-                <div
-                  onClick={() => notificationModal()}
-                  className="taxrirlash_modal_div"
-                >
-                  <BiCast className="taxrirlash_modal_icon" />
-                  <p>Notifications</p>
-                </div>
-                <div className="taxrirlash_modal_div">
-                  <FiLifeBuoy className="taxrirlash_modal_icon" />
-                  <p onClick={() => (window.location = "/help")}>Help</p>
-                </div>
-                <hr />
-                <div className="taxrirlash_modal_div" onClick={() => chiqish()}>
-                  <FiLogOut className="taxrirlash_modal_icon" />
-                  <p>Exit</p>
-                </div>
-              </div>
-              <div className="profil_blok_ikki_icon_taxriirlash_chat">
-                <p>Today</p>
-                <div className="taxrirlash_chad">
-                  <div className="taxrirlash_chad_img_size">
-                    <img src={chadimg} alt="" />
-                  </div>
-                  <div className="taxrirlash_chad_size">
-                    <div className="taxrirlash_chad_vaqt">
-                      <h1>Jenny Fox</h1>
-                      <div className="taxrirlash_chad_vaqt_soat">
-                        <TbPointFilled className="chad_set" />
-                        <p>19:22</p>
-                      </div>
-                    </div>
-                    <div className="taxrirlash_chad_text">
-                      <p>Lorem ipsum dolor sit.</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="taxrirlash_chad">
-                  <div className="taxrirlash_chad_img_size">
-                    <img src={chadimg} alt="" />
-                  </div>
-                  <div className="taxrirlash_chad_size">
-                    <div className="taxrirlash_chad_vaqt">
-                      <h1>Jenny Fox</h1>
-                      <div className="taxrirlash_chad_vaqt_soat">
-                        <TbPointFilled className="chad_set" />
-                        <p>19:22</p>
-                      </div>
-                    </div>
-
-                    <div className="taxrirlash_chad_text">
-                      <p>Lorem ipsum dolor sit.</p>
-                    </div>
-                  </div>
-                </div>
-                <p>06.08.2019</p>
-                <div className="taxrirlash_chad">
-                  <div className="taxrirlash_chad_img_size">
-                    <img src={chadimg} alt="" />
-                  </div>
-                  <div className="taxrirlash_chad_size">
-                    <div className="taxrirlash_chad_vaqt">
-                      <h1>Jenny Fox</h1>
-                      <div className="taxrirlash_chad_vaqt_soat">
-                        <TbPointFilled className="chad_set" />
-                        <p>19:22</p>
-                      </div>
-                    </div>
-                    <div className="taxrirlash_chad_text">
-                      <p>Lorem ipsum dolor sit.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="taxrirlash_chad_barchasini">
-                  <p>
-                    view all
-                    <AiOutlineRight />
-                  </p>
-                </div>
-              </div>
-            </div>
+           
           </div>
         </div>
         <div className="profil_notifacation_size">
@@ -516,7 +416,7 @@ function follow () {
             <TiThMenu onClick={() => menuModalClone()} className='profil_blok_menu_clone' />
           </div>
           <div className="profil_modal_media">
-            <h1 onClick={() => updatetoggle(1)} className='fromMenu'>My Courses</h1>
+            <h1 onClick={() => updatetoggle(1)} className='fromMenu'>Its courses are</h1>
             <h1 onClick={() => updatetoggle(2)} className='fromMenu'>My acquired knowledge</h1>
             <h1 onClick={() => updatetoggle(3)} className='fromMenu'>My Certificates</h1>
             <h1 onClick={() => updatetoggle(4)} className='fromMenu'>My Subscriptions</h1>
