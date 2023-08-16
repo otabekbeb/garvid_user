@@ -27,7 +27,8 @@ export default function FollowCard() {
             <a>
               <div className="followcard">
                 <a href="/TeacherProfil">
-                <img className='jony_foto' src={item.imgage} alt="" />
+                  {item.image===null?(<h1>No signaL</h1>):(   <img className='jony_foto' src={item.image} alt="" />)}
+             
                 <h5 className='Name'>{item.username}</h5 >
                 </a>
                 <button onClick={() => folowcolor()} className='followButton1' >subscribe</button>
