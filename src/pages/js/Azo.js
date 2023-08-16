@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import "../css/azo.css"
 import azoimg from "../img/Ellipse.jpg"
+import axios from 'axios'
+import url from './Host'
 
 export default function Azo() {
-
-    //   function azobutton(){
-    //     for (let i = 0; i = document.querySelectorAll("#azo_bolgan_katta_div_text_block_button").length; i++) {
-    //         if(doccument.querySelectorAll("#azo_bolgan_katta_div_text_block_button"))
-    //     }
-    //   }
+    const [follow, setFollow] = useState([])
+    function folowcolor() {
+        document.querySelector('.followButton1').classList.toggle("followButton2")
+      }
+    useEffect(() => {
+        axios.get(`${url}/auth/teachers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+          setFollow(res.data)
+        })
+      }, [])
     function obuna() {
         document.querySelector('#azo_bolgan_katta_div_text_block_button').classList.toggle("obuna1")
     }
@@ -25,32 +30,27 @@ export default function Azo() {
     return (
         <div>
 
-            <div className="azo_bolgan_katta">
-                <div className="azo_bolgan_katta_div">
-                    <div className='azo_blogan_katta_img'>
-                        <img src={azoimg} alt="" />
-                    </div>
-                    <div className="azo_bolgan_katta_div_text">
-                        <div className="azo_bolgan_katta_div_text_block">
-                            <h1>Diana Henry</h1>
-                            <p>Java Developer, Python</p>
-                        </div>
-                        <button id='azo_bolgan_katta_div_text_block_button' onClick={() => obuna()} style={{ background: '#44bef1' }}><span className='obuna_olin'>Subscribed</span><span className='obuna_text'>Subscription</span></button>
-                    </div>
-                </div>
+           
+              
+                <div className="followcards1">
+                    {follow.map(item => {
+                        return (
+                            <a>
+                                <div className="followcard1">
+                                    <a href="/TeacherProfil">
+                                        {item.image === null ? (<h1>No signaL</h1>) : (<img className='jony_foto' src={item.image} alt="" />)}
 
-                <div className="azo_bolgan_katta_div">
-                    <div className='azo_blogan_katta_img'>
-                        <img src={azoimg} alt="" />
-                    </div>
-                    <div className="azo_bolgan_katta_div_text">
-                        <div className="azo_bolgan_katta_div_text_block">
-                            <h1>Diana Henry</h1>
-                            <p>Java Developer, Python</p>
-                        </div>
-                        <button id='azo_bolgan_katta_div_text_block_button1' onClick={() => obuna2()} style={{ background: '#44bef1' }}><span className='obuna_olin'>Subscribed</span><span className='obuna_text'>Subscription</span></button>
-                    </div>
-                </div>
+                                        <h5 className='Name'>{item.username}</h5 >
+                                    </a>
+                                    <button onClick={() => folowcolor()} className='followButton1' >subscribe</button>
+                                </div>
+                            </a>
+                        )
+                    })}
+
+
+
+                
             </div>
 
         </div>
