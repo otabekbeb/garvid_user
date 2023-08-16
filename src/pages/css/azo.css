@@ -93,3 +93,73 @@ border: 0px;
 .obuna2{
     background-color: gray !important;
 }
+
+.followcards1 {
+    width: 100%;
+    height:auto;
+    margin-top: 40px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.inpf {
+    width: 1150px;
+    height: auto;
+    background-color: #f6f6f6;
+    margin: auto;
+
+
+}
+
+.inpser{
+    width: 100%;
+    height: 70px;
+    background-color: #f6f6f6;
+}
+
+.followcard1 {
+    width: 210px;
+    text-align: center;
+    background-color: #fff;
+    height: 250px;
+    border: 1px solid rgba(60, 60, 60, 0.303);
+}
+
+.jony_foto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.Name {
+    color: #44bef1;
+}
+
+.tuman {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.yangi {
+    color: rgba(37, 36, 36, 0.441);
+}
+
+.followButton1 {
+    width: 130px;
+    margin-top: 10%;
+    z-index: 6269;
+    color: #fff;
+    height: 30px;
+    background-color: #44bef1;
+}
+
+.followButton3 {
+    background-color: gray;
+}
+

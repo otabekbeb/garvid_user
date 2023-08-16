@@ -5,8 +5,8 @@ import url from './Host'
 
 export default function FollowCard() {
   const [follow, setFollow] = useState([])
-  function folowcolor() {
-    document.querySelector('.followButton1').classList.toggle("followButton2")
+  function folowcolor(key) {
+    document.querySelectorAll('.followButton5')[key].classList.toggle("followButton4")
   }
   useEffect(() => {
     axios.get(`${url}/auth/teachers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
@@ -22,7 +22,7 @@ export default function FollowCard() {
      </div>
   </div>
       <div className="followcards">
-        {follow.map(item => {
+        {follow.map((item,key) => {
           return (
             <a>
               <div className="followcard">
@@ -31,7 +31,7 @@ export default function FollowCard() {
              
                 <h5 className='Name'>{item.username}</h5 >
                 </a>
-                <button onClick={() => folowcolor()} className='followButton1' >subscribe</button>
+                <button onClick={() => folowcolor(key)} className='followButton5' >subscribe1</button>
               </div>
             </a>
           )
