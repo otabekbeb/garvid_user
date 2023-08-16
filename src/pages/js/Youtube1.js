@@ -41,6 +41,8 @@ export default function Youtube1() {
   const [state1, setState1] = React.useState();
   const [loader, setLoader] = useState(1);
   const [IDtheme, setIdtheme] = useState({});
+  const [task_comnet_id, setTask_comnet_id]=useState(0)
+
 
   function openModal() {
     document.querySelector(".navbar_yon").classList.toggle("navbar_yon1");
@@ -308,18 +310,7 @@ export default function Youtube1() {
                             </Accordion.Item>
                           </Accordion>
 
-                      {/* <div className="a_err_boganda">
-                      <div className="a_err_bolsa_block">
-                        <img src={err} alt="" />
-                        <h3>
-                          Что-то произошло сервером мы уже испровляем это.
-                        </h3>
-                        <h3> Можете попробовать попойже</h3>
-                        <button onClick={() => ModalCatchBolsa()}>
-                          вернуться назад
-                        </button>
-                      </div>
-                    </div> */}
+                
 
                   </>
                    )
