@@ -446,8 +446,10 @@
     }
     .edication_card{
         display: flex;
-        /* justify-content: space-around; */
-        align-items:baseline;
+        justify-content: space-around;
+        /* margin: auto !important; */
+        width: 90%;
+        align-items:baseline !important;
         flex-flow: wrap;
         margin-top: 40px;
         margin-inline: 80px;

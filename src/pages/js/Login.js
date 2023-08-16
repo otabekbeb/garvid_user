@@ -73,7 +73,7 @@ export default function Login() {
       if (res.data.position==2) {
         window.location="/mentor"
       }else if(res.data.position==1){
-        window.location="/user"
+        window.location="/user" 
       }
       else if(res.data.position==4){
         window.location="/studentall"
