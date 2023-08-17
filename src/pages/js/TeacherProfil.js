@@ -38,6 +38,7 @@ export default function Profil() {
   const [state1, setState1] = React.useState();
   const [toggle, setToggle] = useState(1)
   const [kursdata, setKursData] = useState([])
+  const [allusers,setAllusers] = useState(localStorage.getItem("allUsersId"))
 
   useEffect(() => {
     axios.get(`${url}/api/course`).then(res => {
@@ -85,7 +86,7 @@ export default function Profil() {
 
 
     axios
-      .put(`${url}/auth/oneuser/${id}`, formdata, {
+      .put(`${url}/auth/allusers/${id}`, formdata, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
@@ -96,7 +97,7 @@ export default function Profil() {
         console.log(err);
       });
     axios
-      .get(`${url}/auth/oneuser`, {
+      .get(`${url}/auth/allusers`, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
@@ -133,7 +134,7 @@ export default function Profil() {
 
   useEffect(() => {
     axios
-      .get(`${url}/auth/oneuser/`, {
+      .get(`${url}/auth/allusers`, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
@@ -181,7 +182,8 @@ function follow () {
           <div className="profil_blok_bir">
             <div onMouseLeave={() => userimgClose()} className="user_img_size">
               {data.map((item) => {
-                return (
+                if(allusers==item.id){
+                  return (
                   <>
                     {item.image === null ? (
                       <img
@@ -204,9 +206,12 @@ function follow () {
                     )}
                   </>
                 );
+                }
+                
               })}
               {data.map((item) => {
-                return (
+                if(allusers==item.id){
+                  return (
                   <div className="user_img_hover">
                     <input
                       onChange={() => userImgPut(item.id)}
@@ -215,12 +220,16 @@ function follow () {
                     />
                     <MdOutlinePhotoCamera className="user_hover_photo_icon" />
                   </div>
-                );
+                );}
+                
               })}
             </div>
             <div className="blok_bir_text">
               {data.map((item) => {
-                return <h1>{item.username}</h1>;
+                if(allusers==item.id){
+                  return <h1>{item.username}</h1>;
+                }
+                
               })}
 
               <button>Regular user</button>
