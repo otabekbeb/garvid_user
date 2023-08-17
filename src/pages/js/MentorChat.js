@@ -158,12 +158,22 @@ export default function MentorChat() {
   function Exitopen() {
     var a=document.querySelector(".exitopen").style.display
     if(a=="none"){
-      document.querySelector(".exitopen").style.display="flex"
+      if(theme=="moon"){
+        document.querySelector(".exitopen").style="display:flex;background:rgb(33,33,33);color:white;border:1px solid white"
+      }else{
+        document.querySelector(".exitopen").style="display:flex;background:white;color:black;border:1px solid black"
+      }
+     
     }else{
       document.querySelector(".exitopen").style.display="none"
     }
   }
   function pencil() {
+    if(theme=="moon"){
+      document.querySelector(".exitopen").style="display:none;background:rgb(33,33,33);color:white;border:1px solid white"
+    }else{
+      document.querySelector(".exitopen").style="display:none;background:white;color:black;border:1px solid black"
+    }
     document.querySelector(".exitopen").style="display:none !important"
     if (theme=="moon") {
       document.querySelector(".bx-pencil").style = "color:white";
@@ -182,6 +192,11 @@ export default function MentorChat() {
     }
   }
   function pencil_close() {
+    if(theme=="moon"){
+      document.querySelector(".exitopen").style="display:none;background:rgb(33,33,33);color:white;border:1px solid white"
+    }else{
+      document.querySelector(".exitopen").style="display:none;background:white;color:black;border:1px solid black"
+    }
     if (theme=="moon") {
     document.querySelector(".pencil").style="left:-570px;background:rgb(33,33,33)"
     }else{
@@ -519,6 +534,38 @@ function hover_menu_close() {
     document.querySelector("#telegram_menu").style="background:none;color:black"
   }
 }
+function hovers(key) {
+  if(theme=="moon"){
+    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:black;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"
+  }else{
+    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:white;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"
+  }
+}
+
+function hovers1(key) {
+  if(theme=="moon"){
+    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:none"
+  }else{
+    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:none"
+  }
+}
+function onclicks(key) {
+  // if(key){
+  //   if(theme=="moon"){
+  //   document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:black !important;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"
+  // }else{
+  //   document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:white !important;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"
+  // }
+  // }else{
+  //   if(theme=="moon"){
+  //     document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:none !important;"
+  //   }else{
+  //     document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:none !important;"
+  //   }
+  // }
+  
+}
+
 
   return (
     <div>
@@ -643,16 +690,19 @@ function hover_menu_close() {
 
 
               <div className="telegram_kirish">
-              {rooms.map((item) => {
+              {rooms.map((item,key) => {
                 let a = item;
                 if (a !== null) {
                   const [email1, email2] = a.split("_");
            
                   const displayName = email1 === email ? email2 : email1;
                   return (
-                    <div 
+                    <div className="yozishma_bolim_text_nik_text1">
+                    <div style={theme=="moon"?{borderBottom:"1px solid #e2e2e2"}:{borderBottom:"1px solid #00000014"}}
                       key={item}
-                      onClick={() => chatModal(item)}
+                      onClick={() => {chatModal(item);onclicks(key)}}
+                      onMouseEnter={()=>hovers(key)}
+                      onMouseLeave={()=>hovers1(key)}
                       className="yozishma_bolim_text_nik_text"
                     >
                       <div className="yozishma_bolim_text_nik_text_ism_p">
@@ -665,7 +715,7 @@ function hover_menu_close() {
                       <div className="yozishma_bolim_text_nik_text_qongiroq">
                       <h1>{a.position}</h1>
                       </div>
-                    </div>
+                    </div></div>
                   );
                 }
               })}
@@ -685,6 +735,7 @@ function hover_menu_close() {
           </div>
         </div>
       </div>
+      
       <FollowCard />
     </div>
   );

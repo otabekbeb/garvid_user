@@ -549,20 +549,25 @@ function hovers1(key) {
     document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:none"
   }
 }
-function onclicks(key) {
-  if(key){
-    if(theme=="moon"){
-    document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:black !important;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"
-  }else{
-    document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:white !important;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"
-  }
-  }else{
-    if(theme=="moon"){
-      document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:none !important;"
-    }else{
-      document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:none !important;"
-    }
-  }
+function onclicks(key,id) {
+  // if(key){
+  //   if(theme=="moon"){
+  //   document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:black !important;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"
+  // }else{
+  //   if (document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style.background=="white") {
+  //     document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:none;"
+  //   }else{
+  //     document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:white !important;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"
+  //   }
+  //   // document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:white !important;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"
+  // }
+  // }else{
+  //   if(theme=="moon"){
+  //     document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:none !important;"
+  //   }else{
+  //     document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:none !important;"
+  //   }
+  // }
   
 }
 
@@ -700,7 +705,7 @@ function onclicks(key) {
                     <div className="yozishma_bolim_text_nik_text1">
                     <div style={theme=="moon"?{borderBottom:"1px solid #e2e2e2"}:{borderBottom:"1px solid #00000014"}}
                       key={item}
-                      onClick={() => {chatModal(item);onclicks(key)}}
+                      onClick={() => {chatModal(item);onclicks(key,item.id)}}
                       onMouseEnter={()=>hovers(key)}
                       onMouseLeave={()=>hovers1(key)}
                       className="yozishma_bolim_text_nik_text"

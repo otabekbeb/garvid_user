@@ -1,5 +1,5 @@
   .m_comment_text1505 {
-    width: 300px;
+    width: 80%;
     font-size: 15px;
 }
 .m_comment_kotta{
@@ -382,6 +382,7 @@ height: auto;
 }
 
 .m_comment_delete1{ 
+    width: 100px;
     cursor:pointer;
     color: red !important;
     gap: 5px;
@@ -492,4 +493,9 @@ height: auto;
     .m_comment_kotta{
         padding: 3px;
     }
+}
+
+
+.p_for_width{
+    width: 80%;
 }

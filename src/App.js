@@ -41,6 +41,7 @@ import Testloader from './pages/js/Testloader'
 import Education from './pages/js/Education'
 import Test_create from './pages/js/Test_create'
 
+import Sotibol from './pages/js/Sotibol'
 export default function App() {
 
   return (
@@ -48,6 +49,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/Sotibol" element={<Sotibol />} />
           <Route path="/editprofil" element={<Loginpage />} />
           <Route path="/editprofilmentor" element={<LoginpageMentor />} />
           <Route path="/about" element={<About />} />

@@ -21,10 +21,13 @@ export default function Comment1() {
   const [oneuser,setOneuser]=useState([])
   const [subcoment,setSubcoment]=useState(0)
   const [commenttask, setCommenttask]=useState([])
-  const [task_commnet_id, setTask_commnet_id]=useState(0)
+  const [task_commnet_id, setTask_commnet_id]=useState(JSON.parse(localStorage.getItem("task_commnet_id")))
 
 
-useEffect(()=>{
+useEffect(()=>{   
+
+
+
   axios.get(`${url}/api/course_theme_task`, {
     headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
   .then(res=>{
@@ -144,7 +147,7 @@ function commentTaskPost() {
      
                             
                               <h5>{item.oneuser?item.oneuser.username:"Anonim User"}</h5>
-                                <p>{item.text}</p>
+                                <p className='m_comment_text1505'>{item.text}</p>
                                 {oneuser.map(item5=>{
                      return(
                        <>

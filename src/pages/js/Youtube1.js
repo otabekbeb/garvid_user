@@ -66,8 +66,9 @@ export default function Youtube1() {
       "border-bottom: none; color: #9DA7BB;";
     document.querySelector(".zadaniya3").style =
       "border-bottom: none; color: #9DA7BB;";
+      setTask_comnet_id(0)
   }
-  function painModal1() {
+  function painModal1(id) {
     document.querySelector(".zadaniya1").style =
       "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya").style =
@@ -76,6 +77,7 @@ export default function Youtube1() {
       "border-bottom: none; color: #9DA7BB;";
     document.querySelector(".zadaniya3").style =
       "border-bottom: none; color: #9DA7BB;";
+      setTask_comnet_id(id)
   }
   function painModal2() {
     document.querySelector(".zadaniya2").style =
@@ -142,6 +144,7 @@ export default function Youtube1() {
   }
 
   useEffect(() => {
+    localStorage.setItem("task_commnet_id",JSON.stringify(task_comnet_id)) 
     var id = localStorage.getItem("abbas");
     axios
       .get(`${url}/api/course_data_category/course/${id}`, {
@@ -324,6 +327,7 @@ export default function Youtube1() {
                       onClick={() => {
                         videoBolim(1);
                         painModal();
+                        
                       }}
                       className="zadaniya"
                     >
@@ -333,6 +337,7 @@ export default function Youtube1() {
                       onClick={() => {
                         videoBolim(2);
                         painModal1();
+                        
                       }}
                       className="zadaniya1"
                     >
@@ -375,15 +380,18 @@ export default function Youtube1() {
                       onClick={() => {
                         videoBolim(1);
                         painModal5();
+                        setTask_comnet_id(0)
                       }}
                       className="zadaniya5"
                     >
                      Крмментарии
                     </p>
                     <p
-                      onClick={() => {
-                        videoBolim(1);
+                      onClick={(id) => {
+                        videoBolim(2);
                         painModal6();
+                        setTask_comnet_id(id)
+                        
                       }}
                       className="zadaniya6"
                     >
