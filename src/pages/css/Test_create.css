@@ -1,0 +1,103 @@
+.test_create_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.test_create_card{
+    /* width: 600px;
+    padding: 10px;
+    min-height: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow:  0 10px 40px #a3a5a654; */
+    position: relative;
+    margin: auto;
+    position: relative;
+    padding: 20px !important;
+    display: block;
+    width: 600px;
+    height: auto;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+    box-shadow:  0 10px 40px #a3a5a654;
+}
+.test_close_btn{
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    font-size: 20px;
+}
+.test_df{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+.test_db{
+    width: 75%;
+    display: block;
+}
+.test_download_img{
+    width: 130px;
+    height: 120px;
+    border: 1px solid #9DA7BB;
+    border-radius: 5px;
+}
+.test_img{
+    opacity: -1;
+    border: none !important;
+    padding-left: 0px !important;
+    height: 35px !important;
+}
+.test_img_btn{
+    z-index: 12;
+    margin-top: -30px;
+    width: 100%;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: #44bef1;
+    border: 2px dashed #44bef1 !important;
+    border-radius: 3px;
+}
+.download_icon{
+    font-size: 18px;
+}
+.test_create_inside input{
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 3px;
+    color: black;
+    border: 1px solid #9DA7BB;
+    outline: none;
+}
+.test_create_inside input:focus{
+    box-shadow: 0px 0px 0px 3px #44bdf15f;
+}
+.test_create_option{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+.test_create_option input{
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 3px;
+    color: black;
+    border: 1px solid #9DA7BB;
+    outline: none;
+}
+.test_create_option input:focus{
+    box-shadow: 0px 0px 0px 3px #44bdf15f;
+}
+.test_img:focus{
+    box-shadow: none !important;
+}

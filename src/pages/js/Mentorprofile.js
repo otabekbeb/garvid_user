@@ -19,11 +19,15 @@ import userNull from "../img/149071.png";
 import { BiLogoTelegram } from "react-icons/bi";
 import { FaYoutube } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
-import Swal from "sweetalert2"; 
+import Swal from "sweetalert2";
+
 export default function Profil() {
   const [data, setData] = useState([]);
   const [state1, setState1] = React.useState();
-  const [user,setUser] =useState([])
+  const [user, setUser] = useState([])
+  const [natlifikation, setNatlifikation] = React.useState([]);
+  const [userid, setOneuserId] = useState(localStorage.getItem("OneuserId"))
+
   useEffect(() => {
     console.log("hello");
     axios
@@ -46,11 +50,23 @@ export default function Profil() {
       .catch((err) => {
         console.log(err);
       });
-      axios.get(`${url}/notification/`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{
-        setUser(res.data)
-        console.log(res.data,"aaa")
-    }).catch(err=>{
+    axios.get(`${url}/API/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setNatlifikation(res.data)
+      axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
+        setUser(res1.data)
+        for (let i = 0; i < res.data.length; i++) {
+          for (let j = 0; j < res1.data.length; j++) {
+            if (res.data[i].user_id == res1.data[j].id) {
+              res.data[i].image = res1.data[j].image
+            }
+          }
+        }
+        setNatlifikation(res.data)
+      })
     })
+
+
+
   }, []);
 
   function userimgModal() {
@@ -75,13 +91,13 @@ export default function Profil() {
       })
       .then((res) => {
         axios
-        .get(`${url}/auth/oneuser`, {
-          headers: { Authorization: "Bearer " + localStorage.getItem("token") },
-        })
-        .then((res) => {
-          console.log(res.data);
-          setData(res.data);
-        })
+          .get(`${url}/auth/oneuser`, {
+            headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+          })
+          .then((res) => {
+            console.log(res.data);
+            setData(res.data);
+          })
       })
       .catch((err) => {
         Swal.fire("Что-то пошло не так, попробуйте снова.")
@@ -105,13 +121,12 @@ export default function Profil() {
 
   function taxrirlashModal() {
 
-      var a = document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style.display
-
-      if (a==="none") {
-        document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style="display:block"
-      }else{
-        document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style="display:none"
-      }
+    var a = document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style.display
+    if (a === "none") {
+      document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style = "display:block "
+    } else {
+      document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style = "display:none "
+    }
     document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style =
       "display:none;";
   }
@@ -122,15 +137,18 @@ export default function Profil() {
       "display:none;";
   }
   function taxrirlashChadModal() {
-      var a = document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style.display
-
-    if (a==="none") {
-      document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style="display:block"
-    }else{
-      document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style="display:none"
+    var s = document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style.display
+    if (s === "none") {
+      document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style = "display:block "
+    } else {
+      document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style = "display:none "
     }
+
+    document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style =
+      "display:block;";
     document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
       "display:none;";
+
   }
 
   useEffect(() => {
@@ -140,6 +158,9 @@ export default function Profil() {
       })
       .then((res) => {
         localStorage.setItem("page_user", JSON.stringify(res.data));
+        res.data.map(item => {
+          localStorage.setItem("OneuserId", item.id)
+        })
         console.log(res.data);
         setData(res.data);
       })
@@ -149,6 +170,9 @@ export default function Profil() {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
+
+
+
   }, []);
 
   function chiqish() {
@@ -233,7 +257,7 @@ export default function Profil() {
                 return <h1>{item.username}</h1>;
               })}
 
-              <button>Teacher</button>
+              <button>Regular user</button>
               <p>My social networks :</p>
               <div className="blok_bir_icon">
                 <div className="blok_bir_icon_img1">
@@ -284,7 +308,8 @@ export default function Profil() {
               </div>
             </div>
             <div
-              className="profil_blok_ikki_icon" 
+              onMouseLeave={() => taxrirlashClose()}
+              className="profil_blok_ikki_icon"
             >
               <BsFillBellFill
                 onClick={() => taxrirlashChadModal()}
@@ -292,10 +317,9 @@ export default function Profil() {
               />
               <BsThreeDots
                 onClick={() => taxrirlashModal()}
-                className="profil_blok_ikki_icon_ikki" 
+                className="profil_blok_ikki_icon_ikki"
               />
-              <div className="profil_blok_ikki_icon_texrirlash_modal" 
-              onMouseLeave={() => taxrirlashClose()}>
+              <div className="profil_blok_ikki_icon_texrirlash_modal">
                 <div
                   onClick={() => (window.location = "/editprofil")}
                   className="taxrirlash_modal_div"
@@ -320,8 +344,7 @@ export default function Profil() {
                   <p>Exit</p>
                 </div>
               </div>
-              <div className="profil_blok_ikki_icon_taxriirlash_chat" 
-              onMouseLeave={() => taxrirlashClose()}>
+              <div className="profil_blok_ikki_icon_taxriirlash_chat">
                 <p>Today</p>
                 <div className="taxrirlash_chad">
                   <div className="taxrirlash_chad_img_size">
@@ -394,43 +417,43 @@ export default function Profil() {
 
           </div> */}
 
-<div className="div-admin-sms">
-  <h5>SMS</h5>
-  <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
-</div>
-<div className="sms-insta">
-<div className="sms-insto-bb1">
-    <div className="sms-insta-block">
-    <div className="sms-img">
-      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
-    </div>
-<div className="sms-kotta-pas">
-<div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
-    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
-</div>
-  </div>
+          <div className="div-admin-sms">
+            <h5>SMS</h5>
+            <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
+          </div>
+          <div className="sms-insta">
+            <div className="sms-insto-bb1">
+              {natlifikation.map(item => {
+                if (item.to_user_id == localStorage.getItem("OneuserId")) {
+                  return (
+                    <div className="sms-insta-block">
+                      <div className="sms-img">
+                        <img src={"https://markazback2.onrender.com/" + item.image} alt="" />
+                      </div>
+                      {/* <div className="sms-kotta-pas">
+                        <div className="sms-text-tepa"><p> </p><p></p></div>
+                        <div className="sms-text-pas"><p> </p></div>
+                      </div> */}
 
-  <div className="sms-insta-block">
-    <div className="sms-img">
-      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
-    </div>
-<div className="sms-kotta-pas">
-<div className="sms-text-tepa"><p>boxodirov_025 </p><p></p></div>
-    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
-</div>
-  </div>
+                      <div className="sms_bos">
+                        <div className="nik_name">
+                          <p>{item.title}</p>
+                        </div>
+                        <div className="sms_nik">
+                          <p>{item.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                }
+              })}
 
-    <div className="sms-insta-block">
-    <div className="sms-img">
-      <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
-    </div>
-<div className="sms-kotta-pas">
-<div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
-    <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
-</div>
-  </div>
-</div>
-</div>
+
+
+
+
+            </div>
+          </div>
 
           <div className="div-admin-sms">
             <h5>SMS</h5>
@@ -443,18 +466,17 @@ export default function Profil() {
           </div>
           <div className="sms-insta">
             <div className="sms-insto-bb1">
-              
 
-              {user.map(item=>{
-                return(
-                  <div className="sms-insta-block">
+
+
+              <div className="sms-insta-block">
                 <div className="sms-img">
                   <img
                     src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png"
                     alt=""
                   />
                 </div>
-                
+
                 <div className="sms-kotta-pas">
                   <div className="sms-text-tepa">
                     <p>
@@ -469,8 +491,7 @@ export default function Profil() {
                   </div>
                 </div>
               </div>
-                )
-              })}
+
             </div>
           </div>
         </div>

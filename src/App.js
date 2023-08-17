@@ -39,6 +39,7 @@ import FollowCard from './pages/js/FollowCard'
 import Testpage from './pages/js/Testpage'
 import Testloader from './pages/js/Testloader'
 import Education from './pages/js/Education'
+import Test_create from './pages/js/Test_create'
 
 export default function App() {
 
@@ -84,6 +85,7 @@ export default function App() {
           <Route path="/Testpage" element={<Testpage />} />
           <Route path="/Testloader" element={<Testloader />} />
           <Route path="/education" element={<Education />} />
+          <Route path="/testcreate" element={<Test_create />} />
 
 
           {/* <Route index element={} />*/}
