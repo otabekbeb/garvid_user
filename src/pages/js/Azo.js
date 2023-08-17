@@ -36,7 +36,7 @@ export default function Azo() {
                 <div className="followcards1">
                     {follow.map((item,key) => {
                        if(following==item.topuser){ 
-                        return (
+                        return (    
                             
  <a>
                                 <div className="followcard1">
