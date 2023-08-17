@@ -188,8 +188,8 @@ export default function Searchfilter() {
 
 
     axios.put(`${url}/api/course`).then(res => {
-
     })
+
   }
   function deleteclose() {
     axios.delete(`${url}/api/course/${deleteId}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
@@ -203,6 +203,7 @@ export default function Searchfilter() {
 
 
   useEffect(() => {
+    
 
     document.querySelector(".filter_button").style = "display:none"
     setState1(
@@ -216,9 +217,12 @@ export default function Searchfilter() {
     })
     axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
       setKursdata(res.data)
+      
     }).catch(err => {
       console.log(err);
     })
+
+    
   }, []);
 
   function filter(id) {
@@ -305,6 +309,7 @@ export default function Searchfilter() {
 
         <div className="kurs_cards">
           {kursdata.map(item => {
+            localStorage.setItem("courseLength",kursdata.length)
             return (
               <div className="kurs_card">
                 <button className="btn_das">Dasturlash</button>

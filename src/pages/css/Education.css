@@ -288,11 +288,13 @@
     .search_big_div {
         position: relative;
         display: flex;
+        margin: auto !important;
         justify-content: space-between;
         align-items: center;
         margin-inline: 5%;
-        width: 90%;
-        margin-bottom: 10px;
+        width: 80%;
+        margin-top: 30px !important;
+        margin-bottom: 40px !important;
     }
 
     .search_big_div input {
@@ -446,30 +448,32 @@
     }
     .edication_card{
         display: flex;
-        /* justify-content: space-around; */
-        align-items:baseline;
-        flex-flow: wrap;
-        margin-top: 40px;
-        margin-inline: 80px;
+        justify-content: space-around;
+        margin: auto !important;
+        width: 80%;
+        align-items:baseline !important;
+        flex-wrap: wrap;
+        margin-top: 40px !important;
+        margin-bottom: 40px !important;
         gap: 30px;
     }
     .edication_card_{
         position: relative;
         border-radius: 15px;
-        width: 400px;
-        min-height: 180px;
+        width: 380px;
+        min-height: 160px;
         padding: 20px;
         background-color:#fff;
-        box-shadow:  0 10px 40px #a3a5a654;
-        transition: all .2s ease;
+        box-shadow: 0px 4px 20px 0px rgba(1, 102, 144, 0.10);
+        transition: all .3s ease;
     }
     .edication_card_:hover{
-        box-shadow: 0px 12px 35px 0px #44bdf13e;
+        box-shadow: 0px 12px 45px 0px rgba(83, 109, 253, 0.25);
         cursor: pointer;
     }
     .edication_card_ h1{
         color: black;
-        font-size: 30px !important;
+        font-size: 26px !important;
         font-weight: 550;
     }
     .edication_card_button{
@@ -508,8 +512,8 @@ justify-content: flex-end;
     }
 
     .edication_card_date p{
-        color: var(--seriy, #4a4c53);
-        font-size: 14px;
+        color: var(--seriy, #9DA7BB);
+        font-size: 12px;
         font-weight: 400;
     }
         .edication_card_button button:nth-child(3){

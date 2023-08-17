@@ -4,22 +4,23 @@ margin-top: 10px;
 font-size: 13px;
 }
 .m_zadach{
+    width: 80%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin: auto;
     margin-bottom: 50px;
     gap: 20px;
-    padding: 15px;
 }
 .m_zadach_block{
-    transition: 0.5s;
-    width: 25%;
+    transition: 0.3s;
+    width: 24%;
     margin-top: 20px;
     padding: 10px;  
     overflow: hidden;
     box-shadow: 0px 4px 20px 0px rgba(1, 102, 144, 0.10);
     border-radius: 10px;
-    min-width: 400px;
+    min-width: 380px;
 }
 .m_zadach_block:hover{
     box-shadow: 0px 12px 45px 0px rgba(83, 109, 253, 0.25);
@@ -48,7 +49,6 @@ font-size: 13px;
         height: 30px;
         border-radius: 50%;
         border: none;
-        box-shadow: 0px 0px 10px black;
         font-size: 13px;
         margin-bottom: 10px;
         cursor: pointer;
@@ -62,7 +62,6 @@ font-size: 13px;
         height: 30px;
         border-radius: 50%;
         border: none;
-        box-shadow: 0px 0px 10px black;
         font-size: 12px;
         margin-bottom: 10px;
         cursor: pointer;
@@ -163,19 +162,28 @@ font-size: 13px;
 .m_dobavit_kurs {
  width: 100%;   
  display: flex;
- justify-content: flex-end;
+ justify-content: flex-start;
  align-items: center;
- margin-top: 20px;
- padding: 10px;
+ margin-top: 30px;
+ margin-bottom: 40px;
+ margin-left: 9%;
+
 }
 .m_dobavit_kurs  button{
-    color: #fff  ;
-    background-color: #44bef1;
-    width: 166px;
-    height: 30px;
+    color: #44bef1;
+    background-color: white;
+    border: 1px solid #44bef1;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
     border-radius: 5px;
-    margin: auto;
-    margin-right: 0px;
+    margin-left: 15px;
+    transition: all .3s ease;
+}
+.m_dobavit_kurs  button:hover{
+    color: white;
+    background-color: #44bef1;
 }
 .for_center{
     display: block;
