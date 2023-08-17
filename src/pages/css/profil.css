@@ -95,7 +95,7 @@
   display: flex;
   justify-content: center;
   box-shadow: 0px 2px 2px 0px #0000001A;
-  margin-top: 50px ;
+  margin-top: 50px;
 }
 
 .user_img_size {
@@ -257,14 +257,16 @@
   font-size: 20px;
   cursor: pointer;
 }
-.taxrirlash_modal_div:hover{
+
+.taxrirlash_modal_div:hover {
   background-color: rgba(235, 235, 235, 0.788);
-border-radius: 10px;
+  border-radius: 10px;
 }
+
 .taxrirlash_modal_div p {
- padding-left: 10px;
+  padding-left: 10px;
   font-size: 20px;
- margin-top: 10px;
+  margin-top: 10px;
 }
 
 .taxrirlash_modal_icon {
@@ -646,7 +648,8 @@ border-radius: 10px;
   bottom: 0;
   max-width: 100%;
 }
-.profil-qora-qiladi{
+
+.profil-qora-qiladi {
   height: 100%;
 }
 
@@ -691,7 +694,7 @@ border-radius: 10px;
   backdrop-filter: blur(10px);
   display: none;
 }
-  
+
 .profil_Help_size {
   transition: 1s;
   width: 320px;
@@ -799,8 +802,8 @@ border-radius: 10px;
   background-color: #eeeef0;
   border-radius: 10px;
   display: flex;
-  justify-content:space-around;
-  text-align: center;
+  justify-content: space-around;
+  /* text-align: center; */
   align-items: center;
   padding-left: 20px;
   cursor: pointer;
@@ -858,9 +861,8 @@ border-radius: 10px;
   /* font-family: 'Mulish', sans-serif;
   font-family: 'Open Sans', sans-serif;
   font-family: 'Poppins', sans-serif; */
-  width: 100%;
+  /* width: 100%; */
   font-size: 13px;
-  font-weight: 500;
 }
 
 @media (max-width:701px) {
@@ -942,3 +944,35 @@ border-radius: 10px;
     left: 1vw;
   }
 }
+
+.sms_bos {
+  width: 80%;
+  padding-top: 10px;
+  text-align: start;
+  padding-bottom: 10px;
+}
+.sms_bos p{
+  margin-bottom: 0px !important;
+}
+.sms_nik p{
+  font-size: 15px;
+  color: rgb(95, 95, 95);
+}
+
+/* .nik_name {
+  width: 100%;
+  padding-top: 10px;
+} */
+
+/* .nik_name p {
+  margin-left: -60%;
+  font-weight: 600;
+} */
+/* .sms_nik{
+  margin-left: -10%;
+} */
+/* .sms_nik p {
+  color: rgba(68, 68, 68, 0.856);
+  margin-top: -10px;
+  margin-left: -5px;
+} */
