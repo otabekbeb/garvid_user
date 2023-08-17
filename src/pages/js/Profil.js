@@ -24,6 +24,7 @@ import Swal from "sweetalert2";
 export default function Profil() {
   const [data, setData] = useState([]);
   const [state1, setState1] = React.useState();
+  const [user,setUser]=useState([])
   const [natlifikation,setNatlifikation] = React.useState([]);
   const [userid,setOneuserId] = useState(localStorage.getItem("OneuserId"))
   
@@ -51,7 +52,19 @@ export default function Profil() {
       });
       axios.get(`${url}/API/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         setNatlifikation(res.data)
-      })   
+      axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
+        setUser(res1.data)
+        for (let i = 0; i < res.data.length; i++) {
+          for (let j = 0; j < res1.data.length; j++) {
+           if (res.data[i].user_id==res1.data[j].id) {
+            res.data[i].image=res1.data[j].image
+           } 
+          }
+        }
+        setNatlifikation(res.data)
+      })  
+      })  
+     
  
 
   }, []);
@@ -134,7 +147,8 @@ export default function Profil() {
     document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style =
       "display:block;";
     document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
-      "display:none;";
+      "display:none;" ;
+
   }
 
   useEffect(() => {
@@ -156,6 +170,9 @@ export default function Profil() {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
+
+
+    
   }, []);
 
   function chiqish() {
@@ -411,7 +428,7 @@ export default function Profil() {
                   return(
                     <div className="sms-insta-block">
                   <div className="sms-img">
-                   {item.user_id===userid ?(<img src="" alt="" />):(<img src="" alt="" />)}
+                   <img src={"https://markazback2.onrender.com/"+item.image} alt="" />
                   </div>
                   <div className="sms-kotta-pas">
                    <div className="sms-text-tepa"><p>{item.title} </p><p></p></div>
