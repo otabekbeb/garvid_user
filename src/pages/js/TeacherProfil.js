@@ -425,7 +425,7 @@ function follow () {
             <TiThMenu onClick={() => menuModalClone()} className='profil_blok_menu_clone' />
           </div>
           <div className="profil_modal_media">
-            <h1 onClick={() => updatetoggle(1)} className='fromMenu'>My Courses</h1>
+            <h1 onClick={() => updatetoggle(1)} className='fromMenu'>Its courses are</h1>
             <h1 onClick={() => updatetoggle(2)} className='fromMenu'>My acquired knowledge</h1>
             <h1 onClick={() => updatetoggle(3)} className='fromMenu'>My Certificates</h1>
             <h1 onClick={() => updatetoggle(4)} className='fromMenu'>My Subscriptions</h1>

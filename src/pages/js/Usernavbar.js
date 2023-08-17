@@ -180,19 +180,19 @@ export default function Navbar() {
                   </div>
                 </div>
 
-                <li className="moto-menu-item">
+                {localStorage.getItem("position")==2?(""):(<li className="moto-menu-item">
                   {" "}
                   <a href="/user">User</a>{" "}
-                </li>
+                </li>)}
                 {localStorage.getItem("position")==1?(<li className="moto-menu-item">
                   <a href="/teacher">Teacher</a>
                 </li>):(<li className="moto-menu-item">
                   <a href="/mentor">Teacher</a>
                 </li>)}
                 
-                <li className="moto-menu-item">
+                {localStorage.getItem("position")==2?(""):(<li className="moto-menu-item">
                   <a href="/studentpage">Student</a>
-                </li>
+                </li>)}
                 <li className="moto-menu-item">
                   <a href="/editprofil">Edit profile</a>
                 </li>
@@ -335,11 +335,11 @@ export default function Navbar() {
           <div className="navbar-media-left-ul">
             <ul >
               <div className="navbar-box-icons">  <span><box-icon name='home' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar" onClick={() => window.location = "/"}>Home</li></div>
-              <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946' name='user'></box-icon></span> <li id="surul-navbar" onClick={() => window.location = "/user"}>User</li>  </div>
+              {localStorage.getItem("position")==2?(""):(<div className="navbar-box-icons"><span><box-icon type='solid' color='#323946' name='user'></box-icon></span> <li id="surul-navbar" onClick={() => window.location = "/user"}>User</li>  </div>)}
               {localStorage.getItem("position")==1?(<div className="navbar-box-icons"><span ><img src={teacher} style={{ width: "30px" }} alt="" /></span> <li id="surul-navbar" onClick={() => window.location = "/teacher"}>Teacher</li>  </div>):(<div className="navbar-box-icons"><span ><img src={teacher} style={{ width: "30px" }} alt="" /></span> <li id="surul-navbar" onClick={() => window.location = "/mentor"}>Teacher</li>  </div>)}
 
               
-              <div className="navbar-box-icons">   <span><img src={Student} style={{ width: "30px" }} alt="" /></span> <li id="surul-navbar" onClick={() => window.location = "/studentpage"}>Student</li>  </div>
+              {localStorage.getItem("position")==2?(""):(<div className="navbar-box-icons">   <span><img src={Student} style={{ width: "30px" }} alt="" /></span> <li id="surul-navbar" onClick={() => window.location = "/studentpage"}>Student</li>  </div>)}
               <div className="navbar-box-icons"><span><img src={Edit} style={{ width: "30px" }} alt="" /></span><li id="surul-navbar" onClick={() => window.location = "/loginpage"}>Edit profile</li>  </div>
               <div className="navbar-box-icons"><span><img src={Curs} style={{ width: "30px" }} alt="" /></span><li id="surul-navbar" onClick={() => window.location = "/ourcourse"}>Courses</li></div>
 

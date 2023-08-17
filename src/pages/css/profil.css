@@ -44,6 +44,8 @@
   padding-top: 4px;
   text-align: center;
   width: 40px;
+  height: 40px;
+  font-size: 18px;
   border-radius: 50%;
   border: 2px solid white;
   box-shadow: 0px 4px 8px 5px #0000001a;
@@ -93,7 +95,7 @@
   display: flex;
   justify-content: center;
   box-shadow: 0px 2px 2px 0px #0000001A;
-  margin-top: 50px ;
+  margin-top: 50px;
 }
 
 .user_img_size {
@@ -255,14 +257,16 @@
   font-size: 20px;
   cursor: pointer;
 }
-.taxrirlash_modal_div:hover{
+
+.taxrirlash_modal_div:hover {
   background-color: rgba(235, 235, 235, 0.788);
-border-radius: 10px;
+  border-radius: 10px;
 }
+
 .taxrirlash_modal_div p {
- padding-left: 10px;
+  padding-left: 10px;
   font-size: 20px;
- margin-top: 10px;
+  margin-top: 10px;
 }
 
 .taxrirlash_modal_icon {
@@ -407,7 +411,8 @@ border-radius: 10px;
     padding-top: 3px;
     padding-bottom: 5px;
     text-align: center;
-    width: 35px;
+    width: 42px;
+    height: 40px;
     border-radius: 50%;
     border: 2px solid white;
     background-color: rgba(236, 236, 19, 0.329);
@@ -643,7 +648,8 @@ border-radius: 10px;
   bottom: 0;
   max-width: 100%;
 }
-.profil-qora-qiladi{
+
+.profil-qora-qiladi {
   height: 100%;
 }
 
@@ -688,7 +694,7 @@ border-radius: 10px;
   backdrop-filter: blur(10px);
   display: none;
 }
-  
+
 .profil_Help_size {
   transition: 1s;
   width: 320px;
@@ -796,7 +802,8 @@ border-radius: 10px;
   background-color: #eeeef0;
   border-radius: 10px;
   display: flex;
-  text-align: center;
+  justify-content: space-around;
+  /* text-align: center; */
   align-items: center;
   padding-left: 20px;
   cursor: pointer;
@@ -809,10 +816,14 @@ border-radius: 10px;
   height: 35px;
   position: relative;
   right: 5px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sms-kotta-pas {
-  display: block;
+  width: 100%;
 }
 
 .sms-text-tepa {
@@ -820,12 +831,13 @@ border-radius: 10px;
 }
 
 .sms-text-tepa p {
-  font-family: 'Mulish', sans-serif;
+  /* font-family: 'Mulish', sans-serif;
   font-family: 'Open Sans', sans-serif;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif; */
   width: 76%;
   font-size: 14px;
   font-weight: 700;
+  margin-left: -20%;
 }
 
 .sms-text-tepa box-icon {
@@ -846,13 +858,11 @@ border-radius: 10px;
 }
 
 .sms-text-pas p {
-  font-family: 'Mulish', sans-serif;
+  /* font-family: 'Mulish', sans-serif;
   font-family: 'Open Sans', sans-serif;
-  font-family: 'Poppins', sans-serif;
-  width: 100%;
+  font-family: 'Poppins', sans-serif; */
+  /* width: 100%; */
   font-size: 13px;
-  padding-left: 8px;
-  font-weight: 500;
 }
 
 @media (max-width:701px) {
@@ -934,3 +944,35 @@ border-radius: 10px;
     left: 1vw;
   }
 }
+
+.sms_bos {
+  width: 80%;
+  padding-top: 10px;
+  text-align: start;
+  padding-bottom: 10px;
+}
+.sms_bos p{
+  margin-bottom: 0px !important;
+}
+.sms_nik p{
+  font-size: 15px;
+  color: rgb(95, 95, 95);
+}
+
+/* .nik_name {
+  width: 100%;
+  padding-top: 10px;
+} */
+
+/* .nik_name p {
+  margin-left: -60%;
+  font-weight: 600;
+} */
+/* .sms_nik{
+  margin-left: -10%;
+} */
+/* .sms_nik p {
+  color: rgba(68, 68, 68, 0.856);
+  margin-top: -10px;
+  margin-left: -5px;
+} */

@@ -35,6 +35,7 @@ export default function Searchfilter() {
   const [CourseId, setCourseId] = useState();
   const [deleteId, setDeleteId] = useState()
   const [delete1, setDelete1] = useState([]);
+  const [oneuser, setOneuser] = useState([])
 
   function Filter() {
     var a = document.querySelector(".filter_button").style.display
@@ -187,8 +188,8 @@ export default function Searchfilter() {
 
 
     axios.put(`${url}/api/course`).then(res => {
-
     })
+
   }
   function deleteclose() {
     axios.delete(`${url}/api/course/${deleteId}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
@@ -202,6 +203,7 @@ export default function Searchfilter() {
 
 
   useEffect(() => {
+    
 
     document.querySelector(".filter_button").style = "display:none"
     setState1(
@@ -215,9 +217,12 @@ export default function Searchfilter() {
     })
     axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
       setKursdata(res.data)
+      
     }).catch(err => {
       console.log(err);
     })
+
+    
   }, []);
 
   function filter(id) {
@@ -304,14 +309,17 @@ export default function Searchfilter() {
 
         <div className="kurs_cards">
           {kursdata.map(item => {
+            localStorage.setItem("courseLength",kursdata.length)
             return (
               <div className="kurs_card">
                 <button className="btn_das">Dasturlash</button>
-                {item.image === null ? (
+                {/* {item.image === null ? (
                   <img src={img_for_null} />
                 ) : (
                   <img src={item.image} />
-                )}
+                )} */}
+                 <img src={item.oneuser?item.oneuser.image.includes("http")?item.oneuser.image:`${url}/${item.oneuser.image}`:
+            <img src={img_for_null} alt="" />} alt="" />
                 <div className="kurs_paddaing_auto">
                   <h4>{item.name}</h4>
                   <div className="star_card">

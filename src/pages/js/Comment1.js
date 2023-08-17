@@ -23,10 +23,9 @@ export default function Comment1() {
   const [state1, setState1] = React.useState();
   const [dobavit,setDobavit]=useState([])
   const [subcoment,setSubcoment]=useState(0)
-
   const [user,setUser]=useState([])
   const [oneuser,setoneuser]=useState([])
-
+  const [task_comnet_id, setTask_comnet_id]=useState(0)
 
 
 
@@ -59,7 +58,7 @@ console.log(res.data,"salom");
     formdata.append("user_id", oneuser[0].id)
     formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id)
     formdata.append("subcomment", subcoment)
-    formdata.append("task_commnet_id", 0)
+    formdata.append("task_commnet_id", task_comnet_id)
     
     axios.post(`${url}/api/course_theme_comment/`, formdata, {
       headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}
@@ -72,13 +71,6 @@ console.log(res.data,"salom");
         console.log(res.data,);
       })
     document.querySelector("#chat_text").value=""
-    // document.querySelector(".commetn_otvet_kaytarish").style="display: none;"
-
-    // var otvet = localStorage.getItem("key")
-    // axios.get(`${url}/api/course_theme_comment/${otvet}`, {headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
-    // .then(res=>{
-    //   setDobavit(res.data)
-    // })
     }
     )
     .catch(err=>{
@@ -104,7 +96,7 @@ console.log(res.data,"salom");
     formdata.append("user_id", oneuser[0].id)
     formdata.append("theme", JSON.parse(localStorage.getItem("page_video1")).id)
     formdata.append("subcomment", subcoment )
-    formdata.append("task_commnet_id", 0)
+    formdata.append("task_commnet_id", task_comnet_id)
     
 
     axios.post(`${url}/api/course_theme_comment/`, formdata, {
@@ -226,13 +218,14 @@ function closeViewall() {
       <p>view all <AiOutlineComment/></p>
     </div>
      <div className='for_scroll'>
-     {comment.length===0?( <div className="for_no_comment">
+     {comment.length===0?( 
+     <div className="for_no_comment">
         <p>Тут ещё нут комметнарий</p>
       </div>):(
         <>
         {
         comment.map(item => {
-       if(item.subcomment===0){
+       if(item.subcomment===0 ){
         return <>
         <div className="m_comment">
           <div className="m_comment_img">
@@ -301,7 +294,8 @@ function closeViewall() {
                         
                      if(item32.subcomment==subcoment){
                       return(<>
-                        <div className="df_div_comment_page"><img src={item32.oneuser?item32.oneuser.image.includes("http")?item32.oneuser.image:`${url}/${item32.oneuser.image}`:
+                        <div className="df_div_comment_page">
+                          <img src={item32.oneuser?item32.oneuser.image.includes("http")?item32.oneuser.image:`${url}/${item32.oneuser.image}`:
                         <img src={anonim} alt="" />} alt="" />
                         <div className="div_class_tugadi">
 

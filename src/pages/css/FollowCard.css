@@ -1,6 +1,6 @@
 .followcards {
     width: 100%;
-    height:auto;
+    height: auto;
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
@@ -13,7 +13,7 @@
 }
 
 .inpf {
-    width: 1160px;
+    width: 1410px;
     height: auto;
     background-color: #f6f6f6;
     margin: auto;
@@ -21,7 +21,7 @@
 
 }
 
-.inpser{
+.inpser {
     width: 100%;
     height: 70px;
     background-color: #f6f6f6;
@@ -74,49 +74,75 @@
     border: none;
     outline: none;
     border-radius: 5px;
-    box-shadow: 0 1px  gray;
+    box-shadow: 0 1px gray;
     font-size: 18px;
     transition: width 0.3s;
-    font-family: Consolas,monaco,monospace;
-  }
-  
-  .input:focus {
+    font-family: Consolas, monaco, monospace;
+}
+
+.input:focus {
     outline: 1px solid #44bef1;
     box-shadow: none;
     width: 300px;
-  }
-  
-  .input::placeholder {
-    color: #44bef1;
-  }
+}
 
-  @media (max-width:1210px) {
-    .inpf {
-        width: 940px;
-        height: auto;
-        background-color: #f6f6f6;
-        margin: auto;
-    
-    
-    }
-  }
-  @media (max-width:967px) {
+.input::placeholder {
+    color: #44bef1;
+}
+
+
+@media (max-width:967px) {
     .inpf {
         width: 700px;
         height: auto;
         background-color: #f6f6f6;
         margin: auto;
-    
-    
+
+
     }
-  }
-  @media (max-width:737px) {
+}
+
+@media (max-width:737px) {
     .inpf {
         width: 90%;
         height: auto;
-        background-color:#f6f6f6;
+        background-color: #f6f6f6;
         margin: auto;
-        
-    
+
+
     }
-  }
+}
+
+@media (max-width:1450px) {
+    .inpf {
+        width: 1170px;
+        height: auto;
+        background-color: #f6f6f6;
+        margin: auto;
+    }
+}
+
+@media (max-width:1210px) {
+    .inpf {
+        width: 930px;
+        height: auto;
+        background-color: #f6f6f6;
+        margin: auto;
+    }
+}
+@media (max-width:970px) {
+    .inpf {
+        width: 700px;
+        height: auto;
+        background-color: #f6f6f6;
+        margin: auto;
+    }
+}
+@media (max-width:730px) {
+    .inpf {
+        width:90%;
+        height: auto;
+        background-color: #f6f6f6;
+        margin: auto;
+    }
+}

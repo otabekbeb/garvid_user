@@ -104,8 +104,14 @@ export default function Profil() {
   }
 
   function taxrirlashModal() {
-    document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
-      "display:block;";
+
+      var a = document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style.display
+
+      if (a==="none") {
+        document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style="display:block"
+      }else{
+        document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style="display:none"
+      }
     document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style =
       "display:none;";
   }
@@ -116,8 +122,13 @@ export default function Profil() {
       "display:none;";
   }
   function taxrirlashChadModal() {
-    document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style =
-      "display:block;";
+      var a = document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style.display
+
+    if (a==="none") {
+      document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style="display:block"
+    }else{
+      document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style="display:none"
+    }
     document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
       "display:none;";
   }
@@ -273,20 +284,20 @@ export default function Profil() {
               </div>
             </div>
             <div
-              onMouseLeave={() => taxrirlashClose()}
               className="profil_blok_ikki_icon" 
             >
               <BsFillBellFill
-                onMouseEnter={() => taxrirlashChadModal()}
+                onClick={() => taxrirlashChadModal()}
                 className="profil_blok_ikki_icon_bir"
               />
               <BsThreeDots
-                onMouseEnter={() => taxrirlashModal()}
+                onClick={() => taxrirlashModal()}
                 className="profil_blok_ikki_icon_ikki" 
               />
-              <div className="profil_blok_ikki_icon_texrirlash_modal">
+              <div className="profil_blok_ikki_icon_texrirlash_modal" 
+              onMouseLeave={() => taxrirlashClose()}>
                 <div
-                  onClick={() => (window.location = "/loginpage")}
+                  onClick={() => (window.location = "/editprofil")}
                   className="taxrirlash_modal_div"
                 >
                   <FiEdit className="taxrirlash_modal_icon" />
@@ -309,7 +320,8 @@ export default function Profil() {
                   <p>Exit</p>
                 </div>
               </div>
-              <div className="profil_blok_ikki_icon_taxriirlash_chat">
+              <div className="profil_blok_ikki_icon_taxriirlash_chat" 
+              onMouseLeave={() => taxrirlashClose()}>
                 <p>Today</p>
                 <div className="taxrirlash_chad">
                   <div className="taxrirlash_chad_img_size">
