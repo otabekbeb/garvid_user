@@ -407,17 +407,20 @@ export default function Profil() {
           <div className="sms-insta">
             <div className="sms-insto-bb1">
                 {natlifikation.map(item=>{
+                 if (item.to_user_id==localStorage.getItem("OneuserId")) {
                   return(
                     <div className="sms-insta-block">
                   <div className="sms-img">
                    {item.user_id===userid ?(<img src="" alt="" />):(<img src="" alt="" />)}
                   </div>
                   <div className="sms-kotta-pas">
-                    <div className="sms-text-tepa"><p>{item.title} </p><p></p></div>
-                    <div className="sms-text-pas"><p>Sent an sms to: {item.description}</p></div>
+                   <div className="sms-text-tepa"><p>{item.title} </p><p></p></div>
+                    <div className="sms-text-pas"><p> {item.description}</p></div>
+               
                   </div>
                 </div>
                   )
+                 }
                 })}
                   
 

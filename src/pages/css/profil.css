@@ -815,7 +815,7 @@ border-radius: 10px;
 }
 
 .sms-kotta-pas {
-  display: block;
+  width: 100%;
 }
 
 .sms-text-tepa {
@@ -823,12 +823,13 @@ border-radius: 10px;
 }
 
 .sms-text-tepa p {
-  font-family: 'Mulish', sans-serif;
+  /* font-family: 'Mulish', sans-serif;
   font-family: 'Open Sans', sans-serif;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif; */
   width: 76%;
   font-size: 14px;
   font-weight: 700;
+  margin-left: -20%;
 }
 
 .sms-text-tepa box-icon {
@@ -849,12 +850,11 @@ border-radius: 10px;
 }
 
 .sms-text-pas p {
-  font-family: 'Mulish', sans-serif;
+  /* font-family: 'Mulish', sans-serif;
   font-family: 'Open Sans', sans-serif;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif; */
   width: 100%;
   font-size: 13px;
-  padding-left: 8px;
   font-weight: 500;
 }
 
