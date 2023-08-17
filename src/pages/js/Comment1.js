@@ -25,11 +25,11 @@ export default function Comment1() {
   const [subcoment,setSubcoment]=useState(0)
   const [user,setUser]=useState([])
   const [oneuser,setoneuser]=useState([])
-  const [task_comnet_id, setTask_comnet_id]=useState(0)
-
+  const [task_comnet_id, setTask_comnet_id]=useState(JSON.parse(localStorage.getItem("task_commnet_id")))
 
 
 useEffect(()=>{
+  // task_comnet_id 
   axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
     headers:{Authorization: `Bearer ${localStorage.getItem("token")}`}})
   .then(res=>{
@@ -225,7 +225,7 @@ function closeViewall() {
         <>
         {
         comment.map(item => {
-       if(item.subcomment===0 ){
+       if(item.subcomment===0 && item.task_commnet_id===0 ){
         return <>
         <div className="m_comment">
           <div className="m_comment_img">
