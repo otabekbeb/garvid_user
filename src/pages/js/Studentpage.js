@@ -36,6 +36,51 @@ export default function Mentor() {
   const [kursdata, setKursdata] = useState([]);
   const [courses, setCourses] = useState([]);
   const [user,setUser] =useState([])
+  const [data, setData] = useState([]);
+
+  const [follow, setFollow] = useState([])
+  const [following,setFollowing] = useState(localStorage.getItem("OneuserId"))
+  function folowcolor1(key) {
+      document.querySelectorAll('.followButton1')[key].classList.toggle("followButton3")
+    }
+  useEffect(() => {
+      axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+        setFollow(res.data)
+      })
+    }, [])
+  function obuna() {
+      document.querySelector('#azo_bolgan_katta_div_text_block_button').classList.toggle("obuna1")
+  }
+  function obuna2() {
+      document.querySelector('#azo_bolgan_katta_div_text_block_button1').classList.toggle("obuna2")
+  }
+
+  useEffect(() => {
+      axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+          setUsers(res.data)
+        })
+  }, []);
+
+  function folowcolor1(key) {
+      document.querySelectorAll('.followButton1')[key].classList.toggle("followButton3")
+    }
+  useEffect(() => {
+      axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+        setFollow(res.data)
+      })
+    }, [])
+  function obuna() {
+      document.querySelector('#azo_bolgan_katta_div_text_block_button').classList.toggle("obuna1")
+  }
+  function obuna2() {
+      document.querySelector('#azo_bolgan_katta_div_text_block_button1').classList.toggle("obuna2")
+  }
+  const [users,setUsers] = useState([])
+  useEffect(() => {
+      axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+          setUsers(res.data)
+        })
+  }, []);
   useEffect(() => {
     axios.get(`${url}/auth/oneuser`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
       setStudents(res.data)
@@ -148,6 +193,29 @@ export default function Mentor() {
           "position: fixed;right:-100%;";
         document.querySelector(".profil-qora-qiladi").style = "display:none";
       }
+      useEffect(() => {
+        axios
+          .get(`${url}/auth/oneuser/`, {
+            headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+          })
+          .then((res) => {
+            localStorage.setItem("page_user", JSON.stringify(res.data));
+            res.data.map(item => {
+              localStorage.setItem("OneuserId", item.id)
+            })
+            console.log(res.data);
+            setData(res.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+        setState1(
+          localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
+        );
+    
+    
+    
+      }, []);
       function userImgPut(id) {
         var formdata = new FormData();
     
@@ -334,7 +402,8 @@ export default function Mentor() {
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(0)} className='fromLeft'>Education</h1>{toggle===1?(<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("courselenght")} pieces</div>):("")}</div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} className='fromLeft'>Correspondence</h1><div className="fil_text_blok_kurs_lenght">14 pieces</div></div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} className='fromLeft'>Tasks</h1>{toggle===3?(<div className="fil_text_blok_kurs_lenght">24 pieces</div>):("")}</div>
-                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} className='fromLeft'>My subscribers</h1>{toggle===4?(<div className="fil_text_blok_kurs_lenght">24 pieces</div>):("")}</div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} className='fromLeft'>My subscribtions</h1>{toggle===4?(<div className="fil_text_blok_kurs_lenght">24 pieces</div>):("")}</div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} className='fromLeft'>My subscribers</h1>{toggle===5?(<div className="fil_text_blok_kurs_lenght">24 pieces</div>):("")}</div>
                 </div>
                 <div className="profil_blok_menu_size">
                     <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
@@ -344,7 +413,8 @@ export default function Mentor() {
                     <h1 onClick={() => updatetoggle(1)} className='fromMenu'>My courses</h1>
                     <h1 onClick={() => updatetoggle(2)} className='fromMenu'>Correspondence</h1>
                     <h1 onClick={() => updatetoggle(3)} className='fromMenu'>Tasks</h1>
-                    <h1 onClick={() => updatetoggle(4)} className='fromMenu'>My subscribers</h1>
+                    <h1 onClick={() => updatetoggle(4)} className='fromMenu'>My subscribtions</h1>
+                    <h1 onClick={() => updatetoggle(5)} className='fromMenu'>My subscribers</h1>
                 </div>
             </div>
 
@@ -437,9 +507,7 @@ export default function Mentor() {
               </div>
             )
           })}
-          <div className="dashed" onClick={() => dashed()}>
-            <i><AiOutlinePlus /></i>
-          </div>
+        
           <div id="edit_card" className="edit_card" >
             <div className="edit_padding">
 
@@ -516,8 +584,75 @@ export default function Mentor() {
             <div className={toggle === 2 ? "show-content" : "content"}><UserChat /></div>
             <div className={toggle === 0 ? "show-content" : "content"}><Education /></div>
             <div className={toggle === 3 ? "show-content" : "content"}><Sertifikat /></div>
-            <div className={toggle === 4 ? "show-content" : "content"}><Azo/></div>
+            <div className={toggle === 4 ? "show-content" : "content"}><div>
 
+           
+              
+<div className="followcards1">
+    {follow.map((item,key) => {
+      return <>
+       {users.map(item1=>{
+        if(item1.id==item.topuser){ 
+            return (    
+                
+<a>
+                    <div className="followcard1">
+                        <a href="/TeacherProfil">
+                            {item.image === null ? (<h1>No signaL</h1>) : (<img className='jony_foto' src={item1.image} alt="" />)}
+
+                            <h5 className='Name'>{item1.username}</h5 >
+                        </a>
+                        <button onClick={() => folowcolor1(key)} className='followButton1' >subscribe</button>
+                    </div>
+                </a>
+                
+               
+            )}
+       })}
+       </>
+    })}
+
+
+
+
+</div>
+
+</div></div>
+            <div className={toggle === 5 ? "show-content" : "content"}><div>
+
+           
+              
+<div className="followcards1">
+    {follow.map((item,key) => {
+      if(following==item.topuser){ 
+        return <>
+       {users.map(item1=>{
+            if (item1.id==item.minuser) {
+                return (    
+                    <a>
+                        <div className="followcard1">
+                            <a href="/TeacherProfil">
+                                {item.image === null ? (<h1>No signaL</h1>) : (<img className='jony_foto' src={item1.image} alt="" />)}
+
+                                <h5 className='Name'>{item1.username}</h5 >
+                            </a>
+                            <button onClick={() => folowcolor1(key)} className='followButton1' >subscribe</button>
+                        </div>
+                    </a>
+                    
+                   
+                )
+            }
+       })}
+       </>
+} })}
+
+
+
+
+</div>
+
+</div></div>
     </div>
 
     <div className="profil_notifacation_size">
