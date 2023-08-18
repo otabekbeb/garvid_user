@@ -45,6 +45,7 @@ import Sotibol from './pages/js/Sotibol'
 export default function App() {
 
   return (
+  
     <div>
       <BrowserRouter>
         <Routes>

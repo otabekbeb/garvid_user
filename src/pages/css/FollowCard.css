@@ -70,21 +70,18 @@
 
 .input {
     padding: 10px;
-    width: 200px;
+    width: 300px;
     border: none;
     outline: none;
+    outline: 1px solid #44bef1;
     border-radius: 5px;
-    box-shadow: 0 1px gray;
     font-size: 18px;
     transition: width 0.3s;
     font-family: Consolas, monaco, monospace;
 }
 
-.input:focus {
-    outline: 1px solid #44bef1;
-    box-shadow: none;
-    width: 300px;
-}
+ 
+
 
 .input::placeholder {
     color: #44bef1;
@@ -130,6 +127,7 @@
         margin: auto;
     }
 }
+
 @media (max-width:970px) {
     .inpf {
         width: 700px;
@@ -138,9 +136,10 @@
         margin: auto;
     }
 }
+
 @media (max-width:730px) {
     .inpf {
-        width:90%;
+        width: 90%;
         height: auto;
         background-color: #f6f6f6;
         margin: auto;

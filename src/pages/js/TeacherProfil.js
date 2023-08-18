@@ -31,15 +31,107 @@ import Futer from "./Footer1"
 import UserChat from "./userChat"
 import '../css/TeacherProfil.css'
 
-
-
+import { CiSearch } from "react-icons/ci";
+import { BiMenu } from "react-icons/bi";
+import { MdWindow } from "react-icons/md";
+import { TfiMenuAlt } from "react-icons/tfi";
+import Mon from "../img/Mon.png";
+import { AiFillStar } from "react-icons/ai";
+import { HiArrowRight } from "react-icons/hi";
+import Rasp from "../img/Rasp.png";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import { AiOutlinePlus } from "react-icons/ai";
+import { BsPlus } from "react-icons/bs";
+import "../css/Spiska.css";
+import "../css/Calibig.css";
+import WWW from "../img/WWW.png";
+import Loader from './loader'
+import img_for_null from '../img/download.png'
+import img_prover from '../img/istockphoto-1321436405-612x612.jpg'
+import Sas from '../img/Sas.png'
+import Htmlimg from '../img/Html.png'
+import Bootstrap from '../img/Bootstrap.png'
+import Git from '../img/Git.png'
+import Oragle from '../img/Oragle.png'
+import Sprint from '../img/Spring.png'
+import Start from '../img/Start.png'
+import azoimg from "../img/Ellipse.jpg"
 export default function Profil() {
   const [data, setData] = useState([]);
-  const [state1, setState1] = React.useState();
   const [toggle, setToggle] = useState(1)
   const [kursdata, setKursData] = useState([])
-  const [allusers,setAllusers] = useState(localStorage.getItem("allUsersId"))
+  const [allusers, setAllusers] = useState(localStorage.getItem("allUsersId"))
+  const [courstype, setCoursetype] = useState([])
+  const [type, settype] = useState([]);
+  const [loader, setLoader] = useState(1)
+  const [oneuser, setOneuser] = useState([])
+  const [sertifikat, setSertifikat] = useState([])
+  const [follow, setFollow] = useState([])
+  const [following, setFollowing] = useState(localStorage.getItem("OneuserId"))
+  function Filter() {
+    var a = document.querySelector(".filter_button").style.display
+    if (a === "none") {
+      document.querySelector(".filter_button").style = "display:block "
+    } else {
+      document.querySelector(".filter_button").style = "display:none "
+    }
+  }
+  function filter1() {
+    document.querySelector(".filter_button").style = "display:none !important"
+  }
+  function windowModal() {
+    document.querySelector(".kurs_cards").style = "display:flex;transition:3s";
+    document.querySelector(".spiska_img_title_div").style = "display:none";
+  }
 
+
+  useEffect(() => {
+
+
+    setState1(
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
+    );
+
+    axios.get(`${url}/api/cours_types`, { headers: { "Authorization": "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setCoursetype(res.data)
+      console.log(res.data);
+    }).catch(err => {
+
+    })
+
+
+
+    axios.get(`${url}/api/mycourse/${localStorage.getItem("allUsersId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+      setKursData(res.data)
+      console.log(res.data);
+    }).catch(err => {
+
+    })
+    setLoader(0)
+
+  }, []);
+
+
+  function filter(id) {
+    axios
+      .get(`${url}/api/mycourse/${localStorage.getItem("allUsersId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })
+      .then((res) => {
+        const search = res.data.filter(item => item.course_type === id)
+        setKursData(search)
+      });
+  }
+  const searchInput = (event) => {
+    const searchRegex = new RegExp(`^${event.target.value}`, "i");
+    axios.get(`${url}/api/mycourse/${localStorage.getItem("allUsersId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+      const searchdata = res.data.filter((item) => {
+        return (
+          searchRegex.test(item.name)
+        );
+      })
+      setKursData(searchdata)
+    })
+
+  }
   useEffect(() => {
     axios.get(`${url}/api/course`).then(res => {
       setKursData(res.data)
@@ -171,9 +263,46 @@ export default function Profil() {
   function openNotification() {
     document.querySelector(".yon_notification_all").style = "right:0%;"
   }
-function follow () {
-  document.querySelector(".Following").classList.toggle("following2")
-}
+  // function follow() {
+  //   document.querySelector(".Following").classList.toggle("following2")
+  // }
+  useEffect(() => {
+    setState1(
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
+    );
+  }, []);
+  useEffect(() => {
+    setState1(
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
+    );
+  }, []);
+
+  useEffect(() => {
+    axios.get(`${url}/edu/student_sertificat`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
+      setSertifikat(res.data)
+    })
+  })
+  function folowcolor1(key) {
+    document.querySelectorAll('.followButton1')[key].classList.toggle("followButton3")
+  }
+  useEffect(() => {
+    axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setFollow(res.data)
+    })
+  }, [])
+  function obuna() {
+    document.querySelector('#azo_bolgan_katta_div_text_block_button').classList.toggle("obuna1")
+  }
+  function obuna2() {
+    document.querySelector('#azo_bolgan_katta_div_text_block_button1').classList.toggle("obuna2")
+  }
+  const [state1, setState1] = React.useState();
+  const [users, setUsers] = useState([])
+  useEffect(() => {
+    axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setUsers(res.data)
+    })
+  }, []);
   return (
     <div>
       <Usernavbar />
@@ -182,54 +311,55 @@ function follow () {
           <div className="profil_blok_bir">
             <div onMouseLeave={() => userimgClose()} className="user_img_size">
               {data.map((item) => {
-                if(allusers==item.id){
+                if (allusers == item.id) {
                   return (
-                  <>
-                    {item.image === null ? (
-                      <img
-                        onMouseEnter={() => userimgModal()}
-                        className="user_img"
-                        src={userNull}
-                        alt=""
-                      />
-                    ) : (
-                      <img
-                        onMouseEnter={() => userimgModal()}
-                        className="user_img"
-                        src={
-                          item.image.includes("http")
-                            ? item.image
-                            : `${url}/${item.image}`
-                        }
-                        alt=""
-                      />
-                    )}
-                  </>
-                );
+                    <>
+                      {item.image === null ? (
+                        <img
+                          onMouseEnter={() => userimgModal()}
+                          className="user_img"
+                          src={userNull}
+                          alt=""
+                        />
+                      ) : (
+                        <img
+                          onMouseEnter={() => userimgModal()}
+                          className="user_img"
+                          src={
+                            item.image.includes("http")
+                              ? item.image
+                              : `${url}/${item.image}`
+                          }
+                          alt=""
+                        />
+                      )}
+                    </>
+                  );
                 }
-                
+
               })}
               {data.map((item) => {
-                if(allusers==item.id){
+                if (allusers == item.id) {
                   return (
-                  <div className="user_img_hover">
-                    <input
-                      onChange={() => userImgPut(item.id)}
-                      id="userInput"
-                      type="file"
-                    />
-                    <MdOutlinePhotoCamera className="user_hover_photo_icon" />
-                  </div>
-                );}
-                
+                    <div className="user_img_hover">
+                      <input
+                        onChange={() => userImgPut(item.id)}
+                        id="userInput"
+                        type="file"
+                      />
+                      <MdOutlinePhotoCamera className="user_hover_photo_icon" />
+                    </div>
+                  );
+                }
+
               })}
             </div>
             <div className="blok_bir_text">
               {data.map((item) => {
-                if(allusers==item.id){
+                if (allusers == item.id) {
                   return <h1>{item.username}</h1>;
                 }
-                
+
               })}
 
               <button>Regular user</button>
@@ -282,7 +412,7 @@ function follow () {
                 </button>
               </div>
             </div>
-           
+
           </div>
         </div>
         <div className="profil_notifacation_size">
@@ -453,10 +583,279 @@ function follow () {
         </div>)}
 
 
-        <div className={toggle === 1 ? "show-content" : "content"}><Filtr /></div>
-        <div className={toggle === 2 ? "show-content" : "content"}><Bilim /></div>
-        <div className={toggle === 3 ? "show-content" : "content"}><Sertifikat /> </div>
-        <div className={toggle === 4 ? "show-content" : "content"}><Azo /></div>
+        <div className={toggle === 1 ? "show-content" : "content"}>
+          <div className="Filter">
+            <div className="blur_blok">
+              <div className="inp_blok">
+                <input onChange={searchInput} id="search" type="text" placeholder="Search among my courses" />
+                <CiSearch className="search" />
+              </div>
+              <div className="blur">
+                <div className="icon_blok">
+                  <div
+                    className="sel_blok"
+                    onClick={() => {
+                      Filter();
+                    }}
+                  >
+                    <BiMenu className="menyu" />
+                    <h4>Filter</h4>
+                  </div>
+                  {/* <div className="win_men">
+                  <MdWindow className="window" onClick={() => windowModal()} />
+                  <TfiMenuAlt className="manu" onClick={() => menuModal()} />
+                </div> */}
+                </div>
+                <div onMouseLeave={() => filter1()} className="filter_button">
+
+
+                  {courstype.map(item => {
+                    return (
+                      <div className="button_filter_kurs" >
+                        {item.name === null ? ("") : (<div onClick={() => filter(item.id)} className="div_kurs" style={{ paddingBottom: '5px' }}>{item.name}</div>)}
+                      </div>
+                    )
+                  })}
+
+
+
+                </div>
+              </div>
+            </div>
+          </div></div>
+        <div className={toggle === 2 ? "show-content" : "content"}>
+          <div>
+            <div className="program">
+              <div className="ptogram_tutorial">
+                <div className="html_code_tutoril">
+                  <div className="html_div">
+                    <div className="html_red">
+                      <img src={Htmlimg} alt="" />
+                    </div>
+                  </div>
+                  <div className="text_html">
+                    <h3>HTML</h3>
+                    <p>Lorem ipsum dolor sit
+                      amet, consectetur ar.</p>
+                  </div>
+                </div>
+                <div className="html_code_tutoril">
+                  <div className="html_div">
+                    <div className="sas_red">
+                      <img src={Sas} alt="" />
+                    </div>
+                  </div>
+                  <div className="text_html">
+                    <h3>Sass</h3>
+                    <p>Lorem ipsum dolor sit
+                      amet, consectetur ar.</p>
+                  </div>
+                </div>
+                <div className="html_code_tutoril">
+                  <div className="html_div">
+                    <div className="bootstrap_red">
+                      <img src={Bootstrap} alt="" />
+                    </div>
+                  </div>
+                  <div className="text_html">
+                    <h3>Bootstrap</h3>
+                    <p>Lorem ipsum dolor sit
+                      amet, consectetur ar.</p>
+                  </div>
+                </div>
+                <div className="html_code_tutoril">
+                  <div className="html_div">
+                    <div className="bootstrap_red">
+                      <img src={Bootstrap} alt="" />
+                    </div>
+                  </div>
+                  <div className="text_html">
+                    <h3 className='react_bootstrap' >react-Bootstrap</h3>
+                    <p>Lorem ipsum dolor sit
+                      amet, consectetur ar.</p>
+                  </div>
+                </div>
+                <div className="html_code_tutoril">
+                  <div className="html_div">
+                    <div className="git_red">
+                      <img src={Git} alt="" />
+                    </div>
+                  </div>
+                  <div className="text_html">
+                    <h3>GIT</h3>
+                    <p>Lorem ipsum dolor sit
+                      amet, consectetur ar.</p>
+                  </div>
+                </div>
+                <div className="html_code_tutoril">
+                  <div className="html_div">
+                    <div className="sp_red">
+                      <img src={Sprint} alt="" />
+                    </div>
+                  </div>
+                  <div className="text_html">
+                    <h3 className='react_bootstrap' >Spring</h3>
+                    <p>Lorem ipsum dolor sit
+                      amet, consectetur ar.</p>
+                  </div>
+                </div>
+                <div className="html_code_tutoril">
+                  <div className="html_div">
+                    <div className="git_red">
+                      <img src={Oragle} alt="" />
+                    </div>
+                  </div>
+                  <div className="text_html">
+                    <h3>Oracle</h3>
+                    <p>Lorem ipsum dolor sit
+                      amet, consectetur ar.</p>
+                  </div>
+                </div>
+                <div className="html_code_tutoril">
+                  <div className="html_div">
+                    <div className="html_red">
+                      <img src={Htmlimg} alt="" />
+                    </div>
+                  </div>
+                  <div className="text_html">
+                    <h3>HTML</h3>
+                    <p>Lorem ipsum dolor sit
+                      amet, consectetur ar.</p>
+                  </div>
+                </div>
+                <div className="html_code_tutoril">
+                  <div className="html_div">
+                    <div className="sas_red">
+                      <img src={Sas} alt="" />
+                    </div>
+                  </div>
+                  <div className="text_html">
+                    <h3>Sass</h3>
+                    <p>Lorem ipsum dolor sit
+                      amet, consectetur ar.</p>
+                  </div>
+                </div>
+                <div className="html_code_tutoril">
+                  <div className="html_div">
+                    <div className="bootstrap_red">
+                      <img src={Bootstrap} alt="" />
+                    </div>
+                  </div>
+                  <div className="text_html">
+                    <h3>Bootstrap</h3>
+                    <p>Lorem ipsum dolor sit
+                      amet, consectetur ar.</p>
+                  </div>
+                </div>
+                <div className="html_code_tutoril">
+                  <div className="html_div">
+                    <div className="bootstrap_red">
+                      <img src={Bootstrap} alt="" />
+                    </div>
+                  </div>
+                  <div className="text_html">
+                    <h3 className='react_bootstrap' >react-Bootstrap</h3>
+                    <p>Lorem ipsum dolor sit
+                      amet, consectetur ar.</p>
+                  </div>
+                </div>
+                <div className="html_code_tutoril">
+                  <div className="html_div">
+                    <div className="git_red">
+                      <img src={Git} alt="" />
+                    </div>
+                  </div>
+                  <div className="text_html">
+                    <h3>GIT</h3>
+                    <p>Lorem ipsum dolor sit
+                      amet, consectetur ar.</p>
+                  </div>
+                </div>
+                <div className="html_code_tutoril">
+                  <div className="html_div">
+                    <div className="sp_red">
+                      <img src={Sprint} alt="" />
+                    </div>
+                  </div>
+                  <div className="text_html">
+                    <h3 className='react_bootstrap' >Spring</h3>
+                    <p>Lorem ipsum dolor sit
+                      amet, consectetur ar.</p>
+                  </div>
+                </div>
+                <div className="html_code_tutoril">
+                  <div className="html_div">
+                    <div className="git_red">
+                      <img src={Oragle} alt="" />
+                    </div>
+                  </div>
+                  <div className="text_html">
+                    <h3>Oracle</h3>
+                    <p>Lorem ipsum dolor sit
+                      amet, consectetur ar.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={toggle === 3 ? "show-content" : "content"}>
+          <div>
+            <div className="cards_sertifikat">
+              <div className="card_sertifikat">
+                {sertifikat.map(item => {
+                  return (
+                    <div className="sertifikat">
+                      {item.image === null ? (<img style={{ height: '200px' }} src={img_for_null} alt="" />) : (<img src={item.image} alt="" />)}
+
+                      <div className="button_text_df_blok_pitani_pro_Max">
+                        <div className="text_pro_max_gap_sos_lift_gr">
+                          <h4>{item.title}</h4>
+                          <p>{item.description}</p>
+                        </div>
+                        <button className='Dast_konter_dust_pro_dest' >Programming</button>
+                      </div>
+                    </div>
+                  )
+                })}
+
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div className={toggle === 4 ? "show-content" : "content"}>
+          <div className="followcards1">
+            {follow.map((item, key) => {
+              return <>
+                {users.map(item1 => {
+                  if (item1.id == item.topuser) {
+                    return (
+
+                      <a>
+                        <div className="followcard1">
+                          <a href="/TeacherProfil">
+                            {item.image === null ? (<h1>No signaL</h1>) : (<img className='jony_foto' src={item1.image} alt="" />)}
+
+                            <h5 className='Name'>{item1.username}</h5 >
+                          </a>
+                          <button onClick={() => folowcolor1(key)} className='followButton1' >subscribe</button>
+                        </div>
+                      </a>
+
+
+                    )
+                  }
+                })}
+              </>
+            })}
+
+
+
+
+          </div>
+        </div>
       </div>
       <Futer />
     </div>
