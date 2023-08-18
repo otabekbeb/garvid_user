@@ -180,15 +180,15 @@ export default function Navbar() {
                   </div>
                 </div>
 
-                {localStorage.getItem("position")==2?(""):(<li className="moto-menu-item">
+                {localStorage.getItem("position")==2?(""):(localStorage.getItem("position")==1?(<li className="moto-menu-item">
                   {" "}
                   <a href="/user">User</a>{" "}
-                </li>)}
+                </li>):(localStorage.getItem("position")==4?(""):("")))}
                 {localStorage.getItem("position")==1?(<li className="moto-menu-item">
                   <a href="/teacher">Teacher</a>
-                </li>):(<li className="moto-menu-item">
+                </li>):(localStorage.getItem("position")==2?(<li className="moto-menu-item">
                   <a href="/mentor">Teacher</a>
-                </li>)}
+                </li>):(localStorage.getItem("position")==4?(""):("")))}
                 
                 {localStorage.getItem("position")==2?(""):(<li className="moto-menu-item">
                   <a href="/studentpage">Student</a>

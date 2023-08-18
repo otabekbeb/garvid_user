@@ -93,12 +93,12 @@ export default function Navbar() {
     new window.google.translate.TranslateElement(
       {
         pageLanguage: "en",
-        autoDisplay: false
+        includedLanguages: 'en,zh-TWit,ja,tr,kk,ru,fr,de', // include this for selected languages
+        
       },
       "google_translate_element"
     );
   };
-
 
     useEffect(() => {
     var addScript = document.createElement("script");

@@ -17,7 +17,7 @@ export default function FollowCard() {
     formdata.append("minuser",following)
 
     axios.post(`${url}/api/follow/`, formdata, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-      alert("bosildi")
+      // alert("bosildi")
       axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         setbosildi(res.data)
         res.data.map(item => {
@@ -32,9 +32,9 @@ export default function FollowCard() {
 function folowcolor1(key,id) {
   axios.delete(`${url}/api/follow/${id}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
    
-    alert("olindi")
+    // alert("olindi")
   }).catch(err => {
-    alert("Данные не удалены")
+    // alert("Данные не удалены")
   })
 }
 

@@ -22,10 +22,11 @@ export default function Azo() {
         document.querySelector('#azo_bolgan_katta_div_text_block_button1').classList.toggle("obuna2")
     }
     const [state1, setState1] = React.useState();
+    const [users,setUsers] = useState([])
     useEffect(() => {
-        setState1(
-            localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
-        );
+        axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+            setUsers(res.data)
+          })
     }, []);
 
     return (
@@ -35,22 +36,26 @@ export default function Azo() {
               
                 <div className="followcards1">
                     {follow.map((item,key) => {
-                       if(following==item.topuser){ 
-                        return (    
-                            
- <a>
-                                <div className="followcard1">
-                                    <a href="/TeacherProfil">
-                                        {item.image === null ? (<h1>No signaL</h1>) : (<img className='jony_foto' src={item.image} alt="" />)}
-
-                                        <h5 className='Name'>{item.username}</h5 >
-                                    </a>
-                                    <button onClick={() => folowcolor1(key)} className='followButton1' >subscribe</button>
-                                </div>
-                            </a>
-                            
-                           
-                        )}
+                      return <>
+                       {users.map(item1=>{
+                        if(item1.id==item.topuser){ 
+                            return (    
+                                
+     <a>
+                                    <div className="followcard1">
+                                        <a href="/TeacherProfil">
+                                            {item.image === null ? (<h1>No signaL</h1>) : (<img className='jony_foto' src={item1.image} alt="" />)}
+    
+                                            <h5 className='Name'>{item1.username}</h5 >
+                                        </a>
+                                        <button onClick={() => folowcolor1(key)} className='followButton1' >subscribe</button>
+                                    </div>
+                                </a>
+                                
+                               
+                            )}
+                       })}
+                       </>
                     })}
 
 
