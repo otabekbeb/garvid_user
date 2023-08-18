@@ -40,16 +40,19 @@ import Testpage from './pages/js/Testpage'
 import Testloader from './pages/js/Testloader'
 import Education from './pages/js/Education'
 import Test_create from './pages/js/Test_create'
+import Koz from './pages/js/Koz'
 
 import Sotibol from './pages/js/Sotibol'
 export default function App() {
 
   return (
+  
     <div>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Sotibol" element={<Sotibol />} />
+          <Route path="/Koz" element={<Koz />} />
           <Route path="/editprofil" element={<Loginpage />} />
           <Route path="/editprofilmentor" element={<LoginpageMentor />} />
           <Route path="/about" element={<About />} />
