@@ -11,6 +11,7 @@ import { TiThMenu } from "react-icons/ti";
 import axios from "axios";
 import url from "./Host";
 import Testpage from '../js/Testpage'
+import Mysubscribers from '../js/Mysubscribers'
 
 // const socket = io.connect("http://localhost:5000");
 export default function Pdp() {
@@ -162,6 +163,23 @@ export default function Pdp() {
               </div>
               <div className="fil_text_blok_soz">
                 <h1
+                  onClick={() => updatetoggle(9)}
+                  style={
+                    toggle === 9 ? { borderBottom: "2px solid #44bef1" } : {}
+                  }
+                  className="fromLeft"
+                >
+                 My subscribers
+                </h1>
+                {toggle === 9 ? (
+                  <div className="fil_text_blok_kurs_lenght">24 pieces</div>
+                ) : (
+                  ""
+                )}
+              </div>
+
+              <div className="fil_text_blok_soz">
+                <h1
                   onClick={() => updatetoggle(6)}
                   style={
                     toggle === 6 ? { borderBottom: "2px solid #44bef1" } : {}
@@ -198,6 +216,9 @@ export default function Pdp() {
               </h1>
               <h1 onClick={() => updatetoggle(5)} className="fromMenu">
                 My Subscriptions
+              </h1>
+              <h1 onClick={() => updatetoggle(9)} className="fromMenu">
+My subscribers
               </h1>
               <h1 onClick={() => updatetoggle(6)} className="fromMenu">
                 Correspondence
@@ -330,6 +351,9 @@ export default function Pdp() {
         </div>
         <div className={toggle === 5 ? "show-content" : "content"}>
           <Azo />
+        </div>
+        <div className={toggle === 9 ? "show-content" : "content"}>
+          <Mysubscribers  />
         </div>
         <div className={toggle === 6 ? "show-content" : "content"}>
           <UserChat />
