@@ -12,7 +12,7 @@ import Navbar from "./Navbar";
 import { FcGoogle } from 'react-icons/fc'
 import { AiFillTwitterCircle } from 'react-icons/ai'
 import { FaFacebook } from 'react-icons/fa'
-
+import { AiOutlineEye } from 'react-icons/ai'
 import Swal from "sweetalert2";
 
 
@@ -21,7 +21,8 @@ export default function Login() {
   const [email, setEmail] = useState()
   const [name, setName] = useState()
   const [data, setData] = useState([])
-
+  const [changePassword, setChangePassword] = useState(true);
+  const changeIcon = changePassword === true ? false : true;
   function userModal() {
 
     var formdata = new FormData()
@@ -142,7 +143,15 @@ export default function Login() {
                       </div>
                       <div className="royhat_small_input">
                         <BiLockAlt className="login_icon" />
-                        <input placeholder={state1 === "en" ? ("Password") : ("Пароль")} id="parol" type="password" required />
+                        <input type={changePassword ? "password" : "text"}
+                          name="password" placeholder={state1 === "en" ? ("Password") : ("Пароль")} id="parol" required />
+                        <span className="icon"
+                          onClick={() => {
+                            setChangePassword(changeIcon);
+                          }}
+                        >
+                          {changeIcon ? <AiOutlineEye style={{fontSize:"25px",position:"absolute",top:"30px",right:"0"}}  /> : <i class='bx bx-low-vision'style={{fontSize:"25px",position:"absolute",top:"30px",right:"0"}}  ></i>}
+                        </span>
                       </div>
                       <div className="parol-esdan-chiqdi">
                         <a href="">Забыл пароль ?</a>
@@ -175,7 +184,15 @@ export default function Login() {
                         </div>
                         <div className="login_small_input">
                           <BiLockAlt className="login_icon" />
-                          <input className="password" placeholder={state1 === "en" ? ("Password") : ("Пароль")} type="password" required />
+                          <input type={changePassword ? "password" : "text"}
+                            name="password" className="password" placeholder={state1 === "en" ? ("Password") : ("Пароль")} required />
+                          <span className="icon"
+                            onClick={() => {
+                              setChangePassword(changeIcon);
+                            }}
+                          >
+                                     {changeIcon ? <AiOutlineEye style={{fontSize:"25px",position:"absolute",top:"30px",right:"0"}}  /> : <i class='bx bx-low-vision'style={{fontSize:"25px",position:"absolute",top:"30px",right:"0"}}  ></i>}
+                          </span>
                           <div className="error">{state1 === "en" ? ("The password cannot be less than 8") : ("Пароль не может быть меньше 8")}</div>
                         </div>
                         <div className="login_small_input">
