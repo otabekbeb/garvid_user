@@ -95,10 +95,10 @@ export default function News() {
                 </div>
               </div>
               <div  className="col-lg-7 px-0">
-                <Swiper style={{cursor:"pointer"}} onClick={()=> {window.location="/newspage"}} navigation={true} modules={[Navigation]} className="owl-carousel main-carousel position-relative">
+                <Swiper style={{cursor:"pointer"}}  navigation={true} modules={[Navigation]} className="owl-carousel main-carousel position-relative">
                   {base.map((item,key)=>{
                     return(
-                      <SwiperSlide onClick={()=> {window.location="/newspage";localStorage.setItem("baseId",key)}} className="position-relative overflow-hidden" style={{height: '500px'}}>
+                      <SwiperSlide onClick={()=> {localStorage.setItem("baseId",key)}} className="position-relative overflow-hidden" style={{height: '500px'}}>
                       <img  className="img-fluid h-100" src={item.image} style={{objectFit: 'cover'}} />
                       <div className="overlay">
                         <div className="mb-2">
