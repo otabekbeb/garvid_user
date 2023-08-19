@@ -193,6 +193,18 @@ export default function Mentor() {
   const [counter4 , setCounter4]= React.useState(80)
   const[loading,setloading]= useState(false)
   
+  const searchInput = (event) => {
+    const searchRegex = new RegExp(`^${event.target.value}`, "i");
+    axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+      const searchdata = res.data.filter((item) => {
+        return (
+          searchRegex.test(item.name)
+        );
+      })
+      setKursdata(searchdata)
+    })
+
+  }
   useEffect(()=>{
       setloading(true);
       setTimeout(()=>{
@@ -619,7 +631,7 @@ export default function Mentor() {
         <div className="Filter">
           <div className="blur_blok">
             <div className="inp_blok">
-              <input type="text" placeholder="Search among my courses" />
+              <input onChange={searchInput} type="text" placeholder="Search among my courses" />
               <CiSearch className="search" />
             </div>
             <div className="blur">
