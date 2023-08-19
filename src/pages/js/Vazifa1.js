@@ -132,22 +132,19 @@ export default function Comment1() {
 
       <div className='m_comment_kotta'>
         <div className="m_otdel_bgc">
-        <div className="for_scroll">
-    {commenttask.length==0?( 
-      <div className="for_no_comment">
-                <p>Тут ещё нут ответов на задачу </p>
-              </div>):(
-                <>
-                               {teacherwork.map(item => {
+        {teacherwork.map(item => {
 
-if (item.id == localStorage.getItem("page_video").id) {
-  return (
+if (item.id ==  JSON.parse(localStorage.getItem("page_video")).id) {
+  return (<>
+    <div className="zanacha_vaz">
+      Задача*
+    </div>
     <div className='task_div_big'>
       <img src={item.image} alt="" /> <p>
         {item.content}
       </p>
 
-    </div>
+    </div></>
   )
 } else {
   <div>There are no tasks here</div>
@@ -155,7 +152,14 @@ if (item.id == localStorage.getItem("page_video").id) {
 
 
 })}
+<hr className='hr2000' />
 
+        <div className="for_scroll">
+    {commenttask.length==0?( 
+      <div className="for_no_comment">
+                <p>Тут ещё нут ответов на задачу </p>
+              </div>):(
+                <>
 {commenttask.map(item => {
 if (item.task_commnet_id == 1) {
   return (
@@ -169,7 +173,7 @@ if (item.task_commnet_id == 1) {
         <div className="div_class_tugadi">
 
 
-          <h5>{item.oneuser.username ? item.oneuser.username : "Anonim User"}</h5>
+          <h5>{item.oneuser ? item.oneuser.username : "Anonim User"}</h5>
           <p className='m_comment_text1505'>{item.text}</p>
           {oneuser.map(item5 => {
             return (

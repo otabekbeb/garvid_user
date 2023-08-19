@@ -39,3 +39,13 @@
 .div_class_tugadi{
     margin-top: 10px;
 }
+
+.hr2000{
+    background: black !important;
+    height: 1px !important;
+    border: none !important;
+}
+.zanacha_vaz{
+    color: #44bef1;
+    text-decoration: underline;
+}
