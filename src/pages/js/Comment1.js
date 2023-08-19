@@ -245,8 +245,10 @@ export default function Comment1() {
 
         <div className="m_otdel_bgc">
 
-          <div className="comment_view_all" onClick={() => { openViewall() }}>
-            <p>view all <AiOutlineComment /></p>
+        
+          <div className="comment_view_all">
+          <span className='span_comment1202'>Комментария*</span>
+            <p onClick={() => { openViewall() }}>view all <AiOutlineComment /></p>
           </div>
           <div className='for_scroll'>
             {comment.length === 0 ? (

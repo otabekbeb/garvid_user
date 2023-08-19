@@ -184,6 +184,10 @@ export default function Youtube1() {
   }
   }
 
+
+  function MadolChange(id) {
+    localStorage.setItem("Idvideo",JSON.stringify(id)) 
+  }
   return (
     <div className="youtube_bgc">
       <div className="a_err_boganda">
@@ -290,6 +294,7 @@ export default function Youtube1() {
                                 return (
                                   <Accordion.Body
                                     style={{ cursor: "pointer" }}
+                                    onClick={()=>{MadolChange(item2.id)}}
                                   >
                                     <div
                                       style={{ cursor: "pointer" }}
