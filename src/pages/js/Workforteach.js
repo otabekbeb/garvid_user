@@ -36,40 +36,40 @@ export default function Workforteach() {
                     <img src={sertifikat} alt="" />
                     {/* <h4>Name</h4> */}
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos dolor dignissimos quidem voluptate aliquam culpa sapiente! Atque magni dolorem delectus natus, aut facilis et! Possimus suscipit accusantium beatae dignissimos quo, alias odit cumque ea error fugit repellat earum fugiat illum est pariatur ipsam totam id dolor voluptates dolorum. Voluptatum!</p>
-                    <div className="m_zadacha_icon">
+                    {/* <div className="m_zadacha_icon">
                         <div className="m_zadach_ktug_icon" onClick={() => openModal1()}>
                             <AiOutlineEdit />
                         </div>
                         <div className="m_zadach_ktug_icon1" onClick={() => openModal2()}>
                             <MdDeleteOutline />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="m_zadach_block">
                     <img src={sertifikat} alt="" />
                     {/* <h4>Name</h4> */}
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos dolor dignissimos quidem voluptate aliquam culpa sapiente! Atque magni dolorem delectus natus, aut facilis et! Possimus suscipit accusantium beatae dignissimos quo, alias odit cumque ea error fugit repellat earum fugiat illum est pariatur ipsam totam id dolor voluptates dolorum. Voluptatum!</p>
-                    <div className="m_zadacha_icon">
+                    {/* <div className="m_zadacha_icon">
                         <div className="m_zadach_ktug_icon" onClick={() => openModal1()}>
                             <AiOutlineEdit />
                         </div>
                         <div className="m_zadach_ktug_icon1" onClick={() => openModal2()}>
                             <MdDeleteOutline />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="m_zadach_block">
                     <img src={sertifikat} alt="" />
                     {/* <h4>Name</h4> */}
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos dolor dignissimos quidem voluptate aliquam culpa sapiente! Atque magni dolorem delectus natus, aut facilis et! Possimus suscipit accusantium beatae dignissimos quo, alias odit cumque ea error fugit repellat earum fugiat illum est pariatur ipsam totam id dolor voluptates dolorum. Voluptatum!</p>
-                    <div className="m_zadacha_icon">
+                    {/* <div className="m_zadacha_icon">
                         <div className="m_zadach_ktug_icon" onClick={() => openModal1()}>
                             <AiOutlineEdit />
                         </div>
                         <div className="m_zadach_ktug_icon1" onClick={() => openModal2()}>
                             <MdDeleteOutline />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
