@@ -154,7 +154,7 @@ export default function Login() {
                         </span>
                       </div>
                       <div className="parol-esdan-chiqdi">
-                        <a href="">Забыл пароль ?</a>
+                        <a href="/Email">Забыл пароль ?</a>
                       </div>
                       <div className="login_button_div">
                         <button type="button" onClick={() => userAvto()} >{state1 === "en" ? ("Login") : ("Авторизоваться")}</button>
