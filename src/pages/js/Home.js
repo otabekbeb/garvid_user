@@ -15,6 +15,7 @@ export default function Home() {
     const [state, setState] = React.useState(1)
     const [state1, setState1] = React.useState();
     const [univercard, setUnivercard] = useState([])
+   
     useEffect(() => {
         setState1(
             localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
