@@ -13,7 +13,13 @@
 .yutub_text {
   margin-top: -15%;
 }
-
+.sertifikat_image{
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 .follow_give {
   display: flex;
   justify-content: space-around;

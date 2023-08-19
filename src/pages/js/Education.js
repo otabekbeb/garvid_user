@@ -17,6 +17,7 @@ export default function Edication() {
   const [edication, setEdication] = useState([])
   const [edicationId, setEdicationId] = useState()
   const [page, setPage] = useState(0)
+  const [kursdata, setKursdata] = useState([]);
 
   const username = document.querySelectorAll("#Educationusername")
   const start_date = document.querySelectorAll("#Educationstart_date")
@@ -118,7 +119,18 @@ export default function Edication() {
   function Page() {
     setPage(1)
   }
+  const searchInput = (event) => {
+    const searchRegex = new RegExp(`^${event.target.value}`, "i");
+    axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+      const searchdata = res.data.filter((item) => {
+        return (
+          searchRegex.test(item.name)
+        );
+      })
+      setKursdata(searchdata)
+    })
 
+  }
   
 
   return (
@@ -133,7 +145,8 @@ export default function Edication() {
           <div className="search_big_div">
             <button className="user_post_button" onClick={() => postEducationModal()}>Добавить</button>
             <BsSearch className="search" />
-            <input placeholder="Введите здесь..." type="text" />
+            <input onChange={searchInput} placeholder="Введите здесь..." type="text" />
+
           </div>
           <div className="edication_card">
             {edication.map(item => {
@@ -146,11 +159,11 @@ export default function Edication() {
                     <p>Дата окончания: {(item.end_date).slice(0, 10)}</p>
                   </div>
                   <span>{item.description}</span>
-                  <div className="edication_card_button">
+                  {/* <div className="edication_card_button">
                     <button onClick={() => Page()}><MdPlayLesson /></button>
                     <button onClick={() => putEducationModal(item.id)} ><BiEdit /></button>
                     <button onClick={() => deleteEducationModal(item.id)}><MdDeleteOutline /></button>
-                  </div>
+                  </div> */}
                 </div>
               )
             })}

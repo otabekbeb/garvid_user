@@ -25,9 +25,9 @@ export default function Azo() {
     const [users,setUsers] = useState([])
     useEffect(() => {
         axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-            setUsers(res.data)
+           setUsers(res.data)
           })
-    }, []);
+    }, []); 
 
     return (
         <div>

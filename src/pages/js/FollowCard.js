@@ -6,6 +6,7 @@ import img_for_null from '../img/download.png'
 
 export default function FollowCard() {
   const [follow, setFollow] = useState([])
+  const [follow1, setFollow1] = useState([])
   const [following, setFollowing] = useState(localStorage.getItem("OneuserId"))
   const [bosildi, setbosildi] = useState([])
   const [bosildi1, setbosildi1] = useState()
@@ -17,7 +18,7 @@ export default function FollowCard() {
     formdata.append("minuser",following)
 
     axios.post(`${url}/api/follow/`, formdata, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-      alert("bosildi")
+      
       axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         setbosildi(res.data)
         res.data.map(item => {
@@ -41,6 +42,7 @@ function folowcolor1(key,id) {
   useEffect(() => {
     axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setFollow(res.data)
+      setFollow1(res.data)
     })
     axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setbosildi(res.data)
@@ -49,13 +51,21 @@ function folowcolor1(key,id) {
       })
     })
   }, [])
+  function searchInput(e){
+  const Search=follow.filter(item=>item.username.includes((e.target.value).toLowerCase()))
+  if (e.target.value) {
+    setFollow(Search)
+  }else{
+    setFollow(follow1)
+  }
+  }
 
   return (
     <div>
       <div className="inpser">
         <div className="inpf">
           {/* <input placeholder="Search..." class="input" name="text" type="text" /> */}
-          <input type="text " placeholder='Search...' className='input' />
+          <input onChange={searchInput} type="text " placeholder='Search...' className='input  </div>' />
         </div>
       </div>
       <div className="followcards">
@@ -72,7 +82,7 @@ function folowcolor1(key,id) {
                   
                      
                   {(bosildi.filter(folow=>(item.id == folow.topuser && following == folow.minuser)).length>0)?(
-                    <button style={{background:"gray"}} onClick={() => folowcolor1()} className='followButton5' >Subscribed</button>
+                    <button style={{background:"gray"}} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
                   ):(
                     <button onClick={() => folowcolor(key, item.id)} className='followButton5' >Subscribe</button>
                   )}   

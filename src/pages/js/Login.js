@@ -14,6 +14,7 @@ import { AiFillTwitterCircle } from 'react-icons/ai'
 import { FaFacebook } from 'react-icons/fa'
 import { AiOutlineEye } from 'react-icons/ai'
 import Swal from "sweetalert2";
+import Change_password from "./Email"
 
 
 export default function Login() {
@@ -130,34 +131,19 @@ export default function Login() {
               <button onClick={() => setPage(1)} style={page === 1 ? { background: '#9cf' } : { background: 'white', color: 'black', border: '2px solid #9cf' }}>{state1 === "en" ? ("Login") : ("Авторизоваться")}</button>
               <button onClick={() => setPage(2)} style={page === 2 ? { background: '#9cf' } : { background: 'white', color: 'black', border: '2px solid #9cf' }}>{state1 === "en" ? ("Registration") : ("Регистрация")}</button>
             </div>
-            {page === 1 ? (
-              <div className="login_relative">
+            {page == 5 ? (
+              <div className="login_relative" >
                 <img className="LoginImg" src={LoginImg} alt="" />
-                <div className="login_small_div">
+                <div style={{height:"400px"}} className="login_small_div">
                   <form action="">
                     <div className="login_small_div_input">
-                      <h1>{state1 === "en" ? ("Login") : ("Авторизоваться")}</h1>
+                      <h1 style={{fontSize:'30px'}}>{state1 === "en" ? ("Password Recovery") : ("электронная почта")}</h1>
                       <div className="royhat_small_input">
                         <FiMail className="login_icon" />
-                        <input placeholder={state1 === "en" ? ("Email") : ("Электронная почта")} id="email" type="text" required />
-                      </div>
-                      <div className="royhat_small_input">
-                        <BiLockAlt className="login_icon" />
-                        <input type={changePassword ? "password" : "text"}
-                          name="password" placeholder={state1 === "en" ? ("Password") : ("Пароль")} id="parol" required />
-                        <span className="icon"
-                          onClick={() => {
-                            setChangePassword(changeIcon);
-                          }}
-                        >
-                          {changeIcon ? <AiOutlineEye style={{fontSize:"25px",position:"absolute",top:"30px",right:"0"}}  /> : <i class='bx bx-low-vision'style={{fontSize:"25px",position:"absolute",top:"30px",right:"0"}}  ></i>}
-                        </span>
-                      </div>
-                      <div className="parol-esdan-chiqdi">
-                        <a href="/Email">Забыл пароль ?</a>
+                        <input placeholder={state1 === "en" ? ("Password Recovery ") : ("Электронная почта")} id="email" type="text" required />
                       </div>
                       <div className="login_button_div">
-                        <button type="button" onClick={() => userAvto()} >{state1 === "en" ? ("Login") : ("Авторизоваться")}</button>
+                        <button type="button" >{state1 === "en" ? ("Reset Password") : ("Авторизоваться")}</button>
                       </div>
                       <div className="google_div">
                         <FcGoogle className="google_icon" />
@@ -169,39 +155,34 @@ export default function Login() {
                   </form>
                 </div>
                 <img className="loginimg" src={loginimg} alt="" />
-              </div>) :
-              (
+              </div>) : (<>{page === 1 ? (
                 <div className="login_relative">
                   <img className="LoginImg" src={LoginImg} alt="" />
                   <div className="login_small_div">
-                    <form>
+                    <form action="">
                       <div className="login_small_div_input">
-                        <h1>{state1 === "en" ? ("Registration") : ("Регистрация")}</h1>
-                        <div className="login_small_input">
-                          < FiMail className="login_icon" />
-                          <input className="name" placeholder={state1 === "en" ? ("Email") : ("Email")} type="text" required />
-                          <div className="error">{state1 === "en" ? ("It's already in use") : ("Это уже используется")}</div>
+                        <h1>{state1 === "en" ? ("Login") : ("Авторизоваться")}</h1>
+                        <div className="royhat_small_input">
+                          <FiMail className="login_icon" />
+                          <input placeholder={state1 === "en" ? ("Email") : ("Электронная почта")} id="email" type="text" required />
                         </div>
-                        <div className="login_small_input">
+                        <div className="royhat_small_input">
                           <BiLockAlt className="login_icon" />
                           <input type={changePassword ? "password" : "text"}
-                            name="password" className="password" placeholder={state1 === "en" ? ("Password") : ("Пароль")} required />
+                            name="password" placeholder={state1 === "en" ? ("Password") : ("Пароль")} id="parol" required />
                           <span className="icon"
                             onClick={() => {
                               setChangePassword(changeIcon);
                             }}
                           >
-                                     {changeIcon ? <AiOutlineEye style={{fontSize:"25px",position:"absolute",top:"30px",right:"0"}}  /> : <i class='bx bx-low-vision'style={{fontSize:"25px",position:"absolute",top:"30px",right:"0"}}  ></i>}
+                            {changeIcon ? <AiOutlineEye style={{ fontSize: "25px", position: "absolute", top: "30px", right: "0" }} /> : <i class='bx bx-low-vision' style={{ fontSize: "25px", position: "absolute", top: "30px", right: "0" }}  ></i>}
                           </span>
-                          <div className="error">{state1 === "en" ? ("The password cannot be less than 8") : ("Пароль не может быть меньше 8")}</div>
                         </div>
-                        <div className="login_small_input">
-                          < AiOutlineUser className="login_icon" />
-                          <input onChange={setEmail} className="email" placeholder={state1 === "en" ? ("Name") : ("Имя")} type="text" required />
-                          <div className="error">{state1 === "en" ? ("It's already in use") : ("Это уже используется")}</div>
+                        <div className="parol-esdan-chiqdi">
+                          <a onClick={() => setPage(5)}>Забыл пароль ?</a>
                         </div>
                         <div className="login_button_div">
-                          <button type="button" onClick={() => userModal()}>{state1 === "en" ? ("Registration") : ("Регистрация")}</button>
+                          <button type="button" onClick={() => userAvto()} >{state1 === "en" ? ("Login") : ("Авторизоваться")}</button>
                         </div>
                         <div className="google_div">
                           <FcGoogle className="google_icon" />
@@ -213,8 +194,52 @@ export default function Login() {
                     </form>
                   </div>
                   <img className="loginimg" src={loginimg} alt="" />
-                </div>
-              )}
+                </div>) :
+                (
+                  <div className="login_relative">
+                    <img className="LoginImg" src={LoginImg} alt="" />
+                    <div className="login_small_div">
+                      <form>
+                        <div className="login_small_div_input">
+                          <h1>{state1 === "en" ? ("Registration") : ("Регистрация")}</h1>
+                          <div className="login_small_input">
+                            < FiMail className="login_icon" />
+                            <input className="name" placeholder={state1 === "en" ? ("Email") : ("Email")} type="text" required />
+                            <div className="error">{state1 === "en" ? ("It's already in use") : ("Это уже используется")}</div>
+                          </div>
+                          <div className="login_small_input">
+                            <BiLockAlt className="login_icon" />
+                            <input type={changePassword ? "password" : "text"}
+                              name="password" className="password" placeholder={state1 === "en" ? ("Password") : ("Пароль")} required />
+                            <span className="icon"
+                              onClick={() => {
+                                setChangePassword(changeIcon);
+                              }}
+                            >
+                              {changeIcon ? <AiOutlineEye style={{ fontSize: "25px", position: "absolute", top: "30px", right: "0" }} /> : <i class='bx bx-low-vision' style={{ fontSize: "25px", position: "absolute", top: "30px", right: "0" }}  ></i>}
+                            </span>
+                            <div className="error">{state1 === "en" ? ("The password cannot be less than 8") : ("Пароль не может быть меньше 8")}</div>
+                          </div>
+                          <div className="login_small_input">
+                            < AiOutlineUser className="login_icon" />
+                            <input onChange={setEmail} className="email" placeholder={state1 === "en" ? ("Name") : ("Имя")} type="text" required />
+                            <div className="error">{state1 === "en" ? ("It's already in use") : ("Это уже используется")}</div>
+                          </div>
+                          <div className="login_button_div">
+                            <button type="button" onClick={() => userModal()}>{state1 === "en" ? ("Registration") : ("Регистрация")}</button>
+                          </div>
+                          <div className="google_div">
+                            <FcGoogle className="google_icon" />
+                            <AiFillTwitterCircle className="twiter_icon" />
+                            <FaFacebook className="facebooc_icon" />
+
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <img className="loginimg" src={loginimg} alt="" />
+                  </div>
+                )}</>)}
           </div>
         )}
 

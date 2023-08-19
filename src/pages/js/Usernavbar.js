@@ -92,14 +92,14 @@ export default function Navbar() {
     new window.google.translate.TranslateElement(
       {
         pageLanguage: "en",
-        autoDisplay: false
+        includedLanguages: 'en,zh-TWit,ja,tr,kk,ru,fr,de', // include this for selected languages
+        
       },
       "google_translate_element"
     );
   };
 
-
-  useEffect(() => {
+    useEffect(() => {
     var addScript = document.createElement("script");
     addScript.setAttribute(
       "src",
@@ -107,12 +107,6 @@ export default function Navbar() {
     );
     document.body.appendChild(addScript);
     window.googleTranslateElementInit = googleTranslateElementInit;
-    setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
-    );
-
-
-
   }, []);
 
   return (
