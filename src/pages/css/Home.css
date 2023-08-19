@@ -22,6 +22,78 @@
     letter-spacing: 0px;
     width: 650px;
 }
+.iniversty_cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* width: 90%; */
+    /* max-width: 1600px; */
+    grid-template-columns: auto auto auto auto;
+    background-color: white;
+    margin-top: 80px;
+    gap: 40px;
+}
+.universty{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+.iniversty_card {
+    width: 340px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+@media(max-width:600px){
+    .iniversty_img{
+        height: 170px !important;
+    }
+}
+@media(max-width:550px){
+    .iniversty_card {
+        width: 300px !important;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+}
+@media(max-width:750px){
+    .iniversty_card {
+        width: 48%;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .iniversty_img {
+        width: 100%;
+        height: 190px !important;
+    }
+    .iniversty_cards{
+        gap: 20px;
+    }
+}
+.iniversty_card p{
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.iniversty_card h2{
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 24px;
+}
+.iniversty_img{
+    width: 100%;
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.iniversty_img img{
+    height: 100%;
+}
 .buttons button{
     font-family: 'Roboto', sans-serif !important;
     font-weight: 700 !important;
@@ -786,4 +858,7 @@ background: #f7f7f7;
     .girl {
         margin-top: 320px;
       }
+}
+.soz1{
+    display: none;
 }

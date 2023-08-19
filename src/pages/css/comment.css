@@ -28,10 +28,10 @@ gap: 20px;
 
 .for_scroll{
     width: 1px;
-    height: 350px;
+    min-height: 350px;
+    height: auto;
     width: 100%;
-    overflow: hidden;
-    overflow-y: scroll;
+
 }
 .m_comment_kotta ::-webkit-scrollbar {
     width: 1px;
