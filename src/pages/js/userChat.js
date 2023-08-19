@@ -545,9 +545,9 @@ export default function MentorChat() {
 
   function hovers1(key) {
     if (theme == "moon") {
-      document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style = "background:none"
+      document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style = "background:none;border-bottom:1px solid #e2e2e2"
     } else {
-      document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style = "background:none"
+      document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style = "background:none;border-bottom:1px solid #00000014"
     }
   }
   function onclicks(key, id) {
