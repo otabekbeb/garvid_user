@@ -169,7 +169,7 @@ export default function Pdp() {
                   }
                   className="fromLeft"
                 >
-                 My subscribers
+                  My subscribers
                 </h1>
                 {toggle === 9 ? (
                   <div className="fil_text_blok_kurs_lenght">24 pieces</div>
@@ -218,7 +218,7 @@ export default function Pdp() {
                 My Subscriptions
               </h1>
               <h1 onClick={() => updatetoggle(9)} className="fromMenu">
-My subscribers
+                My subscribers
               </h1>
               <h1 onClick={() => updatetoggle(6)} className="fromMenu">
                 Correspondence
@@ -226,7 +226,7 @@ My subscribers
             </div>
           </div>
         ) : (
-          <div className="gray_blok"> 
+          <div className="gray_blok">
             <div className="fil_text_blok">
               <div className="fil_text_blok_soz">
                 <h1
@@ -353,7 +353,7 @@ My subscribers
           <Azo />
         </div>
         <div className={toggle === 9 ? "show-content" : "content"}>
-          <Mysubscribers  />
+          <Mysubscribers />
         </div>
         <div className={toggle === 6 ? "show-content" : "content"}>
           <UserChat />

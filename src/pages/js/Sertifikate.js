@@ -28,8 +28,9 @@ export default function Sertifikate() {
                    {sertifikat.map(item=>{
                     return (
                         <div className="sertifikat">
-                       {item.image === null?(<img style={{height:'200px'}} src={img_for_null} alt="" />) :( <img src={item.image} alt="" />)}
-                       
+                            <div className="sertifikat_image">
+                       {item.image === null?(<img src={img_for_null} alt="" />) :( <img src={item.image} alt="" />)}
+                       </div>
                         <div className="button_text_df_blok_pitani_pro_Max">
                             <div className="text_pro_max_gap_sos_lift_gr">
                                 <h4>{item.title}</h4>

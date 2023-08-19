@@ -17,7 +17,7 @@ export default function FollowCard() {
     formdata.append("minuser",following)
 
     axios.post(`${url}/api/follow/`, formdata, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-      alert("bosildi")
+      
       axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         setbosildi(res.data)
         res.data.map(item => {
@@ -72,7 +72,7 @@ function folowcolor1(key,id) {
                   
                      
                   {(bosildi.filter(folow=>(item.id == folow.topuser && following == folow.minuser)).length>0)?(
-                    <button style={{background:"gray"}} onClick={() => folowcolor1()} className='followButton5' >Subscribed</button>
+                    <button style={{background:"gray"}} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
                   ):(
                     <button onClick={() => folowcolor(key, item.id)} className='followButton5' >Subscribe</button>
                   )}   
