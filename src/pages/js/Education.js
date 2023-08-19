@@ -159,11 +159,11 @@ export default function Edication() {
                     <p>Дата окончания: {(item.end_date).slice(0, 10)}</p>
                   </div>
                   <span>{item.description}</span>
-                  <div className="edication_card_button">
+                  {/* <div className="edication_card_button">
                     <button onClick={() => Page()}><MdPlayLesson /></button>
                     <button onClick={() => putEducationModal(item.id)} ><BiEdit /></button>
                     <button onClick={() => deleteEducationModal(item.id)}><MdDeleteOutline /></button>
-                  </div>
+                  </div> */}
                 </div>
               )
             })}
