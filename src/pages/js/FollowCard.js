@@ -55,7 +55,7 @@ function folowcolor1(key,id) {
       <div className="inpser">
         <div className="inpf">
           {/* <input placeholder="Search..." class="input" name="text" type="text" /> */}
-          <input type="text " placeholder='Search...' className='input' />
+          <input type="text " placeholder='Search...' className='input  </div>' />
         </div>
       </div>
       <div className="followcards">
