@@ -1063,7 +1063,7 @@ list-style: none;
 .chec_icon {
     width: 50px;
     font-size: 20px;
-    margin-top: -5px;
+    margin-top: -5px; 
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -1085,13 +1085,7 @@ list-style: none;
     color:#44bef1;
 
 }
-.bir_chec:hover{
-    cursor: pointer;
-    color: #fff;
-    background-color: #44bef1;
-}
-.ikki_chec:hover{
-    cursor: pointer;
-    color: #fff;
-    background-color: #44bef1;
+
+.admin_title h4 {
+    font-size: 20px;
 }

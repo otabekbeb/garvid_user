@@ -10,25 +10,27 @@ import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import axios from "axios";
 import Swal from "sweetalert2";
-import {BsCheck2} from 'react-icons/bs'
-import {BsCheckAll} from 'react-icons/bs'
+import { BsCheck2 } from 'react-icons/bs'
+import { BsCheckAll } from 'react-icons/bs'
 
 export default function Contact() {
   const [state, setstate] = React.useState();
+  
+
   const dataPost = () => {
     var formdata = {
       fullname: document.querySelectorAll('.contact_inp')[0].value,
       email: document.querySelectorAll('.contact_inp')[1].value,
       purchase: document.querySelectorAll('.contact_inp')[2].value,
-      message: document.querySelector('.contact_textarea').value
+      message: document.querySelectorAll('.contact_textarea').value
     }
-    axios.post("https://markazback2.onrender.com/api/call_me", formdata, {
+    axios.post('https://markazback2.onrender.com/api/call_me', formdata, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
     }).then(res => {
       state === "ru" ? (Swal.fire("Информация отправлена, дождитесь звонка оператора")) : (Swal.fire("Information sent, wait for a call from the operator"))
       window.location.reload()
     }).catch(err => {
-      state === "ru" ? (Swal.fire("Проверить информацию,Не удалось отправить")) : (Swal.fire("Check information, Failed to send"))
+      state === "ru"?(Swal.fire("Проверить информацию,Не удалось отправить")) : (Swal.fire("Check information, Failed to send"))
     })
   }
   useEffect(() => {
