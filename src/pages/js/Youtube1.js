@@ -182,11 +182,16 @@ export default function Youtube1() {
   else if(localStorage.getItem("position")==4){
     window.location="/studentall"
   }
+
   }
 
 
   function MadolChange(id) {
-    localStorage.setItem("Idvideo",JSON.stringify(id)) 
+    localStorage.setItem("Idvideo",(id)) 
+    axios.get(`${url}/api/course_data_category/course/${id}`)
+    .then(res=>{
+      setMain(res.data)
+    })
   }
   return (
     <div className="youtube_bgc">
@@ -202,129 +207,132 @@ export default function Youtube1() {
         <div>
           <div>
             <Usernavbar />
-            <div className="youtube_bgc">
-              <div className="flex_youtube">
+           {category.id===localStorage.getItem("Idvideo").id?( <div className="youtube_bgc">
+            <div className="flex_youtube">
 
-              <div className="youtube_kotta_img">
-                  <div className="img_youtube_kotta">
-                    <iframe
-                      src={main.video}
-                      title="W3Schools Free Online Web Tutorials"
-                    ></iframe>
-                  </div>
-                  <div className="theme_df">
-                    <div className="flex_logig">
-                      <h1 className="raspberry_pi">{main.name}</h1>
-                      <div className="odtel_media_uchun">
-                        <h1>{main.name}</h1>
-                        {/* <div className="flex_star_p">
-                        <div className="flex_star2">
-                          <p>
-                            <AiFillStar />
-                          </p>
-                          <p>
-                            <AiFillStar />
-                          </p>
-                          <p>
-                            <AiFillStar />
-                          </p>
-                          <p>
-                            <AiFillStar />
-                          </p>
+<div className="youtube_kotta_img">
+    <div className="img_youtube_kotta">
+      <iframe
+        src={main.video}
+        title="W3Schools Free Online Web Tutorials"
+      ></iframe>
+    </div>
+    <div className="theme_df">
+      <div className="flex_logig">
+        <h1 className="raspberry_pi">{main.name}</h1>
+        <div className="odtel_media_uchun">
+          <h1>{main.name}</h1>
+          {/* <div className="flex_star_p">
+          <div className="flex_star2">
+            <p>
+              <AiFillStar />
+            </p>
+            <p>
+              <AiFillStar />
+            </p>
+            <p>
+              <AiFillStar />
+            </p>
+            <p>
+              <AiFillStar />
+            </p>
+          </div>
+          <div className="flex_star12">
+            <p>
+              <AiFillStar />
+            </p>
+          </div>
+          <p className="p_4_1_5245">
+            4.1 <span>(524)</span>
+          </p>
+        </div> */}
+        </div>
+        {/* <div className="flex_star">
+        <p>
+          <AiFillStar />
+        </p>
+        <p>
+          <AiFillStar />
+        </p>
+        <p>
+          <AiFillStar />
+        </p>
+        <p>
+          <AiFillStar />
+        </p>
+      </div>
+      <div className="flex_star1">
+        <p>
+          <AiFillStar />
+        </p>
+      </div>
+
+      <p className="p_4_1_524">
+        4.1 <span>(524)</span>
+      </p> */}
+      </div>
+    </div>
+    <p className="theme_content">{main.content}</p>
+  </div>
+  <div className={main==""?"db":"a_err_boganda"}>
+        <div className="a_err_bolsa_block">
+          <img src={err} alt="" />
+          <h3>
+            Что-то произошло сервером, мы уже испровляем это.
+          </h3>
+          <h3> Можете попробовать попойже</h3>
+          <button onClick={() => ModalCatchBolsa()}>
+            вернуться назад
+          </button>
+        </div>
+      </div>
+
+  <div className="youtube_kichkina">
+    {category.map((item, key) => {
+     return(
+      <>
+
+            <Accordion>
+              <Accordion.Item eventKey={0 + key}>
+                <Accordion.Header>{item.name}</Accordion.Header>
+                {item.theme.map((item2) => {
+                  return (
+                    <Accordion.Body
+                      style={{ cursor: "pointer" }}
+                      onClick={()=>{MadolChange(item2.id)}}
+                    >
+                      <div
+                        style={{ cursor: "pointer" }}
+                        className="accordion_flex"
+                      >
+                        <div className="accordion_img">
+                          {item2.image === null ? (
+                            <img src={novideo} alt="" />
+                          ) : (
+                            <img src={item2.image} alt="" />
+                          )}
                         </div>
-                        <div className="flex_star12">
-                          <p>
-                            <AiFillStar />
-                          </p>
+                        <div className="accordion_text">
+                          <h6>{item2.name}</h6>
+                          <p>{item2.content}</p>
                         </div>
-                        <p className="p_4_1_5245">
-                          4.1 <span>(524)</span>
-                        </p>
-                      </div> */}
                       </div>
-                      {/* <div className="flex_star">
-                      <p>
-                        <AiFillStar />
-                      </p>
-                      <p>
-                        <AiFillStar />
-                      </p>
-                      <p>
-                        <AiFillStar />
-                      </p>
-                      <p>
-                        <AiFillStar />
-                      </p>
-                    </div>
-                    <div className="flex_star1">
-                      <p>
-                        <AiFillStar />
-                      </p>
-                    </div>
+                    </Accordion.Body>
+                  );
+                })}
+              </Accordion.Item>
+            </Accordion>
 
-                    <p className="p_4_1_524">
-                      4.1 <span>(524)</span>
-                    </p> */}
-                    </div>
-                  </div>
-                  <p className="theme_content">{main.content}</p>
-                </div>
-                <div className={main==""?"db":"a_err_boganda"}>
-                      <div className="a_err_bolsa_block">
-                        <img src={err} alt="" />
-                        <h3>
-                          Что-то произошло сервером, мы уже испровляем это.
-                        </h3>
-                        <h3> Можете попробовать попойже</h3>
-                        <button onClick={() => ModalCatchBolsa()}>
-                          вернуться назад
-                        </button>
-                      </div>
-                    </div>
+  
 
-                <div className="youtube_kichkina">
-                  {category.map((item, key) => {
-                   return(
-                    <>
-
-                          <Accordion>
-                            <Accordion.Item eventKey={0 + key}>
-                              <Accordion.Header>{item.name}</Accordion.Header>
-                              {item.theme.map((item2) => {
-                                return (
-                                  <Accordion.Body
-                                    style={{ cursor: "pointer" }}
-                                    onClick={()=>{MadolChange(item2.id)}}
-                                  >
-                                    <div
-                                      style={{ cursor: "pointer" }}
-                                      className="accordion_flex"
-                                    >
-                                      <div className="accordion_img">
-                                        {item2.image === null ? (
-                                          <img src={novideo} alt="" />
-                                        ) : (
-                                          <img src={item2.image} alt="" />
-                                        )}
-                                      </div>
-                                      <div className="accordion_text">
-                                        <h6>{item2.name}</h6>
-                                        <p>{item2.content}</p>
-                                      </div>
-                                    </div>
-                                  </Accordion.Body>
-                                );
-                              })}
-                            </Accordion.Item>
-                          </Accordion>
-
-                
-
-                  </>
-                   )
-                  })}
-                </div>
-              </div>
+    </>
+     )
+    })}
+  </div>
+</div>
+                 
+                      
+            
               <div className="navbar_video">
                 <div className="navbar_none">
                   <div className="navbar_otish">
@@ -431,7 +439,7 @@ export default function Youtube1() {
               <div className={id === 4 ? "show-content" : "content"}>
                 <Scachat />
               </div>
-            </div>
+            </div>):("")}
           </div>
         </div>
       ) : (
