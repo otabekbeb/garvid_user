@@ -1,4 +1,4 @@
-
+/* 
     .user_post_button {
         padding-left: 15px;
         padding-right: 15px;
@@ -13,7 +13,6 @@
     }
 
     .user_post_button_ban {
-        width: 140px;
         padding-top: 5px;
         padding-bottom: 5px;
         margin-bottom: 10px;
@@ -30,7 +29,6 @@
     }
 
     .user_post_button_bandan_olish{
-        width: 140px;
         padding-top: 5px;
         padding-bottom: 5px;
         margin-bottom: 10px;
@@ -97,6 +95,7 @@
         line-height: 30px;
     }
     .postUserModal_div label{
+        width: 100%;
         display: block;
     }
 
@@ -315,10 +314,6 @@
         box-shadow: 0px 0px 5px 1px #44bef1;
     }
 
-    /* .search_big_div input:focus {
-        transition: 0.2s;
-        box-shadow: 0px 0px 5px 0px #085aff;
-    } */
 
     .search_big_div .search {
         position: absolute;
@@ -644,4 +639,4 @@ justify-content: flex-end;
         .edication_card_{
             width: 320px;
         }
-    }
+    } */

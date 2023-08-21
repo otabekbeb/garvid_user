@@ -306,10 +306,31 @@ export default function Mentor() {
     });
 
   }, [])
+  useEffect(() => {
+    axios
+      .get(`${url}/auth/oneuser/`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        localStorage.setItem("page_user", JSON.stringify(res.data));
+        res.data.map(item => {
+          localStorage.setItem("OneuserId", item.id)
+        })
+        console.log(res.data);
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    setState1(
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
+    );
 
-  function dashed() {
 
-  }
+
+  }, []);
+
+
   function Filter() {
     var a = document.querySelector(".filter_button").style.display
     if (a === "none") {
