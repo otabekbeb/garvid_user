@@ -11,30 +11,30 @@ import axios from 'axios'
 import url from './Host'
 import img_for_null from '../img/download.png'
 import Swal from 'sweetalert2';
-import {BsCheck2} from 'react-icons/bs'
-import{BsCheckAll} from 'react-icons/bs'
+import { BsCheck2 } from 'react-icons/bs'
+import { BsCheckAll } from 'react-icons/bs'
 export default function Home() {
 
     const [state, setState] = React.useState(1)
     const [state1, setState1] = React.useState();
     const [univercard, setUnivercard] = useState([])
-   
-    const dataPost=()=>{
-        var formdata={
-          fullname:document.querySelectorAll('#contact_inp')[0].value,
-          email:document.querySelectorAll('#contact_inp')[1].value,
-          purchase:document.querySelectorAll('#contact_inp')[2].value,
-          message:document.querySelector('.contact_textarea').value
+    const [chec,setChec] = useState([])
+    const dataPost = () => {
+        var formdata = {
+            fullname: document.querySelectorAll('#contact_inp')[0].value,
+            email: document.querySelectorAll('#contact_inp')[1].value,
+            purchase: document.querySelectorAll('#contact_inp')[2].value,
+            message: document.querySelector('.contact_textarea').value
         }
         axios.post("https://markazback2.onrender.com/api/call_me", formdata, {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
-        }).then(res=>{
-      state==="ru"?(Swal.fire("Информация отправлена, дождитесь звонка оператора")):(Swal.fire("Information sent, wait for a call from the operator"))
-      window.location.reload()
-        }).catch(err=>{
-          state==="ru"?(Swal.fire("Проверить информацию,Не удалось отправить")):(Swal.fire("Check information, Failed to send"))
+            headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        }).then(res => {
+            state === "ru" ? (Swal.fire("Информация отправлена, дождитесь звонка оператора")) : (Swal.fire("Information sent, wait for a call from the operator"))
+            window.location.reload()
+        }).catch(err => {
+            state === "ru" ? (Swal.fire("Проверить информацию,Не удалось отправить")) : (Swal.fire("Check information, Failed to send"))
         })
-      }
+    }
     useEffect(() => {
         setState1(
             localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
@@ -42,9 +42,14 @@ export default function Home() {
     }, []);
 
     useEffect(() => {
-    axios.get(`${url}/api/university`,{headers:{Authorization:"Bearer"+localStorage.getItem("token")}}).then(res=>{
-        setUnivercard(res.data)
+        axios.get(`${url}/api/university`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
+            setUnivercard(res.data)
+        })
     })
+    useEffect(() => {
+        axios.get(`${url}/api/call_me`,{headers:{Authorization:"Bearer"+localStorage.getItem("token")}}).then(res=>{
+            setChec(res.data)
+        })
     })
     return (
         <div>
@@ -76,22 +81,22 @@ export default function Home() {
                             </Carousel.Caption>
                         </Carousel.Item>
                     </Carousel>
-                    
+
 
                     <div className="universty">
                         <div className="iniversty_cards">
-                            {univercard.map(item=>{
-                                return(
-                                <div className="iniversty_card">
-                                <div className="iniversty_img">
-                                {item.image === null?(<img  src={img_for_null} alt="" />) :( <img src={item.image} alt="" />)}
-                                </div>
-                                <p>{item.title}</p>
-                                <h2>{item.deskription}</h2>
-                                </div>
-                            )
+                            {univercard.map(item => {
+                                return (
+                                    <div className="iniversty_card">
+                                        <div className="iniversty_img">
+                                            {item.image === null ? (<img src={img_for_null} alt="" />) : (<img src={item.image} alt="" />)}
+                                        </div>
+                                        <p>{item.title}</p>
+                                        <h2>{item.deskription}</h2>
+                                    </div>
+                                )
                             })}
-                            
+
                         </div>
                     </div>
                     <div className="big1">
@@ -218,14 +223,15 @@ export default function Home() {
                                         <textarea name="" className='contact_textarea' id="text1" cols="30" rows="10"></textarea>
                                     </label>
                                     <div className="admin_button">
-                                    <button onClick={()=>{dataPost()}}>Subscribe</button>
-                                    <div className="admin_title">
-                                        <h4>Admin:</h4>
-                                      <div className="chec_icon">
-                                      <BsCheck2 className='bir_chec'/>
-                                      <BsCheckAll  className='ikki_chec'/>
-                                      </div>
-                                    </div>
+                                        <button onClick={() => { dataPost() }}>Subscribe</button>
+                                        <div className="admin_title">
+                                            <h4>Admin:</h4>
+                                            <div className="chec_icon">
+                                     {chec.read===false?(<BsCheck2 className='bir_chec' />):( <BsCheckAll className='ikki_chec' />)}
+                                                
+                                               
+                                            </div>
+                                        </div>
                                     </div>
                                 </form>
 
