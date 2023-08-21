@@ -425,7 +425,7 @@ return(
             <div className="mni-dasturlash-bloc"><p>{item.name}</p></div>
             <div className="mni-kurs-narxi">
                 <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
-                <p>{item.price} <span>RUB</span></p></div>
+                <p>{item.price} <span>$</span></p></div>
                 <div className="mni-kurs-block2"></div>
                 
                 <div className="mni-kurs-block1"><h5>Kurs hajmi</h5>
@@ -440,7 +440,7 @@ return(
 
 <div className="mni-kurs-narxi2">
                 <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
-                <p>150.000  <span>RUB</span></p></div>
+                <p>150.000  <span>$</span></p></div>
                 <div className="mni-kurs-block2"></div>
                 
                 <div className="mni-kurs-block1"><h5>Размер поля</h5>
@@ -461,7 +461,7 @@ return(
     </div>
 </div>
 <div className="mni-buton-iikki-yo" onClick={()=>coursid()}>
-    <button id="gbfdgfdgdfgdf">Покупка</button><div className="line-mni-but"></div><button >{item.price} RUB</button>
+    <button id="gbfdgfdgdfgdf">Покупка</button><div className="line-mni-but"></div><button >{item.price} $</button>
 </div>
       
             </div>
@@ -601,7 +601,7 @@ dolor sit amet. . . .</p>
                   <div className="mni-dasturlash-bloc"><p>{item.name}</p></div>
                   <div className="mni-kurs-narxi">
                       <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
-                      <p>{item.price} <span>RUB</span></p></div>
+                      <p>{item.price} <span>$</span></p></div>
                       <div className="mni-kurs-block2"></div>
                       
                       <div className="mni-kurs-block1"><h5>Размер поля</h5>
@@ -619,7 +619,7 @@ dolor sit amet. . . .</p>
       </div>
       <div className="mni-kurs-narxi2">
                       <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
-                      <p>150.000  <span>RUB</span></p></div>
+                      <p>150.000  <span>$</span></p></div>
                       <div className="mni-kurs-block2"></div>
                       
                       <div className="mni-kurs-block1"><h5>Размер поля</h5>
@@ -640,7 +640,7 @@ dolor sit amet. . . .</p>
           </div>
       </div> 
       <div className="mni-buton-iikki-yo" onClick={()=>coursid()}>
-          <button id="gbfdgfdgdfgdf">Покупка</button><div className="line-mni-but"></div><button >{item.price} RUB</button>
+          <button id="gbfdgfdgdfgdf">Покупка</button><div className="line-mni-but"></div><button >{item.price} $</button>
       </div>
             
                   </div>

@@ -62,7 +62,7 @@ export default function Searchfilter() {
 
 
 
-    axios.get(`${url}/api/mycourse/${localStorage.getItem("allUsersId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+    axios.get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
       setKursdata(res.data)
       console.log(res.data);
     }).catch(err => {
@@ -75,7 +75,7 @@ export default function Searchfilter() {
 
   function filter(id) {
     axios
-      .get(`${url}/api/mycourse/${localStorage.getItem("allUsersId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })
+      .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })
       .then((res) => {
         const search = res.data.filter(item => item.course_type === id)
         setKursdata(search)
@@ -83,7 +83,7 @@ export default function Searchfilter() {
   }
   const searchInput = (event) => {
     const searchRegex = new RegExp(`^${event.target.value}`, "i");
-    axios.get(`${url}/api/mycourse/${localStorage.getItem("allUsersId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+    axios.get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
       const searchdata = res.data.filter((item) => {
         return (
           searchRegex.test(item.name)
