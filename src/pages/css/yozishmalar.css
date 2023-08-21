@@ -221,6 +221,8 @@
 .yozishma_bolim_text_nik_text_ism_p {
     width: 100%;
     display: flex;
+    align-items: center;
+    font-weight: 700;
 }
 /* .openModelAddChat{
     height: 100vh !important;
@@ -299,7 +301,8 @@
 
 .userDiv {
     width: 100%;
-    align-items: self-end;
+    align-items: center;
+    font-weight: 700;
     margin-top: 10px;
     padding-left: 15px;
     border-bottom: 1px solid #e2e2e2;
