@@ -60,7 +60,7 @@ import URL from './Test_url.js'
 import { MdDeleteOutline, MdPlayLesson } from "react-icons/md"
 import {GrClose} from "react-icons/gr"
 import deleteImg from "../img/Inbox cleanup-rafiki.png"
-import { FiSearch } from "react-icons/fi"
+import { BsSearch } from "react-icons/bs"
 import { FaUsers } from "react-icons/fa"
 import { BiEdit } from "react-icons/bi"
 // import {
@@ -492,22 +492,22 @@ export default function Test() {
           <div className="exit_button"><button onClick={() => setPage(0)}>Назад</button></div>
           {/* <div className="search_big_div"><button  className="user_post_button" onClick={()=>postAttened_testModal()}>Добавить</button><AiOutlineSearch className="search"/><input placeholder="Введите здесь..." type="text" /></div> */}
           {/* <Table style={{marginBottom:'100px'}} dataSource={attendance_lesson} columns={columns} /> */}
-          <div className="search_big_div"><button onClick={() => postQuestionsModal()} className="user_post_button">Добавить</button><FiSearch className="search" /><input placeholder="Введите здесь..." type="text" /></div>
+          <div className="search_big_div"><button onClick={() => postQuestionsModal()} className="user_post_button">Добавить</button><BsSearch className="search" /><input placeholder="Введите здесь..." type="text" /></div>
           {/* <Table dataSource={quations} columns={quation} /> */}
           <div className="questions_page_big">
             {quations.map((item, key) => {
               return (
                 <div className="questions_page_big_div">
-                  <h1 className='questions_h1_length'><h1>{key + 1}.Вопросы</h1><div><button onClick={() => putQuestionsModal(item.id)} className='user_post_button'>Редактировать</button><button style={{ marginLeft: '10px' }} onClick={() => deleteQuestionsOpen(item.id)} className='user_post_button'>Удалить</button></div></h1>
+                  <h3 className='questions_h1_length'><h3>{key + 1}.Вопросы</h3><div><button onClick={() => putQuestionsModal(item.id)} className='user_post_button'>Редактировать</button><button style={{ marginLeft: '10px' }} onClick={() => deleteQuestionsOpen(item.id)} className='user_post_button'>Удалить</button></div></h3>
                   <div className='questions_page_small_div'>
-                    <h1>{item.question}</h1>
+                    <h3>{item.question}</h3>
                     <div className="questions_page_small_div_img"><img src={"https://markazback2.onrender.com/" + item.image} alt="" /></div>
-                    <p><h1 className='questions_page_small_div_p'>A</h1>  : {item.variant1}</p>
-                    <p><h1 className='questions_page_small_div_p'>B</h1>  : {item.variant2}</p>
-                    <p><h1 className='questions_page_small_div_p'>C</h1>  : {item.variant3}</p>
-                    <p><h1 className='questions_page_small_div_p'>D</h1>  : {item.variant4}</p>
-                    <h1>Тестовый ответ</h1>
-                    <p>{item.answer == 1 ? (<><h1 className='questions_page_small_div_p'>A</h1>  : {item.variant1}</>) : (item.answer == 2 ? (<><h1 className='questions_page_small_div_p'>B</h1>  : {item.variant2}</>) : (item.answer == 3 ? (<><h1 className='questions_page_small_div_p'>C</h1>  : {item.variant3}</>) : (item.answer == 4 ? (<><h1 className='questions_page_small_div_p'>D</h1>  : {item.variant4}</>) : (""))))}</p>
+                    <p><h3 className='questions_page_small_div_p'>A</h3>  : {item.variant1}</p>
+                    <p><h3 className='questions_page_small_div_p'>B</h3>  : {item.variant2}</p>
+                    <p><h3 className='questions_page_small_div_p'>C</h3>  : {item.variant3}</p>
+                    <p><h3 className='questions_page_small_div_p'>D</h3>  : {item.variant4}</p>
+                    <h3>Тестовый ответ</h3>
+                    <p>{item.answer == 1 ? (<><h3 className='questions_page_small_div_p'>A</h3>  : {item.variant1}</>) : (item.answer == 2 ? (<><h3 className='questions_page_small_div_p'>B</h3>  : {item.variant2}</>) : (item.answer == 3 ? (<><h3 className='questions_page_small_div_p'>C</h3>  : {item.variant3}</>) : (item.answer == 4 ? (<><h3 className='questions_page_small_div_p'>D</h3>  : {item.variant4}</>) : (""))))}</p>
                   </div>
                 </div>
               )
@@ -528,7 +528,7 @@ export default function Test() {
                           return (
                             <div className="teacher_page_big_card">
                               <div className="teacher_page_big_card_img">{user.image == null ? (<img src={Noimg} alt="" />) : (<img src={`${URL}/` + user.image} alt="No img" />)}</div>
-                              <h1>{user.username}</h1>
+                              <h3>{user.username}</h3>
                               <button onClick={() => MarkOpen(user.id)}>Оценка</button>
                             </div>
                           )
@@ -542,13 +542,13 @@ export default function Test() {
             </>
           ) : (
             <>
-              <div className="search_big_div"><button className="user_post_button" onClick={() => postTestModal()}>Добавить</button><FiSearch className="search" /><input placeholder="Введите здесь..." type="text" /></div>
+              <div className="search_big_div"><button className="user_post_button" onClick={() => postTestModal()}>Добавить</button><BsSearch className="search" /><input placeholder="Введите здесь..." type="text" /></div>
               <div className="edication_card">
                 {test.map(item => {
                   return (
                     <div className="edication_card_">
-                      <h1>Крайний срок:  {item.deadline}</h1>
-                      <h1 style={{ fontSize: '16px', opacity: '0.6' }}>День:  {(item.day).slice(0, 10)}</h1>
+                      <h3>Крайний срок:  {item.deadline}</h3>
+                      <h3 style={{ fontSize: '16px', opacity: '0.6' }}>День:  {(item.day).slice(0, 10)}</h3>
                       <div className="edication_card_date">
                         <p>Время начала: {item.start_time}</p>
                         <p>Время окончания: {item.end_time}</p>
@@ -585,7 +585,7 @@ export default function Test() {
         </div>
       </div>
       <div id="TestpostModal" className="Modaldiv">
-        <div style={{ width: '340px' }} className="postUserModal_div">
+        <div className="postUserModal_div">
           <div className="postUserModal_div_icon"><GrClose className="icon" onClick={() => postTestClose()} /></div>
           <div className="postUserModal_div_label" style={{ display: 'flex', flexWrap: 'wrap' }}>
             <label htmlFor="">
@@ -636,7 +636,7 @@ export default function Test() {
         </div>
       </div>
       <div id="TestputModal" className="Modaldiv">
-        <div style={{ width: '340px' }} className="postUserModal_div">
+        <div  className="postUserModal_div">
           <div className="postUserModal_div_icon"><GrClose className="icon" onClick={() => putTestClose()} /></div>
           <div className="postUserModal_div_label" style={{ display: 'flex', flexWrap: 'wrap' }}>
             <label htmlFor="">
@@ -698,7 +698,7 @@ export default function Test() {
         </div>
       </div>
       <div id="Attened_testpostModal" className="Modaldiv">
-        <div style={{ width: '340px' }} className="postUserModal_div">
+        <div className="postUserModal_div">
           <div className="postUserModal_div_icon"><GrClose className="icon" onClick={() => postAttened_testClose()} /></div>
           <div className="postUserModal_div_label" style={{ display: 'flex', flexWrap: 'wrap' }}>
             <label htmlFor="">
@@ -722,7 +722,7 @@ export default function Test() {
         </div>
       </div>
       <div id="Attened_testputModal" className="Modaldiv">
-        <div style={{ width: '340px' }} className="postUserModal_div">
+        <div  className="postUserModal_div">
           <div className="postUserModal_div_icon"><GrClose className="icon" onClick={() => putAttened_testClose()} /></div>
           <div className="postUserModal_div_label" style={{ display: 'flex', flexWrap: 'wrap' }}>
             <label htmlFor="">
@@ -788,6 +788,7 @@ export default function Test() {
             <label htmlFor="">
               <p>Изображение</p>
               <input id="questionsimage" type="file" />
+              
             </label>
             <label style={{ width: '100%' }} htmlFor="">
               <p>Отвечать</p>
@@ -832,7 +833,8 @@ export default function Test() {
             </label>
             <label htmlFor="">
               <p>Изображение</p>
-              <input id="questionsimage" type="file" />
+              <input id="questionsimage" type="file" className='questionsimage'/>
+              <div className='questionimg'>Выбрать изображение</div>
             </label>
             <label style={{ width: '100%' }} htmlFor="">
               <p>Отвечать</p>
@@ -857,8 +859,8 @@ export default function Test() {
                     return (
                       <div className="test_big_div">
                         <img src={testimg} alt="" />
-                        <h1>{user.username}</h1>
-                        <h1>Оценка : {item.mark}</h1>
+                        <h3>{user.username}</h3>
+                        <h3>Оценка : {item.mark}</h3>
                       </div>
                     )
                   }
