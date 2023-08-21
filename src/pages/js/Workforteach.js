@@ -7,7 +7,7 @@ import url from './Host'
 import { MdDeleteOutline } from "react-icons/md"
 import Groupimg from '../img/Group 2.png'
 import { GrFormClose } from 'react-icons/gr'
-
+import img_for_null from '../img/download.png'
 export default function Workforteach() {
     const [stsertifikat, setStsertifikat] = useState([])
     function openModal() {
@@ -43,7 +43,7 @@ export default function Workforteach() {
                 {stsertifikat.map(item=>{
                     return(
                           <div className="m_zadach_block">
-                   {}
+                   {item.image === null?(<img className='jony_foto' src={img_for_null} alt="" />):( <img src={item.image} alt="" />)}
                     <h4>{item.title}</h4>
                     <p>{item.description}</p>
                      <div className="m_zadacha_icon">

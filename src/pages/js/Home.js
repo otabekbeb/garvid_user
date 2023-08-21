@@ -11,6 +11,8 @@ import axios from 'axios'
 import url from './Host'
 import img_for_null from '../img/download.png'
 import Swal from 'sweetalert2';
+import {BsCheck2} from 'react-icons/bs'
+import{BsCheckAll} from 'react-icons/bs'
 export default function Home() {
 
     const [state, setState] = React.useState(1)
@@ -215,7 +217,16 @@ export default function Home() {
                                         <p>Message</p>
                                         <textarea name="" className='contact_textarea' id="text1" cols="30" rows="10"></textarea>
                                     </label>
+                                    <div className="admin_button">
                                     <button onClick={()=>{dataPost()}}>Subscribe</button>
+                                    <div className="admin_title">
+                                        <h4>Admin:</h4>
+                                      <div className="chec_icon">
+                                      <BsCheck2 className='bir_chec'/>
+                                      <BsCheckAll  className='ikki_chec'/>
+                                      </div>
+                                    </div>
+                                    </div>
                                 </form>
 
                             </div>
