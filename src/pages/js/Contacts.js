@@ -15,13 +15,15 @@ import Swal from "sweetalert2";
 export default function Contact() {
   const [state, setstate] = React.useState();
 const dataPost=()=>{
-  var postdata={
+  var formdata={
     fullname:document.querySelectorAll('.contact_inp')[0].value,
     email:document.querySelectorAll('.contact_inp')[1].value,
-    phone_number:document.querySelectorAll('.contact_inp')[2].value,
+    purchase:document.querySelectorAll('.contact_inp')[2].value,
     message:document.querySelector('.contact_textarea').value
   }
-  axios.post("http://127.0.0.1:8000/auth/user_connect_with/",postdata).then(res=>{
+  axios.post("https://markazback2.onrender.com/api/call_me", formdata, {
+    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+  }).then(res=>{
 state==="ru"?(Swal.fire("Информация отправлена, дождитесь звонка оператора")):(Swal.fire("Information sent, wait for a call from the operator"))
 window.location.reload()
   }).catch(err=>{
@@ -111,7 +113,7 @@ window.location.reload()
             <input
               type="text"
               className="contact_inp"
-              placeholder={state === "ru" ? "Телефон*" : "Telephone*"}
+              placeholder={state === "ru" ? "Телефон*" : "Purchase*"}
             />
           </div>
           <textarea
