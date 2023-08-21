@@ -183,6 +183,7 @@ export default function Searchfilter() {
                       <AiOutlineArrowRight onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} />
                     </button>
                   </div>
+                  
                 )
 
               })}
