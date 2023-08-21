@@ -85,11 +85,19 @@ export default function Loginpage() {
       })
       .then((res) => {
         state1 === "ru" ? (Swal.fire("Введенная информация")) : (Swal.fire("Entered information"))
-        window.location="/user";
       })
       .catch((err) => {
         state1 === "ru" ? (Swal.fire("Информация введена не полностью")) : (Swal.fire("The information was not fully entered"))
       });
+
+      if (localStorage.getItem("position") == 2) {
+        window.location = "/mentor"
+      } else if (localStorage.getItem("position") == 1) {
+        window.location = "/user"
+      }
+      else if (localStorage.getItem("position") == 4) {
+        window.location = "/studentall"
+      }
   }
 
   function button() {
