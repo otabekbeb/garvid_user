@@ -84,14 +84,14 @@ export default function Loginpage() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
-        if (localStorage.getItem("position") == 2) {
-          window.location = "/mentor"
-        } else if (localStorage.getItem("position") == 1) {
-          window.location = "/user"
-        }
-        else if (localStorage.getItem("position") == 4) {
-          window.location = "/studentall"
-        }
+              if (localStorage.getItem("position") == 2) {
+        window.location = "/mentor"
+      } else if (localStorage.getItem("position") == 1) {
+        window.location = "/user"
+      }
+      else if (localStorage.getItem("position") == 4) {
+        window.location = "/studentall"
+      }
         state1 === "ru" ? (Swal.fire("Введенная информация")) : (Swal.fire("Entered information"))
       })
       .catch((err) => {
