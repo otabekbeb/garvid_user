@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,13 +11,13 @@
     /* transition: all 0.2s linear; */
 }
 
-.container2{
+.container2 {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 25px;
- background-color: rgb(226, 226, 226);
+    background-color: rgb(226, 226, 226);
 }
 
 .container2 form {
@@ -27,60 +27,62 @@
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
 }
 
-.container2 form .row{
+.container2 form .row {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
 }
 
-.container2 form .row .col{
+.container2 form .row .col {
     flex: 1 1 250px;
 }
 
-.col .title{
+.col .title {
     font-size: 20px;
     color: #5e8f94;
     padding-bottom: 5px;
 }
 
-.col .inputBox1{
+.col .inputBox1 {
     margin: 15px 0;
 }
 
-.col .inputBox1 label{
+.col .inputBox1 label {
     margin-bottom: 10px;
     display: block;
 }
 
-.col .inputBox1 input, .col .inputBox1 select{
+.col .inputBox1 input,
+.col .inputBox1 select {
     width: 100%;
     border: 1px solid #ccc;
     padding: 10px 15px;
     font-size: 15px;
 }
 
-.col .inputBox1 input:focus, .col .inputBox1 select:focus{
+.col .inputBox1 input:focus,
+.col .inputBox1 select:focus {
     border: 1px solid #000;
 }
 
-.col .flex1{
+.col .flex1 {
     display: flex;
     gap: 15px;
-    
+
 }
 
-.col .flex1 .inputBox1{
+.col .flex1 .inputBox1 {
     flex: 1 1;
     margin-top: 5px;
 }
 
-.col .inputBox1 img{
+.col .inputBox1 img {
     height: 34px;
     margin-top: 5px;
     filter: drop-shadow(0 0 1px #000);
 }
 
-.container2 form .submit_btn{
+.container2 form .submit_btn {
     width: 100%;
     padding: 12px;
     font-size: 17px;
@@ -91,24 +93,26 @@
     letter-spacing: 1px;
 }
 
-.container2 form .submit_btn:hover{
+.container2 form .submit_btn:hover {
     background: #44bef1;
 }
 
 input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button{
+input::-webkit-outer-spin-button {
     display: none;
 }
-.inputBox1 img{
-  cursor: pointer;
+
+.inputBox1 img {
+    cursor: pointer;
 }
+
 @media (max-width:590px) {
-    .container2{
+    .container2 {
         display: flex;
         justify-content: center;
         align-items: center;
         min-height: 150vh !important;
         padding: 30px;
-     background-color: rgb(226, 226, 226);
+        background-color: rgb(226, 226, 226);
     }
 }
