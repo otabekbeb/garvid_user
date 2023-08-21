@@ -37,26 +37,6 @@ export default function Home() {
 
 
                     <Carousel data-bs-theme="dark">
-                        <Carousel.Item className='item1'>
-                            <img
-                                className="d-block"
-                                src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/08/mt-0514-home-slider01.jpg"
-                                alt="First slide"
-                            />
-                            <Carousel.Caption id="carousel_c">
-                                <h1>Solutions that
-                                    never miss the aim</h1>
-
-                                <div className="buttons">
-                                    <button onClick={() =>
-                                        window.location = "/servis"
-                                    } className='button'>Learn More</button>
-                                    <button onClick={() =>
-                                        window.location = "/blog"
-                                    } className='button1'>Our Services</button>
-                                </div>
-                            </Carousel.Caption>
-                        </Carousel.Item>
                         <Carousel.Item>
                             <img
                                 className="d-block"
@@ -77,6 +57,7 @@ export default function Home() {
                             </Carousel.Caption>
                         </Carousel.Item>
                     </Carousel>
+                    
 
                     <div className="universty">
                         <div className="iniversty_cards">

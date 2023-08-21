@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab:wght@300&display=swap');
 
-
+.carousel-control-next, .carousel-control-prev{
+    display: none !important;
+}
+.body1 .d-block {
+width: 100%;
+}
 *{
     margin: 0;
     padding: 0;
