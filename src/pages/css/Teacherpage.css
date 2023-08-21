@@ -148,7 +148,6 @@
     width: 150px;
     height: 40px;
     font-size: 16px;
-    margin: auto;
     margin-right: 0px;
     position: relative;
     overflow: hidden;
@@ -292,4 +291,14 @@
   }
   #inputs_top{
     display: block !important;
+  }
+  .admin_title h4{
+    font-size: 20px;
+  }
+  .admin_button1{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: center;
+    width: 100%;
   }
