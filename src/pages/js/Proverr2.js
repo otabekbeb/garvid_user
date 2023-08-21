@@ -156,6 +156,14 @@ export default function Proverr2() {
                     coursData(res.data)
                     console.log(res.data)
                     Swal.fire("you have purchased a course")
+                     if (localStorage.getItem("position")==2) {
+                        window.location="/mentor"
+                      }else if(localStorage.getItem("position")==1){
+                        window.location="/user"
+                      }
+                      else if(localStorage.getItem("position")==4){
+                        window.location="/studentall"
+                      }
                 }).catch(err=>{
                     Swal.fire("The balance is insufficient or an error has occurred on the server. Try again")
                 }) 
