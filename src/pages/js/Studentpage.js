@@ -330,9 +330,7 @@ export default function Mentor() {
 
   }, []);
 
-  function dashed() {
 
-  }
   function Filter() {
     var a = document.querySelector(".filter_button").style.display
     if (a === "none") {

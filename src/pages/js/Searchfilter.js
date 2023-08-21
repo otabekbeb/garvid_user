@@ -142,7 +142,9 @@ export default function Searchfilter() {
             <div className="kurs_cards">
               {kursdata.map(item => {
                 return (
-                  <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
+                  <>
+                  {item.length==0?(<h5>a</h5>):(
+                    <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
                     <button className="btn_das">Programming</button>
                     <img src={item.oneuser ? item.oneuser.image.includes("http") ? item.oneuser.image : `${url}/${item.oneuser.image}` :
                       <img src={img_for_null} alt="" />} alt="" />
@@ -182,7 +184,8 @@ export default function Searchfilter() {
                     <button className="button_circle">
                       <AiOutlineArrowRight onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} />
                     </button>
-                  </div>
+                  </div>)}
+                  </>
                 )
 
               })}
