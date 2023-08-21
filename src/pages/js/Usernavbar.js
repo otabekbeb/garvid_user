@@ -185,7 +185,7 @@ export default function Navbar() {
                 </li>):(localStorage.getItem("position")==4?(""):("")))}
                 
                 {localStorage.getItem("position")==2?(""):(<li className="moto-menu-item">
-                  <a href="/studentpage">Student</a>
+                  <a href="/student">Student</a>
                 </li>)}
                 <li className="moto-menu-item">
                   <a href="/editprofil">Edit profile</a>

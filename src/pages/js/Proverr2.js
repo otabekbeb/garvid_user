@@ -156,6 +156,14 @@ export default function Proverr2() {
                     coursData(res.data)
                     console.log(res.data)
                     Swal.fire("you have purchased a course")
+                     if (localStorage.getItem("position")==2) {
+                        window.location="/mentor"
+                      }else if(localStorage.getItem("position")==1){
+                        window.location="/user"
+                      }
+                      else if(localStorage.getItem("position")==4){
+                        window.location="/studentall"
+                      }
                 }).catch(err=>{
                     Swal.fire("The balance is insufficient or an error has occurred on the server. Try again")
                 }) 
@@ -425,7 +433,7 @@ return(
             <div className="mni-dasturlash-bloc"><p>{item.name}</p></div>
             <div className="mni-kurs-narxi">
                 <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
-                <p>{item.price} <span>RUB</span></p></div>
+                <p>{item.price} <span>$</span></p></div>
                 <div className="mni-kurs-block2"></div>
                 
                 <div className="mni-kurs-block1"><h5>Kurs hajmi</h5>
@@ -440,7 +448,7 @@ return(
 
 <div className="mni-kurs-narxi2">
                 <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
-                <p>150.000  <span>RUB</span></p></div>
+                <p>150.000  <span>$</span></p></div>
                 <div className="mni-kurs-block2"></div>
                 
                 <div className="mni-kurs-block1"><h5>Размер поля</h5>
@@ -461,7 +469,7 @@ return(
     </div>
 </div>
 <div className="mni-buton-iikki-yo" onClick={()=>coursid()}>
-    <button id="gbfdgfdgdfgdf">Покупка</button><div className="line-mni-but"></div><button >{item.price} RUB</button>
+    <button id="gbfdgfdgdfgdf">Покупка</button><div className="line-mni-but"></div><button >{item.price} $</button>
 </div>
       
             </div>
@@ -601,7 +609,7 @@ dolor sit amet. . . .</p>
                   <div className="mni-dasturlash-bloc"><p>{item.name}</p></div>
                   <div className="mni-kurs-narxi">
                       <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
-                      <p>{item.price} <span>RUB</span></p></div>
+                      <p>{item.price} <span>$</span></p></div>
                       <div className="mni-kurs-block2"></div>
                       
                       <div className="mni-kurs-block1"><h5>Размер поля</h5>
@@ -619,7 +627,7 @@ dolor sit amet. . . .</p>
       </div>
       <div className="mni-kurs-narxi2">
                       <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
-                      <p>150.000  <span>RUB</span></p></div>
+                      <p>150.000  <span>$</span></p></div>
                       <div className="mni-kurs-block2"></div>
                       
                       <div className="mni-kurs-block1"><h5>Размер поля</h5>
@@ -640,7 +648,7 @@ dolor sit amet. . . .</p>
           </div>
       </div> 
       <div className="mni-buton-iikki-yo" onClick={()=>coursid()}>
-          <button id="gbfdgfdgdfgdf">Покупка</button><div className="line-mni-but"></div><button >{item.price} RUB</button>
+          <button id="gbfdgfdgdfgdf">Покупка</button><div className="line-mni-but"></div><button >{item.price} $</button>
       </div>
             
                   </div>

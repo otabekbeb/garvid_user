@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import '../css/workforteach.css'
-import { AiOutlineEdit } from 'react-icons/ai'
+import { BsFillCloudArrowDownFill } from 'react-icons/bs'
 import sertifikat from '../img/Sertifikat.png'
 import axios from 'axios'
+import url from './Host'
 import { MdDeleteOutline } from "react-icons/md"
 import Groupimg from '../img/Group 2.png'
 import { GrFormClose } from 'react-icons/gr'
-
+import img_for_null from '../img/download.png'
 export default function Workforteach() {
+    const [stsertifikat, setStsertifikat] = useState([])
     function openModal() {
         document.querySelector(".m_zadacha_tepadan").style = "display: flex; justify-content: center;align-items: center;"
     }
@@ -24,7 +26,13 @@ export default function Workforteach() {
     } function clouseModal2() {
         document.querySelector(".m_delete_tepadan2").style = "display:none"
     }
-
+    useEffect(() => {
+        axios.get(`${url}/edu/student_sertificat`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+            setStsertifikat(res.data)
+         
+        })
+     
+      }, [])
     return (
         <div>
 
@@ -32,51 +40,31 @@ export default function Workforteach() {
                 <button onClick={() => openModal()}>Добавить задачу</button>
             </div>
             <div className="m_zadach">
-                <div className="m_zadach_block">
-                    <img src={sertifikat} alt="" />
-                    {/* <h4>Name</h4> */}
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos dolor dignissimos quidem voluptate aliquam culpa sapiente! Atque magni dolorem delectus natus, aut facilis et! Possimus suscipit accusantium beatae dignissimos quo, alias odit cumque ea error fugit repellat earum fugiat illum est pariatur ipsam totam id dolor voluptates dolorum. Voluptatum!</p>
-                    {/* <div className="m_zadacha_icon">
-                        <div className="m_zadach_ktug_icon" onClick={() => openModal1()}>
-                            <AiOutlineEdit />
+                {stsertifikat.map(item=>{
+                    return(
+                          <div className="m_zadach_block">
+                   {item.image === null?(<img className='jony_foto' src={img_for_null} alt="" />):( <img src={item.image} alt="" />)}
+                    <h4>{item.title}</h4>
+                    <p>{item.description}</p>
+                     <div className="m_zadacha_icon">
+                        <div className="m_zadach_ktug_icon" >
+                            <BsFillCloudArrowDownFill />
                         </div>
-                        <div className="m_zadach_ktug_icon1" onClick={() => openModal2()}>
+                        {/* <div className="m_zadach_ktug_icon1" onClick={() => openModal2()}>
                             <MdDeleteOutline />
-                        </div>
-                    </div> */}
+                        </div> */}
+                    </div> 
                 </div>
-                <div className="m_zadach_block">
-                    <img src={sertifikat} alt="" />
-                    {/* <h4>Name</h4> */}
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos dolor dignissimos quidem voluptate aliquam culpa sapiente! Atque magni dolorem delectus natus, aut facilis et! Possimus suscipit accusantium beatae dignissimos quo, alias odit cumque ea error fugit repellat earum fugiat illum est pariatur ipsam totam id dolor voluptates dolorum. Voluptatum!</p>
-                    {/* <div className="m_zadacha_icon">
-                        <div className="m_zadach_ktug_icon" onClick={() => openModal1()}>
-                            <AiOutlineEdit />
-                        </div>
-                        <div className="m_zadach_ktug_icon1" onClick={() => openModal2()}>
-                            <MdDeleteOutline />
-                        </div>
-                    </div> */}
-                </div>
-                <div className="m_zadach_block">
-                    <img src={sertifikat} alt="" />
-                    {/* <h4>Name</h4> */}
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos dolor dignissimos quidem voluptate aliquam culpa sapiente! Atque magni dolorem delectus natus, aut facilis et! Possimus suscipit accusantium beatae dignissimos quo, alias odit cumque ea error fugit repellat earum fugiat illum est pariatur ipsam totam id dolor voluptates dolorum. Voluptatum!</p>
-                    {/* <div className="m_zadacha_icon">
-                        <div className="m_zadach_ktug_icon" onClick={() => openModal1()}>
-                            <AiOutlineEdit />
-                        </div>
-                        <div className="m_zadach_ktug_icon1" onClick={() => openModal2()}>
-                            <MdDeleteOutline />
-                        </div>
-                    </div> */}
-                </div>
+                    )
+                })}
+              
+                    
             </div>
 
             <div className="m_zadacha_tepadan">
 
                 <div className="m_zadachi_dobavit">
-                    <div className="m_clouse_x" onClick={() => clouseModal()}><GrFormClose/></div>
+                    <div className="m_clouse_x" onClick={() => clouseModal()}><GrFormClose /></div>
                     <div className="m_input_file_dobavit">
                         <div className="a_input_file12"> Добавить изоброжение </div>
                         <input type="file" />
@@ -93,7 +81,7 @@ export default function Workforteach() {
             <div className="m_zadacha_tepadan1">
 
                 <div className="m_zadachi_dobavit">
-                    <div className="m_clouse_x" onClick={() => clouseModal1()}><GrFormClose/></div>
+                    <div className="m_clouse_x" onClick={() => clouseModal1()}><GrFormClose /></div>
                     <div className="m_input_file_dobavit">
                         <div className="a_input_file12"> Изменить изоброжение </div>
                         <input type="file" />
@@ -111,9 +99,9 @@ export default function Workforteach() {
                 <div className="a_delete_bgc">
                     <div className="for_center">
                         <img src={Groupimg} alt="" />
-                        <h4>Вы правда хотите удалить?</h4>                        
+                        <h4>Вы правда хотите удалить?</h4>
                         <div className="a_delete_button">
-                        <button className='a_delete_no' onClick={() => clouseModal2()}>Нет</button> <button className="a_delete_yes">Да</button> 
+                            <button className='a_delete_no' onClick={() => clouseModal2()}>Нет</button> <button className="a_delete_yes">Да</button>
                         </div>
                     </div>
                 </div>

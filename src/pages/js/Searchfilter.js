@@ -62,9 +62,9 @@ export default function Searchfilter() {
 
 
 
-    axios.get(`${url}/api/mycourse/${localStorage.getItem("allUsersId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+    axios.get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
       setKursdata(res.data)
-      console.log(res.data);
+      console.log(res.data, "ali");
     }).catch(err => {
 
     })
@@ -75,7 +75,7 @@ export default function Searchfilter() {
 
   function filter(id) {
     axios
-      .get(`${url}/api/mycourse/${localStorage.getItem("allUsersId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })
+      .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })
       .then((res) => {
         const search = res.data.filter(item => item.course_type === id)
         setKursdata(search)
@@ -83,7 +83,7 @@ export default function Searchfilter() {
   }
   const searchInput = (event) => {
     const searchRegex = new RegExp(`^${event.target.value}`, "i");
-    axios.get(`${url}/api/mycourse/${localStorage.getItem("allUsersId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+    axios.get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
       const searchdata = res.data.filter((item) => {
         return (
           searchRegex.test(item.name)
@@ -127,7 +127,8 @@ export default function Searchfilter() {
                     {courstype.map(item => {
                       return (
                         <div className="button_filter_kurs" >
-                          {item.name === null ? ("") : (<div onClick={() => filter(item.id)} className="div_kurs" style={{ paddingBottom: '5px' }}>{item.name}</div>)}
+                          {item.name === null ? ("") : (
+                          <div onClick={() => filter(item.id)} className="div_kurs" style={{ paddingBottom: '5px' }}>{item.name}</div>)}
                         </div>
                       )
                     })}
@@ -143,11 +144,6 @@ export default function Searchfilter() {
                 return (
                   <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
                     <button className="btn_das">Programming</button>
-                    {/* {item.image === null ? (
-                 <img src={img_for_null} alt="" />
-                ) : (
-                  <img src={item.image} />
-                 )} */}
                     <img src={item.oneuser ? item.oneuser.image.includes("http") ? item.oneuser.image : `${url}/${item.oneuser.image}` :
                       <img src={img_for_null} alt="" />} alt="" />
                     <div className="kurs_paddaing_auto">
@@ -184,7 +180,7 @@ export default function Searchfilter() {
                       </div>
                     </div>
                     <button className="button_circle">
-                      <AiOutlineArrowRight onClick={() => { window.location = "video"; localStorage.setItem("abbas", item.id) }} />
+                      <AiOutlineArrowRight onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} />
                     </button>
                   </div>
                 )

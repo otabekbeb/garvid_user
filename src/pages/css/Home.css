@@ -1,19 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab:wght@300&display=swap');
 
+.carousel-control-next,
+.carousel-control-prev {
+    display: none !important;
+}
 
-*{
+.body1 .d-block {
+    width: 100%;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box !important;
     font-family: 'Rubik', sans-serif !important;
 }
-.carousel-caption{
+
+.carousel-caption {
     left: 12% !important;
     top: 130px !important;
     text-align: start !important;
     z-index: 1111 !important;
 }
-.carousel-caption h1{
+
+.carousel-caption h1 {
     font-weight: 700;
     font-style: normal;
     font-family: 'Roboto', sans-serif;
@@ -22,7 +32,8 @@
     letter-spacing: 0px;
     width: 650px;
 }
-.iniversty_cards{
+
+.iniversty_cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -33,24 +44,28 @@
     margin-top: 80px;
     gap: 40px;
 }
-.universty{
+
+.universty {
     background-color: white;
     display: flex;
     justify-content: center;
     padding: 15px;
 }
+
 .iniversty_card {
     width: 340px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 10px;
     overflow: hidden;
 }
-@media(max-width:600px){
-    .iniversty_img{
+
+@media(max-width:600px) {
+    .iniversty_img {
         height: 170px !important;
     }
 }
-@media(max-width:550px){
+
+@media(max-width:550px) {
     .iniversty_card {
         width: 300px !important;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -58,32 +73,38 @@
         overflow: hidden;
     }
 }
-@media(max-width:750px){
+
+@media(max-width:750px) {
     .iniversty_card {
         width: 48%;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         border-radius: 10px;
         overflow: hidden;
     }
+
     .iniversty_img {
         width: 100%;
         height: 190px !important;
     }
-    .iniversty_cards{
+
+    .iniversty_cards {
         gap: 20px;
     }
 }
-.iniversty_card p{
+
+.iniversty_card p {
     padding-top: 15px;
     padding-left: 15px;
     padding-right: 15px;
 }
-.iniversty_card h2{
+
+.iniversty_card h2 {
     padding-left: 15px;
     padding-right: 15px;
     font-size: 24px;
 }
-.iniversty_img{
+
+.iniversty_img {
     width: 100%;
     height: 230px;
     display: flex;
@@ -91,10 +112,12 @@
     align-items: center;
     overflow: hidden;
 }
-.iniversty_img img{
+
+.iniversty_img img {
     height: 100%;
 }
-.buttons button{
+
+.buttons button {
     font-family: 'Roboto', sans-serif !important;
     font-weight: 700 !important;
     font-style: normal;
@@ -106,12 +129,14 @@
     border-radius: 4px;
     transition: 0.5s;
 }
-@media(max-width:400px){
-    #sli11{
+
+@media(max-width:400px) {
+    #sli11 {
         margin-bottom: 150px !important;
     }
 }
-.button1{
+
+.button1 {
     margin-left: 40px;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -120,55 +145,67 @@
     border: 1px solid #44bef1 !important;
     transition: 0.5s;
 }
-.buttons{
+
+.buttons {
     margin-top: 30px;
     display: flex;
 }
-#google_translate_element select{
+
+#google_translate_element select {
     width: 100%;
-height: auto;
+    height: auto;
 }
-#google_translate_element1 select{
+
+#google_translate_element1 select {
     width: 100%;
     display: none !important;
 }
-.goog-te-gadget{
+
+.goog-te-gadget {
     height: 17px !important;
 }
-#google_translate_element{
+
+#google_translate_element {
     overflow: hidden;
     width: 200px !important;
 }
-#google_translate_element1{
+
+#google_translate_element1 {
     overflow: hidden;
     width: 200px !important;
     display: none !important;
 }
-.button:hover{
+
+.button:hover {
     background-color: #00000000;
     border: 1px solid #44bef1;
     color: #44bef1;
 }
-.button1:hover{
+
+.button1:hover {
     background-color: #44bef1 !important;
     color: white !important;
     border: 1px solid #44bef1;
 }
-.carusel .button1{
+
+.carusel .button1 {
     border: 1px solid white !important;
     color: white !important;
 }
-.carusel .button:hover{
+
+.carusel .button:hover {
     background-color: white;
     border: 1px solid white;
     color: #44bef1;
 }
-.carusel .button1:hover{
+
+.carusel .button1:hover {
     background-color: white !important;
     border: 1px solid white !important;
     color: #44bef1 !important;
 }
-.carusel p{
+
+.carusel p {
     font-weight: 300;
     font-style: normal;
     font-family: 'Roboto', sans-serif;
@@ -179,7 +216,7 @@ height: auto;
     width: 700px;
 }
 
-.carusel h1{
+.carusel h1 {
     font-weight: 700;
     font-style: normal;
     font-family: 'Roboto', sans-serif;
@@ -187,13 +224,15 @@ height: auto;
     font-size: 55px;
     letter-spacing: 0px;
 }
-.card1{
+
+.card1 {
     width: 300px;
     text-align: center;
     padding-left: 15px;
     padding-right: 15px;
 }
-.bigdiv{
+
+.bigdiv {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
@@ -202,7 +241,8 @@ height: auto;
     padding-top: 80px;
     text-align: center;
 }
-.big1{
+
+.big1 {
     width: 100%;
     background-color: white;
     min-height: 400px;
@@ -211,7 +251,8 @@ height: auto;
     flex-wrap: wrap;
     padding: 15px;
 }
-.card1 h3{
+
+.card1 h3 {
     color: #000000;
     text-decoration: none;
     font-weight: 700;
@@ -219,7 +260,8 @@ height: auto;
     margin-top: 25px;
     font-size: 22px;
 }
-.card1 p{
+
+.card1 p {
     font-weight: 300;
     font-style: normal;
     font-family: 'Roboto', sans-serif;
@@ -229,7 +271,8 @@ height: auto;
     letter-spacing: 0px;
     margin-top: 15px;
 }
-.body1{
+
+.body1 {
     background: url("https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/08/mt-0514-home-parallax.jpg");
     background-attachment: fixed;
     background-position: center;
@@ -237,33 +280,39 @@ height: auto;
     background-size: cover;
     height: 2300px;
 }
-.soz1{
+
+.soz1 {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 230px;
     padding: 15px;
 }
-.soz1 h1{
+
+.soz1 h1 {
     color: white;
 }
-.line{
+
+.line {
     width: 1px;
     height: 40px;
     background-color: white;
     margin-left: 50px;
 }
-.soz2{
+
+.soz2 {
     display: flex;
     align-items: center;
 }
-.soz2 p{
+
+.soz2 p {
     color: white;
     margin-bottom: 0px;
     font-size: 18px;
     margin-left: 20px;
 }
-.soz2 button{
+
+.soz2 button {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -275,9 +324,11 @@ height: auto;
     height: 55px;
     margin-left: 50px;
 }
-.d-block{
+
+.d-block {
     vertical-align: bottom !important;
 }
+
 /* .item1{
     background-position: center center;
     background-image: url("https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/08/mt-0514-home-slider01.jpg");
@@ -293,29 +344,34 @@ list-style: none;
     height: 573px;
     width: 1490px;
 } */
-.katta1{
+.katta1 {
     width: 100%;
     min-height: 600px;
     background-color: white;
 }
-.katta1 h1{
+
+.katta1 h1 {
     padding-top: 10px;
 }
-.katta1 .katta1_about_h1{
+
+.katta1 .katta1_about_h1 {
     padding-top: 80px;
     font-weight: 700;
     color: #000000;
 }
-.blue1{
+
+.blue1 {
     width: 70px;
     height: 3px;
     background-color: #44bef1;
 }
-.cards1{
+
+.cards1 {
     display: flex;
     justify-content: center;
 }
-.cards2{
+
+.cards2 {
     width: 1350px;
     max-width: 100%;
     display: flex;
@@ -323,11 +379,13 @@ list-style: none;
     align-items: end;
     padding-left: 20px;
 }
-.card4{
+
+.card4 {
     width: 600px;
     max-width: 45%;
 }
-.buttons1 button{
+
+.buttons1 button {
     width: 33%;
     height: 55px;
     border: none;
@@ -335,67 +393,85 @@ list-style: none;
     font-size: 18px;
     transition: 0.3s;
 }
-.but1{ 
+
+.but1 {
     border: 1px solid #dedede !important;
     color: #4d4d4d;
 }
-.but1:hover{
+
+.but1:hover {
     border: 1px solid #dedede !important;
     background-color: #44bef1 !important;
     color: white;
 }
-.but2{
+
+.but2 {
     border: 1px solid #dedede !important;
     background-color: white;
     color: #4d4d4d;
 }
-.but2:hover{
+
+.but2:hover {
     background-color: #44bef1 !important;
     border: 1px solid #dedede !important;
     color: white;
 }
-.buttons1{
+
+.buttons1 {
     margin-top: 50px;
 }
-.about_p{
+
+.about_p {
     font-family: 'Rubik', sans-serif !important;
     margin-top: 30px;
 }
 
-.fact1,.advantage1,.skill1{
+.fact1,
+.advantage1,
+.skill1 {
     width: 90%;
     display: flex;
     justify-content: space-between;
     margin: auto;
 }
-.facts,.advantages,.skills{
+
+.facts,
+.advantages,
+.skills {
     text-align: center;
 }
-.facts h1{
+
+.facts h1 {
     font-weight: 900;
     font-size: 60px;
     color: #75cff5;
 }
-.facts p{
+
+.facts p {
     margin-bottom: 0;
 }
-.advantage1 p{
+
+.advantage1 p {
     margin-bottom: 0;
 }
-.skills p{
+
+.skills p {
     margin-bottom: 0;
 }
-.advantages h1{
+
+.advantages h1 {
     font-weight: 900;
     font-size: 60px;
     color: #75cff5;
 }
-.skills h1{
+
+.skills h1 {
     font-weight: 900;
     font-size: 60px;
     color: #75cff5;
 }
-.card4 .card_about_us_ikki_page{
+
+.card4 .card_about_us_ikki_page {
     padding-top: 10px;
     color: #000000;
     font-weight: 700;
@@ -403,39 +479,47 @@ list-style: none;
     margin-bottom: 10px;
     cursor: pointer;
     transition: .3s;
-}.card4 .card_about_us_ikki_p{
-width: 95%;
 }
-.card4 .card_about_us_ikki_page:hover{
-color: #44bef1;
+
+.card4 .card_about_us_ikki_p {
+    width: 95%;
 }
-.card_about_us_ikki_button{
+
+.card4 .card_about_us_ikki_page:hover {
+    color: #44bef1;
+}
+
+.card_about_us_ikki_button {
     font-weight: 700;
     color: #44bef1;
     background-color: #fff;
-    border:1px solid #44bef1;
+    border: 1px solid #44bef1;
     border-radius: 4px;
     width: 150px;
     height: 50px;
     transition: .3s;
 }
-.card_about_us_ikki_button:hover{
+
+.card_about_us_ikki_button:hover {
     color: #fff;
     background-color: #44bef1;
 }
-.contact_form_input_big{
-display: flex;
-justify-content: center;
-align-items: center;
-background: #f7f7f7;
+
+.contact_form_input_big {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f7f7f7;
 }
-.contact_form_input_big_div_input{
+
+.contact_form_input_big_div_input {
     display: block;
     margin-top: 30px;
 }
-.contact_form_input_big_div{
+
+.contact_form_input_big_div {
     background-color: #ffffff;
-    border:1px solid #c7c7c7;
+    border: 1px solid #c7c7c7;
     width: 630px;
     padding-left: 15px;
     padding-right: 15px;
@@ -445,12 +529,14 @@ background: #f7f7f7;
     margin-top: 50px;
     margin-bottom: 50px;
 }
-.contact_form_input_big{
+
+.contact_form_input_big {
     gap: 20px;
     padding-left: 20px;
     padding-right: 20px;
 }
-.contact_form_input_big_div h1{
+
+.contact_form_input_big_div h1 {
     font-weight: 700;
     font-style: normal;
     font-family: 'Roboto', sans-serif;
@@ -460,10 +546,12 @@ background: #f7f7f7;
     letter-spacing: 0px;
     margin-bottom: 0;
 }
-.contact_form_input_big_div_input p{
+
+.contact_form_input_big_div_input p {
     margin-bottom: 0;
 }
-.contact_form_input_big_div_input input{
+
+.contact_form_input_big_div_input input {
     width: 100%;
     outline: none;
     border: 0;
@@ -476,15 +564,18 @@ background: #f7f7f7;
     background-color: #f4f7f9;
     margin-bottom: 10px;
 }
-.contact_form_input_big_div_input label{
+
+.contact_form_input_big_div_input label {
     width: 100%;
 }
-.contact_form_input_big_div_input p{
+
+.contact_form_input_big_div_input p {
     color: #333333;
     font-size: 14px;
     line-height: 35px;
 }
-.contact_form_input_big_div button{
+
+.contact_form_input_big_div button {
     background-color: #44bef1;
     color: white;
     border-radius: 5px;
@@ -504,322 +595,394 @@ background: #f7f7f7;
 
 
 @media (max-width:1040px) {
-   .about_p{
-    font-size: 12px;
-    line-height: 1.4;
-   }
-   .card_about_us_ikki_p{
-    font-size: 12px;
-    line-height: 1.4;
-   }
-   .card_about_us_ikki_page{
-    font-size: 16px !important;
-    line-height: 1.4;
-   }
-   .card_about_us_ikki_button{
-    width: 100px;
-    height: 40px;
-    font-size: 12px;
-   }
-   .facts h1{
-    font-size: 40px;
-    line-height: 1.4;
-   }
-   .facts p{
-    font-size: 11px;
-    line-height: 0.9;
-   }
-   .advantages h1{
-    font-size: 40px;
-    line-height: 1.4;
-   }
-   .advantages p{
-    font-size: 13px;
-    line-height: 0.9;
-   }
-   .skills h1{
-    font-size: 40px;
-    line-height: 1.4;
-   }
-   .skills p{
-    font-size: 13px;
-    line-height: 0.9;
-   }
-   .but1{
-    font-size: 13px !important;
-    height: 45px !important;
-    line-height: 0.9;
-   }
-   .but2{
-    font-size: 13px !important;
-    height: 45px !important;
-    line-height: 0.9;
-   }
-   .cards2{
-   align-items: center;
-   }
-   .carousel-caption h1{
-    font-size: 39px;
-    line-height: 1.1;
-   }
-   .buttons .button{
-    font-size: 13px;
-    height: 40px;
-    width: 120px;
-   }
-   .buttons .button1{
-    width: 120px;
-    height: 40px;
-    font-size: 13px;
-   }
-   .soz1 h1{
-    font-size: 27px;
-   }
-   .soz2 p{
-    font-size: 20px;
-    line-height: 1.2;
-    font-weight: 100;
-   }
-   .soz2 button {
-   font-size: 13px;
-   width: 400px;
-   height: 35px;
+    .about_p {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .card_about_us_ikki_p {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .card_about_us_ikki_page {
+        font-size: 16px !important;
+        line-height: 1.4;
+    }
+
+    .card_about_us_ikki_button {
+        width: 100px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .facts h1 {
+        font-size: 40px;
+        line-height: 1.4;
+    }
+
+    .facts p {
+        font-size: 11px;
+        line-height: 0.9;
+    }
+
+    .advantages h1 {
+        font-size: 40px;
+        line-height: 1.4;
+    }
+
+    .advantages p {
+        font-size: 13px;
+        line-height: 0.9;
+    }
+
+    .skills h1 {
+        font-size: 40px;
+        line-height: 1.4;
+    }
+
+    .skills p {
+        font-size: 13px;
+        line-height: 0.9;
+    }
+
+    .but1 {
+        font-size: 13px !important;
+        height: 45px !important;
+        line-height: 0.9;
+    }
+
+    .but2 {
+        font-size: 13px !important;
+        height: 45px !important;
+        line-height: 0.9;
+    }
+
+    .cards2 {
+        align-items: center;
+    }
+
+    .carousel-caption h1 {
+        font-size: 39px;
+        line-height: 1.1;
+    }
+
+    .buttons .button {
+        font-size: 13px;
+        height: 40px;
+        width: 120px;
+    }
+
+    .buttons .button1 {
+        width: 120px;
+        height: 40px;
+        font-size: 13px;
+    }
+
+    .soz1 h1 {
+        font-size: 27px;
+    }
+
+    .soz2 p {
+        font-size: 20px;
+        line-height: 1.2;
+        font-weight: 100;
+    }
+
+    .soz2 button {
+        font-size: 13px;
+        width: 400px;
+        height: 35px;
+    }
+
+    .contact_form_input_big img {
+        width: 430px;
+        max-width: 54% !important;
+    }
+
+    .contact_form_input_big_div h1 {
+        font-size: 3.6vw;
+        line-height: 2;
+    }
+
+    .contact_form_input_big_div button {
+        width: 35%;
+        font-weight: 600;
+        font-size: 1.4vw;
+        height: 40px;
+    }
 }
-.contact_form_input_big img{
-    width: 430px;
-    max-width: 54% !important;
-}
-.contact_form_input_big_div h1{
-    font-size: 3.6vw;
-    line-height: 2;
-}
-.contact_form_input_big_div button{
-    width: 35%;
-    font-weight: 600;
-    font-size: 1.4vw;
-    height:40px;
-}
-}
+
 @media (max-width:767px) {
-    .contact_form_input_big img{
+    .contact_form_input_big img {
         margin-top: 10px;
         display: flex;
         margin: auto;
     }
-    #carousel_c{
+
+    #carousel_c {
         top: 200px !important;
     }
-    .carousel-control-next, .carousel-control-prev{
+
+    .carousel-control-next,
+    .carousel-control-prev {
         width: 30px !important;
     }
-    .cards2{
+
+    .cards2 {
         display: flex;
         flex-direction: column;
         padding-left: 20px !important;
         padding-right: 20px;
     }
-    .card1{
-    width: 100% !important;
-    }
-    .card1 p{
+
+    .card1 {
         width: 100% !important;
     }
-    .bigdiv{
-    justify-content: center !important;
+
+    .card1 p {
+        width: 100% !important;
     }
-    .soz2{
+
+    .bigdiv {
+        justify-content: center !important;
+    }
+
+    .soz2 {
         flex-wrap: wrap;
     }
-    .soz1{
-    flex-wrap: wrap;
+
+    .soz1 {
+        flex-wrap: wrap;
     }
-    .soz1 h1{
+
+    .soz1 h1 {
         text-align: start;
     }
-    .soz2 p{
+
+    .soz2 p {
         font-size: 17px;
         line-height: 2.1;
     }
-    .line{
-    margin-left: 0px;
+
+    .line {
+        margin-left: 0px;
     }
-    .soz2 button{
+
+    .soz2 button {
         margin-top: 10px;
         margin: auto;
         width: 200px;
         margin-top: 20px;
     }
-    .buttons1 button{
+
+    .buttons1 button {
         width: 100%;
     }
-    .buttons .button1{
+
+    .buttons .button1 {
         margin-left: 0 !important;
         margin-top: 10px;
     }
-    .buttons{
+
+    .buttons {
         width: 250px;
         display: flex;
         justify-content: space-between;
         align-items: baseline;
         flex-wrap: wrap;
     }
-    .carousel-caption{
+
+    .carousel-caption {
         left: 11%;
     }
-    .card4{
+
+    .card4 {
         width: 100%;
         max-width: 100%;
         padding-bottom: 30px;
     }
-    .card_about_us_ikki_p{
+
+    .card_about_us_ikki_p {
         width: 100% !important;
     }
-    .carousel-caption h1{
+
+    .carousel-caption h1 {
         font-size: 24px;
         line-height: 1.1;
         width: 100%;
     }
-    .carousel-caption{
+
+    .carousel-caption {
         top: 190px !important;
     }
-    .carusel p{
+
+    .carusel p {
         font-size: 15px;
         width: 100%;
     }
-    .contact_form_input_big{
+
+    .contact_form_input_big {
         flex-direction: column;
     }
-    .contact_form_input_big{
+
+    .contact_form_input_big {
         display: block;
         padding-top: 50px;
     }
-    .contact_form_input_big_div h1{
+
+    .contact_form_input_big_div h1 {
         font-size: 30px;
     }
-    .contact_form_input_big_div{
+
+    .contact_form_input_big_div {
         padding-top: 5px;
         padding-bottom: 5px;
     }
-    .contact_form_input_big_div button{
-    width: 25%;
-    font-size: 2.3vw;
-    margin-top: 5px;
-    margin-bottom: 15px;
+
+    .contact_form_input_big_div button {
+        width: 25%;
+        font-size: 2.3vw;
+        margin-top: 5px;
+        margin-bottom: 15px;
     }
-    .contact_form_input_big_div{
+
+    .contact_form_input_big_div {
         width: 100%;
     }
 
 
 }
+
 @media (max-width:479px) {
-    .contact_form_input_big_div h1{
-    font-size: 25px;
+    .contact_form_input_big_div h1 {
+        font-size: 25px;
     }
-    .contact_form_input_big img{
+
+    .contact_form_input_big img {
         position: relative;
         z-index: 10;
     }
-    .contact_form_input_big_div button{
+
+    .contact_form_input_big_div button {
         width: 100px;
         height: 35px;
         font-size: 11px;
     }
-    .soz2 p{
-    font-size: 13px;
+
+    .soz2 p {
+        font-size: 13px;
     }
-    .soz2 button{
-        width:150px;
+
+    .soz2 button {
+        width: 150px;
         font-size: 12px;
     }
-    .facts h1{
+
+    .facts h1 {
         font-size: 30px;
         line-height: 1.2;
     }
-    .advantages h1{
-        font-size: 30px;
-        line-height: 1.2; 
-    }
-    .skills h1{
+
+    .advantages h1 {
         font-size: 30px;
         line-height: 1.2;
     }
-    .facts p{
+
+    .skills h1 {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .facts p {
         font-size: 9px;
         line-height: 1;
     }
-    .advantages p{
+
+    .advantages p {
         font-size: 8px;
-        line-height: 1; 
+        line-height: 1;
     }
-    .skills p{
+
+    .skills p {
         font-size: 12px;
         line-height: 1;
     }
 }
+
 @media (max-width:529px) {
-    .body1 .images{
+    .body1 .images {
         width: 100%;
-    height: 100px !important;
-    background-color: #f7f7f7;
- position: relative;
- top: 90px !important;
-    overflow: hidden;
-    
+        height: 100px !important;
+        background-color: #f7f7f7;
+        position: relative;
+        top: 90px !important;
+        overflow: hidden;
+
     }
 }
+
 @media (max-width:529px) {
-    .body1 .images{
+    .body1 .images {
         width: 100%;
-    height: 100px !important;
-    background-color: #f7f7f7;
- position: relative;
- top: 90px !important;
-    overflow: hidden;
-    
+        height: 100px !important;
+        background-color: #f7f7f7;
+        position: relative;
+        top: 90px !important;
+        overflow: hidden;
+
     }
-    .body1 .futer{
+
+    .body1 .futer {
         margin-top: 0px !important;
     }
 }
-.testimonial_cards{
+
+.testimonial_cards {
     display: flex;
     justify-content: space-between;
     max-width: 1100px;
     width: 80%;
     margin-top: 60px;
 }
-.Testimonial{
+
+.Testimonial {
     background: white;
     padding-top: 100px;
     min-height: 640px;
 }
-.sli1{
+
+.sli1 {
     max-width: 300px;
     width: 30%;
     border-radius: 10px;
     border: 1px solid rgb(236, 230, 230);
     min-height: 310px;
 }
-.sli1 p{
+
+.sli1 p {
     padding-left: 16px;
     padding-right: 16px;
 }
-.sli1 strong{
+
+.sli1 strong {
     top: 0px !important;
 }
-.sli1 h4{
+
+.sli1 h4 {
     top: 0px !important;
 }
-@media(max-width:900px){
-    .testimonial_cards{
+
+@media(max-width:900px) {
+    .testimonial_cards {
         flex-wrap: wrap;
         justify-content: center;
         text-align: center;
         gap: 30px;
         width: 90%;
     }
-    .sli1{
+
+    .sli1 {
         max-width: 300px;
         width: 50%;
         border-radius: 10px;
@@ -827,8 +990,9 @@ background: #f7f7f7;
         min-height: 310px;
     }
 }
-@media(max-width:705px){
-    .sli1{
+
+@media(max-width:705px) {
+    .sli1 {
         max-width: 250px;
         width: 50%;
         border-radius: 10px;
@@ -836,22 +1000,27 @@ background: #f7f7f7;
         min-height: 310px;
     }
 }
-@media(max-width:600px){
-    .sli1{
+
+@media(max-width:600px) {
+    .sli1 {
         max-width: 100%;
         width: 100%;
     }
-    .body1 .d-block{
+
+    .body1 .d-block {
         height: 400px;
     }
-    #carousel_c{
+
+    #carousel_c {
         top: 130px !important;
     }
-    .carousel-caption{
+
+    .carousel-caption {
         top: 100px !important;
     }
 }
-#text1{
+
+#text1 {
     width: 100%;
     background-color: #f4f7f9;
     outline: none;
@@ -860,14 +1029,63 @@ background: #f7f7f7;
     height: 170px;
     font-size: 15px;
 }
-.girl{
+
+.girl {
     margin-top: 230px;
 }
-@media(max-width:1140px){
+
+@media(max-width:1140px) {
     .girl {
         margin-top: 320px;
-      }
+    }
 }
-.soz1{
+
+.soz1 {
     display: none;
+}
+
+
+.admin_title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 150px;
+    margin-top: 15px;
+}
+
+.admin_button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.chec_icon {
+    width: 50px;
+    font-size: 20px;
+    margin-top: -5px; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.chec_icon:hover {
+    cursor: pointer;
+}
+.bir_chec{
+    width: 20px;
+    height: 20px;
+    color:#44bef1;
+    border-radius: 50px;
+}
+.ikki_chec{
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    color:#44bef1;
+
+}
+
+.admin_title h4 {
+    font-size: 20px;
 }
