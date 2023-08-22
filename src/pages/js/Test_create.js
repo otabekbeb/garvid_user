@@ -63,6 +63,7 @@ import deleteImg from "../img/Inbox cleanup-rafiki.png"
 import { BsSearch } from "react-icons/bs"
 import { FaUsers } from "react-icons/fa"
 import { BiEdit } from "react-icons/bi"
+import {FiDownload} from "react-icons/fi"
 // import {
 //   Row,
 //   Col,
@@ -834,7 +835,7 @@ export default function Test() {
             <label htmlFor="">
               <p>Изображение</p>
               <input id="questionsimage" type="file" className='questionsimage'/>
-              <div className='questionimg'>Выбрать изображение</div>
+              <div className='questionimg'><FiDownload/>Выбрать изображение</div>
             </label>
             <label style={{ width: '100%' }} htmlFor="">
               <p>Отвечать</p>

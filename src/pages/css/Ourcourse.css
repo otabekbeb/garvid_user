@@ -388,17 +388,17 @@ line-height: normal;
     gap: 3px;
 }
 
-.star_card .star_i {
+/* .star_card .star_i {
     cursor: pointer;
     font-size: 14px;
-    color: rgba(255, 212, 1, 1);
+    color: #dcdcdc;
 }
 
 .star_card .star_ib {
     cursor: pointer;
     font-size: 14px;
     color: rgba(157, 167, 187, 1);
-}
+} */
 
 .star_card p {
     color: black;

@@ -12,7 +12,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
 import { TbPointFilled } from "react-icons/tb";
 import { GrFormClose } from 'react-icons/gr';
-import Swal from "sweetalert2"; 
+import Swal from "sweetalert2";
 import "../css/Spiska.css";
 import "../css/Calibig.css";
 import WWW from "../img/WWW.png";
@@ -203,7 +203,7 @@ export default function Searchfilter() {
 
 
   useEffect(() => {
-    
+
 
     document.querySelector(".filter_button").style = "display:none"
     setState1(
@@ -217,12 +217,12 @@ export default function Searchfilter() {
     })
     axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
       setKursdata(res.data)
-      
+
     }).catch(err => {
       console.log(err);
     })
 
-    
+
   }, []);
 
   function filter(id) {
@@ -262,6 +262,17 @@ export default function Searchfilter() {
   // }
 
 
+  // const ratingItemsList = document.querySelectorAll(".star_i");
+  // const ratingItemsArray = Array.prototype.slice.call(ratingItemsList);
+
+  // ratingItemsArray.forEach(item =>
+  //   item.addEventListener("click", () => {
+  //     const { itemValue } = item.dataset;
+  //     item.parentNode.dataset.totalValue = itemValue;
+  //   })
+  // );
+
+  // item.dataset.
 
   return (
     <div>
@@ -309,7 +320,7 @@ export default function Searchfilter() {
 
         <div className="kurs_cards">
           {kursdata.map(item => {
-            localStorage.setItem("courseLength",kursdata.length)
+            localStorage.setItem("courseLength", kursdata.length)
             return (
               <div className="kurs_card">
                 <button className="btn_das">Dasturlash</button>
@@ -318,29 +329,19 @@ export default function Searchfilter() {
                 ) : (
                   <img src={item.image} />
                 )} */}
-                 <img src={item.oneuser?item.oneuser.image.includes("http")?item.oneuser.image:`${url}/${item.oneuser.image}`:
-            <img src={img_for_null} alt="" />} alt="" />
+                <img src={item.oneuser ? item.oneuser.image.includes("http") ? item.oneuser.image : `${url}/${item.oneuser.image}` :
+                  <img src={img_for_null} alt="" />} alt="" />
                 <div className="kurs_paddaing_auto">
                   <h4>{item.name}</h4>
-                  <div className="star_card">
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_i">
-                      <AiFillStar />
-                    </i>
-                    <i className="star_ib">
-                      <AiFillStar />
-                    </i>
-                    <p>
-                      4.1 <span>(524)</span>
-                    </p>
+                  <div className="star_df">
+                    <div className="star_card" data-total-value="0">
+                      <i className="star_i" data-item-value="5"><AiFillStar /></i>
+                      <i className="star_i" data-item-value="4"><AiFillStar /></i>
+                      <i className="star_i" data-item-value="3"><AiFillStar /></i>
+                      <i className="star_i" data-item-value="2"><AiFillStar /></i>
+                      <i className="star_i" data-item-value="1"><AiFillStar /></i>
+                    </div>
+                    <p>4.1 <span>(524)</span></p>
                   </div>
                   <div className="hajm">
                     <h5>
@@ -408,12 +409,12 @@ export default function Searchfilter() {
                     </div>
                   </div>
                 </div>
-                <button className="button_circle"  onClick={() => {
-                      window.location = "/video";
-                      localStorage.setItem("abbas", item.id)
-                    }}>
+                <button className="button_circle" onClick={() => {
+                  window.location = "/video";
+                  localStorage.setItem("abbas", item.id)
+                }}>
                   <AiOutlineArrowRight
-                   
+
                   />
                 </button>
               </div>

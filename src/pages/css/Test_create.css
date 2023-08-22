@@ -1163,6 +1163,15 @@ select {
         outline-color: #44bef1;
     }
 
+    .postUserModal_div label .descriptions{
+        width: 100%;
+        height: auto;
+        padding: 5px;
+        border-radius: 4px;
+        border: 1px solid rgb(182, 182, 182);
+        outline-color: #44bef1;
+    }
+
     .postUserModal_div_label input {
         width: 300px;
         height: 35px;
