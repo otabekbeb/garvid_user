@@ -89,8 +89,33 @@ export default function Login() {
 
   }
 
+  function ChangePassword(){
+    var formdata = new FormData()
+    formdata.append("email", document.querySelector("#changepossword").value )
 
+    axios
+    .post(`${url}/auth/change/password`, formdata)
+    .then(res=>{ 
+      Swal.fire("We sent the code to the email")
+      setPage(6)
+    })
+    .catch(err=>{
+      Swal.fire("there is no such email on the server")
+    })
+  }
+function PosssordVery() {
+  var formdata = new FormData()
+  formdata.append("code", document.querySelector("#verifak1").value)
 
+  axios.post(`${url}/auth/reset`, formdata)
+  .then(res=>{
+    setPage(7)
+  })
+  .catch(err=>{
+    Swal.fire("You entered the code incorrectly")
+  })
+}
+  
 
   const [state1, setState1] = React.useState();
   useEffect(() => {
@@ -131,7 +156,50 @@ export default function Login() {
               <button onClick={() => setPage(1)} style={page === 1 ? { background: '#9cf' } : { background: 'white', color: 'black', border: '2px solid #9cf' }}>{state1 === "en" ? ("Login") : ("Авторизоваться")}</button>
               <button onClick={() => setPage(2)} style={page === 2 ? { background: '#9cf' } : { background: 'white', color: 'black', border: '2px solid #9cf' }}>{state1 === "en" ? ("Registration") : ("Регистрация")}</button>
             </div>
-            {page == 5 ? (
+          {page === 7 ? (<div className="login_db">
+            <div className="login_relative">
+              <img className="LoginImg" src={LoginImg} alt="" />
+              <div className="login_small_div">
+                <form>
+                  <div className="login_small_div_input">
+                    <h1>{state1 === "en" ? ("Verification") : ("Верификация")}</h1>
+                    <p>{state1 === "en" ? ("Code sent to your email") : ("Код отправлен на вашу электронную почту")}</p>
+                    <div className="royhat_small_input">
+                      <FiMail className="login_icon" />
+                      <input placeholder="password" id="newpassword" type="number" required />
+                      <input placeholder="repeat password" id="repeatpassword" type="number" required />
+
+                    </div>
+                    <div className="login_button_div">
+                      <button type="button" >{state1 === "en" ? ("Verification") : ("Верификация")}</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <img className="loginimg" src={loginimg} alt="" />
+            </div>
+          </div>):(<>  {page==6?(
+          <div className="login_db">
+            <div className="login_relative">
+              <img className="LoginImg" src={LoginImg} alt="" />
+              <div className="login_small_div">
+                <form>
+                  <div className="login_small_div_input">
+                    <h1>{state1 === "en" ? ("Verification") : ("Верификация")}</h1>
+                    <p>{state1 === "en" ? ("Code sent to your email") : ("Код отправлен на вашу электронную почту")}</p>
+                    <div className="royhat_small_input">
+                      <FiMail className="login_icon" />
+                      <input placeholder="Верификация" id="verifak1" type="number" required />
+                    </div>
+                    <div className="login_button_div">
+                      <button type="button" onClick={() => PosssordVery()}>{state1 === "en" ? ("Verification") : ("Верификация")}</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <img className="loginimg" src={loginimg} alt="" />
+            </div>
+          </div>):(<>{page == 5 ? (
               <div className="login_relative" >
                 <img className="LoginImg" src={LoginImg} alt="" />
                 <div style={{height:"400px"}} className="login_small_div">
@@ -140,10 +208,10 @@ export default function Login() {
                       <h1 style={{fontSize:'30px'}}>{state1 === "en" ? ("Password Recovery") : ("электронная почта")}</h1>
                       <div className="royhat_small_input">
                         <FiMail className="login_icon" />
-                        <input placeholder={state1 === "en" ? ("Password Recovery ") : ("Электронная почта")} id="email" type="text" required />
+                        <input placeholder={state1 === "en" ? ("Password Recovery ") : ("Электронная почта")} id="changepossword" type="text" required />
                       </div>
                       <div className="login_button_div">
-                        <button type="button" >{state1 === "en" ? ("Reset Password") : ("Авторизоваться")}</button>
+                        <button type="button" onClick={()=>{ChangePassword()}}>{state1 === "en" ? ("Reset Password") : ("Авторизоваться")}</button>
                       </div>
                       <div className="google_div">
                         <FcGoogle className="google_icon" />
@@ -155,7 +223,8 @@ export default function Login() {
                   </form>
                 </div>
                 <img className="loginimg" src={loginimg} alt="" />
-              </div>) : (<>{page === 1 ? (
+              </div>) : (
+              <>{page === 1 ? (
                 <div className="login_relative">
                   <img className="LoginImg" src={LoginImg} alt="" />
                   <div className="login_small_div">
@@ -239,7 +308,7 @@ export default function Login() {
                     </div>
                     <img className="loginimg" src={loginimg} alt="" />
                   </div>
-                )}</>)}
+                )}</>)}</>)}</>)}
           </div>
         )}
 

@@ -3508,7 +3508,7 @@ justify-content: space-around; */
     position: fixed;
     background-color: #000000cc;
     backdrop-filter: blur(10px);
-    z-index: 200 !important;
+    z-index: 200342626346234823484 !important;
     display: none;
     top: 0;
     align-items: center;
@@ -3538,7 +3538,7 @@ justify-content: space-around; */
 .MdCloseProver{
     color: #fff;
     position: absolute ;
-    top: 60px;right: 10px;
+    top: 0px;right: 10px;
     z-index: 200 !important;
 }
 
