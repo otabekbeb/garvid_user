@@ -96,6 +96,7 @@ export default function Test() {
   const [CameButton, setCameButton] = useState()
   const [MarkId, setMarkId] = useState([])
   const [quationId, setQuationId] = useState()
+  const [search, setSearch] = useState('')
 
   const education_id = document.querySelectorAll("#Testeducation_id")
   const start_time = document.querySelectorAll("#Teststart_time")
@@ -493,7 +494,10 @@ export default function Test() {
           <div className="exit_button"><button onClick={() => setPage(0)}>Назад</button></div>
           {/* <div className="search_big_div"><button  className="user_post_button" onClick={()=>postAttened_testModal()}>Добавить</button><AiOutlineSearch className="search"/><input placeholder="Введите здесь..." type="text" /></div> */}
           {/* <Table style={{marginBottom:'100px'}} dataSource={attendance_lesson} columns={columns} /> */}
-          <div className="search_big_div"><button onClick={() => postQuestionsModal()} className="user_post_button">Добавить</button><BsSearch className="search" /><input placeholder="Введите здесь..." type="text" /></div>
+          <div className="search_big_div">
+            <button onClick={() => postQuestionsModal()} className="user_post_button">Добавить</button>
+            <BsSearch className="search" />
+            <input onChange={(e) => setSearch(e.target.value)} placeholder="Введите здесь..." type="text" /></div>
           {/* <Table dataSource={quations} columns={quation} /> */}
           <div className="questions_page_big">
             {quations.map((item, key) => {
@@ -543,9 +547,16 @@ export default function Test() {
             </>
           ) : (
             <>
-              <div className="search_big_div"><button className="user_post_button" onClick={() => postTestModal()}>Добавить</button><BsSearch className="search" /><input placeholder="Введите здесь..." type="text" /></div>
+              <div className="search_big_div">
+                <button className="user_post_button" onClick={() => postTestModal()}>Добавить</button>
+                <BsSearch className="search" />
+                <input onChange={(e) => setSearch(e.target.value)} placeholder="Введите здесь..." type="text" /></div>
               <div className="edication_card">
-                {test.map(item => {
+                {test.filter((item) => {
+                  return search.toLocaleLowerCase() ===''
+                  ? item 
+                  : item.day.toLocaleLowerCase().includes(search);
+                }).map((item) => {
                   return (
                     <div className="edication_card_">
                       <h3>Крайний срок:  {item.deadline}</h3>
@@ -577,7 +588,7 @@ export default function Test() {
       <div id="TestdeleteModal" className="deleteModal">
         <div className="deleteModal_div">
           <div className="postUserModal_div_icon"><GrClose className="icon" onClick={() => deleteTestClose()} /></div>
-          <img src={deleteImg} alt="" />
+          <img src={deleteImg} alt="item" />
           <p>Вы хотите удалить это образование</p>
           <div className="deleteButton_div">
             <button onClick={() => deleteTestClose()}>Отмена</button>
