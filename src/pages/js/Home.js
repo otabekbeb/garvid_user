@@ -18,7 +18,7 @@ export default function Home() {
     const [state, setState] = React.useState(1)
     const [state1, setState1] = React.useState();
     const [univercard, setUnivercard] = useState([])
-    const [chec,setChec] = useState([])
+    const [chec, setChec] = useState([])
     const dataPost = () => {
         var formdata = {
             fullname: document.querySelectorAll('#contact_inp')[0].value,
@@ -46,11 +46,8 @@ export default function Home() {
             setUnivercard(res.data)
         })
     })
-    useEffect(() => {
-        axios.get(`${url}/api/call_me`,{headers:{Authorization:"Bearer"+localStorage.getItem("token")}}).then(res=>{
-            setChec(res.data)
-        })
-    })
+
+
     return (
         <div>
 
@@ -227,9 +224,9 @@ export default function Home() {
                                         <div className="admin_title">
                                             <h4>Admin:</h4>
                                             <div className="chec_icon">
-                                     {chec.read===false?(<BsCheck2 className='bir_chec' />):( <BsCheckAll className='ikki_chec' />)}
-                                                
-                                               
+
+                                                <BsCheck2 className='bir_chec' />
+                                                <BsCheckAll className='ikki_chec' />
                                             </div>
                                         </div>
                                     </div>
