@@ -229,7 +229,7 @@ export default function Edication() {
             </label>
             <label htmlFor="">
             <p>Описание</p>
-            <input id="Educationdescription" className="description" type="text" />
+            <input id="Educationdescription" className="descriptions" type="text" />
           </label>
           </div>
           

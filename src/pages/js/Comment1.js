@@ -119,7 +119,7 @@ export default function Comment1() {
     formdata.append("text", document.querySelector("#chat_text1").value)
     formdata.append("image", document.querySelector("#comment_file1").files[0])
     formdata.append("user_id", oneuser[0].id)
-    formdata.append("theme", JSON.parse(localStorage.getItem("page_video1")).id)
+    formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id)
     formdata.append("subcomment", subcoment)
     formdata.append("task_commnet_id", task_comnet_id)
 
@@ -128,8 +128,7 @@ export default function Comment1() {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
     })
       .then(res => {
-        window.location.reload()
-        axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video1")).id}`, {
+        axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         })
           .then(res => {
