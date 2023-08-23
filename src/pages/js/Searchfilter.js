@@ -222,7 +222,7 @@ export default function Searchfilter() {
                       <p style={{fontSize:"16px"}}>
                       {item.star}
                         <span><MdOutlineGrade style={{color:"#FFD401", fontSize:"13px"}}/></span>
-                     </p></div>):(<>{item.star == null?(<div style={{display:"flex", gap:"5px"}}>
+                     </p></div>):(<>{item.star == 4?(<div style={{display:"flex", gap:"5px"}}>
                      <div className="star_card">
                       <i className="star_i">
                           <AiFillStar style={{color:"#FFD401"}}/>
