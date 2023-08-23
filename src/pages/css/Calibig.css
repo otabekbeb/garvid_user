@@ -127,7 +127,6 @@
     display: inline-flex;
     justify-content: start !important;
     gap: 1px !important;
-    flex-direction: row-reverse;
 }
 
 .star_card .star_i {
