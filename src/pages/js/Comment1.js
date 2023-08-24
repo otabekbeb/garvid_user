@@ -37,7 +37,6 @@ export default function Comment1() {
         res.data.map(item=>{
           if (item.task_commnet_id==task_comnet_id) {
             setComment(res.data)
-          // alert("xato")
           }else{
             
           }
