@@ -14,13 +14,13 @@ font-size: 13px;
 }
 .m_zadach_block{
     transition: 0.3s;
-    width: 24%;
+    width: 330px;
     margin-top: 20px;
     padding: 10px;  
     overflow: hidden;
     box-shadow: 0px 4px 20px 0px rgba(1, 102, 144, 0.10);
-    border-radius: 10px;
-    min-width: 380px;
+    border-radius: 5px;
+    min-width: 330px;
 }
 .m_zadach_block:hover{
     box-shadow: 0px 12px 45px 0px rgba(83, 109, 253, 0.25);

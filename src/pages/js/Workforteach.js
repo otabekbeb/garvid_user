@@ -29,10 +29,9 @@ export default function Workforteach() {
     useEffect(() => {
         axios.get(`${url}/edu/student_sertificat`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             setStsertifikat(res.data)
-         
         })
-     
-      }, [])
+
+    }, [])
     return (
         <div>
 
@@ -40,25 +39,25 @@ export default function Workforteach() {
                 <button onClick={() => openModal()}>Добавить задачу</button>
             </div>
             <div className="m_zadach">
-                {stsertifikat.map(item=>{
-                    return(
-                          <div className="m_zadach_block">
-                   {item.image === null?(<img className='jony_foto' src={img_for_null} alt="" />):( <img src={item.image} alt="" />)}
-                    <h4>{item.title}</h4>
-                    <p>{item.description}</p>
-                     <div className="m_zadacha_icon">
-                        <div className="m_zadach_ktug_icon" >
-                            <BsFillCloudArrowDownFill />
+                {stsertifikat.map(item => {
+                    return (
+                        <div className="m_zadach_block">
+                            {item.image === null ? (<img className='jony_foto' src={img_for_null} alt="" />) : (<img src={item.image} alt="" />)}
+                            <h4>{item.title}</h4>
+                            <p>{item.description}</p>
+                            <div className="m_zadacha_icon">
+                                <div className="m_zadach_ktug_icon1" onClick={() => openModal2()}>
+                                    <MdDeleteOutline />
+                                </div>
+                                <div className="m_zadach_ktug_icon" >
+                                    <BsFillCloudArrowDownFill />
+                                </div>
+                            </div>
                         </div>
-                        {/* <div className="m_zadach_ktug_icon1" onClick={() => openModal2()}>
-                            <MdDeleteOutline />
-                        </div> */}
-                    </div> 
-                </div>
                     )
                 })}
-              
-                    
+
+
             </div>
 
             <div className="m_zadacha_tepadan">
