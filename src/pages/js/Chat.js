@@ -96,9 +96,6 @@ function prof_tg() {
           <img onClick={()=>prof_tg()} style={{height:"100%"}} src={tgimg} alt="" />
           
         </div>
-        <div className="for_tges">
-        <div className="prof_tg1">a</div>
-        </div>
         <p >
           {(() => {
             if (!email) {

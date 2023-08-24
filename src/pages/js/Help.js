@@ -1,5 +1,6 @@
 import { useState,useEffect } from 'react'
 import { FaUserCircle } from 'react-icons/fa'
+import { PiChalkboardTeacherFill } from 'react-icons/pi'
 import { PiStudentDuotone } from 'react-icons/pi'
 import { BsChatLeftDots } from 'react-icons/bs'
 import '../css/Help.css'
@@ -34,7 +35,7 @@ export default function Help() {
             <a href="/MentorHelp">
               <div className="user_div"  >
                 <div className="user_icon">
-                  <FaUserCircle />
+                  <PiChalkboardTeacherFill />
                 </div>
                 <h4>Mentor</h4>
               </div>
