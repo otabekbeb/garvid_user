@@ -42,7 +42,8 @@ export default function Youtube1() {
   const [state1, setState1] = React.useState();
   const [loader, setLoader] = useState(1);
   const [IDtheme, setIdtheme] = useState({});
-  const [task_comnet_id, setTask_comnet_id] = useState(0)
+  const [task_comnet_id, setTask_comnet_id] = useState(0)  
+  const [kursdata, setKursdata] = useState([]);
 
 
   function openModal() {
@@ -165,7 +166,22 @@ export default function Youtube1() {
       });
 
 
-
+      axios.get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+        axios.get(`${url}/api/course`, { header: {Authorization : `Bearer ${localStorage.getItem("token")}`}}).then(res1=>{
+          for (let i = 0; i < res.data.length; i++) {
+            for (let j = 0; j < res1.data.length; j++) {
+              if (res.data[i].id==res1.data[j].id) {
+                res.data[i].star=res1.data[j].star
+              }
+              
+            }
+            
+          }
+          setKursdata(res.data)
+        })
+      }).catch(err => {
+  
+      })
 
 
     setState1(
@@ -226,54 +242,126 @@ export default function Youtube1() {
                       <h1 className="raspberry_pi">{main1.name}</h1>
                       <div className="odtel_media_uchun">
                         <h1>{main1.name}</h1>
-                        {/* <div className="flex_star_p">
-          <div className="flex_star2">
-            <p>
-              <AiFillStar />
-            </p>
-            <p>
-              <AiFillStar />
-            </p>
-            <p>
-              <AiFillStar />
-            </p>
-            <p>
-              <AiFillStar />
-            </p>
-          </div>
-          <div className="flex_star12">
-            <p>
-              <AiFillStar />
-            </p>
-          </div>
-          <p className="p_4_1_5245">
-            4.1 <span>(524)</span>
-          </p>
-        </div> */}
+                        {kursdata.map(item=>{
+    {item.star == 1 ?(      <div className="flex_star_p">
+    <p>
+      <AiFillStar style={{color: "#FFD401"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color:"#9DA7BB"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color:"#9DA7BB"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color:"#9DA7BB"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color:"#9DA7BB"}}/>
+    </p>
+  <p className="p_4_1_5245">
+    4.1 <span>(524)</span>
+  </p>
+</div>):(<>{item.star == 2?(      <div className="flex_star_p">
+    <p>
+      <AiFillStar style={{color: "#FFD401"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color: "#FFD401"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color:"#9DA7BB"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color:"#9DA7BB"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color:"#9DA7BB"}}/>
+    </p>
+  <p className="p_4_1_5245">
+    4.1 <span>(524)</span>
+  </p>
+</div>):(<>{item.star == 3?(      <div className="flex_star_p">
+    <p>
+      <AiFillStar style={{color: "#FFD401"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color: "#FFD401"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color: "#FFD401"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color:"#9DA7BB"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color:"#9DA7BB"}}/>
+    </p>
+  <p className="p_4_1_5245">
+    4.1 <span>(524)</span>
+  </p>
+</div>):(<>{item.star == 4?(      <div className="flex_star_p">
+    <p>
+      <AiFillStar style={{color: "#FFD401"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color: "#FFD401"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color: "#FFD401"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color: "#FFD401"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color:"#9DA7BB"}}/>
+    </p>
+  <p className="p_4_1_5245">
+    4.1 <span>(524)</span>
+  </p>
+</div>):(<>{item.star == 5 ? (      <div className="flex_star_p">
+    <p>
+      <AiFillStar style={{color: "#FFD401"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color: "#FFD401"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color: "#FFD401"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color: "#FFD401"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color: "#FFD401"}}/>
+    </p>
+  <p className="p_4_1_5245">
+    4.1 <span>(524)</span>
+  </p>
+</div>):(<div className="flex_star_p">
+    <p>
+      <AiFillStar style={{color:"#9DA7BB"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color:"#9DA7BB"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color:"#9DA7BB"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color:"#9DA7BB"}}/>
+    </p>
+    <p>
+      <AiFillStar style={{color:"#9DA7BB"}}/>
+    </p>
+  <p className="p_4_1_5245">
+    4.1 <span>(524)</span>
+  </p>
+</div>)}</>)}</>)}</>)}</>)}
+                        })}
+                    
+                  
                       </div>
-                      {/* <div className="flex_star">
-        <p>
-          <AiFillStar />
-        </p>
-        <p>
-          <AiFillStar />
-        </p>
-        <p>
-          <AiFillStar />
-        </p>
-        <p>
-          <AiFillStar />
-        </p>
-      </div>
-      <div className="flex_star1">
-        <p>
-          <AiFillStar />
-        </p>
-      </div>
-
-      <p className="p_4_1_524">
-        4.1 <span>(524)</span>
-      </p> */}
                     </div>
                   </div>
                   <p className="theme_content">{main1.content}</p>
@@ -290,30 +378,121 @@ export default function Youtube1() {
                         <h1 className="raspberry_pi">{main.name}</h1>
                         <div className="odtel_media_uchun">
                           <h1>{main.name}</h1>
-                          {/* <div className="flex_star_p">
-          <div className="flex_star2">
+                          {kursdata.star == 1 ?(      <div className="flex_star_p">
             <p>
-              <AiFillStar />
+              <AiFillStar style={{color: "#FFD401"}}/>
             </p>
             <p>
-              <AiFillStar />
+              <AiFillStar style={{color:"#9DA7BB"}}/>
             </p>
             <p>
-              <AiFillStar />
+              <AiFillStar style={{color:"#9DA7BB"}}/>
             </p>
             <p>
-              <AiFillStar />
+              <AiFillStar style={{color:"#9DA7BB"}}/>
             </p>
-          </div>
-          <div className="flex_star12">
             <p>
-              <AiFillStar />
+              <AiFillStar style={{color:"#9DA7BB"}}/>
             </p>
-          </div>
           <p className="p_4_1_5245">
             4.1 <span>(524)</span>
           </p>
-        </div> */}
+        </div>):(<>{kursdata.star == 2?(      <div className="flex_star_p">
+            <p>
+              <AiFillStar style={{color: "#FFD401"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color: "#FFD401"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color:"#9DA7BB"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color:"#9DA7BB"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color:"#9DA7BB"}}/>
+            </p>
+          <p className="p_4_1_5245">
+            4.1 <span>(524)</span>
+          </p>
+        </div>):(<>{kursdata.star == 3?(      <div className="flex_star_p">
+            <p>
+              <AiFillStar style={{color: "#FFD401"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color: "#FFD401"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color: "#FFD401"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color:"#9DA7BB"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color:"#9DA7BB"}}/>
+            </p>
+          <p className="p_4_1_5245">
+            4.1 <span>(524)</span>
+          </p>
+        </div>):(<>{kursdata.star == 4?(      <div className="flex_star_p">
+            <p>
+              <AiFillStar style={{color: "#FFD401"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color: "#FFD401"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color: "#FFD401"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color: "#FFD401"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color:"#9DA7BB"}}/>
+            </p>
+          <p className="p_4_1_5245">
+            4.1 <span>(524)</span>
+          </p>
+        </div>):(<>{kursdata.star == 5 ? (      <div className="flex_star_p">
+            <p>
+              <AiFillStar style={{color: "#FFD401"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color: "#FFD401"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color: "#FFD401"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color: "#FFD401"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color: "#FFD401"}}/>
+            </p>
+          <p className="p_4_1_5245">
+            4.1 <span>(524)</span>
+          </p>
+        </div>):(<div className="flex_star_p">
+            <p>
+              <AiFillStar style={{color:"#9DA7BB"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color:"#9DA7BB"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color:"#9DA7BB"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color:"#9DA7BB"}}/>
+            </p>
+            <p>
+              <AiFillStar style={{color:"#9DA7BB"}}/>
+            </p>
+          <p className="p_4_1_5245">
+            4.1 <span>(524)</span>
+          </p>
+        </div>)}</>)}</>)}</>)}</>)}
                         </div>
                         {/* <div className="flex_star">
         <p>

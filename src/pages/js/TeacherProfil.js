@@ -263,9 +263,10 @@ export default function Profil() {
   function openNotification() {
     document.querySelector(".yon_notification_all").style = "right:0%;"
   }
-  // function follow() {
-  //   document.querySelector(".Following").classList.toggle("following2")
-  // }
+  function follow1() {
+    document.querySelector(".Following").classList.toggle("following2")
+  }
+  
   useEffect(() => {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
@@ -407,8 +408,11 @@ export default function Profil() {
                 {/* <button>
                   <BsActivity />
                 </button> */}
-                <button className="Following" onClick={() => follow()}>
+                <button className="Following" onClick={() => follow1()}>
                   Subscribe
+                </button>
+                <button style={{marginTop:"25px"}} className="Following" id="following" >
+                Send a message
                 </button>
               </div>
             </div>

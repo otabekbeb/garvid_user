@@ -6,6 +6,8 @@
     "@emoji-mart/data": "^1.1.2",
     "@emoji-mart/react": "^1.1.1",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@stripe/react-stripe-js": "^2.1.2",
+    "@stripe/stripe-js": "^2.1.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -27,7 +29,7 @@
     "socket.io": "^4.7.2",
     "socket.io-client": "^4.7.2",
     "swal": "^0.1.0",
-    "sweetalert2": "^11.7.21",
+    "sweetalert2": "^11.7.27",
     "swiper": "^10.0.4",
     "web-vitals": "^2.1.4"
   },

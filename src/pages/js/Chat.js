@@ -61,6 +61,9 @@ function Chat({ socket, email, room }) {
   }
   document.querySelector(".yozishma_small_div").style = "display:none"
 }
+function prof_tg() {
+  
+}
   useEffect(() => {
     if (theme=="moon") {
       document.querySelector(".chat-window .chat-header p").style = "color:white";
@@ -90,7 +93,8 @@ function Chat({ socket, email, room }) {
       <div className="chat-header">
         <i  style={theme=="moon"?{color:"white"}:{color:"black"}} id="back_icons" onClick={() => back()} class='bx bx-arrow-back'></i>
         <div style={{marginLeft:"15px"}} className="tg_img">
-          <img style={{height:"100%"}} src={tgimg} alt="" />
+          <img onClick={()=>prof_tg()} style={{height:"100%"}} src={tgimg} alt="" />
+          
         </div>
         <p >
           {(() => {
