@@ -228,8 +228,6 @@ export default function Home() {
                                             <h4>Admin:</h4>
                                             <div className="chec_icon">
                                      {chec.read===false?(<BsCheck2 className='bir_chec' />):( <BsCheckAll className='ikki_chec' />)}
-                                                
-                                               
                                             </div>
                                         </div>
                                     </div>
