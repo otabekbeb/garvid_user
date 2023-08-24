@@ -212,6 +212,9 @@ input::-webkit-outer-spin-button {
 .inputBox1 img {
     cursor: pointer;
 }
+.paypal-button .paypal-button-color-gold{
+    background: #6ad2ff !important;
+}
 
 @media (max-width:700px) {
     .container2 {
