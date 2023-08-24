@@ -155,6 +155,7 @@ export default function Searchfilter() {
             <div className="kurs_cards">
               {kursdata.map(item => {
                 return (
+                  <>
                   <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
                     <button className="btn_das">Programming</button>
                     <img src={item.oneuser ? item.oneuser.image.includes("http") ? item.oneuser.image : `${url}/${item.oneuser.image}` :
@@ -299,6 +300,7 @@ export default function Searchfilter() {
                     </button>
                   </div>
                   
+                  </>
                 )
 
               })}
