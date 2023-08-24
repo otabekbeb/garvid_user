@@ -59,16 +59,10 @@ export default function Home() {
 
                     <Navbar />
 
-
-                    <Carousel data-bs-theme="dark">
-                        <Carousel.Item>
-                            <img
-                                className="d-block"
-                                src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/08/mt-0514-home-slider02.jpg"
-                                alt="Second slide"
-                            />
-                            <Carousel.Caption className='carusel'>
-                                <h1>Expert Financial Advice</h1>
+<div className="foor_header">
+    <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/08/mt-0514-home-slider02.jpg" alt="" />
+    <div className="fir_header">
+    <h1>Expert Financial Advice</h1>
                                 <p>With over 20 years of experience we'll ensure you always get the best guidance</p>
                                 <div onClick={() =>
                                     window.location = "/servis"
@@ -77,10 +71,9 @@ export default function Home() {
                                     <button onClick={() =>
                                         window.location = "/blog"
                                     } className='button1'>Purchase now</button>
-                                </div>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                    </Carousel>
+                                </div></div>
+</div>
+               
 
 
                     <div className="universty">
