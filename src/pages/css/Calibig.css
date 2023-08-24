@@ -116,23 +116,38 @@
     font-weight: 600;
 }
 
-.star_card {
+.star_df{
     margin-top: 20px;
     display: flex;
-    gap: 3px;
+    gap: 10px;
+}
+
+.star_card {
+    margin-top: -3px !important;
+    display: inline-flex;
+    justify-content: start !important;
+    gap: 1px !important;
 }
 
 .star_card .star_i {
     cursor: pointer;
-    font-size: 14px;
-    color: rgba(255, 212, 1, 1);
+    font-size: 18px;
+    color: #dcdcdc ;
 }
 
-.star_card .star_ib {
-    cursor: pointer;
-    font-size: 14px;
-    color: rgba(157, 167, 187, 1);
+/* .star_i:hover,
+.star_i:hover ~ .star_i{
+    color: #989898 ;
 }
+
+.star_card[data-total-value="1"] .star_i:nth-child(n + 5),
+.star_card[data-total-value="2"] .star_i:nth-child(n + 4),
+.star_card[data-total-value="3"] .star_i:nth-child(n + 3),
+.star_card[data-total-value="4"] .star_i:nth-child(n + 2),
+.star_card[data-total-value="5"] .star_i:nth-child(n + 1){
+    color: orange !important;
+} */
+
 
 .star_card p {
     color: black;
@@ -140,6 +155,7 @@
     font-size: 14px;
     font-weight: 600;
 }
+
 
 .star_card p span {
     font-weight: 400;
