@@ -70,15 +70,9 @@ export default function Loginpage() {
     formdata.append("last_name", document.querySelector("#last_name").value);
     formdata.append("email", document.querySelector("#username").value);
     formdata.append("image", document.querySelector("#img").files[0]);
-    formdata.append(
-      "phone_number",
-      document.querySelector("#phone_number").value
-    );
+    formdata.append( "phone_number",document.querySelector("#phone_number").value);
     formdata.append("address", document.querySelector("#adress").value);
-    formdata.append(
-      "description",
-      document.querySelector("#description").value
-    );
+    formdata.append("description", document.querySelector("#description").value);
 
     axios.put(`${url}/auth/oneuser/${id}`, formdata, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
