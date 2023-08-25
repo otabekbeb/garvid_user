@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Use_img from "../img/Ellipse.jpg"
-
+import {AiOutlineArrowDown} from 'react-icons/ai'
 import Pdp from "./UserPdp"
 import { MdOutlinePhotoCamera } from "react-icons/md"
 import { BsActivity, BsFillBellFill, BsThreeDots } from "react-icons/bs"
@@ -31,6 +31,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
 import img_for_null from '../img/download.png'
 import Testpage from './Testpage'
+import Nosignal from '../js/Nosignal'
 function openTest() {
   document.querySelector(".block-bir-variant1 p").style = `   background-color: #fcfcfc;
   border: 1px solid #ccc;`
@@ -684,91 +685,70 @@ export default function Mentor() {
           </div>
 
           <div className="kurs_cards">
-            {localStorage.setItem("courselenght", kursdata.length)}
-            {kursdata.map(item => {
-              return (
-                <div className="kurs_card">
-                  <button className="btn_das">Dasturlash</button>
-                  {item.image === null ? (
-                    <img src={img_for_null} />
-                  ) : (
-                    <img src={item.image} />
-                  )}
-                  <div className="kurs_paddaing_auto">
-                    <h4>{item.name}</h4>
-                    <div className="star_card">
-                      <i className="star_i">
-                        <AiFillStar />
-                      </i>
-                      <i className="star_i">
-                        <AiFillStar />
-                      </i>
-                      <i className="star_i">
-                        <AiFillStar />
-                      </i>
-                      <i className="star_i">
-                        <AiFillStar />
-                      </i>
-                      <i className="star_ib">
-                        <AiFillStar />
-                      </i>
-                      <p>
-                        4.1 <span>(524)</span>
-                      </p>
+              {kursdata.length===0?(
+                   <div className="No_div">
+                   <h1>Курс не куплен</h1>
+                   <div className="pas_icon">
+                     <AiOutlineArrowDown className='pas'/>
+                     <AiOutlineArrowDown className='pas'/>
+                     <AiOutlineArrowDown className='pas'/>
+                     
+                   </div>
+                   <button>Покупка курса </button>
+             </div>
+              ):(
+                <>
+                {kursdata.map(item => {
+                return (
+                  <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
+                    <button className="btn_das">Programming</button>
+                    <img src={item.oneuser ? item.oneuser.image.includes("http") ? item.oneuser.image : `${url}/${item.oneuser.image}` :
+                      <img src={img_for_null} alt="" />} alt="" />
+                    <div className="kurs_paddaing_auto">
+                      <h4>{item.name}</h4>
+                      <div className="star_card">
+                        <i className="star_i">
+                          <AiFillStar />
+                        </i>
+                        <i className="star_i">
+                          <AiFillStar />
+                        </i>
+                        <i className="star_i">
+                          <AiFillStar />
+                        </i>
+                        <i className="star_i">
+                          <AiFillStar />
+                        </i>
+                        <i className="star_ib">
+                          <AiFillStar />
+                        </i>
+                        <p>
+                          4.1 <span>(524)</span>
+                        </p>
+                      </div>
+                      <div className="hajm">
+                        <h5>
+                          <p>Course size</p>
+                          {item.planned_time}h
+                        </h5>
+                        <h5>
+                          <p>Course price</p>
+                          {item.price}$
+                        </h5>
+                      </div>
                     </div>
-                    <div className="hajm">
-                      <h5>
-                        <p>Kurs narxi</p>
-                        {item.price}$
-                      </h5>
-                      <h5>
-                        <p>Kurs vaqti</p>
-                        {item.planned_time}h
-                      </h5>
-                    </div>
+                    <button className="button_circle">
+                      <AiOutlineArrowRight onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} />
+                    </button>
                   </div>
-                  <button className="button_circle">
-                    <AiOutlineArrowRight
-                    // onClick={() => {
-                    //   window.location = "/video";
-                    //   localStorage.setItem("course", item.id)
-                    // }}
-                    />
-                  </button>
-                </div>
-              )
-            })}
+                  
+                )
 
-            <div id="edit_card" className="edit_card" >
-              <div className="edit_padding">
-
-                <button onClick={() => dashed_nazat()} className="close_btn">
-                  <i><GrFormClose /></i>
-                </button>
-                <div className="edit_inside">
-                  <label htmlFor="">Name:</label>
-                  <input type="text" />
-                </div>
-                <div className="edit_inside">
-                  <label htmlFor="">Description:</label>
-                  <input type="text" />
-                </div>
-                <div className="edit_inside">
-                  <label htmlFor="">Price:</label>
-                  <input type="number" className="inp_numbr" />
-                </div>
-                <div className="edit_inside">
-                  <label htmlFor="">Planned time:</label>
-                  <input type="number" className="inp_numbr" />
-                </div>
-                <div className="edit_inside">
-                  <label htmlFor="">Image:</label>
-                  <input type="file" className="inp_img" />
-                </div>
-                <button className="edit_inside_btn">Send</button>
-              </div>
+              })}
+              </>
+              )}
+              
             </div>
-          </div>
 
           {/* SPISKA */}
 
@@ -999,7 +979,7 @@ export default function Mentor() {
         <div className={toggle === 3 ? "show-content" : "content"}><Sertifikat /></div>
         <div className={toggle === 4 ? "show-content" : "content"}><div>
 
-
+  
 
           <div className="followcards1">
             {follow.map((item, key) => {
