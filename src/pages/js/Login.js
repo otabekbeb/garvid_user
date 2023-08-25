@@ -115,6 +115,21 @@ export default function Login() {
         Swal.fire("You entered the code incorrectly")
       })
   }
+  function PosssordVery() {
+    var formdata = new FormData()
+    formdata.append("code", document.querySelector("#verifak1").value)
+    formdata.append("password", document.querySelector("#password1").value)
+
+    axios.put(`${url}/auth/reset`, formdata)
+      .then(res => {
+        window.location = "/login"
+        Swal.fire("You have successfully changed your password")
+      })
+      .catch(err => {
+        Swal.fire("You entered the code incorrectly or someone already has this password")
+      })
+  }
+
 
 
   const [state1, setState1] = React.useState();
@@ -190,6 +205,23 @@ export default function Login() {
                         <div className="royhat_small_input">
                           <FiMail className="login_icon" />
                           <input placeholder="Верификация" id="verifak1" type="number" required />
+                          <input placeholder={state1 === "en" ? ("Email") : ("Электронная почта")} id="email" type="text" required />
+                        </div>
+                        <div className="royhat_small_input">
+                          <BiLockAlt className="login_icon" />
+                          <input type={changePassword ? "password" : "text"}
+                            name="password" placeholder={state1 === "en" ? ("Password") : ("Пароль")} id="parol" required />
+                          <span className="icon"
+                            onClick={() => {
+                              setChangePassword(changeIcon);
+                            }}
+                          >
+                            {changeIcon ? <AiOutlineEye style={{ fontSize: "25px", position: "absolute", top: "30px", right: "0" }} /> : <i class='bx bx-low-vision' style={{ fontSize: "25px", position: "absolute", top: "30px", right: "0" }}  ></i>}
+                          </span>
+                        </div>
+                        <div className="parol-esdan-chiqdi">
+                          <a onClick={() => setPage(5)} style={{ cursor: "pointer" }}>Забыл пароль ?</a>
+
                         </div>
                         <div className="login_button_div">
                           <button type="button" onClick={() => PosssordVery()}>{state1 === "en" ? ("Verification") : ("Верификация")}</button>
@@ -263,6 +295,7 @@ export default function Login() {
                       </form>
                     </div>
                     <img className="loginimg" src={loginimg} alt="" />
+
                   </div>) :
                   (
                     <div className="login_relative">
@@ -277,7 +310,7 @@ export default function Login() {
                               <div className="error">{state1 === "en" ? ("It's already in use") : ("Это уже используется")}</div>
                             </div>
                             <div className="login_small_input">
-                              <BiLockAlt className="login_icon" /> 
+                              <BiLockAlt className="login_icon" />
                               <input type={changePassword ? "password" : "text"}
                                 name="password" className="password" placeholder={state1 === "en" ? ("Password") : ("Пароль")} required />
                               <span className="icon"
@@ -309,7 +342,12 @@ export default function Login() {
                       <img className="loginimg" src={loginimg} alt="" />
                     </div>
                   )}</>)}</>)}</>)}
+
           </div>
+
+
+
+
         )}
 
 

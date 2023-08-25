@@ -23,6 +23,7 @@ import Delete from './Delete';
 import Groupimg from '../img/Group 2.png'
 import img_for_null from '../img/download.png'
 import Form from 'react-bootstrap/Form';
+import {FiDownload} from "react-icons/fi"
 import { BsChevronDown } from "react-icons/bs"
 
 
@@ -135,7 +136,7 @@ export default function Searchfilter() {
     formdata.append("planned_time", document.querySelector(".planned_timePost").value)
     formdata.append("image", document.querySelector(".imagePost").files[0])
     formdata.append("course_type", document.querySelector(".selectPost").value)
-    formdata.append("author", localStorage.getItem("oneuser"))
+    formdata.append("author", localStorage.getItem("OneuserId"))
 
 
     axios.post(`${url}/api/course`, formdata, {
@@ -157,7 +158,7 @@ export default function Searchfilter() {
     formdata.append("planned_time", document.querySelector(".inp_numbr").value)
     formdata.append("image", document.querySelector(".inp_img").files[0])
     formdata.append("course_type", document.querySelector(".select_opt").value)
-    formdata.append("author", localStorage.getItem("oneuser"))
+    formdata.append("author", localStorage.getItem("OneuserId"))
 
     axios.put(`${url}/api/course/${id}`, formdata, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
@@ -216,7 +217,8 @@ export default function Searchfilter() {
       Swal.fire("err")
     })
     axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-      setKursdata(res.data)
+      const Filter = res.data.filter(item=>item.author==localStorage.getItem("OneuserId"))
+      setKursdata(Filter)
 
     }).catch(err => {
       console.log(err);
@@ -300,7 +302,7 @@ export default function Searchfilter() {
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
                 </div> */}
               </div>
-              <div onMouseLeave={() => filter1()} className="filter_button">
+              <div onMouseLeave={() => filter1()} className="filter_button" >
 
 
                 {courstype.map(item => {
@@ -321,7 +323,8 @@ export default function Searchfilter() {
         <div className="kurs_cards">
           {kursdata.map(item => {
             localStorage.setItem("courseLength", kursdata.length)
-            return (
+
+             return (
               <div className="kurs_card">
                 <button className="btn_das">Dasturlash</button>
                 {/* {item.image === null ? (
@@ -389,6 +392,7 @@ export default function Searchfilter() {
                     <div className="edit_inside">
                       <label htmlFor="">Image:</label>
                       <input id="image" type="file" className="inp_img" />
+                      <div className="inp_img_div"><FiDownload/> Select image</div>
                     </div>
                     <button className="edit_inside_btn" onClick={() => dashed(item.id)}>Send</button>
                   </div>
@@ -418,7 +422,8 @@ export default function Searchfilter() {
                   />
                 </button>
               </div>
-            )
+            ) 
+            
           })}
 
           <div className="dashed" onClick={() => dashedOpen2()}>
@@ -455,6 +460,7 @@ export default function Searchfilter() {
               <div className="edit_inside">
                 <label htmlFor="">Image:</label>
                 <input className="imagePost" type="file" />
+                <div className="inp_img_div"><FiDownload/> Select image</div>
               </div>
               <button className="edit_inside_btn" onClick={() => { postformentor() }}>Send</button>
             </div>

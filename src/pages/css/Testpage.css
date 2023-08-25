@@ -705,7 +705,7 @@ justify-content: space-between;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    transition: background-color 0.5s;
+    transition:  0.5s;
 }
 .block-bir-variant4 p{
     font-size: 16px !important;
@@ -825,7 +825,7 @@ justify-content: space-between;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    transition: background-color 0.5s;
+    transition:  0.5s;
 }
 .block-bir-variant9 p{
     font-size: 16px !important;
@@ -849,7 +849,7 @@ justify-content: space-between;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    transition: background-color 0.5s;
+    transition:  0.5s;
 }
 .block-bir-variant10 p{
     font-size: 16px !important;
@@ -964,3 +964,4 @@ justify-content: space-between;
     border: 1px solid #ccc;
     border-radius: 3px;
 }
+

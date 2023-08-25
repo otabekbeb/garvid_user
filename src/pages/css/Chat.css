@@ -264,6 +264,7 @@ body {
 .telegram_menu1 {
   position: absolute;
   left: -570px;
+  top: 5px;
   width: 300px;
   min-height: 300px;
   background: black;
