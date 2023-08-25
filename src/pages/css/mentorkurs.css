@@ -183,6 +183,9 @@
   .nav-underline {
     margin: auto;
   }
+  .sel_blok{
+    justify-content: center !important;
+  }
 }
 
 @media (max-width: 345px) {

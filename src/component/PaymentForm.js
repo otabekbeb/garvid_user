@@ -1,6 +1,7 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js"
 import axios from "axios"
 import React, { useState } from 'react'
+import { FcApproval } from "react-icons/fc"
 import url from "../pages/js/Host"
 
 
@@ -37,7 +38,6 @@ export default function PaymentForm() {
             type: "card",
             card: elements.getElement(CardElement)
         })
-        console.log(paymentMethod, "slaom");
 
 
         if (!error) {
@@ -49,6 +49,25 @@ export default function PaymentForm() {
                 })
 
                 if (response.data.success) {
+                    var formdata = new FormData()
+            
+                    formdata.append("amout", document.querySelector("#Stripe_input").value)
+                    formdata.append("user_id", localStorage.getItem("OneuserId"))
+                    formdata.append("type", 1)
+                    axios.post(`${url}/pay/payment`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+                    })
+        
+                    var formdata1 = new FormData()
+                    formdata1.append("balance", document.querySelector("#Stripe_input").value)
+        
+                    axios.put(`${url}/auth/balance/${localStorage.getItem("OneuserId")}`, formdata1, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+                    })
+
+                    document.querySelector("#paypal_big_div").style = "position:fixed;top:80px;"
+                    setTimeout(() => {
+                      document.querySelector("#paypal_big_div").style = "position:fixed;top:-100%;"
+                    }, 5000);
+                    document.querySelector("#Stripe_input").value = ""
                     alert("Successful payment")
                     console.log("Successful payment")
                     setSuccess(true)
@@ -57,7 +76,6 @@ export default function PaymentForm() {
                 }
 
             } catch (error) {
-                alert(error)
                 console.log("Error", error)
             }
         } else {
@@ -67,13 +85,10 @@ export default function PaymentForm() {
 
     return (
         <>
-            {page == 0 ? (
-                <>
+
                     <p>Введите деньги</p>
                     <input type="text" id="Stripe_input" />
-                    <button onClick={() => setPage(1)} >Платить</button>
-                </>
-            ) : (<>
+
                 {!success ?
                     <form onSubmit={handleSubmit}>
                         <fieldset className="FormGroup">
@@ -88,8 +103,11 @@ export default function PaymentForm() {
                         <h2>Ваш счет будет пополнен</h2>
                     </div>
                 }
-            </>)}
-
+      <div  className="paypal_modal">
+        <div id="paypal_big_div" className="paypal_big_div">
+          <FcApproval />Деньги были выплачены
+        </div>
+      </div>
 
         </>
     )
