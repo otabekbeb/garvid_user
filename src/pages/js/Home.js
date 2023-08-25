@@ -34,6 +34,9 @@ export default function Home() {
         }).catch(err => {
             state === "ru" ? (Swal.fire("Проверить информацию,Не удалось отправить")) : (Swal.fire("Check information, Failed to send"))
         })
+        axios.get(`https://markazback2.onrender.com/API/call_me/read/${localStorage.getItem("OneuserId")}`).then(res=>{
+            setChec(res.data)
+        })
     }
     useEffect(() => {
         setState1(
@@ -218,15 +221,14 @@ export default function Home() {
                                     <label>
                                         <p>Message</p>
                                         <textarea name="" className='contact_textarea' id="text1" cols="30" rows="10"></textarea>
-                                    </label>
+                                    </label>    
                                     <div className="admin_button">
                                         <button onClick={() => { dataPost() }}>Subscribe</button>
                                         <div className="admin_title">
                                             <h4>Admin:</h4>
                                             <div className="chec_icon">
-
-                                                <BsCheck2 className='bir_chec' />
-                                                <BsCheckAll className='ikki_chec' />
+                                {chec.Updated != true?(  <BsCheck2 className='bir_chec' />):(<BsCheckAll className='ikki_chec' />)}
+                                              
                                             </div>
                                         </div>
                                     </div>

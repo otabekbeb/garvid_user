@@ -19,7 +19,8 @@ import url from "./Host";
 import Loader from './loader'
 import img_for_null from '../img/download.png'
 import img_prover from '../img/istockphoto-1321436405-612x612.jpg'
-
+import {AiOutlineArrowDown} from 'react-icons/ai'
+import '../css/Nosignal.css'
 export default function Searchfilter() {
   const [courstype, setCoursetype] = useState([])
 
@@ -140,7 +141,18 @@ export default function Searchfilter() {
               </div>
             </div>
             <div className="kurs_cards">
-              {kursdata.map(item => {
+              {kursdata.length===0?(  <div className="No_div">
+              <h1>Курс не куплен</h1>
+              <div className="pas_icon">
+                <AiOutlineArrowDown className='pas'/>
+                <AiOutlineArrowDown className='pas'/>
+                <AiOutlineArrowDown className='pas'/>
+                
+              </div>
+              <button>Покупка курса </button>
+        </div>):(
+                <>
+                {kursdata.map(item => {
                 return (
                   <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
                     <button className="btn_das">Programming</button>
@@ -187,6 +199,9 @@ export default function Searchfilter() {
                 )
 
               })}
+              </>
+              )}
+              
             </div>
 
 
