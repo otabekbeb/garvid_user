@@ -28,6 +28,7 @@
     "react-swal": "^4.0.0",
     "socket.io": "^4.7.2",
     "socket.io-client": "^4.7.2",
+    "stripe": "^13.3.0",
     "swal": "^0.1.0",
     "sweetalert2": "^11.7.27",
     "swiper": "^10.0.4",
