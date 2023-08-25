@@ -77,31 +77,34 @@ font-size: 13px;
     align-items: center;
     gap: 10px;
     justify-content: flex-end;
+    margin-right: 10px;
 }
 .m_zadach_ktug_icon{
     transition: 0.5s;
     display: flex;
-    align-items: center;justify-content: center;
+    align-items: center;
+    justify-content: center;
     color: #44bef1  ;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     border: 1px solid #44bef1;
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 10px;
     cursor: pointer;
 }
 .m_zadach_ktug_icon1{
     transition: 0.5s;
     display: flex;
-    align-items: center;justify-content: center;
+    align-items: center;
+    justify-content: center;
     color: red  ;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     border: none;
     border: 1px solid red;
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 10px;
     cursor: pointer;
 }
@@ -123,7 +126,7 @@ font-size: 13px;
     padding: 25px;
     box-shadow:  0 0px 40px #a3a5a654;
     background-color: #f2f5fb;
-    width: 50%;
+    width: 500px;
     height: auto;
     border-radius: 10px;
     position: fixed;
@@ -134,15 +137,15 @@ font-size: 13px;
     margin: auto;
     width: 600px;
     height: 350px;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: white;
     box-shadow:  0 0px 40px #a3a5a654;
 }
 .m_input_bilmafim select{
-    margin-top: 10px;
+    /* margin-top: 10px; */
     border: none;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 5px;
+    /* padding: 10px; */
     outline: none;
     width: 100%;
     background-color: #fff;
@@ -151,8 +154,8 @@ font-size: 13px;
 .m_input_bilmafim textarea{
     margin-top: 10px;
     border: none ;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 5px;
+    padding: 7px 10px; 
     outline: none;
     height: 150px;
     width: 100%;
@@ -248,7 +251,7 @@ font-size: 13px;
 
 .m_input_file_dobavit{
     width: 100% ;
-    height: 200px;
+    height: 100px;
     border-radius: 5px;
     color: #fff;
     display: flex;
@@ -257,12 +260,11 @@ font-size: 13px;
     position: relative;
 }
 .m_input_file_dobavit input{ 
-    margin-top: 10px;
     border: none;
     border-radius: 10px;
     padding: 10px;
     outline: none;
-    height: 180px;
+    height: 100px;
     position: absolute;
     top: 0;
     left: 0;
@@ -273,9 +275,13 @@ font-size: 13px;
 .a_input_file12{
     position: absolute;
     width: 100% ;
-    height: 200px; 
+    height: 100px; 
+    font-size: 18px;
+    gap: 5px;
     border-radius: 5px;
-    background-color: #bbc3d3;
+    color: #44bef1;
+    background-color: #fff;
+    border: 2px dashed #44bef1;
     display: flex;
     align-items: center;
     justify-content: center;
