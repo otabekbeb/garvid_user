@@ -75,7 +75,7 @@ export default function Workforteach() {
                 {stTasks.map(item => {
                     return (
                         <div className="m_zadach_block">
-                            {item.image === null ? (<img className='jony_foto' src={img_for_null} alt="" />) : (<img src={item.image} alt="" />)}
+                        {item.image === null ? (<img className='jony_foto' src={img_for_null} alt="" />) : (<img src={item.image} alt="" />)}
                             <h4>{item.content}</h4>
                             <p>{item.course_theme}</p>
                             <div className="m_zadacha_icon">
