@@ -34,7 +34,7 @@ export default function Home() {
         }).catch(err => {
             state === "ru" ? (Swal.fire("Проверить информацию,Не удалось отправить")) : (Swal.fire("Check information, Failed to send"))
         })
-        axios.get(`https://markazback2.onrender.com/API/call_me/read/${localStorage.getItem("OneuserId")}`).then(res=>{
+        axios.get(`https://markazback2.onrender.com/API/call_me/read/${localStorage.getItem("OneuserId")}`).then(res => {
             setChec(res.data)
         })
     }
@@ -59,23 +59,20 @@ export default function Home() {
 
                     <Navbar />
 
-<div className="foor_header">
-    <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/08/mt-0514-home-slider02.jpg" alt="" />
-    <div className="fir_header">
-    <h1>Expert Financial Advice</h1>
-                                <p>With over 20 years of experience we'll ensure you always get the best guidance</p>
-                                <div onClick={() =>
-                                    window.location = "/servis"
-                                } className="buttons">
-                                    <button className='button'>Our Services</button>
-                                    <button onClick={() =>
-                                        window.location = "/blog"
-                                    } className='button1'>Purchase now</button>
-                                </div></div>
-</div>
-               
-
-
+                    <div className="foor_header">
+                        <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/08/mt-0514-home-slider02.jpg" alt="" />
+                        <div className="fir_header">
+                            <h1>Expert Financial Advice</h1>
+                            <p>With over 20 years of experience we'll ensure you always get the best guidance</p>
+                            <div onClick={() =>
+                                window.location = "/servis"
+                            } className="buttons">
+                                <button className='button'>Our Services</button>
+                                <button onClick={() =>
+                                    window.location = "/blog"
+                                } className='button1'>Purchase now</button>
+                            </div></div>
+                    </div>
                     <div className="universty">
                         <div className="iniversty_cards">
                             {univercard.map(item => {
@@ -214,15 +211,15 @@ export default function Home() {
                                     <label>
                                         <p>Message</p>
                                         <textarea name="" className='contact_textarea' id="text1" cols="30" rows="10"></textarea>
-                                    </label>    
+                                    </label>
                                     <div className="admin_button">
                                         <button onClick={() => { dataPost() }}>Subscribe</button>
                                         <div className="admin_title">
                                             <h4>Admin:</h4>
                                             <div className="chec_icon">
 
-                                {chec.Updated != true?(  <BsCheck2 className='bir_chec' />):(<BsCheckAll className='ikki_chec' />)}
-                                              
+                                                {chec.Updated != true ? (<BsCheck2 className='bir_chec' />) : (<BsCheckAll className='ikki_chec' />)}
+
 
                                             </div>
                                         </div>

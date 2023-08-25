@@ -7,6 +7,7 @@ import url from './Host'
 import { AiOutlineArrowDown } from 'react-icons/ai'
 import '../css/Nosignal.css'
 import img_for_null from '../img/download.png'
+import Groupimg from '../img/Group 2.png'
 export default function Sertifikate() {
     const [state1, setState1] = React.useState();
     const [sertifikat, setSertifikat] = useState([])
@@ -27,16 +28,15 @@ export default function Sertifikate() {
             <div>
                 <div className="cards_sertifikat">
                     <div className="card_sertifikat">
-                        {sertifikat.length === 0 ? (<div className="No_div">
-                            <h1>Курс не куплен</h1>
-                            <div className="pas_icon">
-                                <AiOutlineArrowDown className='pas' />
-                                <AiOutlineArrowDown className='pas' />
-                                <AiOutlineArrowDown className='pas' />
-
-                            </div>
-                            <button>Покупка курса </button>
-                        </div>) : (<>
+                        {sertifikat.length === 0 ? (
+                           <div className="delete_padding">
+                           <img src={Groupimg} alt="" />
+                           <h4>У вас нет сертификата</h4>
+                           <div className="delete_btns">
+                             
+                           {/* <a href="/Ourcourse">  <button style={{background:'#44bef1  '}} className="delete_btn_yes">Купить курс</button></a> */}
+                           </div>
+                         </div>) : (<>
                             {sertifikat.map(item => {
                                 return (
                                     <div className="sertifikat">

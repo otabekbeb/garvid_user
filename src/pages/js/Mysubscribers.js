@@ -6,6 +6,7 @@ import azoimg from "../img/Ellipse.jpg"
 import axios from 'axios'
 import url from './Host'
 import '../css/Nosignal.css'
+import Groupimg from '../img/Group 2.png'
 export default function Azo() {
     const [follow, setFollow] = useState([])
     const [following, setFollowing] = useState(localStorage.getItem("OneuserId"))
@@ -37,41 +38,40 @@ export default function Azo() {
 
 
             <div className="followcards1">
-                {follow.length === 0 ? (<div className="No_div">
-                    <h1>Курс не куплен</h1>
-                    <div className="pas_icon">
-                        <AiOutlineArrowDown className='pas' />
-                        <AiOutlineArrowDown className='pas' />
-                        <AiOutlineArrowDown className='pas' />
+                {follow.length === 0 ? (
+                        <div className="delete_padding">
+                        <img src={Groupimg} alt="" />
+                        <h4>Нет подписчиков</h4>
+                        {/* <div className="delete_btns">
 
-                    </div>
-                    <button>Покупка курса </button>
-                </div>) : (<>
-                    {follow.map((item, key) => {
-                        if (following == item.topuser) {
-                            return <>
-                                {users.map(item1 => {
-                                    if (item1.id == item.minuser) {
-                                        return (
-                                            <a>
-                                                <div className="followcard1">
-                                                    <a href="/TeacherProfil">
-                                                        {item.image === null ? (<h1>No signaL</h1>) : (<img className='jony_foto' src={item1.image} alt="" />)}
+                            <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>
+                        </div> */}
+                        </div>) : (<>
+                        {follow.map((item, key) => {
+                            if (following == item.topuser) {
+                                return <>
+                                    {users.map(item1 => {
+                                        if (item1.id == item.minuser) {
+                                            return (
+                                                <a>
+                                                    <div className="followcard1">
+                                                        <a href="/TeacherProfil">
+                                                            {item.image === null ? (<h1>No signaL</h1>) : (<img className='jony_foto' src={item1.image} alt="" />)}
 
-                                                        <h5 className='Name'>{item1.username}</h5 >
-                                                    </a>
-                                                    <button onClick={() => folowcolor1(key)} className='followButton1' >subscribe</button>
-                                                </div>
-                                            </a>
+                                                            <h5 className='Name'>{item1.username}</h5 >
+                                                        </a>
+                                                        <button onClick={() => folowcolor1(key)} className='followButton1' >subscribe</button>
+                                                    </div>
+                                                </a>
 
 
-                                        )
-                                    }
-                                })}
-                            </>
-                        }
-                    })}
-                </>)}
+                                            )
+                                        }
+                                    })}
+                                </>
+                            }
+                        })}
+                    </>)}
 
 
 
