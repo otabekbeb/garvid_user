@@ -65,8 +65,8 @@ const ButtonWrapper = ({ currency }) => {
                     var formdata = new FormData()
                     formdata.append("amout", document.querySelector("#PayPal_input").value)
                     formdata.append("user_id", localStorage.getItem("OneuserId"))
-                    formdata.append("type", 2)
-                    
+                    formdata.append("type",2)
+
                     axios.post(`${url}/pay/payment`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
                     })
 
