@@ -974,11 +974,11 @@ justify-content: space-around; */
 
 
 .mni-gridf1 {
-
+display: flex;
     gap: 10px !important;
     padding-left: 17px !important;
-  
-}
+    
+    }
 .mni-swiper-grid .mni-gridf1{
     display: grid !important;
     grid-template-columns: auto auto auto !important;

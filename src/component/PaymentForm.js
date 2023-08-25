@@ -53,6 +53,7 @@ export default function PaymentForm() {
             
                     formdata.append("amout", document.querySelector("#Stripe_input").value)
                     formdata.append("user_id", localStorage.getItem("OneuserId"))
+                    formdata.append("type", 1)
                     axios.post(`${url}/pay/payment`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
                     })
         

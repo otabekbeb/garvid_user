@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../css/workforteach.css'
 import { BsFillCloudArrowDownFill } from 'react-icons/bs'
+import {FiEdit} from "react-icons/fi"
 import sertifikat from '../img/Sertifikat.png'
 import axios from 'axios'
 import url from './Host'
@@ -8,6 +9,7 @@ import { MdDeleteOutline } from "react-icons/md"
 import Groupimg from '../img/Group 2.png'
 import { GrFormClose } from 'react-icons/gr'
 import img_for_null from '../img/download.png'
+import {FiDownload} from "react-icons/fi"
 export default function Workforteach() {
     const [stsertifikat, setStsertifikat] = useState([])
     function openModal() {
@@ -18,7 +20,8 @@ export default function Workforteach() {
     }
     function openModal1() {
         document.querySelector(".m_zadacha_tepadan1").style = "display: flex; justify-content: center;align-items: center;"
-    } function clouseModal1() {
+    }
+     function clouseModal1() {
         document.querySelector(".m_zadacha_tepadan1").style = "display:none"
     }
     function openModal2() {
@@ -50,6 +53,9 @@ export default function Workforteach() {
                                     <MdDeleteOutline />
                                 </div>
                                 <div className="m_zadach_ktug_icon" >
+                                    <FiEdit />
+                                </div>
+                                <div className="m_zadach_ktug_icon" >
                                     <BsFillCloudArrowDownFill />
                                 </div>
                             </div>
@@ -65,7 +71,7 @@ export default function Workforteach() {
                 <div className="m_zadachi_dobavit">
                     <div className="m_clouse_x" onClick={() => clouseModal()}><GrFormClose /></div>
                     <div className="m_input_file_dobavit">
-                        <div className="a_input_file12"> Добавить изоброжение </div>
+                        <div className="a_input_file12"><FiDownload/> Добавить задание </div>
                         <input type="file" />
                     </div><br />
                     <div className="m_input_bilmafim">
@@ -77,6 +83,7 @@ export default function Workforteach() {
                     </div>
                 </div>
             </div>
+
             <div className="m_zadacha_tepadan1">
 
                 <div className="m_zadachi_dobavit">
@@ -94,6 +101,7 @@ export default function Workforteach() {
                     </div>
                 </div>
             </div>
+
             <div className="m_delete_tepadan2">
                 <div className="a_delete_bgc">
                     <div className="for_center">
