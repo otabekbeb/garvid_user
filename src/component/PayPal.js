@@ -1,76 +1,139 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import {
+    PayPalScriptProvider,
+    BraintreePayPalButtons,
+    usePayPalScriptReducer
+} from "@paypal/react-paypal-js";
+import { FcApproval } from "react-icons/fc"
 import axios from "axios";
 import url from "../pages/js/Host";
-import { FcApproval } from "react-icons/fc"
 
-export default function Paypal() {
-  const paypal = useRef();
-  const [page, setPage] = useState(0)
-  const [state, setState] = useState("salom")
+// This values are the props in the UI
+const style = { "label": "paypal", "layout": "vertical" };
+const amount = "2";
 
-  useEffect(() => {
-    axios.get(`${url}/auth/oneuser`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-      res.data.map(item => {
-        window.paypal.Buttons({
-          createOrder: (data, actions, err) => {
-            return actions.order.create({
-              intent: "CAPTURE",
-              purchase_units: [
-                {
-                  description: `Имя : ${item.username}  Фамилия : ${item.last_name}  Электронная почта : ${item.email}  Номер телефона : ${item.phone_number}`,
-                  amount: {
-                    currency_code: "USD",
-                    value: `${document.querySelector("#PayPal_input").value}`,
-                  },
-                },
-              ],
-            });
-          },
-          onApprove: async (data, actions) => {
-            const order = await actions.order.capture();
-            
-            var formdata = new FormData()
-            
-            formdata.append("amout", document.querySelector("#PayPal_input").value)
-            formdata.append("user_id", localStorage.getItem("OneuserId"))
-            axios.post(`${url}/pay/payment`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-            })
+// Custom component to wrap the PayPalButtons and handle currency changes
+const ButtonWrapper = ({ currency }) => {
+    // usePayPalScriptReducer can be use only inside children of PayPalScriptProviders
+    // This is the main reason to wrap the PayPalButtons in a new component
+    const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
 
-            var formdata1 = new FormData()
-            formdata1.append("balance", document.querySelector("#PayPal_input").value)
+    useEffect(() => {
+        dispatch({
+            type: "resetOptions",
+            value: {
+                ...options,
+                currency: currency,
+            },
+        });
+    }, [currency]);
 
-            axios.put(`${url}/auth/balance/${localStorage.getItem("OneuserId")}`, formdata1, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-            })
+    return (<BraintreePayPalButtons
+        style={style}
+        disabled={false}
+        fundingSource="" // Available values are: ["paypal", "card", "credit", "paylater", "venmo"]
+        forceReRender={[style, amount]}
+        createOrder={function (data, actions) {
+            return actions.braintree
+                .createPayment({
+                    flow: "checkout",
+                    amount: document.querySelector("#PayPal_input").value, // Here change the amount if needed
+                    currency: "USD", // Here change the currency if needed
+                    intent: "capture",
+                    enableShippingAddress: true,
+                    shippingAddressEditable: false,
+                    shippingAddressOverride: {
+                        recipientName: "Scruff McGruff",
+                        line1: "1234 Main St.",
+                        line2: "Unit 1",
+                        city: "Chicago",
+                        countryCode: "US",
+                        postalCode: "60652",
+                        state: "IL",
+                        phone: "123.456.7890",
+                    },
+                })
+                .then((orderId) => {
+                    // Your code here after create the order
+                    return orderId;
+                });
+        }}
+        onApprove={function (data, actions) {
+            return actions.braintree
+                .tokenizePayment(data)
+                .then((payload) => {
+                    var formdata = new FormData()
+                    formdata.append("amout", document.querySelector("#PayPal_input").value)
+                    formdata.append("user_id", localStorage.getItem("OneuserId"))
+                    formdata.append("type", 2)
+                    
+                    axios.post(`${url}/pay/payment`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+                    })
 
-            document.querySelector(".paypal_big_div").style = "position:fixed;top:80px;"
-            setTimeout(() => {
-              document.querySelector(".paypal_big_div").style = "position:fixed;top:-100%;"
-            }, 5000);
-            document.querySelector("#PayPal_input").value = ""
+                    var formdata1 = new FormData()
+                    formdata1.append("balance", document.querySelector("#PayPal_input").value)
 
-          },
-          onError: (err) => {
-            console.log(err);
-          },
-        }).render(paypal.current);
-      })
-    })
-  }, []);
+                    axios.put(`${url}/auth/balance/${localStorage.getItem("OneuserId")}`, formdata1, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+                    })
 
+                    document.querySelector("#paypal_big_div1").style = "position:fixed;top:80px;"
+                    setTimeout(() => {
+                        document.querySelector("#paypal_big_div1").style = "position:fixed;top:-100%;"
+                    }, 5000);
+                    document.querySelector("#PayPal_input").value = ""
+                    // Your code here after capture the order
+                    console.log(JSON.stringify(payload));
+                });
+        }
+        }
+    />);
+};
 
+export default function App() {
+    const [clientToken, setClientToken] = useState(null);
+    const [Paypal_kluch, setPaypal_kluch] = useState([])
 
-  return (
-    <div>
+    useEffect(() => {
+        (async () => {
+            const response = await (
+                await fetch(
+                    "https://react-paypal-js-storybook.fly.dev/api/braintree/generate-client-token",
+                    { method: "POST" }
+                )
+            ).json();
+            setClientToken(response?.client_token || response?.clientToken);
+        })();
+        axios.get(`${url}/super/pay`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+            setPaypal_kluch(res.data)
+        })
+    }, []);
 
-      <p>Введите деньги</p>
-      <input id="PayPal_input" type="number" />
-      <div ref={paypal}></div>
-
-      <div className="paypal_modal">
-        <div className="paypal_big_div">
-          <FcApproval />Деньги были выплачены
-        </div>
-      </div>
-    </div>
-  );
+    return (
+        <>
+            {clientToken ? (
+                Paypal_kluch.paypal_kluch ? (<div style={{ maxWidth: "750px", minHeight: "200px" }}>
+                    <input placeholder="1$" type="text" id="PayPal_input" />
+                    <PayPalScriptProvider
+                        options={{
+                            clientId: Paypal_kluch.paypal_kluch,
+                            components: "buttons",
+                            // dataUserIdToken: "your-tokenization-key-here",
+                            dataClientToken: clientToken,
+                            intent: "capture",
+                            vault: false,
+                        }}
+                    >
+                        <ButtonWrapper currency={"USD"} />
+                    </PayPalScriptProvider>
+                </div>) : ("salom")
+            ) : (
+                <h1>Loading token...</h1>
+            )}
+            <div className="paypal_modal">
+                <div id="paypal_big_div1" className="paypal_big_div">
+                    <FcApproval />Деньги были выплачены
+                </div>
+            </div>
+        </>
+    );
 }
