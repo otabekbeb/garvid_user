@@ -55,6 +55,8 @@ import Git from '../img/Git.png'
 import Oragle from '../img/Oragle.png'
 import Sprint from '../img/Spring.png'
 import Start from '../img/Start.png'
+
+import Groupimg from '../img/Group 2.png'
 import azoimg from "../img/Ellipse.jpg"
 export default function Profil() {
   const [data, setData] = useState([]);
@@ -266,7 +268,7 @@ export default function Profil() {
   function follow1() {
     document.querySelector(".Following").classList.toggle("following2")
   }
-  
+
   useEffect(() => {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
@@ -411,8 +413,8 @@ export default function Profil() {
                 <button className="Following" onClick={() => follow1()}>
                   Subscribe
                 </button>
-                <button style={{marginTop:"25px"}} className="Following" id="following" >
-                Send a message
+                <button style={{ marginTop: "25px" }} className="Following" id="following" >
+                  Send a message
                 </button>
               </div>
             </div>
@@ -546,45 +548,47 @@ export default function Profil() {
         <div className="profil-qora-qiladi"></div>
       </div>
       <div>
-        {state1 === 'en' ? (<div className="gray_blok">
-          <div className="fil_text_blok">
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} pieces</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My learned knowledge</h1>{toggle === 2 ? (<div className="fil_text_blok_kurs_lenght">14 pieces</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My certificates</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My Subscriptions</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
+        {state1 === 'en' ? (
+          <div className="gray_blok">
+            <div className="fil_text_blok">
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} pieces</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My learned knowledge</h1>{toggle === 2 ? (<div className="fil_text_blok_kurs_lenght">14 pieces</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My certificates</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My Subscriptions</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
 
-          </div>
-          <div className="profil_blok_menu_size">
-            <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
-            <TiThMenu onClick={() => menuModalClone()} className='profil_blok_menu_clone' />
-          </div>
-          <div className="profil_modal_media">
-            <h1 onClick={() => updatetoggle(1)} className='fromMenu'>Its courses are</h1>
-            <h1 onClick={() => updatetoggle(2)} className='fromMenu'>My acquired knowledge</h1>
-            <h1 onClick={() => updatetoggle(3)} className='fromMenu'>My Certificates</h1>
-            <h1 onClick={() => updatetoggle(4)} className='fromMenu'>My Subscriptions</h1>
-            <h1 onClick={() => updatetoggle(5)} className='fromMenu'>Correspondence</h1>
-          </div>
-        </div>) : (<div className="gray_blok">
-          <div className="fil_text_blok">
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: '2px solid #44bef1', } : {}} className='fromLeft'>Мои курсы</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} штуки</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Мои усвоенные знания</h1>{toggle === 2 ? (<div className="fil_text_blok_kurs_lenght">14 штуки</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Мои сертификаты</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">24 штуки</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Мои подписки</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">24 штуки</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Переписка</h1><div className="fil_text_blok_kurs_lenght">1 штуки</div></div>
-          </div>
-          <div className="profil_blok_menu_size">
-            <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
-            <TiThMenu onClick={() => menuModalClone()} className='profil_blok_menu_clone' />
-          </div>
-          <div className="profil_modal_media">
-            <h1 onClick={() => updatetoggle(1)} className='fromMenu'>Мои курсы</h1>
-            <h1 onClick={() => updatetoggle(2)} className='fromMenu'>Мои усвоенные знания</h1>
-            <h1 onClick={() => updatetoggle(3)} className='fromMenu'>Мои сертификаты</h1>
-            <h1 onClick={() => updatetoggle(4)} className='fromMenu'>Мои подписки</h1>
-            <h1 onClick={() => updatetoggle(5)} className='fromMenu'>Переписка</h1>
-          </div>
-        </div>)}
+            </div>
+            <div className="profil_blok_menu_size">
+              <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
+              <TiThMenu onClick={() => menuModalClone()} className='profil_blok_menu_clone' />
+            </div>
+            <div className="profil_modal_media">
+              <h1 onClick={() => updatetoggle(1)} className='fromMenu'>Its courses are</h1>
+              <h1 onClick={() => updatetoggle(2)} className='fromMenu'>My acquired knowledge</h1>
+              <h1 onClick={() => updatetoggle(3)} className='fromMenu'>My Certificates</h1>
+              <h1 onClick={() => updatetoggle(4)} className='fromMenu'>My Subscriptions</h1>
+              <h1 onClick={() => updatetoggle(5)} className='fromMenu'>Correspondence</h1>
+            </div>
+          </div>) : (
+          <div className="gray_blok">
+            <div className="fil_text_blok">
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: '2px solid #44bef1', } : {}} className='fromLeft'>Мои курсы</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} штуки</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Мои усвоенные знания</h1>{toggle === 2 ? (<div className="fil_text_blok_kurs_lenght">14 штуки</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Мои сертификаты</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">24 штуки</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Мои подписки</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">24 штуки</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Переписка</h1><div className="fil_text_blok_kurs_lenght">1 штуки</div></div>
+            </div>
+            <div className="profil_blok_menu_size">
+              <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
+              <TiThMenu onClick={() => menuModalClone()} className='profil_blok_menu_clone' />
+            </div>
+            <div className="profil_modal_media">
+              <h1 onClick={() => updatetoggle(1)} className='fromMenu'>Мои курсы</h1>
+              <h1 onClick={() => updatetoggle(2)} className='fromMenu'>Мои усвоенные знания</h1>
+              <h1 onClick={() => updatetoggle(3)} className='fromMenu'>Мои сертификаты</h1>
+              <h1 onClick={() => updatetoggle(4)} className='fromMenu'>Мои подписки</h1>
+              <h1 onClick={() => updatetoggle(5)} className='fromMenu'>Переписка</h1>
+            </div>
+          </div>)}
 
 
         <div className={toggle === 1 ? "show-content" : "content"}>
@@ -626,7 +630,71 @@ export default function Profil() {
                 </div>
               </div>
             </div>
-          </div></div>
+          </div>
+          <div className="kurs_cards">
+            {kursdata.length === 0 ? (
+                <div className="delete_padding">
+                <img src={Groupimg} alt="" />
+                <h4>Он еще не купил курс</h4>
+                <div className="delete_btns">
+                  
+                <a href="/Ourcourse">  <button style={{background:'#44bef1  '}} className="delete_btn_yes">Купить курс</button></a>
+                </div>
+              </div>
+            ) : (
+              <>
+                {kursdata.map(item => {
+                  return (
+                    <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
+                      <button className="btn_das">Programming</button>
+                      <img src={item.oneuser ? item.oneuser.image.includes("http") ? item.oneuser.image : `${url}/${item.oneuser.image}` :
+                        <img src={img_for_null} alt="" />} alt="" />
+                      <div className="kurs_paddaing_auto">
+                        <h4>{item.name}</h4>
+                        <div className="star_card">
+                          <i className="star_i">
+                            <AiFillStar />
+                          </i>
+                          <i className="star_i">
+                            <AiFillStar />
+                          </i>
+                          <i className="star_i">
+                            <AiFillStar />
+                          </i>
+                          <i className="star_i">
+                            <AiFillStar />
+                          </i>
+                          <i className="star_ib">
+                            <AiFillStar />
+                          </i>
+                          <p>
+                            4.1 <span>(524)</span>
+                          </p>
+                        </div>
+                        <div className="hajm">
+                          <h5>
+                            <p>Course size</p>
+                            {item.planned_time}
+                          </h5>
+                          <h5>
+                            <p>Course price</p>
+                            {item.price}$
+                          </h5>
+                        </div>
+                      </div>
+                      <button className="button_circle">
+                        <AiOutlineArrowRight onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} />
+                      </button>
+                    </div>
+
+                  )
+
+                })}
+              </>
+            )}
+
+          </div>
+          </div>
         <div className={toggle === 2 ? "show-content" : "content"}>
           <div>
             <div className="program">
@@ -806,13 +874,21 @@ export default function Profil() {
         <div className={toggle === 3 ? "show-content" : "content"}>
           <div>
             <div className="cards_sertifikat">
-              <div className="card_sertifikat">
+              {sertifikat.length === 0?(   
+              <div className="delete_padding">
+                <img src={Groupimg} alt="" />
+                <h4>Он еще не получил сертификат</h4>
+                <div className="delete_btns">
+                  
+                <a href="/Ourcourse">  <button style={{background:'#44bef1  '}} className="delete_btn_yes">Купить курс</button></a>
+                </div>
+              </div>):( <div className="card_sertifikat">
                 {sertifikat.map(item => {
                   return (
                     <div className="sertifikat">
                       <div className="sertifikat_image">
-                      {item.image === null ? (<img  src={img_for_null} alt="" />) : (<img src={item.image} alt="" />)}
-</div>
+                        {item.image === null ? (<img src={img_for_null} alt="" />) : (<img src={item.image} alt="" />)}
+                      </div>
                       <div className="button_text_df_blok_pitani_pro_Max">
                         <div className="text_pro_max_gap_sos_lift_gr">
                           <h4>{item.title}</h4>
@@ -825,7 +901,8 @@ export default function Profil() {
                 })}
 
 
-              </div>
+              </div>)}
+             
             </div>
 
           </div>

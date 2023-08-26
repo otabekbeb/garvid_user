@@ -161,7 +161,7 @@ export default function Pdp() {
                   ""
                 )}
               </div>
-              <div className="fil_text_blok_soz">
+              {/* <div className="fil_text_blok_soz">
                 <h1
                   onClick={() => updatetoggle(9)}
                   style={
@@ -176,7 +176,7 @@ export default function Pdp() {
                 ) : (
                   ""
                 )}
-              </div>
+              </div> */}
 
               <div className="fil_text_blok_soz">
                 <h1
@@ -217,9 +217,9 @@ export default function Pdp() {
               <h1 onClick={() => updatetoggle(5)} className="fromMenu">
                 My Subscriptions
               </h1>
-              <h1 onClick={() => updatetoggle(9)} className="fromMenu">
+              {/* <h1 onClick={() => updatetoggle(9)} className="fromMenu">
                 My subscribers
-              </h1>
+              </h1> */}
               <h1 onClick={() => updatetoggle(6)} className="fromMenu">
                 Correspondence
               </h1>

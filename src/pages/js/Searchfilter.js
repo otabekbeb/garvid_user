@@ -11,7 +11,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
 import { TbPointFilled } from "react-icons/tb";
-import "../css/Spiska.css";      
+import "../css/Spiska.css";
 import "../css/Calibig.css";
 import WWW from "../img/WWW.png";
 import axios from "axios";
@@ -19,7 +19,9 @@ import url from "./Host";
 import Loader from './loader'
 import img_for_null from '../img/download.png'
 import img_prover from '../img/istockphoto-1321436405-612x612.jpg'
-
+import { AiOutlineArrowDown } from 'react-icons/ai'
+import '../css/Nosignal.css'
+import Groupimg from '../img/Group 2.png'
 export default function Searchfilter() {
   const [courstype, setCoursetype] = useState([])
 
@@ -45,7 +47,7 @@ export default function Searchfilter() {
     document.querySelector(".kurs_cards").style = "display:flex;transition:3s";
     document.querySelector(".spiska_img_title_div").style = "display:none";
   }
- 
+
 
   useEffect(() => {
 
@@ -64,15 +66,15 @@ export default function Searchfilter() {
 
 
     axios.get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-      axios.get(`${url}/api/course`, { header: {Authorization : `Bearer ${localStorage.getItem("token")}`}}).then(res1=>{
+      axios.get(`${url}/api/course`, { header: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res1 => {
         for (let i = 0; i < res.data.length; i++) {
           for (let j = 0; j < res1.data.length; j++) {
-            if (res.data[i].id==res1.data[j].id) {
-              res.data[i].star=res1.data[j].star
+            if (res.data[i].id == res1.data[j].id) {
+              res.data[i].star = res1.data[j].star
             }
-            
+
           }
-          
+
         }
         setKursdata(res.data)
       })
@@ -141,7 +143,7 @@ export default function Searchfilter() {
                       return (
                         <div className="button_filter_kurs" >
                           {item.name === null ? ("") : (
-                          <div onClick={() => filter(item.id)} className="div_kurs" style={{ paddingBottom: '5px' }}>{item.name}</div>)}
+                            <div onClick={() => filter(item.id)} className="div_kurs" style={{ paddingBottom: '5px' }}>{item.name}</div>)}
                         </div>
                       )
                     })}
@@ -153,157 +155,171 @@ export default function Searchfilter() {
               </div>
             </div>
             <div className="kurs_cards">
-              {kursdata.map(item => {
-                return (
-                  <>
-                  <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
-                    <button className="btn_das">Programming</button>
-                    <img src={item.oneuser ? item.oneuser.image.includes("http") ? item.oneuser.image : `${url}/${item.oneuser.image}` :
-                      <img src={img_for_null} alt="" />} alt="" />
-                    <div className="kurs_paddaing_auto">
-                      <h4>{item.name}</h4> 
-                          <>
-                           {item.star == 1 ? (<div style={{display:"flex", gap:"5px"}}> <div className="star_card">
-                      <i className="star_i">
-                          <AiFillStar style={{color:"#FFD401"}}/>
-                        </i>
-                          <i className="star_i">
-                          <AiFillStar style={{color:"#9DA7BB"}}/>
-                        </i>
-                        <i className="star_i">
-                          <AiFillStar style={{color:"#9DA7BB"}}/>
-                        </i>
-                        <i className="star_i">
-                          <AiFillStar style={{color:"#9DA7BB"}}/>
-                        </i>
-                        <i className="star_i">
-                          <AiFillStar style={{color:"#9DA7BB"}}/>
-                        </i>
-                      </div><p style={{fontSize:"16px"}}>
-                      {item.star}
-                        <span><MdOutlineGrade style={{color:"#FFD401", fontSize:"13px"}}/></span>
-                     </p></div>):(<>{item.star == 2 ? (<div style={{display:"flex", gap:"5px"}}><div className="star_card">
-                      <i className="star_i">
-                          <AiFillStar style={{color:"#FFD401"}}/>
-                        </i>
-                          <i className="star_i">
-                          <AiFillStar style={{color:"#FFD401"}}/>
-                        </i>
-                        <i className="star_i">
-                          <AiFillStar style={{color:"#9DA7BB"}}/>
-                        </i>
-                        <i className="star_i">
-                          <AiFillStar style={{color:"#9DA7BB"}}/>
-                        </i>
-                        <i className="star_i">
-                          <AiFillStar style={{color:"#9DA7BB"}}/>
-                        </i>
-                      </div>
-                      <p style={{fontSize:"16px"}}>
-                      {item.star}
-                        <span><MdOutlineGrade style={{color:"#FFD401", fontSize:"13px"}}/></span>
-                     </p></div>):(<>{item.star === 3 ? (<div style={{display:"flex", gap:"5px"}}>
-                     <div className="star_card">
-                      <i className="star_i">
-                          <AiFillStar style={{color:"#FFD401"}}/>
-                        </i>
-                          <i className="star_i">
-                          <AiFillStar style={{color:"#FFD401"}}/>
-                        </i>
-                        <i className="star_i">
-                          <AiFillStar style={{color:"#FFD401"}}/>
-                        </i>
-                        <i className="star_i">
-                          <AiFillStar style={{color:"#9DA7BB"}}/>
-                        </i>
-                        <i className="star_i">
-                          <AiFillStar style={{color:"#9DA7BB"}}/>
-                        </i>
-                      </div>
-                      <p style={{fontSize:"16px"}}>
-                      {item.star}
-                        <span><MdOutlineGrade style={{color:"#FFD401", fontSize:"13px"}}/></span>
-                     </p></div>):(<>{item.star == 4?(<div style={{display:"flex", gap:"5px"}}>
-                     <div className="star_card">
-                      <i className="star_i">
-                          <AiFillStar style={{color:"#FFD401"}}/>
-                        </i>
-                          <i className="star_i">
-                          <AiFillStar style={{color:"#FFD401"}}/>
-                        </i>
-                        <i className="star_i">
-                          <AiFillStar style={{color:"#FFD401"}} />
-                        </i>
-                        <i className="star_i">
-                          <AiFillStar style={{color:"#FFD401"}}/>
-                        </i>
-                        <i className="star_i">
-                          <AiFillStar style={{color:"#9DA7BB"}}/>
-                        </i>
-                      </div> <p style={{fontSize:"16px"}}>
-                      {item.star}
-                        <span><MdOutlineGrade style={{color:"#FFD401", fontSize:"13px"}}/></span>
-                     </p></div>):(<>{item.star == 5 ? (<div style={{display:"flex", gap:"5px"}}><div className="star_card">
-                      <i className="star_i">
-                          <AiFillStar style={{color:"#FFD401"}}/>
-                        </i>
-                          <i className="star_i">
-                          <AiFillStar style={{color:"#FFD401"}}/>
-                        </i>
-                        <i className="star_i">
-                          <AiFillStar style={{color:"#FFD401"}}/>
-                        </i>
-                        <i className="star_i">
-                          <AiFillStar style={{color:"#FFD401"}}/>
-                        </i>
-                        <i className="star_i">
-                          <AiFillStar style={{color:"#FFD401"}}/>
-                        </i>
-                      </div><p style={{fontSize:"16px"}}>
-                      {item.star}
-                        <span><MdOutlineGrade style={{color:"#FFD401", fontSize:"13px"}}/></span>
-                     </p></div>):(<div style={{display:"flex", gap:"5px"}}><div className="star_card">
-                      <i className="star_i">
-                          <AiFillStar style={{color:"#9DA7BB"}}/>
-                        </i>
-                          <i className="star_i">
-                          <AiFillStar style={{color:"#9DA7BB"}}/>
-                        </i>
-                        <i className="star_i">
-                          <AiFillStar style={{color:"#9DA7BB"}}/>
-                        </i>
-                        <i className="star_i">
-                          <AiFillStar style={{color:"#9DA7BB"}}/>
-                        </i>
-                        <i className="star_i">
-                          <AiFillStar style={{color:"#9DA7BB"}}/>
-                        </i>
-                      </div> <p style={{fontSize:"16px"}}>
-                        0
-                        <span><MdOutlineGrade style={{color:"#9DA7BB", fontSize:"13px"}}/></span>
-                     </p></div>)}</>)}</>)}</>)}</>)}    
-                          </>
-                                     
-                      <div className="hajm">
-                        <h5>
-                          <p>Course size</p>
-                          {item.planned_time}h
-                        </h5>
-                        <h5>
-                          <p>Course price</p>
-                          {item.price}$
-                        </h5>
-                      </div>
-                    </div>
-                    <button className="button_circle">
-                      <AiOutlineArrowRight onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} />
-                    </button>
-                  </div>
-                  
-                  </>
-                )
+              {kursdata.length === 0 ? (
+                        <div className="delete_padding">
+                          <img src={Groupimg} alt="" />
+                          <h4>Вы не купили курс</h4>
+                          <div className="delete_btns">
+                            
+                          <a href="/Ourcourse">  <button style={{background:'#44bef1  '}} className="delete_btn_yes">Купить курс</button></a>
+                          </div>
+                        </div>
+                      ) : (
+                <>
+                  {kursdata.map(item => {
+                    return (
+                      <>
+                        <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
+                          <button className="btn_das">Programming</button>
+                          <img src={item.oneuser ? item.oneuser.image.includes("http") ? item.oneuser.image : `${url}/${item.oneuser.image}` :
+                            <img src={img_for_null} alt="" />} alt="" />
+                          <div className="kurs_paddaing_auto">
+                            <h4>{item.name}</h4>
+                            <>
+                              {item.star == 1 ? (<div style={{ display: "flex", gap: "5px" }}> <div className="star_card">
+                                <i className="star_i">
+                                  <AiFillStar style={{ color: "#FFD401" }} />
+                                </i>
+                                <i className="star_i">
+                                  <AiFillStar style={{ color: "#9DA7BB" }} />
+                                </i>
+                                <i className="star_i">
+                                  <AiFillStar style={{ color: "#9DA7BB" }} />
+                                </i>
+                                <i className="star_i">
+                                  <AiFillStar style={{ color: "#9DA7BB" }} />
+                                </i>
+                                <i className="star_i">
+                                  <AiFillStar style={{ color: "#9DA7BB" }} />
+                                </i>
+                              </div><p style={{ fontSize: "16px" }}>
+                                  {item.star}
+                                  <span><MdOutlineGrade style={{ color: "#FFD401", fontSize: "13px" }} /></span>
+                                </p></div>) : (<>{item.star == 2 ? (<div style={{ display: "flex", gap: "5px" }}><div className="star_card">
+                                  <i className="star_i">
+                                    <AiFillStar style={{ color: "#FFD401" }} />
+                                  </i>
+                                  <i className="star_i">
+                                    <AiFillStar style={{ color: "#FFD401" }} />
+                                  </i>
+                                  <i className="star_i">
+                                    <AiFillStar style={{ color: "#9DA7BB" }} />
+                                  </i>
+                                  <i className="star_i">
+                                    <AiFillStar style={{ color: "#9DA7BB" }} />
+                                  </i>
+                                  <i className="star_i">
+                                    <AiFillStar style={{ color: "#9DA7BB" }} />
+                                  </i>
+                                </div>
+                                  <p style={{ fontSize: "16px" }}>
+                                    {item.star}
+                                    <span><MdOutlineGrade style={{ color: "#FFD401", fontSize: "13px" }} /></span>
+                                  </p></div>) : (<>{item.star === 3 ? (<div style={{ display: "flex", gap: "5px" }}>
+                                    <div className="star_card">
+                                      <i className="star_i">
+                                        <AiFillStar style={{ color: "#FFD401" }} />
+                                      </i>
+                                      <i className="star_i">
+                                        <AiFillStar style={{ color: "#FFD401" }} />
+                                      </i>
+                                      <i className="star_i">
+                                        <AiFillStar style={{ color: "#FFD401" }} />
+                                      </i>
+                                      <i className="star_i">
+                                        <AiFillStar style={{ color: "#9DA7BB" }} />
+                                      </i>
+                                      <i className="star_i">
+                                        <AiFillStar style={{ color: "#9DA7BB" }} />
+                                      </i>
+                                    </div>
+                                    <p style={{ fontSize: "16px" }}>
+                                      {item.star}
+                                      <span><MdOutlineGrade style={{ color: "#FFD401", fontSize: "13px" }} /></span>
+                                    </p></div>) : (<>{item.star == 4 ? (<div style={{ display: "flex", gap: "5px" }}>
+                                      <div className="star_card">
+                                        <i className="star_i">
+                                          <AiFillStar style={{ color: "#FFD401" }} />
+                                        </i>
+                                        <i className="star_i">
+                                          <AiFillStar style={{ color: "#FFD401" }} />
+                                        </i>
+                                        <i className="star_i">
+                                          <AiFillStar style={{ color: "#FFD401" }} />
+                                        </i>
+                                        <i className="star_i">
+                                          <AiFillStar style={{ color: "#FFD401" }} />
+                                        </i>
+                                        <i className="star_i">
+                                          <AiFillStar style={{ color: "#9DA7BB" }} />
+                                        </i>
+                                      </div> <p style={{ fontSize: "16px" }}>
+                                        {item.star}
+                                        <span><MdOutlineGrade style={{ color: "#FFD401", fontSize: "13px" }} /></span>
+                                      </p></div>) : (<>{item.star == 5 ? (<div style={{ display: "flex", gap: "5px" }}><div className="star_card">
+                                        <i className="star_i">
+                                          <AiFillStar style={{ color: "#FFD401" }} />
+                                        </i>
+                                        <i className="star_i">
+                                          <AiFillStar style={{ color: "#FFD401" }} />
+                                        </i>
+                                        <i className="star_i">
+                                          <AiFillStar style={{ color: "#FFD401" }} />
+                                        </i>
+                                        <i className="star_i">
+                                          <AiFillStar style={{ color: "#FFD401" }} />
+                                        </i>
+                                        <i className="star_i">
+                                          <AiFillStar style={{ color: "#FFD401" }} />
+                                        </i>
+                                      </div><p style={{ fontSize: "16px" }}>
+                                          {item.star}
+                                          <span><MdOutlineGrade style={{ color: "#FFD401", fontSize: "13px" }} /></span>
+                                        </p></div>) : (<div style={{ display: "flex", gap: "5px" }}><div className="star_card">
+                                          <i className="star_i">
+                                            <AiFillStar style={{ color: "#9DA7BB" }} />
+                                          </i>
+                                          <i className="star_i">
+                                            <AiFillStar style={{ color: "#9DA7BB" }} />
+                                          </i>
+                                          <i className="star_i">
+                                            <AiFillStar style={{ color: "#9DA7BB" }} />
+                                          </i>
+                                          <i className="star_i">
+                                            <AiFillStar style={{ color: "#9DA7BB" }} />
+                                          </i>
+                                          <i className="star_i">
+                                            <AiFillStar style={{ color: "#9DA7BB" }} />
+                                          </i>
+                                        </div> <p style={{ fontSize: "16px" }}>
+                                            0
+                                            <span><MdOutlineGrade style={{ color: "#9DA7BB", fontSize: "13px" }} /></span>
+                                          </p></div>)}</>)}</>)}</>)}</>)}
+                            </>
 
-              })}
+                            <div className="hajm">
+                              <h5>
+                                <p>Course size</p>
+                                {item.planned_time}h
+                              </h5>
+                              <h5>
+                                <p>Course price</p>
+                                {item.price}$
+                              </h5>
+                            </div>
+                          </div>
+                          <button className="button_circle">
+                            <AiOutlineArrowRight onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} />
+                          </button>
+                        </div>
+
+                      </>
+                    )
+
+                  })}
+                </>
+              )}
+
             </div>
 
 

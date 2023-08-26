@@ -196,6 +196,12 @@
         .nav-underline {
             margin: auto;
         }
+        .sel_blok{
+            margin: auto;
+        }
+        .filter_button{
+            justify-content: center;
+        }
     }
     
     @media (max-width:345px) {

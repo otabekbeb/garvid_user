@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Use_img from "../img/Ellipse.jpg"
-
+import { AiOutlineArrowDown } from 'react-icons/ai'
 import Pdp from "./UserPdp"
 import { MdOutlinePhotoCamera } from "react-icons/md"
 import { BsActivity, BsFillBellFill, BsThreeDots } from "react-icons/bs"
@@ -31,6 +31,17 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
 import img_for_null from '../img/download.png'
 import Testpage from './Testpage'
+import Nosignal from '../js/Nosignal'
+
+
+import { BsFillCloudArrowDownFill } from 'react-icons/bs'
+import sertifikat from '../img/Sertifikat.png'
+
+import { BsSearch } from "react-icons/bs"
+
+import deleteImg from "../img/Group 2.png"
+
+import { MdDeleteOutline } from "react-icons/md"
 function openTest() {
   document.querySelector(".block-bir-variant1 p").style = `   background-color: #fcfcfc;
   border: 1px solid #ccc;`
@@ -192,6 +203,107 @@ export default function Mentor() {
   const [counter3, setCounter3] = React.useState(70)
   const [counter4, setCounter4] = React.useState(80)
   const [loading, setloading] = useState(false)
+  const [stsertifikat, setStsertifikat] = useState([])
+
+
+  const [edication, setEdication] = useState([])
+  const [edicationId, setEdicationId] = useState()
+  
+  const username = document.querySelectorAll("#Educationusername")
+  const start_date = document.querySelectorAll("#Educationstart_date")
+  const end_date = document.querySelectorAll("#Educationend_date")
+  const description = document.querySelectorAll("#Educationdescription")
+
+  useEffect(() => {
+    axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setEdication(res.data)
+    })
+  }, [])
+
+  function postEducationModal() {
+    document.querySelector("#EducationpostModal").style = "display:flex"
+  }
+
+  function postEducationClose() {
+    document.querySelector("#EducationpostModal").style = "display:none"
+  }
+
+  function putEducationModal(id) {
+    setEdicationId(id)
+    edication.map(item => {
+      if (item.id == id) {
+        username[1].value = item.education_name
+        start_date[1].value = item.start_date
+        end_date[1].value = item.end_date
+        description[1].value = item.description
+      }
+    })
+
+
+    document.querySelector("#EducationputModal").style = "display:flex;"
+  }
+
+  function putEducationClose() {
+    document.querySelector("#EducationputModal").style = "display:none;"
+  }
+
+  function deleteEducationModal(id) {
+    setEdicationId(id)
+    document.querySelector("#EducationdeleteModal").style = "display:flex"
+  }
+
+  function deleteEducationClose() {
+    document.querySelector("#EducationdeleteModal").style = "display:none"
+  }
+
+  function postEducation() {
+    var formdata = new FormData()
+    formdata.append("education_name", username[0].value)
+    formdata.append("description", description[0].value)
+    formdata.append("start_date", start_date[0].value)
+    formdata.append("end_date", end_date[0].value)
+    formdata.append("sertificat_id", 0)
+
+    axios.post(`${URL}/edu/education`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      alert("Добавлена информация")
+      document.querySelector("#EducationpostModal").style = "display:none"
+      axios.get(`${URL}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+        setEdication(res.data)
+      })
+    }).catch(err => {
+      alert("Данные не добавлены, введите полностью")
+    })
+  }
+
+  function putEducation() {
+    var formdata = new FormData()
+    formdata.append("education_name", username[1].value)
+    formdata.append("description", description[1].value)
+    formdata.append("start_date", start_date[1].value)
+    formdata.append("end_date", end_date[1].value)
+    formdata.append("sertificat_id", 0)
+
+    axios.put(`${URL}/edu/education/${edicationId}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      alert("Информация изменилась")
+      document.querySelector("#EducationputModal").style = "display:none"
+      axios.get(`${URL}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+        setEdication(res.data)
+      })
+    }).catch(err => {
+      alert("Информация не изменилась, введите полностью")
+    })
+  }
+
+  
+  // function Page() {
+  //   setPage(1)
+  // }
+  
+
+
+
+
+
 
   const searchInput = (event) => {
     const searchRegex = new RegExp(`^${event.target.value}`, "i");
@@ -445,6 +557,9 @@ export default function Mentor() {
 
 
   }, []);
+  function openModal2() {
+    document.querySelector(".m_delete_tepadan2").style = "display: flex; justify-content: center;align-items: center;"
+  }
   function userImgPut(id) {
     var formdata = new FormData();
 
@@ -486,7 +601,9 @@ export default function Mentor() {
         console.log(err);
       });
   }
-
+  function postEducationModal() {
+    document.querySelector("#EducationpostModal").style = "display:flex"
+  } 
   return (
     <div className='studentpagess'>
       <Usernavbar />
@@ -557,10 +674,7 @@ export default function Mentor() {
                 <BsThreeDots onMouseEnter={() => taxrirlashModal()} className='profil_blok_ikki_icon_ikki' />
                 <div className="profil_blok_ikki_icon_texrirlash_modal">
                   <div className='taxrirlash_modal_div'><FiEdit className='taxrirlash_modal_icon' /><p>Edit profile</p></div>
-                  <div
-                    onClick={() => notificationModal()}
-                    className="taxrirlash_modal_div"
-                  >
+                  <div  onClick={() => notificationModal()} className="taxrirlash_modal_div" >
                     <BiCast className="taxrirlash_modal_icon" />
                     <p>Notifications</p>
                   </div>
@@ -623,7 +737,7 @@ export default function Mentor() {
           </div>
         </div>
       </div>
-      <div>
+      <div> 
         <div className="gray_blok">
           <div className="fil_text_blok">
 
@@ -684,133 +798,72 @@ export default function Mentor() {
           </div>
 
           <div className="kurs_cards">
-            {localStorage.setItem("courselenght", kursdata.length)}
-            {kursdata.map(item => {
-              return (
-                <div className="kurs_card">
-                  <button className="btn_das">Dasturlash</button>
-                  {item.image === null ? (
-                    <img src={img_for_null} />
-                  ) : (
-                    <img src={item.image} />
-                  )}
-                  <div className="kurs_paddaing_auto">
-                    <h4>{item.name}</h4>
-                    <div className="star_card">
-                      <i className="star_i">
-                        <AiFillStar />
-                      </i>
-                      <i className="star_i">
-                        <AiFillStar />
-                      </i>
-                      <i className="star_i">
-                        <AiFillStar />
-                      </i>
-                      <i className="star_i">
-                        <AiFillStar />
-                      </i>
-                      <i className="star_ib">
-                        <AiFillStar />
-                      </i>
-                      <p>
-                        4.1 <span>(524)</span>
-                      </p>
-                    </div>
-                    <div className="hajm">
-                      <h5>
-                        <p>Kurs narxi</p>
-                        {item.price}$
-                      </h5>
-                      <h5>
-                        <p>Kurs vaqti</p>
-                        {item.planned_time}h
-                      </h5>
-                    </div>
-                  </div>
-                  <button className="button_circle">
-                    <AiOutlineArrowRight
-                    // onClick={() => {
-                    //   window.location = "/video";
-                    //   localStorage.setItem("course", item.id)
-                    // }}
-                    />
-                  </button>
-                </div>
-              )
-            })}
+            {kursdata.length === 0 ? (
+              <div className="No_div">
+                <h1>Курс не куплен</h1>
+                <div className="pas_icon">
+                  <AiOutlineArrowDown className='pas' />
+                  <AiOutlineArrowDown className='pas' />
+                  <AiOutlineArrowDown className='pas' />
 
-            <div id="edit_card" className="edit_card" >
-              <div className="edit_padding">
-
-                <button onClick={() => dashed_nazat()} className="close_btn">
-                  <i><GrFormClose /></i>
-                </button>
-                <div className="edit_inside">
-                  <label htmlFor="">Name:</label>
-                  <input type="text" />
                 </div>
-                <div className="edit_inside">
-                  <label htmlFor="">Description:</label>
-                  <input type="text" />
-                </div>
-                <div className="edit_inside">
-                  <label htmlFor="">Price:</label>
-                  <input type="number" className="inp_numbr" />
-                </div>
-                <div className="edit_inside">
-                  <label htmlFor="">Planned time:</label>
-                  <input type="number" className="inp_numbr" />
-                </div>
-                <div className="edit_inside">
-                  <label htmlFor="">Image:</label>
-                  <input type="file" className="inp_img" />
-                </div>
-                <button className="edit_inside_btn">Send</button>
+                <button>Покупка курса </button>
               </div>
-            </div>
+            ) : (
+              <>
+                {kursdata.map(item => {
+                  return (
+                    <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
+                      <button className="btn_das">Programming</button>
+                      <img src={item.oneuser ? item.oneuser.image.includes("http") ? item.oneuser.image : `${url}/${item.oneuser.image}` :
+                        <img src={img_for_null} alt="" />} alt="" />
+                      <div className="kurs_paddaing_auto">
+                        <h4>{item.name}</h4>
+                        <div className="star_card">
+                          <i className="star_i">
+                            <AiFillStar />
+                          </i>
+                          <i className="star_i">
+                            <AiFillStar />
+                          </i>
+                          <i className="star_i">
+                            <AiFillStar />
+                          </i>
+                          <i className="star_i">
+                            <AiFillStar />
+                          </i>
+                          <i className="star_ib">
+                            <AiFillStar />
+                          </i>
+                          <p>
+                            4.1 <span>(524)</span>
+                          </p>
+                        </div>
+                        <div className="hajm">
+                          <h5>
+                            <p>Course size</p>
+                            {item.planned_time}
+                          </h5>
+                          <h5>
+                            <p>Course price</p>
+                            {item.price}$
+                          </h5>
+                        </div>
+                      </div>
+                      <button className="button_circle">
+                        <AiOutlineArrowRight onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} />
+                      </button>
+                    </div>
+
+                  )
+
+                })}
+              </>
+            )}
+
           </div>
 
-          {/* SPISKA */}
-
-          {/* <div className="spiska_img_title_div">
-          {kursdata.map((item) => {
-            return (
-              <div className="Spiska_blok">
-                <div className="spiska">
-                  <div className="spiska_display_flex">
-                    <div className="spiska_img">
-                      {item.image === null ? (
-                        <div className="No_img1">
-                          <h1>no picture</h1>
-                        </div>
-                      ) : (
-                        <img src={item.image} alt="No img" />
-                      )}
-                    </div>
-                    <div className="spiska_title_df">
-                      <div className="spiska_title">
-                        <h3>{item.name}</h3>
-                        <div className="star_icon_blok1">
-                          <AiFillStar className="gold" />
-                          <AiFillStar className="gold" />
-                          <AiFillStar className="gold" />
-                          <AiFillStar className="gold" />
-                          <AiFillStar />
-                          <div className="number">
-                            <h6>4.1 (524)</h6>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="left1_icon">
-                        <HiArrowRight />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div> */}
+        
         </div></div><div className={toggle === 7 ? "show-content" : "content"}><div>
 
           <div className="letsgo-test">
@@ -995,8 +1048,56 @@ export default function Mentor() {
 
         </div></div>
         <div className={toggle === 2 ? "show-content" : "content"}><UserChat /></div>
-        <div className={toggle === 0 ? "show-content" : "content"}><Education /></div>
-        <div className={toggle === 3 ? "show-content" : "content"}><Sertifikat /></div>
+        <div className={toggle === 0 ? "show-content" : "content"}>
+        <div className="search_big_div">
+            <button className="user_post_button" onClick={() => postEducationModal()}>Добавить</button>
+            <BsSearch className="search" />
+            <input onChange={searchInput} placeholder="Введите здесь..." type="text" />
+
+          </div>
+          <div className="edication_card">
+            {edication.map(item => {
+              localStorage.setItem("educationLength",edication.length)
+              return (
+                <div className="edication_card_">
+                  <h1>{item.education_name}</h1>
+                  <div className="edication_card_date">
+                    <p>Дата начала: {(item.start_date).slice(0, 10)}</p>
+                    <p>Дата окончания: {(item.end_date).slice(0, 10)}</p>
+                  </div>
+                  <span>{item.description}</span>
+                  {/* <div className="edication_card_button">
+                    <button onClick={() => Page()}><MdPlayLesson /></button>
+                    <button onClick={() => putEducationModal(item.id)} ><BiEdit /></button>
+                    <button onClick={() => deleteEducationModal(item.id)}><MdDeleteOutline /></button>
+                  </div> */}
+                </div>
+              )
+            })}
+          </div>
+        
+        </div>
+        <div className={toggle === 3 ? "show-content" : "content"}>
+          <div className="m_zadach">
+            
+          
+                <div className="m_zadach_block">
+                  <img className='jony_foto' src={img_for_null} alt="" />
+                  <h4>Frone end</h4>
+                  <p>1111</p>
+                  <div className="m_zadacha_icon">
+
+                    <div className="m_zadach_ktug_icon" >
+                      <BsFillCloudArrowDownFill />
+                    </div>
+                  </div>
+                </div>
+              
+           
+
+
+          </div>
+        </div>
         <div className={toggle === 4 ? "show-content" : "content"}><div>
 
 

@@ -644,7 +644,7 @@
  }
 
 
- @media (max-width:991px) {
+ @media (max-width:1067px) {
      .fil_text_blok {
          display: none !important;
      }
@@ -793,3 +793,9 @@
          margin-top: -2px !important;
      }
  }
+
+@media (max-width:1197px) {
+    .fromLeft{
+        font-size: 15px !important;
+    }
+}

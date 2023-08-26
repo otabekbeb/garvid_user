@@ -42,6 +42,8 @@ import Education from './pages/js/Education'
 import Test_create from './pages/js/Test_create'
 import Koz from './pages/js/Koz'
 import Email from './pages/js/Email'
+import Nosignal from './pages/js/Nosignal'
+import Ourcourse from './pages/js/Ourcourse'
 
 import Sotibol from './pages/js/Sotibol'
 export default function App() {
@@ -93,6 +95,8 @@ export default function App() {
           <Route path="/Testloader" element={<Testloader />} />
           <Route path="/education" element={<Education />} />
           <Route path="/testcreate" element={<Test_create />} />
+          <Route path="/Nosignal" element={<Nosignal />} />
+          <Route path="/Ourcourse" element={<Ourcourse />} />
 
 
           {/* <Route index element={} />*/}

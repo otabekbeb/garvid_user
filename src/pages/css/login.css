@@ -301,7 +301,9 @@
  .parol-esdan-chiqdi {
    padding-top: 15px;
  }
-
+ .parol-esdan-chiqdi:hover{
+  cursor: pointer;
+ }
  .parol-esdan-chiqdi {
    text-decoration: underline;
    position: relative;
