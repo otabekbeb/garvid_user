@@ -88,6 +88,7 @@ function prof_tg() {
     });
   }, [socket]);
   
+  
 
   return (
     <div className="chat-window">
