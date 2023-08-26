@@ -1,5 +1,10 @@
 import React,{useState,useEffect} from 'react'
 import '../css/Testpage.css'
+import axios from 'axios'
+import url from './Host'
+
+
+
 function openTest(){
     document.querySelector(".block-bir-variant1 p").style=`   background-color: #fcfcfc;
     border: 1px solid #ccc;`
@@ -158,12 +163,18 @@ const [counter2 , setCounter2]= React.useState(65)
 const [counter3 , setCounter3]= React.useState(70)
 const [counter4 , setCounter4]= React.useState(80)
 const[loading,setloading]= useState(false)
+const[test,setTest]=useState([])
 
 useEffect(()=>{
     setloading(true);
     setTimeout(()=>{
         setloading(false);
     },20000);
+
+    axios.get(`${url}/api/edu/test`)
+    .then(res=>{
+        setTest(res.data)
+    })
 },[])
 
 React.useEffect(()=>{
