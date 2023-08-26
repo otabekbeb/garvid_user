@@ -987,7 +987,11 @@ label{
 .prof_tg1{
     width: 300px;
     height: 300px;
-    background-color: red;
+    background-color: #FFF;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .for_tges{
     background-color: rgba(0, 0, 0, 0.684);
@@ -996,4 +1000,10 @@ label{
     left: 0;
     width: 100vw;
     height: 100vh;
+}
+#icon2{
+    font-size: 25px;
+}
+.fill1{
+    display: block;
 }

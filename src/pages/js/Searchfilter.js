@@ -33,12 +33,8 @@ export default function Searchfilter() {
   const [star, setStar] = useState([]);
 
   function Filter() {
-    var a = document.querySelector(".filter_button").style.display;
-    if (a === "none") {
-      document.querySelector(".filter_button").style = "display:block ";
-    } else {
-      document.querySelector(".filter_button").style = "display:none ";
-    }
+    document.querySelector(".filter_button").classList.toggle("fill1")
+   
   }
   function filter1() {
     document.querySelector(".filter_button").style = "display:none !important";
@@ -183,7 +179,7 @@ export default function Searchfilter() {
               </div>
             </div>
             <div className="kurs_cards">
-              {kursdata.length === 0 ? (
+              {kursdata === null ? (
                 <div className="delete_padding">
                   <img src={Groupimg} alt="" />
                   <h4>Вы не купили курс</h4>
