@@ -41,9 +41,10 @@
 }
 
 .hr2000{
-    background: black !important;
-    height: 1px !important;
+    background: #9DA7BB !important;
+    height: 2px !important;
     border: none !important;
+    border-radius: 10px;
 }
 .zanacha_vaz{
     color: #44bef1;
