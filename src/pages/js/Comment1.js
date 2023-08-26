@@ -131,7 +131,7 @@ export default function Comment1() {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         })
           .then(res => {
-            setComment2(res.data)
+            setComment(res.data)
             console.log(res.data, 'hey');
           })
         document.querySelector("#chat_text1").value = ""
