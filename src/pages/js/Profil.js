@@ -400,12 +400,12 @@ export default function Profil() {
                   </div>
                 </div>
 
-                <div className="taxrirlash_chad_barchasini">
+               <a href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
                   <p>
                     view all
                     <AiOutlineRight />
                   </p>
-                </div>
+                </div></a>
               </div>
             </div>
           </div>
