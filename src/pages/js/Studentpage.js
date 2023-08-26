@@ -204,11 +204,11 @@ export default function Mentor() {
   const [counter4, setCounter4] = React.useState(80)
   const [loading, setloading] = useState(false)
   const [stsertifikat, setStsertifikat] = useState([])
-
+  const [natlifikation, setNatlifikation] = React.useState([]);
 
   const [edication, setEdication] = useState([])
   const [edicationId, setEdicationId] = useState()
-  
+
   const username = document.querySelectorAll("#Educationusername")
   const start_date = document.querySelectorAll("#Educationstart_date")
   const end_date = document.querySelectorAll("#Educationend_date")
@@ -294,11 +294,11 @@ export default function Mentor() {
     })
   }
 
-  
+
   // function Page() {
   //   setPage(1)
   // }
-  
+
 
 
 
@@ -603,7 +603,7 @@ export default function Mentor() {
   }
   function postEducationModal() {
     document.querySelector("#EducationpostModal").style = "display:flex"
-  } 
+  }
   return (
     <div className='studentpagess'>
       <Usernavbar />
@@ -674,7 +674,7 @@ export default function Mentor() {
                 <BsThreeDots onMouseEnter={() => taxrirlashModal()} className='profil_blok_ikki_icon_ikki' />
                 <div className="profil_blok_ikki_icon_texrirlash_modal">
                   <div className='taxrirlash_modal_div'><FiEdit className='taxrirlash_modal_icon' /><p>Edit profile</p></div>
-                  <div  onClick={() => notificationModal()} className="taxrirlash_modal_div" >
+                  <div onClick={() => notificationModal()} className="taxrirlash_modal_div" >
                     <BiCast className="taxrirlash_modal_icon" />
                     <p>Notifications</p>
                   </div>
@@ -737,7 +737,7 @@ export default function Mentor() {
           </div>
         </div>
       </div>
-      <div> 
+      <div>
         <div className="gray_blok">
           <div className="fil_text_blok">
 
@@ -863,7 +863,7 @@ export default function Mentor() {
 
           </div>
 
-        
+
         </div></div><div className={toggle === 7 ? "show-content" : "content"}><div>
 
           <div className="letsgo-test">
@@ -1049,7 +1049,7 @@ export default function Mentor() {
         </div></div>
         <div className={toggle === 2 ? "show-content" : "content"}><UserChat /></div>
         <div className={toggle === 0 ? "show-content" : "content"}>
-        <div className="search_big_div">
+          <div className="search_big_div">
             <button className="user_post_button" onClick={() => postEducationModal()}>Добавить</button>
             <BsSearch className="search" />
             <input onChange={searchInput} placeholder="Введите здесь..." type="text" />
@@ -1057,7 +1057,7 @@ export default function Mentor() {
           </div>
           <div className="edication_card">
             {edication.map(item => {
-              localStorage.setItem("educationLength",edication.length)
+              localStorage.setItem("educationLength", edication.length)
               return (
                 <div className="edication_card_">
                   <h1>{item.education_name}</h1>
@@ -1075,25 +1075,25 @@ export default function Mentor() {
               )
             })}
           </div>
-        
+
         </div>
         <div className={toggle === 3 ? "show-content" : "content"}>
           <div className="m_zadach">
-            
-          
-                <div className="m_zadach_block">
-                  <img className='jony_foto' src={img_for_null} alt="" />
-                  <h4>Frone end</h4>
-                  <p>1111</p>
-                  <div className="m_zadacha_icon">
 
-                    <div className="m_zadach_ktug_icon" >
-                      <BsFillCloudArrowDownFill />
-                    </div>
-                  </div>
+
+            <div className="m_zadach_block">
+              <img className='jony_foto' src={img_for_null} alt="" />
+              <h4>Frone end</h4>
+              <p>1111</p>
+              <div className="m_zadacha_icon">
+
+                <div className="m_zadach_ktug_icon" >
+                  <BsFillCloudArrowDownFill />
                 </div>
-              
-           
+              </div>
+            </div>
+
+
 
 
           </div>
@@ -1172,92 +1172,52 @@ export default function Mentor() {
       </div>
 
       <div className="profil_notifacation_size">
-        {/* <div className="admin">
+          {/* <div className="admin">
             <h4>Sms</h4>
             <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
 
           </div> */}
 
-        <div className="div-admin-sms">
-          <h5>SMS</h5>
-          <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
-        </div>
-        <div className="sms-insta">
-          <div className="sms-insto-bb1">
-            <div className="sms-insta-block">
-              <div className="sms-img">
-                <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
-              </div>
-              <div className="sms-kotta-pas">
-                <div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
-                <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
-              </div>
-            </div>
-
-            <div className="sms-insta-block">
-              <div className="sms-img">
-                <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
-              </div>
-              <div className="sms-kotta-pas">
-                <div className="sms-text-tepa"><p>boxodirov_025 </p><p></p></div>
-                <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
-              </div>
-            </div>
-
-            <div className="sms-insta-block">
-              <div className="sms-img">
-                <img src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png" alt="" />
-              </div>
-              <div className="sms-kotta-pas">
-                <div className="sms-text-tepa"><p>boxodirov_025  </p><p></p></div>
-                <div className="sms-text-pas"><p>Sent an sms to: Salom</p></div>
-              </div>
-            </div>
+          <div className="div-admin-sms">
+            <h5>SMS</h5>
+            <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
           </div>
-        </div>
+          <div className="sms-insta">
+            <div className="sms-insto-bb1">
+              {natlifikation.map(item => {
+                if (item.to_user_id == localStorage.getItem("OneuserId")) {
+                  return (
+                    <div className="sms-insta-block">
+                      <div className="sms-img">
+                        <img src={"https://markazback2.onrender.com/" + item.image} alt="" />
+                      </div>
+                      {/* <div className="sms-kotta-pas">
+                        <div className="sms-text-tepa"><p> </p><p></p></div>
+                        <div className="sms-text-pas"><p> </p></div>
+                      </div> */}
 
-        <div className="div-admin-sms">
-          <h5>SMS</h5>
-          <div
-            onClick={() => notificationClose()}
-            className="profil_notifacation_size_close"
-          >
-            <GrClose className="closei" />
-          </div>
-        </div>
-        <div className="sms-insta">
-          <div className="sms-insto-bb1">
-
-
-            {user.map(item => {
-              return (
-                <div className="sms-insta-block">
-                  <div className="sms-img">
-                    <img
-                      src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png"
-                      alt=""
-                    />
-                  </div>
-
-                  <div className="sms-kotta-pas">
-                    <div className="sms-text-tepa">
-                      <p>
-                        boxodirov_025 • now{" "}
-                        <span>
-                          <box-icon type="solid" name="bell-ring"></box-icon>
-                        </span>
-                      </p>
+                      <div className="sms_bos">
+                        <div className="nik_name">
+                          <p>{item.title}</p>
+                        </div>
+                        <div className="sms_nik">
+                          <p>{item.description}</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="sms-text-pas">
-                      <p>Sent an sms to: Salom</p>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
+                  )
+                }
+              })}
+
+
+
+
+
+            </div>
           </div>
+
+       
         </div>
-      </div>
       <div className="profil-qora-qiladi"></div>
 
 

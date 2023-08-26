@@ -87,6 +87,7 @@ function prof_tg() {
       console.log(data,"load messages");
     });
   }, [socket]);
+  
 
   return (
     <div className="chat-window">
@@ -96,6 +97,11 @@ function prof_tg() {
           <img onClick={()=>prof_tg()} style={{height:"100%"}} src={tgimg} alt="" />
           
         </div>
+        <div className="prof_tg1"><div className="left_tg">
+                    <i id="icon2" class='bx bx-left-arrow-alt'></i>
+                    <p>Profile</p></div>
+                    
+                    </div>
         <p >
           {(() => {
             if (!email) {
@@ -136,6 +142,7 @@ function prof_tg() {
         </ScrollToBottom>
       </div>
       <div className="chat-footer">
+       
         <input
           type="text"
           value={currentMessage}
