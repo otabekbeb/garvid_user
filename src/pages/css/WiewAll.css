@@ -1,0 +1,95 @@
+.wiew_div {
+    width: 60%;
+    min-height: 600px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: auto;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+.wiew_sms_big {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.logo {
+    width: 100%;
+ 
+    padding-top: 20px;
+    padding-left: 5%;
+}
+
+.sms {
+    width: 100%;
+    min-height: 50px;
+    border-radius: 20px;
+    background-color: #d9d9d9ca;
+    margin: auto;
+    margin-top: 20px;
+    padding-bottom: 1px;
+}
+
+.data_title {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    align-items: center;
+    margin: auto;
+    height: auto;
+    
+}
+
+.data {
+    font-weight: 700;
+    color: #000000;
+}
+
+.unred {
+    color: #AC9292;
+    font-weight: 700;
+}
+
+.lorem_sms {
+    font-weight: 700;
+    font-size: 16px;
+
+}
+
+.p_lorem_sms {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 30px;
+    padding-top: -10px;
+}
+.qizil{
+    width: 17px;
+    height: 17px;
+    background-color: 
+    #A54B50;
+    border-radius: 50%;
+    padding-top: -10px;
+}
+@media (max-width:913px) {
+    .wiew_div{
+        width: 90%;
+    }
+}
+.qongiro_title{
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 50px;
+    text-align: center;
+    color: rgba(137, 134, 134, 0.74);
+}
+.icon{
+    width: 100%;
+    
+    
+}
+.ooo{
+    margin: auto;
+    margin-top: 50px;
+}

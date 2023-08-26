@@ -34,7 +34,7 @@ export default function Home() {
         }).catch(err => {
             state === "ru" ? (Swal.fire("Проверить информацию,Не удалось отправить")) : (Swal.fire("Check information, Failed to send"))
         })
-        axios.get(`https://markazback2.onrender.com/API/call_me/read/${localStorage.getItem("OneuserId")}`).then(res => {
+        axios.get(`https://markazback2.onrender.com/api/call_me`).then(res => {
             setChec(res.data)
         })
     }
@@ -217,8 +217,15 @@ export default function Home() {
                                         <div className="admin_title">
                                             <h4>Admin:</h4>
                                             <div className="chec_icon">
+                                                {chec.map(item => {
+                                                    return (
+                                                        <>
+                                                {item.read===true?( <BsCheck2 className='bir_chec' />):(<BsCheckAll className='ikki_chec' />)}
+                                                           
+                                                        </>
+                                                    )
 
-                                                {chec.Updated != true ? (<BsCheck2 className='bir_chec' />) : (<BsCheckAll className='ikki_chec' />)}
+                                                })}
 
 
                                             </div>
