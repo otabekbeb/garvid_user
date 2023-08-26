@@ -1,4 +1,3 @@
-'use clint'
 
 import React, { Component, useState, useEffect } from 'react'
 import Carousel from 'react-bootstrap/Carousel';
@@ -14,7 +13,6 @@ import Swal from 'sweetalert2';
 import { BsCheck2 } from 'react-icons/bs'
 import { BsCheckAll } from 'react-icons/bs'
 export default function Home() {
-
     const [state, setState] = React.useState(1)
     const [state1, setState1] = React.useState();
     const [univercard, setUnivercard] = useState([])
@@ -34,11 +32,12 @@ export default function Home() {
         }).catch(err => {
             state === "ru" ? (Swal.fire("Проверить информацию,Не удалось отправить")) : (Swal.fire("Check information, Failed to send"))
         })
-        axios.get(`https://markazback2.onrender.com/API/call_me/read/${localStorage.getItem("OneuserId")}`).then(res => {
-            setChec(res.data)
-        })
+
     }
     useEffect(() => {
+        axios.get(`https://markazback2.onrender.com/api/call_me`).then(res => {
+            setChec(res.data)
+        })
         setState1(
             localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
         );
@@ -56,9 +55,7 @@ export default function Home() {
 
             <div>
                 <div className='body1'>
-
                     <Navbar />
-
                     <div className="foor_header">
                         <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/08/mt-0514-home-slider02.jpg" alt="" />
                         <div className="fir_header">
@@ -217,8 +214,15 @@ export default function Home() {
                                         <div className="admin_title">
                                             <h4>Admin:</h4>
                                             <div className="chec_icon">
+                                                {chec.map(item => {
+                                                    return (
+                                                        <>
+                                                            {item.read === true ? (<BsCheck2 className='bir_chec' />) : (<BsCheckAll className='ikki_chec' />)}
 
-                                                {chec.Updated != true ? (<BsCheck2 className='bir_chec' />) : (<BsCheckAll className='ikki_chec' />)}
+                                                        </>
+                                                    )
+
+                                                })}
 
 
                                             </div>
@@ -276,10 +280,13 @@ export default function Home() {
                             </testimonial_card>
 
 
-                        </div></center></div>
+                        </div>
+                        </center>
+                    </div>
                     <Images />
                     <Futer />
-                </div></div>
+                </div>
+            </div>
         </div>
 
     )
