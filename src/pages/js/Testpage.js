@@ -210,6 +210,17 @@ React.useEffect(()=>{
     return()=> clearInterval(timer4);
 },[counter4])
 
+
+useEffect(()=>{
+    axios.get(`${url}/edu/test`, {
+        headers : {Authorization : `Bearer ${localStorage.getItem("token")}`}
+    })
+    .then(res=>{
+        console.log(res.data, "ura");
+    })
+    
+})
+
   return (
     <div>
         

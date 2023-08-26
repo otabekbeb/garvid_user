@@ -322,7 +322,6 @@ export default function Comment1() {
               <p>Тут ещё нут ответов</p>
             </div>) : (<>
               {comment.map(item32 => {
-
                 if (item32.subcomment == subcoment) {
                   return (<>
                     <div className="df_div_comment_page">
