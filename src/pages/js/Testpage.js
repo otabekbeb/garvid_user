@@ -164,6 +164,8 @@ const [counter3 , setCounter3]= React.useState(70)
 const [counter4 , setCounter4]= React.useState(80)
 const[loading,setloading]= useState(false)
 const[test,setTest]=useState([])
+const[question,setQuestion] = useState([])
+
 
 useEffect(()=>{
     setloading(true);
@@ -174,7 +176,17 @@ useEffect(()=>{
     axios.get(`${url}/api/edu/test`)
     .then(res=>{
         setTest(res.data)
-    })
+    });
+    axios.get(`${url}/edu/quations`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+      })
+        .then(res => {
+  
+            setQuestion(res.data)
+          console.log(res.data,);
+        })
+        .catch(err => {
+        })
 },[])
 
 React.useEffect(()=>{
