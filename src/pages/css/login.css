@@ -18,6 +18,17 @@
   
   
  }
+ .login_small_div_input h3 {
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 20px;
+ 
+ 
+}
+
+.login_small_div_input p{
+  text-align: center;
+}
 
  .login_small_input {
    position: relative;

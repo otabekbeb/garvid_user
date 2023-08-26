@@ -179,7 +179,7 @@ export default function Searchfilter() {
               </div>
             </div>
             <div className="kurs_cards">
-              {kursdata.length === 0 ? (
+              {kursdata === null ? (
                 <div className="delete_padding">
                   <img src={Groupimg} alt="" />
                   <h4>Вы не купили курс</h4>
