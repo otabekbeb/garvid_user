@@ -874,7 +874,7 @@ export default function Edication() {
           ) : (
             <>
               <div className="search_big_div"><button className="user_post_button" onClick={() => postEducationModal()}>Добавить</button><AiOutlineSearch className="search" /><input onChange={Search} placeholder="Введите здесь..." type="text" /></div>
-              <div className="edication_card">
+              {/* <div className="edication_card">
                 {edication.map(item => {
                   return (
                     <div className="edication_card_">
@@ -893,7 +893,7 @@ export default function Edication() {
                     </div>
                   )
                 })}
-              </div>
+              </div> */}
               <ul class="cards">
                 {edication.map(item => {
                   return (
@@ -912,11 +912,11 @@ export default function Edication() {
                             </div>
                           </div>
                           <p class="card__description">{item.description}</p>
-                          <div className="edication_card_buttons">
-                            <button className='FaUsers' onClick={() => JadvalPage(item.id)}><FaUsers /></button>
-                            <button className='MdPlayLesson' onClick={() => Page(item.id)}><MdPlayLesson /></button>
-                            <button className='MdDeleteOutline' onClick={() => deleteEducationModal(item.id)}><MdDeleteOutline /></button>
-                            <button className='BiEdit' onClick={() => putEducationModal(item.id)} ><BiEdit /></button>
+                          <div className="edu_btns">
+                            <button onClick={() => JadvalPage(item.id)}><FaUsers /></button>
+                            <button onClick={() => Page(item.id)}><MdPlayLesson /></button>
+                            <button className='edu_btn_delete' onClick={() => deleteEducationModal(item.id)}><MdDeleteOutline /></button>
+                            <button onClick={() => putEducationModal(item.id)} ><BiEdit /></button>
                           </div>
                         </div>
                       </div>

@@ -1527,7 +1527,7 @@ select {
   }
   
   .card__overlay {
-    height: 230px;
+    height: 300px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -1622,21 +1622,32 @@ select {
     -webkit-line-clamp: 3;
     overflow: hidden;
   }    
-  .otash .edication_card_button{
+  .otash .edu_btns{
+    /* padding-right: 20px; */
     display: flex;
-    justify-content: end;
-    gap: 10px;
+    justify-content: center;
+    margin-top: -60px !important;
+    gap:7px;
+    z-index: 2;
   }
-  .edication_card_buttons button{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-  }
-  .FaUsers{
-    width: 30px;
-    height: 30px;
-    border: 2px solid #44bef1;
+  .edu_btns button{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #44bef1 ;
     border-radius: 50%;
     color: #44bef1;
     background-color: white;
+    transition: .4s ease;
   }
+.edu_btn_delete{
+    border: 1px solid red !important;
+    color: red !important;
+}
+.edu_btns button:hover{
+    color: white;
+    background-color: #44bef1;
+}
+.edu_btn_delete:hover{
+    color: white !important;
+    background-color: red !important;
+}
