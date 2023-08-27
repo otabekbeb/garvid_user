@@ -608,11 +608,11 @@ list-style: none;
     width: 100%;
 }
 
-.contact_form_input_big_div_input p {
-    color: #333333;
-    font-size: 14px;
-    line-height: 35px;
-}
+    .contact_form_input_big_div_input p {
+        color: #333333;
+        font-size: 14px;
+        line-height: 35px;
+    }
 
 .contact_form_input_big_div button {
     background-color: #44bef1;

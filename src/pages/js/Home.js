@@ -210,8 +210,8 @@ export default function Home() {
                                         <textarea name="" className='contact_textarea' id="text1" cols="30" rows="10"></textarea>
                                     </label>
                                     <div className="admin_button">
-                                        <button onClick={() => { dataPost() }}>Subscribe</button>
-                                        <div className="admin_title">
+                                        <button onClick={() => { dataPost() }}>Send</button>
+                                        {/* <div className="admin_title">
                                             <h4>Admin:</h4>
                                             <div className="chec_icon">
                                                 {chec.map(item => {
@@ -226,7 +226,7 @@ export default function Home() {
 
 
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </form>
 

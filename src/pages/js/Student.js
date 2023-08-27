@@ -9,7 +9,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import axios from "axios";
-import Loader from "./loader"
+import Loader from "./loader" 
 import Swal from "sweetalert2";
 import { BsCheck2 } from 'react-icons/bs'
 import { BsCheckAll } from 'react-icons/bs'
@@ -18,12 +18,11 @@ export default function Contact() {
   const [loader, setLoader] = useState(0)
   const dataPost = () => {
     var formdata = {
-      fullname: document.querySelectorAll('.contact_inp')[0].value,
-      lastname: document.querySelectorAll('.contact_inp')[1].value,
-      email: document.querySelectorAll('.contact_inp')[2].value,
-      phone_number: document.querySelectorAll('.contact_inp')[3].value,
-      country: document.querySelectorAll('.contact_inp')[4].value,
+      fullname: document.querySelectorAll('#contact_inp')[0].value,
+      email: document.querySelectorAll('#contact_inp')[1].value,
+      purchase: document.querySelectorAll('#contact_inp')[2].value,
       message: document.querySelector('.contact_textarea').value
+
     }
     axios.post("https://markazback2.onrender.com/api/call_me", formdata, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
@@ -84,55 +83,46 @@ export default function Contact() {
                 </a>
               </div>
             </div>
+
             <div className="contact_right">
-              <div id="inputs_top" className="inputs_top">
-                <input
-                  type="text"
-                  className="contact_inp"
-                  placeholder={state === "ru" ? "Имя*" : "FirstName*"}
-                />
-                <input
-                  type="text"
-                  className="contact_inp"
-                  placeholder={state === "ru" ? "Фамилия*" : "LastName*"}
-                />
-                <input
-                  type="text"
-                  className="contact_inp"
-                  placeholder={
-                    state === "ru" ? "Электронная почта*" : "Email*"
-                  }
-                />
-                <input
-                  type="text"
-                  className="contact_inp"
-                  placeholder={state === "ru" ? "Телефон*" : "Phone Number*"}
-                />
-                <input
-                  type="text"
-                  className="contact_inp"
-                  placeholder={state === "ru" ? "Страна*" : "Country*"}
-                />
-                <input
-                  type="text"
-                  className="contact_inp"
-                  placeholder={state === "ru" ? "Какой урок*" : "Which lesson*"}
-                />
-              </div>
+              <form action="">
+                <label>
+                  <p>fullname</p>
+                  <input type="email" name="" id="contact_inp" required />
+                </label>
+                <label>
+                  <p>email</p>
+                  <input id='contact_inp' type="text" required />
+                </label>
+                <label>
+                  <p>purchase</p>
+                  <input id='contact_inp' type="text" required />
+                </label>
+                <label>
+                  <p>Message</p>
+                  <textarea name="" className='contact_textarea' id="text1" cols="30" rows="10"></textarea>
+                </label>
+                <div className="admin_button1">
+                  <button onClick={() => { dataPost() }}>Send</button>
+                  {/* <div className="admin_title">
+                                            <admin_buttonh4>Admin:</h4>
+                                            <div className="chec_icon">
+                                                {chec.map(item => {
+                                                    return (
+                                                        <>
+                                                            {item.read === true ? (<BsCheck2 className='bir_chec' />) : (<BsCheckAll className='ikki_chec' />)}
+
+                                                        </>
+                                                    )
+
+                                                })}
 
 
-              <div className="admin_button1">
-                <button onClick={() => { dataPost() }} className="contact_btn">
-                  {state === "ru" ? "отправить" : "send"}
-                </button>
-                <div className="admin_title">
-                  <h4>Admin:</h4>
-                  <div className="chec_icon">
-                    <BsCheck2 className='bir_chec' />
-                    <BsCheckAll className='ikki_chec' />
-                  </div>
+                                            </div>
+                   </div> */}
                 </div>
-              </div>
+              </form>
+
             </div>
           </div>
 
