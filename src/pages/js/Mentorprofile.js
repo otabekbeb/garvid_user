@@ -257,7 +257,7 @@ export default function Profil() {
                 return <h1>{item.username}</h1>;
               })}
 
-              <button>Regular user</button>
+              <button>Teacher</button>
               <p>My social networks :</p>
               <div className="blok_bir_icon">
                 <div className="blok_bir_icon_img1">
