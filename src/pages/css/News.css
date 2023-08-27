@@ -554,7 +554,7 @@ mark,
 
 .img-fluid {
     max-width: 100%;
-    height: auto;
+    height: 250px;
 }
 
 .img-thumbnail {
@@ -1469,8 +1469,11 @@ pre code {
     }
 
     .col-lg-6 {
-        flex: 0 0 50%;
-        max-width: 50%;
+        /* flex: 0 0 50%; */
+        /* max-width: 40%; */
+        width: 100%;
+        justify-content: space-around;
+        display: flex;
     }
 
     .col-lg-7 {
@@ -6947,7 +6950,7 @@ button.bg-dark:focus {
     display: table-cell !important;
 }
 
-.d-flex {
+.newss1 .d-flex {
     display: flex !important;
 }
 
@@ -7969,7 +7972,10 @@ button.bg-dark:focus {
 }
 
 .position-relative {
+
     position: relative !important;
+    width: 100%;
+    justify-content: space-around;
 }
 
 .position-absolute {
@@ -10784,6 +10790,9 @@ h6,
 .section-title {
     margin-bottom: 15px;
     padding: 15px;
+    width: 50%;
+    margin-left: 3%;
+    margin-top: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -10915,4 +10924,59 @@ h6,
 .newsss1 .swiper-button-next,
 .swiper-button-prev {
     color: black !important;
+}
+
+#app {
+    height: 100%;
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.News_card{
+    width: 400px;
+}
+.News_cards{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    gap: 10px;
+    margin: auto;
 }

@@ -37,6 +37,7 @@ export default function Workforteach() {
         })
 
     }, [])
+    
 
 
 
@@ -75,9 +76,14 @@ export default function Workforteach() {
                 {stTasks.map(item => {
                     return (
                         <div className="m_zadach_block">
-                        {item.image === null ? (<img className='jony_foto' src={img_for_null} alt="" />) : (<img src={item.image} alt="" />)}
+                        {item.image === null ? (<img className='jony_foto' src={img_for_null} alt="" />) : (<img src={`${url}/api/course_theme_task_student`+item.image} alt="" />)}
                             <h4>{item.content}</h4>
-                            <p>{item.course_theme}</p>
+                            <div className="zadac_df">
+                            <span>Дата Начала: {(item.time_create).slice(0, 10)}</span>
+                            <span>Дата Окончания: {(item.time_update).slice(0, 10)}</span>
+                            </div>
+                            <p>{item.feedback}</p>
+                            <p>Оценка:{item.mark}</p>
                             <div className="m_zadacha_icon">
                                 <div className="m_zadach_ktug_icon1" onClick={() => openModal2()}>
                                     <MdDeleteOutline />
@@ -85,9 +91,6 @@ export default function Workforteach() {
                                 <div className="m_zadach_ktug_icon" >
                                     <FiEdit />
                                     {/* onClick={() => dashed(item.id)} */}
-                                </div>
-                                <div className="m_zadach_ktug_icon" >
-                                    <BsFillCloudArrowDownFill />
                                 </div>
                             </div>
                         </div>
@@ -160,7 +163,8 @@ export default function Workforteach() {
                         <img src={Groupimg} alt="" />
                         <h4>Вы правда хотите удалить?</h4>
                         <div className="a_delete_button">
-                            <button className='a_delete_no' onClick={() => clouseModal2()}>Нет</button> <button className="a_delete_yes">Да</button>
+                            <button className='a_delete_no' onClick={() => clouseModal2()}>Нет</button>
+                            <button className="a_delete_yes">Да</button>
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,7 @@ import Qongro from '../img/Qongiro.png'
 function WiewAll() {
     return (
         <div>
+            <h1 style={{textAlign:'center'}}></h1>
             <div className="wiew_div">
                 <h3 className='logo'>Notifications</h3>
                 {/* <div className="icon">
