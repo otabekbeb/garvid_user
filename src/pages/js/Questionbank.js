@@ -27,9 +27,9 @@ const qBank = [
 	},
 	{
 		id: 5,
-		question: "144/14",
+		question: "144/12",
 		options: ["12","11","14","20"],
-		answer: "14"
+		answer: "12"
 	},
 ]
 
