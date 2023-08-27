@@ -12,6 +12,7 @@ import Azo from "./Azo"
 // import {BsPlus} from 'react-icons/bs'
 import { TiThMenu } from 'react-icons/ti'
 import Education from './Education';
+import Test_create from "./Test_create.js"
 
 export default function MentorPdp() {
     const [toggle, setToggle] = useState(1)
@@ -51,6 +52,7 @@ export default function MentorPdp() {
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle===3? {borderBottom:'2px solid #44bef1'}:{}} className='fromLeft'>Tasks</h1>{toggle===3?(<div className="fil_text_blok_kurs_lenght">24 pieces</div>):("")}</div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle===4? {borderBottom:'2px solid #44bef1'}:{}} className='fromLeft'>My subscribers</h1>{toggle===4?(<div className="fil_text_blok_kurs_lenght">24 pieces</div>):("")}</div>
                     <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle===5? {borderBottom:'2px solid #44bef1'}:{}} className='fromLeft'>Educations</h1>{toggle===5?(<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("educationLength")} pieces</div>):("")}</div>
+                    <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(6)} style={toggle===6? {borderBottom:'2px solid #44bef1'}:{}} className='fromLeft'>Tests</h1>{toggle===6?(<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("testLength")} pieces</div>):("")}</div>
                 </div>
                 <div className="profil_blok_menu_size">
                     <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
@@ -62,6 +64,7 @@ export default function MentorPdp() {
                     <h1 onClick={() => updatetoggle(3)} className='fromMenu'>Tasks</h1>
                     <h1 onClick={() => updatetoggle(4)} className='fromMenu'>My subscribers</h1>
                     <h1 onClick={() => updatetoggle(5)} className='fromMenu'>Educations</h1>
+                    <h1 onClick={() => updatetoggle(6)} className='fromMenu'>Tests</h1>
                 </div>
             </div>
 
@@ -70,6 +73,7 @@ export default function MentorPdp() {
             <div className={toggle === 3 ? "show-content" : "content"}><Sertifikat /></div>
             <div className={toggle === 4 ? "show-content" : "content"}><Azo/></div>
             <div className={toggle === 5 ? "show-content" : "content"}><Education/></div>
+            <div className={toggle === 6 ? "show-content" : "content"}><Test_create/></div>
 
     </div>
     
