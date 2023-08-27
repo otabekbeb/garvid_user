@@ -3,19 +3,52 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Question from "../js/Question";
-import qBank from "../js/Questionbank";
+// import qBank from "../js/Questionbank";
 import Score from "../js/Score";
+import axios from "axios";
+import url from "./Host";
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			questionBank: qBank,
+			questionBank: [	{
+				id: 1,
+				question: "9*9",
+				options: ["64","87","82","81"],
+				answer: "81"
+			}],
 			currentQuestion: 0,
 			selectedOption: "",
 			score: 0,
 			quizEnd: false,
 		};
+	}
+	componentDidMount(){
+		axios.get(`${url}/edu/quations`).then(res=>{
+			for (let i = 0; i < res.data.length; i++) {
+			res.data[i].options=[res.data[i].variant1,res.data[i].variant2,res.data[i].variant3,res.data[i].variant4]
+			res.data[i].id=i+1
+			if(res.data[i].answer==1){
+			res.data[i].answer=res.data[i].variant1
+			}
+			if(res.data[i].answer==2){
+				res.data[i].answer=res.data[i].variant2
+			
+			}
+			if(res.data[i].answer==3){
+				res.data[i].answer=res.data[i].variant3
+			
+			}
+			if(res.data[i].answer==4){
+				res.data[i].answer=res.data[i].variant4
+			}}
+			
+			this.setState({questionBank:res.data})
+			console.log(res.data);
+			}).catch(err=>{
+			
+			})
 	}
 
 	handleOptionChange = (e) => {
