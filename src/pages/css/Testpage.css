@@ -968,4 +968,17 @@ justify-content: space-between;
     border: 1px solid #ccc;
     border-radius: 3px;
 }
-
+.for_bigs{
+    background-color: #FFF;
+    width: 60%;
+    margin: auto;
+    border-radius: 15px;
+}
+.for_bigs .App{
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    min-height: 200px;
+    height: 400px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
