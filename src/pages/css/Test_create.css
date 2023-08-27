@@ -1185,6 +1185,9 @@ select {
         transition: 0.2s;
         border: 1px solid #44bef1;
     }
+    .postUserModal_div_label label{
+        width: 100% !important;
+    }
     .questionsimage{
         opacity: -1;
         border: none !important;
@@ -1244,11 +1247,11 @@ select {
         outline-color: gery;
     }
 
-    .postUserModal_div_label {
+    /* .postUserModal_div_label {
         display: grid;
         gap: 10px;
         grid-template-columns: auto auto;
-    }
+    } */
 
     .postUserModal_div_icon {
         width: 100%;
