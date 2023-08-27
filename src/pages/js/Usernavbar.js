@@ -184,9 +184,12 @@ export default function Navbar() {
                   <a href="/mentor">Teacher</a>
                 </li>):(localStorage.getItem("position")==4?(""):("")))}
                 
-                {localStorage.getItem("position")==2?(""):(<li className="moto-menu-item">
+                {localStorage.getItem("position")==2?(""):(localStorage.getItem("position")==4?(<li className="moto-menu-item">
+                  <a href="/studentall">Student</a>
+                </li>):(<li className="moto-menu-item">
                   <a href="/student">Student</a>
-                </li>)}
+                  
+                </li>))}
                 <li className="moto-menu-item">
                   <a href="/editprofil">Edit profile</a>
                 </li>
