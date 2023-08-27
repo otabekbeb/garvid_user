@@ -12,6 +12,8 @@ import person from '../img/149071.png'
 import { MdClose } from "react-icons/md";
 import "../css/yozishmalar.css";
 import { AiOutlineDelete } from "react-icons/ai"
+import {TfiMarkerAlt} from 'react-icons/tfi'
+import {BsBookmark} from "react-icons/bs"
 import { CgClose } from "react-icons/cg"
 import Swal from "sweetalert2";
 
@@ -23,6 +25,7 @@ export default function Comment1() {
   const [commenttask, setCommenttask] = useState([])
   const [task_commnet_id, setTask_commnet_id] = useState(JSON.parse(localStorage.getItem("task_commnet_id")))
   const [comment, setComment] = useState([])
+  const [task, setTask] = useState([])
 
 
   useEffect(() => {
@@ -85,10 +88,31 @@ export default function Comment1() {
       })
   }
 
+  function imagePost() {
+    var forda = new FormData()
+    forda.append("image", document.querySelector(".comment_file12").files[0])
+    forda.append("content", "da")
+    forda.append("course_theme", 3)
+    forda.append("feedback", "hjht")
+    forda.append("mark", 5)
+
+
+    axios.post(`${url}api/course_theme_task_student`, forda , {
+      headers: {Authorization:`Bearer ${localStorage.getItem("token")}`}
+    })
+    .then(res=>{
+      setTask(res.data)
+      console.log(res.data, "ily");
+    })
+    .catch(err=>{
+      Swal.fire("ishlamadi tupoy")
+    })
+  }
+
   function commentTaskPost() {
     var formdata = new FormData()
     formdata.append("text", document.querySelector("#chat_text12").value)
-    formdata.append("image", document.querySelector("#comment_file").files[0])
+    formdata.append("image", 0)
     formdata.append("user_id", oneuser[0].id)
     formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id)
     formdata.append("subcomment", subcoment)
@@ -127,10 +151,26 @@ export default function Comment1() {
 
   }
 
+  function cencelModal(){
+    document.querySelector("#chat_text12").value=""
+  }
+
+  function markOpen() {
+    document.querySelector(".m-input-mark").style="display:block !important"
+  }
+  function aftermarkopen() {
+    document.querySelector(".m-comment-Bookmark").style="display:block !important"
+    document.querySelector(".m-input-mark").style="display:none !important"
+  }
+  function markClose() {
+    document.querySelector(".m-input-mark").style="display:none !important"
+  }
+
   return (
     <div>
 
       <div className='m_comment_kotta'>
+     
         <div className="m_otdel_bgc">
         {teacherwork.map(item => {
 
@@ -153,7 +193,7 @@ if (item.id ==  JSON.parse(localStorage.getItem("page_video")).id) {
 
 })}
 <hr className='hr2000' />
-
+ 
         <div className="for_scroll">
     {commenttask.length==0?( 
       <div className="for_no_comment">
@@ -166,6 +206,7 @@ if (item.task_commnet_id == 1) {
     <>
       <div className="df_div_comment_page">
         <div className="div_img_class_over">
+        <p className='m-comment-Bookmark'><BsBookmark/></p>
           <img src={item.oneuser ? item.oneuser.image.includes("http") ? item.oneuser.image : `${url}/${item.oneuser.image}` :
             <img src={img_comment1} alt="" />} alt="" />
         </div>
@@ -174,20 +215,52 @@ if (item.task_commnet_id == 1) {
 
 
           <h5>{item.oneuser ? item.oneuser.username : "Anonim User"}</h5>
+          {task.map(item=>
+          {<img src={item.image.includes("http") ? item.image : `${url}/${item.image}`} alt="" />
+
+          })}
           <p className='m_comment_text1505'>{item.text}</p>
           {oneuser.map(item5 => {
             return (
-              <>
+              <div style={{display: "flex", alignItems:"center", gap:"5px", flexWrap:"wrap"}}>
                 {item5.id == item.user_id ? (
                   <p className='m_comment_delete1'
                     onClick={() => { deleteComment1(item.id) }}>
                     <span><AiOutlineDelete /></span>удалить</p>) :
                   ("")
                 }
-              </>
+                {localStorage.getItem("position")===2?(""):("")}
+                <p className='m-comment-mark' style={{color:"#44bef1", 
+                gap:"5px",
+                textAlign:"center", 
+                cursor:"pointer",
+                padding:"3px"
+                }}
+                onClick={()=>{markOpen()}}>
+                    <span><TfiMarkerAlt /></span>поставить оценку</p>
+                    {localStorage.getItem("position")===2?(""):("")}
+                    <p className='m-comment-mark' style={{color:"#44bef1", 
+                gap:"5px",
+                textAlign:"center", 
+                cursor:"pointer",
+                padding:"3px",
+                display:"none"
+                }}>
+                    <span><TfiMarkerAlt /></span>поставить оценку</p>
+              </div>
             )
 
-          })} </div>
+          })} 
+          <div className="m-input-mark">
+             <input type="number" id='mark-input-in-task' placeholder='оценка'/>
+             <div className="mark-button-down">
+              <p className='mark-otment-bosa' onClick={()=>{markClose()}}>отменить</p>
+              <p className='mark-okey-bosa' onClick={()=>{aftermarkopen()}}>оценить</p>
+             </div>
+             
+          </div>
+         
+          </div>
       </div>
 
     </>
@@ -203,18 +276,17 @@ if (item.task_commnet_id == 1) {
 
 
           <div className="m_comment_yozish">
-            {/* <input type="file" id='comment_file' />
-              <p><FcFile/></p> */}
+            <input type="file" id='comment_file' className='comment_file12' />
+              <p><FcFile/></p>
 
             <textarea placeholder='Введите ответ на задания' id="chat_text12"></textarea>
           </div>
           <div className="m_comment_button">
             <button className='m_otmen'
-            //  onClick={()=>{cencelModal()}}
+             onClick={()=>{cencelModal()}}
             >Cancel</button>
             <button
-              // onClick={(event)=>{ themePost(); cencelModal()}} 
-              className='m_otpravit' onClick={() => { commentTaskPost() }}>Send</button>
+              className='m_otpravit' onClick={() => { commentTaskPost(); imagePost() }}>Send</button>
 
 
 

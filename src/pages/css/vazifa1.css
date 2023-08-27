@@ -11,7 +11,12 @@
     padding-bottom: 10px;
 }
 
-
+.m-comment-mark:active{
+    background-color: #44bef1;
+    color: #fff !important;
+    border-radius: 5px;
+    user-select: none;
+}
 
 .comment_file12{
     width: 25px;
@@ -49,4 +54,38 @@
 .zanacha_vaz{
     color: #44bef1;
     text-decoration: underline;
+}
+
+.m-comment-Bookmark{
+    position: absolute;
+    right: 0;
+    width: 45%;
+    color: #44bef1;
+    display: none;
+}
+
+#mark-input-in-task{
+    height: 30px !important;
+    width: 100% !important;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #44bef1;
+}
+
+.mark-otment-bosa{
+    color: black;
+    font-size: 12px;
+}
+.mark-okey-bosa{
+    color: #44bef1;
+    font-size: 12px;
+}
+
+.mark-button-down{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+.m-input-mark{
+    display: none;
 }
