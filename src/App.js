@@ -44,6 +44,7 @@ import Koz from './pages/js/Koz'
 import Email from './pages/js/Email'
 import Nosignal from './pages/js/Nosignal'
 import Ourcourse from './pages/js/Ourcourse'
+import NNN from './pages/js/NNN'
 
 import Sotibol from './pages/js/Sotibol'
 import WiewAll from './pages/js/WiewAll'
@@ -99,6 +100,7 @@ export default function App() {
           <Route path="/Nosignal" element={<Nosignal />} />
           <Route path="/Ourcourse" element={<Ourcourse />} />
           <Route path="/WiewAll" element={<WiewAll />} />
+          <Route path="/NNN" element={<NNN />} />
 
 
           {/* <Route index element={} />*/}
