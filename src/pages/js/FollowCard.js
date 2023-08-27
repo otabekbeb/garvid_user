@@ -40,7 +40,7 @@ function folowcolor1(key,id) {
 }
 
   useEffect(() => {
-    axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.get(`${url}/auth/teachers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setFollow(res.data)
       setFollow1(res.data)
     })

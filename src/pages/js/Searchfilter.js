@@ -34,7 +34,6 @@ export default function Searchfilter() {
 
   function Filter() {
     document.querySelector(".filter_button").classList.toggle("fill1")
-   
   }
   function filter1() {
     document.querySelector(".filter_button").style = "display:none !important";
