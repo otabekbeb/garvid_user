@@ -131,7 +131,7 @@
 //     })
 
 //   }
-  
+
 
 //   return (
 //     <div>
@@ -205,7 +205,7 @@
 //             <input id="Educationdescription" className="description" placeholder="Описание" type="text" />
 //           </label>
 //           </div>
-          
+
 //           <div className="postUserModal_div_button">
 //             <button onClick={() => postEducation()}>Отправить</button>
 //           </div>
@@ -232,7 +232,7 @@
 //             <input id="Educationdescription" className="descriptions" type="text" />
 //           </label>
 //           </div>
-          
+
 //           <div className="postUserModal_div_button">
 //             <button onClick={() => putEducation()}>Редактировать</button>
 //           </div>
@@ -258,11 +258,11 @@ import url from "./Host"
 import { AiOutlineSearch } from "react-icons/ai"
 import { MdDeleteOutline, MdPlayLesson, MdModeEditOutline, MdOutlineDeleteOutline } from "react-icons/md"
 // import close from "./img/close.png"
-import {GrFormClose} from "react-icons/gr"
+import { GrFormClose } from "react-icons/gr"
 import deleteImg from "../img/Group 2.png"
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
-import { FaUsers } from "react-icons/fa"
+import { FaUsers, FaHourglassStart, FaHourglassEnd } from "react-icons/fa"
 // import events from "./events";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import {
@@ -306,7 +306,7 @@ export default function Edication() {
   const [Marklesson_id, setMarklesson_id] = useState()
   const [Markstudent_id, setMarkstudent_id] = useState()
   const [MarkId, setMarkId] = useState()
-  const [newdate, setNewdate] = useState(`${(new Date()).getMonth()+1}.padStart(2,0)`)
+  const [newdate, setNewdate] = useState(`${(new Date()).getMonth() + 1}.padStart(2,0)`)
 
   const [Journal_mark, setJournal_mark] = useState({ allesson: [], alstudent_mark: [{ mark: [] }] })
 
@@ -339,14 +339,14 @@ export default function Edication() {
       const user = res.data.filter(item => item.position == 2)
       setUser(res.data)
     })
-    axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem(("token")) } }).then(res => {
+    axios.get(`${url}/auth/student`, { headers: { Authorization: "Bearer " + localStorage.getItem(("token")) } }).then(res => {
       const StudentFilter = res.data.filter(item => item.position == 4)
-      setSdutent(StudentFilter)
+      setSdutent(res.data)
     })
 
   }, [])
 
-function Page(id) {
+  function Page(id) {
     setPage(1)
     setEducationId(id)
     axios.get(`${url}/edu/schedule`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
@@ -447,7 +447,7 @@ function Page(id) {
     })
   }
 
-function postScheduleModal(start) {
+  function postScheduleModal(start) {
     setDay(start)
     document.querySelector("#SchedulepostModal").style = "display:flex"
   }
@@ -530,7 +530,7 @@ function postScheduleModal(start) {
     formdata.append("end_time", end_time[1].value)
     formdata.append("teacher_id", teacher_id[1].value)
 
-axios.put(`${url}/edu/schedule/${scheduleId}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.put(`${url}/edu/schedule/${scheduleId}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       alert("Информация изменилась")
       document.querySelector("#ScheduleputModal").style = "display:none"
       axios.get(`${url}/edu/schedule`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
@@ -618,10 +618,10 @@ axios.put(`${url}/edu/schedule/${scheduleId}`, formdata, { headers: { Authorizat
       axios.get(`${url}/edu/schedule`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
         axios.get(`${url}/edu/attendance_lesson`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res2 => {
           var all_lesson1 = res1.data.filter(item => item.education_id == id)
-          var all_lesson = all_lesson1.filter(item => (new Date(item.day)).getMonth()+1 == newdate)
+          var all_lesson = all_lesson1.filter(item => (new Date(item.day)).getMonth() + 1 == newdate)
           var all_mark = res2.data
 
-var lesson = {
+          var lesson = {
             allesson: all_lesson,
             alstudent_mark: [],
           }
@@ -732,7 +732,7 @@ var lesson = {
     })
   }
 
-function sendMarkAll() {
+  function sendMarkAll() {
     var chackbox = document.querySelectorAll('.jadval_checkbox')
     var chackbox1 = document.querySelectorAll('.jadval_checkbox1')
     // console.log(group_student);
@@ -810,47 +810,47 @@ function sendMarkAll() {
     }
   }
 
-  function FilterDay(e){
+  function FilterDay(e) {
 
-var inputmonth=(e.target.value).slice(-2)
-setNewdate(inputmonth)
-  JadvalPage(JadvalPageId)
+    var inputmonth = (e.target.value).slice(-2)
+    setNewdate(inputmonth)
+    JadvalPage(JadvalPageId)
   }
 
-return (
-    <div>
+  return (
+    <div className='otash'>
       {page == 2 ? (
         <>
-          <div className="exit_button"><button onClick={() => setPage(0)}>Назад</button>        <button className='user_post_button_malumot' style={{ paddingTop: '3px' }} onClick={() => { SetMark(0) }} >оценивать</button>   <button style={{ paddingTop: '3px' }} onClick={() => Markpage()} className='user_post_button_malumot'>журнал</button></div>
+          <div className="exit_button"><button onClick={() => setPage(0)} style={{ marginLeft: "0px" }}>Назад</button>        <button className='user_post_button_malumot' style={{ paddingTop: '3px' }} onClick={() => { SetMark(0) }} >оценивать</button>   <button style={{ paddingTop: '3px' }} onClick={() => Markpage()} className='user_post_button_malumot'>журнал</button></div>
           {mark == 0 ? (<><div className="search_big_div"><button onClick={() => postGroupModal()} className="user_post_button">Добавить</button></div><Table dataSource={group_student} columns={columns} />
 
 
           </>) : (
             <>
-            <input onChange={FilterDay}  type="month" style={{marginBottom:"5px"}} />
-          <div style={{ width: '100%', overflowX: 'scroll' }}>
-            <table className='all_mark_jurnal'>
-              <tr>
-                <th>No</th>
-                <th>Фамилия</th>
+              <input onChange={FilterDay} type="month" style={{ marginBottom: "5px" }} />
+              <div style={{ width: '100%', overflowX: 'scroll' }}>
+                <table className='all_mark_jurnal'>
+                  <tr>
+                    <th>No</th>
+                    <th>Фамилия</th>
 
-                {Journal_mark.allesson.map(item => {
+                    {Journal_mark.allesson.map(item => {
 
-                  return <th>{item.day.slice(0, 10)}</th>
-                })}
-              </tr>
-              {Journal_mark.alstudent_mark.map((item1, key) => {
-                return <tr>
-                  <td>{key + 1}</td>
-                  <td>{item1.name}</td>
-                  {item1.mark.map(item2 => {
-                    return <> <td style={item2.came == true ? { backgroundColor: "green", color: '#fff' } : { backgroundColor: "red", color: '#fff' }} onClick={() => MarkputModal(item2.id, item2.mark, item2.came, item2.lesson_id, item2.student_id)}  >{item2.mark}</td></>
+                      return <th>{item.day.slice(0, 10)}</th>
+                    })}
+                  </tr>
+                  {Journal_mark.alstudent_mark.map((item1, key) => {
+                    return <tr>
+                      <td>{key + 1}</td>
+                      <td>{item1.name}</td>
+                      {item1.mark.map(item2 => {
+                        return <> <td style={item2.came == true ? { backgroundColor: "green", color: '#fff' } : { backgroundColor: "red", color: '#fff' }} onClick={() => MarkputModal(item2.id, item2.mark, item2.came, item2.lesson_id, item2.student_id)}  >{item2.mark}</td></>
+                      })}
+                    </tr>
                   })}
-                </tr>
-              })}
-            </table>
-          </div>
-          </>)}
+                </table>
+              </div>
+            </>)}
         </>
       ) : (
         <>
@@ -894,12 +894,91 @@ return (
                   )
                 })}
               </div>
+              <ul class="cards">
+                {edication.map(item => {
+                  return (
+                    <li>
+                      <div class="card">
+                        <img src="https://images.hindustantimes.com/rf/image_size_640x362/HT/p2/2015/12/01/Pictures/_c34102da-9849-11e5-b4f4-1b7a09ed2cea.jpg" class="card__image" alt="" />
+                        <div class="card__overlay">
+                          <div class="card__header">
+                            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                            {/* <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" /> */}
+                            <div class="card__header-text">
+                              <h2 class="card__title">{item.education_name}</h2>
+                              <span class="card__status">
+                                <p><FaHourglassStart />: {(item.start_date).slice(0, 10)}</p>
+                                <p><FaHourglassEnd />: {(item.end_date).slice(0, 10)}</p></span>
+                            </div>
+                          </div>
+                          <p class="card__description">{item.description}</p>
+                          <div className="edication_card_buttons">
+                            <button className='FaUsers' onClick={() => JadvalPage(item.id)}><FaUsers /></button>
+                            <button className='MdPlayLesson' onClick={() => Page(item.id)}><MdPlayLesson /></button>
+                            <button className='MdDeleteOutline' onClick={() => deleteEducationModal(item.id)}><MdDeleteOutline /></button>
+                            <button className='BiEdit' onClick={() => putEducationModal(item.id)} ><BiEdit /></button>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  )
+                })}
+                <li>
+                  <div class="card">
+                    <img src="https://images.hindustantimes.com/rf/image_size_640x362/HT/p2/2015/12/01/Pictures/_c34102da-9849-11e5-b4f4-1b7a09ed2cea.jpg" class="card__image" alt="" />
+                    <div class="card__overlay">
+                      <div class="card__header">
+                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                        <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
+                        <div class="card__header-text">
+                          <h3 class="card__title">kim Cattrall</h3>
+                          <span class="card__status">3 hours ago</span>
+                        </div>
+                      </div>
+                      <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card">
+                    <img src="https://images.hindustantimes.com/rf/image_size_640x362/HT/p2/2015/12/01/Pictures/_c34102da-9849-11e5-b4f4-1b7a09ed2cea.jpg" class="card__image" alt="" />
+                    <div class="card__overlay">
+                      <div class="card__header">
+                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                        <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
+                        <div class="card__header-text">
+                          <h3 class="card__title">Jessica Parker</h3>
+                          <span class="card__tagline">Lorem ipsum dolor sit amet consectetur</span>
+                          <span class="card__status">1 hour ago</span>
+                        </div>
+                      </div>
+                      <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="card">
+                    <img src="https://images.hindustantimes.com/rf/image_size_640x362/HT/p2/2015/12/01/Pictures/_c34102da-9849-11e5-b4f4-1b7a09ed2cea.jpg" class="card__image" alt="" />
+                    <div class="card__overlay">
+                      <div class="card__header">
+                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                        <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
+                        <div class="card__header-text">
+                          <h3 class="card__title">kim Cattrall</h3>
+                          <span class="card__status">3 hours ago</span>
+                        </div>
+                      </div>
+                      <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </>)}
         </>
       )}
 
 
-<div id="EducationdeleteModal" className="deleteModal">
+      <div id="EducationdeleteModal" className="deleteModal">
         <div className="deleteModal_div">
           <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => deleteEducationClose()} /></div>
           <img src={deleteImg} alt="" />
@@ -926,10 +1005,10 @@ return (
               <p>Конечная дата</p>
               <input id="Educationend_date" type="date" />
             </label>
-          <label htmlFor="">
-            <p>Описание</p>
-            <input id="Educationdescription" placeholder="Описание" className="description" type="text" />
-          </label>
+            <label htmlFor="">
+              <p>Описание</p>
+              <input id="Educationdescription" placeholder="Описание" className="description" type="text" />
+            </label>
           </div>
           <div className="postUserModal_div_button">
             <button onClick={() => postEducation()}>Отправить</button>
@@ -952,10 +1031,10 @@ return (
               <p>Конечная дата</p>
               <input id="Educationend_date" type="date" />
             </label>
-          <label htmlFor="">
-            <p>Описание</p>
-            <input id="Educationdescription" className="description" type="text" />
-          </label>
+            <label htmlFor="">
+              <p>Описание</p>
+              <input id="Educationdescription" className="description" type="text" />
+            </label>
           </div>
           <div className="postUserModal_div_button">
             <button onClick={() => putEducation()}>Редактировать</button>
@@ -963,7 +1042,7 @@ return (
         </div>
       </div>
 
-<div id="ScheduledeleteModal" className="deleteModal">
+      <div id="ScheduledeleteModal" className="deleteModal">
         <div className="deleteModal_div">
           <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => deleteScheduleClose()} /></div>
           <img src={deleteImg} alt="" />
@@ -1049,7 +1128,7 @@ return (
           <div className="postUserModal_div_label" >
             <label htmlFor="">
 
-<p>Mark</p>
+              <p>Mark</p>
               <input id="MarkJournal" type="text" />
             </label>
           </div>

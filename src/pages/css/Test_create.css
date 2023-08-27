@@ -985,7 +985,7 @@ select {
         padding-right: 13px;
         padding-top: 4px;
         padding-bottom: 4px;
-        margin-bottom: 10px;
+        /* margin-bottom: 10px; */
         font-size: 15px;
         border: 1px solid #44bef1;
         color: #44bef1;
@@ -1263,10 +1263,10 @@ select {
         position: absolute;
         cursor: pointer;
         color: #44bef1;
-        width: 20px;
-        height: 20px;
-        top: 10px;
-        right: 10px;
+        width: 30px;
+        height: 30px;
+        top: 3px;
+        right: 3px;
     }
 
 
@@ -1274,10 +1274,10 @@ select {
     .exit_button button{
         padding-left: 15px;
         padding-right: 15px;
-        padding-top: 5px;
-        padding-bottom: 5px;
+        padding-top: 4px;
+        padding-bottom: 4px;
         margin-bottom: 10px;
-        margin-left: 100px;
+        margin-left: 30px;
         border: 1px solid #44bef1;
         color: #44bef1;
         background-color: #fff;
@@ -1364,8 +1364,8 @@ select {
     .user_post_button_malumot {
         padding-left: 13px;
         padding-right: 13px;
-        padding-top: 4px;
-        padding-bottom: 4px;
+        padding-top: 4px !important;
+        padding-bottom: 4px !important;
         margin-bottom: 20px !important;
         margin-top: 10px;
         border: 1px solid #44bef1;
@@ -1416,8 +1416,8 @@ select {
         margin: auto !important;
         justify-content: space-between;
         align-items: center;
-        margin-inline: 5%;
-        width: 80%;
+        /* margin-inline: 5%; */
+        width: 100%;
         margin-top: 30px !important;
         margin-bottom: 40px !important;
     }
@@ -1444,7 +1444,7 @@ select {
     .search_big_div .search {
         position: absolute;
         color: rgb(0, 0, 0);
-        top: 12px;
+        top: 10px;
         right: 174px;
         font-size: 16px;
     }
