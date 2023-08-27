@@ -8,7 +8,7 @@ class Question extends Component{
 		const {question, selectedOption, onOptionChange, onSubmit} = this.props;
 
 		return(
-			<div className="">
+			<div className="lend">
 				<h3>Question {question.id}</h3>
 				<h5 className="mt-2">{question.question}</h5>
 				<form onSubmit={onSubmit} className="mt-2 mb-2">
@@ -17,9 +17,10 @@ class Question extends Component{
 						selectedOption={selectedOption}
 						onOptionChange={onOptionChange}
 					/>
+					<div className="butt111">
 					<button style={{background:"#44bef1",border:"none"}} type="submit" className="btn btn-primary mt-2">
 						Next
-					</button>
+					</button></div>
 				</form>
 				
 			</div>

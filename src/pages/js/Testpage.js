@@ -48,14 +48,25 @@ class App extends Component {
 			});
 		}
 	};
+	bir = ()=>{
+		document.querySelector(".for_bigs").style="display:flex"
+		document.querySelector(".bir_uchun").style="display:none"
+	}
 
 	render() {
 		const { questionBank, currentQuestion, selectedOption, score, quizEnd } =
 			this.state;
 		return (
-            <div className="for_bigs">
+<>
+
+			<div className="bir_uchun"><div  className="bir_u">
+				<img src="https://cdn.goconqr.com/assets/quiz/splash_clock-734cd8dde9a207e2c74c07bc3c40edd41e7a3891c095949da9ff3e266e7e6483.png" alt="" />
+				<h1>Each question in this quiz is timed.</h1>
+
+<button onClick={()=>this.bir()}>Begin Quiz</button>
+			</div></div>
+            <div style={{display:"none"}} className="for_bigs">
 			<div className="App d-flex flex-column align-items-center justify-content-center">
-				<h1 className="app-title">QUIZ APP</h1>
 				{!quizEnd ? (
 					<Question
 						question={questionBank[currentQuestion]}
@@ -71,6 +82,7 @@ class App extends Component {
 					/>
 				)}
 			</div></div>
+			</>
 		);
 	}
 }
