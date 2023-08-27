@@ -64,28 +64,55 @@ function folowcolor1(key,id) {
     <div>
       <div className="inpser">
         <div className="inpf">
-          {/* <input placeholder="Search..." class="input" name="text" type="text" /> */}
+          {/* <input placeholder="Search..." className="input" name="text" type="text" /> */}
           <input onChange={searchInput} type="text " placeholder='Search...' className='input  </div>' />
         </div>
       </div>
+      <div className="container">
+  <div className="row">
+    {follow.map((item,key)=>{
+      if (following != item.id){
+        return(
+<div className="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div className="our-team">
+        <div className="picture">
+          <img className="img-fluid" src="https://picsum.photos/130/130?image=1027"/>
+        </div>
+        <div className="team-content">
+          <h3 style={{lineHeight:"70px"}} className="name">{item.username}</h3>
+        </div>
+        <center><ul className="social">
+        {(bosildi.filter(folow=>(item.id == folow.topuser && following == folow.minuser)).length>0)?(
+                    <button style={{background:"gray"}} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
+                  ):(
+                    <button onClick={() => folowcolor(key, item.id)} className='followButton5' >Subscribe</button>
+                  )} 
+        </ul></center>
+      </div>
+    </div>
+        )
+      }
+    })}
+    
+       
+  </div>
+</div>
       <div className="followcards">
+      
         {follow.map((item, key) => {
           if (following != item.id) {
           
            return   <a>
                 <div className="followcard">
-                  <a onClick={()=> {window.location="TeacherProfil";localStorage.setItem("allUsersId",item.id) }}>
-                    {item.image === null ? (<img className='jony_foto' src={img_for_null} alt="" />) : (<img className='jony_foto' src={item.image} alt="" />)}
-
+                 
+                   <center> <div className="jony_foto1">
+                    {item.image === null ? (<img className='jony_foto' src={img_for_null} alt="" />) : (<img className='jony_foto' src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="" />)}
+</div></center>
                     <h5 className='Name'>{item.username}</h5 >
-                  </a>
+                  
                   
                      
-                  {(bosildi.filter(folow=>(item.id == folow.topuser && following == folow.minuser)).length>0)?(
-                    <button style={{background:"gray"}} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
-                  ):(
-                    <button onClick={() => folowcolor(key, item.id)} className='followButton5' >Subscribe</button>
-                  )}   
+                    
                     
                   
                        

@@ -66,9 +66,9 @@ function prof_tg() {
 }
   useEffect(() => {
     if (theme=="moon") {
-      document.querySelector(".chat-window .chat-header p").style = "color:white";
+      document.querySelector(".forr_white").style = "color:white !important";
     }else{
-      document.querySelector(".chat-window .chat-header p").style = "color:black";
+      document.querySelector(".forr_white").style = "color:black !imporatnt";
     }
     socket.on("receive_message", (data) => {
       setMessageList((list) => [...list, data]);
@@ -103,7 +103,7 @@ function prof_tg() {
                     <p>Profile</p></div>
                     
                     </div>
-        <p >
+        <p className="forr_white">
           {(() => {
             if (!email) {
               return "foydalanuvchini tanlang";
