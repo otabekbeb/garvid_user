@@ -73,7 +73,7 @@ function folowcolor1(key,id) {
     {follow.map((item,key)=>{
       if (following != item.id){
         return(
-<div className="col-12 col-sm-6 col-md-4 col-lg-3">
+<div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
       <div className="our-team">
         <div className="picture">
           <img className="img-fluid" src="https://picsum.photos/130/130?image=1027"/>
@@ -97,37 +97,7 @@ function folowcolor1(key,id) {
        
   </div>
 </div>
-      <div className="followcards">
       
-        {follow.map((item, key) => {
-          if (following != item.id) {
-          
-           return   <a>
-                <div className="followcard">
-                 
-                   <center> <div className="jony_foto1">
-                    {item.image === null ? (<img className='jony_foto' src={img_for_null} alt="" />) : (<img className='jony_foto' src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aHVtYW58ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="" />)}
-</div></center>
-                    <h5 className='Name'>{item.username}</h5 >
-                  
-                  
-                     
-                    
-                    
-                  
-                       
-                    
-                 
-                </div>
-              </a>
-           
-          }
-
-        })}
-
-
-
-      </div>
     </div>
   )
 }
