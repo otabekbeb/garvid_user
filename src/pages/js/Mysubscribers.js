@@ -55,7 +55,9 @@ export default function Azo() {
                             if (following == item.topuser) {
                                 return <>
                                     {users.map(item1 => {
+                                        
                                         if (item1.id == item.minuser) {
+                                            localStorage.setItem("subscribersLength",follow.filter(follow=>follow.topuser==following).length)
                                             return (
                                                 <a>
                                                     <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
