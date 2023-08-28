@@ -11,8 +11,10 @@ import { TiThMenu } from "react-icons/ti";
 import axios from "axios";
 import url from "./Host";
 import Testpage from '../js/Testpage'
+import Courses from "./Ourcourse"
 import Mysubscribers from '../js/Mysubscribers'
-
+import Student from '../js/Student'
+import Teacherpage from '../js/Teacherpage'
 // const socket = io.connect("http://localhost:5000");
 export default function Pdp() {
   const [toggle, setToggle] = useState(1);
@@ -173,8 +175,50 @@ export default function Pdp() {
                 >
                   Correspondence
                 </h1>
+                {/* <div className="fil_text_blok_kurs_lenght">1 pieces</div> */}
+              </div>
+              <div className="fil_text_blok_soz">
+                <h1
+                  onClick={() => updatetoggle(7)}
+                  style={
+                    toggle === 7 ? { borderBottom: "2px solid #44bef1" } : {}
+                  }
+                  className="fromLeft"
+                >
+                  Courses
+                </h1>
                 <div className="fil_text_blok_kurs_lenght">1 pieces</div>
               </div>
+              <div className="fil_text_blok_soz">
+                <h1
+                  onClick={() => updatetoggle(8)}
+                  style={
+                    toggle === 8 ? { borderBottom: "2px solid #44bef1" } : {}
+                  }
+                  className="fromLeft"
+                >
+                  Student
+                </h1>
+                {/* <div className="fil_text_blok_kurs_lenght">1 pieces</div> */}
+              </div>
+              <div className="fil_text_blok_soz">
+                <h1
+                  onClick={() => updatetoggle(10)}
+                  style={
+                    toggle === 10 ? { borderBottom: "2px solid #44bef1" } : {}
+                  }
+                  className="fromLeft"
+                >
+                  Teacher
+                </h1>
+                {/* <div className="fil_text_blok_kurs_lenght">1 pieces</div> */}
+              </div>
+           
+
+
+
+
+
             </div>
             <div className="profil_blok_menu_size">
               <TiThMenu
@@ -342,6 +386,16 @@ export default function Pdp() {
         </div>
         <div className={toggle === 6 ? "show-content" : "content"}>
           <UserChat />
+        </div>
+        <div className={toggle === 7 ? "show-content" : "content"}>
+          <Courses />
+        </div>
+        <div className={toggle === 8 ? "show-content" : "content"}>
+          <Student />
+        </div>
+        <div className={toggle === 10 ? "show-content" : "content"}>
+          <Teacherpage />
+          
         </div>
       </div>
     </div>

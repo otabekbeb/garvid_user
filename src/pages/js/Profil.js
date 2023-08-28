@@ -50,7 +50,7 @@ export default function Profil() {
       .catch((err) => {
         console.log(err);
       });
-    axios.get(`${url}/API/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      axios.get(`${url}/API/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setNatlifikation(res.data)
       axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
         setUser(res1.data)
@@ -327,13 +327,13 @@ export default function Profil() {
                   <FiEdit className="taxrirlash_modal_icon" />
                   <p>Edit profile</p>
                 </div>
-                <div
+                {/* <div
                   onClick={() => notificationModal()}
                   className="taxrirlash_modal_div"
                 >
                   <BiCast className="taxrirlash_modal_icon" />
                   <p>Notifications</p>
-                </div>
+                </div> */}
                 <div className="taxrirlash_modal_div">
                   <FiLifeBuoy className="taxrirlash_modal_icon" />
                   <p onClick={() => (window.location = "/help")}>Help</p>
@@ -344,63 +344,41 @@ export default function Profil() {
                   <p>Exit</p>
                 </div>
               </div>
+
+
+
               <div className="profil_blok_ikki_icon_taxriirlash_chat">
-                <p>Today</p>
-                <div className="taxrirlash_chad">
-                  <div className="taxrirlash_chad_img_size">
-                    <img src={chadimg} alt="" />
-                  </div>
-                  <div className="taxrirlash_chad_size">
-                    <div className="taxrirlash_chad_vaqt">
-                      <h1>Jenny Fox</h1>
-                      <div className="taxrirlash_chad_vaqt_soat">
-                        <TbPointFilled className="chad_set" />
-                        <p>19:22</p>
+                {natlifikation.map(item => {
+                  if (item.to_user_id == localStorage.getItem("OneuserId")) {
+                  return (
+                    <>
+                       <p>Today</p>
+                      <div className="taxrirlash_chad"> 
+                        <div className="taxrirlash_chad_img_size">
+                          <img src={chadimg} alt="" />
+                        </div>
+                        <div className="taxrirlash_chad_size">
+                          <div className="taxrirlash_chad_vaqt">
+                            <h1>{item.title}</h1>
+                            <div className="taxrirlash_chad_vaqt_soat">
+                              <TbPointFilled className="chad_set" />
+                              <p>19:22</p>
+                            </div>
+                          </div>
+                          <div className="taxrirlash_chad_text">
+                            <p>{item.description}</p>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div className="taxrirlash_chad_text">
-                      <p>Lorem ipsum dolor sit.</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="taxrirlash_chad">
-                  <div className="taxrirlash_chad_img_size">
-                    <img src={chadimg} alt="" />
-                  </div>
-                  <div className="taxrirlash_chad_size">
-                    <div className="taxrirlash_chad_vaqt">
-                      <h1>Jenny Fox</h1>
-                      <div className="taxrirlash_chad_vaqt_soat">
-                        <TbPointFilled className="chad_set" />
-                        <p>19:22</p>
-                      </div>
-                    </div>
 
-                    <div className="taxrirlash_chad_text">
-                      <p>Lorem ipsum dolor sit.</p>
-                    </div>
-                  </div>
-                </div>
-                <p>06.08.2019</p>
-                <div className="taxrirlash_chad">
-                  <div className="taxrirlash_chad_img_size">
-                    <img src={chadimg} alt="" />
-                  </div>
-                  <div className="taxrirlash_chad_size">
-                    <div className="taxrirlash_chad_vaqt">
-                      <h1>Jenny Fox</h1>
-                      <div className="taxrirlash_chad_vaqt_soat">
-                        <TbPointFilled className="chad_set" />
-                        <p>19:22</p>
-                      </div>
-                    </div>
-                    <div className="taxrirlash_chad_text">
-                      <p>Lorem ipsum dolor sit.</p>
-                    </div>
-                  </div>
-                </div>
+                      <p>{item.time_create.slice(0,10)}</p>
+                    </>
 
-               <a href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
+                  )}
+                })}
+
+
+                <a href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
                   <p>
                     view all
                     <AiOutlineRight />

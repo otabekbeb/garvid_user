@@ -1964,7 +1964,7 @@ justify-content: center; */
     }
 
     .swiper-slide {
-        width: 100% !important;
+    margin: auto;
     }
 
     .swiper-pagination-bullet {

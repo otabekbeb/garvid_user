@@ -6,7 +6,8 @@
 }
 
 .body1 .d-block {
-height: 500px;}
+    height: 500px;
+}
 
 * {
     margin: 0;
@@ -14,7 +15,8 @@ height: 500px;}
     box-sizing: border-box !important;
     font-family: 'Rubik', sans-serif !important;
 }
-.foor_header{
+
+.foor_header {
     width: 100%;
     height: 590px;
     position: relative;
@@ -22,26 +24,30 @@ height: 500px;}
     align-items: center;
     overflow: hidden;
 }
-.fir_header{
+
+.fir_header {
     position: relative;
     z-index: 100;
     margin-left: 12%;
 }
-.foor_header img{
+
+.foor_header img {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
 }
+
 .carousel-caption {
     left: 12% !important;
     top: 130px !important;
     text-align: start !important;
     z-index: 1111 !important;
 }
-@media(max-width:1800px){
-    .foor_header img{
+
+@media(max-width:1800px) {
+    .foor_header img {
         position: absolute;
         width: auto;
         height: 100%;
@@ -49,8 +55,9 @@ height: 500px;}
         left: 0;
     }
 }
-.fir_header{
- 
+
+.fir_header {
+
     font-weight: 700;
     font-style: normal;
     font-family: 'Roboto', sans-serif;
@@ -90,10 +97,12 @@ height: 500px;}
     .iniversty_img {
         height: 170px !important;
     }
-    .foor_header{
+
+    .foor_header {
         height: 400px;
     }
-    .fir_header{
+
+    .fir_header {
         width: 90% !important;
     }
 }
@@ -202,6 +211,8 @@ height: 500px;}
 #google_translate_element {
     overflow: hidden;
     width: 200px !important;
+    height: 40px;
+    margin-top: 10px;
 }
 
 #google_translate_element1 {
@@ -222,28 +233,24 @@ height: 500px;}
     border: 1px solid #44bef1;
 }
 
-.fir_header
-    .button1 {
+.fir_header .button1 {
     border: 1px solid white !important;
     color: white !important;
 }
 
-.fir_header
- .button:hover {
+.fir_header .button:hover {
     background-color: white;
     border: 1px solid white;
     color: #44bef1;
 }
 
-.fir_header
- .button1:hover {
+.fir_header .button1:hover {
     background-color: white !important;
     border: 1px solid white !important;
     color: #44bef1 !important;
 }
 
-.fir_header
-    p {
+.fir_header p {
     font-weight: 300;
     font-style: normal;
     font-family: 'Roboto', sans-serif;
@@ -254,8 +261,7 @@ height: 500px;}
     width: 700px;
 }
 
-.fir_header
-    h1 {
+.fir_header h1 {
     font-weight: 700;
     font-style: normal;
     font-family: 'Roboto', sans-serif;
@@ -608,11 +614,11 @@ list-style: none;
     width: 100%;
 }
 
-    .contact_form_input_big_div_input p {
-        color: #333333;
-        font-size: 14px;
-        line-height: 35px;
-    }
+.contact_form_input_big_div_input p {
+    color: #333333;
+    font-size: 14px;
+    line-height: 35px;
+}
 
 .contact_form_input_big_div button {
     background-color: #44bef1;
@@ -634,11 +640,12 @@ list-style: none;
 
 
 @media (max-width:1040px) {
-    .fir_header{
+    .fir_header {
         margin-left: 0;
         margin: auto;
         width: 80%;
     }
+
     .about_p {
         font-size: 12px;
         line-height: 1.4;
@@ -706,8 +713,8 @@ list-style: none;
         align-items: center;
     }
 
-    .fir_header{
- 
+    .fir_header {
+
         font-size: 39px;
         line-height: 1.1;
     }
@@ -852,7 +859,7 @@ list-style: none;
         width: 100% !important;
     }
 
-    .fir_header{
+    .fir_header {
         font-size: 24px;
         line-height: 1.1;
     }
@@ -865,6 +872,7 @@ list-style: none;
         font-size: 15px;
         width: 100%;
     }
+
     .fir_header h1 {
         font-size: 30px;
         width: 100%;
@@ -968,7 +976,8 @@ list-style: none;
         overflow: hidden;
 
     }
-    .fir_header h1{
+
+    .fir_header h1 {
         font-size: 25px;
     }
 }
@@ -1114,7 +1123,7 @@ list-style: none;
 .chec_icon {
     width: 50px;
     font-size: 20px;
-    margin-top: -5px; 
+    margin-top: -5px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -1123,17 +1132,19 @@ list-style: none;
 .chec_icon:hover {
     cursor: pointer;
 }
-.bir_chec{
+
+.bir_chec {
     width: 20px;
     height: 20px;
-    color:#44bef1;
+    color: #44bef1;
     border-radius: 50px;
 }
-.ikki_chec{
+
+.ikki_chec {
     width: 20px;
     height: 20px;
     border-radius: 50px;
-    color:#44bef1;
+    color: #44bef1;
 
 }
 
