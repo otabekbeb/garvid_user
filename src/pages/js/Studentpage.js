@@ -42,6 +42,7 @@ import Groupimg from "../img/Group 2.png";
 import { BsSearch } from "react-icons/bs"
 import deleteImg from "../img/Group 2.png"
 import { MdDeleteOutline } from "react-icons/md"
+import Ourcourse from './Ourcourse'
 function openTest() {
   document.querySelector(".block-bir-variant1 p").style = `   background-color: #fcfcfc;
   border: 1px solid #ccc;`
@@ -393,16 +394,32 @@ export default function Mentor() {
       setStudents(res.data)
       console.log(res.data, "aa");
     });
-    axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+    axios.get(`${url}/api/mycourse`, { headers: { Authorization: `Bearer ${localStorage.getItem("OneuserId")}` } }).then(res => {
       setKursdata(res.data)
     }).catch(err => {
       console.log(err);
     });
-    axios.get(`${url}/api/mycourse/${localStorage.getItem("courseid")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-      setCourses(res.data)
-      console.log(res.data, "nn")
-    }).catch(err => {
-      console.log("xato");
+    axios
+    .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+    })
+    .then((res) => {
+      axios
+        .get(`${url}/api/course`, {
+          header: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        })
+        .then((res1) => {
+          for (let i = 0; i < res.data.length; i++) {
+            for (let j = 0; j < res1.data.length; j++) {
+              if (res.data[i].id == res1.data[j].id) {
+                res.data[i].star = res1.data[j].star;
+              }
+            }
+          }
+          setKursdata(res.data);
+        });
     });
 
   }, [])
@@ -893,13 +910,13 @@ export default function Mentor() {
         <div className="gray_blok">
           <div className="fil_text_blok">
 
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">14 pieces</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_course") } pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(0)} style={toggle === 0 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Education</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("courselenght")} pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Correspondence</h1><div className="fil_text_blok_kurs_lenght">14 pieces</div></div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Tasks</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(7)} style={toggle === 7 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Test</h1>{toggle === 7 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My subscribtions</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
-            {/* <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My subscribers</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div> */}
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Courses</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
           </div>
           <div className="profil_blok_menu_size">
             <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
@@ -969,6 +986,7 @@ export default function Mentor() {
             ) : (
               <>
                 {kursdata.map(item => {
+                  localStorage.setItem("for_course",kursdata.length)
                   return (
                     <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
                       <button className="btn_das">Programming</button>
@@ -981,13 +999,13 @@ export default function Mentor() {
                           </>) : (item.star === 2 ? (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i></>) :
                             (item.star === 3 ? (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i></>) :
                               (item.star === 4 ? (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i></>) :
-                                (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i></>))))}
+                                (item.star===5?(<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i></>):(<><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i></>)))))}
 
 
 
 
                           <p>
-                            4.1 <span>(524)</span>
+                            {item.star===null?("0"):(item.star)}<span>(524)</span>
                           </p>
                         </div>
                         <div className="hajm">
@@ -1015,189 +1033,9 @@ export default function Mentor() {
           </div>
 
 
-        </div></div><div className={toggle === 7 ? "show-content" : "content"}><div>
-
-          <div className="letsgo-test">
-            <div className="test-ichi">
-              {page == 1 ? (<div>
-                <div className="ichi-img-test">
-                  <img src="https://cdn.goconqr.com/assets/quiz/splash_clock-734cd8dde9a207e2c74c07bc3c40edd41e7a3891c095949da9ff3e266e7e6483.png" alt="" />
-                </div>
-                <div className="ichi-text-test">
-                  <h4>Each question in this quiz is timed.</h4>
-                  <button onClick={() => setpage(2)}>Begin Test</button>
-                </div>
-
-              </div>) : (
-                page === 2 ? (<div >
-                  <div className="test-center">
-                    <div className="tepa-sanidi-test">
-                      <div className="tepa-tepa-zaibal">
-                        <h6>Question <span>1</span> of <span>5</span></h6>
-                      </div>
-                      <div className="tepa-time">
-                        <box-icon name='timer'></box-icon> <span id='timer-yebat'>00:{counter}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="test-center">
-                    <div className="tepa-line"></div>
-                  </div>
-                  <div className="test-center-margin">
-                    <div className="test-variant">
-                      <h3>test-variant</h3>
-                      <h5>test-variant</h5>
-                      <div className="varianlaa">
-                        <div className="block-bir-variant" id='spspspsps' onClick={() => openTest()}>
-                          <p >yoqol</p>
-                        </div>
-                        <div className="block-bir-variant1" onClick={() => openTest1()}>
-                          <p>yoqol2</p>
-                        </div>
-                        <div className="block-bir-variant2" onClick={() => openTest2()}>
-                          <p>yoqol3</p>
-                        </div>
-                      </div>
-                      <div className="buttob-next"><button onClick={() => setpage(3)}>Next</button></div>
-                    </div>
-                  </div>
-                </div>) : (page == 3 ? (<div>
-                  <div className="test-center">
-                    <div className="tepa-sanidi-test">
-                      <div className="tepa-tepa-zaibal">
-                        <h6>Question <span>2</span> of <span>5</span></h6>
-                      </div>
-                      <div className="tepa-time">
-                        <box-icon name='timer'></box-icon> <span id='timer-yebat'>00:{counter1}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="test-center">
-                    <div className="tepa-line"></div>
-                  </div>
-                  <div className="test-center-margin">
-                    <div className="test-variant">
-                      <h3>test-variant2</h3>
-                      <h5>test-variant2</h5>
-                      <div className="varianlaa">
-                        <div className="block-bir-variant3" onClick={() => openTest3()}>
-                          <p >sur</p>
-                        </div>
-                        <div className="block-bir-variant4" onClick={() => openTest4()}>
-                          <p>sur2</p>
-                        </div>
-                        <div className="block-bir-variant5" onClick={() => openTest5()}>
-                          <p>sur3</p>
-                        </div>
-                      </div>
-                      <div className="buttob-next"><button onClick={() => setpage(4)}>Next</button></div>
-                    </div>
-                  </div>
-                </div>) : (page == 4 ? (<div>
-                  <div className="test-center">
-                    <div className="tepa-sanidi-test">
-                      <div className="tepa-tepa-zaibal">
-                        <h6>Question <span>3</span> of <span>5</span></h6>
-                      </div>
-                      <div className="tepa-time">
-                        <box-icon name='timer'></box-icon> <span id='timer-yebat'>00:{counter2}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="test-center">
-                    <div className="tepa-line"></div>
-                  </div>
-                  <div className="test-center-margin">
-                    <div className="test-variant">
-                      <h3>test-variant2</h3>
-                      <h5>test-variant2</h5>
-                      <div className="varianlaa">
-                        <div className="block-bir-variant6" onClick={() => openTest6()}>
-                          <p >surr</p>
-                        </div>
-                        <div className="block-bir-variant7" onClick={() => openTest7()}>
-                          <p>rsur2</p>
-                        </div>
-                        <div className="block-bir-variant8" onClick={() => openTest8()}>
-                          <p>srur3</p>
-                        </div>
-                      </div>
-                      <div className="buttob-next"><button onClick={() => setpage(5)}>Next</button></div>
-                    </div>
-                  </div>
-                </div>) : (page == 5 ? (<div>
-                  <div className="test-center">
-                    <div className="tepa-sanidi-test">
-                      <div className="tepa-tepa-zaibal">
-                        <h6>Question <span>4</span> of <span>5</span></h6>
-                      </div>
-                      <div className="tepa-time">
-                        <box-icon name='timer'></box-icon> <span id='timer-yebat'>00:{counter3}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="test-center">
-                    <div className="tepa-line"></div>
-                  </div>
-                  <div className="test-center-margin">
-                    <div className="test-variant">
-                      <h3>test-variant2</h3>
-                      <h5>test-variant2</h5>
-                      <div className="varianlaa">
-                        <div className="block-bir-variant9" onClick={() => openTest9()}>
-                          <p >surr</p>
-                        </div>
-                        <div className="block-bir-variant10" onClick={() => openTest10()}>
-                          <p>rsur2</p>
-                        </div>
-                        <div className="block-bir-variant11" onClick={() => openTest11()}>
-                          <p>srur3</p>
-                        </div>
-                      </div>
-                      <div className="buttob-next"><button onClick={() => (setpage(6))}>Next</button></div>
-                    </div>
-                  </div>
-                </div>) : (page == 6 ? (<div>
-                  <div className="test-center">
-                    <div className="tepa-sanidi-test">
-                      <div className="tepa-tepa-zaibal">
-                        <h6>Question <span>5</span> of <span>5</span></h6>
-                      </div>
-                      <div className="tepa-time">
-                        <box-icon name='timer'></box-icon> <span id='timer-yebat'>00:{counter4}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="test-center">
-                    <div className="tepa-line"></div>
-                  </div>
-                  <div className="test-center-margin">
-                    <div className="test-variant">
-                      <h3>test-variant2</h3>
-                      <h5>test-variant2</h5>
-                      <div className="varianlaa">
-                        <div className="block-bir-variant12" onClick={() => openTest12()}>
-                          <p >surr</p>
-                        </div>
-                        <div className="block-bir-variant13" onClick={() => openTest13()}>
-                          <p>rsur2</p>
-                        </div>
-                        <div className="block-bir-variant14" onClick={() => openTest14()}>
-                          <p>srur3</p>
-                        </div>
-                      </div>
-                      <div className="buttob-next"><button onClick={() => window.location = "/Testloader"}>Next</button></div>
-                    </div>
-                  </div>
-                </div>) : (<div></div>)))))
-              )
-              }
-            </div>
-
+        </div></div><div className={toggle === 7 ? "show-content" : "content"}>
+          <Testpage/>
           </div>
-
-
-        </div></div>
         <div className={toggle === 2 ? "show-content" : "content"}><UserChat /></div>
         <div className={toggle === 0 ? "show-content" : "content"}>
           <Education />
@@ -1226,6 +1064,10 @@ export default function Mentor() {
         </div>
         <div className={toggle === 4 ? "show-content" : "content"}>
           <Azo/>
+           
+        </div>
+        <div className={toggle === 5 ? "show-content" : "content"}>
+          <Ourcourse/>
            
         </div>
       </div>

@@ -412,12 +412,13 @@ line-height: normal;
     margin-top: -1px;
     font-size: 16px;
     font-weight: 600;
-    /* margin-left: 5px; */
+    margin-left: 5px;
 }
 
 .star_card p span {
     font-weight: 400;
     color: var(--seriy, #9DA7BB);
+    margin-left: 5px;
 }
 
 .hajm {
