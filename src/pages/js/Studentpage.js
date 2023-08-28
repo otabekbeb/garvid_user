@@ -40,9 +40,7 @@ import { BsFillCloudArrowDownFill } from 'react-icons/bs'
 import sertifikat from '../img/Sertifikat.png'
 import Groupimg from "../img/Group 2.png";
 import { BsSearch } from "react-icons/bs"
-
 import deleteImg from "../img/Group 2.png"
-
 import { MdDeleteOutline } from "react-icons/md"
 function openTest() {
   document.querySelector(".block-bir-variant1 p").style = `   background-color: #fcfcfc;
@@ -80,10 +78,6 @@ border: 1px solid #ccc;
 `
   document.querySelector(".block-bir-variant2 p").style = `background-color: rgb(98, 177, 204);color: white;`
 }
-
-
-
-
 function openTest3() {
   document.querySelector(".block-bir-variant3 p").style = `background-color: rgb(98, 177, 204);color: white;`
   document.querySelector(".block-bir-variant4 p").style = `background-color: #fcfcfc;
@@ -92,7 +86,6 @@ border: 1px solid #ccc;`
 border: 1px solid #ccc;`
 
 }
-
 function openTest4() {
 
   document.querySelector(".block-bir-variant4 p").style = `background-color: rgb(98, 177, 204);color: white;`
@@ -110,11 +103,6 @@ function openTest5() {
   border: 1px solid #ccc;`
 
 }
-
-
-
-
-
 function openTest6() {
   document.querySelector(".block-bir-variant6 p").style = `background-color: rgb(98, 177, 204);color: white;`
   document.querySelector(".block-bir-variant7 p").style = `background-color: #fcfcfc;
@@ -139,8 +127,6 @@ function openTest8() {
   border: 1px solid #ccc;`
 
 }
-
-
 function openTest9() {
   document.querySelector(".block-bir-variant9 p").style = `background-color: rgb(98, 177, 204);color: white;`
   document.querySelector(".block-bir-variant10 p").style = `background-color: #fcfcfc;
@@ -615,293 +601,293 @@ export default function Mentor() {
       <Usernavbar />
 
       <div>
-      <div className="profil_size_df">
-        <div className="profil_size">
-          <div className="profil_blok_bir">
-            <div onMouseLeave={() => userimgClose()} className="user_img_size">
-              {data.map((item) => {
-                return (
-                  <>
-                    {item.image === null ? (
-                      <img
-                        onMouseEnter={() => userimgModal()}
-                        className="user_img"
-                        src={userNull}
-                        alt=""
-                      />
-                    ) : (
-                      <img
-                        onMouseEnter={() => userimgModal()}
-                        className="user_img"
-                        src={
-                          item.image.includes("http")
-                            ? item.image
-                            : `${url}/${item.image}`
-                        }
-                        alt=""
-                      />
-                    )}
-                  </>
-                );
-              })}
-              {data.map((item) => {
-                return (
-                  <div className="user_img_hover">
-                    <input
-                      onChange={() => userImgPut(item.id)}
-                      id="userInput"
-                      type="file"
-                    />
-                    <MdOutlinePhotoCamera className="user_hover_photo_icon" />
-                  </div>
-                );
-              })}
-            </div>
-            <div className="blok_bir_text">
-              {data.map((item) => {
-                return <h1>{item.username}</h1>;
-              })}
-
-              <button>Regular user</button>
-              <p>My social networks :</p>
-              <div className="blok_bir_icon">
-                <div className="blok_bir_icon_img1">
-                  <BiLogoTelegram />
-                </div>
-                <div className="blok_bir_icon_img2">
-                  <RiInstagramFill />
-                </div>
-                <div className="youtube">
-                  <FaYoutube />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="profil_blok_ikki">
-            <div className="profil_blok_ikki_text">
-              <p>Current balance</p>
-              <div className="profil_blok_ikki_sum">
+        <div className="profil_size_df">
+          <div className="profil_size">
+            <div className="profil_blok_bir">
+              <div onMouseLeave={() => userimgClose()} className="user_img_size">
                 {data.map((item) => {
                   return (
                     <>
-                      {item.balance === null ? (
-                        <h1>0</h1>
+                      {item.image === null ? (
+                        <img
+                          onMouseEnter={() => userimgModal()}
+                          className="user_img"
+                          src={userNull}
+                          alt=""
+                        />
                       ) : (
-                        <div
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "5px",
-                          }}
-                        >
-                          <h1>{item.balance}</h1>
-                          <p>$</p>
-                        </div>
+                        <img
+                          onMouseEnter={() => userimgModal()}
+                          className="user_img"
+                          src={
+                            item.image.includes("http")
+                              ? item.image
+                              : `${url}/${item.image}`
+                          }
+                          alt=""
+                        />
                       )}
                     </>
                   );
                 })}
+                {data.map((item) => {
+                  return (
+                    <div className="user_img_hover">
+                      <input
+                        onChange={() => userImgPut(item.id)}
+                        id="userInput"
+                        type="file"
+                      />
+                      <MdOutlinePhotoCamera className="user_hover_photo_icon" />
+                    </div>
+                  );
+                })}
               </div>
-              <div className="profil_blok_ikki_button">
-                <button>
-                  <BsActivity />
-                </button>
-                <button onClick={() => (window.location = "/oplata")}>
-                  Balance replenishment
-                </button>
+              <div className="blok_bir_text">
+                {data.map((item) => {
+                  return <h1>{item.username}</h1>;
+                })}
+
+                <button>Regular user</button>
+                <p>My social networks :</p>
+                <div className="blok_bir_icon">
+                  <div className="blok_bir_icon_img1">
+                    <BiLogoTelegram />
+                  </div>
+                  <div className="blok_bir_icon_img2">
+                    <RiInstagramFill />
+                  </div>
+                  <div className="youtube">
+                    <FaYoutube />
+                  </div>
+                </div>
               </div>
             </div>
-            <div
-              onMouseLeave={() => taxrirlashClose()}
-              className="profil_blok_ikki_icon"
-            >
-              <BsFillBellFill
-                onClick={() => taxrirlashChadModal()}
-                className="profil_blok_ikki_icon_bir"
-              />
-              <BsThreeDots
-                onClick={() => taxrirlashModal()}
-                className="profil_blok_ikki_icon_ikki"
-              />
-              <div className="profil_blok_ikki_icon_texrirlash_modal">
-                <div
-                  onClick={() => (window.location = "/editprofil")}
-                  className="taxrirlash_modal_div"
-                >
-                  <FiEdit className="taxrirlash_modal_icon" />
-                  <p>Edit profile</p>
+
+            <div className="profil_blok_ikki">
+              <div className="profil_blok_ikki_text">
+                <p>Current balance</p>
+                <div className="profil_blok_ikki_sum">
+                  {data.map((item) => {
+                    return (
+                      <>
+                        {item.balance === null ? (
+                          <h1>0</h1>
+                        ) : (
+                          <div
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "5px",
+                            }}
+                          >
+                            <h1>{item.balance}</h1>
+                            <p>$</p>
+                          </div>
+                        )}
+                      </>
+                    );
+                  })}
                 </div>
-                {/* <div
+                <div className="profil_blok_ikki_button">
+                  <button>
+                    <BsActivity />
+                  </button>
+                  <button onClick={() => (window.location = "/oplata")}>
+                    Balance replenishment
+                  </button>
+                </div>
+              </div>
+              <div
+                onMouseLeave={() => taxrirlashClose()}
+                className="profil_blok_ikki_icon"
+              >
+                <BsFillBellFill
+                  onClick={() => taxrirlashChadModal()}
+                  className="profil_blok_ikki_icon_bir"
+                />
+                <BsThreeDots
+                  onClick={() => taxrirlashModal()}
+                  className="profil_blok_ikki_icon_ikki"
+                />
+                <div className="profil_blok_ikki_icon_texrirlash_modal">
+                  <div
+                    onClick={() => (window.location = "/editprofil")}
+                    className="taxrirlash_modal_div"
+                  >
+                    <FiEdit className="taxrirlash_modal_icon" />
+                    <p>Edit profile</p>
+                  </div>
+                  {/* <div
                   onClick={() => notificationModal()}
                   className="taxrirlash_modal_div"
                 >
                   <BiCast className="taxrirlash_modal_icon" />
                   <p>Notifications</p>
                 </div> */}
-                <div className="taxrirlash_modal_div">
-                  <FiLifeBuoy className="taxrirlash_modal_icon" />
-                  <p onClick={() => (window.location = "/help")}>Help</p>
-                </div>
-                <hr />
-                <div className="taxrirlash_modal_div" onClick={() => chiqish()}>
-                  <FiLogOut className="taxrirlash_modal_icon" />
-                  <p>Exit</p>
-                </div>
-              </div>
-              <div className="profil_blok_ikki_icon_taxriirlash_chat">
-                <p>Today</p>
-                <div className="taxrirlash_chad">
-                  <div className="taxrirlash_chad_img_size">
-                    <img src={chadimg} alt="" />
+                  <div className="taxrirlash_modal_div">
+                    <FiLifeBuoy className="taxrirlash_modal_icon" />
+                    <p onClick={() => (window.location = "/help")}>Help</p>
                   </div>
-                  <div className="taxrirlash_chad_size">
-                    <div className="taxrirlash_chad_vaqt">
-                      <h1>Jenny Fox</h1>
-                      <div className="taxrirlash_chad_vaqt_soat">
-                        <TbPointFilled className="chad_set" />
-                        <p>19:22</p>
+                  <hr />
+                  <div className="taxrirlash_modal_div" onClick={() => chiqish()}>
+                    <FiLogOut className="taxrirlash_modal_icon" />
+                    <p>Exit</p>
+                  </div>
+                </div>
+                <div className="profil_blok_ikki_icon_taxriirlash_chat">
+                  <p>Today</p>
+                  <div className="taxrirlash_chad">
+                    <div className="taxrirlash_chad_img_size">
+                      <img src={chadimg} alt="" />
+                    </div>
+                    <div className="taxrirlash_chad_size">
+                      <div className="taxrirlash_chad_vaqt">
+                        <h1>Jenny Fox</h1>
+                        <div className="taxrirlash_chad_vaqt_soat">
+                          <TbPointFilled className="chad_set" />
+                          <p>19:22</p>
+                        </div>
+                      </div>
+                      <div className="taxrirlash_chad_text">
+                        <p>Lorem ipsum dolor sit.</p>
                       </div>
                     </div>
-                    <div className="taxrirlash_chad_text">
-                      <p>Lorem ipsum dolor sit.</p>
+                  </div>
+                  <div className="taxrirlash_chad">
+                    <div className="taxrirlash_chad_img_size">
+                      <img src={chadimg} alt="" />
                     </div>
-                  </div>
-                </div>
-                <div className="taxrirlash_chad">
-                  <div className="taxrirlash_chad_img_size">
-                    <img src={chadimg} alt="" />
-                  </div>
-                  <div className="taxrirlash_chad_size">
-                    <div className="taxrirlash_chad_vaqt">
-                      <h1>Jenny Fox</h1>
-                      <div className="taxrirlash_chad_vaqt_soat">
-                        <TbPointFilled className="chad_set" />
-                        <p>19:22</p>
+                    <div className="taxrirlash_chad_size">
+                      <div className="taxrirlash_chad_vaqt">
+                        <h1>Jenny Fox</h1>
+                        <div className="taxrirlash_chad_vaqt_soat">
+                          <TbPointFilled className="chad_set" />
+                          <p>19:22</p>
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="taxrirlash_chad_text">
-                      <p>Lorem ipsum dolor sit.</p>
-                    </div>
-                  </div>
-                </div>
-                <p>06.08.2019</p>
-                <div className="taxrirlash_chad">
-                  <div className="taxrirlash_chad_img_size">
-                    <img src={chadimg} alt="" />
-                  </div>
-                  <div className="taxrirlash_chad_size">
-                    <div className="taxrirlash_chad_vaqt">
-                      <h1>Jenny Fox</h1>
-                      <div className="taxrirlash_chad_vaqt_soat">
-                        <TbPointFilled className="chad_set" />
-                        <p>19:22</p>
+                      <div className="taxrirlash_chad_text">
+                        <p>Lorem ipsum dolor sit.</p>
                       </div>
                     </div>
-                    <div className="taxrirlash_chad_text">
-                      <p>Lorem ipsum dolor sit.</p>
+                  </div>
+                  <p>06.08.2019</p>
+                  <div className="taxrirlash_chad">
+                    <div className="taxrirlash_chad_img_size">
+                      <img src={chadimg} alt="" />
+                    </div>
+                    <div className="taxrirlash_chad_size">
+                      <div className="taxrirlash_chad_vaqt">
+                        <h1>Jenny Fox</h1>
+                        <div className="taxrirlash_chad_vaqt_soat">
+                          <TbPointFilled className="chad_set" />
+                          <p>19:22</p>
+                        </div>
+                      </div>
+                      <div className="taxrirlash_chad_text">
+                        <p>Lorem ipsum dolor sit.</p>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="taxrirlash_chad_barchasini">
-                  <p>
-                    view all
-                    <AiOutlineRight />
-                  </p>
+                  <div className="taxrirlash_chad_barchasini">
+                    <p>
+                      view all
+                      <AiOutlineRight />
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="profil_notifacation_size">
-          {/* <div className="admin">
+          <div className="profil_notifacation_size">
+            {/* <div className="admin">
             <h4>Sms</h4>
             <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
 
           </div> */}
 
-          <div className="div-admin-sms">
-            <h5>SMS</h5>
-            <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
-          </div>
-          <div className="sms-insta">
-            <div className="sms-insto-bb1">
-              {natlifikation.map(item => {
-                if (item.to_user_id == localStorage.getItem("OneuserId")) {
-                  return (
-                    <div className="sms-insta-block">
-                      <div className="sms-img">
-                        <img src={"https://markazback2.onrender.com/" + item.image} alt="" />
-                      </div>
-                      {/* <div className="sms-kotta-pas">
+            <div className="div-admin-sms">
+              <h5>SMS</h5>
+              <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
+            </div>
+            <div className="sms-insta">
+              <div className="sms-insto-bb1">
+                {natlifikation.map(item => {
+                  if (item.to_user_id == localStorage.getItem("OneuserId")) {
+                    return (
+                      <div className="sms-insta-block">
+                        <div className="sms-img">
+                          <img src={"https://markazback2.onrender.com/" + item.image} alt="" />
+                        </div>
+                        {/* <div className="sms-kotta-pas">
                         <div className="sms-text-tepa"><p> </p><p></p></div>
                         <div className="sms-text-pas"><p> </p></div>
                       </div> */}
 
-                      <div className="sms_bos">
-                        <div className="nik_name">
-                          <p>{item.title}</p>
-                        </div>
-                        <div className="sms_nik">
-                          <p>{item.description}</p>
+                        <div className="sms_bos">
+                          <div className="nik_name">
+                            <p>{item.title}</p>
+                          </div>
+                          <div className="sms_nik">
+                            <p>{item.description}</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  )
-                }
-              })}
+                    )
+                  }
+                })}
 
 
 
 
 
-            </div>
-          </div>
-
-          <div className="div-admin-sms">
-            <h5>SMS</h5>
-            <div
-              onClick={() => notificationClose()}
-              className="profil_notifacation_size_close"
-            >
-              <GrClose className="closei" />
-            </div>
-          </div>
-          <div className="sms-insta">
-            <div className="sms-insto-bb1">
-
-
-
-              <div className="sms-insta-block">
-                <div className="sms-img">
-                  <img
-                    src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png"
-                    alt=""
-                  />
-                </div>
-
-                <div className="sms-kotta-pas">
-                  <div className="sms-text-tepa">
-                    <p>
-                      boxodirov_025 • now{" "}
-                      <span>
-                        <box-icon type="solid" name="bell-ring"></box-icon>
-                      </span>
-                    </p>
-                  </div>
-                  <div className="sms-text-pas">
-                    <p>Sent an sms to: Salom</p>
-                  </div>
-                </div>
               </div>
+            </div>
 
+            <div className="div-admin-sms">
+              <h5>SMS</h5>
+              <div
+                onClick={() => notificationClose()}
+                className="profil_notifacation_size_close"
+              >
+                <GrClose className="closei" />
+              </div>
+            </div>
+            <div className="sms-insta">
+              <div className="sms-insto-bb1">
+
+
+
+                <div className="sms-insta-block">
+                  <div className="sms-img">
+                    <img
+                      src="https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/user-1024.png"
+                      alt=""
+                    />
+                  </div>
+
+                  <div className="sms-kotta-pas">
+                    <div className="sms-text-tepa">
+                      <p>
+                        boxodirov_025 • now{" "}
+                        <span>
+                          <box-icon type="solid" name="bell-ring"></box-icon>
+                        </span>
+                      </p>
+                    </div>
+                    <div className="sms-text-pas">
+                      <p>Sent an sms to: Salom</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
+          <div className="profil-qora-qiladi"></div>
         </div>
-        <div className="profil-qora-qiladi"></div>
-      </div>
       </div>
       <div>
         <div className="gray_blok">
@@ -966,20 +952,20 @@ export default function Mentor() {
           <div className="kurs_cards">
             {kursdata.length === 0 ? (
               <div className="delete_padding">
-              <img src={Groupimg} alt="" />
-              <h4>Вы не купили курс</h4>
-              <div className="delete_btns">
-                <a href="/Ourcourse">
-                  {" "}
-                  <button
-                    style={{ background: "#44bef1  " }}
-                    className="delete_btn_yes"
-                  >
-                    Купить курс
-                  </button>
-                </a>
+                <img src={Groupimg} alt="" />
+                <h4>Вы не купили курс</h4>
+                <div className="delete_btns">
+                  <a href="/Ourcourse">
+                    {" "}
+                    <button
+                      style={{ background: "#44bef1  " }}
+                      className="delete_btn_yes"
+                    >
+                      Купить курс
+                    </button>
+                  </a>
+                </div>
               </div>
-            </div>
             ) : (
               <>
                 {kursdata.map(item => {
@@ -991,15 +977,15 @@ export default function Mentor() {
                       <div className="kurs_paddaing_auto">
                         <h4>{item.name}</h4>
                         <div className="star_card">
-                        {item.star === 1?(<><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i>
-                      </>):(item.star===2?(<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i></>):
-                      (item.star===3?(<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i></>):
-                      (item.star===4?(<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i></>):
-                      (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i></>))))}
-                          
-                          
-                          
-                         
+                          {item.star === 1 ? (<><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i>
+                          </>) : (item.star === 2 ? (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i></>) :
+                            (item.star === 3 ? (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i></>) :
+                              (item.star === 4 ? (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i></>) :
+                                (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i></>))))}
+
+
+
+
                           <p>
                             4.1 <span>(524)</span>
                           </p>
@@ -1214,7 +1200,7 @@ export default function Mentor() {
         </div></div>
         <div className={toggle === 2 ? "show-content" : "content"}><UserChat /></div>
         <div className={toggle === 0 ? "show-content" : "content"}>
-          <Education/>
+          <Education />
 
         </div>
         <div className={toggle === 3 ? "show-content" : "content"}>
@@ -1238,110 +1224,10 @@ export default function Mentor() {
 
           </div>
         </div>
-        <div className={toggle === 4 ? "show-content" : "content"}><div>
-
-
-{/* 
-        <div className="followcards1">
-                {follow.length === 0 ? (
-                  <div className="delete_padding">
-                  <img src={Groupimg} alt="" />
-                  <h4>Вы не купили курс</h4>
-                  <div className="delete_btns">
-                    <a href="/Ourcourse">
-                      {" "}
-                      <button
-                        style={{ background: "#44bef1  " }}
-                        className="delete_btn_yes"
-                      >
-                        Купить курс
-                      </button>
-                    </a>
-                  </div>
-                </div>
-              ) : (<> {follow.map((item, key) => {
-                    return <>
-                        {users.map(item1 => {
-                            if (item1.id == item.topuser) {
-                                return (
-
-                                    <a>
-                                        <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
-                                            <div className="our-team">
-                                                <div className="picture">
-                                                    <img className="img-fluid" src="https://picsum.photos/130/130?image=1027" />
-                                                </div>
-                                                <div className="team-content">
-                                                    <h3 style={{ lineHeight: "70px" }} className="name">{item1.username}</h3>
-                                                </div>
-                                                <center><ul className="social">
-                                                    <button style={{ background: "gray" }} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
-                                                </ul></center>
-                                            </div>
-                                        </div>
-                                    </a>
-
-
-                                )
-                            }
-                        })}
-                    </>
-                })}</>)}
-
-
-
-
-            </div> */}
-
-        </div></div>
-        {/* <div className={toggle === 5 ? "show-content" : "content"}><div>
-
-
-        <div className="followcards1">
-                {follow.length === 0 ? (<div className="No_div">
-                    <h1>Курс не куплен</h1>
-                    <div className="pas_icon">
-                        <AiOutlineArrowDown className='pas' />
-                        <AiOutlineArrowDown className='pas' />
-                        <AiOutlineArrowDown className='pas' />
-
-                    </div>
-                    <button>Покупка курса </button>
-                </div>) : (<> {follow.map((item, key) => {
-                    return <>
-                        {users.map(item1 => {
-                            if (item1.id == item.topuser) {
-                                return (
-
-                                    <a>
-                                        <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
-                                            <div className="our-team">
-                                                <div className="picture">
-                                                    <img className="img-fluid" src="https://picsum.photos/130/130?image=1027" />
-                                                </div>
-                                                <div className="team-content">
-                                                    <h3 style={{ lineHeight: "70px" }} className="name">{item1.username}</h3>
-                                                </div>
-                                                <center><ul className="social">
-                                                    <button style={{ background: "gray" }} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
-                                                </ul></center>
-                                            </div>
-                                        </div>
-                                    </a>
-
-
-                                )
-                            }
-                        })}
-                    </>
-                })}</>)}
-
-
-
-
-            </div>
-
-        </div></div> */}
+        <div className={toggle === 4 ? "show-content" : "content"}>
+          <Azo/>
+           
+        </div>
       </div>
 
       <div className="profil_notifacation_size">
