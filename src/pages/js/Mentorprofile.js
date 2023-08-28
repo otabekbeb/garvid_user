@@ -327,13 +327,13 @@ export default function Profil() {
                   <FiEdit className="taxrirlash_modal_icon" />
                   <p>Edit profile</p>
                 </div>
-                <div
+                {/* <div
                   onClick={() => notificationModal()}
                   className="taxrirlash_modal_div"
                 >
                   <BiCast className="taxrirlash_modal_icon" />
                   <p>Notifications</p>
-                </div>
+                </div> */}
                 <div className="taxrirlash_modal_div">
                   <FiLifeBuoy className="taxrirlash_modal_icon" />
                   <p onClick={() => (window.location = "/help")}>Help</p>
