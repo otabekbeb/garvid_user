@@ -203,6 +203,7 @@ types</h5><p style={{cursor:"pointer"}} onClick={()=> {window.location.reload()}
 
                 <div className="filter_kurs">
         {kursdata.map(item=>{
+          localStorage.setItem("ourcourseLength",kursdata.length)
           return(
                <div onClick={()=>{window.location="/proverr2";localStorage.setItem("courseid",item.id)}} className="filter_course" >
                  {item.image === null ? 
@@ -212,21 +213,11 @@ types</h5><p style={{cursor:"pointer"}} onClick={()=> {window.location.reload()}
                   <div className="filter_card_padding">
                     <h4> {item.name}</h4>
                     <div className="star_card">
-                      <i className="star_i">
-                        <AiFillStar />
-                      </i>
-                      <i className="star_i">
-                        <AiFillStar />
-                      </i>
-                      <i className="star_i">
-                        <AiFillStar />
-                      </i>
-                      <i className="star_i">
-                        <AiFillStar />
-                      </i>
-                      <i className="star_ib">
-                        <AiFillStar />
-                      </i>
+                      {item.star === 1?(<><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i>
+                      </>):(item.star===2?(<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i></>):
+                      (item.star===3?(<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i></>):
+                      (item.star===4?(<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i></>):
+                      (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i></>))))}
                       <p>
                         4.1 <span>(524)</span>
                       </p>

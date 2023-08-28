@@ -391,12 +391,16 @@ line-height: normal;
     gap: 3px;
 }
 
-/* .star_card .star_i {
-    cursor: pointer;
-    font-size: 14px;
-    color: #dcdcdc;
-}
-
+ .star_card .bxs-star {
+    /* cursor: pointer; */
+    /* font-size: 14px; */
+    color: orange;
+} 
+ .bxs-star, .bx-star{
+    /* cursor: pointer; */
+    font-size: 18px;
+ }
+ /*
 .star_card .star_ib {
     cursor: pointer;
     font-size: 14px;
@@ -405,8 +409,8 @@ line-height: normal;
 
 .star_card p {
     color: black;
-    margin-top: 1px;
-    font-size: 14px;
+    margin-top: -1px;
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -541,11 +545,11 @@ line-height: normal;
         bottom: 110px;
     }
     .button_circle{
-        width: 32px;
-        height: 32px;
-        font-size: 15px;
-        right: 20px;
-        bottom: 12px;
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        /* right: 20px; */
+        bottom: 25px;
     }
 }
 

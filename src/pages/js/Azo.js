@@ -3,6 +3,8 @@ import "../css/azo.css"
 import azoimg from "../img/Ellipse.jpg"
 import axios from 'axios'
 import url from './Host'
+
+import Groupimg from "../img/Group 2.png";
 import { AiOutlineArrowDown } from 'react-icons/ai'
 import '../css/Nosignal.css'
 export default function Azo() {
@@ -44,16 +46,22 @@ export default function Azo() {
 
 
             <div className="followcards1">
-                {follow.length === 0 ? (<div className="No_div">
-                    <h1>Курс не куплен</h1>
-                    <div className="pas_icon">
-                        <AiOutlineArrowDown className='pas' />
-                        <AiOutlineArrowDown className='pas' />
-                        <AiOutlineArrowDown className='pas' />
-
-                    </div>
-                    <button>Покупка курса </button>
-                </div>) : (<> {follow.map((item, key) => {
+                {follow.length === 0 ? (
+              <div className="delete_padding">
+              <img src={Groupimg} alt="" />
+              <h4>Не подписался на вас</h4>
+              <div className="delete_btns">
+                <a href="/Ourcourse">
+                  {" "}
+                  {/* <button
+                    style={{ background: "#44bef1  " }}
+                    className="delete_btn_yes"
+                  >
+                    Купить курс
+                  </button> */}
+                </a>
+              </div>
+            </div>) : (<> {follow.map((item, key) => {
                     return <>
                         {users.map(item1 => {
                             if (item1.id == item.topuser) {

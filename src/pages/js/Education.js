@@ -923,55 +923,6 @@ export default function Edication() {
                     </li>
                   )
                 })}
-                <li>
-                  <div class="card">
-                    <img src="https://images.hindustantimes.com/rf/image_size_640x362/HT/p2/2015/12/01/Pictures/_c34102da-9849-11e5-b4f4-1b7a09ed2cea.jpg" class="card__image" alt="" />
-                    <div class="card__overlay">
-                      <div class="card__header">
-                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-                        <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
-                        <div class="card__header-text">
-                          <h3 class="card__title">kim Cattrall</h3>
-                          <span class="card__status">3 hours ago</span>
-                        </div>
-                      </div>
-                      <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="card">
-                    <img src="https://images.hindustantimes.com/rf/image_size_640x362/HT/p2/2015/12/01/Pictures/_c34102da-9849-11e5-b4f4-1b7a09ed2cea.jpg" class="card__image" alt="" />
-                    <div class="card__overlay">
-                      <div class="card__header">
-                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-                        <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
-                        <div class="card__header-text">
-                          <h3 class="card__title">Jessica Parker</h3>
-                          <span class="card__tagline">Lorem ipsum dolor sit amet consectetur</span>
-                          <span class="card__status">1 hour ago</span>
-                        </div>
-                      </div>
-                      <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="card">
-                    <img src="https://images.hindustantimes.com/rf/image_size_640x362/HT/p2/2015/12/01/Pictures/_c34102da-9849-11e5-b4f4-1b7a09ed2cea.jpg" class="card__image" alt="" />
-                    <div class="card__overlay">
-                      <div class="card__header">
-                        <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-                        <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />
-                        <div class="card__header-text">
-                          <h3 class="card__title">kim Cattrall</h3>
-                          <span class="card__status">3 hours ago</span>
-                        </div>
-                      </div>
-                      <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, blanditiis?</p>
-                    </div>
-                  </div>
-                </li>
               </ul>
             </>)}
         </>

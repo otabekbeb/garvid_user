@@ -3,7 +3,7 @@ import '../css/FollowCard.css'
 import axios from 'axios'
 import url from './Host'
 import img_for_null from '../img/download.png'
-
+import Groupimg from "../img/Group 2.png";
 export default function FollowCard() {
   const [follow, setFollow] = useState([])
   const [follow1, setFollow1] = useState([])
@@ -80,7 +80,21 @@ export default function FollowCard() {
       </div>
       <div className="container">
         <div className="row">
-          {follow.map((item, key) => {
+          {follow === null?( <div className="delete_padding">
+                  <img src={Groupimg} alt="" />
+                  <h4>Вы не купили курс</h4>
+                  <div className="delete_btns">
+                    <a href="/Ourcourse">
+                      {" "}
+                      <button
+                        style={{ background: "#44bef1  " }}
+                        className="delete_btn_yes"
+                      >
+                        Купить курс
+                      </button>
+                    </a>
+                  </div>
+                </div>):(<>{follow.map((item, key) => {
             if (following != item.id) {
               return (
                 <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -102,7 +116,8 @@ export default function FollowCard() {
                 </div>
               )
             }
-          })}
+          })}</>)}
+          
 
 
         </div>
