@@ -14,7 +14,7 @@ import Footer1 from './Footer1'
 import { Navigation } from 'swiper/modules';
 import 'swiper/css/navigation';
 
-
+import NNN from './NNN'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -139,7 +139,7 @@ export default function News() {
           </div>
 
         
-        
+        <NNN/>
         <Footer1/>
       </div></div>
     );

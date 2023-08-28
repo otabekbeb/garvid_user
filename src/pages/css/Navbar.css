@@ -330,8 +330,11 @@
   }
 
   .navbar-ul {
+    height:40px;
     display: flex;
-    margin-top: -5px;
+    
+    align-items: center;
+
   }
 
   .checkbox-con {
@@ -3276,7 +3279,7 @@ div#goog-gt- {
   width: 15vw;
   text-align: center !important;
   position: relative;
-  top: 6px;
+  top: 3px;
 }
 
 #user-cionnaxuy {
@@ -3506,3 +3509,6 @@ div#goog-gt- {
     padding-top: 60px;
   }
 }
+
+
+

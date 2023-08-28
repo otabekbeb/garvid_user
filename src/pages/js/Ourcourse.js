@@ -6,7 +6,7 @@ import { VscChromeClose } from 'react-icons/vsc'
 import { HiOutlineChevronUp } from "react-icons/hi"
 import {AiOutlineArrowRight,AiOutlineDown,AiFillStar} from "react-icons/ai"
 import img from '../../pages/img/download.png'
-import Usernavbar from '../js/Usernavbar'
+import Usernavbar from '../js/Navbar'
 import Futer from '../js/Futer'
 import axios from 'axios';
 import Anime from "../img/download.png"

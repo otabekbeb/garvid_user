@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import "../css/Teacherpage.css";
 import Footer1 from "./Footer1";
-import Usernavbar from "./Usernavbar";
+import Usernavbar from "./Navbar";
 import { MdEmail } from "react-icons/md";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
