@@ -38,7 +38,7 @@ import { FaYoutube } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import { BsFillCloudArrowDownFill } from 'react-icons/bs'
 import sertifikat from '../img/Sertifikat.png'
-
+import Groupimg from "../img/Group 2.png";
 import { BsSearch } from "react-icons/bs"
 
 import deleteImg from "../img/Group 2.png"
@@ -732,13 +732,13 @@ export default function Mentor() {
                   <FiEdit className="taxrirlash_modal_icon" />
                   <p>Edit profile</p>
                 </div>
-                <div
+                {/* <div
                   onClick={() => notificationModal()}
                   className="taxrirlash_modal_div"
                 >
                   <BiCast className="taxrirlash_modal_icon" />
                   <p>Notifications</p>
-                </div>
+                </div> */}
                 <div className="taxrirlash_modal_div">
                   <FiLifeBuoy className="taxrirlash_modal_icon" />
                   <p onClick={() => (window.location = "/help")}>Help</p>
@@ -913,7 +913,7 @@ export default function Mentor() {
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Tasks</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(7)} style={toggle === 7 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Test</h1>{toggle === 7 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My subscribtions</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My subscribers</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
+            {/* <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My subscribers</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div> */}
           </div>
           <div className="profil_blok_menu_size">
             <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
@@ -965,16 +965,21 @@ export default function Mentor() {
 
           <div className="kurs_cards">
             {kursdata.length === 0 ? (
-              <div className="No_div">
-                <h1>Курс не куплен</h1>
-                <div className="pas_icon">
-                  <AiOutlineArrowDown className='pas' />
-                  <AiOutlineArrowDown className='pas' />
-                  <AiOutlineArrowDown className='pas' />
-
-                </div>
-                <button>Покупка курса </button>
+              <div className="delete_padding">
+              <img src={Groupimg} alt="" />
+              <h4>Вы не купили курс</h4>
+              <div className="delete_btns">
+                <a href="/Ourcourse">
+                  {" "}
+                  <button
+                    style={{ background: "#44bef1  " }}
+                    className="delete_btn_yes"
+                  >
+                    Купить курс
+                  </button>
+                </a>
               </div>
+            </div>
             ) : (
               <>
                 {kursdata.map(item => {
@@ -1236,74 +1241,107 @@ export default function Mentor() {
         <div className={toggle === 4 ? "show-content" : "content"}><div>
 
 
+{/* 
+        <div className="followcards1">
+                {follow.length === 0 ? (
+                  <div className="delete_padding">
+                  <img src={Groupimg} alt="" />
+                  <h4>Вы не купили курс</h4>
+                  <div className="delete_btns">
+                    <a href="/Ourcourse">
+                      {" "}
+                      <button
+                        style={{ background: "#44bef1  " }}
+                        className="delete_btn_yes"
+                      >
+                        Купить курс
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              ) : (<> {follow.map((item, key) => {
+                    return <>
+                        {users.map(item1 => {
+                            if (item1.id == item.topuser) {
+                                return (
 
-          <div className="followcards1">
-            {follow.map((item, key) => {
-              return <>
-                {users.map(item1 => {
-                  if (item1.id == item.topuser) {
-                    return (
-
-                      <a>
-                        <div className="followcard1">
-                          <a href="/TeacherProfil">
-                            {item.image === null ? (<h1>No signaL</h1>) : (<img className='jony_foto' src={item1.image} alt="" />)}
-
-                            <h5 className='Name'>{item1.username}</h5 >
-                          </a>
-                          <button onClick={() => folowcolor1(key)} className='followButton1' >subscribe</button>
-                        </div>
-                      </a>
-
-
-                    )
-                  }
-                })}
-              </>
-            })}
-
-
-
-
-          </div>
-
-        </div></div>
-        <div className={toggle === 5 ? "show-content" : "content"}><div>
-
-
-
-          <div className="followcards1">
-            {follow.map((item, key) => {
-              if (following == item.topuser) {
-                return <>
-                  {users.map(item1 => {
-                    if (item1.id == item.minuser) {
-                      return (
-                        <a>
-                          <div className="followcard1">
-                            <a href="/TeacherProfil">
-                              {item.image === null ? (<h1>No signaL</h1>) : (<img className='jony_foto' src={item1.image} alt="" />)}
-
-                              <h5 className='Name'>{item1.username}</h5 >
-                            </a>
-                            <button onClick={() => folowcolor1(key)} className='followButton1' >subscribe</button>
-                          </div>
-                        </a>
+                                    <a>
+                                        <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
+                                            <div className="our-team">
+                                                <div className="picture">
+                                                    <img className="img-fluid" src="https://picsum.photos/130/130?image=1027" />
+                                                </div>
+                                                <div className="team-content">
+                                                    <h3 style={{ lineHeight: "70px" }} className="name">{item1.username}</h3>
+                                                </div>
+                                                <center><ul className="social">
+                                                    <button style={{ background: "gray" }} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
+                                                </ul></center>
+                                            </div>
+                                        </div>
+                                    </a>
 
 
-                      )
-                    }
-                  })}
-                </>
-              }
-            })}
+                                )
+                            }
+                        })}
+                    </>
+                })}</>)}
 
 
 
 
-          </div>
+            </div> */}
 
         </div></div>
+        {/* <div className={toggle === 5 ? "show-content" : "content"}><div>
+
+
+        <div className="followcards1">
+                {follow.length === 0 ? (<div className="No_div">
+                    <h1>Курс не куплен</h1>
+                    <div className="pas_icon">
+                        <AiOutlineArrowDown className='pas' />
+                        <AiOutlineArrowDown className='pas' />
+                        <AiOutlineArrowDown className='pas' />
+
+                    </div>
+                    <button>Покупка курса </button>
+                </div>) : (<> {follow.map((item, key) => {
+                    return <>
+                        {users.map(item1 => {
+                            if (item1.id == item.topuser) {
+                                return (
+
+                                    <a>
+                                        <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
+                                            <div className="our-team">
+                                                <div className="picture">
+                                                    <img className="img-fluid" src="https://picsum.photos/130/130?image=1027" />
+                                                </div>
+                                                <div className="team-content">
+                                                    <h3 style={{ lineHeight: "70px" }} className="name">{item1.username}</h3>
+                                                </div>
+                                                <center><ul className="social">
+                                                    <button style={{ background: "gray" }} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
+                                                </ul></center>
+                                            </div>
+                                        </div>
+                                    </a>
+
+
+                                )
+                            }
+                        })}
+                    </>
+                })}</>)}
+
+
+
+
+            </div>
+
+        </div></div> */}
       </div>
 
       <div className="profil_notifacation_size">
