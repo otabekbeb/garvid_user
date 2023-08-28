@@ -896,6 +896,7 @@ export default function Edication() {
               </div> */}
               <ul class="cards">
                 {edication.map(item => {
+              localStorage.setItem("educationLength",edication.length)
                   return (
                     <li>
                       <div class="card">
@@ -907,8 +908,8 @@ export default function Edication() {
                             <div class="card__header-text">
                               <h2 class="card__title">{item.education_name}</h2>
                               <span class="card__status">
-                                <p><FaHourglassStart />: {(item.start_date).slice(0, 10)}</p>
-                                <p><FaHourglassEnd />: {(item.end_date).slice(0, 10)}</p></span>
+                                <p><FaHourglassStart />: {}</p>
+                                <p><FaHourglassEnd />: {}</p></span>
                             </div>
                           </div>
                           <p class="card__description">{item.description}</p>

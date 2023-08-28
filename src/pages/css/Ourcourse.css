@@ -388,7 +388,7 @@ line-height: normal;
 .star_card {
     margin-top: 20px;
     display: flex;
-    gap: 3px;
+    gap: 3px !important;
 }
 
  .star_card .bxs-star {
@@ -412,11 +412,13 @@ line-height: normal;
     margin-top: -1px;
     font-size: 16px;
     font-weight: 600;
+    margin-left: 5px;
 }
 
 .star_card p span {
     font-weight: 400;
     color: var(--seriy, #9DA7BB);
+    margin-left: 5px;
 }
 
 .hajm {
@@ -545,11 +547,11 @@ line-height: normal;
         bottom: 110px;
     }
     .button_circle{
-        width: 32px;
-        height: 32px;
-        font-size: 15px;
-        right: 20px;
-        bottom: 12px;
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        /* right: 20px; */
+        bottom: 25px;
     }
 }
 

@@ -257,7 +257,7 @@
     transition: all 0.3s linear 0s;
   }
   
-  .our-team:hover .picture::before {
+  .our-team .picture::before {
     height: 100%;
   }
   
@@ -281,7 +281,7 @@
     transition: all 0.9s ease 0s;
   }
   
-  .our-team:hover .picture img {
+  .our-team .picture img {
     box-shadow: 0 0 0 14px #f7f5ec;
     transform: scale(0.7);
   }
@@ -305,7 +305,7 @@
     transition: all 0.5s ease 0s;
   }
   
-  .our-team:hover .social {
+  .our-team .social {
     bottom: 0;
   }
   
@@ -322,7 +322,7 @@
     text-decoration: none;
   }
   
-  .our-team .social li a:hover {
+  .our-team .social li a {
     color: #44bef1;
     background-color: #f7f5ec;
   }

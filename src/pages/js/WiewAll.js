@@ -1,9 +1,11 @@
 import React from 'react'
 import '../css/WiewAll.css'
 import Qongro from '../img/Qongiro.png'
+import Usernavbar from "./Navbar"
 function WiewAll() {
     return (
         <div>
+            <Usernavbar/>
             <h1 style={{textAlign:'center'}}></h1>
             <div className="wiew_div">
                 <h3 className='logo'>Notifications</h3>

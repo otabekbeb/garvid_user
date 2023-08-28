@@ -23,7 +23,7 @@ import Delete from './Delete';
 import Groupimg from '../img/Group 2.png'
 import img_for_null from '../img/download.png'
 import Form from 'react-bootstrap/Form';
-import {FiDownload} from "react-icons/fi"
+import { FiDownload } from "react-icons/fi"
 import { BsChevronDown } from "react-icons/bs"
 
 
@@ -217,7 +217,7 @@ export default function Searchfilter() {
       Swal.fire("err")
     })
     axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-      const Filter = res.data.filter(item=>item.author==localStorage.getItem("OneuserId"))
+      const Filter = res.data.filter(item => item.author == localStorage.getItem("OneuserId"))
       setKursdata(Filter)
 
     }).catch(err => {
@@ -324,7 +324,7 @@ export default function Searchfilter() {
           {kursdata.map(item => {
             localStorage.setItem("courseLength", kursdata.length)
 
-             return (
+            return (
               <div className="kurs_card">
                 <button className="btn_das">Dasturlash</button>
                 {/* {item.image === null ? (
@@ -338,13 +338,13 @@ export default function Searchfilter() {
                   <h4>{item.name}</h4>
                   <div className="star_df">
                     <div className="star_card" data-total-value="0">
-                      <i className="star_i" data-item-value="5"><AiFillStar /></i>
-                      <i className="star_i" data-item-value="4"><AiFillStar /></i>
-                      <i className="star_i" data-item-value="3"><AiFillStar /></i>
-                      <i className="star_i" data-item-value="2"><AiFillStar /></i>
-                      <i className="star_i" data-item-value="1"><AiFillStar /></i>
+                      {item.star === 1 ? (<><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i>
+                      </>) : (item.star === 2 ? (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i></>) :
+                        (item.star === 3 ? (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i></>) :
+                          (item.star === 4 ? (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i></>) :
+                            (item.star === 5 ? (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i></>) : (<><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i></>)))))}
+                      <p>{item.star === null ? ("0") : (item.star)} <span>(524)</span></p>
                     </div>
-                    <p>4.1 <span>(524)</span></p>
                   </div>
                   <div className="hajm">
                     <h5>
@@ -392,7 +392,7 @@ export default function Searchfilter() {
                     <div className="edit_inside">
                       <label htmlFor="">Image:</label>
                       <input id="image" type="file" className="inp_img" />
-                      <div className="inp_img_div"><FiDownload/> Select image</div>
+                      <div className="inp_img_div"><FiDownload /> Select image</div>
                     </div>
                     <button className="edit_inside_btn" onClick={() => dashed(item.id)}>Send</button>
                   </div>
@@ -422,8 +422,8 @@ export default function Searchfilter() {
                   />
                 </button>
               </div>
-            ) 
-            
+            )
+
           })}
 
           <div className="dashed" onClick={() => dashedOpen2()}>
@@ -460,7 +460,7 @@ export default function Searchfilter() {
               <div className="edit_inside">
                 <label htmlFor="">Image:</label>
                 <input className="imagePost" type="file" />
-                <div className="inp_img_div"><FiDownload/> Select image</div>
+                <div className="inp_img_div"><FiDownload /> Select image</div>
               </div>
               <button className="edit_inside_btn" onClick={() => { postformentor() }}>Send</button>
             </div>
