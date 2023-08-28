@@ -213,14 +213,14 @@
         flex-wrap: wrap;
         margin-top: 30px;
     }    
-    .cards {
+   .ser1 .cards {
         max-width: 298px;
         width: 42%;
         min-height: 350px;
         /* padding-left: 5px; */
         margin-top: 50px;
     }
-    .cards p {
+   .ser1 .cards p {
         font-weight: 300;
         font-style: normal;
         font-family: 'Roboto', sans-serif;
@@ -229,7 +229,7 @@
         line-height: 1.6;
         letter-spacing: 0px;
     }
-    .card { 
+ .ser1   .card { 
         width: 260px;
         height: 280px;
         background: #17aeee;
@@ -241,7 +241,7 @@
         margin-top: 25px;
         margin-bottom: 30px !important;
     }
-    .card p {
+.ser1    .card p {
         font-weight: 300;
         font-style: normal;
         font-family: 'Roboto', sans-serif;

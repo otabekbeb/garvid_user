@@ -6,12 +6,13 @@ import { VscChromeClose } from 'react-icons/vsc'
 import { HiOutlineChevronUp } from "react-icons/hi"
 import {AiOutlineArrowRight,AiOutlineDown,AiFillStar} from "react-icons/ai"
 import img from '../../pages/img/download.png'
-import Usernavbar from '../js/Usernavbar'
+// import Navbar from '../js/Navbar.js'
 import Futer from '../js/Futer'
 import axios from 'axios';
 import Anime from "../img/download.png"
 import url from './Host';
 import Footer1 from "./Footer1"
+import Navbar from './Navbar';
 
 
 
@@ -99,7 +100,7 @@ export default function Ourcourse() {
 
     return (
         <div>
-          <Usernavbar/>
+          <Navbar/>
             <div className="gray_navbar">
                 <div className="course_inp">
                     <h1>Our courses</h1>

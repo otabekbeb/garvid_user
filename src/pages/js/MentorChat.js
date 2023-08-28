@@ -736,7 +736,7 @@ function onclicks(key) {
         </div>
       </div>
       
-      <FollowCard />
+      
     </div>
   );
 }
