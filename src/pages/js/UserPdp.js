@@ -81,7 +81,7 @@ export default function Pdp() {
         {state1 === "en" ? (
           <div className="gray_blok">
             <div className="fil_text_blok">
-              <div className="fil_text_blok_soz">
+              {/* <div className="fil_text_blok_soz">
                 <h1
                   onClick={() => updatetoggle(1)}
                   style={
@@ -98,8 +98,8 @@ export default function Pdp() {
                 ) : (
                   ""
                 )}
-              </div>
-              <div className="fil_text_blok_soz">
+              </div> */}
+              {/* <div className="fil_text_blok_soz">
                 <h1
                   onClick={() => updatetoggle(2)}
                   style={
@@ -114,8 +114,8 @@ export default function Pdp() {
                 ) : (
                   ""
                 )}
-              </div>
-              <div className="fil_text_blok_soz">
+              </div> */}
+              {/* <div className="fil_text_blok_soz">
                 <h1
                   onClick={() => updatetoggle(3)}
                   style={
@@ -130,8 +130,8 @@ export default function Pdp() {
                 ) : (
                   ""
                 )}
-              </div>
-              <div className="fil_text_blok_soz">
+              </div> */}
+              {/* <div className="fil_text_blok_soz">
                 <h1
                   onClick={() => updatetoggle(4)}
                   style={
@@ -146,7 +146,7 @@ export default function Pdp() {
                 ) : (
                   ""
                 )}
-              </div>
+              </div> */}
               <div className="fil_text_blok_soz">
                 <h1
                   onClick={() => updatetoggle(5)}
@@ -162,7 +162,9 @@ export default function Pdp() {
                 ) : (
                   ""
                 )}
-              </div>  
+              </div>
+              
+
               <div className="fil_text_blok_soz">
                 <h1
                   onClick={() => updatetoggle(6)}
@@ -229,18 +231,18 @@ export default function Pdp() {
               />
             </div>
             <div className="profil_modal_media">
-              <h1 onClick={() => updatetoggle(1)} className="fromMenu">
+              {/* <h1 onClick={() => updatetoggle(1)} className="fromMenu">
                 My Courses
-              </h1>
-              <h1 onClick={() => updatetoggle(2)} className="fromMenu">
+              </h1> */}
+              {/* <h1 onClick={() => updatetoggle(2)} className="fromMenu">
                 My acquired knowledge
-              </h1>
-              <h1 onClick={() => updatetoggle(3)} className="fromMenu">
+              </h1> */}
+              {/* <h1 onClick={() => updatetoggle(3)} className="fromMenu">
                 test
-              </h1>
-              <h1 onClick={() => updatetoggle(4)} className="fromMenu">
+              </h1> */}
+              {/* <h1 onClick={() => updatetoggle(4)} className="fromMenu">
                 My Certificates
-              </h1>
+              </h1> */}
               <h1 onClick={() => updatetoggle(5)} className="fromMenu">
                 My Subscriptions
               </h1>

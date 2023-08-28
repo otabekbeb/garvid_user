@@ -2114,3 +2114,8 @@ justify-content: flex-end;
             width: 100%;
         }
     }
+
+    .bigdiv_search{
+        width: 80%;
+        margin: auto;
+    }

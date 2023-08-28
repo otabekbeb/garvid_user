@@ -11,13 +11,20 @@
     padding-bottom: 10px;
 }
 
-.m-comment-mark:active{
+.m-comment-mark:active, .m-comment-mark1:active {
     background-color: #44bef1;
     color: #fff !important;
     border-radius: 5px;
     user-select: none;
 }
-
+.m-comment-mark1{
+    color: #44bef1;
+    cursor: pointer;
+    gap:5px;
+    text-align:center;
+    padding:3px;
+    display:none
+}
 .comment_file12{
     width: 25px;
     z-index: 1000;
@@ -64,8 +71,7 @@
     display: none;
 }
 
-#mark-input-in-task{
-    height: 30px !important;
+#mark-input-in-task, #mark-input-in-task1{
     width: 100% !important;
     margin-bottom: 30px;
     border-bottom: 1px solid #44bef1;
@@ -82,10 +88,26 @@
 
 .mark-button-down{
     display: flex;
-    gap: 5px;
+    gap: 10px;
     align-items: center;
     cursor: pointer;
 }
 .m-input-mark{
     display: none;
+}
+.m-input-mark1{
+    display: none;
+}
+.errorbigfive, .errorbigfive1, .errorbigfive2, .errorbigfive3{
+    color: rgba(255, 0, 0, 0.856);
+    margin-top: -20px;
+    font-size: 12px;
+    display: none;
+}
+.m-comment-mark{
+    color:#44bef1 ;
+    gap: 5px;
+    text-align:center; 
+    cursor:pointer;
+    padding:3px;
 }

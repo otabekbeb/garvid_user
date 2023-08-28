@@ -58,12 +58,12 @@ import "../css/Test_create.css"
 import React, { useEffect, useState } from 'react'
 import URL from './Test_url.js'
 import { MdDeleteOutline, MdPlayLesson } from "react-icons/md"
-import {GrClose} from "react-icons/gr"
+import { GrClose } from "react-icons/gr"
 import deleteImg from "../img/Inbox cleanup-rafiki.png"
 import { BsSearch } from "react-icons/bs"
 import { FaUsers } from "react-icons/fa"
 import { BiEdit } from "react-icons/bi"
-import {FiDownload} from "react-icons/fi"
+import { FiDownload } from "react-icons/fi"
 // import {
 //   Row,
 //   Col,
@@ -127,7 +127,7 @@ export default function Test() {
       setTeacher(res.data)
     })
     axios.get(`${URL}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-      const Teacherr=res.data.filter(item=>item.position==2) 
+      const Teacherr = res.data.filter(item => item.position == 2)
       setTeacherr(Teacherr)
     })
 
@@ -140,7 +140,7 @@ export default function Test() {
     setPageId(id)
     setPage(1)
     axios.get(`${URL}/edu/attendance_test/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-      const Attened_testmark=res.data.filter(item=>item.test_id==id)
+      const Attened_testmark = res.data.filter(item => item.test_id == id)
       setAttendance_lesson(Attened_testmark)
     })
   }
@@ -543,20 +543,24 @@ export default function Test() {
                   )
                 })}
 
-</div>
+              </div>
             </>
           ) : (
             <>
+            <div className="bigdiv_search">
               <div className="search_big_div">
                 <button className="user_post_button" onClick={() => postTestModal()}>Добавить</button>
                 <BsSearch className="search" />
-                <input onChange={(e) => setSearch(e.target.value)} placeholder="Введите здесь..." type="text" /></div>
+                <input onChange={(e) => setSearch(e.target.value)} placeholder="Введите здесь..." type="text" />
+              </div>
+            </div>
               <div className="edication_card">
                 {test.filter((item) => {
-                  return search.toLocaleLowerCase() ===''
-                  ? item 
-                  : item.day.toLocaleLowerCase().includes(search);
+                  return search.toLocaleLowerCase() === ''
+                    ? item
+                    : item.day.toLocaleLowerCase().includes(search);
                 }).map((item) => {
+                  localStorage.setItem("testLength", test.length)
                   return (
                     <div className="edication_card_">
                       <h3>Крайний срок:  {item.deadline}</h3>
@@ -639,7 +643,7 @@ export default function Test() {
                   return <option value={item.id}>{item.username}</option>
                 })}
 
-</select>
+              </select>
             </label>
           </div>
           <div className="postUserModal_div_button">
@@ -648,7 +652,7 @@ export default function Test() {
         </div>
       </div>
       <div id="TestputModal" className="Modaldiv">
-        <div  className="postUserModal_div">
+        <div className="postUserModal_div">
           <div className="postUserModal_div_icon"><GrClose className="icon" onClick={() => putTestClose()} /></div>
           <div className="postUserModal_div_label" style={{ display: 'flex', flexWrap: 'wrap' }}>
             <label htmlFor="">
@@ -734,7 +738,7 @@ export default function Test() {
         </div>
       </div>
       <div id="Attened_testputModal" className="Modaldiv">
-        <div  className="postUserModal_div">
+        <div className="postUserModal_div">
           <div className="postUserModal_div_icon"><GrClose className="icon" onClick={() => putAttened_testClose()} /></div>
           <div className="postUserModal_div_label" style={{ display: 'flex', flexWrap: 'wrap' }}>
             <label htmlFor="">
@@ -800,7 +804,7 @@ export default function Test() {
             <label htmlFor="">
               <p>Изображение</p>
               <input id="questionsimage" type="file" />
-              
+
             </label>
             <label style={{ width: '100%' }} htmlFor="">
               <p>Отвечать</p>
@@ -831,7 +835,7 @@ export default function Test() {
               <p>Вариант 2</p>
               <input style={{ paddingLeft: '25px' }} id="variant2" type="text" />
               <p className='variant1ABCD'>B</p>
-            </label> 
+            </label>
 
             <label style={{ position: 'relative' }} htmlFor="">
               <p>Вариант 3</p>
@@ -845,8 +849,8 @@ export default function Test() {
             </label>
             <label htmlFor="">
               <p>Изображение</p>
-              <input id="questionsimage" type="file" className='questionsimage'/>
-              <div className='questionimg'><FiDownload/>Выбрать изображение</div>
+              <input id="questionsimage" type="file" className='questionsimage' />
+              <div className='questionimg'><FiDownload />Выбрать изображение</div>
             </label>
             <label style={{ width: '100%' }} htmlFor="">
               <p>Отвечать</p>
