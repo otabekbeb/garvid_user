@@ -907,8 +907,8 @@ export default function Edication() {
                             <div class="card__header-text">
                               <h2 class="card__title">{item.education_name}</h2>
                               <span class="card__status">
-                                <p><FaHourglassStart />: {(item.start_date).slice(0, 10)}</p>
-                                <p><FaHourglassEnd />: {(item.end_date).slice(0, 10)}</p></span>
+                                <p><FaHourglassStart />: {(item.start_date).slice(0,10)}</p>
+                                <p><FaHourglassEnd />: {(item.end_date).slice(0,10)}</p></span>
                             </div>
                           </div>
                           <p class="card__description">{item.description}</p>
