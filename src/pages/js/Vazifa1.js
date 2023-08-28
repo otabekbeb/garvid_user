@@ -15,6 +15,7 @@ import { TfiMarkerAlt } from "react-icons/tfi";
 import { BsBookmark } from "react-icons/bs";
 import { CgClose } from "react-icons/cg";
 import Swal from "sweetalert2";
+import mark_img from '../img/evaluation_of_education_300.jpg'
 
 export default function Comment1() {
   const [teacherwork, setTeacherwork] = useState([]);
@@ -26,8 +27,19 @@ export default function Comment1() {
   );
   const [comment, setComment] = useState([]);
   const [task, setTask] = useState([]);
+  const [mark, setMark] = useState([]);
+  const [page, setPage] = useState(1)
 
   useEffect(() => {
+    axios
+      .get(`${url}/api/course_theme_task_student`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        setMark(res.data);
+        console.log(res.data, "hello world");
+      })
+      .catch((err) => {});
     axios
       .get(`${url}/api/course_theme_task`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -131,10 +143,10 @@ export default function Comment1() {
     formdata.append("user_id", oneuser[0].id);
     formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id);
     formdata.append("subcomment", subcoment);
-    formdata.append("task_commnet_id", 1);
+    // formdata.append("task_commnet_id", 1);
 
     axios
-      .post(`${url}/api/course_theme_comment/`, formdata, {
+      .post(`${url}/api/course_theme_task_student`, formdata, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
@@ -161,7 +173,7 @@ export default function Comment1() {
       });
 
     axios
-      .get(`${url}/api/course_theme_comment/`, {
+      .get(`${url}/api/course_theme_comment`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
@@ -181,87 +193,127 @@ export default function Comment1() {
   }
 
   function markOpen(id) {
-    document.querySelector(".m-input-mark").style =
-      "display:block !important";
-      document.querySelector(".errorbigfive2").style =
-      "display:none !important";
-      document.querySelector(".errorbigfive").style =
-      "display:none !important";
-      document.querySelector("#mark-input-in-task").style =
-      "border-bottom: 1px solid #44bef1;";
+    document.querySelector(".mark-uchun-koish-joy").style = "display:flex !important";
+    // document.querySelector(".m-input-mark").style = "display:block !important";
+    // document.querySelector(".errorbigfive2").style = "display:none !important";
+    // document.querySelector(".errorbigfive").style = "display:none !important";
+    // document.querySelector("#mark-input-in-task").style =
+    //   "border-bottom: 1px solid #44bef1;";
   }
   function markOpen2(id) {
-    document.querySelector(".m-input-mark1").style =
-      "display:block !important";
-      document.querySelector(".errorbigfive3").style =
-      "display:none !important";
-      document.querySelector(".errorbigfive1").style =
-      "display:none !important";
-      document.querySelector("#mark-input-in-task1").style =
+    document.querySelector(".m-input-mark1").style = "display:block !important";
+    document.querySelector(".errorbigfive3").style = "display:none !important";
+    document.querySelector(".errorbigfive1").style = "display:none !important";
+    document.querySelector("#mark-input-in-task1").style =
       "border-bottom: 1px solid #44bef1;";
-      document.querySelector("#mark-input-in-task1").value=""
+    document.querySelector("#mark-input-in-task1").value = "";
   }
   function aftermarkopen() {
-    document.querySelector("#mark-input-in-task").style =
-          "border-bottom: 1px solid #44bef1;";
-        document.querySelector(".errorbigfive").style = "display:none !important";
-        document.querySelector(".errorbigfive2").style =
-        "display:none !important";
-    if (document.querySelector("#mark-input-in-task").value === "") {
-      document.querySelector(".errorbigfive2").style =
-      "display:block !important";
-      document.querySelector("#mark-input-in-task").style =
-      "border-bottom: 1px solid rgba(255, 0, 0, 0.856);";
-    }else{
-      if (document.querySelector("#mark-input-in-task").value < 6) {
-        document.querySelector(".m-comment-mark1").style =
-          "display:block !important";
-        document.querySelector(".m-comment-mark").style =
-          "display:none !important";
-        document.querySelector(".m-comment-Bookmark").style =
-          "display:block !important";
-        document.querySelector(".m-input-mark").style = "display:none !important";
-        document.querySelector("#mark-input-in-task").style =
-          "border-bottom: 1px solid #44bef1;";
-        document.querySelector(".errorbigfive").style = "display:none !important";
-        document.querySelector(".errorbigfive2").style =
-        "display:none !important";
-        document.querySelector("#mark-input-in-task").value = "";
-        Swal.fire("Вы поставили оценку");
-      } else {
-        document.querySelector(".errorbigfive").style =
-          "display:block !important";
-        document.querySelector("#mark-input-in-task").style =
-          "border-bottom: 1px solid rgba(255, 0, 0, 0.856);";
-          document.querySelector(".errorbigfive2").style =
-          "display:none !important";
-        document.querySelector("#mark-input-in-task").value = "";
-      }
-    }
+    var formdata = new FormData();
+
+    formdata.append(
+      "mark",
+      page
+    );
+    formdata.append(
+      "image",
+      document.querySelector(".comment_file12").files[0]
+    );
+    formdata.append("content", ":");
+    formdata.append(
+      "course_theme",
+      JSON.parse(localStorage.getItem("page_video")).id
+    );
+    formdata.append("feedback", ".");
+if (page === 1) {
+  Swal.fire("Вы не выбрали какую оценку вы хотите поставить")
+}
+else{
+  axios
+  .post(`${url}/api/course_theme_task_student`, formdata, {
+    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+  })
+  .then((res) => {
+document.querySelector(".mark-uchun-koish-joy").style = "display:none !important";
+Swal.fire("Вы поставили оценку")
+    axios
+      .get(`${url}/api/course_theme_task_student`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      })
+      .then((res) => {
+        setMark(res.data);
+
+      })
+      .catch((err) => {});
+    // document.querySelector(".m-comment-Bookmark").style =
+    //   "display:block !important";
+    // document.querySelector(".m-comment-mark1").style =
+    //   "display:block !important";
+    // document.querySelector(".m-comment-mark").style =
+    //   "display:none !important";
+  })
+  .catch((err) => {
+    Swal.fire("Вы не смогли поставить оценку")
+  });
+}
+
+
+    // document.querySelector("#mark-input-in-task").style =
+    //   "border-bottom: 1px solid #44bef1;";
+    // document.querySelector(".errorbigfive").style = "display:none !important";
+    // document.querySelector(".errorbigfive2").style = "display:none !important";
+    // if (document.querySelector("#mark-input-in-task").value === "") {
+    //   document.querySelector(".errorbigfive2").style =
+    //     "display:block !important";
+    //   document.querySelector("#mark-input-in-task").style =
+    //     "border-bottom: 1px solid rgba(255, 0, 0, 0.856);";
+    // } else {
+    //   if (document.querySelector("#mark-input-in-task").value < 6) {
+    //     document.querySelector(".m-input-mark").style =
+    //       "display:none !important";
+    //     document.querySelector("#mark-input-in-task").style =
+    //       "border-bottom: 1px solid #44bef1;";
+    //     document.querySelector(".errorbigfive").style =
+    //       "display:none !important";
+    //     document.querySelector(".errorbigfive2").style =
+    //       "display:none !important";
+    //     document.querySelector("#mark-input-in-task").value = "";
+    //     Swal.fire("Вы поставили оценку");
+    //   } else {
+    //     document.querySelector(".errorbigfive").style =
+    //       "display:block !important";
+    //     document.querySelector("#mark-input-in-task").style =
+    //       "border-bottom: 1px solid rgba(255, 0, 0, 0.856);";
+    //     document.querySelector(".errorbigfive2").style =
+    //       "display:none !important";
+    //     document.querySelector("#mark-input-in-task").value = "";
+    //   }
+    // }
   }
   function markClose() {
-    document.querySelector(".m-input-mark").style = "display:none !important";
-    document.querySelector("#mark-input-in-task").value = "";
-    document.querySelector(".errorbigfive").style = "display:none !important";
-    document.querySelector("#mark-input-in-task").style =
-      "border-bottom: 1px solid #44bef1;";
+    document.querySelector(".mark-uchun-koish-joy").style = "display:none !important";
+    // document.querySelector(".m-input-mark").style = "display:none !important";
+    // document.querySelector("#mark-input-in-task").value = "";
+    // document.querySelector(".errorbigfive").style = "display:none !important";
+    // document.querySelector("#mark-input-in-task").style =
+    //   "border-bottom: 1px solid #44bef1;";
   }
   function markClose2() {
     document.querySelector(".m-input-mark1").style = "display:none !important";
   }
   function aftermarkopen2() {
     document.querySelector("#mark-input-in-task").style =
-    "border-bottom: 1px solid #44bef1;";
-  document.querySelector(".errorbigfive1").style =
-    "display:none !important";
-    document.querySelector(".errorbigfive3").style =
-      "display:none !important";
+      "border-bottom: 1px solid #44bef1;";
+    document.querySelector(".errorbigfive1").style = "display:none !important";
+    document.querySelector(".errorbigfive3").style = "display:none !important";
     if (document.querySelector("#mark-input-in-task1").value === "") {
       document.querySelector(".errorbigfive3").style =
-      "display:block !important";
+        "display:block !important";
       document.querySelector("#mark-input-in-task1").style =
-      "border-bottom: 1px solid rgba(255, 0, 0, 0.856);";
-    }else{
+        "border-bottom: 1px solid rgba(255, 0, 0, 0.856);";
+    } else {
       if (document.querySelector("#mark-input-in-task1").value < 6) {
         document.querySelector(".m-comment-mark1").style =
           "display:block !important";
@@ -284,10 +336,13 @@ export default function Comment1() {
           "border-bottom: 1px solid rgba(255, 0, 0, 0.856);";
         document.querySelector("#mark-input-in-task1").value = "";
         document.querySelector(".errorbigfive3").style =
-      "display:none !important";
+          "display:none !important";
       }
     }
+  }
 
+  function thomark() {
+   
   }
 
   return (
@@ -323,6 +378,13 @@ export default function Comment1() {
                       <>
                         <div className="df_div_comment_page">
                           <div className="div_img_class_over">
+                            {mark.map((item) => {
+                                return (
+                                  <p style={{ color: "red", fontSize: "50px" }}>
+                                    {item.mark}
+                                  </p>
+                                );  
+                            })}
                             <p className="m-comment-Bookmark">
                               <BsBookmark className="BsBookmark" />
                             </p>
@@ -359,6 +421,7 @@ export default function Comment1() {
                               />;
                             })}
                             <p className="m_comment_text1505">{item.text}</p>
+
                             {oneuser.map((item5) => {
                               return (
                                 <div
@@ -389,7 +452,7 @@ export default function Comment1() {
                                     : ""}
                                   <p
                                     className="m-comment-mark"
-                                    onClick={() => markOpen(item.id)}
+                                    onClick={() =>{ markOpen(item.id); setPage(1)}}
                                   >
                                     <span>
                                       <TfiMarkerAlt />
@@ -421,7 +484,7 @@ export default function Comment1() {
                                 нельзя ставить больше 5
                               </p>
                               <p className="errorbigfive2">
-                                Не поставили оценку
+                                Вы не поставили оценку
                               </p>
                               <div className="mark-button-down">
                                 <p
@@ -434,9 +497,9 @@ export default function Comment1() {
                                 </p>
                                 <p
                                   className="mark-okey-bosa"
-                                  onClick={() => {
-                                    aftermarkopen();
-                                  }}
+                                  // onClick={() => {
+                                  //   aftermarkopen();
+                                  // }}
                                 >
                                   оценить
                                 </p>
@@ -475,6 +538,7 @@ export default function Comment1() {
                             </div>
                           </div>
                         </div>
+                       
                       </>
                     );
                   }
@@ -482,7 +546,36 @@ export default function Comment1() {
               </>
             )}
           </div>
+          <div className="mark-uchun-koish-joy">
+            <div className="kotta-obsh-mark-uchun">
+                          <div className="kichkina-mark-uchun-joy">
+                            <div className="mark-two" onClick={()=>setPage(2)}>2</div>
+                            <div className="mark-three" onClick={()=>setPage(3)}>3</div>
+                            <div className="mark-four" onClick={()=>setPage(4)}>4</div>
+                            <div className="mark-five" onClick={()=>setPage(5)}>5</div>
+                          </div>
+                          <h5>Оценить ученика:</h5>
+                          <div className="mark-bosgandan-kein">
+                            {page === 2 ? (<div className="mark-two">2</div>):
+                            (<>
+                              {page === 3 ?(<div className="mark-three">3</div>):
+                              (<>
+                              {page === 4 ?(<div className="mark-four">4</div>):
+                              (<>
+                              {page === 5 ?(<div className="mark-five">5</div>):
+                              (<></>)}
+                              </>)}
+                              </>)}
+                              </>)}
+                          
 
+                          </div>
+                          <div className="mark-otmen-potver-uchun">
+                            <button className="otmen-uchen-but" onClick={()=>{markClose()}}>Отменить</button>
+                            <button className="porver-uchen-but" onClick={()=>{aftermarkopen()}}>Потвердить</button>
+                          </div>
+                          </div>
+                        </div>
           <div className="m_comment_yozish">
             <input type="file" id="comment_file" className="comment_file12" />
             <p>
