@@ -56,7 +56,7 @@
 import axios from 'axios'
 import "../css/Test_create.css"
 import React, { useEffect, useState } from 'react'
-import URL from './Test_url.js'
+import url from './Test_url.js'
 import { MdDeleteOutline, MdPlayLesson } from "react-icons/md"
 import { GrClose } from "react-icons/gr"
 import deleteImg from "../img/Inbox cleanup-rafiki.png"
@@ -117,16 +117,16 @@ export default function Test() {
   const questionsimage = document.querySelectorAll("#questionsimage")
 
   useEffect(() => {
-    axios.get(`${URL}/edu/test`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.get(`${url}/edu/test`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setTest(res.data)
     })
-    axios.get(`${URL}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setEducation(res.data)
     })
-    axios.get(`${URL}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setTeacher(res.data)
     })
-    axios.get(`${URL}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       const Teacherr = res.data.filter(item => item.position == 2)
       setTeacherr(Teacherr)
     })
@@ -139,7 +139,7 @@ export default function Test() {
   function Page(id) {
     setPageId(id)
     setPage(1)
-    axios.get(`${URL}/edu/attendance_test/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.get(`${url}/edu/attendance_test/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       const Attened_testmark = res.data.filter(item => item.test_id == id)
       setAttendance_lesson(Attened_testmark)
     })
@@ -164,10 +164,10 @@ export default function Test() {
     formdata.append("level_end", level_end[0].value)
     formdata.append("teacher_id", teacher_id[0].value)
 
-    axios.post(`${URL}/edu/test`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.post(`${url}/edu/test`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       alert("Информация отправлена")
       document.querySelector("#TestpostModal").style = "display:none"
-      axios.get(`${URL}/edu/test`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      axios.get(`${url}/edu/test`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         setTest(res.data)
       })
     }).catch(err => {
@@ -211,10 +211,10 @@ export default function Test() {
     formdata.append("level_end", level_end[1].value)
     formdata.append("teacher_id", teacher_id[1].value)
 
-    axios.put(`${URL}/edu/test/${TestId}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.put(`${url}/edu/test/${TestId}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       alert("Информация изменена")
       document.querySelector("#TestputModal").style = "display:none"
-      axios.get(`${URL}/edu/test`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      axios.get(`${url}/edu/test`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         setTest(res.data)
       })
     }).catch(err => {
@@ -232,10 +232,10 @@ export default function Test() {
   }
 
   function deleteTest() {
-    axios.delete(`${URL}/edu/test/${TestId}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.delete(`${url}/edu/test/${TestId}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       alert("Данные удалены")
       document.querySelector("#TestdeleteModal").style = "display:none"
-      axios.get(`${URL}/edu/test`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      axios.get(`${url}/edu/test`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         setTest(res.data)
       })
 
@@ -318,7 +318,7 @@ export default function Test() {
 
   function PageAtest(id) {
     setAttendance_lessonIdP(id)
-    axios.get(`${URL}/edu/quations`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.get(`${url}/edu/quations`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       const Quations = res.data.filter(item => item.test_id == id)
       setQuations(Quations)
     })
@@ -337,10 +337,10 @@ export default function Test() {
     formdata.append("came", CameButton)
 
 
-    axios.post(`${URL}/edu/attendance_test`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.post(`${url}/edu/attendance_test`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       alert("Информация отправлена")
       document.querySelector("#Attened_testpostModal").style = "display:none"
-      axios.get(`${URL}/edu/attendance_test/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      axios.get(`${url}/edu/attendance_test/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         setAttendance_lesson(res.data)
       })
 
@@ -357,10 +357,10 @@ export default function Test() {
     formdata.append("came", CameButton)
 
 
-    axios.put(`${URL}/edu/attendance_test/${attendance_lessonId}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.put(`${url}/edu/attendance_test/${attendance_lessonId}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       alert("Информация изменилась")
       document.querySelector("#Attened_testputModal").style = "display:none"
-      axios.get(`${URL}/edu/attendance_test/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      axios.get(`${url}/edu/attendance_test/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         setAttendance_lesson(res.data)
       })
 
@@ -370,10 +370,10 @@ export default function Test() {
   }
 
   function deleteAttened_test() {
-    axios.delete(`${URL}/edu/attendance_test/${attendance_lessonId}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.delete(`${url}/edu/attendance_test/${attendance_lessonId}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       alert("Данные удалены")
       document.querySelector("#Attened_testdeleteModal").style = "display:none"
-      axios.get(`${URL}/edu/attendance_test/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      axios.get(`${url}/edu/attendance_test/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         setAttendance_lesson(res.data)
       })
 
@@ -430,10 +430,10 @@ export default function Test() {
     formdata.append("image", questionsimage[0].files[0])
     formdata.append("test_id", attendance_lessonIdP)
 
-    axios.post(`${URL}/edu/quations`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.post(`${url}/edu/quations`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       alert("Информация отправлена")
       document.querySelector("#QuestionspostModal").style = "display:none"
-      axios.get(`${URL}/edu/quations`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      axios.get(`${url}/edu/quations`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         const Quations = res.data.filter(item => item.test_id == attendance_lessonIdP)
         setQuations(Quations)
       })
@@ -454,10 +454,10 @@ export default function Test() {
     formdata.append("image", questionsimage[1].files[0])
     formdata.append("test_id", attendance_lessonIdP)
 
-    axios.put(`${URL}/edu/quations/${quationId}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.put(`${url}/edu/quations/${quationId}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       alert("Информация изменена")
       document.querySelector("#QuestionsputModal").style = "display:none"
-      axios.get(`${URL}/edu/quations`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      axios.get(`${url}/edu/quations`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         const Quations = res.data.filter(item => item.test_id == attendance_lessonIdP)
         setQuations(Quations)
       })
@@ -467,10 +467,10 @@ export default function Test() {
     })
   }
   function deleteQuestions() {
-    axios.delete(`${URL}/edu/quations/${quationId}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.delete(`${url}/edu/quations/${quationId}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       alert("Информация удалена")
       document.querySelector("#QuestionsdeleteModal").style = "display:none"
-      axios.get(`${URL}/edu/quations`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      axios.get(`${url}/edu/quations`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         const Quations = res.data.filter(item => item.test_id == attendance_lessonIdP)
         setQuations(Quations)
       })
@@ -491,13 +491,18 @@ export default function Test() {
     <div>
       {page == 3 ? (
         <>
-          <div className="exit_button"><button onClick={() => setPage(0)}>Назад</button></div>
+          <div className="close_btn_test">
+            <div className="exit_button"><button onClick={() => setPage(0)}>Назад</button></div>
+          </div>
           {/* <div className="search_big_div"><button  className="user_post_button" onClick={()=>postAttened_testModal()}>Добавить</button><AiOutlineSearch className="search"/><input placeholder="Введите здесь..." type="text" /></div> */}
           {/* <Table style={{marginBottom:'100px'}} dataSource={attendance_lesson} columns={columns} /> */}
+          <div className="close_btn_test">
           <div className="search_big_div">
             <button onClick={() => postQuestionsModal()} className="user_post_button">Добавить</button>
             <BsSearch className="search" />
-            <input onChange={(e) => setSearch(e.target.value)} placeholder="Введите здесь..." type="text" /></div>
+            <input onChange={(e) => setSearch(e.target.value)} placeholder="Введите здесь..." type="text" />
+          </div>
+          </div>
           {/* <Table dataSource={quations} columns={quation} /> */}
           <div className="questions_page_big">
             {quations.map((item, key) => {
@@ -532,7 +537,7 @@ export default function Test() {
                         if (item.group_id == user.id) {
                           return (
                             <div className="teacher_page_big_card">
-                              <div className="teacher_page_big_card_img">{user.image == null ? (<img src={Noimg} alt="" />) : (<img src={`${URL}/` + user.image} alt="No img" />)}</div>
+                              <div className="teacher_page_big_card_img">{user.image == null ? (<img src={Noimg} alt="" />) : (<img src={`${url}/` + user.image} alt="No img" />)}</div>
                               <h3>{user.username}</h3>
                               <button onClick={() => MarkOpen(user.id)}>Оценка</button>
                             </div>
@@ -547,13 +552,13 @@ export default function Test() {
             </>
           ) : (
             <>
-            <div className="bigdiv_search">
-              <div className="search_big_div">
-                <button className="user_post_button" onClick={() => postTestModal()}>Добавить</button>
-                <BsSearch className="search" />
-                <input onChange={(e) => setSearch(e.target.value)} placeholder="Введите здесь..." type="text" />
+              <div className="bigdiv_search">
+                <div className="search_big_div">
+                  <button className="user_post_button" onClick={() => postTestModal()}>Добавить</button>
+                  <BsSearch className="search" />
+                  <input onChange={(e) => setSearch(e.target.value)} placeholder="Введите здесь..." type="text" />
+                </div>
               </div>
-            </div>
               <div className="edication_card">
                 {test.filter((item) => {
                   return search.toLocaleLowerCase() === ''
@@ -591,7 +596,7 @@ export default function Test() {
 
       <div id="TestdeleteModal" className="deleteModal">
         <div className="deleteModal_div">
-          <div className="postUserModal_div_icon"><GrClose className="icon" onClick={() => deleteTestClose()} /></div>
+          <div className="postUserModal_div_icon"><GrClose className="iconka" onClick={() => deleteTestClose()} /></div>
           <img src={deleteImg} alt="item" />
           <p>Вы хотите удалить это образование</p>
           <div className="deleteButton_div">
@@ -602,7 +607,7 @@ export default function Test() {
       </div>
       <div id="TestpostModal" className="Modaldiv">
         <div className="postUserModal_div">
-          <div className="postUserModal_div_icon"><GrClose className="icon" onClick={() => postTestClose()} /></div>
+          <div className="postUserModal_div_icon"><GrClose className="iconka" onClick={() => postTestClose()} /></div>
           <div className="postUserModal_div_label" style={{ display: 'flex', flexWrap: 'wrap' }}>
             <label htmlFor="">
               <p>Образование</p>

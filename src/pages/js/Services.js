@@ -22,7 +22,7 @@ export default function Services() {
     );},[]);
 
   return (
-    <div>
+    <div className='ser1'>
 
       <div>
   <div className='services_div'>

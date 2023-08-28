@@ -5,7 +5,8 @@
 }
 .gray_navbar{
     padding: 100px 0px 0px 8.594vw;
-    background: var(--background, #F1F2F6);
+    background: white;
+    border-bottom: 1px solid #dcdcdc !important;
 }
 .course_inp{
     display: flex;
@@ -26,7 +27,9 @@ height: 40px;
 display: flex;
 align-items: center;
 border-radius: 4px;
-background: var(--white, #FFF);
+/* background: #dcdcdc; */
+border: 1px solid #dcdcdc;
+box-shadow: #2E2E2E;
 }
 .df_inp input{
     width: 88%;
