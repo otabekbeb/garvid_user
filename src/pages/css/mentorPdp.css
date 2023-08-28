@@ -202,6 +202,9 @@
         .filter_button{
             justify-content: center;
         }
+        .gray_blok{
+            margin-top: 240px;
+        }
     }
     
     @media (max-width:345px) {
