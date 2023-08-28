@@ -157,4 +157,9 @@ border: 0px;
 .followButton3 {
     background-color: gray;
 }
-
+.followi1 a{
+    width: 300px;
+}
+.followi1 #col_12 {
+    max-width: 100% !important;
+}

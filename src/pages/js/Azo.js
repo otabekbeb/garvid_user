@@ -31,7 +31,7 @@ export default function Azo() {
     }, []);
 
     return (
-        <div>
+        <div className='followi1'>
 
 
 
@@ -52,14 +52,19 @@ export default function Azo() {
                                 return (
 
                                     <a>
-                                        <div className="followcard1">
-                                            <a href="/TeacherProfil">
-                                                {item.image === null ? (<h1>No signaL</h1>) : (<img className='jony_foto' src={item1.image} alt="" />)}
-
-                                                <h5 className='Name'>{item1.username}</h5 >
-                                            </a>
-                                            <button onClick={() => folowcolor1(key)} className='followButton1' >subscribe</button>
-                                        </div>
+                                        <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div className="our-team">
+        <div className="picture">
+          <img className="img-fluid" src="https://picsum.photos/130/130?image=1027"/>
+        </div>
+        <div className="team-content">
+          <h3 style={{lineHeight:"70px"}} className="name">{item1.username}</h3>
+        </div>
+        <center><ul className="social">
+        <button style={{background:"gray"}} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
+        </ul></center>
+      </div>
+    </div>
                                     </a>
 
 
