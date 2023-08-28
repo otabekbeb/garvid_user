@@ -119,7 +119,7 @@
 .star_df{
     margin-top: 20px;
     display: flex;
-    gap: 10px;
+    gap: 3px;
 }
 
 .star_card {
@@ -128,12 +128,21 @@
     justify-content: start !important;
     gap: 1px !important;
 }
+ .star_card .bxs-star {
+    /* cursor: pointer; */
+    /* font-size: 14px; */
+    color: orange;
+} 
+ .bxs-star, .bx-star{
+    /* cursor: pointer; */
+    font-size: 18px;
+ }
 
-.star_card .star_i {
+/* .star_card .star_i {
     cursor: pointer;
     font-size: 18px;
     color: #dcdcdc ;
-}
+} */
 
 /* .star_i:hover,
 .star_i:hover ~ .star_i{
@@ -151,9 +160,10 @@
 
 .star_card p {
     color: black;
-    margin-top: 1px;
-    font-size: 14px;
+    margin-top: -1px;
+    font-size: 16px;
     font-weight: 600;
+    /* margin-left: 5px; */
 }
 
 

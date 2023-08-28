@@ -388,7 +388,7 @@ line-height: normal;
 .star_card {
     margin-top: 20px;
     display: flex;
-    gap: 3px;
+    gap: 3px !important;
 }
 
  .star_card .bxs-star {
