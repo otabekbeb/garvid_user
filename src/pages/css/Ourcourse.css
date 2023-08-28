@@ -545,11 +545,11 @@ line-height: normal;
         bottom: 110px;
     }
     .button_circle{
-        width: 32px;
-        height: 32px;
-        font-size: 15px;
-        right: 20px;
-        bottom: 12px;
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        /* right: 20px; */
+        bottom: 25px;
     }
 }
 
