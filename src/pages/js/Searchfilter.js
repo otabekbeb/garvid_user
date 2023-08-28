@@ -571,47 +571,7 @@ export default function Searchfilter() {
               )}
             </div>
 
-            {/* SPISKA */}
-
-            {/* <div className="spiska_img_title_div">
-          {kursdata.map((item) => {
-            return (
-              <div className="Spiska_blok">
-                <div onClick={()=>{window.location="/video";localStorage.setItem("course",item.id)}} className="spiska">
-                  <div className="spiska_display_flex">
-                    <div className="spiska_img">
-                      {item.image === null ? (
-                        <div className="No_img1">
-                          <h1>No picture</h1>
-                        </div>
-                      ) : (
-                        <img src={item.image} alt="No img" />
-                      )}
-                    </div>
-                    <div className="spiska_title_df">
-                      <div className="spiska_title">
-                        <h3>{item.name}</h3>
-                        <div className="star_icon_blok1">
-                          <AiFillStar className="gold" />
-                          <AiFillStar className="gold" />
-                          <AiFillStar className="gold" />
-                          <AiFillStar className="gold" />
-                          <AiFillStar />
-                          <div className="number">
-                            <h6>4.1 (524)</h6>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="left1_icon">
-                        <HiArrowRight onClick={()=>{window.location="/video";localStorage.setItem("course",item.id)}} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div> */}
+        
           </div>
         </div>
       ) : (

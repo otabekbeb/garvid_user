@@ -1215,32 +1215,7 @@ export default function Mentor() {
         </div></div>
         <div className={toggle === 2 ? "show-content" : "content"}><UserChat /></div>
         <div className={toggle === 0 ? "show-content" : "content"}>
-          <div className="search_big_div">
-            <button className="user_post_button" onClick={() => postEducationModal()}>Добавить</button>
-            <BsSearch className="search" />
-            <input onChange={searchInput} placeholder="Введите здесь..." type="text" />
-
-          </div>
-          <div className="edication_card">
-            {edication.map(item => {
-              localStorage.setItem("educationLength", edication.length)
-              return (
-                <div className="edication_card_">
-                  <h1>{item.education_name}</h1>
-                  <div className="edication_card_date">
-                    <p>Дата начала: {(item.start_date).slice(0, 10)}</p>
-                    <p>Дата окончания: {(item.end_date).slice(0, 10)}</p>
-                  </div>
-                  <span>{item.description}</span>
-                  {/* <div className="edication_card_button">
-                    <button onClick={() => Page()}><MdPlayLesson /></button>
-                    <button onClick={() => putEducationModal(item.id)} ><BiEdit /></button>
-                    <button onClick={() => deleteEducationModal(item.id)}><MdDeleteOutline /></button>
-                  </div> */}
-                </div>
-              )
-            })}
-          </div>
+          <Education/>
 
         </div>
         <div className={toggle === 3 ? "show-content" : "content"}>
