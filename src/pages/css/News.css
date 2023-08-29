@@ -11109,3 +11109,12 @@ body {
     height: 100%;
     object-fit: cover;
 }
+
+@media (max-width:1035px) {
+    .swiper-wrapper {
+        margin-left: 10%;
+    }
+    .News_button1{
+        margin-left: 5%;
+    }
+}
