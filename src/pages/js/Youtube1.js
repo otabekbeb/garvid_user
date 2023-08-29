@@ -295,15 +295,17 @@ export default function Youtube1() {
                     return (
                       <>
 
-                        <Accordion>
+                        <Accordion className="for-scroll-accordion">
                           <Accordion.Item eventKey={0 + key}>
                             <Accordion.Header>{item.name}</Accordion.Header>
+                            <div className="for-position-fixed">
                             {item.theme.map((item2) => {
                               return (
+                               
                                 <Accordion.Body
                                   style={{ cursor: "pointer" }}
                                   onClick={() => { MadolChange(item2) }}
-                                >
+                                > 
                                   <div
                                     style={{ cursor: "pointer" }}
                                     className="accordion_flex"
@@ -317,12 +319,13 @@ export default function Youtube1() {
                                     </div>
                                     <div className="accordion_text">
                                       <h6>{item2.name}</h6>
-                                      <p>{item2.content}</p>
+                                      <p>{item2.content.length>15?`${item2.content.slice(0,15)}...`:item2.content}</p>
                                     </div>
                                   </div>
-                                </Accordion.Body>
+                                
+                                </Accordion.Body>  
                               );
-                            })}
+                            })}</div>
                           </Accordion.Item>
                         </Accordion>
 
