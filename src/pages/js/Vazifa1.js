@@ -234,6 +234,8 @@ else{
     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
   })
   .then((res) => {
+    document.querySelector(".m-comment-Bookmark").style =
+    "display:block !important";
 document.querySelector(".mark-uchun-koish-joy").style = "display:none !important";
 Swal.fire("Вы поставили оценку")
     axios
@@ -244,7 +246,6 @@ Swal.fire("Вы поставили оценку")
       })
       .then((res) => {
         setMark(res.data);
-
       })
       .catch((err) => {});
     // document.querySelector(".m-comment-Bookmark").style =
@@ -341,9 +342,23 @@ Swal.fire("Вы поставили оценку")
     }
   }
 
-  function thomark() {
-   
+  function openMarkModal() {
+   document.querySelector(".p-info-mark-div1").style="display:block; "
   }
+  function closeMarkModal() {
+    document.querySelector(".p-info-mark-div1").style="display:none"
+   }
+
+   function openModalMarkOchadi() {
+    document.querySelector(".div-mark-chikadigan-joy").style="display:block"
+    document.querySelector(".asxzsdsdkejhjbdfibmffdo").style="display:none"
+
+   }
+   function openModalMarkOchadi12() {
+    document.querySelector(".div-mark-chikadigan-joy").style="display:none"
+    document.querySelector(".asxzsdsdkejhjbdfibmffdo").style="display:block"
+
+   }
 
   return (
     <div>
@@ -379,15 +394,22 @@ Swal.fire("Вы поставили оценку")
                         <div className="df_div_comment_page">
                           <div className="div_img_class_over">
                             {mark.map((item) => {
-                                return (
-                                  <p style={{ color: "red", fontSize: "50px" }}>
-                                    {item.mark}
+                                return (<div onClick={()=>{openModalMarkOchadi12()}}  className="div-mark-chikadigan-joy" style={{display: "none"}}>
+                                   <p className="mark-p-div-chikadi">
+                                   Mentor поставил оценку: {item.mark}
                                   </p>
+                                </div>
+                                 
                                 );  
                             })}
-                            <p className="m-comment-Bookmark">
+                            <div className="asxzsdsdkejhjbdfibmffdo">
+                            <div className="p-info-mark-div1">Нажав можете помотреть оцентку ментора</div>
+                              <div className="m-comment-Bookmark" onClick={()=>{openModalMarkOchadi()}} onMouseLeave={()=>{closeMarkModal()}} onMouseEnter={()=>{openMarkModal()}}>
                               <BsBookmark className="BsBookmark" />
-                            </p>
+                            </div>
+                            </div>
+                             
+                           
                             <img
                               src={
                                 item.oneuser ? (
