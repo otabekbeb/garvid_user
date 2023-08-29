@@ -11008,15 +11008,6 @@ h6,
     font-weight: 700;
 }
 
-@media (max-width:842px) {
-    .swiper {
-        margin-left: 5%;
-    }
-
-    .News_button1 {
-        margin-left: 0.6%;
-    }
-}
 
 
 
@@ -11109,3 +11100,4 @@ body {
     height: 100%;
     object-fit: cover;
 }
+

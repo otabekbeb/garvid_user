@@ -50,7 +50,8 @@ export default function News() {
   }, [])
 
   return (
-    <div><Navbar />
+    <div>
+      <Navbar />
       <div className='newss1'>
 
         <meta charSet="utf-8" />
@@ -158,6 +159,26 @@ export default function News() {
                   width: 640,
                   slidesPerView: 1,
                 },
+                // when window width is >= 1034px
+                1034: {
+                  width: 640,
+                  slidesPerView: 2,
+                },
+                // when window width is >= 991px
+                991: {
+                  width: 640,
+                  slidesPerView:2,
+                },
+                 // when window width is >= 754px
+                 754: {
+                  width: 640,
+                  slidesPerView:2,
+                },
+                // when window width is >= 606px
+                606: {
+                  width: 640,
+                  slidesPerView: 1,
+                },
                 // when window width is >= 768px
                 768: {
                   width: 768,
@@ -170,8 +191,8 @@ export default function News() {
                 },
                 // when window width is >= 400px
                 400: {
-                  width: 400,
-                  slidesPerView: 2,
+                  width: 640,
+                  slidesPerView:1 ,
                 },
               }}
               modules={[Pagination]}
