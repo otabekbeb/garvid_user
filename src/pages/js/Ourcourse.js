@@ -247,7 +247,7 @@ export default function Ourcourse() {
 
         </div>
       </header>
-      <Footer1 />
+      {/* <Footer1 /> */}
     </div>
   )
 }

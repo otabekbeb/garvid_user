@@ -64,19 +64,19 @@ import { BsSearch } from "react-icons/bs"
 import { FaUsers } from "react-icons/fa"
 import { BiEdit } from "react-icons/bi"
 import { FiDownload } from "react-icons/fi"
-// import {
-//   Row,
-//   Col,
-//   Card,
-//   Radio,
-//   Table,
-//   Upload,
-//   message,
-//   Progress,
-//   Button,
-//   Avatar,
-//   Typography,
-// } from "antd";
+import {
+  Row,
+  Col,
+  Card,
+  Radio,
+  Table,
+  Upload,
+  message,
+  Progress,
+  Button,
+  Avatar,
+  Typography,
+} from "antd";
 import Noimg from "../img/Images-rafiki (1).png"
 import testimg from "../img/Image folder-rafiki.png"
 
