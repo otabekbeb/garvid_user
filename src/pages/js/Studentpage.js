@@ -197,6 +197,7 @@ export default function Mentor() {
 
   const [edication, setEdication] = useState([])
   const [edicationId, setEdicationId] = useState()
+  const [tests,setTests] = useState ([])
 
   const username = document.querySelectorAll("#Educationusername")
   const start_date = document.querySelectorAll("#Educationstart_date")
@@ -207,6 +208,8 @@ export default function Mentor() {
     axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setEdication(res.data)
     })
+
+   
   }, [])
 
   function postEducationModal() {
@@ -352,9 +355,7 @@ export default function Mentor() {
 
   const [follow, setFollow] = useState([])
   const [following, setFollowing] = useState(localStorage.getItem("OneuserId"))
-  function folowcolor1(key) {
-    document.querySelectorAll('.followButton1')[key].classList.toggle("followButton3")
-  }
+  
   useEffect(() => {
     axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setFollow(res.data)
@@ -374,8 +375,12 @@ export default function Mentor() {
   }, []);
 
   function folowcolor1(key) {
-    document.querySelectorAll('.followButton1')[key].classList.toggle("followButton3")
-  }
+    axios.delete(`${url}/api/follow/${key}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+       window.location.reload()
+    }).catch(err => {
+        alert("xato")
+    })
+}
   useEffect(() => {
     axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setFollow(res.data)
