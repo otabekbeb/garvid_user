@@ -231,7 +231,7 @@ export default function Searchfilter() {
     axios
       .get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })
       .then((res) => {
-        const search = res.data.filter(item => item.course_type === id)
+        const search = res.data.filter(item => item.course_type === id && item.author == localStorage.getItem("OneuserId"))
         setKursdata(search)
       });
   }
