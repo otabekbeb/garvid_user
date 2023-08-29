@@ -652,8 +652,55 @@ pre code {
     .container,
     .container-sm,
     .container-md {
-        max-width: 720px;
+        max-width: 840px;
     }
+}
+
+@media (max-width:783px) {
+
+    .container,
+    .container-sm,
+    .container-md {
+        max-width: 700px;
+    }
+}
+
+@media (max-width:750px) {
+
+    .container,
+    .container-sm,
+    .container-md {
+        max-width: 100%;
+    }
+}
+
+@media (max-width:632px) {
+    .mySwiper101 {
+        display: flex !important;
+        margin-top: 20px;
+    }
+
+    .mySwiper100 {
+        display: none;
+    }
+}
+
+@media (max-width:515px) {
+    .mySwiper101 {
+        display: none !important;
+    }
+
+    .mySwiper102 {
+        display: flex !important;
+    }
+}
+
+.mySwiper101 {
+    display: none;
+}
+
+.mySwiper102 {
+    display: none;
 }
 
 @media (min-width: 992px) {
@@ -10996,7 +11043,7 @@ h6,
     justify-content: space-around;
     align-items: center;
     width: 95%;
-    margin: auto;
+    margin: 10% auto;
     padding-bottom: 30px;
 }
 
@@ -11101,3 +11148,34 @@ body {
     object-fit: cover;
 }
 
+.mySwiper100 {
+    margin-top: 2%;
+}
+
+@media (max-width:993px) {
+    .News_button1 {
+        margin: auto;
+    }
+}
+
+@media (max-width:410px) {
+    .News_button1 {
+        width: 300px !important;
+    }
+}
+
+@media (max-width:340px) {
+    .News_button1 {
+        width: 250px !important;
+    }
+}
+
+
+
+.Card_button {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    border-left: 5px solid gold;
+}
