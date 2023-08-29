@@ -64,9 +64,6 @@
 }
 
 .m-comment-Bookmark{
-    position: absolute;
-    right: 0;
-    width: 45%;
     color: #44bef1;
     font-size: 20px;
 }
@@ -85,7 +82,7 @@
         font-size: 20px;
     }
     
-    ..mark-p-div-chikadi{
+    .mark-p-div-chikadi{
         position: absolute;
         right: 10px;
         cursor: pointer;
@@ -120,7 +117,7 @@
 }
 
 .asxzsdsdkejhjbdfibmffdo{
-    display: block;
+    display: none;
 }
 
 .p-info-mark-div1 {
@@ -247,6 +244,19 @@
     z-index: 200;
 }
 .mark-uchun-koish-joy{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000da;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 200;
+    padding: 10px;
+}
+.mark-uchun-koish-joy1{
     display: none;
     justify-content: center;
     align-items: center;
