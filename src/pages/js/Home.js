@@ -79,7 +79,7 @@ export default function Home() {
                                             {item.image === null ? (<img src={img_for_null} alt="" />) : (<img src={item.image} alt="" />)}
                                         </div>
                                         <p>{item.title}</p>
-                                        <h2>{item.deskription}</h2>
+                                        <h2>{item.deckription}</h2>
                                     </div>
                                 )
                             })}

@@ -189,25 +189,26 @@
 //           <div className="postUserModal_div_icon"><GrClose className="icon" onClick={() => postEducationClose()} /></div>
 //           <div className="postUserModal_div_label" >
 //             <label htmlFor="">
-//               <p>Имя</p>
-//               <input id="Educationusername" placeholder="Имя пользователя" type="text" />
+//               <p>Name</p>
+//               <input id="Educationusername" placeholder="Name" type="text" />
 //             </label>
 //             <label htmlFor="">
-//               <p>Начальная дата</p>
+//               <p>Start date</p>
 //               <input id="Educationstart_date" type="date" />
 //             </label>
 //             <label htmlFor="">
-//               <p>Конечная дата</p>
+//               <p>
+
 //               <input id="Educationend_date" type="date" />
 //             </label>
 //             <label htmlFor="">
-//             <p>Описание</p>
+//             <p>Description</p>
 //             <input id="Educationdescription" className="description" placeholder="Описание" type="text" />
 //           </label>
 //           </div>
 
 //           <div className="postUserModal_div_button">
-//             <button onClick={() => postEducation()}>Отправить</button>
+//             <button onClick={() => postEducation()}>Send</button>
 //           </div>
 //         </div>
 //       </div>
@@ -216,25 +217,27 @@
 //           <div className="postUserModal_div_icon"><GrClose className="icon" onClick={() => putEducationClose()} /></div>
 //           <div className="postUserModal_div_label" >
 //             <label htmlFor="">
-//               <p>Имя</p>
+//               <p>Name</p>
 //               <input id="Educationusername" type="text" />
 //             </label>
 //             <label htmlFor="">
-//               <p>Начальная дата</p>
+//               <p>Start date</p>
 //               <input id="Educationstart_date" type="date" />
 //             </label>
 //             <label htmlFor="">
-//               <p>Конечная дата</p>
+//               <p>
+
 //               <input id="Educationend_date" type="date" />
 //             </label>
 //             <label htmlFor="">
-//             <p>Описание</p>
+//             <p>Description</p>
 //             <input id="Educationdescription" className="descriptions" type="text" />
 //           </label>
 //           </div>
 
 //           <div className="postUserModal_div_button">
-//             <button onClick={() => putEducation()}>Редактировать</button>
+//             <button onClick={() => putEducation()}>
+
 //           </div>
 //         </div>
 //       </div>
@@ -417,6 +420,7 @@ export default function Edication() {
   }
 
   function putEducation() {
+    window.location.reload()
     var formdata = new FormData()
     formdata.append("education_name", username[1].value)
     formdata.append("description", description[1].value)
@@ -759,7 +763,7 @@ export default function Edication() {
         <MdOutlineDeleteOutline onClick={() => deleteGroupModal(dataIndex)} style={{ color: 'red', cursor: 'pointer' }} />{student.map(item => { if (item.id == dataIndex) { return <h1 style={{ marginBottom: '0px' }}>{item.username}</h1> } })}</div>
     },
     {
-      title: <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}><select name="" style={{ width: '160px' }} id="journal_day">{Journal_mark.allesson.map(item => { return <option value={item.id}>{(item.day).slice(0, 10)}</option> })}</select>   <button onClick={() => { sendMarkAll() }} style={{ marginTop: '0px', marginBottom: '0px', paddingTop: "5px", paddingBottom: '5px' }} className='user_post_button'>Отправить оценку</button></div>,
+      title: <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}><select name="" style={{ width: '160px' }} id="journal_day">{Journal_mark.allesson.map(item => { return <option value={item.id}>{(item.day).slice(0, 10)}</option> })}</select>   <button onClick={() => { sendMarkAll() }} style={{ marginTop: '0px', marginBottom: '0px', paddingTop: "5px", paddingBottom: '5px' }} className='user_post_button'>Send оценку</button></div>,
       dataIndex: 'id',
       key: 'id',
       render: (dataIndex) => <div>
@@ -873,7 +877,7 @@ export default function Edication() {
             </>
           ) : (
             <>
-              <div className="search_big_div"><button className="user_post_button" onClick={() => postEducationModal()}>Добавить</button><AiOutlineSearch className="search" /><input onChange={Search} placeholder="Введите здесь..." type="text" /></div>
+              <div className="search_big_div"><button className="user_post_button" onClick={() => postEducationModal()}>Add Education</button><AiOutlineSearch className="search" /><input onChange={Search} placeholder="Введите здесь..." type="text" /></div>
               {/* <div className="edication_card">
                 {edication.map(item => {
                   return (
@@ -896,7 +900,7 @@ export default function Edication() {
               </div> */}
               <ul class="cards">
                 {edication.map(item => {
-              localStorage.setItem("educationLength",edication.length)
+              localStorage.setItem("for_education",edication.length)
                   return (
                     <li>
                       <div class="card">
@@ -942,54 +946,59 @@ export default function Edication() {
         </div>
       </div>
       <div id="EducationpostModal" className="Modaldiv">
-        <div style={{ width: '340px' }} className="postUserModal_div">
+        <div style={{ width: '500px' }} className="postUserModal_div">
           <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => postEducationClose()} /></div>
           <div className="postUserModal_div_label" >
             <label htmlFor="">
-              <p>Имя</p>
-              <input id="Educationusername" placeholder="Имя пользователя" type="text" />
+              <p>Name</p>
+              <input id="Educationusername" placeholder="Name" type="text" />
             </label>
             <label htmlFor="">
-              <p>Начальная дата</p>
+              <p>Start date</p>
               <input id="Educationstart_date" type="date" />
             </label>
             <label htmlFor="">
-              <p>Конечная дата</p>
+              <p>
+Final date</p>
               <input id="Educationend_date" type="date" />
             </label>
             <label htmlFor="">
-              <p>Описание</p>
-              <input id="Educationdescription" placeholder="Описание" className="description" type="text" />
+              <p>Description</p>
+              <textarea className="description" placeholder='Description' id="Educationdescription" cols="30" rows="10"></textarea>
+
             </label>
           </div>
           <div className="postUserModal_div_button">
-            <button onClick={() => postEducation()}>Отправить</button>
+            <button onClick={() => postEducation()}>Send</button>
           </div>
         </div>
       </div>
       <div id="EducationputModal" className="Modaldiv">
-        <div style={{ width: '340px' }} className="postUserModal_div">
+        <div style={{ width: '500px' }} className="postUserModal_div">
           <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => putEducationClose()} /></div>
           <div className="postUserModal_div_label" >
             <label htmlFor="">
-              <p>Имя</p>
+              <p>Name</p>
               <input id="Educationusername" type="text" />
             </label>
             <label htmlFor="">
-              <p>Начальная дата</p>
+              <p>Start date</p>
               <input id="Educationstart_date" type="date" />
             </label>
             <label htmlFor="">
-              <p>Конечная дата</p>
+              <p>
+Final date</p>
               <input id="Educationend_date" type="date" />
             </label>
             <label htmlFor="">
-              <p>Описание</p>
-              <input id="Educationdescription" className="description" type="text" />
+              <p>Description</p>
+              <textarea className="description" id="Educationdescription" cols="30" rows="10"></textarea>
+             
             </label>
           </div>
           <div className="postUserModal_div_button">
-            <button onClick={() => putEducation()}>Редактировать</button>
+            <button onClick={() => putEducation()}>
+Edit</button>
           </div>
         </div>
       </div>
@@ -1009,7 +1018,8 @@ export default function Edication() {
         <div className="deleteModal_div">
           <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => ikkiClose()} /></div>
           <div className="deleteButton_div">
-            <button onClick={() => putScheduleModal()}>Редактировать</button>
+            <button onClick={() => putScheduleModal()}>
+Edit</button>
             <button onClick={() => deleteScheduleModal()}>Удалить</button>
           </div>
         </div>
@@ -1040,7 +1050,7 @@ export default function Edication() {
             </label>
           </div>
           <div className="postUserModal_div_button">
-            <button onClick={() => postSchedule()} >Отправить</button>
+            <button onClick={() => postSchedule()} >Send</button>
           </div>
         </div>
       </div>
@@ -1070,7 +1080,8 @@ export default function Edication() {
             </label>
           </div>
           <div className="postUserModal_div_button">
-            <button onClick={() => putSchedule()}>Редактировать</button>
+            <button onClick={() => putSchedule()}>
+Edit</button>
           </div>
         </div>
       </div>
@@ -1085,7 +1096,8 @@ export default function Edication() {
             </label>
           </div>
           <div className="postUserModal_div_button">
-            <button onClick={() => putMark()}>Редактировать</button>
+            <button onClick={() => putMark()}>
+Edit</button>
           </div>
         </div>
       </div>
@@ -1110,7 +1122,7 @@ export default function Edication() {
           <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => postGroupClose()} /></div>
           <div className="postUserModal_div_label" >
             <label htmlFor="">
-              <p>Имя</p>
+              <p>Name</p>
               <select name="" id="Groupusername">
                 {GroupSelect.map(item => {
                   return <option value={item.id}>{item.username}</option>
@@ -1119,7 +1131,7 @@ export default function Edication() {
             </label>
           </div>
           <div className="postUserModal_div_button">
-            <button onClick={() => postGroup()}>Отправить</button>
+            <button onClick={() => postGroup()}>Send</button>
           </div>
         </div>
       </div>
@@ -1128,7 +1140,7 @@ export default function Edication() {
           <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => putGroupClose()} /></div>
           <div className="postUserModal_div_label" >
             <label htmlFor="">
-              <p>Имя</p>
+              <p>Name</p>
               <select name="" id="Groupusername">
                 {GroupSelect.map(item => {
                   return <option value={item.id}>{item.username}</option>
@@ -1137,7 +1149,8 @@ export default function Edication() {
             </label>
           </div>
           <div className="postUserModal_div_button">
-            <button onClick={() => putGroup()}>Редактировать</button>
+            <button onClick={() => putGroup()}>
+Edit</button>
           </div>
         </div>
       </div>

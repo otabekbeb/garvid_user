@@ -18,14 +18,12 @@
     border-radius: 5px;
     transition: 0.4s;
 }
-
 .otash .teacher_page {
     width: 700px;
     max-width: 50%;
     display: grid;
     grid-template-columns: auto auto;
 }
-
 .otash .teacher_page_big {
     width: 100%;
     display: flex;
@@ -33,7 +31,6 @@
     align-items: center;
     flex-wrap: wrap;
 }
-
 .otash .teacher_page .teacher_page_button {
     width: 200px;
     padding-top: 5px;
@@ -255,16 +252,20 @@
 
 .postUserModal_div label .description {
     width: 100%;
+    font-family: 'Roboto', sans-serif;
     padding: 5px;
-    padding-bottom: 140px;
+    height: 180px;
+    /* padding-bottom: 140px; */
     border-radius: 4px;
     border: 1px solid rgb(182, 182, 182);
     outline-color: #44bef1;
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Open+Sans:wght@400;500&family=Roboto&family=Rubik&display=swap');
 
 .postUserModal_div_label input {
     /* width: 300px; */
     width: 100%;
+    font-family: 'Roboto', sans-serif;
     height: 35px;
     padding-left: 5px;
     border-radius: 4px;

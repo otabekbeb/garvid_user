@@ -14,13 +14,13 @@ font-size: 13px;
 }
 .m_zadach_block{
     transition: 0.3s;
-    width: 400px;
+    width: 300px;
     height: auto;
-    margin-top: 20px;
+    margin-top: 100px;
     padding: 20px;
-    overflow: hidden;
-    box-shadow: 0px 4px 20px 0px rgba(1, 102, 144, 0.10);
-    border-radius: 5px;
+    /* overflow: hidden; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
     min-width: 330px;
 }
 .m_zadach_block:hover{
@@ -68,12 +68,19 @@ font-size: 13px;
         cursor: pointer;
     }
 }
-
-.m_zadach img{
-    width: 100%;
+.fors_imagesa{
+    margin-top: -70px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
     border-radius: 10px;
-    /* height: 200px !important; */
-    /* object-fit: fill; */
+}
+.m_zadach img{
+    height: 100%;
+    border-radius: 10px;
 }
 .m_zadach .jony_foto{
     width: 100%;
@@ -83,7 +90,7 @@ font-size: 13px;
     display: flex;
     align-items: center;
     gap: 10px;
-    justify-content: flex-end;
+    justify-content: space-between;
     /* margin-right: 10px; */
     /* margin-bottom: 0px !important; */
 }
@@ -93,9 +100,9 @@ font-size: 13px;
     align-items: center;
     justify-content: center;
     color: #44bef1  ;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
+    width: 47%;
+    height: 40px;
+    border-radius: 5px;
     border: 1px solid #44bef1;
     font-size: 16px;
     /* margin-bottom: 10px; */
@@ -107,9 +114,9 @@ font-size: 13px;
     align-items: center;
     justify-content: center;
     color: red  ;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
+    width: 47%;
+    height: 40px;
+    border-radius: 5px;
     border: none;
     border: 1px solid red;
     font-size: 16px;
@@ -127,7 +134,7 @@ font-size: 13px;
 }
 
 .m_zadach_block h4{
-    margin-top: 10px;
+    margin-top: 20px;
 }
 .m_zadachi_dobavit{
     display: block;
@@ -432,14 +439,23 @@ font-size: 13px;
     display: flex; 
     flex-wrap: wrap;
     gap: 10px;
+    margin-top: 20px;
     justify-content: space-between;
     align-items: center;
 }
 .zadac_df span{
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 400;
     color: #9DA7BB;
+    display: flex;
+    align-items: center;
 }
-.m_zadach_block p{
-    font-size: 14px;
+.ortapp{
+    font-size: 16px !important;
+    margin-top: 15px !important;
+    margin-bottom: 0px;
+}
+.ortap1{
+    font-size: 16px !important;
+    margin-top: 5px !important;
 }

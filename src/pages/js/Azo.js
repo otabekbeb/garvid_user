@@ -64,6 +64,7 @@ export default function Azo() {
             </div>) : (<> {follow.map((item, key) => {
                     return <>
                         {users.map(item1 => {
+                            localStorage.setItem("for_azo", users.length)
                             if (item1.id == item.topuser) {
                                 return (
 

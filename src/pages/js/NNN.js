@@ -15,7 +15,7 @@ export default function NNN() {
             <div>
                 <div className="container-fluid pt-5 mb-3">
                     <div className="container" >
-                        <button className='News_button'>FEATURED NEWS</button>
+                        <button className='News_button1'>FEATURED NEWS</button>
 
                         <Swiper
                             slidesPerView={3}
@@ -124,10 +124,11 @@ export default function NNN() {
                 <div className="News">
 
                     <div className="col-12">
-                        <div className="section-title">
+                        {/* <div className="Last_btton">
                             <h4 className="m-0 text-uppercase font-weight-bold">Latest News</h4>
                             <a className="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
-                        </div>
+                        </div> */}
+                          <button className='Lasr'>FEATURED NEWS</button>
                     </div>
 
                     <div className="News_cards">
