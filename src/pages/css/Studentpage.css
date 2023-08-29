@@ -26,3 +26,6 @@
   .studentpagess .edu_btns{
     display: none;
   }
+  .studentpagess .row{
+    justify-content: center;
+  }

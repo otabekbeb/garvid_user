@@ -970,7 +970,8 @@ justify-content: space-between;
 }
 .for_bigs{
     background-color: #FFF;
-    width: 50%;
+    width: 90%;
+    max-width: 800px;
     margin: auto;
     border-radius: 15px;
 }
@@ -1009,7 +1010,7 @@ justify-content: space-between;
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     min-height: 200px;
-    height: 450px;
+    min-height: 520px;
     margin-top: 50px;
     margin-bottom: 50px;
     margin: auto;
@@ -1022,6 +1023,8 @@ justify-content: space-between;
     margin: auto;
     margin-left: 0;
     width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .form-check:hover{
     background-color: #44bef1;
@@ -1029,12 +1032,13 @@ justify-content: space-between;
 }
 .form-check{
     height: 40px;
-    padding: 25px 40px;
+    padding: 25px 20px;
     display: flex;
     align-items: center;
     border-radius: 5px;
     border: 1px solid gray;
     margin-top: 20px;
+    width: 48%;
 }
 .butt111 button{
     display: flex;
@@ -1050,4 +1054,27 @@ justify-content: space-between;
 }
 .options .form-check-input[type=radio]{
     margin-bottom: 5px !important;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.options .form-check-label{
+    position: relative;
+    z-index: 100;
+}
+#mt-21{
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #44bef1;
+    border-radius: 10px;
+}
+.mt-2 .options{
+    display: flex;
+    /* grid-template-columns: auto auto; */
+    justify-content: space-between;
+    flex-wrap: wrap;
 }

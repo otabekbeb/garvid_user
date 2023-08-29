@@ -9,8 +9,8 @@ class Question extends Component{
 
 		return(
 			<div className="lend">
-				<h3>Question {question.id}</h3>
-				<h5 className="mt-2">{question.question}</h5>
+				<h3 style={{display:"flex",justifyContent:"center"}}>Question {question.id} of {localStorage.getItem("for_tests")}</h3>
+				<h5 id="mt-21" className="mt-2">{question.question}</h5>
 				<form onSubmit={onSubmit} className="mt-2 mb-2">
 					<Options
 						options={question.options}
