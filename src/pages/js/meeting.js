@@ -1,14 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import url from "./Host";
 
 export default function Video({ match }) {
+  const [domain,setDomain]=useState()
   const id = match.params.id;
 
   useEffect(() => {
-    const domain = "https://michaelkitas.daily.co/";
+    axios.get(`${url}/super/pay`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
+      const domain = `https://${res.data.domain}.daily.co/`;
+      setDomain(domain)
+    })
 
     axios
-      .get(`/video-call/${id}`)
+      .get(`${url}/video-call/${id}`)
       .then((res) => {
         if (res.status === 200) {
           const script = document.createElement("script");

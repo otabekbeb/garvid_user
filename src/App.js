@@ -79,7 +79,7 @@ export default function App() {
           <Route path="/user" element={<User />} />
           <Route path="/mentor" element={<Mento />} />
           <Route path="/contacts" element={<Contacts />} />
-          <Route path="/video" element={<Video />} />
+          <Route path="/videoo" element={<Video />} />
           <Route path="/ourcourse" element={<Allcourse />} />
           <Route path="/news" element={<News />} />
           <Route path="/newspage" element={<Newspage />} />
