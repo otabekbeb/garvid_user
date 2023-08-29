@@ -59,19 +59,34 @@ export default function Comment1() {
         setOneuser(res.data);
         console.log(res.data, "salom");
       });
-
     axios
       .get(
         `${url}/api/course_theme_comment/${
           JSON.parse(localStorage.getItem("page_video")).id
         }`,
         {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         }
       )
       .then((res) => {
         var a = res.data.filter((item) => item.task_commnet_id == 1);
+        setComment(a);
+      });
+
+    axios
+      .get(`${url}/api/course_theme_comment`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        var a = res.data.filter(
+          (item) =>
+            item.task_commnet_id !=
+            JSON.parse(localStorage.getItem("page_video")).id
+        );
         setCommenttask(a);
+        console.log(res.data, "sfdfdxdseery");
       })
       .catch((err) => {});
   }, []);
@@ -151,7 +166,7 @@ export default function Comment1() {
     formdata.append("user_id", oneuser[0].id);
     formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id);
     formdata.append("subcomment", subcoment);
-    // formdata.append("task_commnet_id", 1);
+    formdata.append("task_commnet_id", 1);
 
     axios
       .post(`${url}/api/course_theme_comment/`, formdata, {
@@ -172,7 +187,6 @@ export default function Comment1() {
           .then((res) => {
             var a = res.data.filter((item) => item.task_commnet_id == 1);
             setComment(a);
-            console.log(a, "comdwadwadent");
           });
         document.querySelector("#chat_text12").value = "";
       })
@@ -230,10 +244,8 @@ export default function Comment1() {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
         .then((res) => {
-          document.querySelector(".m-comment-Bookmark").style =
+          document.querySelector(".BsBookmark").style =
             "display:block !important";
-          document.querySelector(".asxzsdsdkejhjbdfibmffdo").style =
-            "display:block";
           document.querySelector(".m-comment-mark1").style =
             "display:block !important";
           document.querySelector(".m-comment-mark").style =
@@ -287,7 +299,7 @@ export default function Comment1() {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
         .then((res) => {
-          document.querySelector(".asxzsdsdkejhjbdfibmffdo").style =
+          document.querySelector(".BsBookmark").style =
             "display:block";
           document.querySelector(".mark-uchun-koish-joy1").style =
             "display:none !important";
@@ -318,11 +330,11 @@ export default function Comment1() {
 
   function openModalMarkOchadi() {
     document.querySelector(".div-mark-chikadigan-joy").style = "display:block";
-    document.querySelector(".asxzsdsdkejhjbdfibmffdo").style = "display:none";
+    document.querySelector(".BsBookmark").style = "display:none";
   }
   function openModalMarkOchadi12() {
     document.querySelector(".div-mark-chikadigan-joy").style = "display:none";
-    document.querySelector(".asxzsdsdkejhjbdfibmffdo").style = "display:block";
+    document.querySelector(".BsBookmark").style = "display:block";
   }
 
   return (
@@ -391,9 +403,17 @@ export default function Comment1() {
                           </div>
 
                           <div className="div_class_tugadi">
-                            <div className="asxzsdsdkejhjbdfibmffdo">
+                          <div className="asxzsdsdkejhjbdfibmffdo">
                               <div className="p-info-mark-div1">
                                 Нажав можете помотреть оцентку ментора
+                              </div>
+                             
+                              <div className="oneusername-uchun-kildim">
+                              <h5>
+                              {item.oneuser
+                                ? item.oneuser.username
+                                : "Anonim User"}
+                            </h5>
                               </div>
                               <div className="m-comment-Bookmark">
                                 <BsBookmark
@@ -410,11 +430,7 @@ export default function Comment1() {
                                 />
                               </div>
                             </div>
-                            <h5>
-                              {item.oneuser
-                                ? item.oneuser.username
-                                : "Anonim User"}
-                            </h5>
+                            
                             {task.map((item) => {
                               <img
                                 src={
@@ -458,7 +474,7 @@ export default function Comment1() {
                                   <p
                                     className="m-comment-mark"
                                     onClick={() => {
-                                      markOpen(item.id);
+                                      markOpen(key);
                                       setPage(1);
                                     }}
                                   >
@@ -485,7 +501,7 @@ export default function Comment1() {
                                 </div>
                               );
                             })}
-                            <div className="m-input-mark">
+                            {/* <div className="m-input-mark">
                               <input
                                 type="number"
                                 id="mark-input-in-task"
@@ -546,7 +562,7 @@ export default function Comment1() {
                                   изменить
                                 </p>
                               </div>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </>

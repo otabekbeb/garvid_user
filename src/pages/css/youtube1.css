@@ -1194,3 +1194,19 @@ padding: 10px;
     background-color: #fff;
     color: #2E2E2E;
 }
+.for-position-fixed{
+    min-height: 0px;
+    max-height: 450px;
+    overflow: hidden;
+    overflow-y: scroll; 
+    padding: 5px;
+
+}
+.for-scroll-accordion ::-webkit-scrollbar{
+   width: 1px;
+    opacity: 0; 
+}
+.for-scroll-accordion{
+position: sticky;
+top: 20px;
+}
