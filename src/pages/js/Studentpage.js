@@ -202,7 +202,7 @@ export default function Mentor() {
   const start_date = document.querySelectorAll("#Educationstart_date")
   const end_date = document.querySelectorAll("#Educationend_date")
   const description = document.querySelectorAll("#Educationdescription")
-
+  const [stTask, setTasks] = useState([])
   useEffect(() => {
     axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setEdication(res.data)
@@ -288,7 +288,11 @@ export default function Mentor() {
   //   setPage(1)
   // }
 
-
+  useEffect(() => {
+    axios.get(`${url}/api/course_theme_task_student`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
+      setTasks(res.data)
+    })
+  })
 
 
 
@@ -400,27 +404,27 @@ export default function Mentor() {
       console.log(err);
     });
     axios
-    .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
-      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-    })
-    .then((res) => {
-      axios
-        .get(`${url}/api/course`, {
-          header: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        })
-        .then((res1) => {
-          for (let i = 0; i < res.data.length; i++) {
-            for (let j = 0; j < res1.data.length; j++) {
-              if (res.data[i].id == res1.data[j].id) {
-                res.data[i].star = res1.data[j].star;
+      .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        axios
+          .get(`${url}/api/course`, {
+            header: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
+          .then((res1) => {
+            for (let i = 0; i < res.data.length; i++) {
+              for (let j = 0; j < res1.data.length; j++) {
+                if (res.data[i].id == res1.data[j].id) {
+                  res.data[i].star = res1.data[j].star;
+                }
               }
             }
-          }
-          setKursdata(res.data);
-        });
-    });
+            setKursdata(res.data);
+          });
+      });
 
   }, [])
   useEffect(() => {
@@ -910,13 +914,13 @@ export default function Mentor() {
         <div className="gray_blok">
           <div className="fil_text_blok">
 
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_course") } pieces</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(0)} style={toggle === 0 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Education</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("courselenght")} pieces</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Correspondence</h1><div className="fil_text_blok_kurs_lenght">14 pieces</div></div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Tasks</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_course")} pieces</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(0)} style={toggle === 0 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Education</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_education")} pieces</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Correspondence</h1></div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Tasks</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_task")} pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(7)} style={toggle === 7 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Test</h1>{toggle === 7 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My subscribtions</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Courses</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My subscribtions</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_azo")} pieces</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Courses</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_courses")}  pieces</div>) : ("")}</div>
           </div>
           <div className="profil_blok_menu_size">
             <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
@@ -986,7 +990,7 @@ export default function Mentor() {
             ) : (
               <>
                 {kursdata.map(item => {
-                  localStorage.setItem("for_course",kursdata.length)
+                  localStorage.setItem("for_course", kursdata.length)
                   return (
                     <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
                       <button className="btn_das">Programming</button>
@@ -999,13 +1003,13 @@ export default function Mentor() {
                           </>) : (item.star === 2 ? (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i></>) :
                             (item.star === 3 ? (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i></>) :
                               (item.star === 4 ? (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i></>) :
-                                (item.star===5?(<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i></>):(<><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i></>)))))}
+                                (item.star === 5 ? (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i></>) : (<><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i></>)))))}
 
 
 
 
                           <p>
-                            {item.star===null?("0"):(item.star)}<span>(524)</span>
+                            {item.star === null ? ("0") : (item.star)}<span>(524)</span>
                           </p>
                         </div>
                         <div className="hajm">
@@ -1034,8 +1038,8 @@ export default function Mentor() {
 
 
         </div></div><div className={toggle === 7 ? "show-content" : "content"}>
-          <Testpage/>
-          </div>
+          <Testpage />
+        </div>
         <div className={toggle === 2 ? "show-content" : "content"}><UserChat /></div>
         <div className={toggle === 0 ? "show-content" : "content"}>
           <Education />
@@ -1043,32 +1047,94 @@ export default function Mentor() {
         </div>
         <div className={toggle === 3 ? "show-content" : "content"}>
           <div className="m_zadach">
+            {stTask.map(item => {
+              localStorage.setItem("for_task", stTask.length)
+              return (
+                <div className="m_zadach_block">
+                  {item.image === null ? (<img className='jony_foto' src={img_for_null} alt="" />) : (<img src={`${url}/api/course_theme_task_student` + item.image} alt="" />)}
+                  <h4>{item.content}</h4>
+                  <div className="zadac_df">
+                    <span>Дата Начала: {(item.time_create).slice(0, 10)}</span>
+                    <span>Дата Окончания: {(item.time_update).slice(0, 10)}</span>
+                  </div>
+                  <p>{item.feedback}</p>
+                  <p>Оценка:{item.mark}</p>
 
-
-            <div className="m_zadach_block">
-              <img className='jony_foto' src={img_for_null} alt="" />
-              <h4>Frone end</h4>
-              <p>1111</p>
-              <div className="m_zadacha_icon">
-
-                <div className="m_zadach_ktug_icon" >
-                  <BsFillCloudArrowDownFill />
                 </div>
-              </div>
-            </div>
-
-
-
+              )
+            })}
 
           </div>
+
+
         </div>
+
+
+
+
+
         <div className={toggle === 4 ? "show-content" : "content"}>
-          <Azo/>
-           
+          <div className='followi1'>
+
+
+
+            <div className="followcards1">
+              {follow.length === 0 ? (
+                <div className="delete_padding">
+                  <img src={Groupimg} alt="" />
+                  <h4>Не подписался на вас</h4>
+                  <div className="delete_btns">
+                    <a href="/Ourcourse">
+                      {" "}
+                      {/* <button
+        style={{ background: "#44bef1  " }}
+        className="delete_btn_yes"
+      >
+        Купить курс
+      </button> */}
+                    </a>
+                  </div>
+                </div>) : (<> {follow.map((item, key) => {
+                  return <>
+                    {users.map(item1 => {
+                      if (item1.id == item.topuser) {
+                        localStorage.setItem("for_azo",users.length)
+                        return (
+
+                          <a>
+                            <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
+                              <div className="our-team">
+                                <div className="picture">
+                                  <img className="img-fluid" src="https://picsum.photos/130/130?image=1027" />
+                                </div>
+                                <div className="team-content">
+                                  <h3 style={{ lineHeight: "70px" }} className="name">{item1.username}</h3>
+                                </div>
+                                <center><ul className="social">
+                                  <button style={{ background: "gray" }} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
+                                </ul></center>
+                              </div>
+                            </div>
+                          </a>
+
+
+                        )
+                      }
+                    })}
+                  </>
+                })}</>)}
+
+
+
+
+            </div>
+
+          </div>
+
         </div>
         <div className={toggle === 5 ? "show-content" : "content"}>
-          <Ourcourse/>
-           
+          <Ourcourse />
+
         </div>
       </div>
 
@@ -1125,5 +1191,7 @@ export default function Mentor() {
 
       <Futer />
     </div>
+
   )
+
 }

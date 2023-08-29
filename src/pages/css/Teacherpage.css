@@ -6,6 +6,7 @@
   justify-content: space-between;
   margin-bottom: 100px;
   padding-top: 100px !important;
+
 }
 
 .contact_left {
@@ -66,6 +67,7 @@
   padding: 40px 50px;
   background-color: #eff3fa;
   border-radius: 20px;
+  
 }
 
 .contact_inp,
@@ -383,6 +385,8 @@ iframe {
   color: #4d4d4d;
   background-color: #f4f7f9;
   margin-bottom: 10px;
+ 
+ 
 }
 
 .contact_right label {

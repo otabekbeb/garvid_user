@@ -158,7 +158,7 @@ export default function Pdp() {
                   My Subscriptions
                 </h1>
                 {toggle === 5 ? (
-                  <div className="fil_text_blok_kurs_lenght">24 pieces</div>
+                  <div className="fil_text_blok_kurs_lenght">{localStorage.getItem("followLength")} pieces</div>
                 ) : (
                   ""
                 )}
@@ -187,7 +187,7 @@ export default function Pdp() {
                 >
                   Courses
                 </h1>
-                <div className="fil_text_blok_kurs_lenght">1 pieces</div>
+                <div className="fil_text_blok_kurs_lenght">{localStorage.getItem("ourcourseLength")} pieces</div>
               </div>
               <div className="fil_text_blok_soz">
                 <h1

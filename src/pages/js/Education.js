@@ -896,7 +896,7 @@ export default function Edication() {
               </div> */}
               <ul class="cards">
                 {edication.map(item => {
-              localStorage.setItem("educationLength",edication.length)
+              localStorage.setItem("for_education",edication.length)
                   return (
                     <li>
                       <div class="card">
