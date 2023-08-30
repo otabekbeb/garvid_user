@@ -43,6 +43,20 @@ import { BsSearch } from "react-icons/bs"
 import deleteImg from "../img/Group 2.png"
 import { MdDeleteOutline } from "react-icons/md"
 import Ourcourse from './Ourcourse'
+import '../css/workforteach.css'
+// import { BsFillCloudArrowDownFill } from 'react-icons/bs'
+// import { FiEdit } from "react-icons/fi"
+// import sertifikat from '../img/Sertifikat.png'
+// import axios from 'axios'
+// import url from './Host'
+// import { MdDeleteOutline } from "react-icons/md"
+// import Groupimg from '../img/Group 2.png'
+// import { GrFormClose } from 'react-icons/gr'
+// import img_for_null from '../img/download.png'
+import { FiDownload } from "react-icons/fi"
+import { FaHourglassStart } from 'react-icons/fa'
+import { FaHourglassEnd } from 'react-icons/fa'
+// import Swal from "sweetalert2"; 
 function openTest() {
   document.querySelector(".block-bir-variant1 p").style = `   background-color: #fcfcfc;
   border: 1px solid #ccc;`
@@ -197,19 +211,21 @@ export default function Mentor() {
 
   const [edication, setEdication] = useState([])
   const [edicationId, setEdicationId] = useState()
-  const [tests,setTests] = useState ([])
+  const [tests, setTests] = useState([])
 
   const username = document.querySelectorAll("#Educationusername")
   const start_date = document.querySelectorAll("#Educationstart_date")
   const end_date = document.querySelectorAll("#Educationend_date")
   const description = document.querySelectorAll("#Educationdescription")
-  const [stTask, setTasks] = useState([])
+  const [stTasks, setTasks] = useState([])
+  const [CourseId, setCourseId] = useState();
+  const [deleteId, setDeleteId] = useState()
   useEffect(() => {
     axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setEdication(res.data)
     })
 
-   
+
   }, [])
 
   function postEducationModal() {
@@ -355,7 +371,7 @@ export default function Mentor() {
 
   const [follow, setFollow] = useState([])
   const [following, setFollowing] = useState(localStorage.getItem("OneuserId"))
-  
+
   useEffect(() => {
     axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setFollow(res.data)
@@ -376,11 +392,11 @@ export default function Mentor() {
 
   function folowcolor1(key) {
     axios.delete(`${url}/api/follow/${key}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-       window.location.reload()
+      window.location.reload()
     }).catch(err => {
-        alert("xato")
+      alert("xato")
     })
-}
+  }
   useEffect(() => {
     axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setFollow(res.data)
@@ -622,6 +638,130 @@ export default function Mentor() {
   function postEducationModal() {
     document.querySelector("#EducationpostModal").style = "display:flex"
   }
+  function openModal() {
+    document.querySelector(".m_zadacha_tepadan").style = "display: flex; justify-content: center;align-items: center;"
+  }
+  function clouseModal() {
+    document.querySelector(".m_zadacha_tepadan").style = "display:none "
+  }
+  function clouseput() {
+    document.querySelector("#zadaca_put").style = "display:none"
+  }
+  function openModal1() {
+    document.querySelector(".m_zadacha_tepadan1").style = "display: flex; justify-content: center;align-items: center;"
+  }
+  function clouseModal1() {
+    document.querySelector(".m_zadacha_tepadan1").style = "display:none"
+  }
+  function openModal2(id) {
+    setDeleteId(id)
+    document.querySelector(".m_delete_tepadan2").style = "display: flex; justify-content: center;align-items: center;"
+  }
+  function clouseModal2() {
+    document.querySelector(".m_delete_tepadan2").style = "display:none"
+  }
+  useEffect(() => {
+    axios.get(`${url}/api/course_theme_task_student`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setTasks(res.data)
+    })
+
+  }, [])
+  function deletetask() {
+    axios.delete(`${url}/api/course_theme_task_student/${deleteId}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      alert("Данные удалены")
+      window.location.assign("")
+      document.querySelector("#EducationdeleteModal").style = "display:none"
+      axios.get(`${url}/api/course_theme_task_student`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+        setTasks(res.data)
+      })
+    }).catch(err => {
+      alert("Данные не удалены")
+    })
+  }
+
+
+
+  // function deletetask() {
+  //     axios.delete(`${url}/api/course/${deleteId}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+  //       Swal.fire("ishladi")
+  //       window.location.reload()
+  //     }).catch(err => {
+  //       Swal.fire("xato")
+  //     })
+  //   }
+
+
+
+
+  function postforzadac() {
+    var formdata = new FormData()
+
+    formdata.append("content", document.querySelector(".inp_name_zadac").value)
+    formdata.append("feedback", document.querySelector(".inp_ops_zadac").value)
+    formdata.append("course_theme", document.querySelector(".inp_course_theme_zadac").value)
+    formdata.append("time_create", document.querySelector(".inp_bdate_zadac").value)
+    formdata.append("time_update", document.querySelector(".inp_tdate_zadac").value)
+    formdata.append("image", document.querySelector(".img_inp_zadac").files[0])
+    formdata.append("mark", document.querySelector(".inp_mark_zadac").value)
+    // formdata.append("author", localStorage.getItem("OneuserId"))
+
+
+    axios.post(`${url}/api/course_theme_task_student`, formdata, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    }).then(res => {
+      Swal.fire("success")
+      window.location.reload()
+    }).catch(err => {
+      Swal.fire(err)
+    })
+  }
+
+
+  function zadacput(id) {
+    setCourseId(id)
+    document.querySelector("#zadaca_put").style = "display: flex; justify-content: center;align-items: center;"
+    setTimeout(() => {
+      axios.get(`${url}/api/course_theme_task_student`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+        setTasks(res.data)
+        const filter = res.data.filter(item => item.id == id)
+        document.querySelector(".inp_name_zadacput").value = filter[0].content
+        document.querySelector(".inp_ops_zadacput").value = filter[0].feedback
+        document.querySelector(".inp_course_theme_zadacput").value = filter[0].course_theme
+        document.querySelector(".inp_bdate_zadacput").value = filter[0].time_create
+        document.querySelector(".inp_tdate_zadacput").value = filter[0].time_update
+        document.querySelector(".inp_mark_zadacput").value = filter[0].mark
+      }).catch(err => {
+        console.log(err);
+      })
+    }, 10);
+
+  }
+
+
+  function dashedput(id) {
+    var formdata = new FormData()
+    formdata.append("content", document.querySelector(".inp_name_zadacput").value)
+    formdata.append("feedback", document.querySelector(".inp_ops_zadacput").value)
+    formdata.append("course_theme", 2)
+    formdata.append("time_create", document.querySelector(".inp_bdate_zadacput").value)
+    formdata.append("time_update", document.querySelector(".inp_tdate_zadacput").value)
+    formdata.append("image", document.querySelector(".img_inp_zadacput").files[0])
+    formdata.append("mark", document.querySelector(".inp_mark_zadacput").value)
+
+    axios.put(`${url}/api/course_theme_task_student/${CourseId}`, formdata, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    }).then(res => {
+      Swal.fire("success")
+      window.location.reload()
+    }).catch(err => {
+      Swal.fire(err)
+    })
+    axios.get(`${url}/api/course_theme_task_student`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+      setTasks(res.data)
+    }).catch(err => {
+      console.log(err);
+    })
+  }
   return (
     <div className='studentpagess'>
       <Usernavbar />
@@ -761,49 +901,50 @@ export default function Mentor() {
                     <p>Exit</p>
                   </div>
                 </div>
- 
 
 
-                
+
+
                 <div className="profil_blok_ikki_icon_taxriirlash_chat">
-                {natlifikation.map(item => {
-                  if (item.to_user_id == localStorage.getItem("OneuserId")) {
-                  return (
-                    <>
-                       <p>Today</p>
-                      <div className="taxrirlash_chad"> 
-                        <div className="taxrirlash_chad_img_size">
-                          <img src={chadimg} alt="" />
-                        </div>
-                        <div className="taxrirlash_chad_size">
-                          <div className="taxrirlash_chad_vaqt">
-                            <h1>{item.title}</h1>
-                            <div className="taxrirlash_chad_vaqt_soat">
-                              <TbPointFilled className="chad_set" />
-                              <p>19:22</p>
+                  {natlifikation.map(item => {
+                    if (item.to_user_id == localStorage.getItem("OneuserId")) {
+                      return (
+                        <>
+                          <p>Today</p>
+                          <div className="taxrirlash_chad">
+                            <div className="taxrirlash_chad_img_size">
+                              <img src={chadimg} alt="" />
+                            </div>
+                            <div className="taxrirlash_chad_size">
+                              <div className="taxrirlash_chad_vaqt">
+                                <h1>{item.title}</h1>
+                                <div className="taxrirlash_chad_vaqt_soat">
+                                  <TbPointFilled className="chad_set" />
+                                  <p>19:22</p>
+                                </div>
+                              </div>
+                              <div className="taxrirlash_chad_text">
+                                <p>{item.description}</p>
+                              </div>
                             </div>
                           </div>
-                          <div className="taxrirlash_chad_text">
-                            <p>{item.description}</p>
-                          </div>
-                        </div>
-                      </div>
 
-                      <p>{item.time_create.slice(0,10)}</p>
-                    </>
+                          <p>{item.time_create.slice(0, 10)}</p>
+                        </>
 
-                  )}
-                })}
+                      )
+                    }
+                  })}
 
 
-                <a href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
-                  <p>
-                    view all
-                    <AiOutlineRight />
-                  </p>
-                </div></a>
-              </div>
-                
+                  <a href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
+                    <p>
+                      view all
+                      <AiOutlineRight />
+                    </p>
+                  </div></a>
+                </div>
+
               </div>
             </div>
           </div>
@@ -900,9 +1041,9 @@ export default function Mentor() {
           <div className="fil_text_blok">
 
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_course")} pieces</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(0)} style={toggle === 0 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Education</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_education")} pieces</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(0)} style={toggle === 0 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Education</h1>{toggle === 0 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_education")} pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Correspondence</h1></div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Tasks</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_task")} pieces</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Tasks</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("stTasks")} pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(7)} style={toggle === 7 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Test</h1></div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My subscribtions</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_azo")} pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Courses</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_courses")}  pieces</div>) : ("")}</div>
@@ -1031,7 +1172,136 @@ export default function Mentor() {
 
         </div>
         <div className={toggle === 3 ? "show-content" : "content"}>
-        <Sertifikat/>
+          <div className="m_dobavit_kurs">
+            <button onClick={() => openModal()}>Добавить задачу</button>
+          </div>
+          <div className="m_zadach">
+            {stTasks.map(item => {
+              localStorage.setItem("taskLength", stTasks.length)
+              return (
+                <>
+                  <div className="m_zadach_block">
+                    <div className="fors_imagesa">
+                      {item.image ? (<img className='jony_foto' src={img_for_null} alt="" />) : (<img src={`${url}/` + item.image} alt="" />)}</div>
+                    <h4>{item.content}</h4>
+                    <div className="zadac_df">
+                      <span><FaHourglassStart style={{ color: "black", marginRight: "7px" }} /> {(item.time_create).slice(0, 10)}</span>
+                      <span><FaHourglassEnd style={{ color: "black", marginRight: "7px" }} /> {(item.time_update).slice(0, 10)}</span>
+                    </div>
+                    <p className='ortapp'>{item.feedback}</p>
+                    <p className='ortap1' style={{ marginTop: "0px" }}>Оценка:{item.mark}</p>
+                    <div className="m_zadacha_icon">
+                      <div className="m_zadach_ktug_icon1" onClick={() => openModal2(item.id)}>
+                        <MdDeleteOutline />
+                      </div>
+                      <div className="m_zadach_ktug_icon" onClick={() => zadacput(item.id)}>
+                        <FiEdit />
+                        {/* onClick={() => dashed(item.id)} */}
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div className="m_zadacha_tepadan">
+                    <div className="m_zadachi_dobavit">
+                      <div className="m_clouse_x" onClick={() => clouseModal()}>
+                        <GrFormClose /></div>
+                      <div className="m_input_file_dobavit">
+                        <div className="a_input_file12">
+                          <FiDownload /> Добавить задание
+                        </div>
+                        <input type="file" className='img_inp_zadac' />
+                      </div><br />
+                      <div className="m_input_bilmafim">
+                        <label htmlFor="">Name:</label>
+                        <input type="text" name="" id="" className='inp_name_zadac' />
+                        <label htmlFor="">course theme:</label>
+                        <input type="text" name="" id="" className='inp_course_theme_zadac' />
+                        <label htmlFor="">vremya bowlaniwi:</label>
+                        <input type="date" name="" id="" className='inp_bdate_zadac' />
+                        <label htmlFor="">vremya tugawi:</label>
+                        <input type="date" name="" id="" className='inp_tdate_zadac' />
+                        <label htmlFor="">mark:</label>
+                        <input type="text" name="" id="" className='inp_mark_zadac' />
+                        <label htmlFor="">Opisaniye:</label>
+                        <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadac'></textarea> <br />
+                        <div className="a_button_for_end">
+                          <button onClick={() => { postforzadac() }}>Добавить</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+                </>)
+            })}
+
+
+          </div>
+          <div id='zadaca_put' className="m_zadacha_tepadan">
+
+            <div id='zadac_put_card' className="m_zadachi_dobavit">
+              <div className="m_clouse_x" onClick={() => clouseput()}>
+                <GrFormClose /></div>
+              <div className="m_input_file_dobavit">
+                <div className="a_input_file12">
+                  <FiDownload /> Добавить задание
+                </div>
+                <input type="file" className='img_inp_zadacput' />
+              </div><br />
+              <div className="m_input_bilmafim">
+                <label htmlFor="">Name:</label>
+                <input type="text" name="" id="" className='inp_name_zadacput' />
+                <label htmlFor="">course theme:</label>
+                <input type="text" name="" id="" className='inp_course_theme_put' />
+                <label htmlFor="">vremya bowlaniwi:</label>
+                <input type="date" name="" id="" className='inp_bdate_zadacput' />
+                <label htmlFor="">vremya tugawi:</label>
+                <input type="date" name="" id="" className='inp_tdate_zadacput' />
+                <label htmlFor="">mark:</label>
+                <input type="text" name="" id="" className='inp_mark_zadacput' />
+                <label htmlFor="">Opisaniye:</label>
+                <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadacput'></textarea> <br />
+                <div className="a_button_for_end">
+                  <button onClick={() => dashedput()}>Добавить</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="m_zadacha_tepadan1">
+
+            <div className="m_zadachi_dobavit">
+              <div className="m_clouse_x" onClick={() => clouseModal1()}><GrFormClose /></div>
+              <div className="m_input_file_dobavit">
+                <div className="a_input_file12"> Изменить изоброжение </div>
+                <input type="file" />
+              </div>
+              <div className="m_input_bilmafim">
+                <select name="" id="select1">
+                  <option value="">Otash bilad</option>
+                </select>
+                <textarea placeholder='Edid description' name="" id="" cols="30" rows="10"></textarea>
+                <div className="a_button_for_end"><button>Изменить</button></div>
+              </div>
+            </div>
+          </div>
+          <div className="m_delete_tepadan2">
+            <div className="a_delete_bgc">
+              <div className="for_center">
+                <img src={Groupimg} alt="" />
+                <h4>Вы правда хотите удалить?</h4>
+                <div className="a_delete_button">
+                  <button className='a_delete_no' onClick={() => clouseModal2()}>Нет</button>
+                  <button onClick={() => deletetask()}
+                    className="a_delete_yes">Да</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
         </div>
@@ -1065,7 +1335,7 @@ export default function Mentor() {
                   return <>
                     {users.map(item1 => {
                       if (item1.id == item.topuser) {
-                        localStorage.setItem("for_azo",users.length)
+                        localStorage.setItem("for_azo", users.length)
                         return (
 
                           <a>
@@ -1095,13 +1365,10 @@ export default function Mentor() {
 
 
             </div>
-
           </div>
-
         </div>
         <div className={toggle === 5 ? "show-content" : "content"}>
           <Ourcourse />
-
         </div>
       </div>
 

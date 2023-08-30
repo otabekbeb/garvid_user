@@ -11032,6 +11032,7 @@ h6,
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 
 }
+
 .News_card101 {
     width: 340px;
     margin-top: 20px;
@@ -11039,6 +11040,7 @@ h6,
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 
 }
+
 .News_card:hover {
     cursor: pointer;
 }
@@ -11052,6 +11054,7 @@ h6,
     margin: auto;
     padding-bottom: 30px;
 }
+
 .News_cards101 {
     display: flex;
     flex-wrap: wrap;
@@ -11165,6 +11168,10 @@ body {
 
 .mySwiper100 {
     margin-top: 2%;
+}
+
+.News_cards101 {
+    display: none;
 }
 
 @media (max-width:993px) {
