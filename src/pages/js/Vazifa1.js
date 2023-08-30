@@ -236,7 +236,7 @@ export default function Comment1() {
       JSON.parse(localStorage.getItem("page_video")).id
     );
     formdata.append("feedback", ".");
-    if (page === 1) {
+    if (page === 1 ) {
       Swal.fire("Вы не выбрали какую оценку вы хотите поставить");
     } else {
       axios
@@ -252,7 +252,6 @@ export default function Comment1() {
             "display:none !important";
           document.querySelector(".mark-uchun-koish-joy").style =
             "display:none !important";
-          Swal.fire("Вы поставили оценку");
           axios
             .get(`${url}/api/course_theme_task_student`, {
               headers: {
@@ -291,7 +290,7 @@ export default function Comment1() {
       JSON.parse(localStorage.getItem("page_video")).id
     );
     formdata.append("feedback", ".");
-    if (page === 1) {
+    if (page === 1 ) {
       Swal.fire("Вы не выбрали оценку");
     } else {
       axios
@@ -303,7 +302,6 @@ export default function Comment1() {
             "display:block";
           document.querySelector(".mark-uchun-koish-joy1").style =
             "display:none !important";
-          Swal.fire("Вы изменили оценку");
           axios
             .get(`${url}/api/course_theme_task_student`, {
               headers: {

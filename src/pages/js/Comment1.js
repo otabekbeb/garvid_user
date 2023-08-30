@@ -18,18 +18,12 @@ import anonim from '../img/anonim-user.png'
 export default function Comment1() {
   const [comment, setComment] = useState([])
   const [comment2, setComment2] = useState([])
-
-  const [page, setPage] = useState(4)
-  const [state1, setState1] = React.useState();
-  const [dobavit, setDobavit] = useState([])
   const [subcoment, setSubcoment] = useState(0)
-  const [user, setUser] = useState([])
   const [oneuser, setoneuser] = useState([])
   const [task_comnet_id, setTask_comnet_id] = useState(JSON.parse(localStorage.getItem("task_commnet_id")))
 
 
   useEffect(() => {
-    // task_comnet_id 
     axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
     })
