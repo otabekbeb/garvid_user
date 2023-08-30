@@ -21,7 +21,7 @@ import { BsChat } from 'react-icons/bs'
 import { AiOutlineEye } from 'react-icons/ai'
 import { FreeMode, Pagination } from 'swiper/modules';
 
-import Groupimg from "../img/Imgyoq.jpg";
+import Groupimg from "../img/oooo.png";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -105,7 +105,7 @@ export default function News() {
                 {base.map((item, key) => {
                   return (
                     <SwiperSlide onClick={() => { localStorage.setItem("baseId", key) }} className="position-relative overflow-hidden" style={{ height: '500px' }}>
-                      <img className="img-fluid h-100" src={item.image} style={{ objectFit: 'cover' }} />
+                      {item.image === null?(<img className="img-fluid h-100"  style={{ objectFit: 'cover',width:'100%' }} src={Groupimg} alt="" />):( <img className="img-fluid h-100"  style={{ objectFit: 'cover' }} src={item.image} />)} 
                       <div className="overlay">
                         <div className="mb-2">
                           <a className="text-white">{item.time_create.slice(0, 10)}</a>
@@ -125,7 +125,7 @@ export default function News() {
                     return (
                       <div onClick={() => { window.location = "/newspage"; localStorage.setItem("baseId", key) }} style={{ cursor: "pointer" }} className="col-md-6 px-0">
                         <div className="position-relative overflow-hidden" style={{ height: '250px' }}>
-                          <img className="img-fluid w-100 h-100" src={item.image} style={{ objectFit: 'cover' }} />
+                        {item.image === null?(<img className="img-fluid h-100"  style={{ objectFit: 'cover' }} src={Groupimg} alt="" />):( <img className="img-fluid h-100"  style={{ objectFit: 'cover' }} src={item.image} />)} 
                           <div className="overlay">
                             <div className="mb-2">
                               <a className="text-white" >{item.time_create.slice(0, 10)}</a>
@@ -181,7 +181,7 @@ export default function News() {
                   <SwiperSlide >
                     <div className="position-relative overflow-hidden" style={{ height: "300px" }}>
           {item.image===null?(
-                  <img style={{width:"50%",margin:'auto'}} src={Groupimg} alt="" />):(<img src={item.image} alt="" />)}
+                  <img style={{width:"100%",margin:'auto'}} src={Groupimg} alt="" />):(<img src={item.image} alt="" />)}
                       <div className="overlay">
                         <div className="mb-2">
                           <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
@@ -208,23 +208,24 @@ export default function News() {
 
         <div className="News">
           <div className="News_cards">
-            <div className="News_card" >
+            {base.map(item=>{
+            return(
+              <div className="News_card" >
               <button className='Card_button'>FEATURED NEWS</button>
-              <img className="img-fluid w-100" src="https://blog.hubspot.com/hubfs/CSS%20Flexbox.png" />
+             {item.image === null?(<img style={{width:'100%'}}  src={Groupimg} alt="" />):( <img className="img-fluid w-100" src={item.image} />)}
               <div className="bg-white border border-top-0 p-4">
                 <div className="mb-2">
                   <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                    href="">Business</a>
-                  <a className="text-body" href=""><small>Jan 01, 2045</small></a>
+                    href="">{item.name}</a>
+                  <a className="text-body" href=""><small>{item.time_create.slice(0,10)}</small></a>
                 </div>
-                <a className="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                <p className="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                  rebum clita rebum dolor stet amet justo</p>
+                <a className="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">{item.description}</a>
+                <p className="m-0">{item.description}</p>
               </div>
               <div className="d-flex justify-content-between bg-white border border-top-0 p-4">
                 <div className="d-flex align-items-center">
                   <img className="rounded-circle mr-2" src="img/user.jpg" alt="" />
-                  <small>John ODIL</small>
+                  <small>{item.name}</small>
                 </div>
                 <div className="d-flex align-items-center">
                   <small className="ml-3"><AiOutlineEye />12345</small>
@@ -232,78 +233,10 @@ export default function News() {
                 </div>
               </div>
             </div>
-            <div className="News_card" >
-              <button className='Card_button'>FEATURED NEWS</button>
-              <img className="img-fluid w-100" src="https://blog.hubspot.com/hubfs/CSS%20Flexbox.png" />
-              <div className="bg-white border border-top-0 p-4">
-                <div className="mb-2">
-                  <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                    href="">Business</a>
-                  <a className="text-body" href=""><small>Jan 01, 2045</small></a>
-                </div>
-                <a className="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                <p className="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                  rebum clita rebum dolor stet amet justo</p>
-              </div>
-              <div className="d-flex justify-content-between bg-white border border-top-0 p-4">
-                <div className="d-flex align-items-center">
-                  <img className="rounded-circle mr-2" src="img/user.jpg" alt="" />
-                  <small>John ODIL</small>
-                </div>
-                <div className="d-flex align-items-center">
-                  <small className="ml-3"><AiOutlineEye />12345</small>
-                  <small className="ml-3"><BsChat />123</small>
-                </div>
-              </div>
-            </div>
-            <div className="News_card" >
-              <button className='Card_button'>FEATURED NEWS</button>
-              <img className="img-fluid w-100" src="https://blog.hubspot.com/hubfs/CSS%20Flexbox.png" />
-              <div className="bg-white border border-top-0 p-4">
-                <div className="mb-2">
-                  <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                    href="">Business</a>
-                  <a className="text-body" href=""><small>Jan 01, 2045</small></a>
-                </div>
-                <a className="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                <p className="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                  rebum clita rebum dolor stet amet justo</p>
-              </div>
-              <div className="d-flex justify-content-between bg-white border border-top-0 p-4">
-                <div className="d-flex align-items-center">
-                  <img className="rounded-circle mr-2" src="img/user.jpg" alt="" />
-                  <small>John ODIL</small>
-                </div>
-                <div className="d-flex align-items-center">
-                  <small className="ml-3"><AiOutlineEye />12345</small>
-                  <small className="ml-3"><BsChat />123</small>
-                </div>
-              </div>
-            </div>
-            <div className="News_card" >
-              <button className='Card_button'>FEATURED NEWS</button>
-              <img className="img-fluid w-100" src="https://blog.hubspot.com/hubfs/CSS%20Flexbox.png" />
-              <div className="bg-white border border-top-0 p-4">
-                <div className="mb-2">
-                  <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                    href="">Business</a>
-                  <a className="text-body" href=""><small>Jan 01, 2045</small></a>
-                </div>
-                <a className="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                <p className="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                  rebum clita rebum dolor stet amet justo</p>
-              </div>
-              <div className="d-flex justify-content-between bg-white border border-top-0 p-4">
-                <div className="d-flex align-items-center">
-                  <img className="rounded-circle mr-2" src="img/user.jpg" alt="" />
-                  <small>John ODIL</small>
-                </div>
-                <div className="d-flex align-items-center">
-                  <small className="ml-3"><AiOutlineEye />12345</small>
-                  <small className="ml-3"><BsChat />123</small>
-                </div>
-              </div>
-            </div>
+            )
+
+            })}
+          
           </div>
           {/* <div className="News_cards101">
             <div className="News_card101" >
