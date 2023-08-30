@@ -4,9 +4,9 @@
     text-decoration: none;
 }
 .gray_navbar{
-    padding: 100px 0px 0px 8.594vw;
+    padding: 40px 0px 0px 8.594vw;
     background: white;
-    border-bottom: 1px solid #dcdcdc !important;
+    /* border-bottom: 1px solid #dcdcdc !important; */
 }
 .course_inp{
     display: flex;
@@ -60,7 +60,7 @@ line-height: normal;
 
     @media (max-width:1350px) {
         .gray_navbar{   
-            padding: 100px 0px 0px 3.646vw;
+            padding: 40px 0px 0px 3.646vw;
         }
         .nav_menu{
             gap: 30px !important;
@@ -71,7 +71,7 @@ line-height: normal;
     }
 @media (max-width:1000px) {
     .gray_navbar{
-        padding: 100px 20px 0px 20px;
+        padding: 30px 20px 0px 20px;
         padding-left: 20px;
     }
     .course_inp{
@@ -131,9 +131,7 @@ line-height: normal;
         border: 2px solid #818b9f;
         background-color: #babfc9;
     }
-    .gray_navbar{
-        padding-bottom: 20px;
-    }
+
     .bar{
         display: block;
         font-size: 20px;

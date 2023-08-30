@@ -49,7 +49,7 @@ export default function Workforteach() {
     function deletetask() {
         axios.delete(`${url}/api/course_theme_task_student/${deleteId}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             alert("Данные удалены")
-            window.location.assign("")
+            document.querySelector(".m_delete_tepadan2").style = "display:none"
             document.querySelector("#EducationdeleteModal").style = "display:none"
             axios.get(`${url}/api/course_theme_task_student`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
                 setTasks(res.data)
@@ -156,7 +156,7 @@ export default function Workforteach() {
                         <>
                             <div className="m_zadach_block">
                                 <div className="fors_imagesa">
-                                    {item.image ? (<img className='jony_foto' src={img_for_null} alt="" />) : (<img src={`${url}/` + item.image} alt="" />)}</div>
+                                    {item.image ? (<img src={`${url}/` + item.image} alt="" />) : (<img src={img_for_null} alt="" />)}</div>
                                 <h4>{item.content}</h4>
                                 <div className="zadac_df">
                                     <span><FaHourglassStart style={{ color: "black", marginRight: "7px" }} /> {(item.time_create).slice(0, 10)}</span>
@@ -185,11 +185,11 @@ export default function Workforteach() {
                                             <FiDownload /> Добавить задание
                                         </div>
                                         <input type="file" className='img_inp_zadac' />
-                                    </div><br />
+                                    </div>
                                     <div className="m_input_bilmafim">
                                         <label htmlFor="">Name:</label>
                                         <input type="text" name="" id="" className='inp_name_zadac' />
-                                        <label htmlFor="">course theme:</label>
+                                        <label htmlFor="">Course theme:</label>
                                         <input type="text" name="" id="" className='inp_course_theme_zadac' />
                                         <label htmlFor="">vremya bowlaniwi:</label>
                                         <input type="date" name="" id="" className='inp_bdate_zadac' />
@@ -231,7 +231,7 @@ export default function Workforteach() {
                             <FiDownload /> Добавить задание
                         </div>
                         <input type="file" className='img_inp_zadacput' />
-                    </div><br />
+                    </div>
                     <div className="m_input_bilmafim">
                         <label htmlFor="">Name:</label>
                         <input type="text" name="" id="" className='inp_name_zadacput' />
