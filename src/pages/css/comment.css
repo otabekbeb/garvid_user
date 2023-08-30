@@ -3,6 +3,7 @@
     font-size: 15px;
 }
 .m_comment_kotta{
+    width: 100%;
     padding: 10px;
 }
 .m_comment_text {
@@ -10,7 +11,7 @@
 }
 .m_otdel_bgc{
     background-color: #fff;
-    width: 60%;
+    width: 100%;
     padding: 20px;
 }
 #comment_file, #comment_file1{
@@ -177,6 +178,9 @@ height: auto;
     font-size: 13px;
 }
 @media (max-width:1000px) {
+    .m_comment_kotta{
+        width: 100%;
+    }
     .m_otdel_bgc{
         background-color: #fff;
         width: 100%;
@@ -355,7 +359,7 @@ height: auto;
     width: 1px;
     display: none;
     background-color: #fff;
-    width: 60%;
+    width: 100%;
     padding: 20px;
 }
 .m_otvet_comment_back{
@@ -408,7 +412,7 @@ height: auto;
 
 .view_all_otdel_oyna{
     height: auto;
-    width: 60%;
+    width: 100%;
     display: none;
     background-color: #fff;
     padding: 20px;
