@@ -110,48 +110,6 @@ export default function Ourcourse() {
             <i><BiSearch /></i>
           </div>
         </div>
-        <div className="nav_tab">
-          <ul className='nav_menu'>
-            <li className='nav_item'>Everything</li>
-            <li className='nav_item'>Programming</li>
-            <li className='nav_item'>Design</li>
-            <li className='nav_item'>Marketing</li>
-            <li className='nav_item'>Business</li>
-            <li className='nav_item'>
-
-              Health</li>
-            <li className='nav_item'>Management</li>
-            <li className='nav_item'>Accounting</li>
-            <li className='nav_item'>Security</li>
-          </ul>
-          <div className="burger">
-            <GiHamburgerMenu onClick={() => menuModal()} className='bar' />
-            <VscChromeClose onClick={() => menuModalClone()} className='bar_clone' />
-          </div>
-          <ul className='burger_media'>
-            <div className="burger_media_big_div">
-              <div className='burger_media_div'>
-                <li className='block_item'>Everything</li>
-                <li className='block_item'>Programming</li>
-                <li className='block_item'>Design</li>
-                <li className='block_item'>Marketing</li>
-                <li className='block_item'>Business</li>
-                <li className='block_item'>Health</li>
-                <li className='block_item'>Management</li>
-                <li className='block_item'>Accounting</li>
-                <li className='block_item'>Security</li>
-              </div>
-              <div className='burger_media_div'>
-                <li className="block_item">Everything</li>
-                <li className="block_item">Game programming</li>
-                <li className="block_item">Web programming</li>
-                <li className="block_item">Desktop programming</li>
-                <li className="block_item">Desktop programming</li>
-                <li className="block_item">Mobil programming</li>
-              </div>
-            </div>
-          </ul>
-        </div>
       </div>
 
 

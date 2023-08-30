@@ -11,9 +11,9 @@ export default function Azo() {
     const [follow, setFollow] = useState([])
     const [following, setFollowing] = useState(localStorage.getItem("OneuserId"))
     function folowcolor1(key) {
-        axios.delete(`${url}/api/follow/${key}`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
-         alert("oxsha")   
-        }).catch(err=>{
+        axios.delete(`${url}/api/follow/${key}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+            alert("oxsha")
+        }).catch(err => {
             alert("xato")
         })
     }
@@ -47,7 +47,6 @@ export default function Azo() {
                         <img src={Groupimg} alt="" />
                         <h4>Нет подписчиков</h4>
                         {/* <div className="delete_btns">
-
                             <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>
                         </div> */}
                     </div>) : (<>
@@ -55,9 +54,9 @@ export default function Azo() {
                             if (following == item.topuser) {
                                 return <>
                                     {users.map(item1 => {
-                                        
+
                                         if (item1.id == item.minuser) {
-                                            localStorage.setItem("subscribersLength",follow.filter(follow=>follow.topuser==following).length)
+                                            localStorage.setItem("subscribersLength", follow.filter(follow => follow.topuser == following).length)
                                             return (
                                                 <a>
                                                     <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -69,7 +68,7 @@ export default function Azo() {
                                                                 <h3 style={{ lineHeight: "70px" }} className="name">{item1.username}</h3>
                                                             </div>
                                                             <center><ul className="social">
-                                                            <button style={{ background: "gray" }} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
+                                                                <button style={{ background: "gray" }} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
                                                             </ul></center>
                                                         </div>
                                                     </div>

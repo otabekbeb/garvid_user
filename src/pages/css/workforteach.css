@@ -1,9 +1,10 @@
-.m_zadach p{
-width: 100%;
-margin-top: 10px;
-font-size: 13px;
+.m_zadach p {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 13px;
 }
-.m_zadach{
+
+.m_zadach {
     width: 80%;
     display: flex;
     justify-content: space-around;
@@ -12,7 +13,8 @@ font-size: 13px;
     margin-bottom: 50px;
     gap: 20px;
 }
-#zadaca_put{
+
+#zadaca_put {
     background-color: #000000da;
     width: 100%;
     height: 100vh;
@@ -21,17 +23,18 @@ font-size: 13px;
     top: 80px;
     left: 0;
     padding: 10px;
-    display: none;  
+    display: none;
     position: fixed;
     top: 0;
     z-index: 200;
 }
-#zadac_put_card{
+
+#zadac_put_card {
     justify-content: center;
     margin: auto !important;
     display: block;
     padding: 25px;
-    box-shadow:  0 0px 40px #a3a5a654;
+    box-shadow: 0 0px 40px #a3a5a654;
     background-color: #f2f5fb;
     width: 500px;
     height: auto;
@@ -39,9 +42,11 @@ font-size: 13px;
     position: fixed;
     z-index: 200;
 }
-.m_zadach_block{
+
+.m_zadach_block {
     transition: 0.3s;
     width: 300px;
+    padding-top: 60px !important;
     height: auto;
     /* min-height: 200px; */
     margin-top: 100px;
@@ -51,29 +56,33 @@ font-size: 13px;
     border-radius: 10px;
     min-width: 330px;
 }
-.m_zadach_block:hover{
+
+.m_zadach_block:hover {
     box-shadow: 0px 12px 45px 0px rgba(83, 109, 253, 0.25);
-   
+
 }
 
 @media (max-width:410px) {
-    .m_zadach_block{
+    .m_zadach_block {
         transition: 0.5s;
         width: 20% !important;
         margin-top: 20px;
-        padding: 10px;  
+        padding: 10px;
         overflow: hidden;
         border-radius: 20px;
         min-width: 300px;
     }
-    .m_zadach_block p{
+
+    .m_zadach_block p {
         font-size: 10px;
     }
-    .m_zadach_ktug_icon{
+
+    .m_zadach_ktug_icon {
         transition: 0.5s;
         display: flex;
-        align-items: center;justify-content: center;
-        color: #44bef1  ;
+        align-items: center;
+        justify-content: center;
+        color: #44bef1;
         width: 30px;
         height: 30px;
         border-radius: 50%;
@@ -82,10 +91,12 @@ font-size: 13px;
         margin-bottom: 10px;
         cursor: pointer;
     }
-    .m_zadach_ktug_icon1{
+
+    .m_zadach_ktug_icon1 {
         transition: 0.5s;
         display: flex;
-        align-items: center;justify-content: center;
+        align-items: center;
+        justify-content: center;
         color: red;
         width: 30px;
         height: 30px;
@@ -96,7 +107,8 @@ font-size: 13px;
         cursor: pointer;
     }
 }
-.fors_imagesa{
+
+.fors_imagesa {
     margin-top: -70px !important;
     display: flex;
     justify-content: center;
@@ -106,15 +118,18 @@ font-size: 13px;
     overflow: hidden;
     border-radius: 10px;
 }
-.m_zadach img{
+
+.m_zadach img {
     height: 100%;
     border-radius: 10px;
 }
-.m_zadach .jony_foto{
+
+.m_zadach .jony_foto {
     width: 100%;
     height: 200px !important;
 }
-.m_zadacha_icon{
+
+.m_zadacha_icon {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -122,12 +137,13 @@ font-size: 13px;
     /* margin-right: 10px; */
     /* margin-bottom: 0px !important; */
 }
-.m_zadach_ktug_icon{
+
+.m_zadach_ktug_icon {
     transition: 0.5s;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #44bef1  ;
+    color: #44bef1;
     width: 47%;
     height: 40px;
     border-radius: 5px;
@@ -136,12 +152,13 @@ font-size: 13px;
     /* margin-bottom: 10px; */
     cursor: pointer;
 }
-.m_zadach_ktug_icon1{
+
+.m_zadach_ktug_icon1 {
     transition: 0.5s;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: red  ;
+    color: red;
     width: 47%;
     height: 40px;
     border-radius: 5px;
@@ -151,51 +168,61 @@ font-size: 13px;
     /* margin-bottom: 10px; */
     cursor: pointer;
 }
-.m_zadach_ktug_icon1:hover{
+
+.m_zadach_ktug_icon1:hover {
     color: #fff;
     background-color: red;
 }
-.m_zadach_ktug_icon:hover{
-    color: #fff  ;
+
+.m_zadach_ktug_icon:hover {
+    color: #fff;
     background-color: #44bef1;
 
 }
 
-.m_zadach_block h4{
+.m_zadach_block h4 {
     margin-top: 20px;
 }
-.m_zadachi_dobavit{
+
+.m_zadachi_dobavit {
     display: block;
     padding: 25px;
-    box-shadow:  0 0px 40px #a3a5a654;
+    box-shadow: 0 0px 40px #a3a5a654;
     background-color: #f2f5fb;
     width: 500px;
     height: auto;
     border-radius: 10px;
     position: fixed;
     z-index: 200;
-}   
+}
 
 
-.a_delete_bgc{
+.a_delete_bgc {
     margin: auto;
     width: 600px;
     height: 350px;
     border-radius: 5px;
     background-color: white;
-    box-shadow:  0 0px 40px #a3a5a654;
+    box-shadow: 0 0px 40px #a3a5a654;
 }
-.m_input_bilmafim{
+
+.m_input_bilmafim {
     gap: 10px;
 }
-.m_input_bilmafim input{
+
+.m_input_bilmafim input {
     width: 100%;
     height: 35px;
     padding: 10px;
     border: 1px solid #dcdcdc;
     border-radius: 5px;
 }
-.m_input_bilmafim select{
+.m_input_bilmafim input:focus{
+    transition: 0.2s;
+    box-shadow: 0px 0px 0px 3px #44bdf15f;
+}
+
+.m_input_bilmafim select {
     /* margin-top: 10px; */
     border: none;
     border-radius: 5px;
@@ -205,28 +232,32 @@ font-size: 13px;
     background-color: #fff;
     color: #9DA7BB;
 }
-.m_input_bilmafim textarea{
-    margin-top: 10px;
-    border: none ;
+
+.m_input_bilmafim textarea {
+    border: none;
     border-radius: 5px;
-    padding: 7px 10px; 
+    padding: 7px 10px;
     outline: none;
     height: 150px;
     width: 100%;
 }
+.m_input_bilmafim label{
+    margin-top: 3px;
+}
 
 
 .m_dobavit_kurs {
- width: 100%;   
- display: flex;
- justify-content: flex-start;
- align-items: center;
- margin-top: 30px;
- margin-bottom: 40px;
- margin-left: 9%;
+    /* width: 100%; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    margin-left: 9%;
 
 }
-.m_dobavit_kurs  button{
+
+.m_dobavit_kurs button {
     color: #44bef1;
     background-color: white;
     border: 1px solid #44bef1;
@@ -238,14 +269,17 @@ font-size: 13px;
     margin-left: 15px;
     transition: all .3s ease;
 }
-.m_dobavit_kurs  button:hover{
+
+.m_dobavit_kurs button:hover {
     color: white;
     background-color: #44bef1;
 }
-.for_center{
+
+.for_center {
     display: block;
 }
-.m_zadacha_tepadan{
+
+.m_zadacha_tepadan {
     background-color: #000000da;
     width: 100%;
     height: 100vh;
@@ -254,12 +288,13 @@ font-size: 13px;
     top: 80px;
     left: 0;
     padding: 10px;
-    display: none;  
+    display: none;
     position: fixed;
     top: 0;
     z-index: 200;
 }
-.m_zadacha_tepadan1{
+
+.m_zadacha_tepadan1 {
     background-color: rgba(255, 255, 255, 0.4);
     width: 100%;
     height: 100vh;
@@ -268,34 +303,36 @@ font-size: 13px;
     top: 80px;
     left: 0;
     padding: 10px;
-    display: none;  
+    display: none;
     position: fixed;
     top: 0;
     z-index: 200;
 }
-.m_delete_tepadan2{
+
+.m_delete_tepadan2 {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    
+
     background-color: rgba(0, 0, 0, 0.62);
     display: none;
     justify-content: center;
     z-index: 1000000000000000000000 !important;
 }
 
-.m_clouse_x{
+.m_clouse_x {
     cursor: pointer;
     font-size: 24px;
     position: absolute;
-    top: -5px;right: 2px;
+    top: -5px;
+    right: 2px;
     z-index: 200;
 }
 
-.m_zadachi_dobavit  button{
-    color: #fff  ;
+.m_zadachi_dobavit button {
+    color: #fff;
     background-color: #44bef1;
     width: 150px;
     height: 30px;
@@ -303,22 +340,24 @@ font-size: 13px;
     margin-top: 10px;
 }
 
-.m_input_file_dobavit{
-    width: 100% ;
-    height: 100px;
+.m_input_file_dobavit {
+    width: 100%;
+    height: 40px;
     border-radius: 5px;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    margin-bottom: 5px;
 }
-.m_input_file_dobavit input{ 
+
+.m_input_file_dobavit input {
     border: none;
     border-radius: 10px;
     padding: 10px;
     outline: none;
-    height: 100px;
+    height: 40px;
     position: absolute;
     top: 0;
     left: 0;
@@ -326,10 +365,10 @@ font-size: 13px;
     opacity: 0;
 }
 
-.a_input_file12{
+.a_input_file12 {
     position: absolute;
-    width: 100% ;
-    height: 100px; 
+    width: 100%;
+    height: 40px;
     font-size: 18px;
     gap: 5px;
     border-radius: 5px;
@@ -339,42 +378,47 @@ font-size: 13px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
-.a_button_for_end{
+
+.a_button_for_end {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
 
 
-.for_center img{
+.for_center img {
     margin: auto;
     display: flex;
     margin-top: 30px;
     width: 250px;
     height: 190px;
 }
-.for_center h4{
+
+.for_center h4 {
     font-size: 18px;
     margin-top: 10px;
     display: flex;
     justify-content: center;
 }
-.for_center{
+
+.for_center {
     width: 80%;
     margin-left: 10%;
     height: 100%;
     padding: 15px;
 }
-.a_delete_button{
+
+.a_delete_button {
     margin-top: 20px;
     gap: 20px;
     display: flex;
     justify-content: center;
 }
-.a_delete_yes{
+
+.a_delete_yes {
     width: 150px;
     height: 30px;
     border: none;
@@ -383,10 +427,12 @@ font-size: 13px;
     border-radius: 5px;
     transition: 0.2s;
 }
-.a_delete_yes:hover{
+
+.a_delete_yes:hover {
     background: #10c8a0ae;
 }
-.a_delete_no{
+
+.a_delete_no {
     width: 150px;
     height: 30px;
     border: none;
@@ -395,13 +441,14 @@ font-size: 13px;
     background: red;
     transition: 0.2s;
 }
-.a_delete_no:hover{
+
+.a_delete_no:hover {
     background: rgba(255, 0, 0, 0.556);
 }
 
 
 @media (max-width:800px) {
-    .m_zadachi_dobavit{
+    .m_zadachi_dobavit {
         display: block;
         padding: 25px;
         background-color: #f2f5fb;
@@ -410,8 +457,9 @@ font-size: 13px;
         border-radius: 10px;
         position: fixed;
         z-index: 200;
-    }   
-    .a_delete_bgc{
+    }
+
+    .a_delete_bgc {
         padding: 10px;
         background-color: #f2f5fb;
         width: 90%;
@@ -421,17 +469,19 @@ font-size: 13px;
         z-index: 200;
         padding: 10px;
     }
-    .for_center img{
+
+    .for_center img {
         width: 100%;
         height: 300px;
     }
-    .for_center p{
+
+    .for_center p {
         width: 100%;
         margin-top: 10px;
         font-size: 15px !important;
     }
 
-    .a_delete_yes{
+    .a_delete_yes {
         width: 80px;
         height: 30px;
         background-color: #ff0000;
@@ -439,7 +489,8 @@ font-size: 13px;
         border-radius: 5px;
         font-size: 13px;
     }
-    .a_delete_no{
+
+    .a_delete_no {
         width: 80px;
         height: 30px;
         background-color: #10C8A0;
@@ -447,7 +498,8 @@ font-size: 13px;
         border-radius: 5px;
         font-size: 13px;
     }
-    .for_center{
+
+    .for_center {
         width: 100%;
         margin-left: 0;
         height: 100%;
@@ -457,44 +509,50 @@ font-size: 13px;
 }
 
 @media (max-width:550px) {
-    .for_center img{
+    .for_center img {
         width: 100%;
         height: 200px;
     }
-    .for_center p{
+
+    .for_center p {
         width: 100%;
         margin-top: 10px;
         font-size: 13px !important;
     }
 }
-.a_delete_button{
+
+.a_delete_button {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;  
+    gap: 10px;
     margin-top: 20px;
 }
-.zadac_df{
-    display: flex; 
+
+.zadac_df {
+    display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 20px;
     justify-content: space-between;
     align-items: center;
 }
-.zadac_df span{
+
+.zadac_df span {
     font-size: 16px;
     font-weight: 400;
     color: #9DA7BB;
     display: flex;
     align-items: center;
 }
-.ortapp{
+
+.ortapp {
     font-size: 16px !important;
     margin-top: 15px !important;
     margin-bottom: 0px;
 }
-.ortap1{
+
+.ortap1 {
     font-size: 16px !important;
     margin-top: 5px !important;
 }
