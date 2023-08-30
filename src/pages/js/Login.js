@@ -81,9 +81,7 @@ export default function Login() {
       else if (res.data.position == 4) {
         window.location = "/studentall"
       }
-
-
-    }).catch(err => {
+     }).catch(err => {
       Swal.fire('Пароль или логин неправилный. Попробуйте снова')
       // Swal.fire("Пароль или логин неправилный. Попробуйте снова")
     })

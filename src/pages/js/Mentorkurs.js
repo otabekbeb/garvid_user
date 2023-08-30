@@ -74,7 +74,7 @@ export default function Searchfilter() {
     document.querySelector(".edit_card").style = "display:flex !important"
     setTimeout(() => {
       axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-        setKursdata(res.data)
+        // setKursdata(res.data)
         const filter = res.data.filter(item => item.id == id)
         document.querySelector("#name").value = filter[0].name
         document.querySelector("#description").value = filter[0].description
