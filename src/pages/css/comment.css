@@ -1,5 +1,5 @@
   .m_comment_text1505 {
-    width: 80%;
+    width: 100%;
     font-size: 15px;
 }
 .m_comment_kotta{
@@ -23,20 +23,35 @@
 
 .m_comment{
 border-radius: 5px;
-display: flex;
-gap: 20px;
+display: block;
+border-radius: 5px;
+border: 1px solid #9DA7BB50;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+padding: 15px;
+margin-top: 20px;
+width: 100%;
+}
+
+.user-name-timecreate p{
+    color: #9DA7BB;
+    font-size: 10px;
+}
+
+.user-name-timecreate h5{
+    font-size: 18px;
 }
 
 .for_scroll{
     width: 1px;
     min-height: 350px;
-    height: 450px;
+    max-height: 800px;
     width: 100%;
     overflow: hidden;
     overflow-y: scroll;
+    padding: 5px;
 }
 .m_comment_kotta ::-webkit-scrollbar {
-    width: 1px;
+    width: 0px;
     opacity: 0;
   }
 .m_comment_otvet p{
@@ -79,9 +94,8 @@ gap: 20px;
     gap: 10px;
 }
 .m_comment_img img{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    width: 50px;
+    height: 50px;
 }
 
 .m_comment_img1 img{
@@ -100,10 +114,16 @@ gap: 20px;
         border: none;
 }
 .m_comment_yozish textarea{
-    padding-left: 30px;
+    padding-left: 20px;
     outline: none;
     border: none;
     padding-top: 2px;
+    width: 100%;
+    height: 100px !important;
+}
+.m_comment_yozish textarea:focus{
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #9DA7BB;
     width: 100%;
     height: 100px !important;
 }
@@ -351,10 +371,15 @@ height: auto;
 }
 
 .comment_otevet_all{
-    height: 350px;
+    min-height: 100px;
+    max-height: 800px;
     overflow: hidden;
     overflow-y: scroll;
 }
+.otevet_comment_otdel_oyna ::-webkit-scrollbar {
+    width: 0px;
+    opacity: 0;
+  }
 .otevet_comment_otdel_oyna{
     width: 1px;
     display: none;
@@ -371,11 +396,6 @@ height: auto;
     user-select: none;
 }
 
-.comment_otevet_all img{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
 
 .df_div_comment_page{
     display: flex;
@@ -450,7 +470,7 @@ height: auto;
 
 
 .for_no_comment{
-    border: 1px solid #9DA7BB50;
+    box-shadow: 0px 0px 10px #9DA7BB;
     border-radius: 10px;
     width: 66%;
     margin-left: 15%;
@@ -482,8 +502,11 @@ height: auto;
     width: 80%;
 }
 
+.for-flex-time-name-image{
+    display: flex;
+    gap: 10px;
+}
+.user-name-timecreate{
+    display: block;
 
-/* .span_comment1202{
-    color: #44bef1;
-    text-decoration: underline;
-} */
+}
