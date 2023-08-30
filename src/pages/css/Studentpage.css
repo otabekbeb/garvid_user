@@ -26,6 +26,7 @@
   .studentpagess .edu_btns{
     display: none;
   }
+
   .studentpagess .search_big_div{
     display: none;
   }
@@ -33,5 +34,11 @@
     display: none;
   }
   .studentpagess .m_dobavit_kurs{
-    display: none;
+    display: none;}
+
+
+
+    
+  .studentpagess .row{
+    justify-content: center;
   }
