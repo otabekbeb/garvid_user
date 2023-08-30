@@ -903,7 +903,7 @@ export default function Mentor() {
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(0)} style={toggle === 0 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Education</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_education")} pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Correspondence</h1></div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Tasks</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_task")} pieces</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(7)} style={toggle === 7 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Test</h1>{toggle === 7 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(7)} style={toggle === 7 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Test</h1></div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My subscribtions</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_azo")} pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Courses</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_courses")}  pieces</div>) : ("")}</div>
           </div>
@@ -1031,25 +1031,7 @@ export default function Mentor() {
 
         </div>
         <div className={toggle === 3 ? "show-content" : "content"}>
-          <div className="m_zadach">
-            {stTask.map(item => {
-              localStorage.setItem("for_task", stTask.length)
-              return (
-                <div className="m_zadach_block">
-                  {item.image === null ? (<img className='jony_foto' src={img_for_null} alt="" />) : (<img src={`${url}/api/course_theme_task_student` + item.image} alt="" />)}
-                  <h4>{item.content}</h4>
-                  <div className="zadac_df">
-                    <span>Дата Начала: {(item.time_create).slice(0, 10)}</span>
-                    <span>Дата Окончания: {(item.time_update).slice(0, 10)}</span>
-                  </div>
-                  <p>{item.feedback}</p>
-                  <p>Оценка:{item.mark}</p>
-
-                </div>
-              )
-            })}
-
-          </div>
+        <Sertifikat/>
 
 
         </div>

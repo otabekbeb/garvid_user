@@ -3,13 +3,13 @@ import axios from "axios";
 import url from "./Host";
 
 export default function Video({ match }) {
-  const [domain,setDomain]=useState()
+  const [domain,setDomain]=useState("")
   const id = match.params.id;
 
   useEffect(() => {
     axios.get(`${url}/super/pay`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
-      // const domain = `https://${res.data.domain}.daily.co/`;
-      setDomain(res.data.domain)
+      const domain = `https://${res.data.domain}.daily.co/`;
+      setDomain(domain)
     })
 
     axios

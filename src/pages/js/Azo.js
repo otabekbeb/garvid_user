@@ -62,12 +62,12 @@ export default function Azo() {
                 </a>
               </div>
             </div>) : (<> {follow.map((item, key) => {
-                    return <>
+                return <>
                         {users.map(item1 => {
-                            localStorage.setItem("for_azo", users.length)
                             if (item1.id == item.topuser) {
+                                localStorage.setItem("for_azo", follow.filter(follow1=>follow1.topuser==item1.id).length)
                                 return (
-
+                                    <>
                                     <a>
                                         <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
                                             <div className="our-team">
@@ -84,7 +84,7 @@ export default function Azo() {
                                         </div>
                                     </a>
 
-
+</>
                                 )
                             }
                         })}
