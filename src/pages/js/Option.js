@@ -9,7 +9,7 @@ class Options extends Component {
 		return (
 			<div className='options'>
 				{options.map((option, index) => (
-					<div key={index} className="form-check">
+					<div style={selectedOption===option?{background:"#44bef1",border: "1px solid #44bef1"}:{background:"white"}} key={index} className="form-check">
 						<input
 							type="radio"
 							name="option"
