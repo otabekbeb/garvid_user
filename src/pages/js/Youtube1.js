@@ -11,25 +11,42 @@ import Qollamalar from "../js/Bilmadim1";
 import Scachat from "../js/Scachat";
 import Vazifa from "../js/Vazifa1";
 import Comment from "../js/Comment1";
-import Usernavbar from "../js/Usernavbar";
+import Usernavbar from "../js/Navbar";
 import Loader from "./loader";
 import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
+import err from "../img/istockphoto-1321436405-612x612.jpg"
+import novideo from '../img/download.svg'
 
-import istok_img from "../img/istockphoto-1321436405-612x612.jpg";
 
-import { BiBorderBottom, BiTime } from "react-icons/bi";
-import Footer1 from "./Footer1"
-import "../css/youtube1.css";
-import Accordion from "react-bootstrap/Accordion";
-import "bootstrap/dist/css/bootstrap.min.css";
-import axios from "axios";
-import url from "./Host";
-import err from "../img/istockphoto-1321436405-612x612.jpg";
-import novideo from "../img/download.png";
+import '../css/comment.css'
+import { FiCornerUpLeft } from 'react-icons/fi'
+import { FcFile } from 'react-icons/fc'
+import img_comment from '../img/Ellipse.jpg'
+import img_comment1 from '../img/Ellipse.png'
+import axios from 'axios'
+import url from './Host'
+import Swal from "sweetalert2";
+import person from '../img/149071.png'
+import { MdClose } from "react-icons/md";
+import "../css/yozishmalar.css";
+import { AiOutlineComment, AiOutlineDelete } from "react-icons/ai"
+import { CgClose } from "react-icons/cg"
+import anonim from '../img/anonim-user.png'
+import Footer1 from './Footer1.js'
+
+
+
+import "../css/vazifa1.css";
+import "../css/yozishmalar.css";
+import { TfiMarkerAlt } from "react-icons/tfi";
+import { BsBookmark } from "react-icons/bs";
+import mark_img from "../img/evaluation_of_education_300.jpg";
+import { Accordion } from "react-bootstrap";
+import Profil from "./Profil"
 
 export default function Youtube1() {
   const [id, setId] = useState(1);
@@ -44,7 +61,21 @@ export default function Youtube1() {
   const [IDtheme, setIdtheme] = useState({});
   const [task_comnet_id, setTask_comnet_id] = useState(0)  
   const [kursdata, setKursdata] = useState([]);
+  const [page5,setPage5]=useState(1)
 
+
+  const [comment, setComment] = useState([])
+  const [comment2, setComment2] = useState([])
+  const [subcoment, setSubcoment] = useState(0)
+  const [oneuser, setOneuser] = useState([])
+
+  const [teacherwork, setTeacherwork] = useState([]);
+  const [commenttask, setCommenttask] = useState([]);
+  const [comment5, setComment5] = useState([]);
+  const [task, setTask] = useState([]);
+  const [mark, setMark] = useState([]);
+  const [page, setPage] = useState(1);
+  const [page1, setPage1] = useState(1);
 
   function openModal() {
     document.querySelector(".navbar_yon").classList.toggle("navbar_yon1");
@@ -165,8 +196,92 @@ export default function Youtube1() {
         //   "display: flex;justify-content: center;align-items: center;";
       });
 
+//comment
+
+axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+  headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+})
+  .then(res => {
+    res.data.map(item=>{
+      if (item.task_commnet_id==task_comnet_id) {
+        setComment(res.data)
+      }else{
+        
+      }
+    })
+
+    console.log(res.data, "coment");
+  })
+  .catch(err => {
+  })
 
 
+
+axios.get(`${url}/auth/oneuser`, {
+  headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+}).then(res => {
+  setOneuser(res.data)
+  console.log(res.data, "salom");
+})
+
+//task
+axios
+.get(`${url}/api/course_theme_task_student`, {
+  headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+})
+.then((res) => {
+  setMark(res.data);
+  console.log(res.data, "hello world");
+})
+.catch((err) => {});
+axios
+.get(`${url}/api/course_theme_task`, {
+  headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+})
+.then((res) => {
+  setTeacherwork(res.data);
+  console.log(res.data);
+})
+.catch((err) => {});
+
+axios
+.get(`${url}/auth/oneuser`, {
+  headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+})
+.then((res) => {
+  setOneuser(res.data);
+  console.log(res.data, "salom");
+});
+axios
+.get(
+  `${url}/api/course_theme_comment/${
+    JSON.parse(localStorage.getItem("page_video")).id
+  }`,
+  {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  }
+)
+.then((res) => {
+  var a = res.data.filter((item) => item.task_commnet_id == 1);
+  setComment5(a);
+});
+
+axios
+.get(`${url}/api/course_theme_comment`, {
+  headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+})
+.then((res) => {
+  var a = res.data.filter(
+    (item) =>
+      item.task_commnet_id !=
+      JSON.parse(localStorage.getItem("page_video")).id
+  );
+  setCommenttask(a);
+  console.log(res.data, "sfdfdxdseery");
+})
+.catch((err) => {});
 
 
     setState1(
@@ -198,6 +313,431 @@ export default function Youtube1() {
     // })
   }
   // console.log(main1,"aom");
+
+  //comment
+  function messagePost(id) {
+
+    var formdata = new FormData()
+    formdata.append("text", document.querySelector("#chat_text").value)
+    formdata.append("image", document.querySelector("#comment_file").files[0])
+    formdata.append("user_id", oneuser[0].id)
+    formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id)
+    formdata.append("subcomment", subcoment)
+    formdata.append("task_commnet_id", task_comnet_id)
+
+    axios.post(`${url}/api/course_theme_comment/`, formdata, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    })
+      .then(res => {
+        axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        })
+          .then(res => {
+            setComment(res.data)
+            axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+              headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+            })
+              .then(res => {
+                res.data.map(item=>{
+                  if (item.task_commnet_id==task_comnet_id) {
+                    setComment(res.data)
+                  // alert("xato")
+                  }else{
+                    
+                  }
+                })
+        
+                console.log(res.data, "coment");
+              })
+          })
+        document.querySelector("#chat_text").value = ""
+      }
+      )
+      .catch(err => {
+        Swal.fire("Error")
+      })
+
+    axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    })
+      .then(res => {
+
+        setComment(res.data)
+        console.log(res.data,);
+      })
+      .catch(err => {
+      })
+  }
+
+  function otvetPost(id) {
+
+    var formdata = new FormData()
+    formdata.append("text", document.querySelector("#chat_text1").value)
+    formdata.append("image", document.querySelector("#comment_file1").files[0])
+    formdata.append("user_id", oneuser[0].id)
+    formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id)
+    formdata.append("subcomment", subcoment)
+    formdata.append("task_commnet_id", task_comnet_id)
+
+
+    axios.post(`${url}/api/course_theme_comment/`, formdata, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    })
+      .then(res => {
+        axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        })
+          .then(res => {
+            setComment(res.data)
+            console.log(res.data, 'hey');
+          })
+        document.querySelector("#chat_text1").value = ""
+
+      }
+      )
+      .catch(err => {
+        Swal.fire("Нельзя писать больше 300 символов")
+      })
+
+    axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    })
+      .then(res => {
+
+        setComment2(res.data)
+      })
+      .catch(err => {
+      })
+  }
+
+  function deleteComment(id) {
+    axios
+      .delete(`${url}/api/course_theme_comment/${id}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })
+      .then(res => [
+        axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        })
+          .then(res => {
+
+            setComment(res.data)
+          })
+      ])
+    axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    })
+      .then(res => {
+
+        setComment(res.data)
+      })
+      .catch(err => {
+        Swal.fire("Вы не смогли удалить комментарий, попробуйте снова.")
+      })
+  }
+
+  function deleteComment1(id) {
+    axios
+      .delete(`${url}/api/course_theme_comment/${id}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })
+      .then(res => {
+        window.location.reload()
+        axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+        })
+          .then(res => {
+
+            setComment2(res.data)
+          })
+      })
+    axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+    })
+      .then(res => {
+
+        setComment2(res.data)
+      })
+      .catch(err => {
+        Swal.fire("Вы не смогли удалить комментарий, попробуйте снова.")
+      })
+  }
+
+  function OpenotvetMadal(item, key) {
+    document.querySelector(".commetn_otvet_kaytarish").style = "display: flex; "
+    // setComment2(item)
+    // console.log(key);
+    // localStorage.setItem("key", key)
+
+  }
+  function CloseotvetMadal() {
+    document.querySelector(".otevet_comment_otdel_oyna").style = "display: none;"
+  }
+  function cencelModal() {
+    document.querySelector("#chat_text").value = ""
+    document.querySelector("#chat_text1").value = ""
+  }
+  function openModalOtvet11(id) {
+    setSubcoment(id)
+    document.querySelector(".otevet_comment_otdel_oyna").style = "display: block"
+    document.querySelector(".m_otdel_bgc").style = "display:none"
+  }
+  function closeModalOtvet11() {
+    setSubcoment(0)
+    document.querySelector(".m_otdel_bgc").style = "display: block"
+    document.querySelector(".otevet_comment_otdel_oyna ").style = "display:none !important"
+  }
+  function openViewall() {
+    document.querySelector(".view_all_otdel_oyna").style = "display: block"
+    document.querySelector(".m_otdel_bgc").style = "display:none"
+  }
+
+  function closeViewall() {
+    document.querySelector(".m_otdel_bgc").style = "display: block"
+    document.querySelector(".view_all_otdel_oyna ").style = "display:none !important"
+  }
+
+  //task
+
+  function deleteComment1(id) {
+    axios
+      .delete(`${url}/api/course_theme_comment/${id}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        axios
+          .get(`${url}/api/course_theme_comment/`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
+          .then((res) => {
+            var a = res.data.filter(
+              (item) =>
+                item.task_commnet_id !=
+                JSON.parse(localStorage.getItem("page_video")).id
+            );
+            setCommenttask(a);
+          });
+      });
+    axios
+      .get(
+        `${url}/api/course_theme_comment/${
+          JSON.parse(localStorage.getItem("page_video")).id
+        }`,
+        {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        }
+      )
+      .then((res) => {
+        var a = res.data.filter((item) => item.task_commnet_id == 1);
+        setComment5(a);
+        console.log(a, "comdwadwadent");
+      })
+      .catch((err) => {
+        Swal.fire("Вы не смогли удалить комментарий, попробуйте снова.");
+      });
+  }
+
+  function imagePost() {
+    var formdata = new FormData();
+
+    formdata.append("mark", 3);
+    formdata.append(
+      "image",
+      document.querySelector(".comment_file12").files[0]
+    );
+    formdata.append("content", ":");
+    formdata.append(
+      "course_theme",
+      JSON.parse(localStorage.getItem("page_video")).id
+    );
+    formdata.append("feedback", ".");
+
+    axios
+      .post(`${url}api/course_theme_task_student`, formdata, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        setTask(res.data);
+        console.log(res.data, "ily");
+      })
+      .catch((err) => {
+        Swal.fire("ishlamadi tupoy");
+      });
+  }
+
+  function commentTaskPost() {
+    var formdata = new FormData();
+    formdata.append("text", document.querySelector("#chat_text12").value);
+    formdata.append("image", 0);
+    formdata.append("user_id", oneuser[0].id);
+    formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id);
+    formdata.append("subcomment", subcoment);
+    formdata.append("task_commnet_id", 1);
+
+    axios
+      .post(`${url}/api/course_theme_comment/`, formdata, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        axios
+          .get(
+            `${url}/api/course_theme_comment/${
+              JSON.parse(localStorage.getItem("page_video")).id
+            }`,
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+              },
+            }
+          )
+          .then((res) => {
+            var a = res.data.filter((item) => item.task_commnet_id == 1);
+            setComment5(a);
+          });
+        document.querySelector("#chat_text12").value = "";
+      })
+      .catch((err) => {
+        Swal.fire("Error");
+      });
+
+    axios
+      .get(`${url}/api/course_theme_comment`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        var a = res.data.filter(
+          (item) =>
+            item.task_commnet_id !=
+            JSON.parse(localStorage.getItem("page_video")).id
+        );
+        setCommenttask(a);
+        console.log(res.data, "sfdfdxdseery");
+      })
+      .catch((err) => {});
+  }
+
+  function cencelModal() {
+    document.querySelector("#chat_text12").value = "";
+  }
+
+  function markOpen(id) {
+    document.querySelector(".mark-uchun-koish-joy").style =
+      "display:flex !important";
+  }
+  function markOpen2(id) {
+    document.querySelector(".mark-uchun-koish-joy1").style =
+      "display:flex !important";
+  }
+  function aftermarkopen() {
+    var formdata = new FormData();
+
+    formdata.append("mark", page);
+    formdata.append(
+      "image",
+      document.querySelector(".comment_file12").files[0]
+    );
+    formdata.append("content", ":");
+    formdata.append(
+      "course_theme",
+      JSON.parse(localStorage.getItem("page_video")).id
+    );
+    formdata.append("feedback", ".");
+    if (page === 1 ) {
+      Swal.fire("Вы не выбрали какую оценку вы хотите поставить");
+    } else {
+      axios
+        .post(`${url}/api/course_theme_task_student`, formdata, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        })
+        .then((res) => {
+          document.querySelector(".BsBookmark").style =
+            "display:block !important";
+          document.querySelector(".m-comment-mark1").style =
+            "display:block !important";
+          document.querySelector(".m-comment-mark").style =
+            "display:none !important";
+          document.querySelector(".mark-uchun-koish-joy").style =
+            "display:none !important";
+          axios
+            .get(`${url}/api/course_theme_task_student`, {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+              },
+            })
+            .then((res) => {
+              setMark(res.data);
+            })
+            .catch((err) => {});
+        })
+        .catch((err) => {
+          Swal.fire("Вы не смогли поставить оценку");
+        });
+    }
+  }
+  function markClose() {
+    document.querySelector(".mark-uchun-koish-joy").style =
+      "display:none !important";
+  }
+  function markClose2() {
+    document.querySelector(".mark-uchun-koish-joy1").style =
+      "display:none !important";
+  }
+  function aftermarkopen2(id) {
+    var formdata = new FormData();
+
+    formdata.append("mark", page1);
+    formdata.append(
+      "image",
+      document.querySelector(".comment_file12").files[0]
+    );
+    formdata.append("content", ":");
+    formdata.append(
+      "course_theme",
+      JSON.parse(localStorage.getItem("page_video")).id
+    );
+    formdata.append("feedback", ".");
+    if (page === 1 ) {
+      Swal.fire("Вы не выбрали оценку");
+    } else {
+      axios
+        .put(`${url}/api/course_theme_task_student/${id}`, formdata, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        })
+        .then((res) => {
+          document.querySelector(".BsBookmark").style =
+            "display:block";
+          document.querySelector(".mark-uchun-koish-joy1").style =
+            "display:none !important";
+          axios
+            .get(`${url}/api/course_theme_task_student`, {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+              },
+            })
+            .then((res) => {
+              setMark(res.data);
+            })
+            .catch((err) => {});
+        })
+        .catch((err) => {
+          Swal.fire("Вы не смогли изменить оценку");
+        });
+    }
+  }
+
+  function openMarkModal() {
+    document.querySelector(".p-info-mark-div1").style = "display:block; ";
+  }
+  function closeMarkModal() {
+    document.querySelector(".p-info-mark-div1").style = "display:none";
+  }
+
+  function openModalMarkOchadi() {
+    document.querySelector(".div-mark-chikadigan-joy").style = "display:block";
+    document.querySelector(".BsBookmark").style = "display:none";
+  }
+  function openModalMarkOchadi12() {
+    document.querySelector(".div-mark-chikadigan-joy").style = "display:none";
+    document.querySelector(".BsBookmark").style = "display:block";
+  }
   return (
     <div className="youtube_bgc">
       <div className="a_err_boganda">
@@ -212,10 +752,12 @@ export default function Youtube1() {
         <div>
           <div>
             <Usernavbar />
+           
             <div className="youtube_bgc">
               <div className="flex_youtube">
                 {localStorage.getItem("Idvideo") ? (
                 <div className="youtube_kotta_img">
+                  <div className="for-otdelni-chunmadim">
                   <div className="img_youtube_kotta">
                     <iframe
                       src={main1.video}
@@ -233,9 +775,648 @@ export default function Youtube1() {
                       </div>
                     </div>
                   </div>
-                  <p className="theme_content">{main1.content}</p>
+                  <p className="theme_content">{main1.content}</p> 
+                  <div className="navbar_video" style={{marginTop: "50px"}}>
+                <div className="navbar_none">
+                  <div className="navbar_otish">
+                    <p
+                      onClick={() => {
+                        setPage5(1);
+                        painModal();
+
+                      }}
+                      className="zadaniya"
+                    >
+                      Comments
+                    </p>
+                    <p
+                      onClick={() => {
+                        setPage5(2);
+                        painModal1();
+
+                      }}
+                      className="zadaniya1"
+                    >
+                      Tasks
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="navbar_block">
+                <div
+                  className="menu_navbar"
+                  onClick={() => {
+                    openModal();
+                  }}
+                >
+                  <TiThMenu />
+                </div>
+                <div
+                  className="navbar_yon"
+                  onMouseLeave={() => {
+                    closeModal();
+                  }}
+                >
+                  <div className="navbar_otish1">
+                    <p
+                      onClick={() => {
+                        setPage5(1);
+                        painModal5();
+                        setTask_comnet_id(0);
+                        closeModal()
+                      }}
+                      className="zadaniya5"
+                    >
+                      Крмментарии
+                    </p>
+                    <p
+                      onClick={(id) => {
+                        setPage(2);
+                        painModal6();
+                        setTask_comnet_id(id);
+                        closeModal()
+
+                      }}
+                      className="zadaniya6"
+                    >
+                      Задания
+                    </p>
+                  </div>
+                </div>
+              </div>
+              {page5 === 1 ? (    <div>
+
+<div className='m_comment_kotta'>
+
+
+  <div className="m_otdel_bgc">
+
+  
+    <div className="comment_view_all">
+    <span className='span_comment1202'>Комментария*</span>
+      <p onClick={() => { openViewall() }}>view all <AiOutlineComment /></p>
+    </div>
+    <div className='for_scroll'>
+      {comment.length === 0 ? (
+        <div className="for_no_comment">
+          <p>Тут ещё нут комметнарий</p>
+        </div>) : (
+        <>
+          {
+            comment.map(item => {
+              if (item.subcomment == 0 && item.task_commnet_id == 0) {
+                return <>
+                  <div className="m_comment">
+                    <div className="m_comment_img">
+                      <img src={item.oneuser ? item.oneuser.image.includes("http") ? item.oneuser.image : `${url}/${item.oneuser.image}` :
+                        <img src={anonim} alt="" />} alt="" />
+                    </div>
+                    <div className="m_comment_text">
+                      <h5>{item.oneuser ? item.oneuser.username : "Anonim User"}</h5>
+                      {/* <img src={item.image.includes("http")?item.image:`${url}/${item.image}`} alt="" /> */}
+                      {item.image ? (
+                        "") : (
+                        <img src={item.image.includes("http") ? item.image : `${url}/${item.image}`} alt="" />
+
+                      )}
+                      <p className='m_comment_text1505'>{item.text}</p>
+                      <div className="m_comment_otvet">
+                        <p className='m_otvet_comment'
+                          onClick={() => { openModalOtvet11(item.id) }}
+                        ><span><FiCornerUpLeft /></span>Ответить</p>
+
+                        {oneuser.map(item5 => {
+                          return (
+                            <>
+                              {item5.id == item.user_id ? (
+                                <p className='m_comment_delete' onClick={() => { deleteComment(item.id) }}><span><AiOutlineDelete /></span>удалить</p>) :
+                                ("")
+                              }
+                            </>
+                          )
+
+                        })}
+
+
+                      </div>
+                    </div>
+                  </div>
+                </>
+              }
+            })} </>)}</div>
+
+
+
+    <div className="m_comment_yozish">
+      <input type="file" id='comment_file' />
+      <p><FcFile /></p>
+
+      <textarea placeholder='Введите текст' id="chat_text"></textarea>
+    </div>
+    <div className="m_comment_button">
+      <button className='m_otmen' onClick={() => { cencelModal() }}>Cancel</button>
+      <button onClick={(event) => { messagePost() }} className='m_otpravit'>Send</button>
+    </div>
+  </div>
+
+
+
+  <div className="otevet_comment_otdel_oyna">
+    <p className='m_otvet_comment_back'
+      onClick={() => { closeModalOtvet11() }}>
+      <span><FiCornerUpLeft /></span>Back</p>
+    <div className="comment_otevet_all">
+      {comment.length === 0 ? (<div className="for_no_comment">
+        <p>Тут ещё нут ответов</p>
+      </div>) : (<>
+        {comment.map(item32 => {
+          if (item32.subcomment == subcoment) {
+            return (<>
+              <div className="df_div_comment_page">
+                <img src={item32.oneuser ? item32.oneuser.image.includes("http") ? item32.oneuser.image : `${url}/${item32.oneuser.image}` :
+                  <img src={anonim} alt="" />} alt="" />
+                <div className="div_class_tugadi">
+
+
+                  <h5>{item32.oneuser ? item32.oneuser.username : "Anonim User"}</h5>
+                  <p>{item32.text}</p>
+                  {oneuser.map(item5 => {
+                    return (
+                      <>
+                        {item5.id == item32.user_id ? (
+                          <p className='m_comment_delete1'
+                            onClick={() => { deleteComment1(item32.id) }}>
+                            <span><AiOutlineDelete /></span>удалить</p>) :
+                          ("")
+                        }
+                      </>
+                    )
+
+                  })} </div> </div>
+            </>
+            )
+          }
+        })}</>)}
+
+    </div>
+    <div className="m_comment_yozish">
+      <input type="file" id='comment_file1' />
+      <p><FcFile /></p>
+
+      <textarea placeholder='Введите текст' id="chat_text1"></textarea>
+    </div>
+    <div className="m_comment_button">
+      <button className='m_otmen' onClick={() => { cencelModal() }}>Cancel</button>
+      <button onClick={(event) => { otvetPost() }} className='m_otpravit'>Send</button>
+    </div>
+  </div>
+
+
+  <div className="view_all_otdel_oyna">
+    <div className="df_all_com">
+      <p className='m_otvet_comment_back'
+        onClick={() => { closeViewall() }}>
+        <span><FiCornerUpLeft /></span>Back</p>
+      <p className='AiOutlineComment'>View all comment <AiOutlineComment /></p></div>
+    {comment.length === 0 ? (<div className="for_no_comment">
+      <p>Тут ещё нут комметнарий</p>
+    </div>) : (<>
+      {comment.map(item => {
+       if (item.task_commnet_id!=1) {
+        return (
+          <>
+            <div className="flex_view_all">
+              <div className="img_person_veiw_all">
+                <img src={item.oneuser ? item.oneuser.image.includes("http") ? item.oneuser.image : `${url}/${item.oneuser.image}` :
+                  <img src={anonim} alt="" />} alt="" />
+              </div>
+              <div className="m_comment_text">
+                <h5>{item.oneuser ? item.oneuser.username : "Anonim User"}</h5>
+                <img src={item.image.includes("http") ? item.image : `${url}/${item.image}`} alt="" />
+                <p className='m_comment_text1505'>{item.text}</p>
+                <div className="m_comment_otvet">
+                  <p className='m_otvet_comment'
+                    onClick={() => { openModalOtvet11(item.id) }}
+                  ><span><FiCornerUpLeft /></span>Ответить</p>
+                  {oneuser.map(item5 => {
+                    return (
+                      <>
+                        {item5.id == item.user_id ? ( 
+                          <p className='m_comment_delete' onClick={() => { deleteComment(item.id) }}><span><AiOutlineDelete /></span>удалить</p>) :
+                          ("")
+                        }
+                      </>
+                    )
+
+                  })}
+                </div>
+              </div></div></>
+        )
+       }
+
+      })}
+    </>)}
+
+
+  </div>
+</div>
+</div>):(    <div>
+      <div className="m_comment_kotta">
+        <div className="m_otdel_bgc">
+          {teacherwork.map((item) => {
+            if (item.id == JSON.parse(localStorage.getItem("page_video")).id) {
+              return (
+                <>
+                  <div className="zanacha_vaz">Задача*</div>
+                  <div className="task_div_big">
+                    <img src={item.image} alt="" /> <p>{item.content}</p>
+                  </div>
+                </>
+              );
+            } else {
+              <div>There are no tasks here</div>;
+            }
+          })}
+          <hr className="hr2000" />
+
+          <div className="for_scroll">
+            {commenttask.length == 0 ? (
+              <div className="for_no_comment">
+                <p>Тут ещё нут ответов на задачу </p>
+              </div>
+            ) : (
+              <>
+                {commenttask.map((item, key) => {
+                  if (item.task_commnet_id == 1) {
+                    return (
+                      <>
+                        <div className="df_div_comment_page">
+                          <div className="div_img_class_over">
+                            {mark.map((item) => {
+                              return (
+                                <div
+                                  onMouseLeave={() => {
+                                    openModalMarkOchadi12();
+                                  }}
+                                  className="div-mark-chikadigan-joy"
+                                  style={{ display: "none" }}
+                                >
+                                  <p className="mark-p-div-chikadi">
+                                    Mentor поставил оценку: {item.mark}
+                                  </p>
+                                </div>
+                              );
+                            })}
+
+                            <img
+                              src={
+                                item.oneuser ? (
+                                  item.oneuser.image.includes("http") ? (
+                                    item.oneuser.image
+                                  ) : (
+                                    `${url}/${item.oneuser.image}`
+                                  )
+                                ) : (
+                                  <img src={img_comment1} alt="" />
+                                )
+                              }
+                              alt=""
+                            />
+                          </div>
+
+                          <div className="div_class_tugadi">
+                          <div className="asxzsdsdkejhjbdfibmffdo">
+                              <div className="p-info-mark-div1">
+                                Нажав можете помотреть оцентку ментора
+                              </div>
+                             
+                              <div className="oneusername-uchun-kildim">
+                              <h5>
+                              {item.oneuser
+                                ? item.oneuser.username
+                                : "Anonim User"}
+                            </h5>
+                              </div>
+                              <div className="m-comment-Bookmark">
+                                <BsBookmark
+                                  className="BsBookmark"
+                                  onClick={() => {
+                                    openModalMarkOchadi();
+                                  }}
+                                  onMouseLeave={() => {
+                                    closeMarkModal();
+                                  }}
+                                  onMouseEnter={() => {
+                                    openMarkModal();
+                                  }}
+                                />
+                              </div>
+                            </div>
+                            
+                            {task.map((item) => {
+                              <img
+                                src={
+                                  item.image.includes("http")
+                                    ? item.image
+                                    : `${url}/${item.image}`
+                                }
+                                alt=""
+                              />;
+                            })}
+                            <p className="m_comment_text1505">{item.text}</p>
+
+                            {oneuser.map((item5) => {
+                              return (
+                                <div
+                                  style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "5px",
+                                    flexWrap: "wrap",
+                                  }}
+                                >
+                                  {item5.id == item.user_id ? (
+                                    <p
+                                      className="m_comment_delete1"
+                                      onClick={() => {
+                                        deleteComment1(item.id);
+                                      }}
+                                    >
+                                      <span>
+                                        <AiOutlineDelete />
+                                      </span>
+                                      удалить
+                                    </p>
+                                  ) : (
+                                    ""
+                                  )}
+                                  {localStorage.getItem("position") === 2
+                                    ? ""
+                                    : ""}
+                                  <p
+                                    className="m-comment-mark"
+                                    onClick={() => {
+                                      markOpen(key);
+                                      setPage(1);
+                                    }}
+                                  >
+                                    <span>
+                                      <TfiMarkerAlt />
+                                    </span>
+                                    поставить оценку
+                                  </p>
+                                  {localStorage.getItem("position") === 2
+                                    ? ""
+                                    : ""}
+                                  <p
+                                    className="m-comment-mark1"
+                                    onClick={() => {
+                                      markOpen2(item.id);
+                                      setPage1(1);
+                                    }}
+                                  >
+                                    <span>
+                                      <TfiMarkerAlt />
+                                    </span>
+                                    измеить оценку
+                                  </p>
+                                </div>
+                              );
+                            })}
+                            {/* <div className="m-input-mark">
+                              <input
+                                type="number"
+                                id="mark-input-in-task"
+                                placeholder="оценка"
+                              />
+                              <p className="errorbigfive">
+                                нельзя ставить больше 5
+                              </p>
+                              <p className="errorbigfive2">
+                                Вы не поставили оценку
+                              </p>
+                              <div className="mark-button-down">
+                                <p
+                                  className="mark-otment-bosa"
+                                  onClick={() => {
+                                    markClose();
+                                  }}
+                                >
+                                  отменить
+                                </p>
+                                <p
+                                  className="mark-okey-bosa"
+                                  // onClick={() => {
+                                  //   aftermarkopen();
+                                  // }}
+                                >
+                                  оценить
+                                </p>
+                              </div>
+                            </div>
+                            <div className="m-input-mark1">
+                              <input
+                                type="number"
+                                id="mark-input-in-task1"
+                                placeholder="изменить"
+                              />
+                              <p className="errorbigfive1">
+                                нельзя ставить больше 5
+                              </p>
+                              <p className="errorbigfive3">
+                                Вы не изменили оценку
+                              </p>
+                              <div className="mark-button-down">
+                                <p
+                                  className="mark-otment-bosa"
+                                  onClick={() => {
+                                    markClose2();
+                                  }}
+                                >
+                                  отменить
+                                </p>
+                                <p
+                                  className="mark-okey-bosa"
+                                  onClick={() => {
+                                    aftermarkopen2();
+                                  }}
+                                >
+                                  изменить
+                                </p>
+                              </div>
+                            </div> */}
+                          </div>
+                        </div>
+                      </>
+                    );
+                  }
+                })}
+              </>
+            )}
+          </div>
+          <div className="mark-uchun-koish-joy">
+            <div className="kotta-obsh-mark-uchun">
+              <div className="kichkina-mark-uchun-joy">
+                <div className="mark-two" onClick={() => setPage(2)}>
+                  2
+                </div>
+                <div className="mark-three" onClick={() => setPage(3)}>
+                  3
+                </div>
+                <div className="mark-four" onClick={() => setPage(4)}>
+                  4
+                </div>
+                <div className="mark-five" onClick={() => setPage(5)}>
+                  5
+                </div>
+              </div>
+              <h5>Оценить ученика:</h5>
+              <div className="mark-bosgandan-kein">
+                {page === 2 ? (
+                  <div className="mark-two">2</div>
+                ) : (
+                  <>
+                    {page === 3 ? (
+                      <div className="mark-three">3</div>
+                    ) : (
+                      <>
+                        {page === 4 ? (
+                          <div className="mark-four">4</div>
+                        ) : (
+                          <>
+                            {page === 5 ? (
+                              <div className="mark-five">5</div>
+                            ) : (
+                              <></>
+                            )}
+                          </>
+                        )}
+                      </>
+                    )}
+                  </>
+                )}
+              </div>
+              <div className="mark-otmen-potver-uchun">
+                <button
+                  className="otmen-uchen-but"
+                  onClick={() => {
+                    markClose();
+                  }}
+                >
+                  Отменить
+                </button>
+                <button
+                  className="porver-uchen-but"
+                  onClick={() => {
+                    aftermarkopen();
+                  }}
+                >
+                  Потвердить
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="mark-uchun-koish-joy1">
+            <div className="kotta-obsh-mark-uchun">
+              <div className="kichkina-mark-uchun-joy">
+                <div className="mark-two" onClick={() => setPage1(2)}>
+                  2
+                </div>
+                <div className="mark-three" onClick={() => setPage1(3)}>
+                  3
+                </div>
+                <div className="mark-four" onClick={() => setPage1(4)}>
+                  4
+                </div>
+                <div className="mark-five" onClick={() => setPage1(5)}>
+                  5
+                </div>
+              </div>
+              <h5>Изменить оценку на:</h5>
+              <div className="mark-bosgandan-kein">
+                {page1 === 2 ? (
+                  <div className="mark-two">2</div>
+                ) : (
+                  <>
+                    {page1 === 3 ? (
+                      <div className="mark-three">3</div>
+                    ) : (
+                      <>
+                        {page1 === 4 ? (
+                          <div className="mark-four">4</div>
+                        ) : (
+                          <>
+                            {page1 === 5 ? (
+                              <div className="mark-five">5</div>
+                            ) : (
+                              <></>
+                            )}
+                          </>
+                        )}
+                      </>
+                    )}
+                  </>
+                )}
+              </div>
+              <div className="mark-otmen-potver-uchun">
+                <button
+                  className="otmen-uchen-but"
+                  onClick={() => {
+                    markClose2();
+                  }}
+                >
+                  Отменить
+                </button>
+
+                <button
+                  className="porver-uchen-but"
+                  onClick={() => {
+                    aftermarkopen2(mark.id);
+                  }}
+                >
+                  Изменить
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="m_comment_yozish">
+            <input type="file" id="comment_file" className="comment_file12" />
+            <p>
+              <FcFile />
+            </p>
+
+            <textarea
+              placeholder="Введите ответ на задания"
+              id="chat_text12"
+            ></textarea>
+          </div>
+          <div className="m_comment_button">
+            <button
+              className="m_otmen"
+              onClick={() => {
+                cencelModal();
+              }}
+            >
+              Cancel
+            </button>
+            <button
+              className="m_otpravit"
+              onClick={() => {
+                commentTaskPost();
+                imagePost();
+              }}
+            >
+              Send
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>)}
+                  </div> 
                 </div>) : (
                   <div className="youtube_kotta_img">
+
+                   
                     <div className="img_youtube_kotta">
                       <iframe
                         src={main.video}
@@ -275,6 +1456,9 @@ export default function Youtube1() {
                       </div>
                     </div>
                     <p className="theme_content">{main.content}</p>
+              
+                 
+              
                   </div>)}
 
                 <div className={main == "" ? "db" : "a_err_boganda"}>
@@ -335,105 +1519,12 @@ export default function Youtube1() {
                     )
                   })}
                 </div>
-              </div>
-
-
-
-              <div className="navbar_video">
-                <div className="navbar_none">
-                  <div className="navbar_otish">
-                    <p
-                      onClick={() => {
-                        videoBolim(1);
-                        painModal();
-
-                      }}
-                      className="zadaniya"
-                    >
-                      Comments
-                    </p>
-                    <p
-                      onClick={() => {
-                        videoBolim(2);
-                        painModal1();
-
-                      }}
-                      className="zadaniya1"
-                    >
-                      Tasks
-                    </p>
-                    <p
-                      onClick={() => {
-                        videoBolim(3);
-                        painModal2();
-                      }}
-                      className="zadaniya2"
-                    ></p>
-                    <p
-                      onClick={() => {
-                        videoBolim(4);
-                        painModal3();
-                      }}
-                      className="zadaniya3"
-                    ></p>
-                  </div>
                 </div>
-              </div>
-              <div className="navbar_block">
-                <div
-                  className="menu_navbar"
-                  onClick={() => {
-                    openModal();
-                  }}
-                >
-                  <TiThMenu />
-                </div>
-                <div
-                  className="navbar_yon"
-                  onMouseLeave={() => {
-                    closeModal();
-                  }}
-                >
-                  <div className="navbar_otish1">
-                    <p
-                      onClick={() => {
-                        videoBolim(1);
-                        painModal5();
-                        setTask_comnet_id(0)
-                      }}
-                      className="zadaniya5"
-                    >
-                      Крмментарии
-                    </p>
-                    <p
-                      onClick={(id) => {
-                        videoBolim(2);
-                        painModal6();
-                        setTask_comnet_id(id)
 
-                      }}
-                      className="zadaniya6"
-                    >
-                      Задания
-                    </p>
-                    <p
-                      onClick={() => {
-                        videoBolim(3);
-                        painModal7();
-                      }}
-                      className="zadaniya7"
-                    ></p>
-                    <p
-                      onClick={() => {
-                        videoBolim(4);
-                        painModal8();
-                      }}
-                      className="zadaniya8"
-                    ></p>
-                  </div>
-                </div>
-              </div>
-              <div className={id === 1 ? "show-content" : "content"}>
+
+
+
+              {/* <div className={id === 1 ? "show-content" : "content"}>
                 <Comment />
               </div>
               <div className={id === 2 ? "show-content" : "content"}>
@@ -444,8 +1535,10 @@ export default function Youtube1() {
               </div>
               <div className={id === 4 ? "show-content" : "content"}>
                 <Scachat />
-              </div>
+              </div> */}
             </div>
+
+           
           </div>
         </div>
       ) : (
