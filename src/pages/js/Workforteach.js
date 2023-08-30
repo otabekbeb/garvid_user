@@ -49,7 +49,7 @@ export default function Workforteach() {
     function deletetask() {
         axios.delete(`${url}/api/course_theme_task_student/${deleteId}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             alert("Данные удалены")
-            window.location.assign("")
+            document.querySelector(".m_delete_tepadan2").style = "display:none"
             document.querySelector("#EducationdeleteModal").style = "display:none"
             axios.get(`${url}/api/course_theme_task_student`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
                 setTasks(res.data)

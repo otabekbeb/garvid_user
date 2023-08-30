@@ -1189,7 +1189,7 @@ select {
 
 .postUserModal_div_label input:focus {
     transition: 0.2s;
-    border: 1px solid #44bef1;
+    box-shadow: 0px 0px 0px 3px #44bdf15f;
 }
 
 .postUserModal_div_label label {
@@ -1288,11 +1288,11 @@ select {
     position: absolute;
     cursor: pointer;
     color: #44bef1;
-    width: 20px;
-    height: 20px;
-    font-size: 16px;
-    top: 10px;
-    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    top: 5px;
+    right: 5px;
 }
 
 
@@ -1325,6 +1325,7 @@ select {
     padding-right: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin-top: 10px;
     /* margin-bottom: 10px; */
     border: 1px solid #44bef1;
     color: #44bef1;
