@@ -56,7 +56,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/videochat" component={JoinMeeting} />
-          <Route exact path="/videoo/:id" component={VideoCall} />
+          <Route exact path="/video/:id" component={VideoCall} />
           <Route path="/" element={<Home />} />
           <Route path="/Sotibol" element={<Sotibol />} />
           <Route path="/Email" element={<Email />} />

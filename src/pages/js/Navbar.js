@@ -121,6 +121,8 @@ export default function Navbar() {
 
     axios.get(`${url}/auth/oneuser`, { headers: { "Authorization": "Bearer " + localStorage.getItem("token") } }).then(res => {
       setUser(res.data)
+    }).catch(err=>{
+      
     });
   }, []);
 

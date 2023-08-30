@@ -8,8 +8,8 @@ export default function Video({ match }) {
 
   useEffect(() => {
     axios.get(`${url}/super/pay`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
-      const domain = `https://${res.data.domain}.daily.co/`;
-      setDomain(domain)
+      // const domain = `https://${res.data.domain}.daily.co/`;
+      setDomain(res.data.domain)
     })
 
     axios
