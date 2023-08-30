@@ -989,10 +989,10 @@ export default function Youtube1() {
                                                       openModalOtvet11(item.id);
                                                     }}
                                                   >
-                                                    <span>
                                                       <FiCornerUpLeft />
-                                                    </span>
-                                                    {item.count === 0 ? "" : `${item.count}  `}
+                                                    <span>
+                                                       {item.count === 0 ? "" : `${item.count}  `}
+                                                      </span>
                                                     Ответов
                                                     
                                                   </p>

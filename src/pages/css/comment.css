@@ -65,25 +65,24 @@ width: 100%;
 .m_otvet_comment:active{
     color: #fff;
     background-color: #44bef1;
-    border-radius: 5px;
     user-select: none;
 }
-.m_otvet_comment:active a{
-    color: #fff;
+.m_otvet_comment{
+    padding: 5px;
+    border: 1px solid #44bef1;
+    border-radius: 10px;
 }
 .m_comment_delete{ 
     cursor:pointer;
     color: red !important;
     gap: 5px;
-    text-align: center;
-}
-.m_otvet_comment a{
-    color: #44bef1;
+    padding: 5px;
+    border: 1px solid red;
+    border-radius: 10px;
 }
 .m_comment_delete:active{
     background-color: #ff0000 !important;
     color: #fff !important;
-    border-radius: 5px;
     user-select: none;
 }
 
