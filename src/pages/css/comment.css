@@ -1,5 +1,5 @@
   .m_comment_text1505 {
-    width: 100%;
+    width: 90%;
     font-size: 15px;
 }
 .m_comment_kotta{
@@ -248,7 +248,7 @@ height: auto;
 }
 @media (max-width:600px) {
     .m_comment_text1505{
-        width: 60%;
+        width: 100%;
         font-size: 13px;
     }
     .m_comment_yozish{
@@ -301,7 +301,7 @@ height: auto;
 }
 @media (max-width:400px) {
     .m_comment_text1505{
-        width: 300px;
+        width: 100%;
         font-size: 10px;
     }
     .m_comment_yozish{

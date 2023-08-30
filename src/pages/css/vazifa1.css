@@ -44,13 +44,36 @@
 }
 
 .div_img_class_over img{
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
+    margin-top: 5px;
 }
+.div-like-dislike-delete-share{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.like-dislike-div-uchun{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.like-dislike-div-uchun p{
+    color: #9DA7BB;
+}
+
 .div_class_tugadi{
     margin-top: 10px;
     width: 100%;
+    border-radius: 5px;
+    border: 1px solid #9DA7BB50;
+    padding: 15px;
+}
+
+.p-create-time-uchun{
+    color: #9DA7BB;
+    font-size: 10px;
 }
 
 .hr2000{

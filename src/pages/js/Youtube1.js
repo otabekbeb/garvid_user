@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import img_kotta from "../img/Rectangle.png";
 import img_ava from "../img/Ellipse.png";
 import img_accordion from "../img/Rectangle 14.1.svg";
-import { AiFillStar } from "react-icons/ai";
+import { AiFillDislike, AiFillLike, AiFillStar } from "react-icons/ai";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { TbInfoTriangleFilled } from "react-icons/tb";
 import { TiThMenu } from "react-icons/ti";
@@ -104,26 +104,6 @@ export default function Youtube1() {
 
     setTask_comnet_id(id);
   }
-  function painModal2() {
-    document.querySelector(".zadaniya2").style =
-      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
-    document.querySelector(".zadaniya1").style =
-      "border-bottom: none; color: #9DA7BB;";
-    document.querySelector(".zadaniya1").style =
-      "border-bottom: none; color: #9DA7BB;";
-    document.querySelector(".zadaniya3").style =
-      "border-bottom: none; color: #9DA7BB;";
-  }
-  function painModal3() {
-    document.querySelector(".zadaniya3").style =
-      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
-    document.querySelector(".zadaniya2").style =
-      "border-bottom: none; color: #9DA7BB;";
-    document.querySelector(".zadaniya1").style =
-      "border-bottom: none; color: #9DA7BB;";
-    document.querySelector(".zadaniya").style =
-      "border-bottom: none; color: #9DA7BB;";
-  }
 
   //mediya
 
@@ -136,26 +116,6 @@ export default function Youtube1() {
   function painModal6() {
     document.querySelector(".zadaniya6").style =
       "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
-    document.querySelector(".zadaniya5").style =
-      "border-bottom: none; color: #9DA7BB;";
-  }
-  function painModal7() {
-    document.querySelector(".zadaniya7").style =
-      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
-    document.querySelector(".zadaniya6").style =
-      "border-bottom: none; color: #9DA7BB;";
-    document.querySelector(".zadaniya5").style =
-      "border-bottom: none; color: #9DA7BB;";
-    document.querySelector(".zadaniya8").style =
-      "border-bottom: none; color: #9DA7BB;";
-  }
-  function painModal8() {
-    document.querySelector(".zadaniya8").style =
-      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
-    document.querySelector(".zadaniya6").style =
-      "border-bottom: none; color: #9DA7BB;";
-    document.querySelector(".zadaniya7").style =
-      "border-bottom: none; color: #9DA7BB;";
     document.querySelector(".zadaniya5").style =
       "border-bottom: none; color: #9DA7BB;";
   }
@@ -1010,9 +970,7 @@ export default function Youtube1() {
                                                               );
                                                             }}
                                                           >
-                                                            <span>
                                                               <AiOutlineDelete />
-                                                            </span>
                                                             удалить
                                                           </p>
                                                         ) : (
@@ -1070,9 +1028,7 @@ export default function Youtube1() {
                                   closeModalOtvet11();
                                 }}
                               >
-                                <span>
                                   <FiCornerUpLeft />
-                                </span>
                                 Back
                               </p>
                               <div className="comment_otevet_all">
@@ -1157,9 +1113,7 @@ export default function Youtube1() {
                                                                 );
                                                               }}
                                                             >
-                                                              <span>
                                                                 <AiOutlineDelete />
-                                                              </span>
                                                               удалить
                                                             </p>
                                                           ) : (
@@ -1218,9 +1172,7 @@ export default function Youtube1() {
                                     closeViewall();
                                   }}
                                 >
-                                  <span>
                                     <FiCornerUpLeft />
-                                  </span>
                                   Back
                                 </p>
                                 <p className="AiOutlineComment">
@@ -1295,17 +1247,19 @@ export default function Youtube1() {
                                                   {item.text}
                                                 </p>
                                                 <div className="m_comment_otvet">
-                                                  <p
+                                                <p
+                                                  style={{display: "flex"}}
                                                     className="m_otvet_comment"
                                                     onClick={() => {
                                                       openModalOtvet11(item.id);
                                                     }}
                                                   >
-                                                    {subcoment.length}
-                                                    <span>
                                                       <FiCornerUpLeft />
-                                                    </span>
+                                                    <span>
+                                                       {item.count === 0 ? "" : `${item.count}  `}
+                                                      </span>
                                                     Ответов
+                                                    
                                                   </p>
 
                                                   {oneuser.map((item5) => {
@@ -1321,9 +1275,7 @@ export default function Youtube1() {
                                                               );
                                                             }}
                                                           >
-                                                            <span>
                                                               <AiOutlineDelete />
-                                                            </span>
                                                             удалить
                                                           </p>
                                                         ) : (
@@ -1405,34 +1357,12 @@ export default function Youtube1() {
                                               </div>
 
                                               <div className="div_class_tugadi">
-                                                <div className="asxzsdsdkejhjbdfibmffdo">
-                                                  <div className="p-info-mark-div1">
-                                                    Нажав можете помотреть
-                                                    оцентку ментора
-                                                  </div>
-
-                                                  <div className="oneusername-uchun-kildim">
-                                                    <h5>
+                                              <h5>
                                                       {item.oneuser
                                                         ? item.oneuser.username
                                                         : "Anonim User"}
                                                     </h5>
-                                                  </div>
-                                                  <div className="m-comment-Bookmark">
-                                                    <BsBookmark
-                                                      className="BsBookmark"
-                                                      onClick={() => {
-                                                        openModalMarkOchadi();
-                                                      }}
-                                                      onMouseLeave={() => {
-                                                        closeMarkModal();
-                                                      }}
-                                                      onMouseEnter={() => {
-                                                        openMarkModal();
-                                                      }}
-                                                    />
-                                                  </div>
-                                                </div>
+                                                    <p className="p-create-time-uchun">{item.time_create.slice(0,10)}</p>
 
                                                 {task.map((item) => {
                                                   <img
@@ -1449,7 +1379,11 @@ export default function Youtube1() {
                                                 <p className="m_comment_text1505">
                                                   {item.text}
                                                 </p>
-
+                                                <div className="div-like-dislike-delete-share">
+                                                  <div className="like-dislike-div-uchun">
+                                                    <p><AiFillLike /> 387</p>
+                                                    <p><AiFillDislike /> 178</p>
+                                                  </div>
                                                 {oneuser.map((item5) => {
                                                   return (
                                                     <div
@@ -1460,29 +1394,13 @@ export default function Youtube1() {
                                                         flexWrap: "wrap",
                                                       }}
                                                     >
-                                                      {item5.id ==
-                                                      item.user_id ? (
-                                                        <p
-                                                          className="m_comment_delete1"
-                                                          onClick={() => {
-                                                            deleteComment1(
-                                                              item.id
-                                                            );
-                                                          }}
-                                                        >
-                                                          <span>
-                                                            <AiOutlineDelete />
-                                                          </span>
-                                                          удалить
-                                                        </p>
-                                                      ) : (
-                                                        ""
-                                                      )}
+                                                     
                                                       {localStorage.getItem(
                                                         "position"
                                                       ) === 2
                                                         ? ""
                                                         : ""}
+                                                       
                                                       <p
                                                         className="m-comment-mark"
                                                         onClick={() => {
@@ -1490,9 +1408,7 @@ export default function Youtube1() {
                                                           setPage(1);
                                                         }}
                                                       >
-                                                        <span>
                                                           <TfiMarkerAlt />
-                                                        </span>
                                                         поставить оценку
                                                       </p>
                                                       {localStorage.getItem(
@@ -1507,14 +1423,30 @@ export default function Youtube1() {
                                                           setPage1(1);
                                                         }}
                                                       >
-                                                        <span>
                                                           <TfiMarkerAlt />
-                                                        </span>
                                                         измеить оценку
                                                       </p>
+                                                       {item5.id ==
+                                                      item.user_id ? (
+                                                        <p
+                                                          className="m_comment_delete1"
+                                                          onClick={() => {
+                                                            deleteComment1(
+                                                              item.id
+                                                            );
+                                                          }}
+                                                        >
+                                                            <AiOutlineDelete />
+                                                          удалить
+                                                        </p>
+                                                      ) : (
+                                                        ""
+                                                      )}
                                                     </div>
                                                   );
                                                 })}
+                                                </div>
+                                                
                                               </div>
                                             </div>
                                           </>
@@ -1705,7 +1637,7 @@ export default function Youtube1() {
                                   className="m_otpravit"
                                   onClick={() => {
                                     commentTaskPost();
-                                    imagePost();
+                                    // imagePost();
                                   }}
                                 >
                                   Send
