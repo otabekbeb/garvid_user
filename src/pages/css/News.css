@@ -680,9 +680,7 @@ pre code {
         margin-top: 20px;
     }
 
-    .mySwiper100 {
-        display: none;
-    }
+   
 }
 
 @media (max-width:515px) {
@@ -11202,15 +11200,3 @@ body {
     border-left: 5px solid gold;
 }
 
-@media (max-width:874px) {
-    .News_button1 {
-        width: 100%;
-        font-size: 20px;
-    }
-}
-
-@media (max-width:341px) {
-    .News_button1 {
-        width: 100%;
-    }
-}
