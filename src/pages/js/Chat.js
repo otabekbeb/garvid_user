@@ -3,7 +3,8 @@ import ScrollToBottom from "react-scroll-to-bottom";
 import "../css/Chat.css"
 import { IoArrowBackOutline } from 'react-icons/io';
 import tgimg from "../img/photo_2023-06-25_22-19-50 (2).jpg";
-
+import data from '@emoji-mart/data'
+import { Picker } from "emoji-mart";
 
 
 

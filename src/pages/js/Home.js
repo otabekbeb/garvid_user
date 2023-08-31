@@ -56,6 +56,7 @@ export default function Home() {
             <div>
                 <div className='body1'>
                     <Navbar />
+                    
                     <div className="foor_header">
                         <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/08/mt-0514-home-slider02.jpg" alt="" />
                         <div className="fir_header">
