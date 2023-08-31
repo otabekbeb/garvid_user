@@ -532,7 +532,11 @@ export default function Test() {
 
 
                                 <div className="questions_page_big_div">
-                                    <h3 className='questions_h1_length'><h3>{key + 1}.Вопросы</h3><div><button onClick={() => putQuestionsModal(item.id)} className='user_post_button'>Редактировать</button><button style={{ marginLeft: '10px' }} onClick={() => deleteQuestionsOpen(item.id)} className='user_post_button'>Удалить</button></div></h3>
+                                    <h3 className='questions_h1_length'><h3>{key + 1}.Вопросы</h3>
+                                        <div className='user_post_btns'>
+                                            <button onClick={() => putQuestionsModal(item.id)} className='user_post_button'>Редактировать</button>
+                                            <button style={{ marginLeft: '10px' }} onClick={() => deleteQuestionsOpen(item.id)} className='user_post_button'>Удалить</button>
+                                        </div></h3>
                                     <div className='questions_page_small_div'>
                                         <h3>{item.question}</h3>
                                         <div className="questions_page_small_div_img"><img src={"https://markazback2.onrender.com/" + item.image} alt="" /></div>

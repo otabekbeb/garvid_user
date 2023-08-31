@@ -1503,8 +1503,8 @@ select {
   
  .otash .cards {
     /* display: grid;
-    grid-template-columns:auto auto auto ; */
-    margin: auto;
+    grid-template-columns:auto auto auto auto; */
+    margin: auto !important;
     display: flex;
     justify-content: space-between;
     /* gap: 3.646vw ; */
