@@ -74,6 +74,8 @@ export default function Youtube1() {
   const [mark, setMark] = useState([]);
   const [page, setPage] = useState(1);
   const [page1, setPage1] = useState(1);
+  const [length14, setLength14] = useState(0)
+
 
   function openModal() {
     document.querySelector(".navbar_yon").classList.toggle("navbar_yon1");
@@ -951,10 +953,8 @@ export default function Youtube1() {
                                                   >
                                                       <FiCornerUpLeft />
                                                     <span>
-                                                       {item.count === 0 ? "" : `${item.count}  `}
+                                                       {item.count === 0 ? "Ответить" : (<> {item.count } <span> Ответов</span></> )}
                                                       </span>
-                                                    Ответов
-                                                    
                                                   </p>
 
                                                   {oneuser.map((item5) => {
@@ -1381,8 +1381,8 @@ export default function Youtube1() {
                                                 </p>
                                                 <div className="div-like-dislike-delete-share">
                                                   <div className="like-dislike-div-uchun">
-                                                    <p><AiFillLike /> 387</p>
-                                                    <p><AiFillDislike /> 178</p>
+                                                    <p className="like-dislike-div-uchun1"><AiFillLike /> 387</p>
+                                                    <p className="like-dislike-div-uchun2"><AiFillDislike /> 178</p>
                                                   </div>
                                                 {oneuser.map((item5) => {
                                                   return (
@@ -1409,7 +1409,10 @@ export default function Youtube1() {
                                                         }}
                                                       >
                                                           <TfiMarkerAlt />
+                                                          <span>
+                                                            
                                                         поставить оценку
+                                                          </span>
                                                       </p>
                                                       {localStorage.getItem(
                                                         "position"
@@ -1424,7 +1427,9 @@ export default function Youtube1() {
                                                         }}
                                                       >
                                                           <TfiMarkerAlt />
+                                                          <span>
                                                         измеить оценку
+                                                          </span>
                                                       </p>
                                                        {item5.id ==
                                                       item.user_id ? (
@@ -1437,7 +1442,9 @@ export default function Youtube1() {
                                                           }}
                                                         >
                                                             <AiOutlineDelete />
-                                                          удалить
+                                                            <span>
+                                                             удалить  
+                                                            </span>
                                                         </p>
                                                       ) : (
                                                         ""

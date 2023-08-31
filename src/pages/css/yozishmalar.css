@@ -854,6 +854,7 @@ color: gray;
     width: 100%;
     height: 50px;
     display: flex;
+    margin-top: 15px;
     align-items: center;
     margin-bottom: 10px;
 /* justify-content: space-between; */
