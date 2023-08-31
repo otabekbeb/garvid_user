@@ -1099,3 +1099,10 @@ justify-content: space-between;
   .bir_u h1{
     font-size: 2.5vw;
   }
+  .left_card{
+    width: 25%;
+    min-height: 125px;
+    border: 1px solid #44bef1;
+    background-color: #44bef1;
+    color: #44bef1;
+  }
