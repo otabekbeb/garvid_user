@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 
 import "../css/Teacherpage.css";
-import Footer1 from "./Footer1";
+// import Footer1 from "./Footer1";
 import Usernavbar from "./Navbar";
 import { MdEmail } from "react-icons/md";
 import { FaFacebookF } from "react-icons/fa";
@@ -126,7 +126,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <Footer1 />
+          {/* <Footer1 /> */}
         </div>) : (<Loader />)}
     </>
 

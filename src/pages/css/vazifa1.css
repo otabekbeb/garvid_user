@@ -44,13 +44,36 @@
 }
 
 .div_img_class_over img{
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
+    margin-top: 5px;
 }
+.div-like-dislike-delete-share{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.like-dislike-div-uchun{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.like-dislike-div-uchun p{
+    color: #9DA7BB;
+}
+
 .div_class_tugadi{
     margin-top: 10px;
     width: 100%;
+    border-radius: 5px;
+    border: 1px solid #9DA7BB50;
+    padding: 15px;
+}
+
+.p-create-time-uchun{
+    color: #9DA7BB;
+    font-size: 10px;
 }
 
 .hr2000{
@@ -79,13 +102,9 @@
     left: 40%;
     cursor: pointer;
 }
-@media (max-width:1000px) {
-
-}
 
 .mark-p-div-chikadi{
     border-radius: 10px;
-    border: 1px solid #9DA7BB;
     color: #000;
     box-shadow: 0px 0px 10px rgb(34, 34, 34);
     font-size: 13px;
@@ -105,18 +124,45 @@
 
 .p-info-mark-div1 {
     position: absolute;
-    right: 45%;
+    right: 45.6%;
     display: none;
     height: 35px;
-    top: 800px;
+    top: 735px;
     border-radius: 10px;
-    border: 1px solid #9DA7BB;
     width: 150px;
     text-align: center;
-    box-shadow: 0px 0px 10px rgb(34, 34, 34);
+    box-shadow: 0px 0px 10px #9da7bbde;
     font-size: 10px;
     border-bottom-right-radius: 0px;
     background-color: #fff;
+}
+
+@media (max-width:1000px) {
+    .p-info-mark-div1 {
+        position: absolute;
+        right: 80px;
+        display: none;
+        height: 35px;
+        top: 810px;
+        border-radius: 10px;
+        width: 150px;
+        text-align: center;
+        box-shadow: 0px 0px 10px #9da7bbde;
+        font-size: 10px;
+        border-bottom-right-radius: 0px;
+        background-color: #fff;
+    }
+    .mark-p-div-chikadi{
+        border-radius: 10px;
+        color: #000;
+        box-shadow: 0px 0px 10px rgb(34, 34, 34);
+        font-size: 13px;
+        width: 200px;
+        height: 30px;
+        text-align: center;
+        padding: 5px;
+    }
+    
 }
 
 #mark-input-in-task, #mark-input-in-task1{

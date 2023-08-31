@@ -1,8 +1,9 @@
   .m_comment_text1505 {
-    width: 80%;
+    width: 90%;
     font-size: 15px;
 }
 .m_comment_kotta{
+    width: 100%;
     padding: 10px;
 }
 .m_comment_text {
@@ -10,7 +11,7 @@
 }
 .m_otdel_bgc{
     background-color: #fff;
-    width: 60%;
+    width: 100%;
     padding: 20px;
 }
 #comment_file, #comment_file1{
@@ -22,20 +23,35 @@
 
 .m_comment{
 border-radius: 5px;
-display: flex;
-gap: 20px;
+display: block;
+border-radius: 5px;
+border: 1px solid #9DA7BB50;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+padding: 15px;
+margin-top: 20px;
+width: 100%;
+}
+
+.user-name-timecreate p{
+    color: #9DA7BB;
+    font-size: 10px;
+}
+
+.user-name-timecreate h5{
+    font-size: 18px;
 }
 
 .for_scroll{
     width: 1px;
     min-height: 350px;
-    height: 450px;
+    max-height: 800px;
     width: 100%;
     overflow: hidden;
     overflow-y: scroll;
+    padding: 5px;
 }
 .m_comment_kotta ::-webkit-scrollbar {
-    width: 1px;
+    width: 0px;
     opacity: 0;
   }
 .m_comment_otvet p{
@@ -49,25 +65,24 @@ gap: 20px;
 .m_otvet_comment:active{
     color: #fff;
     background-color: #44bef1;
-    border-radius: 5px;
     user-select: none;
 }
-.m_otvet_comment:active a{
-    color: #fff;
+.m_otvet_comment{
+    padding: 5px;
+    border: 1px solid #44bef1;
+    border-radius: 10px;
 }
 .m_comment_delete{ 
     cursor:pointer;
     color: red !important;
     gap: 5px;
-    text-align: center;
-}
-.m_otvet_comment a{
-    color: #44bef1;
+    padding: 5px;
+    border: 1px solid red;
+    border-radius: 10px;
 }
 .m_comment_delete:active{
     background-color: #ff0000 !important;
     color: #fff !important;
-    border-radius: 5px;
     user-select: none;
 }
 
@@ -78,9 +93,8 @@ gap: 20px;
     gap: 10px;
 }
 .m_comment_img img{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    width: 50px;
+    height: 50px;
 }
 
 .m_comment_img1 img{
@@ -99,10 +113,16 @@ gap: 20px;
         border: none;
 }
 .m_comment_yozish textarea{
-    padding-left: 30px;
+    padding-left: 20px;
     outline: none;
     border: none;
     padding-top: 2px;
+    width: 100%;
+    height: 100px !important;
+}
+.m_comment_yozish textarea:focus{
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #9DA7BB;
     width: 100%;
     height: 100px !important;
 }
@@ -177,6 +197,9 @@ height: auto;
     font-size: 13px;
 }
 @media (max-width:1000px) {
+    .m_comment_kotta{
+        width: 100%;
+    }
     .m_otdel_bgc{
         background-color: #fff;
         width: 100%;
@@ -225,7 +248,7 @@ height: auto;
 }
 @media (max-width:600px) {
     .m_comment_text1505{
-        width: 60%;
+        width: 100%;
         font-size: 13px;
     }
     .m_comment_yozish{
@@ -278,7 +301,7 @@ height: auto;
 }
 @media (max-width:400px) {
     .m_comment_text1505{
-        width: 300px;
+        width: 100%;
         font-size: 10px;
     }
     .m_comment_yozish{
@@ -347,15 +370,20 @@ height: auto;
 }
 
 .comment_otevet_all{
-    height: 350px;
+    min-height: 100px;
+    max-height: 800px;
     overflow: hidden;
     overflow-y: scroll;
 }
+.otevet_comment_otdel_oyna ::-webkit-scrollbar {
+    width: 0px;
+    opacity: 0;
+  }
 .otevet_comment_otdel_oyna{
     width: 1px;
     display: none;
     background-color: #fff;
-    width: 60%;
+    width: 100%;
     padding: 20px;
 }
 .m_otvet_comment_back{
@@ -367,11 +395,6 @@ height: auto;
     user-select: none;
 }
 
-.comment_otevet_all img{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
 
 .df_div_comment_page{
     display: flex;
@@ -408,7 +431,7 @@ height: auto;
 
 .view_all_otdel_oyna{
     height: auto;
-    width: 60%;
+    width: 100%;
     display: none;
     background-color: #fff;
     padding: 20px;
@@ -446,7 +469,7 @@ height: auto;
 
 
 .for_no_comment{
-    border: 1px solid #9DA7BB50;
+    box-shadow: 0px 0px 10px #9DA7BB;
     border-radius: 10px;
     width: 66%;
     margin-left: 15%;
@@ -478,8 +501,11 @@ height: auto;
     width: 80%;
 }
 
+.for-flex-time-name-image{
+    display: flex;
+    gap: 10px;
+}
+.user-name-timecreate{
+    display: block;
 
-/* .span_comment1202{
-    color: #44bef1;
-    text-decoration: underline;
-} */
+}
