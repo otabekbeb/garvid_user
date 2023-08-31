@@ -18,11 +18,12 @@
 
 .foor_header {
     width: 100%;
-    height: 590px;
+    height: 100vh;
     position: relative;
     display: flex;
     align-items: center;
     overflow: hidden;
+
 }
 
 .fir_header {
@@ -33,7 +34,6 @@
 
 .foor_header img {
     position: absolute;
-    width: 100%;
     height: 100%;
     top: 0;
     left: 0;

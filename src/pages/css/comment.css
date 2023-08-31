@@ -71,6 +71,10 @@ width: 100%;
     padding: 5px;
     border: 1px solid #44bef1;
     border-radius: 10px;
+}.m_otvet_comment span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 .m_comment_delete{ 
     cursor:pointer;

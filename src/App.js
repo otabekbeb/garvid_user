@@ -45,8 +45,8 @@ import Email from "./pages/js/Email";
 import Nosignal from "./pages/js/Nosignal";
 import Ourcourse from "./pages/js/Ourcourse";
 import NNN from "./pages/js/NNN";
-import VideoCall from "./pages/js/meeting";
-import JoinMeeting from "./pages/js/Join";
+import VideoCall from "./pages/meeting";
+import JoinMeeting from "./pages/Join";
 
 import Sotibol from "./pages/js/Sotibol";
 import WiewAll from "./pages/js/WiewAll";
