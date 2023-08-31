@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../css/videoChat.css"
+import "./css/videoChat.css"
 
 export default function JoinRoom() {
   const [room, setRoom] = useState(null);
