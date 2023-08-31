@@ -175,7 +175,7 @@ export default function Profil() {
 
   }, []);
 
-  function chiqish() {
+  function chiqish() {  
     window.location = "/";
     localStorage.removeItem("token");
   }

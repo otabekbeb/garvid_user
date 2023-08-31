@@ -8,7 +8,7 @@
     /* align-items: center; */
     justify-content: space-between;
     padding: 10px;
-    margin-top: 0px;
+    margin-top: 70px;
    
 }
 @media (max-width:1034px) {
@@ -1214,3 +1214,4 @@ top: 80px;
 .profil-in-video-sure{
     background-color: #fff;
 }
+

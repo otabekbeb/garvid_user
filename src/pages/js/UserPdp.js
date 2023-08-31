@@ -11,7 +11,7 @@ import { TiThMenu } from "react-icons/ti";
 import axios from "axios";
 import url from "./Host";
 import Testpage from '../js/Testpage'
-import VideoChat from "./Join"
+import VideoChat from "../Join"
 import Courses from "./Ourcourse"
 import Mysubscribers from '../js/Mysubscribers'
 import Student from '../js/Student'

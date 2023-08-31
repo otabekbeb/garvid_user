@@ -80,7 +80,8 @@ export default function FollowCard() {
       </div>
       <div className="container">
         <div className="row">
-          {follow === null?( <div className="delete_padding">
+          {follow === null?( 
+          <div className="delete_padding">
                   <img src={Groupimg} alt="" />
                   <h4>Вы не купили курс</h4>
                   <div className="delete_btns">

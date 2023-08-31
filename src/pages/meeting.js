@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import url from "./Host";
+import url from "./js/Host";
 
 export default function Video({ match }) {
   const [domain,setDomain]=useState("")
@@ -11,6 +11,7 @@ export default function Video({ match }) {
       const domain = `https://${res.data.domain}.daily.co/`;
       setDomain(domain)
     })
+    
 
     axios
       .get(`${url}/video-call/${id}`)
@@ -34,7 +35,7 @@ export default function Video({ match }) {
           document.body.appendChild(script);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) =>alert(domain));
   }, [id]);
 
   return <div></div>;

@@ -121,7 +121,7 @@ body {
   }
 }
 
-@media (max-width:726px) {
+/* @media (max-width:726px) {
   .News_cards {
     display: none;
   }
@@ -159,4 +159,4 @@ body {
   .News_card101{
     width: 90%;
   }
-}
+} */
