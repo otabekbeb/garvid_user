@@ -58,6 +58,9 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    user-select: none;
+    cursor: pointer;
+
 }
 .like-dislike-div-uchun p{
     color: #9DA7BB;
@@ -410,4 +413,42 @@
     align-items: center;
     font-size: 25px;
     cursor: pointer;
+}
+
+@media (max-width:550px) {
+    .m_comment_delete1 span{ 
+        display: none;
+    }
+    .m_comment_delete1{
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 50%;
+        border: 1px solid red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .m_comment_delete1:active{
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 50% !important;
+        background-color: red;
+    }
+    .m-comment-mark span{
+        display: none;
+    }
+    .m-comment-mark{
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 50%;
+        border: 1px solid #44bef1;
+        display: flex;
+        align-items: center;justify-content: center; 
+    }
+    .m-comment-mark:active{
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 50% !important;
+        background-color: #44bef1;
+    }
 }
