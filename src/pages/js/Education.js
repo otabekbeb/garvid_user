@@ -54,9 +54,9 @@ export default function Edication() {
   const [Markstudent_id, setMarkstudent_id] = useState()
   const [MarkId, setMarkId] = useState()
   const [newdate, setNewdate] = useState(`${(new Date()).getMonth() + 1}.padStart(2,0)`)
-
+  
   const [Journal_mark, setJournal_mark] = useState({ allesson: [], alstudent_mark: [{ mark: [] }] })
-
+  
   // 
   const username = document.querySelectorAll("#Educationusername")
   const start_date = document.querySelectorAll("#Educationstart_date")
@@ -68,8 +68,8 @@ export default function Edication() {
   const day = document.querySelectorAll("#Scheduleday")
   const teacher_id = document.querySelectorAll("#ScheduleTeacher_id")
   const student_id = document.querySelectorAll("#Groupusername")
-
-
+  
+  
   useEffect(() => {
     const a = new Date()
     var b = a.getDate()
@@ -80,8 +80,9 @@ export default function Edication() {
     axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setEdication(res.data)
       setEdication1(res.data)
+      localStorage.setItem("for_education",(res.data).length)
     })
-
+    
     axios.get(`${url}/auth/teachers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       const user = res.data.filter(item => item.position == 2)
       setUser(res.data)
@@ -90,9 +91,9 @@ export default function Edication() {
       const StudentFilter = res.data.filter(item => item.position == 4)
       setSdutent(res.data)
     })
-
+    
   }, [])
-
+  
   function Page(id) {
     setPage(1)
     setEducationId(id)
@@ -644,7 +645,6 @@ export default function Edication() {
               </div> */}
               <ul class="cards">
                 {edication.map(item => {
-              localStorage.setItem("for_education",edication.length)
                   return (
                     <li>
                       <div class="card">
@@ -656,8 +656,8 @@ export default function Edication() {
                             <div class="card__header-text">
                               <h2 class="card__title">{item.education_name}</h2>
                               <span class="card__status">
-                                <p><FaHourglassStart />: {}</p>
-                                <p><FaHourglassEnd />: {}</p></span>
+                                <p><FaHourglassStart />: {(item.start_date).slice(0, 10)}</p>
+                                <p><FaHourglassEnd />: {(item.end_date).slice(0, 10)}</p></span>
                             </div>
                           </div>
                           <p class="card__description">{item.description}</p>

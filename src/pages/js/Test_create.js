@@ -81,6 +81,21 @@ import Noimg from "../img/Images-rafiki (1).png"
 import testimg from "../img/Image folder-rafiki.png"
 
 
+// import React, { useRef, useState } from 'react';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+// import './styles.css';
+
+// import required modules
+import { Pagination, Navigation } from 'swiper/modules';
+
+
 export default function Test() {
     const [test, setTest] = useState([])
     const [page, setPage] = useState(0)
@@ -488,7 +503,7 @@ export default function Test() {
     }
 
     return (
-        <div>
+        <div className='test_craete_svipe'>
             {page == 3 ? (
                 <>
                     <div className="close_btn_test">
@@ -504,9 +519,18 @@ export default function Test() {
                         </div>
                     </div>
                     {/* <Table dataSource={quations} columns={quation} /> */}
-                    <div className="questions_page_big">
+                    <Swiper
+                        pagination={{
+                            type: 'fraction',
+                        }}
+                        navigation={true}
+                        modules={[Pagination, Navigation]}
+                        className="mySwiper"
+                    >
                         {quations.map((item, key) => {
-                            return (
+                            return (<SwiperSlide>
+
+
                                 <div className="questions_page_big_div">
                                     <h3 className='questions_h1_length'><h3>{key + 1}.Вопросы</h3><div><button onClick={() => putQuestionsModal(item.id)} className='user_post_button'>Редактировать</button><button style={{ marginLeft: '10px' }} onClick={() => deleteQuestionsOpen(item.id)} className='user_post_button'>Удалить</button></div></h3>
                                     <div className='questions_page_small_div'>
@@ -520,8 +544,13 @@ export default function Test() {
                                         <p>{item.answer == 1 ? (<><h3 className='questions_page_small_div_p'>A</h3>  : {item.variant1}</>) : (item.answer == 2 ? (<><h3 className='questions_page_small_div_p'>B</h3>  : {item.variant2}</>) : (item.answer == 3 ? (<><h3 className='questions_page_small_div_p'>C</h3>  : {item.variant3}</>) : (item.answer == 4 ? (<><h3 className='questions_page_small_div_p'>D</h3>  : {item.variant4}</>) : (""))))}</p>
                                     </div>
                                 </div>
-                            )
+
+
+                            </SwiperSlide>)
                         })}
+                    </Swiper>
+                    <div className="questions_page_big">
+
 
                     </div>
                 </>) : (

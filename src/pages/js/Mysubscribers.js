@@ -12,7 +12,7 @@ export default function Azo() {
     const [following, setFollowing] = useState(localStorage.getItem("OneuserId"))
     function folowcolor1(key) {
         axios.delete(`${url}/api/follow/${key}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-            alert("oxsha")
+            window.location.reload()
         }).catch(err => {
             alert("xato")
         })
@@ -20,6 +20,7 @@ export default function Azo() {
     useEffect(() => {
         axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             setFollow(res.data)
+            localStorage.setItem("subscribersLength", res.data.filter(filter => filter.topuser == localStorage.getItem("OneuserId")).length)
         })
     }, [])
     function obuna() {
@@ -34,7 +35,7 @@ export default function Azo() {
         axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             setUsers(res.data)
         })
-    }, []);
+        }, []);
 
     return (
         <div className='followi1'>
@@ -54,9 +55,8 @@ export default function Azo() {
                             if (following == item.topuser) {
                                 return <>
                                     {users.map(item1 => {
-
+                                        
                                         if (item1.id == item.minuser) {
-                                            localStorage.setItem("subscribersLength", follow.filter(follow => follow.topuser == following).length)
                                             return (
                                                 <a>
                                                     <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
