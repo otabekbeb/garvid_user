@@ -46,8 +46,7 @@ import Nosignal from "./pages/js/Nosignal";
 import Ourcourse from "./pages/js/Ourcourse";
 import NNN from "./pages/js/NNN";
 import VideoCall from "./pages/metting";
-import JoinMeeting from "./pages/join";
-
+import JoinMeeting from "../src/pages/Join"
 import Sotibol from "./pages/js/Sotibol";
 import WiewAll from "./pages/js/WiewAll";
 export default function App() {
@@ -103,7 +102,6 @@ export default function App() {
           <Route path="/Ourcourse" element={<Ourcourse />} />
           <Route path="/WiewAll" element={<WiewAll />} />
           <Route path="/NNN" element={<NNN />} />
-
           {/* <Route index element={} />*/}
         </Routes>
       </BrowserRouter>
