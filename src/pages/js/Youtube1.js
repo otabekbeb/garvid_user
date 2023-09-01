@@ -1380,10 +1380,6 @@ export default function Youtube1() {
                                                   {item.text}
                                                 </p>
                                                 <div className="div-like-dislike-delete-share">
-                                                  <div className="like-dislike-div-uchun">
-                                                    <p className="like-dislike-div-uchun1"><AiFillLike /> 387</p>
-                                                    <p className="like-dislike-div-uchun2"><AiFillDislike /> 178</p>
-                                                  </div>
                                                 {oneuser.map((item5) => {
                                                   return (
                                                     <div
