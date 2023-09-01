@@ -406,7 +406,7 @@ select {
     transition: 0.4s;
 }
 
-.user_post_button_malumot {
+/* .user_post_button_malumot {
     padding-left: 13px;
     padding-right: 13px;
     padding-top: 4px;
@@ -420,12 +420,12 @@ select {
     font-size: 15px;
     border-radius: 5px;
     transition: 0.4s;
-}
+} */
 
-.user_post_button_malumot:hover {
+/* .user_post_button_malumot:hover {
     background-color: #44bef1;
     color: #fff
-}
+} */
 
 .deleteModal_div button:hover {
     background-color: #44bef1;
@@ -578,8 +578,8 @@ select {
 .exit_button button {
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
     margin-bottom: 10px;
     border: 1px solid #44bef1;
     color: #44bef1;
@@ -1066,14 +1066,14 @@ select {
         margin-bottom: 5px;
     } */
 
-    .user_post_button_malumot {
+    /* .user_post_button_malumot {
         font-size: 11px !important;
         padding-left: 6px;
         padding-right: 6px;
         padding-top: 2px;
         padding-bottom: 2px;
         margin-bottom: 5px;
-    }
+    } */
 
     .user_post_button_bandan_olish {
         width: 80px;
@@ -1694,4 +1694,22 @@ select {
 .edu_btn_delete:hover{
     color: white !important;
     background-color: red !important;
+}
+.otash{
+    width: 80%;
+}
+.edu_th{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: -10px !important;
+    /* padding: 0px !important; */
+}
+@media (max-width:705px) {
+    .otash{
+        width: 98%;
+    }
+    :where(.css-dev-only-do-not-override-190m0jy).ant-table-wrapper .ant-table-thead>tr>th, :where(.css-dev-only-do-not-override-190m0jy).ant-table-wrapper .ant-table-tbody>tr>th, :where(.css-dev-only-do-not-override-190m0jy).ant-table-wrapper .ant-table-tbody>tr>td, :where(.css-dev-only-do-not-override-190m0jy).ant-table-wrapper tfoot>tr>th, :where(.css-dev-only-do-not-override-190m0jy).ant-table-wrapper tfoot>tr>td{
+        /* margin-top: 10px !important; */
+        padding: 7px;
+    }
 }

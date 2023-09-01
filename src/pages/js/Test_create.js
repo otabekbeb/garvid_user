@@ -274,7 +274,7 @@ export default function Test() {
             title: '',
             dataIndex: 'id',
             key: 'id',
-            render: (dataIndex) => <><button onClick={() => putAttened_testModal(dataIndex)} className="user_post_button">Редактировать</button>      <button onClick={() => deleteAttened_testModal(dataIndex)} className="user_post_button">Удалить</button>     </>,
+            render: (dataIndex) => <><button onClick={() => putAttened_testModal(dataIndex)} className="user_post_button">Edit</button>      <button onClick={() => deleteAttened_testModal(dataIndex)} className="user_post_button">Удалить</button>     </>,
         },
     ]
 
@@ -294,7 +294,7 @@ export default function Test() {
             title: '',
             dataIndex: 'id',
             key: 'id',
-            render: (dataIndex) => <><button className="user_post_button">Редактировать</button>      <button className="user_post_button">Удалить</button>     </>,
+            render: (dataIndex) => <><button className="user_post_button">Edit</button>      <button className="user_post_button">Удалить</button>     </>,
         },
     ]
 
@@ -507,15 +507,15 @@ export default function Test() {
             {page == 3 ? (
                 <>
                     <div className="close_btn_test">
-                        <div className="exit_button"><button onClick={() => setPage(0)}>Назад</button></div>
+                        <div className="exit_button"><button onClick={() => setPage(0)}>Clouse</button></div>
                     </div>
                     {/* <div className="search_big_div"><button  className="user_post_button" onClick={()=>postAttened_testModal()}>Добавить</button><AiOutlineSearch className="search"/><input placeholder="Введите здесь..." type="text" /></div> */}
                     {/* <Table style={{marginBottom:'100px'}} dataSource={attendance_lesson} columns={columns} /> */}
                     <div className="close_btn_test">
                         <div className="search_big_div">
-                            <button onClick={() => postQuestionsModal()} className="user_post_button">Добавить</button>
+                            <button onClick={() => postQuestionsModal()} className="user_post_button">Add</button>
                             <BsSearch className="search" />
-                            <input onChange={(e) => setSearch(e.target.value)} placeholder="Введите здесь..." type="text" />
+                            <input onChange={(e) => setSearch(e.target.value)} placeholder="Enter here..." type="text" />
                         </div>
                     </div>
                     {/* <Table dataSource={quations} columns={quation} /> */}
@@ -532,9 +532,9 @@ export default function Test() {
 
 
                                 <div className="questions_page_big_div">
-                                    <h3 className='questions_h1_length'><h3>{key + 1}.Вопросы</h3>
+                                    <h3 className='questions_h1_length'><h3>{key + 1}.Quations</h3>
                                         <div className='user_post_btns'>
-                                            <button onClick={() => putQuestionsModal(item.id)} className='user_post_button'>Редактировать</button>
+                                            <button onClick={() => putQuestionsModal(item.id)} className='user_post_button'>Edit</button>
                                             <button style={{ marginLeft: '10px' }} onClick={() => deleteQuestionsOpen(item.id)} className='user_post_button'>Удалить</button>
                                         </div></h3>
                                     <div className='questions_page_small_div'>
@@ -544,7 +544,7 @@ export default function Test() {
                                         <p><h3 className='questions_page_small_div_p'>B</h3>  : {item.variant2}</p>
                                         <p><h3 className='questions_page_small_div_p'>C</h3>  : {item.variant3}</p>
                                         <p><h3 className='questions_page_small_div_p'>D</h3>  : {item.variant4}</p>
-                                        <h3>Тестовый ответ</h3>
+                                        <h3>Test answer</h3>
                                         <p>{item.answer == 1 ? (<><h3 className='questions_page_small_div_p'>A</h3>  : {item.variant1}</>) : (item.answer == 2 ? (<><h3 className='questions_page_small_div_p'>B</h3>  : {item.variant2}</>) : (item.answer == 3 ? (<><h3 className='questions_page_small_div_p'>C</h3>  : {item.variant3}</>) : (item.answer == 4 ? (<><h3 className='questions_page_small_div_p'>D</h3>  : {item.variant4}</>) : (""))))}</p>
                                     </div>
                                 </div>
@@ -589,9 +589,9 @@ export default function Test() {
                         <>
                             <div className="bigdiv_search">
                                 <div className="search_big_div">
-                                    <button className="user_post_button" onClick={() => postTestModal()}>Добавить</button>
+                                    <button className="user_post_button" onClick={() => postTestModal()}>Add</button>
                                     <BsSearch className="search" />
-                                    <input onChange={(e) => setSearch(e.target.value)} placeholder="Введите здесь..." type="text" />
+                                    <input onChange={(e) => setSearch(e.target.value)} placeholder="Enter here..." type="text" />
                                 </div>
                             </div>
                             <div className="edication_card">
@@ -603,15 +603,15 @@ export default function Test() {
                                     localStorage.setItem("testLength", test.length)
                                     return (
                                         <div className="edication_card_">
-                                            <h3>Крайний срок:  {item.deadline}</h3>
-                                            <h3 style={{ fontSize: '16px', opacity: '0.6' }}>День:  {(item.day).slice(0, 10)}</h3>
+                                            <h3>Deadline:  {item.deadline}</h3>
+                                            <h3 style={{ fontSize: '16px', opacity: '0.6' }}>Day:  {(item.day).slice(0, 10)}</h3>
                                             <div className="edication_card_date">
-                                                <p>Время начала: {item.start_time}</p>
-                                                <p>Время окончания: {item.end_time}</p>
+                                                <p>Start time: {item.start_time}</p>
+                                                <p>End time: {item.end_time}</p>
                                             </div>
                                             <div className="edication_card_date">
-                                                <p>Начальный уровень: {item.level_start ? ((item.level_start).slice(0, 10)) : ("Time")}</p>
-                                                <p>Конец уровня: {item.level_end ? ((item.level_end).slice(0, 10)) : ("Time")}</p>
+                                                <p>First level: {item.level_start ? ((item.level_start).slice(0, 10)) : ("Time")}</p>
+                                                <p>Level end: {item.level_end ? ((item.level_end).slice(0, 10)) : ("Time")}</p>
                                             </div>
                                             <span>{item.description}</span>
                                             <div className="edication_card_button">
@@ -633,10 +633,10 @@ export default function Test() {
                 <div className="deleteModal_div">
                     <div className="postUserModal_div_icon"><GrFormClose className="iconka" onClick={() => deleteTestClose()} /></div>
                     <img src={deleteImg} alt="item" />
-                    <p>Вы хотите удалить это образование</p>
+                    <p>Do you want to remove this entity?</p>
                     <div className="deleteButton_div">
-                        <button onClick={() => deleteTestClose()}>Отмена</button>
-                        <button onClick={() => deleteTest()}>Подтвердить</button>
+                        <button onClick={() => deleteTestClose()}>Cancel</button>
+                        <button onClick={() => deleteTest()}>Confirm</button>
                     </div>
                 </div>
             </div>
@@ -645,7 +645,7 @@ export default function Test() {
                     <div className="postUserModal_div_icon"><GrFormClose className="iconka" onClick={() => postTestClose()} /></div>
                     <div className="postUserModal_div_label" style={{ display: 'flex', flexWrap: 'wrap' }}>
                         <label htmlFor="">
-                            <p>Образование</p>
+                            <p>Education</p>
                             <select name="" id="Testeducation_id">
                                 {education.map(item => {
                                     return <option value={item.id}>{item.education_name}</option>
@@ -653,31 +653,31 @@ export default function Test() {
                             </select>
                         </label>
                         <label htmlFor="">
-                            <p>Время начала</p>
+                            <p>Start time</p>
                             <input id="Teststart_time" type="time" />
                         </label>
                         <label htmlFor="">
-                            <p>Крайний срок</p>
+                            <p>Deadline</p>
                             <input id="Testdeadline" type="time" />
                         </label>
                         <label htmlFor="">
-                            <p>День</p>
+                            <p>Day</p>
                             <input id="Testday" type="date" />
                         </label>
                         <label htmlFor="">
-                            <p>Время окончания</p>
+                            <p>End time</p>
                             <input id="Testend_time" type="time" />
                         </label>
                         <label htmlFor="">
-                            <p>Конечная дата</p>
+                            <p>Final date</p>
                             <input id="Testlevel_start" type="time" />
                         </label>
                         <label htmlFor="">
-                            <p>Конец уровня</p>
+                            <p>Level end</p>
                             <input id="Testlevel_end" type="time" />
                         </label>
                         <label htmlFor="">
-                            <p>Учитель</p>
+                            <p>Teacher</p>
                             <select name="" id="Testteacher_id">
                                 {teacherr.map(item => {
                                     return <option value={item.id}>{item.username}</option>
@@ -687,7 +687,7 @@ export default function Test() {
                         </label>
                     </div>
                     <div className="postUserModal_div_button">
-                        <button onClick={() => postTest()}>Отправить</button>
+                        <button onClick={() => postTest()}>Send</button>
                     </div>
                 </div>
             </div>
@@ -696,7 +696,7 @@ export default function Test() {
                     <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => putTestClose()} /></div>
                     <div className="postUserModal_div_label" style={{ display: 'flex', flexWrap: 'wrap' }}>
                         <label htmlFor="">
-                            <p>Образование</p>
+                            <p>Education</p>
                             <select name="" id="Testeducation_id">
                                 {education.map(item => {
                                     return <option value={item.id}>{item.education_name}</option>
@@ -704,31 +704,31 @@ export default function Test() {
                             </select>
                         </label>
                         <label htmlFor="">
-                            <p>Время начала</p>
+                            <p>Start time</p>
                             <input id="Teststart_time" type="time" />
                         </label>
                         <label htmlFor="">
-                            <p>Крайний срок</p>
+                            <p>Deadline</p>
                             <input id="Testdeadline" type="time" />
                         </label>
                         <label htmlFor="">
-                            <p>День</p>
+                            <p>Day</p>
                             <input id="Testday" type="date" />
                         </label>
                         <label htmlFor="">
-                            <p>Время окончания</p>
+                            <p>End time</p>
                             <input id="Testend_time" type="time" />
                         </label>
                         <label htmlFor="">
-                            <p>Конечная дата</p>
+                            <p>Final date</p>
                             <input id="Testlevel_start" type="time" />
                         </label>
                         <label htmlFor="">
-                            <p>Конец уровня</p>
+                            <p>Level end</p>
                             <input id="Testlevel_end" type="time" />
                         </label>
                         <label htmlFor="">
-                            <p>Учитель</p>
+                            <p>Teacher</p>
                             <select name="" id="Testteacher_id">
                                 {teacherr.map(item => {
                                     return <option value={item.id}>{item.username}</option>
@@ -737,7 +737,7 @@ export default function Test() {
                         </label>
                     </div>
                     <div className="postUserModal_div_button">
-                        <button onClick={() => putTest()}>Редактировать</button>
+                        <button onClick={() => putTest()}>Edit</button>
                     </div>
                 </div>
             </div>
@@ -746,10 +746,10 @@ export default function Test() {
                 <div className="deleteModal_div">
                     <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => deleteAttened_testClose()} /></div>
                     <img src={deleteImg} alt="" />
-                    <p>Вы хотите удалить это образование</p>
+                    <p>Do you want to delete this Questions</p>
                     <div className="deleteButton_div">
-                        <button onClick={() => deleteAttened_testClose()}>Отмена</button>
-                        <button onClick={() => deleteAttened_test()}>Подтвердить</button>
+                        <button onClick={() => deleteAttened_testClose()}>Cancel</button>
+                        <button onClick={() => deleteAttened_test()}>Confirm</button>
                     </div>
                 </div>
             </div>
@@ -758,22 +758,22 @@ export default function Test() {
                     <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => postAttened_testClose()} /></div>
                     <div className="postUserModal_div_label" style={{ display: 'flex', flexWrap: 'wrap' }}>
                         <label htmlFor="">
-                            <p>Идентификатор группы</p>
+                            <p>Group ID</p>
                             <input id="Attened_testgroup_id" type="text" />
                         </label>
                         <label htmlFor="">
-                            <p>Отметка</p>
+                            <p>Mark</p>
                             <input id="Attened_testmark" type="text" />
                         </label>
                         <label style={{ width: '100%' }} htmlFor="">
-                            <p>Пришел</p>
+                            <p>Came</p>
                             <div className="Came_button_div">
                                 <button style={CameButton == true ? { backgroundColor: '#1890ff', color: '#fff' } : {}} id='Attened_testcame' onClick={() => Came(true)}>Пришел</button>    <button id='Attened_testcame' style={CameButton == false ? { backgroundColor: '#1890ff', color: '#fff' } : {}} onClick={() => Came(false)}>Не пришел</button>
                             </div>
                         </label>
                     </div>
                     <div className="postUserModal_div_button">
-                        <button onClick={() => postAttened_test()}>Отправить</button>
+                        <button onClick={() => postAttened_test()}>Send</button>
                     </div>
                 </div>
             </div>
@@ -782,22 +782,22 @@ export default function Test() {
                     <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => putAttened_testClose()} /></div>
                     <div className="postUserModal_div_label" style={{ display: 'flex', flexWrap: 'wrap' }}>
                         <label htmlFor="">
-                            <p>Идентификатор группы</p>
+                            <p>Group ID</p>
                             <input id="Attened_testgroup_id" type="text" />
                         </label>
                         <label htmlFor="">
-                            <p>Отметка</p>
+                            <p>Mark</p>
                             <input id="Attened_testmark" type="text" />
                         </label>
                         <label style={{ width: '100%' }} htmlFor="">
-                            <p>Пришел</p>
+                            <p>Came</p>
                             <div className="Came_button_div">
                                 <button style={CameButton == true ? { backgroundColor: '#1890ff', color: '#fff' } : {}} id='Attened_testcame' onClick={() => Came(true)}>Пришел</button>    <button id='Attened_testcame' style={CameButton == false ? { backgroundColor: '#1890ff', color: '#fff' } : {}} onClick={() => Came(false)}>Не пришел</button>
                             </div>
                         </label>
                     </div>
                     <div className="postUserModal_div_button">
-                        <button onClick={() => putAttened_test()}>Редактировать</button>
+                        <button onClick={() => putAttened_test()}>Edit</button>
                     </div>
                 </div>
             </div>
@@ -806,10 +806,10 @@ export default function Test() {
                 <div className="deleteModal_div">
                     <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => deleteQuestionsClose()} /></div>
                     <img src={deleteImg} alt="" />
-                    <p>Вы хотите удалить это Вопросы</p>
+                    <p>Do you want to delete this Questions</p>
                     <div className="deleteButton_div">
-                        <button onClick={() => deleteQuestionsClose()}>Отмена</button>
-                        <button onClick={() => deleteQuestions()}>Подтвердить</button>
+                        <button onClick={() => deleteQuestionsClose()}>Cancel</button>
+                        <button onClick={() => deleteQuestions()}>Confirm</button>
                     </div>
                 </div>
             </div>
@@ -818,7 +818,7 @@ export default function Test() {
                     <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => postQuestionsClose()} /></div>
                     <div className="postUserModal_div_label" style={{ display: 'flex', flexWrap: 'wrap' }}>
                         <label htmlFor="">
-                            <p>Вопрос</p>
+                            <p>Questoin</p>
                             <input id="questions" type="text" />
                         </label>
                         <label style={{ position: 'relative' }} htmlFor="">
@@ -842,19 +842,19 @@ export default function Test() {
                             <p className='variant1ABCD'>D</p>
                         </label>
                         <label htmlFor="">
-                            <p>Изображение</p>
+                            <p>Image</p>
                             <input id="questionsimage" type="file" />
 
                         </label>
                         <label style={{ width: '100%' }} htmlFor="">
-                            <p>Отвечать</p>
+                            <p>Reply</p>
                             <div className="Came_button_div">
                                 <button style={CameButton == 1 ? { backgroundColor: '#1890ff', color: '#fff' } : {}} id='Attened_testcame' onClick={() => Came(1)}>Вариант 1</button>    <button id='Attened_testcame' style={CameButton == 2 ? { backgroundColor: '#1890ff', color: '#fff' } : {}} onClick={() => Came(2)}>Вариант 2</button> <button id='Attened_testcame' style={CameButton == 3 ? { backgroundColor: '#1890ff', color: '#fff' } : {}} onClick={() => Came(3)}>Вариант 3</button> <button id='Attened_testcame' style={CameButton == 4 ? { backgroundColor: '#1890ff', color: '#fff' } : {}} onClick={() => Came(4)}>Вариант 4</button>
                             </div>
                         </label>
                     </div>
                     <div className="postUserModal_div_button">
-                        <button onClick={() => postQuestions()}>Отправить</button>
+                        <button onClick={() => postQuestions()}>Send</button>
                     </div>
                 </div>
             </div>
@@ -863,7 +863,7 @@ export default function Test() {
                     <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => putQuestionsClose()} /></div>
                     <div className="postUserModal_div_label" style={{ display: 'flex', flexWrap: 'wrap' }}>
                         <label htmlFor="">
-                            <p>Вопрос</p>
+                            <p>Question</p>
                             <input id="questions" type="text" />
                         </label>
                         <label style={{ position: 'relative' }} htmlFor="">
@@ -888,19 +888,19 @@ export default function Test() {
                             <p className='variant1ABCD'>D</p>
                         </label>
                         <label htmlFor="">
-                            <p>Изображение</p>
+                            <p>Image</p>
                             <input id="questionsimage" type="file" className='questionsimage' />
-                            <div className='questionimg'><FiDownload />Выбрать изображение</div>
+                            <div className='questionimg'><FiDownload />Select image</div>
                         </label>
                         <label style={{ width: '100%' }} htmlFor="">
-                            <p>Отвечать</p>
+                            <p>Reply</p>
                             <div className="Came_button_div">
                                 <button style={CameButton == 1 ? { backgroundColor: '#1890ff', color: '#fff' } : {}} id='Attened_testcame' onClick={() => Came(1)}>Вариант 1</button>    <button id='Attened_testcame' style={CameButton == 2 ? { backgroundColor: '#1890ff', color: '#fff' } : {}} onClick={() => Came(2)}>Вариант 2</button> <button id='Attened_testcame' style={CameButton == 3 ? { backgroundColor: '#1890ff', color: '#fff' } : {}} onClick={() => Came(3)}>Вариант 3</button> <button id='Attened_testcame' style={CameButton == 4 ? { backgroundColor: '#1890ff', color: '#fff' } : {}} onClick={() => Came(4)}>Вариант 4</button>
                             </div>
                         </label>
                     </div>
                     <div className="postUserModal_div_button">
-                        <button onClick={() => putQuestions()}>Редактировать</button>
+                        <button onClick={() => putQuestions()}>Edit</button>
                     </div>
                 </div>
             </div>
@@ -916,7 +916,7 @@ export default function Test() {
                                             <div className="test_big_div">
                                                 <img src={testimg} alt="" />
                                                 <h3>{user.username}</h3>
-                                                <h3>Оценка : {item.mark}</h3>
+                                                <h3>Grade : {item.mark}</h3>
                                             </div>
                                         )
                                     }

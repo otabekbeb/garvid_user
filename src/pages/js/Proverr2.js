@@ -21,7 +21,7 @@ import Footer1 from '../js/Footer1'
 import buyimg from '../img/2282281.png'
 import { MdClose } from 'react-icons/md'
 import Profil from './Profil'
-// import UserPdp from '../js/UserPdp'
+
 function onga() {
     document.querySelector(".mni-gridf1").classList.toggle("mni-gridf1-none")
     document.querySelector(".mni-gridf2").classList.toggle("mni-gridf2-none")
