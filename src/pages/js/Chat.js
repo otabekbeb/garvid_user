@@ -17,6 +17,7 @@ function Chat({ socket, email, room }) {
   const [CurrentEmoji,setCurrentEmoji] = useState(null)
 
   const sendMessage = async () => {
+    document.querySelector(".emojiess").style="display:none"
     if (currentMessage !== "") {
       const messageData = {
         room: room,
@@ -67,7 +68,16 @@ function Chat({ socket, email, room }) {
 function prof_tg() {
   
 }
+function smileu() {
+  var a=document.querySelector(".emojiess").style.display
+  if (a==="none") {
+     document.querySelector(".emojiess").style.display="block"
+  }else{
+    document.querySelector(".emojiess").style.display="none"
+  }
+}
   useEffect(() => {
+    document.querySelector(".emojiess").style="display:none"
     if (theme=="moon") {
       document.querySelector(".emoj").style = "color:white;";
     }else{
@@ -158,7 +168,7 @@ function prof_tg() {
       <div className="chat-footer">
        <div className="emojiess" ><Picker data={data} previewPosition="flex" onEmojiSelect={(e)=>{setCurrentMessage(currentMessage+e.native)}}/></div>
       <div className="for_emojis">
-      <div className="emojis" onClick={()=> {document.querySelector(".emojiess").classList.toggle("smilek")}}><BsEmojiSmile className="emoj"/></div>
+      <div className="emojis" onClick={()=> smileu()}><BsEmojiSmile className="emoj"/></div>
 
         <input
           type="text"

@@ -38,7 +38,7 @@ import { FaYoutube } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import { BsFillCloudArrowDownFill } from 'react-icons/bs'
 import sertifikat from '../img/Sertifikat.png'
-import Groupimg from "../img/Group 2.png";
+import Groupimg from "../img/Checklist-rafiki.png";
 import { BsSearch } from "react-icons/bs"
 import deleteImg from "../img/Group 2.png"
 import { MdDeleteOutline } from "react-icons/md"
