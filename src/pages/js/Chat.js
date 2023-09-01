@@ -3,9 +3,9 @@ import ScrollToBottom from "react-scroll-to-bottom";
 import "../css/Chat.css"
 import { IoArrowBackOutline } from 'react-icons/io';
 import tgimg from "../img/photo_2023-06-25_22-19-50 (2).jpg";
+import Picker from '@emoji-mart/react'
 import data from '@emoji-mart/data'
-import { Picker } from "emoji-mart";
-
+import {BsEmojiSmile} from 'react-icons/bs'
 
 
 
@@ -13,6 +13,8 @@ function Chat({ socket, email, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
   const [theme,setTheme] = useState(localStorage.getItem("back"))
+  const [isPickerVisible,setPickerVisible] = useState(false)
+  const [CurrentEmoji,setCurrentEmoji] = useState(null)
 
   const sendMessage = async () => {
     if (currentMessage !== "") {
@@ -66,6 +68,16 @@ function prof_tg() {
   
 }
   useEffect(() => {
+    if (theme=="moon") {
+      document.querySelector(".emoj").style = "color:white;";
+    }else{
+      document.querySelector(".emoj").style = "color:black;";
+    }
+    if (theme=="moon") {
+      document.querySelector(".for_emojis").style = "background: rgb(33, 33, 33);";
+    }else{
+      document.querySelector(".for_emojis").style = "background: rgb(236, 235, 235);;";
+    }
     if (theme=="moon") {
       document.querySelector(".forr_white").style = "color:white !important";
     }else{
@@ -144,7 +156,10 @@ function prof_tg() {
         </ScrollToBottom>
       </div>
       <div className="chat-footer">
-       
+       <div className="emojiess" ><Picker data={data} previewPosition="flex" onEmojiSelect={(e)=>{setCurrentMessage(currentMessage+e.native)}}/></div>
+      <div className="for_emojis">
+      <div className="emojis" onClick={()=> {document.querySelector(".emojiess").classList.toggle("smilek")}}><BsEmojiSmile className="emoj"/></div>
+
         <input
           type="text"
           value={currentMessage}
@@ -155,7 +170,7 @@ function prof_tg() {
           onKeyPress={(event) => {
             event.key === "Enter" && sendMessage();
           }}
-        />
+        /></div>
         <button onMouseLeave={()=>send2()} onMouseEnter={()=>send1()} onClick={sendMessage}><i style={{ fontSize: "25px" }} class='bx bx-send'></i></button>
       </div>
     </div>

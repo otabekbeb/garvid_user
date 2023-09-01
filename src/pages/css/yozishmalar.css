@@ -521,7 +521,7 @@ color: gray;
     width: 1px !important;
     opacity: 0 !important;
   }
-@media(min-width:700px) {
+@media(min-width:800px) {
     .yoq1 {
         display: none !important;
     }
@@ -561,7 +561,7 @@ color: gray;
 
 }
 
-@media(max-width:700px) {
+@media(max-width:800px) {
     .yozishma_bolim_text_nik {
         display: block;
     }
@@ -850,6 +850,7 @@ color: gray;
     border-bottom-right-radius: 10px;
     background-color: #FFF;
 }
+
 .yozishma_bolim_text_nik_search {
     width: 100%;
     height: 50px;
@@ -873,9 +874,6 @@ label{
     margin-left: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     color: gray;
-}
-@media(min-width:700px){
-
 }
 .switch {
     font-size: 17px;
@@ -1008,4 +1006,38 @@ label{
 }
 .fill1{
     display: block;
+}
+.emojiess{
+    display: none;
+}
+.smilek{
+    display: block;
+    position: relative;
+}
+.yozishma_small_div{
+    position: relative;
+}
+.emojiess{
+    position: relative;
+}
+.emojiess div{
+    position: absolute;
+    bottom: 70px;
+    left: 20px;
+    height: 265px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.emojis{
+    font-size: 25px;
+}
+.for_emojis{
+    display: flex;
+    width: 92%;
+    background: rgb(236, 235, 235);
+    margin: auto;
+    height: 60px;
+    align-items: center;
+    padding-left: 20px;
+    border-radius: 10px;
 }

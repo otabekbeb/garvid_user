@@ -208,13 +208,13 @@ body {
 }
 
 .chat-window .chat-footer input {
+  width: 100%;
+  /* margin-left: 2%; */
   height: 100%;
-  width: 92%;
-  margin-left: 4%;
   border-radius: 7px;
   border: 0;
   padding: 0 1.5em;
-  font-size: 1em;
+  font-size: 20px;
   /* border-right: 2px solid #e2e2e2; */
   color: gray;
   outline: none;

@@ -1250,27 +1250,19 @@ select {
 
     .test_craete_svipe .swiper-wrapper {
         margin: auto !important;
-    
-    
-    
-    
-        .test_craete_svipe .swiper-slide-active {
+
+
+    }
+
+    .test_craete_svipe .swiper-slide-active {
         width: 100% !important;
         margin: auto !important;
         justify-content: center !important;
-    
-    
-    
-    
-        /* .swiper-slide-active{
-        width: 100% !important;
-    }
-    .swiper-slide-next{
-        width: 100% !important;
-    } */
-}
 
-}}
+
+    }
+
+}
 
 .test_craete_svipe .mySwiper {
     right: 0px !important;
@@ -1308,8 +1300,9 @@ select {
     border: 1px solid #dcdcdc;
     border-radius: 50%;
 }
+
 @media (max-width:480px) {
-    .user_post_btns{
+    .user_post_btns {
         /* display: flex;
         justify-content:space-between; */
         /* flex-wrap: wrap; */
@@ -1319,6 +1312,7 @@ select {
         width: 150px;
         height: auto;
     }
+
     .user_post_button:nth-child(2) {
         margin-top: 10px;
         margin-right: -40px !important;

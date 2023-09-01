@@ -14,13 +14,13 @@
 .m-comment-mark:active, .m-comment-mark1:active {
     background-color: #44bef1;
     color: #fff !important;
-    border-radius: 5px;
+    border-radius: 10px;
     user-select: none;
 }
 .m-comment-mark1{
     color: #44bef1;
     cursor: pointer;
-    gap:5px;
+    gap:10px;
     text-align:center;
     padding:3px;
     display:none
@@ -52,7 +52,9 @@
 .div-like-dislike-delete-share{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 10px;
+    margin: auto;
+    margin-right: 0px;
 }
 .like-dislike-div-uchun{
     display: flex;
@@ -203,10 +205,14 @@
 }
 .m-comment-mark{
     color:#44bef1 ;
+    display: flex;
+    align-items: center;
     gap: 5px;
     text-align:center; 
     cursor:pointer;
-    padding:3px;
+    padding: 5px;
+    border: 1px solid #44bef1;
+    border-radius: 10px;
 }
 
 .mark-two{
