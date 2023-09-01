@@ -6,7 +6,7 @@ import Footer from "../js/Footer1";
 import Loader from "./loader"
 import Swal from "sweetalert2";
 
-import Usernavbar from "../js/Usernavbar";
+import Usernavbar from "../js/Navbar";
 
 export default function Loginpage() {
   const [user, setUser] = React.useState([]);

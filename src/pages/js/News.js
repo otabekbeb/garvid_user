@@ -20,7 +20,7 @@ import 'swiper/css/pagination';
 import { BsChat } from 'react-icons/bs'
 import { AiOutlineEye } from 'react-icons/ai'
 import { FreeMode, Pagination } from 'swiper/modules';
-
+import Sory from '../img/SoryyNoImage.jpg'
 import Groupimg from "../img/oooo.png";
 
 // Import Swiper styles
@@ -176,24 +176,29 @@ export default function News() {
               className="mySwiper100"
             >
 
-              {base.map(item => {
-                return (
-                  <SwiperSlide >
-                    <div className="position-relative overflow-hidden" style={{ height: "300px" }}>
-                      {item.image === null ? (
-                        <img style={{ width: "100%", margin: 'auto' }} src={Groupimg} alt="" />) : (<img src={item.image} alt="" />)}
-                      <div className="overlay">
-                        <div className="mb-2">
-                          <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                            href="">{item.name}</a>
-                          <a className="text-white" href=""><small>{item.time_create.slice(0, 10)}</small></a>
+              
+               
+             
+                {base.map(item => {
+                  
+                  return (
+                    <SwiperSlide >
+                      <div className="position-relative overflow-hidden" style={{ height: "300px" }}>
+                        {item.image === null ? (
+                          <img style={{ width: "100%", margin: 'auto' }} src={Groupimg} alt="" />) : (<img src={item.image} alt="" />)}
+                        <div className="overlay">
+                          <div className="mb-2">
+                            <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                              href="">{item.name}</a>
+                            <a className="text-white" href=""><small>{item.time_create.slice(0, 10)}</small></a>
+                          </div>
+                          <a className="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">{item.description}</a>
                         </div>
-                        <a className="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">{item.description}</a>
                       </div>
-                    </div>
-                  </SwiperSlide>
-                )
-              })}
+                    </SwiperSlide>
+                  )
+                })}
+
 
 
             </Swiper>
