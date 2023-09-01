@@ -500,7 +500,7 @@ export default function Edication() {
   }
   const columns = [
     {
-      title: 'Студент',
+      title: 'Student',
       dataIndex: 'student_id',
       key: 'student_id',
       render: (dataIndex) => <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -508,7 +508,7 @@ export default function Edication() {
         <MdOutlineDeleteOutline onClick={() => deleteGroupModal(dataIndex)} style={{ color: 'red', cursor: 'pointer' }} />{student.map(item => { if (item.id == dataIndex) { return <h1 style={{ marginBottom: '0px' }}>{item.username}</h1> } })}</div>
     },
     {
-      title: <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}><select name="" style={{ width: '160px' }} id="journal_day">{Journal_mark.allesson.map(item => { return <option value={item.id}>{(item.day).slice(0, 10)}</option> })}</select>   <button onClick={() => { sendMarkAll() }} style={{ marginTop: '0px', marginBottom: '0px', paddingTop: "5px", paddingBottom: '5px' }} className='user_post_button'>Send оценку</button></div>,
+      title: <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}><select name="" style={{ width: '160px' }} id="journal_day">{Journal_mark.allesson.map(item => { return <option value={item.id}>{(item.day).slice(0, 10)}</option> })}</select>   <button onClick={() => { sendMarkAll() }} style={{ marginTop: '0px', marginBottom: '0px', paddingTop: "5px", paddingBottom: '5px' }} className='user_post_button'>Send</button></div>,
       dataIndex: 'id',
       key: 'id',
       render: (dataIndex) => <div>
@@ -570,8 +570,8 @@ export default function Edication() {
     <div className='otash'>
       {page == 2 ? (
         <>
-          <div className="exit_button"><button onClick={() => setPage(0)} style={{ marginLeft: "0px" }}>Назад</button>        <button className='user_post_button_malumot' style={{ paddingTop: '3px' }} onClick={() => { SetMark(0) }} >оценивать</button>   <button style={{ paddingTop: '3px' }} onClick={() => Markpage()} className='user_post_button_malumot'>журнал</button></div>
-          {mark == 0 ? (<><div className="search_big_div"><button onClick={() => postGroupModal()} className="user_post_button">Добавить</button></div><Table dataSource={group_student} columns={columns} />
+          <div className="exit_button"><button onClick={() => setPage(0)} style={{ marginLeft: "0px" }}>Clouse</button>        <button className='user_post_button_malumot' style={{ paddingTop: '3px' }} onClick={() => { SetMark(0) }} >Evaluate</button>   <button style={{ paddingTop: '3px' }} onClick={() => Markpage()} className='user_post_button_malumot'>Magazine</button></div>
+          {mark == 0 ? (<><div className="search_big_div"><button onClick={() => postGroupModal()} className="user_post_button">Add</button></div><Table dataSource={group_student} columns={columns} />
 
 
           </>) : (
@@ -581,11 +581,11 @@ export default function Edication() {
                 <table className='all_mark_jurnal'>
                   <tr>
                     <th>No</th>
-                    <th>Фамилия</th>
+                    <th>Surname</th>
 
                     {Journal_mark.allesson.map(item => {
 
-                      return <th>{item.day.slice(0, 10)}</th>
+                      return <th className='edu_th'>{item.day.slice(0, 10)}</th>
                     })}
                   </tr>
                   {Journal_mark.alstudent_mark.map((item1, key) => {
@@ -605,7 +605,7 @@ export default function Edication() {
         <>
           {page == 1 ? (
             <>
-              <div className="exit_button"><button onClick={() => setPage(0)}>Назад</button></div>
+              <div className="exit_button"><button onClick={() => setPage(0)}>Clouse</button></div>
               <div className="App">
                 <Calendar className='calendar'
                   views={["day", "agenda", "work_week", "month"]}
@@ -622,7 +622,7 @@ export default function Edication() {
             </>
           ) : (
             <>
-              <div className="search_big_div"><button className="user_post_button" onClick={() => postEducationModal()}>Add Education</button><AiOutlineSearch className="search" /><input onChange={Search} placeholder="Введите здесь..." type="text" /></div>
+              <div className="search_big_div"><button className="user_post_button" onClick={() => postEducationModal()}>Add Education</button><AiOutlineSearch className="search" /><input onChange={Search} placeholder="Enter here..." type="text" /></div>
               {/* <div className="edication_card">
                 {edication.map(item => {
                   return (
