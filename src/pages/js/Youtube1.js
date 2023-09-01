@@ -74,8 +74,7 @@ export default function Youtube1() {
   const [mark, setMark] = useState([]);
   const [page, setPage] = useState(1);
   const [page1, setPage1] = useState(1);
-  const [length14, setLength14] = useState(0)
-
+  const [length14, setLength14] = useState(0);
 
   function openModal() {
     document.querySelector(".navbar_yon").classList.toggle("navbar_yon1");
@@ -159,15 +158,16 @@ export default function Youtube1() {
       .then((res) => {
         res.data.map((item) => {
           if (item.task_commnet_id == task_comnet_id) {
-            var coment21=res.data
+            var coment21 = res.data;
             for (let i = 0; i < res.data.length; i++) {
-              var a=0
-           for (let j = 0; j < coment21.length; j++) {
-  if(res.data[i].id==coment21[j].subcomment){
-    a=a+1
-  }} 
-            res.data[i].count=a           
+              var a = 0;
+              for (let j = 0; j < coment21.length; j++) {
+                if (res.data[i].id == coment21[j].subcomment) {
+                  a = a + 1;
+                }
               }
+              res.data[i].count = a;
+            }
             setComment(res.data);
           } else {
           }
@@ -475,9 +475,6 @@ export default function Youtube1() {
   function OpenotvetMadal(item, key) {
     document.querySelector(".commetn_otvet_kaytarish").style =
       "display: flex; ";
-    // setComment2(item)
-    // console.log(key);
-    // localStorage.setItem("key", key)
   }
   function CloseotvetMadal() {
     document.querySelector(".otevet_comment_otdel_oyna").style =
@@ -657,34 +654,31 @@ export default function Youtube1() {
       JSON.parse(localStorage.getItem("page_video")).id
     );
     formdata.append("feedback", ".");
-      axios
-        .post(`${url}/api/course_theme_task_student`, formdata, {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        })
-        .then((res) => {
-          document.querySelector(".BsBookmark").style =
-            "display:block !important";
-          document.querySelector(".m-comment-mark1").style =
-            "display:block !important";
-          document.querySelector(".m-comment-mark").style =
-            "display:none !important";
-          document.querySelector(".mark-uchun-koish-joy").style =
-            "display:none !important";
-          axios
-            .get(`${url}/api/course_theme_task_student`, {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-              },
-            })
-            .then((res) => {
-              setMark(res.data);
-            })
-            .catch((err) => {});
-        })
-        .catch((err) => {
-          Swal.fire("Вы не смогли поставить оценку");
-        });
-    
+    axios
+      .post(`${url}/api/course_theme_task_student`, formdata, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        alert("otash tupoy");
+        document.querySelector(".BsBookmark").style =
+          "display:block ";
+        document.querySelector(".m-comment-mark1").style = "display:block";
+        document.querySelector(".m-comment-mark").style = "display:none";
+        document.querySelector(".mark-uchun-koish-joy").style = "display:none";
+        axios
+          .get(`${url}/api/course_theme_task_student`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
+          .then((res) => {
+            setMark(res.data);
+          })
+          .catch((err) => {});
+      })
+      .catch((err) => {
+        Swal.fire("Вы не смогли поставить оценку");
+      });
   }
   function markClose() {
     document.querySelector(".mark-uchun-koish-joy").style =
@@ -745,11 +739,9 @@ export default function Youtube1() {
 
   function openModalMarkOchadi() {
     document.querySelector(".div-mark-chikadigan-joy").style = "display:block";
-    document.querySelector(".BsBookmark").style = "display:none";
   }
   function openModalMarkOchadi12() {
     document.querySelector(".div-mark-chikadigan-joy").style = "display:none";
-    document.querySelector(".BsBookmark").style = "display:block";
   }
   return (
     <div className="youtube_bgc">
@@ -942,16 +934,24 @@ export default function Youtube1() {
                                                 </p>
                                                 <div className="m_comment_otvet">
                                                   <p
-                                                  style={{display: "flex"}}
+                                                    style={{ display: "flex" }}
                                                     className="m_otvet_comment"
                                                     onClick={() => {
                                                       openModalOtvet11(item.id);
                                                     }}
                                                   >
-                                                      <FiCornerUpLeft />
+                                                    <FiCornerUpLeft />
                                                     <span>
-                                                       {item.count === 0 ? "Ответить" : (<> {item.count } <span> Ответов</span></> )}
-                                                      </span>
+                                                      {item.count === 0 ? (
+                                                        "Ответить"
+                                                      ) : (
+                                                        <>
+                                                          {" "}
+                                                          {item.count}{" "}
+                                                          <span> Ответов</span>
+                                                        </>
+                                                      )}
+                                                    </span>
                                                   </p>
 
                                                   {oneuser.map((item5) => {
@@ -967,7 +967,7 @@ export default function Youtube1() {
                                                               );
                                                             }}
                                                           >
-                                                              <AiOutlineDelete />
+                                                            <AiOutlineDelete />
                                                             удалить
                                                           </p>
                                                         ) : (
@@ -1025,7 +1025,7 @@ export default function Youtube1() {
                                   closeModalOtvet11();
                                 }}
                               >
-                                  <FiCornerUpLeft />
+                                <FiCornerUpLeft />
                                 Back
                               </p>
                               <div className="comment_otevet_all">
@@ -1110,7 +1110,7 @@ export default function Youtube1() {
                                                                 );
                                                               }}
                                                             >
-                                                                <AiOutlineDelete />
+                                                              <AiOutlineDelete />
                                                               удалить
                                                             </p>
                                                           ) : (
@@ -1169,7 +1169,7 @@ export default function Youtube1() {
                                     closeViewall();
                                   }}
                                 >
-                                    <FiCornerUpLeft />
+                                  <FiCornerUpLeft />
                                   Back
                                 </p>
                                 <p className="AiOutlineComment">
@@ -1244,19 +1244,20 @@ export default function Youtube1() {
                                                   {item.text}
                                                 </p>
                                                 <div className="m_comment_otvet">
-                                                <p
-                                                  style={{display: "flex"}}
+                                                  <p
+                                                    style={{ display: "flex" }}
                                                     className="m_otvet_comment"
                                                     onClick={() => {
                                                       openModalOtvet11(item.id);
                                                     }}
                                                   >
-                                                      <FiCornerUpLeft />
+                                                    <FiCornerUpLeft />
                                                     <span>
-                                                       {item.count === 0 ? "" : `${item.count}  `}
-                                                      </span>
+                                                      {item.count === 0
+                                                        ? ""
+                                                        : `${item.count}  `}
+                                                    </span>
                                                     Ответов
-                                                    
                                                   </p>
 
                                                   {oneuser.map((item5) => {
@@ -1272,7 +1273,7 @@ export default function Youtube1() {
                                                               );
                                                             }}
                                                           >
-                                                              <AiOutlineDelete />
+                                                            <AiOutlineDelete />
                                                             удалить
                                                           </p>
                                                         ) : (
@@ -1354,12 +1355,24 @@ export default function Youtube1() {
                                               </div>
 
                                               <div className="div_class_tugadi">
-                                              <h5>
-                                                      {item.oneuser
-                                                        ? item.oneuser.username
-                                                        : "Anonim User"}
-                                                    </h5>
-                                                    <p className="p-create-time-uchun">{item.time_create.slice(0,10)}</p>
+                                                <div className="task-uchun-joy-and-mark">
+                                                   <h5>
+                                                  {item.oneuser
+                                                    ? item.oneuser.username
+                                                    : "Anonim User"}
+                                                </h5>
+                                                
+                                                  <p className="p-onclick-for-info">Нажав можете посмотреть оценку учителя.</p>
+                                                <p><BsBookmark className="BsBookmark"/></p>
+
+                                                </div>
+                                               
+                                                <p className="p-create-time-uchun">
+                                                  {item.time_create.slice(
+                                                    0,
+                                                    10
+                                                  )}
+                                                </p>
 
                                                 {task.map((item) => {
                                                   <img
@@ -1377,76 +1390,71 @@ export default function Youtube1() {
                                                   {item.text}
                                                 </p>
                                                 <div className="div-like-dislike-delete-share">
-                                                {oneuser.map((item5) => {
-                                                  return (
-                                                    <div
-                                                      style={{
-                                                        display: "flex",
-                                                        alignItems: "center",
-                                                        gap: "5px",
-                                                        flexWrap: "wrap",
-                                                      }}
-                                                    >
-                                                     
-                                                      {localStorage.getItem(
-                                                        "position"
-                                                      ) === 2
-                                                        ? ""
-                                                        : ""}
-                                                       
-                                                      <p
-                                                        className="m-comment-mark"
-                                                        onClick={() => {
-                                                          markOpen(key);
-                                                          setPage(1);
+                                                  {oneuser.map((item5) => {
+                                                    return (
+                                                      <div
+                                                        style={{
+                                                          display: "flex",
+                                                          alignItems: "center",
+                                                          gap: "5px",
+                                                          flexWrap: "wrap",
                                                         }}
                                                       >
-                                                          <TfiMarkerAlt />
-                                                          <span>
-                                                            
-                                                        поставить оценку
-                                                          </span>
-                                                      </p>
-                                                      {localStorage.getItem(
-                                                        "position"
-                                                      ) === 2
-                                                        ? ""
-                                                        : ""}
-                                                      <p
-                                                        className="m-comment-mark1"
-                                                        onClick={() => {
-                                                          markOpen2(item.id);
-                                                          setPage1(1);
-                                                        }}
-                                                      >
-                                                          <TfiMarkerAlt />
-                                                          <span>
-                                                        измеить оценку
-                                                          </span>
-                                                      </p>
-                                                       {item5.id ==
-                                                      item.user_id ? (
+                                                        {localStorage.getItem(
+                                                          "position"
+                                                        ) === 2
+                                                          ? ""
+                                                          : ""}
+
                                                         <p
-                                                          className="m_comment_delete1"
+                                                          className="m-comment-mark"
                                                           onClick={() => {
-                                                            deleteComment1(
-                                                              item.id
-                                                            );
+                                                            markOpen(key);
+                                                            setPage(1);
                                                           }}
                                                         >
-                                                            <AiOutlineDelete />
-                                                            <span>
-                                                             удалить  
-                                                            </span>
+                                                          <TfiMarkerAlt />
+                                                          <span>
+                                                            поставить оценку
+                                                          </span>
                                                         </p>
-                                                      ) : (
-                                                        ""
-                                                      )}
-                                                    </div>
-                                                  );
-                                                })}
+                                                        {localStorage.getItem(
+                                                          "position"
+                                                        ) === 2
+                                                          ? ""
+                                                          : ""}
+                                                        <p
+                                                          className="m-comment-mark1"
+                                                          onClick={() => {
+                                                            markOpen2(item.id);
+                                                            setPage1(1);
+                                                          }}
+                                                        >
+                                                          <TfiMarkerAlt />
+                                                          <span>
+                                                            измеить оценку
+                                                          </span>
+                                                        </p>
+                                                        {item5.id ==
+                                                        item.user_id ? (
+                                                          <p
+                                                            className="m_comment_delete1"
+                                                            onClick={() => {
+                                                              deleteComment1(
+                                                                item.id
+                                                              );
+                                                            }}
+                                                          >
+                                                            <AiOutlineDelete />
+                                                            <span>удалить</span>
+                                                          </p>
+                                                        ) : (
+                                                          ""
+                                                        )}
+                                                      </div>
+                                                    );
+                                                  })}
                                                 </div>
-                                                
                                               </div>
                                             </div>
                                           </>

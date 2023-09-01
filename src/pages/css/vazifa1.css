@@ -23,7 +23,9 @@
     gap:10px;
     text-align:center;
     padding:3px;
-    display:none
+    display:none;
+    border: 1px solid #44bef1;
+    border-radius: 10px;
 }
 .comment_file12{
     width: 25px;
@@ -97,10 +99,6 @@
     font-size: 20px;
 }
 
-.BsBookmark{
-    display: none;
-    margin-right: 20px;
-}
 
 .div-mark-chikadigan-joy{
     position: absolute;
@@ -457,4 +455,27 @@
         border-radius: 50% !important;
         background-color: #44bef1;
     }
+}
+
+.task-uchun-joy-and-mark{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.BsBookmark{
+    color: #44bef1;
+
+}
+.p-onclick-for-info{
+    position: absolute;
+    width: 130px;
+    left: 45%;
+    top: 830px;
+    box-shadow: 0px 0px 10px #9da7bbc9;
+    font-size: 8px;
+    border-radius: 5px;
+    border-bottom-right-radius: 0px;
+    padding: 3px;
+    background-color: #fff;
+    display: none;
 }

@@ -28,6 +28,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 5px;
   height: 40px;
   /* background: gainsboro; */
   border-radius: 50%;
@@ -104,7 +105,7 @@ body {
 }
 
 .chat-window .chat-body {
-  height: calc(600px - (45px + 70px));
+  height: calc(580px - (45px + 70px));
   border-left: 0px;
   background: #fff;
   background: url("https://web.telegram.org/a/chat-bg-pattern-dark.ad38368a9e8140d0ac7d.png");
