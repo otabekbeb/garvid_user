@@ -15,7 +15,7 @@ import Education from './Education';
 import Test_create from "./Test_create.js"
 import Mysubscribers from "../js/Mysubscribers.js"
 import Ourcourse from './Ourcourse';
-import VideoChat from "../join"
+import VideoChat from "../Join"
 
 export default function MentorPdp() {
     const [toggle, setToggle] = useState(1)
