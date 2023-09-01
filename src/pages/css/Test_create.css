@@ -288,9 +288,13 @@ select {
         gap: 10px;
         grid-template-columns: auto auto;
     } */
-.swiper-slide-active {
+
+
+
+/* .swiper-slide-active {
     height: 750px;
-}
+    Teyma mani swiperim buzulib ketvoti boshqacha qil !!!
+} */
 
 .test_craete_svipe {
     /* height: 200vh; */
@@ -1246,21 +1250,27 @@ select {
 
     .test_craete_svipe .swiper-wrapper {
         margin: auto !important;
-    }
-
-    .test_craete_svipe .swiper-slide-active {
+    
+    
+    
+    
+        .test_craete_svipe .swiper-slide-active {
         width: 100% !important;
         margin: auto !important;
         justify-content: center !important;
-    }
-
-    /* .swiper-slide-active{
+    
+    
+    
+    
+        /* .swiper-slide-active{
         width: 100% !important;
     }
     .swiper-slide-next{
         width: 100% !important;
     } */
 }
+
+}}
 
 .test_craete_svipe .mySwiper {
     right: 0px !important;
