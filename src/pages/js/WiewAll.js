@@ -5,6 +5,7 @@ import Usernavbar from "./Navbar"
 import axios from 'axios'
 import url from './Host'
 import Profil from './Profil'
+import Futer from '../js/Footer1'
 function WiewAll() {
     const [Wiew, setWiew] = useState([])
     useEffect(() => {
@@ -42,6 +43,7 @@ function WiewAll() {
 
                 </div>
             </div>
+            <Futer/>
         </div>
     )
 }
