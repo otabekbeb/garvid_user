@@ -1318,3 +1318,7 @@ select {
         margin-right: -40px !important;
     }
 }
+.swiper-pagination{
+    margin-top: 10px;
+    position: relative;
+}
