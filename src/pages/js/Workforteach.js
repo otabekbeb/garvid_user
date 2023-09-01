@@ -19,10 +19,10 @@ export default function Workforteach() {
     const [deleteId, setDeleteId] = useState()
     // const [kursdata, setKursdata] = useState([]);
     function openModal() {
-        document.querySelector(".m_zadacha_tepadan").style = "display: flex; justify-content: center;align-items: center;"
+        document.querySelector("#m_zadacha_tepadan").style = "display: flex; justify-content: center;align-items: center;"
     }
     function clouseModal() {
-        document.querySelector(".m_zadacha_tepadan").style = "display:none "
+        document.querySelector("#m_zadacha_tepadan").style = "display:none"
     }
     function clouseput() {
         document.querySelector("#zadaca_put").style = "display:none"
@@ -43,6 +43,7 @@ export default function Workforteach() {
     useEffect(() => {
         axios.get(`${url}/api/course_theme_task_student`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             setTasks(res.data)
+            localStorage.setItem("taskLength", (res.data).length)
         })
 
     }, [])
@@ -147,7 +148,7 @@ export default function Workforteach() {
         <div>
 
             <div className="m_dobavit_kurs">
-                <button onClick={() => openModal()}>Добавить задачу</button>
+                <button onClick={() => openModal()}>Add task</button>
             </div>
             <div className="m_zadach">
                 {stTasks.map(item => {
@@ -163,7 +164,7 @@ export default function Workforteach() {
                                     <span><FaHourglassEnd style={{ color: "black", marginRight: "7px" }} /> {(item.time_update).slice(0, 10)}</span>
                                 </div>
                                 <p className='ortapp'>{item.feedback}</p>
-                                <p className='ortap1' style={{ marginTop: "0px" }}>Оценка:{item.mark}</p>
+                                <p className='ortap1' style={{ marginTop: "0px" }}>Grade:{item.mark}</p>
                                 <div className="m_zadacha_icon">
                                     <div className="m_zadach_ktug_icon1" onClick={() => openModal2(item.id)}>
                                         <MdDeleteOutline />
@@ -176,35 +177,7 @@ export default function Workforteach() {
                             </div>
 
 
-                            <div className="m_zadacha_tepadan">
-                                <div className="m_zadachi_dobavit">
-                                    <div className="m_clouse_x" onClick={() => clouseModal()}>
-                                        <GrFormClose /></div>
-                                    <div className="m_input_file_dobavit">
-                                        <div className="a_input_file12">
-                                            <FiDownload /> Добавить задание
-                                        </div>
-                                        <input type="file" className='img_inp_zadac' />
-                                    </div>
-                                    <div className="m_input_bilmafim">
-                                        <label htmlFor="">Name:</label>
-                                        <input type="text" name="" id="" className='inp_name_zadac' />
-                                        <label htmlFor="">Course theme:</label>
-                                        <input type="text" name="" id="" className='inp_course_theme_zadac' />
-                                        <label htmlFor="">vremya bowlaniwi:</label>
-                                        <input type="date" name="" id="" className='inp_bdate_zadac' />
-                                        <label htmlFor="">vremya tugawi:</label>
-                                        <input type="date" name="" id="" className='inp_tdate_zadac' />
-                                        <label htmlFor="">mark:</label>
-                                        <input type="text" name="" id="" className='inp_mark_zadac' />
-                                        <label htmlFor="">Opisaniye:</label>
-                                        <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadac'></textarea> <br />
-                                        <div className="a_button_for_end">
-                                            <button onClick={() => { postforzadac() }}>Добавить</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
 
 
 
@@ -218,7 +191,35 @@ export default function Workforteach() {
             </div>
 
 
-
+            <div id='m_zadacha_tepadan' className="m_zadacha_tepadan">
+                <div className="m_zadachi_dobavit">
+                    <div className="m_clouse_x" onClick={() => clouseModal()}>
+                        <GrFormClose /></div>
+                    <div className="m_input_file_dobavit">
+                        <div className="a_input_file12">
+                            <FiDownload /> Add task
+                        </div>
+                        <input type="file" className='img_inp_zadac' />
+                    </div>
+                    <div className="m_input_bilmafim">
+                        <label htmlFor="">Name:</label>
+                        <input type="text" name="" id="" className='inp_name_zadac' />
+                        <label htmlFor="">Course theme:</label>
+                        <input type="text" name="" id="" className='inp_course_theme_zadac' />
+                        <label htmlFor="">Time create:</label>
+                        <input type="date" name="" id="" className='inp_bdate_zadac' />
+                        <label htmlFor="">Time update:</label>
+                        <input type="date" name="" id="" className='inp_tdate_zadac' />
+                        <label htmlFor="">Mark:</label>
+                        <input type="text" name="" id="" className='inp_mark_zadac' />
+                        <label htmlFor="">Feedback:</label>
+                        <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadac'></textarea> <br />
+                        <div className="a_button_for_end">
+                            <button onClick={() => postforzadac()}>Добавить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
             <div id='zadaca_put' className="m_zadacha_tepadan">

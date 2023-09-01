@@ -118,9 +118,6 @@ line-height: normal;
     display: none !important;
 }
 @media (max-width:1000px) {
-    .nav_menu{
-        display: none;
-    }
     .burger{
         display: block !important;
         margin-left: auto;
@@ -163,12 +160,6 @@ line-height: normal;
         flex-wrap: wrap;
         margin: auto;
 
-    }
-    .nav_ul{
-        display: none !important;
-    }
-    .bottom_line{
-        display: none !important;
     }
     .block_item{
         min-height: 33px;

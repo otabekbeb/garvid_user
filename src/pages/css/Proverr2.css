@@ -1,4 +1,4 @@
-#asdsadasdsadas22{
+#asdsadasdsadas22 {
     background: #F1F2F6;
     width: 100%;
     height: 100%;
@@ -10,7 +10,7 @@
     height: 55vw;
     max-width: 100%;
     background: #F1F2F6;
-    padding-top: 30px;
+    padding-top: 10px;
 
 }
 
@@ -53,11 +53,12 @@ body {
 .prover2-info-d {
     border-radius: 5px;
     width: 370px;
-    height: auto;
+    height: 721px;
     margin-top: 20px;
     background-color: #ffffff;
     padding-left: 15px;
     padding-top: 5px;
+    overflow-y: scroll;
 }
 
 .prover2-info-filter button {
@@ -120,7 +121,7 @@ body {
 }
 
 .prover2-info-filter button:hover {
-    background-color: #44bef1 ;
+    background-color: #44bef1;
 
 }
 
@@ -182,7 +183,7 @@ body {
 }
 
 .prover2-info-filter2 button:hover {
-    background-color: #44bef1 ;
+    background-color: #44bef1;
 
 }
 
@@ -647,6 +648,7 @@ body {
 .radio-inputs {
     position: relative;
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
     border-radius: 0.5rem;
     background-color: #EEE;
@@ -660,6 +662,7 @@ body {
 
 .radio-inputs .radio {
     flex: 1 1 auto;
+
     text-align: center;
 }
 
@@ -721,7 +724,7 @@ body {
 
     height: 23px;
     border-radius: 2px;
-    background-color: #44bef1 ;
+    background-color: #44bef1;
     color: white;
     cursor: pointer;
 }
@@ -879,7 +882,7 @@ body {
     width: 130px !important;
     height: 40px !important;
     border-radius: 2px;
-    background-color: #44bef1 ;
+    background-color: #44bef1;
     color: white;
     border: none;
     outline: none;
@@ -907,7 +910,7 @@ body {
 
 .mni-krus-techer-swiper {
     width: 330px;
-    height: 410px;
+    height: 510px;
     background-color: #ffffff;
     position: relative;
     top: 30px;
@@ -969,17 +972,17 @@ justify-content: space-around; */
 
 }
 
-.asdasdsadasdsa  {
-}
+.asdasdsadasdsa {}
 
 
 .mni-gridf1 {
-display: flex;
+    display: flex;
     gap: 10px !important;
     padding-left: 17px !important;
-    
-    }
-.mni-swiper-grid .mni-gridf1{
+
+}
+
+.mni-swiper-grid .mni-gridf1 {
     display: grid !important;
     grid-template-columns: auto auto auto !important;
 }
@@ -1478,7 +1481,7 @@ display: flex;
         justify-content: center;
         background: #F1F2F6;
         width: 100%;
-        height: 100vh !important ;
+        height: 100vh !important;
 
     }
 
@@ -1528,7 +1531,7 @@ display: flex;
         width: 50% !important;
         height: 40px !important;
         border-radius: 2px;
-        background-color: #44bef1 ;
+        background-color: #44bef1;
         color: white;
         border: none;
         outline: none;
@@ -3497,12 +3500,12 @@ display: flex;
     
     } 
 } */
-.prover2-hr{
+.prover2-hr {
     background-color: rgb(153, 149, 149);
     height: 2px;
 }
 
-.buy_course_prover{
+.buy_course_prover {
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -3515,10 +3518,12 @@ display: flex;
     justify-content: center;
     padding: 5px;
 }
-.buy_image_prove img{
+
+.buy_image_prove img {
     width: 35%;
 }
-.buy_image_prove{
+
+.buy_image_prove {
     padding: 10px;
     text-align: center;
     display: block;
@@ -3528,21 +3533,24 @@ display: flex;
     border-radius: 10px;
     margin-top: 100px;
 }
-.buy_button_prover{
+
+.buy_button_prover {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     text-align: center;
 }
-.MdCloseProver{
+
+.MdCloseProver {
     color: #fff;
-    position: absolute ;
-    top: 0px;right: 10px;
+    position: absolute;
+    top: 0px;
+    right: 10px;
     z-index: 200 !important;
 }
 
-.buy_no_prover{
+.buy_no_prover {
     color: black;
     width: 100px;
     height: 30px;
@@ -3550,7 +3558,8 @@ display: flex;
     border: 1px solid #44bef1;
     background-color: #fff;
 }
-.buy_yes_prover{
+
+.buy_yes_prover {
     color: black;
     width: 100px;
     height: 30px;
@@ -3558,25 +3567,29 @@ display: flex;
     border: 1px solid #44bef1;
     background-color: #fff;
 }
-.text_prover_buy{
+
+.text_prover_buy {
     margin-top: 10px;
 }
-.buy_yes_prover:hover{
+
+.buy_yes_prover:hover {
     border: none;
     background-color: #44bef1;
-    color:white;
+    color: white;
 }
-.buy_no_prover:hover{
+
+.buy_no_prover:hover {
     border: none;
     background-color: #44bef1;
-    color:white;
+    color: white;
 }
 
 @media (max-width:750px) {
-    .buy_image_prove img{
+    .buy_image_prove img {
         width: 35%;
     }
-    .buy_image_prove{
+
+    .buy_image_prove {
         padding: 10px;
         text-align: center;
         display: block;
@@ -3584,6 +3597,10 @@ display: flex;
         background-color: #fff;
         z-index: 200;
         margin-top: 80px !important;
-    } 
+    }
 }
-
+@media (max-width:701px) {
+    .prover2-kotta-men{
+        margin-top: 200px;
+    }
+}

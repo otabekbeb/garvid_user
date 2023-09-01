@@ -71,6 +71,10 @@ width: 100%;
     padding: 5px;
     border: 1px solid #44bef1;
     border-radius: 10px;
+}.m_otvet_comment span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 .m_comment_delete{ 
     cursor:pointer;
@@ -409,13 +413,18 @@ height: auto;
     width: 100px;
     cursor:pointer;
     color: red !important;
+    display: flex;
+    align-items: center;
     gap: 5px;
     text-align: center;
+    padding: 5px;
+    border: 1px solid red;
+    border-radius: 10px;
 }
 .m_comment_delete1:active{
     background-color: #ff0000 !important;
     color: #fff !important;
-    border-radius: 5px;
+    border-radius: 10px;
     user-select: none;
 }
 
