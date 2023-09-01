@@ -550,19 +550,23 @@ function hovers1(key) {
   }
 }
 function onclicks(key) {
-  // if(key){
-  //   if(theme=="moon"){
-  //   document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:black !important;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"
-  // }else{
-  //   document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:white !important;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"
-  // }
-  // }else{
-  //   if(theme=="moon"){
-  //     document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:none !important;"
-  //   }else{
-  //     document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:none !important;"
-  //   }
-  // }
+  console.log(key);
+  for (let i = 0; i < document.querySelectorAll(".yozishma_bolim_text_nik_text1").length; i++) {
+    if(key==i){
+    if(theme=="moon"){
+    document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:black !important;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"
+  }else{
+    document.querySelectorAll(".yozishma_bolim_text_nik_text1")[key].style="background:white !important;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"
+  }
+  }else{
+    if(theme=="moon"){
+      document.querySelectorAll(".yozishma_bolim_text_nik_text1")[i].style="background:none !important;"
+    }else{
+      document.querySelectorAll(".yozishma_bolim_text_nik_text1")[i].style="background:none !important;"
+    }
+  }  
+  }
+
   
 }
 
@@ -696,6 +700,7 @@ function onclicks(key) {
                   const [email1, email2] = a.split("_");
            
                   const displayName = email1 === email ? email2 : email1;
+                  const Filter = users.filter(item => item.email == displayName)
                   return (
                     <div className="yozishma_bolim_text_nik_text1">
                     <div style={theme=="moon"?{borderBottom:"1px solid #e2e2e2"}:{borderBottom:"1px solid #00000014"}}
@@ -706,9 +711,12 @@ function onclicks(key) {
                       className="yozishma_bolim_text_nik_text"
                     >
                       <div className="yozishma_bolim_text_nik_text_ism_p">
-                        <div className="tg_img">
-                          <img src={tgimg} alt="" />
-                        </div>
+                      {Filter.map(filter => {
+                              return <div className="tg_img">
+                                {item.image===null?(<img src={userNull} alt="" />):(<img src={"https://markazback2.onrender.com/" + filter.image} alt="" />)}
+                                
+                              </div>
+                            })}
                         <h1 style={theme=="moon"?{color:"white"}:{color:"black"}} id="name">{displayName.slice(0,-10)}</h1>
                         
                       </div>

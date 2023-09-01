@@ -1030,6 +1030,7 @@ label{
 }
 .emojis{
     font-size: 25px;
+    cursor: pointer;
 }
 .for_emojis{
     display: flex;
