@@ -410,7 +410,6 @@ height: auto;
 }
 
 .m_comment_delete1{ 
-    width: 100px;
     cursor:pointer;
     color: red !important;
     display: flex;

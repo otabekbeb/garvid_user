@@ -1508,7 +1508,7 @@ select {
     display: flex;
     justify-content: center;
     /* gap: 3.646vw ; */
-    gap: 70px;
+    gap: 3.646vw;
     width: 100%;
     flex-wrap: wrap;
     /* margin: 4rem 5vw; */
