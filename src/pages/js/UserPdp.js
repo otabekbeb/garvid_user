@@ -11,7 +11,6 @@ import { TiThMenu } from "react-icons/ti";
 import axios from "axios";
 import url from "./Host";
 import Testpage from '../js/Testpage'
-import VideoChat from "../Join"
 import Courses from "./Ourcourse"
 import Mysubscribers from '../js/Mysubscribers'
 import Student from '../js/Student'
@@ -75,6 +74,7 @@ export default function Pdp() {
       "display:none !important;";
     document.querySelector(".profil_blok_menu").style = "display:block;";
   }
+  
 
   return (
     <div>
@@ -214,18 +214,7 @@ export default function Pdp() {
                 </h1>
                 {/* <div className="fil_text_blok_kurs_lenght">1 pieces</div> */}
               </div>
-              <div className="fil_text_blok_soz">
-              <h1
-                onClick={() => updatetoggle(11)}
-                style={
-                  toggle === 11 ? { borderBottom: "2px solid #44bef1" } : {}
-                }
-                className="fromLeft"
-              >
-                Video Chat
-              </h1>
-              {/* <div className="fil_text_blok_kurs_lenght">1 pieces</div> */}
-            </div>
+
            
 
 
@@ -419,10 +408,7 @@ export default function Pdp() {
         <div className={toggle === 10 ? "show-content" : "content"}>
           <Teacherpage />
         </div>
-        <div className={toggle === 11 ? "show-content" : "content"}>
-        <VideoChat />
-        
-      </div>
+
       </div>
     </div>
   );
