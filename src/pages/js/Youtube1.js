@@ -657,9 +657,6 @@ export default function Youtube1() {
       JSON.parse(localStorage.getItem("page_video")).id
     );
     formdata.append("feedback", ".");
-    if (page === 1) {
-      Swal.fire("Вы не выбрали какую оценку вы хотите поставить");
-    } else {
       axios
         .post(`${url}/api/course_theme_task_student`, formdata, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -687,7 +684,7 @@ export default function Youtube1() {
         .catch((err) => {
           Swal.fire("Вы не смогли поставить оценку");
         });
-    }
+    
   }
   function markClose() {
     document.querySelector(".mark-uchun-koish-joy").style =
