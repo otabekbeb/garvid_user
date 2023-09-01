@@ -31,7 +31,7 @@ import MentorHelp from "./pages/js/MentorHelp";
 import Student_Help from "./pages/js/Student_Help";
 import TeacherProfil from "./pages/js/TeacherProfil";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Proverr2 from "./pages/js/Proverr2";
 import Oplata from "./pages/js/Oplata";
 import Help_chat from "./pages/js/Help_chat";
@@ -54,58 +54,58 @@ export default function App() {
   return (
     <div>
       <BrowserRouter>
-        <Routes>
+        <Switch >
           <Route exact path="/videochat" component={JoinMeeting} />
           <Route exact path="/video/:id" component={VideoCall} />
-          <Route path="/" element={<Home />} />
-          <Route path="/Sotibol" element={<Sotibol />} />
-          <Route path="/Email" element={<Email />} />
-          <Route path="/Koz" element={<Koz />} />
-          <Route path="/editprofil" element={<Loginpage />} />
-          <Route path="/editprofilmentor" element={<LoginpageMentor />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/servis" element={<Services />} />
-          <Route path="/help" element={<Help />} />
-          <Route path="/userhelp" element={<UserHelp />} />
-          <Route path="/USer_help1" element={<UserHelp1 />} />
-          <Route path="/USer_help2" element={<UserHelp2 />} />
-          <Route path="/USer_help3" element={<UserHelp3 />} />
-          <Route path="/USer_help4" element={<UserHelp4 />} />
-          <Route path="/StudentHelp4 " element={<StudentHelp4 />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/ourteam" element={<Ourteam />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/user" element={<User />} />
-          <Route path="/mentor" element={<Mento />} />
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="/video" element={<Video />} />
-          <Route path="/ourcourse" element={<Allcourse />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/newspage" element={<Newspage />} />
-          <Route path="/prover" element={<Prover />} />
-          <Route path="/Proverr2" element={<Proverr2 />} />
-          <Route path="/teacher" element={<Teacher />} />
-          <Route path="/student" element={<Student />} />
-          <Route path="/mentorcontact" element={<Mentorcontact />} />
-          <Route path="/studentall" element={<StudentAll />} />
-          <Route path="/Oplata" element={<Oplata />} />
-          <Route path="/MentorHelp" element={<MentorHelp />} />
-          <Route path="/Student_Help" element={<Student_Help />} />
-          <Route path="/Help_chat" element={<Help_chat />} />
-          <Route path="/FollowCard" element={<FollowCard />} />
-          <Route path="/TeacherProfil" element={<TeacherProfil />} />
-          <Route path="/Testpage" element={<Testpage />} />
-          <Route path="/Testloader" element={<Testloader />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/testcreate" element={<Test_create />} />
-          <Route path="/Nosignal" element={<Nosignal />} />
-          <Route path="/Ourcourse" element={<Ourcourse />} />
-          <Route path="/WiewAll" element={<WiewAll />} />
-          <Route path="/NNN" element={<NNN />} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/Sotibol" component={Sotibol} />
+          <Route exact path="/Email" component={Email} />
+          <Route exact path="/Koz" component={Koz} />
+          <Route exact path="/editprofil" component={Loginpage} />
+          <Route exact path="/editprofilmentor" component={LoginpageMentor} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/servis" component={Services} />
+          <Route exact path="/help" component={Help} />
+          <Route exact path="/userhelp" component={UserHelp} />
+          <Route exact path="/USer_help1" component={UserHelp1} />
+          <Route exact path="/USer_help2" component={UserHelp2} />
+          <Route exact path="/USer_help3" component={UserHelp3} />
+          <Route exact path="/USer_help4" component={UserHelp4} />
+          <Route exact path="/StudentHelp4 " component={StudentHelp4} />
+          <Route exact path="/blog" component={Blog} />
+          <Route exact path="/ourteam" component={Ourteam} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/user" component={User} />
+          <Route exact path="/mentor" component={Mento} />
+          <Route exact path="/contacts" component={Contacts} />
+          <Route exact path="/video" component={Video} />
+          <Route exact path="/ourcourse" component={Allcourse} />
+          <Route exact path="/news" component={News} />
+          <Route exact path="/newspage" component={Newspage} />
+          <Route exact path="/prover" component={Prover} />
+          <Route exact path="/Proverr2" component={Proverr2} />
+          <Route exact path="/teacher" component={Teacher} />
+          <Route exact path="/student" component={Student} />
+          <Route exact path="/mentorcontact" component={Mentorcontact} />
+          <Route exact path="/studentall" component={StudentAll} />
+          <Route exact path="/Oplata" component={Oplata} />
+          <Route exact path="/MentorHelp" component={MentorHelp} />
+          <Route exact path="/Student_Help" component={Student_Help} />
+          <Route exact path="/Help_chat" component={Help_chat} />
+          <Route exact path="/FollowCard" component={FollowCard} />
+          <Route exact path="/TeacherProfil" component={TeacherProfil} />
+          <Route exact path="/Testpage" component={Testpage} />
+          <Route exact path="/Testloader" component={Testloader} />
+          <Route exact path="/education" component={Education} />
+          <Route exact path="/testcreate" component={Test_create} />
+          <Route exact path="/Nosignal" component={Nosignal} />
+          <Route exact path="/Ourcourse" component={Ourcourse} />
+          <Route exact path="/WiewAll" component={WiewAll} />
+          <Route exact path="/NNN" component={NNN} />
 
           {/* <Route index element={} />*/}
-        </Routes>
+        </Switch>
       </BrowserRouter>
     </div>
   );
