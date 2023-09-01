@@ -1,18 +1,20 @@
 .wiew_div {
-    width: 60%;
+    width: 70%;
     min-height: 600px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin: auto;
+    margin: 50px auto;
     padding-bottom: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 40px; 
 }
 
 .wiew_sms_big {
-    width: 90%;
-    height: auto;
+    width: 95%;
+    height: 500px;
     border-radius: 10px;
     margin: auto;
+    overflow-y: scroll;
+
 }
 
 .logo {
@@ -23,7 +25,7 @@
 }
 
 .sms {
-    width: 100%;
+    width: 93%;
     min-height: 50px;
     border-radius: 20px;
     background-color: #d9d9d9ca;
@@ -92,4 +94,9 @@
 .ooo{
     margin: auto;
     margin-top: 50px;
+}
+@media (max-width:701px) {
+   .wiew_div{
+    margin-top: 200px;
+   } 
 }

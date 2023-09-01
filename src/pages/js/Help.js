@@ -5,7 +5,7 @@ import { PiStudentDuotone } from 'react-icons/pi'
 import { BsChatLeftDots } from 'react-icons/bs'
 import '../css/Help.css'
 import Futer from "./Footer1"
-import Usernavbar from './Usernavbar'
+import Usernavbar from './Navbar'
 
 import axios from 'axios'
 import url from './Host'
