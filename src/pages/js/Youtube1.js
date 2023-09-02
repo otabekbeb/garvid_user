@@ -640,20 +640,18 @@ export default function Youtube1() {
     document.querySelector(".mark-uchun-koish-joy1").style =
       "display:flex ";
   }
-  function aftermarkopen() {
+  function aftermarkopen(id) {
     var formdata = new FormData();
 
     formdata.append("mark", page);
     formdata.append(
       "image",
-      document.querySelector(".comment_file12").files[0]
+        document.querySelector(".comment_file12").files[0]
     );
     formdata.append("content", ":");
     formdata.append(
-      "course_theme",
-      JSON.parse(localStorage.getItem("page_video")).id
-    );
-    formdata.append("feedback", ".");
+      "course_theme", JSON.parse(localStorage.getItem("page_video")).id)
+    formdata.append("feedback", id );
     axios
       .post(`${url}/api/course_theme_task_student`, formdata, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -698,7 +696,7 @@ export default function Youtube1() {
       "course_theme",
       JSON.parse(localStorage.getItem("page_video")).id
     );
-    formdata.append("feedback", ".");
+    formdata.append("feedback", JSON.parse(localStorage.getItem("page_video")).name);
     if (page === 1) {
       Swal.fire("Вы не выбрали оценку");
     } else {
@@ -1345,7 +1343,27 @@ export default function Youtube1() {
                                                     ? item.oneuser.username
                                                     : "Anonim User"}
                                                 </h5>
-                                                <p>{mark.mark}</p>
+                                                  {mark.map(item1505 => {
+                                                  if (item.id == item1505.feedback) {
+                                                    return(<>
+                                                      <p>{item1505.mark === 2 ? (<><div className="mark-two-bosa">
+                                                       2</div></>):(<>{item1505.mark === 3 ? (<><div className="mark-three-bosa">
+                                                        3 </div></>):(
+                                                       <>{item1505.mark === 4 ? (<><div className="mark-four-bosa">
+                                                         4 </div></>):(<>{item1505.mark === 5 ? (<><div className="mark-five-bosa">
+                                                          5 </div></>):(
+                                                         ""
+                                                       )}</>)}</>
+                                                      )}</>)}</p> 
+                                                       </>
+                                                     )
+                                                  }else{
+                                                    <></>
+                                                  }
+                                                 
+                                                })}
+                                                
+                                               
 
                                                 </div>
                                                
@@ -1439,14 +1457,7 @@ export default function Youtube1() {
                                                 </div>
                                               </div>
                                             </div>
-                                          </>
-                                        );
-                                      }
-                                    })}
-                                  </>
-                                )}
-                              </div>
-                              <div className="mark-uchun-koish-joy">
+                                            <div className="mark-uchun-koish-joy">
                                 <div className="kotta-obsh-mark-uchun">
                                   <div className="kichkina-mark-uchun-joy">
                                     <div
@@ -1514,7 +1525,7 @@ export default function Youtube1() {
                                     <button
                                       className="porver-uchen-but"
                                       onClick={() => {
-                                        aftermarkopen();
+                                        aftermarkopen(item.id);
                                       }}
                                     >
                                       Потвердить
@@ -1599,6 +1610,14 @@ export default function Youtube1() {
                                   </div>
                                 </div>
                               </div>
+                                          </>
+                                        );
+                                      }
+                                    })}
+                                  </>
+                                )}
+                              </div>
+                             
                             
                               <div className="m_comment_yozish">
                                 <input

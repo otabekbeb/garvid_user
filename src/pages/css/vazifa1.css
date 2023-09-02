@@ -462,3 +462,47 @@
     align-items: center;
     justify-content: space-between;
 }
+.mark-two-bosa{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: red;
+    border: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mark-three-bosa{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgb(255, 123, 0);
+    border: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mark-four-bosa{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgb(245, 179, 11);
+    border: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mark-five-bosa{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgb(5, 197, 5);
+    border: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
