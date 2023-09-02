@@ -128,13 +128,13 @@ export default function Contact() {
             <button onClick={() => { dataPost() }} className="contact_btn">
               {state === "ru" ? "отправить" : "send"}
             </button>
-            <div className="admin_title">
+            {/* <div className="admin_title">
               <h4>Admin:</h4>
               <div className="chec_icon">
                 <BsCheck2 className='bir_chec' />
                 <BsCheckAll className='ikki_chec' />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

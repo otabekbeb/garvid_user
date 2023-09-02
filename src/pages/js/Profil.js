@@ -352,7 +352,7 @@ export default function Profil() {
                   if (item.to_user_id == localStorage.getItem("OneuserId")) {
                   return (
                     <>
-                       <p>Today</p>
+                       {/* <p>Today</p> */}
                       <div className="taxrirlash_chad"> 
                         <div className="taxrirlash_chad_img_size">
                           <img src={chadimg} alt="" />
@@ -362,7 +362,7 @@ export default function Profil() {
                             <h1>{item.title}</h1>
                             <div className="taxrirlash_chad_vaqt_soat">
                               <TbPointFilled className="chad_set" />
-                              <p>19:22</p>
+                              <p>{item.time_create.slice(11,16)}</p>
                             </div>
                           </div>
                           <div className="taxrirlash_chad_text">

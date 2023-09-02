@@ -34,7 +34,7 @@ export default function Azo() {
     }, []);
     function folowcolor1(key) {
         axios.delete(`${url}/api/follow/${key}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-            alert("oxsha")
+            window.location.reload()
         }).catch(err => {
             alert("xato")
         })
