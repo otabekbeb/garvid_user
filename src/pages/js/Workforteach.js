@@ -164,7 +164,7 @@ export default function Workforteach() {
                                     <span><FaHourglassEnd style={{ color: "black", marginRight: "7px" }} /> {(item.time_update).slice(0, 10)}</span>
                                 </div>
                                 <p className='ortapp'>{item.feedback}</p>
-                                <p className='ortap1' style={{ marginTop: "0px" }}>Grade:{item.mark}</p>
+                                <p className='ortap1' style={{ marginTop: "0px" }}>Mark:{item.mark}</p>
                                 <div className="m_zadacha_icon">
                                     <div className="m_zadach_ktug_icon1" onClick={() => openModal2(item.id)}>
                                         <MdDeleteOutline />
@@ -215,7 +215,7 @@ export default function Workforteach() {
                         <label htmlFor="">Feedback:</label>
                         <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadac'></textarea> <br />
                         <div className="a_button_for_end">
-                            <button onClick={() => postforzadac()}>Добавить</button>
+                            <button onClick={() => postforzadac()}>Add</button>
                         </div>
                     </div>
                 </div>
@@ -229,25 +229,25 @@ export default function Workforteach() {
                         <GrFormClose /></div>
                     <div className="m_input_file_dobavit">
                         <div className="a_input_file12">
-                            <FiDownload /> Добавить задание
+                            <FiDownload />  Add task
                         </div>
                         <input type="file" className='img_inp_zadacput' />
                     </div>
                     <div className="m_input_bilmafim">
                         <label htmlFor="">Name:</label>
                         <input type="text" name="" id="" className='inp_name_zadacput' />
-                        <label htmlFor="">course theme:</label>
+                        <label htmlFor="">Course theme:</label>
                         <input type="text" name="" id="" className='inp_course_theme_put' />
-                        <label htmlFor="">vremya bowlaniwi:</label>
+                        <label htmlFor="">Time create:</label>
                         <input type="date" name="" id="" className='inp_bdate_zadacput' />
-                        <label htmlFor="">vremya tugawi:</label>
+                        <label htmlFor="">Time update:</label>
                         <input type="date" name="" id="" className='inp_tdate_zadacput' />
-                        <label htmlFor="">mark:</label>
+                        <label htmlFor="">Mark:</label>
                         <input type="text" name="" id="" className='inp_mark_zadacput' />
-                        <label htmlFor="">Opisaniye:</label>
+                        <label htmlFor="">Feedback:</label>
                         <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadacput'></textarea> <br />
                         <div className="a_button_for_end">
-                            <button onClick={() => dashedput()}>Добавить</button>
+                            <button onClick={() => dashedput()}>Add</button>
                         </div>
                     </div>
                 </div>
@@ -258,7 +258,7 @@ export default function Workforteach() {
                 <div className="m_zadachi_dobavit">
                     <div className="m_clouse_x" onClick={() => clouseModal1()}><GrFormClose /></div>
                     <div className="m_input_file_dobavit">
-                        <div className="a_input_file12"> Изменить изоброжение </div>
+                        <div className="a_input_file12"> Change image </div>
                         <input type="file" />
                     </div>
                     <div className="m_input_bilmafim">
@@ -266,7 +266,7 @@ export default function Workforteach() {
                             <option value="">Otash bilad</option>
                         </select>
                         <textarea placeholder='Edid description' name="" id="" cols="30" rows="10"></textarea>
-                        <div className="a_button_for_end"><button>Изменить</button></div>
+                        <div className="a_button_for_end"><button>Change</button></div>
                     </div>
                 </div>
             </div>

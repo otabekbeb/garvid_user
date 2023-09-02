@@ -11,6 +11,7 @@ import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import { FaUsers, FaHourglassStart, FaHourglassEnd } from "react-icons/fa"
 // import events from "./events";
+import Education from '../img/Education-bro.png'
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import {
   Row,
@@ -54,9 +55,9 @@ export default function Edication() {
   const [Markstudent_id, setMarkstudent_id] = useState()
   const [MarkId, setMarkId] = useState()
   const [newdate, setNewdate] = useState(`${(new Date()).getMonth() + 1}.padStart(2,0)`)
-  
+
   const [Journal_mark, setJournal_mark] = useState({ allesson: [], alstudent_mark: [{ mark: [] }] })
-  
+
   // 
   const username = document.querySelectorAll("#Educationusername")
   const start_date = document.querySelectorAll("#Educationstart_date")
@@ -68,8 +69,8 @@ export default function Edication() {
   const day = document.querySelectorAll("#Scheduleday")
   const teacher_id = document.querySelectorAll("#ScheduleTeacher_id")
   const student_id = document.querySelectorAll("#Groupusername")
-  
-  
+
+
   useEffect(() => {
     const a = new Date()
     var b = a.getDate()
@@ -80,9 +81,9 @@ export default function Edication() {
     axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setEdication(res.data)
       setEdication1(res.data)
-      localStorage.setItem("for_education",(res.data).length)
+      localStorage.setItem("for_education", (res.data).length)
     })
-    
+
     axios.get(`${url}/auth/teachers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       const user = res.data.filter(item => item.position == 2)
       setUser(res.data)
@@ -91,9 +92,9 @@ export default function Edication() {
       const StudentFilter = res.data.filter(item => item.position == 4)
       setSdutent(res.data)
     })
-    
+
   }, [])
-  
+
   function Page(id) {
     setPage(1)
     setEducationId(id)
@@ -500,7 +501,7 @@ export default function Edication() {
   }
   const columns = [
     {
-      title: 'Студент',
+      title: 'Student',
       dataIndex: 'student_id',
       key: 'student_id',
       render: (dataIndex) => <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -508,7 +509,7 @@ export default function Edication() {
         <MdOutlineDeleteOutline onClick={() => deleteGroupModal(dataIndex)} style={{ color: 'red', cursor: 'pointer' }} />{student.map(item => { if (item.id == dataIndex) { return <h1 style={{ marginBottom: '0px' }}>{item.username}</h1> } })}</div>
     },
     {
-      title: <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}><select name="" style={{ width: '160px' }} id="journal_day">{Journal_mark.allesson.map(item => { return <option value={item.id}>{(item.day).slice(0, 10)}</option> })}</select>   <button onClick={() => { sendMarkAll() }} style={{ marginTop: '0px', marginBottom: '0px', paddingTop: "5px", paddingBottom: '5px' }} className='user_post_button'>Send оценку</button></div>,
+      title: <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}><select name="" style={{ width: '160px' }} id="journal_day">{Journal_mark.allesson.map(item => { return <option value={item.id}>{(item.day).slice(0, 10)}</option> })}</select>   <button onClick={() => { sendMarkAll() }} style={{ marginTop: '0px', marginBottom: '0px', paddingTop: "5px", paddingBottom: '5px' }} className='user_post_button'>Send</button></div>,
       dataIndex: 'id',
       key: 'id',
       render: (dataIndex) => <div>
@@ -570,8 +571,8 @@ export default function Edication() {
     <div className='otash'>
       {page == 2 ? (
         <>
-          <div className="exit_button"><button onClick={() => setPage(0)} style={{ marginLeft: "0px" }}>Назад</button>        <button className='user_post_button_malumot' style={{ paddingTop: '3px' }} onClick={() => { SetMark(0) }} >оценивать</button>   <button style={{ paddingTop: '3px' }} onClick={() => Markpage()} className='user_post_button_malumot'>журнал</button></div>
-          {mark == 0 ? (<><div className="search_big_div"><button onClick={() => postGroupModal()} className="user_post_button">Добавить</button></div><Table dataSource={group_student} columns={columns} />
+          <div className="exit_button"><button onClick={() => setPage(0)} style={{ marginLeft: "0px" }}>Clouse</button>        <button className='user_post_button_malumot' style={{ paddingTop: '3px' }} onClick={() => { SetMark(0) }} >Evaluate</button>   <button style={{ paddingTop: '3px' }} onClick={() => Markpage()} className='user_post_button_malumot'>Magazine</button></div>
+          {mark == 0 ? (<><div className="search_big_div"><button onClick={() => postGroupModal()} className="user_post_button">Add</button></div><Table dataSource={group_student} columns={columns} />
 
 
           </>) : (
@@ -581,11 +582,11 @@ export default function Edication() {
                 <table className='all_mark_jurnal'>
                   <tr>
                     <th>No</th>
-                    <th>Фамилия</th>
+                    <th>Surname</th>
 
                     {Journal_mark.allesson.map(item => {
 
-                      return <th>{item.day.slice(0, 10)}</th>
+                      return <th className='edu_th'>{item.day.slice(0, 10)}</th>
                     })}
                   </tr>
                   {Journal_mark.alstudent_mark.map((item1, key) => {
@@ -605,7 +606,7 @@ export default function Edication() {
         <>
           {page == 1 ? (
             <>
-              <div className="exit_button"><button onClick={() => setPage(0)}>Назад</button></div>
+              <div className="exit_button"><button onClick={() => setPage(0)}>Clouse</button></div>
               <div className="App">
                 <Calendar className='calendar'
                   views={["day", "agenda", "work_week", "month"]}
@@ -622,7 +623,7 @@ export default function Edication() {
             </>
           ) : (
             <>
-              <div className="search_big_div"><button className="user_post_button" onClick={() => postEducationModal()}>Add Education</button><AiOutlineSearch className="search" /><input onChange={Search} placeholder="Введите здесь..." type="text" /></div>
+              <div className="search_big_div"><button className="user_post_button" onClick={() => postEducationModal()}>Add Education</button><AiOutlineSearch className="search" /><input onChange={Search} placeholder="Enter here..." type="text" /></div>
               {/* <div className="edication_card">
                 {edication.map(item => {
                   return (
@@ -644,34 +645,40 @@ export default function Edication() {
                 })}
               </div> */}
               <ul class="cards">
-                {edication.map(item => {
-                  return (
-                    <li>
-                      <div class="card">
-                        <img src="https://images.hindustantimes.com/rf/image_size_640x362/HT/p2/2015/12/01/Pictures/_c34102da-9849-11e5-b4f4-1b7a09ed2cea.jpg" class="card__image" alt="" />
-                        <div class="card__overlay">
-                          <div class="card__header">
-                            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-                            {/* <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" /> */}
-                            <div class="card__header-text">
-                              <h2 class="card__title">{item.education_name}</h2>
-                              <span class="card__status">
-                                <p><FaHourglassStart />: {(item.start_date).slice(0, 10)}</p>
-                                <p><FaHourglassEnd />: {(item.end_date).slice(0, 10)}</p></span>
+                {edication === null ? (
+                  <div className="delete_padding">
+                    <img style={{ width: "60%", height: '70%' }} src={Education} alt="" />
+                    <h3 style={{ textAlign: 'center' }}>No education</h3>
+                  </div>) : (<>
+                    {edication.map(item => {
+                      return (
+                        <li>
+                          <div class="card">
+                            <img src="https://images.hindustantimes.com/rf/image_size_640x362/HT/p2/2015/12/01/Pictures/_c34102da-9849-11e5-b4f4-1b7a09ed2cea.jpg" class="card__image" alt="" />
+                            <div class="card__overlay">
+                              <div class="card__header">
+                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                                {/* <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" /> */}
+                                <div class="card__header-text">
+                                  <h2 class="card__title">{item.education_name}</h2>
+                                  <span class="card__status">
+                                    <p><FaHourglassStart />: {(item.start_date).slice(0, 10)}</p>
+                                    <p><FaHourglassEnd />: {(item.end_date).slice(0, 10)}</p></span>
+                                </div>
+                              </div>
+                              <p class="card__description">{item.description}</p>
+                              <div className="edu_btns">
+                                <button onClick={() => JadvalPage(item.id)}><FaUsers /></button>
+                                <button onClick={() => Page(item.id)}><MdPlayLesson /></button>
+                                <button className='edu_btn_delete' onClick={() => deleteEducationModal(item.id)}><MdDeleteOutline /></button>
+                                <button onClick={() => putEducationModal(item.id)} ><BiEdit /></button>
+                              </div>
                             </div>
                           </div>
-                          <p class="card__description">{item.description}</p>
-                          <div className="edu_btns">
-                            <button onClick={() => JadvalPage(item.id)}><FaUsers /></button>
-                            <button onClick={() => Page(item.id)}><MdPlayLesson /></button>
-                            <button className='edu_btn_delete' onClick={() => deleteEducationModal(item.id)}><MdDeleteOutline /></button>
-                            <button onClick={() => putEducationModal(item.id)} ><BiEdit /></button>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  )
-                })}
+                        </li>
+                      )
+                    })}</>)}
+
               </ul>
             </>)}
         </>
@@ -703,7 +710,7 @@ export default function Edication() {
             </label>
             <label htmlFor="">
               <p>
-Final date</p>
+                Final date</p>
               <input id="Educationend_date" type="date" />
             </label>
             <label htmlFor="">
@@ -731,18 +738,18 @@ Final date</p>
             </label>
             <label htmlFor="">
               <p>
-Final date</p>
+                Final date</p>
               <input id="Educationend_date" type="date" />
             </label>
             <label htmlFor="">
               <p>Description</p>
               <textarea className="description" id="Educationdescription" cols="30" rows="10"></textarea>
-             
+
             </label>
           </div>
           <div className="postUserModal_div_button">
             <button onClick={() => putEducation()}>
-Edit</button>
+              Edit</button>
           </div>
         </div>
       </div>
@@ -763,7 +770,7 @@ Edit</button>
           <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => ikkiClose()} /></div>
           <div className="deleteButton_div">
             <button onClick={() => putScheduleModal()}>
-Edit</button>
+              Edit</button>
             <button onClick={() => deleteScheduleModal()}>Удалить</button>
           </div>
         </div>
@@ -825,7 +832,7 @@ Edit</button>
           </div>
           <div className="postUserModal_div_button">
             <button onClick={() => putSchedule()}>
-Edit</button>
+              Edit</button>
           </div>
         </div>
       </div>
@@ -841,7 +848,7 @@ Edit</button>
           </div>
           <div className="postUserModal_div_button">
             <button onClick={() => putMark()}>
-Edit</button>
+              Edit</button>
           </div>
         </div>
       </div>
@@ -894,7 +901,7 @@ Edit</button>
           </div>
           <div className="postUserModal_div_button">
             <button onClick={() => putGroup()}>
-Edit</button>
+              Edit</button>
           </div>
         </div>
       </div>

@@ -17,6 +17,7 @@ function Chat({ socket, email, room }) {
   const [CurrentEmoji,setCurrentEmoji] = useState(null)
 
   const sendMessage = async () => {
+    document.querySelector(".emojiess").style="display:none"
     if (currentMessage !== "") {
       const messageData = {
         room: room,
@@ -67,7 +68,16 @@ function Chat({ socket, email, room }) {
 function prof_tg() {
   
 }
+function smileu() {
+  var a=document.querySelector(".emojiess").style.display
+  if (a==="none") {
+     document.querySelector(".emojiess").style.display="block"
+  }else{
+    document.querySelector(".emojiess").style.display="none"
+  }
+}
   useEffect(() => {
+    document.querySelector(".emojiess").style="display:none"
     if (theme=="moon") {
       document.querySelector(".emoj").style = "color:white;";
     }else{
@@ -141,11 +151,13 @@ function prof_tg() {
                 id={email === messageContent.author ? "you" : "other"}
               >
                 <div>
+                  <div className="forsss">
                   <div className="message-content">
                     <p>{messageContent.message}</p> 
                     <div className="timee"><p id="time">{messageContent.time}</p></div>
                     
-                  </div>
+     
+                  </div>{email === messageContent.author?(<div className="for_svg"><svg width="9" height="20" class="svg-appendix"><defs><filter x="-50%" y="-14.7%" width="200%" height="141.2%" filterUnits="objectBoundingBox" id="messageAppendix"><feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur><feColorMatrix values="0 0 0 0 0.0621962482 0 0 0 0 0.138574144 0 0 0 0 0.185037364 0 0 0 0.15 0" in="shadowBlurOuter1"></feColorMatrix></filter></defs><g fill="none" fill-rule="evenodd"><path d="M6 17H0V0c.193 2.84.876 5.767 2.05 8.782.904 2.325 2.446 4.485 4.625 6.48A1 1 0 016 17z" fill="#000" filter="url(#messageAppendix)"></path><path d="M6 17H0V0c.193 2.84.876 5.767 2.05 8.782.904 2.325 2.446 4.485 4.625 6.48A1 1 0 016 17z" fill="#EEFFDE" class="corner"></path></g></svg></div>):(<div className="for_svg"><svg width="9" height="20" class="svg-appendix"><defs><filter x="-50%" y="-14.7%" width="200%" height="141.2%" filterUnits="objectBoundingBox" id="messageAppendix"><feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur><feColorMatrix values="0 0 0 0 0.0621962482 0 0 0 0 0.138574144 0 0 0 0 0.185037364 0 0 0 0.15 0" in="shadowBlurOuter1"></feColorMatrix></filter></defs><g fill="none" fill-rule="evenodd"><path d="M3 17h6V0c-.193 2.84-.876 5.767-2.05 8.782-.904 2.325-2.446 4.485-4.625 6.48A1 1 0 003 17z" fill="#000" filter="url(#messageAppendix)"></path><path d="M3 17h6V0c-.193 2.84-.876 5.767-2.05 8.782-.904 2.325-2.446 4.485-4.625 6.48A1 1 0 003 17z" fill="FFF" class="corner"></path></g></svg></div>)}</div>
                   <div className="message-meta">
 
                   </div>
@@ -156,10 +168,9 @@ function prof_tg() {
         </ScrollToBottom>
       </div>
       <div className="chat-footer">
-       <div className="emojiess" ><Picker data={data} previewPosition="flex" onEmojiSelect={(e)=>{setCurrentMessage(currentMessage+e.native)}}/></div>
+       <div className="emojiess" ><Picker  data={data} previewPosition="flex" onEmojiSelect={(e)=>{setCurrentMessage(currentMessage+e.native)}}/></div>
       <div className="for_emojis">
-      <div className="emojis" onClick={()=> {document.querySelector(".emojiess").classList.toggle("smilek")}}><BsEmojiSmile className="emoj"/></div>
-
+      <div className="emojis" onClick={()=> smileu()}><BsEmojiSmile style={{cursor:"pointer"}} className="emoj"/></div>
         <input
           type="text"
           value={currentMessage}

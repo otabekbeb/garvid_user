@@ -4,7 +4,7 @@ import azoimg from "../img/Ellipse.jpg"
 import axios from 'axios'
 import url from './Host'
 
-import Groupimg from "../img/Group 2.png";
+import Groupimg from "../img/Subscriber-pana.png";
 import { AiOutlineArrowDown } from 'react-icons/ai'
 import '../css/Nosignal.css'
 export default function Azo() {

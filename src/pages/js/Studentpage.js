@@ -38,7 +38,7 @@ import { FaYoutube } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import { BsFillCloudArrowDownFill } from 'react-icons/bs'
 import sertifikat from '../img/Sertifikat.png'
-import Groupimg from "../img/Group 2.png";
+import Groupimg from "../img/Checklist-rafiki.png";
 import { BsSearch } from "react-icons/bs"
 import deleteImg from "../img/Group 2.png"
 import { MdDeleteOutline } from "react-icons/md"
@@ -1042,7 +1042,7 @@ export default function Mentor() {
 
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_course")} pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(0)} style={toggle === 0 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Education</h1>{toggle === 0 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_education")} pieces</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Correspondence</h1></div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Chat</h1></div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Tasks</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("stTasks")} pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(7)} style={toggle === 7 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Test</h1></div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My subscribtions</h1>{toggle === 4 ? ("") : ("")}</div>
@@ -1054,7 +1054,7 @@ export default function Mentor() {
           </div>
           <div className="profil_modal_media">
             <h1 onClick={() => updatetoggle(1)} className='fromMenu'>My courses</h1>
-            <h1 onClick={() => updatetoggle(2)} className='fromMenu'>Correspondence</h1>
+            <h1 onClick={() => updatetoggle(2)} className='fromMenu'>Chat</h1>
             <h1 onClick={() => updatetoggle(3)} className='fromMenu'>Tasks</h1>
             <h1 onClick={() => updatetoggle(7)} className='fromMenu'>Test</h1>
             <h1 onClick={() => updatetoggle(4)} className='fromMenu'>My subscribtions</h1>
@@ -1173,7 +1173,7 @@ export default function Mentor() {
         </div>
         <div className={toggle === 3 ? "show-content" : "content"}>
           <div className="m_dobavit_kurs">
-            <button onClick={() => openModal()}>Добавить задачу</button>
+            <button onClick={() => openModal()}>Add task</button>
           </div>
           <div className="m_zadach">
             {stTasks.map(item => {
@@ -1208,25 +1208,25 @@ export default function Mentor() {
                         <GrFormClose /></div>
                       <div className="m_input_file_dobavit">
                         <div className="a_input_file12">
-                          <FiDownload /> Добавить задание
+                          <FiDownload /> Add task
                         </div>
                         <input type="file" className='img_inp_zadac' />
                       </div><br />
                       <div className="m_input_bilmafim">
                         <label htmlFor="">Name:</label>
                         <input type="text" name="" id="" className='inp_name_zadac' />
-                        <label htmlFor="">course theme:</label>
+                        <label htmlFor="">Course theme:</label>
                         <input type="text" name="" id="" className='inp_course_theme_zadac' />
-                        <label htmlFor="">vremya bowlaniwi:</label>
+                        <label htmlFor="">Time create:</label>
                         <input type="date" name="" id="" className='inp_bdate_zadac' />
-                        <label htmlFor="">vremya tugawi:</label>
+                        <label htmlFor="">Time update:</label>
                         <input type="date" name="" id="" className='inp_tdate_zadac' />
-                        <label htmlFor="">mark:</label>
+                        <label htmlFor="">Mark:</label>
                         <input type="text" name="" id="" className='inp_mark_zadac' />
-                        <label htmlFor="">Opisaniye:</label>
+                        <label htmlFor="">Feedback:</label>
                         <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadac'></textarea> <br />
                         <div className="a_button_for_end">
-                          <button onClick={() => { postforzadac() }}>Добавить</button>
+                          <button onClick={() => { postforzadac() }}>Add</button>
                         </div>
                       </div>
                     </div>
@@ -1249,20 +1249,20 @@ export default function Mentor() {
                 <GrFormClose /></div>
               <div className="m_input_file_dobavit">
                 <div className="a_input_file12">
-                  <FiDownload /> Добавить задание
+                  <FiDownload /> Add task
                 </div>
                 <input type="file" className='img_inp_zadacput' />
               </div><br />
               <div className="m_input_bilmafim">
                 <label htmlFor="">Name:</label>
                 <input type="text" name="" id="" className='inp_name_zadacput' />
-                <label htmlFor="">course theme:</label>
+                <label htmlFor="">Course theme:</label>
                 <input type="text" name="" id="" className='inp_course_theme_put' />
-                <label htmlFor="">vremya bowlaniwi:</label>
+                <label htmlFor="">Time create:</label>
                 <input type="date" name="" id="" className='inp_bdate_zadacput' />
-                <label htmlFor="">vremya tugawi:</label>
+                <label htmlFor="">Time update:</label>
                 <input type="date" name="" id="" className='inp_tdate_zadacput' />
-                <label htmlFor="">mark:</label>
+                <label htmlFor="">Mark:</label>
                 <input type="text" name="" id="" className='inp_mark_zadacput' />
                 <label htmlFor="">Opisaniye:</label>
                 <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadacput'></textarea> <br />
