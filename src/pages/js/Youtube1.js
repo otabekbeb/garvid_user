@@ -1703,10 +1703,10 @@ export default function Youtube1() {
                 <div className={main == "" ? "db" : "a_err_boganda"}>
                   <div className="a_err_bolsa_block">
                     <img src={err} alt="" />
-                    <h3>Что-то произошло сервером, мы уже испровляем это.</h3>
-                    <h3> Можете попробовать попойже</h3>
+                    <h3>Something happened to the server, we are already fixing it.</h3>
+                    <h3>You can try better</h3>
                     <button onClick={() => ModalCatchBolsa()}>
-                      вернуться назад
+                      Come back
                     </button>
                   </div>
                 </div>

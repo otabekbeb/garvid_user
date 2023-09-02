@@ -406,10 +406,10 @@ export default function Searchfilter() {
                 <div className="delete_card">
                   <div className="delete_padding">
                     <img src={Groupimg} alt="" />
-                    <h4>Вы правда хотите удалить?</h4>
+                    <h4>Do you really want to delete?</h4>
                     <div className="delete_btns">
-                      <button onClick={() => close()} className="delete_btn_no">Нет</button>
-                      <button className="delete_btn_yes" onClick={() => deleteclose()}>Да</button>
+                      <button onClick={() => close()} className="delete_btn_no">Not</button>
+                      <button className="delete_btn_yes" onClick={() => deleteclose()}>Yes</button>
                     </div>
                   </div>
                 </div>

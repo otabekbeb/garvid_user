@@ -11,8 +11,8 @@ export default function JoinRoom() {
   return (
     <div className="VideoChat_room_big_div">
     <div className="VideoChat_room_big">
-      <input type="text" placeholder="Создать комнату" onChange={(e) => setRoom(e.target.value)} />
-      <button onClick={onSubmit}>Создавать</button>
+      <input type="text" placeholder="Create a room" onChange={(e) => setRoom(e.target.value)} />
+      <button onClick={onSubmit}>Create</button>
     </div>
     </div>
   );

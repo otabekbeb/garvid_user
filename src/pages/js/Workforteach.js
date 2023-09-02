@@ -13,6 +13,7 @@ import { FiDownload } from "react-icons/fi"
 import { FaHourglassStart } from 'react-icons/fa'
 import { FaHourglassEnd } from 'react-icons/fa'
 import Swal from "sweetalert2";
+import Form from 'react-bootstrap/Form';
 export default function Workforteach() {
     const [stTasks, setTasks] = useState([])
     const [CourseId, setCourseId] = useState();
@@ -41,23 +42,25 @@ export default function Workforteach() {
         document.querySelector(".m_delete_tepadan2").style = "display:none"
     }
     useEffect(() => {
-        axios.get(`${url}/api/course_theme_task_student`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+        axios.get(`${url}/api/course_theme_task`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             setTasks(res.data)
             localStorage.setItem("taskLength", (res.data).length)
         })
 
     }, [])
     function deletetask() {
-        axios.delete(`${url}/api/course_theme_task_student/${deleteId}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+        axios.delete(`${url}/api/course_theme_task/${deleteId}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             alert("Данные удалены")
             document.querySelector(".m_delete_tepadan2").style = "display:none"
-            document.querySelector("#EducationdeleteModal").style = "display:none"
-            axios.get(`${url}/api/course_theme_task_student`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+            axios.get(`${url}/api/course_theme_task`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
                 setTasks(res.data)
             })
         }).catch(err => {
             alert("Данные не удалены")
         })
+            
+    
+        
     }
 
 
@@ -78,16 +81,16 @@ export default function Workforteach() {
         var formdata = new FormData()
 
         formdata.append("content", document.querySelector(".inp_name_zadac").value)
-        formdata.append("feedback", document.querySelector(".inp_ops_zadac").value)
+        // formdata.append("feedback", document.querySelector(".inp_ops_zadac").value)
         formdata.append("course_theme", document.querySelector(".inp_course_theme_zadac").value)
-        formdata.append("time_create", document.querySelector(".inp_bdate_zadac").value)
-        formdata.append("time_update", document.querySelector(".inp_tdate_zadac").value)
+        // formdata.append("time_create", document.querySelector(".inp_bdate_zadac").value)
+        // formdata.append("time_update", document.querySelector(".inp_tdate_zadac").value)
         formdata.append("image", document.querySelector(".img_inp_zadac").files[0])
-        formdata.append("mark", document.querySelector(".inp_mark_zadac").value)
+        // formdata.append("mark", document.querySelector(".inp_mark_zadac").value)
         // formdata.append("author", localStorage.getItem("OneuserId"))
 
 
-        axios.post(`${url}/api/course_theme_task_student`, formdata, {
+        axios.post(`${url}/api/course_theme_task`, formdata, {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         }).then(res => {
             Swal.fire("success")
@@ -102,15 +105,15 @@ export default function Workforteach() {
         setCourseId(id)
         document.querySelector("#zadaca_put").style = "display: flex; justify-content: center;align-items: center;"
         setTimeout(() => {
-            axios.get(`${url}/api/course_theme_task_student`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+            axios.get(`${url}/api/course_theme_task`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
                 setTasks(res.data)
                 const filter = res.data.filter(item => item.id == id)
                 document.querySelector(".inp_name_zadacput").value = filter[0].content
-                document.querySelector(".inp_ops_zadacput").value = filter[0].feedback
+                // document.querySelector(".inp_ops_zadacput").value = filter[0].feedback
                 document.querySelector(".inp_course_theme_zadacput").value = filter[0].course_theme
-                document.querySelector(".inp_bdate_zadacput").value = filter[0].time_create
-                document.querySelector(".inp_tdate_zadacput").value = filter[0].time_update
-                document.querySelector(".inp_mark_zadacput").value = filter[0].mark
+                // document.querySelector(".inp_bdate_zadacput").value = filter[0].time_create
+                // document.querySelector(".inp_tdate_zadacput").value = filter[0].time_update
+                // document.querySelector(".inp_mark_zadacput").value = filter[0].mark
             }).catch(err => {
                 console.log(err);
             })
@@ -122,14 +125,14 @@ export default function Workforteach() {
     function dashedput(id) {
         var formdata = new FormData()
         formdata.append("content", document.querySelector(".inp_name_zadacput").value)
-        formdata.append("feedback", document.querySelector(".inp_ops_zadacput").value)
+        // formdata.append("feedback", document.querySelector(".inp_ops_zadacput").value)
         formdata.append("course_theme", 2)
-        formdata.append("time_create", document.querySelector(".inp_bdate_zadacput").value)
-        formdata.append("time_update", document.querySelector(".inp_tdate_zadacput").value)
+        // formdata.append("time_create", document.querySelector(".inp_bdate_zadacput").value)
+        // formdata.append("time_update", document.querySelector(".inp_tdate_zadacput").value)
         formdata.append("image", document.querySelector(".img_inp_zadacput").files[0])
-        formdata.append("mark", document.querySelector(".inp_mark_zadacput").value)
+        // formdata.append("mark", document.querySelector(".inp_mark_zadacput").value)
 
-        axios.put(`${url}/api/course_theme_task_student/${CourseId}`, formdata, {
+        axios.put(`${url}/api/course_theme_task/${CourseId}`, formdata, {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         }).then(res => {
             Swal.fire("success")
@@ -137,7 +140,7 @@ export default function Workforteach() {
         }).catch(err => {
             Swal.fire(err)
         })
-        axios.get(`${url}/api/course_theme_task_student`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+        axios.get(`${url}/api/course_theme_task`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
             setTasks(res.data)
         }).catch(err => {
             console.log(err);
@@ -161,10 +164,10 @@ export default function Workforteach() {
                                 <h4>{item.content}</h4>
                                 <div className="zadac_df">
                                     <span><FaHourglassStart style={{ color: "black", marginRight: "7px" }} /> {(item.time_create).slice(0, 10)}</span>
-                                    <span><FaHourglassEnd style={{ color: "black", marginRight: "7px" }} /> {(item.time_update).slice(0, 10)}</span>
+                                    <span><FaHourglassEnd style={{ color: "black", marginRight: "7px" }}    /> {(item.time_update).slice(0, 10)}</span>
                                 </div>
-                                <p className='ortapp'>{item.feedback}</p>
-                                <p className='ortap1' style={{ marginTop: "0px" }}>Mark:{item.mark}</p>
+                                {/* <p className='ortapp'>{item.feedback}</p> */}
+                                {/* <p className='ortap1' style={{ marginTop: "0px" }}>Mark:{item.mark}</p> */}
                                 <div className="m_zadacha_icon">
                                     <div className="m_zadach_ktug_icon1" onClick={() => openModal2(item.id)}>
                                         <MdDeleteOutline />
@@ -205,15 +208,18 @@ export default function Workforteach() {
                         <label htmlFor="">Name:</label>
                         <input type="text" name="" id="" className='inp_name_zadac' />
                         <label htmlFor="">Course theme:</label>
+                      {/* <Form.Select className="inp_course_theme_zadac" aria-label="Default select example">
+                       <option value=""></option>
+                      </Form.Select> */}
                         <input type="text" name="" id="" className='inp_course_theme_zadac' />
-                        <label htmlFor="">Time create:</label>
+                        {/* <label htmlFor="">Time create:</label>
                         <input type="date" name="" id="" className='inp_bdate_zadac' />
                         <label htmlFor="">Time update:</label>
-                        <input type="date" name="" id="" className='inp_tdate_zadac' />
-                        <label htmlFor="">Mark:</label>
-                        <input type="text" name="" id="" className='inp_mark_zadac' />
-                        <label htmlFor="">Feedback:</label>
-                        <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadac'></textarea> <br />
+                        <input type="date" name="" id="" className='inp_tdate_zadac' /> */}
+                        {/* <label htmlFor="">Mark:</label>
+                        <input type="text" name="" id="" className='inp_mark_zadac' /> */}
+                        {/* <label htmlFor="">Feedback:</label> */}
+                        {/* <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadac'></textarea> <br /> */}
                         <div className="a_button_for_end">
                             <button onClick={() => postforzadac()}>Add</button>
                         </div>
@@ -238,14 +244,14 @@ export default function Workforteach() {
                         <input type="text" name="" id="" className='inp_name_zadacput' />
                         <label htmlFor="">Course theme:</label>
                         <input type="text" name="" id="" className='inp_course_theme_put' />
-                        <label htmlFor="">Time create:</label>
+                        {/* <label htmlFor="">Time create:</label>
                         <input type="date" name="" id="" className='inp_bdate_zadacput' />
                         <label htmlFor="">Time update:</label>
-                        <input type="date" name="" id="" className='inp_tdate_zadacput' />
-                        <label htmlFor="">Mark:</label>
-                        <input type="text" name="" id="" className='inp_mark_zadacput' />
-                        <label htmlFor="">Feedback:</label>
-                        <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadacput'></textarea> <br />
+                        <input type="date" name="" id="" className='inp_tdate_zadacput' /> */}
+                        {/* <label htmlFor="">Mark:</label>
+                        <input type="text" name="" id="" className='inp_mark_zadacput' /> */}
+                        {/* <label htmlFor="">Feedback:</label> */}
+                        {/* <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadacput'></textarea> <br /> */}
                         <div className="a_button_for_end">
                             <button onClick={() => dashedput()}>Add</button>
                         </div>
@@ -275,11 +281,11 @@ export default function Workforteach() {
                 <div className="a_delete_bgc">
                     <div className="for_center">
                         <img src={Groupimg} alt="" />
-                        <h4>Вы правда хотите удалить?</h4>
+                        <h4>Do you really want to delete?</h4>
                         <div className="a_delete_button">
-                            <button className='a_delete_no' onClick={() => clouseModal2()}>Нет</button>
+                            <button className='a_delete_no' onClick={() => clouseModal2()}>No</button>
                             <button onClick={() => deletetask()}
-                                className="a_delete_yes">Да</button>
+                                className="a_delete_yes">Yes</button>
                         </div>
                     </div>
                 </div>

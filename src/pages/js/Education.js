@@ -161,7 +161,7 @@ export default function Edication() {
         setEdication(res.data)
       })
     }).catch(err => {
-      alert("Данные не добавлены, введите полностью")
+      alert("Data not added, please enter in full")
     })
   }
 
@@ -187,13 +187,13 @@ export default function Edication() {
 
   function deleteEducation() {
     axios.delete(`${url}/edu/education/${edicationId}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-      alert("Данные удалены")
+      alert("Data deleted")
       document.querySelector("#EducationdeleteModal").style = "display:none"
       axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         setEdication(res.data)
       })
     }).catch(err => {
-      alert("Данные не удалены")
+      alert("Data not deleted")
     })
   }
 
@@ -300,7 +300,7 @@ export default function Edication() {
 
   function deleteSchedule() {
     axios.delete(`${url}/edu/schedule/${scheduleId}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-      alert("Данные удалены")
+      alert("Data deleted")
       document.querySelector("#ScheduledeleteModal").style = "display:none"
       axios.get(`${url}/edu/schedule`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         console.log(res.data, "dsd");
@@ -317,7 +317,7 @@ export default function Edication() {
         setEventsData(a)
       })
     }).catch(err => {
-      alert("Данные не удалены")
+      alert("Data not deleted")
     })
   }
 
@@ -465,12 +465,12 @@ export default function Edication() {
         setGroup_Student(StudentFilter)
       })
     }).catch(err => {
-      alert("Студент не изменился, заполните полностью")
+      alert("Student has not changed, fill in completely")
     })
   }
   function deleteGroup() {
     axios.delete(`${url}/edu/group_student/${GroupId}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-      alert("Студент удален")
+      alert("Student removed")
       JadvalPage(JadvalPageId)
       document.querySelector("#GroupdeleteModal").style = "display:none"
       axios.get(`${url}/edu/group_student`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
@@ -478,7 +478,7 @@ export default function Edication() {
         setGroup_Student(StudentFilter)
       })
     }).catch(err => {
-      alert("Студент не удален")
+      alert("Student not removed")
     })
   }
 
@@ -689,7 +689,7 @@ export default function Edication() {
         <div className="deleteModal_div">
           <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => deleteEducationClose()} /></div>
           <img src={deleteImg} alt="" />
-          <p>Вы хотите удалить это образование</p>
+          <p>Do you want to remove this entity?</p>
           <div className="deleteButton_div">
             <button onClick={() => deleteEducationClose()}>Отмена</button>
             <button onClick={() => deleteEducation()}>Подтвердить</button>
@@ -758,10 +758,10 @@ export default function Edication() {
         <div className="deleteModal_div">
           <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => deleteScheduleClose()} /></div>
           <img src={deleteImg} alt="" />
-          <p>Вы хотите удалить это <span className='deleteModalSpan'>образование</span></p>
+          <p>Do you want to delete this<span className='deleteModalSpan'>Education</span></p>
           <div className="deleteButton_div">
-            <button onClick={() => deleteScheduleClose()}>Отмена</button>
-            <button onClick={() => deleteSchedule()}>Подтвердить</button>
+            <button onClick={() => deleteScheduleClose()}>Cancel</button>
+            <button onClick={() => deleteSchedule()}>Confirm</button>
           </div>
         </div>
       </div>
@@ -771,7 +771,7 @@ export default function Edication() {
           <div className="deleteButton_div">
             <button onClick={() => putScheduleModal()}>
               Edit</button>
-            <button onClick={() => deleteScheduleModal()}>Удалить</button>
+            <button onClick={() => deleteScheduleModal()}>Delete</button>
           </div>
         </div>
       </div>
@@ -780,19 +780,19 @@ export default function Edication() {
           <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => postScheduleClose()} /></div>
           <div className="postUserModal_div_label" >
             <label htmlFor="">
-              <p>Название урока</p>
-              <input id="Scheduleusername" placeholder="Название урока" type="text" />
+              <p>Lesson name</p>
+              <input id="Scheduleusername" placeholder="Lesson name" type="text" />
             </label>
             <label htmlFor="">
-              <p>Время начала</p>
+              <p>Start time</p>
               <input id="Schedulestart_time" type="time" />
             </label>
             <label htmlFor="">
-              <p>Время окончания</p>
+              <p>End time</p>
               <input id="Scheduleend_time" type="time" />
             </label>
             <label htmlFor="">
-              <p>Удостоверение преподавателя</p>
+              <p>Instructor ID</p>
               <select name="" id="ScheduleTeacher_id">
                 {user.map(item => {
                   return <option value={item.id}>{item.username}</option>
@@ -810,19 +810,19 @@ export default function Edication() {
           <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => putScheduleClose()} /></div>
           <div className="postUserModal_div_label" >
             <label htmlFor="">
-              <p>Название урока</p>
-              <input id="Scheduleusername" placeholder="Название урока" type="text" />
+              <p>Lesson name</p>
+              <input id="Scheduleusername" placeholder="Lesson name" type="text" />
             </label>
             <label htmlFor="">
-              <p>Время начала</p>
+              <p>Start time</p>
               <input id="Schedulestart_time" type="time" />
             </label>
             <label htmlFor="">
-              <p>Время окончания</p>
+              <p>End time</p>
               <input id="Scheduleend_time" type="time" />
             </label>
             <label htmlFor="">
-              <p>Удостоверение преподавателя</p>
+              <p>Instructor ID</p>
               <select name="" id="ScheduleTeacher_id">
                 {user.map(item => {
                   return <option value={item.id}>{item.username}</option>
@@ -859,12 +859,12 @@ export default function Edication() {
           <img src={deleteImg} alt="" />
           {group_student.map(item => {
             if (GroupId == item.id) {
-              return <p>Вы хотите удалить этого {student.map(student => { if (student.id == item.student_id) { return <>{student.username}</> } })}</p>
+              return <p>Do you want to remove this {student.map(student => { if (student.id == item.student_id) { return <>{student.username}</> } })}</p>
             }
           })}
           <div className="deleteButton_div">
-            <button onClick={() => deleteGroupClose()}>Отмена</button>
-            <button onClick={() => deleteGroup()}>Подтвердить</button>
+            <button onClick={() => deleteGroupClose()}>Cancel</button>
+            <button onClick={() => deleteGroup()}>Confirm</button>
           </div>
         </div>
       </div>

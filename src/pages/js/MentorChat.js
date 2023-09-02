@@ -115,7 +115,7 @@ export default function MentorChat() {
       });
     socket.on("new_private_room", (data) => {
       setRooms((prevRooms) => [...prevRooms, data.roomName]);
-      Swal.fire(`Новая приватная комната создана: ${data.roomName}`);
+      Swal.fire(`New private room created: ${data.roomName}`);
     });
   }, [socket]);
   const createPrivateRoom = (otheremail) => {

@@ -42,7 +42,7 @@ export default function FollowCard() {
         })
       })
     }).catch(err => {
-      alert("Данные не удалены")
+      alert("Data not deleted")
     })
    })
 

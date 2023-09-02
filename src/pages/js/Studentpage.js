@@ -1264,10 +1264,10 @@ export default function Mentor() {
                 <input type="date" name="" id="" className='inp_tdate_zadacput' />
                 <label htmlFor="">Mark:</label>
                 <input type="text" name="" id="" className='inp_mark_zadacput' />
-                <label htmlFor="">Opisaniye:</label>
+                <label htmlFor="">Feedback:</label>
                 <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadacput'></textarea> <br />
                 <div className="a_button_for_end">
-                  <button onClick={() => dashedput()}>Добавить</button>
+                  <button onClick={() => dashedput()}>Add</button>
                 </div>
               </div>
             </div>
@@ -1277,7 +1277,7 @@ export default function Mentor() {
             <div className="m_zadachi_dobavit">
               <div className="m_clouse_x" onClick={() => clouseModal1()}><GrFormClose /></div>
               <div className="m_input_file_dobavit">
-                <div className="a_input_file12"> Изменить изоброжение </div>
+                <div className="a_input_file12">Change image </div>
                 <input type="file" />
               </div>
               <div className="m_input_bilmafim">
@@ -1285,7 +1285,7 @@ export default function Mentor() {
                   <option value="">Otash bilad</option>
                 </select>
                 <textarea placeholder='Edid description' name="" id="" cols="30" rows="10"></textarea>
-                <div className="a_button_for_end"><button>Изменить</button></div>
+                <div className="a_button_for_end"><button>Change</button></div>
               </div>
             </div>
           </div>
@@ -1293,7 +1293,7 @@ export default function Mentor() {
             <div className="a_delete_bgc">
               <div className="for_center">
                 <img src={Groupimg} alt="" />
-                <h4>Вы правда хотите удалить?</h4>
+                <h4>Do you really want to delete?</h4>
                 <div className="a_delete_button">
                   <button className='a_delete_no' onClick={() => clouseModal2()}>Нет</button>
                   <button onClick={() => deletetask()}
