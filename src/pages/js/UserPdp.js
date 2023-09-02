@@ -174,7 +174,7 @@ export default function Pdp() {
                   }
                   className="fromLeft"
                 >
-                  Correspondence
+                  Chat
                 </h1>
                 {/* <div className="fil_text_blok_kurs_lenght">1 pieces</div> */}
               </div>
@@ -252,7 +252,7 @@ export default function Pdp() {
                 My subscribers
               </h1> */}
               <h1 onClick={() => updatetoggle(6)} className="fromMenu">
-                Correspondence
+                Chat
               </h1>
               <h1 onClick={() => updatetoggle(7)} className="fromMenu">
               Courses

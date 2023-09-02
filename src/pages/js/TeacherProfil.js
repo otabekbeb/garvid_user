@@ -566,7 +566,7 @@ export default function Profil() {
               <h1 onClick={() => updatetoggle(2)} className='fromMenu'>My acquired knowledge</h1>
               <h1 onClick={() => updatetoggle(3)} className='fromMenu'>My Certificates</h1>
               <h1 onClick={() => updatetoggle(4)} className='fromMenu'>My Subscriptions</h1>
-              <h1 onClick={() => updatetoggle(5)} className='fromMenu'>Correspondence</h1>
+              <h1 onClick={() => updatetoggle(5)} className='fromMenu'>Chat</h1>
             </div>
           </div>) : (
           <div className="gray_blok">
