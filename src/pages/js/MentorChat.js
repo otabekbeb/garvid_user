@@ -536,17 +536,17 @@ function hover_menu_close() {
 }
 function hovers(key) {
   if(theme=="moon"){
-    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:black;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"
+    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:black;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;border-bottom: 1px solid #e2e2e2;"
   }else{
-    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:white;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;"
+    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:white;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;border-bottom: 1px solid gray;"
   }
 }
 
 function hovers1(key) {
   if(theme=="moon"){
-    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:none"
+    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:none;border-bottom: 1px solid #e2e2e2;"
   }else{
-    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:none"
+    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:none;border-bottom: 1px solid gray;"
   }
 }
 function onclicks(key) {
