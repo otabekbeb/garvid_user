@@ -634,11 +634,11 @@ export default function Youtube1() {
 
   function markOpen(id) {
     document.querySelector(".mark-uchun-koish-joy").style =
-      "display:flex !important";
+      "display:flex ";
   }
   function markOpen2(id) {
     document.querySelector(".mark-uchun-koish-joy1").style =
-      "display:flex !important";
+      "display:flex ";
   }
   function aftermarkopen() {
     var formdata = new FormData();
@@ -659,9 +659,6 @@ export default function Youtube1() {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
-        alert("otash tupoy");
-        document.querySelector(".BsBookmark").style =
-          "display:block ";
         document.querySelector(".m-comment-mark1").style = "display:block";
         document.querySelector(".m-comment-mark").style = "display:none";
         document.querySelector(".mark-uchun-koish-joy").style = "display:none";
@@ -682,11 +679,11 @@ export default function Youtube1() {
   }
   function markClose() {
     document.querySelector(".mark-uchun-koish-joy").style =
-      "display:none !important";
+      "display:none ";
   }
   function markClose2() {
     document.querySelector(".mark-uchun-koish-joy1").style =
-      "display:none !important";
+      "display:none ";
   }
   function aftermarkopen2(id) {
     var formdata = new FormData();
@@ -710,9 +707,8 @@ export default function Youtube1() {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
         .then((res) => {
-          document.querySelector(".BsBookmark").style = "display:block";
           document.querySelector(".mark-uchun-koish-joy1").style =
-            "display:none !important";
+            "display:none ";
           axios
             .get(`${url}/api/course_theme_task_student`, {
               headers: {
@@ -730,19 +726,8 @@ export default function Youtube1() {
     }
   }
 
-  function openMarkModal() {
-    document.querySelector(".p-info-mark-div1").style = "display:block; ";
-  }
-  function closeMarkModal() {
-    document.querySelector(".p-info-mark-div1").style = "display:none";
-  }
 
-  function openModalMarkOchadi() {
-    document.querySelector(".div-mark-chikadigan-joy").style = "display:block";
-  }
-  function openModalMarkOchadi12() {
-    document.querySelector(".div-mark-chikadigan-joy").style = "display:none";
-  }
+
   return (
     <div className="youtube_bgc">
       <div className="a_err_boganda">
@@ -946,8 +931,7 @@ export default function Youtube1() {
                                                         "Ответить"
                                                       ) : (
                                                         <>
-                                                          {" "}
-                                                          {item.count}{" "}
+                                                          {item.count}
                                                           <span> Ответов</span>
                                                         </>
                                                       )}
@@ -1096,33 +1080,33 @@ export default function Youtube1() {
                                                   <p className="m_comment_text1505">
                                                     {item.text}
                                                   </p>
-                                                  <div className="m_comment_otvet">
-                                                    {oneuser.map((item5) => {
-                                                      return (
-                                                        <>
-                                                          {item5.id ==
-                                                          item.user_id ? (
-                                                            <p
-                                                              className="m_comment_delete"
-                                                              onClick={() => {
-                                                                deleteComment(
-                                                                  item.id
-                                                                );
-                                                              }}
-                                                            >
-                                                              <AiOutlineDelete />
-                                                              удалить
-                                                            </p>
-                                                          ) : (
-                                                            ""
-                                                          )}
-                                                        </>
-                                                      );
-                                                    })}
-                                                  </div>
-                                                </div>
-                                              </div>
-                                            </div>
+                          <div className="m_comment_otvet">
+                            {oneuser.map((item5) => {
+                              return (
+                                <>
+                                  {item5.id ==
+                                  item.user_id ? (
+                                    <p
+                                      className="m_comment_delete"
+                                      onClick={() => {
+                                        deleteComment(
+                                          item.id
+                                        );
+                                      }}
+                                    >
+                                      <AiOutlineDelete />
+                                      удалить
+                                    </p>
+                                  ) : (
+                                    ""
+                                  )}
+                                </>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                                           </>
                                         );
                                       }
@@ -1252,12 +1236,12 @@ export default function Youtube1() {
                                                     }}
                                                   >
                                                     <FiCornerUpLeft />
-                                                    <span>
                                                       {item.count === 0
-                                                        ? ""
-                                                        : `${item.count}  `}
-                                                    </span>
-                                                    Ответов
+                                                        ? "Ответить"
+                                                        : (<>${item.count} <span>
+                                                         Ответов 
+                                                         </span></>  )}
+                                                    
                                                   </p>
 
                                                   {oneuser.map((item5) => {
@@ -1361,9 +1345,7 @@ export default function Youtube1() {
                                                     ? item.oneuser.username
                                                     : "Anonim User"}
                                                 </h5>
-                                                
-                                                  <p className="p-onclick-for-info">Нажав можете посмотреть оценку учителя.</p>
-                                                <p><BsBookmark className="BsBookmark"/></p>
+                                                <p>{mark.mark}</p>
 
                                                 </div>
                                                
@@ -1396,7 +1378,7 @@ export default function Youtube1() {
                                                         style={{
                                                           display: "flex",
                                                           alignItems: "center",
-                                                          gap: "5px",
+                                                          gap: "10px",
                                                           flexWrap: "wrap",
                                                         }}
                                                       >
@@ -1617,6 +1599,7 @@ export default function Youtube1() {
                                   </div>
                                 </div>
                               </div>
+                            
                               <div className="m_comment_yozish">
                                 <input
                                   type="file"
@@ -1759,18 +1742,7 @@ export default function Youtube1() {
                 </div>
               </div>
 
-              {/* <div className={id === 1 ? "show-content" : "content"}>
-        <Comment />
-      </div>
-      <div className={id === 2 ? "show-content" : "content"}>
-        <Vazifa />
-      </div>
-      <div className={id === 3 ? "show-content" : "content"}>
-        <Qollamalar />
-      </div>
-      <div className={id === 4 ? "show-content" : "content"}>
-        <Scachat />
-      </div> */}
+             
             </div>
           </div>
         </div>
