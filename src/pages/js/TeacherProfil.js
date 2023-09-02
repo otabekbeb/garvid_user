@@ -909,7 +909,11 @@ export default function Profil() {
         </div>
         <div className={toggle === 4 ? "show-content" : "content"}>
           <div className="followcards1">
-            {follow.map((item, key) => {
+            {follow.length===0?("a"):(
+              <>
+              {
+              
+              follow.map((item, key) => {
               return <>
                 {users.map(item1 => {
                   if (item1.id == item.topuser) {
@@ -931,7 +935,8 @@ export default function Profil() {
                   }
                 })}
               </>
-            })}
+            })}</>)}
+            
 
 
 

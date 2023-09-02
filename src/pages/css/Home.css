@@ -325,7 +325,22 @@
     background-size: cover;
     height: 2300px;
 }
-
+.jumbotron {
+    background: linear-gradient(rgba(40, 120, 235, 0.9), rgba(40, 120, 235, 0.9)), url("https://demo.htmlcodex.com/1574/online-education-website-template/img/header.jpg"), no-repeat center center;
+    background-size: cover;
+}
+.body1 .jumbotron{
+    margin-bottom: 0px;
+}
+.body1 .jumbotron img{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.qiy {
+    bottom: 0;
+    background-size: contain;
+}
 .soz1 {
     display: flex;
     align-items: center;
@@ -1151,3 +1166,15 @@ list-style: none;
 .admin_title h4 {
     font-size: 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
+

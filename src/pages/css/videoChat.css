@@ -26,7 +26,6 @@
     align-items: center;
     justify-content: center;
     transition: all 100ms ease-in-out;
-    padding-bottom: 5px;
 }
 .VideoChat_room_big p{
 font-weight: 800;

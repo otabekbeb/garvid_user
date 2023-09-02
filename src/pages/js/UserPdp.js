@@ -150,6 +150,18 @@ export default function Pdp() {
               </div> */}
               <div className="fil_text_blok_soz">
                 <h1
+                  onClick={() => updatetoggle(1)}
+                  style={
+                    toggle === 1 ? { borderBottom: "2px solid #44bef1" } : {}
+                  }
+                  className="fromLeft"
+                >
+                  Courses
+                </h1>
+                <div className="fil_text_blok_kurs_lenght">{localStorage.getItem("ourcourseLength")} pieces</div>
+              </div>
+              <div className="fil_text_blok_soz">
+                <h1
                   onClick={() => updatetoggle(5)}
                   style={
                     toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}
@@ -159,7 +171,7 @@ export default function Pdp() {
                   My Subscriptions
                 </h1>
                 {toggle === 5 ? (
-                  <div className="fil_text_blok_kurs_lenght">{localStorage.getItem("followLength")} pieces</div>
+                  <div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_azo")} pieces</div>
                 ) : (
                   ""
                 )}
@@ -178,18 +190,7 @@ export default function Pdp() {
                 </h1>
                 {/* <div className="fil_text_blok_kurs_lenght">1 pieces</div> */}
               </div>
-              <div className="fil_text_blok_soz">
-                <h1
-                  onClick={() => updatetoggle(7)}
-                  style={
-                    toggle === 7 ? { borderBottom: "2px solid #44bef1" } : {}
-                  }
-                  className="fromLeft"
-                >
-                  Courses
-                </h1>
-                <div className="fil_text_blok_kurs_lenght">{localStorage.getItem("ourcourseLength")} pieces</div>
-              </div>
+              
               <div className="fil_text_blok_soz">
                 <h1
                   onClick={() => updatetoggle(8)}
@@ -244,7 +245,10 @@ export default function Pdp() {
               </h1> */}
               {/* <h1 onClick={() => updatetoggle(4)} className="fromMenu">
                 My Certificates
-              </h1> */}
+              </h1> */}<h1 onClick={() => updatetoggle(1)} className="fromMenu">
+              Courses
+
+              </h1>
               <h1 onClick={() => updatetoggle(5)} className="fromMenu">
                 My Subscriptions
               </h1>
@@ -254,10 +258,7 @@ export default function Pdp() {
               <h1 onClick={() => updatetoggle(6)} className="fromMenu">
                 Chat
               </h1>
-              <h1 onClick={() => updatetoggle(7)} className="fromMenu">
-              Courses
-
-              </h1>
+              
               <h1 onClick={() => updatetoggle(8)} className="fromMenu">
               Student
               </h1>
@@ -379,7 +380,7 @@ export default function Pdp() {
         )}
 
         <div className={toggle === 1 ? "show-content" : "content"}>
-          <Filtr />
+        <Courses />
         </div>
         <div className={toggle === 2 ? "show-content" : "content"}>
           <Bilim />
@@ -400,7 +401,7 @@ export default function Pdp() {
           <UserChat />
         </div>
         <div className={toggle === 7 ? "show-content" : "content"}>
-          <Courses />
+       
         </div>
         <div className={toggle === 8 ? "show-content" : "content"}>
           <Student />

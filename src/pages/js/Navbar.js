@@ -6,6 +6,7 @@ import url from "./Host";
 import { NavLink } from "react-router-dom";
 import { BsFillPersonFill } from "react-icons/bs"
 import garvrd from '../img/Remove-bg.ai_1691307426758.png'
+import bgremove from '../img/bgremove.png'
 function sa() {
   var o = document.querySelector(".media-ul").style.display;
   if (o == "flex") {
@@ -147,6 +148,7 @@ export default function Navbar() {
 
           <div className="navbar-ul">
             <ul>
+              <img onClick={()=>window.location="/"} style={{width:"100px"}} src="https://poets-erc.org/sites/default/files/2022-11/Howard-University_3.png" alt="" />
               <li className="moto-menu-item">
                 <NavLink to="/" className={({ isActive }) => isActive ? activeLink : normalLink}><a>Home</a></NavLink>
               </li>
@@ -339,7 +341,8 @@ export default function Navbar() {
                 </div>
               </div>  */}
             <div className="navbar-media-img-joy">
-              <img src={garvrd} alt="" id="avbar-media-img-joyimg" />
+            <img onClick={()=>window.location="/"} style={{width:"100px"}} src="https://poets-erc.org/sites/default/files/2022-11/Howard-University_3.png" alt="" />
+
             </div>
             <div className="navbar-media-katalog-joy" onClick={() => setMobileMenu(!MobileMenu)} >
               {MobileMenu ? <div className="box-icon-togirladim1" onClick={() => yopilqora1()}><box-icon name='x' color='white' ></box-icon></div> : <div className="box-icon-togirladim" onClick={() => ochilnavbar()}><box-icon name='menu-alt-right' color='white' ></box-icon></div>}

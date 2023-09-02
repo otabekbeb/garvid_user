@@ -57,20 +57,29 @@ export default function Home() {
                 <div className='body1'>
                     <Navbar />
                     
-                    <div className="foor_header">
-                        <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/08/mt-0514-home-slider02.jpg" alt="" />
-                        <div className="fir_header">
-                            <h1>Expert Financial Advice</h1>
-                            <p>With over 20 years of experience we'll ensure you always get the best guidance</p>
-                            <div onClick={() =>
-                                window.location = "/servis"
-                            } className="buttons">
-                                <button className='button'>Our Services</button>
-                                <button onClick={() =>
-                                    window.location = "/blog"
-                                } className='button1'>Purchase now</button>
-                            </div></div>
-                    </div>
+<div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style={{marginBottom: "90px;"}}>
+<div class="container text-center my-5 py-5">
+<h1 class="text-white mt-4 mb-4">Learn From Home</h1>
+<h1 class="text-white display-1 mb-5">Education Courses</h1>
+<div class="mx-auto mb-5" style={{width: "100%;", maxWidth: "600px;"}}>
+<div class="input-group">
+<div class="input-group-prepend">
+
+<div class="dropdown-menu">
+<a class="dropdown-item" href="#">Courses 1</a>
+<a class="dropdown-item" href="#">Courses 2</a>
+<a class="dropdown-item" href="#">Courses 3</a>
+</div>
+</div>
+<input type="text" class="form-control border-light" style={{padding: "30px 25px;"}} placeholder="Keyword"/>
+<div class="input-group-append">
+
+</div>
+</div>
+</div>
+</div>
+<div className="qiy"><img src="https://demo.htmlcodex.com/1574/online-education-website-template/img/overlay-bottom.png" alt="" /></div>
+</div>
                     <div className="universty">
                         <div className="iniversty_cards">
                             {univercard.map(item => {

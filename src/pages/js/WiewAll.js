@@ -31,10 +31,10 @@ function WiewAll() {
                                 <div className="qizil"></div>
                                 <div className="data_title">
                                     <p className='unred'>{item.title}</p>
-                                    <p className='data'>{item.time_create.slice(0,10)}</p>
+                                    <p className='data'>{item.time_create.slice(11,16)}</p>
                                 </div>
                                 <div className="p_lorem_sms">
-                                    <p className='lorem_sms'>{item.description} 😊?</p>
+                                    <p className='lorem_sms'>{item.description} </p>
                                 </div>
                             </div>
                         )

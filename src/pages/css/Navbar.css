@@ -322,7 +322,7 @@
 }
 
 
-@media (min-width: 915px) {
+@media (min-width: 1100px) {
   .media-navbar {
     display: none !important;
     align-items: center !important;
@@ -344,7 +344,9 @@
 }
 
 @media (max-width:850px) {
-
+.navbar-media-img-joy img{
+  width: 80px;
+}
   /* .checkbox-con {
     margin: 10px;
     display: flex;
@@ -693,7 +695,7 @@
 
   .navbar {
     width: 100%;
-    height: 50px !important;
+    /* height: 50px !important; */
     background-color: #323946;
   }
 
@@ -742,7 +744,7 @@
 }
 
 
-@media (min-width: 915px) {
+@media (min-width: 1100px) {
 
 
   .navbar-ul {
@@ -1283,7 +1285,6 @@ color: white;
 
   .navbar {
     width: 100%;
-    height: 50px !important;
     background-color: #323946;
   }
 
@@ -1393,7 +1394,7 @@ color: white;
   } */
 }
 
-@media (min-width: 915px) {
+@media (min-width: 1100px) {
   .media-navbar {
     display: none !important;
 
