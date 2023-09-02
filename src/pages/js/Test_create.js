@@ -535,7 +535,7 @@ export default function Test() {
                                     <h3 className='questions_h1_length'><h3>{key + 1}.Quations</h3>
                                         <div className='user_post_btns'>
                                             <button onClick={() => putQuestionsModal(item.id)} className='user_post_button'>Edit</button>
-                                            <button style={{ marginLeft: '10px' }} onClick={() => deleteQuestionsOpen(item.id)} className='user_post_button'>Удалить</button>
+                                            <button style={{ marginLeft: '10px' }} onClick={() => deleteQuestionsOpen(item.id)} className='user_post_button'>Delete</button>
                                         </div></h3>
                                     <div className='questions_page_small_div'>
                                         <h3>{item.question}</h3>

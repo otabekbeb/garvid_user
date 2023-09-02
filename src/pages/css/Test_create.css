@@ -1303,19 +1303,21 @@ select {
 
 @media (max-width:480px) {
     .user_post_btns {
-        /* display: flex;
-        justify-content:space-between; */
-        /* flex-wrap: wrap; */
-        /* margin-top: 40px; */
         gap: 10px !important;
-        /* justify-content: end; */
         width: 150px;
         height: auto;
     }
+    .user_post_btns button{
+        font-size: 14px !important;
+    }
 
     .user_post_button:nth-child(2) {
-        margin-top: 10px;
-        margin-right: -40px !important;
+        margin-right: -20px !important;
+
+    }
+    .questions_page_small_div_img{
+        margin: auto;
+        margin-bottom: 14px;
     }
 }
 .swiper-pagination{
