@@ -58,9 +58,14 @@ export default function Home() {
                     <Navbar />
                     
 <div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style={{marginBottom: "90px;"}}>
-<div class="container text-center my-5 py-5">
-<h1 class="text-white mt-4 mb-4">Learn From Home</h1>
-<h1 class="text-white display-1 mb-5">Education Courses</h1>
+<div style={{textAlign:"center"}} class="container my-5 py-5">
+    <h3 id='huch' style={{fontSize:"18px",color:"#44bef1"}}>BEST ONLINE COURSES</h3>
+<h1 class="text-white mt-4 mb-4" id='hbir'>Get Educated Online From Your Home</h1>
+<p id='pp1' style={{color:"white",fontSize:"20px"}}>With over 20 years of experience we'll ensure you always get the best guidance</p>
+<div style={{display:"flex",justifyContent:"center",marginTop:"30px"}} className="butonss">
+    <button onClick={()=>window.location="/services"}>Services</button>
+    <button onClick={()=>window.location="/contacts"} id='but22'>Contacts</button>
+</div>
 <div class="mx-auto mb-5" style={{width: "100%;", maxWidth: "600px;"}}>
 <div class="input-group">
 <div class="input-group-prepend">
