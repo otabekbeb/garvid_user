@@ -1,0 +1,69 @@
+.sertificate_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.sertificate_card_edit{
+    width: 450px;
+    height: 250px;
+    padding: 20px;
+    box-shadow: 0 0px 40px #a3a5a654;
+    border-radius: 10px;
+}
+.sertificate_df_edit{
+    width: 100%;
+    display: flex;
+}
+.sertificate_i{
+    width: auto;
+    height: auto;
+}
+.sertificate_icon{
+    font-size: 105px;
+    color: #989898;
+}
+.sertificate_db_edit{
+    width: 100%;
+    display: block;
+}
+.sertificate_db_edit label{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+.sertificate_db_edit input{
+    width: 80%;
+    padding: 3px 5px ;
+    border: 1px solid #dcdcdc;
+}
+.sertificate_card textarea{
+    width: 100%;
+    max-height: 80px;
+    margin-top: 3px;
+    padding: 5px;
+    border: 1px solid #dcdcdc;
+}
+.sertificate_botom_df_edit{
+    display: flex;
+    justify-content: space-between;
+}
+.sertificate_btn_delete{
+    width: 100px;
+    height: 25px;
+    border: 1px solid red;
+    color: red;
+    background-color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.sertificate_btn_delete:hover{
+    color: #fff;
+    background-color: red;
+}
+.sertificate_date_inp{
+    width: 100px;
+}
