@@ -422,6 +422,7 @@ export default function Mentor() {
     });
     axios.get(`${url}/api/mycourse`, { headers: { Authorization: `Bearer ${localStorage.getItem("OneuserId")}` } }).then(res => {
       setKursdata(res.data)
+      localStorage.setItem("Mycourse",JSON.stringify(res.data))
     }).catch(err => {
       console.log(err);
     });
