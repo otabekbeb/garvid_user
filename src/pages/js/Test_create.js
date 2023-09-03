@@ -507,7 +507,7 @@ export default function Test() {
             {page == 3 ? (
                 <>
                     <div className="close_btn_test">
-                        <div className="exit_button"><button onClick={() => setPage(0)}>Clouse</button></div>
+                        <div className="exit_button"><button onClick={() => setPage(0)}>Close</button></div>
                     </div>
                     {/* <div className="search_big_div"><button  className="user_post_button" onClick={()=>postAttened_testModal()}>Добавить</button><AiOutlineSearch className="search"/><input placeholder="Введите здесь..." type="text" /></div> */}
                     {/* <Table style={{marginBottom:'100px'}} dataSource={attendance_lesson} columns={columns} /> */}

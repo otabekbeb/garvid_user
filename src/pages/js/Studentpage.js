@@ -1295,9 +1295,9 @@ export default function Mentor() {
                 <img src={Groupimg} alt="" />
                 <h4>Do you really want to delete?</h4>
                 <div className="a_delete_button">
-                  <button className='a_delete_no' onClick={() => clouseModal2()}>Нет</button>
+                  <button className='a_delete_no' onClick={() => clouseModal2()}>Not</button>
                   <button onClick={() => deletetask()}
-                    className="a_delete_yes">Да</button>
+                    className="a_delete_yes">Yes</button>
                 </div>
               </div>
             </div>

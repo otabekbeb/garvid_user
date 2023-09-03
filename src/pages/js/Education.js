@@ -571,7 +571,7 @@ export default function Edication() {
     <div className='otash'>
       {page == 2 ? (
         <>
-          <div className="exit_button"><button onClick={() => setPage(0)} style={{ marginLeft: "0px" }}>Clouse</button>        <button className='user_post_button_malumot' style={{ paddingTop: '3px' }} onClick={() => { SetMark(0) }} >Evaluate</button>   <button style={{ paddingTop: '3px' }} onClick={() => Markpage()} className='user_post_button_malumot'>Magazine</button></div>
+          <div className="exit_button"><button onClick={() => setPage(0)} style={{ marginLeft: "0px" }}>Close</button>        <button className='user_post_button_malumot' style={{ paddingTop: '3px' }} onClick={() => { SetMark(0) }} >Evaluate</button>   <button style={{ paddingTop: '3px' }} onClick={() => Markpage()} className='user_post_button_malumot'>Magazine</button></div>
           {mark == 0 ? (<><div className="search_big_div"><button onClick={() => postGroupModal()} className="user_post_button">Add</button></div><Table dataSource={group_student} columns={columns} />
 
 
@@ -606,7 +606,7 @@ export default function Edication() {
         <>
           {page == 1 ? (
             <>
-              <div className="exit_button"><button onClick={() => setPage(0)}>Clouse</button></div>
+              <div className="exit_button"><button onClick={() => setPage(0)}>Close</button></div>
               <div className="App">
                 <Calendar className='calendar'
                   views={["day", "agenda", "work_week", "month"]}
