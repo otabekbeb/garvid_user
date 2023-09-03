@@ -36,6 +36,8 @@ if(onvideo){
 axios.post(`${url}/api/course_data_theme`,data,{ headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res=>{
     message.success("create theme")
     setIsModalOpen(false);
+
+    window.location.reload()
 }).catch(err=>{
     message.error("don't create")
     setIsModalOpen(false);
@@ -65,7 +67,7 @@ useEffect(()=>{
       console.log(res.data,"asdasabbas");
    var ss=res.data.filter(item=>item.course==id)
         setCategory(ss)
-        console.log(id,"abnbas");
+  
         
     }).catch(err=>{
 
