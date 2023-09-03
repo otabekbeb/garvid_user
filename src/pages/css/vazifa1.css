@@ -226,7 +226,7 @@
     cursor: pointer;
 }
 .mark-three{
-    background-color: rgb(255, 123, 0);
+    background-color: rgb(255, 72, 0);
     color: white;
     width: 60px;
     height: 60px;
@@ -370,7 +370,7 @@
         cursor: pointer;
     }
     .mark-three{
-        background-color: rgb(255, 123, 0);
+        background-color: rgb(255, 72, 0);
         color: white;
         width: 45px !important;
         height: 45px !important;
@@ -477,7 +477,7 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background-color: rgb(255, 123, 0);
+    background-color: rgb(255, 72, 0);
     border: none;
     color: white;
     display: flex;
