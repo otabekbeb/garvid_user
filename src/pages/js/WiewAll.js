@@ -38,10 +38,10 @@ function WiewAll() {
     }
 
     function inputOpen(key){
-    document.querySelectorAll("#inputNotifaction")[key].style="display:block"
+    document.querySelectorAll("#inputNotifaction")[key].style.display="block"
     }
     function inputClose(key){
-    document.querySelectorAll("#inputNotifaction")[key].style="display:none"
+    document.querySelectorAll("#inputNotifaction")[key].style.display="none"
     }
 
     function Page(id){
@@ -90,7 +90,7 @@ function WiewAll() {
                         if (item.to_user_id == localStorage.getItem("OneuserId")) {
                             return (
                                 <>
-                                <div  style={{ cursor: "pointer" }} className="sms">
+                                <div onClick={()=>inputOpen(key)}  style={{ cursor: "pointer" }} className="sms">
                                     <div className="qizil"></div>
                                     <div className="data_title">
                                         <p className='unred'>{item.title}</p>
@@ -103,7 +103,7 @@ function WiewAll() {
                                     <div id='inputNotifaction' className="input_notification_bid_div">
                                       <input id='atvetu1' onChange={(e)=>setInputValue(e.target.value)} type="text" />
                                       <button onClick={()=>atvet(item.user_id)}>Send</button>
-                                      <button ><MdOutlineClose/></button>
+                                      <button onClick={()=>inputClose()}><MdOutlineClose/></button>
                                     </div>
                                 </div>
                                 </>
