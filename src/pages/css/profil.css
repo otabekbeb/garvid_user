@@ -281,6 +281,8 @@
 
 .profil_blok_ikki_icon_taxriirlash_chat {
   width: 300px;
+  height: 307px;
+  overflow-y: scroll;
   background-color: white;
   border-radius: 4px;
   box-shadow: 0px 2px 2px 0px #0715652E;

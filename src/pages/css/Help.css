@@ -1,7 +1,6 @@
 .Savol {
     text-align: center;
-    margin-top: 9%;
-
+    margin-top: 30px;
     font-size: 25px;
 }
 
@@ -98,7 +97,7 @@
         text-align: center;
         color: rgba(0, 0, 0, 0.649);
     }
-}   
+}
 
 @media (max-width:1024px) {
     .user_help {
