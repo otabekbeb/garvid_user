@@ -87,20 +87,20 @@ export default function Contact() {
             <div className="contact_right">
               <form action="">
                 <label>
-                  {/* <p>fullname</p> */}
-                  <input type="email" name="" id="contact_inp" required placeholder="fullname" style={{paddingLeft:'10px'}} />
+                  <p style={{fontWeight:'700'}}>fullname</p>
+                  <input type="email" name="" id="contact_inp" required  style={{paddingLeft:'10px'}} />
                 </label>
                 <label>
-                  {/* <p>email</p> */}
-                  <input id='contact_inp' type="text" required placeholder="email" style={{paddingLeft:'10px'}} />
+                  <p style={{fontWeight:'700'}}>email</p>
+                  <input id='contact_inp' type="text" required style={{paddingLeft:'10px'}} />
                 </label>
                 <label>
-                  {/* <p>purchase</p> */}
-                  <input id='contact_inp' type="text" required  placeholder="purchase" style={{paddingLeft:'10px'}}/>
+                  <p style={{fontWeight:'700'}}>purchase</p>
+                  <input id='contact_inp' type="text" required   style={{paddingLeft:'10px'}}/>
                 </label>
                 <label>
-                  {/* <p>Message</p> */}
-                  <textarea name="" className='contact_textarea' id="text1" cols="30" rows="10" placeholder="Message"></textarea>
+                  <p style={{fontWeight:'700'}}>Message</p>
+                  <textarea name="" className='contact_textarea' id="text1" cols="30" rows="10" ></textarea>
                 </label>
                 <div className="admin_button1">
                   <button onClick={() => { dataPost() }}>Send</button>
