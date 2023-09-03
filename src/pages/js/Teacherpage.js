@@ -87,19 +87,19 @@ export default function Contact() {
             <div className="contact_right">
               <form action="">
                 <label>
-                  <p>fullname</p>
+                  <p style={{fontWeight:'700'}}>fullname</p>
                   <input type="email" name="" id="contact_inp" required />
                 </label>
                 <label>
-                  <p>email</p>
+                  <p style={{fontWeight:'700'}}>email</p>
                   <input id='contact_inp' type="text" required />
                 </label>
                 <label>
-                  <p>purchase</p>
+                  <p style={{fontWeight:'700'}}>purchase</p>
                   <input id='contact_inp' type="text" required />
                 </label>
                 <label>
-                  <p>Message</p>
+                  <p style={{fontWeight:'700'}}>Message</p>
                   <textarea name="" className='contact_textarea' id="text1" cols="30" rows="10"></textarea>
                 </label>
                 <div className="admin_button1">
