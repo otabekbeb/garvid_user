@@ -176,11 +176,14 @@ export default function News() {
               className="mySwiper100"
             >
 
-              
-               
-             
-                {base.map(item => {
-                  
+
+
+              {base === 0 ? (
+                <div className="delete_padding">
+                <img src={Groupimg} alt="" />
+                <h3>No information</h3>
+              </div>) : (
+                <>   {base.map(item => {
                   return (
                     <SwiperSlide >
                       <div className="position-relative overflow-hidden" style={{ height: "300px" }}>
@@ -197,7 +200,8 @@ export default function News() {
                       </div>
                     </SwiperSlide>
                   )
-                })}
+                })}</>)}
+
 
 
 
@@ -213,34 +217,41 @@ export default function News() {
 
         <div className="News">
           <div className="News_cards">
-            {base.map(item => {
-              return (
-                <div className="News_card" >
-                  <button className='Card_button'>FEATURED NEWS</button>
-                  {item.image === null ? (<img style={{ width: '100%' }} src={Groupimg} alt="" />) : (<img className="img-fluid w-100" src={item.image} />)}
-                  <div className="bg-white border border-top-0 p-4">
-                    <div className="mb-2">
-                      <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                        href="">{item.name}</a>
-                      <a className="text-body" href=""><small>{item.time_create.slice(0, 10)}</small></a>
+            {base === 0?(
+               <div className="delete_padding">
+               <img src={Groupimg} alt="" />
+               <h3>No information</h3>
+          
+             </div>):(
+              <>    {base.map(item => {
+                return (
+                  <div className="News_card" >
+                    <button className='Card_button'>FEATURED NEWS</button>
+                    {item.image === null ? (<img style={{ width: '100%' }} src={Groupimg} alt="" />) : (<img className="img-fluid w-100" src={item.image} />)}
+                    <div className="bg-white border border-top-0 p-4">
+                      <div className="mb-2">
+                        <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                          href="">{item.name}</a>
+                        <a className="text-body" href=""><small>{item.time_create.slice(0, 10)}</small></a>
+                      </div>
+                      <a className="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">{item.description}</a>
+                      <p className="m-0">{item.description}</p>
                     </div>
-                    <a className="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">{item.description}</a>
-                    <p className="m-0">{item.description}</p>
+                    <div className="d-flex justify-content-between bg-white border border-top-0 p-4">
+                      <div className="d-flex align-items-center">
+                        <img className="rounded-circle mr-2" src="img/user.jpg" alt="" />
+                        <small>{item.name}</small>
+                      </div>
+                      <div className="d-flex align-items-center">
+                        <small className="ml-3"><AiOutlineEye />12345</small>
+                        <small className="ml-3"><BsChat />123</small>
+                      </div>
+                    </div>
                   </div>
-                  <div className="d-flex justify-content-between bg-white border border-top-0 p-4">
-                    <div className="d-flex align-items-center">
-                      <img className="rounded-circle mr-2" src="img/user.jpg" alt="" />
-                      <small>{item.name}</small>
-                    </div>
-                    <div className="d-flex align-items-center">
-                      <small className="ml-3"><AiOutlineEye />12345</small>
-                      <small className="ml-3"><BsChat />123</small>
-                    </div>
-                  </div>
-                </div>
-              )
-
-            })}
+                )
+  
+              })}</>)}
+        
 
           </div>
           {/* <div className="News_cards101">
