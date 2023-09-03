@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import img_kotta from "../img/Rectangle.png";
 import img_ava from "../img/Ellipse.png";
 import img_accordion from "../img/Rectangle 14.1.svg";
@@ -6,7 +6,6 @@ import { AiFillDislike, AiFillLike, AiFillStar } from "react-icons/ai";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { TiThMenu } from "react-icons/ti";
 import "../css/youtube1.css";
-
 
 import Usernavbar from "../js/Navbar";
 import Loader from "./loader";
@@ -17,7 +16,7 @@ import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import err from "../img/istockphoto-1321436405-612x612.jpg";
 import novideo from "../img/download.svg";
-import  Create_Theme_Category_mentor from "./Create_Theme_Category_mentor.js"
+import Create_Theme_Category_mentor from "./Create_Theme_Category_mentor.js";
 import "../css/comment.css";
 import { FiCornerUpLeft } from "react-icons/fi";
 import { FcFile } from "react-icons/fc";
@@ -33,7 +32,7 @@ import { AiOutlineComment, AiOutlineDelete } from "react-icons/ai";
 import { CgClose } from "react-icons/cg";
 import anonim from "../img/anonim-user.png";
 import Footer1 from "./Footer1.js";
-import ReactPlayer from 'react-player';
+import ReactPlayer from "react-player";
 import "../css/vazifa1.css";
 import "../css/yozishmalar.css";
 import { TfiMarkerAlt } from "react-icons/tfi";
@@ -74,127 +73,207 @@ export default function Youtube1() {
   const playerRef = useRef(null);
   const [currentTime, setCurrentTime] = useState(0);
 
- 
-
   const handleReady = () => {
     // Seek to the desired time (in seconds)
     var StudentId = parseInt(localStorage.getItem("OneuserId"));
     // console.log(main,main1.id,"aaaaaaaaaaaaaaaaaadddd");
-    var id=main1.id
+    var id = main1.id;
     // var id2=main.id
 
     // if (main1) {
-      // axios
-      // .get(`${url}/api/student_theme/`, {
-      //   headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      // })
-      // .then((res) => {
-      //   const filter = res.data.filter(
-      //     (item) => item.student_id === StudentId && item.theme_id === id
-      //   );
-      //   setchooseStudentTheme(filter[0].id);
-      //   const num = filter[0].complate;
-      //   const time = duration / 100;
-      //   const result = time*num
-      //   setProgressTheme(result);
-      //   // alert(result, "result");
-      //   // console.log(time, "time");
-      //   // console.log(result, "result");
-      //   // setTimeout(() => {
-      //   //   playerRef.current.seekTo(Number(result));
-      //   //   console.log(result,"result")
-      //   // }, 5000);
 
-      // })
-      // .catch((err) => {
-      //   alert("lox1");
-      //   console.log(err);
-      //   alert(err);
-      // });
-
-
-      //   playerRef.current.seekTo();
-
-          
-
-    
-
-
-
-  };
-useEffect(() => {
-
-  var StudentId = parseInt(localStorage.getItem("OneuserId"));
-  var id=main1.id
-  const fetchData = async () => {
-    try {
-      const res = await axios.get(`${url}/api/student_theme/`, {
+    axios
+      .get(`${url}/api/student_theme/`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        const filter = res.data.filter(
+          (item) => item.student_id === StudentId && item.theme_id === id
+        );
+        setchooseStudentTheme(filter[0].id);
+        const num = filter[0].complate;
+        const time = duration / 100;
+        const result = time * num;
+        setProgressTheme(result);
+        alert(result, "result");
+        console.log(time, "time");
+        console.log(result, "result");
+        playerRef.current.seekTo(result);
+      })
+      .catch((err) => {
+        alert("lox1");
+
+        alert(err);
       });
-
-      const filter = res.data.filter(
-        (item) => item.student_id === StudentId && item.theme_id === id
-      );
-      setchooseStudentTheme(filter[0].id);
-      const num = filter[0].complate;
-      const time = duration / 100;
-      const result = time*num;
-      setProgressTheme(result);
-
-      console.log(result, "result");
-      // Perform other actions with the result
-              playerRef.current.seekTo(Number(result));
-    } catch (err) {
-      alert("lox1");
-      console.log(err);
-      alert(err);
-    }
+    setTimeout(() => {
+      const time = progressTheme;
+      alert(progressTheme, 2);
+      playerRef.current.seekTo(100);
+    }, 4000);
   };
-  fetchData();
+  useEffect(() => {
+    var StudentId = parseInt(localStorage.getItem("OneuserId"));
+    var id = main1.id;
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(`${url}/api/student_theme/`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        });
 
+        const filter = res.data.filter(
+          (item) => item.student_id === StudentId && item.theme_id === id
+        );
+        setchooseStudentTheme(filter[0].id);
+        const num = filter[0].complate;
+        const time = duration / 100;
+        const result = time * num;
+        setProgressTheme(result);
 
-
-
-
-}, []);
+        console.log(result, "result");
+        // Perform other actions with the result
+        playerRef.current.seekTo(Number(result));
+      } catch (err) {
+        alert("lox1");
+        console.log(err);
+        alert(err);
+      }
+    };
+    fetchData();
+  }, []);
 
   const handleDuration = (duration) => {
-
-    console.log('Длительность видео:', duration);
-    alert(duration)
-    setDuration(duration)
-
+    console.log("Длительность видео:", duration);
+    alert(duration);
+    setDuration(duration);
   };
 
   const handleProgress = (progress) => {
     setCurrentTime(progress.playedSeconds);
-    
+
     var StudentId = parseInt(localStorage.getItem("OneuserId"));
-      console.log(progress.playedSeconds)
-      console.log(progressTheme,'progress')
-      if (chooseStudentTheme>=1) {
-        setInterval(() => {
-          const math=duration/progress.playedSeconds*100
-          var fomdata=new FormData()
-          fomdata.append("student_id",StudentId)
-          fomdata.append("theme_id",main1.id)
-          fomdata.append("complate",math)
-          axios.put(`${url}/api/student_theme/2`,fomdata, {
-            headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-          }).then((item)=>{
-            alert("work")
-          }).catch((err)=>{
+    console.log(progress.playedSeconds);
+    console.log(progressTheme, "progress");
+    if (chooseStudentTheme >= 1) {
+      setInterval(() => {
+        const math = (duration / progress.playedSeconds) * 100;
+        var fomdata = new FormData();
+        fomdata.append("student_id", StudentId);
+        fomdata.append("theme_id", main1.id);
+        fomdata.append("complate", math);
+        axios
+          .put(`${url}/api/student_theme/2`, fomdata, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
+          .then((item) => {
+            alert("work");
+          })
+          .catch((err) => {
             console.log("ss");
-          });   
-        }, 3000); 
-      }
+          });
+      }, 3000);
+    }
   };
 
+  useEffect(() => {
+    const idget = JSON.parse(localStorage.getItem("page_video"));
+    axios
+      .get(`${url}/api/course_theme_comment`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        var mycoment = res.data.filter((item) => item.theme == idget.id);
+        
+        axios
+          .get(`${url}/auth/allusers`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
+          .then((res3) => {
+         
+            for (let i = 0; i < mycoment.length; i++) {
+              mycoment[i].username = "Ananim User";
+              mycoment[i].image1 = "";
+              for (let j = 0; j < res3.data.length; j++) {
+                if (res3.data[j].id == mycoment[i].user_id) {
+                  mycoment[i].username = res3.data[j].username;
+                  mycoment[i].image1 = res3.data[j].image;
+                }
+              }
+            }
 
+            var onlycoment = mycoment.filter(
+              (item) => (item.subcomment==0&&item.task_commnet_id == 0)
+            );
+            var all_task = mycoment.filter((item) => item.task_commnet_id != 0);
 
-
-
-
+            axios
+              .get(`${url}/api/course_theme_task_student`, {
+                headers: {
+                  Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+              })
+              .then((res1) => {
+                for (let i = 0; i < all_task.length; i++) {
+                  all_task[i].mark = 0;
+                  for (let j = 0; j < res1.data.length; j++) {
+                    if (all_task[i].id == res1.data[j].feedback) {
+                      all_task[i].mark = res1.data[j].mark;
+                    }
+                  }
+                }
+                
+                setComment(onlycoment);
+                setCommenttask(all_task);
+              })
+              .catch((err) => {
+                console.log("123");
+              });
+          });
+      })
+      .catch((err) => {
+        console.log("1223");
+      });
+  }, []);
+  // Abbas subcomnet
+function getSubcoment(id){
+  const idget = JSON.parse(localStorage.getItem("page_video"));
+  axios
+    .get(`${url}/api/course_theme_comment`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+    })
+    .then((res) => {
+      var mycoment = res.data.filter((item) => item.theme == idget.id);
+      
+      axios
+        .get(`${url}/auth/allusers`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        })
+        .then((res3) => {
+       
+          for (let i = 0; i < mycoment.length; i++) {
+            mycoment[i].username = "Ananim User";
+            mycoment[i].image1 = "";
+            for (let j = 0; j < res3.data.length; j++) {
+              if (res3.data[j].id == mycoment[i].user_id) {
+                mycoment[i].username = res3.data[j].username;
+                mycoment[i].image1 = res3.data[j].image;
+              }
+            }
+          }
+          var subcomnet = mycoment.filter((item) => item.subcommnet==id);
+            })
+            .catch((err) => {
+        });
+    })
+    .catch((err) => {
+   
+    });
+}
   function openModal() {
     document.querySelector(".navbar_yon").classList.toggle("navbar_yon1");
   }
@@ -233,7 +312,7 @@ useEffect(() => {
   }
 
   useEffect(() => {
-    console.log(progressTheme,'progress')
+    console.log(progressTheme, "progress");
     localStorage.setItem("task_commnet_id", JSON.stringify(task_comnet_id));
     var id = localStorage.getItem("abbas");
     var StudentId = localStorage.getItem("OneuserId");
@@ -244,25 +323,27 @@ useEffect(() => {
       .then((res) => {
         setMain(res.data.one ? res.data.one : []);
         setCategory(res.data.all);
-                res.data.all.map((itam)=>{
-          itam.theme.map((itam2)=>{
-            console.log(itam2,"dddddddddd");
-            var Formdata=new FormData()
-            Formdata.append("student_id",StudentId)
-            Formdata.append("theme_id",itam2.id)
-            Formdata.append("complate",0)
+        res.data.all.map((itam) => {
+          itam.theme.map((itam2) => {
+            var Formdata = new FormData();
+            Formdata.append("student_id", StudentId);
+            Formdata.append("theme_id", itam2.id);
+            Formdata.append("complate", 0);
             axios
-            .post(`${url}/api/student_theme/`, Formdata,{
-              headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-            }).then((res)=>{
-              alert("ishadi")
-            }).catch((err)=>{
-              // alert("bor ekan")
-            })
-          })
-        })
-        console.log(res.data,"aaaaaaaaaaaa");
-        console.log(res.data);
+              .post(`${url}/api/student_theme/`, Formdata, {
+                headers: {
+                  Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+              })
+              .then((res) => {
+                alert("ishadi");
+              })
+              .catch((err) => {
+                // alert("bor ekan")
+              });
+          });
+        });
+
         localStorage.setItem(
           "page_video",
           JSON.stringify(res.data.one ? res.data.one : [])
@@ -319,17 +400,6 @@ useEffect(() => {
 
     //task
     axios
-      .get(`${url}/api/course_theme_task_student`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      })
-      .then((res) => {
-        setMark(res.data);
-        console.log(res.data, "hello world");
-      })
-      .catch((err) => {});
-
-
-    axios
       .get(`${url}/api/course_theme_task`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
@@ -338,9 +408,13 @@ useEffect(() => {
         console.log(res.data);
       })
       .catch((err) => {});
-      {(JSON.parse(localStorage.getItem('page_user')))[0].position==2?(
+    {
+      JSON.parse(localStorage.getItem("page_user"))[0].position == 2 ? (
         <Create_Theme_Category_mentor id1={localStorage.getItem("abbas")} />
-      ):(<></>)}
+      ) : (
+        <></>
+      );
+    }
     axios
       .get(`${url}/auth/oneuser`, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
@@ -363,29 +437,12 @@ useEffect(() => {
       .then((res) => {
         var a = res.data.filter((item) => item.task_commnet_id == 1);
         setComment5(a);
-      }).catch(err=>{
-
-      });
-
-    axios
-      .get(`${url}/api/course_theme_comment`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      })
-      .then((res) => {
-        var a = res.data.filter(
-          (item) =>
-            item.task_commnet_id !=
-            JSON.parse(localStorage.getItem("page_video")).id
-        );
-        setCommenttask(a);
-        console.log(res.data, "sfdfdxdseery");
       })
       .catch((err) => {});
 
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
-
   }, []);
 
   function ModalCatchBolsa() {
@@ -401,12 +458,11 @@ useEffect(() => {
   function MadolChange(id) {
     localStorage.setItem("Idvideo", JSON.stringify(id));
     window.location.reload();
-    axios.get(`${url}/api/course_data_category/course/${id}`)
-    .then(res=>{
-      setMain(res.data.one?res.data.one:[])
+    axios.get(`${url}/api/course_data_category/course/${id}`).then((res) => {
+      setMain(res.data.one ? res.data.one : []);
       setCategory(res.data.all);
       console.log(res.data, "ali");
-    })
+    });
   }
   // console.log(main1,"aom");
 
@@ -425,45 +481,74 @@ useEffect(() => {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
+        const idget = JSON.parse(localStorage.getItem("page_video"));
         axios
-          .get(
-            `${url}/api/course_theme_comment/${
-              JSON.parse(localStorage.getItem("page_video")).id
-            }`,
-            {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-              },
-            }
-          )
+          .get(`${url}/api/course_theme_comment`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
           .then((res) => {
-            setComment(res.data);
+            console.log(res.data);
+            var mycoment = res.data.filter((item) => item.theme == idget.id);
+            console.log("asdsad");
             axios
-              .get(
-                `${url}/api/course_theme_comment/${
-                  JSON.parse(localStorage.getItem("page_video")).id
-                }`,
-                {
-                  headers: {
-                    Authorization: `Bearer ${localStorage.getItem("token")}`,
-                  },
-                }
-              )
-              .then((res) => {
-                res.data.map((item) => {
-                  if (item.task_commnet_id == task_comnet_id) {
-                    setComment(res.data);
-                    // alert("xato")
-                  } else {
+              .get(`${url}/auth/allusers`, {
+                headers: {
+                  Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+              })
+              .then((res3) => {
+                console.log("asdsa2");
+                for (let i = 0; i < mycoment.length; i++) {
+                  mycoment[i].username = "Ananim User";
+                  mycoment[i].image1 = "";
+                  for (let j = 0; j < res3.data.length; j++) {
+                    console.log(
+                      res3.data[j].id == mycoment[i].user_id,
+                      res3.data[j].id,
+                      mycoment[i].user_id
+                    );
+
+                    if (res3.data[j].id == mycoment[i].user_id) {
+                      mycoment[i].username = res3.data[j].username;
+                      mycoment[i].image1 = res3.data[j].image;
+                    }
                   }
-                }).catch(err=>{
+                }
 
-                });
+                var onlycoment = mycoment.filter(
+                  (item) => item.subcoment == 0 && item.task_commnet_id == 0
+                );
+                var all_task = mycoment.filter(
+                  (item) => item.task_commnet_id != 0
+                );
 
-                console.log(res.data, "coment");
-              }).catch(err=>{
-                  
-                });
+                axios
+                  .get(`${url}/api/course_theme_task_student`, {
+                    headers: {
+                      Authorization: `Bearer ${localStorage.getItem("token")}`,
+                    },
+                  })
+                  .then((res1) => {
+                    for (let i = 0; i < all_task.length; i++) {
+                      all_task[i].mark = 0;
+                      for (let j = 0; j < res1.data.length; j++) {
+                        if (all_task[i].id == res1.data[j].feedback) {
+                          all_task[i].mark = res1.data[j].mark;
+                        }
+                      }
+                    }
+                    setComment(onlycoment);
+                    setCommenttask(all_task);
+                  })
+                  .catch((err) => {
+                    console.log("123");
+                  });
+              });
+          })
+          .catch((err) => {
+            console.log("1223");
           });
         document.querySelector("#chat_text").value = "";
       })
@@ -501,42 +586,93 @@ useEffect(() => {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
+        const idget = JSON.parse(localStorage.getItem("page_video"));
         axios
-          .get(
-            `${url}/api/course_theme_comment/${
-              JSON.parse(localStorage.getItem("page_video")).id
-            }`,
-            {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-              },
-            }
-          )
+          .get(`${url}/api/course_theme_comment`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
           .then((res) => {
-            setComment(res.data);
-            console.log(res.data, "hey");
-          }).catch(err=>{
-                  
+            console.log(res.data);
+            var mycoment = res.data.filter((item) => item.theme == idget.id);
+            console.log("asdsad");
+            axios
+              .get(`${url}/auth/allusers`, {
+                headers: {
+                  Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+              })
+              .then((res3) => {
+                console.log("asdsa2");
+                for (let i = 0; i < mycoment.length; i++) {
+                  mycoment[i].username = "Ananim User";
+                  mycoment[i].image1 = "";
+                  for (let j = 0; j < res3.data.length; j++) {
+                    console.log(
+                      res3.data[j].id == mycoment[i].user_id,
+                      res3.data[j].id,
+                      mycoment[i].user_id
+                    );
+
+                    if (res3.data[j].id == mycoment[i].user_id) {
+                      mycoment[i].username = res3.data[j].username;
+                      mycoment[i].image1 = res3.data[j].image;
+                    }
+                  }
+                }
+
+                var onlycoment = mycoment.filter(
+                  (item) => item.subcoment == 0 && item.task_commnet_id == 0
+                );
+                var all_task = mycoment.filter(
+                  (item) => item.task_commnet_id != 0
+                );
+
+                axios
+                  .get(`${url}/api/course_theme_task_student`, {
+                    headers: {
+                      Authorization: `Bearer ${localStorage.getItem("token")}`,
+                    },
+                  })
+                  .then((res1) => {
+                    for (let i = 0; i < all_task.length; i++) {
+                      all_task[i].mark = 0;
+                      for (let j = 0; j < res1.data.length; j++) {
+                        if (all_task[i].id == res1.data[j].feedback) {
+                          all_task[i].mark = res1.data[j].mark;
+                        }
+                      }
+                    }
+                    setComment(onlycoment);
+                    setCommenttask(all_task);
+                  })
+                  .catch((err) => {
+                    console.log("123");
+                  });
+              });
+          })
+          .catch((err) => {
+            console.log("1223");
           });
-        document.querySelector("#chat_text1").value = "";
       })
       .catch((err) => {
         Swal.fire("Нельзя писать больше 300 символов");
       });
 
-    axios
-      .get(
-        `${url}/api/course_theme_comment/${
-          JSON.parse(localStorage.getItem("page_video")).id
-        }`,
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        }
-      )
-      .then((res) => {
-        setComment2(res.data);
-      })
-      .catch((err) => {});
+    // axios
+    //   .get(
+    //     `${url}/api/course_theme_comment/${
+    //       JSON.parse(localStorage.getItem("page_video")).id
+    //     }`,
+    //     {
+    //       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+    //     }
+    //   )
+    //   .then((res) => {
+    //     setComment2(res.data);
+    //   })
+    //   .catch((err) => {});
   }
 
   function deleteComment(id) {
@@ -544,26 +680,78 @@ useEffect(() => {
       .delete(`${url}/api/course_theme_comment/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
-      .then((res) => [
+      .then((res) => {
+        const idget = JSON.parse(localStorage.getItem("page_video"));
         axios
-          .get(
-            `${url}/api/course_theme_comment/${
-              JSON.parse(localStorage.getItem("page_video")).id
-            }`,
-            {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-              },
-            }
-          )
+          .get(`${url}/api/course_theme_comment`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
           .then((res) => {
-            setComment(res.data);
-          }).catch(err=>{
-                  
-          }),
-      ]).catch(err=>{
-                  
-      });
+            console.log(res.data);
+            var mycoment = res.data.filter((item) => item.theme == idget.id);
+            console.log("asdsad");
+            axios
+              .get(`${url}/auth/allusers`, {
+                headers: {
+                  Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+              })
+              .then((res3) => {
+                console.log("asdsa2");
+                for (let i = 0; i < mycoment.length; i++) {
+                  mycoment[i].username = "Ananim User";
+                  mycoment[i].image1 = "";
+                  for (let j = 0; j < res3.data.length; j++) {
+                    console.log(
+                      res3.data[j].id == mycoment[i].user_id,
+                      res3.data[j].id,
+                      mycoment[i].user_id
+                    );
+
+                    if (res3.data[j].id == mycoment[i].user_id) {
+                      mycoment[i].username = res3.data[j].username;
+                      mycoment[i].image1 = res3.data[j].image;
+                    }
+                  }
+                }
+
+                var onlycoment = mycoment.filter(
+                  (item) => item.subcoment == 0 && item.task_commnet_id == 0
+                );
+                var all_task = mycoment.filter(
+                  (item) => item.task_commnet_id != 0
+                );
+
+                axios
+                  .get(`${url}/api/course_theme_task_student`, {
+                    headers: {
+                      Authorization: `Bearer ${localStorage.getItem("token")}`,
+                    },
+                  })
+                  .then((res1) => {
+                    for (let i = 0; i < all_task.length; i++) {
+                      all_task[i].mark = 0;
+                      for (let j = 0; j < res1.data.length; j++) {
+                        if (all_task[i].id == res1.data[j].feedback) {
+                          all_task[i].mark = res1.data[j].mark;
+                        }
+                      }
+                    }
+                    setComment(onlycoment);
+                    setCommenttask(all_task);
+                  })
+                  .catch((err) => {
+                    console.log("123");
+                  });
+              });
+          })
+          .catch((err) => {
+            console.log("1223");
+          });
+      })
+      .catch((err) => {});
     axios
       .get(
         `${url}/api/course_theme_comment/${
@@ -588,21 +776,74 @@ useEffect(() => {
       })
       .then((res) => {
         window.location.reload();
+        const idget = JSON.parse(localStorage.getItem("page_video"));
         axios
-          .get(
-            `${url}/api/course_theme_comment/${
-              JSON.parse(localStorage.getItem("page_video")).id
-            }`,
-            {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-              },
-            }
-          )
+          .get(`${url}/api/course_theme_comment`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
           .then((res) => {
-            setComment2(res.data);
-          }).catch(err=>{
-                  
+            console.log(res.data);
+            var mycoment = res.data.filter((item) => item.theme == idget.id);
+            console.log("asdsad");
+            axios
+              .get(`${url}/auth/allusers`, {
+                headers: {
+                  Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+              })
+              .then((res3) => {
+                console.log("asdsa2");
+                for (let i = 0; i < mycoment.length; i++) {
+                  mycoment[i].username = "Ananim User";
+                  mycoment[i].image1 = "";
+                  for (let j = 0; j < res3.data.length; j++) {
+                    console.log(
+                      res3.data[j].id == mycoment[i].user_id,
+                      res3.data[j].id,
+                      mycoment[i].user_id
+                    );
+
+                    if (res3.data[j].id == mycoment[i].user_id) {
+                      mycoment[i].username = res3.data[j].username;
+                      mycoment[i].image1 = res3.data[j].image;
+                    }
+                  }
+                }
+
+                var onlycoment = mycoment.filter(
+                  (item) => item.subcoment == 0 && item.task_commnet_id == 0
+                );
+                var all_task = mycoment.filter(
+                  (item) => item.task_commnet_id != 0
+                );
+
+                axios
+                  .get(`${url}/api/course_theme_task_student`, {
+                    headers: {
+                      Authorization: `Bearer ${localStorage.getItem("token")}`,
+                    },
+                  })
+                  .then((res1) => {
+                    for (let i = 0; i < all_task.length; i++) {
+                      all_task[i].mark = 0;
+                      for (let j = 0; j < res1.data.length; j++) {
+                        if (all_task[i].id == res1.data[j].feedback) {
+                          all_task[i].mark = res1.data[j].mark;
+                        }
+                      }
+                    }
+                    setComment(onlycoment);
+                    setCommenttask(all_task);
+                  })
+                  .catch((err) => {
+                    console.log("123");
+                  });
+              });
+          })
+          .catch((err) => {
+            console.log("1223");
           });
       });
     axios
@@ -657,19 +898,44 @@ useEffect(() => {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
+        const idget = JSON.parse(localStorage.getItem("page_video"));
         axios
-          .get(`${url}/api/course_theme_comment/`, {
+          .get(`${url}/api/course_theme_comment`, {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
           })
           .then((res) => {
-            var a = res.data.filter(
-              (item) =>
-                item.task_commnet_id !=
-                JSON.parse(localStorage.getItem("page_video")).id
+            console.log(res.data);
+            var mycoment = res.data.filter((item) => item.theme == idget.id);
+            var onlycoment = mycoment.filter(
+              (item) => item.subcoment == 0 && item.task_commnet_id == 0
             );
-            setCommenttask(a);
+            var all_task = mycoment.filter((item) => item.task_commnet_id != 0);
+            axios
+              .get(`${url}/api/course_theme_task_student`, {
+                headers: {
+                  Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+              })
+              .then((res1) => {
+                for (let i = 0; i < all_task.length; i++) {
+                  all_task[i].mark = 0;
+                  for (let j = 0; j < res1.data.length; j++) {
+                    if (all_task[i].id == res1.data[j].feedback) {
+                      all_task[i].mark = res1.data[j].mark;
+                    }
+                  }
+                }
+                setComment(onlycoment);
+                setCommenttask(all_task);
+              })
+              .catch((err) => {
+                console.log("123");
+              });
+          })
+          .catch((err) => {
+            console.log("1223");
           });
       });
     axios
@@ -691,7 +957,6 @@ useEffect(() => {
       });
   }
 
- 
   function commentTaskPost() {
     var formdata = new FormData();
     formdata.append("text", document.querySelector("#chat_text12").value);
@@ -706,41 +971,117 @@ useEffect(() => {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
+        const idget = JSON.parse(localStorage.getItem("page_video"));
         axios
-          .get(
-            `${url}/api/course_theme_comment/${
-              JSON.parse(localStorage.getItem("page_video")).id
-            }`,
-            {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-              },
-            }
-          )
+          .get(`${url}/api/course_theme_comment`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
           .then((res) => {
-            var a = res.data.filter((item) => item.task_commnet_id == 1);
-            setComment5(a);
+            console.log(res.data);
+            var mycoment = res.data.filter((item) => item.theme == idget.id);
+            console.log("asdsad");
+            axios
+              .get(`${url}/auth/allusers`, {
+                headers: {
+                  Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+              })
+              .then((res3) => {
+                console.log("asdsa2");
+                for (let i = 0; i < mycoment.length; i++) {
+                  mycoment[i].username = "Ananim User";
+                  mycoment[i].image1 = "";
+                  for (let j = 0; j < res3.data.length; j++) {
+                    console.log(
+                      res3.data[j].id == mycoment[i].user_id,
+                      res3.data[j].id,
+                      mycoment[i].user_id
+                    );
+
+                    if (res3.data[j].id == mycoment[i].user_id) {
+                      mycoment[i].username = res3.data[j].username;
+                      mycoment[i].image1 = res3.data[j].image;
+                    }
+                  }
+                }
+
+                var onlycoment = mycoment.filter(
+                  (item) => item.subcoment == 0 && item.task_commnet_id == 0
+                );
+                var all_task = mycoment.filter(
+                  (item) => item.task_commnet_id != 0
+                );
+
+                axios
+                  .get(`${url}/api/course_theme_task_student`, {
+                    headers: {
+                      Authorization: `Bearer ${localStorage.getItem("token")}`,
+                    },
+                  })
+                  .then((res1) => {
+                    for (let i = 0; i < all_task.length; i++) {
+                      all_task[i].mark = 0;
+                      for (let j = 0; j < res1.data.length; j++) {
+                        if (all_task[i].id == res1.data[j].feedback) {
+                          all_task[i].mark = res1.data[j].mark;
+                        }
+                      }
+                    }
+                    setComment(onlycoment);
+                    setCommenttask(all_task);
+                  })
+                  .catch((err) => {
+                    console.log("123");
+                  });
+              });
+          })
+          .catch((err) => {
+            console.log("1223");
           });
-        document.querySelector("#chat_text12").value = "";
       })
       .catch((err) => {
         Swal.fire("Error");
       });
 
+    const idget = JSON.parse(localStorage.getItem("page_video"));
     axios
       .get(`${url}/api/course_theme_comment`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
-        var a = res.data.filter(
-          (item) =>
-            item.task_commnet_id !=
-            JSON.parse(localStorage.getItem("page_video")).id
+        console.log(res.data);
+        var mycoment = res.data.filter((item) => item.theme == idget.id);
+        var onlycoment = mycoment.filter(
+          (item) => item.subcoment == 0 && item.task_commnet_id == 0
         );
-        setCommenttask(a);
-        console.log(res.data, "sfdfdxdseery");
+        var all_task = mycoment.filter((item) => item.task_commnet_id != 0);
+        axios
+          .get(`${url}/api/course_theme_task_student`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
+          .then((res1) => {
+            for (let i = 0; i < all_task.length; i++) {
+              all_task[i].mark = 0;
+              for (let j = 0; j < res1.data.length; j++) {
+                if (all_task[i].id == res1.data[j].feedback) {
+                  all_task[i].mark = res1.data[j].mark;
+                }
+              }
+            }
+            setComment(onlycoment);
+            setCommenttask(all_task);
+          })
+          .catch((err) => {
+            console.log("123");
+          });
       })
-      .catch((err) => {});
+      .catch((err) => {
+        console.log("1223");
+      });
   }
 
   function cencelModal() {
@@ -748,21 +1089,25 @@ useEffect(() => {
   }
 
   function markOpen(id) {
-    document.querySelector(".mark-uchun-koish-joy").style =
-      "display:flex ";
+    document.querySelector(".mark-uchun-koish-joy").style = "display:flex ";
   }
   function markOpen2(id) {
-    document.querySelector(".mark-uchun-koish-joy1").style =
-      "display:flex ";
+    document.querySelector(".mark-uchun-koish-joy1").style = "display:flex ";
   }
   function aftermarkopen(id) {
     var formdata = new FormData();
 
     formdata.append("mark", page);
-    formdata.append("image",document.querySelector(".comment_file12").files[0]);
+    formdata.append(
+      "image",
+      document.querySelector(".comment_file12").files[0]
+    );
     formdata.append("content", "ghjkh");
-    formdata.append("course_theme", JSON.parse(localStorage.getItem("page_video")).id)
-    formdata.append("feedback", id );
+    formdata.append(
+      "course_theme",
+      JSON.parse(localStorage.getItem("page_video")).id
+    );
+    formdata.append("feedback", id);
     axios
       .post(`${url}/api/course_theme_task_student`, formdata, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -786,21 +1131,25 @@ useEffect(() => {
       });
   }
   function markClose() {
-    document.querySelector(".mark-uchun-koish-joy").style =
-      "display:none ";
+    document.querySelector(".mark-uchun-koish-joy").style = "display:none ";
   }
   function markClose2() {
-    document.querySelector(".mark-uchun-koish-joy1").style =
-      "display:none ";
+    document.querySelector(".mark-uchun-koish-joy1").style = "display:none ";
   }
   function aftermarkopen2(id) {
     var formdata = new FormData();
 
     formdata.append("mark", page);
-    formdata.append("image",document.querySelector(".comment_file12").files[0]);
+    formdata.append(
+      "image",
+      document.querySelector(".comment_file12").files[0]
+    );
     formdata.append("content", ":");
-    formdata.append("course_theme", JSON.parse(localStorage.getItem("page_video")).id)
-    formdata.append("feedback", id );
+    formdata.append(
+      "course_theme",
+      JSON.parse(localStorage.getItem("page_video")).id
+    );
+    formdata.append("feedback", id);
     axios
       .put(`${url}/api/course_theme_task_student`, formdata, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -822,8 +1171,6 @@ useEffect(() => {
         Swal.fire("Вы не смогли поставить оценку");
       });
   }
-
-
 
   return (
     <div className="youtube_bgc">
@@ -850,23 +1197,25 @@ useEffect(() => {
                           src={main1.video}
                           title="W3Schools Free Online Web Tutorials"
                         ></iframe> */}
-                            <ReactPlayer
-      ref={playerRef}
-      url={main1.video}
-      // width={100}
-      // height={100}
-      controls={true}
-      // playing={true}
-      onReady={handleReady}
-      onProgress={handleProgress}
-      onDuration={handleDuration}
-      className="React_player"
-      // style={{display:"flex"he}}
-    />
+                        <ReactPlayer
+                          ref={playerRef}
+                          url={main1.video}
+                          // width={100}
+                          // height={100}
+                          controls={true}
+                          // playing={true}
+                          onReady={handleReady}
+                          onProgress={handleProgress}
+                          onDuration={handleDuration}
+                          className="React_player"
+                          // style={{display:"flex"he}}
+                        />
                       </div>
                       <div className="theme_df">
                         <div className="flex_logig">
-                          <h1 className="raspberry_pi">{main1.name} Ффффффффффф</h1>
+                          <h1 className="raspberry_pi">
+                            {main1.name} Ффффффффффф
+                          </h1>
                           <div className="odtel_media_uchun">
                             <h1>{main1.name}</h1>
                           </div>
@@ -949,7 +1298,7 @@ useEffect(() => {
                                 <span className="span_comment1202">
                                   Комментария*
                                 </span>
-                                <p 
+                                <p
                                   onClick={() => {
                                     openViewall();
                                   }}
@@ -973,25 +1322,30 @@ useEffect(() => {
                                           <>
                                             <div className="m_comment">
                                               <div className="for-flex-time-name-image">
-                                              <div className="m_comment_img">
-  <img
-    src={
-      item.oneuser && item.oneuser.image && item.oneuser.image.includes("http")
-        ? item.oneuser.image
-        : item.oneuser && item.oneuser.image
-        ? `${url}/${item.oneuser.image}`
-        : <img src={anonim} alt="" />
-    }
-    alt=""
-  />
-</div>
+                                                <div className="m_comment_img">
+                                                  <img
+                                                    src={
+                                                      item &&
+                                                      item.image1 &&
+                                                      item.image1.includes(
+                                                        "http"
+                                                      ) ? (
+                                                        item.image1
+                                                      ) : item.image1 ? (
+                                                        `${url}/${item.image}`
+                                                      ) : (
+                                                        <img
+                                                          src={anonim}
+                                                          alt=""
+                                                        />
+                                                      )
+                                                    }
+                                                    alt=""
+                                                  />
+                                                </div>
 
                                                 <div className="user-name-timecreate">
-                                                  <h5>
-                                                    {item.oneuser
-                                                      ? item.oneuser.username
-                                                      : "Anonim User"}
-                                                  </h5>
+                                                  <h5>{item.username}</h5>
                                                   <p>
                                                     {item.time_create.slice(
                                                       0,
@@ -1002,64 +1356,69 @@ useEffect(() => {
                                               </div>
 
                                               <div className="m_comment_text">
-  {item.image ? (
-    ""
-  ) : (
-    <img
-      src={
-        item.image && item.image.includes("http")
-          ? item.image
-          : `${url}/${item.image}`
-      }
-      alt=""
-    />
-  )}
-  <p className="m_comment_text1505">
-    {item.text}
-  </p>
-  <div className="m_comment_otvet">
-    <p
-      style={{ display: "flex" }}
-      className="m_otvet_comment"
-      onClick={() => {
-        openModalOtvet11(item.id);
-      }}
-    >
-      <FiCornerUpLeft />
-      <span>
-        {item.count === 0 ? (
-          "Ответить"
-        ) : (
-          <>
-            {item.count}
-            <span> Ответов</span>
-          </>
-        )}
-      </span>
-    </p>
+                                                {item.image ? (
+                                                  ""
+                                                ) : (
+                                                  <img
+                                                    src={
+                                                      item.image &&
+                                                      item.image.includes(
+                                                        "http"
+                                                      )
+                                                        ? item.image
+                                                        : `${url}/${item.image}`
+                                                    }
+                                                    alt=""
+                                                  />
+                                                )}
+                                                <p className="m_comment_text1505">
+                                                  {item.text}
+                                                </p>
+                                                <div className="m_comment_otvet">
+                                                  <p
+                                                    style={{ display: "flex" }}
+                                                    className="m_otvet_comment"
+                                                    onClick={() => {
+                                                      openModalOtvet11(item.id);
+                                                    }}
+                                                  >
+                                                    <FiCornerUpLeft />
+                                                    <span>
+                                                      {item.count === 0 ? (
+                                                        "Ответить"
+                                                      ) : (
+                                                        <>
+                                                          {item.count}
+                                                          <span> Ответов</span>
+                                                        </>
+                                                      )}
+                                                    </span>
+                                                  </p>
 
-    {oneuser.map((item5) => {
-      return (
-        <>
-          {item5.id == item.user_id ? (
-            <p
-              className="m_comment_delete"
-              onClick={() => {
-                deleteComment(item.id);
-              }}
-            >
-              <AiOutlineDelete />
-              удалить
-            </p>
-          ) : (
-            ""
-          )}
-        </>
-      );
-    })}
-  </div>
-</div>
-
+                                                  {oneuser.map((item5) => {
+                                                    return (
+                                                      <>
+                                                        {item5.id ==
+                                                        item.user_id ? (
+                                                          <p
+                                                            className="m_comment_delete"
+                                                            onClick={() => {
+                                                              deleteComment(
+                                                                item.id
+                                                              );
+                                                            }}
+                                                          >
+                                                            <AiOutlineDelete />
+                                                            удалить
+                                                          </p>
+                                                        ) : (
+                                                          ""
+                                                        )}
+                                                      </>
+                                                    );
+                                                  })}
+                                                </div>
+                                              </div>
                                             </div>
                                           </>
                                         );
@@ -1123,71 +1482,85 @@ useEffect(() => {
                                           <>
                                             <div className="df_div_comment_page">
                                               <div className="m_comment">
-                                              <div className="for-flex-time-name-image">
-  <div className="m_comment_img">
-    <img
-      src={
-        item.oneuser && item.oneuser.image && item.oneuser.image.includes("http")
-          ? item.oneuser.image
-          : item.oneuser && item.oneuser.image
-          ? `${url}/${item.oneuser.image}`
-          : anonim
-      }
-      alt=""
-    />
-  </div>
-  <div className="user-name-timecreate">
-    <h5>
-      {item.oneuser ? item.oneuser.username : "Anonim User"}
-    </h5>
-    <p>
-      {item.time_create.slice(0, 10)}
-    </p>
-  </div>
-</div>
+                                                <div className="for-flex-time-name-image">
+                                                  <div className="m_comment_img">
+                                                    <img
+                                                      src={
+                                                        item &&
+                                                        item.image1 &&
+                                                        item.image1.includes(
+                                                          "http"
+                                                        ) ? (
+                                                          item.image1
+                                                        ) : item.image1 ? (
+                                                          `${url}/${item.image}`
+                                                        ) : (
+                                                          <img
+                                                            src={anonim}
+                                                            alt=""
+                                                          />
+                                                        )
+                                                      }
+                                                      alt=""
+                                                    />
+                                                  </div>
+                                                  <div className="user-name-timecreate">
+                                                    <h5>{item.username}</h5>
+                                                    <p>
+                                                      {item.time_create.slice(
+                                                        0,
+                                                        10
+                                                      )}
+                                                    </p>
+                                                  </div>
+                                                </div>
 
-
-<div className="m_comment_text">
-  {item.image ? (
-    ""
-  ) : (
-    <img
-      src={
-        item.image && item.image.includes("http")
-          ? item.image
-          : `${url}/${item.image}`
-      }
-      alt=""
-    />
-  )}
-  <p className="m_comment_text1505">
-    {item.text}
-  </p>
-  <div className="m_comment_otvet">
-    {oneuser.map((item5) => {
-      return (
-        <>
-          {item5.id == item.user_id ? (
-            <p
-              className="m_comment_delete"
-              onClick={() => {
-                deleteComment(item.id);
-              }}
-            >
-              <AiOutlineDelete />
-              удалить
-            </p>
-          ) : (
-            ""
-          )}
-        </>
-      );
-    })}
-  </div>
-</div>
-
-                      </div>
-                    </div>
+                                                <div className="m_comment_text">
+                                                  {item.image ? (
+                                                    ""
+                                                  ) : (
+                                                    <img
+                                                      src={
+                                                        item.image &&
+                                                        item.image.includes(
+                                                          "http"
+                                                        )
+                                                          ? item.image
+                                                          : `${url}/${item.image}`
+                                                      }
+                                                      alt=""
+                                                    />
+                                                  )}
+                                                  <p className="m_comment_text1505">
+                                                    {item.text}
+                                                  </p>
+                                                  <div className="m_comment_otvet">
+                                                    {oneuser.map((item5) => {
+                                                      return (
+                                                        <>
+                                                          {item5.id ==
+                                                          item.user_id ? (
+                                                            <p
+                                                              className="m_comment_delete"
+                                                              onClick={() => {
+                                                                deleteComment(
+                                                                  item.id
+                                                                );
+                                                              }}
+                                                            >
+                                                              <AiOutlineDelete />
+                                                              удалить
+                                                            </p>
+                                                          ) : (
+                                                            ""
+                                                          )}
+                                                        </>
+                                                      );
+                                                    })}
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
                                           </>
                                         );
                                       }
@@ -1254,27 +1627,35 @@ useEffect(() => {
                                           <div className="flex_view_all">
                                             <div className="m_comment">
                                               <div className="for-flex-time-name-image">
-                                              <div className="m_comment_img">
-  {item.oneuser && item.oneuser.image ? (
-    <img
-      src={
-        item.oneuser.image.includes("http")
-          ? item.oneuser.image
-          : `${url}/${item.oneuser.image}`
-      }
-      alt=""
-    />
-  ) : (
-    <img src={anonim} alt="" />
-  )}
-</div>
+                                                <div className="m_comment_img">
+                                                  {item.oneuser &&
+                                                  item.oneuser.image ? (
+                                                    <img
+                                                      src={
+                                                        item &&
+                                                        item.image1 &&
+                                                        item.image1.includes(
+                                                          "http"
+                                                        ) ? (
+                                                          item.image1
+                                                        ) : item.image1 ? (
+                                                          `${url}/${item.image}`
+                                                        ) : (
+                                                          <img
+                                                            src={anonim}
+                                                            alt=""
+                                                          />
+                                                        )
+                                                      }
+                                                      alt=""
+                                                    />
+                                                  ) : (
+                                                    <img src={anonim} alt="" />
+                                                  )}
+                                                </div>
 
                                                 <div className="user-name-timecreate">
-                                                  <h5>
-                                                    {item.oneuser
-                                                      ? item.oneuser.username
-                                                      : "Anonim User"}
-                                                  </h5>
+                                                  <h5>{item.username}</h5>
                                                   <p>
                                                     {item.time_create.slice(
                                                       0,
@@ -1285,61 +1666,67 @@ useEffect(() => {
                                               </div>
 
                                               <div className="m_comment_text">
-  {item.image ? (
-    ""
-  ) : (
-    <img
-      src={
-        item.image && item.image.includes("http")
-          ? item.image
-          : `${url}/${item.image}`
-      }
-      alt=""
-    />
-  )}
-  <p className="m_comment_text1505">
-    {item.text}
-  </p>
-  <div className="m_comment_otvet">
-    <p
-      style={{ display: "flex" }}
-      className="m_otvet_comment"
-      onClick={() => {
-        openModalOtvet11(item.id);
-      }}
-    >
-      <FiCornerUpLeft />
-      {item.count === 0 ? (
-        "Ответить"
-      ) : (
-        <>
-          {item.count} <span>Ответов</span>
-        </>
-      )}
-    </p>
+                                                {item.image ? (
+                                                  ""
+                                                ) : (
+                                                  <img
+                                                    src={
+                                                      item.image &&
+                                                      item.image.includes(
+                                                        "http"
+                                                      )
+                                                        ? item.image
+                                                        : `${url}/${item.image}`
+                                                    }
+                                                    alt=""
+                                                  />
+                                                )}
+                                                <p className="m_comment_text1505">
+                                                  {item.text}
+                                                </p>
+                                                <div className="m_comment_otvet">
+                                                  <p
+                                                    style={{ display: "flex" }}
+                                                    className="m_otvet_comment"
+                                                    onClick={() => {
+                                                      openModalOtvet11(item.id);
+                                                    }}
+                                                  >
+                                                    <FiCornerUpLeft />
+                                                    {item.count === 0 ? (
+                                                      "Ответить"
+                                                    ) : (
+                                                      <>
+                                                        {item.count}{" "}
+                                                        <span>Ответов</span>
+                                                      </>
+                                                    )}
+                                                  </p>
 
-    {oneuser.map((item5) => {
-      return (
-        <>
-          {item5.id == item.user_id ? (
-            <p
-              className="m_comment_delete"
-              onClick={() => {
-                deleteComment(item.id);
-              }}
-            >
-              <AiOutlineDelete />
-              удалить
-            </p>
-          ) : (
-            ""
-          )}
-        </>
-      );
-    })}
-  </div>
-</div>
-
+                                                  {oneuser.map((item5) => {
+                                                    return (
+                                                      <>
+                                                        {item5.id ==
+                                                        item.user_id ? (
+                                                          <p
+                                                            className="m_comment_delete"
+                                                            onClick={() => {
+                                                              deleteComment(
+                                                                item.id
+                                                              );
+                                                            }}
+                                                          >
+                                                            <AiOutlineDelete />
+                                                            удалить
+                                                          </p>
+                                                        ) : (
+                                                          ""
+                                                        )}
+                                                      </>
+                                                    );
+                                                  })}
+                                                </div>
+                                              </div>
                                             </div>
                                           </div>
                                         </>
@@ -1388,54 +1775,34 @@ useEffect(() => {
                                         return (
                                           <>
                                             <div className="df_div_comment_page">
-                                            <div className="div_img_class_over">
-  <img
-    src={
-      item.oneuser && item.oneuser.image && item.oneuser.image.includes("http")
-        ? item.oneuser.image
-        : item.oneuser && item.oneuser.image
-        ? `${url}/${item.oneuser.image}`
-        : img_comment1
-    }
-    alt=""
-  />
-</div>
-
+                                              <div className="div_img_class_over">
+                                                <img
+                                                  src={
+                                                    item &&
+                                                    item.image1 &&
+                                                    item.image1.includes(
+                                                      "http"
+                                                    ) ? (
+                                                      item.image1
+                                                    ) : item.image1 ? (
+                                                      `${url}/${item.image}`
+                                                    ) : (
+                                                      <img
+                                                        src={anonim}
+                                                        alt=""
+                                                      />
+                                                    )
+                                                  }
+                                                  alt=""
+                                                />
+                                              </div>
 
                                               <div className="div_class_tugadi">
                                                 <div className="task-uchun-joy-and-mark">
-                                                   <h5>
-                                                  {item.oneuser
-                                                    ? item.oneuser.username
-                                                    : "Anonim User"}
-                                                </h5>
-                                                  {mark.map(item1505 => {
-                                                  if (item.id === item1505.feedback) {
-                                                    return(<>
-                                                      <p  onClick={() => {
-                                                            markOpen2(item.id);
-                                                            setPage1(1);
-                                                          }} style={{cursor:"pointer"}}>{item1505.mark === 2 ? (<><div className="mark-two-bosa">
-                                                       2</div></>):(<>{item1505.mark === 3 ? (<><div className="mark-three-bosa">
-                                                        3 </div></>):(
-                                                       <>{item1505.mark === 4 ? (<><div className="mark-four-bosa">
-                                                         4 </div></>):(<>{item1505.mark === 5 ? (<><div className="mark-five-bosa">
-                                                          5 </div></>):(
-                                                         ""
-                                                       )}</>)}</>
-                                                      )}</>)}</p> 
-                                                       </>
-                                                     )
-                                                  }else{
-                                                    <></>
-                                                  }
-                                                 
-                                                })}
-                                                
-                                               
-
+                                                  <h5>{item.username}</h5>
+                                                  {item.mark}
                                                 </div>
-                                               
+
                                                 <p className="p-create-time-uchun">
                                                   {item.time_create.slice(
                                                     0,
@@ -1444,15 +1811,18 @@ useEffect(() => {
                                                 </p>
 
                                                 {task.map((item) => (
-  <img
-    src={
-      item.image && item.image.includes("http")
-        ? item.image
-        : `${url}/${item.image}`
-    }
-    alt=""
-  />
-))}
+                                                  <img
+                                                    src={
+                                                      item.image &&
+                                                      item.image.includes(
+                                                        "http"
+                                                      )
+                                                        ? item.image
+                                                        : `${url}/${item.image}`
+                                                    }
+                                                    alt=""
+                                                  />
+                                                ))}
 
                                                 <p className="m_comment_text1505">
                                                   {item.text}
@@ -1509,158 +1879,170 @@ useEffect(() => {
                                               </div>
                                             </div>
                                             <div className="mark-uchun-koish-joy">
-                                <div className="kotta-obsh-mark-uchun">
-                                  <div className="kichkina-mark-uchun-joy">
-                                    <div
-                                      className="mark-two"
-                                      onClick={() => setPage(2)}
-                                    >
-                                      2
-                                    </div>
-                                    <div
-                                      className="mark-three"
-                                      onClick={() => setPage(3)}
-                                    >
-                                      3
-                                    </div>
-                                    <div
-                                      className="mark-four"
-                                      onClick={() => setPage(4)}
-                                    >
-                                      4
-                                    </div>
-                                    <div
-                                      className="mark-five"
-                                      onClick={() => setPage(5)}
-                                    >
-                                      5
-                                    </div>
-                                  </div>
-                                  <h5>Оценить ученика:</h5>
-                                  <div className="mark-bosgandan-kein">
-                                    {page === 2 ? (
-                                      <div className="mark-two">2</div>
-                                    ) : (
-                                      <>
-                                        {page === 3 ? (
-                                          <div className="mark-three">3</div>
-                                        ) : (
-                                          <>
-                                            {page === 4 ? (
-                                              <div className="mark-four">4</div>
-                                            ) : (
-                                              <>
-                                                {page === 5 ? (
-                                                  <div className="mark-five">
+                                              <div className="kotta-obsh-mark-uchun">
+                                                <div className="kichkina-mark-uchun-joy">
+                                                  <div
+                                                    className="mark-two"
+                                                    onClick={() => setPage(2)}
+                                                  >
+                                                    2
+                                                  </div>
+                                                  <div
+                                                    className="mark-three"
+                                                    onClick={() => setPage(3)}
+                                                  >
+                                                    3
+                                                  </div>
+                                                  <div
+                                                    className="mark-four"
+                                                    onClick={() => setPage(4)}
+                                                  >
+                                                    4
+                                                  </div>
+                                                  <div
+                                                    className="mark-five"
+                                                    onClick={() => setPage(5)}
+                                                  >
                                                     5
                                                   </div>
-                                                ) : (
-                                                  <></>
-                                                )}
-                                              </>
-                                            )}
-                                          </>
-                                        )}
-                                      </>
-                                    )}
-                                  </div>
-                                  <div className="mark-otmen-potver-uchun">
-                                    <button
-                                      className="otmen-uchen-but"
-                                      onClick={() => {
-                                        markClose();
-                                      }}
-                                    >
-                                      Отменить
-                                    </button>
-                                    <button
-                                      className="porver-uchen-but"
-                                      onClick={() => {
-                                        aftermarkopen(item.id);
-                                      }}
-                                    >
-                                      Потвердить
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="mark-uchun-koish-joy1">
-                                <div className="kotta-obsh-mark-uchun">
-                                  <div className="kichkina-mark-uchun-joy">
-                                    <div
-                                      className="mark-two"
-                                      onClick={() => setPage1(2)}
-                                    >
-                                      2
-                                    </div>
-                                    <div
-                                      className="mark-three"
-                                      onClick={() => setPage1(3)}
-                                    >
-                                      3
-                                    </div>
-                                    <div
-                                      className="mark-four"
-                                      onClick={() => setPage1(4)}
-                                    >
-                                      4
-                                    </div>
-                                    <div
-                                      className="mark-five"
-                                      onClick={() => setPage1(5)}
-                                    >
-                                      5
-                                    </div>
-                                  </div>
-                                  <h5>Изменить оценку на:</h5>
-                                  <div className="mark-bosgandan-kein">
-                                    {page1 === 2 ? (
-                                      <div className="mark-two">2</div>
-                                    ) : (
-                                      <>
-                                        {page1 === 3 ? (
-                                          <div className="mark-three">3</div>
-                                        ) : (
-                                          <>
-                                            {page1 === 4 ? (
-                                              <div className="mark-four">4</div>
-                                            ) : (
-                                              <>
-                                                {page1 === 5 ? (
-                                                  <div className="mark-five">
+                                                </div>
+                                                <h5>Оценить ученика:</h5>
+                                                <div className="mark-bosgandan-kein">
+                                                  {page === 2 ? (
+                                                    <div className="mark-two">
+                                                      2
+                                                    </div>
+                                                  ) : (
+                                                    <>
+                                                      {page === 3 ? (
+                                                        <div className="mark-three">
+                                                          3
+                                                        </div>
+                                                      ) : (
+                                                        <>
+                                                          {page === 4 ? (
+                                                            <div className="mark-four">
+                                                              4
+                                                            </div>
+                                                          ) : (
+                                                            <>
+                                                              {page === 5 ? (
+                                                                <div className="mark-five">
+                                                                  5
+                                                                </div>
+                                                              ) : (
+                                                                <></>
+                                                              )}
+                                                            </>
+                                                          )}
+                                                        </>
+                                                      )}
+                                                    </>
+                                                  )}
+                                                </div>
+                                                <div className="mark-otmen-potver-uchun">
+                                                  <button
+                                                    className="otmen-uchen-but"
+                                                    onClick={() => {
+                                                      markClose();
+                                                    }}
+                                                  >
+                                                    Отменить
+                                                  </button>
+                                                  <button
+                                                    className="porver-uchen-but"
+                                                    onClick={() => {
+                                                      aftermarkopen(item.id);
+                                                    }}
+                                                  >
+                                                    Потвердить
+                                                  </button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div className="mark-uchun-koish-joy1">
+                                              <div className="kotta-obsh-mark-uchun">
+                                                <div className="kichkina-mark-uchun-joy">
+                                                  <div
+                                                    className="mark-two"
+                                                    onClick={() => setPage1(2)}
+                                                  >
+                                                    2
+                                                  </div>
+                                                  <div
+                                                    className="mark-three"
+                                                    onClick={() => setPage1(3)}
+                                                  >
+                                                    3
+                                                  </div>
+                                                  <div
+                                                    className="mark-four"
+                                                    onClick={() => setPage1(4)}
+                                                  >
+                                                    4
+                                                  </div>
+                                                  <div
+                                                    className="mark-five"
+                                                    onClick={() => setPage1(5)}
+                                                  >
                                                     5
                                                   </div>
-                                                ) : (
-                                                  <></>
-                                                )}
-                                              </>
-                                            )}
-                                          </>
-                                        )}
-                                      </>
-                                    )}
-                                  </div>
-                                  <div className="mark-otmen-potver-uchun">
-                                    <button
-                                      className="otmen-uchen-but"
-                                      onClick={() => {
-                                        markClose2();
-                                      }}
-                                    >
-                                      Отменить
-                                    </button>
+                                                </div>
+                                                <h5>Изменить оценку на:</h5>
+                                                <div className="mark-bosgandan-kein">
+                                                  {page1 === 2 ? (
+                                                    <div className="mark-two">
+                                                      2
+                                                    </div>
+                                                  ) : (
+                                                    <>
+                                                      {page1 === 3 ? (
+                                                        <div className="mark-three">
+                                                          3
+                                                        </div>
+                                                      ) : (
+                                                        <>
+                                                          {page1 === 4 ? (
+                                                            <div className="mark-four">
+                                                              4
+                                                            </div>
+                                                          ) : (
+                                                            <>
+                                                              {page1 === 5 ? (
+                                                                <div className="mark-five">
+                                                                  5
+                                                                </div>
+                                                              ) : (
+                                                                <></>
+                                                              )}
+                                                            </>
+                                                          )}
+                                                        </>
+                                                      )}
+                                                    </>
+                                                  )}
+                                                </div>
+                                                <div className="mark-otmen-potver-uchun">
+                                                  <button
+                                                    className="otmen-uchen-but"
+                                                    onClick={() => {
+                                                      markClose2();
+                                                    }}
+                                                  >
+                                                    Отменить
+                                                  </button>
 
-                                    <button
-                                      className="porver-uchen-but"
-                                      onClick={() => {
-                                        aftermarkopen2(mark.id);
-                                      }}
-                                    >
-                                      Изменить
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
+                                                  <button
+                                                    className="porver-uchen-but"
+                                                    onClick={() => {
+                                                      aftermarkopen2(mark.id);
+                                                    }}
+                                                  >
+                                                    Изменить
+                                                  </button>
+                                                </div>
+                                              </div>
+                                            </div>
                                           </>
                                         );
                                       }
@@ -1668,8 +2050,7 @@ useEffect(() => {
                                   </>
                                 )}
                               </div>
-                             
-                            
+
                               <div className="m_comment_yozish">
                                 <input
                                   type="file"
@@ -1713,23 +2094,16 @@ useEffect(() => {
                 ) : (
                   <div className="youtube_kotta_img">
                     <div className="img_youtube_kotta">
-                      {/* <iframe
-                        src={main.video}
-                        title="W3Schools Free Online Web Tutorials"
-                      ></iframe> */}
-                          <ReactPlayer
-      ref={playerRef}
-      url={main.video}
-      // width={100}
-      // height={100}
-      controls={true}
-      playing={true}
-      onReady={handleReady}
-      onProgress={handleProgress}
-      onDuration={handleDuration}
-      className="React_player"
-      // style={{display:"flex"he}}
-    />
+                      <ReactPlayer
+                        ref={playerRef}
+                        url={main.video}
+                        controls={true}
+                        playing={true}
+                        onReady={handleReady}
+                        onProgress={handleProgress}
+                        onDuration={handleDuration}
+                        className="React_player"
+                      />
                     </div>
                     <div className="theme_df">
                       <div className="flex_logig">
@@ -1737,29 +2111,6 @@ useEffect(() => {
                         <div className="odtel_media_uchun">
                           <h1>{main.name}</h1>
                         </div>
-                        {/* <div className="flex_star">
-  <p>
-  <AiFillStar />
-  </p>
-  <p>
-  <AiFillStar />
-  </p>
-  <p>
-  <AiFillStar />
-  </p>
-  <p>
-  <AiFillStar />
-  </p>
-  </div>
-  <div className="flex_star1">
-  <p>
-  <AiFillStar />
-  </p>
-  </div>
-
-  <p className="p_4_1_524">
-  4.1 <span>(524)</span>
-  </p> */}
                       </div>
                     </div>
                     <p className="theme_content">{main.content}</p>
@@ -1769,27 +2120,37 @@ useEffect(() => {
                 <div className={main == "" ? "db" : "a_err_boganda"}>
                   <div className="a_err_bolsa_block">
                     <img src={err} alt="" />
-                    <h3>Something happened to the server, we are already fixing it.</h3>
+                    <h3>
+                      Something happened to the server, we are already fixing
+                      it.
+                    </h3>
                     <h3>You can try better</h3>
                     <br />
-                    {(JSON.parse(localStorage.getItem('page_user')))[0].position==2?(
-                      <Create_Theme_Category_mentor id1={localStorage.getItem("abbas")} />
-                    ):(<></>)}
-                    <br/>
-                 <br />
-                    <button onClick={() => ModalCatchBolsa()}>
-                      Come back
-                    </button>
+                    {JSON.parse(localStorage.getItem("page_user"))[0]
+                      .position == 2 ? (
+                      <Create_Theme_Category_mentor
+                        id1={localStorage.getItem("abbas")}
+                      />
+                    ) : (
+                      <></>
+                    )}
+                    <br />
+                    <br />
+                    <button onClick={() => ModalCatchBolsa()}>Come back</button>
                   </div>
                 </div>
-                {(JSON.parse(localStorage.getItem('page_user')))[0].position==2?(
-                      <Create_Theme_Category_mentor id1={localStorage.getItem("abbas")} />
-                    ):(<></>)}
+                {JSON.parse(localStorage.getItem("page_user"))[0].position ==
+                2 ? (
+                  <Create_Theme_Category_mentor
+                    id1={localStorage.getItem("abbas")}
+                  />
+                ) : (
+                  <></>
+                )}
                 <div className="youtube_kichkina">
                   {category.map((item, key) => {
                     return (
                       <>
-                      
                         <Accordion className="for-scroll-accordion">
                           <Accordion.Item eventKey={0 + key}>
                             <Accordion.Header>{item.name}</Accordion.Header>
@@ -1810,11 +2171,15 @@ useEffect(() => {
                                         {item2.image === null ? (
                                           <img src={novideo} alt="" />
                                         ) : (
-                                          <img   src={
-                                            item.image && item.image.includes("http")
-                                              ? item.image
-                                              : `${url}/${item.image}`
-                                          }alt="" />
+                                          <img
+                                            src={
+                                              item.image &&
+                                              item.image.includes("http")
+                                                ? item.image
+                                                : `${url}/${item.image}`
+                                            }
+                                            alt=""
+                                          />
                                         )}
                                       </div>
                                       <div className="accordion_text">
@@ -1837,8 +2202,6 @@ useEffect(() => {
                   })}
                 </div>
               </div>
-
-             
             </div>
           </div>
         </div>
