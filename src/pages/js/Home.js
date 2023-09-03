@@ -58,7 +58,7 @@ export default function Home() {
                     <Navbar />
 
                     <div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style={{ marginBottom: "90px;" }}>
-                        <div style={{ textAlign: "center" }} class="container my-5 py-5">
+                        <div style={{ textAlign: "center",padding:"20px" }} class="container my-5 py-5">
                             <h3 id='huch' style={{ fontSize: "18px", color: "#44bef1" }}>BEST ONLINE COURSES</h3>
                             <h1 class="text-white mt-4 mb-4" id='hbir'>Get Educated Online From Your Home</h1>
                             <p id='pp1' style={{ color: "white", fontSize: "20px" }}>With over 20 years of experience we'll ensure you always get the best guidance</p>

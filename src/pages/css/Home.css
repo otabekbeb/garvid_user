@@ -1201,10 +1201,19 @@ list-style: none;
 }
 @media(max-width:470px){
     #hbir{
-        font-size: 2.3rem;
+        font-size: 1.8rem;
     }
     #ppq{
-        font-size: 17px;
+        font-size: 14px;
+    }
+    #pp1{
+        font-size: 15px !important;
+    }
+    .body1 .position-relative{
+        height: 500px;
+    }
+    .butonss button {
+        padding: 10px 25px;
     }
 }
 

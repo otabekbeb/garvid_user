@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import img_kotta from "../img/Rectangle.png";
 import img_ava from "../img/Ellipse.png";
 import img_accordion from "../img/Rectangle 14.1.svg";
 import { AiFillDislike, AiFillLike, AiFillStar } from "react-icons/ai";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import { TbInfoTriangleFilled } from "react-icons/tb";
 import { TiThMenu } from "react-icons/ti";
 import "../css/youtube1.css";
-import Qollamalar from "../js/Bilmadim1";
-import Scachat from "../js/Scachat";
-import Vazifa from "../js/Vazifa1";
-import Comment from "../js/Comment1";
+
+
 import Usernavbar from "../js/Navbar";
 import Loader from "./loader";
 import { Pagination, Navigation } from "swiper/modules";
@@ -20,7 +17,7 @@ import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import err from "../img/istockphoto-1321436405-612x612.jpg";
 import novideo from "../img/download.svg";
-
+import  Create_Theme_Category_mentor from "./Create_Theme_Category_mentor.js"
 import "../css/comment.css";
 import { FiCornerUpLeft } from "react-icons/fi";
 import { FcFile } from "react-icons/fc";
@@ -36,7 +33,7 @@ import { AiOutlineComment, AiOutlineDelete } from "react-icons/ai";
 import { CgClose } from "react-icons/cg";
 import anonim from "../img/anonim-user.png";
 import Footer1 from "./Footer1.js";
-
+import ReactPlayer from 'react-player';
 import "../css/vazifa1.css";
 import "../css/yozishmalar.css";
 import { TfiMarkerAlt } from "react-icons/tfi";
@@ -44,24 +41,23 @@ import { BsBookmark } from "react-icons/bs";
 import mark_img from "../img/evaluation_of_education_300.jpg";
 import { Accordion } from "react-bootstrap";
 import Profil from "./Profil";
+import Create_theme_mentor from "./Create_theme_mentor";
+import { async } from "q";
 
 export default function Youtube1() {
   const [id, setId] = useState(1);
   const [category, setCategory] = useState([]);
-  const [subcategory, setSubcategory] = useState([]);
-  const [theme, setTheme] = useState([]);
+  const [chooseStudentTheme, setchooseStudentTheme] = useState(0);
+  const [progressTheme, setProgressTheme] = useState();
+  const [duration, setDuration] = useState(0);
   const [main, setMain] = useState([]);
   const [main1, setMain1] = useState(
     JSON.parse(localStorage.getItem("Idvideo"))
   );
-  const [user, setUser] = useState([]);
   const [state1, setState1] = React.useState();
   const [loader, setLoader] = useState(1);
-  const [IDtheme, setIdtheme] = useState({});
   const [task_comnet_id, setTask_comnet_id] = useState(0);
-  const [kursdata, setKursdata] = useState([]);
   const [page5, setPage5] = useState(1);
-
   const [comment, setComment] = useState([]);
   const [comment2, setComment2] = useState([]);
   const [subcoment, setSubcoment] = useState(0);
@@ -74,7 +70,120 @@ export default function Youtube1() {
   const [mark, setMark] = useState([]);
   const [page, setPage] = useState(1);
   const [page1, setPage1] = useState(1);
-  const [length14, setLength14] = useState(0);
+  const playerRef = useRef(null);
+  const [currentTime, setCurrentTime] = useState(0);
+
+  // useEffect(() => {
+  //   var StudentId = parseInt(localStorage.getItem("OneuserId"));
+  //   // console.log(main,main1.id,"aaaaaaaaaaaaaaaaaadddd");
+  //   var id=main1.id
+  //   // var id2=main.id
+
+  //   // if (main1) {
+  //       axios
+  //       .get(`${url}/api/student_theme/`,{
+  //         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+  //       }).then((res)=>{
+  //        const filter=res.data.filter(item=>(item.student_id===StudentId&&item.theme_id===id))
+  //        setchooseStudentTheme(filter[0].id)
+  //        const num=filter[0].complate
+  // const time=duration/100
+  // const result=time*num
+  //         setProgressTheme(result)
+  //         alert(result,"result")
+  //         console.log(time,"time");
+  //         console.log(result,"result");
+  //       //  setProgressTheme(33)
+  //       //  console.log(filter,"22424")
+  //       //  console.log(res.data,"res.data");
+  //       //  console.log(StudentId,"student");
+  //       //  console.log(id,"theme_id");
+  //       //  alert("ishladi2")
+  //       }).catch((err)=>{
+  //         alert("lox1")
+  //         console.log(err);
+  //         alert(err)
+  //       })    
+ 
+
+  //   // }
+  //   // if (main) {
+  //   //   axios
+  //   //   .get(`${url}/api/student_theme/`,{
+  //   //     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+  //   //   }).then((res)=>{
+  //   //   const filter=res.data.filter(item=>item.student_id===StudentId&&item.theme_id===id2)
+  //   //   alert(filter)
+  //   //   }).catch((err)=>{
+  //   //     alert("lox2")
+  //   //     console.log(err);
+  //   //   })
+  //   // }
+  // }, []);
+
+  const handleReady = () => {
+    // Seek to the desired time (in seconds)
+    var StudentId = parseInt(localStorage.getItem("OneuserId"));
+    // console.log(main,main1.id,"aaaaaaaaaaaaaaaaaadddd");
+    var id=main1.id
+    // var id2=main.id
+
+    // if (main1) {
+      axios
+      .get(`${url}/api/student_theme/`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        const filter = res.data.filter(
+          (item) => item.student_id === StudentId && item.theme_id === id
+        );
+        setchooseStudentTheme(filter[0].id);
+        const num = filter[0].complate;
+        const time = duration / 100;
+        const result = time * num;
+        setProgressTheme(result);
+        alert(result, "result");
+        console.log(time, "time");
+        console.log(result, "result");
+        playerRef.current.seekTo(result);
+      })
+      .catch((err) => {
+        alert("lox1");
+        console.log(err);
+        alert(err);
+      });
+      setTimeout(() => {
+        const time = progressTheme;
+        alert(progressTheme, 2);
+        playerRef.current.seekTo(100);
+      }, 4000);
+          
+
+    
+
+
+
+  };
+
+  const handleDuration = (duration) => {
+
+    console.log('Длительность видео:', duration);
+    alert(duration)
+    setDuration(duration)
+
+  };
+
+  const handleProgress = (progress) => {
+    setCurrentTime(progress.playedSeconds);
+ 
+      console.log(progress.playedSeconds)
+
+  };
+
+
+
+
+
 
   function openModal() {
     document.querySelector(".navbar_yon").classList.toggle("navbar_yon1");
@@ -82,19 +191,11 @@ export default function Youtube1() {
   function closeModal() {
     document.querySelector(".navbar_yon").style = "display:none;";
   }
-
-  function videoBolim(id) {
-    document.querySelector(".navbar_yon", ".navbar_none").style =
-      "display:none;";
-    setId(id);
-  }
-
   function painModal() {
     document.querySelector(".zadaniya").style =
       "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya1").style =
       "border-bottom: none; color: #9DA7BB;";
-
     setTask_comnet_id(0);
   }
   function painModal1(id) {
@@ -124,6 +225,7 @@ export default function Youtube1() {
   useEffect(() => {
     localStorage.setItem("task_commnet_id", JSON.stringify(task_comnet_id));
     var id = localStorage.getItem("abbas");
+    var StudentId = localStorage.getItem("OneuserId");
     axios
       .get(`${url}/api/course_data_category/course/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -131,6 +233,24 @@ export default function Youtube1() {
       .then((res) => {
         setMain(res.data.one ? res.data.one : []);
         setCategory(res.data.all);
+                res.data.all.map((itam)=>{
+          itam.theme.map((itam2)=>{
+            console.log(itam2,"dddddddddd");
+            var Formdata=new FormData()
+            Formdata.append("student_id",StudentId)
+            Formdata.append("theme_id",itam2.id)
+            Formdata.append("complate",0)
+            axios
+            .post(`${url}/api/student_theme/`, Formdata,{
+              headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+            }).then((res)=>{
+              alert("ishadi")
+            }).catch((err)=>{
+              // alert("bor ekan")
+            })
+          })
+        })
+        console.log(res.data,"aaaaaaaaaaaa");
         console.log(res.data);
         localStorage.setItem(
           "page_video",
@@ -196,6 +316,8 @@ export default function Youtube1() {
         console.log(res.data, "hello world");
       })
       .catch((err) => {});
+
+
     axios
       .get(`${url}/api/course_theme_task`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -205,7 +327,9 @@ export default function Youtube1() {
         console.log(res.data);
       })
       .catch((err) => {});
-
+      {(JSON.parse(localStorage.getItem('page_user')))[0].position==2?(
+        <Create_Theme_Category_mentor id1={localStorage.getItem("abbas")} />
+      ):(<></>)}
     axios
       .get(`${url}/auth/oneuser`, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
@@ -228,6 +352,8 @@ export default function Youtube1() {
       .then((res) => {
         var a = res.data.filter((item) => item.task_commnet_id == 1);
         setComment5(a);
+      }).catch(err=>{
+
       });
 
     axios
@@ -248,6 +374,7 @@ export default function Youtube1() {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
+
   }, []);
 
   function ModalCatchBolsa() {
@@ -263,12 +390,12 @@ export default function Youtube1() {
   function MadolChange(id) {
     localStorage.setItem("Idvideo", JSON.stringify(id));
     window.location.reload();
-    // axios.get(`${url}/api/course_data_category/course/${id}`)
-    // .then(res=>{
-    //   setMain(res.data.one?res.data.one:[])
-    //   setCategory(res.data.all);
-    //   console.log(res.data, "ali");
-    // })
+    axios.get(`${url}/api/course_data_category/course/${id}`)
+    .then(res=>{
+      setMain(res.data.one?res.data.one:[])
+      setCategory(res.data.all);
+      console.log(res.data, "ali");
+    })
   }
   // console.log(main1,"aom");
 
@@ -318,10 +445,14 @@ export default function Youtube1() {
                     // alert("xato")
                   } else {
                   }
+                }).catch(err=>{
+
                 });
 
                 console.log(res.data, "coment");
-              });
+              }).catch(err=>{
+                  
+                });
           });
         document.querySelector("#chat_text").value = "";
       })
@@ -373,6 +504,8 @@ export default function Youtube1() {
           .then((res) => {
             setComment(res.data);
             console.log(res.data, "hey");
+          }).catch(err=>{
+                  
           });
         document.querySelector("#chat_text1").value = "";
       })
@@ -414,8 +547,12 @@ export default function Youtube1() {
           )
           .then((res) => {
             setComment(res.data);
+          }).catch(err=>{
+                  
           }),
-      ]);
+      ]).catch(err=>{
+                  
+      });
     axios
       .get(
         `${url}/api/course_theme_comment/${
@@ -453,6 +590,8 @@ export default function Youtube1() {
           )
           .then((res) => {
             setComment2(res.data);
+          }).catch(err=>{
+                  
           });
       });
     axios
@@ -472,14 +611,6 @@ export default function Youtube1() {
       });
   }
 
-  function OpenotvetMadal(item, key) {
-    document.querySelector(".commetn_otvet_kaytarish").style =
-      "display: flex; ";
-  }
-  function CloseotvetMadal() {
-    document.querySelector(".otevet_comment_otdel_oyna").style =
-      "display: none;";
-  }
   function cencelModal() {
     document.querySelector("#chat_text").value = "";
     document.querySelector("#chat_text1").value = "";
@@ -549,34 +680,7 @@ export default function Youtube1() {
       });
   }
 
-  function imagePost() {
-    var formdata = new FormData();
-
-    formdata.append("mark", 3);
-    formdata.append(
-      "image",
-      document.querySelector(".comment_file12").files[0]
-    );
-    formdata.append("content", ":");
-    formdata.append(
-      "course_theme",
-      JSON.parse(localStorage.getItem("page_video")).id
-    );
-    formdata.append("feedback", ".");
-
-    axios
-      .post(`${url}api/course_theme_task_student`, formdata, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      })
-      .then((res) => {
-        setTask(res.data);
-        console.log(res.data, "ily");
-      })
-      .catch((err) => {
-        Swal.fire("ishlamadi tupoy");
-      });
-  }
-
+ 
   function commentTaskPost() {
     var formdata = new FormData();
     formdata.append("text", document.querySelector("#chat_text12").value);
@@ -644,20 +748,15 @@ export default function Youtube1() {
     var formdata = new FormData();
 
     formdata.append("mark", page);
-    formdata.append(
-      "image",
-        document.querySelector(".comment_file12").files[0]
-    );
-    formdata.append("content", ":");
-    formdata.append(
-      "course_theme", JSON.parse(localStorage.getItem("page_video")).id)
+    formdata.append("image",document.querySelector(".comment_file12").files[0]);
+    formdata.append("content", "ghjkh");
+    formdata.append("course_theme", JSON.parse(localStorage.getItem("page_video")).id)
     formdata.append("feedback", id );
     axios
       .post(`${url}/api/course_theme_task_student`, formdata, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
-        document.querySelector(".m-comment-mark1").style = "display:block";
         document.querySelector(".m-comment-mark").style = "display:none";
         document.querySelector(".mark-uchun-koish-joy").style = "display:none";
         axios
@@ -686,42 +785,31 @@ export default function Youtube1() {
   function aftermarkopen2(id) {
     var formdata = new FormData();
 
-    formdata.append("mark", page1);
-    formdata.append(
-      "image",
-      document.querySelector(".comment_file12").files[0]
-    );
+    formdata.append("mark", page);
+    formdata.append("image",document.querySelector(".comment_file12").files[0]);
     formdata.append("content", ":");
-    formdata.append(
-      "course_theme",
-      JSON.parse(localStorage.getItem("page_video")).id
-    );
-    formdata.append("feedback", JSON.parse(localStorage.getItem("page_video")).name);
-    if (page === 1) {
-      Swal.fire("Вы не выбрали оценку");
-    } else {
-      axios
-        .put(`${url}/api/course_theme_task_student/${id}`, formdata, {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        })
-        .then((res) => {
-          document.querySelector(".mark-uchun-koish-joy1").style =
-            "display:none ";
-          axios
-            .get(`${url}/api/course_theme_task_student`, {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-              },
-            })
-            .then((res) => {
-              setMark(res.data);
-            })
-            .catch((err) => {});
-        })
-        .catch((err) => {
-          Swal.fire("Вы не смогли изменить оценку");
-        });
-    }
+    formdata.append("course_theme", JSON.parse(localStorage.getItem("page_video")).id)
+    formdata.append("feedback", id );
+    axios
+      .put(`${url}/api/course_theme_task_student`, formdata, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        document.querySelector(".mark-uchun-koish-joy1").style = "display:none";
+        axios
+          .get(`${url}/api/course_theme_task_student`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
+          .then((res) => {
+            setMark(res.data);
+          })
+          .catch((err) => {});
+      })
+      .catch((err) => {
+        Swal.fire("Вы не смогли поставить оценку");
+      });
   }
 
 
@@ -747,14 +835,27 @@ export default function Youtube1() {
                   <div className="youtube_kotta_img">
                     <div className="for-otdelni-chunmadim">
                       <div className="img_youtube_kotta">
-                        <iframe
+                        {/* <iframe
                           src={main1.video}
                           title="W3Schools Free Online Web Tutorials"
-                        ></iframe>
+                        ></iframe> */}
+                            <ReactPlayer
+      ref={playerRef}
+      url={main1.video}
+      // width={100}
+      // height={100}
+      controls={true}
+      // playing={true}
+      onReady={handleReady}
+      onProgress={handleProgress}
+      onDuration={handleDuration}
+      className="React_player"
+      // style={{display:"flex"he}}
+    />
                       </div>
                       <div className="theme_df">
                         <div className="flex_logig">
-                          <h1 className="raspberry_pi">{main1.name}</h1>
+                          <h1 className="raspberry_pi">{main1.name} Ффффффффффф</h1>
                           <div className="odtel_media_uchun">
                             <h1>{main1.name}</h1>
                           </div>
@@ -837,7 +938,7 @@ export default function Youtube1() {
                                 <span className="span_comment1202">
                                   Комментария*
                                 </span>
-                                <p
+                                <p 
                                   onClick={() => {
                                     openViewall();
                                   }}
@@ -861,27 +962,19 @@ export default function Youtube1() {
                                           <>
                                             <div className="m_comment">
                                               <div className="for-flex-time-name-image">
-                                                <div className="m_comment_img">
-                                                  <img
-                                                    src={
-                                                      item.oneuser ? (
-                                                        item.oneuser.image.includes(
-                                                          "http"
-                                                        ) ? (
-                                                          item.oneuser.image
-                                                        ) : (
-                                                          `${url}/${item.oneuser.image}`
-                                                        )
-                                                      ) : (
-                                                        <img
-                                                          src={anonim}
-                                                          alt=""
-                                                        />
-                                                      )
-                                                    }
-                                                    alt=""
-                                                  />
-                                                </div>
+                                              <div className="m_comment_img">
+  <img
+    src={
+      item.oneuser && item.oneuser.image && item.oneuser.image.includes("http")
+        ? item.oneuser.image
+        : item.oneuser && item.oneuser.image
+        ? `${url}/${item.oneuser.image}`
+        : <img src={anonim} alt="" />
+    }
+    alt=""
+  />
+</div>
+
                                                 <div className="user-name-timecreate">
                                                   <h5>
                                                     {item.oneuser
@@ -898,68 +991,64 @@ export default function Youtube1() {
                                               </div>
 
                                               <div className="m_comment_text">
-                                                {item.image ? (
-                                                  ""
-                                                ) : (
-                                                  <img
-                                                    src={
-                                                      item.image.includes(
-                                                        "http"
-                                                      )
-                                                        ? item.image
-                                                        : `${url}/${item.image}`
-                                                    }
-                                                    alt=""
-                                                  />
-                                                )}
-                                                <p className="m_comment_text1505">
-                                                  {item.text}
-                                                </p>
-                                                <div className="m_comment_otvet">
-                                                  <p
-                                                    style={{ display: "flex" }}
-                                                    className="m_otvet_comment"
-                                                    onClick={() => {
-                                                      openModalOtvet11(item.id);
-                                                    }}
-                                                  >
-                                                    <FiCornerUpLeft />
-                                                    <span>
-                                                      {item.count === 0 ? (
-                                                        "Ответить"
-                                                      ) : (
-                                                        <>
-                                                          {item.count}
-                                                          <span> Ответов</span>
-                                                        </>
-                                                      )}
-                                                    </span>
-                                                  </p>
+  {item.image ? (
+    ""
+  ) : (
+    <img
+      src={
+        item.image && item.image.includes("http")
+          ? item.image
+          : `${url}/${item.image}`
+      }
+      alt=""
+    />
+  )}
+  <p className="m_comment_text1505">
+    {item.text}
+  </p>
+  <div className="m_comment_otvet">
+    <p
+      style={{ display: "flex" }}
+      className="m_otvet_comment"
+      onClick={() => {
+        openModalOtvet11(item.id);
+      }}
+    >
+      <FiCornerUpLeft />
+      <span>
+        {item.count === 0 ? (
+          "Ответить"
+        ) : (
+          <>
+            {item.count}
+            <span> Ответов</span>
+          </>
+        )}
+      </span>
+    </p>
 
-                                                  {oneuser.map((item5) => {
-                                                    return (
-                                                      <>
-                                                        {item5.id ==
-                                                        item.user_id ? (
-                                                          <p
-                                                            className="m_comment_delete"
-                                                            onClick={() => {
-                                                              deleteComment(
-                                                                item.id
-                                                              );
-                                                            }}
-                                                          >
-                                                            <AiOutlineDelete />
-                                                            удалить
-                                                          </p>
-                                                        ) : (
-                                                          ""
-                                                        )}
-                                                      </>
-                                                    );
-                                                  })}
-                                                </div>
-                                              </div>
+    {oneuser.map((item5) => {
+      return (
+        <>
+          {item5.id == item.user_id ? (
+            <p
+              className="m_comment_delete"
+              onClick={() => {
+                deleteComment(item.id);
+              }}
+            >
+              <AiOutlineDelete />
+              удалить
+            </p>
+          ) : (
+            ""
+          )}
+        </>
+      );
+    })}
+  </div>
+</div>
+
                                             </div>
                                           </>
                                         );
@@ -1023,86 +1112,69 @@ export default function Youtube1() {
                                           <>
                                             <div className="df_div_comment_page">
                                               <div className="m_comment">
-                                                <div className="for-flex-time-name-image">
-                                                  <div className="m_comment_img">
-                                                    <img
-                                                      src={
-                                                        item.oneuser ? (
-                                                          item.oneuser.image.includes(
-                                                            "http"
-                                                          ) ? (
-                                                            item.oneuser.image
-                                                          ) : (
-                                                            `${url}/${item.oneuser.image}`
-                                                          )
-                                                        ) : (
-                                                          <img
-                                                            src={anonim}
-                                                            alt=""
-                                                          />
-                                                        )
-                                                      }
-                                                      alt=""
-                                                    />
-                                                  </div>
-                                                  <div className="user-name-timecreate">
-                                                    <h5>
-                                                      {item.oneuser
-                                                        ? item.oneuser.username
-                                                        : "Anonim User"}
-                                                    </h5>
-                                                    <p>
-                                                      {item.time_create.slice(
-                                                        0,
-                                                        10
-                                                      )}
-                                                    </p>
-                                                  </div>
-                                                </div>
+                                              <div className="for-flex-time-name-image">
+  <div className="m_comment_img">
+    <img
+      src={
+        item.oneuser && item.oneuser.image && item.oneuser.image.includes("http")
+          ? item.oneuser.image
+          : item.oneuser && item.oneuser.image
+          ? `${url}/${item.oneuser.image}`
+          : anonim
+      }
+      alt=""
+    />
+  </div>
+  <div className="user-name-timecreate">
+    <h5>
+      {item.oneuser ? item.oneuser.username : "Anonim User"}
+    </h5>
+    <p>
+      {item.time_create.slice(0, 10)}
+    </p>
+  </div>
+</div>
 
-                                                <div className="m_comment_text">
-                                                  {item.image ? (
-                                                    ""
-                                                  ) : (
-                                                    <img
-                                                      src={
-                                                        item.image.includes(
-                                                          "http"
-                                                        )
-                                                          ? item.image
-                                                          : `${url}/${item.image}`
-                                                      }
-                                                      alt=""
-                                                    />
-                                                  )}
-                                                  <p className="m_comment_text1505">
-                                                    {item.text}
-                                                  </p>
-                          <div className="m_comment_otvet">
-                            {oneuser.map((item5) => {
-                              return (
-                                <>
-                                  {item5.id ==
-                                  item.user_id ? (
-                                    <p
-                                      className="m_comment_delete"
-                                      onClick={() => {
-                                        deleteComment(
-                                          item.id
-                                        );
-                                      }}
-                                    >
-                                      <AiOutlineDelete />
-                                      удалить
-                                    </p>
-                                  ) : (
-                                    ""
-                                  )}
-                                </>
-                              );
-                            })}
-                          </div>
-                        </div>
+
+<div className="m_comment_text">
+  {item.image ? (
+    ""
+  ) : (
+    <img
+      src={
+        item.image && item.image.includes("http")
+          ? item.image
+          : `${url}/${item.image}`
+      }
+      alt=""
+    />
+  )}
+  <p className="m_comment_text1505">
+    {item.text}
+  </p>
+  <div className="m_comment_otvet">
+    {oneuser.map((item5) => {
+      return (
+        <>
+          {item5.id == item.user_id ? (
+            <p
+              className="m_comment_delete"
+              onClick={() => {
+                deleteComment(item.id);
+              }}
+            >
+              <AiOutlineDelete />
+              удалить
+            </p>
+          ) : (
+            ""
+          )}
+        </>
+      );
+    })}
+  </div>
+</div>
+
                       </div>
                     </div>
                                           </>
@@ -1171,27 +1243,21 @@ export default function Youtube1() {
                                           <div className="flex_view_all">
                                             <div className="m_comment">
                                               <div className="for-flex-time-name-image">
-                                                <div className="m_comment_img">
-                                                  <img
-                                                    src={
-                                                      item.oneuser ? (
-                                                        item.oneuser.image.includes(
-                                                          "http"
-                                                        ) ? (
-                                                          item.oneuser.image
-                                                        ) : (
-                                                          `${url}/${item.oneuser.image}`
-                                                        )
-                                                      ) : (
-                                                        <img
-                                                          src={anonim}
-                                                          alt=""
-                                                        />
-                                                      )
-                                                    }
-                                                    alt=""
-                                                  />
-                                                </div>
+                                              <div className="m_comment_img">
+  {item.oneuser && item.oneuser.image ? (
+    <img
+      src={
+        item.oneuser.image.includes("http")
+          ? item.oneuser.image
+          : `${url}/${item.oneuser.image}`
+      }
+      alt=""
+    />
+  ) : (
+    <img src={anonim} alt="" />
+  )}
+</div>
+
                                                 <div className="user-name-timecreate">
                                                   <h5>
                                                     {item.oneuser
@@ -1208,64 +1274,61 @@ export default function Youtube1() {
                                               </div>
 
                                               <div className="m_comment_text">
-                                                {item.image ? (
-                                                  ""
-                                                ) : (
-                                                  <img
-                                                    src={
-                                                      item.image.includes(
-                                                        "http"
-                                                      )
-                                                        ? item.image
-                                                        : `${url}/${item.image}`
-                                                    }
-                                                    alt=""
-                                                  />
-                                                )}
-                                                <p className="m_comment_text1505">
-                                                  {item.text}
-                                                </p>
-                                                <div className="m_comment_otvet">
-                                                  <p
-                                                    style={{ display: "flex" }}
-                                                    className="m_otvet_comment"
-                                                    onClick={() => {
-                                                      openModalOtvet11(item.id);
-                                                    }}
-                                                  >
-                                                    <FiCornerUpLeft />
-                                                      {item.count === 0
-                                                        ? "Ответить"
-                                                        : (<>${item.count} <span>
-                                                         Ответов 
-                                                         </span></>  )}
-                                                    
-                                                  </p>
+  {item.image ? (
+    ""
+  ) : (
+    <img
+      src={
+        item.image && item.image.includes("http")
+          ? item.image
+          : `${url}/${item.image}`
+      }
+      alt=""
+    />
+  )}
+  <p className="m_comment_text1505">
+    {item.text}
+  </p>
+  <div className="m_comment_otvet">
+    <p
+      style={{ display: "flex" }}
+      className="m_otvet_comment"
+      onClick={() => {
+        openModalOtvet11(item.id);
+      }}
+    >
+      <FiCornerUpLeft />
+      {item.count === 0 ? (
+        "Ответить"
+      ) : (
+        <>
+          {item.count} <span>Ответов</span>
+        </>
+      )}
+    </p>
 
-                                                  {oneuser.map((item5) => {
-                                                    return (
-                                                      <>
-                                                        {item5.id ==
-                                                        item.user_id ? (
-                                                          <p
-                                                            className="m_comment_delete"
-                                                            onClick={() => {
-                                                              deleteComment(
-                                                                item.id
-                                                              );
-                                                            }}
-                                                          >
-                                                            <AiOutlineDelete />
-                                                            удалить
-                                                          </p>
-                                                        ) : (
-                                                          ""
-                                                        )}
-                                                      </>
-                                                    );
-                                                  })}
-                                                </div>
-                                              </div>
+    {oneuser.map((item5) => {
+      return (
+        <>
+          {item5.id == item.user_id ? (
+            <p
+              className="m_comment_delete"
+              onClick={() => {
+                deleteComment(item.id);
+              }}
+            >
+              <AiOutlineDelete />
+              удалить
+            </p>
+          ) : (
+            ""
+          )}
+        </>
+      );
+    })}
+  </div>
+</div>
+
                                             </div>
                                           </div>
                                         </>
@@ -1314,27 +1377,19 @@ export default function Youtube1() {
                                         return (
                                           <>
                                             <div className="df_div_comment_page">
-                                              <div className="div_img_class_over">
-                                                <img
-                                                  src={
-                                                    item.oneuser ? (
-                                                      item.oneuser.image.includes(
-                                                        "http"
-                                                      ) ? (
-                                                        item.oneuser.image
-                                                      ) : (
-                                                        `${url}/${item.oneuser.image}`
-                                                      )
-                                                    ) : (
-                                                      <img
-                                                        src={img_comment1}
-                                                        alt=""
-                                                      />
-                                                    )
-                                                  }
-                                                  alt=""
-                                                />
-                                              </div>
+                                            <div className="div_img_class_over">
+  <img
+    src={
+      item.oneuser && item.oneuser.image && item.oneuser.image.includes("http")
+        ? item.oneuser.image
+        : item.oneuser && item.oneuser.image
+        ? `${url}/${item.oneuser.image}`
+        : img_comment1
+    }
+    alt=""
+  />
+</div>
+
 
                                               <div className="div_class_tugadi">
                                                 <div className="task-uchun-joy-and-mark">
@@ -1344,9 +1399,12 @@ export default function Youtube1() {
                                                     : "Anonim User"}
                                                 </h5>
                                                   {mark.map(item1505 => {
-                                                  if (item.id == item1505.feedback) {
+                                                  if (item.id === item1505.feedback) {
                                                     return(<>
-                                                      <p>{item1505.mark === 2 ? (<><div className="mark-two-bosa">
+                                                      <p  onClick={() => {
+                                                            markOpen2(item.id);
+                                                            setPage1(1);
+                                                          }} style={{cursor:"pointer"}}>{item1505.mark === 2 ? (<><div className="mark-two-bosa">
                                                        2</div></>):(<>{item1505.mark === 3 ? (<><div className="mark-three-bosa">
                                                         3 </div></>):(
                                                        <>{item1505.mark === 4 ? (<><div className="mark-four-bosa">
@@ -1374,18 +1432,17 @@ export default function Youtube1() {
                                                   )}
                                                 </p>
 
-                                                {task.map((item) => {
-                                                  <img
-                                                    src={
-                                                      item.image.includes(
-                                                        "http"
-                                                      )
-                                                        ? item.image
-                                                        : `${url}/${item.image}`
-                                                    }
-                                                    alt=""
-                                                  />;
-                                                })}
+                                                {task.map((item) => (
+  <img
+    src={
+      item.image && item.image.includes("http")
+        ? item.image
+        : `${url}/${item.image}`
+    }
+    alt=""
+  />
+))}
+
                                                 <p className="m_comment_text1505">
                                                   {item.text}
                                                 </p>
@@ -1409,30 +1466,13 @@ export default function Youtube1() {
                                                         <p
                                                           className="m-comment-mark"
                                                           onClick={() => {
-                                                            markOpen(key);
+                                                            markOpen();
                                                             setPage(1);
                                                           }}
                                                         >
                                                           <TfiMarkerAlt />
                                                           <span>
                                                             поставить оценку
-                                                          </span>
-                                                        </p>
-                                                        {localStorage.getItem(
-                                                          "position"
-                                                        ) === 2
-                                                          ? ""
-                                                          : ""}
-                                                        <p
-                                                          className="m-comment-mark1"
-                                                          onClick={() => {
-                                                            markOpen2(item.id);
-                                                            setPage1(1);
-                                                          }}
-                                                        >
-                                                          <TfiMarkerAlt />
-                                                          <span>
-                                                            измеить оценку
                                                           </span>
                                                         </p>
                                                         {item5.id ==
@@ -1662,10 +1702,23 @@ export default function Youtube1() {
                 ) : (
                   <div className="youtube_kotta_img">
                     <div className="img_youtube_kotta">
-                      <iframe
+                      {/* <iframe
                         src={main.video}
                         title="W3Schools Free Online Web Tutorials"
-                      ></iframe>
+                      ></iframe> */}
+                          <ReactPlayer
+      ref={playerRef}
+      url={main.video}
+      // width={100}
+      // height={100}
+      controls={true}
+      playing={true}
+      onReady={handleReady}
+      onProgress={handleProgress}
+      onDuration={handleDuration}
+      className="React_player"
+      // style={{display:"flex"he}}
+    />
                     </div>
                     <div className="theme_df">
                       <div className="flex_logig">
@@ -1707,16 +1760,25 @@ export default function Youtube1() {
                     <img src={err} alt="" />
                     <h3>Something happened to the server, we are already fixing it.</h3>
                     <h3>You can try better</h3>
+                    <br />
+                    {(JSON.parse(localStorage.getItem('page_user')))[0].position==2?(
+                      <Create_Theme_Category_mentor id1={localStorage.getItem("abbas")} />
+                    ):(<></>)}
+                    <br/>
+                 <br />
                     <button onClick={() => ModalCatchBolsa()}>
                       Come back
                     </button>
                   </div>
                 </div>
-
+                {(JSON.parse(localStorage.getItem('page_user')))[0].position==2?(
+                      <Create_Theme_Category_mentor id1={localStorage.getItem("abbas")} />
+                    ):(<></>)}
                 <div className="youtube_kichkina">
                   {category.map((item, key) => {
                     return (
                       <>
+                      
                         <Accordion className="for-scroll-accordion">
                           <Accordion.Item eventKey={0 + key}>
                             <Accordion.Header>{item.name}</Accordion.Header>
@@ -1737,7 +1799,11 @@ export default function Youtube1() {
                                         {item2.image === null ? (
                                           <img src={novideo} alt="" />
                                         ) : (
-                                          <img src={item2.image} alt="" />
+                                          <img   src={
+                                            item.image && item.image.includes("http")
+                                              ? item.image
+                                              : `${url}/${item.image}`
+                                          }alt="" />
                                         )}
                                       </div>
                                       <div className="accordion_text">

@@ -23,9 +23,7 @@
     padding-top: 20px;
     padding-left: 5%;
 }
-.yubor22{
-    display: none;
-}
+
 .sms {
     width: 93%;
     min-height: 50px;
@@ -76,12 +74,15 @@
     border-radius: 50%;
     padding-top: -10px;
 }
+.qongiro_title1{
+    margin-top: 10%;
+}
 @media (max-width:913px) {
     .wiew_div{
         width: 90%;
     }
 }
-.qongiro_title{
+.qongiro_title1{
     font-size: 28px;
     font-weight: 700;
     margin-top: 50px;
@@ -89,7 +90,7 @@
     color: rgba(137, 134, 134, 0.74);
 }
 .icon{
-    width: 38%;
+    width: 100%;
     
     
 }

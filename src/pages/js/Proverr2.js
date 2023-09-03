@@ -28,11 +28,7 @@ function onga() {
     document.querySelector(".mni-gridf1").classList.toggle("mni-gridf5-none")
     document.querySelector(".mni-gridf2").classList.toggle("mni-gridf6-none")
 }
-function button() {
-    document.querySelector(".aaa").classList.toggle("bbb")
-    document.querySelector(".aa").classList.toggle("bb")
-    document.querySelector(".potpis").classList.toggle("potpis1")
-}
+
 function menuobmen() {
     var y = document.querySelector(".obmen-kategory-re").style.display;
     if (y == "none") {
@@ -80,16 +76,37 @@ export default function Proverr2() {
     const [loading, setloading] = useState()
     const [kurshaqida, setKurs] = useState({})
     const [hamma,setHamma] = useState([])
+    const [following, setFollowing] = useState(localStorage.getItem("OneuserId"))
+    const [bosildi,setbosildi] = useState ([])
 
     function okurse(id) {
         setToggle(id)
 
     }
-
+    function button(id) {
+        var formdata = new FormData()
+        formdata.append("topuser", id)
+        formdata.append("minuser", following)
+    
+        axios.post(`${url}/api/follow/`, formdata, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+        window.location.reload()
+         
+    
+        }).catch(err => {
+          alert("ishlxadatoi")
+        })
+        document.querySelector(".aaa").classList.toggle("bbb")
+        document.querySelector(".aa").classList.toggle("bb")
+        document.querySelector(".potpis").classList.toggle("potpis1")
+    }
 
 
     useEffect(() => {
-
+        axios.get(`${url}/api/follow/`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+            setbosildi(res.data)
+            }).catch(err => {
+              alert("ishlxadatoi")
+            })
         // axios.get(`${url}/api/course_data_category/course/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{ 
         //     setKurs(res.data.one ,"salommmmm")
         //     console.log(res.data.one)
@@ -161,6 +178,7 @@ export default function Proverr2() {
         document.querySelector('.buy_course_prover').style = "display: none !important;"
     }
     function Buycourse() {
+        document.querySelector('.buy_course_prover').style = "display: none !important;"
         axios.post(`${url}/api/course/${localStorage.getItem("courseid")}/register/${oneuser[0].id}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
             coursData(res.data)
             console.log(res.data)
@@ -234,7 +252,7 @@ export default function Proverr2() {
                                         <p className='prover2-p-df'>Программирование</p>
                                         {dusha.map(item1 => {
                                             return (
-                                                <div className="prover2-info-block1">
+                                                <div onClick={() => { window.location = "/proverr2"; localStorage.setItem("courseid", item1.id) }} className="prover2-info-block1">
                                                     <div className="prover2-info-block1-img">
                                                         {item1.image === null ? (
                                                             <img src={img_for_null1} alt="" />
@@ -276,7 +294,7 @@ export default function Proverr2() {
                                                 <label for="star5" title="text"></label>
                                                 <input type="radio" id="star4" name="rate" value="4" />
                                                 <label for="star4" title="text"></label>
-                                                <input checked="" type="radio" id="star3" name="rate" value="3" />
+                                                <input type="radio" id="star3" name="rate" value="3" />
                                                 <label for="star3" title="text"></label>
                                                 <input type="radio" id="star2" name="rate" value="2" />
                                                 <label for="star2" title="text"></label>
@@ -286,19 +304,27 @@ export default function Proverr2() {
                                             <div className="prover2-orta-joy-reytin">
                                                 <p>4.1</p><span>(524)</span>
                                             </div>
-
                                         </div>
                                         <div className="prover2-profil-patpis">
-                                            <div className="prover2-profil-img">
-                                                <img src={profil} alt="" />
-                                            </div>
+                                        {hamma.map(item1=>{
+                                                   if (item.author==item1.id) {
+                                                     return<div className="prover2-profil-img">
+                                                     <img src={item1.image} alt="" />
+                                                 </div>
+                                                    }
+                                                })}
+                                            
                                             <div className="prover2-profil-text-info">
                                                 {hamma.map(item1=>{
                                                    if (item.author==item1.id) {
                                                      return<p>{item1.username}</p>
                                                     }
                                                 })}
-                                                 <button onClick={() => button()} className="potpis"><p className="aa">Подписаться</p><p className="aaa">Отменить подписку</p></button>
+                                                {bosildi.map(item=>{
+                                                    <button onClick={() => button(item.id)} className="potpis"><p className="aa">Подписаться</p><p className="aaa">Отменить подписку</p></button>
+                                                })}
+
+                                                 
                                             </div>
                                             {/* <div className="obmen-kategory-re">
                         <h5>URL-адрес курса:</h5>
@@ -448,15 +474,14 @@ export default function Proverr2() {
                                         <div className="prover2-oxiri-block-in">
                                             <div className="mni-dasturlash-bloc"><p>{item.name}</p></div>
                                             <div className="mni-kurs-narxi">
-                                                <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
+                                                <div className="mni-kurs-block1"><h5>Course fee</h5>
                                                     <p>{item.price} <span>$</span></p></div>
                                                 <div className="mni-kurs-block2"></div>
-
-                                                <div className="mni-kurs-block1"><h5>Kurs hajmi</h5>
-                                                    <p>{item.planned_time} час</p></div>
+                                                <div className="mni-kurs-block1"><h5>course duration</h5>
+                                                    <p>{item.planned_time} hour</p></div>
                                                 <div className="mni-kurs-block2"></div>
                                             </div>
-                                            <p className="spdfodsofdsf">Разделы курса:</p>
+                                            <p className="spdfodsofdsf">Course sections:</p>
                                             {/* <div className="mni-blocc-linee"></div> */}
 
                                             {/* <div className="prover2-oxiri-total-kurss"onMouseLeave={()=>aboutClose123122()}  >
