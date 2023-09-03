@@ -348,9 +348,9 @@ export default function Profil() {
 
 
               <div className="profil_blok_ikki_icon_taxriirlash_chat">
-                {natlifikation.map(item => {
+                {natlifikation.map((item,key) => {
                   if (item.to_user_id == localStorage.getItem("OneuserId")) {
-                  return (
+                    return (
                     <>
                        {/* <p>Today</p> */}
                       <div className="taxrirlash_chad"> 
@@ -374,7 +374,8 @@ export default function Profil() {
                       <p>{item.time_create.slice(0,10)}</p>
                     </>
 
-                  )}
+                  )
+                }
                 })}
 
 

@@ -405,9 +405,15 @@ body {
 
 .prover2-orta-joy .saas {
     width: 800px !important;
-    height: 320px !important;
+    height: 400px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
-
+.saasimg{
+    width: 100%;
+}
 .prover2-orta-joy-text h5 {
     font-family: SF Pro Display;
     font-size: 22px;
@@ -419,6 +425,7 @@ body {
 
 .prover2-orta-joy-text {
     display: flex;
+    margin-top: 10px;
 }
 
 

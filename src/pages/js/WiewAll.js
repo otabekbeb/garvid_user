@@ -8,11 +8,23 @@ import Profil from './Profil'
 import Futer from '../js/Footer1'
 function WiewAll() {
     const [Wiew, setWiew] = useState([])
+    const [Oneuser, setOneuser] = useState()
     useEffect(() => {
-        axios.get(`${url}/api/notification`,{ headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
+        axios.get(`${url}/api/notification`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
             setWiew(res.data)
+            console.log(res.data, "slom");
         })
     })
+    function atvet(id) {
+        var formdata = new FormData()
+        formdata.append("title", document.querySelector("#atvetu").value)
+        formdata.append("description", document.querySelector("#atvetu1").value)
+        formdata.append("user_id", localStorage.getItem("OneuserId"))
+        formdata.append("to_user_id", id)
+        axios.post(`${url}/api/notification`,formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+            alert("ishladi ")
+        })
+    }
     return (
         <div>
             <Usernavbar />
@@ -25,25 +37,33 @@ function WiewAll() {
                 </div>
                 <p className='qongiro_title'>You don't have any notifications yet!</p> */}
                 <div className="wiew_sms_big">
+
                     {Wiew.map(item => {
-                        return (
-                            <div className="sms">
-                                <div className="qizil"></div>
-                                <div className="data_title">
-                                    <p className='unred'>{item.title}</p>
-                                    <p className='data'>{item.time_create.slice(11,16)}</p>
+                        if (item.to_user_id == localStorage.getItem("OneuserId")) {
+                            return (
+                                <div style={{ cursor: "pointer" }} className="sms">
+                                    <div className="qizil"></div>
+                                    <button onClick={() => atvet(item.user_id)}>a</button>
+                                    <div className="data_title">
+                                        <input type="text" id='atvetu' />
+                                        <input type="text" id='atvetu1' />
+                                        <p className='unred'>{item.title}</p>
+                                        <p className='data'>{item.time_create.slice(11, 16)}</p>
+                                    </div>
+                                    <div className="p_lorem_sms">
+                                        <p className='lorem_sms'>{item.description} </p>
+                                        <input style={{display:"none"}} type="text" id='atvet' />
+                                    </div>
                                 </div>
-                                <div className="p_lorem_sms">
-                                    <p className='lorem_sms'>{item.description} </p>
-                                </div>
-                            </div>
-                        )
+                            )
+                        }
+
                     })}
 
 
                 </div>
             </div>
-            <Futer/>
+            <Futer />
         </div>
     )
 }

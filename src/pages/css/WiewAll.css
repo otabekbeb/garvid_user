@@ -23,7 +23,9 @@
     padding-top: 20px;
     padding-left: 5%;
 }
-
+.yubor22{
+    display: none;
+}
 .sms {
     width: 93%;
     min-height: 50px;
@@ -87,7 +89,7 @@
     color: rgba(137, 134, 134, 0.74);
 }
 .icon{
-    width: 100%;
+    width: 38%;
     
     
 }
