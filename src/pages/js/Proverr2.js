@@ -79,6 +79,7 @@ export default function Proverr2() {
     const [oneuser, oneData] = useState([]);
     const [loading, setloading] = useState()
     const [kurshaqida, setKurs] = useState({})
+    const [hamma,setHamma] = useState([])
 
     function okurse(id) {
         setToggle(id)
@@ -96,6 +97,13 @@ export default function Proverr2() {
         // }).catch(err=>{
         //     Swal.fire("The balance is insufficient or the server has an error1")
         // })
+        axios.get(`${url}/auth/allusers`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+            setHamma(res.data)
+        }).catch(err => {
+            
+        })
+
+
 
         axios.get(`${url}/api/cours_types`).then(res => {
             setData(res.data)
@@ -258,8 +266,9 @@ export default function Proverr2() {
                             if (item.id == localStorage.getItem("courseid")) {
                                 return (
                                     <div className="prover2-orta-joy">
-                                        <img className="saas" src={item.image} alt="" />
-
+                                        <div className="saas">
+                                        <img className="saasimg" src={item.image} alt="" />
+</div>
                                         <div className="prover2-orta-joy-text">
                                             <h5>{item.name}</h5>
                                             <div className="rating">
@@ -273,8 +282,6 @@ export default function Proverr2() {
                                                 <label for="star2" title="text"></label>
                                                 <input type="radio" id="star1" name="rate" value="1" />
                                                 <label for="star1" title="text"></label>
-
-
                                             </div>
                                             <div className="prover2-orta-joy-reytin">
                                                 <p>4.1</p><span>(524)</span>
@@ -286,7 +293,12 @@ export default function Proverr2() {
                                                 <img src={profil} alt="" />
                                             </div>
                                             <div className="prover2-profil-text-info">
-                                                <p>ODIL</p> <button onClick={() => button()} className="potpis"><p className="aa">Подписаться</p><p className="aaa">Отменить подписку</p></button>
+                                                {hamma.map(item1=>{
+                                                   if (item.author==item1.id) {
+                                                     return<p>{item1.username}</p>
+                                                    }
+                                                })}
+                                                 <button onClick={() => button()} className="potpis"><p className="aa">Подписаться</p><p className="aaa">Отменить подписку</p></button>
                                             </div>
                                             {/* <div className="obmen-kategory-re">
                         <h5>URL-адрес курса:</h5>
