@@ -204,12 +204,12 @@ export default function Profil() {
   //     Swal.fire("ishlamadi")
   //   })
   // }
-function soyaa(id) {
-  var formdata = new FormData()
-  formdata.append("read", true)
-  axios.get(`${URL}/api/notification/read/${id}` ,formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-})
-}
+  function soyaa(id) {
+    var formdata = new FormData()
+    formdata.append("read", true)
+    axios.get(`${URL}/api/notification/read/${id}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    })
+  }
   function openNotification() {
     document.querySelector(".yon_notification_all").style = "right:0%;";
   }
@@ -316,7 +316,7 @@ function soyaa(id) {
             {/* <div  className="soon" style={{width:"25px", marginTop:'-5%',height:'25px',textAlign:'center',borderRadius:'50%',background:'red',color:'#fff'}}>
                 {localStorage.getItem('soya')}
             </div> */}
-            <div 
+            <div
               onMouseLeave={() => taxrirlashClose()}
               className="profil_blok_ikki_icon"
             >
@@ -324,9 +324,9 @@ function soyaa(id) {
                 onClick={() => taxrirlashChadModal()}
                 className="profil_blok_ikki_icon_bir"
               />
-              
-              <div className="nol" style={{background:"red",width:"20px",height:"20px",borderRadius:'50%',color:'#fff',textAlign:"center",marginTop:'-7px',marginLeft:'-25px'}}> 
-              {localStorage.getItem("soya")}
+
+              <div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
+                {localStorage.getItem("soya")}
               </div>
               <BsThreeDots
                 onClick={() => taxrirlashModal()}
@@ -360,42 +360,43 @@ function soyaa(id) {
 
 
               <div className="profil_blok_ikki_icon_taxriirlash_chat">
+                {natlifikation.length === 0 ? (<h4 style={{textAlign:"center"}}>Вам не писали</h4>) : (<>
+                  {natlifikation.map((item, key) => {
+
+                    if (item.to_user_id == localStorage.getItem("OneuserId")) {
+                      localStorage.setItem("soya", natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length)
+                      return (
+                        <>
+                          <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p>
+                          <div className="taxrirlash_chad">
+                            <div className="taxrirlash_chad_img_size">
+                              <img src={chadimg} alt="" />
+
+                            </div>
+                            <div className="taxrirlash_chad_size">
+                              <div className="taxrirlash_chad_vaqt">
+                                <h1>{item.title}</h1>
+                                <div className="taxrirlash_chad_vaqt_soat">
+                                  <TbPointFilled className="chad_set" />
+                                  <p >{item.time_create.slice(11, 16)}</p>
+                                </div>
 
 
-                {natlifikation.map((item, key) => {
-
-                  if (item.to_user_id == localStorage.getItem("OneuserId") ) {
-                    localStorage.setItem("soya", natlifikation.filter(filter=>filter.to_user_id == localStorage.getItem("OneuserId")).length )
-                    return (
-                      <>
-                        <p style={{marginLeft:'70%'}} onClick={()=>soyaa(item.id)}>прочитал</p>
-                        <div className="taxrirlash_chad">
-                          <div className="taxrirlash_chad_img_size">
-                            <img src={chadimg} alt="" />
-
-                          </div>
-                          <div className="taxrirlash_chad_size">
-                            <div className="taxrirlash_chad_vaqt">
-                              <h1>{item.title}</h1>
-                              <div className="taxrirlash_chad_vaqt_soat">
-                                <TbPointFilled className="chad_set" />
-                                <p >{item.time_create.slice(11, 16)}</p>
                               </div>
-
-
-                            </div>
-                            <div className="taxrirlash_chad_text">
-                              <p>{item.description}</p>
+                              <div className="taxrirlash_chad_text">
+                                <p>{item.description}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
 
-                        <p >{item.time_create.slice(0, 10)}</p>
-                      </>
+                          <p >{item.time_create.slice(0, 10)}</p>
+                        </>
 
-                    )
-                  }
-                })}
+                      )
+                    }
+                  })}</>
+
+                )}
 
 
                 <a href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
