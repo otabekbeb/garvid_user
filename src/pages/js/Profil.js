@@ -364,8 +364,8 @@ function soyaa(id) {
 
                 {natlifikation.map((item, key) => {
 
-                  if (item.to_user_id == localStorage.getItem("OneuserId") && item.read==false) {
-                    localStorage.setItem("soya", natlifikation.filter(filter=>filter.to_user_id == localStorage.getItem("OneuserId")).length && item.read==false)
+                  if (item.to_user_id == localStorage.getItem("OneuserId") ) {
+                    localStorage.setItem("soya", natlifikation.filter(filter=>filter.to_user_id == localStorage.getItem("OneuserId")).length )
                     return (
                       <>
                         <p style={{marginLeft:'70%'}} onClick={()=>soyaa(item.id)}>прочитал</p>
