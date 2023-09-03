@@ -379,7 +379,7 @@ iframe {
 }
 
 .contact_right input {
-  width: 100%;
+
   outline: none;
   border: 0;
   height: 40px;
@@ -415,12 +415,12 @@ iframe {
     width: 80%;
   }
 }
-@media (max-width:415px) {
+/* @media (max-width:415px) {
   .contact_right input {
     width: 100% !important;
   }
 
-}
+} */
 @media (max-width:515px) {
   .contact_right {
     width: 95%;
