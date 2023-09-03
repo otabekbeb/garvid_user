@@ -105,7 +105,7 @@ export default function App() {
         })();
         axios.get(`${url}/super/pay`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             setPaypal_kluch(res.data)
-        })
+        }).catch(err=>{})
     }, []);
 
     return (

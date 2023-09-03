@@ -64,8 +64,8 @@ export default function Profil() {
           }
         }
         setNatlifikation(res.data)
-      })
-    })
+      }).catch(err=>{})
+    }).catch(err=>{})
 
 
 

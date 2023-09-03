@@ -14,7 +14,7 @@ export default function StripeContainer() {
 	useEffect(() => {
 		axios.get(`${url}/super/pay`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
 			setStrip_Payment(res.data)
-		})
+		}).catch(err=>{})
 	}, [])
 	const PUBLIC_KEY = Strip_Payment.public_key
 
