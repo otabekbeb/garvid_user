@@ -3,7 +3,8 @@ import { useState } from 'react'
 import { Modal,Form,Button, Input, message} from 'antd';
 import axios from 'axios';
 import url from './Host';
-export default function Create_theme_mentor(props) {
+import Create_theme_mentor from './Create_theme_mentor.js'
+export default function Create_Theme_Category_mentor(props) {
 const [id,setId]=useState(props.id1)
 const [isModalOpen, setIsModalOpen] = useState(false);
 const showModal = () => {
@@ -31,6 +32,11 @@ const handleCancel = () => {
  <Button type="primary" onClick={showModal}>
     Create Theme Category
   </Button>
+
+
+  <br/>
+<br/>
+<Create_theme_mentor id1={id} />
   <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
 <Form>
 <Input className='name' placeholder='title' />

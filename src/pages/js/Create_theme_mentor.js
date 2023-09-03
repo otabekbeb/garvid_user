@@ -20,6 +20,8 @@ const handleOk = () => {
   var data=new FormData()
   data.append("name",document.querySelector(".name").value)
   data.append("content",document.querySelector(".content").value)
+  data.append("extra_data",document.querySelector(".extra_data").value)
+  data.append("category",document.querySelector(".category").value)
 if(onimage){
     data.append("image",document.querySelector(".image").files[0])  
 }else{
@@ -30,6 +32,7 @@ if(onvideo){
 }else{
     data.append("video",document.querySelector(".video").value)
 }
+
 axios.post(`${url}/api/course_data_theme`,data,{ headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res=>{
     message.success("create theme")
     setIsModalOpen(false);
@@ -58,9 +61,12 @@ const handleCancel = () => {
   setIsModalOpen(false);
 };
 useEffect(()=>{
-    axios.get(`${url}/api/course_data_category`).then(res=>{
+    axios.get(`${url}/api/course_data_category`,{ headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res=>{
+      console.log(res.data,"asdasabbas");
    var ss=res.data.filter(item=>item.course==id)
         setCategory(ss)
+        console.log(id,"abnbas");
+        
     }).catch(err=>{
 
     })
@@ -77,11 +83,13 @@ useEffect(()=>{
     )}
 
   <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-<Form>
 <Input className='name' placeholder='title' />
 <br />
 <br />
 <Input className='content' placeholder='content' />
+<br />
+<br />
+<Input type="number" className='extra_data' placeholder='extra_data' />
 <br />
 <br />
 <Checkbox onChange={(e)=>{onFile(e)}}>Image File</Checkbox>
@@ -92,14 +100,12 @@ useEffect(()=>{
 <Input className='video' placeholder='video' />
 <br />
 <br />
-<Input className='extra_data' placeholder='extra_data' />
 <select className='category'>
 {category.map(item=>{
     return <option value={item.id}>{item.name}</option>
 })}
 </select>
 
-</Form>
   </Modal>
     
     
