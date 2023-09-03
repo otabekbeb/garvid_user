@@ -220,6 +220,7 @@ export default function Mentor() {
   const [stTasks, setTasks] = useState([])
   const [CourseId, setCourseId] = useState();
   const [deleteId, setDeleteId] = useState()
+  const [courstype, setCoursetype] = useState([]);
   useEffect(() => {
     axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setEdication(res.data)
@@ -737,7 +738,16 @@ export default function Mentor() {
 
   }
 
-
+  function filter(id) {
+    axios
+      .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        const search = res.data.filter((item) => item.course_type === id);
+        setKursdata(search);
+      });
+  }
   function dashedput(id) {
     var formdata = new FormData()
     formdata.append("content", document.querySelector(".inp_name_zadacput").value)
@@ -910,7 +920,7 @@ export default function Mentor() {
                     if (item.to_user_id == localStorage.getItem("OneuserId")) {
                       return (
                         <>
-                          <p>Today</p>
+                          {/* <p>Today</p> */}
                           <div className="taxrirlash_chad">
                             <div className="taxrirlash_chad_img_size">
                               <img src={chadimg} alt="" />
@@ -920,7 +930,7 @@ export default function Mentor() {
                                 <h1>{item.title}</h1>
                                 <div className="taxrirlash_chad_vaqt_soat">
                                   <TbPointFilled className="chad_set" />
-                                  <p>19:22</p>
+                                  <p>{item.time_create.slice(11,16)}</p>
                                 </div>
                               </div>
                               <div className="taxrirlash_chad_text">
@@ -1063,38 +1073,55 @@ export default function Mentor() {
         </div>
 
         <div className={toggle === 1 ? "show-content" : "content"}><div>
-          <div className="Filter">
-            <div className="blur_blok">
-              <div className="inp_blok">
-                <input onChange={searchInput} type="text" placeholder="Search among my courses" />
-                <CiSearch className="search" />
-              </div>
-              <div className="blur">
-                <div className="icon_blok">
-                  <div
-                    className="sel_blok"
-                    onClick={() => {
-                      Filter();
-                    }}
-                  >
-                    <BiMenu className="menyu" />
-                    <h4>Filter</h4>
-                  </div>
-                  {/* <div className="win_men">
+        <div className="Filter">
+              <div className="blur_blok">
+                <div className="inp_blok">
+                  <input
+                    onChange={searchInput}
+                    id="search"
+                    type="text"
+                    placeholder="Search among my courses"
+                  />
+                  <CiSearch className="search" />
+                </div>
+                <div className="blur">
+                  <div className="icon_blok">
+                    <div
+                      className="sel_blok"
+                      onClick={() => {
+                        Filter();
+                      }}
+                    >
+                      <BiMenu className="menyu" />
+                      <h4>Filter</h4>
+                    </div>
+                    {/* <div className="win_men">
                   <MdWindow className="window" onClick={() => windowModal()} />
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
                 </div> */}
-                </div>
-                <div onMouseLeave={() => filter1()} className="filter_button">
-
-                  <div className="button_filter_kurs">
-                    <div className="div_kurs">dawdawdd</div>
                   </div>
-
+                  <div onMouseLeave={() => filter1()} className="filter_button">
+                    {courstype.map((item) => {
+                      return (
+                        <div className="button_filter_kurs">
+                          {item.name === null ? (
+                            ""
+                          ) : (
+                            <div
+                              onClick={() => filter(item.id)}
+                              className="div_kurs"
+                              style={{ paddingBottom: "5px" }}
+                            >
+                              {item.name}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
           <div className="kurs_cards">
             {kursdata.length === 0 ? (
@@ -1264,10 +1291,10 @@ export default function Mentor() {
                 <input type="date" name="" id="" className='inp_tdate_zadacput' />
                 <label htmlFor="">Mark:</label>
                 <input type="text" name="" id="" className='inp_mark_zadacput' />
-                <label htmlFor="">Opisaniye:</label>
+                <label htmlFor="">Feedback:</label>
                 <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadacput'></textarea> <br />
                 <div className="a_button_for_end">
-                  <button onClick={() => dashedput()}>Добавить</button>
+                  <button onClick={() => dashedput()}>Add</button>
                 </div>
               </div>
             </div>
@@ -1277,7 +1304,7 @@ export default function Mentor() {
             <div className="m_zadachi_dobavit">
               <div className="m_clouse_x" onClick={() => clouseModal1()}><GrFormClose /></div>
               <div className="m_input_file_dobavit">
-                <div className="a_input_file12"> Изменить изоброжение </div>
+                <div className="a_input_file12">Change image </div>
                 <input type="file" />
               </div>
               <div className="m_input_bilmafim">
@@ -1285,7 +1312,7 @@ export default function Mentor() {
                   <option value="">Otash bilad</option>
                 </select>
                 <textarea placeholder='Edid description' name="" id="" cols="30" rows="10"></textarea>
-                <div className="a_button_for_end"><button>Изменить</button></div>
+                <div className="a_button_for_end"><button>Change</button></div>
               </div>
             </div>
           </div>
@@ -1293,7 +1320,7 @@ export default function Mentor() {
             <div className="a_delete_bgc">
               <div className="for_center">
                 <img src={Groupimg} alt="" />
-                <h4>Вы правда хотите удалить?</h4>
+                <h4>Do you really want to delete?</h4>
                 <div className="a_delete_button">
                   <button className='a_delete_no' onClick={() => clouseModal2()}>Нет</button>
                   <button onClick={() => deletetask()}

@@ -6,6 +6,7 @@ import url from "./Host";
 import { NavLink } from "react-router-dom";
 import { BsFillPersonFill } from "react-icons/bs"
 import garvrd from '../img/Remove-bg.ai_1691307426758.png'
+import bgremove from '../img/bgremove.png'
 function sa() {
   var o = document.querySelector(".media-ul").style.display;
   if (o == "flex") {
@@ -147,15 +148,16 @@ export default function Navbar() {
 
           <div className="navbar-ul">
             <ul>
+              <img onClick={()=>window.location="/"} style={{width:"100px"}} src="https://poets-erc.org/sites/default/files/2022-11/Howard-University_3.png" alt="" />
               <li className="moto-menu-item">
-                <NavLink to="/" className={({ isActive }) => isActive ? activeLink : normalLink}><a>Home</a></NavLink>
+                <NavLink to="/" className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/"}>Home</a></NavLink>
               </li>
 
 
               <div className="menu" onMouseLeave={() => menuufolse()}>
                 <div className="menuu" onMouseEnter={() => menuul()}>
                   <p>
-                    <NavLink to="/about" className={({ isActive }) => isActive ? activeLink : normalLink}><a>About us</a></NavLink>
+                    <NavLink to="/about" className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/about"}>About us</a></NavLink>
                     <span>
                       <box-icon
                         name="chevron-down"
@@ -165,11 +167,12 @@ export default function Navbar() {
                   </p>
 
                   <ul>
-                    <li onClick={() => window.location = "#"} id="ded">
+                    
+                    <li onClick={() => window.location = "/"} id="ded">
                       <a id="contactcolor" href="/">FAQ </a>
                     </li>
                     <div className="navbbar-line-hr"></div>
-                    <li onClick={() => window.location = "contacts"} id="ded">
+                    <li onClick={() => window.location = "/contacts"} id="ded">
                       <a id="contactcolor" href="/contacts">Contact </a>
                     </li>
                     <div className="navbbar-line-hr"></div>
@@ -199,16 +202,16 @@ export default function Navbar() {
 
               <li className="moto-menu-item">
                 {" "}
-                <NavLink to="/servis" className={({ isActive }) => isActive ? activeLink : normalLink}><a>Services</a>{" "}</NavLink>
+                <NavLink to="/servis"   className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/servis"}>Services</a>{" "}</NavLink>
               </li>
               <li className="moto-menu-item">
-                <NavLink to="/blog" className={({ isActive }) => isActive ? activeLink : normalLink}><a>Blog</a>{" "}</NavLink>
+                <NavLink to="/blog" className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/blog"}>Blog</a>{" "}</NavLink>
               </li>
               <li className="moto-menu-item">
-                <NavLink to="/ourteam" className={({ isActive }) => isActive ? activeLink : normalLink}><a>Our team</a>{" "}</NavLink>
+                <NavLink to="/ourteam" className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/ourteam"}> Our team</a>{" "}</NavLink>
               </li>
               <li className="moto-menu-item">
-                <NavLink to="/contacts" className={({ isActive }) => isActive ? activeLink : normalLink}><a>Contacts</a>{" "}</NavLink>
+                <NavLink to="/contacts" className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/contacts"}>Contacts</a>{" "}</NavLink>
               </li>
 
 
@@ -339,7 +342,8 @@ export default function Navbar() {
                 </div>
               </div>  */}
             <div className="navbar-media-img-joy">
-              <img src={garvrd} alt="" id="avbar-media-img-joyimg" />
+            <img onClick={()=>window.location="/"} style={{width:"100px"}} src="https://poets-erc.org/sites/default/files/2022-11/Howard-University_3.png" alt="" />
+
             </div>
             <div className="navbar-media-katalog-joy" onClick={() => setMobileMenu(!MobileMenu)} >
               {MobileMenu ? <div className="box-icon-togirladim1" onClick={() => yopilqora1()}><box-icon name='x' color='white' ></box-icon></div> : <div className="box-icon-togirladim" onClick={() => ochilnavbar()}><box-icon name='menu-alt-right' color='white' ></box-icon></div>}
@@ -364,10 +368,10 @@ export default function Navbar() {
 
           <div className="navbar-media-left-ul">
             <ul >
-              <div className="navbar-box-icons">  <span><box-icon name='home' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar" onClick={() => window.location = "/"}>Home</li></div>
+              <div className="navbar-box-icons"><span><box-icon name='home' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar" onClick={() => window.location = "/"}>Home</li></div>
               <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946' name='user'></box-icon></span> <li id="surul-navbar" onClick={() => window.location = "/About"}>About us</li>  </div>
               <div className="navbar-box-icons"><span><box-icon name='news' color='#323946' ></box-icon></span> <li id="surul-navbar" onClick={() => window.location = "/News"}>News</li>  </div>
-              <div className="navbar-box-icons">   <span><box-icon name='contact' type='solid' color='#323946' ></box-icon></span> <li id="surul-navbar" onClick={() => window.location = "/contacts"}>Contacts</li>  </div>
+              <div className="navbar-box-icons"><span><box-icon name='contact' type='solid' color='#323946' ></box-icon></span> <li id="surul-navbar" onClick={() => window.location = "/contacts"}>Contacts</li>  </div>
               <div className="navbar-box-icons"><span><box-icon name='chat' type='solid' color='#323946' ></box-icon></span><li id="surul-navbar" >FAQs</li>  </div>
               <div className="navbar-box-icons"><span><box-icon type='solid' color='#323946' name='wrench'></box-icon></span><li id="surul-navbar" onClick={() => window.location = "/servis"}>Services</li></div>
               <div className="navbar-box-icons"><span><box-icon name='message-alt-detail' color='#323946' ></box-icon></span><li id="surul-navbar" onClick={() => window.location = "/blog"}>Blog</li></div>

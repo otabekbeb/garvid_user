@@ -25,6 +25,7 @@ export default function MentorChat() {
 
   const [theme,setTheme] = useState(localStorage.getItem("back"))
   useEffect(() => {
+    
     if(theme=="moon"){
       document.querySelector(".exitopen").style="display:none;background:rgb(33,33,33);color:white;border:1px solid white"
     }else{
@@ -115,7 +116,7 @@ export default function MentorChat() {
       });
     socket.on("new_private_room", (data) => {
       setRooms((prevRooms) => [...prevRooms, data.roomName]);
-      Swal.fire(`Новая приватная комната создана: ${data.roomName}`);
+      Swal.fire(`New private room created: ${data.roomName}`);
     });
   }, [socket]);
   const createPrivateRoom = (otheremail) => {
@@ -148,7 +149,7 @@ export default function MentorChat() {
       });
 
       setUsers(searchdata);
-    });
+    }).catch(err=>{});
   };
   
   function Exit() {
@@ -538,7 +539,7 @@ function hovers(key) {
   if(theme=="moon"){
     document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:black;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;border-bottom: 1px solid #e2e2e2;"
   }else{
-    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:white;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;border-bottom: 1px solid gray;"
+    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:white;border-radius:10px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;border-bottom: 1px solid #00000014;"
   }
 }
 
@@ -546,7 +547,7 @@ function hovers1(key) {
   if(theme=="moon"){
     document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:none;border-bottom: 1px solid #e2e2e2;"
   }else{
-    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:none;border-bottom: 1px solid gray;"
+    document.querySelectorAll(".yozishma_bolim_text_nik_text")[key].style="background:none;border-bottom: 1px solid #00000014;"
   }
 }
 function onclicks(key) {

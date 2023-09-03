@@ -30,7 +30,7 @@ export default function Contact() {
       state === "ru" ? (Swal.fire("Информация отправлена, дождитесь звонка оператора")) : (Swal.fire("Information sent, wait for a call from the operator"))
       window.location.reload()
     }).catch(err => {
-      state === "ru"?(Swal.fire("Проверить информацию,Не удалось отправить")) : (Swal.fire("Check information, Failed to send"))
+      state === "ru"?(Swal.fire("Check information, Failed to send")) : (Swal.fire("Check information, Failed to send"))
     })
   }
   useEffect(() => {
@@ -128,13 +128,13 @@ export default function Contact() {
             <button onClick={() => { dataPost() }} className="contact_btn">
               {state === "ru" ? "отправить" : "send"}
             </button>
-            <div className="admin_title">
+            {/* <div className="admin_title">
               <h4>Admin:</h4>
               <div className="chec_icon">
                 <BsCheck2 className='bir_chec' />
                 <BsCheckAll className='ikki_chec' />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

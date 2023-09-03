@@ -16,7 +16,7 @@ export default function Azo() {
     useEffect(() => {
         axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             setFollow(res.data)
-        })
+        }).catch(err=>{})
     }, [])
     
     function obuna() {
@@ -30,11 +30,11 @@ export default function Azo() {
     useEffect(() => {
         axios.get(`${url}/auth/teachers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             setUsers(res.data)
-        })
+        }).catch(err=>{})
     }, []);
     function folowcolor1(key) {
         axios.delete(`${url}/api/follow/${key}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-            alert("oxsha")
+            window.location.reload()
         }).catch(err => {
             alert("xato")
         })

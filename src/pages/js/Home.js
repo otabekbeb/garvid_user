@@ -27,17 +27,17 @@ export default function Home() {
         axios.post("https://markazback2.onrender.com/api/call_me", formdata, {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         }).then(res => {
-            state === "ru" ? (Swal.fire("Информация отправлена, дождитесь звонка оператора")) : (Swal.fire("Information sent, wait for a call from the operator"))
+            state === "ru" ? (Swal.fire("Information sent, wait for a call from the operator")) : (Swal.fire("Information sent, wait for a call from the operator"))
             window.location.reload()
         }).catch(err => {
-            state === "ru" ? (Swal.fire("Проверить информацию,Не удалось отправить")) : (Swal.fire("Check information, Failed to send"))
+            state === "ru" ? (Swal.fire("Check information, Failed to send")) : (Swal.fire("Check information, Failed to send"))
         })
 
     }
     useEffect(() => {
         axios.get(`https://markazback2.onrender.com/api/call_me`).then(res => {
             setChec(res.data)
-        })
+        }).catch(err => { })
         setState1(
             localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
         );
@@ -46,7 +46,7 @@ export default function Home() {
     useEffect(() => {
         axios.get(`${url}/api/university`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
             setUnivercard(res.data)
-        })
+        }).catch(err => { })
     })
 
 
@@ -56,20 +56,34 @@ export default function Home() {
             <div>
                 <div className='body1'>
                     <Navbar />
-                    
-                    <div className="foor_header">
-                        <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/08/mt-0514-home-slider02.jpg" alt="" />
-                        <div className="fir_header">
-                            <h1>Expert Financial Advice</h1>
-                            <p>With over 20 years of experience we'll ensure you always get the best guidance</p>
-                            <div onClick={() =>
-                                window.location = "/servis"
-                            } className="buttons">
-                                <button className='button'>Our Services</button>
-                                <button onClick={() =>
-                                    window.location = "/blog"
-                                } className='button1'>Purchase now</button>
-                            </div></div>
+
+                    <div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style={{ marginBottom: "90px;" }}>
+                        <div style={{ textAlign: "center" }} class="container my-5 py-5">
+                            <h3 id='huch' style={{ fontSize: "18px", color: "#44bef1" }}>BEST ONLINE COURSES</h3>
+                            <h1 class="text-white mt-4 mb-4" id='hbir'>Get Educated Online From Your Home</h1>
+                            <p id='pp1' style={{ color: "white", fontSize: "20px" }}>With over 20 years of experience we'll ensure you always get the best guidance</p>
+                            <div style={{ display: "flex", justifyContent: "center", marginTop: "30px" }} className="butonss">
+                                <button onClick={() => window.location = "/services"}>Services</button>
+                                <button onClick={() => window.location = "/contacts"} id='but22'>Contacts</button>
+                            </div>
+                            <div class="mx-auto mb-5" style={{ width: "100%;", maxWidth: "600px;" }}>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Courses 1</a>
+                                            <a class="dropdown-item" href="#">Courses 2</a>
+                                            <a class="dropdown-item" href="#">Courses 3</a>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control border-light" style={{ padding: "30px 25px;" }} placeholder="Keyword" />
+                                    <div class="input-group-append">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="qiy"><img src="https://demo.htmlcodex.com/1574/online-education-website-template/img/overlay-bottom.png" alt="" /></div>
                     </div>
                     <div className="universty">
                         <div className="iniversty_cards">
@@ -199,7 +213,7 @@ export default function Home() {
                                         <input type="email" name="" id="contact_inp" required />
                                     </label>
                                     <label>
-                                        <p>email</p>
+                                        <p >email</p>
                                         <input id='contact_inp' type="text" required />
                                     </label>
                                     <label>
