@@ -17,6 +17,7 @@ const handleOk = () => {
 axios.post(`${url}/api/course_data_category`,data,{ headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res=>{
     message.success("create theme")
     setIsModalOpen(false);
+    window.location.reload()
 }).catch(err=>{
     message.error("don't create")
     setIsModalOpen(false);

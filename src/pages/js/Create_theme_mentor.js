@@ -19,7 +19,7 @@ const showModal = () => {
 const handleOk = () => {
   var data=new FormData()
   data.append("name",document.querySelector(".name").value)
-  data.append("content",document.querySelector(".content").value)
+  data.append("content",document.querySelector(".content112").value)
   data.append("extra_data",document.querySelector(".extra_data").value)
   data.append("category",document.querySelector(".category").value)
 if(onimage){
@@ -36,6 +36,8 @@ if(onvideo){
 axios.post(`${url}/api/course_data_theme`,data,{ headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res=>{
     message.success("create theme")
     setIsModalOpen(false);
+
+    window.location.reload()
 }).catch(err=>{
     message.error("don't create")
     setIsModalOpen(false);
@@ -65,7 +67,7 @@ useEffect(()=>{
       console.log(res.data,"asdasabbas");
    var ss=res.data.filter(item=>item.course==id)
         setCategory(ss)
-        console.log(id,"abnbas");
+  
         
     }).catch(err=>{
 
@@ -86,7 +88,7 @@ useEffect(()=>{
 <Input className='name' placeholder='title' />
 <br />
 <br />
-<Input className='content' placeholder='content' />
+<Input className='content112' placeholder='content' />
 <br />
 <br />
 <Input type="number" className='extra_data' placeholder='extra_data' />
