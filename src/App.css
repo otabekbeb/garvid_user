@@ -43,3 +43,6 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+.emojiess section{
+  width: 285px !important;
+}
