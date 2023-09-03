@@ -195,7 +195,9 @@ export default function Youtube1() {
         console.log(res.data);
       })
       .catch((err) => {});
-
+      {(JSON.parse(localStorage.getItem('page_user')))[0].position==2?(
+        <Create_Theme_Category_mentor id1={localStorage.getItem("abbas")} />
+      ):(<></>)}
     axios
       .get(`${url}/auth/oneuser`, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
@@ -1610,11 +1612,14 @@ export default function Youtube1() {
                     </button>
                   </div>
                 </div>
-
+                {(JSON.parse(localStorage.getItem('page_user')))[0].position==2?(
+                      <Create_Theme_Category_mentor id1={localStorage.getItem("abbas")} />
+                    ):(<></>)}
                 <div className="youtube_kichkina">
                   {category.map((item, key) => {
                     return (
                       <>
+                      
                         <Accordion className="for-scroll-accordion">
                           <Accordion.Item eventKey={0 + key}>
                             <Accordion.Header>{item.name}</Accordion.Header>
