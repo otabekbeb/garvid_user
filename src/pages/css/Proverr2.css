@@ -7,7 +7,7 @@
 
 .prover2 {
     width: 100% !important;
-    height: 55vw;
+    height: 60vw;
     max-width: 100%;
     background: #F1F2F6;
     padding-top: 10px;
@@ -532,11 +532,18 @@ body {
 }
 
 .prover2-profil-img img {
-    width: 28px;
-    height: 28px;
-    cursor: pointer;
+    height: 100%;
 }
-
+.prover2-profil-img{
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+}
 .prover2-profil-patpis {
     display: flex;
 }
