@@ -84,7 +84,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="contact_right">
+            <div className="contact_right1">
               <form action="">
                 <label>
                   <p style={{fontWeight:'700'}}>fullname</p>

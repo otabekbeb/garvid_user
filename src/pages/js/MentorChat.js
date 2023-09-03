@@ -458,7 +458,7 @@ function putname(id) {
     })
     .then((res) => {
       state1 === "ru" ? (Swal.fire("Введенная информация")) : (Swal.fire("Entered information"))
-      window.location="/user";
+      window.location.reload();
     })
     .catch((err) => {
       state1 === "ru" ? (Swal.fire("Информация введена не полностью")) : (Swal.fire("The information was not fully entered"))

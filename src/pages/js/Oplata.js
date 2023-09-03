@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../css/Aplata.css'
 import Navbar from './Navbar'
 import Footer1 from '../js/Footer1'
-import Usernavbar from '../js/Usernavbar'
+import Usernavbar from '../js/Navbar'
 import PayPal from "../../component/PayPal";
 import StripeContainer from '../../component/StripeContainer';
 

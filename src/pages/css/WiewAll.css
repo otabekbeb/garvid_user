@@ -74,12 +74,15 @@
     border-radius: 50%;
     padding-top: -10px;
 }
+.qongiro_title1{
+    margin-top: 10%;
+}
 @media (max-width:913px) {
     .wiew_div{
         width: 90%;
     }
 }
-.qongiro_title{
+.qongiro_title1{
     font-size: 28px;
     font-weight: 700;
     margin-top: 50px;
