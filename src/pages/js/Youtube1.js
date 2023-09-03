@@ -68,6 +68,10 @@ export default function Youtube1() {
   const [mark, setMark] = useState([]);
   const [page, setPage] = useState(1);
   const [page1, setPage1] = useState(1);
+  const [length14, setLength14] = useState(0);
+  const [pageid,setPageid] = useState()
+
+
   function openModal() {
     document.querySelector(".navbar_yon").classList.toggle("navbar_yon1");
   }
@@ -180,6 +184,8 @@ export default function Youtube1() {
         console.log(res.data, "hello world");
       })
       .catch((err) => {});
+
+
     axios
       .get(`${url}/api/course_theme_task`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -189,7 +195,9 @@ export default function Youtube1() {
         console.log(res.data);
       })
       .catch((err) => {});
-
+      {(JSON.parse(localStorage.getItem('page_user')))[0].position==2?(
+        <Create_Theme_Category_mentor id1={localStorage.getItem("abbas")} />
+      ):(<></>)}
     axios
       .get(`${url}/auth/oneuser`, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
@@ -249,12 +257,12 @@ export default function Youtube1() {
   function MadolChange(id) {
     localStorage.setItem("Idvideo", JSON.stringify(id));
     window.location.reload();
-    // axios.get(`${url}/api/course_data_category/course/${id}`)
-    // .then(res=>{
-    //   setMain(res.data.one?res.data.one:[])
-    //   setCategory(res.data.all);
-    //   console.log(res.data, "ali");
-    // })
+    axios.get(`${url}/api/course_data_category/course/${id}`)
+    .then(res=>{
+      setMain(res.data.one?res.data.one:[])
+      setCategory(res.data.all);
+      console.log(res.data, "ali");
+    })
   }
   // console.log(main1,"aom");
 
@@ -607,20 +615,15 @@ export default function Youtube1() {
     var formdata = new FormData();
 
     formdata.append("mark", page);
-    formdata.append(
-      "image",
-        document.querySelector(".comment_file12").files[0]
-    );
-    formdata.append("content", ":");
-    formdata.append(
-      "course_theme", JSON.parse(localStorage.getItem("page_video")).id)
+    formdata.append("image",document.querySelector(".comment_file12").files[0]);
+    formdata.append("content", "ghjkh");
+    formdata.append("course_theme", JSON.parse(localStorage.getItem("page_video")).id)
     formdata.append("feedback", id );
     axios
       .post(`${url}/api/course_theme_task_student`, formdata, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
-        document.querySelector(".m-comment-mark1").style = "display:block";
         document.querySelector(".m-comment-mark").style = "display:none";
         document.querySelector(".mark-uchun-koish-joy").style = "display:none";
         axios
@@ -649,42 +652,31 @@ export default function Youtube1() {
   function aftermarkopen2(id) {
     var formdata = new FormData();
 
-    formdata.append("mark", page1);
-    formdata.append(
-      "image",
-      document.querySelector(".comment_file12").files[0]
-    );
+    formdata.append("mark", page);
+    formdata.append("image",document.querySelector(".comment_file12").files[0]);
     formdata.append("content", ":");
-    formdata.append(
-      "course_theme",
-      JSON.parse(localStorage.getItem("page_video")).id
-    );
-    formdata.append("feedback", JSON.parse(localStorage.getItem("page_video")).name);
-    if (page === 1) {
-      Swal.fire("Вы не выбрали оценку");
-    } else {
-      axios
-        .put(`${url}/api/course_theme_task_student/${id}`, formdata, {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        })
-        .then((res) => {
-          document.querySelector(".mark-uchun-koish-joy1").style =
-            "display:none ";
-          axios
-            .get(`${url}/api/course_theme_task_student`, {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-              },
-            })
-            .then((res) => {
-              setMark(res.data);
-            })
-            .catch((err) => {});
-        })
-        .catch((err) => {
-          Swal.fire("Вы не смогли изменить оценку");
-        });
-    }
+    formdata.append("course_theme", JSON.parse(localStorage.getItem("page_video")).id)
+    formdata.append("feedback", id );
+    axios
+      .put(`${url}/api/course_theme_task_student`, formdata, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        document.querySelector(".mark-uchun-koish-joy1").style = "display:none";
+        axios
+          .get(`${url}/api/course_theme_task_student`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
+          .then((res) => {
+            setMark(res.data);
+          })
+          .catch((err) => {});
+      })
+      .catch((err) => {
+        Swal.fire("Вы не смогли поставить оценку");
+      });
   }
 
 
@@ -1261,9 +1253,12 @@ export default function Youtube1() {
                                                     : "Anonim User"}
                                                 </h5>
                                                   {mark.map(item1505 => {
-                                                  if (item.id == item1505.feedback) {
+                                                  if (item.id === item1505.feedback) {
                                                     return(<>
-                                                      <p>{item1505.mark === 2 ? (<><div className="mark-two-bosa">
+                                                      <p  onClick={() => {
+                                                            markOpen2(item.id);
+                                                            setPage1(1);
+                                                          }} style={{cursor:"pointer"}}>{item1505.mark === 2 ? (<><div className="mark-two-bosa">
                                                        2</div></>):(<>{item1505.mark === 3 ? (<><div className="mark-three-bosa">
                                                         3 </div></>):(
                                                        <>{item1505.mark === 4 ? (<><div className="mark-four-bosa">
@@ -1325,30 +1320,13 @@ export default function Youtube1() {
                                                         <p
                                                           className="m-comment-mark"
                                                           onClick={() => {
-                                                            markOpen(key);
+                                                            markOpen();
                                                             setPage(1);
                                                           }}
                                                         >
                                                           <TfiMarkerAlt />
                                                           <span>
                                                             поставить оценку
-                                                          </span>
-                                                        </p>
-                                                        {localStorage.getItem(
-                                                          "position"
-                                                        ) === 2
-                                                          ? ""
-                                                          : ""}
-                                                        <p
-                                                          className="m-comment-mark1"
-                                                          onClick={() => {
-                                                            markOpen2(item.id);
-                                                            setPage1(1);
-                                                          }}
-                                                        >
-                                                          <TfiMarkerAlt />
-                                                          <span>
-                                                            измеить оценку
                                                           </span>
                                                         </p>
                                                         {item5.id ==
@@ -1634,11 +1612,14 @@ export default function Youtube1() {
                     </button>
                   </div>
                 </div>
-
+                {(JSON.parse(localStorage.getItem('page_user')))[0].position==2?(
+                      <Create_Theme_Category_mentor id1={localStorage.getItem("abbas")} />
+                    ):(<></>)}
                 <div className="youtube_kichkina">
                   {category.map((item, key) => {
                     return (
                       <>
+                      
                         <Accordion className="for-scroll-accordion">
                           <Accordion.Item eventKey={0 + key}>
                             <Accordion.Header>{item.name}</Accordion.Header>
@@ -1659,7 +1640,11 @@ export default function Youtube1() {
                                         {item2.image === null ? (
                                           <img src={novideo} alt="" />
                                         ) : (
-                                          <img src={item2.image} alt="" />
+                                          <img   src={
+                                            item.image && item.image.includes("http")
+                                              ? item.image
+                                              : `${url}/${item.image}`
+                                          }alt="" />
                                         )}
                                       </div>
                                       <div className="accordion_text">
