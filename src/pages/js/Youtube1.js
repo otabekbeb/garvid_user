@@ -4,13 +4,10 @@ import img_ava from "../img/Ellipse.png";
 import img_accordion from "../img/Rectangle 14.1.svg";
 import { AiFillDislike, AiFillLike, AiFillStar } from "react-icons/ai";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import { TbInfoTriangleFilled } from "react-icons/tb";
 import { TiThMenu } from "react-icons/ti";
 import "../css/youtube1.css";
-import Qollamalar from "../js/Bilmadim1";
-import Scachat from "../js/Scachat";
-import Vazifa from "../js/Vazifa1";
-import Comment from "../js/Comment1";
+
+
 import Usernavbar from "../js/Navbar";
 import Loader from "./loader";
 import { Pagination, Navigation } from "swiper/modules";
@@ -20,7 +17,7 @@ import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import err from "../img/istockphoto-1321436405-612x612.jpg";
 import novideo from "../img/download.svg";
-
+import  Create_Theme_Category_mentor from "./Create_Theme_Category_mentor.js"
 import "../css/comment.css";
 import { FiCornerUpLeft } from "react-icons/fi";
 import { FcFile } from "react-icons/fc";
@@ -44,6 +41,7 @@ import { BsBookmark } from "react-icons/bs";
 import mark_img from "../img/evaluation_of_education_300.jpg";
 import { Accordion } from "react-bootstrap";
 import Profil from "./Profil";
+import Create_theme_mentor from "./Create_theme_mentor";
 
 export default function Youtube1() {
   const [id, setId] = useState(1);
@@ -54,14 +52,10 @@ export default function Youtube1() {
   const [main1, setMain1] = useState(
     JSON.parse(localStorage.getItem("Idvideo"))
   );
-  const [user, setUser] = useState([]);
   const [state1, setState1] = React.useState();
   const [loader, setLoader] = useState(1);
-  const [IDtheme, setIdtheme] = useState({});
   const [task_comnet_id, setTask_comnet_id] = useState(0);
-  const [kursdata, setKursdata] = useState([]);
   const [page5, setPage5] = useState(1);
-
   const [comment, setComment] = useState([]);
   const [comment2, setComment2] = useState([]);
   const [subcoment, setSubcoment] = useState(0);
@@ -74,27 +68,17 @@ export default function Youtube1() {
   const [mark, setMark] = useState([]);
   const [page, setPage] = useState(1);
   const [page1, setPage1] = useState(1);
-  const [length14, setLength14] = useState(0);
-
   function openModal() {
     document.querySelector(".navbar_yon").classList.toggle("navbar_yon1");
   }
   function closeModal() {
     document.querySelector(".navbar_yon").style = "display:none;";
   }
-
-  function videoBolim(id) {
-    document.querySelector(".navbar_yon", ".navbar_none").style =
-      "display:none;";
-    setId(id);
-  }
-
   function painModal() {
     document.querySelector(".zadaniya").style =
       "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya1").style =
       "border-bottom: none; color: #9DA7BB;";
-
     setTask_comnet_id(0);
   }
   function painModal1(id) {
@@ -228,6 +212,8 @@ export default function Youtube1() {
       .then((res) => {
         var a = res.data.filter((item) => item.task_commnet_id == 1);
         setComment5(a);
+      }).catch(err=>{
+
       });
 
     axios
@@ -318,10 +304,14 @@ export default function Youtube1() {
                     // alert("xato")
                   } else {
                   }
+                }).catch(err=>{
+
                 });
 
                 console.log(res.data, "coment");
-              });
+              }).catch(err=>{
+                  
+                });
           });
         document.querySelector("#chat_text").value = "";
       })
@@ -373,6 +363,8 @@ export default function Youtube1() {
           .then((res) => {
             setComment(res.data);
             console.log(res.data, "hey");
+          }).catch(err=>{
+                  
           });
         document.querySelector("#chat_text1").value = "";
       })
@@ -414,8 +406,12 @@ export default function Youtube1() {
           )
           .then((res) => {
             setComment(res.data);
+          }).catch(err=>{
+                  
           }),
-      ]);
+      ]).catch(err=>{
+                  
+      });
     axios
       .get(
         `${url}/api/course_theme_comment/${
@@ -453,6 +449,8 @@ export default function Youtube1() {
           )
           .then((res) => {
             setComment2(res.data);
+          }).catch(err=>{
+                  
           });
       });
     axios
@@ -472,14 +470,6 @@ export default function Youtube1() {
       });
   }
 
-  function OpenotvetMadal(item, key) {
-    document.querySelector(".commetn_otvet_kaytarish").style =
-      "display: flex; ";
-  }
-  function CloseotvetMadal() {
-    document.querySelector(".otevet_comment_otdel_oyna").style =
-      "display: none;";
-  }
   function cencelModal() {
     document.querySelector("#chat_text").value = "";
     document.querySelector("#chat_text1").value = "";
@@ -549,34 +539,7 @@ export default function Youtube1() {
       });
   }
 
-  function imagePost() {
-    var formdata = new FormData();
-
-    formdata.append("mark", 3);
-    formdata.append(
-      "image",
-      document.querySelector(".comment_file12").files[0]
-    );
-    formdata.append("content", ":");
-    formdata.append(
-      "course_theme",
-      JSON.parse(localStorage.getItem("page_video")).id
-    );
-    formdata.append("feedback", ".");
-
-    axios
-      .post(`${url}api/course_theme_task_student`, formdata, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      })
-      .then((res) => {
-        setTask(res.data);
-        console.log(res.data, "ily");
-      })
-      .catch((err) => {
-        Swal.fire("ishlamadi tupoy");
-      });
-  }
-
+ 
   function commentTaskPost() {
     var formdata = new FormData();
     formdata.append("text", document.querySelector("#chat_text12").value);
@@ -1707,6 +1670,12 @@ export default function Youtube1() {
                     <img src={err} alt="" />
                     <h3>Something happened to the server, we are already fixing it.</h3>
                     <h3>You can try better</h3>
+                    <br />
+                    {(JSON.parse(localStorage.getItem('page_user')))[0].position==2?(
+                      <Create_Theme_Category_mentor id1={localStorage.getItem("abbas")} />
+                    ):(<></>)}
+                    <br/>
+                 <br />
                     <button onClick={() => ModalCatchBolsa()}>
                       Come back
                     </button>
