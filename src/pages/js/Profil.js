@@ -360,7 +360,10 @@ export default function Profil() {
 
 
               <div className="profil_blok_ikki_icon_taxriirlash_chat">
-                {natlifikation.length === 0 ? (<h4 style={{textAlign:"center"}}>Вам не писали</h4>) : (<>
+                {natlifikation.length === 0 ? (
+                <><p style={{textAlign:'center',marginTop:'35%',fontSize:'20px',opacity:'0.4'}}>Not written to you</p>
+                
+                </>) : (<>
                   {natlifikation.map((item, key) => {
 
                     if (item.to_user_id == localStorage.getItem("OneuserId")) {
@@ -399,7 +402,7 @@ export default function Profil() {
                 )}
 
 
-                <a href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
+                <a style={natlifikation.length===0?{display:"none"}:{display:"flex"}} href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
                   <p>
                     view all
                     <AiOutlineRight />
