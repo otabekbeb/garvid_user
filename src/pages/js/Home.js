@@ -37,7 +37,7 @@ export default function Home() {
     useEffect(() => {
         axios.get(`https://markazback2.onrender.com/api/call_me`).then(res => {
             setChec(res.data)
-        })
+        }).catch(err=>{})
         setState1(
             localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
         );
@@ -46,7 +46,7 @@ export default function Home() {
     useEffect(() => {
         axios.get(`${url}/api/university`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
             setUnivercard(res.data)
-        })
+        }).catch(err=>{})
     })
 
 
