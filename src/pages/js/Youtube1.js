@@ -42,11 +42,12 @@ import mark_img from "../img/evaluation_of_education_300.jpg";
 import { Accordion } from "react-bootstrap";
 import Profil from "./Profil";
 import Create_theme_mentor from "./Create_theme_mentor";
+import { async } from "q";
 
 export default function Youtube1() {
   const [id, setId] = useState(1);
   const [category, setCategory] = useState([]);
-  const [subcategory, setSubcategory] = useState([]);
+  const [chooseStudentTheme, setchooseStudentTheme] = useState(0);
   const [progressTheme, setProgressTheme] = useState();
   const [duration, setDuration] = useState(0);
   const [main, setMain] = useState([]);
@@ -71,50 +72,107 @@ export default function Youtube1() {
   const [page1, setPage1] = useState(1);
   const playerRef = useRef(null);
   const [currentTime, setCurrentTime] = useState(0);
+
+  // useEffect(() => {
+  //   var StudentId = parseInt(localStorage.getItem("OneuserId"));
+  //   // console.log(main,main1.id,"aaaaaaaaaaaaaaaaaadddd");
+  //   var id=main1.id
+  //   // var id2=main.id
+
+  //   // if (main1) {
+  //       axios
+  //       .get(`${url}/api/student_theme/`,{
+  //         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+  //       }).then((res)=>{
+  //        const filter=res.data.filter(item=>(item.student_id===StudentId&&item.theme_id===id))
+  //        setchooseStudentTheme(filter[0].id)
+  //        const num=filter[0].complate
+  // const time=duration/100
+  // const result=time*num
+  //         setProgressTheme(result)
+  //         alert(result,"result")
+  //         console.log(time,"time");
+  //         console.log(result,"result");
+  //       //  setProgressTheme(33)
+  //       //  console.log(filter,"22424")
+  //       //  console.log(res.data,"res.data");
+  //       //  console.log(StudentId,"student");
+  //       //  console.log(id,"theme_id");
+  //       //  alert("ishladi2")
+  //       }).catch((err)=>{
+  //         alert("lox1")
+  //         console.log(err);
+  //         alert(err)
+  //       })    
+ 
+
+  //   // }
+  //   // if (main) {
+  //   //   axios
+  //   //   .get(`${url}/api/student_theme/`,{
+  //   //     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+  //   //   }).then((res)=>{
+  //   //   const filter=res.data.filter(item=>item.student_id===StudentId&&item.theme_id===id2)
+  //   //   alert(filter)
+  //   //   }).catch((err)=>{
+  //   //     alert("lox2")
+  //   //     console.log(err);
+  //   //   })
+  //   // }
+  // }, []);
+
   const handleReady = () => {
     // Seek to the desired time (in seconds)
-    playerRef.current.seekTo(100);
+    var StudentId = parseInt(localStorage.getItem("OneuserId"));
+    // console.log(main,main1.id,"aaaaaaaaaaaaaaaaaadddd");
+    var id=main1.id
+    // var id2=main.id
+
+    // if (main1) {
+      axios
+      .get(`${url}/api/student_theme/`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        const filter = res.data.filter(
+          (item) => item.student_id === StudentId && item.theme_id === id
+        );
+        setchooseStudentTheme(filter[0].id);
+        const num = filter[0].complate;
+        const time = duration / 100;
+        const result = time * num;
+        setProgressTheme(result);
+        alert(result, "result");
+        console.log(time, "time");
+        console.log(result, "result");
+        playerRef.current.seekTo(result);
+      })
+      .catch((err) => {
+        alert("lox1");
+        console.log(err);
+        alert(err);
+      });
+      setTimeout(() => {
+        const time = progressTheme;
+        alert(progressTheme, 2);
+        playerRef.current.seekTo(100);
+      }, 4000);
+          
+
+    
+
+
+
   };
 
   const handleDuration = (duration) => {
-
 
     console.log('Длительность видео:', duration);
     alert(duration)
     setDuration(duration)
 
   };
-  useEffect(() => {
-    var StudentId = localStorage.getItem("OneuserId");
-    console.log(main,main1.id,"aaaaaaaaaaaaaaaaaadddd");
-    var id=main1.id
-    var id2=main.id
-    if (main1) {
-      axios
-      .get(`${url}/api/student_theme/`,{
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      }).then((res)=>{
-       const filter=res.data.filter(item=>item.student_id===StudentId&&item.theme_id===id)
-       alert(filter)
-      }).catch((err)=>{
-        alert("lox1")
-        console.log(err);
-        alert(err)
-      })
-    }
-    if (main) {
-      axios
-      .get(`${url}/api/student_theme/`,{
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      }).then((res)=>{
-      const filter=res.data.filter(item=>item.student_id===StudentId&&item.theme_id===id2)
-      alert(filter)
-      }).catch((err)=>{
-        alert("lox2")
-        console.log(err);
-      })
-    }
-  }, []);
+
   const handleProgress = (progress) => {
     setCurrentTime(progress.playedSeconds);
  
@@ -787,7 +845,7 @@ export default function Youtube1() {
       // width={100}
       // height={100}
       controls={true}
-      playing={true}
+      // playing={true}
       onReady={handleReady}
       onProgress={handleProgress}
       onDuration={handleDuration}
