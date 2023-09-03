@@ -703,7 +703,7 @@ function onclicks(key) {
                   const Filter = users.filter(item => item.email == displayName)
                   return (
                     <div className="yozishma_bolim_text_nik_text1">
-                    <div style={theme=="moon"?{borderBottom:"1px solid #e2e2e2"}:{borderBottom:"1px solid #00000014"}}
+                    <div style={theme=="moon"?{borderBottom:"1px solid #e2e2e2"}:{borderBottom:"1px solid gray"}}
                       key={item}
                       onClick={() => {chatModal(item);onclicks(key)}}
                       onMouseEnter={()=>hovers(key)}
