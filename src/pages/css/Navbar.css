@@ -330,9 +330,9 @@
   }
 
   .navbar-ul {
-    height:40px;
+    height: 40px;
     display: flex;
-    
+
     align-items: center;
 
   }
@@ -344,9 +344,10 @@
 }
 
 @media (max-width:850px) {
-.navbar-media-img-joy img{
-  width: 80px;
-}
+  .navbar-media-img-joy img {
+    width: 80px;
+  }
+
   /* .checkbox-con {
     margin: 10px;
     display: flex;
@@ -3277,7 +3278,7 @@ div#goog-gt- {
   justify-content: center !important;
   gap: 20px !important;
   height: 100%;
-  width: 15vw;
+  width: 24vw;
   text-align: center !important;
   position: relative;
   top: 1px;
@@ -3510,6 +3511,3 @@ div#goog-gt- {
     padding-top: 60px;
   }
 }
-
-
-

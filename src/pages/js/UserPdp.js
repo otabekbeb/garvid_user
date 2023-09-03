@@ -100,54 +100,7 @@ export default function Pdp() {
                   ""
                 )}
               </div>
-              {/* <div className="fil_text_blok_soz">
-                <h1
-                  onClick={() => updatetoggle(2)}
-                  style={
-                    toggle === 2 ? { borderBottom: "2px solid #44bef1" } : {}
-                  }
-                  className="fromLeft"
-                >
-                  My learned knowledge
-                </h1>
-                {toggle === 2 ? (
-                  <div className="fil_text_blok_kurs_lenght">14 pieces</div>
-                ) : (
-                  ""
-                )}
-              </div> */}
-              {/* <div className="fil_text_blok_soz">
-                <h1
-                  onClick={() => updatetoggle(3)}
-                  style={
-                    toggle === 3 ? { borderBottom: "2px solid #44bef1" } : {}
-                  }
-                  className="fromLeft"
-                >
-                  Test
-                </h1>
-                {toggle === 3 ? (
-                  ""
-                ) : (
-                  ""
-                )}
-              </div> */}
-              {/* <div className="fil_text_blok_soz">
-                <h1
-                  onClick={() => updatetoggle(4)}
-                  style={
-                    toggle === 4 ? { borderBottom: "2px solid #44bef1" } : {}
-                  }
-                  className="fromLeft"
-                >
-                  My certificates
-                </h1>
-                {toggle === 4 ? (
-                  <div className="fil_text_blok_kurs_lenght">24 pieces</div>
-                ) : (
-                  ""
-                )}
-              </div> */}
+          
               <div className="fil_text_blok_soz">
                 <h1
                   onClick={() => updatetoggle(2)}
@@ -158,7 +111,8 @@ export default function Pdp() {
                 >
                   Courses
                 </h1>
-                <div className="fil_text_blok_kurs_lenght">{localStorage.getItem("ourcourseLength")} pieces</div>
+                {toggle===2?( <div className="fil_text_blok_kurs_lenght">{localStorage.getItem("ourcourseLength")} pieces</div>):("")}
+               
               </div>
               <div className="fil_text_blok_soz">
                 <h1

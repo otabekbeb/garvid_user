@@ -3091,6 +3091,9 @@ justify-content: center; */
         left: -1%;
         top: 15px;
     }
+    .media-navbar{
+        margin-top: -8px !important;
+    }
 }
 
 @media (max-width:428px) {
