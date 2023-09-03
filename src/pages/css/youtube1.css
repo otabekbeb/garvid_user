@@ -133,7 +133,10 @@
     width: 60%;
     margin-bottom: 20px;
 }
-
+.React_player{
+    width: 100% !important;
+    height: 100% !important;
+    }
 .img_youtube_kotta img{
     width: 99%;
     margin-top: 1px;
