@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "../css/Sertificate_create.css"
 import { AiOutlineFileAdd } from "react-icons/ai"
 import { BsCalendar } from "react-icons/bs"
 import {MdClose} from "react-icons/md"
-
+import axios from 'axios'
+import url from "./Host.js"
+import { useState } from 'react'
 export default function Sertificate_create() {
+    
+    
+    var [sertificat,setSertificat]=useState([])
     function edit() {
         document.querySelector(".sertificate_edit_header").style = "display:flex;"
         document.querySelector(".sertificate_card_header").style="display:none;"
@@ -13,6 +18,15 @@ export default function Sertificate_create() {
         document.querySelector(".sertificate_edit_header").style = "display:none;"
         document.querySelector(".sertificate_card_header").style="display:flex;"
     }
+
+
+
+
+useEffect(()=>{
+axios.get(`${url}/api/sertificat`).then(res=>{
+
+})
+})
 
     return (
         <div>
