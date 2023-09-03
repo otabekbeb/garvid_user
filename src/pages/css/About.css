@@ -3092,7 +3092,7 @@ justify-content: center; */
         top: 15px;
     }
     .media-navbar{
-        margin-top: -8px;
+        margin-top: -8px !important;
     }
 }
 
