@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "../css/Sertificate_create.css"
 import { AiOutlineFileAdd } from "react-icons/ai"
+<<<<<<< Updated upstream
 import { BsCalendar } from "react-icons/bs"
 import {MdClose} from "react-icons/md"
 
@@ -13,6 +14,19 @@ export default function Sertificate_create() {
         document.querySelector(".sertificate_edit_header").style = "display:none;"
         document.querySelector(".sertificate_card_header").style="display:flex;"
     }
+=======
+import axios from 'axios'
+import url from "./Host.js"
+import { useState } from 'react'
+export default function Sertificate_create() {
+var [sertificat,setSertificat]=useState([])
+
+useEffect(()=>{
+axios.get(`${url}/api/sertificat`).then(res=>{
+
+})
+})
+>>>>>>> Stashed changes
 
     return (
         <div>
