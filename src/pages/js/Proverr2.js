@@ -252,7 +252,7 @@ export default function Proverr2() {
                                         <p className='prover2-p-df'>Программирование</p>
                                         {dusha.map(item1 => {
                                             return (
-                                                <div className="prover2-info-block1">
+                                                <div onClick={() => { window.location = "/proverr2"; localStorage.setItem("courseid", item1.id) }} className="prover2-info-block1">
                                                     <div className="prover2-info-block1-img">
                                                         {item1.image === null ? (
                                                             <img src={img_for_null1} alt="" />
@@ -474,15 +474,14 @@ export default function Proverr2() {
                                         <div className="prover2-oxiri-block-in">
                                             <div className="mni-dasturlash-bloc"><p>{item.name}</p></div>
                                             <div className="mni-kurs-narxi">
-                                                <div className="mni-kurs-block1"><h5>Стоимость курса</h5>
+                                                <div className="mni-kurs-block1"><h5>Course fee</h5>
                                                     <p>{item.price} <span>$</span></p></div>
                                                 <div className="mni-kurs-block2"></div>
-
-                                                <div className="mni-kurs-block1"><h5>Kurs hajmi</h5>
-                                                    <p>{item.planned_time} час</p></div>
+                                                <div className="mni-kurs-block1"><h5>course duration</h5>
+                                                    <p>{item.planned_time} hour</p></div>
                                                 <div className="mni-kurs-block2"></div>
                                             </div>
-                                            <p className="spdfodsofdsf">Разделы курса:</p>
+                                            <p className="spdfodsofdsf">Course sections:</p>
                                             {/* <div className="mni-blocc-linee"></div> */}
 
                                             {/* <div className="prover2-oxiri-total-kurss"onMouseLeave={()=>aboutClose123122()}  >
