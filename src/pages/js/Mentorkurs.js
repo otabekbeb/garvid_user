@@ -244,7 +244,7 @@ export default function Searchfilter() {
         );
       })
       setKursdata(searchdata)
-    })
+    }).catch(err=>{})
 
   }
 

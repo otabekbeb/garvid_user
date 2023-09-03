@@ -149,7 +149,7 @@ export default function MentorChat() {
       });
 
       setUsers(searchdata);
-    });
+    }).catch(err=>{});
   };
   
   function Exit() {

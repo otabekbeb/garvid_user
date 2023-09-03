@@ -1,0 +1,150 @@
+.sertificate_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.sertificate_edit_header{
+    display: none;
+}
+.sertificate_close_btn{
+    position: absolute;
+    top: -3px;
+    right: 3px;
+    font-size: 20px;
+}
+.sertificate_card_edit {
+    position: relative;
+    width: 450px;
+    height: 250px;
+    padding: 20px;
+    box-shadow: 0 0px 40px #a3a5a654;
+    border-radius: 10px;
+}
+
+.sertificate_df_edit {
+    width: 100%;
+    display: flex;
+}
+
+.sertificate_i {
+    width: auto;
+    height: auto;
+}
+
+.sertificate_icon {
+    font-size: 105px;
+    color: #989898;
+}
+
+.sertificate_db_edit {
+    width: 100%;
+    display: block;
+}
+
+.sertificate_db_edit label {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.sertificate_db_edit input {
+    width: 80%;
+    padding: 3px 5px;
+    border: 1px solid #dcdcdc;
+}
+
+.sertificate_card_edit textarea {
+    width: 100% !important;
+    max-height: 70px !important;
+    margin-top: 3px !important;
+    padding: 5px;
+    border: 1px solid #dcdcdc !important;
+}
+
+.sertificate_botom_df_edit {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sertificate_btn_send {
+    width: 80px;
+    height: 25px;
+    border: 1px solid #44bef1;
+    color: #44bef1;
+    background-color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.sertificate_btn_send:hover {
+    color: #fff;
+    background-color: #44bef1;
+}
+
+.sertificate_date_inp_edit {
+    width: 100px;
+}
+
+
+
+
+
+.sertificate_card {
+    width: 450px;
+    height: auto;
+    padding: 20px;
+    box-shadow: 0 0px 40px #a3a5a654;
+    border-radius: 10px;
+}
+
+.sertificate_db {
+    width: 100%;
+    display: block;
+}
+
+.sertificate_db label {
+    width: 100%;
+    display: flex;
+    margin-top: 3px;
+    gap: 5px;
+}
+.sertificate_i{
+    height: auto;
+}
+.sertificate_botom_df_edit {
+    display: flex;
+    justify-content: space-between;
+    /* margin-bottom: 0px !important; */
+    bottom: 0px !important;
+}
+
+.sertificate_btn_edit {
+    width: 80px;
+    height: 25px;
+    margin-bottom: 0px !important;
+    border: 1px solid #44bef1;
+    color: #44bef1;
+    background-color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.sertificate_btn_edit:hover {
+    color: #fff;
+    background-color: #44bef1;
+}
+.sertificate_botom_df {
+    display: flex;
+    justify-content: space-between;
+}
+.sertificate_calendar{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    gap: 10px;
+}

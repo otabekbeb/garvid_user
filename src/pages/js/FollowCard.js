@@ -24,7 +24,7 @@ export default function FollowCard() {
         res.data.map(item => {
           setbosildi1(item.minuser)
         })
-      })
+      }).catch(err=>{})
 
     }).catch(err => {
       alert("ishlxadatoi")
@@ -40,7 +40,7 @@ export default function FollowCard() {
         res.data.map(item => {
           setbosildi1(item.minuser)
         })
-      })
+      }).catch(err=>{})
     }).catch(err => {
       alert("Data not deleted")
     })
@@ -53,13 +53,13 @@ export default function FollowCard() {
     axios.get(`${url}/auth/teachers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setFollow(res.data)
       setFollow1(res.data)
-    })
+    }).catch(err=>{})
     axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setbosildi(res.data)
       res.data.map(item => {
         setbosildi1(item.minuser)
       })
-    })
+    }).catch(err=>{})
   }, [])
   function searchInput(e) {
     const Search = follow.filter(item => item.username.includes((e.target.value).toLowerCase()))
