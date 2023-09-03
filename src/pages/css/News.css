@@ -10981,7 +10981,7 @@ h6,
 .fa-linkedin-in::before {
     opacity: 0 !important;
 }
-
+/* 
 .newsss1 .swiper-button-prev,
 .swiper-button-next {
     color: black !important;
@@ -10990,7 +10990,7 @@ h6,
 .newsss1 .swiper-button-next,
 .swiper-button-prev {
     color: black !important;
-}
+} */
 
 #app {
     height: 100%;
@@ -10998,18 +10998,18 @@ h6,
 
 
 
-.swiper {
+/* .swiper {
     width: 100%;
     height: 100%;
 
-}
+} */
 
-.swiper-slide {
+/* .swiper-slide {
     text-align: center;
     font-size: 18px;
     background: #fff;
 
-    /* Center slide text vertically */
+   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11020,7 +11020,7 @@ h6,
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
+} */
 
 
 .News_card {
@@ -11141,7 +11141,7 @@ body {
     padding: 0;
 }
 
-.swiper {
+/* .swiper {
     width: 100%;
     height: 100%;
 }
@@ -11150,8 +11150,6 @@ body {
     text-align: center;
     font-size: 18px;
     background: #fff;
-
-    /* Center slide text vertically */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11162,7 +11160,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
+} */
 
 .mySwiper100 {
     margin-top: 2%;
