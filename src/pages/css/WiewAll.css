@@ -15,6 +15,15 @@
     gap: 10px;
     /* display: none; */
 }
+.Exit_notifaction_button{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    background-color: #A54B50;
+    color: #fff;
+    border-radius: 4px;
+    padding-bottom: 5px;
+}
 .input_notification_bid_div input{
     width: 100%;
     border: 1px solid #AC9292;

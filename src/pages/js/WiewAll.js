@@ -63,6 +63,7 @@ function WiewAll() {
                 <div className="wiew_sms_big">
                     {page==1?(
                     <>
+                    <button className='Exit_notifaction_button' onClick={()=>setPage(0)}>Exit</button>
                     {Wiew.map((item,key) => {
                         if (item.to_user_id == read) {
                             return (
