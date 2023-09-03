@@ -111,7 +111,7 @@ export default function Pdp() {
                 >
                   Courses
                 </h1>
-                {toggle===2?( <div className="fil_text_blok_kurs_lenght">{localStorage.getItem("ourcourseLength")} pieces</div>):(".user-name-media")}
+                {toggle===2?( <div className="fil_text_blok_kurs_lenght">{localStorage.getItem("ourcourseLength")} pieces</div>):("")}
                
               </div>
               <div className="fil_text_blok_soz">

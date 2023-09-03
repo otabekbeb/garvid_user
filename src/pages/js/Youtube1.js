@@ -938,7 +938,7 @@ export default function Youtube1() {
                                 <span className="span_comment1202">
                                   Комментария*
                                 </span>
-                                <p
+                                <p 
                                   onClick={() => {
                                     openViewall();
                                   }}
