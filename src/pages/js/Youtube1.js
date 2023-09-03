@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import img_kotta from "../img/Rectangle.png";
 import img_ava from "../img/Ellipse.png";
 import img_accordion from "../img/Rectangle 14.1.svg";
@@ -33,7 +33,7 @@ import { AiOutlineComment, AiOutlineDelete } from "react-icons/ai";
 import { CgClose } from "react-icons/cg";
 import anonim from "../img/anonim-user.png";
 import Footer1 from "./Footer1.js";
-
+import ReactPlayer from 'react-player';
 import "../css/vazifa1.css";
 import "../css/yozishmalar.css";
 import { TfiMarkerAlt } from "react-icons/tfi";
@@ -47,7 +47,8 @@ export default function Youtube1() {
   const [id, setId] = useState(1);
   const [category, setCategory] = useState([]);
   const [subcategory, setSubcategory] = useState([]);
-  const [theme, setTheme] = useState([]);
+  const [progressTheme, setProgressTheme] = useState();
+  const [duration, setDuration] = useState(0);
   const [main, setMain] = useState([]);
   const [main1, setMain1] = useState(
     JSON.parse(localStorage.getItem("Idvideo"))
@@ -68,6 +69,64 @@ export default function Youtube1() {
   const [mark, setMark] = useState([]);
   const [page, setPage] = useState(1);
   const [page1, setPage1] = useState(1);
+  const playerRef = useRef(null);
+  const [currentTime, setCurrentTime] = useState(0);
+  const handleReady = () => {
+    // Seek to the desired time (in seconds)
+    playerRef.current.seekTo(100);
+  };
+
+  const handleDuration = (duration) => {
+
+
+    console.log('Длительность видео:', duration);
+    alert(duration)
+    setDuration(duration)
+
+  };
+  useEffect(() => {
+    var StudentId = localStorage.getItem("OneuserId");
+    console.log(main,main1.id,"aaaaaaaaaaaaaaaaaadddd");
+    var id=main1.id
+    var id2=main.id
+    if (main1) {
+      axios
+      .get(`${url}/api/student_theme/`,{
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      }).then((res)=>{
+       const filter=res.data.filter(item=>item.student_id===StudentId&&item.theme_id===id)
+       alert(filter)
+      }).catch((err)=>{
+        alert("lox1")
+        console.log(err);
+        alert(err)
+      })
+    }
+    if (main) {
+      axios
+      .get(`${url}/api/student_theme/`,{
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      }).then((res)=>{
+      const filter=res.data.filter(item=>item.student_id===StudentId&&item.theme_id===id2)
+      alert(filter)
+      }).catch((err)=>{
+        alert("lox2")
+        console.log(err);
+      })
+    }
+  }, []);
+  const handleProgress = (progress) => {
+    setCurrentTime(progress.playedSeconds);
+ 
+      console.log(progress.playedSeconds)
+
+  };
+
+
+
+
+
+
   function openModal() {
     document.querySelector(".navbar_yon").classList.toggle("navbar_yon1");
   }
@@ -108,6 +167,7 @@ export default function Youtube1() {
   useEffect(() => {
     localStorage.setItem("task_commnet_id", JSON.stringify(task_comnet_id));
     var id = localStorage.getItem("abbas");
+    var StudentId = localStorage.getItem("OneuserId");
     axios
       .get(`${url}/api/course_data_category/course/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -115,6 +175,24 @@ export default function Youtube1() {
       .then((res) => {
         setMain(res.data.one ? res.data.one : []);
         setCategory(res.data.all);
+                res.data.all.map((itam)=>{
+          itam.theme.map((itam2)=>{
+            console.log(itam2,"dddddddddd");
+            var Formdata=new FormData()
+            Formdata.append("student_id",StudentId)
+            Formdata.append("theme_id",itam2.id)
+            Formdata.append("complate",0)
+            axios
+            .post(`${url}/api/student_theme/`, Formdata,{
+              headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+            }).then((res)=>{
+              alert("ishadi")
+            }).catch((err)=>{
+              // alert("bor ekan")
+            })
+          })
+        })
+        console.log(res.data,"aaaaaaaaaaaa");
         console.log(res.data);
         localStorage.setItem(
           "page_video",
@@ -234,6 +312,7 @@ export default function Youtube1() {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
+
   }, []);
 
   function ModalCatchBolsa() {
@@ -710,14 +789,27 @@ export default function Youtube1() {
                   <div className="youtube_kotta_img">
                     <div className="for-otdelni-chunmadim">
                       <div className="img_youtube_kotta">
-                        <iframe
+                        {/* <iframe
                           src={main1.video}
                           title="W3Schools Free Online Web Tutorials"
-                        ></iframe>
+                        ></iframe> */}
+                            <ReactPlayer
+      ref={playerRef}
+      url={main1.video}
+      // width={100}
+      // height={100}
+      controls={true}
+      playing={true}
+      onReady={handleReady}
+      onProgress={handleProgress}
+      onDuration={handleDuration}
+      className="React_player"
+      // style={{display:"flex"he}}
+    />
                       </div>
                       <div className="theme_df">
                         <div className="flex_logig">
-                          <h1 className="raspberry_pi">{main1.name}</h1>
+                          <h1 className="raspberry_pi">{main1.name} Ффффффффффф</h1>
                           <div className="odtel_media_uchun">
                             <h1>{main1.name}</h1>
                           </div>
@@ -1578,10 +1670,23 @@ export default function Youtube1() {
                 ) : (
                   <div className="youtube_kotta_img">
                     <div className="img_youtube_kotta">
-                      <iframe
+                      {/* <iframe
                         src={main.video}
                         title="W3Schools Free Online Web Tutorials"
-                      ></iframe>
+                      ></iframe> */}
+                          <ReactPlayer
+      ref={playerRef}
+      url={main.video}
+      // width={100}
+      // height={100}
+      controls={true}
+      playing={true}
+      onReady={handleReady}
+      onProgress={handleProgress}
+      onDuration={handleDuration}
+      className="React_player"
+      // style={{display:"flex"he}}
+    />
                     </div>
                     <div className="theme_df">
                       <div className="flex_logig">
