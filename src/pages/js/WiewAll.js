@@ -4,27 +4,51 @@ import Qongro from '../img/Qongiro.png'
 import Usernavbar from "./Navbar"
 import axios from 'axios'
 import url from './Host'
+import { MdOutlineClose } from "react-icons/md"
 import Profil from './Profil'
 import Futer from '../js/Footer1'
 function WiewAll() {
     const [Wiew, setWiew] = useState([])
-    const [Oneuser, setOneuser] = useState()
+    const [inputValue, setInputValue] = useState()
+    const [oneuser,setOneuser]=useState([])
+    const [page,setPage]=useState(0)
+    const [read,setRead]=useState()
+
     useEffect(() => {
         axios.get(`${url}/api/notification`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
             setWiew(res.data)
-            console.log(res.data, "slom");
+        })
+        axios.get(`${url}/auth/oneuser`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
+          res.data.map(item=>{
+            setOneuser(item)
+          })
         })
     })
     function atvet(id) {
         var formdata = new FormData()
-        formdata.append("title", document.querySelector("#atvetu").value)
-        formdata.append("description", document.querySelector("#atvetu1").value)
-        formdata.append("user_id", localStorage.getItem("OneuserId"))
+        formdata.append("title", oneuser.username)
+        formdata.append("description",inputValue)
+        formdata.append("user_id", oneuser.id)
         formdata.append("to_user_id", id)
         axios.post(`${url}/api/notification`,formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-            alert("ishladi ")
+        })
+        .catch(err=>{
+            alert("xato")
         })
     }
+
+    function inputOpen(key){
+    document.querySelectorAll("#inputNotifaction")[key].style="display:block"
+    }
+    function inputClose(key){
+    document.querySelectorAll("#inputNotifaction")[key].style="display:none"
+    }
+
+    function Page(id){
+        setRead(id)
+        setPage(1)
+    }
+
     return (
         <div>
             <Usernavbar />
@@ -37,28 +61,58 @@ function WiewAll() {
                 </div>
                 <p className='qongiro_title'>You don't have any notifications yet!</p> */}
                 <div className="wiew_sms_big">
-
-                    {Wiew.map(item => {
-                        if (item.to_user_id == localStorage.getItem("OneuserId")) {
+                    {page==1?(
+                    <>
+                    {Wiew.map((item,key) => {
+                        if (item.to_user_id == read) {
                             return (
-                                <div style={{ cursor: "pointer" }} className="sms">
+                                <>
+                                <div  style={{ cursor: "pointer" }} className="sms">
                                     <div className="qizil"></div>
-                                    <button onClick={() => atvet(item.user_id)}>a</button>
                                     <div className="data_title">
-                                        <input type="text" id='atvetu' />
-                                        <input type="text" id='atvetu1' />
                                         <p className='unred'>{item.title}</p>
-                                        <p className='data'>{item.time_create.slice(11, 16)}</p>
+                                       <p className='data'>{item.time_create.slice(11, 16)}</p>
                                     </div>
                                     <div className="p_lorem_sms">
                                         <p className='lorem_sms'>{item.description} </p>
                                         <input style={{display:"none"}} type="text" id='atvet' />
                                     </div>
                                 </div>
+                                </>
+                            )
+                        }
+
+                    })} 
+                    </>):(
+                    <>
+                    {Wiew.map((item,key) => {
+                        if (item.to_user_id == localStorage.getItem("OneuserId")) {
+                            return (
+                                <>
+                                <div  style={{ cursor: "pointer" }} className="sms">
+                                    <div className="qizil"></div>
+                                    <div className="data_title">
+                                        <p className='unred'>{item.title}</p>
+                                        <div style={{display:'flex',gap:'10px'}}><p onClick={()=>Page(item.user_id)} className='data'>Yozgan</p><p className='data'>{item.time_create.slice(11, 16)}</p></div>
+                                    </div>
+                                    <div className="p_lorem_sms">
+                                        <p className='lorem_sms'>{item.description} </p>
+                                        <input style={{display:"none"}} type="text" id='atvet' />
+                                    </div>
+                                    <div id='inputNotifaction' className="input_notification_bid_div">
+                                      <input id='atvetu1' onChange={(e)=>setInputValue(e.target.value)} type="text" />
+                                      <button onClick={()=>atvet(item.user_id)}>Send</button>
+                                      <button ><MdOutlineClose/></button>
+                                    </div>
+                                </div>
+                                </>
                             )
                         }
 
                     })}
+                    </>
+                    )}
+                 
 
 
                 </div>
