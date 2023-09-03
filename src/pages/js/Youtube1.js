@@ -249,12 +249,12 @@ export default function Youtube1() {
   function MadolChange(id) {
     localStorage.setItem("Idvideo", JSON.stringify(id));
     window.location.reload();
-    // axios.get(`${url}/api/course_data_category/course/${id}`)
-    // .then(res=>{
-    //   setMain(res.data.one?res.data.one:[])
-    //   setCategory(res.data.all);
-    //   console.log(res.data, "ali");
-    // })
+    axios.get(`${url}/api/course_data_category/course/${id}`)
+    .then(res=>{
+      setMain(res.data.one?res.data.one:[])
+      setCategory(res.data.all);
+      console.log(res.data, "ali");
+    })
   }
   // console.log(main1,"aom");
 

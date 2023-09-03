@@ -19,7 +19,7 @@ const showModal = () => {
 const handleOk = () => {
   var data=new FormData()
   data.append("name",document.querySelector(".name").value)
-  data.append("content",document.querySelector(".content").value)
+  data.append("content",document.querySelector(".content112").value)
   data.append("extra_data",document.querySelector(".extra_data").value)
   data.append("category",document.querySelector(".category").value)
 if(onimage){
@@ -86,7 +86,7 @@ useEffect(()=>{
 <Input className='name' placeholder='title' />
 <br />
 <br />
-<Input className='content' placeholder='content' />
+<Input className='content112' placeholder='content' />
 <br />
 <br />
 <Input type="number" className='extra_data' placeholder='extra_data' />
