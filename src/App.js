@@ -49,6 +49,7 @@ import VideoCall from "./pages/metting";
 import JoinMeeting from "./pages/Join"
 import Sotibol from "./pages/js/Sotibol";
 import WiewAll from "./pages/js/WiewAll";
+import Sertificate_create from "./pages/js/Sertificate_create";
 export default function App() {
   return (
     <div>
@@ -102,6 +103,7 @@ export default function App() {
           <Route exact path="/Ourcourse" component={Ourcourse} />
           <Route exact path="/WiewAll" component={WiewAll} />
           <Route exact path="/NNN" component={NNN} />
+          <Route exact path="/sertificate_create" component={Sertificate_create} />
 
           {/* <Route index element={} />*/}
         </Switch>
