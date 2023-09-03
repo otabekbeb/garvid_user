@@ -1640,7 +1640,11 @@ export default function Youtube1() {
                                         {item2.image === null ? (
                                           <img src={novideo} alt="" />
                                         ) : (
-                                          <img src={item2.image} alt="" />
+                                          <img   src={
+                                            item.image && item.image.includes("http")
+                                              ? item.image
+                                              : `${url}/${item.image}`
+                                          }alt="" />
                                         )}
                                       </div>
                                       <div className="accordion_text">

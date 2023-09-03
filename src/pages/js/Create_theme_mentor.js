@@ -44,16 +44,18 @@ axios.post(`${url}/api/course_data_theme`,data,{ headers: { Authorization: "Bear
 })
 };
 function onFile(e) {
-   setOnImage(e.target.value) 
-   if(e.target.value){
+  console.log(e.target.checked);
+   setOnImage(e.target.checked) 
+   if(e.target.checked){
    document.querySelector(".image").type="file"
    }else{
     document.querySelector(".image").type="text"
    }
 }
 function onFile2(e) {
-    setOnVideo(e.target.value)
-    if(e.target.value){
+  console.log(e.target.checked);
+    setOnVideo(e.target.checked)
+    if(e.target.checked){
         document.querySelector(".video").type="file"
         }else{
          document.querySelector(".video").type="text"
