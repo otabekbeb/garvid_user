@@ -713,7 +713,7 @@ justify-content: center; */
     background: none !important;
     border: 2px solid #1aa1dc;
     position: relative;
-    top: -25px !important;
+    top: -35px !important;
 }
 
 .sli-kurg-rasm {
@@ -1674,6 +1674,9 @@ justify-content: center; */
 }
 
 @media (max-width:1035px) {
+    .swiper-pagination-bullet{
+        display: none !important;
+    }
     .about-header-block-swiper {
         display: none;
     }

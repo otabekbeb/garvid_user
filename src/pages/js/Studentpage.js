@@ -220,6 +220,7 @@ export default function Mentor() {
   const [stTasks, setTasks] = useState([])
   const [CourseId, setCourseId] = useState();
   const [deleteId, setDeleteId] = useState()
+  const [courstype, setCoursetype] = useState([]);
   useEffect(() => {
     axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setEdication(res.data)
@@ -737,7 +738,16 @@ export default function Mentor() {
 
   }
 
-
+  function filter(id) {
+    axios
+      .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        const search = res.data.filter((item) => item.course_type === id);
+        setKursdata(search);
+      });
+  }
   function dashedput(id) {
     var formdata = new FormData()
     formdata.append("content", document.querySelector(".inp_name_zadacput").value)
@@ -1063,38 +1073,55 @@ export default function Mentor() {
         </div>
 
         <div className={toggle === 1 ? "show-content" : "content"}><div>
-          <div className="Filter">
-            <div className="blur_blok">
-              <div className="inp_blok">
-                <input onChange={searchInput} type="text" placeholder="Search among my courses" />
-                <CiSearch className="search" />
-              </div>
-              <div className="blur">
-                <div className="icon_blok">
-                  <div
-                    className="sel_blok"
-                    onClick={() => {
-                      Filter();
-                    }}
-                  >
-                    <BiMenu className="menyu" />
-                    <h4>Filter</h4>
-                  </div>
-                  {/* <div className="win_men">
+        <div className="Filter">
+              <div className="blur_blok">
+                <div className="inp_blok">
+                  <input
+                    onChange={searchInput}
+                    id="search"
+                    type="text"
+                    placeholder="Search among my courses"
+                  />
+                  <CiSearch className="search" />
+                </div>
+                <div className="blur">
+                  <div className="icon_blok">
+                    <div
+                      className="sel_blok"
+                      onClick={() => {
+                        Filter();
+                      }}
+                    >
+                      <BiMenu className="menyu" />
+                      <h4>Filter</h4>
+                    </div>
+                    {/* <div className="win_men">
                   <MdWindow className="window" onClick={() => windowModal()} />
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
                 </div> */}
-                </div>
-                <div onMouseLeave={() => filter1()} className="filter_button">
-
-                  <div className="button_filter_kurs">
-                    <div className="div_kurs">dawdawdd</div>
                   </div>
-
+                  <div onMouseLeave={() => filter1()} className="filter_button">
+                    {courstype.map((item) => {
+                      return (
+                        <div className="button_filter_kurs">
+                          {item.name === null ? (
+                            ""
+                          ) : (
+                            <div
+                              onClick={() => filter(item.id)}
+                              className="div_kurs"
+                              style={{ paddingBottom: "5px" }}
+                            >
+                              {item.name}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
           <div className="kurs_cards">
             {kursdata.length === 0 ? (
