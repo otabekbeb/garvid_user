@@ -278,7 +278,7 @@
     right: 20px;
     font-size: 30px;
     color: white;
-    display: flex;
+    display: flex !important;
     align-items: center;
     display: none;
     justify-content: center;
