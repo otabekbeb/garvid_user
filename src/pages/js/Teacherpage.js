@@ -21,7 +21,11 @@ export default function Contact() {
       fullname: document.querySelectorAll('#contact_inp')[0].value,
       email: document.querySelectorAll('#contact_inp')[1].value,
       purchase: document.querySelectorAll('#contact_inp')[2].value,
-      message: document.querySelector('.contact_textarea').value
+      message: document.querySelector('.contact_textarea').value,
+      // phone: document.querySelector('.contact_inp1').value,
+      // city: document.querySelector('.contact_inp2').value,
+      // which_lesson: document.querySelector('.contact_inp3').value,
+    
 
     }
     axios.post("https://markazback2.onrender.com/api/call_me", formdata, {
@@ -97,6 +101,20 @@ export default function Contact() {
                 <label>
                   <p style={{fontWeight:'700'}}>purchase</p>
                   <input id='contact_inp' type="text" required />
+                </label>
+
+
+                <label>
+                  <p style={{fontWeight:'700'}}>Phone</p>
+                  <input id='contact_inp1' type="text" required />
+                </label>
+                <label>
+                  <p style={{fontWeight:'700'}}>City</p>
+                  <input id='contact_inp2' type="text" required />
+                </label>
+                <label>
+                  <p style={{fontWeight:'700'}}>which_lesson</p>
+                  <input id='contact_inp3' type="text" required />
                 </label>
                 <label>
                   <p style={{fontWeight:'700'}}>Message</p>

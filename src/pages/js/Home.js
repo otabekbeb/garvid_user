@@ -93,7 +93,11 @@ export default function Home() {
                                         <div className="iniversty_img">
                                             {item.image === null ? (<img src={img_for_null} alt="" />) : (<img src={item.image} alt="" />)}
                                         </div>
+
                                         <p>{item.title}</p>
+                                                                                <div className="line-jome-home">
+                                            
+                                        </div>
                                         <h2>{item.deckription}</h2>
                                     </div>
                                 )
