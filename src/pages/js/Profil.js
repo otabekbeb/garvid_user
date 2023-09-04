@@ -376,7 +376,7 @@ export default function Profil() {
                               {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
                               <div className="taxrirlash_chad">
                                 <div className="taxrirlash_chad_img_size">
-                                  <img src={item.img} alt="" />
+                                  <img src={`${url}`+item.image} alt="" />
 
                                 </div>
                                 <div className="taxrirlash_chad_size">
