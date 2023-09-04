@@ -6,7 +6,7 @@ import { AiFillDislike, AiFillLike, AiFillStar } from "react-icons/ai";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { TiThMenu } from "react-icons/ti";
 import "../css/youtube1.css";
-
+import imgNotFound from "../img/Not Found.jpg"
 import Usernavbar from "../js/Navbar";
 import Loader from "./loader";
 import { Pagination, Navigation } from "swiper/modules";
@@ -51,7 +51,7 @@ export default function Youtube1() {
   const [main1, setMain1] = useState(
     JSON.parse(localStorage.getItem("Idvideo"))
   );
-
+  const [error, setError] = useState(false);
   const [state1, setState1] = React.useState();
   const [loader, setLoader] = useState(1);
   const [task_comnet_id, setTask_comnet_id] = useState(0);
@@ -72,7 +72,7 @@ export default function Youtube1() {
   const [currentTime, setCurrentTime] = useState(0);
   const [startAt, setStartAt] = useState(0);
   const [subcomentdata, setSubcomentData] = useState([]);
-  const [taskData, setTaskData]=useState([])
+  const [taskData, setTaskData] = useState([]);
 
   const playerRef = useRef(null);
 
@@ -179,14 +179,20 @@ export default function Youtube1() {
     setTask_comnet_id(0);
   }
   function painModal1() {
-    axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`,{
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    })
-    .then(res=>{
-      setTaskData(res.data)
-    });
+    axios
+      .get(
+        `${url}/api/course_theme_comment/${
+          JSON.parse(localStorage.getItem("page_video")).id
+        }`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      )
+      .then((res) => {
+        setTaskData(res.data);
+      });
     document.querySelector(".zadaniya1").style =
       "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya").style =
@@ -378,18 +384,20 @@ export default function Youtube1() {
       .then((res) => {
         const idget = JSON.parse(localStorage.getItem("page_video"));
         axios
-        .get(`${url}/api/course_theme_comment/subcomment/`, {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        })
-        .then((res) => {
-          setSubcomentData(res.data);
-        });
+          .get(`${url}/api/course_theme_comment/subcomment/`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
+          .then((res) => {
+            setSubcomentData(res.data);
+          });
       })
       .catch((err) => {
         Swal.fire("Нельзя писать больше 300 символов");
       });
 
-      axios
+    axios
       .get(`${url}/api/course_theme_comment/subcomment/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
@@ -410,7 +418,6 @@ export default function Youtube1() {
       .catch((err) => {});
     getData();
   }
-
 
   function cencelModal() {
     document.querySelector("#chat_text").value = "";
@@ -453,14 +460,20 @@ export default function Youtube1() {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
-        axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`,{
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        })
-        .then(res=>{
-          setTaskData(res.data)
-        });
+        axios
+          .get(
+            `${url}/api/course_theme_comment/${
+              JSON.parse(localStorage.getItem("page_video")).id
+            }`,
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+              },
+            }
+          )
+          .then((res) => {
+            setTaskData(res.data);
+          });
       });
     axios
       .get(
@@ -495,26 +508,33 @@ export default function Youtube1() {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
-        axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`,{
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        })
-        .then(res=>{
-          setTaskData(res.data)
-        });
+        axios
+          .get(
+            `${url}/api/course_theme_comment/${
+              JSON.parse(localStorage.getItem("page_video")).id
+            }`,
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+              },
+            }
+          )
+          .then((res) => {
+            setTaskData(res.data);
+          });
       })
       .catch((err) => {
         Swal.fire("Error");
       });
 
-      axios.get(`${url}/api/course_theme_comment/`,{
+    axios
+      .get(`${url}/api/course_theme_comment/`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       })
-      .then(res=>{
-        setTaskData(res.data)
+      .then((res) => {
+        setTaskData(res.data);
       });
   }
 
@@ -634,34 +654,19 @@ export default function Youtube1() {
                           src={main1.video}
                           title="W3Schools Free Online Web Tutorials"
                         ></iframe> */}
-                        {(() => {
-                          if (
-                            main.video.includes(".jpg") ||
-                            main.video.includes(".png") ||
-                            main.video === null
-                          ) {
-                            return (
-                              <p
-                                style={{
-                                  margin: "100px",
-                                }}
-                              >
-                                video not found or not exist
-                              </p>
-                            );
-                          } else {
-                            return (
-                              <ReactPlayer
-                                ref={playerRef}
-                                url={main1.video}
-                                controls
-                                onDuration={handleDuration}
-                                onProgress={handleProgress}
-                                className="React_player"
-                              />
-                            );
-                          }
-                        })()}
+                      {error ? (
+                        <img className="React_player" src={imgNotFound} alt=""/>
+                      ) : (
+                        <ReactPlayer
+                          ref={playerRef}
+                          url={main.video}
+                          controls
+                          onDuration={handleDuration}
+                          onProgress={handleProgress}
+                          className="React_player"
+                          onError={() => setError(true)}
+                        />
+                      )}
                       </div>
                       <div className="theme_df">
                         <div className="flex_logig">
@@ -923,7 +928,9 @@ export default function Youtube1() {
                                                   />
                                                 </div>
                                                 <div className="user-name-timecreate">
-                                                  <h5>{item.oneuser.username}</h5>
+                                                  <h5>
+                                                    {item.oneuser.username}
+                                                  </h5>
                                                   <p>
                                                     {item.time_create.slice(
                                                       0,
@@ -938,9 +945,7 @@ export default function Youtube1() {
                                                   ""
                                                 ) : (
                                                   <img
-                                                    src={
-                                                      item.image
-                                                    }
+                                                    src={item.image}
                                                     alt=""
                                                   />
                                                 )}
@@ -1157,13 +1162,19 @@ export default function Youtube1() {
                               {teacherwork.map((item) => {
                                 if (
                                   item.id ==
-                                  JSON.parse(localStorage.getItem("page_video")).id
+                                  JSON.parse(localStorage.getItem("page_video"))
+                                    .id
                                 ) {
                                   return (
                                     <>
                                       <div className="zanacha_vaz">Задача*</div>
                                       <div className="task_div_big">
-                                        <img src={item.image ? "" : `${item.image}`} alt="" />
+                                        <img
+                                          src={
+                                            item.image ? "" : `${item.image}`
+                                          }
+                                          alt=""
+                                        />
                                         <p>{item.content}</p>
                                       </div>
                                     </>
@@ -1188,25 +1199,55 @@ export default function Youtube1() {
                                             <div className="df_div_comment_page">
                                               <div className="div_img_class_over">
                                                 <img
-                                                  src={
-                                                    item.oneuser.image
-                                                  }
+                                                  src={item.oneuser.image}
                                                   alt=""
                                                 />
                                               </div>
 
                                               <div className="div_class_tugadi">
                                                 <div className="task-uchun-joy-and-mark">
-                                                  <h5>{item.oneuser.username}</h5>
-                                                  {item.mark === 0 ? "" : (<>{item.mark === 2 ? (<div className="mark-two-bosa">
-                                                    2
-                                                  </div>) : (<>{item.mark === 3 ? (<div className="mark-three-bosa">
-                                                    3
-                                                  </div>): (<>{item.mark === 4 ? (<div className="mark-four-bosa">
-                                                    4
-                                                  </div>):(<>{item.mark === 5 ? (<div className="mark-five-bosa">
-                                                    5
-                                                  </div>):""}</>)}</>)}</>)}</>)}
+                                                  <h5>
+                                                    {item.oneuser.username}
+                                                  </h5>
+                                                  {item.mark === 0 ? (
+                                                    ""
+                                                  ) : (
+                                                    <>
+                                                      {item.mark === 2 ? (
+                                                        <div className="mark-two-bosa">
+                                                          2
+                                                        </div>
+                                                      ) : (
+                                                        <>
+                                                          {item.mark === 3 ? (
+                                                            <div className="mark-three-bosa">
+                                                              3
+                                                            </div>
+                                                          ) : (
+                                                            <>
+                                                              {item.mark ===
+                                                              4 ? (
+                                                                <div className="mark-four-bosa">
+                                                                  4
+                                                                </div>
+                                                              ) : (
+                                                                <>
+                                                                  {item.mark ===
+                                                                  5 ? (
+                                                                    <div className="mark-five-bosa">
+                                                                      5
+                                                                    </div>
+                                                                  ) : (
+                                                                    ""
+                                                                  )}
+                                                                </>
+                                                              )}
+                                                            </>
+                                                          )}
+                                                        </>
+                                                      )}
+                                                    </>
+                                                  )}
                                                 </div>
 
                                                 <p className="p-create-time-uchun">
@@ -1219,7 +1260,9 @@ export default function Youtube1() {
                                                 {task.map((item) => (
                                                   <img
                                                     src={
-                                                      item.image ? "" : `${item.image}`
+                                                      item.image
+                                                        ? ""
+                                                        : `${item.image}`
                                                     }
                                                     alt=""
                                                   />
@@ -1495,34 +1538,19 @@ export default function Youtube1() {
                 ) : (
                   <div className="youtube_kotta_img">
                     <div className="img_youtube_kotta">
-                      {(() => {
-                        if (
-                          main.video.includes(".jpg") ||
-                          main.video.includes(".png") ||
-                          main.video === null
-                        ) {
-                          return (
-                            <p
-                              style={{
-                                margin: "30%",
-                              }}
-                            >
-                              video not found or not exist
-                            </p>
-                          );
-                        } else {
-                          return (
-                            <ReactPlayer
-                              ref={playerRef}
-                              url={main.video}
-                              controls
-                              onDuration={handleDuration}
-                              onProgress={handleProgress}
-                              className="React_player"
-                            />
-                          );
-                        }
-                      })()}
+                      {error ? (
+                        <img className="React_player" src={imgNotFound} alt=""/>
+                      ) : (
+                        <ReactPlayer
+                          ref={playerRef}
+                          url={main.video}
+                          controls
+                          onDuration={handleDuration}
+                          onProgress={handleProgress}
+                          className="React_player"
+                          onError={() => setError(true)}
+                        />
+                      )}
                     </div>
                     <div className="theme_df">
                       <div className="flex_logig">
