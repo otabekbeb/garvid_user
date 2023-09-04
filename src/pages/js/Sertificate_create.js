@@ -108,7 +108,7 @@ export default function Sertificate_create() {
                                 <a href={`${url}/${item.file}`} className="sertificate_i"><AiOutlineFileAdd className='sertificate_icon' /></a>
                                 <div className="sertificate_db">
                                     <label htmlFor="">Type:
-                                        <p>{item.type.length<29 ?(item.type):(<>{item.type.slice(0,29)}...</>)}</p>
+                                        <p>{item.type.length<29 ?(item.type):(<div>{item.type.slice(0,29)}...</div>)}</p>
                                     </label>
                                     <label htmlFor="">Director:
                                         <p>{item.director}</p>

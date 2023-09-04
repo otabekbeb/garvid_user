@@ -50,10 +50,10 @@ export default function Azo() {
                         {/* <div className="delete_btns">
                             <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>
                         </div> */}
-                    </div>) : (<>
+                    </div>) : (<div>
                         {follow.map((item, key) => {
                             if (following == item.topuser) {
-                                return <>
+                                return <div>
                                     {users.map(item1 => {
                                         
                                         if (item1.id == item.minuser) {
@@ -78,10 +78,10 @@ export default function Azo() {
                                             )
                                         }
                                     })}
-                                </>
+                                </div>
                             }
                         })}
-                    </>)}
+                    </div>)}
 
 
 

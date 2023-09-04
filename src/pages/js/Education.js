@@ -570,13 +570,13 @@ export default function Edication() {
   return (
     <div className='otash'>
       {page == 2 ? (
-        <>
+        <div>
           <div className="exit_button"><button onClick={() => setPage(0)} style={{ marginLeft: "0px" }}>Close</button>        <button className='user_post_button_malumot' style={{ paddingTop: '3px' }} onClick={() => { SetMark(0) }} >Evaluate</button>   <button style={{ paddingTop: '3px' }} onClick={() => Markpage()} className='user_post_button_malumot'>Magazine</button></div>
-          {mark == 0 ? (<><div className="search_big_div"><button onClick={() => postGroupModal()} className="user_post_button">Add</button></div><Table dataSource={group_student} columns={columns} />
+          {mark == 0 ? (<div><div className="search_big_div"><button onClick={() => postGroupModal()} className="user_post_button">Add</button></div><Table dataSource={group_student} columns={columns} />
 
 
-          </>) : (
-            <>
+          </div>) : (
+            <div>
               <input onChange={FilterDay} type="month" style={{ marginBottom: "5px" }} />
               <div style={{ width: '100%', overflowX: 'scroll' }}>
                 <table className='all_mark_jurnal'>
@@ -594,18 +594,18 @@ export default function Edication() {
                       <td>{key + 1}</td>
                       <td>{item1.name}</td>
                       {item1.mark.map(item2 => {
-                        return <> <td style={item2.came == true ? { backgroundColor: "green", color: '#fff' } : { backgroundColor: "red", color: '#fff' }} onClick={() => MarkputModal(item2.id, item2.mark, item2.came, item2.lesson_id, item2.student_id)}  >{item2.mark}</td></>
+                        return <div> <td style={item2.came == true ? { backgroundColor: "green", color: '#fff' } : { backgroundColor: "red", color: '#fff' }} onClick={() => MarkputModal(item2.id, item2.mark, item2.came, item2.lesson_id, item2.student_id)}  >{item2.mark}</td></div>
                       })}
                     </tr>
                   })}
                 </table>
               </div>
-            </>)}
-        </>
+            </div>)}
+        </div>
       ) : (
-        <>
+        <div>
           {page == 1 ? (
-            <>
+            <div>
               <div className="exit_button"><button onClick={() => setPage(0)}>Close</button></div>
               <div className="App">
                 <Calendar className='calendar'
@@ -620,9 +620,9 @@ export default function Edication() {
                   onSelectSlot={handleSelect}
                 />
               </div>
-            </>
+            </div>
           ) : (
-            <>
+            <div>
               <div className="search_big_div"><button className="user_post_button" onClick={() => postEducationModal()}>Add Education</button><AiOutlineSearch className="search" /><input onChange={Search} placeholder="Enter here..." type="text" /></div>
               {/* <div className="edication_card">
                 {edication.map(item => {
@@ -644,29 +644,29 @@ export default function Edication() {
                   )
                 })}
               </div> */}
-              <ul class="cards">
+              <ul className="cards">
                 {edication === null ? (
                   <div className="delete_padding">
                     <img style={{ width: "60%", height: '70%' }} src={Education} alt="" />
                     <h3 style={{ textAlign: 'center' }}>No education</h3>
-                  </div>) : (<>
+                  </div>) : (<div className='edu_cards_inside'>
                     {edication.map(item => {
                       return (
                         <li>
-                          <div class="card">
-                            <img src="https://images.hindustantimes.com/rf/image_size_640x362/HT/p2/2015/12/01/Pictures/_c34102da-9849-11e5-b4f4-1b7a09ed2cea.jpg" class="card__image" alt="" />
-                            <div class="card__overlay">
-                              <div class="card__header">
-                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-                                {/* <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" /> */}
-                                <div class="card__header-text">
-                                  <h2 class="card__title">{item.education_name}</h2>
-                                  <span class="card__status">
+                          <div className="card">
+                            <img src="https://images.hindustantimes.com/rf/image_size_640x362/HT/p2/2015/12/01/Pictures/_c34102da-9849-11e5-b4f4-1b7a09ed2cea.jpg" className="card__image" alt="" />
+                            <div className="card__overlay">
+                              <div className="card__header">
+                                <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                                {/* <img className="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" /> */}
+                                <div className="card__header-text">
+                                  <h2 className="card__title">{item.education_name}</h2>
+                                  <span className="card__status">
                                     <p><FaHourglassStart />: {(item.start_date).slice(0, 10)}</p>
                                     <p><FaHourglassEnd />: {(item.end_date).slice(0, 10)}</p></span>
                                 </div>
                               </div>
-                              <p class="card__description">{item.description}</p>
+                              <p className="card__description">{item.description}</p>
                               <div className="edu_btns">
                                 <button onClick={() => JadvalPage(item.id)}><FaUsers /></button>
                                 <button onClick={() => Page(item.id)}><MdPlayLesson /></button>
@@ -677,11 +677,11 @@ export default function Edication() {
                           </div>
                         </li>
                       )
-                    })}</>)}
+                    })}</div>)}
 
               </ul>
-            </>)}
-        </>
+            </div>)}
+        </div>
       )}
 
 
@@ -859,7 +859,7 @@ export default function Edication() {
           <img src={deleteImg} alt="" />
           {group_student.map(item => {
             if (GroupId == item.id) {
-              return <p>Do you want to remove this {student.map(student => { if (student.id == item.student_id) { return <>{student.username}</> } })}</p>
+              return <p>Do you want to remove this {student.map(student => { if (student.id == item.student_id) { return <div>{student.username}</div> } })}</p>
             }
           })}
           <div className="deleteButton_div">

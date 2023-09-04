@@ -330,7 +330,7 @@ export default function Navbar() {
                       </li>
                       
                     <li >
-                      {localStorage.getItem("token") ? (user.map(item=>{return(<a href="/user" className="tt">{item.username}</a>) })) : (<a href="/login" className="tt">Log in</a>)}
+                      {localStorage.getItem("token") ? (user.map((item,key)=>{return(<a href="/user" className="tt">{item.username}</a>) })) : (<a href="/login" className="tt">Log in</a>)}
                     </li>
 
 

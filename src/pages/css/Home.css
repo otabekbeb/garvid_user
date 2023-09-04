@@ -1216,3 +1216,146 @@ list-style: none;
         padding: 10px 25px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+  
+  /* .cards55 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem 5vw;
+    padding: 0;
+    list-style-type: none;
+
+  }
+  
+  .card55 {
+    position: relative;
+    display: block;
+    height: 100%;  
+    border-radius: calc(var(--curve) * 1px);
+    overflow: hidden;
+    text-decoration: none;
+    width: 500px;
+    
+  }
+  
+  .card__image21 {      
+    width: 100%;
+    height: auto;
+    
+  }
+  
+  .card__overlay22 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;      
+    background-color: var(--surface-color);      
+    transform: translateY(100%);
+    transition: .2s ease-in-out;
+  }
+  
+  .card55:hover .card__overlay22 {
+    transform: translateY(0);
+  }
+  
+  .card__header12 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    padding: 2em;
+    border-radius: calc(var(--curve) * 1px) 0 0 0;    
+    background-color: var(--surface-color);
+    transform: translateY(-100%);
+    transition: .2s ease-in-out;
+  }
+  
+  .card__arc2 {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;      
+    z-index: 1;
+  }
+  
+  .card__arc2 path {
+    fill: var(--surface-color);
+    d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+  }       
+  
+  .card55:hover .card__header12 {
+    transform: translateY(0);
+  }
+  
+  .card__thumb1 {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;      
+    border-radius: 50%;      
+  }
+  
+  .card__title3 {
+    font-size: 1em;
+    margin: 0 0 .3em;
+    color: #6A515E;
+  }
+  
+
+  
+  .card__status3 {
+    font-size: .8em;
+    color: #D7BDCA;
+  }
+  
+  .card__description2 {
+    padding: 0 2em 2em;
+    margin: 0;
+    color: #D7BDCA;
+    font-family: "MockFlowFont";   
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }     */
+
+
+
+.line-jome-home{
+    width: 90%;
+    height: 1px;
+    background-color:#3d3a3ad7;
+    display: flex;
+    margin: auto;
+    margin-bottom: 15px;
+}
+  .iniversty_img img{
+    cursor: crosshair;
+  }
+  .iniversty_card p{
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 17px;
+  }
+  .iniversty_card h2{
+    font-weight: 300;
+    font-style: normal;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0px;
+    color: black !important;
+  }

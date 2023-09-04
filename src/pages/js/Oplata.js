@@ -15,7 +15,7 @@ export default function Oplata() {
         <div>
             <Usernavbar />
             <div className="container2_bid_div">
-                <div class="container2">
+                <div className="container2">
                     <div className="oplata_button_div"><button style={page == 1 ? { backgroundColor: "#44bef1", color: "#fff" } : {}} onClick={() => setPage(1)}>Stripe</button><button style={page == 0 ? { backgroundColor: "#44bef1", color: "#fff" } : {}} onClick={() => setPage(0)}>PayPal</button></div>
                     {page == 1 ? (
                         <div className='PayPal_big_div'><StripeContainer /></div>

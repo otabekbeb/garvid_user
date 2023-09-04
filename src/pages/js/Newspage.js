@@ -37,7 +37,7 @@ export default function News() {
               {base.map((item,key)=>{
                 if (key==localStorage.getItem("baseId")) {
                   return(
-                    <>
+                    <div>
                     <div className="newspage_cards">
                       {item.image === null ?(<img src={img_for_null} alt="" />):(<img src={item.image} alt="" />)}
                         
@@ -46,7 +46,7 @@ export default function News() {
                     <div className="newspage_p">
                         <p>{item.description}</p>
                     </div>
-                    </>
+                    </div>
                   )
                 }
               })}

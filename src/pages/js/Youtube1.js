@@ -1,59 +1,55 @@
 import React, { useEffect, useState, useRef } from "react";
-import img_kotta from "../img/Rectangle.png";
-import img_ava from "../img/Ellipse.png";
-import img_accordion from "../img/Rectangle 14.1.svg";
-import { AiFillDislike, AiFillLike, AiFillStar } from "react-icons/ai";
-import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import ReactPlayer from 'react-player';
+// import img_kotta from "../img/Rectangle.png";
+// import img_ava from "../img/Ellipse.png";
+// import img_accordion from "../img/Rectangle 14.1.svg";
+// import { AiFillDislike, AiFillLike, AiFillStar } from "react-icons/ai";
+// import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { TiThMenu } from "react-icons/ti";
 import "../css/youtube1.css";
 
 import Usernavbar from "../js/Navbar";
 import Loader from "./loader";
-import { Pagination, Navigation } from "swiper/modules";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Swiper, SwiperSlide } from "swiper/react";
+
 import err from "../img/istockphoto-1321436405-612x612.jpg";
 import novideo from "../img/download.svg";
 import Create_Theme_Category_mentor from "./Create_Theme_Category_mentor.js";
 import "../css/comment.css";
 import { FiCornerUpLeft } from "react-icons/fi";
 import { FcFile } from "react-icons/fc";
-import img_comment from "../img/Ellipse.jpg";
-import img_comment1 from "../img/Ellipse.png";
+// import img_comment from "../img/Ellipse.jpg";
+// import img_comment1 from "../img/Ellipse.png";
 import axios from "axios";
 import url from "./Host";
 import Swal from "sweetalert2";
-import person from "../img/149071.png";
-import { MdClose } from "react-icons/md";
+// import person from "../img/149071.png";
+// import { MdClose } from "react-icons/md";
 import "../css/yozishmalar.css";
 import { AiOutlineComment, AiOutlineDelete } from "react-icons/ai";
-import { CgClose } from "react-icons/cg";
+// import { CgClose } from "react-icons/cg";
 import anonim from "../img/anonim-user.png";
 import Footer1 from "./Footer1.js";
-import ReactPlayer from "react-player";
 import "../css/vazifa1.css";
 import "../css/yozishmalar.css";
 import { TfiMarkerAlt } from "react-icons/tfi";
-import { BsBookmark } from "react-icons/bs";
-import mark_img from "../img/evaluation_of_education_300.jpg";
+// import { BsBookmark } from "react-icons/bs";
+// import mark_img from "../img/evaluation_of_education_300.jpg";
 import { Accordion } from "react-bootstrap";
-import Profil from "./Profil";
-import Create_theme_mentor from "./Create_theme_mentor";
-import { async } from "q";
+// import Profil from "./Profil";
+// import Create_theme_mentor from "./Create_theme_mentor";
+// import { async } from "q";
 
 export default function Youtube1() {
-  const [id, setId] = useState(1);
+  // const [id, setId] = useState(1);
   const [category, setCategory] = useState([]);
-
-  const [progressTheme, setProgressTheme] = useState();
-  const [duration, setDuration] = useState(0);
   const [main, setMain] = useState([]);
   const [main1, setMain1] = useState(
     JSON.parse(localStorage.getItem("Idvideo"))
   );
-  const [chooseStudentTheme, setchooseStudentTheme] = useState(0);
   const [state1, setState1] = React.useState();
   const [loader, setLoader] = useState(1);
   const [task_comnet_id, setTask_comnet_id] = useState(0);
@@ -62,7 +58,6 @@ export default function Youtube1() {
   const [comment2, setComment2] = useState([]);
   const [subcoment, setSubcoment] = useState(0);
   const [oneuser, setOneuser] = useState([]);
-
   const [teacherwork, setTeacherwork] = useState([]);
   const [commenttask, setCommenttask] = useState([]);
   const [comment5, setComment5] = useState([]);
@@ -70,119 +65,125 @@ export default function Youtube1() {
   const [mark, setMark] = useState([]);
   const [page, setPage] = useState(1);
   const [page1, setPage1] = useState(1);
-  const playerRef = useRef(null);
+  const [videoDuration, setVideoDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
+  const [startAt, setStartAt] = useState(0);
+  const playerRef = useRef(null);
 
-  const handleReady = () => {
-    // Seek to the desired time (in seconds)
-    var StudentId = parseInt(localStorage.getItem("OneuserId"));
-    // console.log(main,main1.id,"aaaaaaaaaaaaaaaaaadddd");
-    var id = main1.id;
-    // var id2=main.id
 
-    // if (main1) {
 
-    axios
-      .get(`${url}/api/student_theme/`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      })
-      .then((res) => {
-        const filter = res.data.filter(
-          (item) => item.student_id === StudentId && item.theme_id === id
-        );
-        setchooseStudentTheme(filter[0].id);
-        const num = filter[0].complate;
-        const time = duration / 100;
-        const result = time * num;
-        setProgressTheme(result);
-        alert(result, "result");
-        console.log(time, "time");
-        console.log(result, "result");
-        playerRef.current.seekTo(result);
-      })
-      .catch((err) => {
-
-        alert(err);
-      });
-    setTimeout(() => {
-      const time = progressTheme;
-      alert(progressTheme, 2);
-      playerRef.current.seekTo(100);
-    }, 4000);
-  };
-  useEffect(() => {
-    var StudentId = parseInt(localStorage.getItem("OneuserId"));
-    var id = main1.id;
-    const fetchData = async () => {
-      try {
-        const res = await axios.get(`${url}/api/student_theme/`, {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        });
-
-        const filter = res.data.filter(
-          (item) => item.student_id === StudentId && item.theme_id === id
-        );
-        setchooseStudentTheme(filter[0].id);
-        const num = filter[0].complate;
-        const time = duration / 100;
-        const result = time * num;
-        setProgressTheme(result);
-
-        console.log(result, "result");
-        // Perform other actions with the result
-        playerRef.current.seekTo(Number(result));
-      } catch (err) {
-        console.log(err);
-        alert(err);
-      }
-    };
-    fetchData();
-  }, []);
 
   const handleDuration = (duration) => {
-    console.log("Длительность видео:", duration);
-    alert(duration);
-    setDuration(duration);
+    const OneuserId = parseInt(localStorage.getItem("OneuserId"));
+    const { id } = JSON.parse(localStorage.getItem("page_video"));
+    const token = localStorage.getItem("token");
+  
+    axios
+      .get(`${url}/api/student_theme/`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        const filteredItem = res.data.find(
+          (item) => item.theme_id === id && item.student_id === OneuserId
+        );
+        const percentWatched = filteredItem ? filteredItem.complate : 0;
+        const secondsWatched = (percentWatched * duration) / 100;
+        setStartAt(secondsWatched);
+      });
+  
+    setVideoDuration(duration);
   };
+  
 
+
+ 
+  
   const handleProgress = (progress) => {
+    const OneuserId = parseInt(localStorage.getItem("OneuserId"));
+    const { id } = JSON.parse(localStorage.getItem("page_video"));
+    const token = localStorage.getItem("token");
     setCurrentTime(progress.playedSeconds);
-
-    var StudentId = parseInt(localStorage.getItem("OneuserId"));
-    console.log(progress.playedSeconds);
-    console.log(progressTheme, "progress");
-    if (chooseStudentTheme >= 1) {
-      setInterval(() => {
-        const math = (duration / progress.playedSeconds) * 100;
-        var fomdata = new FormData();
-        fomdata.append("student_id", StudentId);
-        fomdata.append("theme_id", main1.id);
-        fomdata.append("complate", math);
-        axios
-          .put(`${url}/api/student_theme/2`, fomdata, {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          })
-          .then((item) => {
-            alert("work");
-          })
-          .catch((err) => {
-            console.log("ss");
-          });
-      }, 3000);
+    const percentWatched = Math.floor(progress.played * 100);
+  
+    if (percentWatched % 10 === 0) {
+      // alert(`Вы просмотрели ${percentWatched}% видео`);
+  
+      axios
+        .get(`${url}/api/student_theme/`, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((res) => {
+          const filteredItem = res.data.find(
+            (item) => item.theme_id === id && item.student_id === OneuserId
+          );
+  
+          if (!filteredItem || percentWatched > filteredItem.complate) {
+            const formData = new FormData();
+            formData.append("student_id", OneuserId);
+            formData.append("theme_id", id);
+            formData.append("complate", percentWatched);
+  
+            if (!filteredItem) {
+              axios
+                .post(`${url}/api/student_theme/`, formData, {
+                  headers: { Authorization: `Bearer ${token}` },
+                })
+                .then((res) => {
+                  console.log("work");
+                  console.log(filteredItem);
+                  console.log(OneuserId);
+                  console.log(id);
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+            } else {
+              axios
+                .put(
+                  `${url}/api/student_theme/complate/${filteredItem.id}`,
+                  formData,
+                  {
+                    headers: { Authorization: `Bearer ${token}` },
+                  }
+                )
+                .then((res) => {
+                  console.log("work");
+                  console.log(filteredItem);
+                  console.log(OneuserId);
+                  console.log(id);
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+            }
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
   };
+  
+
+
+
 
   useEffect(() => {
-    const idget = JSON.parse(localStorage.getItem("page_video"));
+    const { id } = JSON.parse(localStorage.getItem("page_video"));
+    setLoader(1);
+
     axios
       .get(`${url}/api/course_theme_comment`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
-        var mycoment = res.data.filter((item) => item.theme == idget.id);
-        
+        var mycoment = res.data.filter(
+          (item) =>
+            item.theme === id &&
+            item.subcomment === 0 &&
+            item.task_commnet_id === 0
+        );
+
         axios
           .get(`${url}/auth/allusers`, {
             headers: {
@@ -190,22 +191,23 @@ export default function Youtube1() {
             },
           })
           .then((res3) => {
-         
-            for (let i = 0; i < mycoment.length; i++) {
-              mycoment[i].username = "Ananim User";
-              mycoment[i].image1 = "";
-              for (let j = 0; j < res3.data.length; j++) {
-                if (res3.data[j].id == mycoment[i].user_id) {
-                  mycoment[i].username = res3.data[j].username;
-                  mycoment[i].image1 = res3.data[j].image;
-                }
+            mycoment = mycoment.map((item) => {
+              item.username = "Ananim User";
+              item.image1 = "";
+              const user = res3.data.find((user) => user.id === item.user_id);
+              if (user) {
+                item.username = user.username;
+                item.image1 = user.image;
               }
-            }
+              return item;
+            });
 
             var onlycoment = mycoment.filter(
-              (item) => (item.subcomment==0&&item.task_commnet_id == 0)
+              (item) => item.task_commnet_id === 0
             );
-            var all_task = mycoment.filter((item) => item.task_commnet_id != 0);
+            var all_task = mycoment.filter(
+              (item) => item.task_commnet_id !== 0
+            );
 
             axios
               .get(`${url}/api/course_theme_task_student`, {
@@ -214,64 +216,128 @@ export default function Youtube1() {
                 },
               })
               .then((res1) => {
-                for (let i = 0; i < all_task.length; i++) {
-                  all_task[i].mark = 0;
-                  for (let j = 0; j < res1.data.length; j++) {
-                    if (all_task[i].id == res1.data[j].feedback) {
-                      all_task[i].mark = res1.data[j].mark;
-                    }
+                all_task = all_task.map((item) => {
+                  item.mark = 0;
+                  const task = res1.data.find(
+                    (task) => task.feedback === item.id
+                  );
+                  if (task) {
+                    item.mark = task.mark;
                   }
-                }
-                
+                  return item;
+                });
+
                 setComment(onlycoment);
                 setCommenttask(all_task);
+                setLoader(0);
               })
               .catch((err) => {
-                console.log("123");
+                console.log(err);
               });
+          })
+          .catch((err) => {
+            console.log(err);
           });
       })
       .catch((err) => {
-        console.log("1223");
+        console.log(err);
       });
   }, []);
-  // Abbas subcomnet
-function getSubcoment(id){
-  const idget = JSON.parse(localStorage.getItem("page_video"));
-  axios
-    .get(`${url}/api/course_theme_comment`, {
-      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-    })
-    .then((res) => {
-      var mycoment = res.data.filter((item) => item.theme == idget.id);
-      
-      axios
-        .get(`${url}/auth/allusers`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        })
-        .then((res3) => {
-       
-          for (let i = 0; i < mycoment.length; i++) {
-            mycoment[i].username = "Ananim User";
-            mycoment[i].image1 = "";
-            for (let j = 0; j < res3.data.length; j++) {
-              if (res3.data[j].id == mycoment[i].user_id) {
-                mycoment[i].username = res3.data[j].username;
-                mycoment[i].image1 = res3.data[j].image;
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const OneuserId = localStorage.getItem("OneuserId");
+        const id = localStorage.getItem("abbas");
+        const task_comnet_id = 1; // Замените значение на необходимое
+  
+        setLoader(1);
+        localStorage.setItem("task_commnet_id", JSON.stringify(task_comnet_id));
+  
+        const res = await axios.get(`${url}/api/course_data_category/course/${id}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+  
+        setMain(res.data.one ? res.data.one : []);
+        setCategory(res.data.all);
+  
+        // const promises = res.data.all.flatMap((itam) =>
+        //   itam.theme.map(async (itam2) => {
+        //     const formData = new FormData();
+        //     formData.append("student_id", OneuserId);
+        //     formData.append("theme_id", itam2.id);
+        //     formData.append("complate", 0);
+        //     return axios.post(`${url}/api/student_theme/`, formData, {
+        //       headers: { Authorization: `Bearer ${token}` },
+        //     });
+        //   })
+        // );
+  
+        // await Promise.all(promises);
+        alert("ishadi");
+  
+        const coment21 = res.data;
+        const comment = res.data.map((item) => {
+          if (item.task_commnet_id === task_comnet_id) {
+            let a = 0;
+            for (let j = 0; j < coment21.length; j++) {
+              if (item.id === coment21[j].subcomment) {
+                a++;
               }
             }
+            item.count = a;
           }
-          var subcomnet = mycoment.filter((item) => item.subcommnet==id);
-            })
-            .catch((err) => {
+          return item;
         });
-    })
-    .catch((err) => {
-   
-    });
-}
+        setComment(comment);
+        setTeacherwork(res.data);
+        console.log(res.data);
+  
+        if (JSON.parse(localStorage.getItem("page_user"))[0].position === 2) {
+          return <Create_Theme_Category_mentor id1={id} />;
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+  
+    fetchData();
+  }, []);
+  
+  
+  // Abbas subcomnet
+  function getSubcoment(id) {
+    const idget = JSON.parse(localStorage.getItem("page_video"));
+    axios
+      .get(`${url}/api/course_theme_comment`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        var mycoment = res.data.filter((item) => item.theme === idget.id);
+
+        axios
+          .get(`${url}/auth/allusers`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
+          .then((res3) => {
+            for (let i = 0; i < mycoment.length; i++) {
+              mycoment[i].username = "Ananim User";
+              mycoment[i].image1 = "";
+              for (let j = 0; j < res3.data.length; j++) {
+                if (res3.data[j].id === mycoment[i].user_id) {
+                  mycoment[i].username = res3.data[j].username;
+                  mycoment[i].image1 = res3.data[j].image;
+                }
+              }
+            }
+            var subcomnet = mycoment.filter((item) => item.subcommnet ===id);
+          })
+          .catch((err) => {});
+      })
+      .catch((err) => {});
+  }
   function openModal() {
     document.querySelector(".navbar_yon").classList.toggle("navbar_yon1");
   }
@@ -309,139 +375,7 @@ function getSubcoment(id){
       "border-bottom: none; color: #9DA7BB;";
   }
 
-  useEffect(() => {
-    console.log(progressTheme, "progress");
-    localStorage.setItem("task_commnet_id", JSON.stringify(task_comnet_id));
-    var id = localStorage.getItem("abbas");
-    var StudentId = localStorage.getItem("OneuserId");
-    axios
-      .get(`${url}/api/course_data_category/course/${id}`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      })
-      .then((res) => {
-        setMain(res.data.one ? res.data.one : []);
-        setCategory(res.data.all);
-        res.data.all.map((itam) => {
-          itam.theme.map((itam2) => {
-            var Formdata = new FormData();
-            Formdata.append("student_id", StudentId);
-            Formdata.append("theme_id", itam2.id);
-            Formdata.append("complate", 0);
-            axios
-              .post(`${url}/api/student_theme/`, Formdata, {
-                headers: {
-                  Authorization: `Bearer ${localStorage.getItem("token")}`,
-                },
-              })
-              .then((res) => {
-                alert("ishadi");
-              })
-              .catch((err) => {
-                // alert("bor ekan")
-              });
-          });
-        });
 
-        localStorage.setItem(
-          "page_video",
-          JSON.stringify(res.data.one ? res.data.one : [])
-        );
-        setLoader(0);
-      })
-      .catch((err) => {
-        // console.log(err);
-        // document.querySelector(".a_err_boganda").style =
-        //   "display: flex;justify-content: center;align-items: center;";
-      });
-
-    //comment
-
-    axios
-      .get(
-        `${url}/api/course_theme_comment/${
-          JSON.parse(localStorage.getItem("page_video")).id
-        }`,
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        }
-      )
-      .then((res) => {
-        res.data.map((item) => {
-          if (item.task_commnet_id == task_comnet_id) {
-            var coment21 = res.data;
-            for (let i = 0; i < res.data.length; i++) {
-              var a = 0;
-              for (let j = 0; j < coment21.length; j++) {
-                if (res.data[i].id == coment21[j].subcomment) {
-                  a = a + 1;
-                }
-              }
-              res.data[i].count = a;
-            }
-            setComment(res.data);
-          } else {
-          }
-        });
-
-        console.log(res.data, "coment");
-      })
-      .catch((err) => {});
-
-    axios
-      .get(`${url}/auth/oneuser`, {
-        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
-      })
-      .then((res) => {
-        setOneuser(res.data);
-        console.log(res.data, "salom");
-      });
-
-    //task
-    axios
-      .get(`${url}/api/course_theme_task`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      })
-      .then((res) => {
-        setTeacherwork(res.data);
-        console.log(res.data);
-      })
-      .catch((err) => {});
-    {
-      JSON.parse(localStorage.getItem("page_user"))[0].position == 2 ? (
-        <Create_Theme_Category_mentor id1={localStorage.getItem("abbas")} />
-      ) : (
-        <></>
-      );
-    }
-    axios
-      .get(`${url}/auth/oneuser`, {
-        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
-      })
-      .then((res) => {
-        setOneuser(res.data);
-        console.log(res.data, "salom");
-      });
-    axios
-      .get(
-        `${url}/api/course_theme_comment/${
-          JSON.parse(localStorage.getItem("page_video")).id
-        }`,
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      )
-      .then((res) => {
-        var a = res.data.filter((item) => item.task_commnet_id == 1);
-        setComment5(a);
-      })
-      .catch((err) => {});
-
-    setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
-    );
-  }, []);
 
   function ModalCatchBolsa() {
     if (localStorage.getItem("position") == 2) {
@@ -462,14 +396,14 @@ function getSubcoment(id){
       console.log(res.data, "ali");
     });
   }
-  // console.log(main1,"aom");
 
   //comment
   function messagePost(id) {
+    const OneuserId = localStorage.getItem("OneuserId");
     var formdata = new FormData();
     formdata.append("text", document.querySelector("#chat_text").value);
     formdata.append("image", document.querySelector("#comment_file").files[0]);
-    formdata.append("user_id", oneuser[0].id);
+    formdata.append("user_id", OneuserId[0].id);
     formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id);
     formdata.append("subcomment", subcoment);
     formdata.append("task_commnet_id", task_comnet_id);
@@ -571,10 +505,11 @@ function getSubcoment(id){
   }
 
   function otvetPost(id) {
+    const OneuserId = localStorage.getItem("OneuserId");
     var formdata = new FormData();
     formdata.append("text", document.querySelector("#chat_text1").value);
     formdata.append("image", document.querySelector("#comment_file1").files[0]);
-    formdata.append("user_id", oneuser[0].id);
+    formdata.append("user_id", OneuserId[0].id);
     formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id);
     formdata.append("subcomment", subcoment);
     formdata.append("task_commnet_id", task_comnet_id);
@@ -657,23 +592,10 @@ function getSubcoment(id){
       .catch((err) => {
         Swal.fire("Нельзя писать больше 300 символов");
       });
-
-    // axios
-    //   .get(
-    //     `${url}/api/course_theme_comment/${
-    //       JSON.parse(localStorage.getItem("page_video")).id
-    //     }`,
-    //     {
-    //       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-    //     }
-    //   )
-    //   .then((res) => {
-    //     setComment2(res.data);
-    //   })
-    //   .catch((err) => {});
   }
 
   function deleteComment(id) {
+    const OneuserId = localStorage.getItem("OneuserId");
     axios
       .delete(`${url}/api/course_theme_comment/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -956,10 +878,11 @@ function getSubcoment(id){
   }
 
   function commentTaskPost() {
+    const OneuserId = localStorage.getItem("OneuserId");
     var formdata = new FormData();
     formdata.append("text", document.querySelector("#chat_text12").value);
     formdata.append("image", 0);
-    formdata.append("user_id", oneuser[0].id);
+    formdata.append("user_id", OneuserId[0].id);
     formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id);
     formdata.append("subcomment", subcoment);
     formdata.append("task_commnet_id", 1);
@@ -1194,24 +1117,22 @@ function getSubcoment(id){
                           src={main1.video}
                           title="W3Schools Free Online Web Tutorials"
                         ></iframe> */}
-                        <ReactPlayer
-                          ref={playerRef}
-                          url={main1.video}
-                          // width={100}
-                          // height={100}
-                          controls={true}
-                          // playing={true}
-                          onReady={handleReady}
-                          onProgress={handleProgress}
-                          onDuration={handleDuration}
-                          className="React_player"
-                          // style={{display:"flex"he}}
-                        />
+      <ReactPlayer
+    ref={playerRef}
+    url={main1.video}
+    controls
+    onDuration={handleDuration}
+    onProgress={handleProgress}
+    className="React_player"
+      />
                       </div>
                       <div className="theme_df">
                         <div className="flex_logig">
                           <h1 className="raspberry_pi">
                             {main1.name} Ффффффффффф
+                            <p>Размер видео: {videoDuration.toFixed(2)} секунд</p>
+                            <p>Последний раз останавливались на {startAt} </p>
+      <p>Текущее время: {currentTime.toFixed(2)} секунд</p>
                           </h1>
                           <div className="odtel_media_uchun">
                             <h1>{main1.name}</h1>
@@ -1304,126 +1225,103 @@ function getSubcoment(id){
                                 </p>
                               </div>
                               <div className="for_scroll">
-                                {comment.length === 0 ? (
-                                  <div className="for_no_comment">
-                                    <p>Тут ещё нут комметнарий</p>
-                                  </div>
-                                ) : (
-                                  <>
-                                    {comment.map((item) => {
-                                      if (
-                                        item.subcomment == 0 &&
-                                        item.task_commnet_id == 0
-                                      ) {
-                                        return (
-                                          <>
-                                            <div className="m_comment">
-                                              <div className="for-flex-time-name-image">
-                                                <div className="m_comment_img">
-                                                  <img
-                                                    src={
-                                                      item &&
-                                                      item.image1 &&
-                                                      item.image1.includes(
-                                                        "http"
-                                                      ) ? (
-                                                        item.image1
-                                                      ) : item.image1 ? (
-                                                        `${url}/${item.image}`
-                                                      ) : (
-                                                        <img
-                                                          src={anonim}
-                                                          alt=""
-                                                        />
-                                                      )
-                                                    }
-                                                    alt=""
-                                                  />
-                                                </div>
+  {comment.length === 0 ? (
+    <div className="for_no_comment">
+      <p>Тут ещё нут комметнарий</p>
+    </div>
+  ) : (
+    <div>
+      {comment
+        .filter(
+          (item) =>
+            item.subcomment === 0 && item.task_commnet_id === 0
+        )
+        .map((item) => (
+          <div className="m_comment" key={item.id}>
+            <div className="for-flex-time-name-image">
+              <div className="m_comment_img">
+                <img
+                  src={
+                    item &&
+                    item.image1 &&
+                    item.image1.includes("http")
+                      ? item.image1
+                      : item.image1
+                      ? `${url}/${item.image}`
+                      : <img src={anonim} alt="" />
+                  }
+                  alt=""
+                />
+              </div>
 
-                                                <div className="user-name-timecreate">
-                                                  <h5>{item.username}</h5>
-                                                  <p>
-                                                    {item.time_create.slice(
-                                                      0,
-                                                      10
-                                                    )}
-                                                  </p>
-                                                </div>
-                                              </div>
+              <div className="user-name-timecreate">
+                <h5>{item.username}</h5>
+                <p>{item.time_create.slice(0, 10)}</p>
+              </div>
+            </div>
 
-                                              <div className="m_comment_text">
-                                                {item.image ? (
-                                                  ""
-                                                ) : (
-                                                  <img
-                                                    src={
-                                                      item.image &&
-                                                      item.image.includes(
-                                                        "http"
-                                                      )
-                                                        ? item.image
-                                                        : `${url}/${item.image}`
-                                                    }
-                                                    alt=""
-                                                  />
-                                                )}
-                                                <p className="m_comment_text1505">
-                                                  {item.text}
-                                                </p>
-                                                <div className="m_comment_otvet">
-                                                  <p
-                                                    style={{ display: "flex" }}
-                                                    className="m_otvet_comment"
-                                                    onClick={() => {
-                                                      openModalOtvet11(item.id);
-                                                    }}
-                                                  >
-                                                    <FiCornerUpLeft />
-                                                    <span>
-                                                      {item.count === 0 ? (
-                                                        "Ответить"
-                                                      ) : (
-                                                        <>
-                                                          {item.count}
-                                                          <span> Ответов</span>
-                                                        </>
-                                                      )}
-                                                    </span>
-                                                  </p>
+            <div className="m_comment_text">
+              {item.image ? (
+                ""
+              ) : (
+                <img
+                  src={
+                    item.image && item.image.includes("http")
+                      ? item.image
+                      : `${url}/${item.image}`
+                  }
+                  alt=""
+                />
+              )}
+              <p className="m_comment_text1505">{item.text}</p>
+              <div className="m_comment_otvet">
+                <p
+                  style={{ display: "flex" }}
+                  className="m_otvet_comment"
+                  onClick={() => {
+                    openModalOtvet11(item.id);
+                  }}
+                >
+                  <FiCornerUpLeft />
+                  <span>
+                    {item.count === 0 ? (
+                      "Ответить"
+                    ) : (
+                      <div>
+                        {item.count}
+                        <span> Ответов</span>
+                      </div>
+                    )}
+                  </span>
+                </p>
 
-                                                  {oneuser.map((item5) => {
-                                                    return (
-                                                      <>
-                                                        {item5.id ==
-                                                        item.user_id ? (
-                                                          <p
-                                                            className="m_comment_delete"
-                                                            onClick={() => {
-                                                              deleteComment(
-                                                                item.id
-                                                              );
-                                                            }}
-                                                          >
-                                                            <AiOutlineDelete />
-                                                            удалить
-                                                          </p>
-                                                        ) : (
-                                                          ""
-                                                        )}
-                                                      </>
-                                                    );
-                                                  })}
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </>
-                                        );
-                                      }
-                                    })}
-                                  </>
-                                )}
-                              </div>
+                {oneuser.map((item5) => {
+                  return (
+                    <div>
+                      {item5.id == item.user_id ? (
+                        <p
+                          className="m_comment_delete"
+                          onClick={() => {
+                            deleteComment(item.id);
+                          }}
+                        >
+                          <AiOutlineDelete />
+                          удалить
+                        </p>
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        ))}
+    </div>
+  )}
+</div>
+
 
                               <div className="m_comment_yozish">
                                 <input type="file" id="comment_file" />
@@ -1472,11 +1370,11 @@ function getSubcoment(id){
                                     <p>Тут ещё нут ответов</p>
                                   </div>
                                 ) : (
-                                  <>
+                                  <div>
                                     {comment.map((item) => {
                                       if (item.subcomment == subcoment) {
                                         return (
-                                          <>
+                                          <div>
                                             <div className="df_div_comment_page">
                                               <div className="m_comment">
                                                 <div className="for-flex-time-name-image">
@@ -1534,7 +1432,7 @@ function getSubcoment(id){
                                                   <div className="m_comment_otvet">
                                                     {oneuser.map((item5) => {
                                                       return (
-                                                        <>
+                                                        <div>
                                                           {item5.id ==
                                                           item.user_id ? (
                                                             <p
@@ -1551,18 +1449,18 @@ function getSubcoment(id){
                                                           ) : (
                                                             ""
                                                           )}
-                                                        </>
+                                                        </div>
                                                       );
                                                     })}
                                                   </div>
                                                 </div>
                                               </div>
                                             </div>
-                                          </>
+                                          </div>
                                         );
                                       }
                                     })}
-                                  </>
+                                  </div>
                                 )}
                               </div>
                               <div className="m_comment_yozish">
@@ -1616,11 +1514,11 @@ function getSubcoment(id){
                                   <p>Тут ещё нут комметнарий</p>
                                 </div>
                               ) : (
-                                <>
+                                <div>
                                   {comment.map((item) => {
                                     if (item.task_commnet_id != 1) {
                                       return (
-                                        <>
+                                        <div>
                                           <div className="flex_view_all">
                                             <div className="m_comment">
                                               <div className="for-flex-time-name-image">
@@ -1693,16 +1591,16 @@ function getSubcoment(id){
                                                     {item.count === 0 ? (
                                                       "Ответить"
                                                     ) : (
-                                                      <>
+                                                      <div>
                                                         {item.count}{" "}
                                                         <span>Ответов</span>
-                                                      </>
+                                                      </div>
                                                     )}
                                                   </p>
 
                                                   {oneuser.map((item5) => {
                                                     return (
-                                                      <>
+                                                      <div>
                                                         {item5.id ==
                                                         item.user_id ? (
                                                           <p
@@ -1719,18 +1617,18 @@ function getSubcoment(id){
                                                         ) : (
                                                           ""
                                                         )}
-                                                      </>
+                                                      </div>
                                                     );
                                                   })}
                                                 </div>
                                               </div>
                                             </div>
                                           </div>
-                                        </>
+                                        </div>
                                       );
                                     }
                                   })}
-                                </>
+                                </div>
                               )}
                             </div>
                           </div>
@@ -1746,13 +1644,13 @@ function getSubcoment(id){
                                     .id
                                 ) {
                                   return (
-                                    <>
+                                    <div>
                                       <div className="zanacha_vaz">Задача*</div>
                                       <div className="task_div_big">
                                         <img src={item.image} alt="" />
                                         <p>{item.content}</p>
                                       </div>
-                                    </>
+                                    </div>
                                   );
                                 } else {
                                   <div>There are no tasks here</div>;
@@ -1766,11 +1664,11 @@ function getSubcoment(id){
                                     <p>Тут ещё нут ответов на задачу </p>
                                   </div>
                                 ) : (
-                                  <>
+                                  <div>
                                     {commenttask.map((item, key) => {
                                       if (item.task_commnet_id == 1) {
                                         return (
-                                          <>
+                                          <div>
                                             <div className="df_div_comment_page">
                                               <div className="div_img_class_over">
                                                 <img
@@ -1924,31 +1822,31 @@ function getSubcoment(id){
                                                       2
                                                     </div>
                                                   ) : (
-                                                    <>
+                                                    <div>
                                                       {page === 3 ? (
                                                         <div className="mark-three">
                                                           3
                                                         </div>
                                                       ) : (
-                                                        <>
+                                                        <div>
                                                           {page === 4 ? (
                                                             <div className="mark-four">
                                                               4
                                                             </div>
                                                           ) : (
-                                                            <>
+                                                            <div>
                                                               {page === 5 ? (
                                                                 <div className="mark-five">
                                                                   5
                                                                 </div>
                                                               ) : (
-                                                                <></>
+                                                                <div></div>
                                                               )}
-                                                            </>
+                                                            </div>
                                                           )}
-                                                        </>
+                                                        </div>
                                                       )}
-                                                    </>
+                                                    </div>
                                                   )}
                                                 </div>
                                                 <div className="mark-otmen-potver-uchun">
@@ -2006,31 +1904,31 @@ function getSubcoment(id){
                                                       2
                                                     </div>
                                                   ) : (
-                                                    <>
+                                                    <div>
                                                       {page1 === 3 ? (
                                                         <div className="mark-three">
                                                           3
                                                         </div>
                                                       ) : (
-                                                        <>
+                                                        <div>
                                                           {page1 === 4 ? (
                                                             <div className="mark-four">
                                                               4
                                                             </div>
                                                           ) : (
-                                                            <>
+                                                            <div>
                                                               {page1 === 5 ? (
                                                                 <div className="mark-five">
                                                                   5
                                                                 </div>
                                                               ) : (
-                                                                <></>
+                                                                <div></div>
                                                               )}
-                                                            </>
+                                                            </div>
                                                           )}
-                                                        </>
+                                                        </div>
                                                       )}
-                                                    </>
+                                                    </div>
                                                   )}
                                                 </div>
                                                 <div className="mark-otmen-potver-uchun">
@@ -2054,11 +1952,11 @@ function getSubcoment(id){
                                                 </div>
                                               </div>
                                             </div>
-                                          </>
+                                          </div>
                                         );
                                       }
                                     })}
-                                  </>
+                                  </div>
                                 )}
                               </div>
 
@@ -2105,16 +2003,14 @@ function getSubcoment(id){
                 ) : (
                   <div className="youtube_kotta_img">
                     <div className="img_youtube_kotta">
-                      <ReactPlayer
-                        ref={playerRef}
-                        url={main.video}
-                        controls={true}
-                        playing={true}
-                        onReady={handleReady}
-                        onProgress={handleProgress}
-                        onDuration={handleDuration}
-                        className="React_player"
-                      />
+                    <ReactPlayer
+      ref={playerRef}
+      url={main.video}
+      controls
+      onDuration={handleDuration}
+      onProgress={handleProgress}
+      className="React_player"
+      />
                     </div>
                     <div className="theme_df">
                       <div className="flex_logig">
@@ -2143,7 +2039,7 @@ function getSubcoment(id){
                         id1={localStorage.getItem("abbas")}
                       />
                     ) : (
-                      <></>
+                      <div></div>
                     )}
                     <br />
                     <br />
@@ -2156,12 +2052,12 @@ function getSubcoment(id){
                     id1={localStorage.getItem("abbas")}
                   />
                 ) : (
-                  <></>
+                  <div></div>
                 )}
                 <div className="youtube_kichkina">
                   {category.map((item, key) => {
                     return (
-                      <>
+                      <div>
                         <Accordion className="for-scroll-accordion">
                           <Accordion.Item eventKey={0 + key}>
                             <Accordion.Header>{item.name}</Accordion.Header>
@@ -2208,7 +2104,7 @@ function getSubcoment(id){
                             </div>
                           </Accordion.Item>
                         </Accordion>
-                      </>
+                      </div>
                     );
                   })}
                 </div>

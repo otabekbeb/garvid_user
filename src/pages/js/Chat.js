@@ -116,13 +116,13 @@ function smileu() {
   return (
     <div className="chat-window">
       <div className="chat-header">
-        <i  style={theme=="moon"?{color:"white"}:{color:"black"}} id="back_icons" onClick={() => back()} class='bx bx-arrow-back'></i>
+        <i  style={theme=="moon"?{color:"white"}:{color:"black"}} id="back_icons" onClick={() => back()} className='bx bx-arrow-back'></i>
         <div style={{marginLeft:"15px"}} className="tg_img">
           <img onClick={()=>prof_tg()} style={{height:"100%"}} src={tgimg} alt="" />
           
         </div>
         <div className="prof_tg1"><div className="left_tg">
-                    <i id="icon2" class='bx bx-left-arrow-alt'></i>
+                    <i id="icon2" className='bx bx-left-arrow-alt'></i>
                     <p>Profile</p></div>
                     
                     </div>
@@ -157,7 +157,7 @@ function smileu() {
                     <div className="timee"><p id="time">{messageContent.time}</p></div>
                     
      
-                  </div>{email === messageContent.author?(<div className="for_svg"><svg width="9" height="20" class="svg-appendix"><defs><filter x="-50%" y="-14.7%" width="200%" height="141.2%" filterUnits="objectBoundingBox" id="messageAppendix"><feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur><feColorMatrix values="0 0 0 0 0.0621962482 0 0 0 0 0.138574144 0 0 0 0 0.185037364 0 0 0 0.15 0" in="shadowBlurOuter1"></feColorMatrix></filter></defs><g fill="none" fill-rule="evenodd"><path d="M6 17H0V0c.193 2.84.876 5.767 2.05 8.782.904 2.325 2.446 4.485 4.625 6.48A1 1 0 016 17z" fill="#000" filter="url(#messageAppendix)"></path><path d="M6 17H0V0c.193 2.84.876 5.767 2.05 8.782.904 2.325 2.446 4.485 4.625 6.48A1 1 0 016 17z" fill="#EEFFDE" class="corner"></path></g></svg></div>):(<div className="for_svg"><svg width="9" height="20" class="svg-appendix"><defs><filter x="-50%" y="-14.7%" width="200%" height="141.2%" filterUnits="objectBoundingBox" id="messageAppendix"><feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur><feColorMatrix values="0 0 0 0 0.0621962482 0 0 0 0 0.138574144 0 0 0 0 0.185037364 0 0 0 0.15 0" in="shadowBlurOuter1"></feColorMatrix></filter></defs><g fill="none" fill-rule="evenodd"><path d="M3 17h6V0c-.193 2.84-.876 5.767-2.05 8.782-.904 2.325-2.446 4.485-4.625 6.48A1 1 0 003 17z" fill="#000" filter="url(#messageAppendix)"></path><path d="M3 17h6V0c-.193 2.84-.876 5.767-2.05 8.782-.904 2.325-2.446 4.485-4.625 6.48A1 1 0 003 17z" fill="FFF" class="corner"></path></g></svg></div>)}</div>
+                  </div>{email === messageContent.author?(<div className="for_svg"><svg width="9" height="20" className="svg-appendix"><defs><filter x="-50%" y="-14.7%" width="200%" height="141.2%" filterUnits="objectBoundingBox" id="messageAppendix"><feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur><feColorMatrix values="0 0 0 0 0.0621962482 0 0 0 0 0.138574144 0 0 0 0 0.185037364 0 0 0 0.15 0" in="shadowBlurOuter1"></feColorMatrix></filter></defs><g fill="none" fill-rule="evenodd"><path d="M6 17H0V0c.193 2.84.876 5.767 2.05 8.782.904 2.325 2.446 4.485 4.625 6.48A1 1 0 016 17z" fill="#000" filter="url(#messageAppendix)"></path><path d="M6 17H0V0c.193 2.84.876 5.767 2.05 8.782.904 2.325 2.446 4.485 4.625 6.48A1 1 0 016 17z" fill="#EEFFDE" className="corner"></path></g></svg></div>):(<div className="for_svg"><svg width="9" height="20" className="svg-appendix"><defs><filter x="-50%" y="-14.7%" width="200%" height="141.2%" filterUnits="objectBoundingBox" id="messageAppendix"><feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur><feColorMatrix values="0 0 0 0 0.0621962482 0 0 0 0 0.138574144 0 0 0 0 0.185037364 0 0 0 0.15 0" in="shadowBlurOuter1"></feColorMatrix></filter></defs><g fill="none" fill-rule="evenodd"><path d="M3 17h6V0c-.193 2.84-.876 5.767-2.05 8.782-.904 2.325-2.446 4.485-4.625 6.48A1 1 0 003 17z" fill="#000" filter="url(#messageAppendix)"></path><path d="M3 17h6V0c-.193 2.84-.876 5.767-2.05 8.782-.904 2.325-2.446 4.485-4.625 6.48A1 1 0 003 17z" fill="FFF" className="corner"></path></g></svg></div>)}</div>
                   <div className="message-meta">
 
                   </div>
@@ -182,7 +182,7 @@ function smileu() {
             event.key === "Enter" && sendMessage();
           }}
         /></div>
-        <button onMouseLeave={()=>send2()} onMouseEnter={()=>send1()} onClick={sendMessage}><i style={{ fontSize: "25px" }} class='bx bx-send'></i></button>
+        <button onMouseLeave={()=>send2()} onMouseEnter={()=>send1()} onClick={sendMessage}><i style={{ fontSize: "25px" }} className='bx bx-send'></i></button>
       </div>
     </div>
   );
