@@ -123,12 +123,17 @@
 }
 
 .star_card {
-    margin-top: -3px !important;
+    margin-top: 0px !important;
     display: inline-flex;
     justify-content: start !important;
     gap: 1px !important;
 }
- .star_card .bxs-star {
+.star_card div{
+    display: inline-flex;
+    justify-content: start !important;
+    gap: 1px !important;
+}
+ .star_card div .bxs-star {
     /* cursor: pointer; */
     /* font-size: 14px; */
     color: orange;
