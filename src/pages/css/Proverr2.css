@@ -53,7 +53,7 @@ body {
 .prover2-info-d {
     border-radius: 5px;
     width: 370px;
-    height: 721px;
+    height: 562px;
     margin-top: 20px;
     background-color: #ffffff;
     padding-left: 15px;
@@ -929,7 +929,7 @@ body {
 
 .mni-krus-techer-swiper {
     width: 330px;
-    height: 510px;
+    height: 350px;
     background-color: #ffffff;
     position: relative;
     top: 30px;
@@ -3647,6 +3647,7 @@ justify-content: space-around; */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     align-items: center;
     margin-top: 30px;
+
     margin-left: 26%;
 }
 
@@ -3676,4 +3677,5 @@ justify-content: space-around; */
 
 .mni-krus-techer-swiper .mySwiper {
     height:300px !important;
+ 
 }
