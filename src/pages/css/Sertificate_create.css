@@ -240,10 +240,21 @@
     }
 }
 
-/* @media (max-width:500px) {
-    .sertificate_card{
-        width: 23.438vw !important;
-        min-width: none !important;
-        display: block;
+.rafiki_sertificate_img{
+    text-align: center;
+}
+.rafiki_sertificate_img img{
+    width: 450px;
+}
+.rafiki_sertificate_img h3{
+    font-size: 40px;
+    color: #989898;
+}
+@media (max-width:705px) {
+    .rafiki_sertificate_img img{
+        width: 250px !important;
     }
-} */
+    .rafiki_sertificate_img h3{
+        font-size: 18px !important;
+    }
+}
