@@ -93,7 +93,7 @@ export default function Navbar() {
   const googleTranslateElementInit = () => {
     new window.google.translate.TranslateElement(
       {
-        pageLanguage: "en",
+        pageLanguage: "ru",
         includedLanguages: 'en,zh-TWit,ja,tr,kk,ru,fr,de', // include this for selected languages
 
       },
