@@ -79,9 +79,9 @@ export default function Searchfilter() {
             }
             setKursdata(res.data);
             localStorage.setItem("mycourseUser", res.data.length)
+            setLoader(0);
           });
       });
-    setLoader(0);
   }, []);
 
   function filter(id) {
@@ -123,6 +123,34 @@ export default function Searchfilter() {
 
       });
   };
+  
+  function Allfilter(){
+    axios
+      .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        axios
+          .get(`${url}/api/course`, {
+            header: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
+          .then((res1) => {
+            for (let i = 0; i < res.data.length; i++) {
+              for (let j = 0; j < res1.data.length; j++) {
+                if (res.data[i].id == res1.data[j].id) {
+                  res.data[i].star = res1.data[j].star;
+                }
+              }
+            }
+            setKursdata(res.data);
+            localStorage.setItem("mycourseUser", res.data.length)
+            setLoader(0);
+          });
+      });
+  }
+  
 
   return (
     <div>
@@ -157,6 +185,15 @@ export default function Searchfilter() {
                 </div> */}
                   </div>
                   <div onMouseLeave={() => filter1()} className="filter_button">
+                  <div className="button_filter_kurs">
+                            <div
+                              onClick={() => Allfilter()}
+                              className="div_kurs"
+                              style={{ paddingBottom: "5px" }}
+                            >
+                              All
+                            </div>
+                        </div>
                     {courstype.map((item) => {
                       return (
                         <div className="button_filter_kurs">
