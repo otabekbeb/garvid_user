@@ -221,7 +221,7 @@ export default function Proverr2() {
     return (
         <div id="asdsadasdsadas22">
             <Usernavbar />
-            <Profil />
+            {/* <Profil /> */}
             {/* <UserPdp /> */}
 
             {loading ? ((
