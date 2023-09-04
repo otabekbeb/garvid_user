@@ -307,7 +307,7 @@ export default function About() {
  </div>
 {/* <div className="asdf">
 <div className="navigator-tepaga" >
-<a href="#tepaga"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+<a href="#tepaga"><i className="fa fa-chevron-up" aria-hidden="true"></i></a>
 </div>
 
 </div> */}

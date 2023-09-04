@@ -61,7 +61,7 @@ export default function Footer1() {
 <ul className='ry'>
   <li><a onClick={()=> window.location="/ourteam"} href="/ourteam">Our team</a></li>
   <li><a onClick={()=> window.location="/contacts"} href="/contacts">Contacts</a></li>
-  <li>{localStorage.getItem("token")?(user.map(item=>{return<a onClick={()=> window.location="/user"} href="/user">{item.username}</a>})):(<a onClick={()=> window.location="/login"} href="/login">Log in</a>)}</li>
+  <li>{localStorage.getItem("token")?(user.map((item,key)=>{return<a onClick={()=> window.location="/user"} href="/user">{item.username}</a>})):(<a onClick={()=> window.location="/login"} href="/login">Log in</a>)}</li>
 </ul>
 
 
@@ -130,7 +130,7 @@ export default function Footer1() {
     <ul>
     <li><a onClick={()=> window.location="/ourteam"} href="/ourteam">Our team</a></li>
   <li><a onClick={()=> window.location="/contacts"} href="/contacts">Contacts</a></li>
-    <li>{localStorage.getItem("token")?(user.map(item=>{return<a onClick={()=> window.location="/user"} href="/user">{item.username}</a>})):(<a onClick={()=> window.location="/login"} href="/login">Log in</a>)} </li>
+    <li>{localStorage.getItem("token")?(user.map((item,key)=>{return<a key={key} onClick={()=> window.location="/user"} href="/user">{item.username}</a>})):(<a onClick={()=> window.location="/login"} href="/login">Log in</a>)} </li>
     </ul>
   </div>
 </div>

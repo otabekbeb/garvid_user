@@ -274,7 +274,7 @@ export default function Test() {
             title: '',
             dataIndex: 'id',
             key: 'id',
-            render: (dataIndex) => <><button onClick={() => putAttened_testModal(dataIndex)} className="user_post_button">Edit</button>      <button onClick={() => deleteAttened_testModal(dataIndex)} className="user_post_button">Удалить</button>     </>,
+            render: (dataIndex) => <div><button onClick={() => putAttened_testModal(dataIndex)} className="user_post_button">Edit</button>      <button onClick={() => deleteAttened_testModal(dataIndex)} className="user_post_button">Удалить</button>     </div>,
         },
     ]
 
@@ -294,7 +294,7 @@ export default function Test() {
             title: '',
             dataIndex: 'id',
             key: 'id',
-            render: (dataIndex) => <><button className="user_post_button">Edit</button>      <button className="user_post_button">Удалить</button>     </>,
+            render: (dataIndex) => <div><button className="user_post_button">Edit</button>      <button className="user_post_button">Удалить</button>     </div>,
         },
     ]
 
@@ -505,9 +505,9 @@ export default function Test() {
     return (
         <div className='test_craete_svipe'>
             {page == 3 ? (
-                <>
+                <div>
                     <div className="close_btn_test">
-                        <div className="exit_button"><button onClick={() => setPage(0)}>Clouse</button></div>
+                        <div className="exit_button"><button onClick={() => setPage(0)}>Close</button></div>
                     </div>
                     {/* <div className="search_big_div"><button  className="user_post_button" onClick={()=>postAttened_testModal()}>Добавить</button><AiOutlineSearch className="search"/><input placeholder="Введите здесь..." type="text" /></div> */}
                     {/* <Table style={{marginBottom:'100px'}} dataSource={attendance_lesson} columns={columns} /> */}
@@ -545,7 +545,7 @@ export default function Test() {
                                         <p><h3 className='questions_page_small_div_p'>C</h3>  : {item.variant3}</p>
                                         <p><h3 className='questions_page_small_div_p'>D</h3>  : {item.variant4}</p>
                                         <h3>Test answer</h3>
-                                        <p>{item.answer == 1 ? (<><h3 className='questions_page_small_div_p'>A</h3>  : {item.variant1}</>) : (item.answer == 2 ? (<><h3 className='questions_page_small_div_p'>B</h3>  : {item.variant2}</>) : (item.answer == 3 ? (<><h3 className='questions_page_small_div_p'>C</h3>  : {item.variant3}</>) : (item.answer == 4 ? (<><h3 className='questions_page_small_div_p'>D</h3>  : {item.variant4}</>) : (""))))}</p>
+                                        <p>{item.answer == 1 ? (<div><h3 className='questions_page_small_div_p'>A</h3>  : {item.variant1}</div>) : (item.answer == 2 ? (<div><h3 className='questions_page_small_div_p'>B</h3>  : {item.variant2}</div>) : (item.answer == 3 ? (<div><h3 className='questions_page_small_div_p'>C</h3>  : {item.variant3}</div>) : (item.answer == 4 ? (<div><h3 className='questions_page_small_div_p'>D</h3>  : {item.variant4}</div>) : (""))))}</p>
                                     </div>
                                 </div>
 
@@ -557,17 +557,17 @@ export default function Test() {
 
 
                     </div>
-                </>) : (
-                <>
+                </div>) : (
+                <div>
                     {page == 1 ? (
-                        <>
+                        <div>
                             <div className="close_btn_test">
                                 <div className="exit_button"><button onClick={() => setPage(0)}>Назад</button></div>
                             </div>
                             <div className="teacher_page_big">
                                 {attendance_lesson.map(item => {
                                     return (
-                                        <>
+                                        <div>
                                             {teacher.map(user => {
                                                 if (item.group_id == user.id) {
                                                     return (
@@ -579,14 +579,14 @@ export default function Test() {
                                                     )
                                                 }
                                             })}
-                                        </>
+                                        </div>
                                     )
                                 })}
 
                             </div>
-                        </>
+                        </div>
                     ) : (
-                        <>
+                        <div>
                             <div className="bigdiv_search">
                                 <div className="search_big_div">
                                     <button className="user_post_button" onClick={() => postTestModal()}>Add</button>
@@ -624,8 +624,8 @@ export default function Test() {
                                     )
                                 })}
                             </div>
-                        </>)}
-                </>)}
+                        </div>)}
+                </div>)}
 
 
 
@@ -909,7 +909,7 @@ export default function Test() {
                     <div className="postUserModal_div_icon"><GrFormClose className="icon" onClick={() => MarkClose()} /></div>
                     {attendance_lesson.map(item => {
                         return (
-                            <>
+                            <div>
                                 {teacher.map(user => {
                                     if (item.group_id == user.id && user.id == MarkId) {
                                         return (
@@ -921,7 +921,7 @@ export default function Test() {
                                         )
                                     }
                                 })}
-                            </>
+                            </div>
                         )
                     })}
 

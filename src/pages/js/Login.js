@@ -187,7 +187,7 @@ export default function Login() {
                </div>
                <img className="loginimg" src={loginimg} alt="" />
              </div>
-           </div>) : (<>{page == 5 ? (
+           </div>) : (<div>{page == 5 ? (
                 <div className="login_relative" >
                   <img className="LoginImg" src={LoginImg} alt="" />
                   <div style={{ height: "400px" }} className="login_small_div">
@@ -212,7 +212,7 @@ export default function Login() {
                   </div>
                   <img className="loginimg" src={loginimg} alt="" />
                 </div>) : (
-                <>{page === 1 ? (
+                <div>{page === 1 ? (
                   <div className="login_relative">
                     <img className="LoginImg" src={LoginImg} alt="" />
                     <div className="login_small_div">
@@ -232,7 +232,7 @@ export default function Login() {
                                 setChangePassword(changeIcon);
                               }}
                             >
-                              {changeIcon ? <AiOutlineEye style={{ fontSize: "20px", position: "absolute", top: "34px", right: "7px" }} /> : <i class='bx bx-low-vision' style={{ fontSize: "20px", position: "absolute", top: "34px", right: "7px" }}  ></i>}
+                              {changeIcon ? <AiOutlineEye style={{ fontSize: "20px", position: "absolute", top: "34px", right: "7px" }} /> : <i className='bx bx-low-vision' style={{ fontSize: "20px", position: "absolute", top: "34px", right: "7px" }}  ></i>}
                             </span>
                           </div>
                           <div className="parol-esdan-chiqdi">
@@ -279,7 +279,7 @@ export default function Login() {
                                   setChangePassword(changeIcon);
                                 }}
                               >
-                                {changeIcon ? <AiOutlineEye style={{ fontSize: "25px", position: "absolute", top: "30px", right: "0" }} /> : <i class='bx bx-low-vision' style={{ fontSize: "25px", position: "absolute", top: "30px", right: "0" }}  ></i>}
+                                {changeIcon ? <AiOutlineEye style={{ fontSize: "25px", position: "absolute", top: "30px", right: "0" }} /> : <i className='bx bx-low-vision' style={{ fontSize: "25px", position: "absolute", top: "30px", right: "0" }}  ></i>}
                               </span>
                               <div className="error">{state1 === "en" ? ("The password cannot be less than 8") : ("Пароль не может быть меньше 8")}</div>
                             </div>
@@ -297,7 +297,7 @@ export default function Login() {
                       </div>
                       <img className="loginimg" src={loginimg} alt="" />
                     </div>
-                  )}</>)}</>)}
+                  )}</div>)}</div>)}
 
           </div>
 

@@ -28,7 +28,7 @@
 //       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
 //     })
 //       .then(res => {
-//         res.data.map(item=>{
+//         res.data.map((item,key)=>{
 //           if (item.task_commnet_id==task_comnet_id) {
 //             setComment(res.data)
 //           }else{
@@ -75,7 +75,7 @@
 //               headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
 //             })
 //               .then(res => {
-//                 res.data.map(item=>{
+//                 res.data.map((item,key)=>{
 //                   if (item.task_commnet_id==task_comnet_id) {
 //                     setComment(res.data)
 //                   // alert("xato")
@@ -247,11 +247,11 @@
 //               <div className="for_no_comment">
 //                 <p>Тут ещё нут комметнарий</p>
 //               </div>) : (
-//               <>
+//               <div>
 //                 {
 //                   comment.map(item => {
 //                     if (item.subcomment == 0 && item.task_commnet_id == 0) {
-//                       return <>
+//                       return <div>
 //                         <div className="m_comment">
 //                           <div className="m_comment_img">
 //                             <img src={item.oneuser ? item.oneuser.image.includes("http") ? item.oneuser.image : `${url}/${item.oneuser.image}` :
@@ -273,12 +273,12 @@
 
 //                               {oneuser.map(item5 => {
 //                                 return (
-//                                   <>
+//                                   <div>
 //                                     {item5.id == item.user_id ? (
 //                                       <p className='m_comment_delete' onClick={() => { deleteComment(item.id) }}><span><AiOutlineDelete /></span>удалить</p>) :
 //                                       ("")
 //                                     }
-//                                   </>
+//                                   </div>
 //                                 )
 
 //                               })}
@@ -287,9 +287,9 @@
 //                             </div>
 //                           </div>
 //                         </div>
-//                       </>
+//                       </div>
 //                     }
-//                   })} </>)}</div>
+//                   })} </div>)}</div>
 
 
 
@@ -314,10 +314,10 @@
 //           <div className="comment_otevet_all">
 //             {comment.length === 0 ? (<div className="for_no_comment">
 //               <p>Тут ещё нут ответов</p>
-//             </div>) : (<>
+//             </div>) : (<div>
 //               {comment.map(item32 => {
 //                 if (item32.subcomment == subcoment) {
-//                   return (<>
+//                   return (<div>
 //                     <div className="df_div_comment_page">
 //                       <img src={item32.oneuser ? item32.oneuser.image.includes("http") ? item32.oneuser.image : `${url}/${item32.oneuser.image}` :
 //                         <img src={anonim} alt="" />} alt="" />
@@ -328,21 +328,21 @@
 //                         <p>{item32.text}</p>
 //                         {oneuser.map(item5 => {
 //                           return (
-//                             <>
+//                             <div>
 //                               {item5.id == item32.user_id ? (
 //                                 <p className='m_comment_delete1'
 //                                   onClick={() => { deleteComment1(item32.id) }}>
 //                                   <span><AiOutlineDelete /></span>удалить</p>) :
 //                                 ("")
 //                               }
-//                             </>
+//                             </div>
 //                           )
 
 //                         })} </div> </div>
-//                   </>
+//                   </div>
 //                   )
 //                 }
-//               })}</>)}
+//               })}</div>)}
 
 //           </div>
 //           <div className="m_comment_yozish">
@@ -366,11 +366,11 @@
 //             <p className='AiOutlineComment'>View all comment <AiOutlineComment /></p></div>
 //           {comment.length === 0 ? (<div className="for_no_comment">
 //             <p>Тут ещё нут комметнарий</p>
-//           </div>) : (<>
+//           </div>) : (<div>
 //             {comment.map(item => {
 //              if (item.task_commnet_id!=1) {
 //               return (
-//                 <>
+//                 <div>
 //                   <div className="flex_view_all">
 //                     <div className="img_person_veiw_all">
 //                       <img src={item.oneuser ? item.oneuser.image.includes("http") ? item.oneuser.image : `${url}/${item.oneuser.image}` :
@@ -386,22 +386,22 @@
 //                         ><span><FiCornerUpLeft /></span>Ответить</p>
 //                         {oneuser.map(item5 => {
 //                           return (
-//                             <>
+//                             <div>
 //                               {item5.id == item.user_id ? ( 
 //                                 <p className='m_comment_delete' onClick={() => { deleteComment(item.id) }}><span><AiOutlineDelete /></span>удалить</p>) :
 //                                 ("")
 //                               }
-//                             </>
+//                             </div>
 //                           )
 
 //                         })}
 //                       </div>
-//                     </div></div></>
+//                     </div></div></div>
 //               )
 //              }
 
 //             })}
-//           </>)}
+//           </div>)}
 
 
 //         </div>

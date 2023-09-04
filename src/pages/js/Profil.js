@@ -221,7 +221,7 @@ export default function Profil() {
             <div onMouseLeave={() => userimgClose()} className="user_img_size">
               {data.map((item) => {
                 return (
-                  <>
+                  <div>
                     {item.image === null ? (
                       <img
                         onMouseEnter={() => userimgModal()}
@@ -241,7 +241,7 @@ export default function Profil() {
                         alt=""
                       />
                     )}
-                  </>
+                  </div>
                 );
               })}
               {data.map((item) => {
@@ -284,7 +284,7 @@ export default function Profil() {
               <div className="profil_blok_ikki_sum">
                 {data.map((item) => {
                   return (
-                    <>
+                    <div>
                       {item.balance === null ? (
                         <h1>0</h1>
                       ) : (
@@ -299,7 +299,7 @@ export default function Profil() {
                           <p>$</p>
                         </div>
                       )}
-                    </>
+                    </div>
                   );
                 })}
               </div>
@@ -361,15 +361,15 @@ export default function Profil() {
 
               <div className="profil_blok_ikki_icon_taxriirlash_chat">
                 {natlifikation.length === 0 ? (
-                <><p style={{textAlign:'center',marginTop:'35%',fontSize:'20px',opacity:'0.4'}}>Not written to you</p>
+                <div><p style={{textAlign:'center',marginTop:'35%',fontSize:'20px',opacity:'0.4'}}>Not written to you</p>
                 
-                </>) : (<>
+                </div>) : (<div>
                   {natlifikation.map((item, key) => {
 
                     if (item.to_user_id == localStorage.getItem("OneuserId")) {
                       localStorage.setItem("soya", natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length)
                       return (
-                        <>
+                        <div>
                           <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p>
                           <div className="taxrirlash_chad">
                             <div className="taxrirlash_chad_img_size">
@@ -393,11 +393,11 @@ export default function Profil() {
                           </div>
 
                           <p >{item.time_create.slice(0, 10)}</p>
-                        </>
+                        </div>
 
                       )
                     }
-                  })}</>
+                  })}</div>
 
                 )}
 

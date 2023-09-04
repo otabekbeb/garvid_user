@@ -187,7 +187,7 @@ export default function Workforteach() {
         {stTasks.map((item) => {
           localStorage.setItem("taskLength", stTasks.length);
           return (
-            <>
+            <div>
               <div className="m_zadach_block">
                 <div className="fors_imagesa">
                   {item.image ? (
@@ -229,7 +229,7 @@ export default function Workforteach() {
                   </div>
                 </div>
               </div>
-            </>
+            </div>
           );
         })}
       </div>
@@ -250,7 +250,7 @@ export default function Workforteach() {
             <input type="text" name="" id="" className="inp_name_zadac" />
             <label htmlFor="">Course theme:</label>
             <select name="" className="inp_course_theme_zadac">
-            {themeSelect.map(item=>{
+            {themeSelect.map((item,key)=>{
                 return<option value={item.id}>{item.name}</option>
             })}
             </select>
@@ -277,7 +277,7 @@ export default function Workforteach() {
             <input type="text" name="" id="" className="inp_name_zadacput" />
             <label htmlFor="">Course theme:</label>
             <select name="" className="inp_course_theme_put">
-            {themeSelect.map(item=>{
+            {themeSelect.map((item,key)=>{
                 return<option value={item.id}>{item.name}</option>
             })}
             </select>

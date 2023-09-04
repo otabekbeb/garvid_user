@@ -225,13 +225,13 @@ export default function Proverr2() {
 
             {loading ? ((
                 <div>
-                    <div className="loader">  <div class="book">
-                        <div class="book__pg-shadow"></div>
-                        <div class="book__pg"></div>
-                        <div class="book__pg book__pg--2"></div>
-                        <div class="book__pg book__pg--3"></div>
-                        <div class="book__pg book__pg--4"></div>
-                        <div class="book__pg book__pg--5"></div>
+                    <div className="loader">  <div className="book">
+                        <div className="book__pg-shadow"></div>
+                        <div className="book__pg"></div>
+                        <div className="book__pg book__pg--2"></div>
+                        <div className="book__pg book__pg--3"></div>
+                        <div className="book__pg book__pg--4"></div>
+                        <div className="book__pg book__pg--5"></div>
                     </div></div>
                 </div>)) : ((<div className="prover2">
                     <div className="prover2-kotta-men">
@@ -263,7 +263,7 @@ export default function Proverr2() {
                                                     <div className="prover2-info-block1-text">
                                                         <h5>{item1.name}</h5>
                                                         <p>{item1.description}</p>
-                                                        <hr class="prover2-hr" />
+                                                        <hr className="prover2-hr" />
                                                     </div>
                                                 </div>
                                             )
@@ -320,7 +320,7 @@ export default function Proverr2() {
                                                      return<p>{item1.username}</p>
                                                     }
                                                 })}
-                                                {bosildi.map(item=>{
+                                                {bosildi.map((item,key)=>{
                                                     <button onClick={() => button(item.id)} className="potpis"><p className="aa">Подписаться</p><p className="aaa">Отменить подписку</p></button>
                                                 })}
 

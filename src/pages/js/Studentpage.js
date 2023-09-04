@@ -784,7 +784,7 @@ export default function Mentor() {
               <div onMouseLeave={() => userimgClose()} className="user_img_size">
                 {data.map((item) => {
                   return (
-                    <>
+                    <div>
                       {item.image === null ? (
                         <img
                           onMouseEnter={() => userimgModal()}
@@ -804,7 +804,7 @@ export default function Mentor() {
                           alt=""
                         />
                       )}
-                    </>
+                    </div>
                   );
                 })}
                 {data.map((item) => {
@@ -847,7 +847,7 @@ export default function Mentor() {
                 <div className="profil_blok_ikki_sum">
                   {data.map((item) => {
                     return (
-                      <>
+                      <div>
                         {item.balance === null ? (
                           <h1>0</h1>
                         ) : (
@@ -862,7 +862,7 @@ export default function Mentor() {
                             <p>$</p>
                           </div>
                         )}
-                      </>
+                      </div>
                     );
                   })}
                 </div>
@@ -920,7 +920,7 @@ export default function Mentor() {
                   {natlifikation.map(item => {
                     if (item.to_user_id == localStorage.getItem("OneuserId")) {
                       return (
-                        <>
+                        <div>
                           {/* <p>Today</p> */}
                           <div className="taxrirlash_chad">
                             <div className="taxrirlash_chad_img_size">
@@ -941,7 +941,7 @@ export default function Mentor() {
                           </div>
 
                           <p>{item.time_create.slice(0, 10)}</p>
-                        </>
+                        </div>
 
                       )
                     }
@@ -1142,7 +1142,7 @@ export default function Mentor() {
                 </div>
               </div>
             ) : (
-              <>
+              <div>
                 {kursdata.map(item => {
                   localStorage.setItem("for_course", kursdata.length)
                   return (
@@ -1153,11 +1153,11 @@ export default function Mentor() {
                       <div className="kurs_paddaing_auto">
                         <h4>{item.name}</h4>
                         <div className="star_card">
-                          {item.star === 1 ? (<><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i>
-                          </>) : (item.star === 2 ? (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i></>) :
-                            (item.star === 3 ? (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i></>) :
-                              (item.star === 4 ? (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i></>) :
-                                (item.star === 5 ? (<><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i></>) : (<><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i></>)))))}
+                          {item.star === 1 ? (<div><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i>
+                          </div>) : (item.star === 2 ? (<div><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i></div>) :
+                            (item.star === 3 ? (<div><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i></div>) :
+                              (item.star === 4 ? (<div><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i></div>) :
+                                (item.star === 5 ? (<div><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i></div>) : (<div><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i></div>)))))}
 
 
 
@@ -1185,7 +1185,7 @@ export default function Mentor() {
                   )
 
                 })}
-              </>
+              </div>
             )}
 
           </div>
@@ -1207,7 +1207,7 @@ export default function Mentor() {
             {stTasks.map(item => {
               localStorage.setItem("taskLength", stTasks.length)
               return (
-                <>
+                <div>
                   <div className="m_zadach_block">
                     <div className="fors_imagesa">
                       {item.image ? (<img className='jony_foto' src={img_for_null} alt="" />) : (<img src={`${url}/` + item.image} alt="" />)}</div>
@@ -1265,7 +1265,7 @@ export default function Mentor() {
 
 
 
-                </>)
+                </div>)
             })}
 
 
@@ -1323,9 +1323,9 @@ export default function Mentor() {
                 <img src={Groupimg} alt="" />
                 <h4>Do you really want to delete?</h4>
                 <div className="a_delete_button">
-                  <button className='a_delete_no' onClick={() => clouseModal2()}>Нет</button>
+                  <button className='a_delete_no' onClick={() => clouseModal2()}>Not</button>
                   <button onClick={() => deletetask()}
-                    className="a_delete_yes">Да</button>
+                    className="a_delete_yes">Yes</button>
                 </div>
               </div>
             </div>
@@ -1359,8 +1359,8 @@ export default function Mentor() {
       </button> */}
                     </a>
                   </div>
-                </div>) : (<> {follow.map((item, key) => {
-                  return <>
+                </div>) : (<div> {follow.map((item, key) => {
+                  return <div>
                     {users.map(item1 => {
                       if (item1.id == item.topuser) {
                         localStorage.setItem("for_azo", users.length)
@@ -1386,8 +1386,8 @@ export default function Mentor() {
                         )
                       }
                     })}
-                  </>
-                })}</>)}
+                  </div>
+                })}</div>)}
 
 
 

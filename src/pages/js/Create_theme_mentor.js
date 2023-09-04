@@ -83,7 +83,7 @@ useEffect(()=>{
     Create Theme
   </Button>
     ):(
-      <></>
+      <div></div>
     )}
 
   <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
@@ -105,7 +105,7 @@ useEffect(()=>{
 <br />
 <br />
 <select className='category'>
-{category.map(item=>{
+{category.map((item,key)=>{
     return <option value={item.id}>{item.name}</option>
 })}
 </select>

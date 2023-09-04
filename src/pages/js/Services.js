@@ -2,8 +2,10 @@ import React, { useState,useEffect } from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer1'
 import Images from './Images'
-
+import axios from 'axios'
+import url from "./Host";
 import "../css/Services.css"
+import img_for_null1 from '../img/download.png'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -14,12 +16,25 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Pagination } from 'swiper/modules';
+
 export default function Services() {
       const [state1, setState1] = React.useState();
+      const [data, setData] = useState([]);
   useEffect(() => {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );},[]);
+
+useEffect(()=>{
+
+  axios.get(`${url}/api/servis`).then(res => {
+    setData(res.data)
+    console.log(res.data)
+}).catch(err => {
+
+})
+})
+
 
   return (
     <div className='ser1'>
@@ -49,41 +64,23 @@ export default function Services() {
 </div>
          <div className="box">
         <div className="left-card">
-            <div id='serviscards' className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img01.jpg" alt=""/>
-                <h1><a href="#">Financial Planning</a></h1>
-                <p>Even though financial planning is an ongoing and complex process, it helps a person make smart decisions about money goals in their life.</p>
-            </div>
 
-            <div id='serviscards' className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img02.jpg" alt=""/>
-                <h1><a href="#">Investment</a></h1>
-                <p>Our investment advisors study clients' goals, investment experience and risk tolerance and determine the investment plan best suited for each client.</p>
-            </div>
+            {data.map(item1 => {
+                                            return (
+                                                <div id='serviscards' className="cards">
 
-            <div id='serviscards' className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img03.jpg" alt=""/>
-                <h1><a href="#">Taxation</a></h1>
-                <p>Arranging your affairs to avoid or defer taxation is an art, and effective tax planning can be the first step to your financial success and potential savings.</p>
-            </div>
+                                                        {item1.image === null ? (
+                                                            <img src={img_for_null1} alt="" />
+                                                        ) : (
+                                                            <img src={item1.image} />
+                                                        )}
+                                                        <h5>{item1.title}</h5>
+                                                        <p>{item1.deckription}</p>
+                                                </div>
+                                            )
+                                        })}
 
-            <div id='serviscards' className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img04.jpg" alt=""/>
-                <h1><a href="#">Retirement planning</a></h1>
-                <p>Retirement planning can be problematic if you don't have the necessary knowledge on how to manage your funds or build a foundation for retirement.</p>
-            </div>
 
-            <div id='serviscards' className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img05.jpg" alt=""/>
-                <h1><a href="#">Business Planning</a></h1>
-                <p>Managing a company's finances, no matter how big or small, can often seem like a daunting task, but our experts can help you improve your company's financial health.</p>
-            </div>
-
-            <div id='serviscards' className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-services-img06.jpg" alt=""/>
-                <h1><a href="#">Management of risks</a></h1>
-                <p>This area of ​​financial advisory involves identifying, assessing and prioritizing potential risks to your business, followed by preventive action.</p>
-            </div>
         </div>
 
 

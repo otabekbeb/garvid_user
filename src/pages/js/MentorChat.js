@@ -102,7 +102,7 @@ export default function MentorChat() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
-        res.data.map(item=>{
+        res.data.map((item,key)=>{
           document.querySelector("#tg_name").value=item.username
           document.querySelector("#tg_number").value=item.phone_number
           document.querySelector("#tg_email").value=item.email
@@ -580,7 +580,7 @@ function onclicks(key) {
           <div className="yozishma_big_div_size">
           <div className="openModelAddChat" >
             <div className="back_search">
-            <i id="back_icons" onClick={() => back1()} class='bx bx-arrow-back'></i>
+            <i id="back_icons" onClick={() => back1()} className='bx bx-arrow-back'></i>
           <p className="vibor" style={{display:"flex",justifyContent:"center"}}>select the user you want to chat with</p></div>
           <input placeholder="Search..." className="vibor_search" onChange={handleInputChange}/>
           <div className="userList">
@@ -595,20 +595,20 @@ function onclicks(key) {
               <div  className="telegram_menu1">
                 <div className="tg_header">
                   <div className="left_tg">
-              <i onMouseLeave={()=>hover_back_close()} onMouseEnter={()=>hover_back()}  onClick={()=>telegram_close()} class='bx bx-left-arrow-alt'></i>
+              <i onMouseLeave={()=>hover_back_close()} onMouseEnter={()=>hover_back()}  onClick={()=>telegram_close()} className='bx bx-left-arrow-alt'></i>
               <p>Settings</p></div>
               <div className="right_tg">
-              <i onMouseEnter={()=>hover_pen()} onMouseLeave={()=>hover_pen_close()} onClick={()=>pencil()} class='bx bx-pencil'></i>
+              <i onMouseEnter={()=>hover_pen()} onMouseLeave={()=>hover_pen_close()} onClick={()=>pencil()} className='bx bx-pencil'></i>
               <div className="pencil">
                 <div className="left_pen">
-                  <i onMouseLeave={()=>hover_back_close1()} onMouseEnter={()=>hover_back1()}   onClick={()=>pencil_close()} id="arrow" class='bx bx-left-arrow-alt'></i>
+                  <i onMouseLeave={()=>hover_back_close1()} onMouseEnter={()=>hover_back1()}   onClick={()=>pencil_close()} id="arrow" className='bx bx-left-arrow-alt'></i>
                   <p>change profile</p>
                   </div>
                   <div className="edit_profilees">
                     <div onMouseEnter={()=>tg_imagess()} onMouseLeave={()=>tg_imagess_close()} className="tg_imagess">
-                      {chats.map(item=>{
+                      {chats.map((item,key)=>{
                         return(
-                          <>
+                          <div>
                           {item.image === null ? (
                             <img
                             onMouseLeave={()=> tg_imagess_close}
@@ -629,31 +629,31 @@ function onclicks(key) {
                               alt=""
                             />
                           )}<input id="userInput1" onChange={() => userImgPut(item.id)} style={{cursor:"pointer"}} type="file" className="tg_input" />
-                        </>)
+                        </div>)
                       })}
                       
-                      <div style={{cursor:"pointer"}} className="foto_tg"><i style={{cursor:"pointer"}} class='bx bx-camera'></i></div>
+                      <div style={{cursor:"pointer"}} className="foto_tg"><i style={{cursor:"pointer"}} className='bx bx-camera'></i></div>
                     </div>
                   </div>
                   <input style={theme=="moon"?{background:"rgb(33,33,33)",color:"white"}:{background:"white",color:"black"}} id="tg_name" className="tgs_inp" type="text" placeholder="Name"/>
                   <input style={theme=="moon"?{background:"rgb(33,33,33)",color:"white"}:{background:"white",color:"black"}} id="tg_number" className="tgs_inp" type="text" placeholder="Number"/>
                   <input style={theme=="moon"?{background:"rgb(33,33,33)",color:"white"}:{background:"white",color:"black"}} id="tg_email" className="tgs_inp" type="text" placeholder="Email"/>
 
-                  {chats.map(item=>{
+                  {chats.map((item,key)=>{
                     return(
-                       <div onClick={()=> putname(item.id)} className="savename"><i id="tgs_i" class='bx bx-check'></i></div>  
+                       <div onClick={()=> putname(item.id)} className="savename"><i id="tgs_i" className='bx bx-check'></i></div>  
                     )
                   })} 
                              
                   </div>
-              <i onMouseLeave={()=>hover_rounded_close1()} onMouseEnter={()=>hover_rounded()}  onClick={()=>Exitopen()} class='bx bx-dots-vertical-rounded'></i>
+              <i onMouseLeave={()=>hover_rounded_close1()} onMouseEnter={()=>hover_rounded()}  onClick={()=>Exitopen()} className='bx bx-dots-vertical-rounded'></i>
               <div style={theme=="moon"?{background:"rgb(33,33,33)",color:"white",border:"1px solid white"}:{background:"white",color:"black",border:"1px solid black"}}  onClick={()=>Exit()} className="exitopen"><RxExit/><p style={{marginLeft:"15px"}}>Exit</p></div>
               </div>
               </div>
                 
-              {chats.map(item=>{
+              {chats.map((item,key)=>{
                         return(
-                          <>
+                          <div>
                           {item.image === null ? (
                             <div className="tg_image">
                             <img
@@ -672,22 +672,22 @@ function onclicks(key) {
                               alt=""
                             /></div>
                           )}
-                        </>)
+                        </div>)
                       })}
                 <div className="for_theme">
                   <div className="theme_icons">
                   <BsMoonStars className="theme_iconss"/>
                   <p>Night mode</p>
                   </div>
-                <label class="switch" >
-  <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="#ffd43b"><circle r="5" cy="12" cx="12"></circle><path d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"></path></g></svg></span>
-  <span class="moon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path></svg></span>   
-  <input id="checkbox2" onClick={()=>{!document.querySelector("#checkbox2").checked?(localStorage.setItem("back", "sun")):(localStorage.setItem("back", "moon"));window.location.reload()}} type="checkbox" class="input"/>
-  <span class="slider"></span>
+                <label className="switch" >
+  <span className="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="#ffd43b"><circle r="5" cy="12" cx="12"></circle><path d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"></path></g></svg></span>
+  <span className="moon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path></svg></span>   
+  <input id="checkbox2" onClick={()=>{!document.querySelector("#checkbox2").checked?(localStorage.setItem("back", "sun")):(localStorage.setItem("back", "moon"));window.location.reload()}} type="checkbox" className="input"/>
+  <span className="slider"></span>
 </label></div>
               </div>
               <div className="yozishma_bolim_text_nik_search">
-              <i onMouseLeave={()=>hover_menu_close()} onMouseEnter={()=>hover_menu()}  style={{fontSize:"25px"}} onClick={()=>telegrammenu()} id="telegram_menu" class='bx bx-menu'></i>
+              <i onMouseLeave={()=>hover_menu_close()} onMouseEnter={()=>hover_menu()}  style={{fontSize:"25px"}} onClick={()=>telegrammenu()} id="telegram_menu" className='bx bx-menu'></i>
                 <input style={theme=="moon"?{background:"rgb(33,33,33)"}:{background:"white"}} id="searchss" onChange={handleInputChange} type="text" placeholder="Search... " />
                 
                               <button className="btnChatAdd" onClick={()=>openModelAddChat()} >+</button>
