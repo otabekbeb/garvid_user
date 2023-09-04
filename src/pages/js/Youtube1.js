@@ -47,8 +47,6 @@ export default function Youtube1() {
   const [id, setId] = useState(1);
   const [category, setCategory] = useState([]);
 
-
-
   const [main, setMain] = useState([]);
   const [main1, setMain1] = useState(
     JSON.parse(localStorage.getItem("Idvideo"))
@@ -62,7 +60,7 @@ export default function Youtube1() {
   const [comment2, setComment2] = useState([]);
   const [subcoment, setSubcoment] = useState(0);
   const [oneuser, setOneuser] = useState([]);
-
+  // const[subcomment, setSubcomment] = useState(0)
   const [teacherwork, setTeacherwork] = useState([]);
   const [commenttask, setCommenttask] = useState([]);
   const [comment5, setComment5] = useState([]);
@@ -73,6 +71,9 @@ export default function Youtube1() {
   const [videoDuration, setVideoDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [startAt, setStartAt] = useState(0);
+  const [subcomentdata, setSubcomentData] = useState([]);
+  const [taskData, setTaskData]=useState([])
+
   const playerRef = useRef(null);
 
   const handleDuration = (duration) => {
@@ -162,107 +163,8 @@ export default function Youtube1() {
     }
   };
 
-
-
-
-  useEffect(() => {
-    const idget = JSON.parse(localStorage.getItem("page_video"));
-    axios
-      .get(`${url}/api/course_theme_comment`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      })
-      .then((res) => {
-        var mycoment = res.data.filter((item) => item.theme == idget.id);
-        
-        axios
-          .get(`${url}/auth/allusers`, {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          })
-          .then((res3) => {
-         
-            for (let i = 0; i < mycoment.length; i++) {
-              mycoment[i].username = "Ananim User";
-              mycoment[i].image1 = "";
-              for (let j = 0; j < res3.data.length; j++) {
-                if (res3.data[j].id == mycoment[i].user_id) {
-                  mycoment[i].username = res3.data[j].username;
-                  mycoment[i].image1 = res3.data[j].image;
-                }
-              }
-            }
-
-            var onlycoment = mycoment.filter(
-              (item) => (item.subcomment==0&&item.task_commnet_id == 0)
-            );
-            var all_task = mycoment.filter((item) => item.task_commnet_id != 0);
-
-            axios
-              .get(`${url}/api/course_theme_task_student`, {
-                headers: {
-                  Authorization: `Bearer ${localStorage.getItem("token")}`,
-                },
-              })
-              .then((res1) => {
-                for (let i = 0; i < all_task.length; i++) {
-                  all_task[i].mark = 0;
-                  for (let j = 0; j < res1.data.length; j++) {
-                    if (all_task[i].id == res1.data[j].feedback) {
-                      all_task[i].mark = res1.data[j].mark;
-                    }
-                  }
-                }
-                
-                setComment(onlycoment);
-                setCommenttask(all_task);
-              })
-              .catch((err) => {
-                console.log("123");
-              });
-          });
-      })
-      .catch((err) => {
-        console.log("1223");
-      });
-  }, []);
   // Abbas subcomnet
-function getSubcoment(id){
-  const idget = JSON.parse(localStorage.getItem("page_video"));
-  axios
-    .get(`${url}/api/course_theme_comment`, {
-      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-    })
-    .then((res) => {
-      var mycoment = res.data.filter((item) => item.theme == idget.id);
-      
-      axios
-        .get(`${url}/auth/allusers`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        })
-        .then((res3) => {
-       
-          for (let i = 0; i < mycoment.length; i++) {
-            mycoment[i].username = "Ananim User";
-            mycoment[i].image1 = "";
-            for (let j = 0; j < res3.data.length; j++) {
-              if (res3.data[j].id == mycoment[i].user_id) {
-                mycoment[i].username = res3.data[j].username;
-                mycoment[i].image1 = res3.data[j].image;
-              }
-            }
-          }
-          var subcomnet = mycoment.filter((item) => item.subcommnet==id);
-            })
-            .catch((err) => {
-        });
-    })
-    .catch((err) => {
-   
-    });
-}
+
   function openModal() {
     document.querySelector(".navbar_yon").classList.toggle("navbar_yon1");
   }
@@ -276,7 +178,15 @@ function getSubcoment(id){
       "border-bottom: none; color: #9DA7BB;";
     setTask_comnet_id(0);
   }
-  function painModal1(id) {
+  function painModal1() {
+    axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`,{
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
+    .then(res=>{
+      setTaskData(res.data)
+    });
     document.querySelector(".zadaniya1").style =
       "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
     document.querySelector(".zadaniya").style =
@@ -299,8 +209,35 @@ function getSubcoment(id){
     document.querySelector(".zadaniya5").style =
       "border-bottom: none; color: #9DA7BB;";
   }
+  function getData() {
+    axios
+      .get(
+        `${url}/api/course_theme_comment/${
+          JSON.parse(localStorage.getItem("page_video")).id
+        }`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      )
+      .then((res) => {
+        setComment(res.data);
+        console.log(res.data, "abbaslog");
+      });
+  }
 
   useEffect(() => {
+    getData();
+    axios
+      .get(`${url}/auth/oneuser`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        setOneuser(res.data);
+        console.log(res.data, "oneuser");
+      });
+
     localStorage.setItem("task_commnet_id", JSON.stringify(task_comnet_id));
     var id = localStorage.getItem("abbas");
     var StudentId = localStorage.getItem("OneuserId");
@@ -323,9 +260,7 @@ function getSubcoment(id){
                   Authorization: `Bearer ${localStorage.getItem("token")}`,
                 },
               })
-              .then((res) => {
-               
-              })
+              .then((res) => {})
               .catch((err) => {
                 // alert("bor ekan")
               });
@@ -338,53 +273,7 @@ function getSubcoment(id){
         );
         setLoader(0);
       })
-      .catch((err) => {
-        // console.log(err);
-        // document.querySelector(".a_err_boganda").style =
-        //   "display: flex;justify-content: center;align-items: center;";
-      });
-
-    //comment
-
-    axios
-      .get(
-        `${url}/api/course_theme_comment/${
-          JSON.parse(localStorage.getItem("page_video")).id
-        }`,
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        }
-      )
-      .then((res) => {
-        res.data.map((item) => {
-          if (item.task_commnet_id == task_comnet_id) {
-            var coment21 = res.data;
-            for (let i = 0; i < res.data.length; i++) {
-              var a = 0;
-              for (let j = 0; j < coment21.length; j++) {
-                if (res.data[i].id == coment21[j].subcomment) {
-                  a = a + 1;
-                }
-              }
-              res.data[i].count = a;
-            }
-            setComment(res.data);
-          } else {
-          }
-        });
-
-        console.log(res.data, "coment");
-      })
       .catch((err) => {});
-
-    axios
-      .get(`${url}/auth/oneuser`, {
-        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
-      })
-      .then((res) => {
-        setOneuser(res.data);
-        console.log(res.data, "salom");
-      });
 
     //task
     axios
@@ -403,14 +292,7 @@ function getSubcoment(id){
         <></>
       );
     }
-    axios
-      .get(`${url}/auth/oneuser`, {
-        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
-      })
-      .then((res) => {
-        setOneuser(res.data);
-        console.log(res.data, "salom");
-      });
+
     axios
       .get(
         `${url}/api/course_theme_comment/${
@@ -470,386 +352,65 @@ function getSubcoment(id){
       })
       .then((res) => {
         const idget = JSON.parse(localStorage.getItem("page_video"));
-        axios
-          .get(`${url}/api/course_theme_comment`, {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          })
-          .then((res) => {
-            console.log(res.data);
-            var mycoment = res.data.filter((item) => item.theme == idget.id);
-            console.log("asdsad");
-            axios
-              .get(`${url}/auth/allusers`, {
-                headers: {
-                  Authorization: `Bearer ${localStorage.getItem("token")}`,
-                },
-              })
-              .then((res3) => {
-                console.log("asdsa2");
-                for (let i = 0; i < mycoment.length; i++) {
-                  mycoment[i].username = "Ananim User";
-                  mycoment[i].image1 = "";
-                  for (let j = 0; j < res3.data.length; j++) {
-                    console.log(
-                      res3.data[j].id == mycoment[i].user_id,
-                      res3.data[j].id,
-                      mycoment[i].user_id
-                    );
-
-                    if (res3.data[j].id == mycoment[i].user_id) {
-                      mycoment[i].username = res3.data[j].username;
-                      mycoment[i].image1 = res3.data[j].image;
-                    }
-                  }
-                }
-
-                var onlycoment = mycoment.filter(
-                  (item) => item.subcoment == 0 && item.task_commnet_id == 0
-                );
-                var all_task = mycoment.filter(
-                  (item) => item.task_commnet_id != 0
-                );
-
-                axios
-                  .get(`${url}/api/course_theme_task_student`, {
-                    headers: {
-                      Authorization: `Bearer ${localStorage.getItem("token")}`,
-                    },
-                  })
-                  .then((res1) => {
-                    for (let i = 0; i < all_task.length; i++) {
-                      all_task[i].mark = 0;
-                      for (let j = 0; j < res1.data.length; j++) {
-                        if (all_task[i].id == res1.data[j].feedback) {
-                          all_task[i].mark = res1.data[j].mark;
-                        }
-                      }
-                    }
-                    setComment(onlycoment);
-                    setCommenttask(all_task);
-                  })
-                  .catch((err) => {
-                    console.log("123");
-                  });
-              });
-          })
-          .catch((err) => {
-            console.log("1223");
-          });
+        getData();
         document.querySelector("#chat_text").value = "";
       })
       .catch((err) => {
         Swal.fire("Error");
       });
 
-    axios
-      .get(
-        `${url}/api/course_theme_comment/${
-          JSON.parse(localStorage.getItem("page_video")).id
-        }`,
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        }
-      )
-      .then((res) => {
-        setComment(res.data);
-        console.log(res.data);
-      })
-      .catch((err) => {});
+    getData();
   }
 
-  function otvetPost(id) {
+  function otvetPost() {
     var formdata = new FormData();
     formdata.append("text", document.querySelector("#chat_text1").value);
     formdata.append("image", document.querySelector("#comment_file1").files[0]);
-    formdata.append("user_id", oneuser[0].id);
+    formdata.append("user_id", localStorage.getItem("OneuserId"));
     formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id);
     formdata.append("subcomment", subcoment);
     formdata.append("task_commnet_id", task_comnet_id);
 
     axios
-      .post(`${url}/api/course_theme_comment/`, formdata, {
+      .post(`${url}/api/course_theme_comment`, formdata, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
         const idget = JSON.parse(localStorage.getItem("page_video"));
         axios
-          .get(`${url}/api/course_theme_comment`, {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          })
-          .then((res) => {
-            console.log(res.data);
-            var mycoment = res.data.filter((item) => item.theme == idget.id);
-            console.log("asdsad");
-            axios
-              .get(`${url}/auth/allusers`, {
-                headers: {
-                  Authorization: `Bearer ${localStorage.getItem("token")}`,
-                },
-              })
-              .then((res3) => {
-                console.log("asdsa2");
-                for (let i = 0; i < mycoment.length; i++) {
-                  mycoment[i].username = "Ananim User";
-                  mycoment[i].image1 = "";
-                  for (let j = 0; j < res3.data.length; j++) {
-                    console.log(
-                      res3.data[j].id == mycoment[i].user_id,
-                      res3.data[j].id,
-                      mycoment[i].user_id
-                    );
-
-                    if (res3.data[j].id == mycoment[i].user_id) {
-                      mycoment[i].username = res3.data[j].username;
-                      mycoment[i].image1 = res3.data[j].image;
-                    }
-                  }
-                }
-
-                var onlycoment = mycoment.filter(
-                  (item) => item.subcoment == 0 && item.task_commnet_id == 0
-                );
-                var all_task = mycoment.filter(
-                  (item) => item.task_commnet_id != 0
-                );
-
-                axios
-                  .get(`${url}/api/course_theme_task_student`, {
-                    headers: {
-                      Authorization: `Bearer ${localStorage.getItem("token")}`,
-                    },
-                  })
-                  .then((res1) => {
-                    for (let i = 0; i < all_task.length; i++) {
-                      all_task[i].mark = 0;
-                      for (let j = 0; j < res1.data.length; j++) {
-                        if (all_task[i].id == res1.data[j].feedback) {
-                          all_task[i].mark = res1.data[j].mark;
-                        }
-                      }
-                    }
-                    setComment(onlycoment);
-                    setCommenttask(all_task);
-                  })
-                  .catch((err) => {
-                    console.log("123");
-                  });
-              });
-          })
-          .catch((err) => {
-            console.log("1223");
-          });
+        .get(`${url}/api/course_theme_comment/subcomment/`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        })
+        .then((res) => {
+          setSubcomentData(res.data);
+        });
       })
       .catch((err) => {
         Swal.fire("Нельзя писать больше 300 символов");
       });
 
-    // axios
-    //   .get(
-    //     `${url}/api/course_theme_comment/${
-    //       JSON.parse(localStorage.getItem("page_video")).id
-    //     }`,
-    //     {
-    //       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-    //     }
-    //   )
-    //   .then((res) => {
-    //     setComment2(res.data);
-    //   })
-    //   .catch((err) => {});
+      axios
+      .get(`${url}/api/course_theme_comment/subcomment/${id}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        setSubcomentData(res.data);
+      });
   }
 
   function deleteComment(id) {
     axios
-      .delete(`${url}/api/course_theme_comment/${id}`, {
+      .delete(`${url}/api/course_theme_comment/`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
         const idget = JSON.parse(localStorage.getItem("page_video"));
-        axios
-          .get(`${url}/api/course_theme_comment`, {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          })
-          .then((res) => {
-            console.log(res.data);
-            var mycoment = res.data.filter((item) => item.theme == idget.id);
-            console.log("asdsad");
-            axios
-              .get(`${url}/auth/allusers`, {
-                headers: {
-                  Authorization: `Bearer ${localStorage.getItem("token")}`,
-                },
-              })
-              .then((res3) => {
-                console.log("asdsa2");
-                for (let i = 0; i < mycoment.length; i++) {
-                  mycoment[i].username = "Ananim User";
-                  mycoment[i].image1 = "";
-                  for (let j = 0; j < res3.data.length; j++) {
-                    console.log(
-                      res3.data[j].id == mycoment[i].user_id,
-                      res3.data[j].id,
-                      mycoment[i].user_id
-                    );
-
-                    if (res3.data[j].id == mycoment[i].user_id) {
-                      mycoment[i].username = res3.data[j].username;
-                      mycoment[i].image1 = res3.data[j].image;
-                    }
-                  }
-                }
-
-                var onlycoment = mycoment.filter(
-                  (item) => item.subcoment == 0 && item.task_commnet_id == 0
-                );
-                var all_task = mycoment.filter(
-                  (item) => item.task_commnet_id != 0
-                );
-
-                axios
-                  .get(`${url}/api/course_theme_task_student`, {
-                    headers: {
-                      Authorization: `Bearer ${localStorage.getItem("token")}`,
-                    },
-                  })
-                  .then((res1) => {
-                    for (let i = 0; i < all_task.length; i++) {
-                      all_task[i].mark = 0;
-                      for (let j = 0; j < res1.data.length; j++) {
-                        if (all_task[i].id == res1.data[j].feedback) {
-                          all_task[i].mark = res1.data[j].mark;
-                        }
-                      }
-                    }
-                    setComment(onlycoment);
-                    setCommenttask(all_task);
-                  })
-                  .catch((err) => {
-                    console.log("123");
-                  });
-              });
-          })
-          .catch((err) => {
-            console.log("1223");
-          });
+        getData();
       })
       .catch((err) => {});
-    axios
-      .get(
-        `${url}/api/course_theme_comment/${
-          JSON.parse(localStorage.getItem("page_video")).id
-        }`,
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        }
-      )
-      .then((res) => {
-        setComment(res.data);
-      })
-      .catch((err) => {
-        Swal.fire("Вы не смогли удалить комментарий, попробуйте снова.");
-      });
+    getData();
   }
 
-  function deleteComment1(id) {
-    axios
-      .delete(`${url}/api/course_theme_comment/${id}`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      })
-      .then((res) => {
-        window.location.reload();
-        const idget = JSON.parse(localStorage.getItem("page_video"));
-        axios
-          .get(`${url}/api/course_theme_comment`, {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          })
-          .then((res) => {
-            console.log(res.data);
-            var mycoment = res.data.filter((item) => item.theme == idget.id);
-            console.log("asdsad");
-            axios
-              .get(`${url}/auth/allusers`, {
-                headers: {
-                  Authorization: `Bearer ${localStorage.getItem("token")}`,
-                },
-              })
-              .then((res3) => {
-                console.log("asdsa2");
-                for (let i = 0; i < mycoment.length; i++) {
-                  mycoment[i].username = "Ananim User";
-                  mycoment[i].image1 = "";
-                  for (let j = 0; j < res3.data.length; j++) {
-                    console.log(
-                      res3.data[j].id == mycoment[i].user_id,
-                      res3.data[j].id,
-                      mycoment[i].user_id
-                    );
-
-                    if (res3.data[j].id == mycoment[i].user_id) {
-                      mycoment[i].username = res3.data[j].username;
-                      mycoment[i].image1 = res3.data[j].image;
-                    }
-                  }
-                }
-
-                var onlycoment = mycoment.filter(
-                  (item) => item.subcoment == 0 && item.task_commnet_id == 0
-                );
-                var all_task = mycoment.filter(
-                  (item) => item.task_commnet_id != 0
-                );
-
-                axios
-                  .get(`${url}/api/course_theme_task_student`, {
-                    headers: {
-                      Authorization: `Bearer ${localStorage.getItem("token")}`,
-                    },
-                  })
-                  .then((res1) => {
-                    for (let i = 0; i < all_task.length; i++) {
-                      all_task[i].mark = 0;
-                      for (let j = 0; j < res1.data.length; j++) {
-                        if (all_task[i].id == res1.data[j].feedback) {
-                          all_task[i].mark = res1.data[j].mark;
-                        }
-                      }
-                    }
-                    setComment(onlycoment);
-                    setCommenttask(all_task);
-                  })
-                  .catch((err) => {
-                    console.log("123");
-                  });
-              });
-          })
-          .catch((err) => {
-            console.log("1223");
-          });
-      });
-    axios
-      .get(
-        `${url}/api/course_theme_comment/${
-          JSON.parse(localStorage.getItem("page_video")).id
-        }`,
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        }
-      )
-      .then((res) => {
-        setComment2(res.data);
-      })
-      .catch((err) => {
-        Swal.fire("Вы не смогли удалить комментарий, попробуйте снова.");
-      });
-  }
 
   function cencelModal() {
     document.querySelector("#chat_text").value = "";
@@ -857,12 +418,18 @@ function getSubcoment(id){
   }
   function openModalOtvet11(id) {
     setSubcoment(id);
+    axios
+      .get(`${url}/api/course_theme_comment/subcomment/${id}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        setSubcomentData(res.data);
+      });
     document.querySelector(".otevet_comment_otdel_oyna").style =
       "display: block";
     document.querySelector(".m_otdel_bgc").style = "display:none";
   }
   function closeModalOtvet11() {
-    setSubcoment(0);
     document.querySelector(".m_otdel_bgc").style = "display: block";
     document.querySelector(".otevet_comment_otdel_oyna ").style =
       "display:none !important";
@@ -886,45 +453,14 @@ function getSubcoment(id){
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
-        const idget = JSON.parse(localStorage.getItem("page_video"));
-        axios
-          .get(`${url}/api/course_theme_comment`, {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          })
-          .then((res) => {
-            console.log(res.data);
-            var mycoment = res.data.filter((item) => item.theme == idget.id);
-            var onlycoment = mycoment.filter(
-              (item) => item.subcoment == 0 && item.task_commnet_id == 0
-            );
-            var all_task = mycoment.filter((item) => item.task_commnet_id != 0);
-            axios
-              .get(`${url}/api/course_theme_task_student`, {
-                headers: {
-                  Authorization: `Bearer ${localStorage.getItem("token")}`,
-                },
-              })
-              .then((res1) => {
-                for (let i = 0; i < all_task.length; i++) {
-                  all_task[i].mark = 0;
-                  for (let j = 0; j < res1.data.length; j++) {
-                    if (all_task[i].id == res1.data[j].feedback) {
-                      all_task[i].mark = res1.data[j].mark;
-                    }
-                  }
-                }
-                setComment(onlycoment);
-                setCommenttask(all_task);
-              })
-              .catch((err) => {
-                console.log("123");
-              });
-          })
-          .catch((err) => {
-            console.log("1223");
-          });
+        axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`,{
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        })
+        .then(res=>{
+          setTaskData(res.data)
+        });
       });
     axios
       .get(
@@ -949,7 +485,7 @@ function getSubcoment(id){
     var formdata = new FormData();
     formdata.append("text", document.querySelector("#chat_text12").value);
     formdata.append("image", 0);
-    formdata.append("user_id", oneuser[0].id);
+    formdata.append("user_id", localStorage.getItem("OneuserId"));
     formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id);
     formdata.append("subcomment", subcoment);
     formdata.append("task_commnet_id", 1);
@@ -959,116 +495,26 @@ function getSubcoment(id){
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
-        const idget = JSON.parse(localStorage.getItem("page_video"));
-        axios
-          .get(`${url}/api/course_theme_comment`, {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          })
-          .then((res) => {
-            console.log(res.data);
-            var mycoment = res.data.filter((item) => item.theme == idget.id);
-            console.log("asdsad");
-            axios
-              .get(`${url}/auth/allusers`, {
-                headers: {
-                  Authorization: `Bearer ${localStorage.getItem("token")}`,
-                },
-              })
-              .then((res3) => {
-                console.log("asdsa2");
-                for (let i = 0; i < mycoment.length; i++) {
-                  mycoment[i].username = "Ananim User";
-                  mycoment[i].image1 = "";
-                  for (let j = 0; j < res3.data.length; j++) {
-                    console.log(
-                      res3.data[j].id == mycoment[i].user_id,
-                      res3.data[j].id,
-                      mycoment[i].user_id
-                    );
-
-                    if (res3.data[j].id == mycoment[i].user_id) {
-                      mycoment[i].username = res3.data[j].username;
-                      mycoment[i].image1 = res3.data[j].image;
-                    }
-                  }
-                }
-
-                var onlycoment = mycoment.filter(
-                  (item) => item.subcoment == 0 && item.task_commnet_id == 0
-                );
-                var all_task = mycoment.filter(
-                  (item) => item.task_commnet_id != 0
-                );
-
-                axios
-                  .get(`${url}/api/course_theme_task_student`, {
-                    headers: {
-                      Authorization: `Bearer ${localStorage.getItem("token")}`,
-                    },
-                  })
-                  .then((res1) => {
-                    for (let i = 0; i < all_task.length; i++) {
-                      all_task[i].mark = 0;
-                      for (let j = 0; j < res1.data.length; j++) {
-                        if (all_task[i].id == res1.data[j].feedback) {
-                          all_task[i].mark = res1.data[j].mark;
-                        }
-                      }
-                    }
-                    setComment(onlycoment);
-                    setCommenttask(all_task);
-                  })
-                  .catch((err) => {
-                    console.log("123");
-                  });
-              });
-          })
-          .catch((err) => {
-            console.log("1223");
-          });
+        axios.get(`${url}/api/course_theme_comment/${JSON.parse(localStorage.getItem("page_video")).id}`,{
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        })
+        .then(res=>{
+          setTaskData(res.data)
+        });
       })
       .catch((err) => {
         Swal.fire("Error");
       });
 
-    const idget = JSON.parse(localStorage.getItem("page_video"));
-    axios
-      .get(`${url}/api/course_theme_comment`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      axios.get(`${url}/api/course_theme_comment/`,{
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
       })
-      .then((res) => {
-        console.log(res.data);
-        var mycoment = res.data.filter((item) => item.theme == idget.id);
-        var onlycoment = mycoment.filter(
-          (item) => item.subcoment == 0 && item.task_commnet_id == 0
-        );
-        var all_task = mycoment.filter((item) => item.task_commnet_id != 0);
-        axios
-          .get(`${url}/api/course_theme_task_student`, {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          })
-          .then((res1) => {
-            for (let i = 0; i < all_task.length; i++) {
-              all_task[i].mark = 0;
-              for (let j = 0; j < res1.data.length; j++) {
-                if (all_task[i].id == res1.data[j].feedback) {
-                  all_task[i].mark = res1.data[j].mark;
-                }
-              }
-            }
-            setComment(onlycoment);
-            setCommenttask(all_task);
-          })
-          .catch((err) => {
-            console.log("123");
-          });
-      })
-      .catch((err) => {
-        console.log("1223");
+      .then(res=>{
+        setTaskData(res.data)
       });
   }
 
@@ -1160,6 +606,9 @@ function getSubcoment(id){
       });
   }
 
+  function forbox() {
+    document.querySelector("").style = "box-shadow: 0px 0px 10px #9DA7BB;";
+  }
   return (
     <div className="youtube_bgc">
       <div className="a_err_boganda">
@@ -1185,28 +634,39 @@ function getSubcoment(id){
                           src={main1.video}
                           title="W3Schools Free Online Web Tutorials"
                         ></iframe> */}
-                    {(() => {
-if (main.video.includes(".jpg")||main.video.includes(".png")||main.video===null) {
-  return<p style={{
-    margin:"100px"
-  }}>video not found or not exist</p>
-}else{
-  return<ReactPlayer
-  ref={playerRef}
-  url={main1.video}
-  controls
-  onDuration={handleDuration}
-  onProgress={handleProgress}
-  className="React_player"
-/>
-}
-
-                    })()}
+                        {(() => {
+                          if (
+                            main.video.includes(".jpg") ||
+                            main.video.includes(".png") ||
+                            main.video === null
+                          ) {
+                            return (
+                              <p
+                                style={{
+                                  margin: "100px",
+                                }}
+                              >
+                                video not found or not exist
+                              </p>
+                            );
+                          } else {
+                            return (
+                              <ReactPlayer
+                                ref={playerRef}
+                                url={main1.video}
+                                controls
+                                onDuration={handleDuration}
+                                onProgress={handleProgress}
+                                className="React_player"
+                              />
+                            );
+                          }
+                        })()}
                       </div>
                       <div className="theme_df">
                         <div className="flex_logig">
                           <h1 className="raspberry_pi">
-                          <p>
+                            <p>
                               Размер видео: {videoDuration.toFixed(2)} секунд
                             </p>
                             <p>Последний раз останавливались на {startAt} </p>
@@ -1322,28 +782,15 @@ if (main.video.includes(".jpg")||main.video.includes(".png")||main.video===null)
                                               <div className="for-flex-time-name-image">
                                                 <div className="m_comment_img">
                                                   <img
-                                                    src={
-                                                      item &&
-                                                      item.image1 &&
-                                                      item.image1.includes(
-                                                        "http"
-                                                      ) ? (
-                                                        item.image1
-                                                      ) : item.image1 ? (
-                                                        `${url}/${item.image}`
-                                                      ) : (
-                                                        <img
-                                                          src={anonim}
-                                                          alt=""
-                                                        />
-                                                      )
-                                                    }
+                                                    src={item.oneuser.image}
                                                     alt=""
                                                   />
                                                 </div>
 
                                                 <div className="user-name-timecreate">
-                                                  <h5>{item.username}</h5>
+                                                  <h5>
+                                                    {item.oneuser.username}
+                                                  </h5>
                                                   <p>
                                                     {item.time_create.slice(
                                                       0,
@@ -1354,21 +801,9 @@ if (main.video.includes(".jpg")||main.video.includes(".png")||main.video===null)
                                               </div>
 
                                               <div className="m_comment_text">
-                                                {item.image ? (
-                                                  ""
-                                                ) : (
-                                                  <img
-                                                    src={
-                                                      item.image &&
-                                                      item.image.includes(
-                                                        "http"
-                                                      )
-                                                        ? item.image
-                                                        : `${url}/${item.image}`
-                                                    }
-                                                    alt=""
-                                                  />
-                                                )}
+                                                {item.image
+                                                  ? ""
+                                                  : `${item.image}`}
                                                 <p className="m_comment_text1505">
                                                   {item.text}
                                                 </p>
@@ -1382,11 +817,12 @@ if (main.video.includes(".jpg")||main.video.includes(".png")||main.video===null)
                                                   >
                                                     <FiCornerUpLeft />
                                                     <span>
-                                                      {item.count === 0 ? (
+                                                      {item.message.length ===
+                                                      0 ? (
                                                         "Ответить"
                                                       ) : (
                                                         <>
-                                                          {item.count}
+                                                          {item.message.length}
                                                           <span> Ответов</span>
                                                         </>
                                                       )}
@@ -1474,94 +910,72 @@ if (main.video.includes(".jpg")||main.video.includes(".png")||main.video===null)
                                   </div>
                                 ) : (
                                   <>
-                                    {comment.map((item) => {
-                                      if (item.subcomment == subcoment) {
-                                        return (
-                                          <>
-                                            <div className="df_div_comment_page">
-                                              <div className="m_comment">
-                                                <div className="for-flex-time-name-image">
-                                                  <div className="m_comment_img">
-                                                    <img
-                                                      src={
-                                                        item &&
-                                                        item.image1 &&
-                                                        item.image1.includes(
-                                                          "http"
-                                                        ) ? (
-                                                          item.image1
-                                                        ) : item.image1 ? (
-                                                          `${url}/${item.image}`
-                                                        ) : (
-                                                          <img
-                                                            src={anonim}
-                                                            alt=""
-                                                          />
-                                                        )
-                                                      }
-                                                      alt=""
-                                                    />
-                                                  </div>
-                                                  <div className="user-name-timecreate">
-                                                    <h5>{item.username}</h5>
-                                                    <p>
-                                                      {item.time_create.slice(
-                                                        0,
-                                                        10
-                                                      )}
-                                                    </p>
-                                                  </div>
+                                    {subcomentdata.map((item) => {
+                                      return (
+                                        <>
+                                          <div className="df_div_comment_page">
+                                            <div className="m_comment">
+                                              <div className="for-flex-time-name-image">
+                                                <div className="m_comment_img">
+                                                  <img
+                                                    src={item.oneuser.image}
+                                                    alt=""
+                                                  />
                                                 </div>
-
-                                                <div className="m_comment_text">
-                                                  {item.image ? (
-                                                    ""
-                                                  ) : (
-                                                    <img
-                                                      src={
-                                                        item.image &&
-                                                        item.image.includes(
-                                                          "http"
-                                                        )
-                                                          ? item.image
-                                                          : `${url}/${item.image}`
-                                                      }
-                                                      alt=""
-                                                    />
-                                                  )}
-                                                  <p className="m_comment_text1505">
-                                                    {item.text}
+                                                <div className="user-name-timecreate">
+                                                  <h5>{item.oneuser.username}</h5>
+                                                  <p>
+                                                    {item.time_create.slice(
+                                                      0,
+                                                      10
+                                                    )}
                                                   </p>
-                                                  <div className="m_comment_otvet">
-                                                    {oneuser.map((item5) => {
-                                                      return (
-                                                        <>
-                                                          {item5.id ==
-                                                          item.user_id ? (
-                                                            <p
-                                                              className="m_comment_delete"
-                                                              onClick={() => {
-                                                                deleteComment(
-                                                                  item.id
-                                                                );
-                                                              }}
-                                                            >
-                                                              <AiOutlineDelete />
-                                                              удалить
-                                                            </p>
-                                                          ) : (
-                                                            ""
-                                                          )}
-                                                        </>
-                                                      );
-                                                    })}
-                                                  </div>
+                                                </div>
+                                              </div>
+
+                                              <div className="m_comment_text">
+                                                {item.image ? (
+                                                  ""
+                                                ) : (
+                                                  <img
+                                                    src={
+                                                      item.image
+                                                    }
+                                                    alt=""
+                                                  />
+                                                )}
+                                                <p className="m_comment_text1505">
+                                                  {item.text}
+                                                </p>
+                                                <div className="m_comment_otvet">
+                                                  {oneuser.map((item5) => {
+                                                    return (
+                                                      <>
+                                                        {item5.id ==
+                                                        item.user_id ? (
+                                                          <p
+                                                            className="m_comment_delete"
+                                                            onClick={() => {
+                                                              deleteComment(
+                                                                item.id
+                                                              );
+                                                            }}
+                                                          >
+                                                            <AiOutlineDelete />
+                                                            удалить
+                                                          </p>
+                                                        ) : (
+                                                          ""
+                                                        )}
+                                                      </>
+                                                    );
+                                                  })}
                                                 </div>
                                               </div>
                                             </div>
-                                          </>
-                                        );
-                                      }
+                                          </div>
+                                        </>
+                                      );
                                     })}
                                   </>
                                 )}
@@ -1743,14 +1157,13 @@ if (main.video.includes(".jpg")||main.video.includes(".png")||main.video===null)
                               {teacherwork.map((item) => {
                                 if (
                                   item.id ==
-                                  JSON.parse(localStorage.getItem("page_video"))
-                                    .id
+                                  JSON.parse(localStorage.getItem("page_video")).id
                                 ) {
                                   return (
                                     <>
                                       <div className="zanacha_vaz">Задача*</div>
                                       <div className="task_div_big">
-                                        <img src={item.image} alt="" />
+                                        <img src={item.image ? "" : `${item.image}`} alt="" />
                                         <p>{item.content}</p>
                                       </div>
                                     </>
@@ -1762,13 +1175,13 @@ if (main.video.includes(".jpg")||main.video.includes(".png")||main.video===null)
                               <hr className="hr2000" />
 
                               <div className="for_scroll">
-                                {commenttask.length == 0 ? (
+                                {taskData.length == 0 ? (
                                   <div className="for_no_comment">
                                     <p>Тут ещё нут ответов на задачу </p>
                                   </div>
                                 ) : (
                                   <>
-                                    {commenttask.map((item, key) => {
+                                    {taskData.map((item, key) => {
                                       if (item.task_commnet_id == 1) {
                                         return (
                                           <>
@@ -1776,20 +1189,7 @@ if (main.video.includes(".jpg")||main.video.includes(".png")||main.video===null)
                                               <div className="div_img_class_over">
                                                 <img
                                                   src={
-                                                    item &&
-                                                    item.image1 &&
-                                                    item.image1.includes(
-                                                      "http"
-                                                    ) ? (
-                                                      item.image1
-                                                    ) : item.image1 ? (
-                                                      `${url}/${item.image}`
-                                                    ) : (
-                                                      <img
-                                                        src={anonim}
-                                                        alt=""
-                                                      />
-                                                    )
+                                                    item.oneuser.image
                                                   }
                                                   alt=""
                                                 />
@@ -1797,8 +1197,16 @@ if (main.video.includes(".jpg")||main.video.includes(".png")||main.video===null)
 
                                               <div className="div_class_tugadi">
                                                 <div className="task-uchun-joy-and-mark">
-                                                  <h5>{item.username}</h5>
-                                                  {item.mark}
+                                                  <h5>{item.oneuser.username}</h5>
+                                                  {item.mark === 0 ? "" : (<>{item.mark === 2 ? (<div className="mark-two-bosa">
+                                                    2
+                                                  </div>) : (<>{item.mark === 3 ? (<div className="mark-three-bosa">
+                                                    3
+                                                  </div>): (<>{item.mark === 4 ? (<div className="mark-four-bosa">
+                                                    4
+                                                  </div>):(<>{item.mark === 5 ? (<div className="mark-five-bosa">
+                                                    5
+                                                  </div>):""}</>)}</>)}</>)}</>)}
                                                 </div>
 
                                                 <p className="p-create-time-uchun">
@@ -1811,12 +1219,7 @@ if (main.video.includes(".jpg")||main.video.includes(".png")||main.video===null)
                                                 {task.map((item) => (
                                                   <img
                                                     src={
-                                                      item.image &&
-                                                      item.image.includes(
-                                                        "http"
-                                                      )
-                                                        ? item.image
-                                                        : `${url}/${item.image}`
+                                                      item.image ? "" : `${item.image}`
                                                     }
                                                     alt=""
                                                   />
@@ -2092,23 +1495,34 @@ if (main.video.includes(".jpg")||main.video.includes(".png")||main.video===null)
                 ) : (
                   <div className="youtube_kotta_img">
                     <div className="img_youtube_kotta">
-                    {(() => {
-if (main.video.includes(".jpg")||main.video.includes(".png")||main.video===null) {
-  return<p style={{
-    margin:"30%"
-  }}>video not found or not exist</p>
-}else{
-  return<ReactPlayer
-  ref={playerRef}
-  url={main.video}
-  controls
-  onDuration={handleDuration}
-  onProgress={handleProgress}
-  className="React_player"
-/>
-}
-
-                    })()}
+                      {(() => {
+                        if (
+                          main.video.includes(".jpg") ||
+                          main.video.includes(".png") ||
+                          main.video === null
+                        ) {
+                          return (
+                            <p
+                              style={{
+                                margin: "30%",
+                              }}
+                            >
+                              video not found or not exist
+                            </p>
+                          );
+                        } else {
+                          return (
+                            <ReactPlayer
+                              ref={playerRef}
+                              url={main.video}
+                              controls
+                              onDuration={handleDuration}
+                              onProgress={handleProgress}
+                              className="React_player"
+                            />
+                          );
+                        }
+                      })()}
                     </div>
                     <div className="theme_df">
                       <div className="flex_logig">
