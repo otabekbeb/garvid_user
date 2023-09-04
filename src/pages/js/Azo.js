@@ -61,7 +61,7 @@ export default function Azo() {
                   </button> */}
                 </a>
               </div>
-            </div>) : (<div> {follow.map((item, key) => {
+            </div>) : (<div style={{display:"flex"}}> {follow.map((item, key) => {
                 return <div>
                         {users.map(item1 => {
                             if (item1.id == item.topuser) {
