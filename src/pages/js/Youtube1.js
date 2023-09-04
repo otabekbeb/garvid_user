@@ -1130,7 +1130,7 @@ export default function Youtube1() {
                       <div className="theme_df">
                         <div className="flex_logig">
                           <h1 className="raspberry_pi">
-                            {main1.name} Ффффффффффф
+                            {main1.name} 
                             <p>Размер видео: {videoDuration.toFixed(2)} секунд</p>
                             <p>Последний раз останавливались на {startAt} </p>
       <p>Текущее время: {currentTime.toFixed(2)} секунд</p>
