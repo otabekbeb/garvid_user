@@ -1005,6 +1005,7 @@ select {
     justify-content: flex-end;
     gap: 10px;
     margin-top: 20px;
+    width: 100%;
 }
 
 .edication_card_ span {
@@ -1012,9 +1013,9 @@ select {
     font-weight: 600;
 }
 
-.edication_card_button button {
+/* .edication_card_button button {
     cursor: pointer;
-    border-radius: 50%;
+    border-radius: 50%; 
     width: 35px;
     height: 35px;
     padding-top: 8px;
@@ -1024,14 +1025,44 @@ select {
     background-color: white;
     display: flex;
     justify-content: center;
+    transition: all .2s ease; 
+} */
+.test_card_btn{
+    width: 25% !important;
+    height: 30px;
+    padding-top: 5px !important;
+    border-radius: 3px !important;
+    font-size: 18px;
+    border: 1px solid #44bef1;
+    color: #44bef1;
+    background-color: white;
+    display: flex;
+    justify-content: center;
     transition: all .2s ease;
+    cursor: pointer;
 }
-
-.edication_card_button button:hover {
+.edication_card_button .test_card_btn:hover {
     background-color: #44bef1;
     color: #fff;
 }
-
+.test_card_btn_red{
+    width: 25% !important;
+    height: 30px;
+    padding: 5px !important;
+    border-radius: 3px !important;
+    font-size: 18px;
+    border: 1px solid red;
+    color: red;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+.test_card_btn_red:hover{
+    color: #fff;
+    background-color: red;
+}
 .edication_card_date {
     display: flex;
     justify-content: space-between;
@@ -1044,11 +1075,10 @@ select {
     font-weight: 400;
 }
 
-.edication_card_button button:nth-child(3) {
+/* .edication_card_button button:nth-child(3) {
     cursor: pointer;
     width: 35px;
     height: 35px;
-    border-radius: 50%;
     padding-top: 8px;
     font-size: 18px;
     border: 1px solid #ff4d4f;
@@ -1062,7 +1092,7 @@ select {
 .edication_card_button button:nth-child(3):hover {
     background-color: #ff4d4f;
     color: #fff;
-}
+} */
 
 @media (max-width:1500px) {
     .edication_card_ {

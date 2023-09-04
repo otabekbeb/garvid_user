@@ -615,10 +615,10 @@ export default function Test() {
                                             </div>
                                             <span>{item.description}</span>
                                             <div className="edication_card_button">
-                                                <button onClick={() => Page(item.id)}><FaUsers /></button>
-                                                <button onClick={() => PageAtest(item.id)}><MdPlayLesson /></button>
-                                                <button onClick={() => deleteTestModal(item.id)}><MdDeleteOutline /></button>
-                                                <button onClick={() => putTestModal(item.id)}><BiEdit /></button>
+                                                <button className='test_card_btn' onClick={() => Page(item.id)}><FaUsers /></button>
+                                                <button className='test_card_btn' onClick={() => PageAtest(item.id)}><MdPlayLesson /></button>
+                                                <button className='test_card_btn_red' onClick={() => deleteTestModal(item.id)}><MdDeleteOutline /></button>
+                                                <button className='test_card_btn' onClick={() => putTestModal(item.id)}><BiEdit /></button>
                                             </div>
                                         </div>
                                     )
