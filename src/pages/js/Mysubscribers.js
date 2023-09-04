@@ -46,7 +46,7 @@ export default function Azo() {
                 {follow.length === 0 ? (
                     <div className="delete_padding">
                         <img src={Groupimg} alt="" />
-                        <h4>Нет подписчиков</h4>
+                        <h4>No followers</h4>
                         {/* <div className="delete_btns">
                             <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>
                         </div> */}
