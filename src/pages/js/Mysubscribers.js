@@ -50,7 +50,7 @@ export default function Azo() {
                         {/* <div className="delete_btns">
                             <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>
                         </div> */}
-                    </div>) : (<div>
+                    </div>) : (<div className='follow_card_width'>
                         {follow.map((item, key) => {
                             if (following == item.minuser) {
                                 return <div>
