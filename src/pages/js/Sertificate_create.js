@@ -7,16 +7,17 @@ import axios from 'axios'
 import url from "./Host.js"
 import { useState } from 'react'
 import Swal from "sweetalert2";
+import rafiki from "../img/Certification-amico.png"
 export default function Sertificate_create() {
 
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("page_user")))
     var [sertificat, setSertificat] = useState([])
     const [sertificatId, setSertificatId] = useState()
-    function edit(id,type,director,description,time_create) {
-        document.querySelector(".sertificate_type_edit").value=type
-        document.querySelector(".sertificate_director_edit").value=director
-        document.querySelector(".sertificate_description_edit").value=description
-        document.querySelector(".sertificate_date_inp_edit").value=time_create
+    function edit(id, type, director, description, time_create) {
+        document.querySelector(".sertificate_type_edit").value = type
+        document.querySelector(".sertificate_director_edit").value = director
+        document.querySelector(".sertificate_description_edit").value = description
+        document.querySelector(".sertificate_date_inp_edit").value = time_create
         setSertificatId(id)
         document.querySelector("#sertificate_edit_header").style = "display:flex;"
     }
@@ -58,7 +59,7 @@ export default function Sertificate_create() {
 
         formdata.append("type", document.querySelector(".sertificate_type_edit").value)
         formdata.append("director", document.querySelector(".sertificate_director_edit").value)
-        formdata.append("mentor",  localStorage.getItem("OneuserId"))
+        formdata.append("mentor", localStorage.getItem("OneuserId"))
         formdata.append("description", document.querySelector(".sertificate_description_edit").value)
         formdata.append("time_create", document.querySelector(".sertificate_date_inp_edit").value)
         formdata.append("file", document.querySelector(".sertificate_file_edit").files[0])
@@ -88,8 +89,6 @@ export default function Sertificate_create() {
 
             var a = res.data.filter(item => item.mentor == localStorage.getItem("OneuserId"))
             setSertificat(a)
-        }).catch(err => {
-            alert("mo")
         })
     })
 
@@ -101,7 +100,10 @@ export default function Sertificate_create() {
                 </div>
             </div>
             <div className="sertificate_header">
-                {sertificat.map(item => {
+                {sertificat.length === 0 ? (<div className='rafiki_sertificate_img'>
+                    <img src={rafiki} alt="" />
+                    <h3>You have not created a certificate</h3>
+                </div>) : (<>{sertificat.map(item => {
                     localStorage.setItem("sertificate_createLength", sertificat.length)
                     return <div className="sertificate_card_header">
                         <div className="sertificate_card">
@@ -109,7 +111,7 @@ export default function Sertificate_create() {
                                 <a href={`${url}/${item.file}`} className="sertificate_i"><AiOutlineFileAdd className='sertificate_icon' /></a>
                                 <div className="sertificate_db">
                                     <label htmlFor="">Type:
-                                        <p>{item.type.length<29 ?(item.type):(<div>{item.type.slice(0,29)}...</div>)}</p>
+                                        <p>{item.type.length < 29 ? (item.type) : (<div>{item.type.slice(0, 29)}...</div>)}</p>
                                     </label>
                                     <label htmlFor="">Director:
                                         <p>{item.director}</p>
@@ -123,20 +125,22 @@ export default function Sertificate_create() {
                                 <p>{item.description}</p>
                             </label>
                             <div className="sertificate_botom_df">
-                                <button className='sertificate_btn_edit' onClick={() => edit(item.id,item.type,item.director,item.description,item.time_create)}>edit</button>
+                                <button className='sertificate_btn_edit' onClick={() => edit(item.id, item.type, item.director, item.description, item.time_create)}>edit</button>
                                 <span className='sertificate_calendar'>{(item.time_create).slice(0, 10)} <BsCalendar /></span>
                                 {/* <input type="date" name="" id="" className='sertificate_date_inp' /> */}
                             </div>
                         </div>
                     </div>
-                })}
+                })}</>)}
+
+
 
                 <div id='sertificate_edit_header' className="sertificate_edit_header">
                     <div className="sertificate_card_edit">
                         <div className="sertificate_close_btn" onClick={() => edit_close()}><MdClose /></div>
                         <div className="sertificate_df_edit">
                             <div className="sertificate_i_edit"><AiOutlineFileAdd className='sertificate_icon' />
-                            <input type="file" name="" id="" className='sertificate_file_edit' />
+                                <input type="file" name="" id="" className='sertificate_file_edit' />
                             </div>
                             <div className="sertificate_db_edit">
                                 <label htmlFor="">Type:

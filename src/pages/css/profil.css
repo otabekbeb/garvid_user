@@ -391,6 +391,7 @@
 @media (max-width:1000px) {
   .profil_size {
     width: 89% !important;
+    margin-top: 30px;
   }
 
   .user_img_size {
@@ -579,6 +580,12 @@
 
   .taxrirlash_chad_img_size {
     padding: 3px;
+  }
+  .nol{
+    width: 10px !important;
+    height: 10px !important;
+    margin-top: -3px !important;
+    margin-right: -10px;
   }
 
 }
