@@ -11,6 +11,7 @@
     display: flex;
     margin: auto;
     width: 80px;
+    display: none;
     justify-content: space-around;
     margin-right: 10px;
     font-size: 20px;
