@@ -25,6 +25,7 @@ import img_for_null from '../img/download.png'
 import Form from 'react-bootstrap/Form';
 import { FiDownload } from "react-icons/fi"
 import { BsChevronDown } from "react-icons/bs"
+import rafiki from "../img/Course app-pana.png"
 
 
 
@@ -321,7 +322,13 @@ export default function Searchfilter() {
         </div>
 
         <div className="kurs_cards">
-          {kursdata.map(item => {
+          {kursdata.length===0?(
+            <div className="rafiki_img_course">
+              <img src={rafiki} alt="" />
+              <h3>You have not created a course yet</h3>
+              <button onClick={() => dashedOpen2()}>Create course</button>
+            </div>
+          ):(<>{kursdata.map(item => {
             localStorage.setItem("courseLength", kursdata.length)
 
             return (
@@ -424,11 +431,12 @@ export default function Searchfilter() {
               </div>
             )
 
-          })}
-
-          <div className="dashed" onClick={() => dashedOpen2()}>
+          })}</>)}
+          
+{kursdata.length===0?(""):(<div className="dashed" onClick={() => dashedOpen2()}>
             <i><AiOutlinePlus /></i>
-          </div>
+          </div>)}
+          
           <div className="edit_card2" style={{ display: 'none' }}>
             <div className="edit_padding">
 
