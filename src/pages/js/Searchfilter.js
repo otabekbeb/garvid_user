@@ -197,6 +197,7 @@ export default function Searchfilter() {
               ) : (
                 <div>
                   {kursdata.map((item) => {
+                    localStorage.setItem("mycourseUser",kursdata.length)
                     return (
                       <div>
                         <div

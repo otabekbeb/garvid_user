@@ -178,17 +178,18 @@ export default function Proverr2() {
         document.querySelector('.buy_course_prover').style = "display: none !important;"
     }
     function Buycourse() {
+        const OneuserId = parseInt(localStorage.getItem("OneuserId"));
         document.querySelector('.buy_course_prover').style = "display: none !important;"
-        axios.post(`${url}/api/course/${localStorage.getItem("courseid")}/register/${oneuser[0].id}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+        axios.post(`${url}/api/course/${localStorage.getItem("courseid")}/register/${OneuserId}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
             coursData(res.data)
             console.log(res.data)
             Swal.fire("you have purchased a course")
-            if (localStorage.getItem("position") == 2) {
+            if (parseInt(localStorage.getItem("position")) === 2) {
                 window.location = "/mentor"
-            } else if (localStorage.getItem("position") == 1) {
+            } else if (parseInt(localStorage.getItem("position")) === 1) {
                 window.location = "/user"
             }
-            else if (localStorage.getItem("position") == 4) {
+            else if (parseInt(localStorage.getItem("position")) === 4) {
                 window.location = "/studentall"
             }
         }).catch(err => {
