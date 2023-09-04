@@ -188,8 +188,8 @@ export default function Workforteach() {
           <div className="delete_padding">
             <img src={Groupimg} alt="" />
             <h4>No tasks</h4>
-          
-          </div>) : (<>   {stTasks.map((item) => {
+          </div>
+          ) : (<>   {stTasks.map((item) => {
             localStorage.setItem("taskLength", stTasks.length);
             return (
               <div>

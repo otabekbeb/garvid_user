@@ -21,6 +21,16 @@ import Footer1 from '../js/Footer1'
 import buyimg from '../img/2282281.png'
 import { MdClose } from 'react-icons/md'
 import Profil from './Profil'
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+// import './styles.css';
+
+// import required modules
+import { Navigation } from 'swiper/modules';
 
 function onga() {
     document.querySelector(".mni-gridf1").classList.toggle("mni-gridf1-none")
@@ -75,9 +85,9 @@ export default function Proverr2() {
     const [oneuser, oneData] = useState([]);
     const [loading, setloading] = useState()
     const [kurshaqida, setKurs] = useState({})
-    const [hamma,setHamma] = useState([])
+    const [hamma, setHamma] = useState([])
     const [following, setFollowing] = useState(localStorage.getItem("OneuserId"))
-    const [bosildi,setbosildi] = useState ([])
+    const [bosildi, setbosildi] = useState([])
 
     function okurse(id) {
         setToggle(id)
@@ -87,13 +97,13 @@ export default function Proverr2() {
         var formdata = new FormData()
         formdata.append("topuser", id)
         formdata.append("minuser", following)
-    
+
         axios.post(`${url}/api/follow/`, formdata, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-        window.location.reload()
-         
-    
+            window.location.reload()
+
+
         }).catch(err => {
-          alert("ishlxadatoi")
+            alert("ishlxadatoi")
         })
         document.querySelector(".aaa").classList.toggle("bbb")
         document.querySelector(".aa").classList.toggle("bb")
@@ -104,9 +114,9 @@ export default function Proverr2() {
     useEffect(() => {
         axios.get(`${url}/api/follow/`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
             setbosildi(res.data)
-            }).catch(err => {
-              alert("ishlxadatoi")
-            })
+        }).catch(err => {
+            alert("ishlxadatoi")
+        })
         // axios.get(`${url}/api/course_data_category/course/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{ 
         //     setKurs(res.data.one ,"salommmmm")
         //     console.log(res.data.one)
@@ -117,7 +127,7 @@ export default function Proverr2() {
         axios.get(`${url}/auth/allusers`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
             setHamma(res.data)
         }).catch(err => {
-            
+
         })
 
 
@@ -221,7 +231,7 @@ export default function Proverr2() {
     return (
         <div id="asdsadasdsadas22">
             <Usernavbar />
-            <Profil />
+            {/* <Profil /> */}
             {/* <UserPdp /> */}
 
             {loading ? ((
@@ -286,8 +296,8 @@ export default function Proverr2() {
                                 return (
                                     <div className="prover2-orta-joy">
                                         <div className="saas">
-                                        <img className="saasimg" src={item.image} alt="" />
-</div>
+                                            <img className="saasimg" src={item.image} alt="" />
+                                        </div>
                                         <div className="prover2-orta-joy-text">
                                             <h5>{item.name}</h5>
                                             <div className="rating">
@@ -307,25 +317,25 @@ export default function Proverr2() {
                                             </div>
                                         </div>
                                         <div className="prover2-profil-patpis">
-                                        {hamma.map(item1=>{
-                                                   if (item.author==item1.id) {
-                                                     return<div className="prover2-profil-img">
-                                                     <img src={item1.image} alt="" />
-                                                 </div>
-                                                    }
-                                                })}
-                                            
+                                            {hamma.map(item1 => {
+                                                if (item.author == item1.id) {
+                                                    return <div className="prover2-profil-img">
+                                                        <img src={item1.image} alt="" />
+                                                    </div>
+                                                }
+                                            })}
+
                                             <div className="prover2-profil-text-info">
-                                                {hamma.map(item1=>{
-                                                   if (item.author==item1.id) {
-                                                     return<p>{item1.username}</p>
+                                                {hamma.map(item1 => {
+                                                    if (item.author == item1.id) {
+                                                        return <p>{item1.username}</p>
                                                     }
                                                 })}
-                                                {bosildi.map((item,key)=>{
+                                                {bosildi.map((item, key) => {
                                                     <button onClick={() => button(item.id)} className="potpis"><p className="aa">Подписаться</p><p className="aaa">Отменить подписку</p></button>
                                                 })}
 
-                                                 
+
                                             </div>
                                             {/* <div className="obmen-kategory-re">
                         <h5>URL-адрес курса:</h5>
@@ -522,40 +532,36 @@ export default function Proverr2() {
                             <div className="mni-krus-techer-swiper">
                                 <div className="boshqa-mentorla">
                                     <h5>Другие наставники</h5>
-                                    <div className="boshqa-mentorla-krugg1">
+                                    {/* <div className="boshqa-mentorla-krugg1">
                                         <div className="boshqa-kurglaaaaa1" onClick={() => onga()}><box-icon name='right-arrow-alt' color='#44bef1 ' ></box-icon></div>
-                                    </div>
+                                    </div> */}
                                 </div>
-                                {ticher.map(item1 => {
-                                    return (
-
-                                        <div className="mni-swiper-grid">
-                                            <div className="mni-gridf1">
-
-                                                {item1.image === null ? (
-                                                    <img src={img_for_null1} alt="" />
-                                                ) : (
-                                                    <img src={item1.image} />
-                                                )}
+                                <Swiper style={{ height: "200px !important" }} navigation={true} slidesPerView={1} modules={[Navigation]} className="mySwiper">
+                                    {ticher.map(item1 => {
+                                        return (
+                                            <SwiperSlide><div className="mni-swiper-grid">
 
 
+                                                <div className="mni-gridf2">
+                                                    <div className="fora_img">
+                                                        {item1.image === null ? (
+                                                            <img src={img_for_null1} alt="" />
+                                                        ) : (
+                                                            <img src={item1.image} />
+                                                        )}</div>
+                                                    <h3 style={{ fontSize: "17px" }}>{item1.username}</h3>
+
+                                                </div>
+                                            </div></SwiperSlide>
+                                        )
+
+                                    })}
 
 
-                                            </div>
-
-                                            <div className="mni-gridf2">
-                                                {item1.image === null ? (
-                                                    <img src={img_for_null1} alt="" />
-                                                ) : (
-                                                    <img src={item1.image} />
-                                                )}
+                                </Swiper>
 
 
-                                            </div>
-                                        </div>
 
-                                    )
-                                })}
 
                             </div>
 
@@ -696,39 +702,38 @@ dolor sit amet. . . .</p>
                                     </div>
                                     <div className="mni-krus-techer-swiper">
                                         <div className="boshqa-mentorla">
-                                            <h5>Boshqa Mentorlar</h5>
-                                            <div className="boshqa-mentorla-krugg1">
-                                                <div className="boshqa-kurglaaaaa1" onClick={() => onga()}><box-icon name='right-arrow-alt' color='#536dfd' ></box-icon></div>
-                                            </div>
+                                            <h5>Другие наставники</h5>
+                                            {/* <div className="boshqa-mentorla-krugg1">
+                                                <div className="boshqa-kurglaaaaa1" onClick={() => onga()}><box-icon name='right-arrow-alt' color='#44bef1 ' ></box-icon></div>
+                                            </div> */}
                                         </div>
-                                        {ticher.map(item1 => {
-                                            return (
+                                        <Swiper style={{ height: "200px !important" }} navigation={true} slidesPerView={1} modules={[Navigation]} className="mySwiper">
+                                            {ticher.map(item1 => {
+                                                return (
+                                                    <SwiperSlide><div className="mni-swiper-grid">
 
 
-                                                <div className="mni-swiper-grid">
-                                                    <div className="mni-gridf1">
-                                                        {item1.image === null ? (
-                                                            <img src={img_for_null1} alt="" />
-                                                        ) : (
-                                                            <img src={item1.image} />
-                                                        )}
+                                                        <div className="mni-gridf2">
+                                                            <div className="fora_img">
+                                                                {item1.image === null ? (
+                                                                    <img src={img_for_null1} alt="" />
+                                                                ) : (
+                                                                    <img src={item1.image} />
+                                                                )}</div>
+                                                            <h3 style={{ fontSize: "17px" }}>{item1.username}</h3>
+
+                                                        </div>
+                                                    </div></SwiperSlide>
+                                                )
+
+                                            })}
 
 
-                                                    </div>
-
-                                                    <div className="mni-gridf2">
-                                                        {item1.image === null ? (
-                                                            <img src={img_for_null1} alt="" />
-                                                        ) : (
-                                                            <img src={item1.image} />
-                                                        )}
+                                        </Swiper>
 
 
-                                                    </div>
-                                                </div>
 
-                                            )
-                                        })}
+
                                     </div>
 
 
@@ -745,9 +750,9 @@ dolor sit amet. . . .</p>
                         <div className="mni-krus-techer-swiper1">
                             <div className="boshqa-mentorla">
                                 <h5>Другие наставники</h5>
-                                <div className="boshqa-mentorla-krugg1">
+                                {/* <div className="boshqa-mentorla-krugg1">
                                     <div className="boshqa-kurglaaaaa1" onClick={() => onga()}><box-icon name='right-arrow-alt' color='#536dfd' ></box-icon></div>
-                                </div>
+                                </div> */}
                             </div>
                             <div className="mni-swiper-grid">
                                 <div className="mni-gridf1">

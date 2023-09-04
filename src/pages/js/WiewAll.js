@@ -17,7 +17,18 @@ export default function WiewAll() {
 
     useEffect(() => {
         axios.get(`${url}/api/notification`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
-            setWiew(res.data)
+            axios.get(`${url}/auth/allusers`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res1=>{
+                for (let i = 0; i < res.data.length; i++) {
+                for (let j = 0; j < res1.data.length; j++) {
+                    if(res.data[i].user_id==res1.data[j].id){
+                      res.data[i].username=res1.data[j].username
+                      res.data[i].last_name=res1.data[j].last_name
+                    }
+                }
+                    
+                }
+                setWiew(res.data)
+            })
         })
         axios.get(`${url}/auth/oneuser`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             res.data.map(item => {
@@ -70,7 +81,9 @@ export default function WiewAll() {
                                     return (
                                         <>
                                             <div style={{ cursor: "pointer" }} className="sms">
-                                                <div className="qizil"></div>
+                                                {/*<div className="qizil"></div>*/}
+                                                <p className='data'>{item.username}</p>
+                                                <p className='data'>{item.last_name}</p>
                                                 <div className="data_title">
                                                     <p className='unred'>{item.title}</p>
                                                     <p className='data'>{item.time_create.slice(11, 16)}</p>
@@ -91,20 +104,20 @@ export default function WiewAll() {
                                 if (item.to_user_id == localStorage.getItem("OneuserId")) {
                                     return (
                                         <>
-                                            <div onClick={() => inputOpen(key)} style={{ cursor: "pointer" }} className="sms">
+                                            <div onClick={() => Page(item.user_id)} style={{ cursor: "pointer" }} className="sms">
                                                 <div className="qizil"></div>
                                                 <div className="data_title">
-                                                    <p className='unred'>{item.title}</p>
-                                                    <div style={{ display: 'flex', gap: '10px' }}><p onClick={() => Page(item.user_id)} className='data'>wrote</p><p className='data'>{item.time_create.slice(11, 16)}</p></div>
+                                                    <p className='unred'>{item.username}</p>
+                                                    <p className='data'>{item.time_create.slice(11, 16)}</p>
                                                 </div>
                                                 <div className="p_lorem_sms">
-                                                    <p className='lorem_sms'>{item.description} </p>
+                                                    <p className='lorem_sms'>{item.last_name} </p>
                                                     <input style={{ display: "none" }} type="text" id='atvet' />
                                                 </div>
                                                 <div id='inputNotifaction' className="input_notification_bid_div">
                                                     <input id='atvetu1' onChange={(e) => setInputValue(e.target.value)} type="text" />
                                                     <button onClick={() => atvet(item.user_id)}>Send</button>
-                                                    <button onClick={() => inputClose()}><MdOutlineClose /></button>
+                                                    <button ><MdOutlineClose /></button>
                                                 </div>
                                             </div>
                                         </>

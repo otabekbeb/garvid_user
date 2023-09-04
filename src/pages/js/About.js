@@ -292,17 +292,6 @@ export default function About() {
 {data.map((item)=>{
   return(
       <SwiperSlide className='sli'>
-        {/* <div className="sli-kurg-rasm">
-
-<div className="sli-img"><img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-about-img01.png" alt="" /></div>
-
-</div>
-<div className="sli-text">
-<p>Wow I'm so happy with you <br />service. You managed to overcome<br /> my expectations! You guys are very efficient.</p>
-
-<strong>Adam Watson</strong>
-<h4>(CEO and Founder)</h4>
-</div> */}
 <div className="sli-kurg-rasm">
 
 <div className="sli-img"><img src={item.image}  alt="" /></div>
@@ -318,31 +307,7 @@ export default function About() {
   
 })}
       
-        {/* <SwiperSlide className='sli'>
-          <div className="sli-kurg-rasm">
 
-<div className="sli-img"><img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-about-img02.png" alt="" /></div>
-
-</div>
-<div className="sli-text">
-<p>Hi guys! You solved my problem in no time! <br className='sdfsdf' />Your service and customer care is excellent!</p>
-
-<strong>Louise Smith</strong>
-<h4>(CEO and Founder)</h4>
-</div></SwiperSlide> */}
-        {/* <SwiperSlide className='sli'>
-        <div className="sli-kurg-rasm">
-
-<div className="sli-img"><img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-about-img03.png" alt="" /></div>
-
-</div>
-<div className="sli-text">
-<p>Great organization!! Your quick response was nice <br className='sdfsdf' /> surprise for me. Thank you!</p>
-
-<strong>Jack Walsh</strong>
-<h4>(CEO and Founder)</h4>
-</div>
-        </SwiperSlide> */}
 
       </Swiper>
      </div>

@@ -32,17 +32,33 @@ z-index: 1000000000000000000000 !important;
 }
 .delete_padding{
     margin: auto;
-    width: 50%;
+    width: 40%;
     height: 350px;
     border-radius: 10px;
     background-color: white;
     box-shadow:  0 0px 40px #a3a5a654;
 }
+.delete_padding1{
+    margin: auto;
+    border-radius: 10px;
+    background-color: white;
+}
+.delete_padding1 img{
+    margin: auto;   
+    display: flex;
+    width: 600px;
+    height: 200px;
+    height: 70%;
+}
+.delete_padding1 h4{
+    font-size: 18px;
+    
+    display: flex;
+    justify-content: center;
+}
 .delete_padding img{
     margin: auto;
     display: flex;
-    margin-top: 30px;
-
     height: 70%;
 }
 .delete_padding h4{
@@ -64,8 +80,10 @@ z-index: 1000000000000000000000 !important;
     background: rgba(255, 0, 0, 0.556);
 }
 .delete_btn_yes{
-    width: 150px;
-    height: 30px;
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+
     border: none;
     border-radius: 5px;
     color: white;

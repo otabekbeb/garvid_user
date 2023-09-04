@@ -21,7 +21,7 @@ import img_for_null from "../img/download.png";
 import img_prover from "../img/istockphoto-1321436405-612x612.jpg";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import "../css/Nosignal.css";
-import Groupimg from "../img/Group 2.png";
+import Groupimg from "../img/Teacher-cuate.png";
 export default function Searchfilter() {
   const [courstype, setCoursetype] = useState([]);
 
@@ -79,9 +79,9 @@ export default function Searchfilter() {
             }
             setKursdata(res.data);
             localStorage.setItem("mycourseUser", res.data.length)
+            setLoader(0);
           });
       });
-    setLoader(0);
   }, []);
 
   function filter(id) {
@@ -123,6 +123,34 @@ export default function Searchfilter() {
 
       });
   };
+  
+  function Allfilter(){
+    axios
+      .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        axios
+          .get(`${url}/api/course`, {
+            header: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
+          .then((res1) => {
+            for (let i = 0; i < res.data.length; i++) {
+              for (let j = 0; j < res1.data.length; j++) {
+                if (res.data[i].id == res1.data[j].id) {
+                  res.data[i].star = res1.data[j].star;
+                }
+              }
+            }
+            setKursdata(res.data);
+            localStorage.setItem("mycourseUser", res.data.length)
+            setLoader(0);
+          });
+      });
+  }
+  
 
   return (
     <div>
@@ -157,6 +185,15 @@ export default function Searchfilter() {
                 </div> */}
                   </div>
                   <div onMouseLeave={() => filter1()} className="filter_button">
+                  <div className="button_filter_kurs">
+                            <div
+                              onClick={() => Allfilter()}
+                              className="div_kurs"
+                              style={{ paddingBottom: "5px" }}
+                            >
+                              All
+                            </div>
+                        </div>
                     {courstype.map((item) => {
                       return (
                         <div className="button_filter_kurs">
@@ -179,22 +216,22 @@ export default function Searchfilter() {
               </div>
             </div>
             <div className="kurs_cards">
-              {kursdata === null ? (
-                <div className="delete_padding">
-                  <img src={Groupimg} alt="" />
-                  <h4>Вы не купили курс</h4>
-                  <div className="delete_btns">
-                    <a href="/Ourcourse">
-                      {" "}
-                      <button
-                        style={{ background: "#44bef1  " }}
-                        className="delete_btn_yes"
-                      >
-                        Купить курс
-                      </button>
-                    </a>
-                  </div>
-                </div>
+              {kursdata !== null ? (
+                   <div className="delete_padding1">
+                   <img src={Groupimg} alt="" />
+                   <h4 style={{ fontSize: '30px', opacity: '0.3' }}>You didn't buy the course</h4>
+                   <div className="delete_btns">
+                     <a href="/Ourcourse">
+                       {" "}
+                       <button
+                         style={{ background: "#44bef1  " }}
+                         className="delete_btn_yes"
+                       >
+                         Buy a course
+                       </button>
+                     </a>
+                   </div>
+                 </div>
               ) : (
                 <div className="cursu" style={{display:"flex"}}>
                   {kursdata.map((item) => {
