@@ -12,6 +12,7 @@ import img_for_null from '../img/download.png'
 import Swal from 'sweetalert2';
 import { BsCheck2 } from 'react-icons/bs'
 import { BsCheckAll } from 'react-icons/bs'
+import Groupimg from "../img/oooo.png";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -279,50 +280,65 @@ export default function Home() {
                         <img className="girl" src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2019/07/mt-0514-home-image-2.png" alt="" />
                     </div>
                     <div className="Testimonial">
-                        <center><h1>Testimonials</h1></center>
+                        <center><h1>Teacher</h1></center>
                         <center><div className="blue1"></div></center>
 
-                        <Swiper
-        slidesPerView={4}
-        spaceBetween={30}
-        centeredSlides={true}
-        pagination={{
-          clickable: true,
-        }}
-        // breakpoints={{
-        //     576: {
-             
-        //       slidesPerView: 2,
-        //     },
-        //     768: {
-             
-        //       slidesPerView: 1,
-        //     },
-        //   }}
-        modules={[Pagination]}
-        className="mySwiper342"
-      > 
-      {data.map((item)=>{
-                                return(
-        <SwiperSlide className='home-slider-sli'>  
-        <center><div className="testimonial_cards">
-                                    <div className="sli-kurg-rasm">
-    
-                                        <div className="sli-img"><img src={item.image}  alt="" /></div>
-    
-                                    </div>
-                                    <div className="sli-text">
-                                        <p>{item.description}</p>
-    
-                                        <strong>{item.username}</strong>
-                                        
-                                    </div>
+                        <div className="container-fluid pt-5 mb-3">
+          <div className="container" >
+            
+
+            <Swiper
+              slidesPerView={3}
+              spaceBetween={30}
+
+              // pagination={{
+              //     clickable: true, 
+              // }}
+              breakpoints={{
+                // when window width is <= 782px
+                300: {
+                  slidesPerView: 2,
+                },
+                800: {
+                  slidesPerView: 3,
+                },
+                1000: {
+                  slidesPerView: 3,
+                },
+                1200: {
+                  slidesPerView: 3,
+                },
+
+              }}
+              modules={[Pagination]}
+              className="mySwiper100"
+            >
+
+
+
+              {data.map(item => {
+                  return (
+                    <SwiperSlide >
+                      <div className="position-relative overflow-hidden" style={{ height: "300px" }}>
+                        {item.image === null ? (
+                          <img style={{ width: "100%", margin: 'auto' }} src={Groupimg} alt="" />) : (<img src={item.image} alt="" />)}
+                        <div className="overlay">
+                          <div className="mb-2">
+                            <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                              href="">{item.name}</a>
+                           
+                          </div>
+                          <a className="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">{item.description}</a>
                         </div>
-                        </center>
-        </SwiperSlide> 
-         )
-                            })}
-      </Swiper>
+                      </div>
+                    </SwiperSlide>
+                  )
+                })}
+            </Swiper>
+
+
+          </div>
+        </div>
 
       
                     </div>
