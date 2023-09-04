@@ -6,7 +6,7 @@ import sertifikat from "../img/Sertifikat.png";
 import axios from "axios";
 import url from "./Host";
 import { MdDeleteOutline } from "react-icons/md";
-import Groupimg from "../img/Group 2.png";
+import Groupimg from "../img/Teacher-cuate.png";
 import { GrFormClose } from "react-icons/gr";
 import img_for_null from "../img/download.png";
 import { FiDownload } from "react-icons/fi";
@@ -18,8 +18,8 @@ export default function Workforteach() {
   const [stTasks, setTasks] = useState([]);
   const [CourseId, setCourseId] = useState();
   const [deleteId, setDeleteId] = useState();
-//   const [kursdata, setKursdata] = useState([]);
-  const [themeSelect,setThemeSelect]=useState([])
+  //   const [kursdata, setKursdata] = useState([]);
+  const [themeSelect, setThemeSelect] = useState([])
   function openModal() {
     document.querySelector("#m_zadacha_tepadan").style =
       "display: flex; justify-content: center;align-items: center;";
@@ -55,8 +55,8 @@ export default function Workforteach() {
         localStorage.setItem("taskLength", res.data.length);
       });
 
-    axios.get(`${url}/api/course_data_theme`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
-        setThemeSelect(res.data)
+    axios.get(`${url}/api/course_data_theme`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setThemeSelect(res.data)
     })
 
   }, []);
@@ -95,7 +95,7 @@ export default function Workforteach() {
   function postforzadac() {
     var formdata = new FormData();
     formdata.append("content", document.querySelector(".inp_name_zadac").value);
-    formdata.append("course_theme",document.querySelector(".inp_course_theme_zadac").value);
+    formdata.append("course_theme", document.querySelector(".inp_course_theme_zadac").value);
     formdata.append("image", document.querySelector(".img_inp_zadac").files[0]);
 
 
@@ -184,54 +184,60 @@ export default function Workforteach() {
         <button onClick={() => openModal()}>Add task</button>
       </div>
       <div className="m_zadach">
-        {stTasks.map((item) => {
-          localStorage.setItem("taskLength", stTasks.length);
-          return (
-            <div>
-              <div className="m_zadach_block">
-                <div className="fors_imagesa">
-                  {item.image ? (
-                    <img src={`${url}/` + item.image} alt="" />
-                  ) : (
-                    <img src={img_for_null} alt="" />
-                  )}
-                </div>
-                <h4>{item.content}</h4>
-                <div className="zadac_df">
-                  <span>
-                    <FaHourglassStart
-                      style={{ color: "black", marginRight: "7px" }}
-                    />{" "}
-                    {item.time_create.slice(0, 10)}
-                  </span>
-                  <span>
-                    <FaHourglassEnd
-                      style={{ color: "black", marginRight: "7px" }}
-                    />{" "}
-                    {item.time_update.slice(0, 10)}
-                  </span>
-                </div>
-                {/* <p className='ortapp'>{item.feedback}</p> */}
-                {/* <p className='ortap1' style={{ marginTop: "0px" }}>Mark:{item.mark}</p> */}
-                <div className="m_zadacha_icon">
-                  <div
-                    className="m_zadach_ktug_icon1"
-                    onClick={() => openModal2(item.id)}
-                  >
-                    <MdDeleteOutline />
+        {stTasks.length === 0 ? (
+          <div className="delete_padding">
+            <img src={Groupimg} alt="" />
+            <h4>No tasks</h4>
+          </div>
+          ) : (<>   {stTasks.map((item) => {
+            localStorage.setItem("taskLength", stTasks.length);
+            return (
+              <div>
+                <div className="m_zadach_block">
+                  <div className="fors_imagesa">
+                    {item.image ? (
+                      <img src={`${url}/` + item.image} alt="" />
+                    ) : (
+                      <img src={img_for_null} alt="" />
+                    )}
                   </div>
-                  <div
-                    className="m_zadach_ktug_icon"
-                    onClick={() => zadacput(item.id)}
-                  >
-                    <FiEdit />
-                    {/* onClick={() => dashed(item.id)} */}
+                  <h4>{item.content}</h4>
+                  <div className="zadac_df">
+                    <span>
+                      <FaHourglassStart
+                        style={{ color: "black", marginRight: "7px" }}
+                      />{" "}
+                      {item.time_create.slice(0, 10)}
+                    </span>
+                    <span>
+                      <FaHourglassEnd
+                        style={{ color: "black", marginRight: "7px" }}
+                      />{" "}
+                      {item.time_update.slice(0, 10)}
+                    </span>
+                  </div>
+                  {/* <p className='ortapp'>{item.feedback}</p> */}
+                  {/* <p className='ortap1' style={{ marginTop: "0px" }}>Mark:{item.mark}</p> */}
+                  <div className="m_zadacha_icon">
+                    <div
+                      className="m_zadach_ktug_icon1"
+                      onClick={() => openModal2(item.id)}
+                    >
+                      <MdDeleteOutline />
+                    </div>
+                    <div
+                      className="m_zadach_ktug_icon"
+                      onClick={() => zadacput(item.id)}
+                    >
+                      <FiEdit />
+                      {/* onClick={() => dashed(item.id)} */}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}</>)}
+
       </div>
 
       <div id="m_zadacha_tepadan" className="m_zadacha_tepadan">
@@ -250,9 +256,9 @@ export default function Workforteach() {
             <input type="text" name="" id="" className="inp_name_zadac" />
             <label htmlFor="">Course theme:</label>
             <select name="" className="inp_course_theme_zadac">
-            {themeSelect.map((item,key)=>{
-                return<option value={item.id}>{item.name}</option>
-            })}
+              {themeSelect.map((item, key) => {
+                return <option value={item.id}>{item.name}</option>
+              })}
             </select>
             <div className="a_button_for_end">
               <button onClick={() => postforzadac()}>Add</button>
@@ -277,9 +283,9 @@ export default function Workforteach() {
             <input type="text" name="" id="" className="inp_name_zadacput" />
             <label htmlFor="">Course theme:</label>
             <select name="" className="inp_course_theme_put">
-            {themeSelect.map((item,key)=>{
-                return<option value={item.id}>{item.name}</option>
-            })}
+              {themeSelect.map((item, key) => {
+                return <option value={item.id}>{item.name}</option>
+              })}
             </select>
             <div className="a_button_for_end">
               <button onClick={() => dashedput()}>Add</button>

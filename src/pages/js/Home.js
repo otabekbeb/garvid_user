@@ -12,6 +12,19 @@ import img_for_null from '../img/download.png'
 import Swal from 'sweetalert2';
 import { BsCheck2 } from 'react-icons/bs'
 import { BsCheckAll } from 'react-icons/bs'
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+
+
+// import required modules
+import { Pagination } from 'swiper/modules';
+
+
 export default function Home() {
     const [state, setState] = React.useState(1)
     const [state1, setState1] = React.useState();
@@ -269,10 +282,20 @@ export default function Home() {
                         <center><h1>Testimonials</h1></center>
                         <center><div className="blue1"></div></center>
 
-                        <center><div className="testimonial_cards">
-                            {data.map((item)=>{
+                        <Swiper
+        slidesPerView={4}
+        spaceBetween={30}
+        centeredSlides={true}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper342"
+      > 
+      {data.map((item)=>{
                                 return(
-                                    <testimonial_card className='sli1'>
+        <SwiperSlide className='home-slider-sli'>  
+        <center><div className="testimonial_cards">
                                     <div className="sli-kurg-rasm">
     
                                         <div className="sli-img"><img src={item.image}  alt="" /></div>
@@ -284,39 +307,14 @@ export default function Home() {
                                         <strong>{item.username}</strong>
                                         
                                     </div>
-                                </testimonial_card>
-                                )
-                            })}
-
-                            {/* <testimonial_card className='sli1'>
-                                <div className="sli-kurg-rasm">
-
-                                    <div className="sli-img"><img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-about-img02.png" alt="" /></div>
-
-                                </div>
-                                <div className="sli-text">
-                                    <p>Wow, I'm so happy with your service. You managed to exceed my <br /> expectations! You guys are very efficient.</p>
-
-                                    <strong>Louise Smith</strong>
-                                    <h4>(CEO & Founder)</h4>
-                                </div></testimonial_card> */}
-                            {/* <testimonial_card id="sli11" className='sli1'>
-                                <div className="sli-kurg-rasm">
-
-                                    <div className="sli-img"><img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-about-img03.png" alt="" /></div>
-
-                                </div>
-                                <div className="sli-text">
-                                    <p>Great organization!! Your prompt answer became a pleasant surprise for me.You've rendered an invaluable service! Thank you!</p>
-
-                                    <strong>Jack Walsh</strong>
-                                    <h4>(CEO & Founder)</h4>
-                                </div>
-                            </testimonial_card> */}
-
-
                         </div>
                         </center>
+        </SwiperSlide> 
+         )
+                            })}
+      </Swiper>
+
+      
                     </div>
                     <Images />
                     <Futer />

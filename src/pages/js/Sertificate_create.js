@@ -102,6 +102,7 @@ export default function Sertificate_create() {
             </div>
             <div className="sertificate_header">
                 {sertificat.map(item => {
+                    localStorage.setItem("sertificate_createLength", sertificat.length)
                     return <div className="sertificate_card_header">
                         <div className="sertificate_card">
                             <div className="sertificate_df_edit">
