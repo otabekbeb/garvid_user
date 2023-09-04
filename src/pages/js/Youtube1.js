@@ -1100,14 +1100,23 @@ export default function Youtube1() {
                           src={main1.video}
                           title="W3Schools Free Online Web Tutorials"
                         ></iframe> */}
-                        <ReactPlayer
-                          ref={playerRef}
-                          url={main1.video}
-                          controls
-                          onDuration={handleDuration}
-                          onProgress={handleProgress}
-                          className="React_player"
-                        />
+                    {(() => {
+if (main.video.includes(".jpg")||main.video.includes(".png")||main.video===null) {
+  return<p style={{
+    margin:"30%"
+  }}>video not found or not exist</p>
+}else{
+  return<ReactPlayer
+  ref={playerRef}
+  url={main1.video}
+  controls
+  onDuration={handleDuration}
+  onProgress={handleProgress}
+  className="React_player"
+/>
+}
+
+                    })()}
                       </div>
                       <div className="theme_df">
                         <div className="flex_logig">
@@ -1868,14 +1877,23 @@ export default function Youtube1() {
                 ) : (
                   <div className="youtube_kotta_img">
                     <div className="img_youtube_kotta">
-                      <ReactPlayer
-                        ref={playerRef}
-                        url={main.video}
-                        controls
-                        onDuration={handleDuration}
-                        onProgress={handleProgress}
-                        className="React_player"
-                      />
+                    {(() => {
+if (main.video.includes(".jpg")||main.video.includes(".png")||main.video===null) {
+  return<p style={{
+    margin:"30%"
+  }}>video not found or not exist</p>
+}else{
+  return<ReactPlayer
+  ref={playerRef}
+  url={main.video}
+  controls
+  onDuration={handleDuration}
+  onProgress={handleProgress}
+  className="React_player"
+/>
+}
+
+                    })()}
                     </div>
                     <div className="theme_df">
                       <div className="flex_logig">
