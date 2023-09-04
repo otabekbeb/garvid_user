@@ -16,12 +16,6 @@ export default function Azo() {
     useEffect(() => {
         axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             setFollow(res.data)
-            axios.get(`${url}/auth/teachers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
-                setUsers(res1.data)
-                res1.data.map(item=>{
-                    localStorage.setItem("for_azo", res.data.filter(follow1=>item.id==follow1.topuser).length)
-                })
-            }).catch(err=>{})
         }).catch(err=>{})
     }, [])
     
@@ -33,7 +27,11 @@ export default function Azo() {
     }
     const [state1, setState1] = React.useState();
     const [users, setUsers] = useState([])
-
+    useEffect(() => {
+        axios.get(`${url}/auth/teachers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+            setUsers(res.data)
+        }).catch(err=>{})
+    }, []);
     function folowcolor1(key) {
         axios.delete(`${url}/api/follow/${key}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             window.location.reload()
@@ -49,9 +47,9 @@ export default function Azo() {
 
             <div className="followcards1">
                 {follow.length === 0 ? (
-              <div className="delete_padding">
-              <img src={Groupimg} alt="" />
-              <h4>Не подписался на вас</h4>
+              <div className="delete_padding1">
+              <img style={{width:'400px'}} src={Groupimg} alt="" />
+              <h4 style={{fontSize:'40px',opacity:'0.3'}}>No subscribers</h4>
               <div className="delete_btns">
                 <a href="/Ourcourse">
                   {" "}
@@ -67,6 +65,7 @@ export default function Azo() {
                 return <div>
                         {users.map(item1 => {
                             if (item1.id == item.topuser) {
+                                localStorage.setItem("for_azo", follow.filter(follow1=>follow1.topuser==item1.id).length)
                                 return (
                                     <div style={{width:"300px"}}>
                                     <a>

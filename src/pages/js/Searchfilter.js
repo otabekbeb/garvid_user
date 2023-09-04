@@ -21,7 +21,7 @@ import img_for_null from "../img/download.png";
 import img_prover from "../img/istockphoto-1321436405-612x612.jpg";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import "../css/Nosignal.css";
-import Groupimg from "../img/Group 2.png";
+import Groupimg from "../img/Teacher-cuate.png";
 export default function Searchfilter() {
   const [courstype, setCoursetype] = useState([]);
 
@@ -216,22 +216,22 @@ export default function Searchfilter() {
               </div>
             </div>
             <div className="kurs_cards">
-              {kursdata === null ? (
-                <div className="delete_padding">
-                  <img src={Groupimg} alt="" />
-                  <h4>Вы не купили курс</h4>
-                  <div className="delete_btns">
-                    <a href="/Ourcourse">
-                      {" "}
-                      <button
-                        style={{ background: "#44bef1  " }}
-                        className="delete_btn_yes"
-                      >
-                        Купить курс
-                      </button>
-                    </a>
-                  </div>
-                </div>
+              {kursdata !== null ? (
+                   <div className="delete_padding1">
+                   <img src={Groupimg} alt="" />
+                   <h4 style={{ fontSize: '30px', opacity: '0.3' }}>You didn't buy the course</h4>
+                   <div className="delete_btns">
+                     <a href="/Ourcourse">
+                       {" "}
+                       <button
+                         style={{ background: "#44bef1  " }}
+                         className="delete_btn_yes"
+                       >
+                         Buy a course
+                       </button>
+                     </a>
+                   </div>
+                 </div>
               ) : (
                 <div className="cursu" style={{display:"flex"}}>
                   {kursdata.map((item) => {
