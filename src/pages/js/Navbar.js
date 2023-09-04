@@ -97,7 +97,7 @@ export default function Navbar() {
         includedLanguages: 'en,zh-TWit,ja,tr,kk,ru,fr,de', // include this for selected languages
 
       },
-      "google_translate_element"
+      "google_translate_element"  
     );
   };
 
