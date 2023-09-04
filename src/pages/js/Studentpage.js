@@ -321,22 +321,22 @@ export default function Mentor() {
     return () => clearInterval(timer);
   }, [counter])
 
-  React.useEffect(() => {
+  useEffect(() => {
     const timer1 =
       counter1 > 0 && setInterval(() => setCounter1(counter1 - 1), 1000);
     return () => clearInterval(timer1);
   }, [counter1])
-  React.useEffect(() => {
+  useEffect(() => {
     const timer2 =
       counter2 > 0 && setInterval(() => setCounter2(counter2 - 1), 1000);
     return () => clearInterval(timer2);
   }, [counter2])
-  React.useEffect(() => {
+  useEffect(() => {
     const timer3 =
       counter3 > 0 && setInterval(() => setCounter3(counter3 - 1), 1000);
     return () => clearInterval(timer3);
   }, [counter3])
-  React.useEffect(() => {
+  useEffect(() => {
     const timer4 =
       counter4 > 0 && setInterval(() => setCounter4(counter4 - 1), 1000);
     return () => clearInterval(timer4);
