@@ -1025,8 +1025,8 @@ export default function Mentor() {
           <div className="kurs_cards">
             {kursdata.length === 0 ? (
               <div className="delete_padding">
-                <img src={Groupimg} alt="" />
-                <h4>Вы не купили курс</h4>
+                <img style={{width:'100%'}} src="https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2020/06/02135832/Short-term-Professional-Courses-after-Graduation.jpg" alt="" />
+                <h4>You didn't buy the course</h4>
                 <div className="delete_btns">
                   <a href="/Ourcourse">
                     {" "}
@@ -1034,7 +1034,7 @@ export default function Mentor() {
                       style={{ background: "#44bef1  " }}
                       className="delete_btn_yes"
                     >
-                      Купить курс
+                      Buy a course
                     </button>
                   </a>
                 </div>
@@ -1241,14 +1241,14 @@ export default function Mentor() {
 
 
             <div className="followcards1">
-              {follow.length !== 0 ? (
+              {follow.length === 0 ? (
                 <div className="delete_padding">
-                  <img src={Groupimg} alt="" />
+                  <img src="https://t4.ftcdn.net/jpg/02/97/35/45/360_F_297354558_XmlmcjcWCXkm2scy9qIkzVdh6qNHaVzy.jpg"  alt="" />
                   <h4>No subscribers</h4>
                   {/* <div className="delete_btns">
                             <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>
                         </div> */}
-                </div>) : (<div className='follow_card_width'>
+                </div>) : (<div>
                   {follow.map((item, key) => {
                     if (following == item.minuser) {
                       return <div>

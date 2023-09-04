@@ -184,12 +184,12 @@ export default function Workforteach() {
         <button onClick={() => openModal()}>Add task</button>
       </div>
       <div className="m_zadach">
-        {stTasks.length === 0 ? (
+        {stTasks.length !== 0 ? (
           <div className="delete_padding">
             <img src={Groupimg} alt="" />
             <h4>No tasks</h4>
-          
-          </div>) : (<>   {stTasks.map((item) => {
+          </div>
+          ) : (<>   {stTasks.map((item) => {
             localStorage.setItem("taskLength", stTasks.length);
             return (
               <div>
