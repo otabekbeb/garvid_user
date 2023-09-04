@@ -50,7 +50,7 @@ export default function Youtube1() {
   const [main1, setMain1] = useState(
     JSON.parse(localStorage.getItem("Idvideo"))
   );
-  const [state1, setState1] = React.useState();
+  const [state1, setState1] = useState([]);
   const [loader, setLoader] = useState(1);
   const [task_comnet_id, setTask_comnet_id] = useState(0);
   const [page5, setPage5] = useState(1);
@@ -169,6 +169,14 @@ export default function Youtube1() {
 
 
   useEffect(() => {
+axios.get(`${url}/api/course_data_category`,{
+  headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+})
+.then(res=>{
+setState1(res.data.one)
+localStorage.setItem("page_video", JSON.stringify(res.data))
+})
+
     const { id } = JSON.parse(localStorage.getItem("page_video"));
     setLoader(1);
 
@@ -302,6 +310,9 @@ export default function Youtube1() {
     };
   
     fetchData();
+
+    
+
   }, []);
   
   
@@ -584,9 +595,6 @@ export default function Youtube1() {
                     console.log("123");
                   });
               });
-          })
-          .catch((err) => {
-            console.log("1223");
           });
       })
       .catch((err) => {
@@ -799,17 +807,6 @@ export default function Youtube1() {
     document.querySelector(".otevet_comment_otdel_oyna ").style =
       "display:none !important";
   }
-  function openViewall() {
-    document.querySelector(".view_all_otdel_oyna").style = "display: block";
-    document.querySelector(".m_otdel_bgc").style = "display:none";
-  }
-
-  function closeViewall() {
-    document.querySelector(".m_otdel_bgc").style = "display: block";
-    document.querySelector(".view_all_otdel_oyna ").style =
-      "display:none !important";
-  }
-
   //task
 
   function deleteComment1(id) {
@@ -1216,40 +1213,24 @@ export default function Youtube1() {
                                 <span className="span_comment1202">
                                   Комментария*
                                 </span>
-                                <p
-                                  onClick={() => {
-                                    openViewall();
-                                  }}
-                                >
-                                  view all <AiOutlineComment />
-                                </p>
                               </div>
                               <div className="for_scroll">
   {comment.length === 0 ? (
     <div className="for_no_comment">
-      <p>Тут ещё нут комметнарий</p>
+      <p>Тут ещё нету комметнарий</p>
     </div>
   ) : (
     <div>
-      {comment
-        .filter(
-          (item) =>
-            item.subcomment === 0 && item.task_commnet_id === 0
-        )
-        .map((item) => (
+      {comment.filter((item) =>item.subcomment === 0 && item.task_commnet_id === 0).map((item) => (
           <div className="m_comment" key={item.id}>
             <div className="for-flex-time-name-image">
               <div className="m_comment_img">
                 <img
-                  src={
-                    item &&
-                    item.image1 &&
-                    item.image1.includes("http")
-                      ? item.image1
-                      : item.image1
-                      ? `${url}/${item.image}`
-                      : <img src={anonim} alt="" />
-                  }
+                src={
+                  item.image && item.image.includes("http")
+                    ? item.image
+                    : `${url}/${item.image}`
+                }
                   alt=""
                 />
               </div>
@@ -1494,143 +1475,6 @@ export default function Youtube1() {
                               </div>
                             </div>
 
-                            <div className="view_all_otdel_oyna">
-                              <div className="df_all_com">
-                                <p
-                                  className="m_otvet_comment_back"
-                                  onClick={() => {
-                                    closeViewall();
-                                  }}
-                                >
-                                  <FiCornerUpLeft />
-                                  Back
-                                </p>
-                                <p className="AiOutlineComment">
-                                  View all comment <AiOutlineComment />
-                                </p>
-                              </div>
-                              {comment.length === 0 ? (
-                                <div className="for_no_comment">
-                                  <p>Тут ещё нут комметнарий</p>
-                                </div>
-                              ) : (
-                                <div>
-                                  {comment.map((item) => {
-                                    if (item.task_commnet_id != 1) {
-                                      return (
-                                        <div>
-                                          <div className="flex_view_all">
-                                            <div className="m_comment">
-                                              <div className="for-flex-time-name-image">
-                                                <div className="m_comment_img">
-                                                  {item.oneuser &&
-                                                  item.oneuser.image ? (
-                                                    <img
-                                                      src={
-                                                        item &&
-                                                        item.image1 &&
-                                                        item.image1.includes(
-                                                          "http"
-                                                        ) ? (
-                                                          item.image1
-                                                        ) : item.image1 ? (
-                                                          `${url}/${item.image}`
-                                                        ) : (
-                                                          <img
-                                                            src={anonim}
-                                                            alt=""
-                                                          />
-                                                        )
-                                                      }
-                                                      alt=""
-                                                    />
-                                                  ) : (
-                                                    <img src={anonim} alt="" />
-                                                  )}
-                                                </div>
-
-                                                <div className="user-name-timecreate">
-                                                  <h5>{item.username}</h5>
-                                                  <p>
-                                                    {item.time_create.slice(
-                                                      0,
-                                                      10
-                                                    )}
-                                                  </p>
-                                                </div>
-                                              </div>
-
-                                              <div className="m_comment_text">
-                                                {item.image ? (
-                                                  ""
-                                                ) : (
-                                                  <img
-                                                    src={
-                                                      item.image &&
-                                                      item.image.includes(
-                                                        "http"
-                                                      )
-                                                        ? item.image
-                                                        : `${url}/${item.image}`
-                                                    }
-                                                    alt=""
-                                                  />
-                                                )}
-                                                <p className="m_comment_text1505">
-                                                  {item.text}
-                                                </p>
-                                                <div className="m_comment_otvet">
-                                                  <p
-                                                    style={{ display: "flex" }}
-                                                    className="m_otvet_comment"
-                                                    onClick={() => {
-                                                      openModalOtvet11(item.id);
-                                                    }}
-                                                  >
-                                                    <FiCornerUpLeft />
-                                                    {item.count === 0 ? (
-                                                      "Ответить"
-                                                    ) : (
-                                                      <div>
-                                                        {item.count}{" "}
-                                                        <span>Ответов</span>
-                                                      </div>
-                                                    )}
-                                                  </p>
-
-                                                  {oneuser.map((item5) => {
-                                                    return (
-                                                      <div>
-                                                        {item5.id ==
-                                                        item.user_id ? (
-                                                          <p
-                                                            className="m_comment_delete"
-                                                            onClick={() => {
-                                                              deleteComment(
-                                                                item.id
-                                                              );
-                                                            }}
-                                                          >
-                                                            <AiOutlineDelete />
-                                                            удалить
-                                                          </p>
-                                                        ) : (
-                                                          ""
-                                                        )}
-                                                      </div>
-                                                    );
-                                                  })}
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      );
-                                    }
-                                  })}
-                                </div>
-                              )}
-                            </div>
                           </div>
                         </div>
                       ) : (
@@ -1673,20 +1517,9 @@ export default function Youtube1() {
                                               <div className="div_img_class_over">
                                                 <img
                                                   src={
-                                                    item &&
-                                                    item.image1 &&
-                                                    item.image1.includes(
-                                                      "http"
-                                                    ) ? (
-                                                      item.image1
-                                                    ) : item.image1 ? (
-                                                      `${url}/${item.image}`
-                                                    ) : (
-                                                      <img
-                                                        src={anonim}
-                                                        alt=""
-                                                      />
-                                                    )
+                                                    item.image && item.image.includes("http")
+                                                      ? item.image
+                                                      : `${url}/${item.image}`
                                                   }
                                                   alt=""
                                                 />
@@ -1987,7 +1820,7 @@ export default function Youtube1() {
                                 <button
                                   className="m_otpravit"
                                   onClick={() => {
-                                    commentTaskPost();
+                                    getSubcoment();
                                     // imagePost();
                                   }}
                                 >
