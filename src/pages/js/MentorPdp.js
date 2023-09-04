@@ -55,12 +55,11 @@ export default function MentorPdp() {
                         <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght" >{localStorage.getItem("courseLength")} pieces</div>) : ("")}</div>
                         <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Chat</h1></div>
                         <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Tasks</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("taskLength")} pieces</div>) : ("")}</div>
-                        {/* <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Courses</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_courses")} pieces</div>) : ("")}</div> */}
-                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(7)} style={toggle === 7 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My Subscribers</h1>{toggle === 7 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("subscribersLength")} pieces</div>) : ("")}</div>
+                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My Subscribers</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("subscribersLength")} pieces</div>) : ("")}</div>
                         <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Educations</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_education")} pieces</div>) : ("")}</div>
                         <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(6)} style={toggle === 6 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Tests</h1>{toggle === 6 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("testLength")} pieces</div>) : ("")}</div>
                         <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(8)} style={toggle === 8 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Zoom</h1>{toggle === 8 ? ("") : ("")}</div>
-                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(9)} style={toggle === 9 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Sertificate</h1>{toggle === 9 ? ("") : ("")}</div>
+                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(9)} style={toggle === 9 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Sertificate</h1>{toggle === 9 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("sertificate_createLength")} pieces</div>) : ("")}</div>
                     </div>
                     <div className="profil_blok_menu_size">
                         <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
@@ -70,8 +69,7 @@ export default function MentorPdp() {
                         <h1 onClick={() => updatetoggle(1)} className='fromMenu'>My courses</h1>
                         <h1 onClick={() => updatetoggle(2)} className='fromMenu'>Chat</h1>
                         <h1 onClick={() => updatetoggle(3)} className='fromMenu'>Tasks</h1>
-                        {/* <h1 onClick={() => updatetoggle(4)} className='fromMenu'>Courses</h1> */}
-                        <h1 onClick={() => updatetoggle(7)} className='fromMenu'>My Subscribers</h1>
+                        <h1 onClick={() => updatetoggle(4)} className='fromMenu'>My Subscribers</h1>
                         <h1 onClick={() => updatetoggle(5)} className='fromMenu'>Educations</h1>
                         <h1 onClick={() => updatetoggle(6)} className='fromMenu'>Tests</h1>
                         <h1 onClick={() => updatetoggle(8)} className='fromMenu'>Zoom</h1>
@@ -82,8 +80,7 @@ export default function MentorPdp() {
                 <div className={toggle === 1 ? "show-content" : "content"}><Mentorkurs /></div>
                 <div className={toggle === 2 ? "show-content" : "content"}><Yozishma /></div>
                 <div className={toggle === 3 ? "show-content" : "content"}><Sertifikat /></div>
-                {/* <div className={toggle === 4 ? "show-content" : "content"}><Ourcourse /></div> */}
-                <div className={toggle === 7 ? "show-content" : "content"}><Mysubscribers /></div>
+                <div className={toggle === 4 ? "show-content" : "content"}><Mysubscribers /></div>
                 <div className={toggle === 5 ? "show-content" : "content"}><Education /></div>
                 <div className={toggle === 6 ? "show-content" : "content"}><Test_create /></div>
                 <div className={toggle === 8 ? "show-content" : "content"}><VideoChat /></div>

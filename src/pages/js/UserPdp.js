@@ -138,7 +138,7 @@ export default function Pdp() {
                 All Teachers
               </h1>
               {toggle === 6 ? (
-                <div className="fil_text_blok_kurs_lenght">{localStorage.getItem("subscribersLength")} pieces</div>
+                <div className="fil_text_blok_kurs_lenght">{localStorage.getItem("FollowCard")} pieces</div>
               ) : (
                 ""
               )}
@@ -219,6 +219,9 @@ export default function Pdp() {
               </h1>
               <h1 onClick={() => updatetoggle(5)} className="fromMenu">
                 My Subscriptions
+              </h1>
+              <h1 onClick={() => updatetoggle(6)} className="fromMenu">
+                All Teachers
               </h1>
               {/* <h1 onClick={() => updatetoggle(9)} className="fromMenu">
                 My subscribers
