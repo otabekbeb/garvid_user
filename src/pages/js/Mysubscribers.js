@@ -20,7 +20,7 @@ export default function Azo() {
     useEffect(() => {
         axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             setFollow(res.data)
-            localStorage.setItem("subscribersLength", res.data.filter(filter => filter.topuser == localStorage.getItem("OneuserId")).length)
+            localStorage.setItem("subscribersLength", res.data.filter(filter => filter.minuser == localStorage.getItem("OneuserId")).length)
         })
     }, [])
     function obuna() {
@@ -50,9 +50,9 @@ export default function Azo() {
                         {/* <div className="delete_btns">
                             <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>
                         </div> */}
-                    </div>) : (<div>
+                    </div>) : (<div className='follow_card_width'>
                         {follow.map((item, key) => {
-                            if (following == item.topuser) {
+                            if (following == item.minuser) {
                                 return <div>
                                     {users.map(item1 => {
                                         

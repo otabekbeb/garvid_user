@@ -57,141 +57,141 @@ import { FiDownload } from "react-icons/fi"
 import { FaHourglassStart } from 'react-icons/fa'
 import { FaHourglassEnd } from 'react-icons/fa'
 // import Swal from "sweetalert2"; 
-function openTest() {
-  document.querySelector(".block-bir-variant1 p").style = `   background-color: #fcfcfc;
-  border: 1px solid #ccc;`
-  document.querySelector(".block-bir-variant2 p").style = `
-background-color: #fcfcfc;
-border: 1px solid #ccc;
+// function openTest() {
+//   document.querySelector(".block-bir-variant1 p").style = `   background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
+//   document.querySelector(".block-bir-variant2 p").style = `
+// background-color: #fcfcfc;
+// border: 1px solid #ccc;
 
-`
-  document.querySelector(".block-bir-variant2 p").style = `
-background-color: #fcfcfc;
-border: 1px solid #ccc;
+// `
+//   document.querySelector(".block-bir-variant2 p").style = `
+// background-color: #fcfcfc;
+// border: 1px solid #ccc;
 
-`
-  document.querySelector(".block-bir-variant p").style = ` background-color: rgb(98, 177, 204);color: white;`
-}
-function openTest1() {
-  document.querySelector(".block-bir-variant2 p").style = `   background-color: #fcfcfc;
-  border: 1px solid #ccc;`
-  document.querySelector(".block-bir-variant p").style = `   background-color: #fcfcfc;
-  border: 1px solid #ccc;`
-  document.querySelector(".block-bir-variant1 p").style = `background-color: rgb(98, 177, 204);color: white;
+// `
+//   document.querySelector(".block-bir-variant p").style = ` background-color: rgb(98, 177, 204);color: white;`
+// }
+// function openTest1() {
+//   document.querySelector(".block-bir-variant2 p").style = `   background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
+//   document.querySelector(".block-bir-variant p").style = `   background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
+//   document.querySelector(".block-bir-variant1 p").style = `background-color: rgb(98, 177, 204);color: white;
   
-  `
-}
-function openTest2() {
-  document.querySelector(".block-bir-variant1 p").style = `
-background-color: #fcfcfc;
-border: 1px solid #ccc;
+//   `
+// }
+// function openTest2() {
+//   document.querySelector(".block-bir-variant1 p").style = `
+// background-color: #fcfcfc;
+// border: 1px solid #ccc;
 
-`
-  document.querySelector(".block-bir-variant p").style = `
-background-color: #fcfcfc;
-border: 1px solid #ccc;
-`
-  document.querySelector(".block-bir-variant2 p").style = `background-color: rgb(98, 177, 204);color: white;`
-}
-function openTest3() {
-  document.querySelector(".block-bir-variant3 p").style = `background-color: rgb(98, 177, 204);color: white;`
-  document.querySelector(".block-bir-variant4 p").style = `background-color: #fcfcfc;
-border: 1px solid #ccc;`
-  document.querySelector(".block-bir-variant5 p").style = `background-color: #fcfcfc;
-border: 1px solid #ccc;`
+// `
+//   document.querySelector(".block-bir-variant p").style = `
+// background-color: #fcfcfc;
+// border: 1px solid #ccc;
+// `
+//   document.querySelector(".block-bir-variant2 p").style = `background-color: rgb(98, 177, 204);color: white;`
+// }
+// function openTest3() {
+//   document.querySelector(".block-bir-variant3 p").style = `background-color: rgb(98, 177, 204);color: white;`
+//   document.querySelector(".block-bir-variant4 p").style = `background-color: #fcfcfc;
+// border: 1px solid #ccc;`
+//   document.querySelector(".block-bir-variant5 p").style = `background-color: #fcfcfc;
+// border: 1px solid #ccc;`
 
-}
-function openTest4() {
+// }
+// function openTest4() {
 
-  document.querySelector(".block-bir-variant4 p").style = `background-color: rgb(98, 177, 204);color: white;`
-  document.querySelector(".block-bir-variant3 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
-  document.querySelector(".block-bir-variant5 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
+//   document.querySelector(".block-bir-variant4 p").style = `background-color: rgb(98, 177, 204);color: white;`
+//   document.querySelector(".block-bir-variant3 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
+//   document.querySelector(".block-bir-variant5 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
 
-}
-function openTest5() {
-  document.querySelector(".block-bir-variant5 p").style = `background-color: rgb(98, 177, 204);color: white;`
-  document.querySelector(".block-bir-variant4 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
-  document.querySelector(".block-bir-variant3 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
+// }
+// function openTest5() {
+//   document.querySelector(".block-bir-variant5 p").style = `background-color: rgb(98, 177, 204);color: white;`
+//   document.querySelector(".block-bir-variant4 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
+//   document.querySelector(".block-bir-variant3 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
 
-}
-function openTest6() {
-  document.querySelector(".block-bir-variant6 p").style = `background-color: rgb(98, 177, 204);color: white;`
-  document.querySelector(".block-bir-variant7 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
-  document.querySelector(".block-bir-variant8 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
+// }
+// function openTest6() {
+//   document.querySelector(".block-bir-variant6 p").style = `background-color: rgb(98, 177, 204);color: white;`
+//   document.querySelector(".block-bir-variant7 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
+//   document.querySelector(".block-bir-variant8 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
 
-}
-function openTest7() {
-  document.querySelector(".block-bir-variant7 p").style = `background-color: rgb(98, 177, 204);color: white;`
-  document.querySelector(".block-bir-variant6 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
-  document.querySelector(".block-bir-variant8 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
+// }
+// function openTest7() {
+//   document.querySelector(".block-bir-variant7 p").style = `background-color: rgb(98, 177, 204);color: white;`
+//   document.querySelector(".block-bir-variant6 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
+//   document.querySelector(".block-bir-variant8 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
 
-}
-function openTest8() {
-  document.querySelector(".block-bir-variant8 p").style = `background-color: rgb(98, 177, 204);color: white;`
-  document.querySelector(".block-bir-variant7 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
-  document.querySelector(".block-bir-variant6 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
+// }
+// function openTest8() {
+//   document.querySelector(".block-bir-variant8 p").style = `background-color: rgb(98, 177, 204);color: white;`
+//   document.querySelector(".block-bir-variant7 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
+//   document.querySelector(".block-bir-variant6 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
 
-}
-function openTest9() {
-  document.querySelector(".block-bir-variant9 p").style = `background-color: rgb(98, 177, 204);color: white;`
-  document.querySelector(".block-bir-variant10 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
-  document.querySelector(".block-bir-variant11 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
+// }
+// function openTest9() {
+//   document.querySelector(".block-bir-variant9 p").style = `background-color: rgb(98, 177, 204);color: white;`
+//   document.querySelector(".block-bir-variant10 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
+//   document.querySelector(".block-bir-variant11 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
 
-}
-function openTest10() {
-  document.querySelector(".block-bir-variant10 p").style = `background-color: rgb(98, 177, 204);color: white;`
-  document.querySelector(".block-bir-variant9 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
-  document.querySelector(".block-bir-variant11 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
+// }
+// function openTest10() {
+//   document.querySelector(".block-bir-variant10 p").style = `background-color: rgb(98, 177, 204);color: white;`
+//   document.querySelector(".block-bir-variant9 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
+//   document.querySelector(".block-bir-variant11 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
 
-}
-function openTest11() {
-  document.querySelector(".block-bir-variant11 p").style = `background-color: rgb(98, 177, 204);color: white;`
-  document.querySelector(".block-bir-variant10 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
-  document.querySelector(".block-bir-variant9 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
+// }
+// function openTest11() {
+//   document.querySelector(".block-bir-variant11 p").style = `background-color: rgb(98, 177, 204);color: white;`
+//   document.querySelector(".block-bir-variant10 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
+//   document.querySelector(".block-bir-variant9 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
 
-}
+// }
 
 
-function openTest12() {
-  document.querySelector(".block-bir-variant12 p").style = `background-color: rgb(98, 177, 204);color: white;`
-  document.querySelector(".block-bir-variant13 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
-  document.querySelector(".block-bir-variant14 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
+// function openTest12() {
+//   document.querySelector(".block-bir-variant12 p").style = `background-color: rgb(98, 177, 204);color: white;`
+//   document.querySelector(".block-bir-variant13 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
+//   document.querySelector(".block-bir-variant14 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
 
-}
-function openTest13() {
-  document.querySelector(".block-bir-variant13 p").style = `background-color: rgb(98, 177, 204);color: white;`
-  document.querySelector(".block-bir-variant12 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
-  document.querySelector(".block-bir-variant14 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
+// }
+// function openTest13() {
+//   document.querySelector(".block-bir-variant13 p").style = `background-color: rgb(98, 177, 204);color: white;`
+//   document.querySelector(".block-bir-variant12 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
+//   document.querySelector(".block-bir-variant14 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
 
-}
-function openTest14() {
-  document.querySelector(".block-bir-variant14 p").style = `background-color: rgb(98, 177, 204);color: white;`
-  document.querySelector(".block-bir-variant13 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
-  document.querySelector(".block-bir-variant12 p").style = `background-color: #fcfcfc;
-  border: 1px solid #ccc;`
+// }
+// function openTest14() {
+//   document.querySelector(".block-bir-variant14 p").style = `background-color: rgb(98, 177, 204);color: white;`
+//   document.querySelector(".block-bir-variant13 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
+//   document.querySelector(".block-bir-variant12 p").style = `background-color: #fcfcfc;
+//   border: 1px solid #ccc;`
 
-}
+// }
 export default function Mentor() {
   const [state1, setState1] = React.useState();
   const [students, setStudents] = React.useState([]);
@@ -210,17 +210,20 @@ export default function Mentor() {
   const [natlifikation, setNatlifikation] = React.useState([]);
 
   const [edication, setEdication] = useState([])
-  const [edicationId, setEdicationId] = useState()
-  const [tests, setTests] = useState([])
+  // const [edicationId, setEdicationId] = useState()
+  // const [tests, setTests] = useState([])
 
-  const username = document.querySelectorAll("#Educationusername")
-  const start_date = document.querySelectorAll("#Educationstart_date")
-  const end_date = document.querySelectorAll("#Educationend_date")
-  const description = document.querySelectorAll("#Educationdescription")
+  // const username = document.querySelectorAll("#Educationusername")
+  // const start_date = document.querySelectorAll("#Educationstart_date")
+  // const end_date = document.querySelectorAll("#Educationend_date")
+  // const description = document.querySelectorAll("#Educationdescription")
   const [stTasks, setTasks] = useState([])
   const [CourseId, setCourseId] = useState();
   const [deleteId, setDeleteId] = useState()
+  const [follow, setFollow] = useState([])
   const [courstype, setCoursetype] = useState([]);
+  const [toggle, setToggle] = useState(1)
+  const [users, setUsers] = useState([])
   useEffect(() => {
     axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setEdication(res.data)
@@ -228,228 +231,56 @@ export default function Mentor() {
 
 
   }, [])
-
-  function postEducationModal() {
-    document.querySelector("#EducationpostModal").style = "display:flex"
-  }
-
-  function postEducationClose() {
-    document.querySelector("#EducationpostModal").style = "display:none"
-  }
-
-  function putEducationModal(id) {
-    setEdicationId(id)
-    edication.map(item => {
-      if (item.id == id) {
-        username[1].value = item.education_name
-        start_date[1].value = item.start_date
-        end_date[1].value = item.end_date
-        description[1].value = item.description
+  useEffect(() => {
+    axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setUsers(res.data)
+    })
+  }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const OneuserId = localStorage.getItem("OneuserId");
+  
+        // Fetch one user data
+        const oneUserResponse = await axios.get(`${url}/auth/oneuser`, {
+          headers: { Authorization: "Bearer " + token },
+        });
+        setStudents(oneUserResponse.data);
+        console.log(oneUserResponse.data, "aa");
+  
+        // Fetch my course data
+        const myCourseResponse = await axios.get(`${url}/api/mycourse`, {
+          headers: { Authorization: `Bearer ${OneuserId}` },
+        });
+        setKursdata(myCourseResponse.data);
+        localStorage.setItem("Mycourse", JSON.stringify(myCourseResponse.data));
+  
+        // Fetch course data
+        const courseResponse = await axios.get(`${url}/api/course`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+  
+        // Update star property in kursdata
+        const updatedKursdata = myCourseResponse.data.map((course) => {
+          const matchingCourse = courseResponse.data.find(
+            (c) => c.id === course.id
+          );
+          if (matchingCourse) {
+            course.star = matchingCourse.star;
+          }
+          return course;
+        });
+        setKursdata(updatedKursdata);
+        console.log(updatedKursdata);
+      } catch (error) {
+        console.log(error,"KURSDATA");
       }
-    })
-
-
-    document.querySelector("#EducationputModal").style = "display:flex;"
-  }
-
-  function putEducationClose() {
-    document.querySelector("#EducationputModal").style = "display:none;"
-  }
-
-  function deleteEducationModal(id) {
-    setEdicationId(id)
-    document.querySelector("#EducationdeleteModal").style = "display:flex"
-  }
-
-  function deleteEducationClose() {
-    document.querySelector("#EducationdeleteModal").style = "display:none"
-  }
-
-  function postEducation() {
-    var formdata = new FormData()
-    formdata.append("education_name", username[0].value)
-    formdata.append("description", description[0].value)
-    formdata.append("start_date", start_date[0].value)
-    formdata.append("end_date", end_date[0].value)
-    formdata.append("sertificat_id", 0)
-
-    axios.post(`${URL}/edu/education`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-      alert("Добавлена информация")
-      document.querySelector("#EducationpostModal").style = "display:none"
-      axios.get(`${URL}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-        setEdication(res.data)
-      })
-    }).catch(err => {
-      alert("Данные не добавлены, введите полностью")
-    })
-  }
-
-  function putEducation() {
-    var formdata = new FormData()
-    formdata.append("education_name", username[1].value)
-    formdata.append("description", description[1].value)
-    formdata.append("start_date", start_date[1].value)
-    formdata.append("end_date", end_date[1].value)
-    formdata.append("sertificat_id", 0)
-
-    axios.put(`${URL}/edu/education/${edicationId}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-      alert("Информация изменилась")
-      document.querySelector("#EducationputModal").style = "display:none"
-      axios.get(`${URL}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-        setEdication(res.data)
-      })
-    }).catch(err => {
-      alert("Информация не изменилась, введите полностью")
-    })
-  }
-
-
-  // function Page() {
-  //   setPage(1)
-  // }
-
-  useEffect(() => {
-    axios.get(`${url}/api/course_theme_task_student`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
-      setTasks(res.data)
-    })
-  })
-
-
-
-
-
-  const searchInput = (event) => {
-    const searchRegex = new RegExp(`^${event.target.value}`, "i");
-    axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-      const searchdata = res.data.filter((item) => {
-        return (
-          searchRegex.test(item.name)
-        );
-      })
-      setKursdata(searchdata)
-    })
-
-  }
-  useEffect(() => {
-    setloading(true);
-    setTimeout(() => {
-      setloading(false);
-    }, 20000);
-  }, [])
-
-  React.useEffect(() => {
-    const timer =
-      counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
-    return () => clearInterval(timer);
-  }, [counter])
-
-  React.useEffect(() => {
-    const timer1 =
-      counter1 > 0 && setInterval(() => setCounter1(counter1 - 1), 1000);
-    return () => clearInterval(timer1);
-  }, [counter1])
-
-
-  React.useEffect(() => {
-    const timer2 =
-      counter2 > 0 && setInterval(() => setCounter2(counter2 - 1), 1000);
-    return () => clearInterval(timer2);
-  }, [counter2])
-
-
-  React.useEffect(() => {
-    const timer3 =
-      counter3 > 0 && setInterval(() => setCounter3(counter3 - 1), 1000);
-    return () => clearInterval(timer3);
-  }, [counter3])
-
-
-  React.useEffect(() => {
-    const timer4 =
-      counter4 > 0 && setInterval(() => setCounter4(counter4 - 1), 1000);
-    return () => clearInterval(timer4);
-  }, [counter4])
-
-  const [follow, setFollow] = useState([])
-  const [following, setFollowing] = useState(localStorage.getItem("OneuserId"))
-
-  useEffect(() => {
-    axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-      setFollow(res.data)
-    })
-  }, [])
-  function obuna() {
-    document.querySelector('#azo_bolgan_katta_div_text_block_button').classList.toggle("obuna1")
-  }
-  function obuna2() {
-    document.querySelector('#azo_bolgan_katta_div_text_block_button1').classList.toggle("obuna2")
-  }
-
-  useEffect(() => {
-    axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-      setUsers(res.data)
-    })
+    };
+  
+    fetchData();
   }, []);
-
-  function folowcolor1(key) {
-    axios.delete(`${url}/api/follow/${key}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-      window.location.reload()
-    }).catch(err => {
-      alert("xato")
-    })
-  }
-  useEffect(() => {
-    axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-      setFollow(res.data)
-    })
-  }, [])
-  function obuna() {
-    document.querySelector('#azo_bolgan_katta_div_text_block_button').classList.toggle("obuna1")
-  }
-  function obuna2() {
-    document.querySelector('#azo_bolgan_katta_div_text_block_button1').classList.toggle("obuna2")
-  }
-  const [users, setUsers] = useState([])
-  useEffect(() => {
-    axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-      setUsers(res.data)
-    })
-  }, []);
-  useEffect(() => {
-    axios.get(`${url}/auth/oneuser`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-      setStudents(res.data)
-      console.log(res.data, "aa");
-    });
-    axios.get(`${url}/api/mycourse`, { headers: { Authorization: `Bearer ${localStorage.getItem("OneuserId")}` } }).then(res => {
-      setKursdata(res.data)
-      localStorage.setItem("Mycourse",JSON.stringify(res.data))
-    }).catch(err => {
-      console.log(err);
-    });
-    axios
-      .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      })
-      .then((res) => {
-        axios
-          .get(`${url}/api/course`, {
-            header: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          })
-          .then((res1) => {
-            for (let i = 0; i < res.data.length; i++) {
-              for (let j = 0; j < res1.data.length; j++) {
-                if (res.data[i].id == res1.data[j].id) {
-                  res.data[i].star = res1.data[j].star;
-                }
-              }
-            }
-            setKursdata(res.data);
-          });
-      });
-
-  }, [])
+  
   useEffect(() => {
     axios
       .get(`${url}/auth/oneuser/`, {
@@ -473,8 +304,259 @@ export default function Mentor() {
 
 
   }, []);
+  useEffect(() => {
+    axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setUsers(res.data)
+    })
+  }, []);
+  useEffect(() => {
+    axios.get(`${url}/api/course_theme_task_student`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
+      setTasks(res.data)
+    })
+  })
+
+  React.useEffect(() => {
+    const timer =
+      counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
+    return () => clearInterval(timer);
+  }, [counter])
+
+  useEffect(() => {
+    const timer1 =
+      counter1 > 0 && setInterval(() => setCounter1(counter1 - 1), 1000);
+    return () => clearInterval(timer1);
+  }, [counter1])
+  useEffect(() => {
+    const timer2 =
+      counter2 > 0 && setInterval(() => setCounter2(counter2 - 1), 1000);
+    return () => clearInterval(timer2);
+  }, [counter2])
+  useEffect(() => {
+    const timer3 =
+      counter3 > 0 && setInterval(() => setCounter3(counter3 - 1), 1000);
+    return () => clearInterval(timer3);
+  }, [counter3])
+  useEffect(() => {
+    const timer4 =
+      counter4 > 0 && setInterval(() => setCounter4(counter4 - 1), 1000);
+    return () => clearInterval(timer4);
+  }, [counter4])
+  useEffect(() => {
+    axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setFollow(res.data)
+    })
+  }, [])
+  useEffect(() => {
+    axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setFollow(res.data)
+    })
+  }, [])
+  useEffect(() => {
+    setState1(
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
+    );
+  }, []);
+  useEffect(() => {
+    axios
+      .get(`${url}/auth/oneuser/`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        localStorage.setItem("page_user", JSON.stringify(res.data));
+        res.data.map(item => {
+          localStorage.setItem("OneuserId", item.id)
+        })
+        console.log(res.data);
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    setState1(
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
+    );
 
 
+
+  }, []);
+  useEffect(() => {
+    axios.get(`${url}/api/course_theme_task_student`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setTasks(res.data)
+    })
+
+  }, [])
+
+  
+  
+  const searchInput = (event) => {
+    const searchRegex = new RegExp(`^${event.target.value}`, "i");
+    axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+      const searchdata = res.data.filter((item) => {
+        return (
+          searchRegex.test(item.name)
+        );
+      })
+      setKursdata(searchdata)
+    })
+
+  }
+
+
+
+
+  // useEffect(() => {
+  //   setloading(true);
+  //   setTimeout(() => {
+  //     setloading(false);
+  //   }, 20000);
+  // }, [])
+  // const [following, setFollowing] = useState(localStorage.getItem("OneuserId"))
+
+  // function postEducationModal() {
+  //   document.querySelector("#EducationpostModal").style = "display:flex"
+  // }
+
+  // function postEducationClose() {
+  //   document.querySelector("#EducationpostModal").style = "display:none"
+  // }
+
+  // function putEducationModal(id) {
+  //   setEdicationId(id)
+  //   edication.map(item => {
+  //     if (item.id == id) {
+  //       username[1].value = item.education_name
+  //       start_date[1].value = item.start_date
+  //       end_date[1].value = item.end_date
+  //       description[1].value = item.description
+  //     }
+  //   })
+
+
+  //   document.querySelector("#EducationputModal").style = "display:flex;"
+  // }
+
+  // function putEducationClose() {
+  //   document.querySelector("#EducationputModal").style = "display:none;"
+  // }
+
+  // function deleteEducationModal(id) {
+  //   setEdicationId(id)
+  //   document.querySelector("#EducationdeleteModal").style = "display:flex"
+  // }
+
+  // function deleteEducationClose() {
+  //   document.querySelector("#EducationdeleteModal").style = "display:none"
+  // }
+
+  // function postEducation() {
+  //   var formdata = new FormData()
+  //   formdata.append("education_name", username[0].value)
+  //   formdata.append("description", description[0].value)
+  //   formdata.append("start_date", start_date[0].value)
+  //   formdata.append("end_date", end_date[0].value)
+  //   formdata.append("sertificat_id", 0)
+
+  //   axios.post(`${URL}/edu/education`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+  //     alert("Добавлена информация")
+  //     document.querySelector("#EducationpostModal").style = "display:none"
+  //     axios.get(`${URL}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+  //       setEdication(res.data)
+  //     })
+  //   }).catch(err => {
+  //     alert("Данные не добавлены, введите полностью")
+  //   })
+  // }
+
+  // function putEducation() {
+  //   var formdata = new FormData()
+  //   formdata.append("education_name", username[1].value)
+  //   formdata.append("description", description[1].value)
+  //   formdata.append("start_date", start_date[1].value)
+  //   formdata.append("end_date", end_date[1].value)
+  //   formdata.append("sertificat_id", 0)
+
+  //   axios.put(`${URL}/edu/education/${edicationId}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+  //     alert("Информация изменилась")
+  //     document.querySelector("#EducationputModal").style = "display:none"
+  //     axios.get(`${URL}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+  //       setEdication(res.data)
+  //     })
+  //   }).catch(err => {
+  //     alert("Информация не изменилась, введите полностью")
+  //   })
+  // }
+
+
+  // function Page() {
+  //   setPage(1)
+  // }
+  // function obuna() {
+  //   document.querySelector('#azo_bolgan_katta_div_text_block_button').classList.toggle("obuna1")
+  // }
+  // function obuna2() {
+  //   document.querySelector('#azo_bolgan_katta_div_text_block_button1').classList.toggle("obuna2")
+  // }
+    // function dashed_nazat() {
+  //   document.querySelector("#edit_card").style = "display:none"
+  // }
+  // function exitss() {
+  //   window.location = "/"
+  //   localStorage.removeItem("token")
+  // }
+  // function notificationModal() {
+  //   document.querySelector(".profil_notifacation_size").style =
+  //     "position: fixed;right:0px;";
+  //   document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
+  //     "display:none";
+  //   document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
+  //     "display:none";
+  //   document.querySelector(".profil-qora-qiladi").style = "display:block";
+
+  // }
+  // function notificationModal() {
+  //   document.querySelector(".profil_notifacation_size").style =
+  //     "position: fixed;right:0px;";
+
+  //   document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
+  //     "display:none";
+  //   document.querySelector(".profil-qora-qiladi").style = "display:block";
+  // }
+    // function openModal2(id) {
+  //   setDeleteId(id)
+  //   document.querySelector(".m_delete_tepadan2").style = "display: flex; justify-content: center;align-items: center;"
+  // }
+    // function postEducationModal() {
+  //   document.querySelector("#EducationpostModal").style = "display:flex"
+  // }
+    // function openModal1() {
+  //   document.querySelector(".m_zadacha_tepadan1").style = "display: flex; justify-content: center;align-items: center;"
+  // }
+    // function openModal2(id) {
+  //   setDeleteId(id)
+  //   document.querySelector(".m_delete_tepadan2").style = "display: flex; justify-content: center;align-items: center;"
+  // }
+    // function deletetask() {
+  //     axios.delete(`${url}/api/course/${deleteId}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+  //       Swal.fire("ishladi")
+  //       window.location.reload()
+  //     }).catch(err => {
+  //       Swal.fire("xato")
+  //     })
+  //   }
+  // function obuna() {
+  //   document.querySelector('#azo_bolgan_katta_div_text_block_button').classList.toggle("obuna1")
+  // }
+  // function obuna2() {
+  //   document.querySelector('#azo_bolgan_katta_div_text_block_button1').classList.toggle("obuna2")
+  // }
+
+  function folowcolor1(key) {
+    axios.delete(`${url}/api/follow/${key}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      window.location.reload()
+    }).catch(err => {
+      alert("xato")
+    })
+  }
   function Filter() {
     var a = document.querySelector(".filter_button").style.display
     if (a === "none") {
@@ -490,13 +572,9 @@ export default function Mentor() {
     document.querySelector(".user_img_hover").style = "  position: absolute;bottom: 0;"
 
   }
-  function dashed_nazat() {
-    document.querySelector("#edit_card").style = "display:none"
-  }
   function userimgClose() {
     document.querySelector(".user_img_hover").style = "  position: absolute;bottom: -100px;"
   }
-
   function taxrirlashModal() {
     document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style = "display:block;"
     document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style = "display:none;"
@@ -509,24 +587,12 @@ export default function Mentor() {
     document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style = "display:block;"
     document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style = "display:none;"
   }
-  const [toggle, setToggle] = useState(1)
-
-  useEffect(() => {
-    setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
-    );
-  }, []);
-  function exitss() {
-    window.location = "/"
-    localStorage.removeItem("token")
-  }
   function updatetoggle(id) {
     setToggle(id)
     document.querySelector(".profil_modal_media").style = "display:none;"
     document.querySelector(".profil_blok_menu_clone").style = "display:none !important;"
     document.querySelector(".profil_blok_menu").style = "display:block;"
   }
-
   function menuModal() {
     document.querySelector(".profil_modal_media").style = "display:block;"
     document.querySelector(".profil_blok_menu").style = "display:none !important;"
@@ -537,58 +603,12 @@ export default function Mentor() {
     document.querySelector(".profil_blok_menu_clone").style = "display:none !important;"
     document.querySelector(".profil_blok_menu").style = "display:block;"
   }
-  function notificationModal() {
-    document.querySelector(".profil_notifacation_size").style =
-      "position: fixed;right:0px;";
-    document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
-      "display:none";
-    document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
-      "display:none";
-    document.querySelector(".profil-qora-qiladi").style = "display:block";
-
-  }
   function notificationClose() {
     document.querySelector(".profil_notifacation_size").style =
       "position: fixed;right:-100%;";
 
     document.querySelector(".profil-qora-qiladi").style = "display:none";
   }
-  function notificationModal() {
-    document.querySelector(".profil_notifacation_size").style =
-      "position: fixed;right:0px;";
-
-    document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
-      "display:none";
-    document.querySelector(".profil-qora-qiladi").style = "display:block";
-  }
-  function notificationClose() {
-    document.querySelector(".profil_notifacation_size").style =
-      "position: fixed;right:-100%;";
-    document.querySelector(".profil-qora-qiladi").style = "display:none";
-  }
-  useEffect(() => {
-    axios
-      .get(`${url}/auth/oneuser/`, {
-        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
-      })
-      .then((res) => {
-        localStorage.setItem("page_user", JSON.stringify(res.data));
-        res.data.map(item => {
-          localStorage.setItem("OneuserId", item.id)
-        })
-        console.log(res.data);
-        setData(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
-    );
-
-
-
-  }, []);
   function openModal2() {
     document.querySelector(".m_delete_tepadan2").style = "display: flex; justify-content: center;align-items: center;"
   }
@@ -637,9 +657,6 @@ export default function Mentor() {
         console.log(err);
       });
   }
-  function postEducationModal() {
-    document.querySelector("#EducationpostModal").style = "display:flex"
-  }
   function openModal() {
     document.querySelector(".m_zadacha_tepadan").style = "display: flex; justify-content: center;align-items: center;"
   }
@@ -649,25 +666,12 @@ export default function Mentor() {
   function clouseput() {
     document.querySelector("#zadaca_put").style = "display:none"
   }
-  function openModal1() {
-    document.querySelector(".m_zadacha_tepadan1").style = "display: flex; justify-content: center;align-items: center;"
-  }
   function clouseModal1() {
     document.querySelector(".m_zadacha_tepadan1").style = "display:none"
-  }
-  function openModal2(id) {
-    setDeleteId(id)
-    document.querySelector(".m_delete_tepadan2").style = "display: flex; justify-content: center;align-items: center;"
   }
   function clouseModal2() {
     document.querySelector(".m_delete_tepadan2").style = "display:none"
   }
-  useEffect(() => {
-    axios.get(`${url}/api/course_theme_task_student`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-      setTasks(res.data)
-    })
-
-  }, [])
   function deletetask() {
     axios.delete(`${url}/api/course_theme_task_student/${deleteId}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       alert("Данные удалены")
@@ -680,21 +684,6 @@ export default function Mentor() {
       alert("Данные не удалены")
     })
   }
-
-
-
-  // function deletetask() {
-  //     axios.delete(`${url}/api/course/${deleteId}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-  //       Swal.fire("ishladi")
-  //       window.location.reload()
-  //     }).catch(err => {
-  //       Swal.fire("xato")
-  //     })
-  //   }
-
-
-
-
   function postforzadac() {
     var formdata = new FormData()
 
@@ -717,8 +706,6 @@ export default function Mentor() {
       Swal.fire(err)
     })
   }
-
-
   function zadacput(id) {
     setCourseId(id)
     document.querySelector("#zadaca_put").style = "display: flex; justify-content: center;align-items: center;"
@@ -738,7 +725,6 @@ export default function Mentor() {
     }, 10);
 
   }
-
   function filter(id) {
     axios
       .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
@@ -1359,7 +1345,7 @@ export default function Mentor() {
       </button> */}
                     </a>
                   </div>
-                </div>) : (<div> {follow.map((item, key) => {
+                </div>) : (<div className='follow_card_width'> {follow.map((item, key) => {
                   return <div>
                     {users.map(item1 => {
                       if (item1.id == item.topuser) {

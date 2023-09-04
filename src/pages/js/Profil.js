@@ -360,6 +360,7 @@ export default function Profil() {
 
 
               <div className="profil_blok_ikki_icon_taxriirlash_chat">
+                <div className="for_wiewall">
                 {natlifikation.length === 0 ? (
                 <div><p style={{textAlign:'center',marginTop:'35%',fontSize:'20px',opacity:'0.4'}}>Not written to you</p>
                 
@@ -400,9 +401,9 @@ export default function Profil() {
                   })}</div>
 
                 )}
+</div>
 
-
-                <a style={natlifikation.length===0?{display:"none"}:{display:"flex"}} href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
+                <a className="wiewu" style={natlifikation.length===0?{display:"none"}:{display:"flex"}} href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
                   <p>
                     view all
                     <AiOutlineRight />
