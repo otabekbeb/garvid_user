@@ -1345,7 +1345,7 @@ export default function Mentor() {
       </button> */}
                     </a>
                   </div>
-                </div>) : (<div> {follow.map((item, key) => {
+                </div>) : (<div className='follow_card_width'> {follow.map((item, key) => {
                   return <div>
                     {users.map(item1 => {
                       if (item1.id == item.topuser) {
