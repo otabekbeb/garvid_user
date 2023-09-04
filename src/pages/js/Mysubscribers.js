@@ -56,7 +56,7 @@ export default function Azo() {
                                 return <div>
                                     {users.map(item1 => {
                                         
-                                        if (item1.id == item.minuser) {
+                                        if (item1.id == item.topuser) {
                                             return (
                                                 <a>
                                                     <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">

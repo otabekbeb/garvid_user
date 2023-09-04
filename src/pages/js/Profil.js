@@ -371,7 +371,7 @@ export default function Profil() {
                       localStorage.setItem("soya", natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length)
                       return (
                         <div>
-                          <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p>
+                          <p style={{ marginLeft: '80%' }} onClick={() => soyaa(item.id)}>read</p>
                           <div className="taxrirlash_chad">
                             <div className="taxrirlash_chad_img_size">
                               <img src={chadimg} alt="" />

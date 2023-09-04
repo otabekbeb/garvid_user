@@ -3231,3 +3231,6 @@ justify-content: center; */
         width: 370px !important;
     }
 }
+.sli-img img{
+width: 60px !important;
+}
