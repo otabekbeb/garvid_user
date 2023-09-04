@@ -289,6 +289,16 @@ export default function Home() {
         pagination={{
           clickable: true,
         }}
+        // breakpoints={{
+        //     576: {
+             
+        //       slidesPerView: 2,
+        //     },
+        //     768: {
+             
+        //       slidesPerView: 1,
+        //     },
+        //   }}
         modules={[Pagination]}
         className="mySwiper342"
       > 
