@@ -8,14 +8,14 @@
     padding-bottom: 20px;
     justify-content: center;
     align-items: center;
-    background-color: #f6f6f6;
+   background-color: #fff;
     /* border: 1px solid red; */
 }
 
 .inpf {
     width: 1410px;
     height: auto;
-    background-color: #f6f6f6;
+   background-color: #fff;
     margin: auto;
 }
 
@@ -23,7 +23,7 @@
     .inpf {
         width: 1890px;
         height: auto;
-        background-color: #f6f6f6;
+       background-color: #fff;
         margin: auto;
 
 
@@ -35,7 +35,7 @@
         width: 1650px;
         height: auto;
 
-        background-color: #f6f6f6;
+       background-color: #fff;
         margin: auto;
 
 
@@ -46,7 +46,7 @@
     .inpf {
         width: 1410px;
         height: auto;
-        background-color: #f6f6f6;
+       background-color: #fff;
         margin: auto;
 
 
@@ -57,7 +57,7 @@
     .inpf {
         width: 300px !important;
         height: auto;
-        background-color: #f6f6f6;
+       background-color: #fff;
         margin: auto;
     }
 }
@@ -76,8 +76,9 @@
     .inpf {
         width: 260px !important;
         height: auto;
-        background-color: #f6f6f6;
+        background-color: #fff;
         margin: auto;
+        
     }
     
 }
@@ -85,6 +86,7 @@
     width: 100%;
     height: 70px; 
     background-color: #fff;
+    margin-top: 25px;
 }
 
 .followcard {
@@ -161,7 +163,7 @@
     .inpf {
         width: 700px;
         height: auto;
-        background-color: #f6f6f6;
+       background-color: #fff;
         margin: auto;
 
 
@@ -172,7 +174,7 @@
     .inpf {
         width: 90%;
         height: auto;
-        background-color: #f6f6f6;
+       background-color: #fff;
         margin: auto;
 
 
@@ -183,7 +185,7 @@
     .inpf {
         width: 1170px;
         height: auto;
-        background-color: #f6f6f6;
+       background-color: #fff;
         margin: auto;
     }
 }
@@ -192,7 +194,7 @@
     .inpf {
         width: 930px;
         height: auto;
-        background-color: #f6f6f6;
+       background-color: #fff;
         margin: auto;
     }
 }
@@ -201,7 +203,7 @@
     .inpf {
         width: 700px;
         height: auto;
-        background-color: #f6f6f6;
+       background-color: #fff;
         margin: auto;
     }
 }
@@ -210,7 +212,7 @@
     .inpf {
         width: 90%;
         height: auto;
-        background-color: #f6f6f6;
+       background-color: #fff;
         margin: auto;
     }
 }
