@@ -1359,3 +1359,11 @@ list-style: none;
     letter-spacing: 0px;
     color: black !important;
   }
+.mySwiper223{
+    width: 1200px;
+height: 400px;
+}
+.home-slider-sli{
+    border-radius: 10px;
+    border: 1px solid rgb(236, 230, 230);
+}

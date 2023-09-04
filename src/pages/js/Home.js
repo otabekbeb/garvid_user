@@ -12,6 +12,19 @@ import img_for_null from '../img/download.png'
 import Swal from 'sweetalert2';
 import { BsCheck2 } from 'react-icons/bs'
 import { BsCheckAll } from 'react-icons/bs'
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+
+// import required modules
+import { Pagination } from 'swiper/modules';
+
+
 export default function Home() {
     const [state, setState] = React.useState(1)
     const [state1, setState1] = React.useState();
@@ -266,53 +279,52 @@ export default function Home() {
                         <img className="girl" src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2019/07/mt-0514-home-image-2.png" alt="" />
                     </div>
                     <div className="Testimonial">
-                        <center><h1>Testimonials</h1></center>
+                        <center><h1>Teacher</h1></center>
                         <center><div className="blue1"></div></center>
 
+
+
                         <center><div className="testimonial_cards">
-                            {data.map((item)=>{
-                                return(
-                                    <testimonial_card className='sli1'>
-                                    <div className="sli-kurg-rasm">
+                          
+
+
+
+                        <Swiper
+                                breakpoints={{
     
-                                        <div className="sli-img"><img src={item.image}  alt="" /></div>
-    
-                                    </div>
-                                    <div className="sli-text">
-                                        <p>{item.description}</p>
-    
-                                        <strong>{item.username}</strong>
-                                        
-                                    </div>
-                                </testimonial_card>
-                                )
-                            })}
+                                    880: {
+                                      slidesPerView: 2,
+                                    },
+                                  }}
+        slidesPerView={3}
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
 
-                            {/* <testimonial_card className='sli1'>
-                                <div className="sli-kurg-rasm">
+        }}
+        modules={[Pagination]}
+        className="mySwiper223">
+{data.map((item)=>{
+  return(
+      <SwiperSlide className='home-slider-sli'>
+<div className="sli-kurg-rasm">
 
-                                    <div className="sli-img"><img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-about-img02.png" alt="" /></div>
+<div className="sli-img"><img src={item.image}  alt="" /></div>
 
-                                </div>
-                                <div className="sli-text">
-                                    <p>Wow, I'm so happy with your service. You managed to exceed my <br /> expectations! You guys are very efficient.</p>
+</div>
+<div className="sli-text">
+<p>{item.description}</p>
 
-                                    <strong>Louise Smith</strong>
-                                    <h4>(CEO & Founder)</h4>
-                                </div></testimonial_card> */}
-                            {/* <testimonial_card id="sli11" className='sli1'>
-                                <div className="sli-kurg-rasm">
+<strong>{item.username}</strong>
+</div>
+        </SwiperSlide>
+  )
+  
+})}
+      
 
-                                    <div className="sli-img"><img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-about-img03.png" alt="" /></div>
 
-                                </div>
-                                <div className="sli-text">
-                                    <p>Great organization!! Your prompt answer became a pleasant surprise for me.You've rendered an invaluable service! Thank you!</p>
-
-                                    <strong>Jack Walsh</strong>
-                                    <h4>(CEO & Founder)</h4>
-                                </div>
-                            </testimonial_card> */}
+      </Swiper>
 
 
                         </div>
