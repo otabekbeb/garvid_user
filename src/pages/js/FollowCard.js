@@ -95,7 +95,7 @@ export default function FollowCard() {
                       </button>
                     </a>
                   </div>
-                </div>):(<div>{follow.map((item, key) => {
+                </div>):(<div style={{display:"flex",justifyContent:"center"}}>{follow.map((item, key) => {
             if (following != item.id) {
               return (
                 <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
