@@ -66,7 +66,6 @@ const handleCancel = () => {
 };
 useEffect(()=>{
     axios.get(`${url}/api/course_data_category`,{ headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res=>{
-      console.log(res.data,"asdasabbas");
    var ss=res.data.filter(item=>item.course==id)
         setCategory(ss)
   
