@@ -1025,8 +1025,8 @@ export default function Mentor() {
           <div className="kurs_cards">
             {kursdata.length === 0 ? (
               <div className="delete_padding">
-                <img src={Groupimg} alt="" />
-                <h4>Вы не купили курс</h4>
+                <img style={{ width: '100%' ,borderRadius:'10px'}} src="https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2020/06/02135832/Short-term-Professional-Courses-after-Graduation.jpg" alt="" />
+                <h4>You didn't buy the course</h4>
                 <div className="delete_btns">
                   <a href="/Ourcourse">
                     {" "}
@@ -1034,7 +1034,7 @@ export default function Mentor() {
                       style={{ background: "#44bef1  " }}
                       className="delete_btn_yes"
                     >
-                      Купить курс
+                      Buy a course
                     </button>
                   </a>
                 </div>
@@ -1102,69 +1102,74 @@ export default function Mentor() {
             <button onClick={() => openModal()}>Add task</button>
           </div>
           <div className="m_zadach">
-            {stTasks.map(item => {
-              localStorage.setItem("taskLength", stTasks.length)
-              return (
-                <div>
-                  <div className="m_zadach_block">
-                    <div className="fors_imagesa">
-                      {item.image ? (<img className='jony_foto' src={img_for_null} alt="" />) : (<img src={`${url}/` + item.image} alt="" />)}</div>
-                    <h4>{item.content}</h4>
-                    <div className="zadac_df">
-                      <span><FaHourglassStart style={{ color: "black", marginRight: "7px" }} /> {(item.time_create).slice(0, 10)}</span>
-                      <span><FaHourglassEnd style={{ color: "black", marginRight: "7px" }} /> {(item.time_update).slice(0, 10)}</span>
-                    </div>
-                    <p className='ortapp'>{item.feedback}</p>
-                    <p className='ortap1' style={{ marginTop: "0px" }}>Оценка:{item.mark}</p>
-                    <div className="m_zadacha_icon">
-                      <div className="m_zadach_ktug_icon1" onClick={() => openModal2(item.id)}>
-                        <MdDeleteOutline />
+            {stTasks.length !== 0 ? (
+              <div className="delete_padding">
+                <img src={Groupimg} alt="" />
+                <h4>No tasks</h4>
+              </div>) : (<>   {stTasks.map(item => {
+                localStorage.setItem("taskLength", stTasks.length)
+                return (
+                  <div>
+                    <div className="m_zadach_block">
+                      <div className="fors_imagesa">
+                        {item.image ? (<img className='jony_foto' src={img_for_null} alt="" />) : (<img src={`${url}/` + item.image} alt="" />)}</div>
+                      <h4>{item.content}</h4>
+                      <div className="zadac_df">
+                        <span><FaHourglassStart style={{ color: "black", marginRight: "7px" }} /> {(item.time_create).slice(0, 10)}</span>
+                        <span><FaHourglassEnd style={{ color: "black", marginRight: "7px" }} /> {(item.time_update).slice(0, 10)}</span>
                       </div>
-                      <div className="m_zadach_ktug_icon" onClick={() => zadacput(item.id)}>
-                        <FiEdit />
-                        {/* onClick={() => dashed(item.id)} */}
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div className="m_zadacha_tepadan">
-                    <div className="m_zadachi_dobavit">
-                      <div className="m_clouse_x" onClick={() => clouseModal()}>
-                        <GrFormClose /></div>
-                      <div className="m_input_file_dobavit">
-                        <div className="a_input_file12">
-                          <FiDownload /> Add task
+                      <p className='ortapp'>{item.feedback}</p>
+                      <p className='ortap1' style={{ marginTop: "0px" }}>Оценка:{item.mark}</p>
+                      <div className="m_zadacha_icon">
+                        <div className="m_zadach_ktug_icon1" onClick={() => openModal2(item.id)}>
+                          <MdDeleteOutline />
                         </div>
-                        <input type="file" className='img_inp_zadac' />
-                      </div><br />
-                      <div className="m_input_bilmafim">
-                        <label htmlFor="">Name:</label>
-                        <input type="text" name="" id="" className='inp_name_zadac' />
-                        <label htmlFor="">Course theme:</label>
-                        <input type="text" name="" id="" className='inp_course_theme_zadac' />
-                        <label htmlFor="">Time create:</label>
-                        <input type="date" name="" id="" className='inp_bdate_zadac' />
-                        <label htmlFor="">Time update:</label>
-                        <input type="date" name="" id="" className='inp_tdate_zadac' />
-                        <label htmlFor="">Mark:</label>
-                        <input type="text" name="" id="" className='inp_mark_zadac' />
-                        <label htmlFor="">Feedback:</label>
-                        <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadac'></textarea> <br />
-                        <div className="a_button_for_end">
-                          <button onClick={() => { postforzadac() }}>Add</button>
+                        <div className="m_zadach_ktug_icon" onClick={() => zadacput(item.id)}>
+                          <FiEdit />
+                          {/* onClick={() => dashed(item.id)} */}
                         </div>
                       </div>
                     </div>
-                  </div>
+
+
+                    <div className="m_zadacha_tepadan">
+                      <div className="m_zadachi_dobavit">
+                        <div className="m_clouse_x" onClick={() => clouseModal()}>
+                          <GrFormClose /></div>
+                        <div className="m_input_file_dobavit">
+                          <div className="a_input_file12">
+                            <FiDownload /> Add task
+                          </div>
+                          <input type="file" className='img_inp_zadac' />
+                        </div><br />
+                        <div className="m_input_bilmafim">
+                          <label htmlFor="">Name:</label>
+                          <input type="text" name="" id="" className='inp_name_zadac' />
+                          <label htmlFor="">Course theme:</label>
+                          <input type="text" name="" id="" className='inp_course_theme_zadac' />
+                          <label htmlFor="">Time create:</label>
+                          <input type="date" name="" id="" className='inp_bdate_zadac' />
+                          <label htmlFor="">Time update:</label>
+                          <input type="date" name="" id="" className='inp_tdate_zadac' />
+                          <label htmlFor="">Mark:</label>
+                          <input type="text" name="" id="" className='inp_mark_zadac' />
+                          <label htmlFor="">Feedback:</label>
+                          <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadac'></textarea> <br />
+                          <div className="a_button_for_end">
+                            <button onClick={() => { postforzadac() }}>Add</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
 
 
 
 
 
-                </div>)
-            })}
+                  </div>)
+              })}</>)}
+
 
 
           </div>
@@ -1241,14 +1246,14 @@ export default function Mentor() {
 
 
             <div className="followcards1">
-              {follow.length !== 0 ? (
+              {follow.length === 0 ? (
                 <div className="delete_padding">
-                  <img src={Groupimg} alt="" />
+                  <img src="https://t4.ftcdn.net/jpg/02/97/35/45/360_F_297354558_XmlmcjcWCXkm2scy9qIkzVdh6qNHaVzy.jpg" alt="" />
                   <h4>No subscribers</h4>
                   {/* <div className="delete_btns">
                             <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>
                         </div> */}
-                </div>) : (<div className='follow_card_width'>
+                </div>) : (<div>
                   {follow.map((item, key) => {
                     if (following == item.minuser) {
                       return <div>
