@@ -215,14 +215,6 @@ height: auto;
         width: 100% !important;
         padding: 20px;
     }
-    .view_all_otdel_oyna{
-        height: auto;
-        min-height: 100px;
-        width: 100% !important;
-        display: none;
-        background-color: #fff;
-        padding: 20px;
-    }
     .AiOutlineComment{
         position: relative;
         left: 20% !important;
@@ -374,7 +366,7 @@ height: auto;
 }
 
 .comment_otevet_all{
-    min-height: 100px;
+    min-height: 350px;
     max-height: 800px;
     overflow: hidden;
     overflow-y: scroll;
