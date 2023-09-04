@@ -476,3 +476,34 @@
 .select_opt option{
     border-bottom: 1px solid #9DA7BB !important;
 }
+.rafiki_img_course{
+    text-align: center;
+}
+.rafiki_img_course img{
+    width: 450px;
+}
+.rafiki_img_course button{
+    width: 200px;
+    height: 50px;
+    margin-top: 10px;
+    color: #fff;
+    background: #44bef1;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: .3s ease;
+}
+.rafiki_img_course button:hover{
+    background: #45afdd;
+}
+.rafiki_img_course h3{
+    font-size: 40px;
+    color: #989898;
+}
+@media (max-width:705px) {
+    .rafiki_img_course img{
+        width: 250px !important;
+    }
+    .rafiki_img_course h3{
+        font-size: 18px !important;
+    }
+}

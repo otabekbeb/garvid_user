@@ -1727,3 +1727,22 @@ select {
         padding: 7px;
     }
 }
+
+.rafiki_delete_img{
+    text-align: center;
+}
+.rafiki_delete_img img{
+    width: 450px;
+}
+.rafiki_delete_img h3{
+    font-size: 40px;
+    color: #989898;
+}
+@media (max-width:705px) {
+    .rafiki_delete_img img{
+        width: 250px !important;
+    }
+    .rafiki_delete_img h3{
+        font-size: 18px !important;
+    }
+}
