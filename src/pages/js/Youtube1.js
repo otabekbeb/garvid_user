@@ -169,13 +169,7 @@ export default function Youtube1() {
 
 
   useEffect(() => {
-axios.get(`${url}/api/course_data_category`,{
-  headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-})
-.then(res=>{
-setState1(res.data.one)
-localStorage.setItem("page_video", JSON.stringify(res.data))
-})
+
 
     const { id } = JSON.parse(localStorage.getItem("page_video"));
     setLoader(1);
@@ -267,6 +261,7 @@ localStorage.setItem("page_video", JSON.stringify(res.data))
         });
   
         setMain(res.data.one ? res.data.one : []);
+        localStorage.setItem("page_video", JSON.stringify(res.data.one))
         setCategory(res.data.all);
   
         // const promises = res.data.all.flatMap((itam) =>
@@ -410,11 +405,11 @@ localStorage.setItem("page_video", JSON.stringify(res.data))
 
   //comment
   function messagePost(id) {
-    const OneuserId = localStorage.getItem("OneuserId");
+    var OneuserId = localStorage.getItem("OneuserId");
     var formdata = new FormData();
     formdata.append("text", document.querySelector("#chat_text").value);
     formdata.append("image", document.querySelector("#comment_file").files[0]);
-    formdata.append("user_id", OneuserId[0].id);
+    formdata.append("user_id", OneuserId);
     formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id);
     formdata.append("subcomment", subcoment);
     formdata.append("task_commnet_id", task_comnet_id);
@@ -498,29 +493,82 @@ localStorage.setItem("page_video", JSON.stringify(res.data))
       .catch((err) => {
         Swal.fire("Error");
       });
-
-    axios
-      .get(
-        `${url}/api/course_theme_comment/${
-          JSON.parse(localStorage.getItem("page_video")).id
-        }`,
-        {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        }
-      )
+      
+      const idget = JSON.parse(localStorage.getItem("page_video"));
+      axios
+      .get(`${url}/api/course_theme_comment`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      })
       .then((res) => {
-        setComment(res.data);
         console.log(res.data);
+        var mycoment = res.data.filter((item) => item.theme == idget.id);
+        console.log("asdsad");
+        axios
+          .get(`${url}/auth/allusers`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
+          .then((res3) => {
+            console.log("asdsa2");
+            for (let i = 0; i < mycoment.length; i++) {
+              mycoment[i].username = "Ananim User";
+              mycoment[i].image1 = "";
+              for (let j = 0; j < res3.data.length; j++) {
+                console.log(
+                  res3.data[j].id == mycoment[i].user_id,
+                  res3.data[j].id,
+                  mycoment[i].user_id
+                );
+
+                if (res3.data[j].id == mycoment[i].user_id) {
+                  mycoment[i].username = res3.data[j].username;
+                  mycoment[i].image1 = res3.data[j].image;
+                }
+              }
+            }
+
+            var onlycoment = mycoment.filter(
+              (item) => item.subcoment == 0 && item.task_commnet_id == 0
+            );
+            var all_task = mycoment.filter(
+              (item) => item.task_commnet_id != 0
+            );
+
+            axios
+              .get(`${url}/api/course_theme_task_student`, {
+                headers: {
+                  Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+              })
+              .then((res1) => {
+                for (let i = 0; i < all_task.length; i++) {
+                  all_task[i].mark = 0;
+                  for (let j = 0; j < res1.data.length; j++) {
+                    if (all_task[i].id == res1.data[j].feedback) {
+                      all_task[i].mark = res1.data[j].mark;
+                    }
+                  }
+                }
+                setComment(onlycoment);
+                setCommenttask(all_task);
+              })
+              .catch((err) => {
+                console.log("123");
+              });
+          });
       })
       .catch((err) => {});
   }
 
   function otvetPost(id) {
-    const OneuserId = localStorage.getItem("OneuserId");
+    var OneuserId = localStorage.getItem("OneuserId");
     var formdata = new FormData();
     formdata.append("text", document.querySelector("#chat_text1").value);
     formdata.append("image", document.querySelector("#comment_file1").files[0]);
-    formdata.append("user_id", OneuserId[0].id);
+    formdata.append("user_id", OneuserId);
     formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id);
     formdata.append("subcomment", subcoment);
     formdata.append("task_commnet_id", task_comnet_id);
@@ -1466,7 +1514,7 @@ localStorage.setItem("page_video", JSON.stringify(res.data))
                                 </button>
                                 <button
                                   onClick={(event) => {
-                                    otvetPost();
+                                    getSubcoment();
                                   }}
                                   className="m_otpravit"
                                 >
@@ -1820,7 +1868,7 @@ localStorage.setItem("page_video", JSON.stringify(res.data))
                                 <button
                                   className="m_otpravit"
                                   onClick={() => {
-                                    getSubcoment();
+                                    commentTaskPost();
                                     // imagePost();
                                   }}
                                 >
