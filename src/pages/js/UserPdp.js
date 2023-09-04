@@ -122,7 +122,7 @@ export default function Pdp() {
                   My Subscriptions
                 </h1>
                 {toggle === 5 ? (
-                  <div className="fil_text_blok_kurs_lenght">{localStorage.getItem("subscribersLength")} pieces</div>
+                  <div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_azo")} pieces</div>
                 ) : (
                   ""
                 )}
