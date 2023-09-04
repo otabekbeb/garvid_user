@@ -38,7 +38,7 @@ import { FaYoutube } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import { BsFillCloudArrowDownFill } from 'react-icons/bs'
 import sertifikat from '../img/Sertifikat.png'
-import Groupimg from "../img/Checklist-rafiki.png";
+import Groupimg from "../img/Teacher-cuate.png";
 import { BsSearch } from "react-icons/bs"
 import deleteImg from "../img/Group 2.png"
 import { MdDeleteOutline } from "react-icons/md"
@@ -208,7 +208,7 @@ export default function Mentor() {
   const [loading, setloading] = useState(false)
   const [stsertifikat, setStsertifikat] = useState([])
   const [natlifikation, setNatlifikation] = React.useState([]);
-
+  const [following, setFollowing] = useState(localStorage.getItem("OneuserId"))
   const [edication, setEdication] = useState([])
   // const [edicationId, setEdicationId] = useState()
   // const [tests, setTests] = useState([])
@@ -771,9 +771,9 @@ export default function Mentor() {
                   onClick={() => taxrirlashChadModal()}
                   className="profil_blok_ikki_icon_bir"
                 />
-                 <div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
-                {localStorage.getItem("soya")}
-              </div>
+                <div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
+                  {localStorage.getItem("soya")}
+                </div>
                 <BsThreeDots
                   onClick={() => taxrirlashModal()}
                   className="profil_blok_ikki_icon_ikki"
@@ -808,62 +808,62 @@ export default function Mentor() {
 
 
                 <div className="profil_blok_ikki_icon_taxriirlash_chat">
-                <div className="for_wiewall">
-                {natlifikation.length === 0 ? (
-                <div><p style={{textAlign:'center',marginTop:'35%',fontSize:'20px',opacity:'0.4'}}>Not written to you</p>
-                
-                </div>) : (<div>
-                  {natlifikation.map((item, key) => {
+                  <div className="for_wiewall">
+                    {natlifikation.length === 0 ? (
+                      <div><p style={{ textAlign: 'center', marginTop: '35%', fontSize: '20px', opacity: '0.4' }}>Not written to you</p>
 
-                    if (item.to_user_id == localStorage.getItem("OneuserId")) {
-                      localStorage.setItem("soya", natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length)
-                      return (
-                        <div>
-                          {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
-                          <div className="taxrirlash_chad">
-                            <div className="taxrirlash_chad_img_size">
-                              <img src={chadimg} alt="" />
+                      </div>) : (<div>
+                        {natlifikation.map((item, key) => {
 
-                            </div>
-                            <div className="taxrirlash_chad_size">
-                              <div className="taxrirlash_chad_vaqt">
-                                <h1>{item.title}</h1>
-                                <div className="taxrirlash_chad_vaqt_soat">
-                                  <TbPointFilled className="chad_set" />
-                                  <p >{item.time_create.slice(11, 16)}</p>
+                          if (item.to_user_id == localStorage.getItem("OneuserId")) {
+                            localStorage.setItem("soya", natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length)
+                            return (
+                              <div>
+                                {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
+                                <div className="taxrirlash_chad">
+                                  <div className="taxrirlash_chad_img_size">
+                                    <img src={chadimg} alt="" />
+
+                                  </div>
+                                  <div className="taxrirlash_chad_size">
+                                    <div className="taxrirlash_chad_vaqt">
+                                      <h1>{item.title}</h1>
+                                      <div className="taxrirlash_chad_vaqt_soat">
+                                        <TbPointFilled className="chad_set" />
+                                        <p >{item.time_create.slice(11, 16)}</p>
+                                      </div>
+
+
+                                    </div>
+                                    <div className="taxrirlash_chad_text">
+                                      <p>{item.description}</p>
+                                    </div>
+                                  </div>
                                 </div>
 
-
+                                <p >{item.time_create.slice(0, 10)}</p>
                               </div>
-                              <div className="taxrirlash_chad_text">
-                                <p>{item.description}</p>
-                              </div>
-                            </div>
-                          </div>
 
-                          <p >{item.time_create.slice(0, 10)}</p>
-                        </div>
+                            )
+                          }
+                        })}</div>
 
-                      )
-                    }
-                  })}</div>
+                    )}
+                  </div>
 
-                )}
-</div>
-
-                <a className="wiewu" style={natlifikation.length===0?{display:"none"}:{display:"flex"}} href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
-                  <p>
-                    view all
-                    <AiOutlineRight />
-                  </p>
-                </div></a>
-              </div>
+                  <a className="wiewu" style={natlifikation.length === 0 ? { display: "none" } : { display: "flex" }} href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
+                    <p>
+                      view all
+                      <AiOutlineRight />
+                    </p>
+                  </div></a>
+                </div>
 
               </div>
             </div>
           </div>
           <div className="profil_notifacation_size">
-    
+
             <div className="div-admin-sms">
               <h5>SMS</h5>
               <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
@@ -1240,52 +1240,46 @@ export default function Mentor() {
           <div className='followi1'>
 
 
-
             <div className="followcards1">
-              {follow.length === 0 ? (
+              {follow.length !== 0 ? (
                 <div className="delete_padding">
                   <img src={Groupimg} alt="" />
-                  <h4>Не подписался на вас</h4>
-                  <div className="delete_btns">
-                    <a href="/Ourcourse">
-                      {" "}
-                      {/* <button
-        style={{ background: "#44bef1  " }}
-        className="delete_btn_yes"
-      >
-        Купить курс
-      </button> */}
-                    </a>
-                  </div>
-                </div>) : (<div className='follow_card_width'> {follow.map((item, key) => {
-                  return <div>
-                    {users.map(item1 => {
-                      if (item1.id == item.topuser) {
-                        localStorage.setItem("for_azo", users.length)
-                        return (
+                  <h4>No subscribers</h4>
+                  {/* <div className="delete_btns">
+                            <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>
+                        </div> */}
+                </div>) : (<div className='follow_card_width'>
+                  {follow.map((item, key) => {
+                    if (following == item.minuser) {
+                      return <div>
+                        {users.map(item1 => {
 
-                          <a>
-                            <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
-                              <div className="our-team">
-                                <div className="picture">
-                                  {item1.image === null ? (<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjDQxJomerNcXJqX7IQeLmKbFUA7U5JLanCEW23p8p52ZWtq3gcOcQEB4v_HegvorxeZM&usqp=CAU" />) : (<img className="img-fluid" src={item1.image} />)}
+                          if (item1.id == item.topuser) {
+                            return (
+                              <a>
+                                <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
+                                  <div className="our-team">
+                                    <div className="picture">
+                                      {item1.image === null ? (<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjDQxJomerNcXJqX7IQeLmKbFUA7U5JLanCEW23p8p52ZWtq3gcOcQEB4v_HegvorxeZM&usqp=CAU" />) : (<img className="img-fluid" src={item1.image} />)}
+                                    </div>
+                                    <div className="team-content">
+                                      <h3 style={{ lineHeight: "70px" }} className="name">{item1.username}</h3>
+                                    </div>
+                                    <center><ul className="social">
+                                      <button style={{ background: "gray" }} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
+                                    </ul></center>
+                                  </div>
                                 </div>
-                                <div className="team-content">
-                                  <h3 style={{ lineHeight: "70px" }} className="name">{item1.username}</h3>
-                                </div>
-                                <center><ul className="social">
-                                  <button style={{ background: "gray" }} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
-                                </ul></center>
-                              </div>
-                            </div>
-                          </a>
+                              </a>
 
 
-                        )
-                      }
-                    })}
-                  </div>
-                })}</div>)}
+                            )
+                          }
+                        })}
+                      </div>
+                    }
+                  })}
+                </div>)}
 
 
 
