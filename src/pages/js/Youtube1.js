@@ -1034,7 +1034,6 @@ export default function Youtube1() {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
-        document.querySelector(".m-comment-mark").style = "display:none";
         document.querySelector(".mark-uchun-koish-joy").style = "display:none";
         axios
           .get(`${url}/api/course_theme_task_student`, {
@@ -1696,7 +1695,23 @@ export default function Youtube1() {
                                               <div className="div_class_tugadi">
                                                 <div className="task-uchun-joy-and-mark">
                                                   <h5>{item.username}</h5>
-                                                  {item.mark}
+                                                  {item.mark === 0 ? "" : (<>
+                                                  {item.mark === 2 ? (<div className="mark-two-bosa">
+                                                    2
+                                                  </div>):(<>
+                                                  {item.mark === 3 ? (<div className="mark-three-bosa">
+                                                    3
+                                                  </div>): (<>
+                                                  {item.mark === 4 ? (<div className="mark-four-bosa">
+                                                    4
+                                                  </div>): (<>
+                                                  {item.mark === 5 ? (<div className="mark-five-bosa">
+                                                    5
+                                                  </div>):""}
+                                                  </>)}
+                                                  </>)}
+                                                  </>)}
+                                                  </>)}
                                                 </div>
 
                                                 <p className="p-create-time-uchun">
@@ -1734,24 +1749,22 @@ export default function Youtube1() {
                                                           flexWrap: "wrap",
                                                         }}
                                                       >
-                                                        {localStorage.getItem(
-                                                          "position"
-                                                        ) === 2
-                                                          ? ""
+                                                        {localStorage.getItem("position") === 2 ? (
+                                                          <></>
+                                                          )
                                                           : ""}
-
-                                                        <p
-                                                          className="m-comment-mark"
-                                                          onClick={() => {
-                                                            markOpen();
-                                                            setPage(1);
-                                                          }}
-                                                        >
-                                                          <TfiMarkerAlt />
-                                                          <span>
-                                                            поставить оценку
-                                                          </span>
-                                                        </p>
+                                                             <p
+                                                             className="m-comment-mark"
+                                                             onClick={() => {
+                                                               markOpen();
+                                                               setPage(1);
+                                                             }}
+                                                           >
+                                                             <TfiMarkerAlt />
+                                                             <span>
+                                                               поставить оценку
+                                                             </span>
+                                                           </p>
                                                         {item5.id ==
                                                         item.user_id ? (
                                                           <p
