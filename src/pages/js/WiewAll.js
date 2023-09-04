@@ -14,6 +14,7 @@ export default function WiewAll() {
     const [oneuser, setOneuser] = useState([])
     const [page, setPage] = useState(0)
     const [read, setRead] = useState()
+    const [pageId, setPageId] = useState()
 
     useEffect(() => {
         axios.get(`${url}/api/notification`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
@@ -43,6 +44,20 @@ export default function WiewAll() {
         formdata.append("user_id", oneuser.id)
         formdata.append("to_user_id", id)
         axios.post(`${url}/api/notification`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+            axios.get(`${url}/api/notification`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
+                axios.get(`${url}/auth/allusers`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res1=>{
+                    for (let i = 0; i < res.data.length; i++) {
+                    for (let j = 0; j < res1.data.length; j++) {
+                        if(res.data[i].user_id==res1.data[j].id){
+                          res.data[i].username=res1.data[j].username
+                          res.data[i].last_name=res1.data[j].last_name
+                        }
+                    }
+                        
+                    }
+                    setWiew(res.data)
+                })
+            })
         })
             .catch(err => {
                 alert("xato")
@@ -54,7 +69,8 @@ export default function WiewAll() {
     function inputClose(key) {
         document.querySelectorAll("#inputNotifaction")[key].style.display = "none"
     }
-    function Page(id) {
+    function Page(id,key) {
+        setPageId(key)
         setRead(id)
         setPage(1)
     }
@@ -77,7 +93,25 @@ export default function WiewAll() {
 
                                     <p className='qongiro_title'>You don't have any notifications yet!</p> </div>
                             ) : (<div>    {Wiew.map((item, key) => {
-                                if (item.to_user_id == read) {
+                                if (item.id == pageId) {
+                                    return (
+                                        <div>
+                                            <div style={{ cursor: "pointer" }} className="sms">
+                                                {/*<div className="qizil"></div>
+                                                <p className='data'>{item.username}</p>
+                                                <p className='data'>{item.last_name}</p>*/}
+                                                <div className="data_title">
+                                                    <p className='unred'>{item.title}</p>
+                                                    <p className='data'>{item.time_create.slice(11, 16)}</p>
+                                                </div>
+                                                <div className="p_lorem_sms">
+                                                    <p className='lorem_sms'>{item.description} </p>
+                                                    <input style={{ display: "none" }} type="text" id='atvet' />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                }else if(item.to_user_id==read){
                                     return (
                                         <div>
                                             <div style={{ cursor: "pointer" }} className="sms">
@@ -107,7 +141,7 @@ export default function WiewAll() {
                                 if (item.to_user_id == localStorage.getItem("OneuserId")) {
                                     return (
                                         <div>
-                                            <div onClick={() => Page(item.user_id)} style={{ cursor: "pointer" }} className="sms">
+                                            <div onClick={() => Page(item.user_id,item.id)} style={{ cursor: "pointer" }} className="sms">
                                                 <div className="qizil"></div>
                                                 <div className="data_title">
                                                     <p className='unred'>{item.username}</p>

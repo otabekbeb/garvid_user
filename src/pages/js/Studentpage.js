@@ -289,6 +289,8 @@ export default function Mentor() {
           for (let j = 0; j < res1.data.length; j++) {
             if (res.data[i].user_id == res1.data[j].id) {
               res.data[i].image = res1.data[j].image
+              res.data[i].username = res1.data[j].username
+              res.data[i].last_name = res1.data[j].last_name
             }
           }
         }
@@ -823,25 +825,25 @@ export default function Mentor() {
                               <div>
                                 {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
                                 <div className="taxrirlash_chad">
-                                  <div className="taxrirlash_chad_img_size">
-                                    <img src={chadimg} alt="" />
+                                <div className="taxrirlash_chad_img_size">
+                                  <img src={item.image} alt="" />
+
+                                </div>
+                                <div className="taxrirlash_chad_size">
+                                  <div className="taxrirlash_chad_vaqt">
+                                    <h1>{item.username}</h1>
+                                    <div className="taxrirlash_chad_vaqt_soat">
+                                      <TbPointFilled className="chad_set" />
+                                      <p >{item.time_create.slice(11, 16)}</p>
+                                    </div>
+
 
                                   </div>
-                                  <div className="taxrirlash_chad_size">
-                                    <div className="taxrirlash_chad_vaqt">
-                                      <h1>{item.title}</h1>
-                                      <div className="taxrirlash_chad_vaqt_soat">
-                                        <TbPointFilled className="chad_set" />
-                                        <p >{item.time_create.slice(11, 16)}</p>
-                                      </div>
-
-
-                                    </div>
-                                    <div className="taxrirlash_chad_text">
-                                      <p>{item.description}</p>
-                                    </div>
+                                  <div className="taxrirlash_chad_text">
+                                    <p>{item.last_name}</p>
                                   </div>
                                 </div>
+                              </div>
 
                                 <p >{item.time_create.slice(0, 10)}</p>
                               </div>
@@ -1029,7 +1031,6 @@ export default function Mentor() {
               </div>
             </div>
           </div>
-
           <div className="kurs_cards">
             {kursdata.length === 0 ? (
               <div className="delete_padding1">
