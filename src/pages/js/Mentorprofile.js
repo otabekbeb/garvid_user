@@ -218,7 +218,7 @@ export default function Profil() {
             <div onMouseLeave={() => userimgClose()} className="user_img_size">
               {data.map((item) => {
                 return (
-                  <>
+                  <div>
                     {item.image === null ? (
                       <img
                         onMouseEnter={() => userimgModal()}
@@ -238,7 +238,7 @@ export default function Profil() {
                         alt=""
                       />
                     )}
-                  </>
+                  </div>
                 );
               })}
               {data.map((item) => {
@@ -281,7 +281,7 @@ export default function Profil() {
               <div className="profil_blok_ikki_sum">
                 {data.map((item) => {
                   return (
-                    <>
+                    <div>
                       {item.balance === null ? (
                         <h1>0</h1>
                       ) : (
@@ -296,7 +296,7 @@ export default function Profil() {
                           <p>$</p>
                         </div>
                       )}
-                    </>
+                    </div>
                   );
                 })}
               </div>
@@ -350,7 +350,7 @@ export default function Profil() {
                 {natlifikation.map(item => {
                   if (item.to_user_id == localStorage.getItem("OneuserId")) {
                   return (
-                    <>
+                    <div>
                        {/* <p>{Date()}</p> */}
                       <div className="taxrirlash_chad"> 
                         <div className="taxrirlash_chad_img_size">
@@ -371,7 +371,7 @@ export default function Profil() {
                       </div>
 
                       <p>{item.time_create.slice(0,10)}</p>
-                    </>
+                    </div>
 
                   )}
                 })}

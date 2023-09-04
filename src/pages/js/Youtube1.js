@@ -1231,7 +1231,7 @@ export default function Youtube1() {
       <p>Тут ещё нут комметнарий</p>
     </div>
   ) : (
-    <>
+    <div>
       {comment
         .filter(
           (item) =>
@@ -1288,17 +1288,17 @@ export default function Youtube1() {
                     {item.count === 0 ? (
                       "Ответить"
                     ) : (
-                      <>
+                      <div>
                         {item.count}
                         <span> Ответов</span>
-                      </>
+                      </div>
                     )}
                   </span>
                 </p>
 
                 {oneuser.map((item5) => {
                   return (
-                    <>
+                    <div>
                       {item5.id == item.user_id ? (
                         <p
                           className="m_comment_delete"
@@ -1312,14 +1312,14 @@ export default function Youtube1() {
                       ) : (
                         ""
                       )}
-                    </>
+                    </div>
                   );
                 })}
               </div>
             </div>
           </div>
         ))}
-    </>
+    </div>
   )}
 </div>
 
@@ -1371,11 +1371,11 @@ export default function Youtube1() {
                                     <p>Тут ещё нут ответов</p>
                                   </div>
                                 ) : (
-                                  <>
+                                  <div>
                                     {comment.map((item) => {
                                       if (item.subcomment == subcoment) {
                                         return (
-                                          <>
+                                          <div>
                                             <div className="df_div_comment_page">
                                               <div className="m_comment">
                                                 <div className="for-flex-time-name-image">
@@ -1433,7 +1433,7 @@ export default function Youtube1() {
                                                   <div className="m_comment_otvet">
                                                     {oneuser.map((item5) => {
                                                       return (
-                                                        <>
+                                                        <div>
                                                           {item5.id ==
                                                           item.user_id ? (
                                                             <p
@@ -1450,18 +1450,18 @@ export default function Youtube1() {
                                                           ) : (
                                                             ""
                                                           )}
-                                                        </>
+                                                        </div>
                                                       );
                                                     })}
                                                   </div>
                                                 </div>
                                               </div>
                                             </div>
-                                          </>
+                                          </div>
                                         );
                                       }
                                     })}
-                                  </>
+                                  </div>
                                 )}
                               </div>
                               <div className="m_comment_yozish">
@@ -1515,11 +1515,11 @@ export default function Youtube1() {
                                   <p>Тут ещё нут комметнарий</p>
                                 </div>
                               ) : (
-                                <>
+                                <div>
                                   {comment.map((item) => {
                                     if (item.task_commnet_id != 1) {
                                       return (
-                                        <>
+                                        <div>
                                           <div className="flex_view_all">
                                             <div className="m_comment">
                                               <div className="for-flex-time-name-image">
@@ -1592,16 +1592,16 @@ export default function Youtube1() {
                                                     {item.count === 0 ? (
                                                       "Ответить"
                                                     ) : (
-                                                      <>
+                                                      <div>
                                                         {item.count}{" "}
                                                         <span>Ответов</span>
-                                                      </>
+                                                      </div>
                                                     )}
                                                   </p>
 
                                                   {oneuser.map((item5) => {
                                                     return (
-                                                      <>
+                                                      <div>
                                                         {item5.id ==
                                                         item.user_id ? (
                                                           <p
@@ -1618,18 +1618,18 @@ export default function Youtube1() {
                                                         ) : (
                                                           ""
                                                         )}
-                                                      </>
+                                                      </div>
                                                     );
                                                   })}
                                                 </div>
                                               </div>
                                             </div>
                                           </div>
-                                        </>
+                                        </div>
                                       );
                                     }
                                   })}
-                                </>
+                                </div>
                               )}
                             </div>
                           </div>
@@ -1645,13 +1645,13 @@ export default function Youtube1() {
                                     .id
                                 ) {
                                   return (
-                                    <>
+                                    <div>
                                       <div className="zanacha_vaz">Задача*</div>
                                       <div className="task_div_big">
                                         <img src={item.image} alt="" />
                                         <p>{item.content}</p>
                                       </div>
-                                    </>
+                                    </div>
                                   );
                                 } else {
                                   <div>There are no tasks here</div>;
@@ -1665,11 +1665,11 @@ export default function Youtube1() {
                                     <p>Тут ещё нут ответов на задачу </p>
                                   </div>
                                 ) : (
-                                  <>
+                                  <div>
                                     {commenttask.map((item, key) => {
                                       if (item.task_commnet_id == 1) {
                                         return (
-                                          <>
+                                          <div>
                                             <div className="df_div_comment_page">
                                               <div className="div_img_class_over">
                                                 <img
@@ -1809,31 +1809,31 @@ export default function Youtube1() {
                                                       2
                                                     </div>
                                                   ) : (
-                                                    <>
+                                                    <div>
                                                       {page === 3 ? (
                                                         <div className="mark-three">
                                                           3
                                                         </div>
                                                       ) : (
-                                                        <>
+                                                        <div>
                                                           {page === 4 ? (
                                                             <div className="mark-four">
                                                               4
                                                             </div>
                                                           ) : (
-                                                            <>
+                                                            <div>
                                                               {page === 5 ? (
                                                                 <div className="mark-five">
                                                                   5
                                                                 </div>
                                                               ) : (
-                                                                <></>
+                                                                <div></div>
                                                               )}
-                                                            </>
+                                                            </div>
                                                           )}
-                                                        </>
+                                                        </div>
                                                       )}
-                                                    </>
+                                                    </div>
                                                   )}
                                                 </div>
                                                 <div className="mark-otmen-potver-uchun">
@@ -1891,31 +1891,31 @@ export default function Youtube1() {
                                                       2
                                                     </div>
                                                   ) : (
-                                                    <>
+                                                    <div>
                                                       {page1 === 3 ? (
                                                         <div className="mark-three">
                                                           3
                                                         </div>
                                                       ) : (
-                                                        <>
+                                                        <div>
                                                           {page1 === 4 ? (
                                                             <div className="mark-four">
                                                               4
                                                             </div>
                                                           ) : (
-                                                            <>
+                                                            <div>
                                                               {page1 === 5 ? (
                                                                 <div className="mark-five">
                                                                   5
                                                                 </div>
                                                               ) : (
-                                                                <></>
+                                                                <div></div>
                                                               )}
-                                                            </>
+                                                            </div>
                                                           )}
-                                                        </>
+                                                        </div>
                                                       )}
-                                                    </>
+                                                    </div>
                                                   )}
                                                 </div>
                                                 <div className="mark-otmen-potver-uchun">
@@ -1939,11 +1939,11 @@ export default function Youtube1() {
                                                 </div>
                                               </div>
                                             </div>
-                                          </>
+                                          </div>
                                         );
                                       }
                                     })}
-                                  </>
+                                  </div>
                                 )}
                               </div>
 
@@ -2026,7 +2026,7 @@ export default function Youtube1() {
                         id1={localStorage.getItem("abbas")}
                       />
                     ) : (
-                      <></>
+                      <div></div>
                     )}
                     <br />
                     <br />
@@ -2039,12 +2039,12 @@ export default function Youtube1() {
                     id1={localStorage.getItem("abbas")}
                   />
                 ) : (
-                  <></>
+                  <div></div>
                 )}
                 <div className="youtube_kichkina">
                   {category.map((item, key) => {
                     return (
-                      <>
+                      <div>
                         <Accordion className="for-scroll-accordion">
                           <Accordion.Item eventKey={0 + key}>
                             <Accordion.Header>{item.name}</Accordion.Header>
@@ -2091,7 +2091,7 @@ export default function Youtube1() {
                             </div>
                           </Accordion.Item>
                         </Accordion>
-                      </>
+                      </div>
                     );
                   })}
                 </div>

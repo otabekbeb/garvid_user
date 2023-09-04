@@ -22,7 +22,7 @@ export default function Testloader() {
 <div>
  
     <div>
-      {loading?((<div className='loader-suka'><span class="loader1"></span></div>)):(<div>
+      {loading?((<div className='loader-suka'><span className="loader1"></span></div>)):(<div>
 
 <div className="butonn-la">
 <div className="asaloriza">

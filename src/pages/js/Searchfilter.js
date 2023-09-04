@@ -124,7 +124,7 @@ export default function Searchfilter() {
   };
 
   return (
-    <>
+    <div>
       {loader === 0 ? (
         <div>
           <div>
@@ -195,10 +195,10 @@ export default function Searchfilter() {
                   </div>
                 </div>
               ) : (
-                <>
+                <div>
                   {kursdata.map((item) => {
                     return (
-                      <>
+                      <div>
                         <div
                           onClick={() => {
                             window.location = "/video";
@@ -223,7 +223,7 @@ export default function Searchfilter() {
                           />
                           <div className="kurs_paddaing_auto">
                             <h4>{item.name}</h4>
-                            <>
+                            <div>
                               {item.star == 1 ? (
                                 <div style={{ display: "flex", gap: "5px" }}>
                                   {" "}
@@ -267,7 +267,7 @@ export default function Searchfilter() {
                                   </p>
                                 </div>
                               ) : (
-                                <>
+                                <div>
                                   {item.star == 2 ? (
                                     <div
                                       style={{ display: "flex", gap: "5px" }}
@@ -312,7 +312,7 @@ export default function Searchfilter() {
                                       </p>
                                     </div>
                                   ) : (
-                                    <>
+                                    <div>
                                       {item.star === 3 ? (
                                         <div
                                           style={{
@@ -360,7 +360,7 @@ export default function Searchfilter() {
                                           </p>
                                         </div>
                                       ) : (
-                                        <>
+                                        <div>
                                           {item.star == 4 ? (
                                             <div
                                               style={{
@@ -408,7 +408,7 @@ export default function Searchfilter() {
                                               </p>
                                             </div>
                                           ) : (
-                                            <>
+                                            <div>
                                               {item.star == 5 ? (
                                                 <div
                                                   style={{
@@ -468,7 +468,7 @@ export default function Searchfilter() {
                                                   </p>
                                                 </div>
                                               ) : (
-                                                <>
+                                                <div>
                                                   {item.star === null ? (
                                                     <div
                                                       style={{
@@ -532,17 +532,17 @@ export default function Searchfilter() {
                                                   ) : (
                                                     ""
                                                   )}{" "}
-                                                </>
+                                                </div>
                                               )}
-                                            </>
+                                            </div>
                                           )}
-                                        </>
+                                        </div>
                                       )}
-                                    </>
+                                    </div>
                                   )}
-                                </>
+                                </div>
                               )}
-                            </>
+                            </div>
 
                             <div className="hajm">
                               <h5>
@@ -564,10 +564,10 @@ export default function Searchfilter() {
                             />
                           </button>
                         </div>
-                      </>
+                      </div>
                     );
                   })}
-                </>
+                </div>
               )}
             </div>
 
@@ -577,6 +577,6 @@ export default function Searchfilter() {
       ) : (
         <Loader />
       )}
-    </>
+    </div>
   );
 }

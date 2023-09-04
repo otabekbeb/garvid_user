@@ -91,7 +91,7 @@ class App extends Component {
 		const { questionBank, currentQuestion, selectedOption, score, quizEnd } =
 			this.state;
 		return (
-<>
+<div>
 
 			<div className="bir_uchun"><div  className="bir_u">
 				<img src="https://cdn.goconqr.com/assets/quiz/splash_clock-734cd8dde9a207e2c74c07bc3c40edd41e7a3891c095949da9ff3e266e7e6483.png" alt="" />
@@ -116,7 +116,7 @@ class App extends Component {
 					/>
 				)}
 			</div></div>
-			</>
+			</div>
 		);
 	}
 }
