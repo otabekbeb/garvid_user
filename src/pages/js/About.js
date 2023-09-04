@@ -15,16 +15,30 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Pagination } from 'swiper/modules';
+import axios from 'axios'
+import url from './Host'
 
 
 
 
 export default function About() {
+  const [data, setData] = useState([]);
   const [state1, setState1] = React.useState();
   useEffect(() => {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );},[]);
+
+
+
+    useEffect(()=>{
+      axios.get(`${url}/auth/teachers/`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+        setData(res.data)
+        console.log(res.data);
+        }).catch(err => {
+         
+        })
+    })
   return (
 
     
@@ -124,9 +138,10 @@ export default function About() {
         }}
         modules={[Pagination]}
         className="mySwiper">
-
-        <SwiperSlide className='sli'>
-        <div className="sli-kurg-rasm">
+{data.map((item)=>{
+  return(
+      <SwiperSlide className='sli'>
+        {/* <div className="sli-kurg-rasm">
 
 <div className="sli-img"><img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-about-img01.png" alt="" /></div>
 
@@ -136,9 +151,23 @@ export default function About() {
 
 <strong>Adam Watson</strong>
 <h4>(CEO and Founder)</h4>
+</div> */}
+<div className="sli-kurg-rasm">
+
+<div className="sli-img"><img src={item.image}  alt="" /></div>
+
+</div>
+<div className="sli-text">
+<p>{item.description}</p>
+
+<strong>{item.username}</strong>
 </div>
         </SwiperSlide>
-        <SwiperSlide className='sli'>
+  )
+  
+})}
+      
+        {/* <SwiperSlide className='sli'>
           <div className="sli-kurg-rasm">
 
 <div className="sli-img"><img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-about-img02.png" alt="" /></div>
@@ -149,8 +178,8 @@ export default function About() {
 
 <strong>Louise Smith</strong>
 <h4>(CEO and Founder)</h4>
-</div></SwiperSlide>
-        <SwiperSlide className='sli'>
+</div></SwiperSlide> */}
+        {/* <SwiperSlide className='sli'>
         <div className="sli-kurg-rasm">
 
 <div className="sli-img"><img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-about-img03.png" alt="" /></div>
@@ -162,7 +191,7 @@ export default function About() {
 <strong>Jack Walsh</strong>
 <h4>(CEO and Founder)</h4>
 </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
 
       </Swiper>
 
@@ -260,21 +289,36 @@ export default function About() {
         }}
         modules={[Pagination]}
         className="mySwiper">
-
-        <SwiperSlide className='sli'>
-        <div className="sli-kurg-rasm">
+{data.map((item)=>{
+  return(
+      <SwiperSlide className='sli'>
+        {/* <div className="sli-kurg-rasm">
 
 <div className="sli-img"><img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-about-img01.png" alt="" /></div>
 
 </div>
 <div className="sli-text">
-<p>Wow, I'm so happy with you favor. You managed to overcome <br className='sdfsdf' />my expectations! You guys are very efficient.</p>
+<p>Wow I'm so happy with you <br />service. You managed to overcome<br /> my expectations! You guys are very efficient.</p>
 
 <strong>Adam Watson</strong>
 <h4>(CEO and Founder)</h4>
+</div> */}
+<div className="sli-kurg-rasm">
+
+<div className="sli-img"><img src={item.image}  alt="" /></div>
+
+</div>
+<div className="sli-text">
+<p>{item.description}</p>
+
+<strong>{item.username}</strong>
 </div>
         </SwiperSlide>
-        <SwiperSlide className='sli'>
+  )
+  
+})}
+      
+        {/* <SwiperSlide className='sli'>
           <div className="sli-kurg-rasm">
 
 <div className="sli-img"><img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-about-img02.png" alt="" /></div>
@@ -285,8 +329,8 @@ export default function About() {
 
 <strong>Louise Smith</strong>
 <h4>(CEO and Founder)</h4>
-</div></SwiperSlide>
-        <SwiperSlide className='sli'>
+</div></SwiperSlide> */}
+        {/* <SwiperSlide className='sli'>
         <div className="sli-kurg-rasm">
 
 <div className="sli-img"><img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-about-img03.png" alt="" /></div>
@@ -298,7 +342,7 @@ export default function About() {
 <strong>Jack Walsh</strong>
 <h4>(CEO and Founder)</h4>
 </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
 
       </Swiper>
      </div>

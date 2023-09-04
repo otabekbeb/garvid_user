@@ -17,6 +17,10 @@ export default function Home() {
     const [state1, setState1] = React.useState();
     const [univercard, setUnivercard] = useState([])
     const [chec, setChec] = useState([])
+
+    const [data, setData] = useState([]);
+
+
     const dataPost = () => {
         var formdata = {
             fullname: document.querySelectorAll('#contact_inp')[0].value,
@@ -49,7 +53,14 @@ export default function Home() {
         }).catch(err => { })
     })
 
-
+    useEffect(()=>{
+        axios.get(`${url}/auth/teachers/`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+          setData(res.data)
+          console.log(res.data);
+          }).catch(err => {
+           
+          })
+      })
     return (
         <div>
 
@@ -259,20 +270,25 @@ export default function Home() {
                         <center><div className="blue1"></div></center>
 
                         <center><div className="testimonial_cards">
-                            <testimonial_card className='sli1'>
-                                <div className="sli-kurg-rasm">
+                            {data.map((item)=>{
+                                return(
+                                    <testimonial_card className='sli1'>
+                                    <div className="sli-kurg-rasm">
+    
+                                        <div className="sli-img"><img src={item.image}  alt="" /></div>
+    
+                                    </div>
+                                    <div className="sli-text">
+                                        <p>{item.description}</p>
+    
+                                        <strong>{item.username}</strong>
+                                        
+                                    </div>
+                                </testimonial_card>
+                                )
+                            })}
 
-                                    <div className="sli-img"><img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-about-img01.png" alt="" /></div>
-
-                                </div>
-                                <div className="sli-text">
-                                    <p>Hi, guys! You've solved my<br />  problem in no time! Your <br /> efficient services and customer care are second to none!</p>
-
-                                    <strong>Adam Watson</strong>
-                                    <h4>(CEO & Founder)</h4>
-                                </div>
-                            </testimonial_card>
-                            <testimonial_card className='sli1'>
+                            {/* <testimonial_card className='sli1'>
                                 <div className="sli-kurg-rasm">
 
                                     <div className="sli-img"><img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-about-img02.png" alt="" /></div>
@@ -283,8 +299,8 @@ export default function Home() {
 
                                     <strong>Louise Smith</strong>
                                     <h4>(CEO & Founder)</h4>
-                                </div></testimonial_card>
-                            <testimonial_card id="sli11" className='sli1'>
+                                </div></testimonial_card> */}
+                            {/* <testimonial_card id="sli11" className='sli1'>
                                 <div className="sli-kurg-rasm">
 
                                     <div className="sli-img"><img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-about-img03.png" alt="" /></div>
@@ -296,7 +312,7 @@ export default function Home() {
                                     <strong>Jack Walsh</strong>
                                     <h4>(CEO & Founder)</h4>
                                 </div>
-                            </testimonial_card>
+                            </testimonial_card> */}
 
 
                         </div>
