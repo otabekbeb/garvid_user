@@ -649,7 +649,7 @@ export default function Edication() {
                   <div className="delete_padding">
                     <img style={{ width: "60%", height: '70%' }} src={Education} alt="" />
                     <h3 style={{ textAlign: 'center' }}>No education</h3>
-                  </div>) : (<div>
+                  </div>) : (<div className='edu_cards_inside'>
                     {edication.map(item => {
                       return (
                         <li>
