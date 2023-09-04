@@ -78,6 +78,7 @@ export default function Searchfilter() {
               }
             }
             setKursdata(res.data);
+            localStorage.setItem("mycourseUser", res.data.length)
           });
       });
     setLoader(0);
@@ -197,7 +198,7 @@ export default function Searchfilter() {
               ) : (
                 <div className="cursu" style={{display:"flex"}}>
                   {kursdata.map((item) => {
-                    localStorage.setItem("mycourseUser", kursdata.length)
+                    
                     return (
                       <div>
                         <div

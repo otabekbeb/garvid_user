@@ -113,7 +113,7 @@ export default function Ourcourse() {
 
 
       <header className="curs">
-        <nav className="nav_ul">
+      {/*  <nav className="nav_ul">
           <ul className="bottom_ul">
             <li style={{ cursor: "pointer" }} className="bottom_li">Everything</li>
             {kurscategory.map(item => {
@@ -124,7 +124,7 @@ export default function Ourcourse() {
 
 
           </ul>
-        </nav>
+        </nav>*/}
         <div className="bottom_line"></div>
         <div className="curs_cards">
           <button className="curs_filter" onClick={() => filter()}>
