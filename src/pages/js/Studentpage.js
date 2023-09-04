@@ -45,6 +45,7 @@ import { MdDeleteOutline } from "react-icons/md"
 import Ourcourse from './Ourcourse'
 import Team from '../img/Task.png'
 import '../css/workforteach.css'
+import Following_img from '../img/Following.png'
 // import { BsFillCloudArrowDownFill } from 'react-icons/bs'
 // import { FiEdit } from "react-icons/fi"
 // import sertifikat from '../img/Sertifikat.png'
@@ -1253,9 +1254,9 @@ export default function Mentor() {
 
 
             <div className="followcards1">
-              {follow.length === 0 ? (
-                <div className="delete_padding">
-                  <img src="https://t4.ftcdn.net/jpg/02/97/35/45/360_F_297354558_XmlmcjcWCXkm2scy9qIkzVdh6qNHaVzy.jpg" alt="" />
+              {follow.length !== 0 ? (
+                <div className="delete_padding1">
+                  <img style={{width:'400px'}} src={Following_img} alt="" />
                   <h4 style={{ fontSize: '30px', opacity: '0.3' }}>No subscribers</h4>
                   {/* <div className="delete_btns">
                             <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>
