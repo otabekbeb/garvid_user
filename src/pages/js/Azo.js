@@ -46,7 +46,7 @@ export default function Azo() {
 
 
             <div className="followcards1">
-                {follow.length !== 0 ? (
+                {follow.length === 0 ? (
               <div className="delete_padding1">
               <img style={{width:'400px'}} src={Groupimg} alt="" />
               <h4 style={{fontSize:'40px',opacity:'0.3'}}>No subscribers</h4>
