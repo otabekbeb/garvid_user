@@ -3,7 +3,7 @@ import "../css/azo.css"
 import azoimg from "../img/Ellipse.jpg"
 import axios from 'axios'
 import url from './Host'
-import Following_img from '../img/Following.png'
+
 import Groupimg from "../img/Subscriber-pana.png";
 import { AiOutlineArrowDown } from 'react-icons/ai'
 import '../css/Nosignal.css'
@@ -16,9 +16,9 @@ export default function Azo() {
     useEffect(() => {
         axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             setFollow(res.data)
-        }).catch(err => { })
+        }).catch(err=>{})
     }, [])
-
+    
     function obuna() {
         document.querySelector('#azo_bolgan_katta_div_text_block_button').classList.toggle("obuna1")
     }
@@ -30,7 +30,7 @@ export default function Azo() {
     useEffect(() => {
         axios.get(`${url}/auth/teachers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             setUsers(res.data)
-        }).catch(err => { })
+        }).catch(err=>{})
     }, []);
     function folowcolor1(key) {
         axios.delete(`${url}/api/follow/${key}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
@@ -47,41 +47,49 @@ export default function Azo() {
 
             <div className="followcards1">
                 {follow.length !== 0 ? (
-                    <div className="delete_padding1">
-                        <img style={{ width: '400px' }} src={Following_img} alt="" />
-                        <h4 style={{ fontSize: '30px', opacity: '0.3' }}>No subscribers</h4>
-                        {/* <div className="delete_btns">
-                        <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>
-                    </div> */}
-                    </div>) : (<div style={{ display: "flex" }}> {follow.map((item, key) => {
-                        return <div>
-                            {users.map(item1 => {
-                                if (item1.id == item.topuser) {
-                                    localStorage.setItem("for_azo", follow.filter(follow1 => follow1.topuser == item1.id).length)
-                                    return (
-                                        <div style={{ width: "300px" }}>
-                                            <a>
-                                                <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
-                                                    <div className="our-team">
-                                                        <div className="picture">
-                                                            {item1.image === null ? (<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjDQxJomerNcXJqX7IQeLmKbFUA7U5JLanCEW23p8p52ZWtq3gcOcQEB4v_HegvorxeZM&usqp=CAU" />) : (<img className="img-fluid" src={item1.image} />)}
-                                                        </div>
-                                                        <div className="team-content">
-                                                            <h3 style={{ lineHeight: "70px" }} className="name">{item1.username}</h3>
-                                                        </div>
-                                                        <center><ul className="social">
-                                                            <button style={{ background: "gray" }} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
-                                                        </ul></center>
-                                                    </div>
+              <div className="delete_padding1">
+              <img style={{width:'400px'}} src={Groupimg} alt="" />
+              <h4 style={{fontSize:'40px',opacity:'0.3'}}>No subscribers</h4>
+              <div className="delete_btns">
+                <a href="/Ourcourse">
+                  {" "}
+                  {/* <button
+                    style={{ background: "#44bef1  " }}
+                    className="delete_btn_yes"
+                  >
+                    Купить курс
+                  </button> */}
+                </a>
+              </div>
+            </div>) : (<div style={{display:"flex"}}> {follow.map((item, key) => {
+                return <div>
+                        {users.map(item1 => {
+                            if (item1.id == item.topuser) {
+                                localStorage.setItem("for_azo", follow.filter(follow1=>follow1.topuser==item1.id).length)
+                                return (
+                                    <div style={{width:"300px"}}>
+                                    <a>
+                                        <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
+                                            <div className="our-team">
+                                                <div className="picture">
+                                                 {item1.image === null?(<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjDQxJomerNcXJqX7IQeLmKbFUA7U5JLanCEW23p8p52ZWtq3gcOcQEB4v_HegvorxeZM&usqp=CAU"/>):(  <img className="img-fluid" src={item1.image} />)} 
                                                 </div>
-                                            </a>
-
+                                                <div className="team-content">
+                                                    <h3 style={{ lineHeight: "70px" }} className="name">{item1.username}</h3>
+                                                </div>
+                                                <center><ul className="social">
+                                                    <button style={{ background: "gray" }} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
+                                                </ul></center>
+                                            </div>
                                         </div>
-                                    )
-                                }
-                            })}
-                        </div>
-                    })}</div>)}
+                                    </a>
+
+</div>
+                                )
+                            }
+                        })}
+                    </div>
+                })}</div>)}
 
 
 

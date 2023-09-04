@@ -536,19 +536,20 @@ export default function Proverr2() {
                                         <div className="boshqa-kurglaaaaa1" onClick={() => onga()}><box-icon name='right-arrow-alt' color='#44bef1 ' ></box-icon></div>
                                     </div>
                                 </div>
-                                <Swiper navigation={true} slidesPerView={2} modules={[Navigation]} className="mySwiper">
+                                <Swiper style={{height:"200px !important"}} navigation={true} slidesPerView={1} modules={[Navigation]} className="mySwiper">
                                     {ticher.map(item1=>{
                                         return(
                                             <SwiperSlide><div className="mni-swiper-grid">
                                             
 
                                             <div className="mni-gridf2">
+                                                <div className="fora_img">
                                                 {item1.image === null ? (
                                                     <img src={img_for_null1} alt="" />
                                                 ) : (
                                                     <img src={item1.image} />
-                                                )}
-                                                <h1>{item1.username}</h1>
+                                                )}</div>
+                                                <h3 style={{fontSize:"17px"}}>{item1.username}</h3>
 
                                             </div>
                                         </div></SwiperSlide>  

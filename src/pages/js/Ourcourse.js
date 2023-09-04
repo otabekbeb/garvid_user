@@ -102,6 +102,7 @@ export default function Ourcourse() {
       .then((res) => {
         setKursdata(res.data);
         localStorage.setItem("ourcourseLength", res.data.length);
+        
       })
       .catch((err) => {
         console.log(err);
@@ -127,6 +128,22 @@ export default function Ourcourse() {
         console.log("err");
       });
   }, []);
+
+  function RatingFilter(id){
+    axios
+    .get(`${url}/api/course`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+    })
+    .then((res) => {
+      const filter=res.data.filter(item=>item.star==id)
+      setKursdata(filter);
+      localStorage.setItem("ourcourseLength", res.data.length);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+
 
   return (
     <div>
@@ -190,8 +207,8 @@ export default function Ourcourse() {
             <div className="filter_padding">
               <h5>By rating</h5>
               <p>
-                <input type="checkbox" name="" id="" />{" "}
-                <div className="filter_star">
+                {/*<input onClick={()=>RatingFilter(5)} type="checkbox" name="" id="" />*/}
+                <div onClick={()=>RatingFilter(5)} className="filter_star">
                   <AiFillStar />
                   <AiFillStar />
                   <AiFillStar />
@@ -201,8 +218,8 @@ export default function Ourcourse() {
                 5.0
               </p>
               <p>
-                <input type="checkbox" name="" id="" />{" "}
-                <div className="filter_star">
+                {/*<input onClick={()=>RatingFilter(4)} type="checkbox" name="" id="" />*/}
+                <div onClick={()=>RatingFilter(4)} className="filter_star">
                   <AiFillStar />
                   <AiFillStar />
                   <AiFillStar />
@@ -212,8 +229,8 @@ export default function Ourcourse() {
                 Above 4.0
               </p>
               <p>
-                <input type="checkbox" name="" id="" />{" "}
-                <div className="filter_star">
+                {/*<input onClick={()=>RatingFilter(3)} type="checkbox" name="" id="" />*/}
+                <div onClick={()=>RatingFilter(3)} className="filter_star">
                   <AiFillStar />
                   <AiFillStar />
                   <AiFillStar />
@@ -223,8 +240,8 @@ export default function Ourcourse() {
                 Above 3.0
               </p>
               <p>
-                <input type="checkbox" name="" id="" />{" "}
-                <div className="filter_star">
+            {/*<input onClick={()=>RatingFilter(2)} type="checkbox" name="" id="" />*/}
+                <div onClick={()=>RatingFilter(2)} className="filter_star">
                   <AiFillStar />
                   <AiFillStar />
                   <AiFillStar className="none_star" />

@@ -1004,12 +1004,15 @@ justify-content: space-around; */
 
 .mni-gridf2 {
     height: 200px;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+.fora_img{
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
-
 .mni-gridf1-none {
     display: none !important;
 }
@@ -3632,4 +3635,7 @@ justify-content: space-around; */
     border: 0px !important;
     /* width: auto !important; */
     /* height: auto !important; */
+}
+.mni-krus-techer-swiper .mySwiper{
+    height: 200px !important;
 }
