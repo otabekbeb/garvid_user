@@ -81,6 +81,7 @@ export default function Ourcourse() {
     document.querySelector(".filter_card").style = "display:none"
     axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
       setKursdata(res.data)
+      localStorage.setItem("ourcourseLength",res.data.length)
     }).catch(err => {
       console.log(err);
     })
