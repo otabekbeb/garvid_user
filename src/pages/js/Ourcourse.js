@@ -80,22 +80,12 @@ export default function Ourcourse() {
   useEffect(() => {
     document.querySelector(".filter_card").style = "display:none"
     axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-      var a=[]
-      for (let i = 0; i < res.data.length; i++) {
-        for (let j = 0; j < localStorage.getItem("Mycourse").length; j++) {
-          if (res.data[i].id!==localStorage.getItem("Mycourse")[j].id) {
-            a.push(res.data[i])
-          }
-        } 
-      }
-      setKursdata(a)
-      console.log(res.data,);
+      setKursdata(res.data)
     }).catch(err => {
       console.log(err);
     })
     axios.get(`${url}/api/course_data_category`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
       setKurscategory(res.data)
-      console.log(res.data, "mm");
     }).catch(err => {
       console.log(err);
     })

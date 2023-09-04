@@ -64,7 +64,7 @@
         padding-right: 10px;
         height: 40px;
         border-radius: 5px;
-        border: 2px solid rgba(128, 128, 128, 0.438);
+        border: 1px solid #dcdcdc;
         display: flex;
         justify-content: space-around;
         align-items: center !important;

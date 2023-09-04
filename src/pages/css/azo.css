@@ -107,6 +107,9 @@ border: 0px;
     justify-content: center;
     align-items: center;
 }
+.follow_card_width{
+    width: 300px;
+}
 
 .inpf {
     width: 1890px;
