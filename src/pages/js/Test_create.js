@@ -545,7 +545,7 @@ export default function Test() {
                                         <p><h3 className='questions_page_small_div_p'>C</h3>  : {item.variant3}</p>
                                         <p><h3 className='questions_page_small_div_p'>D</h3>  : {item.variant4}</p>
                                         <h3>Test answer</h3>
-                                        <p>{item.answer == 1 ? (<div><h3 className='questions_page_small_div_p'>A</h3>  : {item.variant1}</div>) : (item.answer == 2 ? (<div><h3 className='questions_page_small_div_p'>B</h3>  : {item.variant2}</div>) : (item.answer == 3 ? (<div><h3 className='questions_page_small_div_p'>C</h3>  : {item.variant3}</div>) : (item.answer == 4 ? (<div><h3 className='questions_page_small_div_p'>D</h3>  : {item.variant4}</div>) : (""))))}</p>
+                                        <p>{item.answer == 1 ? (<div ><h3 className='questions_page_small_div_p'>A</h3>  : {item.variant1}</div>) : (item.answer == 2 ? (<div><h3 className='questions_page_small_div_p'>B</h3>  : {item.variant2}</div>) : (item.answer == 3 ? (<div><h3 className='questions_page_small_div_p'>C</h3>  : {item.variant3}</div>) : (item.answer == 4 ? (<div><h3 className='questions_page_small_div_p'>D</h3>  : {item.variant4}</div>) : (""))))}</p>
                                     </div>
                                 </div>
 

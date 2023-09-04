@@ -1517,6 +1517,19 @@ select {
     list-style-type: none;
     max-width: none !important;
   }
+  .edu_cards_inside{
+    margin: auto !important;
+    display: flex;
+    justify-content: center;
+    /* gap: 3.646vw ; */
+    gap: 3.646vw;
+    width: 100%;
+    flex-wrap: wrap;
+    /* margin: 4rem 5vw; */
+    padding: 0;
+    list-style-type: none;
+    max-width: none !important;
+  }
   @media (max-width:1288px) {
     .otash .cards {
         justify-content: space-evenly !important;
