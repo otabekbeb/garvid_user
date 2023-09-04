@@ -43,6 +43,7 @@ import { BsSearch } from "react-icons/bs"
 import deleteImg from "../img/Group 2.png"
 import { MdDeleteOutline } from "react-icons/md"
 import Ourcourse from './Ourcourse'
+import Team from '../img/Task.png'
 import '../css/workforteach.css'
 // import { BsFillCloudArrowDownFill } from 'react-icons/bs'
 // import { FiEdit } from "react-icons/fi"
@@ -1000,23 +1001,29 @@ export default function Mentor() {
                 </div> */}
                 </div>
                 <div onMouseLeave={() => filter1()} className="filter_button">
-                  {courstype.map((item) => {
-                    return (
-                      <div className="button_filter_kurs">
-                        {item.name === null ? (
-                          ""
-                        ) : (
-                          <div
-                            onClick={() => filter(item.id)}
-                            className="div_kurs"
-                            style={{ paddingBottom: "5px" }}
-                          >
-                            {item.name}
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })}
+                  {courstype.length === 0 ? (
+                    <div className="delete_padding1">
+                      <img src={Groupimg} alt="" />
+                      <h4 style={{ fontSize: '30px', opacity: '0.3' }}>Our courses are not yet</h4>
+                      
+                    </div>) : (<>   {courstype.map((item) => {
+                      return (
+                        <div className="button_filter_kurs">
+                          {item.name === null ? (
+                            ""
+                          ) : (
+                            <div
+                              onClick={() => filter(item.id)}
+                              className="div_kurs"
+                              style={{ paddingBottom: "5px" }}
+                            >
+                              {item.name}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}</>)}
+
                 </div>
               </div>
             </div>
@@ -1024,9 +1031,9 @@ export default function Mentor() {
 
           <div className="kurs_cards">
             {kursdata.length === 0 ? (
-              <div className="delete_padding">
-                <img style={{ width: '100%' ,borderRadius:'10px'}} src="https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2020/06/02135832/Short-term-Professional-Courses-after-Graduation.jpg" alt="" />
-                <h4>You didn't buy the course</h4>
+              <div className="delete_padding1">
+                <img src={Groupimg} alt="" />
+                <h4 style={{ fontSize: '30px', opacity: '0.3' }}>You didn't buy the course</h4>
                 <div className="delete_btns">
                   <a href="/Ourcourse">
                     {" "}
@@ -1102,10 +1109,10 @@ export default function Mentor() {
             <button onClick={() => openModal()}>Add task</button>
           </div>
           <div className="m_zadach">
-            {stTasks.length !== 0 ? (
-              <div className="delete_padding">
-                <img src={Groupimg} alt="" />
-                <h4>No tasks</h4>
+            {stTasks.length === 0 ? (
+              <div className="delete_padding1">
+                <img src={Team} alt="" />
+                <h4 style={{ fontSize: '50px', marginTop: '-100px', opacity: '0.3' }}>No tasks</h4>
               </div>) : (<>   {stTasks.map(item => {
                 localStorage.setItem("taskLength", stTasks.length)
                 return (
@@ -1249,7 +1256,7 @@ export default function Mentor() {
               {follow.length === 0 ? (
                 <div className="delete_padding">
                   <img src="https://t4.ftcdn.net/jpg/02/97/35/45/360_F_297354558_XmlmcjcWCXkm2scy9qIkzVdh6qNHaVzy.jpg" alt="" />
-                  <h4>No subscribers</h4>
+                  <h4 style={{ fontSize: '30px', opacity: '0.3' }}>No subscribers</h4>
                   {/* <div className="delete_btns">
                             <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>
                         </div> */}
