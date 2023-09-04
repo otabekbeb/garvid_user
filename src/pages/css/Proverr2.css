@@ -10,7 +10,7 @@
     height: 60vw;
     max-width: 100%;
     background: #F1F2F6;
-    padding-top: 10px;
+    padding-top: 70px;
 
 }
 
@@ -3634,7 +3634,7 @@ justify-content: space-around; */
 
 .mni-krus-techer-swiper .swiper-button-next:after,
 .swiper-rtl .swiper-button-prev:after {
-    font-size: 30px !important;
+    font-size: 20px !important;
 
 }
 
@@ -3646,7 +3646,7 @@ justify-content: space-around; */
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 50px;
 
     margin-left: 26%;
 }
@@ -3659,13 +3659,13 @@ justify-content: space-around; */
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-right: 22%;
 }
 
 .mni-krus-techer-swiper .swiper-button-prev:after,
 .swiper-rtl .swiper-button-next:after {
-    font-size: 30px !important;
+    font-size: 20px !important;
 }
 
 .mni-krus-techer-swiper .swiper-button-prev.swiper-button-disabled,

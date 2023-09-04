@@ -1031,7 +1031,6 @@ export default function Mentor() {
               </div>
             </div>
           </div>
-
           <div className="kurs_cards">
             {kursdata.length === 0 ? (
               <div className="delete_padding1">
