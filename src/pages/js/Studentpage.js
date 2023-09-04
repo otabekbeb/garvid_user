@@ -78,7 +78,7 @@ import { FaHourglassEnd } from 'react-icons/fa'
 //   document.querySelector(".block-bir-variant p").style = `   background-color: #fcfcfc;
 //   border: 1px solid #ccc;`
 //   document.querySelector(".block-bir-variant1 p").style = `background-color: rgb(98, 177, 204);color: white;
-  
+
 //   `
 // }
 // function openTest2() {
@@ -241,26 +241,26 @@ export default function Mentor() {
       try {
         const token = localStorage.getItem("token");
         const OneuserId = localStorage.getItem("OneuserId");
-  
+
         // Fetch one user data
         const oneUserResponse = await axios.get(`${url}/auth/oneuser`, {
           headers: { Authorization: "Bearer " + token },
         });
         setStudents(oneUserResponse.data);
         console.log(oneUserResponse.data, "aa");
-  
+
         // Fetch my course data
         const myCourseResponse = await axios.get(`${url}/api/mycourse`, {
           headers: { Authorization: `Bearer ${OneuserId}` },
         });
         setKursdata(myCourseResponse.data);
         localStorage.setItem("Mycourse", JSON.stringify(myCourseResponse.data));
-  
+
         // Fetch course data
         const courseResponse = await axios.get(`${url}/api/course`, {
           headers: { Authorization: `Bearer ${token}` },
         });
-  
+
         // Update star property in kursdata
         const updatedKursdata = myCourseResponse.data.map((course) => {
           const matchingCourse = courseResponse.data.find(
@@ -274,13 +274,27 @@ export default function Mentor() {
         setKursdata(updatedKursdata);
         console.log(updatedKursdata);
       } catch (error) {
-        console.log(error,"KURSDATA");
+        console.log(error, "KURSDATA");
       }
     };
-  
+
     fetchData();
+    axios.get(`${url}/API/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setNatlifikation(res.data)
+      axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
+        setUser(res1.data)
+        for (let i = 0; i < res.data.length; i++) {
+          for (let j = 0; j < res1.data.length; j++) {
+            if (res.data[i].user_id == res1.data[j].id) {
+              res.data[i].image = res1.data[j].image
+            }
+          }
+        }
+        setNatlifikation(res.data)
+      })
+    })
   }, []);
-  
+
   useEffect(() => {
     axios
       .get(`${url}/auth/oneuser/`, {
@@ -386,8 +400,8 @@ export default function Mentor() {
 
   }, [])
 
-  
-  
+
+
   const searchInput = (event) => {
     const searchRegex = new RegExp(`^${event.target.value}`, "i");
     axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
@@ -403,152 +417,12 @@ export default function Mentor() {
 
 
 
-
-  // useEffect(() => {
-  //   setloading(true);
-  //   setTimeout(() => {
-  //     setloading(false);
-  //   }, 20000);
-  // }, [])
-  // const [following, setFollowing] = useState(localStorage.getItem("OneuserId"))
-
-  // function postEducationModal() {
-  //   document.querySelector("#EducationpostModal").style = "display:flex"
-  // }
-
-  // function postEducationClose() {
-  //   document.querySelector("#EducationpostModal").style = "display:none"
-  // }
-
-  // function putEducationModal(id) {
-  //   setEdicationId(id)
-  //   edication.map(item => {
-  //     if (item.id == id) {
-  //       username[1].value = item.education_name
-  //       start_date[1].value = item.start_date
-  //       end_date[1].value = item.end_date
-  //       description[1].value = item.description
-  //     }
-  //   })
-
-
-  //   document.querySelector("#EducationputModal").style = "display:flex;"
-  // }
-
-  // function putEducationClose() {
-  //   document.querySelector("#EducationputModal").style = "display:none;"
-  // }
-
-  // function deleteEducationModal(id) {
-  //   setEdicationId(id)
-  //   document.querySelector("#EducationdeleteModal").style = "display:flex"
-  // }
-
-  // function deleteEducationClose() {
-  //   document.querySelector("#EducationdeleteModal").style = "display:none"
-  // }
-
-  // function postEducation() {
-  //   var formdata = new FormData()
-  //   formdata.append("education_name", username[0].value)
-  //   formdata.append("description", description[0].value)
-  //   formdata.append("start_date", start_date[0].value)
-  //   formdata.append("end_date", end_date[0].value)
-  //   formdata.append("sertificat_id", 0)
-
-  //   axios.post(`${URL}/edu/education`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-  //     alert("Добавлена информация")
-  //     document.querySelector("#EducationpostModal").style = "display:none"
-  //     axios.get(`${URL}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-  //       setEdication(res.data)
-  //     })
-  //   }).catch(err => {
-  //     alert("Данные не добавлены, введите полностью")
-  //   })
-  // }
-
-  // function putEducation() {
-  //   var formdata = new FormData()
-  //   formdata.append("education_name", username[1].value)
-  //   formdata.append("description", description[1].value)
-  //   formdata.append("start_date", start_date[1].value)
-  //   formdata.append("end_date", end_date[1].value)
-  //   formdata.append("sertificat_id", 0)
-
-  //   axios.put(`${URL}/edu/education/${edicationId}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-  //     alert("Информация изменилась")
-  //     document.querySelector("#EducationputModal").style = "display:none"
-  //     axios.get(`${URL}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-  //       setEdication(res.data)
-  //     })
-  //   }).catch(err => {
-  //     alert("Информация не изменилась, введите полностью")
-  //   })
-  // }
-
-
-  // function Page() {
-  //   setPage(1)
-  // }
-  // function obuna() {
-  //   document.querySelector('#azo_bolgan_katta_div_text_block_button').classList.toggle("obuna1")
-  // }
-  // function obuna2() {
-  //   document.querySelector('#azo_bolgan_katta_div_text_block_button1').classList.toggle("obuna2")
-  // }
-    // function dashed_nazat() {
-  //   document.querySelector("#edit_card").style = "display:none"
-  // }
-  // function exitss() {
-  //   window.location = "/"
-  //   localStorage.removeItem("token")
-  // }
-  // function notificationModal() {
-  //   document.querySelector(".profil_notifacation_size").style =
-  //     "position: fixed;right:0px;";
-  //   document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
-  //     "display:none";
-  //   document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
-  //     "display:none";
-  //   document.querySelector(".profil-qora-qiladi").style = "display:block";
-
-  // }
-  // function notificationModal() {
-  //   document.querySelector(".profil_notifacation_size").style =
-  //     "position: fixed;right:0px;";
-
-  //   document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
-  //     "display:none";
-  //   document.querySelector(".profil-qora-qiladi").style = "display:block";
-  // }
-    // function openModal2(id) {
-  //   setDeleteId(id)
-  //   document.querySelector(".m_delete_tepadan2").style = "display: flex; justify-content: center;align-items: center;"
-  // }
-    // function postEducationModal() {
-  //   document.querySelector("#EducationpostModal").style = "display:flex"
-  // }
-    // function openModal1() {
-  //   document.querySelector(".m_zadacha_tepadan1").style = "display: flex; justify-content: center;align-items: center;"
-  // }
-    // function openModal2(id) {
-  //   setDeleteId(id)
-  //   document.querySelector(".m_delete_tepadan2").style = "display: flex; justify-content: center;align-items: center;"
-  // }
-    // function deletetask() {
-  //     axios.delete(`${url}/api/course/${deleteId}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-  //       Swal.fire("ishladi")
-  //       window.location.reload()
-  //     }).catch(err => {
-  //       Swal.fire("xato")
-  //     })
-  //   }
-  // function obuna() {
-  //   document.querySelector('#azo_bolgan_katta_div_text_block_button').classList.toggle("obuna1")
-  // }
-  // function obuna2() {
-  //   document.querySelector('#azo_bolgan_katta_div_text_block_button1').classList.toggle("obuna2")
-  // }
+  function soyaa(id) {
+    var formdata = new FormData()
+    formdata.append("read", true)
+    axios.get(`${URL}/api/notification/read/${id}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    })
+  }
 
   function folowcolor1(key) {
     axios.delete(`${url}/api/follow/${key}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
@@ -586,6 +460,34 @@ export default function Mentor() {
   function taxrirlashChadModal() {
     document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style = "display:block;"
     document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style = "display:none;"
+  }
+  function taxrirlashChadModal() {
+    var s = document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style.display
+    if (s === "none") {
+      document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style = "display:block "
+    } else {
+      document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style = "display:none "
+    }
+
+    document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style =
+      "display:block;";
+    document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
+      "display:none;";
+
+  }
+  function taxrirlashChadModal() {
+    var s = document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style.display
+    if (s === "none") {
+      document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style = "display:block "
+    } else {
+      document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style = "display:none "
+    }
+
+    document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style =
+      "display:block;";
+    document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
+      "display:none;";
+
   }
   function updatetoggle(id) {
     setToggle(id)
@@ -869,6 +771,9 @@ export default function Mentor() {
                   onClick={() => taxrirlashChadModal()}
                   className="profil_blok_ikki_icon_bir"
                 />
+                 <div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
+                {localStorage.getItem("soya")}
+              </div>
                 <BsThreeDots
                   onClick={() => taxrirlashModal()}
                   className="profil_blok_ikki_icon_ikki"
@@ -903,22 +808,32 @@ export default function Mentor() {
 
 
                 <div className="profil_blok_ikki_icon_taxriirlash_chat">
-                  {natlifikation.map(item => {
+                <div className="for_wiewall">
+                {natlifikation.length === 0 ? (
+                <div><p style={{textAlign:'center',marginTop:'35%',fontSize:'20px',opacity:'0.4'}}>Not written to you</p>
+                
+                </div>) : (<div>
+                  {natlifikation.map((item, key) => {
+
                     if (item.to_user_id == localStorage.getItem("OneuserId")) {
+                      localStorage.setItem("soya", natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length)
                       return (
                         <div>
-                          {/* <p>Today</p> */}
+                          <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p>
                           <div className="taxrirlash_chad">
                             <div className="taxrirlash_chad_img_size">
                               <img src={chadimg} alt="" />
+
                             </div>
                             <div className="taxrirlash_chad_size">
                               <div className="taxrirlash_chad_vaqt">
                                 <h1>{item.title}</h1>
                                 <div className="taxrirlash_chad_vaqt_soat">
                                   <TbPointFilled className="chad_set" />
-                                  <p>{item.time_create.slice(11,16)}</p>
+                                  <p >{item.time_create.slice(11, 16)}</p>
                                 </div>
+
+
                               </div>
                               <div className="taxrirlash_chad_text">
                                 <p>{item.description}</p>
@@ -926,32 +841,29 @@ export default function Mentor() {
                             </div>
                           </div>
 
-                          <p>{item.time_create.slice(0, 10)}</p>
+                          <p >{item.time_create.slice(0, 10)}</p>
                         </div>
 
                       )
                     }
-                  })}
+                  })}</div>
 
+                )}
+</div>
 
-                  <a href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
-                    <p>
-                      view all
-                      <AiOutlineRight />
-                    </p>
-                  </div></a>
-                </div>
+                <a className="wiewu" style={natlifikation.length===0?{display:"none"}:{display:"flex"}} href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
+                  <p>
+                    view all
+                    <AiOutlineRight />
+                  </p>
+                </div></a>
+              </div>
 
               </div>
             </div>
           </div>
           <div className="profil_notifacation_size">
-            {/* <div className="admin">
-            <h4>Sms</h4>
-            <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
-
-          </div> */}
-
+    
             <div className="div-admin-sms">
               <h5>SMS</h5>
               <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
@@ -1060,55 +972,55 @@ export default function Mentor() {
         </div>
 
         <div className={toggle === 1 ? "show-content" : "content"}><div>
-        <div className="Filter">
-              <div className="blur_blok">
-                <div className="inp_blok">
-                  <input
-                    onChange={searchInput}
-                    id="search"
-                    type="text"
-                    placeholder="Search among my courses"
-                  />
-                  <CiSearch className="search" />
-                </div>
-                <div className="blur">
-                  <div className="icon_blok">
-                    <div
-                      className="sel_blok"
-                      onClick={() => {
-                        Filter();
-                      }}
-                    >
-                      <BiMenu className="menyu" />
-                      <h4>Filter</h4>
-                    </div>
-                    {/* <div className="win_men">
+          <div className="Filter">
+            <div className="blur_blok">
+              <div className="inp_blok">
+                <input
+                  onChange={searchInput}
+                  id="search"
+                  type="text"
+                  placeholder="Search among my courses"
+                />
+                <CiSearch className="search" />
+              </div>
+              <div className="blur">
+                <div className="icon_blok">
+                  <div
+                    className="sel_blok"
+                    onClick={() => {
+                      Filter();
+                    }}
+                  >
+                    <BiMenu className="menyu" />
+                    <h4>Filter</h4>
+                  </div>
+                  {/* <div className="win_men">
                   <MdWindow className="window" onClick={() => windowModal()} />
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
                 </div> */}
-                  </div>
-                  <div onMouseLeave={() => filter1()} className="filter_button">
-                    {courstype.map((item) => {
-                      return (
-                        <div className="button_filter_kurs">
-                          {item.name === null ? (
-                            ""
-                          ) : (
-                            <div
-                              onClick={() => filter(item.id)}
-                              className="div_kurs"
-                              style={{ paddingBottom: "5px" }}
-                            >
-                              {item.name}
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
+                </div>
+                <div onMouseLeave={() => filter1()} className="filter_button">
+                  {courstype.map((item) => {
+                    return (
+                      <div className="button_filter_kurs">
+                        {item.name === null ? (
+                          ""
+                        ) : (
+                          <div
+                            onClick={() => filter(item.id)}
+                            className="div_kurs"
+                            style={{ paddingBottom: "5px" }}
+                          >
+                            {item.name}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
+          </div>
 
           <div className="kurs_cards">
             {kursdata.length === 0 ? (
@@ -1356,7 +1268,7 @@ export default function Mentor() {
                             <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
                               <div className="our-team">
                                 <div className="picture">
-                                  {item1.image === null?(<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjDQxJomerNcXJqX7IQeLmKbFUA7U5JLanCEW23p8p52ZWtq3gcOcQEB4v_HegvorxeZM&usqp=CAU"/>):(  <img className="img-fluid" src={item1.image} />)} 
+                                  {item1.image === null ? (<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjDQxJomerNcXJqX7IQeLmKbFUA7U5JLanCEW23p8p52ZWtq3gcOcQEB4v_HegvorxeZM&usqp=CAU" />) : (<img className="img-fluid" src={item1.image} />)}
                                 </div>
                                 <div className="team-content">
                                   <h3 style={{ lineHeight: "70px" }} className="name">{item1.username}</h3>

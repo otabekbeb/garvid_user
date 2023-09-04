@@ -26,6 +26,7 @@ export default function Profil() {
   const [data, setData] = useState([]);
   const [state1, setState1] = React.useState();
   const [user, setUser] = useState([])
+  const [stsertifikat, setStsertifikat] = useState([])
   const [natlifikation, setNatlifikation] = React.useState([]);
   const [userid, setOneuserId] = useState(localStorage.getItem("OneuserId"))
 
@@ -64,8 +65,8 @@ export default function Profil() {
           }
         }
         setNatlifikation(res.data)
-      }).catch(err=>{})
-    }).catch(err=>{})
+      }).catch(err => { })
+    }).catch(err => { })
 
 
 
@@ -174,7 +175,20 @@ export default function Profil() {
     );
 
 
-
+    // axios.get(`${url}/API/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    //   setNatlifikation(res.data)
+    //   axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
+    //     setUser(res1.data)
+    //     for (let i = 0; i < res.data.length; i++) {
+    //       for (let j = 0; j < res1.data.length; j++) {
+    //         if (res.data[i].user_id == res1.data[j].id) {
+    //           res.data[i].image = res1.data[j].image
+    //         }
+    //       }
+    //     }
+    //     setNatlifikation(res.data)
+    //   })
+    // })
   }, []);
 
   function chiqish() {
@@ -209,7 +223,12 @@ export default function Profil() {
   function openNotification() {
     document.querySelector(".yon_notification_all").style = "right:0%;";
   }
-
+  function soyaa(id) {
+    var formdata = new FormData()
+    formdata.append("read", true)
+    axios.get(`${URL}/api/notification/read/${id}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    })
+  }
   return (
     <div>
       <div className="profil_size_df">
@@ -317,6 +336,9 @@ export default function Profil() {
                 onClick={() => taxrirlashChadModal()}
                 className="profil_blok_ikki_icon_bir"
               />
+              <div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
+                {localStorage.getItem("soya")}
+              </div>
               <BsThreeDots
                 onClick={() => taxrirlashModal()}
                 className="profil_blok_ikki_icon_ikki"
@@ -347,43 +369,58 @@ export default function Profil() {
                 </div>
               </div>
               <div className="profil_blok_ikki_icon_taxriirlash_chat">
-                {natlifikation.map(item => {
-                  if (item.to_user_id == localStorage.getItem("OneuserId")) {
-                  return (
-                    <div>
-                       {/* <p>{Date()}</p> */}
-                      <div className="taxrirlash_chad"> 
-                        <div className="taxrirlash_chad_img_size">
-                          <img src={chadimg} alt="" />
-                        </div>
-                        <div className="taxrirlash_chad_size">
-                          <div className="taxrirlash_chad_vaqt">
-                            <h1>{item.title}</h1>
-                            <div className="taxrirlash_chad_vaqt_soat">
-                              <TbPointFilled className="chad_set" />
-                              <p>{item.time_create.slice(11,16)}</p>
-                            </div>
-                          </div>
-                          <div className="taxrirlash_chad_text">
-                            <p>{item.description}</p>
-                          </div>
-                        </div>
-                      </div>
+                <div className="for_wiewall">
+                  {natlifikation.length === 0 ? (
+                    <div><p style={{ textAlign: 'center', marginTop: '35%', fontSize: '20px', opacity: '0.4' }}>Not written to you</p>
 
-                      <p>{item.time_create.slice(0,10)}</p>
-                    </div>
+                    </div>) : (<div>
+                      {natlifikation.map((item, key) => {
+
+                        if (item.to_user_id == localStorage.getItem("OneuserId")) {
+                          localStorage.setItem("soya", natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length)
+                          return (
+                            <div>
+                              <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p>
+                              <div className="taxrirlash_chad">
+                                <div className="taxrirlash_chad_img_size">
+                                  <img src={chadimg} alt="" />
+
+                                </div>
+                                <div className="taxrirlash_chad_size">
+                                  <div className="taxrirlash_chad_vaqt">
+                                    <h1>{item.title}</h1>
+                                    <div className="taxrirlash_chad_vaqt_soat">
+                                      <TbPointFilled className="chad_set" />
+                                      <p >{item.time_create.slice(11, 16)}</p>
+                                    </div>
+
+
+                                  </div>
+                                  <div className="taxrirlash_chad_text">
+                                    <p>{item.description}</p>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <p >{item.time_create.slice(0, 10)}</p>
+                            </div>
+
+                          )
+                        }
+                      })}</div>
 
                   )}
-                })}
+                </div>
 
-
-                <a href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
+                <a className="wiewu" style={natlifikation.length === 0 ? { display: "none" } : { display: "flex" }} href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
                   <p>
                     view all
                     <AiOutlineRight />
                   </p>
                 </div></a>
               </div>
+
+
             </div>
           </div>
         </div>
