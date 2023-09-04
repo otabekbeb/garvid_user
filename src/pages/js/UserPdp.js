@@ -22,9 +22,6 @@ export default function Pdp() {
   const [state1, setState1] = React.useState();
   const [email, setEmail] = useState("");
   useEffect(() => {
-    axios.get(`${url}/api/course`).then((res) => {
-      setKursData(res.data);
-    });
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
@@ -94,7 +91,7 @@ export default function Pdp() {
                 </h1>
                 {toggle === 1 ? (
                   <div className="fil_text_blok_kurs_lenght">
-                    {kursdata.length} pieces
+                    {localStorage.getItem("mycourseUser")} pieces
                   </div>
                 ) : (
                   ""
@@ -125,7 +122,7 @@ export default function Pdp() {
                   My Subscriptions
                 </h1>
                 {toggle === 5 ? (
-                  <div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_azo")} pieces</div>
+                  <div className="fil_text_blok_kurs_lenght">{localStorage.getItem("subscribersLength")} pieces</div>
                 ) : (
                   ""
                 )}
@@ -209,9 +206,9 @@ export default function Pdp() {
               {/* <h1 onClick={() => updatetoggle(9)} className="fromMenu">
                 My subscribers
               </h1> */}
-              <h1 onClick={() => updatetoggle(6)} className="fromMenu">
-                Chat
-              </h1>
+              {/*<h1 onClick={() => updatetoggle(6)} className="fromMenu">
+               Chat
+             </h1>*/}
               
               <h1 onClick={() => updatetoggle(8)} className="fromMenu">
               Student
