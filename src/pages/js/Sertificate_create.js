@@ -100,7 +100,7 @@ export default function Sertificate_create() {
                 </div>
             </div>
             <div className="sertificate_header">
-                {sertificat.length !== 0 ? (<div className='rafiki_sertificate_img'>
+                {sertificat.length === 0 ? (<div className='rafiki_sertificate_img'>
                     <img src={rafiki} alt="" />
                     <h3>You have not created a certificate</h3>
                 </div>) : (<>{sertificat.map(item => {
