@@ -36,7 +36,7 @@ export default function Sertifikate() {
                              
                            {/* <a href="/Ourcourse">  <button style={{background:'#44bef1  '}} className="delete_btn_yes">Купить курс</button></a> */}
                            </div>
-                         </div>) : (<>
+                         </div>) : (<div>
                             {sertifikat.map(item => {
                                 return (
                                     <div className="sertifikat">
@@ -52,7 +52,7 @@ export default function Sertifikate() {
                                         </div>
                                     </div>
                                 )
-                            })}</>)}
+                            })}</div>)}
 
 
 

@@ -40,7 +40,7 @@ function WiewAll() {
 
                 <div className="wiew_sms_big">
                     {Wiew.length === 0 ? (
-                        <>   <div className="delete_padding">
+                        <div>   <div className="delete_padding">
                             <img style={{ width: "30%", paddingTop: '40px' }} src={Qongro} alt="" />
                             <h4 style={{ marginTop: '20px', fontSize: '25px' }}>No message</h4>
                             <div className="delete_btns">
@@ -49,7 +49,7 @@ function WiewAll() {
 
                                 </a>
                             </div>
-                        </div></>) : (<>
+                        </div></div>) : (<div>
                             {Wiew.map(item => {
                                 if (item.to_user_id == localStorage.getItem("OneuserId")) {
                                     return (
@@ -70,7 +70,7 @@ function WiewAll() {
                                     )
                                 }
 
-                            })}</>)}
+                            })}</div>)}
 
 
 

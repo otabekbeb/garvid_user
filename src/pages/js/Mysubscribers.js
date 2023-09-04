@@ -50,10 +50,10 @@ export default function Azo() {
                         {/* <div className="delete_btns">
                             <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>
                         </div> */}
-                    </div>) : (<>
+                    </div>) : (<div>
                         {follow.map((item, key) => {
                             if (following == item.topuser) {
-                                return <>
+                                return <div>
                                     {users.map(item1 => {
                                         
                                         if (item1.id == item.minuser) {
@@ -62,7 +62,7 @@ export default function Azo() {
                                                     <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
                                                         <div className="our-team">
                                                             <div className="picture">
-                                                                <img className="img-fluid" src="https://picsum.photos/130/130?image=1027" />
+                                                            {item1.image === null?(<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjDQxJomerNcXJqX7IQeLmKbFUA7U5JLanCEW23p8p52ZWtq3gcOcQEB4v_HegvorxeZM&usqp=CAU"/>):(  <img className="img-fluid" src={item1.image} />)} 
                                                             </div>
                                                             <div className="team-content">
                                                                 <h3 style={{ lineHeight: "70px" }} className="name">{item1.username}</h3>
@@ -78,10 +78,10 @@ export default function Azo() {
                                             )
                                         }
                                     })}
-                                </>
+                                </div>
                             }
                         })}
-                    </>)}
+                    </div>)}
 
 
 

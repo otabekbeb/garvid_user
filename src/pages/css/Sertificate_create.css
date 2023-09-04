@@ -1,24 +1,52 @@
 .sertificate_header {
+    width: 80%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+   margin: auto;
+   /* justify-content: center; */
     align-items: center;
+    flex-wrap: wrap;
     margin-top: 50px;
     margin-bottom: 50px;
+    gap: 30px !important;
 }
+/* .sertificate_card_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
 .sertificate_edit_header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.62);
     display: none;
+    justify-content: center;align-items: center;
+    z-index: 1000000000000000000000 !important;
+}
+.sertificatedf{
+    width: 80%;
+    display: flex;
+    margin: auto;
+    margin-top: 30px ;
 }
 .sertificate_close_btn{
     position: absolute;
     top: -3px;
     right: 3px;
     font-size: 20px;
+    cursor: pointer;
 }
 .sertificate_card_edit {
     position: relative;
-    width: 450px;
+    width: auto;
+    min-width: 450px;
     height: 250px;
     padding: 20px;
+    background: #fff;
     box-shadow: 0 0px 40px #a3a5a654;
     border-radius: 10px;
 }
@@ -31,6 +59,7 @@
 .sertificate_i {
     width: auto;
     height: auto;
+    position: relative;
 }
 
 .sertificate_icon {
@@ -45,14 +74,14 @@
 
 .sertificate_db_edit label {
     width: 100%;
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 5px;
+    align-items: center; */
+    /* margin-top: 5px; */
 }
 
 .sertificate_db_edit input {
-    width: 80%;
+    width: 100%;
     padding: 3px 5px;
     border: 1px solid #dcdcdc;
 }
@@ -95,7 +124,7 @@
 
 
 .sertificate_card {
-    width: 450px;
+    width:450px ;
     height: auto;
     padding: 20px;
     box-shadow: 0 0px 40px #a3a5a654;
@@ -149,3 +178,72 @@
     font-size: 14px;
     gap: 10px;
 }
+
+.sertificate_post_btn button{
+    width: 80px;
+    height: 30px;
+    color: #44bef1;
+    background-color: #fff;
+    border: 1px solid #44bef1;
+    border-radius: 3px;
+    transition: .4s ease;
+}
+.sertificate_post_btn button:hover{
+    color: #fff;
+    background-color: #44bef1;
+}
+.sertificate_file_post{
+    opacity: -1;
+    width: 75px;
+    height: 95px;
+    left: 35px;
+    top: 25px;
+    position: absolute;
+}
+.sertificate_file_edit{
+    opacity: -1;
+    width: 75px;
+    height: 95px;
+    left: 35px;
+    top: 25px;
+    position: absolute;
+}
+
+
+@media (max-width:650px) {
+    .sertificate_card{
+        width: 300px;
+        display: block;
+    }
+    .sertificate_df_edit{
+        width: 100%;
+        display: block;
+    }
+    .sertificate_i{
+        width: 100%;
+        margin: auto;
+        justify-content: center;
+    }
+    .sertificate_icon{
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+    .sertificate_db{
+        flex-wrap: wrap;
+    }
+    .sertificate_db label{
+        font-size: 14px;
+    }
+    .sertificate_header{
+        width: 100%;
+    }
+}
+
+/* @media (max-width:500px) {
+    .sertificate_card{
+        width: 23.438vw !important;
+        min-width: none !important;
+        display: block;
+    }
+} */

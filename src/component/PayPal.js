@@ -109,7 +109,7 @@ export default function App() {
     }, []);
 
     return (
-        <>
+        <div>
             {clientToken ? (
                 Paypal_kluch.paypal_kluch ? (<div style={{ maxWidth: "750px", minHeight: "200px" }}>
                     <input placeholder="1$" type="text" id="PayPal_input" />
@@ -134,6 +134,6 @@ export default function App() {
                     <FcApproval />Деньги были выплачены
                 </div>
             </div>
-        </>
+        </div>
     );
 }

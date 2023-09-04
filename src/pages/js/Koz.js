@@ -30,7 +30,7 @@ export default function Koz() {
                       setChangePassword(changeIcon);
                    }}
                 >
-                   {changeIcon ? <i class='bx bx-low-vision'></i> : <i class='bx bx-low-vision'></i>}
+                   {changeIcon ? <i className='bx bx-low-vision'></i> : <i className='bx bx-low-vision'></i>}
                 </span>
              </div>
           </form>

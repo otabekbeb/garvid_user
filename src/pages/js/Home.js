@@ -57,27 +57,27 @@ export default function Home() {
                 <div className='body1'>
                     <Navbar />
 
-                    <div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style={{ marginBottom: "90px;" }}>
-                        <div style={{ textAlign: "center",padding:"20px" }} class="container my-5 py-5">
+                    <div className="jumbotron jumbotron-fluid position-relative overlay-bottom" style={{ marginBottom: "90px;" }}>
+                        <div style={{ textAlign: "center",padding:"20px" }} className="container my-5 py-5">
                             <h3 id='huch' style={{ fontSize: "18px", color: "#44bef1" }}>BEST ONLINE COURSES</h3>
-                            <h1 class="text-white mt-4 mb-4" id='hbir'>Get Educated Online From Your Home</h1>
+                            <h1 className="text-white mt-4 mb-4" id='hbir'>Get Educated Online From Your Home</h1>
                             <p id='pp1' style={{ color: "white", fontSize: "20px" }}>With over 20 years of experience we'll ensure you always get the best guidance</p>
                             <div style={{ display: "flex", justifyContent: "center", marginTop: "30px" }} className="butonss">
                                 <button onClick={() => window.location = "/services"}>Services</button>
                                 <button onClick={() => window.location = "/contacts"} id='but22'>Contacts</button>
                             </div>
-                            <div class="mx-auto mb-5" style={{ width: "100%;", maxWidth: "600px;" }}>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
+                            <div className="mx-auto mb-5" style={{ width: "100%;", maxWidth: "600px;" }}>
+                                <div className="input-group">
+                                    <div className="input-group-prepend">
 
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Courses 1</a>
-                                            <a class="dropdown-item" href="#">Courses 2</a>
-                                            <a class="dropdown-item" href="#">Courses 3</a>
+                                        <div className="dropdown-menu">
+                                            <a className="dropdown-item" href="#">Courses 1</a>
+                                            <a className="dropdown-item" href="#">Courses 2</a>
+                                            <a className="dropdown-item" href="#">Courses 3</a>
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control border-light" style={{ padding: "30px 25px;" }} placeholder="Keyword" />
-                                    <div class="input-group-append">
+                                    <input type="text" className="form-control border-light" style={{ padding: "30px 25px;" }} placeholder="Keyword" />
+                                    <div className="input-group-append">
 
                                     </div>
                                 </div>
@@ -87,9 +87,9 @@ export default function Home() {
                     </div>
                     <div className="universty">
                         <div className="iniversty_cards">
-                            {univercard.map(item => {
+                            {univercard.map((item,key) => {
                                 return (
-                                    <div className="iniversty_card">
+                                    <div key={key} className="iniversty_card">
                                         <div className="iniversty_img">
                                             {item.image === null ? (<img src={img_for_null} alt="" />) : (<img src={item.image} alt="" />)}
                                         </div>
@@ -235,10 +235,10 @@ export default function Home() {
                                             <div className="chec_icon">
                                                 {chec.map(item => {
                                                     return (
-                                                        <>
+                                                        <div>
                                                             {item.read === true ? (<BsCheck2 className='bir_chec' />) : (<BsCheckAll className='ikki_chec' />)}
 
-                                                        </>
+                                                        </div>
                                                     )
 
                                                 })}

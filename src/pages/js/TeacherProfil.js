@@ -316,7 +316,7 @@ export default function Profil() {
               {data.map((item) => {
                 if (allusers == item.id) {
                   return (
-                    <>
+                    <div>
                       {item.image === null ? (
                         <img
                           onMouseEnter={() => userimgModal()}
@@ -336,7 +336,7 @@ export default function Profil() {
                           alt=""
                         />
                       )}
-                    </>
+                    </div>
                   );
                 }
 
@@ -387,7 +387,7 @@ export default function Profil() {
               {/* <div className="profil_blok_ikki_sum">
                 {data.map((item) => {
                   return (
-                    <>
+                    <div>
                       {item.balance === null ? (
                         <h1>0</h1>
                       ) : (
@@ -402,7 +402,7 @@ export default function Profil() {
                           <p>$</p>
                         </div>
                       )}
-                    </>
+                    </div>
                   );
                 })}
               </div> */}
@@ -642,7 +642,7 @@ export default function Profil() {
                 </div>
               </div>
             ) : (
-              <>
+              <div>
                 {kursdata.map(item => {
                   return (
                     <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
@@ -690,7 +690,7 @@ export default function Profil() {
                   )
 
                 })}
-              </>
+              </div>
             )}
 
           </div>
@@ -910,11 +910,11 @@ export default function Profil() {
         <div className={toggle === 4 ? "show-content" : "content"}>
           <div className="followcards1">
             {follow.length===0?("a"):(
-              <>
+              <div>
               {
               
               follow.map((item, key) => {
-              return <>
+              return <div>
                 {users.map(item1 => {
                   if (item1.id == item.topuser) {
                     return (
@@ -934,8 +934,8 @@ export default function Profil() {
                     )
                   }
                 })}
-              </>
-            })}</>)}
+              </div>
+            })}</div>)}
             
 
 

@@ -32,7 +32,7 @@ export default function FollowCard() {
   }
   function folowcolor1(key) {
    const Filter=bosildi.filter(item=>item.topuser==key)
-   Filter.map(item=>{
+   Filter.map((item,key)=>{
     axios.delete(`${url}/api/follow/${item.id}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       window.location.reload()
       axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
@@ -95,13 +95,13 @@ export default function FollowCard() {
                       </button>
                     </a>
                   </div>
-                </div>):(<>{follow.map((item, key) => {
+                </div>):(<div>{follow.map((item, key) => {
             if (following != item.id) {
               return (
                 <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
                   <div className="our-team">
                     <div className="picture">
-                      <img className="img-fluid" src="https://picsum.photos/130/130?image=1027" />
+                    {item.image === null?(<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjDQxJomerNcXJqX7IQeLmKbFUA7U5JLanCEW23p8p52ZWtq3gcOcQEB4v_HegvorxeZM&usqp=CAU"/>):(  <img className="img-fluid" src={item.image} />)} 
                     </div>
                     <div className="team-content">
                       <h3 style={{ lineHeight: "70px" }} className="name">{item.username}</h3>
@@ -117,7 +117,7 @@ export default function FollowCard() {
                 </div>
               )
             }
-          })}</>)}
+          })}</div>)}
           
 
 

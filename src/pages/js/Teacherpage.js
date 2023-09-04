@@ -44,7 +44,7 @@ export default function Contact() {
     }, 3000);
   }, []);
   return (
-    <>
+    <div>
       {loader === 1 ? (
         <div>
           <Usernavbar />
@@ -127,10 +127,10 @@ export default function Contact() {
                                             <div className="chec_icon">
                                                 {chec.map(item => {
                                                     return (
-                                                        <>
+                                                        <div>
                                                             {item.read === true ? (<BsCheck2 className='bir_chec' />) : (<BsCheckAll className='ikki_chec' />)}
 
-                                                        </>
+                                                        </div>
                                                     )
 
                                                 })}
@@ -146,7 +146,7 @@ export default function Contact() {
 
           {/* <Footer1 /> */}
         </div>) : (<Loader />)}
-    </>
+    </div>
 
   );
 }

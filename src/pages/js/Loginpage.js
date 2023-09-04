@@ -230,7 +230,7 @@ export default function Loginpage() {
                           </div>
                         </div>
                         <div className="inputs111">
-                          {user.map(item=>{
+                          {user.map((item,key)=>{
                           return<button onClick={() => putUser(item.id)}>Keeping</button>   
                           })}
                         </div>

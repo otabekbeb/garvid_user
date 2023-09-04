@@ -339,12 +339,12 @@
 //           {teacherwork.map((item) => {
 //             if (item.id == JSON.parse(localStorage.getItem("page_video")).id) {
 //               return (
-//                 <>
+//                 <div>
 //                   <div className="zanacha_vaz">Задача*</div>
 //                   <div className="task_div_big">
 //                     <img src={item.image} alt="" /> <p>{item.content}</p>
 //                   </div>
-//                 </>
+//                 </div>
 //               );
 //             } else {
 //               <div>There are no tasks here</div>;
@@ -358,11 +358,11 @@
 //                 <p>Тут ещё нут ответов на задачу </p>
 //               </div>
 //             ) : (
-//               <>
+//               <div>
 //                 {commenttask.map((item, key) => {
 //                   if (item.task_commnet_id == 1) {
 //                     return (
-//                       <>
+//                       <div>
 //                         <div className="df_div_comment_page">
 //                           <div className="div_img_class_over">
 //                             {mark.map((item) => {
@@ -560,11 +560,11 @@
 //                             </div> */}
 //                           </div>
 //                         </div>
-//                       </>
+//                       </div>
 //                     );
 //                   }
 //                 })}
-//               </>
+//               </div>
 //             )}
 //           </div>
 //           <div className="mark-uchun-koish-joy">
@@ -588,25 +588,25 @@
 //                 {page === 2 ? (
 //                   <div className="mark-two">2</div>
 //                 ) : (
-//                   <>
+//                   <div>
 //                     {page === 3 ? (
 //                       <div className="mark-three">3</div>
 //                     ) : (
-//                       <>
+//                       <div>
 //                         {page === 4 ? (
 //                           <div className="mark-four">4</div>
 //                         ) : (
-//                           <>
+//                           <div>
 //                             {page === 5 ? (
 //                               <div className="mark-five">5</div>
 //                             ) : (
-//                               <></>
+//                               <div></div>
 //                             )}
-//                           </>
+//                           </div>
 //                         )}
-//                       </>
+//                       </div>
 //                     )}
-//                   </>
+//                   </div>
 //                 )}
 //               </div>
 //               <div className="mark-otmen-potver-uchun">
@@ -650,25 +650,25 @@
 //                 {page1 === 2 ? (
 //                   <div className="mark-two">2</div>
 //                 ) : (
-//                   <>
+//                   <div>
 //                     {page1 === 3 ? (
 //                       <div className="mark-three">3</div>
 //                     ) : (
-//                       <>
+//                       <div>
 //                         {page1 === 4 ? (
 //                           <div className="mark-four">4</div>
 //                         ) : (
-//                           <>
+//                           <div>
 //                             {page1 === 5 ? (
 //                               <div className="mark-five">5</div>
 //                             ) : (
-//                               <></>
+//                               <div></div>
 //                             )}
-//                           </>
+//                           </div>
 //                         )}
-//                       </>
+//                       </div>
 //                     )}
-//                   </>
+//                   </div>
 //                 )}
 //               </div>
 //               <div className="mark-otmen-potver-uchun">

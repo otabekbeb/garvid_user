@@ -89,12 +89,12 @@ export default function News() {
                 <div className="bg-white border border-top-0 p-3">
                   {basetype.map(item => {
                     return (
-                      <>
-                        {item.name == null ? ("") : (<><a onClick={() => { localStorage.setItem("BaseType", item.id); window.location.reload() }} href className="d-block w-100 text-white text-decoration-none mb-3" style={{ background: '#52AAF4' }}>
+                      <div>
+                        {item.name == null ? ("") : (<div><a onClick={() => { localStorage.setItem("BaseType", item.id); window.location.reload() }} href className="d-block w-100 text-white text-decoration-none mb-3" style={{ background: '#52AAF4' }}>
                           <i className="fab fa-twitter text-center py-4 mr-3" style={{ width: '65px', background: 'rgba(0, 0, 0, .2)' }} />
                           <span className="font-weight-medium">{item.name}</span>
-                        </a></>)}
-                      </>
+                        </a></div>)}
+                      </div>
                     )
                   })}
                 </div>
@@ -183,7 +183,7 @@ export default function News() {
                 <img src={Groupimg} alt="" />
                 <h3>No information</h3>
               </div>) : (
-                <>   {base.map(item => {
+                <div>   {base.map(item => {
                   return (
                     <SwiperSlide >
                       <div className="position-relative overflow-hidden" style={{ height: "300px" }}>
@@ -200,7 +200,7 @@ export default function News() {
                       </div>
                     </SwiperSlide>
                   )
-                })}</>)}
+                })}</div>)}
 
 
 
@@ -223,7 +223,7 @@ export default function News() {
                <h3>No information</h3>
           
              </div>):(
-              <>    {base.map(item => {
+              <div>    {base.map(item => {
                 return (
                   <div className="News_card" >
                     <button className='Card_button'>FEATURED NEWS</button>
@@ -250,7 +250,7 @@ export default function News() {
                   </div>
                 )
   
-              })}</>)}
+              })}</div>)}
         
 
           </div>

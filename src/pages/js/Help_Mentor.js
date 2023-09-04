@@ -26,7 +26,7 @@ export default function Help_Mentor() {
                     </div>
                 </div>
                 <div className="mod_svg">
-                  {help.map(item=>{
+                  {help.map((item,key)=>{
                     return(
                       <a href="/User_help2" style={{color:'black'}}>
                    <div className="text_mod">

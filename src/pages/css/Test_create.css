@@ -304,7 +304,11 @@ select {
 
 .test_craete_svipe .mySwiper {
     width: 60%;
+    height: 700px;
     text-align: none !important;
+}
+.test_craete_svipe .swiper-slide-active{
+    padding-top: 30px !important;
 }
 
 .swiper-pagination-fraction {
@@ -833,6 +837,7 @@ select {
     margin-bottom: 20px;
     padding: 10px 10px 0px 10px;
     width: 700px;
+    margin: auto;
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 0px 40px #a3a5a654;

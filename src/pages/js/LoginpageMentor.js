@@ -34,7 +34,7 @@ export default function Loginpage() {
         document.querySelector("#adress").value = res.data.adress;
         document.querySelector("#description").value = res.data.description;
         setUser(res.data);
-        user.map(item=>{
+        user.map((item,key)=>{
           document.querySelector("#first_name").value = item.first_name;
           document.querySelector("#last_name").value = item.last_name;
           document.querySelector("#username").value = item.username;

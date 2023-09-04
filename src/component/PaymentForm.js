@@ -84,7 +84,7 @@ export default function PaymentForm() {
     }
 
     return (
-        <>
+        <div>
 
                     <p>Введите деньги</p>
                     <input type="text" id="Stripe_input" />
@@ -109,6 +109,6 @@ export default function PaymentForm() {
         </div>
       </div>
 
-        </>
+        </div>
     )
 }
