@@ -206,9 +206,9 @@ export default function Pdp() {
               {/* <h1 onClick={() => updatetoggle(9)} className="fromMenu">
                 My subscribers
               </h1> */}
-              <h1 onClick={() => updatetoggle(6)} className="fromMenu">
-                Chat
-              </h1>
+              {/*<h1 onClick={() => updatetoggle(6)} className="fromMenu">
+               Chat
+             </h1>*/}
               
               <h1 onClick={() => updatetoggle(8)} className="fromMenu">
               Student
