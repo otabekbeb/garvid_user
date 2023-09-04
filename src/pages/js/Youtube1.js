@@ -101,7 +101,6 @@ export default function Youtube1() {
         playerRef.current.seekTo(result);
       })
       .catch((err) => {
-        alert("lox1");
 
         alert(err);
       });
@@ -133,7 +132,6 @@ export default function Youtube1() {
         // Perform other actions with the result
         playerRef.current.seekTo(Number(result));
       } catch (err) {
-        alert("lox1");
         console.log(err);
         alert(err);
       }
@@ -1113,7 +1111,6 @@ function getSubcoment(id){
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
-        document.querySelector(".m-comment-mark").style = "display:none";
         document.querySelector(".mark-uchun-koish-joy").style = "display:none";
         axios
           .get(`${url}/api/course_theme_task_student`, {
@@ -1800,7 +1797,23 @@ function getSubcoment(id){
                                               <div className="div_class_tugadi">
                                                 <div className="task-uchun-joy-and-mark">
                                                   <h5>{item.username}</h5>
-                                                  {item.mark}
+                                                  {item.mark === 0 ? "" : (<>
+                                                  {item.mark === 2 ? (<div className="mark-two-bosa">
+                                                    2
+                                                  </div>):(<>
+                                                  {item.mark === 3 ? (<div className="mark-three-bosa">
+                                                    3
+                                                  </div>): (<>
+                                                  {item.mark === 4 ? (<div className="mark-four-bosa">
+                                                    4
+                                                  </div>): (<>
+                                                  {item.mark === 5 ? (<div className="mark-five-bosa">
+                                                    5
+                                                  </div>):""}
+                                                  </>)}
+                                                  </>)}
+                                                  </>)}
+                                                  </>)}
                                                 </div>
 
                                                 <p className="p-create-time-uchun">
@@ -1838,24 +1851,22 @@ function getSubcoment(id){
                                                           flexWrap: "wrap",
                                                         }}
                                                       >
-                                                        {localStorage.getItem(
-                                                          "position"
-                                                        ) === 2
-                                                          ? ""
+                                                        {localStorage.getItem("position") === 2 ? (
+                                                          <></>
+                                                          )
                                                           : ""}
-
-                                                        <p
-                                                          className="m-comment-mark"
-                                                          onClick={() => {
-                                                            markOpen();
-                                                            setPage(1);
-                                                          }}
-                                                        >
-                                                          <TfiMarkerAlt />
-                                                          <span>
-                                                            поставить оценку
-                                                          </span>
-                                                        </p>
+                                                             <p
+                                                             className="m-comment-mark"
+                                                             onClick={() => {
+                                                               markOpen();
+                                                               setPage(1);
+                                                             }}
+                                                           >
+                                                             <TfiMarkerAlt />
+                                                             <span>
+                                                               поставить оценку
+                                                             </span>
+                                                           </p>
                                                         {item5.id ==
                                                         item.user_id ? (
                                                           <p

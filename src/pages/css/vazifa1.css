@@ -472,6 +472,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor:pointer;
 }
 .mark-three-bosa{
     width: 25px;
@@ -483,6 +484,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor:pointer;
 }
 .mark-four-bosa{
     width: 25px;
@@ -494,6 +496,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor:pointer;
 }
 .mark-five-bosa{
     width: 25px;
@@ -505,4 +508,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor:pointer;
 }
