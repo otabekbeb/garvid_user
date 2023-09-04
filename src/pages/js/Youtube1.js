@@ -1188,7 +1188,7 @@ function getSubcoment(id){
                     {(() => {
 if (main.video.includes(".jpg")||main.video.includes(".png")||main.video===null) {
   return<p style={{
-    margin:"30%"
+    margin:"100px"
   }}>video not found or not exist</p>
 }else{
   return<ReactPlayer
