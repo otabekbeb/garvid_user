@@ -1025,7 +1025,7 @@ export default function Mentor() {
           <div className="kurs_cards">
             {kursdata.length === 0 ? (
               <div className="delete_padding">
-                <img style={{ width: '100%' }} src="https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2020/06/02135832/Short-term-Professional-Courses-after-Graduation.jpg" alt="" />
+                <img style={{ width: '100%' ,borderRadius:'10px'}} src="https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2020/06/02135832/Short-term-Professional-Courses-after-Graduation.jpg" alt="" />
                 <h4>You didn't buy the course</h4>
                 <div className="delete_btns">
                   <a href="/Ourcourse">
