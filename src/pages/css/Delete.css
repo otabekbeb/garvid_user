@@ -32,7 +32,7 @@ z-index: 1000000000000000000000 !important;
 }
 .delete_padding{
     margin: auto;
-    width: 35%;
+    width: 40%;
     height: 350px;
     border-radius: 10px;
     background-color: white;
@@ -41,8 +41,6 @@ z-index: 1000000000000000000000 !important;
 .delete_padding img{
     margin: auto;
     display: flex;
-    margin-top: 30px;
-
     height: 70%;
 }
 .delete_padding h4{
