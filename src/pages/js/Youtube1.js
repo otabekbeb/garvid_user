@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import ReactPlayer from 'react-player';
+import ReactPlayer from "react-player";
 // import img_kotta from "../img/Rectangle.png";
 // import img_ava from "../img/Ellipse.png";
 // import img_accordion from "../img/Rectangle 14.1.svg";
@@ -44,7 +44,6 @@ import { Accordion } from "react-bootstrap";
 // import { async } from "q";
 
 export default function Youtube1() {
-  // const [id, setId] = useState(1);
   const [category, setCategory] = useState([]);
   const [main, setMain] = useState([]);
   const [main1, setMain1] = useState(
@@ -70,14 +69,11 @@ export default function Youtube1() {
   const [startAt, setStartAt] = useState(0);
   const playerRef = useRef(null);
 
-
-
-
   const handleDuration = (duration) => {
     const OneuserId = parseInt(localStorage.getItem("OneuserId"));
     const { id } = JSON.parse(localStorage.getItem("page_video"));
     const token = localStorage.getItem("token");
-  
+
     axios
       .get(`${url}/api/student_theme/`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -90,24 +86,20 @@ export default function Youtube1() {
         const secondsWatched = (percentWatched * duration) / 100;
         setStartAt(secondsWatched);
       });
-  
+
     setVideoDuration(duration);
   };
-  
 
-
- 
-  
   const handleProgress = (progress) => {
     const OneuserId = parseInt(localStorage.getItem("OneuserId"));
     const { id } = JSON.parse(localStorage.getItem("page_video"));
     const token = localStorage.getItem("token");
     setCurrentTime(progress.playedSeconds);
     const percentWatched = Math.floor(progress.played * 100);
-  
+
     if (percentWatched % 10 === 0) {
       // alert(`Вы просмотрели ${percentWatched}% видео`);
-  
+
       axios
         .get(`${url}/api/student_theme/`, {
           headers: { Authorization: `Bearer ${token}` },
@@ -116,13 +108,13 @@ export default function Youtube1() {
           const filteredItem = res.data.find(
             (item) => item.theme_id === id && item.student_id === OneuserId
           );
-  
+
           if (!filteredItem || percentWatched > filteredItem.complate) {
             const formData = new FormData();
             formData.append("student_id", OneuserId);
             formData.append("theme_id", id);
             formData.append("complate", percentWatched);
-  
+
             if (!filteredItem) {
               axios
                 .post(`${url}/api/student_theme/`, formData, {
@@ -163,12 +155,17 @@ export default function Youtube1() {
         });
     }
   };
-  
-
-
-
 
   useEffect(() => {
+
+    axios
+      .get(`${url}/api/course_data_category`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        setState1(res.data.one);
+        localStorage.setItem("page_video", JSON.stringify(res.data));
+      });
 
 
     const { id } = JSON.parse(localStorage.getItem("page_video"));
@@ -252,18 +249,21 @@ export default function Youtube1() {
         const OneuserId = localStorage.getItem("OneuserId");
         const id = localStorage.getItem("abbas");
         const task_comnet_id = 1; // Замените значение на необходимое
-  
+
         setLoader(1);
         localStorage.setItem("task_commnet_id", JSON.stringify(task_comnet_id));
-  
-        const res = await axios.get(`${url}/api/course_data_category/course/${id}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-  
+
+        const res = await axios.get(
+          `${url}/api/course_data_category/course/${id}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
+
         setMain(res.data.one ? res.data.one : []);
         localStorage.setItem("page_video", JSON.stringify(res.data.one))
         setCategory(res.data.all);
-  
+
         // const promises = res.data.all.flatMap((itam) =>
         //   itam.theme.map(async (itam2) => {
         //     const formData = new FormData();
@@ -275,10 +275,10 @@ export default function Youtube1() {
         //     });
         //   })
         // );
-  
+
         // await Promise.all(promises);
-        alert("ishadi");
-  
+        // alert("ishadi");
+
         const coment21 = res.data;
         const comment = res.data.map((item) => {
           if (item.task_commnet_id === task_comnet_id) {
@@ -295,7 +295,7 @@ export default function Youtube1() {
         setComment(comment);
         setTeacherwork(res.data);
         console.log(res.data);
-  
+
         if (JSON.parse(localStorage.getItem("page_user"))[0].position === 2) {
           return <Create_Theme_Category_mentor id1={id} />;
         }
@@ -303,14 +303,10 @@ export default function Youtube1() {
         console.log(err);
       }
     };
-  
+
     fetchData();
-
-    
-
   }, []);
-  
-  
+
   // Abbas subcomnet
   function getSubcoment(id) {
     const idget = JSON.parse(localStorage.getItem("page_video"));
@@ -338,7 +334,7 @@ export default function Youtube1() {
                 }
               }
             }
-            var subcomnet = mycoment.filter((item) => item.subcommnet ===id);
+            var subcomnet = mycoment.filter((item) => item.subcommnet === id);
           })
           .catch((err) => {});
       })
@@ -380,8 +376,6 @@ export default function Youtube1() {
     document.querySelector(".zadaniya5").style =
       "border-bottom: none; color: #9DA7BB;";
   }
-
-
 
   function ModalCatchBolsa() {
     if (localStorage.getItem("position") == 2) {
@@ -491,7 +485,7 @@ export default function Youtube1() {
         document.querySelector("#chat_text").value = "";
       })
       .catch((err) => {
-        Swal.fire("Error");
+        // Swal.fire("Error");
       });
       
       const idget = JSON.parse(localStorage.getItem("page_video"));
@@ -1162,22 +1156,26 @@ export default function Youtube1() {
                           src={main1.video}
                           title="W3Schools Free Online Web Tutorials"
                         ></iframe> */}
-      <ReactPlayer
-    ref={playerRef}
-    url={main1.video}
-    controls
-    onDuration={handleDuration}
-    onProgress={handleProgress}
-    className="React_player"
-      />
+                        <ReactPlayer
+                          ref={playerRef}
+                          url={main1.video}
+                          controls
+                          onDuration={handleDuration}
+                          onProgress={handleProgress}
+                          className="React_player"
+                        />
                       </div>
                       <div className="theme_df">
                         <div className="flex_logig">
                           <h1 className="raspberry_pi">
-                            {main1.name} Ффффффффффф
-                            <p>Размер видео: {videoDuration.toFixed(2)} секунд</p>
+                            {main1.name}
+                            <p>
+                              Размер видео: {videoDuration.toFixed(2)} секунд
+                            </p>
                             <p>Последний раз останавливались на {startAt} </p>
-      <p>Текущее время: {currentTime.toFixed(2)} секунд</p>
+                            <p>
+                              Текущее время: {currentTime.toFixed(2)} секунд
+                            </p>
                           </h1>
                           <div className="odtel_media_uchun">
                             <h1>{main1.name}</h1>
@@ -1263,94 +1261,111 @@ export default function Youtube1() {
                                 </span>
                               </div>
                               <div className="for_scroll">
-  {comment.length === 0 ? (
-    <div className="for_no_comment">
-      <p>Тут ещё нету комметнарий</p>
-    </div>
-  ) : (
-    <div>
-      {comment.filter((item) =>item.subcomment === 0 && item.task_commnet_id === 0).map((item) => (
-          <div className="m_comment" key={item.id}>
-            <div className="for-flex-time-name-image">
-              <div className="m_comment_img">
-                <img
-                src={
-                  item.image && item.image.includes("http")
-                    ? item.image
-                    : `${url}/${item.image}`
-                }
-                  alt=""
-                />
-              </div>
+                                {comment.length === 0 ? (
+                                  <div className="for_no_comment">
+                                    <p>Тут ещё нету комметнарий</p>
+                                  </div>
+                                ) : (
+                                  <div>
+                                    {comment
+                                      .filter(
+                                        (item) =>
+                                          item.subcomment === 0 &&
+                                          item.task_commnet_id === 0
+                                      )
+                                      .map((item) => (
+                                        <div
+                                          className="m_comment"
+                                          key={item.id}
+                                        >
+                                          <div className="for-flex-time-name-image">
+                                            <div className="m_comment_img">
+                                              <img
+                                                src={
+                                                  item.image &&
+                                                  item.image.includes("http")
+                                                    ? item.image
+                                                    : `${url}/${item.image}`
+                                                }
+                                                alt=""
+                                              />
+                                            </div>
 
-              <div className="user-name-timecreate">
-                <h5>{item.username}</h5>
-                <p>{item.time_create.slice(0, 10)}</p>
-              </div>
-            </div>
+                                            <div className="user-name-timecreate">
+                                              <h5>{item.username}</h5>
+                                              <p>
+                                                {item.time_create.slice(0, 10)}
+                                              </p>
+                                            </div>
+                                          </div>
 
-            <div className="m_comment_text">
-              {item.image ? (
-                ""
-              ) : (
-                <img
-                  src={
-                    item.image && item.image.includes("http")
-                      ? item.image
-                      : `${url}/${item.image}`
-                  }
-                  alt=""
-                />
-              )}
-              <p className="m_comment_text1505">{item.text}</p>
-              <div className="m_comment_otvet">
-                <p
-                  style={{ display: "flex" }}
-                  className="m_otvet_comment"
-                  onClick={() => {
-                    openModalOtvet11(item.id);
-                  }}
-                >
-                  <FiCornerUpLeft />
-                  <span>
-                    {item.count === 0 ? (
-                      "Ответить"
-                    ) : (
-                      <div>
-                        {item.count}
-                        <span> Ответов</span>
-                      </div>
-                    )}
-                  </span>
-                </p>
+                                          <div className="m_comment_text">
+                                            {item.image ? (
+                                              ""
+                                            ) : (
+                                              <img
+                                                src={
+                                                  item.image &&
+                                                  item.image.includes("http")
+                                                    ? item.image
+                                                    : `${url}/${item.image}`
+                                                }
+                                                alt=""
+                                              />
+                                            )}
+                                            <p className="m_comment_text1505">
+                                              {item.text}
+                                            </p>
+                                            <div className="m_comment_otvet">
+                                              <p
+                                                style={{ display: "flex" }}
+                                                className="m_otvet_comment"
+                                                onClick={() => {
+                                                  openModalOtvet11(item.id);
+                                                }}
+                                              >
+                                                <FiCornerUpLeft />
+                                                <span>
+                                                  {item.count === 0 ? (
+                                                    "Ответить"
+                                                  ) : (
+                                                    <div>
+                                                      {item.count}
+                                                      <span> Ответов</span>
+                                                    </div>
+                                                  )}
+                                                </span>
+                                              </p>
 
-                {oneuser.map((item5) => {
-                  return (
-                    <div>
-                      {item5.id == item.user_id ? (
-                        <p
-                          className="m_comment_delete"
-                          onClick={() => {
-                            deleteComment(item.id);
-                          }}
-                        >
-                          <AiOutlineDelete />
-                          удалить
-                        </p>
-                      ) : (
-                        ""
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        ))}
-    </div>
-  )}
-</div>
-
+                                              {oneuser.map((item5) => {
+                                                return (
+                                                  <div>
+                                                    {item5.id ==
+                                                    item.user_id ? (
+                                                      <p
+                                                        className="m_comment_delete"
+                                                        onClick={() => {
+                                                          deleteComment(
+                                                            item.id
+                                                          );
+                                                        }}
+                                                      >
+                                                        <AiOutlineDelete />
+                                                        удалить
+                                                      </p>
+                                                    ) : (
+                                                      ""
+                                                    )}
+                                                  </div>
+                                                );
+                                              })}
+                                            </div>
+                                          </div>
+                                        </div>
+                                      ))}
+                                  </div>
+                                )}
+                              </div>
 
                               <div className="m_comment_yozish">
                                 <input type="file" id="comment_file" />
@@ -1522,7 +1537,6 @@ export default function Youtube1() {
                                 </button>
                               </div>
                             </div>
-
                           </div>
                         </div>
                       ) : (
@@ -1565,7 +1579,8 @@ export default function Youtube1() {
                                               <div className="div_img_class_over">
                                                 <img
                                                   src={
-                                                    item.image && item.image.includes("http")
+                                                    item.image &&
+                                                    item.image.includes("http")
                                                       ? item.image
                                                       : `${url}/${item.image}`
                                                   }
@@ -1576,23 +1591,45 @@ export default function Youtube1() {
                                               <div className="div_class_tugadi">
                                                 <div className="task-uchun-joy-and-mark">
                                                   <h5>{item.username}</h5>
-                                                  {item.mark === 0 ? "" : (<>
-                                                  {item.mark === 2 ? (<div className="mark-two-bosa">
-                                                    2
-                                                  </div>):(<>
-                                                  {item.mark === 3 ? (<div className="mark-three-bosa">
-                                                    3
-                                                  </div>): (<>
-                                                  {item.mark === 4 ? (<div className="mark-four-bosa">
-                                                    4
-                                                  </div>): (<>
-                                                  {item.mark === 5 ? (<div className="mark-five-bosa">
-                                                    5
-                                                  </div>):""}
-                                                  </>)}
-                                                  </>)}
-                                                  </>)}
-                                                  </>)}
+                                                  {item.mark === 0 ? (
+                                                    ""
+                                                  ) : (
+                                                    <>
+                                                      {item.mark === 2 ? (
+                                                        <div className="mark-two-bosa">
+                                                          2
+                                                        </div>
+                                                      ) : (
+                                                        <>
+                                                          {item.mark === 3 ? (
+                                                            <div className="mark-three-bosa">
+                                                              3
+                                                            </div>
+                                                          ) : (
+                                                            <>
+                                                              {item.mark ===
+                                                              4 ? (
+                                                                <div className="mark-four-bosa">
+                                                                  4
+                                                                </div>
+                                                              ) : (
+                                                                <>
+                                                                  {item.mark ===
+                                                                  5 ? (
+                                                                    <div className="mark-five-bosa">
+                                                                      5
+                                                                    </div>
+                                                                  ) : (
+                                                                    ""
+                                                                  )}
+                                                                </>
+                                                              )}
+                                                            </>
+                                                          )}
+                                                        </>
+                                                      )}
+                                                    </>
+                                                  )}
                                                 </div>
 
                                                 <p className="p-create-time-uchun">
@@ -1630,22 +1667,25 @@ export default function Youtube1() {
                                                           flexWrap: "wrap",
                                                         }}
                                                       >
-                                                        {localStorage.getItem("position") === 2 ? (
+                                                        {localStorage.getItem(
+                                                          "position"
+                                                        ) === 2 ? (
                                                           <></>
-                                                          )
-                                                          : ""}
-                                                             <p
-                                                             className="m-comment-mark"
-                                                             onClick={() => {
-                                                               markOpen();
-                                                               setPage(1);
-                                                             }}
-                                                           >
-                                                             <TfiMarkerAlt />
-                                                             <span>
-                                                               поставить оценку
-                                                             </span>
-                                                           </p>
+                                                        ) : (
+                                                          ""
+                                                        )}
+                                                        <p
+                                                          className="m-comment-mark"
+                                                          onClick={() => {
+                                                            markOpen();
+                                                            setPage(1);
+                                                          }}
+                                                        >
+                                                          <TfiMarkerAlt />
+                                                          <span>
+                                                            поставить оценку
+                                                          </span>
+                                                        </p>
                                                         {item5.id ==
                                                         item.user_id ? (
                                                           <p
@@ -1884,14 +1924,14 @@ export default function Youtube1() {
                 ) : (
                   <div className="youtube_kotta_img">
                     <div className="img_youtube_kotta">
-                    <ReactPlayer
-      ref={playerRef}
-      url={main.video}
-      controls
-      onDuration={handleDuration}
-      onProgress={handleProgress}
-      className="React_player"
-      />
+                      <ReactPlayer
+                        ref={playerRef}
+                        url={main.video}
+                        controls
+                        onDuration={handleDuration}
+                        onProgress={handleProgress}
+                        className="React_player"
+                      />
                     </div>
                     <div className="theme_df">
                       <div className="flex_logig">
