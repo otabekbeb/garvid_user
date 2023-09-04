@@ -52,6 +52,7 @@ export default function FollowCard() {
   useEffect(() => {
     axios.get(`${url}/auth/teachers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setFollow(res.data)
+      localStorage.setItem("FollowCard",res.data.length)
       setFollow1(res.data)
     }).catch(err=>{})
     axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
@@ -95,7 +96,8 @@ export default function FollowCard() {
                       </button>
                     </a>
                   </div>
-                </div>):(<div style={{display:"flex",justifyContent:"center"}}>{follow.map((item, key) => {
+                </div>):(<div style={{display:"flex",justifyContent:"center"}}>
+                {follow.map((item, key) => {
             if (following != item.id) {
               return (
                 <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
