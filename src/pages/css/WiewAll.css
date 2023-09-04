@@ -13,8 +13,9 @@
     align-items: center;
     padding: 15px;
     gap: 10px;
+    background-color: #AC9292;
     /* display: none; */
-    display: none;
+    /* display: none; */
 }
 .Exit_notifaction_button{
     padding-left: 15px;

@@ -68,18 +68,18 @@ export default function WiewAll() {
                 <h3 className='logo'>Notifications</h3>
                 <div className="wiew_sms_big">
                     {page == 1 ? (
-                        <>
+                        <div>
                             <button className='Exit_notifaction_button' onClick={() => setPage(0)}><BsArrowLeft style={{ fontSize: '20px' }} /></button>
                             {Wiew === 0 ? (
-                                <><div className="icon">
+                                <div><div className="icon">
                                     <img className='ooo' src={Qongro} alt="" />
                                 </div>
 
-                                    <p className='qongiro_title'>You don't have any notifications yet!</p> </>
-                            ) : (<>    {Wiew.map((item, key) => {
+                                    <p className='qongiro_title'>You don't have any notifications yet!</p> </div>
+                            ) : (<div>    {Wiew.map((item, key) => {
                                 if (item.to_user_id == read) {
                                     return (
-                                        <>
+                                        <div>
                                             <div style={{ cursor: "pointer" }} className="sms">
                                                 {/*<div className="qizil"></div>*/}
                                                 <p className='data'>{item.username}</p>
@@ -93,17 +93,20 @@ export default function WiewAll() {
                                                     <input style={{ display: "none" }} type="text" id='atvet' />
                                                 </div>
                                             </div>
-                                        </>
+                                        </div>
                                     )
                                 }
-                            })} </>)}
-
-                        </>) : (
-                        <>
+                            })} </div>)}
+                            <div id='inputNotifaction' className="input_notification_bid_div">
+                            <input id='atvetu1' onChange={(e) => setInputValue(e.target.value)} type="text" />
+                            <button onClick={() => atvet(read)}>Send</button>
+                        </div>
+                        </div>) : (
+                        <div>
                             {Wiew.map((item, key) => {
                                 if (item.to_user_id == localStorage.getItem("OneuserId")) {
                                     return (
-                                        <>
+                                        <div>
                                             <div onClick={() => Page(item.user_id)} style={{ cursor: "pointer" }} className="sms">
                                                 <div className="qizil"></div>
                                                 <div className="data_title">
@@ -114,17 +117,12 @@ export default function WiewAll() {
                                                     <p className='lorem_sms'>{item.last_name} </p>
                                                     <input style={{ display: "none" }} type="text" id='atvet' />
                                                 </div>
-                                                <div id='inputNotifaction' className="input_notification_bid_div">
-                                                    <input id='atvetu1' onChange={(e) => setInputValue(e.target.value)} type="text" />
-                                                    <button onClick={() => atvet(item.user_id)}>Send</button>
-                                                    <button ><MdOutlineClose /></button>
-                                                </div>
                                             </div>
-                                        </>
+                                        </div>
                                     )
                                 }
                             })}
-                        </>
+                        </div>
                     )}
                 </div>
             </div>
