@@ -21,6 +21,16 @@ import Footer1 from '../js/Footer1'
 import buyimg from '../img/2282281.png'
 import { MdClose } from 'react-icons/md'
 import Profil from './Profil'
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+// import './styles.css';
+
+// import required modules
+import { Navigation } from 'swiper/modules';
 
 function onga() {
     document.querySelector(".mni-gridf1").classList.toggle("mni-gridf1-none")
@@ -526,22 +536,11 @@ export default function Proverr2() {
                                         <div className="boshqa-kurglaaaaa1" onClick={() => onga()}><box-icon name='right-arrow-alt' color='#44bef1 ' ></box-icon></div>
                                     </div>
                                 </div>
-                                {ticher.map(item1 => {
-                                    return (
-
-                                        <div className="mni-swiper-grid">
-                                            <div className="mni-gridf1">
-
-                                                {item1.image === null ? (
-                                                    <img src={img_for_null1} alt="" />
-                                                ) : (
-                                                    <img src={item1.image} />
-                                                )}
-
-
-
-
-                                            </div>
+                                <Swiper navigation={true} slidesPerView={2} modules={[Navigation]} className="mySwiper">
+                                    {ticher.map(item1=>{
+                                        return(
+                                            <SwiperSlide><div className="mni-swiper-grid">
+                                            
 
                                             <div className="mni-gridf2">
                                                 {item1.image === null ? (
@@ -549,13 +548,19 @@ export default function Proverr2() {
                                                 ) : (
                                                     <img src={item1.image} />
                                                 )}
-
+                                                <h1>{item1.username}</h1>
 
                                             </div>
-                                        </div>
-
-                                    )
-                                })}
+                                        </div></SwiperSlide>  
+                                        )
+                                      
+                                    })}
+        
+        
+      </Swiper>
+                                
+                    
+                                
 
                             </div>
 
@@ -706,15 +711,6 @@ dolor sit amet. . . .</p>
 
 
                                                 <div className="mni-swiper-grid">
-                                                    <div className="mni-gridf1">
-                                                        {item1.image === null ? (
-                                                            <img src={img_for_null1} alt="" />
-                                                        ) : (
-                                                            <img src={item1.image} />
-                                                        )}
-
-
-                                                    </div>
 
                                                     <div className="mni-gridf2">
                                                         {item1.image === null ? (
