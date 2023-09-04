@@ -61,13 +61,13 @@ export default function Azo() {
                   </button> */}
                 </a>
               </div>
-            </div>) : (<div> {follow.map((item, key) => {
+            </div>) : (<div style={{display:"flex"}}> {follow.map((item, key) => {
                 return <div>
                         {users.map(item1 => {
                             if (item1.id == item.topuser) {
                                 localStorage.setItem("for_azo", follow.filter(follow1=>follow1.topuser==item1.id).length)
                                 return (
-                                    <div>
+                                    <div style={{width:"300px"}}>
                                     <a>
                                         <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
                                             <div className="our-team">
