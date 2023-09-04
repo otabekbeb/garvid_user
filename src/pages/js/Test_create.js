@@ -64,6 +64,8 @@ import { BsSearch } from "react-icons/bs"
 import { FaUsers } from "react-icons/fa"
 import { BiEdit } from "react-icons/bi"
 import { FiDownload } from "react-icons/fi"
+import { Route, Switch, NavLink, Link } from 'react-router-dom'
+import rafiki from "../img/Choose-rafiki.png"
 import {
     Row,
     Col,
@@ -595,7 +597,12 @@ export default function Test() {
                                 </div>
                             </div>
                             <div className="edication_card">
-                                {test.filter((item) => {
+                                {test.length===0?(
+                                    <div className='rafiki_test_img'>
+                                        <img src={rafiki} alt="" />
+                                        <h3>You have not created a test</h3>
+                                    </div>
+                                ):(<> {test.filter((item) => {
                                     return search.toLocaleLowerCase() === ''
                                         ? item
                                         : item.day.toLocaleLowerCase().includes(search);
@@ -622,7 +629,8 @@ export default function Test() {
                                             </div>
                                         </div>
                                     )
-                                })}
+                                })}</>)}
+                               
                             </div>
                         </div>)}
                 </div>)}

@@ -11,7 +11,7 @@ import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import { FaUsers, FaHourglassStart, FaHourglassEnd } from "react-icons/fa"
 // import events from "./events";
-import Education from '../img/Education-bro.png'
+import Education from '../img/Thesis-pana.png'
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import {
   Row,
@@ -82,16 +82,16 @@ export default function Edication() {
       setEdication(res.data)
       setEdication1(res.data)
       localStorage.setItem("for_education", (res.data).length)
-    }).catch(err=>{})
+    }).catch(err => { })
 
     axios.get(`${url}/auth/teachers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       const user = res.data.filter(item => item.position == 2)
       setUser(res.data)
-    }).catch(err=>{})
+    }).catch(err => { })
     axios.get(`${url}/auth/student`, { headers: { Authorization: "Bearer " + localStorage.getItem(("token")) } }).then(res => {
       const StudentFilter = res.data.filter(item => item.position == 4)
       setSdutent(res.data)
-    }).catch(err=>{})
+    }).catch(err => { })
 
   }, [])
 
@@ -107,7 +107,7 @@ export default function Edication() {
         a[i].title = (a[i].start_time).slice(0, 5) + " - " + (a[i].end_time).slice(0, 5) + " / " + a[i].lesson_name
       }
       setEventsData(a)
-    }).catch(err=>{})
+    }).catch(err => { })
   }
 
   function postEducationModal() {
@@ -264,7 +264,7 @@ export default function Edication() {
           a[i].title = (a[i].start_time).slice(0, 5) + " - " + (a[i].end_time).slice(0, 5) + " / " + a[i].lesson_name
         }
         setEventsData(a)
-      }).catch(err=>{})
+      }).catch(err => { })
 
     }).catch(err => {
       alert("Информация не добавлена,заполните полностью")
@@ -291,7 +291,7 @@ export default function Edication() {
           a[i].title = (a[i].start_time).slice(0, 5) + " - " + (a[i].end_time).slice(0, 5) + " / " + a[i].lesson_name
         }
         setEventsData(a)
-      }).catch(err=>{})
+      }).catch(err => { })
 
     }).catch(err => {
       alert("Информация не изменилась, заполните полностью")
@@ -315,7 +315,7 @@ export default function Edication() {
           a[i].title = a[i].start_time + " - " + a[i].end_time + " / " + a[i].lesson_name
         }
         setEventsData(a)
-      }).catch(err=>{})
+      }).catch(err => { })
     }).catch(err => {
       alert("Data not deleted")
     })
@@ -339,7 +339,7 @@ export default function Edication() {
 
     axios.get(`${url}/edu/schedule`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setSchudele(res.data)
-    }).catch(err=>{})
+    }).catch(err => { })
 
 
     axios.get(`${url}/edu/group_student`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
@@ -395,13 +395,13 @@ export default function Edication() {
           lesson.alstudent_mark = table
           setJournal_mark(lesson)
           console.log(lesson, "lesson");
-        }).catch(err=>{})
+        }).catch(err => { })
 
 
 
 
       })
-    }).catch(err=>{})
+    }).catch(err => { })
   }
 
   function postGroupModal() {
@@ -447,7 +447,7 @@ export default function Edication() {
       axios.get(`${url}/edu/group_student`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         const StudentFilter = res.data.filter(item => item.education_id == JadvalPageId)
         setGroup_Student(StudentFilter)
-      }).catch(err=>{})
+      }).catch(err => { })
     }).catch(err => {
       alert("Студент не присоединился")
     })
@@ -463,7 +463,7 @@ export default function Edication() {
       axios.get(`${url}/edu/group_student`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         const StudentFilter = res.data.filter(item => item.education_id == JadvalPageId)
         setGroup_Student(StudentFilter)
-      }).catch(err=>{})
+      }).catch(err => { })
     }).catch(err => {
       alert("Student has not changed, fill in completely")
     })
@@ -476,7 +476,7 @@ export default function Edication() {
       axios.get(`${url}/edu/group_student`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         const StudentFilter = res.data.filter(item => item.education_id == JadvalPageId)
         setGroup_Student(StudentFilter)
-      }).catch(err=>{})
+      }).catch(err => { })
     }).catch(err => {
       alert("Student not removed")
     })
@@ -646,10 +646,11 @@ export default function Edication() {
               </div> */}
               <ul className="cards">
                 {edication === null ? (
-                  <div className="delete_padding">
-                    <img style={{ width: "60%", height: '70%' }} src={Education} alt="" />
-                    <h3 style={{ textAlign: 'center' }}>No education</h3>
+                  <div className="rafiki_delete_img">
+                    <img src={Education} alt="" />
+                    <h3>No education</h3>
                   </div>) : (<div className='edu_cards_inside'>
+
                     {edication.map(item => {
                       return (
                         <li>

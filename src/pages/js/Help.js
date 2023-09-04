@@ -18,7 +18,7 @@ export default function Help() {
   return (
     <div>
       <Usernavbar />
-      <Profil />
+      {/* <Profil /> */}
 
       <div className="bos">
         <h1 className='Savol'>Answers to frequently asked questions</h1>
