@@ -1014,11 +1014,8 @@ list-style: none;
 }
 
 .testimonial_cards {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1100px;
-    width: 80%;
-    margin-top: 60px;
+display: block !important;   
+
 }
 
 .Testimonial {
@@ -1359,3 +1356,17 @@ list-style: none;
     letter-spacing: 0px;
     color: black !important;
   }
+
+.home-slider-sli{
+    width: 400px !important;
+    border-radius: 10px;
+    border: 1px solid rgb(236, 230, 230);
+    display: block !important; 
+}
+
+.mySwiper342{
+ 
+height: 400px;
+overflow: hidden !important;
+    margin-top: 30px;
+}

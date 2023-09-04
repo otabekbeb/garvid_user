@@ -688,7 +688,8 @@ body {
     display: flex;
     cursor: pointer;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     justify-content: center;
     border-radius: 0.5rem;
     border: none;
@@ -997,16 +998,21 @@ justify-content: space-around; */
 }
 
 .mni-swiper-grid .mni-gridf1 {
-    display: grid !important;
-    grid-template-columns: auto auto auto !important;
+    
+    height: 100%;
 }
 
 .mni-gridf2 {
-    gap: 10px !important;
-    padding-left: 17px !important;
-    display: none !important;
+    height: 200px;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
 }
-
+.fora_img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .mni-gridf1-none {
     display: none !important;
 }
@@ -3617,4 +3623,19 @@ justify-content: space-around; */
     .prover2-kotta-men{
         margin-top: 200px;
     }
+}
+.mni-krus-techer-swiper .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+    font-size: 30px !important;
+}
+
+.mni-krus-techer-swiper .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
+    font-size: 30px !important;
+}
+.mni-krus-techer-swiper .swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled{
+    border: 0px !important;
+    /* width: auto !important; */
+    /* height: auto !important; */
+}
+.mni-krus-techer-swiper .mySwiper{
+    height: 200px !important;
 }
