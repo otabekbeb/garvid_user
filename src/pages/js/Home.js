@@ -13,12 +13,12 @@ import Swal from 'sweetalert2';
 import { BsCheck2 } from 'react-icons/bs'
 import { BsCheckAll } from 'react-icons/bs'
 
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+
 
 
 // import required modules
@@ -279,56 +279,42 @@ export default function Home() {
                         <img className="girl" src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2019/07/mt-0514-home-image-2.png" alt="" />
                     </div>
                     <div className="Testimonial">
-                        <center><h1>Teacher</h1></center>
+                        <center><h1>Testimonials</h1></center>
                         <center><div className="blue1"></div></center>
 
-
-
-                        <center><div className="testimonial_cards">
-                          
-
-
-
                         <Swiper
-                                breakpoints={{
-    
-                                    880: {
-                                      slidesPerView: 2,
-                                    },
-                                  }}
-        slidesPerView={3}
+        slidesPerView={4}
         spaceBetween={30}
+        centeredSlides={true}
         pagination={{
           clickable: true,
-
         }}
         modules={[Pagination]}
-        className="mySwiper223">
-{data.map((item)=>{
-  return(
-      <SwiperSlide className='home-slider-sli'>
-<div className="sli-kurg-rasm">
-
-<div className="sli-img"><img src={item.image}  alt="" /></div>
-
-</div>
-<div className="sli-text">
-<p>{item.description}</p>
-
-<strong>{item.username}</strong>
-</div>
-        </SwiperSlide>
-  )
-  
-})}
-      
-
-
-      </Swiper>
-
-
+        className="mySwiper342"
+      > 
+      {data.map((item)=>{
+                                return(
+        <SwiperSlide className='home-slider-sli'>  
+        <center><div className="testimonial_cards">
+                                    <div className="sli-kurg-rasm">
+    
+                                        <div className="sli-img"><img src={item.image}  alt="" /></div>
+    
+                                    </div>
+                                    <div className="sli-text">
+                                        <p>{item.description}</p>
+    
+                                        <strong>{item.username}</strong>
+                                        
+                                    </div>
                         </div>
                         </center>
+        </SwiperSlide> 
+         )
+                            })}
+      </Swiper>
+
+      
                     </div>
                     <Images />
                     <Futer />
