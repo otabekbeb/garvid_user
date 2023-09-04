@@ -282,7 +282,7 @@ localStorage.setItem("page_video", JSON.stringify(res.data))
         // );
   
         // await Promise.all(promises);
-        alert("ishadi");
+        // alert("ishadi");
   
         const coment21 = res.data;
         const comment = res.data.map((item) => {
