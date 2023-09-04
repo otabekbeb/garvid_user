@@ -7,8 +7,8 @@ import url from './Host'
 import { MdOutlineClose } from "react-icons/md"
 import Profil from './Profil'
 import Futer from '../js/Footer1'
-import {BsArrowLeft} from 'react-icons/bs'
- export default   function WiewAll() {
+import { BsArrowLeft } from 'react-icons/bs'
+export default function WiewAll() {
     const [Wiew, setWiew] = useState([])
     const [inputValue, setInputValue] = useState()
     const [oneuser, setOneuser] = useState([])
@@ -58,64 +58,64 @@ import {BsArrowLeft} from 'react-icons/bs'
                 <div className="wiew_sms_big">
                     {page == 1 ? (
                         <>
-                            <button className='Exit_notifaction_button' onClick={() => setPage(0)}><BsArrowLeft style={{fontSize:'20px'}}/></button>
+                            <button className='Exit_notifaction_button' onClick={() => setPage(0)}><BsArrowLeft style={{ fontSize: '20px' }} /></button>
                             {Wiew === 0 ? (
                                 <><div className="icon">
                                     <img className='ooo' src={Qongro} alt="" />
                                 </div>
-                               
-                            <p className='qongiro_title'>You don't have any notifications yet!</p> </>
-                    ) : (<>    {Wiew.map((item, key) => {
-                        if (item.to_user_id == read) {
-                            return (
-                                <>
-                                    <div style={{ cursor: "pointer" }} className="sms">
-                                        <div className="qizil"></div>
-                                        <div className="data_title">
-                                            <p className='unred'>{item.title}</p>
-                                            <p className='data'>{item.time_create.slice(11, 16)}</p>
-                                        </div>
-                                        <div className="p_lorem_sms">
-                                            <p className='lorem_sms'>{item.description} </p>
-                                            <input style={{ display: "none" }} type="text" id='atvet' />
-                                        </div>
-                                    </div>
-                                </>
-                            )
-                        }
-                    })} </>)}
 
-                </>) : (
-                <>
-                    {Wiew.map((item, key) => {
-                        if (item.to_user_id == localStorage.getItem("OneuserId")) {
-                            return (
-                                <>
-                                    <div onClick={() => Page(item.user_id)} style={{ cursor: "pointer" }} className="sms">
-                                        <div className="qizil"></div>
-                                        <div className="data_title">
-                                            <p className='unred'>{item.title}</p>
-                                            <p className='data'>{item.time_create.slice(11, 16)}</p>
-                                        </div>
-                                        <div className="p_lorem_sms">
-                                            <p className='lorem_sms'>{item.description} </p>
-                                            <input style={{ display: "none" }} type="text" id='atvet' />
-                                        </div>
-                                        <div id='inputNotifaction' className="input_notification_bid_div">
-                                            <input id='atvetu1' onChange={(e) => setInputValue(e.target.value)} type="text" />
-                                            <button onClick={() => atvet(item.user_id)}>Send</button>
-                                            <button onClick={() => inputClose()}><MdOutlineClose /></button>
-                                        </div>
-                                    </div>
-                                </>
-                            )
-                        }
-                    })}
-                </>
-                                        )}
+                                    <p className='qongiro_title'>You don't have any notifications yet!</p> </>
+                            ) : (<>    {Wiew.map((item, key) => {
+                                if (item.to_user_id == read) {
+                                    return (
+                                        <>
+                                            <div style={{ cursor: "pointer" }} className="sms">
+                                                <div className="qizil"></div>
+                                                <div className="data_title">
+                                                    <p className='unred'>{item.title}</p>
+                                                    <p className='data'>{item.time_create.slice(11, 16)}</p>
+                                                </div>
+                                                <div className="p_lorem_sms">
+                                                    <p className='lorem_sms'>{item.description} </p>
+                                                    <input style={{ display: "none" }} type="text" id='atvet' />
+                                                </div>
+                                            </div>
+                                        </>
+                                    )
+                                }
+                            })} </>)}
+
+                        </>) : (
+                        <>
+                            {Wiew.map((item, key) => {
+                                if (item.to_user_id == localStorage.getItem("OneuserId")) {
+                                    return (
+                                        <>
+                                            <div onClick={() => inputOpen(key)} style={{ cursor: "pointer" }} className="sms">
+                                                <div className="qizil"></div>
+                                                <div className="data_title">
+                                                    <p className='unred'>{item.title}</p>
+                                                    <div style={{ display: 'flex', gap: '10px' }}><p onClick={() => Page(item.user_id)} className='data'>wrote</p><p className='data'>{item.time_create.slice(11, 16)}</p></div>
+                                                </div>
+                                                <div className="p_lorem_sms">
+                                                    <p className='lorem_sms'>{item.description} </p>
+                                                    <input style={{ display: "none" }} type="text" id='atvet' />
+                                                </div>
+                                                <div id='inputNotifaction' className="input_notification_bid_div">
+                                                    <input id='atvetu1' onChange={(e) => setInputValue(e.target.value)} type="text" />
+                                                    <button onClick={() => atvet(item.user_id)}>Send</button>
+                                                    <button onClick={() => inputClose()}><MdOutlineClose /></button>
+                                                </div>
+                                            </div>
+                                        </>
+                                    )
+                                }
+                            })}
+                        </>
+                    )}
+                </div>
             </div>
-        </div>
-        <Futer />
+            <Futer />
         </div>
     )
 }

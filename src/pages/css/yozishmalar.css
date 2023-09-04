@@ -1048,3 +1048,14 @@ label{
     width: 40%;
 }
 
+.cursu{
+    width: 81%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px;
+    margin-top: 5%;
+    position: relative;
+}

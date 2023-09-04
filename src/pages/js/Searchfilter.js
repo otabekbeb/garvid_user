@@ -56,7 +56,7 @@ export default function Searchfilter() {
         setCoursetype(res.data);
         console.log(res.data);
       })
-      .catch((err) => {});
+      .catch((err) => { });
 
     axios
       .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
@@ -78,6 +78,7 @@ export default function Searchfilter() {
               }
             }
             setKursdata(res.data);
+            localStorage.setItem("mycourseUser", res.data.length)
           });
       });
     setLoader(0);
@@ -119,7 +120,7 @@ export default function Searchfilter() {
             });
             setKursdata(searchdata);
           });
-    
+
       });
   };
 
@@ -195,9 +196,9 @@ export default function Searchfilter() {
                   </div>
                 </div>
               ) : (
-                <div>
+                <div className="cursu" style={{display:"flex"}}>
                   {kursdata.map((item) => {
-                    localStorage.setItem("mycourseUser",kursdata.length)
+                    
                     return (
                       <div>
                         <div
@@ -257,14 +258,7 @@ export default function Searchfilter() {
                                   </div>
                                   <p style={{ fontSize: "16px" }}>
                                     {item.star}
-                                    <span>
-                                      <MdOutlineGrade
-                                        style={{
-                                          color: "#FFD401",
-                                          fontSize: "13px",
-                                        }}
-                                      />
-                                    </span>
+                                    
                                   </p>
                                 </div>
                               ) : (
@@ -302,14 +296,7 @@ export default function Searchfilter() {
                                       </div>
                                       <p style={{ fontSize: "16px" }}>
                                         {item.star}
-                                        <span>
-                                          <MdOutlineGrade
-                                            style={{
-                                              color: "#FFD401",
-                                              fontSize: "13px",
-                                            }}
-                                          />
-                                        </span>
+                                        
                                       </p>
                                     </div>
                                   ) : (
@@ -350,14 +337,7 @@ export default function Searchfilter() {
                                           </div>
                                           <p style={{ fontSize: "16px" }}>
                                             {item.star}
-                                            <span>
-                                              <MdOutlineGrade
-                                                style={{
-                                                  color: "#FFD401",
-                                                  fontSize: "13px",
-                                                }}
-                                              />
-                                            </span>
+                                            
                                           </p>
                                         </div>
                                       ) : (
@@ -398,14 +378,7 @@ export default function Searchfilter() {
                                               </div>{" "}
                                               <p style={{ fontSize: "16px" }}>
                                                 {item.star}
-                                                <span>
-                                                  <MdOutlineGrade
-                                                    style={{
-                                                      color: "#FFD401",
-                                                      fontSize: "13px",
-                                                    }}
-                                                  />
-                                                </span>
+                                               
                                               </p>
                                             </div>
                                           ) : (
@@ -458,14 +431,7 @@ export default function Searchfilter() {
                                                     style={{ fontSize: "16px" }}
                                                   >
                                                     {item.star}
-                                                    <span>
-                                                      <MdOutlineGrade
-                                                        style={{
-                                                          color: "#FFD401",
-                                                          fontSize: "13px",
-                                                        }}
-                                                      />
-                                                    </span>
+                                                    
                                                   </p>
                                                 </div>
                                               ) : (
@@ -520,14 +486,7 @@ export default function Searchfilter() {
                                                         }}
                                                       >
                                                         0
-                                                        <span>
-                                                          <MdOutlineGrade
-                                                            style={{
-                                                              color: "#9DA7BB",
-                                                              fontSize: "13px",
-                                                            }}
-                                                          />
-                                                        </span>
+                                                        
                                                       </p>
                                                     </div>
                                                   ) : (
@@ -572,7 +531,7 @@ export default function Searchfilter() {
               )}
             </div>
 
-        
+
           </div>
         </div>
       ) : (

@@ -76,6 +76,14 @@ export default function Ourcourse() {
   //     setFilter1(search)
   //   });
   // }
+  function AllType(){
+    axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+      setKursdata(res.data)
+      localStorage.setItem("ourcourseLength",res.data.length)
+    }).catch(err => {
+      console.log(err);
+    })
+  }
 
   useEffect(() => {
     document.querySelector(".filter_card").style = "display:none"
@@ -113,7 +121,7 @@ export default function Ourcourse() {
 
 
       <header className="curs">
-        <nav className="nav_ul">
+      {/*  <nav className="nav_ul">
           <ul className="bottom_ul">
             <li style={{ cursor: "pointer" }} className="bottom_li">Everything</li>
             {kurscategory.map(item => {
@@ -124,7 +132,7 @@ export default function Ourcourse() {
 
 
           </ul>
-        </nav>
+        </nav>*/}
         <div className="bottom_line"></div>
         <div className="curs_cards">
           <button className="curs_filter" onClick={() => filter()}>
@@ -137,7 +145,7 @@ export default function Ourcourse() {
             <div className="filter_padding">
               <h5>Sorting
 
-                types</h5><p style={{ cursor: "pointer" }} onClick={() => { window.location.reload() }}>All</p>
+                types</h5><p style={{ cursor: "pointer" }} onClick={() =>AllType()}>All</p>
               {filter1.map(item => {
                 return (
                   <p style={{ cursor: "pointer" }} onClick={() => filter11(item.id)}>{item.name}</p>

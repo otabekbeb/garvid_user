@@ -6,7 +6,7 @@ import Bilim from "./Bilim";
 import Sertifikat from "./Sertifikate";
 import Azo from "./Azo";
 import io from "socket.io-client";
-import UserChat from "./userChat";
+import UserChat from "./FollowCard";
 import { TiThMenu } from "react-icons/ti";
 import axios from "axios";
 import url from "./Host";
@@ -127,6 +127,23 @@ export default function Pdp() {
                   ""
                 )}
               </div>
+              <div className="fil_text_blok_soz">
+              <h1
+                onClick={() => updatetoggle(6)}
+                style={
+                  toggle === 6 ? { borderBottom: "2px solid #44bef1" } : {}
+                }
+                className="fromLeft"
+              >
+                All Teachers
+              </h1>
+              {toggle === 6 ? (
+                <div className="fil_text_blok_kurs_lenght">{localStorage.getItem("FollowCard")} pieces</div>
+              ) : (
+                ""
+              )}
+            </div>
+
               
 
               {/* <div className="fil_text_blok_soz">
@@ -202,6 +219,9 @@ export default function Pdp() {
               </h1>
               <h1 onClick={() => updatetoggle(5)} className="fromMenu">
                 My Subscriptions
+              </h1>
+              <h1 onClick={() => updatetoggle(6)} className="fromMenu">
+                All Teachers
               </h1>
               {/* <h1 onClick={() => updatetoggle(9)} className="fromMenu">
                 My subscribers
