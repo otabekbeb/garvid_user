@@ -91,11 +91,11 @@ import {BsArrowLeft} from 'react-icons/bs'
                         if (item.to_user_id == localStorage.getItem("OneuserId")) {
                             return (
                                 <>
-                                    <div onClick={() => inputOpen(key)} style={{ cursor: "pointer" }} className="sms">
+                                    <div onClick={() => Page(item.user_id)} style={{ cursor: "pointer" }} className="sms">
                                         <div className="qizil"></div>
                                         <div className="data_title">
                                             <p className='unred'>{item.title}</p>
-                                            <div style={{ display: 'flex', gap: '10px' }}><p onClick={() => Page(item.user_id)} className='data'>wrote</p><p className='data'>{item.time_create.slice(11, 16)}</p></div>
+                                            <p className='data'>{item.time_create.slice(11, 16)}</p>
                                         </div>
                                         <div className="p_lorem_sms">
                                             <p className='lorem_sms'>{item.description} </p>
