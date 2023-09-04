@@ -47,13 +47,13 @@ export default function Youtube1() {
   const [id, setId] = useState(1);
   const [category, setCategory] = useState([]);
 
-  const [progressTheme, setProgressTheme] = useState();
-  const [duration, setDuration] = useState(0);
+
+
   const [main, setMain] = useState([]);
   const [main1, setMain1] = useState(
     JSON.parse(localStorage.getItem("Idvideo"))
   );
-  const [chooseStudentTheme, setchooseStudentTheme] = useState(0);
+
   const [state1, setState1] = React.useState();
   const [loader, setLoader] = useState(1);
   const [task_comnet_id, setTask_comnet_id] = useState(0);
@@ -70,87 +70,100 @@ export default function Youtube1() {
   const [mark, setMark] = useState([]);
   const [page, setPage] = useState(1);
   const [page1, setPage1] = useState(1);
-  const playerRef = useRef(null);
+  const [videoDuration, setVideoDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-
-  const handleReady = () => {
-    // Seek to the desired time (in seconds)
-    var StudentId = parseInt(localStorage.getItem("OneuserId"));
-    // console.log(main,main1.id,"aaaaaaaaaaaaaaaaaadddd");
-    var id = main1.id;
-    // var id2=main.id
-
-    // if (main1) {
-
-
-    setTimeout(() => {
-      const time = progressTheme;
-      alert(progressTheme, 2);
-      playerRef.current.seekTo(100);
-    }, 4000);
-  };
-  useEffect(() => {
-    var StudentId = parseInt(localStorage.getItem("OneuserId"));
-    var id = main1.id;
-    const fetchData = async () => {
-      try {
-        const res = await axios.get(`${url}/api/student_theme/`, {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        });
-
-        const filter = res.data.filter(
-          (item) => item.student_id === StudentId && item.theme_id === id
-        );
-        setchooseStudentTheme(filter[0].id);
-        const num = filter[0].complate;
-        const time = duration / 100;
-        const result = time * num;
-        setProgressTheme(result);
-
-        console.log(result, "result");
-        // Perform other actions with the result
-        playerRef.current.seekTo(Number(result));
-      } catch (err) {
-      
-      }
-    };
-    fetchData();
-  }, []);
+  const [startAt, setStartAt] = useState(0);
+  const playerRef = useRef(null);
 
   const handleDuration = (duration) => {
-    console.log("Длительность видео:", duration);
+    const OneuserId = parseInt(localStorage.getItem("OneuserId"));
+    const { id } = JSON.parse(localStorage.getItem("page_video"));
+    const token = localStorage.getItem("token");
 
-    setDuration(duration);
+    axios
+      .get(`${url}/api/student_theme/`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        const filteredItem = res.data.find(
+          (item) => item.theme_id === id && item.student_id === OneuserId
+        );
+        const percentWatched = filteredItem ? filteredItem.complate : 0;
+        const secondsWatched = (percentWatched * duration) / 100;
+        setStartAt(secondsWatched);
+      });
+
+    setVideoDuration(duration);
   };
 
   const handleProgress = (progress) => {
+    const OneuserId = parseInt(localStorage.getItem("OneuserId"));
+    const { id } = JSON.parse(localStorage.getItem("page_video"));
+    const token = localStorage.getItem("token");
     setCurrentTime(progress.playedSeconds);
+    const percentWatched = Math.floor(progress.played * 100);
 
-    var StudentId = parseInt(localStorage.getItem("OneuserId"));
-    console.log(progress.playedSeconds);
-    console.log(progressTheme, "progress");
-    if (chooseStudentTheme >= 1) {
-      setInterval(() => {
-        const math = (duration / progress.playedSeconds) * 100;
-        var fomdata = new FormData();
-        fomdata.append("student_id", StudentId);
-        fomdata.append("theme_id", main1.id);
-        fomdata.append("complate", math);
-        axios
-          .put(`${url}/api/student_theme/2`, fomdata, {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          })
-          .then((item) => {
-            alert("work");
-          })
-          .catch((err) => {
-            console.log("ss");
-          });
-      }, 3000);
+    if (percentWatched % 10 === 0) {
+      // alert(`Вы просмотрели ${percentWatched}% видео`);
+
+      axios
+        .get(`${url}/api/student_theme/`, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((res) => {
+          const filteredItem = res.data.find(
+            (item) => item.theme_id === id && item.student_id === OneuserId
+          );
+
+          if (!filteredItem || percentWatched > filteredItem.complate) {
+            const formData = new FormData();
+            formData.append("student_id", OneuserId);
+            formData.append("theme_id", id);
+            formData.append("complate", percentWatched);
+
+            if (!filteredItem) {
+              axios
+                .post(`${url}/api/student_theme/`, formData, {
+                  headers: { Authorization: `Bearer ${token}` },
+                })
+                .then((res) => {
+                  console.log("work");
+                  console.log(filteredItem);
+                  console.log(OneuserId);
+                  console.log(id);
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+            } else {
+              axios
+                .put(
+                  `${url}/api/student_theme/complate/${filteredItem.id}`,
+                  formData,
+                  {
+                    headers: { Authorization: `Bearer ${token}` },
+                  }
+                )
+                .then((res) => {
+                  console.log("work");
+                  console.log(filteredItem);
+                  console.log(OneuserId);
+                  console.log(id);
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+            }
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
   };
+
+
+
 
   useEffect(() => {
     const idget = JSON.parse(localStorage.getItem("page_video"));
@@ -288,7 +301,6 @@ function getSubcoment(id){
   }
 
   useEffect(() => {
-    console.log(progressTheme, "progress");
     localStorage.setItem("task_commnet_id", JSON.stringify(task_comnet_id));
     var id = localStorage.getItem("abbas");
     var StudentId = localStorage.getItem("OneuserId");
@@ -1173,24 +1185,34 @@ function getSubcoment(id){
                           src={main1.video}
                           title="W3Schools Free Online Web Tutorials"
                         ></iframe> */}
-                        <ReactPlayer
-                          ref={playerRef}
-                          url={main1.video}
-                          // width={100}
-                          // height={100}
-                          controls={true}
-                          // playing={true}
-                          onReady={handleReady}
-                          onProgress={handleProgress}
-                          onDuration={handleDuration}
-                          className="React_player"
-                          // style={{display:"flex"he}}
-                        />
+                    {(() => {
+if (main.video.includes(".jpg")||main.video.includes(".png")||main.video===null) {
+  return<p style={{
+    margin:"30%"
+  }}>video not found or not exist</p>
+}else{
+  return<ReactPlayer
+  ref={playerRef}
+  url={main1.video}
+  controls
+  onDuration={handleDuration}
+  onProgress={handleProgress}
+  className="React_player"
+/>
+}
+
+                    })()}
                       </div>
                       <div className="theme_df">
                         <div className="flex_logig">
                           <h1 className="raspberry_pi">
-                            {main1.name} Ффффффффффф
+                          <p>
+                              Размер видео: {videoDuration.toFixed(2)} секунд
+                            </p>
+                            <p>Последний раз останавливались на {startAt} </p>
+                            <p>
+                              Текущее время: {currentTime.toFixed(2)} секунд
+                            </p>
                           </h1>
                           <div className="odtel_media_uchun">
                             <h1>{main1.name}</h1>
@@ -2070,16 +2092,23 @@ function getSubcoment(id){
                 ) : (
                   <div className="youtube_kotta_img">
                     <div className="img_youtube_kotta">
-                      <ReactPlayer
-                        ref={playerRef}
-                        url={main.video}
-                        controls={true}
-                        playing={true}
-                        onReady={handleReady}
-                        onProgress={handleProgress}
-                        onDuration={handleDuration}
-                        className="React_player"
-                      />
+                    {(() => {
+if (main.video.includes(".jpg")||main.video.includes(".png")||main.video===null) {
+  return<p style={{
+    margin:"30%"
+  }}>video not found or not exist</p>
+}else{
+  return<ReactPlayer
+  ref={playerRef}
+  url={main.video}
+  controls
+  onDuration={handleDuration}
+  onProgress={handleProgress}
+  className="React_player"
+/>
+}
+
+                    })()}
                     </div>
                     <div className="theme_df">
                       <div className="flex_logig">
