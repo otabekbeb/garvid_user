@@ -271,16 +271,17 @@ export default function Login() {
                         <form>
                           <div className="login_small_div_input">
                             <h1>{state1 === "en" ? ("Registration") : ("Регистрация")}</h1>
+                             <div className="login_small_input">
+                              < FiMail className="login_icon" />
+                              <input className="email" placeholder={state1 === "en" ? ("Email") : ("Email")} type="text" required />
+                              <div className="error">{state1 === "en" ? ("It's already in use") : ("Это уже используется")}</div>
+                            </div>
                             <div className="login_small_input">
                               < AiOutlineUser className="login_icon" />
                               <input onChange={setEmail} className="name" placeholder={state1 === "en" ? ("Name") : ("Имя")} type="text" required />
                               <div className="error">{state1 === "en" ? ("It's already in use") : ("Это уже используется")}</div>
                             </div>
-                            <div className="login_small_input">
-                              < FiMail className="login_icon" />
-                              <input className="email" placeholder={state1 === "en" ? ("Email") : ("Email")} type="text" required />
-                              <div className="error">{state1 === "en" ? ("It's already in use") : ("Это уже используется")}</div>
-                            </div>
+                          
                             <div className="login_small_input">
                               <BiLockAlt className="login_icon" />
                               <input type={changePassword ? "password" : "text"}
@@ -301,6 +302,7 @@ export default function Login() {
                                 onChange={handleRecaptchaChange}
                               />
                             </div>
+                          
                             <div className="login_button_div">
                               <button type="button" onClick={() => userModal()}>{state1 === "en" ? ("Registration") : ("Регистрация")}</button>
                             </div>
