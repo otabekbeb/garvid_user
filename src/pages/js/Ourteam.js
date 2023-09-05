@@ -67,7 +67,7 @@ export default function Services() {
             </div>
           </div>
           <div className="box">
-            <div className="left-card">
+            <div style={{boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" }} className="left-card">
               {partner.map(item=>{
                 return(
                   <div id='cards11' className="cards">
@@ -76,7 +76,7 @@ export default function Services() {
                 <p>{item.description}</p>
                 <div className="two">
                   <div className="icon">
-                  <a style={{color:"black"}} href="mailto:akbarbahodirov@gmail.com"><div className="dumalo"><i className="bx bxl-facebook"></i></div></a>
+                  <a style={{color:"black"}} href="mailto:${item.twiter}"><div className="dumalo"><i className="bx bxl-facebook"></i></div></a>
                   <a style={{color:"black"}} href=""><div className="dumalo"><i className="bx bxl-twitter"></i></div></a>
                   <a style={{color:"black"}} href=""><div className="dumalo"><i className="bx bxl-linkedin"></i></div></a>
                   </div>
@@ -86,6 +86,7 @@ export default function Services() {
                 )
                 
               })}
+              
               
 
             </div>
