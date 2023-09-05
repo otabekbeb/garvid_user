@@ -14,7 +14,7 @@ export default function Images() {
 
 
   useEffect(()=>{
-    axios.get(`${url}/api/homiy`,{headers:{Authorization:"Bearer "+ localStorage.getItem("token")}}).then(res=>{
+    axios.get(`${url}/api/university`,{headers:{Authorization:"Bearer "+ localStorage.getItem("token")}}).then(res=>{
       setData(res.data)
     }).catch(err=>{})
   },[])
@@ -27,7 +27,7 @@ export default function Images() {
           {data.map(item1000 => {
             return (
               <>
-                <img src={item1000.image} alt="" />
+                <img src={item1000.logo} alt="" />
                 
               </>
             )

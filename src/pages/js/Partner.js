@@ -6,13 +6,27 @@ import url from './Host';
 
 export default function Partner() {
     const [partner, setPartner] = useState([]);
+    const [til, setTil] = useState([]);
 
+
+    useEffect(() => {
+      
     axios.get(`${url}/api/operator`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
         setPartner(res.data)
         console.log(res.data);
       }).catch(err => {
   
       })
+      axios.get(`${url}/api/language`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+        setTil(res.data)
+        console.log(res.data);
+      }).catch(err => {
+  
+      })
+      
+    }, [])
+    
+    
   return (
     <div>
         <Navbar/>
@@ -48,6 +62,11 @@ export default function Partner() {
                 
             })}
           </div> */}
+          {til.map(item=>{
+            return(
+                <h1>{item.lg}</h1>
+            )
+          })}
           <Footer1/>
     </div>
   )

@@ -1,9 +1,10 @@
-.otash{
+.otash {
     margin: auto;
     width: 80%;
     margin-top: 30px;
     margin-bottom: 80px;
 }
+
 .user_post_button {
     padding-left: 13px;
     padding-right: 13px;
@@ -18,12 +19,14 @@
     border-radius: 5px;
     transition: 0.4s;
 }
+
 .otash .teacher_page {
     width: 700px;
     max-width: 50%;
     display: grid;
     grid-template-columns: auto auto;
 }
+
 .otash .teacher_page_big {
     width: 100%;
     display: flex;
@@ -31,6 +34,7 @@
     align-items: center;
     flex-wrap: wrap;
 }
+
 .otash .teacher_page .teacher_page_button {
     width: 200px;
     padding-top: 5px;
@@ -260,6 +264,7 @@
     border: 1px solid rgb(182, 182, 182);
     outline-color: #44bef1;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Open+Sans:wght@400;500&family=Roboto&family=Rubik&display=swap');
 
 .postUserModal_div_label input {
@@ -344,11 +349,13 @@ select {
     border-radius: 5px;
     transition: 0.4s;
 }
+
 @media (max-width:600px) {
     .postUserModal_div_button button {
         width: 100% !important;
     }
 }
+
 .postUserModal_div_button {
     text-align: end;
     /* margin-top: 10px; */
@@ -1135,7 +1142,7 @@ select {
     }
 }
 
-.iniversty_cards {
+.iniversty_cards1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1190,7 +1197,7 @@ select {
         height: 190px !important;
     }
 
-    .iniversty_cards {
+    .iniversty_cards1 {
         gap: 20px;
     }
 }
@@ -1491,18 +1498,18 @@ select {
 :root {
     --surface-color: #fff;
     --curve: 40;
-  }
-  
-  /* * {
+}
+
+/* * {
     box-sizing: border-box;
   } */
-  
-  body {
+
+body {
     font-family: 'Noto Sans JP', sans-serif;
     background-color: #fef8f8;
-  }
-  
- .otash .cards {
+}
+
+.otash .cards {
     /* display: grid;
     grid-template-columns:auto auto auto auto; */
     margin: auto !important;
@@ -1516,8 +1523,9 @@ select {
     padding: 0;
     list-style-type: none;
     max-width: none !important;
-  }
-  .edu_cards_inside{
+}
+
+.edu_cards_inside {
     margin: auto !important;
     display: flex;
     justify-content: center;
@@ -1529,33 +1537,39 @@ select {
     padding: 0;
     list-style-type: none;
     max-width: none !important;
-  }
-  @media (max-width:1288px) {
+}
+
+@media (max-width:1288px) {
     .otash .cards {
         justify-content: space-evenly !important;
     }
-  }
-  @media (max-width:400px) {
-    .otash .card{
+}
+
+@media (max-width:400px) {
+    .otash .card {
         width: 300px !important;
         height: 280px;
         /* padding-top: 20px; */
     }
-      .card__description{
+
+    .card__description {
         margin-top: -20px;
-      }
-.edu_btns{
-    margin-bottom: 20px !important;
+    }
+
+    .edu_btns {
+        margin-bottom: 20px !important;
+    }
+
+    .otash .card__status {
+        gap: 30px;
+    }
+
+    .otash .card__status p {
+        font-size: 14px;
+    }
 }
-.otash .card__status{
-    gap: 30px;
-}
-.otash .card__status p{
-    font-size: 14px;
-}
-  }
-  
-  .card {
+
+.card {
     position: relative;
     display: block;
     width: 330px;
@@ -1564,89 +1578,90 @@ select {
     overflow: hidden;
     text-decoration: none;
     padding: 0px;
-  }
-  .card img{
+}
+
+.card img {
     width: auto !important;
-  }
-  
-  .card__image {      
+}
+
+.card__image {
     width: 100%;
     height: auto;
-  }
-  
-  .card__overlay {
+}
+
+.card__overlay {
     height: 300px;
     /* padding-top: 20px; */
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 1;      
-    border-radius: calc(var(--curve) * 1px);    
-    background-color: var(--surface-color);      
+    z-index: 1;
+    border-radius: calc(var(--curve) * 1px);
+    background-color: var(--surface-color);
     transform: translateY(100%);
     transition: .2s ease-in-out;
-  }
-  
-  .card:hover .card__overlay {
+}
+
+.card:hover .card__overlay {
     transform: translateY(0);
     /* padding-top: 20px; */
-  }
-  
-  .card__header {
+}
+
+.card__header {
     position: relative;
     display: flex;
     align-items: center;
     gap: 2em;
     padding: 2em;
-    border-radius: calc(var(--curve) * 1px) 0 0 0;    
+    border-radius: calc(var(--curve) * 1px) 0 0 0;
     background-color: var(--surface-color);
     transform: translateY(-100%);
     transition: .2s ease-in-out;
-  }
-  
-  .card__arc {
+}
+
+.card__arc {
     width: 80px;
     height: 80px;
     position: absolute;
     bottom: 100%;
-    right: 0;      
+    right: 0;
     z-index: 1;
-  }
-  
-  .card__arc path {
+}
+
+.card__arc path {
     fill: var(--surface-color);
     d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
-  }       
-  
-  .card:hover .card__header {
+}
+
+.card:hover .card__header {
     padding-top: 40px;
     transform: translateY(0);
-  }
-  
-  .card__thumb {
+}
+
+.card__thumb {
     flex-shrink: 0;
     width: 50px;
-    height: 50px;      
-    border-radius: 50%;      
-  }
-  
-  .card__title {
+    height: 50px;
+    border-radius: 50%;
+}
+
+.card__title {
     font-size: 20px;
     margin: 0 0 .3em;
     font-weight: 700;
     color: #6A515E;
-  }
-  
-  .card__tagline {
+}
+
+.card__tagline {
     display: block;
     margin: 1em 0;
-    font-family: "MockFlowFont";  
-    font-size: .8em; 
-    color: #D7BDCA;  
-  }
-  
-  .card__status {
+    font-family: "MockFlowFont";
+    font-size: .8em;
+    color: #D7BDCA;
+}
+
+.card__status {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1655,94 +1670,113 @@ select {
     /* height: 20px; */
     /* font-size: .8em; */
     color: #D7BDCA;
-  }
- .otash .card__status p{
+}
+
+.otash .card__status p {
     align-items: center;
     /* width: 50%;/ */
     line-height: 0px !important;
     margin-bottom: 0px !important;
-  }
-  
-  .card__description {
+}
+
+.card__description {
     padding: 0 2em 2em;
     margin: 0;
     /* margin-top: -20px; */
     color: #D7BDCA;
-    font-family: "MockFlowFont";   
+    font-family: "MockFlowFont";
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     overflow: hidden;
     overflow-y: scroll;
     height: 100px;
-  }   
-  .otash .card ::-webkit-scrollbar {
+}
+
+.otash .card ::-webkit-scrollbar {
     width: 0px;
     opacity: 0 !important;
-  }
-  .otash .edu_btns{
+}
+
+.otash .edu_btns {
     /* padding-right: 20px; */
     display: flex;
     justify-content: center;
     margin-top: -40px !important;
-    gap:7px;
+    gap: 7px;
     z-index: 2;
-  }
-  .edu_btns button{
+}
+
+.edu_btns button {
     width: 40px;
     height: 40px;
-    border: 1px solid #44bef1 ;
+    border: 1px solid #44bef1;
     border-radius: 50%;
     color: #44bef1;
     background-color: white;
     transition: .4s ease;
-  }
-.edu_btn_delete{
+}
+
+.edu_btn_delete {
     border: 1px solid red !important;
     color: red !important;
 }
-.edu_btns button:hover{
+
+.edu_btns button:hover {
     color: white;
     background-color: #44bef1;
 }
-.edu_btn_delete:hover{
+
+.edu_btn_delete:hover {
     color: white !important;
     background-color: red !important;
 }
-.otash{
+
+.otash {
     width: 80%;
 }
-.edu_th{
+
+.edu_th {
     display: flex;
     flex-wrap: wrap;
     padding-left: -10px !important;
     /* padding: 0px !important; */
 }
+
 @media (max-width:705px) {
-    .otash{
+    .otash {
         width: 98%;
     }
-    :where(.css-dev-only-do-not-override-190m0jy).ant-table-wrapper .ant-table-thead>tr>th, :where(.css-dev-only-do-not-override-190m0jy).ant-table-wrapper .ant-table-tbody>tr>th, :where(.css-dev-only-do-not-override-190m0jy).ant-table-wrapper .ant-table-tbody>tr>td, :where(.css-dev-only-do-not-override-190m0jy).ant-table-wrapper tfoot>tr>th, :where(.css-dev-only-do-not-override-190m0jy).ant-table-wrapper tfoot>tr>td{
+
+    :where(.css-dev-only-do-not-override-190m0jy).ant-table-wrapper .ant-table-thead>tr>th,
+    :where(.css-dev-only-do-not-override-190m0jy).ant-table-wrapper .ant-table-tbody>tr>th,
+    :where(.css-dev-only-do-not-override-190m0jy).ant-table-wrapper .ant-table-tbody>tr>td,
+    :where(.css-dev-only-do-not-override-190m0jy).ant-table-wrapper tfoot>tr>th,
+    :where(.css-dev-only-do-not-override-190m0jy).ant-table-wrapper tfoot>tr>td {
         /* margin-top: 10px !important; */
         padding: 7px;
     }
 }
 
-.rafiki_delete_img{
+.rafiki_delete_img {
     text-align: center;
 }
-.rafiki_delete_img img{
+
+.rafiki_delete_img img {
     width: 450px;
 }
-.rafiki_delete_img h3{
+
+.rafiki_delete_img h3 {
     font-size: 40px;
     color: #989898;
 }
+
 @media (max-width:705px) {
-    .rafiki_delete_img img{
+    .rafiki_delete_img img {
         width: 250px !important;
     }
-    .rafiki_delete_img h3{
+
+    .rafiki_delete_img h3 {
         font-size: 18px !important;
     }
 }

@@ -388,7 +388,7 @@
 
 .forsa_img {
   width: 260px;
-  height: 200px;
+  height: 180px;
   margin: auto;
   overflow: hidden;
   display: flex;
@@ -435,7 +435,7 @@
   cursor: pointer;
 }
 
-.cards {
+.left-card .cards {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 10px;
   padding: 20px;
