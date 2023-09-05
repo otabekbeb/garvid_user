@@ -67,7 +67,7 @@ export default function Services() {
             </div>
           </div>
           <div className="box">
-            <div style={{boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" }} className="left-card">
+            <div id='for_boxsh' className="left-card">
               {partner.map(item=>{
                 return(
                   <div id='cards11' className="cards">
