@@ -8,7 +8,10 @@ import "../css/Services.css"
 import "../css/Ourteam.css"
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import {GrFacebookOption} from "react-icons/gr"
+import {IoLogoWhatsapp} from "react-icons/io"
+import {BsTelephoneFill} from "react-icons/bs"
+import {MdEmail} from "react-icons/md"
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -19,6 +22,7 @@ import { Pagination } from 'swiper/modules';
 export default function Services() {
   const [state1, setState1] = React.useState();
   const [data, setData] = useState([]);
+  const [partner, setPartner] = useState([]);
   useEffect(() => {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
@@ -28,6 +32,12 @@ export default function Services() {
   useEffect(() => {
     axios.get(`${url}/auth/teachers/`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
       setData(res.data)
+      console.log(res.data);
+    }).catch(err => {
+
+    })
+    axios.get(`${url}/api/operator`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+      setPartner(res.data)
       console.log(res.data);
     }).catch(err => {
 
@@ -60,62 +70,30 @@ export default function Services() {
             </div>
           </div>
           <div className="box">
-            <div className="left-card">
-              <div id='cards11' className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-team-img01.jpg" alt="" />
-                <h1><a href="#">Johnny Bennett</a></h1>
-                <p>As FinExpert's founder, Dennis solves issues concerning the company's development and its departments...</p>
+            <div id='for_boxsh' className="left-card">
+              {partner.map(item=>{
+                return(
+                  <div id='cards11' className="cards">
+                    <div className="forsa_img">
+                      <img src={item.image} alt="" />
+                    </div>
+                <h1><a href="#">{item.name}</a></h1>
+                <p>{item.description}</p>
                 <div className="two">
                   <div className="icon">
-                    <div className="dumalo"><i className="bx bxl-facebook"></i></div>
-                    <div className="dumalo"><i className="bx bxl-twitter"></i></div>
-                    <div className="dumalo"><i className="bx bxl-linkedin"></i></div>
+                  {/* <a style={{color:"black"}} href={{mailto:`${item.twiter}`}}><div className="dumalo"><GrFacebookOption/></div></a> */}
+                  <a style={{color:"black"}} href={item.whatsapp}><div className="dumalo"><IoLogoWhatsapp/></div></a>
+                  <a style={{color:"black"}} href={{tel:`${item.call_me}`}}><div className="dumalo"><BsTelephoneFill/></div></a>
+                  <a style={{color:"black"}} href={{mailto:`${item.email}`}}><div className="dumalo"><MdEmail/></div></a>
                   </div>
-                  <div className="view"><h4>View profile <span>&gt;</span></h4></div>
+                  <div className="view"><h4>View profile<span>&gt;</span></h4></div>
                 </div>
               </div>
-
-              <div id='cards11' className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-team-img02.jpg" alt="" />
-                <h1><a href="#">Clarke Grinn</a></h1>
-                <p>Clarke provides financial planning and wealth management services trying to minimize expenses and risks of our...</p>
-                <div className="two">
-                  <div className="icon">
-                    <div className="dumalo"><i className="bx bxl-facebook"></i></div>
-                    <div className="dumalo"><i className="bx bxl-twitter"></i></div>
-                    <div className="dumalo"><i className="bx bxl-linkedin"></i></div>
-                  </div>
-                  <div className="view"><h4>View profile <span>&gt;</span></h4></div>
-                </div>
-              </div>
-
-              <div id='cards11' className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-team-img03.jpg" alt="" />
-                <h1><a href="#">Ashley Jonas</a></h1>
-                <p>Ashley's main task is to manage the financial risks of FinExpert. She is also responsible for analyzing the data received from...</p>
-                <div className="two">
-                  <div className="icon">
-                    <div className="dumalo"><i className="bx bxl-facebook"></i></div>
-                    <div className="dumalo"><i className="bx bxl-twitter"></i></div>
-                    <div className="dumalo"><i className="bx bxl-linkedin"></i></div>
-                  </div>
-                  <div className="view"><h4>View profile <span>&gt;</span></h4></div>
-                </div>
-              </div>
-
-              <div id='cards11' className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-team-img04.jpg" alt="" />
-                <h1><a href="#">Johnny Bennett</a></h1>
-                <p>Mr. Benett is an important member of our team. His work consists in managing the taxes and solving various situations...</p>
-                <div className="two">
-                  <div className="icon">
-                    <div className="dumalo"><i className="bx bxl-facebook"></i></div>
-                    <div className="dumalo"><i className="bx bxl-twitter"></i></div>
-                    <div className="dumalo"><i className="bx bxl-linkedin"></i></div>
-                  </div>
-                  <div className="view"><h4>View profile <span>&gt;</span></h4></div>
-                </div>
-              </div>
+                )
+                
+              })}
+              
+              
 
             </div>
 

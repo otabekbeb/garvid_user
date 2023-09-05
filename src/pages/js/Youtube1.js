@@ -382,14 +382,15 @@ export default function Youtube1() {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
-        const idget = JSON.parse(localStorage.getItem("page_video"));
         axios
-          .get(`${url}/api/course_theme_comment/subcomment/`, {
+          .get(`${url}/api/course_theme_comment/subcomment/${subcoment}`, {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
           })
           .then((res) => {
+
+            console.log(res.data,"subcoment");
             setSubcomentData(res.data);
           });
       })

@@ -31,10 +31,10 @@ export default function Blog() {
 <div className="sahifa">
 <div className="sahifa-glav">
 <div className="safiha-p">
-    <h4 onClick={()=>window.location="/"}>Home  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></h4>
+    <h4><a href="/">Blog  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
 </div>
 <div className="safiha-d">
-    <p id='tepaga'>Blog</p>
+    <p  id='tepaga'>About Us</p>
 </div>
 </div>
 </div>
