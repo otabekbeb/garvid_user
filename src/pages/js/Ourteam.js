@@ -83,10 +83,10 @@ export default function Services() {
                   <div className="icon">
                   {/* <a style={{color:"black"}} href={{mailto:`${item.twiter}`}}><div className="dumalo"><GrFacebookOption/></div></a> */}
                   <a style={{color:"black"}} href={item.whatsapp}><div className="dumalo"><IoLogoWhatsapp/></div></a>
-                  <a style={{color:"black"}} href={{tel:`${item.call_me}`}}><div className="dumalo"><BsTelephoneFill/></div></a>
-                  <a style={{color:"black"}} href={{mailto:`${item.email}`}}><div className="dumalo"><MdEmail/></div></a>
+                  <a style={{color:"black"}} href={`tel:${item.call_me}`}><div className="dumalo"><BsTelephoneFill/></div></a>
+                  <a style={{color:"black"}} href={`mailto:${item.email}`}><div className="dumalo"><MdEmail/></div></a>
                   </div>
-                  <div className="view"><h4>View profile<span>&gt;</span></h4></div>
+                  <div onClick={()=>window.location="/partner"} className="view"><h4>View profile<span>&gt;</span></h4></div>
                 </div>
               </div>
                 )
