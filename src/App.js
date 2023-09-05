@@ -50,6 +50,7 @@ import JoinMeeting from "./pages/Join"
 import Sotibol from "./pages/js/Sotibol";
 import WiewAll from "./pages/js/WiewAll";
 import Sertificate_create from "./pages/js/Sertificate_create";
+import Partner from "./pages/js/Partner";
 export default function App() {
   return (
     <div>
@@ -104,7 +105,7 @@ export default function App() {
           <Route exact path="/WiewAll" component={WiewAll} />
           <Route exact path="/NNN" component={NNN} />
           <Route exact path="/sertificate_create" component={Sertificate_create} />
-
+          <Route exact path="/partner" component={Partner} />
           {/* <Route index element={} />*/}
         </Switch>
       </BrowserRouter>
