@@ -215,6 +215,9 @@ export default function Profil() {
   function openNotification() {
     document.querySelector(".yon_notification_all").style = "right:0%;";
   }
+
+
+
   return (
     <div>
       <div className="profil_size_df">
@@ -264,7 +267,9 @@ export default function Profil() {
                 return <h1>{item.username}</h1>;
               })}
 
-              <button>Regular User</button>
+
+              
+              <button>Regular {localStorage.getItem("position")==1?("user"):(localStorage.getItem("position")==2?("teacher"):("student"))}</button>
               <p>My social networks :</p>
               <div className="blok_bir_icon">
                 <div className="blok_bir_icon_img1">
