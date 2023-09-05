@@ -9,9 +9,9 @@ import "../css/Ourteam.css"
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {GrFacebookOption} from "react-icons/gr"
-import {MdEmail} from "react-icons/md"
+import {IoLogoWhatsapp} from "react-icons/io"
 import {BsTelephoneFill} from "react-icons/bs"
-
+import {MdEmail} from "react-icons/md"
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -81,9 +81,10 @@ export default function Services() {
                 <p>{item.description}</p>
                 <div className="two">
                   <div className="icon">
-                  <a style={{color:"black"}} href="mailto:${item.twiter}"><div className="dumalo"><GrFacebookOption/></div></a>
-                  <a style={{color:"black"}} href=""><div className="dumalo"><MdEmail/></div></a>
-                  <a style={{color:"black"}} href=""><div className="dumalo"><BsTelephoneFill/></div></a>
+                  {/* <a style={{color:"black"}} href={{mailto:`${item.twiter}`}}><div className="dumalo"><GrFacebookOption/></div></a> */}
+                  <a style={{color:"black"}} href={item.whatsapp}><div className="dumalo"><IoLogoWhatsapp/></div></a>
+                  <a style={{color:"black"}} href={{tel:`${item.call_me}`}}><div className="dumalo"><BsTelephoneFill/></div></a>
+                  <a style={{color:"black"}} href={{mailto:`${item.email}`}}><div className="dumalo"><MdEmail/></div></a>
                   </div>
                   <div className="view"><h4>View profile<span>&gt;</span></h4></div>
                 </div>

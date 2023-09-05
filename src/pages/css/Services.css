@@ -366,6 +366,7 @@
 }
 .dumalo:hover {
   background: #44bef1;
+  color: white;
   cursor: pointer;
 }
 .view span {
