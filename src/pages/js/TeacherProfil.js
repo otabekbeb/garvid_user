@@ -646,7 +646,6 @@ export default function Profil() {
                 {kursdata.map(item => {
                   return (
                     <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
-                      <button className="btn_das">Programming</button>
                       <img src={item.oneuser ? item.oneuser.image.includes("http") ? item.oneuser.image : `${url}/${item.oneuser.image}` :
                         <img src={img_for_null} alt="" />} alt="" />
                       <div className="kurs_paddaing_auto">

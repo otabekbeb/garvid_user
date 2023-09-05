@@ -10,7 +10,7 @@ import Rasp from "../img/Rasp.png";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
 import { BsPlus } from "react-icons/bs";
-import { TbPointFilled } from "react-icons/tb";
+import { TbHomeInfinity, TbPointFilled } from "react-icons/tb";
 import { GrFormClose } from 'react-icons/gr';
 import Swal from "sweetalert2";
 import "../css/Spiska.css";
@@ -34,6 +34,7 @@ export default function Searchfilter() {
   const [type, settype] = useState([]);
   const [state1, setState1] = React.useState();
   const [courstype, setCoursetype] = useState([]);
+  const [homiy, setHomiy] = useState([]);
   const [CourseId, setCourseId] = useState();
   const [deleteId, setDeleteId] = useState()
   const [delete1, setDelete1] = useState([]);
@@ -222,9 +223,17 @@ export default function Searchfilter() {
         );
       })
       setKursdata(searchdata)
-    }).catch(err=>{})
+    }).catch(err => { })
 
   }
+
+
+  axios.get(`${url}/api/homiy`, { headers: { "Authorization": "Bearer " + localStorage.getItem("token") } }).then(res => {
+    setHomiy(res.data)
+    console.log(res.data);
+  }).catch(err => {
+    Swal.fire("err")
+  })
 
   // function deleteData(id) {
   //   console.log(id);
@@ -298,19 +307,18 @@ export default function Searchfilter() {
           </div>
         </div>
 
-        <div className="kurs_cards" style={{display:"flex"}}> 
-          {kursdata.length===0?(
+        <div className="kurs_cards" style={{ display: "flex" }}>
+          {kursdata.length === 0 ? (
             <div className="rafiki_img_course">
               <img src={rafiki} alt="" />
               <h3>You have not created a course yet</h3>
               <button onClick={() => dashedOpen2()}>Create course</button>
             </div>
-          ):kursdata.map(item => {
+          ) : kursdata.map(item => {
             localStorage.setItem("courseLength", kursdata.length)
             return (
               <div className="kurs_card">
-                <button className="btn_das">Dasturlash</button>
-                  <img src={item.image} alt="" />
+                <img src={item.image} alt="" />
                 <div className="kurs_paddaing_auto">
                   <h4>{item.name}</h4>
                   <div className="star_df">
@@ -367,6 +375,13 @@ export default function Searchfilter() {
                       </Form.Select>
                     </div>
                     <div className="edit_inside">
+                      <label htmlFor="">Sponsor:</label>
+                      <Form.Select className="select_opt" aria-label="Default select example">
+                      <option value="0">not</option>
+                      {homiy.map(item => { return <option value={item.id}>{item.title}</option> })}
+                      </Form.Select>
+                    </div>
+                    <div className="edit_inside">
                       <label htmlFor="">Image:</label>
                       <input id="image" type="file" className="inp_img" />
                       <div className="inp_img_div"><FiDownload /> Select image</div>
@@ -402,11 +417,11 @@ export default function Searchfilter() {
             )
 
           })}
-          
-{kursdata.length===0?(""):(<div className="dashed" onClick={() => dashedOpen2()}>
+
+          {kursdata.length === 0 ? ("") : (<div className="dashed" onClick={() => dashedOpen2()}>
             <i><AiOutlinePlus /></i>
           </div>)}
-          
+
           <div className="edit_card2" style={{ display: 'none' }}>
             <div className="edit_padding">
 
@@ -433,6 +448,13 @@ export default function Searchfilter() {
                 <label htmlFor="">Course type:</label>
                 <Form.Select className="selectPost" aria-label="Default select example">
                   {courstype.map(item => { return <option value={item.id}>{item.name}</option> })}
+                </Form.Select>
+              </div>
+              <div className="edit_inside">
+                <label htmlFor="">Sponsor:</label>
+                <Form.Select className="select_opt" aria-label="Default select example">
+                <option value="0">not</option>
+                  {homiy.map(item => { return <option value={item.id}>{item.title}</option> })}
                 </Form.Select>
               </div>
               <div className="edit_inside">

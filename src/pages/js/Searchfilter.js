@@ -245,7 +245,6 @@ export default function Searchfilter() {
                           }}
                           className="kurs_card"
                         >
-                          <button className="btn_das">Programming</button>
                           <img
                             src={
                               item.oneuser ? (

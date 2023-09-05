@@ -16,7 +16,8 @@ const CARD_OPTIONS = {
             fontSize: "16px",
             fontSmoothing: "antialiased",
             ":-webkit-autofill": { color: "#fce883" },
-            "::placeholder": { color: "#87bbfd" }
+            "::placeholder": { color: "#87bbfd" },
+            background: "white",
         },
         invalid: {
             iconColor: "#ffc7ee",
@@ -84,19 +85,20 @@ export default function PaymentForm() {
     }
 
     return (
-        <div>
+        <div id="paymentform" style={{boxShadow:"0px 0px 15px #9DA7BB", padding:"10px", borderRadius:"10px", marginTop:"20px", width:"80%", marginLeft:"10%"}}>
 
-                    <p>Введите деньги</p>
-                    <input type="text" id="Stripe_input" />
+                    <p>Введите сумму</p>
+                    <input placeholder="1000$" type="text" id="Stripe_input" />
 
                 {!success ?
                     <form onSubmit={handleSubmit}>
-                        <fieldset className="FormGroup">
+                        <p>Введите информации карты</p>
+                        <fieldset className="FormGroup" style={{border:"none !important"}}>
                             <div className="FormRow">
-                                <CardElement options={CARD_OPTIONS} />
+                                <CardElement  />
                             </div>
                         </fieldset>
-                        <button>Платить</button>
+                        <button>Оплатить</button>
                     </form>
                     :
                     <div>

@@ -238,7 +238,7 @@
   width: 1020px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
   margin: auto;
 }
@@ -450,6 +450,3 @@
   margin-top: -20px;
 }
 
-@media (max-width:715px) {
- 
-}
