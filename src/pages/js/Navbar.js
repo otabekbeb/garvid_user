@@ -96,7 +96,6 @@ export default function Navbar() {
       {
         pageLanguage: "ru",
         includedLanguages: 'en,zh-TWit,ja,tr,kk,ru,fr,de', // include this for selected languages
-
       },
       "google_translate_element"  
     );
@@ -149,7 +148,7 @@ export default function Navbar() {
 
           <div className="navbar-ul">
             <ul>
-              <img onClick={()=>window.location="/"} style={{width:"120px", marginRight:'-30px'}} src={logo} alt="" />
+              <img onClick={()=>window.location="/"} style={{width:"120px", marginRight:'-30px',cursor:"pointer"}} src={logo} alt="" />
               <li className="moto-menu-item">
                 <NavLink to="/" className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/"}>Home</a></NavLink>
               </li>
@@ -235,7 +234,6 @@ export default function Navbar() {
               </li>
             </div>
             <div id="google_translate_element"></div>
-
           </div>
           <div className="media-navbar" style={{ margin: "auto", width: '100%' }}>
             {/* <div style={{width:'100%'}} className="navbar-menu">

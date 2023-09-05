@@ -8,27 +8,28 @@
    background-color: #fff;
    box-shadow: 0px 0px 9px 0px rgb(173, 173, 173);
    z-index: 10;
-   height: 530px;
+   height: 600px;
  }
 
  .login_small_div_input h1 {
    text-align: center;
    font-weight: 300;
    margin-bottom: 20px;
-  
-  
- }
- .login_small_div_input h3 {
-  text-align: center;
-  font-weight: 300;
-  margin-bottom: 20px;
- 
- 
-}
 
-.login_small_div_input p{
-  text-align: center;
-}
+
+ }
+
+ .login_small_div_input h3 {
+   text-align: center;
+   font-weight: 300;
+   margin-bottom: 20px;
+
+
+ }
+
+ .login_small_div_input p {
+   text-align: center;
+ }
 
  .login_small_input {
    position: relative;
@@ -230,6 +231,7 @@
  .login_i_register_button {
    width: 100%;
    display: flex;
+   margin-top: 50px;
    align-items: stretch;
    justify-content: space-between;
  }
@@ -312,13 +314,17 @@
  .parol-esdan-chiqdi {
    padding-top: 15px;
  }
- .parol-esdan-chiqdi:hover{
-  cursor: pointer;
+
+ .parol-esdan-chiqdi:hover {
+   cursor: pointer;
  }
+
  .parol-esdan-chiqdi {
    text-decoration: underline;
    position: relative;
    font-size: 13px;
+   margin-top: -30px;
+   height: 65px;
    display: flex;
    align-items: center;
    justify-content: flex-end;

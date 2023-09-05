@@ -238,9 +238,9 @@
   width: 1020px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-   margin: auto;
+  margin: auto;
 }
 
 @media (max-width: 1630px) {
@@ -388,7 +388,7 @@
 
 .forsa_img {
   width: 260px;
-  height: 260px;
+  height: 180px;
   margin: auto;
   overflow: hidden;
   display: flex;
@@ -435,16 +435,18 @@
   cursor: pointer;
 }
 
-.cards {
+.left-card .cards {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 10px;
-  padding: 10px;
+  padding: 20px;
 }
 
 .title {
   padding: 10px;
 }
-.descrip{
+
+.descrip {
   padding: 10px;
   margin-top: -20px;
 }
+

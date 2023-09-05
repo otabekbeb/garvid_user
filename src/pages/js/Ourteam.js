@@ -8,10 +8,10 @@ import "../css/Services.css"
 import "../css/Ourteam.css"
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import {GrFacebookOption} from "react-icons/gr"
-import {IoLogoWhatsapp} from "react-icons/io"
-import {BsTelephoneFill} from "react-icons/bs"
-import {MdEmail} from "react-icons/md"
+import { GrFacebookOption } from "react-icons/gr"
+import { IoLogoWhatsapp } from "react-icons/io"
+import { BsTelephoneFill } from "react-icons/bs"
+import { MdEmail } from "react-icons/md"
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -71,30 +71,26 @@ export default function Services() {
           </div>
           <div className="box">
             <div id='for_boxsh' className="left-card">
-              {partner.map(item=>{
-                return(
+              {partner.map(item => {
+                return (
                   <div id='cards11' className="cards">
                     <div className="forsa_img">
                       <img src={item.image} alt="" />
                     </div>
-                <h1><a href="#">{item.name}</a></h1>
-                <p>{item.description}</p>
-                <div className="two">
-                  <div className="icon">
-                  {/* <a style={{color:"black"}} href={{mailto:`${item.twiter}`}}><div className="dumalo"><GrFacebookOption/></div></a> */}
-                  <a style={{color:"black"}} href={item.whatsapp}><div className="dumalo"><IoLogoWhatsapp/></div></a>
-                  <a style={{color:"black"}} href={{tel:`${item.call_me}`}}><div className="dumalo"><BsTelephoneFill/></div></a>
-                  <a style={{color:"black"}} href={{mailto:`${item.email}`}}><div className="dumalo"><MdEmail/></div></a>
+                    <h1><a href="#">{item.name}</a></h1>
+                    <p>{item.description}</p>
+                    <div className="two">
+                      <div className="icon">
+                        {/* <a style={{color:"black"}} href={{mailto:`${item.twiter}`}}><div className="dumalo"><GrFacebookOption/></div></a> */}
+                        <a style={{ color: "black" }} href={item.whatsapp}><div className="dumalo"><IoLogoWhatsapp /></div></a>
+                        <a style={{ color: "black" }} href={`tel:${item.call_me}`}><div className="dumalo"><BsTelephoneFill /></div></a>
+                        <a style={{ color: "black" }} href={`mailto:${item.email}`}><div className="dumalo"><MdEmail /></div></a>
+                      </div>
+                      <div onClick={() => window.location = "/partner"} className="view"><h4>View profile<span>&gt;</span></h4></div>
+                    </div>
                   </div>
-                  <div className="view"><h4>View profile<span>&gt;</span></h4></div>
-                </div>
-              </div>
                 )
-                
               })}
-              
-              
-
             </div>
 
 
