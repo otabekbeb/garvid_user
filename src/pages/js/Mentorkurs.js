@@ -103,29 +103,6 @@ export default function Searchfilter() {
     document.querySelector('.edit_card2').style = 'display: flex;'
   }
 
-  // function dashed() {
-  //   // Swal.fire('hjkl')
-  //   var name = document.querySelector('.name').value
-  //   var description = document.querySelector('.description').value
-  //   var price = document.querySelector('.price').value
-  //   var planed_time = document.querySelector('.planed_time').value
-  //   var image = document.querySelector('.image').files[0]
-  //   var formdata = new FormData()
-  //   formdata.append("name", name)
-  //   formdata.append("description", description)
-  //   formdata.append("price", price)
-  //   formdata.append("planed_time", planed_time)
-  //   formdata.append("image", image)
-
-  //   axios.post(`${url}/api/course/`, formdata, { headers: { "Authorization": "Bearer " + localStorage.getItem("token") } }).then(res => {
-  //     Swal.fire("Добавлена информация")
-  //     console.log('success');
-  //   })
-  //     .catch(err => {
-  //       console.log(err);
-  //       // Swal.fire("Это адрес электронной почты или имя, пароль введен")
-  //     })
-  // }
 
 
   function postformentor() {
@@ -321,26 +298,19 @@ export default function Searchfilter() {
           </div>
         </div>
 
-        <div className="kurs_cards">
+        <div className="kurs_cards" style={{display:"flex"}}> 
           {kursdata.length===0?(
             <div className="rafiki_img_course">
               <img src={rafiki} alt="" />
               <h3>You have not created a course yet</h3>
               <button onClick={() => dashedOpen2()}>Create course</button>
             </div>
-          ):(<>{kursdata.map(item => {
+          ):kursdata.map(item => {
             localStorage.setItem("courseLength", kursdata.length)
-
             return (
               <div className="kurs_card">
                 <button className="btn_das">Dasturlash</button>
-                {/* {item.image === null ? (
-                  <img src={img_for_null} />
-                ) : (
-                  <img src={item.image} />
-                )} */}
-                <img src={item.oneuser ? item.oneuser.image.includes("http") ? item.oneuser.image : `${url}/${item.oneuser.image}` :
-                  <img src={img_for_null} alt="" />} alt="" />
+                  <img src={item.image} alt="" />
                 <div className="kurs_paddaing_auto">
                   <h4>{item.name}</h4>
                   <div className="star_df">
@@ -431,7 +401,7 @@ export default function Searchfilter() {
               </div>
             )
 
-          })}</>)}
+          })}
           
 {kursdata.length===0?(""):(<div className="dashed" onClick={() => dashedOpen2()}>
             <i><AiOutlinePlus /></i>

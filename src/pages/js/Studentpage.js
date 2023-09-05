@@ -252,8 +252,8 @@ export default function Mentor() {
         console.log(oneUserResponse.data, "aa");
 
         // Fetch my course data
-        const myCourseResponse = await axios.get(`${url}/api/mycourse`, {
-          headers: { Authorization: `Bearer ${OneuserId}` },
+        const myCourseResponse = await axios.get(`${url}/api/mycourse/${OneuserId}`, {
+          headers: { Authorization: `Bearer ${token}` },
         });
         setKursdata(myCourseResponse.data);
         localStorage.setItem("Mycourse", JSON.stringify(myCourseResponse.data));
@@ -1048,15 +1048,12 @@ export default function Mentor() {
                   </a>
                 </div>
               </div>
-            ) : (
-              <div>
-                {kursdata.map(item => {
+            ) : kursdata.map(item => {
                   localStorage.setItem("for_course", kursdata.length)
                   return (
                     <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
                       <button className="btn_das">Programming</button>
-                      <img src={item.oneuser ? item.oneuser.image.includes("http") ? item.oneuser.image : `${url}/${item.oneuser.image}` :
-                        <img src={img_for_null} alt="" />} alt="" />
+                        <img src={item.image} alt="" />
                       <div className="kurs_paddaing_auto">
                         <h4>{item.name}</h4>
                         <div className="star_card">
@@ -1065,10 +1062,6 @@ export default function Mentor() {
                             (item.star === 3 ? (<div><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i></div>) :
                               (item.star === 4 ? (<div><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i></div>) :
                                 (item.star === 5 ? (<div><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i></div>) : (<div><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i></div>)))))}
-
-
-
-
                           <p>
                             {item.star === null ? ("0") : (item.star)}<span>(524)</span>
                           </p>
@@ -1092,8 +1085,6 @@ export default function Mentor() {
                   )
 
                 })}
-              </div>
-            )}
 
           </div>
 
