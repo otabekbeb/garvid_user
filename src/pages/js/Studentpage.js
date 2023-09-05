@@ -1052,7 +1052,6 @@ export default function Mentor() {
                   localStorage.setItem("for_course", kursdata.length)
                   return (
                     <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
-                      <button className="btn_das">Programming</button>
                         <img src={item.image} alt="" />
                       <div className="kurs_paddaing_auto">
                         <h4>{item.name}</h4>
