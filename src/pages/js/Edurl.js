@@ -1,2 +1,2 @@
-var URL = "https://api.abbas.uz/"
+var URL = "https://api.abbas.uz"
 export default URL;

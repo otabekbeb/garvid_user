@@ -1,2 +1,2 @@
-var url="https://api.abbas.uz/"
+var url="https://api.abbas.uz"
 export default url;
