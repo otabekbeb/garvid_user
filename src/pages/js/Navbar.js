@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import "../css/Navbar.css";
 import axios from "axios";
+import logo from '../img/signal-2023-06-09-165727_003.png'
 import url from "./Host";
 import { NavLink } from "react-router-dom";
 import { BsFillPersonFill } from "react-icons/bs"
@@ -148,7 +149,7 @@ export default function Navbar() {
 
           <div className="navbar-ul">
             <ul>
-              <img onClick={()=>window.location="/"} style={{width:"100px"}} src="https://poets-erc.org/sites/default/files/2022-11/Howard-University_3.png" alt="" />
+              <img onClick={()=>window.location="/"} style={{width:"120px", marginRight:'-30px'}} src={logo} alt="" />
               <li className="moto-menu-item">
                 <NavLink to="/" className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/"}>Home</a></NavLink>
               </li>
@@ -341,7 +342,7 @@ export default function Navbar() {
                 </div>
               </div>  */}
             <div className="navbar-media-img-joy">
-            <img onClick={()=>window.location="/"} style={{width:"100px"}} src="https://poets-erc.org/sites/default/files/2022-11/Howard-University_3.png" alt="" />
+            <img onClick={()=>window.location="/"} style={{width:"130px", marginTop:'-31px', marginBottom:'-34px'}} src={logo} alt="" />
 
             </div>
             <div className="navbar-media-katalog-joy" onClick={() => setMobileMenu(!MobileMenu)} >
