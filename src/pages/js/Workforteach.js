@@ -185,7 +185,7 @@ export default function Workforteach() {
       </div>
       <div className="m_zadach">
         {stTasks.length === 0 ? (
-          <div className="delete_padding">
+          <div className="delete_padding1">
             <img src={Groupimg} alt="" />
             <h4>No tasks</h4>
           </div>

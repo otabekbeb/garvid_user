@@ -633,7 +633,7 @@ export default function Profil() {
           </div>
           <div className="kurs_cards">
             {kursdata.length === 0 ? (
-                <div className="delete_padding">
+                <div className="delete_padding1">
                 <img src={Groupimg} alt="" />
                 <h4>Он еще не купил курс</h4>
                 <div className="delete_btns">
@@ -874,7 +874,7 @@ export default function Profil() {
           <div>
             <div className="cards_sertifikat">
               {sertifikat.length === 0?(   
-              <div className="delete_padding">
+              <div className="delete_padding1">
                 <img src={Groupimg} alt="" />
                 <h4>Он еще не получил сертификат</h4>
                 <div className="delete_btns">
