@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react";
+import Navbar from './Navbar'
+import Footer1 from './Footer1'
+import axios from 'axios'
+import url from "./Host";
 import { CiSearch } from "react-icons/ci";
 import { BiMenu } from "react-icons/bi";
 import { MdOutlineGrade, MdWindow } from "react-icons/md";
@@ -14,16 +18,16 @@ import { TbPointFilled } from "react-icons/tb";
 import "../css/Spiska.css";
 import "../css/Calibig.css";
 import WWW from "../img/WWW.png";
-import axios from "axios";
-import url from "./Host";
 import Loader from "./loader";
 import img_for_null from "../img/download.png";
 import img_prover from "../img/istockphoto-1321436405-612x612.jpg";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import "../css/Nosignal.css";
 import Groupimg from "../img/Teacher-cuate.png";
-export default function Searchfilter() {
-  const [courstype, setCoursetype] = useState([]);
+
+export default function Teams() {
+    const [partner, setPartner] = useState([])
+    const [courstype, setCoursetype] = useState([]);
 
   const [kursdata, setKursdata] = useState([]);
   const [type, settype] = useState([]);
@@ -97,12 +101,12 @@ export default function Searchfilter() {
   const searchInput = (event) => {
     const searchRegex = new RegExp(`^${event.target.value}`, "i");
     axios
-      .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
+      .get(`${url}/api/university/${localStorage.getItem("partner")}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
         axios
-          .get(`${url}/api/course`, {
+          .get(`${url}/api/university/`, {
             header: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
@@ -118,7 +122,7 @@ export default function Searchfilter() {
             const searchdata = res.data.filter((item) => {
               return searchRegex.test(item.name);
             });
-            setKursdata(searchdata);
+            setPartner(searchdata);
           });
 
       });
@@ -150,12 +154,40 @@ export default function Searchfilter() {
           });
       });
   }
-  
 
+
+    useEffect(() => {
+        axios.get(`${url}/api/university/${localStorage.getItem("partner")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+            setPartner(res.data)
+          }).catch(err => {
+      
+          })
+    }, [])
+    
   return (
     <div>
-      {loader === 0 ? (
-        <div>
+        <Navbar/>
+        <div className="asd">
+            {/* <img src={abaut} alt="" /> */}
+            <div className="asd-block">
+              <h1>Our partner</h1> 
+              <br />
+              <br className='rr' />
+
+              <div className="mini"></div>
+            </div>
+          </div>
+          <div className="sahifa">
+            <div className="sahifa-glav">
+              <div className="safiha-p">
+                <h4><a href="/">Home  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
+              </div>
+              <div className="safiha-d">
+                <p id='tepaga'>Our partner</p>
+              </div>
+            </div>
+          </div>
+          <div>
           <div>
             <div className="Filter">
               <div className="blur_blok">
@@ -199,7 +231,7 @@ export default function Searchfilter() {
                         <div className="button_filter_kurs">
                           {item.name === null ? (
                             ""
-                          ) : (
+                          ) : ( 
                             <div
                               onClick={() => filter(item.id)}
                               className="div_kurs"
@@ -216,7 +248,7 @@ export default function Searchfilter() {
               </div>
             </div>
             <div className="kurs_cards">
-              {kursdata !== null ? (
+              {partner.length === 0 ? (
                    <div className="delete_padding1">
                    <img src={Groupimg} alt="" />
                    <h4 style={{ fontSize: '30px', opacity: '0.3' }}>You didn't buy the course</h4>
@@ -234,7 +266,7 @@ export default function Searchfilter() {
                  </div>
               ) : (
                 <div className="cursu" style={{display:"flex"}}>
-                  {kursdata.map((item) => {
+                  {partner.map((item) => {
                     
                     return (
                       <div>
@@ -570,9 +602,10 @@ export default function Searchfilter() {
 
           </div>
         </div>
-      ) : (
-        <Loader />
-      )}
+
+
+          
+        <Footer1/>
     </div>
-  );
+  )
 }

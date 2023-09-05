@@ -112,7 +112,7 @@ export default function App() {
         <div>
             {clientToken ? (
                 Paypal_kluch.paypal_kluch ? (<div style={{ maxWidth: "750px", minHeight: "200px" }}>
-                    <input placeholder="1$" type="text" id="PayPal_input" />
+                    <input placeholder="1000$" type="text" id="PayPal_input" />
                     <PayPalScriptProvider
                         options={{
                             clientId: Paypal_kluch.paypal_kluch,
