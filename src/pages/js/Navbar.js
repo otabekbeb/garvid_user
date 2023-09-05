@@ -96,7 +96,6 @@ export default function Navbar() {
       {
         pageLanguage: "ru",
         includedLanguages: 'en,zh-TWit,ja,tr,kk,ru,fr,de', // include this for selected languages
-
       },
       "google_translate_element"  
     );
@@ -235,7 +234,6 @@ export default function Navbar() {
               </li>
             </div>
             <div id="google_translate_element"></div>
-
           </div>
           <div className="media-navbar" style={{ margin: "auto", width: '100%' }}>
             {/* <div style={{width:'100%'}} className="navbar-menu">
