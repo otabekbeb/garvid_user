@@ -240,7 +240,7 @@
   flex-wrap: wrap;
   justify-content: left;
   align-items: center;
-   margin: auto;
+  margin: auto;
 }
 
 @media (max-width: 1630px) {
@@ -438,13 +438,18 @@
 .cards {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 10px;
-  padding: 10px;
+  padding: 20px;
 }
 
 .title {
   padding: 10px;
 }
-.descrip{
+
+.descrip {
   padding: 10px;
   margin-top: -20px;
+}
+
+@media (max-width:715px) {
+ 
 }
