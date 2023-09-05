@@ -179,7 +179,7 @@ export default function Footer1() {
 
 <div className="futer-pas">
   <div className="futer-cen">
-<p>baisan.org</p>
+<p>© 2023 Educational online center BAISAN</p>
   </div>
 </div>
     </div>
