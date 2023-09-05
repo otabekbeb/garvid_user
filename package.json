@@ -26,6 +26,7 @@
     "react-big-calendar": "^1.8.2",
     "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
+    "react-google-recaptcha": "^3.1.0",
     "react-icons": "^4.10.1",
     "react-icons-kit": "^2.0.0",
     "react-input-emoji": "^5.3.1",
