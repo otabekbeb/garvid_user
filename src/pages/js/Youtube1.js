@@ -253,6 +253,7 @@ export default function Youtube1() {
       })
       .then((res) => {
         setMain(res.data.one ? res.data.one : []);
+        localStorage.setItem("page_video", JSON.stringify(res.data.one ? res.data.one : []));
         setCategory(res.data.all);
         res.data.all.map((itam) => {
           itam.theme.map((itam2) => {
@@ -273,10 +274,7 @@ export default function Youtube1() {
           });
         });
 
-        localStorage.setItem(
-          "page_video",
-          JSON.stringify(res.data.one ? res.data.one : [])
-        );
+        
         setLoader(0);
       })
       .catch((err) => {});
@@ -347,7 +345,7 @@ export default function Youtube1() {
     var formdata = new FormData();
     formdata.append("text", document.querySelector("#chat_text").value);
     formdata.append("image", document.querySelector("#comment_file").files[0]);
-    formdata.append("user_id", oneuser[0].id);
+    formdata.append("user_id", localStorage.getItem("OneuserId"));
     formdata.append("theme", JSON.parse(localStorage.getItem("page_video")).id);
     formdata.append("subcomment", subcoment);
     formdata.append("task_commnet_id", task_comnet_id);
@@ -1160,30 +1158,6 @@ export default function Youtube1() {
                         <div>
                           <div className="m_comment_kotta">
                             <div className="m_otdel_bgc">
-                              {teacherwork.map((item) => {
-                                if (
-                                  item.id ==
-                                  JSON.parse(localStorage.getItem("page_video"))
-                                    .id
-                                ) {
-                                  return (
-                                    <>
-                                      <div className="zanacha_vaz">Задача*</div>
-                                      <div className="task_div_big">
-                                        <img
-                                          src={
-                                            item.image ? "" : `${item.image}`
-                                          }
-                                          alt=""
-                                        />
-                                        <p>{item.content}</p>
-                                      </div>
-                                    </>
-                                  );
-                                } else {
-                                  <div>There are no tasks here</div>;
-                                }
-                              })}
                               <hr className="hr2000" />
 
                               <div className="for_scroll">
@@ -1194,303 +1168,301 @@ export default function Youtube1() {
                                 ) : (
                                   <>
                                     {taskData.map((item, key) => {
-                                      if (item.task_commnet_id == 1) {
-                                        return (
-                                          <>
-                                            <div className="df_div_comment_page">
-                                              <div className="div_img_class_over">
+                                       return (
+                                        <>
+                                          <div className="df_div_comment_page">
+                                            <div className="div_img_class_over">
+                                              <img
+                                                src={item.oneuser.image}
+                                                alt=""
+                                              />
+                                            </div>
+
+                                            <div className="div_class_tugadi">
+                                              <div className="task-uchun-joy-and-mark">
+                                                <h5>
+                                                  {item.oneuser.username}
+                                                </h5>
+                                                {item.mark === 0 ? (
+                                                  ""
+                                                ) : (
+                                                  <>
+                                                    {item.mark === 2 ? (
+                                                      <div className="mark-two-bosa">
+                                                        2
+                                                      </div>
+                                                    ) : (
+                                                      <>
+                                                        {item.mark === 3 ? (
+                                                          <div className="mark-three-bosa">
+                                                            3
+                                                          </div>
+                                                        ) : (
+                                                          <>
+                                                            {item.mark ===
+                                                            4 ? (
+                                                              <div className="mark-four-bosa">
+                                                                4
+                                                              </div>
+                                                            ) : (
+                                                              <>
+                                                                {item.mark ===
+                                                                5 ? (
+                                                                  <div className="mark-five-bosa">
+                                                                    5
+                                                                  </div>
+                                                                ) : (
+                                                                  ""
+                                                                )}
+                                                              </>
+                                                            )}
+                                                          </>
+                                                        )}
+                                                      </>
+                                                    )}
+                                                  </>
+                                                )}
+                                              </div>
+
+                                              <p className="p-create-time-uchun">
+                                                {item.time_create.slice(
+                                                  0,
+                                                  10
+                                                )}
+                                              </p>
+
+                                              {task.map((item) => (
                                                 <img
-                                                  src={item.oneuser.image}
+                                                  src={
+                                                    item.image
+                                                      ? ""
+                                                      : `${item.image}`
+                                                  }
                                                   alt=""
                                                 />
-                                              </div>
+                                              ))}
 
-                                              <div className="div_class_tugadi">
-                                                <div className="task-uchun-joy-and-mark">
-                                                  <h5>
-                                                    {item.oneuser.username}
-                                                  </h5>
-                                                  {item.mark === 0 ? (
-                                                    ""
-                                                  ) : (
-                                                    <>
-                                                      {item.mark === 2 ? (
-                                                        <div className="mark-two-bosa">
-                                                          2
-                                                        </div>
-                                                      ) : (
-                                                        <>
-                                                          {item.mark === 3 ? (
-                                                            <div className="mark-three-bosa">
-                                                              3
-                                                            </div>
-                                                          ) : (
-                                                            <>
-                                                              {item.mark ===
-                                                              4 ? (
-                                                                <div className="mark-four-bosa">
-                                                                  4
-                                                                </div>
-                                                              ) : (
-                                                                <>
-                                                                  {item.mark ===
-                                                                  5 ? (
-                                                                    <div className="mark-five-bosa">
-                                                                      5
-                                                                    </div>
-                                                                  ) : (
-                                                                    ""
-                                                                  )}
-                                                                </>
-                                                              )}
-                                                            </>
-                                                          )}
-                                                        </>
-                                                      )}
-                                                    </>
-                                                  )}
-                                                </div>
-
-                                                <p className="p-create-time-uchun">
-                                                  {item.time_create.slice(
-                                                    0,
-                                                    10
-                                                  )}
-                                                </p>
-
-                                                {task.map((item) => (
-                                                  <img
-                                                    src={
-                                                      item.image
+                                              <p className="m_comment_text1505">
+                                                {item.text}
+                                              </p>
+                                              <div className="div-like-dislike-delete-share">
+                                                {oneuser.map((item5) => {
+                                                  return (
+                                                    <div
+                                                      style={{
+                                                        display: "flex",
+                                                        alignItems: "center",
+                                                        gap: "10px",
+                                                        flexWrap: "wrap",
+                                                      }}
+                                                    >
+                                                      {localStorage.getItem(
+                                                        "position"
+                                                      ) === 2
                                                         ? ""
-                                                        : `${item.image}`
-                                                    }
-                                                    alt=""
-                                                  />
-                                                ))}
+                                                        : ""}
 
-                                                <p className="m_comment_text1505">
-                                                  {item.text}
-                                                </p>
-                                                <div className="div-like-dislike-delete-share">
-                                                  {oneuser.map((item5) => {
-                                                    return (
-                                                      <div
-                                                        style={{
-                                                          display: "flex",
-                                                          alignItems: "center",
-                                                          gap: "10px",
-                                                          flexWrap: "wrap",
+                                                      <p
+                                                        className="m-comment-mark"
+                                                        onClick={() => {
+                                                          markOpen();
+                                                          setPage(1);
                                                         }}
                                                       >
-                                                        {localStorage.getItem(
-                                                          "position"
-                                                        ) === 2
-                                                          ? ""
-                                                          : ""}
-
+                                                        <TfiMarkerAlt />
+                                                        <span>
+                                                          поставить оценку
+                                                        </span>
+                                                      </p>
+                                                      {item5.id ==
+                                                      item.user_id ? (
                                                         <p
-                                                          className="m-comment-mark"
+                                                          className="m_comment_delete1"
                                                           onClick={() => {
-                                                            markOpen();
-                                                            setPage(1);
+                                                            deleteComment1(
+                                                              item.id
+                                                            );
                                                           }}
                                                         >
-                                                          <TfiMarkerAlt />
-                                                          <span>
-                                                            поставить оценку
-                                                          </span>
+                                                          <AiOutlineDelete />
+                                                          <span>удалить</span>
                                                         </p>
-                                                        {item5.id ==
-                                                        item.user_id ? (
-                                                          <p
-                                                            className="m_comment_delete1"
-                                                            onClick={() => {
-                                                              deleteComment1(
-                                                                item.id
-                                                              );
-                                                            }}
-                                                          >
-                                                            <AiOutlineDelete />
-                                                            <span>удалить</span>
-                                                          </p>
-                                                        ) : (
-                                                          ""
-                                                        )}
+                                                      ) : (
+                                                        ""
+                                                      )}
+                                                    </div>
+                                                  );
+                                                })}
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div className="mark-uchun-koish-joy">
+                                            <div className="kotta-obsh-mark-uchun">
+                                              <div className="kichkina-mark-uchun-joy">
+                                                <div
+                                                  className="mark-two"
+                                                  onClick={() => setPage(2)}
+                                                >
+                                                  2
+                                                </div>
+                                                <div
+                                                  className="mark-three"
+                                                  onClick={() => setPage(3)}
+                                                >
+                                                  3
+                                                </div>
+                                                <div
+                                                  className="mark-four"
+                                                  onClick={() => setPage(4)}
+                                                >
+                                                  4
+                                                </div>
+                                                <div
+                                                  className="mark-five"
+                                                  onClick={() => setPage(5)}
+                                                >
+                                                  5
+                                                </div>
+                                              </div>
+                                              <h5>Оценить ученика:</h5>
+                                              <div className="mark-bosgandan-kein">
+                                                {page === 2 ? (
+                                                  <div className="mark-two">
+                                                    2
+                                                  </div>
+                                                ) : (
+                                                  <>
+                                                    {page === 3 ? (
+                                                      <div className="mark-three">
+                                                        3
                                                       </div>
-                                                    );
-                                                  })}
-                                                </div>
+                                                    ) : (
+                                                      <>
+                                                        {page === 4 ? (
+                                                          <div className="mark-four">
+                                                            4
+                                                          </div>
+                                                        ) : (
+                                                          <>
+                                                            {page === 5 ? (
+                                                              <div className="mark-five">
+                                                                5
+                                                              </div>
+                                                            ) : (
+                                                              <></>
+                                                            )}
+                                                          </>
+                                                        )}
+                                                      </>
+                                                    )}
+                                                  </>
+                                                )}
+                                              </div>
+                                              <div className="mark-otmen-potver-uchun">
+                                                <button
+                                                  className="otmen-uchen-but"
+                                                  onClick={() => {
+                                                    markClose();
+                                                  }}
+                                                >
+                                                  Отменить
+                                                </button>
+                                                <button
+                                                  className="porver-uchen-but"
+                                                  onClick={() => {
+                                                    aftermarkopen(item.id);
+                                                  }}
+                                                >
+                                                  Потвердить
+                                                </button>
                                               </div>
                                             </div>
-                                            <div className="mark-uchun-koish-joy">
-                                              <div className="kotta-obsh-mark-uchun">
-                                                <div className="kichkina-mark-uchun-joy">
-                                                  <div
-                                                    className="mark-two"
-                                                    onClick={() => setPage(2)}
-                                                  >
-                                                    2
-                                                  </div>
-                                                  <div
-                                                    className="mark-three"
-                                                    onClick={() => setPage(3)}
-                                                  >
-                                                    3
-                                                  </div>
-                                                  <div
-                                                    className="mark-four"
-                                                    onClick={() => setPage(4)}
-                                                  >
-                                                    4
-                                                  </div>
-                                                  <div
-                                                    className="mark-five"
-                                                    onClick={() => setPage(5)}
-                                                  >
-                                                    5
-                                                  </div>
+                                          </div>
+                                          <div className="mark-uchun-koish-joy1">
+                                            <div className="kotta-obsh-mark-uchun">
+                                              <div className="kichkina-mark-uchun-joy">
+                                                <div
+                                                  className="mark-two"
+                                                  onClick={() => setPage1(2)}
+                                                >
+                                                  2
                                                 </div>
-                                                <h5>Оценить ученика:</h5>
-                                                <div className="mark-bosgandan-kein">
-                                                  {page === 2 ? (
-                                                    <div className="mark-two">
-                                                      2
-                                                    </div>
-                                                  ) : (
-                                                    <>
-                                                      {page === 3 ? (
-                                                        <div className="mark-three">
-                                                          3
-                                                        </div>
-                                                      ) : (
-                                                        <>
-                                                          {page === 4 ? (
-                                                            <div className="mark-four">
-                                                              4
-                                                            </div>
-                                                          ) : (
-                                                            <>
-                                                              {page === 5 ? (
-                                                                <div className="mark-five">
-                                                                  5
-                                                                </div>
-                                                              ) : (
-                                                                <></>
-                                                              )}
-                                                            </>
-                                                          )}
-                                                        </>
-                                                      )}
-                                                    </>
-                                                  )}
+                                                <div
+                                                  className="mark-three"
+                                                  onClick={() => setPage1(3)}
+                                                >
+                                                  3
                                                 </div>
-                                                <div className="mark-otmen-potver-uchun">
-                                                  <button
-                                                    className="otmen-uchen-but"
-                                                    onClick={() => {
-                                                      markClose();
-                                                    }}
-                                                  >
-                                                    Отменить
-                                                  </button>
-                                                  <button
-                                                    className="porver-uchen-but"
-                                                    onClick={() => {
-                                                      aftermarkopen(item.id);
-                                                    }}
-                                                  >
-                                                    Потвердить
-                                                  </button>
+                                                <div
+                                                  className="mark-four"
+                                                  onClick={() => setPage1(4)}
+                                                >
+                                                  4
+                                                </div>
+                                                <div
+                                                  className="mark-five"
+                                                  onClick={() => setPage1(5)}
+                                                >
+                                                  5
                                                 </div>
                                               </div>
-                                            </div>
-                                            <div className="mark-uchun-koish-joy1">
-                                              <div className="kotta-obsh-mark-uchun">
-                                                <div className="kichkina-mark-uchun-joy">
-                                                  <div
-                                                    className="mark-two"
-                                                    onClick={() => setPage1(2)}
-                                                  >
+                                              <h5>Изменить оценку на:</h5>
+                                              <div className="mark-bosgandan-kein">
+                                                {page1 === 2 ? (
+                                                  <div className="mark-two">
                                                     2
                                                   </div>
-                                                  <div
-                                                    className="mark-three"
-                                                    onClick={() => setPage1(3)}
-                                                  >
-                                                    3
-                                                  </div>
-                                                  <div
-                                                    className="mark-four"
-                                                    onClick={() => setPage1(4)}
-                                                  >
-                                                    4
-                                                  </div>
-                                                  <div
-                                                    className="mark-five"
-                                                    onClick={() => setPage1(5)}
-                                                  >
-                                                    5
-                                                  </div>
-                                                </div>
-                                                <h5>Изменить оценку на:</h5>
-                                                <div className="mark-bosgandan-kein">
-                                                  {page1 === 2 ? (
-                                                    <div className="mark-two">
-                                                      2
-                                                    </div>
-                                                  ) : (
-                                                    <>
-                                                      {page1 === 3 ? (
-                                                        <div className="mark-three">
-                                                          3
-                                                        </div>
-                                                      ) : (
-                                                        <>
-                                                          {page1 === 4 ? (
-                                                            <div className="mark-four">
-                                                              4
-                                                            </div>
-                                                          ) : (
-                                                            <>
-                                                              {page1 === 5 ? (
-                                                                <div className="mark-five">
-                                                                  5
-                                                                </div>
-                                                              ) : (
-                                                                <></>
-                                                              )}
-                                                            </>
-                                                          )}
-                                                        </>
-                                                      )}
-                                                    </>
-                                                  )}
-                                                </div>
-                                                <div className="mark-otmen-potver-uchun">
-                                                  <button
-                                                    className="otmen-uchen-but"
-                                                    onClick={() => {
-                                                      markClose2();
-                                                    }}
-                                                  >
-                                                    Отменить
-                                                  </button>
+                                                ) : (
+                                                  <>
+                                                    {page1 === 3 ? (
+                                                      <div className="mark-three">
+                                                        3
+                                                      </div>
+                                                    ) : (
+                                                      <>
+                                                        {page1 === 4 ? (
+                                                          <div className="mark-four">
+                                                            4
+                                                          </div>
+                                                        ) : (
+                                                          <>
+                                                            {page1 === 5 ? (
+                                                              <div className="mark-five">
+                                                                5
+                                                              </div>
+                                                            ) : (
+                                                              <></>
+                                                            )}
+                                                          </>
+                                                        )}
+                                                      </>
+                                                    )}
+                                                  </>
+                                                )}
+                                              </div>
+                                              <div className="mark-otmen-potver-uchun">
+                                                <button
+                                                  className="otmen-uchen-but"
+                                                  onClick={() => {
+                                                    markClose2();
+                                                  }}
+                                                >
+                                                  Отменить
+                                                </button>
 
-                                                  <button
-                                                    className="porver-uchen-but"
-                                                    onClick={() => {
-                                                      aftermarkopen2(mark.id);
-                                                    }}
-                                                  >
-                                                    Изменить
-                                                  </button>
-                                                </div>
+                                                <button
+                                                  className="porver-uchen-but"
+                                                  onClick={() => {
+                                                    aftermarkopen2(mark.id);
+                                                  }}
+                                                >
+                                                  Изменить
+                                                </button>
                                               </div>
                                             </div>
-                                          </>
-                                        );
-                                      }
+                                          </div>
+                                        </>
+                                      );
                                     })}
                                   </>
                                 )}
