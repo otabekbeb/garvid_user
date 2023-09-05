@@ -238,7 +238,7 @@
   width: 1020px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: left;
   align-items: center;
    margin: auto;
 }
