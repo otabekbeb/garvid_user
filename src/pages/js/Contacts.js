@@ -76,14 +76,14 @@ export default function Contact() {
           </p>
           <p className="contact_address">
             {state === "ru"
-              ? " Мирабадский район,Малая кольцевая дорога, Россия, 100015"
-              : "Mirabad District, Small Ring Road, Russia 100015"}
+              ? " Казахстан, Туркестанская область, город Шымкент,Улица Сурикова 3Б"
+              : "Qazaqstan, Turkestan Region, Shymkent city, Surikova street 3B"}
           </p>
 
           <div className="email_box">
             <MdEmail className="email_icon" />
             <a href="mailto: garvird@gmail.com">
-              garvird@gmail.com
+            info@baisan.orgf
             </a>
           </div>
           <div className="feat_left contact_icons">
