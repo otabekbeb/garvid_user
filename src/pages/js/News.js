@@ -179,7 +179,7 @@ export default function News() {
 
 
               {base === 0 ? (
-                <div className="delete_padding">
+                <div className="delete_padding1">
                 <img src={Groupimg} alt="" />
                 <h3>No information</h3>
               </div>) : (
@@ -218,7 +218,7 @@ export default function News() {
         <div className="News">
           <div className="News_cards">
             {base === 0?(
-               <div className="delete_padding">
+               <div className="delete_padding1">
                <img src={Groupimg} alt="" />
                <h3>No information</h3>
           

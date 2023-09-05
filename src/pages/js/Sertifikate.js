@@ -29,7 +29,7 @@ export default function Sertifikate() {
                 <div className="cards_sertifikat">
                     <div className="card_sertifikat">
                         {sertifikat.length === 0 ? (
-                           <div className="delete_padding">
+                           <div className="delete_padding1">
                            <img src={Groupimg} alt="" />
                            <h4>У вас нет сертификата</h4>
                            <div className="delete_btns">
