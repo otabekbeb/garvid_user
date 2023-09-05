@@ -6,7 +6,7 @@ import azoimg from "../img/Ellipse.jpg"
 import axios from 'axios'
 import url from './Host'
 import '../css/Nosignal.css'
-import Groupimg from '../img/Group 2.png'
+import Groupimg from '../img/Subscriber-amico.png'
 export default function Azo() {
     const [follow, setFollow] = useState([])
     const [following, setFollowing] = useState(localStorage.getItem("OneuserId"))
@@ -43,10 +43,10 @@ export default function Azo() {
 
 
             <div className="followcards1">
-                {follow.length === 0 ? (
-                    <div className="delete_padding">
+                {follow.filter(filter => filter.topuser == localStorage.getItem("OneuserId")).length === 0 ? (
+                    <div className="rafiki_subcriber_img">
                         <img src={Groupimg} alt="" />
-                        <h4>No subscribers</h4>
+                        <h3>No subscribers</h3>
                         {/* <div className="delete_btns">
                             <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>
                         </div> */}
