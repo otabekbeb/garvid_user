@@ -14,7 +14,7 @@ export default function Images() {
 
 
   useEffect(()=>{
-    axios.get(`${url}/api/university`,{headers:{Authorization:"Bearer "+ localStorage.getItem("token")}}).then(res=>{
+    axios.get(`${url}/api/homiy`,{headers:{Authorization:"Bearer "+ localStorage.getItem("token")}}).then(res=>{
       setData(res.data)
     }).catch(err=>{})
   },[])
@@ -28,7 +28,7 @@ export default function Images() {
             return (
               <>
               
-                <img onClick={()=>{window.location="/Teams";localStorage.setItem("partner",item.id)}} src={item.logo} alt="" />
+                <img onClick={()=>{window.location="/Teams";localStorage.setItem("partner",item.id)}} src={item.image} alt="" />
                 
               </>
             )
