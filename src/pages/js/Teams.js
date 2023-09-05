@@ -251,16 +251,10 @@ export default function Teams() {
               {partner.length === 0 ? (
                    <div className="delete_padding1">
                    <img src={Groupimg} alt="" />
-                   <h4 style={{ fontSize: '30px', opacity: '0.3' }}>You didn't buy the course</h4>
+                   <h4 style={{ fontSize: '30px', opacity: '0.3' }}>There are no courses here yetYou didn't buy the course</h4>
                    <div className="delete_btns">
                      <a href="/Ourcourse">
                        {" "}
-                       <button
-                         style={{ background: "#44bef1  " }}
-                         className="delete_btn_yes"
-                       >
-                         Buy a course
-                       </button>
                      </a>
                    </div>
                  </div>
