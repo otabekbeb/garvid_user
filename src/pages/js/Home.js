@@ -226,7 +226,7 @@ export default function Home() {
                                 <div className="card4">
                                     <h1 className='card_about_us_ikki_page'>Doing the right thing, at the right time.</h1>
                                     <p className='card_about_us_ikki_p'>Welcome to the leading company on the market! Our success is driven by the highest quality customer service. We can meet the requirements even of the whimsical clients; there are no complex tasks for us! Thanks for your choice! Our company can boast the reputation of the trusted partner known worldwide. We are proud of the uncompromising quality of services</p>
-                                    <button className='card_about_us_ikki_button'>Read More</button>
+                                    <button onClick={()=>window.location="about"} className='card_about_us_ikki_button'>Read More</button>
                                 </div>
                             </div>
                         </div>
