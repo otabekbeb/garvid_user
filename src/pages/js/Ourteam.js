@@ -73,7 +73,7 @@ export default function Services() {
             <div id='for_boxsh' className="left-card">
               {partner.map(item => {
                 return (
-                  <div id='cards11' className="cards">
+                  <div id='cards11' className="cards1">
                     <div className="forsa_img">
                       <img src={item.image} alt="" />
                     </div>
