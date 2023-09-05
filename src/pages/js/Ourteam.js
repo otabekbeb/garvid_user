@@ -8,6 +8,9 @@ import "../css/Services.css"
 import "../css/Ourteam.css"
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import {GrFacebookOption} from "react-icons/gr"
+import {MdEmail} from "react-icons/md"
+import {BsTelephoneFill} from "react-icons/bs"
 
 // Import Swiper styles
 import 'swiper/css';
@@ -78,9 +81,9 @@ export default function Services() {
                 <p>{item.description}</p>
                 <div className="two">
                   <div className="icon">
-                  <a style={{color:"black"}} href="mailto:${item.twiter}"><div className="dumalo"><i className="bx bxl-facebook"></i></div></a>
-                  <a style={{color:"black"}} href=""><div className="dumalo"><i className="bx bxl-twitter"></i></div></a>
-                  <a style={{color:"black"}} href=""><div className="dumalo"><i className="bx bxl-linkedin"></i></div></a>
+                  <a style={{color:"black"}} href="mailto:${item.twiter}"><div className="dumalo"><GrFacebookOption/></div></a>
+                  <a style={{color:"black"}} href=""><div className="dumalo"><MdEmail/></div></a>
+                  <a style={{color:"black"}} href=""><div className="dumalo"><BsTelephoneFill/></div></a>
                   </div>
                   <div className="view"><h4>View profile<span>&gt;</span></h4></div>
                 </div>
