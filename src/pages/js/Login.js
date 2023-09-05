@@ -15,8 +15,7 @@ import { FaFacebook } from 'react-icons/fa'
 import { AiOutlineEye } from 'react-icons/ai'
 import Swal from "sweetalert2";
 import Change_password from "./Email"
-
-
+import ReCAPTCHA from 'react-google-recaptcha';
 export default function Login() {
   const [page, setPage] = useState(1)
   const [email, setEmail] = useState()
@@ -24,6 +23,10 @@ export default function Login() {
   const [data, setData] = useState([])
   const [changePassword, setChangePassword] = useState(true);
   const changeIcon = changePassword === true ? false : true;
+  const handleRecaptchaChange = (value) => {
+    // Обработка изменения состояния reCAPTCHA
+    console.log('reCAPTCHA value:', value);
+  };
 
   function userModal() {
 
@@ -81,7 +84,7 @@ export default function Login() {
       else if (res.data.position == 4) {
         window.location = "/studentall"
       }
-     }).catch(err => {
+    }).catch(err => {
       Swal.fire('Пароль или логин неправилный. Попробуйте снова')
       // Swal.fire("Пароль или логин неправилный. Попробуйте снова")
     })
@@ -103,7 +106,7 @@ export default function Login() {
       })
   }
 
-  const[password,setPassword]=useState(0)
+  const [password, setPassword] = useState(0)
   function PosssordVery() {
     var formdata = new FormData()
     formdata.append("code", document.querySelector("#verifak1").value)
@@ -147,6 +150,7 @@ export default function Login() {
                       <FiMail className="login_icon" />
                       <input placeholder="Верификация" id="verifak" type="number" required />
                     </div>
+
                     <div className="login_button_div">
                       <button type="button" onClick={() => userVeri()}>{state1 === "en" ? ("Verification") : ("Верификация")}</button>
                     </div>
@@ -162,32 +166,32 @@ export default function Login() {
               <button onClick={() => setPage(2)} style={page === 2 ? { background: '#9cf' } : { background: 'white', color: 'black', border: '2px solid #9cf' }}>{state1 === "en" ? ("Registration") : ("Регистрация")}</button>
             </div>
             {page === 6 ? (
-             <div className="login_db">
-             <div className="login_relative">
-               <img className="LoginImg" src={LoginImg} alt="" />
-               <div className="login_small_div">
-                 <form>
-                   <div className="login_small_div_input">
-                     <h3>{state1 === "en" ? ("Change password ") : ("Код")}</h3>
-                     <p>{state1 === "en" ? ("Code sent to your email") : ("Код отправлен на вашу электронную почту")}</p>
-                     <div className="royhat_small_input">
-                       <FiMail className="login_icon" />
-                       <input placeholder="Code" id="verifak1" type="number" required />
-                     </div>
-                     <div className="royhat_small_input">
-                     <BiLockAlt className="login_icon" />
-                     <input placeholder="New password" id="newpassword" type="text" required />
+              <div className="login_db">
+                <div className="login_relative">
+                  <img className="LoginImg" src={LoginImg} alt="" />
+                  <div className="login_small_div">
+                    <form>
+                      <div className="login_small_div_input">
+                        <h3>{state1 === "en" ? ("Change password ") : ("Код")}</h3>
+                        <p>{state1 === "en" ? ("Code sent to your email") : ("Код отправлен на вашу электронную почту")}</p>
+                        <div className="royhat_small_input">
+                          <FiMail className="login_icon" />
+                          <input placeholder="Code" id="verifak1" type="number" required />
+                        </div>
+                        <div className="royhat_small_input">
+                          <BiLockAlt className="login_icon" />
+                          <input placeholder="New password" id="newpassword" type="text" required />
 
-                   </div>
-                     <div className="login_button_div">
-                       <button type="button" onClick={() => PosssordVery()}>{state1 === "en" ? ("Send") : ("Отправить")}</button>
-                     </div>
-                   </div>
-                 </form>
-               </div>
-               <img className="loginimg" src={loginimg} alt="" />
-             </div>
-           </div>) : (<div>{page == 5 ? (
+                        </div>
+                        <div className="login_button_div">
+                          <button type="button" onClick={() => PosssordVery()}>{state1 === "en" ? ("Send") : ("Отправить")}</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <img className="loginimg" src={loginimg} alt="" />
+                </div>
+              </div>) : (<div>{page == 5 ? (
                 <div className="login_relative" >
                   <img className="LoginImg" src={LoginImg} alt="" />
                   <div style={{ height: "400px" }} className="login_small_div">
@@ -238,6 +242,13 @@ export default function Login() {
                           <div className="parol-esdan-chiqdi">
                             <a onClick={() => setPage(5)}>Забыл пароль ?</a>
                           </div>
+                          <div>
+                            {/* Вставьте свой site key в атрибут 'sitekey' */}
+                            <ReCAPTCHA
+                              sitekey="Ваш_site_key"
+                              onChange={handleRecaptchaChange}
+                            />
+                          </div>
                           <div className="login_button_div">
                             <button type="button" onClick={() => userAvto()} >{state1 === "en" ? ("Login") : ("Авторизоваться")}</button>
                           </div>
@@ -282,6 +293,13 @@ export default function Login() {
                                 {changeIcon ? <AiOutlineEye style={{ fontSize: "25px", position: "absolute", top: "30px", right: "0" }} /> : <i className='bx bx-low-vision' style={{ fontSize: "25px", position: "absolute", top: "30px", right: "0" }}  ></i>}
                               </span>
                               <div className="error">{state1 === "en" ? ("The password cannot be less than 8") : ("Пароль не может быть меньше 8")}</div>
+                            </div>
+                            <div>
+                              {/* Вставьте свой site key в атрибут 'sitekey' */}
+                              <ReCAPTCHA
+                                sitekey="Ваш_site_key"
+                                onChange={handleRecaptchaChange}
+                              />
                             </div>
                             <div className="login_button_div">
                               <button type="button" onClick={() => userModal()}>{state1 === "en" ? ("Registration") : ("Регистрация")}</button>

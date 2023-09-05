@@ -65,7 +65,7 @@ export default function Contact() {
           <h1 onClick={() => window.location = "/contacts"}>
             {state === "ru" ? "Связаться с нами" : "Connect with us"}
           </h1>
-          <p className="contact_info">
+          {/* <p className="contact_info">
             {state === "ru"
               ? (<div>Как я могу связаться с вами? <br /><br />По номеру <a className="contact_tel" href="tel: +7 032 11 12">
                 (+7) <span> 032 11 12</span>
@@ -73,17 +73,17 @@ export default function Contact() {
               : (<div>How can I contact you? <br /><br /><a className="contact_tel" href="tel: +7 032 11 12">
                 (+7) <span> 032 11 12</span>
               </a>call or leave a message and our operators will contact you as soon as possible.</div>)}
-          </p>
+          </p> */}
           <p className="contact_address">
             {state === "ru"
-              ? " Мирабадский район,Малая кольцевая дорога, Россия, 100015"
-              : "Mirabad District, Small Ring Road, Russia 100015"}
+              ? " Казахстан, Туркестанская область, город Шымкент,Улица Сурикова 3Б"
+              : "Qazaqstan, Turkestan Region, Shymkent city, Surikova street 3B"}
           </p>
 
           <div className="email_box">
             <MdEmail className="email_icon" />
             <a href="mailto: garvird@gmail.com">
-              garvird@gmail.com
+            info@baisan.orgf
             </a>
           </div>
           <div className="feat_left contact_icons">
