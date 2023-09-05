@@ -295,13 +295,13 @@ export default function Login() {
                               </span>
                               <div className="error">{state1 === "en" ? ("The password cannot be less than 8") : ("Пароль не может быть меньше 8")}</div>
                             </div>
-                            <div>
-                              {/* Вставьте свой site key в атрибут 'sitekey' */}
-                              <ReCAPTCHA
-                                sitekey="Ваш_site_key"
-                                onChange={handleRecaptchaChange}
-                              />
-                            </div>
+                              <div>
+                                {/* Вставьте свой site key в атрибут 'sitekey' */}
+                                <ReCAPTCHA
+                                  sitekey="Ваш_site_key"
+                                  onChange={handleRecaptchaChange}
+                                />
+                              </div>
                           
                             <div className="login_button_div">
                               <button type="button" onClick={() => userModal()}>{state1 === "en" ? ("Registration") : ("Регистрация")}</button>

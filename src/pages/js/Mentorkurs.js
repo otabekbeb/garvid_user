@@ -375,8 +375,8 @@ export default function Searchfilter() {
                     <div className="edit_inside">
                       <label htmlFor="">Sponsor:</label>
                       <Form.Select className="select_opt" aria-label="Default select example">
-                      <option value="0">not</option>
-                      {homiy.map(item => { return <option value={item.id}>{item.title}</option> })}
+                        <option value="0">not</option>
+                        {homiy.map(item => { return <option value={item.id}>{item.title}</option> })}
                       </Form.Select>
                     </div>
                     <div className="edit_inside">
@@ -451,7 +451,7 @@ export default function Searchfilter() {
               <div className="edit_inside">
                 <label htmlFor="">Sponsor:</label>
                 <Form.Select className="select_opt" aria-label="Default select example">
-                <option value="0">not</option>
+                  <option value="0">not</option>
                   {homiy.map(item => { return <option value={item.id}>{item.title}</option> })}
                 </Form.Select>
               </div>
