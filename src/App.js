@@ -51,6 +51,7 @@ import Sotibol from "./pages/js/Sotibol";
 import WiewAll from "./pages/js/WiewAll";
 import Sertificate_create from "./pages/js/Sertificate_create";
 import Partner from "./pages/js/Partner";
+import Teams from "./pages/js/Teams";
 export default function App() {
   return (
     <div>
@@ -106,6 +107,7 @@ export default function App() {
           <Route exact path="/NNN" component={NNN} />
           <Route exact path="/sertificate_create" component={Sertificate_create} />
           <Route exact path="/partner" component={Partner} />
+          <Route exact path="/Teams" component={Teams} />
           {/* <Route index element={} />*/}
         </Switch>
       </BrowserRouter>

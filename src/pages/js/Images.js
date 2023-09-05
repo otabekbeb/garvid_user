@@ -24,10 +24,11 @@ export default function Images() {
     <header id='imagees' className='images'>
       <div className="images-kotta">
         <div className="images-img">
-          {data.map(item1000 => {
+          {data.map(item => {
             return (
               <>
-                <img src={item1000.logo} alt="" />
+              
+                <img onClick={()=>{window.location="/Teams";localStorage.setItem("partner",item.id)}} src={item.logo} alt="" />
                 
               </>
             )

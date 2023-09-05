@@ -114,14 +114,12 @@ export default function Home() {
                         <div className="iniversty_cards">
                             {univercard.map((item,key) => {
                                 return (
-                                    <div key={key} className="iniversty_card">
+                                    <div onClick={()=>{window.location="/Teams";localStorage.setItem("partner",item.id)}} key={key} className="iniversty_card">
                                         <div className="iniversty_img">
                                             {item.image === null ? (<img src={img_for_null} alt="" />) : (<img src={item.image} alt="" />)}
                                         </div>
-
                                         <p>{item.title}</p>
-                                                                                <div className="line-jome-home">
-                                            
+                                            <div className="line-jome-home">
                                         </div>
                                         <h2>{item.deckription}</h2>
                                     </div>
