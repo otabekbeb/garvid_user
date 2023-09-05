@@ -238,7 +238,7 @@
   width: 1020px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: left;
   align-items: center;
   margin: auto;
 }
@@ -388,7 +388,7 @@
 
 .forsa_img {
   width: 260px;
-  height: 260px;
+  height: 200px;
   margin: auto;
   overflow: hidden;
   display: flex;
