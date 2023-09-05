@@ -62,11 +62,11 @@ export default function Partner() {
                 
             })}
           </div> */}
-          {til.map(item=>{
+          {/* {til.map(item=>{
             return(
                 <h1>{item.lg}</h1>
             )
-          })}
+          })} */}
           <Footer1/>
     </div>
   )
