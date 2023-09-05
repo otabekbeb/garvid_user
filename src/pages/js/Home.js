@@ -88,7 +88,7 @@ export default function Home() {
                             <h1 className="text-white mt-4 mb-4" id='hbir'>Get Educated Online From Your Home</h1>
                             <p id='pp1' style={{ color: "white", fontSize: "20px" }}>With over 20 years of experience we'll ensure you always get the best guidance</p>
                             <div style={{ display: "flex", justifyContent: "center", marginTop: "30px" }} className="butonss">
-                                <button onClick={() => window.location = "/services"}>Services</button>
+                                <button onClick={() => window.location = "/servis"}>Services</button>
                                 <button onClick={() => window.location = "/contacts"} id='but22'>Contacts</button>
                             </div>
                             <div className="mx-auto mb-5" style={{ width: "100%;", maxWidth: "600px;" }}>

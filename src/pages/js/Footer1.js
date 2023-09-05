@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import '../css/Footer1.css'
 import axios from 'axios';
+import logo from '../img/signal-2023-06-09-165727_003.png'  
 import url from './Host';
 
 export default function Footer1() {
@@ -27,7 +28,7 @@ export default function Footer1() {
 <div className="futer-ichi">
 
 <div className="futer-block1">
-<img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/08/mt-0514-logo-footer.png" alt="" />
+<img style={{width:'200px', marginTop:'-200px',marginBottom:'-180px'}} src={logo} alt="" />
 <div className="vbe">
   <p>Welcome to the host<br />company providing services <br /> combining quality,<br /> reliability and compliance!</p>
 </div>
@@ -72,10 +73,9 @@ export default function Footer1() {
 <h3>Contact Information</h3>
 <div className="futer-liner1"></div>
 <div className="futer-text">
-<p><box-icon name='check' color='#44bef1' id="pdsfp"></box-icon><span>(123) 45678910</span></p>
-<p><box-icon name='check' color='#44bef1'id="pdsfp" ></box-icon><span>info@demolink.org</span></p>
+<p><box-icon name='check' color='#44bef1'id="pdsfp" ></box-icon><span>info@baisan.org</span></p>
 <p><box-icon name='check' color='#44bef1' id="pdsfp"></box-icon><span>Mon - Sat: 9:00 - 18:00</span></p>
-<p><box-icon name='check' color='#44bef1'id="pdsfp" ></box-icon><span>267 Park Avenue New York, NY 90210</span></p>
+<p><box-icon name='check' color='#44bef1'id="pdsfp" ></box-icon><span>Qazaqstan, Turkestan Region, Shymkent city, <br /> Surikova street 3B</span></p>
 
 </div>
 
@@ -99,7 +99,7 @@ export default function Footer1() {
 
 <div className="media-foter-mobil">
   <div className="futer-mobil-block">
-  <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/08/mt-0514-logo-footer.png" alt="" />
+  <img style={{width:'200px', marginTop:'-50px', marginBottom:'-60px', marginLeft:'-60px'}} src={logo} alt="" />
 <div className="futer-mobil-text">
   <p>Welcome to the leading company providing services that combine quality, reliability and compliance!</p>
 </div>
@@ -139,10 +139,9 @@ export default function Footer1() {
     <h3>Contact Information</h3>
     <div className="futer-nobil-block-line"></div>
     <div className="futer-text">
-<p className='lkas'><box-icon name='check' color='#44bef1' id="pdsfp"></box-icon><span>(123) 45678910</span></p>
-<p className='lls'><box-icon name='check' color='#44bef1' id="pdsfp"></box-icon><span >info@demolink.org</span></p>
+<p className='lls'><box-icon name='check' color='#44bef1' id="pdsfp"></box-icon><span >info@baisan.org</span></p>
 <p className='lls'><box-icon name='check' color='#44bef1' id="pdsfp"></box-icon><span >Mon - Sat: 9:00 - 18:00</span></p>
-<p className='lkas'><box-icon name='check' color='#44bef1' id="pdsfp"></box-icon><span>267 Park Avenue, New York, NY 90210</span></p>
+<p className='lkas'><box-icon name='check' color='#44bef1' id="pdsfp"></box-icon><span>Qazaqstan, Turkestan Region, Shymkent city, Surikova street 3B</span></p>
 
 </div>
 
@@ -180,7 +179,7 @@ export default function Footer1() {
 
 <div className="futer-pas">
   <div className="futer-cen">
-<p>© 2019 FinExpert.  Privacy policy</p>
+<p>baisan.org</p>
   </div>
 </div>
     </div>

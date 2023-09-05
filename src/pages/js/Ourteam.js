@@ -117,34 +117,6 @@ export default function Services() {
                 </div>
               </div>
 
-              <div id='cards11' className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-team-img05.jpg" alt="" />
-                <h1><a href="#">Joe Norris</a></h1>
-                <p>Ms. Norris deals with various financial concerns of small businesses and startups. He provides online consulting services...</p>
-                <div className="two">
-                  <div className="icon">
-                    <div className="dumalo"><i className="bx bxl-facebook"></i></div>
-                    <div className="dumalo"><i className="bx bxl-twitter"></i></div>
-                    <div className="dumalo"><i className="bx bxl-linkedin"></i></div>
-                  </div>
-                  <div className="view"><h4>View profile <span>&gt;</span></h4></div>
-                </div>
-              </div>
-
-              <div id='cards11' className="cards">
-                <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-team-img06.jpg" alt="" />
-                <h1><a href="#">Bernard Harris</a></h1>
-                <p>When it comes to reduction of financial risks of international companies and business corporations, Bernard is our leading consultant...</p>
-                <div className="two">
-                  <div className="icon">
-                    <div className="dumalo"><i className="bx bxl-facebook"></i></div>
-                    <div className="dumalo"><i className="bx bxl-twitter"></i></div>
-                    <div className="dumalo"><i className="bx bxl-linkedin"></i></div>
-                  </div>
-                  <div className="view"><h4>View profile <span>&gt;</span></h4></div>
-                </div>
-              </div>
-
             </div>
 
 
