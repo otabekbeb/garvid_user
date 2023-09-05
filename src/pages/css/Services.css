@@ -27,9 +27,13 @@
   /* height: 370px; */
   margin: 20px;
 }
-.cards img {
+#cards11 img {
   height: 100%;
   border-radius: 5px;
+}
+.cards img{
+  width: 100%;
+  border-radius: 5%;
 }
 @media (max-width: 615px) {
   .services_div .swiper-pagination-fraction,
