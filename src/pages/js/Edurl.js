@@ -1,2 +1,2 @@
-var URL = "https://api.abbas.uz/"
+var URL = "https://markazback2.onrender.com"
 export default URL;

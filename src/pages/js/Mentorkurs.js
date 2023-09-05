@@ -231,8 +231,6 @@ export default function Searchfilter() {
   axios.get(`${url}/api/homiy`, { headers: { "Authorization": "Bearer " + localStorage.getItem("token") } }).then(res => {
     setHomiy(res.data)
     console.log(res.data);
-  }).catch(err => {
-    Swal.fire("err")
   })
 
   // function deleteData(id) {
