@@ -228,6 +228,15 @@ export default function Profil() {
     formdata.append("read", true)
     axios.get(`${URL}/api/notification/read/${id}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
     })
+
+    // axios.get(`${url}/auth/teachers`, {
+    //     headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+    //   })
+
+      axios.get(`${url}/auth/teachers`, { headers: { "Authorization": "Bearer " + localStorage.getItem("token") } }).then(res => {
+        setData(res.data)
+        console.log(res.data);
+      })
   }
   return (
     <div>
@@ -281,15 +290,37 @@ export default function Profil() {
               <button>Teacher</button>
               <p>My social networks :</p>
               <div className="blok_bir_icon">
-                <div className="blok_bir_icon_img1">
+                {data.map(item=>{
+                  return(
+<div className="blok_bir_icon_img1" onClick={()=>{
+                  window.location =`${item.telegram}`}}>
                   <BiLogoTelegram />
                 </div>
-                <div className="blok_bir_icon_img2">
+                  )
+                  
+                })}
+                
+                {data.map(item=>{
+                    return(
+                       <div className="blok_bir_icon_img2" onClick={()=>{
+                        window.location=`${item.instagram}`
+                       }}>
                   <RiInstagramFill />
                 </div>
-                <div className="youtube">
+                    )
+                  })}
+               
+
+               {data.map(item=>{
+                    return(
+                      <div className="youtube" onClick={()=>{
+                        window.location=`${item.youtobe}`
+                      }}>
                   <FaYoutube />
                 </div>
+                    )
+                  })}
+                
               </div>
             </div>
           </div>

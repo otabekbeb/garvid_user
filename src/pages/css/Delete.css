@@ -38,6 +38,12 @@ z-index: 1000000000000000000000 !important;
     background-color: white;
     box-shadow:  0 0px 40px #a3a5a654;
 }
+.delete_padding img{
+    margin: auto;   
+    display: flex;
+    width: auto !important;
+    height: 70%;
+}
 .delete_padding1{
     margin: auto;
     border-radius: 10px;
@@ -56,13 +62,8 @@ z-index: 1000000000000000000000 !important;
     display: flex;
     justify-content: center;
 }
-.delete_padding img{
-    margin: auto;
-    display: flex;
-    height: 70%;
-}
 .delete_padding h4{
-    font-size: 18px;
+    font-size: 20px;
     margin-top: 10px;
     display: flex;
     justify-content: center;
@@ -80,10 +81,8 @@ z-index: 1000000000000000000000 !important;
     background: rgba(255, 0, 0, 0.556);
 }
 .delete_btn_yes{
-    width: 200px;
-    height: 40px;
-    font-size: 20px;
-
+    width: 150px;
+    height: 30px;
     border: none;
     border-radius: 5px;
     color: white;
