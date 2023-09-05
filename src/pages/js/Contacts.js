@@ -65,7 +65,7 @@ export default function Contact() {
           <h1 onClick={() => window.location = "/contacts"}>
             {state === "ru" ? "Связаться с нами" : "Connect with us"}
           </h1>
-          <p className="contact_info">
+          {/* <p className="contact_info">
             {state === "ru"
               ? (<div>Как я могу связаться с вами? <br /><br />По номеру <a className="contact_tel" href="tel: +7 032 11 12">
                 (+7) <span> 032 11 12</span>
@@ -73,7 +73,7 @@ export default function Contact() {
               : (<div>How can I contact you? <br /><br /><a className="contact_tel" href="tel: +7 032 11 12">
                 (+7) <span> 032 11 12</span>
               </a>call or leave a message and our operators will contact you as soon as possible.</div>)}
-          </p>
+          </p> */}
           <p className="contact_address">
             {state === "ru"
               ? " Казахстан, Туркестанская область, город Шымкент,Улица Сурикова 3Б"

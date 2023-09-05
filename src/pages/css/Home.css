@@ -1130,6 +1130,7 @@ display: block !important;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-top: 15px;
 }
 
 .chec_icon {
