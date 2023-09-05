@@ -228,6 +228,7 @@
     border: none;
     border-radius: 5px;
     /* padding: 10px; */
+    border: 1px solid #dcdcdc;
     outline: none;
     width: 100%;
     background-color: #fff;
