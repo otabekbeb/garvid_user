@@ -71,7 +71,9 @@ export default function Services() {
               {partner.map(item=>{
                 return(
                   <div id='cards11' className="cards">
-                <img src={item.image} alt="" />
+                    <div className="forsa_img">
+                      <img src={item.image} alt="" />
+                    </div>
                 <h1><a href="#">{item.name}</a></h1>
                 <p>{item.description}</p>
                 <div className="two">
