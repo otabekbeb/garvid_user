@@ -4,7 +4,7 @@ import "../css/Blog.css"
 import Navbar from './Navbar'
 import Footer from './Footer1'
 import Images from './Images'
-
+import {BsCalendar2Date} from 'react-icons/bs'
 export default function Blog() {
 
     const [state1, setState1] = React.useState();
@@ -46,7 +46,7 @@ export default function Blog() {
                 <div className="big-cards">
                     <div className="h01">
                         <p className="h11">The main objectives of the marketer</p>
-                        <p className="pp"><i className='bx bx-calendar'></i> 07.09.2016</p>
+                        <p className="pp"><BsCalendar2Date/> 07.09.2016</p>
                     </div>
                     <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-blog-img02.jpg" alt=""/>
                     <p>The modern market is absolutely unpredictable. And yet it lives according to strict laws. The marketers need to be known to achieve maximum results in their business - that is the main task of the marketer.</p>                    
@@ -56,7 +56,7 @@ export default function Blog() {
                 <div className="big-cards">
                     <div className="h01">
                         <p className="h11">Recession is a good opportunity to deal a deathblow to the competitors</p>
-                        <p className="pp"><i className='bx bx-calendar'></i> 07.09.2016</p>
+                        <p className="pp"><BsCalendar2Date/> 07.09.2016</p>
                     </div>
                     <img src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/09/mt-0514-blog-img01.jpg" alt=""/>
                     <p>Media prices are falling, so advertising becomes more profitable. The combination of low prices on media and weak competition gives companies the opportunity to cheaply grab market share.</p>
