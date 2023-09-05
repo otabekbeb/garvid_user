@@ -45,44 +45,44 @@ export default function Contact() {
         <div>
           <Usernavbar />
           <div className="contact">
-            <div className="contact_left">
-              <h1 onClick={() => window.location = "/contacts"}>
-                {state === "ru" ? "Связаться с нами" : "Connect with us"}
-              </h1>
-              <p className="contact_info">
-                {state === "ru"
-                  ? (<div>Как я могу связаться с вами? <br /><br />По номеру <a className="contact_tel" href="tel: +7 032 11 12">
-                    (+7) <span> 032 11 12</span>
-                  </a>  или же оставить сообщение и наши операторы с вами свяжутся в кратчайшее время. </div>)
-                  : (<div>How can I contact you? <br /><br /><a className="contact_tel" href="tel: +7 032 11 12">
-                    (+7) <span> 032 11 12</span>
-                  </a>call or leave a message and our operators will contact you as soon as possible.</div>)}
-              </p>
-              <p className="contact_address">
-                {state === "ru"
-                  ? " Мирабадский район,Малая кольцевая дорога, Россия, 100015"
-                  : "Mirabad District, Small Ring Road, Russia 100015"}
-              </p>
+          <div className="contact_left">
+          <h1 onClick={() => window.location = "/contacts"}>
+            {state === "ru" ? "Связаться с нами" : "Connect with us"}
+          </h1>
+          {/* <p className="contact_info">
+            {state === "ru"
+              ? (<div>Как я могу связаться с вами? <br /><br />По номеру <a className="contact_tel" href="tel: +7 032 11 12">
+                (+7) <span> 032 11 12</span>
+              </a>  или же оставить сообщение и наши операторы с вами свяжутся в кратчайшее время. </div>)
+              : (<div>How can I contact you? <br /><br /><a className="contact_tel" href="tel: +7 032 11 12">
+                (+7) <span> 032 11 12</span>
+              </a>call or leave a message and our operators will contact you as soon as possible.</div>)}
+          </p> */}
+          <p className="contact_address">
+            {state === "ru"
+              ? " Казахстан, Туркестанская область, город Шымкент,Улица Сурикова 3Б"
+              : "Qazaqstan, Turkestan Region, Shymkent city, Surikova street 3B"}
+          </p>
 
-              <div className="email_box">
-                <MdEmail className="email_icon" />
-                <a href="mailto: garvird@gmail.com">
-                  garvird@gmail.com
-                </a>
-              </div>
-              <div className="feat_left contact_icons">
+          <div className="email_box">
+            <MdEmail className="email_icon" />
+            <a href="mailto: garvird@gmail.com">
+            info@baisan.orgf
+            </a>
+          </div>
+          <div className="feat_left contact_icons">
 
-                <a href="#" className="iconBox ">
-                  <FaFacebookF className="icon icon4" />
-                </a>
-                <a href="#" className="iconBox">
-                  <FaTwitter className="icon icon4" />
-                </a>
-                <a href="#" className="iconBox">
-                  <FaInstagram className="icon icon4" />
-                </a>
-              </div>
-            </div>
+            <a href="#" className="iconBox ">
+              <FaFacebookF className="icon icon4" />
+            </a>
+            <a href="#" className="iconBox">
+              <FaTwitter className="icon icon4" />
+            </a>
+            <a href="#" className="iconBox">
+              <FaInstagram className="icon icon4" />
+            </a>
+          </div>
+        </div>
 
             <div className="contact_right1">
               <form action="">
