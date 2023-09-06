@@ -79,9 +79,9 @@ export default function Searchfilter() {
             }
             setKursdata(res.data);
             localStorage.setItem("mycourseUser", res.data.length)
-            setLoader(0);
           });
-      });
+        });
+        setLoader(0);
   }, []);
 
   function filter(id) {
