@@ -26,7 +26,7 @@ class App extends Component {
 	}
 	componentDidMount(){
 		axios.get(`${url}/edu/quations`).then(res=>{
-			localStorage.setItem("for_tests",this.state.questionBank.length)
+			
 			for (let i = 0; i < res.data.length; i++) {
 			res.data[i].options=[res.data[i].variant1,res.data[i].variant2,res.data[i].variant3,res.data[i].variant4]
 			res.data[i].id=i+1

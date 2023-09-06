@@ -82,7 +82,7 @@ export default function Teams() {
               }
             }
             setKursdata(res.data);
-            localStorage.setItem("mycourseUser", res.data.length)
+            // localStorage.setItem("mycourseUser", res.data.length)
             setLoader(0);
           });
       });
@@ -149,7 +149,7 @@ export default function Teams() {
               }
             }
             setKursdata(res.data);
-            localStorage.setItem("mycourseUser", res.data.length)
+            // localStorage.setItem("mycourseUser", res.data.length)
             setLoader(0);
           });
       });

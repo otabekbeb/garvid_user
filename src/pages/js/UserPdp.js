@@ -20,13 +20,21 @@ export default function Pdp() {
   const [toggle, setToggle] = useState(1);
   const [kursdata, setKursData] = useState([]);
   const [state1, setState1] = React.useState();
+  const [courses,setCourses] = useState([])
   const [email, setEmail] = useState("");
+  const [follow, setFollow] = useState([])
   useEffect(() => {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en",
       axios.get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         setKursData(res.data)
-      })
+      }),
+      axios.get(`${url}/api/nomycourse/${localStorage.getItem("OneuserId")}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+        setCourses(res.data)
+      }),
+      axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+        setFollow(res.data)
+    }).catch(err=>{})
     );
     // Swal.fire(socket.id);
     // Swal.fire("zm")
@@ -111,7 +119,7 @@ export default function Pdp() {
                 >
                   Courses
                 </h1>
-                {toggle===2?( <div className="fil_text_blok_kurs_lenght">{localStorage.getItem("ourcourseLength")} pieces</div>):("")}
+                {toggle===2?( <div className="fil_text_blok_kurs_lenght">{courses.length} pieces</div>):("")}
                
               </div>
               <div className="fil_text_blok_soz">

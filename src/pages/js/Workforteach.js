@@ -52,7 +52,7 @@ export default function Workforteach() {
       })
       .then((res) => {
         setTasks(res.data);
-        localStorage.setItem("taskLength", res.data.length);
+        // localStorage.setItem("taskLength", res.data.length);
       });
 
     axios.get(`${url}/api/course_data_theme`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
@@ -190,7 +190,7 @@ export default function Workforteach() {
             <h4>No tasks</h4>
           </div>
           ) : (<>   {stTasks.map((item) => {
-            localStorage.setItem("taskLength", stTasks.length);
+            // localStorage.setItem("taskLength", stTasks.length);
             return (
               <div>
                 <div className="m_zadach_block">

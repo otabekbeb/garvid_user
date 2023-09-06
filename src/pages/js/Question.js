@@ -2,14 +2,24 @@
 
 import React, {Component} from "react";
 import Options from "./Option";
+import axios from "axios";
+import url from "./Host";
 
 class Question extends Component{
+	state={
+		data:[]
+	}
+	componentDidMount(){
+		axios.get(`${url}/api/nomycourse/${localStorage.getItem("OneuserId")}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+			this.setState({data:res.data})
+		}).catch(err=>{})
+	}
 	render() {
 		const {question, selectedOption, onOptionChange, onSubmit} = this.props;
 
 		return(
 			<div className="lend">
-				<h3 style={{display:"flex",justifyContent:"center",marginBottom:"30px",gap:"10px"}}>Question {question.id} of {localStorage.getItem("for_tests")}</h3>
+				<h3 style={{display:"flex",justifyContent:"center",marginBottom:"30px",gap:"10px"}}>Question {question.id} of {this.state.data.length}</h3>
 				<h5 id="mt-21" className="mt-2">{question.question}</h5>
 				<form onSubmit={onSubmit} className="mt-2 mb-2">
 					<Options type="submit"

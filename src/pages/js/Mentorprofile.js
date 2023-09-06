@@ -368,9 +368,9 @@ export default function Profil() {
                 onClick={() => taxrirlashChadModal()}
                 className="profil_blok_ikki_icon_bir"
               />
-              {/* {localStorage.getItem("soya").length == 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
-                {localStorage.getItem("soya")}
-              </div>)} */}
+              {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length == 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
+                  {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length}
+                </div>)}
 
               <BsThreeDots
                 onClick={() => taxrirlashModal()}
@@ -402,56 +402,55 @@ export default function Profil() {
                 </div>
               </div>
               <div className="profil_blok_ikki_icon_taxriirlash_chat">
-                <div className="for_wiewall">
-                  {natlifikation.length === 0 ? (
-                    <div><p style={{ textAlign: 'center', marginTop: '35%', fontSize: '20px', opacity: '0.4' }}>Not written to you</p>
+                  <div className="for_wiewall">
+                    {natlifikation.length === 0 ? (
+                      <div><p style={{ textAlign: 'center', marginTop: '35%', fontSize: '20px', opacity: '0.4' }}>Not written to you</p>
 
-                    </div>) : (<div>
-                      {natlifikation.map((item, key) => {
+                      </div>) : (<div>
+                        {natlifikation.map((item, key) => {
 
-                        if (item.to_user_id == localStorage.getItem("OneuserId")) {
-                          localStorage.setItem("soya", natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length)
-                          return (
-                            <div>
+                          if (item.to_user_id == localStorage.getItem("OneuserId")) {
+                            return (
+                              <div>
+                                {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
+                                <div className="taxrirlash_chad">
+                                  <div className="taxrirlash_chad_img_size">
+                                    <img src={item.image} alt="" />
 
-                              <div className="taxrirlash_chad">
-                                <div className="taxrirlash_chad_img_size">
-                                  <img src={chadimg} alt="" />
+                                  </div>
+                                  <div className="taxrirlash_chad_size">
+                                    <div className="taxrirlash_chad_vaqt">
+                                      <h1>{item.username}</h1>
+                                      <div className="taxrirlash_chad_vaqt_soat">
+                                        <TbPointFilled className="chad_set" />
+                                        <p >{item.time_create.slice(11, 16)}</p>
+                                      </div>
 
-                                </div>
-                                <div className="taxrirlash_chad_size">
-                                  <div className="taxrirlash_chad_vaqt">
-                                    <h1>{item.title}</h1>
-                                    <div className="taxrirlash_chad_vaqt_soat">
-                                      <TbPointFilled className="chad_set" />
-                                      <p >{item.time_create.slice(11, 16)}</p>
+
                                     </div>
-
-
-                                  </div>
-                                  <div className="taxrirlash_chad_text">
-                                    <p>{item.description}</p>
+                                    <div className="taxrirlash_chad_text">
+                                      <p>{item.last_name}</p>
+                                    </div>
                                   </div>
                                 </div>
+
+                                <p >{item.time_create.slice(0, 10)}</p>
                               </div>
 
-                              <p >{item.time_create.slice(0, 10)}</p>
-                            </div>
+                            )
+                          }
+                        })}</div>
 
-                          )
-                        }
-                      })}</div>
+                    )}
+                  </div>
 
-                  )}
+                  <a className="wiewu" style={natlifikation.length === 0 ? { display: "none" } : { display: "flex" }} href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
+                    <p>
+                      view all
+                      <AiOutlineRight />
+                    </p>
+                  </div></a>
                 </div>
-
-                <a className="wiewu" style={natlifikation.length === 0 ? { display: "none" } : { display: "flex" }} href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
-                  <p>
-                    view all
-                    <AiOutlineRight />
-                  </p>
-                </div></a>
-              </div>
 
 
             </div>

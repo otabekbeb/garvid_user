@@ -79,7 +79,7 @@ export default function Edication() {
     axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setEdication(res.data)
       setEdication1(res.data)
-      localStorage.setItem("for_education", (res.data).length)
+      
     }).catch(err => { })
 
     axios.get(`${url}/auth/teachers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
