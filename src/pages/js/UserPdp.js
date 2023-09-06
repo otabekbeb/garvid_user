@@ -23,7 +23,10 @@ export default function Pdp() {
   const [email, setEmail] = useState("");
   useEffect(() => {
     setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en",
+      axios.get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+        setKursData(res.data)
+      })
     );
     // Swal.fire(socket.id);
     // Swal.fire("zm")
@@ -91,7 +94,7 @@ export default function Pdp() {
                 </h1>
                 {toggle === 1 ? (
                   <div className="fil_text_blok_kurs_lenght">
-                    {localStorage.getItem("mycourseUser")} pieces
+                    {kursdata.length} pieces
                   </div>
                 ) : (
                   ""

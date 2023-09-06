@@ -143,8 +143,6 @@ export default function Ourcourse() {
       console.log(err);
     });
   }
-
-
   return (
     <div>
       <Navbar />
