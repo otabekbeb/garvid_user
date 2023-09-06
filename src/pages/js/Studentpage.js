@@ -775,9 +775,9 @@ export default function Mentor() {
                   onClick={() => taxrirlashChadModal()}
                   className="profil_blok_ikki_icon_bir"
                 />
-                <div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
+                {localStorage.getItem("soya").length == 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
                   {localStorage.getItem("soya")}
-                </div>
+                </div>)}
                 <BsThreeDots
                   onClick={() => taxrirlashModal()}
                   className="profil_blok_ikki_icon_ikki"
@@ -825,25 +825,25 @@ export default function Mentor() {
                               <div>
                                 {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
                                 <div className="taxrirlash_chad">
-                                <div className="taxrirlash_chad_img_size">
-                                  <img src={item.image} alt="" />
+                                  <div className="taxrirlash_chad_img_size">
+                                    <img src={item.image} alt="" />
 
-                                </div>
-                                <div className="taxrirlash_chad_size">
-                                  <div className="taxrirlash_chad_vaqt">
-                                    <h1>{item.username}</h1>
-                                    <div className="taxrirlash_chad_vaqt_soat">
-                                      <TbPointFilled className="chad_set" />
-                                      <p >{item.time_create.slice(11, 16)}</p>
+                                  </div>
+                                  <div className="taxrirlash_chad_size">
+                                    <div className="taxrirlash_chad_vaqt">
+                                      <h1>{item.username}</h1>
+                                      <div className="taxrirlash_chad_vaqt_soat">
+                                        <TbPointFilled className="chad_set" />
+                                        <p >{item.time_create.slice(11, 16)}</p>
+                                      </div>
+
+
                                     </div>
-
-
-                                  </div>
-                                  <div className="taxrirlash_chad_text">
-                                    <p>{item.last_name}</p>
+                                    <div className="taxrirlash_chad_text">
+                                      <p>{item.last_name}</p>
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
 
                                 <p >{item.time_create.slice(0, 10)}</p>
                               </div>
@@ -1008,7 +1008,7 @@ export default function Mentor() {
                     <div className="delete_padding1">
                       <img src={Groupimg} alt="" />
                       <h4 style={{ fontSize: '30px', opacity: '0.3' }}>Our courses are not yet</h4>
-                      
+
                     </div>) : (<>   {courstype.map((item) => {
                       return (
                         <div className="button_filter_kurs">
@@ -1049,41 +1049,41 @@ export default function Mentor() {
                 </div>
               </div>
             ) : kursdata.map(item => {
-                  localStorage.setItem("for_course", kursdata.length)
-                  return (
-                    <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
-                        <img src={item.image} alt="" />
-                      <div className="kurs_paddaing_auto">
-                        <h4>{item.name}</h4>
-                        <div className="star_card">
-                          {item.star === 1 ? (<div><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i>
-                          </div>) : (item.star === 2 ? (<div><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i></div>) :
-                            (item.star === 3 ? (<div><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i></div>) :
-                              (item.star === 4 ? (<div><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i></div>) :
-                                (item.star === 5 ? (<div><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i></div>) : (<div><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i></div>)))))}
-                          <p>
-                            {item.star === null ? ("0") : (item.star)}<span>(524)</span>
-                          </p>
-                        </div>
-                        <div className="hajm">
-                          <h5>
-                            <p>Course size</p>
-                            {item.planned_time}
-                          </h5>
-                          <h5>
-                            <p>Course price</p>
-                            {item.price}$
-                          </h5>
-                        </div>
-                      </div>
-                      <button className="button_circle">
-                        <AiOutlineArrowRight onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} />
-                      </button>
+              localStorage.setItem("for_course", kursdata.length)
+              return (
+                <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
+                  <img src={item.image} alt="" />
+                  <div className="kurs_paddaing_auto">
+                    <h4>{item.name}</h4>
+                    <div className="star_card">
+                      {item.star === 1 ? (<div><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i>
+                      </div>) : (item.star === 2 ? (<div><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i></div>) :
+                        (item.star === 3 ? (<div><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i><i className='bx bx-star'></i></div>) :
+                          (item.star === 4 ? (<div><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bx-star'></i></div>) :
+                            (item.star === 5 ? (<div><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i><i className='bx bxs-star' ></i></div>) : (<div><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i><i className='bx bx-star'></i></div>)))))}
+                      <p>
+                        {item.star === null ? ("0") : (item.star)}<span>(524)</span>
+                      </p>
                     </div>
+                    <div className="hajm">
+                      <h5>
+                        <p>Course size</p>
+                        {item.planned_time}
+                      </h5>
+                      <h5>
+                        <p>Course price</p>
+                        {item.price}$
+                      </h5>
+                    </div>
+                  </div>
+                  <button className="button_circle">
+                    <AiOutlineArrowRight onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} />
+                  </button>
+                </div>
 
-                  )
+              )
 
-                })}
+            })}
 
           </div>
 
@@ -1247,7 +1247,7 @@ export default function Mentor() {
             <div className="followcards1">
               {follow.length !== 0 ? (
                 <div className="delete_padding1">
-                  <img style={{width:'400px'}} src={Following_img} alt="" />
+                  <img style={{ width: '400px' }} src={Following_img} alt="" />
                   <h4 style={{ fontSize: '30px', opacity: '0.3' }}>No subscribers</h4>
                   {/* <div className="delete_btns">
                             <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>

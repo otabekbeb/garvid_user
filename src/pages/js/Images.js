@@ -28,7 +28,7 @@ export default function Images() {
             return (
               <>
               
-                <img onClick={()=>{window.location="/Teams";localStorage.setItem("partner",item.id)}} src={item.image} alt="" />
+                <img style={{height:'100px', width:'140px'}} onClick={()=>{window.location="/Teams";localStorage.setItem("partner",item.id)}} src={item.image} alt="" />
                 
               </>
             )
