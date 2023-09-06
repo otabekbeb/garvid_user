@@ -37,7 +37,6 @@ import "../css/vazifa1.css";
 import "../css/yozishmalar.css";
 import { TfiMarkerAlt } from "react-icons/tfi";
 import { BsBookmark } from "react-icons/bs";
-import mark_img from "../img/evaluation_of_education_300.jpg";
 import { Accordion } from "react-bootstrap";
 import Profil from "./Profil";
 import Create_theme_mentor from "./Create_theme_mentor";
