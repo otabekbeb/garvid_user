@@ -7,7 +7,7 @@ import { FiMail } from "react-icons/fi";
 import { BiLockAlt } from "react-icons/bi";
 import axios from "axios";
 import url from "./Host";
-import ReCAPTCHA from "react-google-recaptcha";
+
 import { type } from "@testing-library/user-event/dist/type";
 import Navbar from "./Navbar";
 import { FcGoogle } from "react-icons/fc";
@@ -16,6 +16,8 @@ import { FaFacebook } from "react-icons/fa";
 import { AiOutlineEye } from "react-icons/ai";
 import Swal from "sweetalert2";
 import Change_password from "./Email";
+import { SmartCaptcha } from "@yandex/smart-captcha";
+import ReCAPTCHA from "react-google-recaptcha";
 export default function Login() {
   const [page, setPage] = useState(1);
   const [email, setEmail] = useState();
@@ -23,19 +25,10 @@ export default function Login() {
   const [data, setData] = useState([]);
   const [changePassword, setChangePassword] = useState(true);
   const changeIcon = changePassword === true ? false : true;
-  const token = "";
-  const onChangeRecaptcha = (value) => {
-    // token = value;
-    console.log("onChangeRecaptcha", JSON.stringify(value));
-  };
+
 
   function userModal() {
-    const handleRecaptchaChange = (value) => {
-      // value содержит информацию о состоянии reCAPTCHA
-      console.log("reCAPTCHA value:", value);
 
-      // Вы можете выполнить здесь нужные действия, например, отправку формы
-    };
 
     var formdata = new FormData();
 
@@ -100,7 +93,9 @@ export default function Login() {
         // Swal.fire("Пароль или логин неправилный. Попробуйте снова")
       });
   }
-
+  function onChange(value) {
+    console.log("Captcha value:", value);
+  }
   function ChangePassword() {
     var formdata = new FormData();
     formdata.append("email", document.querySelector("#changepossword").value);
@@ -115,7 +110,7 @@ export default function Login() {
         Swal.fire("there is no such email on the server");
       });
   }
-
+  const [token, setToken] = useState('');
   const [password, setPassword] = useState(0);
   function PosssordVery() {
     var formdata = new FormData();
@@ -372,6 +367,7 @@ export default function Login() {
                               </div>
                               <div>
                                 {/* Вставьте свой site key в атрибут 'sitekey' */}
+                                {/* <ReCAPTCHA style={{marginBottom:'10px'}} sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" onChange={onChange} /> */}
                               </div>
                               <div className="login_button_div">
                                 <button
@@ -480,10 +476,7 @@ export default function Login() {
                               </div>
                               <div>
                                 {/* Вставьте свой site key в атрибут 'sitekey' */}
-                                <ReCAPTCHA
-                                  onChange={onChangeRecaptcha}
-                                  sitekey="6Lc7SOseAAAAAHBh-joEdg_fmL4wiJXVW8h3lUIU"
-                                />
+                                {/* <ReCAPTCHA style={{marginBottom:'10px'}} sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" onChange={onChange} /> */}
                               </div>
 
                               <div className="login_button_div">
