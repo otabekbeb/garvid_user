@@ -30,48 +30,7 @@ export default function Home() {
 
   const [data, setData] = useState([]);
 
-
-
-    const dataPost = () => {
-        var formdata = {
-            fullname: document.querySelectorAll('#contact_inp')[0].value,
-            email: document.querySelectorAll('#contact_inp')[1].value,
-            purchase: document.querySelectorAll('#contact_inp')[2].value,
-            message: document.querySelector('.contact_textarea').value
-        }
-        axios.post("https://markazback2.onrender.com/api/call_me", formdata, {
-            headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
-        }).then(res => {
-            state === "ru" ? (Swal.fire("Information sent, wait for a call from the operator")) : (Swal.fire("Information sent, wait for a call from the operator"))
-            window.location.reload()
-        }).catch(err => {
-            state === "ru" ? (Swal.fire("Check information, Failed to send")) : (Swal.fire("Check information, Failed to send"))
-        })
-
-    }
-    useEffect(() => {
-        axios.get(`https://markazback2.onrender.com/api/call_me`).then(res => {
-            setChec(res.data)
-        }).catch(err => { })
-        setState1(
-            localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
-        );
-    }, []);
-
-    useEffect(() => {
-        axios.get(`${url}/api/university`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
-            setUnivercard(res.data)
-        }).catch(err => { })
-    })
-
-    useEffect(()=>{
-        axios.get(`${url}/auth/teachers/`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-          setData(res.data)
-          console.log(res.data);
-          }).catch(err => {
-           
-          })
-
+ 
   const dataPost = () => {
     var formdata = {
       fullname: document.querySelectorAll("#contact_inp")[0].value,
@@ -82,7 +41,6 @@ export default function Home() {
     axios
       .post("https://markazback2.onrender.com/api/call_me", formdata, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-
       })
       .then((res) => {
         state === "ru"
@@ -243,7 +201,8 @@ export default function Home() {
                 />
                 <h3>Career support</h3>
                 <p>
-                Some study centers provide career counseling services and help students find jobs in their field after graduation.
+                  Some study centers provide career counseling services and help
+                  students find jobs in their field after graduation.
                 </p>
               </div>
               <div className="card1">
@@ -253,7 +212,9 @@ export default function Home() {
                 />
                 <h3>Modern teaching methods</h3>
                 <p>
-                Learning centers can use modern teaching methods, including online resources, interactive materials and technologies, to make learning more interesting and effective.
+                  Learning centers can use modern teaching methods, including
+                  online resources, interactive materials and technologies, to
+                  make learning more interesting and effective.
                 </p>
               </div>
               <div className="card1">
@@ -263,7 +224,9 @@ export default function Home() {
                 />
                 <h3>Knowledge update</h3>
                 <p>
-                Studying at a learning center allows students to constantly update their knowledge and skills, which is important in a rapidly changing world.
+                  Studying at a learning center allows students to constantly
+                  update their knowledge and skills, which is important in a
+                  rapidly changing world.
                 </p>
               </div>
               <div className="card1">
@@ -273,7 +236,10 @@ export default function Home() {
                 />
                 <h3>Certifications and diplomas</h3>
                 <p>
-                After completing their studies at the training center, students receive certificates or diplomas confirming their qualifications, which can be useful when looking for a job or raising their professional status.
+                  After completing their studies at the training center,
+                  students receive certificates or diplomas confirming their
+                  qualifications, which can be useful when looking for a job or
+                  raising their professional status.
                 </p>
               </div>
             </div>
@@ -399,7 +365,10 @@ export default function Home() {
                         >
                           <div style={{ width: "100%" }}>
                             <p className="about_p">
-                            Variety of study programs: The Study Center offers a wide range of educational programs and courses, allowing students to choose from a variety of options depending on their interests and goals.
+                              Variety of study programs: The Study Center offers
+                              a wide range of educational programs and courses,
+                              allowing students to choose from a variety of
+                              options depending on their interests and goals.
                             </p>
                           </div>
                           <div
@@ -421,7 +390,7 @@ export default function Home() {
                                 <p>Awards won</p>
                               </div>
                               <div className="advantages">
-                                <h1>132</h1>  
+                                <h1>132</h1>
                                 <p>Cases completed</p>
                               </div>
                             </div>
@@ -434,7 +403,8 @@ export default function Home() {
                         >
                           <div style={{ width: "100%" }}>
                             <p className="about_p">
-                            Cultural Literacy: Understanding and adapting to different cultures and socio-cultural contexts.
+                              Cultural Literacy: Understanding and adapting to
+                              different cultures and socio-cultural contexts.
                             </p>
                           </div>
                           <div
