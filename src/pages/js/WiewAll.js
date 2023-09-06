@@ -18,7 +18,7 @@ export default function WiewAll() {
 
     useEffect(() => {
         axios.get(`${url}/api/notification`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
-            axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
+            axios.get(`${url}/auth/allusers`,{ headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res1 => {
                 for (let i = 0; i < res.data.length; i++) {
                     for (let j = 0; j < res1.data.length; j++) {
                         if (res.data[i].user_id == res1.data[j].id) {
@@ -101,12 +101,15 @@ export default function WiewAll() {
                                                 <p className='data'>{item.username}</p>
                                                 <p className='data'>{item.last_name}</p>*/}
                                                 <div className="data_title">
-                                                    <p className='unred'>{item.title}</p>
+                                                    <div style={{paddingLeft:"20px",marginTop:"20px"}} className="fort_block">
+                                                        <p className='unred'>{item.title}</p>
+                                                        <p className='lorem_sms'>{item.description} </p>
+                                                    <input style={{ display: "none" }} type="text" id='atvet' />
+                                                    </div>
                                                     <p className='data'>{item.time_create.slice(11, 16)}</p>
                                                 </div>
                                                 <div className="p_lorem_sms">
-                                                    <p className='lorem_sms'>{item.description} </p>
-                                                    <input style={{ display: "none" }} type="text" id='atvet' />
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -114,19 +117,22 @@ export default function WiewAll() {
                                 } else if (item.to_user_id == read) {
                                     return (
                                         <div>
-                                            <div style={{ cursor: "pointer" }} className="sms">
+                                            <div style={{ cursor: "pointer",display:"flex",justifyContent:"space-between" }} className="sms">
                                                 {/*<div className="qizil"></div>*/}
+                                                <div style={{paddingLeft:"15px"}} className="fort_block">
+
                                                 <p style={{marginBottom:'0px'}} className='data'>{item.username}</p>
                                                 <p  className='data'>{item.last_name}</p>
                                                 <div className="data_title">
                                                     <p className='unred'>{item.title}</p>
                                                     
                                                 </div>
-                                                <p  className='data'>{item.time_create.slice(11, 16)}</p>
+                                                
                                                 <div className="p_lorem_sms">
                                                     <p className='lorem_sms'>{item.description} </p>
                                                     <input style={{ display: "none" }} type="text" id='atvet' />
                                                 </div>
+                                                </div><p  className='data'>{item.time_create.slice(11, 16)}</p>
                                             </div>
                                         </div>
                                     )
@@ -145,12 +151,14 @@ export default function WiewAll() {
                                             <div onClick={() => Page(item.user_id, item.id)} style={{ cursor: "pointer" }} className="sms">
                                                 <div className="qizil"></div>
                                                 <div className="data_title">
+                                                    <div style={{paddingLeft:"20px"}} className="fort_block">
                                                     <p className='unred'>{item.username}</p>
-                                                    <p className='data'>{item.time_create.slice(11, 16)}</p>
-                                                </div>
-                                                <div className="p_lorem_sms">
                                                     <p className='lorem_sms'>{item.last_name} </p>
                                                     <input style={{ display: "none" }} type="text" id='atvet' />
+                                                    </div><p className='data'>{item.time_create.slice(11, 16)}</p>
+                                                </div>
+                                                <div className="p_lorem_sms">
+                                                    
                                                 </div>
                                             </div>
                                         </div>

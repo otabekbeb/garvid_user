@@ -180,7 +180,7 @@ export default function Profil() {
 
   function chiqish() {
     window.location = "/";
-    localStorage.removeItem("token");
+    localStorage.clear();
   }
   function notificationModal() {
     document.querySelector(".profil_notifacation_size").style =
