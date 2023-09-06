@@ -174,7 +174,7 @@ export default function Searchfilter() {
   function deleteclose() {
     axios.delete(`${url}/api/course/${deleteId}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
       Swal.fire("ishladi")
-      window.location.reload()
+      document.querySelector(".delete_card").style = "display:none"
     }).catch(err => {
       Swal.fire("xato")
     })
