@@ -61,8 +61,6 @@ export default function Home() {
     useEffect(() => {
         axios.get(`${url}/api/university`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
             setUnivercard(res.data)
-
-            
         }).catch(err => { })
     })
 
