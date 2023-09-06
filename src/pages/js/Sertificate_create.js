@@ -12,7 +12,7 @@ export default function Sertificate_create() {
 
     const [user, setUser] = useState(JSON.parse(localStorage.getItem("page_user")))
     var [sertificat, setSertificat] = useState([])
-    const [sertificatId, setSertificatId] = useState()
+    const [sertificatId, setSertificatId] = useState([])
     function edit(id, type, director, description, time_create) {
         document.querySelector(".sertificate_type_edit").value = type
         document.querySelector(".sertificate_director_edit").value = director

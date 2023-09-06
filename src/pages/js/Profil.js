@@ -268,8 +268,8 @@ export default function Profil() {
               })}
 
 
-              
-              <button>Regular {localStorage.getItem("position")==1?("user"):(localStorage.getItem("position")==2?("teacher"):("student"))}</button>
+
+              <button>Regular {localStorage.getItem("position") == 1 ? ("user") : (localStorage.getItem("position") == 2 ? ("teacher") : ("student"))}</button>
               <p>My social networks :</p>
               <div className="blok_bir_icon">
                 <div className="blok_bir_icon_img1">
@@ -332,9 +332,9 @@ export default function Profil() {
                 className="profil_blok_ikki_icon_bir"
               />
 
-              <div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
+              {localStorage.getItem("soya").length == 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
                 {localStorage.getItem("soya")}
-              </div>
+              </div>)}
               <BsThreeDots
                 onClick={() => taxrirlashModal()}
                 className="profil_blok_ikki_icon_ikki"

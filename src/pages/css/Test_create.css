@@ -1328,6 +1328,16 @@ select {
 .swiper-rtl .swiper-button-prev:after {
     font-size: 24px !important;
 }
+.test_craete_svipe .swiper-button-next{
+    margin-right: 0px !important;
+    margin-top: 0px !important;
+    box-shadow: none;
+}
+.test_craete_svipe .swiper-button-prev{
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+    box-shadow: none;
+}
 
 .test_craete_svipe .swiper-button-prev {
     width: 50px;

@@ -21,7 +21,7 @@ export default function Sertifikate() {
         axios.get(`${url}/edu/student_sertificat`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
             setSertifikat(res.data)
         })
-    })
+    },[])
     return (
         <div>
 

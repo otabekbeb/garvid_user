@@ -1,4 +1,4 @@
-.delete_icon{
+.delete_icon {
     position: absolute;
     width: 35px;
     height: 35px;
@@ -12,63 +12,72 @@
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    transition:  0.2s ;
+    transition: 0.2s;
 }
+
 .delete_icon:hover {
     border: 1px solid red;
     background: red;
     color: white;
 }
-.delete_card{
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: rgba(0, 0, 0, 0.62);
-display: none;
-justify-content: center;
-z-index: 1000000000000000000000 !important;
+
+.delete_card {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.62);
+    display: none;
+    justify-content: center;
+    z-index: 1000000000000000000000 !important;
 }
-.delete_padding{
+
+.delete_padding {
     margin: auto;
     width: 40%;
     height: 350px;
     border-radius: 10px;
     background-color: white;
-    box-shadow:  0 0px 40px #a3a5a654;
+    box-shadow: 0 0px 40px #a3a5a654;
 }
-.delete_padding img{
-    margin: auto;   
+
+.delete_padding img {
+    margin: auto;
     display: flex;
     width: auto !important;
     height: 70%;
 }
-.delete_padding1{
+
+.delete_padding1 {
     margin: auto;
     border-radius: 10px;
     background-color: white;
 }
-.delete_padding1 img{
-    margin: auto;   
+
+.delete_padding1 img {
+    margin: auto;
     display: flex;
     width: 600px;
     height: 200px;
     height: 70%;
 }
-.delete_padding1 h4{
+
+.delete_padding1 h4 {
     font-size: 18px;
-    
+
     display: flex;
     justify-content: center;
 }
-.delete_padding h4{
+
+.delete_padding h4 {
     font-size: 20px;
     margin-top: 10px;
     display: flex;
     justify-content: center;
 }
-.delete_btn_no{
+
+.delete_btn_no {
     width: 150px;
     height: 30px;
     border: none;
@@ -77,10 +86,12 @@ z-index: 1000000000000000000000 !important;
     background: red;
     transition: 0.2s;
 }
-.delete_btn_no:hover{
+
+.delete_btn_no:hover {
     background: rgba(255, 0, 0, 0.556);
 }
-.delete_btn_yes{
+
+.delete_btn_yes {
     width: 150px;
     height: 30px;
     border: none;
@@ -89,10 +100,12 @@ z-index: 1000000000000000000000 !important;
     background: #10C8A0;
     transition: 0.2s;
 }
-.delete_btn_yes:hover{
+
+.delete_btn_yes:hover {
     background: #10c8a0ae;
 }
-.delete_btns{
+
+.delete_btns {
     margin-top: 20px;
     gap: 20px;
     display: flex;

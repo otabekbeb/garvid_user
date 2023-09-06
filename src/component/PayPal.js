@@ -7,6 +7,7 @@ import {
 import { FcApproval } from "react-icons/fc"
 import axios from "axios";
 import url from "../pages/js/Host";
+import errorpaypal from "../pages/img/istockphoto-1321436405-612x612.jpg"
 
 // This values are the props in the UI
 const style = { "label": "paypal", "layout": "vertical" };
@@ -111,7 +112,7 @@ export default function App() {
     return (
         <div>
             {clientToken ? (
-                Paypal_kluch.paypal_kluch ? (<div style={{boxShadow:"0px 0px 15px #9DA7BB", maxWidth: "80%", minHeight: "200px", marginLeft:"10%", padding:"10px", borderRadius:"10px", marginTop:"20px", marginBlock:"20px"  }}>
+                Paypal_kluch.paypal_kluch ? (<div style={{boxShadow:"0px 0px 15px #9DA7BB", maxWidth: "80%", minHeight: "200px", marginLeft:"10%", padding:"10px", borderRadius:"10px", marginTop:"20px", marginBottom:"20px"  }}>
                   <p>Введите сумму</p>
                     <input placeholder="1000$" type="text" id="PayPal_input" />
                     <PayPalScriptProvider
@@ -126,7 +127,9 @@ export default function App() {
                     >
                         <ButtonWrapper currency={"USD"} />
                     </PayPalScriptProvider>
-                </div>) : ("salom")
+                </div>) : (<div className="errorpaypal_bosa" > 
+                <img src={errorpaypal} alt="" />
+                 </div>) 
             ) : (
                 <h1>Loading token...</h1>
             )}
