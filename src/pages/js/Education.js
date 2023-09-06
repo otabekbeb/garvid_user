@@ -4,13 +4,11 @@ import axios from "axios"
 import url from "./Host"
 import { AiOutlineSearch } from "react-icons/ai"
 import { MdDeleteOutline, MdPlayLesson, MdModeEditOutline, MdOutlineDeleteOutline } from "react-icons/md"
-// import close from "./img/close.png"
 import { GrFormClose } from "react-icons/gr"
 import deleteImg from "../img/Group 2.png"
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import { FaUsers, FaHourglassStart, FaHourglassEnd } from "react-icons/fa"
-// import events from "./events";
 import Education from '../img/Thesis-pana.png'
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import {
@@ -624,26 +622,6 @@ export default function Edication() {
           ) : (
             <div>
               <div className="search_big_div"><button className="user_post_button" onClick={() => postEducationModal()}>Add Education</button><AiOutlineSearch className="search" /><input onChange={Search} placeholder="Enter here..." type="text" /></div>
-              {/* <div className="edication_card">
-                {edication.map(item => {
-                  return (
-                    <div className="edication_card_">
-                      <h1>{item.education_name}</h1>
-                      <div className="edication_card_date">
-                        <p>Дата начала: {(item.start_date).slice(0, 10)}</p>
-                        <p>Дата окончания: {(item.end_date).slice(0, 10)}</p>
-                      </div>
-                      <span>{item.description}</span>
-                      <div className="edication_card_button">
-                        <button onClick={() => JadvalPage(item.id)}><FaUsers /></button>
-                        <button onClick={() => Page(item.id)}><MdPlayLesson /></button>
-                        <button onClick={() => deleteEducationModal(item.id)}><MdDeleteOutline /></button>
-                        <button onClick={() => putEducationModal(item.id)} ><BiEdit /></button>
-                      </div>
-                    </div>
-                  )
-                })}
-              </div> */}
               <ul className="cards">
                 {edication === null ? (
                   <div className="rafiki_delete_img">
@@ -659,7 +637,6 @@ export default function Edication() {
                             <div className="card__overlay">
                               <div className="card__header">
                                 <svg className="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
-                                {/* <img className="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" /> */}
                                 <div className="card__header-text">
                                   <h2 className="card__title">{item.education_name}</h2>
                                   <span className="card__status">
