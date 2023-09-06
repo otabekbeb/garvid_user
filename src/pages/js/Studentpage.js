@@ -239,48 +239,69 @@ export default function Mentor() {
     })
   }, []);
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const token = localStorage.getItem("token");
-        const OneuserId = localStorage.getItem("OneuserId");
+    // const fetchData = async () => {
+    //   try {
+    //     const token = localStorage.getItem("token");
+    //     const OneuserId = localStorage.getItem("OneuserId");
 
-        // Fetch one user data
-        const oneUserResponse = await axios.get(`${url}/auth/oneuser`, {
-          headers: { Authorization: "Bearer " + token },
-        });
-        setStudents(oneUserResponse.data);
-        console.log(oneUserResponse.data, "aa");
+    //     // Fetch one user data
+    //     const oneUserResponse = await axios.get(`${url}/auth/oneuser`, {
+    //       headers: { Authorization: "Bearer " + token },
+    //     });
+    //     setStudents(oneUserResponse.data);
+    //     console.log(oneUserResponse.data, "aa");
 
-        // Fetch my course data
-        const myCourseResponse = await axios.get(`${url}/api/mycourse/${OneuserId}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        setKursdata(myCourseResponse.data);
-        localStorage.setItem("Mycourse", JSON.stringify(myCourseResponse.data));
+    //     // Fetch my course data
+    //     const myCourseResponse = await axios.get(`${url}/api/mycourse/${OneuserId}`, {
+    //       headers: { Authorization: `Bearer ${token}` },
+    //     });
+    //     setKursdata(myCourseResponse.data);
+    //     localStorage.setItem("Mycourse", JSON.stringify(myCourseResponse.data));
 
-        // Fetch course data
-        const courseResponse = await axios.get(`${url}/api/course`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+    //     // Fetch course data
+    //     const courseResponse = await axios.get(`${url}/api/course`, {
+    //       headers: { Authorization: `Bearer ${token}` },
+    //     });
 
-        // Update star property in kursdata
-        const updatedKursdata = myCourseResponse.data.map((course) => {
-          const matchingCourse = courseResponse.data.find(
-            (c) => c.id === course.id
-          );
-          if (matchingCourse) {
-            course.star = matchingCourse.star;
+    //     // Update star property in kursdata
+    //     const updatedKursdata = myCourseResponse.data.map((course) => {
+    //       const matchingCourse = courseResponse.data.find(
+    //         (c) => c.id === course.id
+    //       );
+    //       if (matchingCourse) {
+    //         course.star = matchingCourse.star;
+    //       }
+    //       return course;
+    //     });
+    //     setKursdata(updatedKursdata);
+    //     console.log(updatedKursdata);
+    //   } catch (error) {
+    //     console.log(error, "KURSDATA");
+    //   }
+    // };
+    axios
+    .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+    })
+    .then((res) => {
+      axios
+        .get(`${url}/api/course`, {
+          header: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        })
+        .then((res1) => {
+          for (let i = 0; i < res.data.length; i++) {
+            for (let j = 0; j < res1.data.length; j++) {
+              if (res.data[i].id == res1.data[j].id) {
+                res.data[i].star = res1.data[j].star;
+              }
+            }
           }
-          return course;
+          setKursdata(res.data);
+          localStorage.setItem("mycourseUser", res.data.length)
         });
-        setKursdata(updatedKursdata);
-        console.log(updatedKursdata);
-      } catch (error) {
-        console.log(error, "KURSDATA");
-      }
-    };
-
-    fetchData();
+    });
     axios.get(`${url}/API/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setNatlifikation(res.data)
       axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
@@ -408,7 +429,7 @@ export default function Mentor() {
 
   const searchInput = (event) => {
     const searchRegex = new RegExp(`^${event.target.value}`, "i");
-    axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+    axios.get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
       const searchdata = res.data.filter((item) => {
         return (
           searchRegex.test(item.name)

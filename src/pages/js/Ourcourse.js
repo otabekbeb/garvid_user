@@ -50,7 +50,7 @@ export default function Ourcourse() {
   }
   function filter11(id) {
     axios
-      .get(`${url}/api/course`, {
+      .get(`${url}/api/nomycourse/${localStorage.getItem("OneuserId")}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
@@ -61,7 +61,7 @@ export default function Ourcourse() {
   const searchfilter1 = (event) => {
     const searchRegex = new RegExp(`^${event.target.value}`, "i");
     axios
-      .get(`${url}/api/course`, {
+      .get(`${url}/api/nomycourse/${localStorage.getItem("OneuserId")}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
@@ -81,7 +81,7 @@ export default function Ourcourse() {
   // }
   function AllType() {
     axios
-      .get(`${url}/api/course`, {
+      .get(`${url}/api/nomycourse/${localStorage.getItem("OneuserId")}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
@@ -96,7 +96,7 @@ export default function Ourcourse() {
   useEffect(() => {
     document.querySelector(".filter_card").style = "display:none";
     axios
-      .get(`${url}/api/course`, {
+      .get(`${url}/api/nomycourse/${localStorage.getItem("OneuserId")}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
@@ -131,7 +131,7 @@ export default function Ourcourse() {
 
   function RatingFilter(id){
     axios
-    .get(`${url}/api/course`, {
+    .get(`${url}/api/nomycourse/${localStorage.getItem("OneuserId")}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     })
     .then((res) => {
