@@ -233,10 +233,10 @@ export default function Profil() {
     //     headers: { Authorization: "Bearer " + localStorage.getItem("token") },
     //   })
 
-      axios.get(`${url}/auth/teachers`, { headers: { "Authorization": "Bearer " + localStorage.getItem("token") } }).then(res => {
-        setData(res.data)
-        console.log(res.data);
-      })
+    axios.get(`${url}/auth/teachers`, { headers: { "Authorization": "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setData(res.data)
+      console.log(res.data);
+    })
   }
   return (
     <div>
@@ -290,37 +290,38 @@ export default function Profil() {
               <button>Teacher</button>
               <p>My social networks :</p>
               <div className="blok_bir_icon">
-                {data.map(item=>{
-                  return(
-<div className="blok_bir_icon_img1" onClick={()=>{
-                  window.location =`${item.telegram}`}}>
-                  <BiLogoTelegram />
-                </div>
+                {data.map(item => {
+                  return (
+                    <div className="blok_bir_icon_img1" onClick={() => {
+                      window.location = `${item.telegram}`
+                    }}>
+                      <BiLogoTelegram />
+                    </div>
                   )
-                  
-                })}
-                
-                {data.map(item=>{
-                    return(
-                       <div className="blok_bir_icon_img2" onClick={()=>{
-                        window.location=`${item.instagram}`
-                       }}>
-                  <RiInstagramFill />
-                </div>
-                    )
-                  })}
-               
 
-               {data.map(item=>{
-                    return(
-                      <div className="youtube" onClick={()=>{
-                        window.location=`${item.youtobe}`
-                      }}>
-                  <FaYoutube />
-                </div>
-                    )
-                  })}
-                
+                })}
+
+                {data.map(item => {
+                  return (
+                    <div className="blok_bir_icon_img2" onClick={() => {
+                      window.location = `${item.instagram}`
+                    }}>
+                      <RiInstagramFill />
+                    </div>
+                  )
+                })}
+
+
+                {data.map(item => {
+                  return (
+                    <div className="youtube" onClick={() => {
+                      window.location = `${item.youtobe}`
+                    }}>
+                      <FaYoutube />
+                    </div>
+                  )
+                })}
+
               </div>
             </div>
           </div>
@@ -367,10 +368,10 @@ export default function Profil() {
                 onClick={() => taxrirlashChadModal()}
                 className="profil_blok_ikki_icon_bir"
               />
-              {localStorage.getItem("soya").length==0?(""):(<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
+              {localStorage.getItem("soya").length == 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
                 {localStorage.getItem("soya")}
               </div>)}
-              
+
               <BsThreeDots
                 onClick={() => taxrirlashModal()}
                 className="profil_blok_ikki_icon_ikki"
@@ -412,7 +413,7 @@ export default function Profil() {
                           localStorage.setItem("soya", natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length)
                           return (
                             <div>
-                              
+
                               <div className="taxrirlash_chad">
                                 <div className="taxrirlash_chad_img_size">
                                   <img src={chadimg} alt="" />

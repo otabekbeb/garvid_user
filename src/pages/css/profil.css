@@ -584,6 +584,7 @@
   .nol{
     width: 10px !important;
     height: 10px !important;
+    font-size: 8px;
     margin-top: -3px !important;
     margin-right: -10px;
   }
