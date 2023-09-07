@@ -5,6 +5,7 @@ import Pdp from "./UserPdp"
 import { MdOutlinePhotoCamera } from "react-icons/md"
 import { BsActivity, BsFillBellFill, BsThreeDots } from "react-icons/bs"
 import { BiCast } from "react-icons/bi"
+import KursClose from "../img/Course app-rafiki.png";
 import { FiEdit, FiLifeBuoy, FiLogOut } from "react-icons/fi"
 import { TbPointFilled } from "react-icons/tb"
 import { AiOutlineRight } from "react-icons/ai"
@@ -41,7 +42,7 @@ import sertifikat from '../img/Sertifikat.png'
 import Groupimg from "../img/Teacher-cuate.png";
 import { BsSearch } from "react-icons/bs"
 import deleteImg from "../img/Group 2.png"
-import { MdDeleteOutline } from "react-icons/md"
+import {MdOutlineClose, MdDeleteOutline } from "react-icons/md"
 import Ourcourse from './Ourcourse'
 import Team from '../img/Task.png'
 import '../css/workforteach.css'
@@ -698,6 +699,28 @@ export default function Mentor() {
       console.log(err);
     })
   }
+
+  function videoPage(item) {
+    axios
+      .get(`${url}/api/course_data_category/course/${item.id}`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        if (res.data.all == "") {
+          document.querySelector("#course_video_error").style = "display:flex";
+        } else {
+            res.data.all.map(item=>{
+            if(item.theme==""){
+              document.querySelector("#course_video_error").style = "display:flex";
+            }else{
+              window.location = "/video";
+              localStorage.setItem("abbas", item.id);
+            }
+            })
+          }  
+      });
+  }
+
   return (
     <div className='studentpagess'>
       <Usernavbar />
@@ -1087,7 +1110,7 @@ export default function Mentor() {
             ) : kursdata.map(item => {
               // localStorage.setItem("for_course", kursdata.length)
               return (
-                <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
+                <div onClick={() => videoPage(item)} className="kurs_card">
                   <img src={item.image} alt="" />
                   <div className="kurs_paddaing_auto">
                     <h4>{item.name}</h4>
@@ -1113,7 +1136,7 @@ export default function Mentor() {
                     </div>
                   </div>
                   <button className="button_circle">
-                    <AiOutlineArrowRight onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} />
+                    <AiOutlineArrowRight onClick={() => videoPage(item)} />
                   </button>
                 </div>
 
@@ -1381,7 +1404,20 @@ export default function Mentor() {
 
       </div>
       <div className="profil-qora-qiladi"></div>
-
+      <div id="course_video_error" className="Modal_big_div_video_error">
+      <div className="Modal_big_div_video_error_div">
+        <div className="Modal_big_div_video_error_div_close">
+          <MdOutlineClose
+            onClick={() => {
+              document.querySelector("#course_video_error").style =
+                "display:none";
+            }}
+          />
+        </div>
+        <img src={KursClose} alt="" />
+        <p>К сожалению, к этому курсу не прикреплено видео.</p>
+      </div>
+    </div>
 
       <Futer />
     </div>

@@ -598,12 +598,18 @@ export default function Searchfilter() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
-        if (res.data.one == null) {
+        if (!res.data.all) {
             document.querySelector("#course_video_error").style = "display:flex";
         } else {
-          window.location = "/video";
-          localStorage.setItem("abbas", item.id);
-        }
+            res.data.all.map(item=>{
+            if(!item.theme){
+              document.querySelector("#course_video_error").style = "display:flex";
+            }else{
+              window.location = "/video";
+              localStorage.setItem("abbas", item.id);
+            }
+            })
+          }  
       });
   }
 
