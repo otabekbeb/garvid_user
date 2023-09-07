@@ -16,6 +16,7 @@ import Swal from "sweetalert2";
 import "../css/Spiska.css";
 import "../css/Calibig.css";
 import WWW from "../img/WWW.png";
+import { MdOutlineClose } from "react-icons/md";
 import axios from "axios";
 import url from "./Host";
 import Edit from './Edit';
@@ -39,6 +40,7 @@ export default function Searchfilter() {
   const [deleteId, setDeleteId] = useState()
   const [delete1, setDelete1] = useState([]);
   const [oneuser, setOneuser] = useState([])
+  const [pageVideo,setPageVideo]=useState(0)
 
   function Filter() {
     var a = document.querySelector(".filter_button").style.display
@@ -261,6 +263,23 @@ export default function Searchfilter() {
 
   // item.dataset.
 
+  function videoPage(item) {
+    axios
+      .get(`${url}/api/course_data_category/course/${item.id}`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        if (res.data.one == null) {
+
+            document.querySelector("#course_video_error1").style = "display:flex";
+
+        } else {
+          window.location = "/video";
+          localStorage.setItem("abbas", item.id);
+        }
+      });
+  }
+
   return (
     <div>
 
@@ -403,10 +422,7 @@ export default function Searchfilter() {
                     </div>
                   </div>
                 </div>
-                <button className="button_circle" onClick={() => {
-                  window.location = "/video";
-                  localStorage.setItem("abbas", item.id)
-                }}>
+                <button className="button_circle" onClick={() =>videoPage(item)}>
                   <AiOutlineArrowRight
 
                   />
@@ -465,49 +481,34 @@ export default function Searchfilter() {
           </div>
 
         </div>
-
-        {/* SPISKA */}
-
-        {/* <div className="spiska_img_title_div">
-          {kursdata.map((item) => {
-            return (
-              <div className="Spiska_blok">
-                <div className="spiska">
-                  <div className="spiska_display_flex">
-                    <div className="spiska_img">
-                      {item.image === null ? (
-                        <div className="No_img1">
-                          <h1>no picture</h1>
-                        </div>
-                      ) : (
-                        <img src={item.image} alt="No img" />
-                      )}
-                    </div>
-                    <div className="spiska_title_df">
-                      <div className="spiska_title">
-                        <h3>{item.name}</h3>
-                        <div className="star_icon_blok1">
-                          <AiFillStar className="gold" />
-                          <AiFillStar className="gold" />
-                          <AiFillStar className="gold" />
-                          <AiFillStar className="gold" />
-                          <AiFillStar />
-                          <div className="number">
-                            <h6>4.1 (524)</h6>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="left1_icon">
-                        <HiArrowRight />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div> */}
       </div>
+
+      <div id="course_video_error1" className="Modal_big_div_video_error1">
+      <div className="Modal_big_div_video_error_div">
+        <div className="Modal_big_div_video_error_div_close">
+          <MdOutlineClose
+            onClick={() => {
+              document.querySelector("#course_video_error1").style =
+                "display:none";
+            }}
+          />
+        </div>
+        <div className="Modal_big_div_video_error_div_button">
+        <button onClick={()=>{setPageVideo(0)}}>Theme</button>
+        <button onClick={()=>{setPageVideo(1)}}>Category</button>
+        </div>
+        {pageVideo==0?(
+          <div className="Modal_big_div_video_error_div_theme">
+          
+          </div>
+        ):(
+          <div className="Modal_big_div_video_error_div_theme">
+          
+          </div>
+        )}
+      </div>
+      </div>
+
 
     </div>
   );

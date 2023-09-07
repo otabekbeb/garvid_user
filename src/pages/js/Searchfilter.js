@@ -21,7 +21,9 @@ import img_for_null from "../img/download.png";
 import img_prover from "../img/istockphoto-1321436405-612x612.jpg";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import "../css/Nosignal.css";
+import { MdOutlineClose } from "react-icons/md";
 import Groupimg from "../img/Teacher-cuate.png";
+import KursClose from "../img/Course app-rafiki.png";
 export default function Searchfilter() {
   const [courstype, setCoursetype] = useState([]);
 
@@ -33,7 +35,7 @@ export default function Searchfilter() {
   const [star, setStar] = useState([]);
 
   function Filter() {
-    document.querySelector(".filter_button").classList.toggle("fill1")
+    document.querySelector(".filter_button").classList.toggle("fill1");
   }
   function filter1() {
     document.querySelector(".filter_button").style = "display:none !important";
@@ -56,7 +58,7 @@ export default function Searchfilter() {
         setCoursetype(res.data);
         console.log(res.data);
       })
-      .catch((err) => { });
+      .catch((err) => {});
 
     axios
       .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
@@ -78,10 +80,10 @@ export default function Searchfilter() {
               }
             }
             setKursdata(res.data);
-            // localStorage.setItem("mycourseUser", res.data.length)
+            localStorage.setItem("mycourseUser", res.data.length)
           });
-        });
-        setLoader(0);
+      });
+    setLoader(0);
   }, []);
 
   function filter(id) {
@@ -120,11 +122,10 @@ export default function Searchfilter() {
             });
             setKursdata(searchdata);
           });
-
       });
   };
-  
-  function Allfilter(){
+
+  function Allfilter() {
     axios
       .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -145,12 +146,30 @@ export default function Searchfilter() {
               }
             }
             setKursdata(res.data);
-            // localStorage.setItem("mycourseUser", res.data.length)
+            localStorage.setItem("mycourseUser", res.data.length)
             setLoader(0);
           });
       });
   }
-  
+
+  function videoPage(item) {
+    axios
+      .get(`${url}/api/course_data_category/course/${item.id}`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        if (res.data.one == null) {
+          if (localStorage.getItem("position")==2) {
+            document.querySelector("#course_video_error1").style = "display:flex";
+          }else{
+            document.querySelector("#course_video_error").style = "display:flex";
+          }
+        } else {
+          window.location = "/video";
+          localStorage.setItem("abbas", item.id);
+        }
+      });
+  }
 
   return (
     <div>
@@ -185,15 +204,15 @@ export default function Searchfilter() {
                 </div> */}
                   </div>
                   <div onMouseLeave={() => filter1()} className="filter_button">
-                  <div className="button_filter_kurs">
-                            <div
-                              onClick={() => Allfilter()}
-                              className="div_kurs"
-                              style={{ paddingBottom: "5px" }}
-                            >
-                              All
-                            </div>
-                        </div>
+                    <div className="button_filter_kurs">
+                      <div
+                        onClick={() => Allfilter()}
+                        className="div_kurs"
+                        style={{ paddingBottom: "5px" }}
+                      >
+                        All
+                      </div>
+                    </div>
                     {courstype.map((item) => {
                       return (
                         <div className="button_filter_kurs">
@@ -217,32 +236,30 @@ export default function Searchfilter() {
             </div>
             <div className="kurs_cards">
               {kursdata === 0 ? (
-                   <div className="delete_padding1">
-                   <img src={Groupimg} alt="" />
-                   <h4 style={{ fontSize: '30px', opacity: '0.3' }}>You didn't buy the course</h4>
-                   <div className="delete_btns">
-                     <a href="/Ourcourse">
-                       {" "}
-                       <button
-                         style={{ background: "#44bef1  " }}
-                         className="delete_btn_yes"
-                       >
-                         Buy a course
-                       </button>
-                     </a>
-                   </div>
-                 </div>
+                <div className="delete_padding1">
+                  <img src={Groupimg} alt="" />
+                  <h4 style={{ fontSize: "30px", opacity: "0.3" }}>
+                    You didn't buy the course
+                  </h4>
+                  <div className="delete_btns">
+                    <a href="/Ourcourse">
+                      {" "}
+                      <button
+                        style={{ background: "#44bef1  " }}
+                        className="delete_btn_yes"
+                      >
+                        Buy a course
+                      </button>
+                    </a>
+                  </div>
+                </div>
               ) : (
-                <div className="cursu" style={{display:"flex"}}>
+                <div className="cursu" style={{ display: "flex" }}>
                   {kursdata.map((item) => {
-                    
                     return (
                       <div>
                         <div
-                          onClick={() => {
-                            window.location = "/video";
-                            localStorage.setItem("abbas", item.id);
-                          }}
+                          onClick={() => videoPage(item)}
                           className="kurs_card"
                         >
                           <img
@@ -260,7 +277,7 @@ export default function Searchfilter() {
                             alt=""
                           />
                           <div className="kurs_paddaing_auto">
-                            <h4>{item.name}</h4>
+                            <h4>{item.id}</h4>
                             <div>
                               {item.star == 1 ? (
                                 <div style={{ display: "flex", gap: "5px" }}>
@@ -294,7 +311,6 @@ export default function Searchfilter() {
                                   </div>
                                   <p style={{ fontSize: "16px" }}>
                                     {item.star}
-                                    
                                   </p>
                                 </div>
                               ) : (
@@ -332,7 +348,6 @@ export default function Searchfilter() {
                                       </div>
                                       <p style={{ fontSize: "16px" }}>
                                         {item.star}
-                                        
                                       </p>
                                     </div>
                                   ) : (
@@ -373,7 +388,6 @@ export default function Searchfilter() {
                                           </div>
                                           <p style={{ fontSize: "16px" }}>
                                             {item.star}
-                                            
                                           </p>
                                         </div>
                                       ) : (
@@ -414,7 +428,6 @@ export default function Searchfilter() {
                                               </div>{" "}
                                               <p style={{ fontSize: "16px" }}>
                                                 {item.star}
-                                               
                                               </p>
                                             </div>
                                           ) : (
@@ -467,7 +480,6 @@ export default function Searchfilter() {
                                                     style={{ fontSize: "16px" }}
                                                   >
                                                     {item.star}
-                                                    
                                                   </p>
                                                 </div>
                                               ) : (
@@ -522,7 +534,6 @@ export default function Searchfilter() {
                                                         }}
                                                       >
                                                         0
-                                                        
                                                       </p>
                                                     </div>
                                                   ) : (
@@ -553,10 +564,7 @@ export default function Searchfilter() {
                           </div>
                           <button className="button_circle">
                             <AiOutlineArrowRight
-                              onClick={() => {
-                                window.location = "/video";
-                                localStorage.setItem("abbas", item.id);
-                              }}
+                              onClick={() => videoPage(item)}
                             />
                           </button>
                         </div>
@@ -566,13 +574,29 @@ export default function Searchfilter() {
                 </div>
               )}
             </div>
-
-
           </div>
         </div>
       ) : (
         <Loader />
       )}
+
+      <div id="course_video_error" className="Modal_big_div_video_error">
+        <div className="Modal_big_div_video_error_div">
+          <div className="Modal_big_div_video_error_div_close">
+            <MdOutlineClose
+              onClick={() => {
+                document.querySelector("#course_video_error").style =
+                  "display:none";
+              }}
+            />
+          </div>
+          <img src={KursClose} alt="" />
+          <p>К сожалению, к этому курсу не прикреплено видео.</p>
+        </div>
+      </div>
+
+
+
     </div>
   );
 }
