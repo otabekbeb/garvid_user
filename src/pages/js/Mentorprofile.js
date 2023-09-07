@@ -21,14 +21,13 @@ import { FaYoutube } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import Swal from "sweetalert2";
 
-
 export default function Profil() {
   const [data, setData] = useState([]);
   const [state1, setState1] = React.useState();
-  const [user, setUser] = useState([])
-  const [stsertifikat, setStsertifikat] = useState([])
+  const [user, setUser] = useState([]);
+  const [stsertifikat, setStsertifikat] = useState([]);
   const [natlifikation, setNatlifikation] = React.useState([]);
-  const [userid, setOneuserId] = useState(localStorage.getItem("OneuserId"))
+  const [userid, setOneuserId] = useState(localStorage.getItem("OneuserId"));
 
   useEffect(() => {
     const now = new Date();
@@ -46,30 +45,39 @@ export default function Profil() {
           })
           .then((res2) => {
             if (res.data.id === res2.topuser) {
-              console.log(res2.data)
+              console.log(res2.data);
             }
           });
       })
       .catch((err) => {
         console.log(err);
       });
-    axios.get(`${url}/API/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-      setNatlifikation(res.data)
-      axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
-        setUser(res1.data)
-        for (let i = 0; i < res.data.length; i++) {
-          for (let j = 0; j < res1.data.length; j++) {
-            if (res.data[i].user_id == res1.data[j].id) {
-              res.data[i].image = res1.data[j].image
+    axios
+      .get(`${url}/API/notification`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        setNatlifikation(res.data);
+        axios
+          .get(`${url}/auth/allusers`, {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token"),
+            },
+          })
+          .then((res1) => {
+            setUser(res1.data);
+            for (let i = 0; i < res.data.length; i++) {
+              for (let j = 0; j < res1.data.length; j++) {
+                if (res.data[i].user_id == res1.data[j].id) {
+                  res.data[i].image = res1.data[j].image;
+                }
+              }
             }
-          }
-        }
-        setNatlifikation(res.data)
-      }).catch(err => { })
-    }).catch(err => { })
-
-
-
+            setNatlifikation(res.data);
+          })
+          .catch((err) => {});
+      })
+      .catch((err) => {});
   }, []);
 
   function userimgModal() {
@@ -95,15 +103,17 @@ export default function Profil() {
       .then((res) => {
         axios
           .get(`${url}/auth/oneuser`, {
-            headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token"),
+            },
           })
           .then((res) => {
             console.log(res.data);
             setData(res.data);
-          })
+          });
       })
       .catch((err) => {
-        Swal.fire("Что-то пошло не так, попробуйте снова.")
+        Swal.fire("Что-то пошло не так, попробуйте снова.");
       });
     axios
       .get(`${url}/auth/oneuser`, {
@@ -123,12 +133,14 @@ export default function Profil() {
   }
 
   function taxrirlashModal() {
-
-    var a = document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style.display
+    var a = document.querySelector(".profil_blok_ikki_icon_texrirlash_modal")
+      .style.display;
     if (a === "none") {
-      document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style = "display:block "
+      document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
+        "display:block ";
     } else {
-      document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style = "display:none "
+      document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
+        "display:none ";
     }
     document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style =
       "display:none;";
@@ -140,18 +152,20 @@ export default function Profil() {
       "display:none;";
   }
   function taxrirlashChadModal() {
-    var s = document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style.display
+    var s = document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat")
+      .style.display;
     if (s === "none") {
-      document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style = "display:block "
+      document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style =
+        "display:block ";
     } else {
-      document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style = "display:none "
+      document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style =
+        "display:none ";
     }
 
     document.querySelector(".profil_blok_ikki_icon_taxriirlash_chat").style =
       "display:block;";
     document.querySelector(".profil_blok_ikki_icon_texrirlash_modal").style =
       "display:none;";
-
   }
 
   useEffect(() => {
@@ -161,9 +175,9 @@ export default function Profil() {
       })
       .then((res) => {
         localStorage.setItem("page_user", JSON.stringify(res.data));
-        res.data.map(item => {
-          localStorage.setItem("OneuserId", item.id)
-        })
+        res.data.map((item) => {
+          localStorage.setItem("OneuserId", item.id);
+        });
         console.log(res.data);
         setData(res.data);
       })
@@ -173,7 +187,6 @@ export default function Profil() {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
-
 
     // axios.get(`${url}/API/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
     //   setNatlifikation(res.data)
@@ -224,19 +237,26 @@ export default function Profil() {
     document.querySelector(".yon_notification_all").style = "right:0%;";
   }
   function soyaa(id) {
-    var formdata = new FormData()
-    formdata.append("read", true)
-    axios.get(`${URL}/api/notification/read/${id}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-    })
+    var formdata = new FormData();
+    formdata.append("read", true);
+    axios
+      .get(`${URL}/api/notification/read/${id}`, formdata, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {});
 
     // axios.get(`${url}/auth/teachers`, {
     //     headers: { Authorization: "Bearer " + localStorage.getItem("token") },
     //   })
 
-    axios.get(`${url}/auth/teachers`, { headers: { "Authorization": "Bearer " + localStorage.getItem("token") } }).then(res => {
-      setData(res.data)
-      console.log(res.data);
-    })
+    axios
+      .get(`${url}/auth/teachers`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        setData(res.data);
+        console.log(res.data);
+      });
   }
   return (
     <div>
@@ -290,38 +310,44 @@ export default function Profil() {
               <button>Teacher</button>
               <p>My social networks :</p>
               <div className="blok_bir_icon">
-                {data.map(item => {
+                {data.map((item) => {
                   return (
-                    <div className="blok_bir_icon_img1" onClick={() => {
-                      window.location = `${item.telegram}`
-                    }}>
+                    <div
+                      className="blok_bir_icon_img1"
+                      onClick={() => {
+                        window.location = `${item.telegram}`;
+                      }}
+                    >
                       <BiLogoTelegram />
                     </div>
-                  )
-
+                  );
                 })}
 
-                {data.map(item => {
+                {data.map((item) => {
                   return (
-                    <div className="blok_bir_icon_img2" onClick={() => {
-                      window.location = `${item.instagram}`
-                    }}>
+                    <div
+                      className="blok_bir_icon_img2"
+                      onClick={() => {
+                        window.location = `${item.instagram}`;
+                      }}
+                    >
                       <RiInstagramFill />
                     </div>
-                  )
+                  );
                 })}
 
-
-                {data.map(item => {
+                {data.map((item) => {
                   return (
-                    <div className="youtube" onClick={() => {
-                      window.location = `${item.youtobe}`
-                    }}>
+                    <div
+                      className="youtube"
+                      onClick={() => {
+                        window.location = `${item.youtobe}`;
+                      }}
+                    >
                       <FaYoutube />
                     </div>
-                  )
+                  );
                 })}
-
               </div>
             </div>
           </div>
@@ -368,15 +394,38 @@ export default function Profil() {
                 onClick={() => taxrirlashChadModal()}
                 className="profil_blok_ikki_icon_bir"
               />
-<<<<<<< Updated upstream
-              {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length == 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
-                  {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length}
-                </div>)}
-=======
+
+              {natlifikation.filter(
+                (filter) =>
+                  filter.to_user_id == localStorage.getItem("OneuserId")
+              ).length == 0 ? (
+                ""
+              ) : (
+                <div
+                  className="nol"
+                  style={{
+                    background: "red",
+                    width: "20px",
+                    height: "20px",
+                    borderRadius: "50%",
+                    color: "#fff",
+                    textAlign: "center",
+                    marginTop: "-7px",
+                    marginLeft: "-25px",
+                  }}
+                >
+                  {
+                    natlifikation.filter(
+                      (filter) =>
+                        filter.to_user_id == localStorage.getItem("OneuserId")
+                    ).length
+                  }
+                </div>
+              )}
+
               {/* {localStorage.getItem("soya").length == 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
                 {localStorage.getItem("soya")}
               </div>)} */}
->>>>>>> Stashed changes
 
               <BsThreeDots
                 onClick={() => taxrirlashModal()}
@@ -408,57 +457,74 @@ export default function Profil() {
                 </div>
               </div>
               <div className="profil_blok_ikki_icon_taxriirlash_chat">
-                  <div className="for_wiewall">
-                    {natlifikation.length === 0 ? (
-                      <div><p style={{ textAlign: 'center', marginTop: '35%', fontSize: '20px', opacity: '0.4' }}>Not written to you</p>
-
-                      </div>) : (<div>
-                        {natlifikation.map((item, key) => {
-
-                          if (item.to_user_id == localStorage.getItem("OneuserId")) {
-                            return (
-                              <div>
-                                {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
-                                <div className="taxrirlash_chad">
-                                  <div className="taxrirlash_chad_img_size">
-                                    <img src={item.image} alt="" />
-
+                <div className="for_wiewall">
+                  {natlifikation.length === 0 ? (
+                    <div>
+                      <p
+                        style={{
+                          textAlign: "center",
+                          marginTop: "35%",
+                          fontSize: "20px",
+                          opacity: "0.4",
+                        }}
+                      >
+                        Not written to you
+                      </p>
+                    </div>
+                  ) : (
+                    <div>
+                      {natlifikation.map((item, key) => {
+                        if (
+                          item.to_user_id == localStorage.getItem("OneuserId")
+                        ) {
+                          return (
+                            <div>
+                              {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
+                              <div className="taxrirlash_chad">
+                                <div className="taxrirlash_chad_img_size">
+                                  <img src={item.image} alt="" />
+                                </div>
+                                <div className="taxrirlash_chad_size">
+                                  <div className="taxrirlash_chad_vaqt">
+                                    <h1>{item.username}</h1>
+                                    <div className="taxrirlash_chad_vaqt_soat">
+                                      <TbPointFilled className="chad_set" />
+                                      <p>{item.time_create.slice(11, 16)}</p>
+                                    </div>
                                   </div>
-                                  <div className="taxrirlash_chad_size">
-                                    <div className="taxrirlash_chad_vaqt">
-                                      <h1>{item.username}</h1>
-                                      <div className="taxrirlash_chad_vaqt_soat">
-                                        <TbPointFilled className="chad_set" />
-                                        <p >{item.time_create.slice(11, 16)}</p>
-                                      </div>
-
-
-                                    </div>
-                                    <div className="taxrirlash_chad_text">
-                                      <p>{item.last_name}</p>
-                                    </div>
+                                  <div className="taxrirlash_chad_text">
+                                    <p>{item.last_name}</p>
                                   </div>
                                 </div>
-
-                                <p >{item.time_create.slice(0, 10)}</p>
                               </div>
 
-                            )
-                          }
-                        })}</div>
+                              <p>{item.time_create.slice(0, 10)}</p>
+                            </div>
+                          );
+                        }
+                      })}
+                    </div>
+                  )}
+                </div>
 
-                    )}
-                  </div>
-
-                  <a className="wiewu" style={natlifikation.length === 0 ? { display: "none" } : { display: "flex" }} href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
+                <a
+                  className="wiewu"
+                  style={
+                    natlifikation.length === 0
+                      ? { display: "none" }
+                      : { display: "flex" }
+                  }
+                  href="/WiewAll"
+                >
+                  {" "}
+                  <div className="taxrirlash_chad_barchasini">
                     <p>
                       view all
                       <AiOutlineRight />
                     </p>
-                  </div></a>
-                </div>
-
-
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -471,16 +537,24 @@ export default function Profil() {
 
           <div className="div-admin-sms">
             <h5>SMS</h5>
-            <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
+            <div
+              onClick={() => notificationClose()}
+              className="profil_notifacation_size_close"
+            >
+              <GrClose className="closei" />
+            </div>
           </div>
           <div className="sms-insta">
             <div className="sms-insto-bb1">
-              {natlifikation.map(item => {
+              {natlifikation.map((item) => {
                 if (item.to_user_id == localStorage.getItem("OneuserId")) {
                   return (
                     <div className="sms-insta-block">
                       <div className="sms-img">
-                        <img src={"https://markazback2.onrender.com/" + item.image} alt="" />
+                        <img
+                          src={"https://markazback2.onrender.com/" + item.image}
+                          alt=""
+                        />
                       </div>
                       {/* <div className="sms-kotta-pas">
                         <div className="sms-text-tepa"><p> </p><p></p></div>
@@ -496,14 +570,9 @@ export default function Profil() {
                         </div>
                       </div>
                     </div>
-                  )
+                  );
                 }
               })}
-
-
-
-
-
             </div>
           </div>
 
@@ -518,9 +587,6 @@ export default function Profil() {
           </div>
           <div className="sms-insta">
             <div className="sms-insto-bb1">
-
-
-
               <div className="sms-insta-block">
                 <div className="sms-img">
                   <img
@@ -543,7 +609,6 @@ export default function Profil() {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
