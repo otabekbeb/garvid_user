@@ -30,7 +30,6 @@ export default function Home() {
 
   const [data, setData] = useState([]);
 
-
   const dataPost = () => {
     var formdata = {
       fullname: document.querySelectorAll("#contact_inp")[0].value,
