@@ -27,9 +27,7 @@ export default function Images() {
           {data.map(item => {
             return (
               <>
-              
                 <img style={{height:'100px', width:'140px'}} onClick={()=>{window.location="/Teams";localStorage.setItem("partner",item.id)}} src={item.image} alt="" />
-                
               </>
             )
           })}
