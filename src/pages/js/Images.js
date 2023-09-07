@@ -44,6 +44,7 @@ export default function Images() {
                     },
 
 
+
                 }}
                 // pagination={{
                 //   clickable: true,
