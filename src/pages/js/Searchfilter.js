@@ -277,7 +277,7 @@ export default function Searchfilter() {
                             alt=""
                           />
                           <div className="kurs_paddaing_auto">
-                            <h4>{item.id}</h4>
+                            <h4>{item.name}</h4>
                             <div>
                               {item.star == 1 ? (
                                 <div style={{ display: "flex", gap: "5px" }}>
