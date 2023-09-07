@@ -28,7 +28,7 @@ export default function Searchfilter() {
   const [kursdata, setKursdata] = useState([]);
   const [type, settype] = useState([]);
   const [state1, setState1] = React.useState();
-  const [loader, setLoader] = useState(1);
+  const [loader, setLoader] = useState(0);
   const [oneuser, setOneuser] = useState([]);
   const [star, setStar] = useState([]);
 
