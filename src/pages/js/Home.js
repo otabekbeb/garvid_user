@@ -30,11 +30,7 @@ export default function Home() {
 
   const [data, setData] = useState([]);
 
-<<<<<<< Updated upstream
- 
-=======
 
->>>>>>> Stashed changes
   const dataPost = () => {
     var formdata = {
       fullname: document.querySelectorAll("#contact_inp")[0].value,
