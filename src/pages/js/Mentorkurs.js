@@ -5,6 +5,7 @@ import { MdWindow } from "react-icons/md";
 import { TfiMenuAlt } from "react-icons/tfi";
 import Mon from "../img/Mon.png";
 import KursClose from "../img/Course app-rafiki.png";
+import ThemeClose from "../img/Webinar-pana.png";
 import { AiFillStar } from "react-icons/ai";
 import { HiArrowRight } from "react-icons/hi";
 import Rasp from "../img/Rasp.png";
@@ -46,7 +47,9 @@ export default function Searchfilter() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalOpen1, setIsModalOpen1] = useState(false);
   const [isModalOpen2, setIsModalOpen2] = useState(false);
+  const [isModalOpen3, setIsModalOpen3] = useState(false);
   const [themeId,setThemeId]=useState()
+  const [CategoryId,setCategoryId]=useState()
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -206,6 +209,95 @@ export default function Searchfilter() {
     setIsModalOpen2(false);
     document.querySelector("#course_video_error1").style="display:flex"
   };
+
+  const showModal3 = (item) => {
+    setIsModalOpen3(true);
+    setCategoryId(item.id)
+    setTimeout(()=>{
+      document.querySelector("#Category_Name_put").value=item.name
+    },1000)
+    document.querySelector("#course_video_error1").style="display:none"
+    document.querySelector("#course_video_error").style="display:none"
+
+  };
+
+  const handleOk3 = () => {
+    var formdata=new FormData()
+    formdata.append("name",document.querySelector("#Category_Name_put").value)
+    formdata.append("course",pageVideoId)
+
+    axios.put(`${url}/api/course_data_category/${CategoryId}`,formdata,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
+      setIsModalOpen3(false);
+      document.querySelector("#course_video_error1").style="display:flex"
+      axios
+      .get(`${url}/api/course_data_category`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        const Filter=res.data.filter(category=>category.course==pageVideoId)
+        setCourse_Category(Filter)
+        axios
+      .get(`${url}/api/course_data_theme`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res1) => {
+        var a=[]
+        for (let i = 0; i < Filter.length; i++) {
+          for (let j = 0; j < res1.data.length; j++) {
+          if (Filter[i].id==res1.data[j].category) {
+            a.push(res1.data[j])
+          }
+          }
+        }
+        setCourse_theme(a);
+      })
+      .catch((err) => {});
+      })
+      .catch((err) => {});
+
+    }).catch(err=>{
+      alert("xato")
+    })
+  };
+
+  const handleCancel3 = () => {
+    setIsModalOpen3(false);
+    document.querySelector("#course_video_error1").style="display:flex"
+  };
+
+  function deleteCategory(id){
+    axios.delete(`${url}/api/course_data_category/${id}`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
+      axios
+      .get(`${url}/api/course_data_category`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        const Filter=res.data.filter(category=>category.course==pageVideoId)
+        setCourse_Category(Filter)
+        axios
+      .get(`${url}/api/course_data_theme`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res1) => {
+        var a=[]
+        for (let i = 0; i < Filter.length; i++) {
+          for (let j = 0; j < res1.data.length; j++) {
+          if (Filter[i].id==res1.data[j].category) {
+            a.push(res1.data[j])
+          }
+          }
+        }
+        setCourse_theme(a);
+      })
+      .catch((err) => {});
+      })
+      .catch((err) => {});
+    }).catch(err=>{
+      alert("xato")
+    })
+  } 
+
+
 
 
 
@@ -519,13 +611,36 @@ export default function Searchfilter() {
     axios.delete(`${url}/api/course_data_theme/${id}`,{
       headers: { Authorization: "Bearer " + localStorage.getItem("token") }
     }).then(res=>{
-      document.querySelector("#course_video_error1").style = "display:none";
-      Swal.fire("ishladi")
+      axios
+      .get(`${url}/api/course_data_category`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        const Filter=res.data.filter(category=>category.course==pageVideoId)
+        setCourse_Category(Filter)
+        axios
+      .get(`${url}/api/course_data_theme`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res1) => {
+        var a=[]
+        for (let i = 0; i < Filter.length; i++) {
+          for (let j = 0; j < res1.data.length; j++) {
+          if (Filter[i].id==res1.data[j].category) {
+            a.push(res1.data[j])
+          }
+          }
+        }
+        setCourse_theme(a);
+      })
+      .catch((err) => {});
+      })
+      .catch((err) => {});
     }).catch(err=>{
       Swal.fire("xato")
     })
   }
-  
+
 
   return (
     <div>
@@ -897,17 +1012,23 @@ export default function Searchfilter() {
             <div
               style={{ height: "300px" ,overflowY:'scroll',boxShadow:'initial 5px 5px 4px 4px grey'}}
             >
-              {course_theme.map((item) => {
-                return (
-                  <div className="Modal_big_div_video_error_div_theme">
-                    <p>{item.name}</p>
-                    <div className="Modal_big_div_video_error_div_theme_button">
-                      <FiEdit2 onClick={()=>showModal2(item)} className="button" />
-                      <MdOutlineDelete onClick={()=>deleteTheme(item.id)} className="button" />
+              {course_theme.length==0?(
+                <img src={ThemeClose} alt="" />
+              ):(
+                <>
+                {course_theme.map((item) => {
+                  return (
+                    <div className="Modal_big_div_video_error_div_theme">
+                      <p>{item.name}</p>
+                      <div className="Modal_big_div_video_error_div_theme_button">
+                        <FiEdit2 onClick={()=>showModal2(item)} className="button" />
+                        <MdOutlineDelete onClick={()=>deleteTheme(item.id)} className="button" />
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+                </>
+              )}
             </div>
             <Modal  title="Theme" open={isModalOpen1} onOk={handleOk1} onCancel={handleCancel1}>
             <p style={{marginBottom:"0px"}}>Name</p>
@@ -954,22 +1075,33 @@ export default function Searchfilter() {
             <div
               style={{ height: "300px" ,overflowY:'scroll',boxShadow:'initial 5px 5px 4px 4px grey'}}
             >
+              {course_Category.length==0?(
+              <img src={KursClose} alt="" />
+              ):(
+              <>
               {course_Category.map((item) => {
                   return (
                   <div className="Modal_big_div_video_error_div_theme">
                     <p>{item.name}</p>
                     <div className="Modal_big_div_video_error_div_theme_button">
-                      <FiEdit2 className="button" />
-                      <MdOutlineDelete  className="button" />
+                      <FiEdit2 onClick={()=>showModal3(item)} className="button" />
+                      <MdOutlineDelete onClick={()=>deleteCategory(item.id)} className="button" />
                     </div>
                   </div>
-                ); 
+                  ); 
               })}
+              </>
+              )}
+              
             </div>
-            <Modal  title="Category" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+          <Modal  title="Category" open={isModalOpen} onOk={handleOk}     onCancel={handleCancel}>
             <p style={{marginBottom:"0px"}}>Name</p>
             <input className="input_Video" id="Category_Name" type="text" />
           </Modal>
+          <Modal  title="Category" open={isModalOpen3} onOk={handleOk3}     onCancel={handleCancel3}>
+          <p style={{marginBottom:"0px"}}>Name</p>
+          <input className="input_Video" id="Category_Name_put" type="text" />
+           </Modal>
             </>
           )}
         </div>
