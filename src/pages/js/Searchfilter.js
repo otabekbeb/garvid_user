@@ -159,11 +159,7 @@ export default function Searchfilter() {
       })
       .then((res) => {
         if (res.data.one == null) {
-          if (localStorage.getItem("position")==2) {
-            document.querySelector("#course_video_error1").style = "display:flex";
-          }else{
             document.querySelector("#course_video_error").style = "display:flex";
-          }
         } else {
           window.location = "/video";
           localStorage.setItem("abbas", item.id);
@@ -277,7 +273,7 @@ export default function Searchfilter() {
                             alt=""
                           />
                           <div className="kurs_paddaing_auto">
-                            <h4>{item.id}</h4>
+                            <h4>{item.name}</h4>
                             <div>
                               {item.star == 1 ? (
                                 <div style={{ display: "flex", gap: "5px" }}>
