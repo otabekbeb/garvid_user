@@ -30,7 +30,7 @@ export default function Searchfilter() {
   const [kursdata, setKursdata] = useState([]);
   const [type, settype] = useState([]);
   const [state1, setState1] = React.useState();
-  const [loader, setLoader] = useState(1);
+  const [loader, setLoader] = useState(0);
   const [oneuser, setOneuser] = useState([]);
   const [star, setStar] = useState([]);
 
@@ -273,7 +273,7 @@ export default function Searchfilter() {
                             alt=""
                           />
                           <div className="kurs_paddaing_auto">
-                            <h4>{item.id}</h4>
+                            <h4>{item.name}</h4>
                             <div>
                               {item.star == 1 ? (
                                 <div style={{ display: "flex", gap: "5px" }}>

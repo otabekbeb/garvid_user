@@ -352,17 +352,12 @@ export default function Searchfilter() {
     axios.put(`${url}/api/course`).then((res) => {});
   }
   function deleteclose() {
-    axios
-      .delete(`${url}/api/course/${deleteId}`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      })
-      .then((res) => {
-        Swal.fire("deleted");
-        document.querySelector(".delete_card").style = "display:none";
-      })
-      .catch((err) => {
-        Swal.fire("xato");
-      });
+    axios.delete(`${url}/api/course/${deleteId}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+      window.location.reload()
+      document.querySelector(".delete_card").style = "display:none"
+    }).catch(err => {
+      Swal.fire("xato")
+    })
   }
 
   useEffect(() => {
