@@ -154,7 +154,7 @@ export default function MentorChat() {
   
   function Exit() {
     window.location = "/";
-    localStorage.removeItem("token");
+    localStorage.clear();
   }
   function Exitopen() {
     var a=document.querySelector(".exitopen").style.display
