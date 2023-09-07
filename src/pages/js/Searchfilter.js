@@ -159,11 +159,7 @@ export default function Searchfilter() {
       })
       .then((res) => {
         if (res.data.one == null) {
-          if (localStorage.getItem("position")==2) {
-            document.querySelector("#course_video_error1").style = "display:flex";
-          }else{
             document.querySelector("#course_video_error").style = "display:flex";
-          }
         } else {
           window.location = "/video";
           localStorage.setItem("abbas", item.id);
