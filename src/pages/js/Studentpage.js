@@ -811,6 +811,10 @@ export default function Mentor() {
                 {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length == 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
                   {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length}
                 </div>)}
+                {/* {localStorage.getItem("soya").length == 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
+                  {localStorage.getItem("soya")}
+                </div>)} */}
+
                 <BsThreeDots
                   onClick={() => taxrirlashModal()}
                   className="profil_blok_ikki_icon_ikki"
