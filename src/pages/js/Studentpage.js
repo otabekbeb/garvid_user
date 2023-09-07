@@ -212,6 +212,7 @@ export default function Mentor() {
   const [natlifikation, setNatlifikation] = React.useState([]);
   const [following, setFollowing] = useState(localStorage.getItem("OneuserId"))
   const [edication, setEdication] = useState([])
+  const [education,setForeducation] = useState([])
   // const [edicationId, setEdicationId] = useState()
   // const [tests, setTests] = useState([])
 
@@ -230,6 +231,9 @@ export default function Mentor() {
     axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setEdication(res.data)
     })
+    axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setEdication(res.data)
+    })
 
 
   }, [])
@@ -239,48 +243,72 @@ export default function Mentor() {
     })
   }, []);
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const token = localStorage.getItem("token");
-        const OneuserId = localStorage.getItem("OneuserId");
+    axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setForeducation(res.data)
+  }).catch(err=>{})
+    // const fetchData = async () => {
+    //   try {
+    //     const token = localStorage.getItem("token");
+    //     const OneuserId = localStorage.getItem("OneuserId");
 
-        // Fetch one user data
-        const oneUserResponse = await axios.get(`${url}/auth/oneuser`, {
-          headers: { Authorization: "Bearer " + token },
-        });
-        setStudents(oneUserResponse.data);
-        console.log(oneUserResponse.data, "aa");
+    //     // Fetch one user data
+    //     const oneUserResponse = await axios.get(`${url}/auth/oneuser`, {
+    //       headers: { Authorization: "Bearer " + token },
+    //     });
+    //     setStudents(oneUserResponse.data);
+    //     console.log(oneUserResponse.data, "aa");
 
-        // Fetch my course data
-        const myCourseResponse = await axios.get(`${url}/api/mycourse/${OneuserId}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        setKursdata(myCourseResponse.data);
-        localStorage.setItem("Mycourse", JSON.stringify(myCourseResponse.data));
+    //     // Fetch my course data
+    //     const myCourseResponse = await axios.get(`${url}/api/mycourse/${OneuserId}`, {
+    //       headers: { Authorization: `Bearer ${token}` },
+    //     });
+    //     setKursdata(myCourseResponse.data);
+    //     localStorage.setItem("Mycourse", JSON.stringify(myCourseResponse.data));
 
-        // Fetch course data
-        const courseResponse = await axios.get(`${url}/api/course`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+    //     // Fetch course data
+    //     const courseResponse = await axios.get(`${url}/api/course`, {
+    //       headers: { Authorization: `Bearer ${token}` },
+    //     });
 
-        // Update star property in kursdata
-        const updatedKursdata = myCourseResponse.data.map((course) => {
-          const matchingCourse = courseResponse.data.find(
-            (c) => c.id === course.id
-          );
-          if (matchingCourse) {
-            course.star = matchingCourse.star;
+    //     // Update star property in kursdata
+    //     const updatedKursdata = myCourseResponse.data.map((course) => {
+    //       const matchingCourse = courseResponse.data.find(
+    //         (c) => c.id === course.id
+    //       );
+    //       if (matchingCourse) {
+    //         course.star = matchingCourse.star;
+    //       }
+    //       return course;
+    //     });
+    //     setKursdata(updatedKursdata);
+    //     console.log(updatedKursdata);
+    //   } catch (error) {
+    //     console.log(error, "KURSDATA");
+    //   }
+    // };
+    axios
+    .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+    })
+    .then((res) => {
+      axios
+        .get(`${url}/api/course`, {
+          header: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        })
+        .then((res1) => {
+          for (let i = 0; i < res.data.length; i++) {
+            for (let j = 0; j < res1.data.length; j++) {
+              if (res.data[i].id == res1.data[j].id) {
+                res.data[i].star = res1.data[j].star;
+              }
+            }
           }
-          return course;
+          setKursdata(res.data);
+          // localStorage.setItem("mycourseUser", res.data.length)
         });
-        setKursdata(updatedKursdata);
-        console.log(updatedKursdata);
-      } catch (error) {
-        console.log(error, "KURSDATA");
-      }
-    };
-
-    fetchData();
+    });
     axios.get(`${url}/API/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setNatlifikation(res.data)
       axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
@@ -323,6 +351,9 @@ export default function Mentor() {
 
   }, []);
   useEffect(() => {
+    axios.get(`${url}/api/nomycourse/${localStorage.getItem("OneuserId")}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setCourses(res.data)
+  }).catch(err=>{})
     axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setUsers(res.data)
     })
@@ -375,6 +406,7 @@ export default function Mentor() {
     );
   }, []);
   useEffect(() => {
+    
     axios
       .get(`${url}/auth/oneuser/`, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
@@ -398,6 +430,7 @@ export default function Mentor() {
 
   }, []);
   useEffect(() => {
+    
     axios.get(`${url}/api/course_theme_task_student`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setTasks(res.data)
     })
@@ -408,7 +441,7 @@ export default function Mentor() {
 
   const searchInput = (event) => {
     const searchRegex = new RegExp(`^${event.target.value}`, "i");
-    axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+    axios.get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
       const searchdata = res.data.filter((item) => {
         return (
           searchRegex.test(item.name)
@@ -520,7 +553,7 @@ export default function Mentor() {
   }
   function chiqish() {
     window.location = "/";
-    localStorage.removeItem("token");
+    localStorage.clear();
   }
   function userImgPut(id) {
     var formdata = new FormData();
@@ -775,9 +808,9 @@ export default function Mentor() {
                   onClick={() => taxrirlashChadModal()}
                   className="profil_blok_ikki_icon_bir"
                 />
-                {/* {localStorage.getItem("soya").length == 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
-                  {localStorage.getItem("soya")}
-                </div>)} */}
+                {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length == 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
+                  {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length}
+                </div>)}
                 <BsThreeDots
                   onClick={() => taxrirlashModal()}
                   className="profil_blok_ikki_icon_ikki"
@@ -820,7 +853,6 @@ export default function Mentor() {
                         {natlifikation.map((item, key) => {
 
                           if (item.to_user_id == localStorage.getItem("OneuserId")) {
-                            localStorage.setItem("soya", natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length)
                             return (
                               <div>
                                 {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
@@ -953,13 +985,13 @@ export default function Mentor() {
         <div className="gray_blok">
           <div className="fil_text_blok">
 
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_course")} pieces</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(0)} style={toggle === 0 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Education</h1>{toggle === 0 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_education")} pieces</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} pieces</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(0)} style={toggle === 0 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Education</h1>{toggle === 0 ? (<div className="fil_text_blok_kurs_lenght">{education.length} pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Chat</h1></div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Tasks</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("stTasks")} pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(7)} style={toggle === 7 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Test</h1></div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My subscribtions</h1>{toggle === 4 ? ("") : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Courses</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_courses")}  pieces</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Courses</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">{courses.length}  pieces</div>) : ("")}</div>
           </div>
           <div className="profil_blok_menu_size">
             <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
@@ -1049,7 +1081,7 @@ export default function Mentor() {
                 </div>
               </div>
             ) : kursdata.map(item => {
-              localStorage.setItem("for_course", kursdata.length)
+              // localStorage.setItem("for_course", kursdata.length)
               return (
                 <div onClick={() => { window.location = "/video"; localStorage.setItem("abbas", item.id) }} className="kurs_card">
                   <img src={item.image} alt="" />
@@ -1106,7 +1138,7 @@ export default function Mentor() {
                 <img src={Team} alt="" />
                 <h4 style={{ fontSize: '50px', marginTop: '-100px', opacity: '0.3' }}>No tasks</h4>
               </div>) : (<>   {stTasks.map(item => {
-                localStorage.setItem("taskLength", stTasks.length)
+                // localStorage.setItem("taskLength", stTasks.length)
                 return (
                   <div>
                     <div className="m_zadach_block">

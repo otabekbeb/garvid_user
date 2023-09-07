@@ -332,7 +332,7 @@ export default function Searchfilter() {
               <button onClick={() => dashedOpen2()}>Create course</button>
             </div>
           ) : kursdata.map(item => {
-            localStorage.setItem("courseLength", kursdata.length)
+            // localStorage.setItem("courseLength", kursdata.length)
             return (
               <div className="kurs_card">
                 <img src={item.image} alt="" />

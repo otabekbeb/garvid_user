@@ -67,7 +67,7 @@ export default function Contact() {
           <div className="email_box">
             <MdEmail className="email_icon" />
             <a href="mailto: garvird@gmail.com">
-            info@baisan.orgf
+            info@baisan.org
             </a>
           </div>
           <div className="feat_left contact_icons">

@@ -104,7 +104,7 @@ export default function Sertificate_create() {
                     <img src={rafiki} alt="" />
                     <h3>You have not created a certificate</h3>
                 </div>) : (<>{sertificat.map(item => {
-                    localStorage.setItem("sertificate_createLength", sertificat.length)
+                    // localStorage.setItem("sertificate_createLength", sertificat.length)
                     return <div className="sertificate_card_header">
                         <div className="sertificate_card">
                             <div className="sertificate_df_edit">

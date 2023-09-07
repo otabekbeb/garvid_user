@@ -80,7 +80,7 @@ export default function Searchfilter() {
               }
             }
             setKursdata(res.data);
-            localStorage.setItem("mycourseUser", res.data.length);
+            localStorage.setItem("mycourseUser", res.data.length)
           });
       });
     setLoader(0);
@@ -146,7 +146,7 @@ export default function Searchfilter() {
               }
             }
             setKursdata(res.data);
-            localStorage.setItem("mycourseUser", res.data.length);
+            localStorage.setItem("mycourseUser", res.data.length)
             setLoader(0);
           });
       });

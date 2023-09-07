@@ -11,6 +11,8 @@ import Azo from "./Azo"
 // import Rasp from '../img/Rasp.png'
 // import {BsPlus} from 'react-icons/bs'
 import { TiThMenu } from 'react-icons/ti'
+import axios from "axios";
+import url from "./Host";
 import Education from './Education';
 import Test_create from "./Test_create.js"
 import Mysubscribers from "../js/Mysubscribers.js"
@@ -20,11 +22,38 @@ import Sertificate_create from "./Sertificate_create.js"
 
 export default function MentorPdp() {
     const [toggle, setToggle] = useState(1)
+    const [stTasks, setTasks] = useState([]);
     const [state1, setState1] = React.useState();
+    const [foreducation,setForeducation] = useState([])
+    const [test, setTest] = useState([])
+    const [kursdata,setKursdata] = useState([])
+    const [sertificat, setSertificat] = useState([])
     useEffect(() => {
+        axios
+      .get(`${url}/edu/sertificat`)
+      .then((res) => {
+        var a = res.data.filter(item => item.mentor == localStorage.getItem("OneuserId"))
+        setSertificat(a)
+      });
+        axios.get(`${url}/edu/test`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+            setTest(res.data)
+        })
+        axios.get(`${url}/api/course`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+            const Filter = res.data.filter(item => item.author == localStorage.getItem("OneuserId"))
+            setKursdata(Filter)
+      
+          }).catch(err => {
+            console.log(err);
+          })
+        axios.get(`${url}/api/course_theme_task`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+            setTasks(res.data)
+        }).catch(err=>{})
         setState1(
             localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
         );
+        axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+            setForeducation(res.data)
+        }).catch(err=>{})
     }, []);
 
 
@@ -52,14 +81,14 @@ export default function MentorPdp() {
             <div>
                 <div className="gray_blok">
                     <div className="fil_text_blok">
-                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght" >{localStorage.getItem("courseLength")} pieces</div>) : ("")}</div>
+                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght" >{kursdata.length} pieces</div>) : ("")}</div>
                         <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Chat</h1></div>
-                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Tasks</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("taskLength")} pieces</div>) : ("")}</div>
+                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Tasks</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">{stTasks.length} pieces</div>) : ("")}</div>
                         <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My Subscribers</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("subscribersLength")} pieces</div>) : ("")}</div>
-                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Educations</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("for_education")} pieces</div>) : ("")}</div>
-                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(6)} style={toggle === 6 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Tests</h1>{toggle === 6 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("testLength")} pieces</div>) : ("")}</div>
+                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Educations</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">{foreducation.length} pieces</div>) : ("")}</div>
+                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(6)} style={toggle === 6 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Tests</h1>{toggle === 6 ? (<div className="fil_text_blok_kurs_lenght">{test.length} pieces</div>) : ("")}</div>
                         <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(8)} style={toggle === 8 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Zoom</h1>{toggle === 8 ? ("") : ("")}</div>
-                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(9)} style={toggle === 9 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Sertificate</h1>{toggle === 9 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("sertificate_createLength")} pieces</div>) : ("")}</div>
+                        <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(9)} style={toggle === 9 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Sertificate</h1>{toggle === 9 ? (<div className="fil_text_blok_kurs_lenght">{sertificat.length} pieces</div>) : ("")}</div>
                     </div>
                     <div className="profil_blok_menu_size">
                         <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />

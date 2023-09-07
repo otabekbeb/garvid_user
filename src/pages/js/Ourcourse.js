@@ -50,7 +50,7 @@ export default function Ourcourse() {
   }
   function filter11(id) {
     axios
-      .get(`${url}/api/course`, {
+      .get(`${url}/api/nomycourse/${localStorage.getItem("OneuserId")}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
@@ -61,7 +61,7 @@ export default function Ourcourse() {
   const searchfilter1 = (event) => {
     const searchRegex = new RegExp(`^${event.target.value}`, "i");
     axios
-      .get(`${url}/api/course`, {
+      .get(`${url}/api/nomycourse/${localStorage.getItem("OneuserId")}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
@@ -81,12 +81,12 @@ export default function Ourcourse() {
   // }
   function AllType() {
     axios
-      .get(`${url}/api/course`, {
+      .get(`${url}/api/nomycourse/${localStorage.getItem("OneuserId")}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
         setKursdata(res.data);
-        localStorage.setItem("ourcourseLength", res.data.length);
+        // localStorage.setItem("ourcourseLength", res.data.length);
       })
       .catch((err) => {
         console.log(err);
@@ -96,12 +96,12 @@ export default function Ourcourse() {
   useEffect(() => {
     document.querySelector(".filter_card").style = "display:none";
     axios
-      .get(`${url}/api/course`, {
+      .get(`${url}/api/nomycourse/${localStorage.getItem("OneuserId")}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
         setKursdata(res.data);
-        localStorage.setItem("ourcourseLength", res.data.length);
+        // localStorage.setItem("ourcourseLength", res.data.length);
         
       })
       .catch((err) => {
@@ -131,20 +131,18 @@ export default function Ourcourse() {
 
   function RatingFilter(id){
     axios
-    .get(`${url}/api/course`, {
+    .get(`${url}/api/nomycourse/${localStorage.getItem("OneuserId")}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     })
     .then((res) => {
       const filter=res.data.filter(item=>item.star==id)
       setKursdata(filter);
-      localStorage.setItem("ourcourseLength", res.data.length);
+      // localStorage.setItem("ourcourseLength", res.data.length);
     })
     .catch((err) => {
       console.log(err);
     });
   }
-
-
   return (
     <div>
       <Navbar />
@@ -256,7 +254,6 @@ export default function Ourcourse() {
 
         <div className="filter_kurs">
           {kursdata.map((item) => {
-            localStorage.setItem("for_courses", kursdata.length);
             return (
               <div
                 onClick={() => {
