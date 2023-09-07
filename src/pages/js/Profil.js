@@ -333,6 +333,7 @@ export default function Profil() {
               />
 
 
+
 {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length === 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
                   {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length}
                 </div>)}
