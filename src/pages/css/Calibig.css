@@ -11,6 +11,78 @@
     /* display: none; */
     margin-bottom: 100px;
 }
+.Modal_big_div_video_error_div{
+ background-color: #fff; 
+ display: block;
+ text-align: center;
+ align-items: center;
+ justify-content: center;
+ width: 400px; 
+ max-width: 100%; 
+ padding: 1% 1% 1% 1%;
+ margin-left: 10px;
+ margin-right: 10px;
+}
+.Modal_big_div_video_error_div_close{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-size: 20px;
+    cursor: pointer;
+    color: #44bef1;
+}
+.Modal_big_div_video_error_div img{
+    width: 80%;
+}
+.Modal_big_div_video_error{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.338);
+}
+.Modal_big_div_video_error1{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.338);
+}
+.Modal_big_div_video_error_div_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.Modal_big_div_video_error_div_button button{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: black;
+    background-color: #fff;
+    border: 1px solid #44bef1;
+    border-radius: 5px;
+}
+.Modal_big_div_video_error_div_button button:hover{
+background-color: #44bef1;
+color: #fff;
+}
+.Modal_big_div_video_error_div_theme{
+    height: 300px;
+}
 
 .foto {
     width: 100%;
