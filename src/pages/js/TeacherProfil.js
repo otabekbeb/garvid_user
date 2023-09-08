@@ -55,7 +55,7 @@ import Git from '../img/Git.png'
 import Oragle from '../img/Oragle.png'
 import Sprint from '../img/Spring.png'
 import Start from '../img/Start.png'
-import FollowCard from '../js/FollowCard'
+import FollowCard from '../js/Azo'
 import Groupimg from '../img/Group 2.png'
 import azoimg from "../img/Ellipse.jpg"
 export default function Profil() {
