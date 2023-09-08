@@ -44,7 +44,7 @@
     "stripe": "^13.3.0",
     "swal": "^0.1.0",
     "sweetalert2": "^11.7.27",
-    "swiper": "^10.0.4",
+    "swiper": "^10.2.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
