@@ -48,7 +48,7 @@ export default function Youtube1() {
 
   const [main, setMain] = useState([]);
   const [main1, setMain1] = useState(
-    JSON.parse(localStorage.getItem("Idvideo"))
+    JSON.parse(localStorage.getItem("page_video"))
   );
   const [error, setError] = useState(false);
   const [state1, setState1] = React.useState();
@@ -228,11 +228,11 @@ export default function Youtube1() {
       )
       .then((res) => {
         setComment(res.data);
-        console.log(res.data, "abbaslog");
       });
   }
 
   useEffect(() => {
+    getData()
     axios
       .get(`${url}/auth/oneuser`, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
@@ -251,7 +251,6 @@ export default function Youtube1() {
       })
       .then((res) => {
         setMain(res.data.one ? res.data.one : []);
-        localStorage.setItem("page_video", JSON.stringify(res.data.one ? res.data.one : []));
         setCategory(res.data.all);
         res.data.all.map((itam) => {
           itam.theme.map((itam2) => {
@@ -328,7 +327,7 @@ export default function Youtube1() {
   }
 
   function MadolChange(id) {
-    localStorage.setItem("Idvideo", JSON.stringify(id));
+    localStorage.setItem("page_video", JSON.stringify(id));
     window.location.reload();
     axios.get(`${url}/api/course_data_category/course/${id}`).then((res) => {
       setMain(res.data.one ? res.data.one : []);
@@ -353,8 +352,7 @@ export default function Youtube1() {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
-        const idget = JSON.parse(localStorage.getItem("page_video"));
-
+        getData()
         document.querySelector("#chat_text").value = "";
       })
       .catch((err) => {
@@ -378,38 +376,22 @@ export default function Youtube1() {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
-        axios
-          .get(`${url}/api/course_theme_comment/subcomment/${subcoment}`, {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          })
-          .then((res) => {
+          openModalOtvet11(subcoment)
+          document.querySelector("#chat_text").value = " ";
 
-            console.log(res.data,"subcoment");
-            setSubcomentData(res.data);
-          });
       })
       .catch((err) => {
         Swal.fire("Нельзя писать больше 300 символов");
-      });
-
-    axios
-      .get(`${url}/api/course_theme_comment/subcomment/${id}`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      })
-      .then((res) => {
-        setSubcomentData(res.data);
       });
   }
 
   function deleteComment(id) {
     axios
-      .delete(`${url}/api/course_theme_comment/`, {
+      .delete(`${url}/api/course_theme_comment/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
-        const idget = JSON.parse(localStorage.getItem("page_video"));
+        subcoment==0?getData():openModalOtvet11(subcoment)
       })
       .catch((err) => {});
   }
@@ -427,11 +409,13 @@ export default function Youtube1() {
       .then((res) => {
         setSubcomentData(res.data);
       });
+
     document.querySelector(".otevet_comment_otdel_oyna").style =
       "display: block";
     document.querySelector(".m_otdel_bgc").style = "display:none";
   }
   function closeModalOtvet11() {
+    setSubcoment(0)
     document.querySelector(".m_otdel_bgc").style = "display: block";
     document.querySelector(".otevet_comment_otdel_oyna ").style =
       "display:none !important";
@@ -641,7 +625,7 @@ export default function Youtube1() {
 
             <div className="youtube_bgc">
               <div className="flex_youtube">
-                {localStorage.getItem("Idvideo") ? (
+                {localStorage.getItem("page_video") ? (
                   <div className="youtube_kotta_img">
                     <div className="for-otdelni-chunmadim">
                       <div className="img_youtube_kotta">
@@ -752,18 +736,6 @@ export default function Youtube1() {
                         <div>
                           <div className="m_comment_kotta">
                             <div className="m_otdel_bgc">
-                              <div className="comment_view_all">
-                                <span className="span_comment1202">
-                                  Комментария*
-                                </span>
-                                <p
-                                  onClick={() => {
-                                    openViewall();
-                                  }}
-                                >
-                                  view all <AiOutlineComment />
-                                </p>
-                              </div>
                               <div className="for_scroll">
                                 {comment.length === 0 ? (
                                   <div className="for_no_comment">
@@ -772,10 +744,6 @@ export default function Youtube1() {
                                 ) : (
                                   <>
                                     {comment.map((item) => {
-                                      if (
-                                        item.subcomment == 0 &&
-                                        item.task_commnet_id == 0
-                                      ) {
                                         return (
                                           <>
                                             <div className="m_comment">
@@ -856,7 +824,6 @@ export default function Youtube1() {
                                             </div>
                                           </>
                                         );
-                                      }
                                     })}
                                   </>
                                 )}
@@ -1555,15 +1522,8 @@ export default function Youtube1() {
                     <button onClick={() => ModalCatchBolsa()}>Come back</button>
                   </div>
                 </div>
-                {JSON.parse(localStorage.getItem("page_user"))[0].position ==
-                2 ? (
-                  <Create_Theme_Category_mentor
-                    id1={localStorage.getItem("abbas")}
-                  />
-                ) : (
-                  <></>
-                )}
-                <div className="youtube_kichkina">
+                <div  className="youtube_kichkina">
+                <div style={{position:'sticky',top:'80px'}}>
                   {category.map((item, key) => {
                     return (
                       <>
@@ -1616,6 +1576,7 @@ export default function Youtube1() {
                       </>
                     );
                   })}
+                </div>
                 </div>
               </div>
             </div>
