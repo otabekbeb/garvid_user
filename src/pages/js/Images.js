@@ -42,8 +42,6 @@ export default function Images() {
                         slidesPerView: 3,
                     },
 
-
-
                 }}
                 // pagination={{
                 //   clickable: true,
