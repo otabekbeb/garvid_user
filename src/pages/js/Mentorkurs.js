@@ -5,6 +5,7 @@ import { MdWindow } from "react-icons/md";
 import { TfiMenuAlt } from "react-icons/tfi";
 import Mon from "../img/Mon.png";
 import KursClose from "../img/Course app-rafiki.png";
+import ThemeClose from "../img/Webinar-pana.png";
 import { AiFillStar } from "react-icons/ai";
 import { HiArrowRight } from "react-icons/hi";
 import Rasp from "../img/Rasp.png";
@@ -44,7 +45,11 @@ export default function Searchfilter() {
   const [course_theme, setCourse_theme] = useState([]);
   const [course_Category, setCourse_Category] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen1, setIsModalOpen1] = useState(false);
+  const [isModalOpen2, setIsModalOpen2] = useState(false);
+  const [isModalOpen3, setIsModalOpen3] = useState(false);
   const [themeId,setThemeId]=useState()
+  const [CategoryId,setCategoryId]=useState()
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -96,7 +101,7 @@ export default function Searchfilter() {
   };
 
   const showModal1 = () => {
-    setIsModalOpen(true);
+    setIsModalOpen1(true);
     document.querySelector("#course_video_error1").style="display:none"
     document.querySelector("#course_video_error").style="display:none"
   };
@@ -104,13 +109,13 @@ export default function Searchfilter() {
     var formdata=new FormData()
     formdata.append("name",document.querySelector("#Theme_Name").value)
     formdata.append("content",document.querySelector("#Theme_Content").value)
-    formdata.append("image",document.querySelector("#Theme_Image").value)
-    formdata.append("video",document.querySelector("#Theme_Video").value)
+    formdata.append("image",document.querySelector("#Theme_Image").files[0])
+    formdata.append("video",document.querySelector("#Theme_Video").files[0])
     formdata.append("extra_data",document.querySelector("#Theme_extra_data").value)
     formdata.append("category",document.querySelector("#Theme_category").value)
 
     axios.post(`${url}/api/course_data_theme`,formdata,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
-      setIsModalOpen(false);
+      setIsModalOpen1(false);
       document.querySelector("#course_video_error1").style="display:flex"
       axios
       .get(`${url}/api/course_data_category`, {
@@ -142,30 +147,34 @@ export default function Searchfilter() {
     })
   };
   const handleCancel1 = () => {
-    setIsModalOpen(false);
+    setIsModalOpen1(false);
     document.querySelector("#course_video_error1").style="display:flex"
   };
 
   const showModal2 = (item) => {
+    setIsModalOpen2(true)
     setThemeId(item.id)
-    setIsModalOpen(true);
-    document.querySelector("#Theme_Name_put").value=item.name
+    document.querySelector("#course_video_error1").style="display:none"
+    document.querySelector("#course_video_error").style="display:none"
+    setTimeout(() => {
+     document.querySelector("#Theme_Name_put").value=item.name
     document.querySelector("#Theme_Content_put").value=item.content
     document.querySelector("#Theme_extra_data_put").value=item.extra_data
-    document.querySelector("#Theme_category_put").value=item.category
-    document.querySelector("#course_video_error1").style="display:none"
+    document.querySelector("#Theme_category_put").value=item.category  
+    }, 1000)
+   
   };
   const handleOk2 = () => {
     var formdata=new FormData()
     formdata.append("name",document.querySelector("#Theme_Name_put").value)
     formdata.append("content",document.querySelector("#Theme_Content_put").value)
-    formdata.append("image",document.querySelector("#Theme_Image_put").value)
-    formdata.append("video",document.querySelector("#Theme_Video_put").value)
+    formdata.append("image",document.querySelector("#Theme_Image_put").files[0])
+    formdata.append("video",document.querySelector("#Theme_Video_put").files[0])
     formdata.append("extra_data",document.querySelector("#Theme_extra_data_put").value)
     formdata.append("category",document.querySelector("#Theme_category_put").value)
 
     axios.put(`${url}/api/course_data_theme/${themeId}`,formdata,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
-      setIsModalOpen(false);
+      setIsModalOpen2(false);
       document.querySelector("#course_video_error1").style="display:flex"
       axios
       .get(`${url}/api/course_data_category`, {
@@ -197,9 +206,98 @@ export default function Searchfilter() {
     })
   };
   const handleCancel2 = () => {
-    setIsModalOpen(false);
+    setIsModalOpen2(false);
     document.querySelector("#course_video_error1").style="display:flex"
   };
+
+  const showModal3 = (item) => {
+    setIsModalOpen3(true);
+    setCategoryId(item.id)
+    setTimeout(()=>{
+      document.querySelector("#Category_Name_put").value=item.name
+    },1000)
+    document.querySelector("#course_video_error1").style="display:none"
+    document.querySelector("#course_video_error").style="display:none"
+
+  };
+
+  const handleOk3 = () => {
+    var formdata=new FormData()
+    formdata.append("name",document.querySelector("#Category_Name_put").value)
+    formdata.append("course",pageVideoId)
+
+    axios.put(`${url}/api/course_data_category/${CategoryId}`,formdata,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
+      setIsModalOpen3(false);
+      document.querySelector("#course_video_error1").style="display:flex"
+      axios
+      .get(`${url}/api/course_data_category`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        const Filter=res.data.filter(category=>category.course==pageVideoId)
+        setCourse_Category(Filter)
+        axios
+      .get(`${url}/api/course_data_theme`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res1) => {
+        var a=[]
+        for (let i = 0; i < Filter.length; i++) {
+          for (let j = 0; j < res1.data.length; j++) {
+          if (Filter[i].id==res1.data[j].category) {
+            a.push(res1.data[j])
+          }
+          }
+        }
+        setCourse_theme(a);
+      })
+      .catch((err) => {});
+      })
+      .catch((err) => {});
+
+    }).catch(err=>{
+      alert("xato")
+    })
+  };
+
+  const handleCancel3 = () => {
+    setIsModalOpen3(false);
+    document.querySelector("#course_video_error1").style="display:flex"
+  };
+
+  function deleteCategory(id){
+    axios.delete(`${url}/api/course_data_category/${id}`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
+      axios
+      .get(`${url}/api/course_data_category`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        const Filter=res.data.filter(category=>category.course==pageVideoId)
+        setCourse_Category(Filter)
+        axios
+      .get(`${url}/api/course_data_theme`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res1) => {
+        var a=[]
+        for (let i = 0; i < Filter.length; i++) {
+          for (let j = 0; j < res1.data.length; j++) {
+          if (Filter[i].id==res1.data[j].category) {
+            a.push(res1.data[j])
+          }
+          }
+        }
+        setCourse_theme(a);
+      })
+      .catch((err) => {});
+      })
+      .catch((err) => {});
+    }).catch(err=>{
+      alert("xato")
+    })
+  } 
+
+
 
 
 
@@ -500,14 +598,55 @@ export default function Searchfilter() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
-        if (res.data.one == null) {
+        if (!res.data.all) {
             document.querySelector("#course_video_error").style = "display:flex";
         } else {
-          window.location = "/video";
-          localStorage.setItem("abbas", item.id);
-        }
+            res.data.all.map(item=>{
+            if(!item.theme){
+              document.querySelector("#course_video_error").style = "display:flex";
+            }else{
+              window.location = "/video";
+              localStorage.setItem("abbas", item.id);
+            }
+            })
+          }  
       });
   }
+
+  function deleteTheme(id){
+    axios.delete(`${url}/api/course_data_theme/${id}`,{
+      headers: { Authorization: "Bearer " + localStorage.getItem("token") }
+    }).then(res=>{
+      axios
+      .get(`${url}/api/course_data_category`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        const Filter=res.data.filter(category=>category.course==pageVideoId)
+        setCourse_Category(Filter)
+        axios
+      .get(`${url}/api/course_data_theme`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res1) => {
+        var a=[]
+        for (let i = 0; i < Filter.length; i++) {
+          for (let j = 0; j < res1.data.length; j++) {
+          if (Filter[i].id==res1.data[j].category) {
+            a.push(res1.data[j])
+          }
+          }
+        }
+        setCourse_theme(a);
+      })
+      .catch((err) => {});
+      })
+      .catch((err) => {});
+    }).catch(err=>{
+      Swal.fire("xato")
+    })
+  }
+
 
   return (
     <div>
@@ -879,27 +1018,33 @@ export default function Searchfilter() {
             <div
               style={{ height: "300px" ,overflowY:'scroll',boxShadow:'initial 5px 5px 4px 4px grey'}}
             >
-              {course_theme.map((item) => {
-                return (
-                  <div className="Modal_big_div_video_error_div_theme">
-                    <p>{item.name}</p>
-                    <div className="Modal_big_div_video_error_div_theme_button">
-                      <FiEdit2 onClick={()=>showModal2(item)} className="button" />
-                      <MdOutlineDelete  className="button" />
+              {course_theme.length==0?(
+                <img src={ThemeClose} alt="" />
+              ):(
+                <>
+                {course_theme.map((item) => {
+                  return (
+                    <div className="Modal_big_div_video_error_div_theme">
+                      <p>{item.name}</p>
+                      <div className="Modal_big_div_video_error_div_theme_button">
+                        <FiEdit2 onClick={()=>showModal2(item)} className="button" />
+                        <MdOutlineDelete onClick={()=>deleteTheme(item.id)} className="button" />
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+                </>
+              )}
             </div>
-            <Modal  title="Theme" open={isModalOpen} onOk={handleOk1} onCancel={handleCancel1}>
+            <Modal  title="Theme" open={isModalOpen1} onOk={handleOk1} onCancel={handleCancel1}>
             <p style={{marginBottom:"0px"}}>Name</p>
             <input className="input_Video" id="Theme_Name" type="text" />
             <p style={{marginBottom:"0px"}}>Content</p>
             <input className="input_Video" id="Theme_Content" type="text" />
             <p style={{marginBottom:"0px"}}>Image</p>
-            <input className="input_Video" id="Theme_Image" type="text" />
+            <input className="input_Video" id="Theme_Image" type="file" />
             <p style={{marginBottom:"0px"}}>Video</p>
-            <input className="input_Video" id="Theme_Video" type="text" />
+            <input className="input_Video" id="Theme_Video" type="file" />
             <p style={{marginBottom:"0px"}}>Extra_data</p>
             <input className="input_Video" id="Theme_extra_data" type="text" />
             <p style={{marginBottom:"0px"}}>Category</p>
@@ -909,15 +1054,15 @@ export default function Searchfilter() {
             })}
             </select>
             </Modal>
-            <Modal  title="Theme" open={isModalOpen} onOk={handleOk2} onCancel={handleCancel2}>
+            <Modal  title="Theme" open={isModalOpen2} onOk={handleOk2} onCancel={handleCancel2}>
             <p style={{marginBottom:"0px"}}>Name</p>
             <input className="input_Video" id="Theme_Name_put" type="text" />
             <p style={{marginBottom:"0px"}}>Content</p>
             <input className="input_Video" id="Theme_Content_put" type="text" />
             <p style={{marginBottom:"0px"}}>Image</p>
-            <input className="input_Video" id="Theme_Image_put" type="text" />
+            <input className="input_Video" id="Theme_Image_put" type="file" />
             <p style={{marginBottom:"0px"}}>Video</p>
-            <input className="input_Video" id="Theme_Video_put" type="text" />
+            <input className="input_Video" id="Theme_Video_put" type="file" />
             <p style={{marginBottom:"0px"}}>Extra_data</p>
             <input className="input_Video" id="Theme_extra_data_put" type="text" />
             <p style={{marginBottom:"0px"}}>Category</p>
@@ -936,22 +1081,33 @@ export default function Searchfilter() {
             <div
               style={{ height: "300px" ,overflowY:'scroll',boxShadow:'initial 5px 5px 4px 4px grey'}}
             >
+              {course_Category.length==0?(
+              <img src={KursClose} alt="" />
+              ):(
+              <>
               {course_Category.map((item) => {
                   return (
                   <div className="Modal_big_div_video_error_div_theme">
                     <p>{item.name}</p>
                     <div className="Modal_big_div_video_error_div_theme_button">
-                      <FiEdit2 className="button" />
-                      <MdOutlineDelete  className="button" />
+                      <FiEdit2 onClick={()=>showModal3(item)} className="button" />
+                      <MdOutlineDelete onClick={()=>deleteCategory(item.id)} className="button" />
                     </div>
                   </div>
-                ); 
+                  ); 
               })}
+              </>
+              )}
+              
             </div>
-            <Modal  title="Category" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+          <Modal  title="Category" open={isModalOpen} onOk={handleOk}     onCancel={handleCancel}>
             <p style={{marginBottom:"0px"}}>Name</p>
             <input className="input_Video" id="Category_Name" type="text" />
           </Modal>
+          <Modal  title="Category" open={isModalOpen3} onOk={handleOk3}     onCancel={handleCancel3}>
+          <p style={{marginBottom:"0px"}}>Name</p>
+          <input className="input_Video" id="Category_Name_put" type="text" />
+           </Modal>
             </>
           )}
         </div>
