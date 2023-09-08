@@ -103,13 +103,19 @@ export default function Profil() {
 
 
 
-    axios.get(`${url}/api/mycourse/${localStorage.getItem("allUsersId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-      setKursData(res.data)
-      console.log(res.data);
-    }).catch(err => {
-
+    axios
+    .get(`${url}/api/course`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     })
-    setLoader(0)
+    .then((res) => {
+      const Filter = res.data.filter(
+        (item) => item.author == localStorage.getItem("allUsersId")
+      );
+      setKursData(Filter);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 
   }, []);
 
