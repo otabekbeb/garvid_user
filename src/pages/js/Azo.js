@@ -42,9 +42,6 @@ export default function Azo() {
 
     return (
         <div className='followi1'>
-
-
-
             <div className="followcards1">
                 {follow.length === 0 ? (
               <div className="delete_padding1">

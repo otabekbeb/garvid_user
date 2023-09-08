@@ -96,16 +96,16 @@ export default function FollowCard() {
                       </button>
                     </a>
                   </div>
-                </div>):(<div style={{display:"flex",justifyContent:"center"}}>
+                </div>):(<div style={{display:"flex",justifyContent:"center",flexWrap:"wrap"}}>
                 {follow.map((item, key) => {
             if (following != item.id) {
               return (
                 <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
-                  <div onClick={()=>window.location="/TeacherProfil"} className="our-team">
-                    <div className="picture">
+                  <div onClick={()=>{localStorage.setItem("allUsersId",item.id)}} className="our-team">
+                    <div className="picture"  onClick={()=>{window.location="/TeacherProfil";}}>
                     {item.image === null?(<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjDQxJomerNcXJqX7IQeLmKbFUA7U5JLanCEW23p8p52ZWtq3gcOcQEB4v_HegvorxeZM&usqp=CAU"/>):(  <img className="img-fluid" src={item.image} />)} 
                     </div>
-                    <div className="team-content">
+                    <div className="team-content" onClick={()=>{window.location="/TeacherProfil";}}>
                       <h3 style={{ lineHeight: "70px" }} className="name">{item.username}</h3>
                     </div>
                     <center><ul className="social">

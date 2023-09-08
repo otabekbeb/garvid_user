@@ -409,8 +409,8 @@ export default function Profil() {
                     borderRadius: "50%",
                     color: "#fff",
                     textAlign: "center",
-                    marginTop: "-7px",
-                    marginLeft: "-25px",
+                    marginTop: "-7%",
+                    marginLeft: "-10px",
                   }}
                 >
                   {
@@ -485,7 +485,7 @@ export default function Profil() {
                           item.to_user_id == localStorage.getItem("OneuserId")
                         ) {
                           return (
-                            <div>
+                            <div> 
                               {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
                               <div className="taxrirlash_chad">
                                 <div className="taxrirlash_chad_img_size">
