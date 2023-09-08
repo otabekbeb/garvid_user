@@ -233,7 +233,6 @@ export default function Youtube1() {
   }
 
   useEffect(() => {
-    getData();
     axios
       .get(`${url}/auth/oneuser`, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
@@ -355,14 +354,14 @@ export default function Youtube1() {
       })
       .then((res) => {
         const idget = JSON.parse(localStorage.getItem("page_video"));
-        getData();
+
         document.querySelector("#chat_text").value = "";
       })
       .catch((err) => {
         Swal.fire("Error");
       });
 
-    getData();
+
   }
 
   function otvetPost() {
@@ -411,10 +410,8 @@ export default function Youtube1() {
       })
       .then((res) => {
         const idget = JSON.parse(localStorage.getItem("page_video"));
-        getData();
       })
       .catch((err) => {});
-    getData();
   }
 
   function cencelModal() {
