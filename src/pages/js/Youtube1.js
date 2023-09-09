@@ -65,6 +65,7 @@ export default function Youtube1() {
   const [comment5, setComment5] = useState([]);
   const [task, setTask] = useState([]);
   const [mark, setMark] = useState([]);
+  const [markPut, setMarkPut] = useState();
   const [page, setPage] = useState(1);
   const [page1, setPage1] = useState(1);
   const [videoDuration, setVideoDuration] = useState(0);
@@ -278,7 +279,7 @@ export default function Youtube1() {
 
     //task
     axios
-      .get(`${url}/api/course_theme_task`, {
+      .get(`${url}/api/course_theme_comment/task/${JSON.parse(localStorage.getItem("page_video")).id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
@@ -353,6 +354,7 @@ export default function Youtube1() {
       })
       .then((res) => {
         getData()
+        document.querySelector("#chat_text1").value ="";
         document.querySelector("#chat_text").value = "";
       })
       .catch((err) => {
@@ -377,7 +379,7 @@ export default function Youtube1() {
       })
       .then((res) => {
           openModalOtvet11(subcoment)
-          document.querySelector("#chat_text").value = " ";
+          document.querySelector("#chat_text1").value ="";
 
       })
       .catch((err) => {
@@ -397,8 +399,8 @@ export default function Youtube1() {
   }
 
   function cencelModal() {
-    document.querySelector("#chat_text").value = "";
-    document.querySelector("#chat_text1").value = "";
+    document.querySelector("#chat_text").value ="";
+    document.querySelector("#chat_text1").value ="";
   }
   function openModalOtvet11(id) {
     setSubcoment(id);
@@ -440,36 +442,14 @@ export default function Youtube1() {
       })
       .then((res) => {
         axios
-          .get(
-            `${url}/api/course_theme_comment/${
-              JSON.parse(localStorage.getItem("page_video")).id
-            }`,
-            {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-              },
-            }
-          )
-          .then((res) => {
-            setTaskData(res.data);
-          });
-      });
-    axios
-      .get(
-        `${url}/api/course_theme_comment/${
-          JSON.parse(localStorage.getItem("page_video")).id
-        }`,
-        {
+        .get(`${url}/api/course_theme_comment/task/${JSON.parse(localStorage.getItem("page_video")).id}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        }
-      )
-      .then((res) => {
-        var a = res.data.filter((item) => item.task_commnet_id == 1);
-        setComment5(a);
-        console.log(a, "comdwadwadent");
-      })
-      .catch((err) => {
-        Swal.fire("Вы не смогли удалить комментарий, попробуйте снова.");
+        })
+        .then((res) => {
+          setTeacherwork(res.data);
+          console.log(res.data);
+        })
+        .catch((err) => {});
       });
   }
 
@@ -488,19 +468,14 @@ export default function Youtube1() {
       })
       .then((res) => {
         axios
-          .get(
-            `${url}/api/course_theme_comment/${
-              JSON.parse(localStorage.getItem("page_video")).id
-            }`,
-            {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-              },
-            }
-          )
-          .then((res) => {
-            setTaskData(res.data);
-          });
+        .get(`${url}/api/course_theme_comment/task/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        })
+        .then((res) => {
+          setTeacherwork(res.data);
+          console.log(res.data);
+        })
+        .catch((err) => {});
       })
       .catch((err) => {
         Swal.fire("Error");
@@ -517,30 +492,25 @@ export default function Youtube1() {
       });
   }
 
-  function cencelModal() {
+  function cencelModal1() {
     document.querySelector("#chat_text12").value = "";
   }
 
   function markOpen(id) {
+    setMarkPut(id)
     document.querySelector(".mark-uchun-koish-joy").style = "display:flex ";
   }
   function markOpen2(id) {
+    setMarkPut(id)
     document.querySelector(".mark-uchun-koish-joy1").style = "display:flex ";
   }
   function aftermarkopen(id) {
     var formdata = new FormData();
-
     formdata.append("mark", page);
-    formdata.append(
-      "image",
-      document.querySelector(".comment_file12").files[0]
-    );
+    formdata.append("image",document.querySelector(".comment_file12").files[0]);
     formdata.append("content", "ghjkh");
-    formdata.append(
-      "course_theme",
-      JSON.parse(localStorage.getItem("page_video")).id
-    );
-    formdata.append("feedback", id);
+    formdata.append("course_theme",JSON.parse(localStorage.getItem("page_video")).id);
+    formdata.append("feedback", markPut);
     axios
       .post(`${url}/api/course_theme_task_student`, formdata, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -549,15 +519,14 @@ export default function Youtube1() {
         document.querySelector(".m-comment-mark").style = "display:none";
         document.querySelector(".mark-uchun-koish-joy").style = "display:none";
         axios
-          .get(`${url}/api/course_theme_task_student`, {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          })
-          .then((res) => {
-            setMark(res.data);
-          })
-          .catch((err) => {});
+        .get(`${url}/api/course_theme_comment/task/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        })
+        .then((res) => {
+          setTeacherwork(res.data);
+          console.log(res.data);
+        })
+        .catch((err) => {});
       })
       .catch((err) => {
         Swal.fire("Вы не смогли поставить оценку");
@@ -571,7 +540,6 @@ export default function Youtube1() {
   }
   function aftermarkopen2(id) {
     var formdata = new FormData();
-
     formdata.append("mark", page);
     formdata.append(
       "image",
@@ -582,23 +550,22 @@ export default function Youtube1() {
       "course_theme",
       JSON.parse(localStorage.getItem("page_video")).id
     );
-    formdata.append("feedback", id);
+    formdata.append("feedback", markPut);
     axios
-      .put(`${url}/api/course_theme_task_student`, formdata, {
+      .put(`${url}/api/course_theme_task_student/${markPut}`, formdata, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
         document.querySelector(".mark-uchun-koish-joy1").style = "display:none";
         axios
-          .get(`${url}/api/course_theme_task_student`, {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          })
-          .then((res) => {
-            setMark(res.data);
-          })
-          .catch((err) => {});
+        .get(`${url}/api/course_theme_comment/task/${JSON.parse(localStorage.getItem("page_video")).id}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+        })
+        .then((res) => {
+          setTeacherwork(res.data);
+          console.log(res.data);
+        })
+        .catch((err) => {});
       })
       .catch((err) => {
         Swal.fire("Вы не смогли поставить оценку");
@@ -682,7 +649,7 @@ export default function Youtube1() {
                             <p
                               onClick={() => {
                                 setPage5(2);
-                                painModal1();
+                                painModal1(); 
                               }}
                               className="zadaniya1"
                             >
@@ -1124,13 +1091,13 @@ export default function Youtube1() {
                               <hr className="hr2000" />
 
                               <div className="for_scroll">
-                                {taskData.length == 0 ? (
+                                {teacherwork.length == 0 ? (
                                   <div className="for_no_comment">
                                     <p>Тут ещё нут ответов на задачу </p>
                                   </div>
                                 ) : (
                                   <>
-                                    {taskData.map((item, key) => {
+                                    {teacherwork.map((item, key) => {
                                        return (
                                         <>
                                           <div className="df_div_comment_page">
@@ -1146,45 +1113,7 @@ export default function Youtube1() {
                                                 <h5>
                                                   {item.oneuser.username}
                                                 </h5>
-                                                {item.mark === 0 ? (
-                                                  ""
-                                                ) : (
-                                                  <>
-                                                    {item.mark === 2 ? (
-                                                      <div className="mark-two-bosa">
-                                                        2
-                                                      </div>
-                                                    ) : (
-                                                      <>
-                                                        {item.mark === 3 ? (
-                                                          <div className="mark-three-bosa">
-                                                            3
-                                                          </div>
-                                                        ) : (
-                                                          <>
-                                                            {item.mark ===
-                                                            4 ? (
-                                                              <div className="mark-four-bosa">
-                                                                4
-                                                              </div>
-                                                            ) : (
-                                                              <>
-                                                                {item.mark ===
-                                                                5 ? (
-                                                                  <div className="mark-five-bosa">
-                                                                    5
-                                                                  </div>
-                                                                ) : (
-                                                                  ""
-                                                                )}
-                                                              </>
-                                                            )}
-                                                          </>
-                                                        )}
-                                                      </>
-                                                    )}
-                                                  </>
-                                                )}
+                                                {item.mark==0?(""):(item.mark)}
                                               </div>
 
                                               <p className="p-create-time-uchun">
@@ -1225,18 +1154,44 @@ export default function Youtube1() {
                                                         ? ""
                                                         : ""}
 
-                                                      <p
-                                                        className="m-comment-mark"
-                                                        onClick={() => {
-                                                          markOpen();
-                                                          setPage(1);
-                                                        }}
-                                                      >
-                                                        <TfiMarkerAlt />
-                                                        <span>
-                                                          поставить оценку
-                                                        </span>
-                                                      </p>
+                                                      {localStorage.getItem("position")==2?(
+                                                        <>
+                                                        {item.mark==0?(<p
+                                                          className="m-comment-mark"
+                                                          onClick={() => {
+                                                            markOpen(item.id);
+                                                            setPage(1);
+                                                          }}
+                                                        >
+                                                          <TfiMarkerAlt />
+                                                          <span>
+                                                           поставить оценку
+                                                          </span>
+                                                        </p>):(item.mark!==0?(<p
+                                                          className="m-comment-mark"
+                                                          onClick={() => {
+                                                            markOpen2(item.id);
+                                                            setPage(1);
+                                                          }}
+                                                        >
+                                                          <TfiMarkerAlt />
+                                                          <span>
+                                                          Изменить оценку
+                                                          </span>
+                                                        </p>):(<p
+                                                          className="m-comment-mark"
+                                                          onClick={() => {
+                                                            markOpen(item.id);
+                                                            setPage(1);
+                                                          }}
+                                                        >
+                                                          <TfiMarkerAlt />
+                                                          <span>
+                                                            поставить оценку
+                                                          </span>
+                                                        </p>))}
+                                                        </>
+                                                      ):("")}
                                                       {item5.id ==
                                                       item.user_id ? (
                                                         <p
@@ -1450,7 +1405,7 @@ export default function Youtube1() {
                                 <button
                                   className="m_otmen"
                                   onClick={() => {
-                                    cencelModal();
+                                    cencelModal1();
                                   }}
                                 >
                                   Cancel
