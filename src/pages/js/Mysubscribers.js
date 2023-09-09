@@ -50,7 +50,7 @@ export default function Azo() {
                     </div>) : (<div style={{display:"flex"}}>
                         {follow.map((item, key) => {
                             if (following == item.topuser) {
-                                return <div style={{width:"300px",}}>
+                                return <div style={{width:"300px",flexWrap:'wrap'}}>
                                     {users.map(item1 => {
                                         
                                         if (item1.id == item.minuser) {
@@ -81,7 +81,7 @@ export default function Azo() {
                     </div>)}
 
 
-                        
+
 
             </div>
 
