@@ -39,9 +39,6 @@ export default function Azo() {
 
     return (
         <div className='followi1'>
-
-
-
             <div className="followcards1">
                 {follow.filter(filter => filter.topuser == localStorage.getItem("OneuserId")).length === 0 ? (
                     <div className="rafiki_subcriber_img">
@@ -53,7 +50,7 @@ export default function Azo() {
                     </div>) : (<div style={{display:"flex"}}>
                         {follow.map((item, key) => {
                             if (following == item.topuser) {
-                                return <div style={{width:"300px"}}>
+                                return <div style={{width:"300px",flexWrap:'wrap'}}>
                                     {users.map(item1 => {
                                         
                                         if (item1.id == item.minuser) {
