@@ -1,113 +1,132 @@
-.azo_bolgan_katta_div{
+.azo_bolgan_katta_div {
     margin-top: 20px;
     width: 700px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-
 }
-.azo_blogan_katta_img{
+
+.azo_blogan_katta_img {
     border-radius: 50%;
     width: 130px;
 }
-.azo_blogan_katta_img img{
+
+.azo_blogan_katta_img img {
     border-radius: 50%;
     width: 100px;
 }
-.azo_bolgan_katta_div_text{
+
+.azo_bolgan_katta_div_text {
     width: 700px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #9DA7BB;
 }
-.azo_bolgan_katta_div_text_block h1{
+
+.azo_bolgan_katta_div_text_block h1 {
     font-size: 30px;
 }
-.azo_bolgan_katta_div_text button{
-background-color: #9DA7BB;
-color: white;
-border-radius: 2px;
-width: 150px;
-height: 35px;
-border: 0px;
+
+.azo_bolgan_katta_div_text button {
+    background-color: #9DA7BB;
+    color: white;
+    border-radius: 2px;
+    width: 150px;
+    height: 35px;
+    border: 0px;
 }
-.azo_bolgan_katta{
+
+.azo_bolgan_katta {
     margin-top: 20px;
     display: grid;
     grid-template-columns: auto;
     margin-left: 10%;
     margin-bottom: 50px;
 }
-.obuna_text{
+
+.obuna_text {
     display: none;
 }
 
 
 @media (max-width:860px) {
-    .azo_bolgan_katta_div_text{
+    .azo_bolgan_katta_div_text {
         width: 90%;
     }
-    .azo_bolgan_katta_div{
-    width: 90%;
+
+    .azo_bolgan_katta_div {
+        width: 90%;
     }
 }
+
 @media (max-width:700px) {
-    .azo_bolgan_katta_div_text_block h1{
+    .azo_bolgan_katta_div_text_block h1 {
         font-size: 3.5vw;
     }
-    .azo_bolgan_katta_div_text_block p{
+
+    .azo_bolgan_katta_div_text_block p {
         font-size: 2.5vw;
     }
-    .azo_blogan_katta_img{
+
+    .azo_blogan_katta_img {
         width: 15%;
     }
-    .azo_blogan_katta_img img{
+
+    .azo_blogan_katta_img img {
         width: 100%;
     }
-    .azo_bolgan_katta_div{
-    gap: 10px;
+
+    .azo_bolgan_katta_div {
+        gap: 10px;
     }
-    .azo_bolgan_katta_div_text button{
+
+    .azo_bolgan_katta_div_text button {
         width: 30%;
         font-size: 2vw;
         height: auto;
         padding: 3px;
         margin-top: -10px;
     }
-    .azo_bolgan_katta_div_text_block p{
-    margin-bottom: 5px;
+
+    .azo_bolgan_katta_div_text_block p {
+        margin-bottom: 5px;
     }
-    .azo_bolgan_katta_div_text_block h1{
+
+    .azo_bolgan_katta_div_text_block h1 {
         margin-bottom: 1px;
     }
 }
-.azo_bolgan_katta{
+
+.azo_bolgan_katta {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.obuna1{
+
+.obuna1 {
     background-color: gray !important;
 }
-.obuna2{
+
+.obuna2 {
     background-color: gray !important;
 }
 
 .followcards1 {
-    width: 100%;
-    height:auto;
+    width: 90%;
+    height: auto;
     margin-top: 40px;
     display: flex;
+    margin: auto;
     gap: 30px;
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
     padding: 20px;
     padding-bottom: 20px;
     justify-content: center;
     align-items: center;
 }
-.follow_card_width{
+
+.follow_card_width {
     width: 300px;
 }
 
@@ -119,8 +138,8 @@ border: 0px;
 
 
 }
-zzz
-.inpser{
+
+.inpser {
     width: 100%;
     height: 70px;
     background-color: #f6f6f6;
@@ -161,27 +180,77 @@ zzz
 .followButton3 {
     background-color: gray;
 }
-.followi1 a{
+
+.followi1 a {
     width: 300px;
 }
+
 .followi1 #col_12 {
     max-width: 100% !important;
 }
-.rafiki_subcriber_img{
+
+.rafiki_subcriber_img {
     text-align: center;
 }
-.rafiki_subcriber_img img{
+
+.rafiki_subcriber_img img {
     width: 450px;
 }
-.rafiki_subcriber_img h3{
+
+.rafiki_subcriber_img h3 {
     font-size: 40px;
     color: #989898;
 }
+
 @media (max-width:705px) {
-    .rafiki_subcriber_img img{
+    .rafiki_subcriber_img img {
         width: 250px !important;
     }
-    .rafiki_subcriber_img h3{
+
+    .rafiki_subcriber_img h3 {
         font-size: 18px !important;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

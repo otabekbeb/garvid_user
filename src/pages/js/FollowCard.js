@@ -72,7 +72,7 @@ export default function FollowCard() {
   }
 
   return (
-    <div>
+    <div className='skubi_dubi'>
       <div className="inpser">
         <div className="inpf">
           {/* <input placeholder="Search..." className="input" name="text" type="text" /> */}

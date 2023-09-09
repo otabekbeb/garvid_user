@@ -71,7 +71,7 @@
         outline: 1px solid #44bef1;
         border-radius: 5px;
         font-size: 18px;
-        transition: width 0.3s;
+        transition:  0.3s;
         font-family: Consolas, monaco, monospace;
     }
 
@@ -332,7 +332,7 @@
     background-color: #f7f5ec;
 }
 
-#col_12 {
+.skubi_dubi #col_12 {
     padding-left: 15px;
     padding-right: 15px;
     max-width: 300px;
