@@ -228,7 +228,43 @@ export default function Mentor() {
   const [courstype, setCoursetype] = useState([]);
   const [toggle, setToggle] = useState(1)
   const [users, setUsers] = useState([])
+  function all() {
+    axios
+    .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+    })
+    .then((res) => {
+      axios
+        .get(`${url}/api/course`, {
+          header: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        })
+        .then((res1) => {
+          for (let i = 0; i < res.data.length; i++) {
+            for (let j = 0; j < res1.data.length; j++) {
+              if (res.data[i].id == res1.data[j].id) {
+                res.data[i].star = res1.data[j].star;
+              }
+            }
+          }
+          setKursdata(res.data);
+          // localStorage.setItem("mycourseUser", res.data.length)
+        });
+    });
+  }
   useEffect(() => {
+    axios
+      .get(`${url}/api/cours_types`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        setCoursetype(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        Swal.fire("err");
+      });
     axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setEdication(res.data)
     })
@@ -1065,7 +1101,7 @@ export default function Mentor() {
                       <img src={Groupimg} alt="" />
                       <h4 style={{ fontSize: '30px', opacity: '0.3' }}>Our courses are not yet</h4>
 
-                    </div>) : (<>   {courstype.map((item) => {
+                    </div>) : (<><span style={{display:"flex",justifyContent:"end",marginRight:"20px"}} onClick={()=>all()}> All</span>  {courstype.map((item) => {
                       return (
                         <div className="button_filter_kurs">
                           {item.name === null ? (
@@ -1076,6 +1112,7 @@ export default function Mentor() {
                               className="div_kurs"
                               style={{ paddingBottom: "5px" }}
                             >
+                              
                               {item.name}
                             </div>
                           )}
