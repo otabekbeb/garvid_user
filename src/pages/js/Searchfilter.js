@@ -35,7 +35,12 @@ export default function Searchfilter() {
   const [star, setStar] = useState([]);
 
   function Filter() {
-    document.querySelector(".filter_button").classList.toggle("fill1");
+    var a = document.querySelector(".filter_button").style.display
+    if (a === "none") {
+      document.querySelector(".filter_button").style = "display:block "
+    } else {
+      document.querySelector(".filter_button").style = "display:none "
+    }
   }
   function filter1() {
     document.querySelector(".filter_button").style = "display:none !important";
@@ -297,9 +302,9 @@ export default function Searchfilter() {
                           />
                           <div className="kurs_paddaing_auto">
                             <h4>{item.name}</h4>
-                            <div>
+                            <div className="fors_pp">
                               {item.star == 1 ? (
-                                <div style={{ display: "flex", gap: "5px" }}>
+                                <div  style={{ display: "flex", gap: "5px" }}>
                                   {" "}
                                   <div className="star_card">
                                     <i className="star_i">

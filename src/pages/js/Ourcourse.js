@@ -14,6 +14,7 @@ import url from "./Host";
 import Footer1 from "./Footer1";
 import Navbar from "./Navbar";
 
+
 export default function Ourcourse() {
   const [main, setMain] = useState([]);
   const [kursdata, setKursdata] = useState([]);
@@ -102,7 +103,7 @@ export default function Ourcourse() {
       .then((res) => {
         setKursdata(res.data);
         // localStorage.setItem("ourcourseLength", res.data.length);
-        
+
       })
       .catch((err) => {
         console.log(err);
@@ -129,19 +130,19 @@ export default function Ourcourse() {
       });
   }, []);
 
-  function RatingFilter(id){
+  function RatingFilter(id) {
     axios
-    .get(`${url}/api/nomycourse/${localStorage.getItem("OneuserId")}`, {
-      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-    })
-    .then((res) => {
-      const filter=res.data.filter(item=>item.star==id)
-      setKursdata(filter);
-      // localStorage.setItem("ourcourseLength", res.data.length);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+      .get(`${url}/api/nomycourse/${localStorage.getItem("OneuserId")}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        const filter = res.data.filter(item => item.star == id)
+        setKursdata(filter);
+        // localStorage.setItem("ourcourseLength", res.data.length);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
   return (
     <div>
@@ -206,7 +207,7 @@ export default function Ourcourse() {
               <h5>By rating</h5>
               <p>
                 {/*<input onClick={()=>RatingFilter(5)} type="checkbox" name="" id="" />*/}
-                <div onClick={()=>RatingFilter(5)} className="filter_star">
+                <div onClick={() => RatingFilter(5)} className="filter_star">
                   <AiFillStar />
                   <AiFillStar />
                   <AiFillStar />
@@ -217,7 +218,7 @@ export default function Ourcourse() {
               </p>
               <p>
                 {/*<input onClick={()=>RatingFilter(4)} type="checkbox" name="" id="" />*/}
-                <div onClick={()=>RatingFilter(4)} className="filter_star">
+                <div onClick={() => RatingFilter(4)} className="filter_star">
                   <AiFillStar />
                   <AiFillStar />
                   <AiFillStar />
@@ -228,7 +229,7 @@ export default function Ourcourse() {
               </p>
               <p>
                 {/*<input onClick={()=>RatingFilter(3)} type="checkbox" name="" id="" />*/}
-                <div onClick={()=>RatingFilter(3)} className="filter_star">
+                <div onClick={() => RatingFilter(3)} className="filter_star">
                   <AiFillStar />
                   <AiFillStar />
                   <AiFillStar />
@@ -238,8 +239,8 @@ export default function Ourcourse() {
                 Above 3.0
               </p>
               <p>
-            {/*<input onClick={()=>RatingFilter(2)} type="checkbox" name="" id="" />*/}
-                <div onClick={()=>RatingFilter(2)} className="filter_star">
+                {/*<input onClick={()=>RatingFilter(2)} type="checkbox" name="" id="" />*/}
+                <div onClick={() => RatingFilter(2)} className="filter_star">
                   <AiFillStar />
                   <AiFillStar />
                   <AiFillStar className="none_star" />
@@ -269,59 +270,277 @@ export default function Ourcourse() {
                 )}
                 <div className="filter_card_padding">
                   <h4> {item.name}</h4>
-                  <div className="star_card">
-                    {item.star === 1 ? (
-                      <div>
-                        <i className="bx bxs-star"></i>
-                        <i className="bx bx-star"></i>
-                        <i className="bx bx-star"></i>
-                        <i className="bx bx-star"></i>
-                        <i className="bx bx-star"></i>
-                      </div>
-                    ) : item.star === 2 ? (
-                      <div>
-                        <i className="bx bxs-star"></i>
-                        <i className="bx bxs-star"></i>
-                        <i className="bx bx-star"></i>
-                        <i className="bx bx-star"></i>
-                        <i className="bx bx-star"></i>
-                      </div>
-                    ) : item.star === 3 ? (
-                      <div>
-                        <i className="bx bxs-star"></i>
-                        <i className="bx bxs-star"></i>
-                        <i className="bx bxs-star"></i>
-                        <i className="bx bx-star"></i>
-                        <i className="bx bx-star"></i>
-                      </div>
-                    ) : item.star === 4 ? (
-                      <div>
-                        <i className="bx bxs-star"></i>
-                        <i className="bx bxs-star"></i>
-                        <i className="bx bxs-star"></i>
-                        <i className="bx bxs-star"></i>
-                        <i className="bx bx-star"></i>
-                      </div>
-                    ) : item.star === 5 ? (
-                      <div>
-                        <i className="bx bxs-star"></i>
-                        <i className="bx bxs-star"></i>
-                        <i className="bx bxs-star"></i>
-                        <i className="bx bxs-star"></i>
-                        <i className="bx bxs-star"></i>
+                  <div className="fors_pp">
+                    {item.star == 1 ? (
+                      <div style={{ display: "flex", gap: "5px" }}>
+                        {" "}
+                        <div className="star_card">
+                          <i className="star_i">
+                            <AiFillStar
+                              style={{ color: "#FFD401" }}
+                            />
+                          </i>
+                          <i className="star_i">
+                            <AiFillStar
+                              style={{ color: "#9DA7BB" }}
+                            />
+                          </i>
+                          <i className="star_i">
+                            <AiFillStar
+                              style={{ color: "#9DA7BB" }}
+                            />
+                          </i>
+                          <i className="star_i">
+                            <AiFillStar
+                              style={{ color: "#9DA7BB" }}
+                            />
+                          </i>
+                          <i className="star_i">
+                            <AiFillStar
+                              style={{ color: "#9DA7BB" }}
+                            />
+                          </i>
+                        </div>
+                        <p style={{ fontSize: "16px" }}>
+                          {item.star}
+                        </p>
                       </div>
                     ) : (
                       <div>
-                        <i className="bx bx-star"></i>
-                        <i className="bx bx-star"></i>
-                        <i className="bx bx-star"></i>
-                        <i className="bx bx-star"></i>
-                        <i className="bx bx-star"></i>
+                        {item.star == 2 ? (
+                          <div
+                            style={{ display: "flex", gap: "5px" }}
+                          >
+                            <div className="star_card">
+                              <i className="star_i">
+                                <AiFillStar
+                                  style={{ color: "#FFD401" }}
+                                />
+                              </i>
+                              <i className="star_i">
+                                <AiFillStar
+                                  style={{ color: "#FFD401" }}
+                                />
+                              </i>
+                              <i className="star_i">
+                                <AiFillStar
+                                  style={{ color: "#9DA7BB" }}
+                                />
+                              </i>
+                              <i className="star_i">
+                                <AiFillStar
+                                  style={{ color: "#9DA7BB" }}
+                                />
+                              </i>
+                              <i className="star_i">
+                                <AiFillStar
+                                  style={{ color: "#9DA7BB" }}
+                                />
+                              </i>
+                            </div>
+                            <p style={{ fontSize: "16px" }}>
+                              {item.star}
+                            </p>
+                          </div>
+                        ) : (
+                          <div>
+                            {item.star === 3 ? (
+                              <div
+                                style={{
+                                  display: "flex",
+                                  gap: "5px",
+                                }}
+                              >
+                                <div className="star_card">
+                                  <i className="star_i">
+                                    <AiFillStar
+                                      style={{ color: "#FFD401" }}
+                                    />
+                                  </i>
+                                  <i className="star_i">
+                                    <AiFillStar
+                                      style={{ color: "#FFD401" }}
+                                    />
+                                  </i>
+                                  <i className="star_i">
+                                    <AiFillStar
+                                      style={{ color: "#FFD401" }}
+                                    />
+                                  </i>
+                                  <i className="star_i">
+                                    <AiFillStar
+                                      style={{ color: "#9DA7BB" }}
+                                    />
+                                  </i>
+                                  <i className="star_i">
+                                    <AiFillStar
+                                      style={{ color: "#9DA7BB" }}
+                                    />
+                                  </i>
+                                </div>
+                                <p style={{ fontSize: "16px" }}>
+                                  {item.star}
+                                </p>
+                              </div>
+                            ) : (
+                              <div>
+                                {item.star == 4 ? (
+                                  <div
+                                    style={{
+                                      display: "flex",
+                                      gap: "5px",
+                                    }}
+                                  >
+                                    <div className="star_card">
+                                      <i className="star_i">
+                                        <AiFillStar
+                                          style={{ color: "#FFD401" }}
+                                        />
+                                      </i>
+                                      <i className="star_i">
+                                        <AiFillStar
+                                          style={{ color: "#FFD401" }}
+                                        />
+                                      </i>
+                                      <i className="star_i">
+                                        <AiFillStar
+                                          style={{ color: "#FFD401" }}
+                                        />
+                                      </i>
+                                      <i className="star_i">
+                                        <AiFillStar
+                                          style={{ color: "#FFD401" }}
+                                        />
+                                      </i>
+                                      <i className="star_i">
+                                        <AiFillStar
+                                          style={{ color: "#9DA7BB" }}
+                                        />
+                                      </i>
+                                    </div>{" "}
+                                    <p style={{ fontSize: "16px" }}>
+                                      {item.star}
+                                    </p>
+                                  </div>
+                                ) : (
+                                  <div>
+                                    {item.star == 5 ? (
+                                      <div
+                                        style={{
+                                          display: "flex",
+                                          gap: "5px",
+                                        }}
+                                      >
+                                        <div className="star_card">
+                                          <i className="star_i">
+                                            <AiFillStar
+                                              style={{
+                                                color: "#FFD401",
+                                              }}
+                                            />
+                                          </i>
+                                          <i className="star_i">
+                                            <AiFillStar
+                                              style={{
+                                                color: "#FFD401",
+                                              }}
+                                            />
+                                          </i>
+                                          <i className="star_i">
+                                            <AiFillStar
+                                              style={{
+                                                color: "#FFD401",
+                                              }}
+                                            />
+                                          </i>
+                                          <i className="star_i">
+                                            <AiFillStar
+                                              style={{
+                                                color: "#FFD401",
+                                              }}
+                                            />
+                                          </i>
+                                          <i className="star_i">
+                                            <AiFillStar
+                                              style={{
+                                                color: "#FFD401",
+                                              }}
+                                            />
+                                          </i>
+                                        </div>
+                                        <p
+                                          style={{ fontSize: "16px" }}
+                                        >
+                                          {item.star}
+                                        </p>
+                                      </div>
+                                    ) : (
+                                      <div>
+                                        {item.star === null ? (
+                                          <div
+                                            style={{
+                                              display: "flex",
+                                              gap: "5px",
+                                            }}
+                                          >
+                                            <div className="star_card">
+                                              <i className="star_i">
+                                                <AiFillStar
+                                                  style={{
+                                                    color: "#9DA7BB",
+                                                  }}
+                                                />
+                                              </i>
+                                              <i className="star_i">
+                                                <AiFillStar
+                                                  style={{
+                                                    color: "#9DA7BB",
+                                                  }}
+                                                />
+                                              </i>
+                                              <i className="star_i">
+                                                <AiFillStar
+                                                  style={{
+                                                    color: "#9DA7BB",
+                                                  }}
+                                                />
+                                              </i>
+                                              <i className="star_i">
+                                                <AiFillStar
+                                                  style={{
+                                                    color: "#9DA7BB",
+                                                  }}
+                                                />
+                                              </i>
+                                              <i className="star_i">
+                                                <AiFillStar
+                                                  style={{
+                                                    color: "#9DA7BB",
+                                                  }}
+                                                />
+                                              </i>
+                                            </div>{" "}
+                                            <p
+                                              style={{
+                                                fontSize: "16px",
+                                              }}
+                                            >
+                                              0
+                                            </p>
+                                          </div>
+                                        ) : (
+                                          ""
+                                        )}{" "}
+                                      </div>
+                                    )}
+                                  </div>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        )}
                       </div>
                     )}
-                    <p>
-                      {item.star === null ? "0" : item.star} <span>(524)</span>
-                    </p>
                   </div>
                   <div className="hajm">
                     <h5>

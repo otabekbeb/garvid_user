@@ -4,7 +4,11 @@
     height: 100%;
 }
 
-
+.star_i{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
 .prover2 {
     width: 100% !important;
     height: 60vw;
@@ -13,14 +17,23 @@
     padding-top: 70px;
 
 }
-
+.fors_pp p{
+    margin-bottom: 0px;
+}
 body {
     overflow-x: hidden !important;
     background: #F1F2F6 !important;
     width: 100%;
 
 }
-
+.startuc{
+    margin-top: 4px !important;
+    margin-left: 10px;
+    /* margin-right: 7px; */
+}
+.startuc p{
+    margin-bottom: 0px !important;
+}
 .prover2-mni-search button {
     border: none;
     outline: none;

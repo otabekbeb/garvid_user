@@ -108,7 +108,6 @@ export default function Pdp() {
                   ""
                 )}
               </div>
-              container
               <div className="fil_text_blok_soz">
                 <h1
                   onClick={() => updatetoggle(2)}
