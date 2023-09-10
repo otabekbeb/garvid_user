@@ -47,6 +47,7 @@ import Ourcourse from './Ourcourse'
 import Team from '../img/Task.png'
 import '../css/workforteach.css'
 import Following_img from '../img/Following.png'
+import Sertificat from "./Sertifikate"
 // import { BsFillCloudArrowDownFill } from 'react-icons/bs'
 // import { FiEdit } from "react-icons/fi"
 // import sertifikat from '../img/Sertifikat.png'
@@ -1053,6 +1054,7 @@ export default function Mentor() {
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(7)} style={toggle === 7 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Test</h1></div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My subscribtions</h1>{toggle === 4 ? ("") : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Courses</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">{courses.length}  pieces</div>) : ("")}</div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(6)} style={toggle === 6 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Sertificat</h1>{toggle === 6 ? (<div className="fil_text_blok_kurs_lenght">{courses.length}  pieces</div>) : ("")}</div>
           </div>
           <div className="profil_blok_menu_size">
             <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
@@ -1064,7 +1066,8 @@ export default function Mentor() {
             <h1 onClick={() => updatetoggle(3)} className='fromMenu'>Tasks</h1>
             <h1 onClick={() => updatetoggle(7)} className='fromMenu'>Test</h1>
             <h1 onClick={() => updatetoggle(4)} className='fromMenu'>My subscribtions</h1>
-            <h1 onClick={() => updatetoggle(5)} className='fromMenu'>My subscribers</h1>
+            <h1 onClick={() => updatetoggle(5)} className='fromMenu'>Courses</h1>
+            <h1 onClick={() => updatetoggle(6)} className='fromMenu'>Sertificat</h1>
           </div>
         </div>
 
@@ -1387,6 +1390,9 @@ export default function Mentor() {
         </div>
         <div className={toggle === 5 ? "show-content" : "content"}>
           <Ourcourse />
+        </div>
+        <div className={toggle === 6 ? "show-content" : "content"}>
+          <Sertificat />
         </div>
       </div>
 
