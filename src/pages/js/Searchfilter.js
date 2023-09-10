@@ -72,29 +72,33 @@ export default function Searchfilter() {
       })
       .catch((err) => {});
 
-    axios
-      .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      })
-      .then((res) => {
-        axios
-          .get(`${url}/api/course`, {
-            header: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
+      axios.get(`${url}/auth/oneuser`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res10=>{
+        res10.data.map(ite=>{
+          axios
+          .get(`${url}/api/mycourse/${ite.id}`, {
+            headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
           })
-          .then((res1) => {
-            for (let i = 0; i < res.data.length; i++) {
-              for (let j = 0; j < res1.data.length; j++) {
-                if (res.data[i].id == res1.data[j].id) {
-                  res.data[i].star = res1.data[j].star;
+          .then((res) => {
+            axios
+              .get(`${url}/api/course`, {
+                header: {
+                  Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+              })
+              .then((res1) => {
+                for (let i = 0; i < res.data.length; i++) {
+                  for (let j = 0; j < res1.data.length; j++) {
+                    if (res.data[i].id == res1.data[j].id) {
+                      res.data[i].star = res1.data[j].star;
+                    }
+                  }
                 }
-              }
-            }
-            setKursdata(res.data);
-            localStorage.setItem("mycourseUser", res.data.length)
+                setKursdata(res.data);
+                localStorage.setItem("mycourseUser", res.data.length)
+              });
           });
-      });
+        })
+      })
     setLoader(0);
   }, []);
 

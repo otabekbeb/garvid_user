@@ -46,8 +46,12 @@ export default function Sertificate_create() {
         axios.post(`${url}/edu/sertificat`, formdata, {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         }).then(res => {
+            document.querySelector("#sertificate_post_header").style = "display:none;"
             Swal.fire("success")
-            window.location.reload()
+            axios.get(`${url}/edu/sertificat`).then(res => {
+                var a = res.data.filter(item => item.mentor == localStorage.getItem("OneuserId"))
+                setSertificat(a)
+            })
         }).catch(err => {
             Swal.fire(err)
         })
@@ -67,16 +71,20 @@ export default function Sertificate_create() {
         axios.put(`${url}/edu/sertificat/${sertificatId}`, formdata, {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         }).then(res => {
+            document.querySelector("#sertificate_edit_header").style = "display:none;"
             Swal.fire("success")
-            window.location.reload()
+            axios.get(`${url}/edu/sertificat`).then(res => {
+                var a = res.data.filter(item => item.mentor == localStorage.getItem("OneuserId"))
+                setSertificat(a)
+            })
         }).catch(err => {
             Swal.fire(err)
         })
-        axios.get(`${url}/edu/sertificat`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-            setSertificatId(res.data)
-        }).catch(err => {
-            console.log(err);
-        })
+        // axios.get(`${url}/edu/sertificat`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
+        //     setSertificatId(res.data)
+        // }).catch(err => {
+        //     console.log(err);
+        // })
     }
 
 
@@ -86,7 +94,6 @@ export default function Sertificate_create() {
 
     useEffect(() => {
         axios.get(`${url}/edu/sertificat`).then(res => {
-
             var a = res.data.filter(item => item.mentor == localStorage.getItem("OneuserId"))
             setSertificat(a)
         })
@@ -153,7 +160,7 @@ export default function Sertificate_create() {
                         </div>
                         <textarea name="" id="" cols="30" rows="10" placeholder='Description' className='sertificate_description_edit'></textarea>
                         <div className="sertificate_botom_df_edit">
-                            <button className='sertificate_btn_send' onClick={() => sertificateput()}>send</button>
+                            <button className='sertificate_btn_send' onClick={() => sertificateput()}>Edit</button>
                             <input type="date" name="" id="" className='sertificate_date_inp_edit' />
                         </div>
                     </div>

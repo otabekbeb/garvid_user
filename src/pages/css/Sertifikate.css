@@ -21,7 +21,8 @@
     align-items: center;
 }
 .sertifikat {
-    width: 460px;
+    width: 400px;
+    overflow: hidden;
     height: auto;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
@@ -60,8 +61,10 @@
 
 .button_text_df_blok_pitani_pro_Max {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 @media (max-width:1544px) {
@@ -75,20 +78,6 @@
     }
 }
 
-@media (max-width:1014px) {
-    .sertifikat {
-        width: 350px;
-        height: 320px;
-    }
-
-    .sertifikat img {
-        height: 200px;
-    }
-
-    .button_text_df_blok_pitani_pro_Max {
-        flex-direction: column;
-    }
-}
 
 @media (max-width:776px) {
     .card_sertifikat {
@@ -105,7 +94,7 @@
 }
 @media (max-width:501px) {
     .sertifikat{
-        width: 100% ;
+        width: 80%;
     }
     .card_sertifikat {
         width: 100% !important ;
@@ -114,11 +103,11 @@
         gap: 50px;
     }
     .button_text_df_blok_pitani_pro_Max{
-        width: 100%;
+        width: 95%;
+        margin: auto !important;
     }
     .text_pro_max_gap_sos_lift_gr{
         width: 90%;
-        
     }
 }
 @media (max-width:772px) {
@@ -143,7 +132,6 @@
 
     .Dast_konter_dust_pro_dest {
         width: 80px;
-        margin-top: 10%;
         font-size: 15px !important;
     }
 
@@ -174,9 +162,6 @@
 @media (max-width:326px) {
     .text_pro_max_gap_sos_lift_gr{
         width: 90%;
-    }
-    .sertifikat{
-        height: 370px;
     }
     .Dast_konter_dust_pro_dest{
         width: 70%;

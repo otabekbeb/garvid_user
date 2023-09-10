@@ -11,13 +11,12 @@ import Groupimg from '../img/Group 2.png'
 export default function Sertifikate() {
     const [state1, setState1] = React.useState();
     const [sertifikat, setSertifikat] = useState([])
+
+
     useEffect(() => {
         setState1(
             localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
         );
-    }, []);
-
-    useEffect(() => {
         axios.get(`${url}/edu/student_sertificat`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
             setSertifikat(res.data)
         })
@@ -36,12 +35,12 @@ export default function Sertifikate() {
                              
                            {/* <a href="/Ourcourse">  <button style={{background:'#44bef1  '}} className="delete_btn_yes">Купить курс</button></a> */}
                            </div>
-                         </div>) : (<div>
+                         </div>) : (<div style={{display:'flex',alignItems:'center',justifyContent:'space-around',flexWrap:'wrap'}}>
                             {sertifikat.map(item => {
                                 return (
-                                    <div className="sertifikat">
+                                    <div style={{marginBottom:"15px"}} className="sertifikat">
                                         <div className="sertifikat_image">
-                                            {item.image === null ? (<img src={img_for_null} alt="" />) : (<img src={item.image} alt="" />)}
+                                            {item.image === null ? (<img  src={img_for_null} alt="" />) : (<img  src={item.image} alt="" />)}
                                         </div>
                                         <div className="button_text_df_blok_pitani_pro_Max">
                                             <div className="text_pro_max_gap_sos_lift_gr">
