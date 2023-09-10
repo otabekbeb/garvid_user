@@ -51,6 +51,13 @@ export default function Searchfilter() {
   }
 
   useEffect(() => {
+    // axios
+    //   .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
+    //     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+    //   })
+    //   .then((res) => {
+    //     setKursdata(res.data);
+    //   });
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );

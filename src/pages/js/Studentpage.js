@@ -366,6 +366,13 @@ export default function Mentor() {
 
   useEffect(() => {
     axios
+      .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        setKursdata(res.data);
+      });
+    axios
       .get(`${url}/auth/oneuser/`, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
@@ -1045,7 +1052,6 @@ export default function Mentor() {
       <div>
         <div className="gray_blok">
           <div className="fil_text_blok">
-
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(0)} style={toggle === 0 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Education</h1>{toggle === 0 ? (<div className="fil_text_blok_kurs_lenght">{education.length} pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Chat</h1></div>
@@ -1067,7 +1073,6 @@ export default function Mentor() {
             <h1 onClick={() => updatetoggle(5)} className='fromMenu'>My subscribers</h1>
           </div>
         </div>
-
         <div className={toggle === 1 ? "show-content" : "content"}><div>
           <div className="Filter">
             <div className="blur_blok">
