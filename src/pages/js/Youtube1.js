@@ -66,6 +66,7 @@ export default function Youtube1() {
   const [task, setTask] = useState([]);
   const [mark, setMark] = useState([]);
   const [markPut, setMarkPut] = useState();
+  const [markPutID, setMarkPutID] = useState();
   const [page, setPage] = useState(1);
   const [page1, setPage1] = useState(1);
   const [videoDuration, setVideoDuration] = useState(0);
@@ -380,6 +381,20 @@ export default function Youtube1() {
       .then((res) => {
           openModalOtvet11(subcoment)
           document.querySelector("#chat_text1").value ="";
+              axios
+      .get(
+        `${url}/api/course_theme_comment/${
+          JSON.parse(localStorage.getItem("page_video")).id
+        }`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      )
+      .then((res) => {
+        setComment(res.data);
+      });
 
       })
       .catch((err) => {
@@ -394,6 +409,20 @@ export default function Youtube1() {
       })
       .then((res) => {
         subcoment==0?getData():openModalOtvet11(subcoment)
+            axios
+      .get(
+        `${url}/api/course_theme_comment/${
+          JSON.parse(localStorage.getItem("page_video")).id
+        }`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      )
+      .then((res) => {
+        setComment(res.data);
+      });
       })
       .catch((err) => {});
   }
@@ -404,7 +433,7 @@ export default function Youtube1() {
   }
   function openModalOtvet11(id) {
     setSubcoment(id);
-    axios
+    axios 
       .get(`${url}/api/course_theme_comment/subcomment/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
@@ -467,6 +496,7 @@ export default function Youtube1() {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
+        document.querySelector("#chat_text12").value=""
         axios
         .get(`${url}/api/course_theme_comment/task/${JSON.parse(localStorage.getItem("page_video")).id}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -501,8 +531,24 @@ export default function Youtube1() {
     document.querySelector(".mark-uchun-koish-joy").style = "display:flex ";
   }
   function markOpen2(id) {
-    setMarkPut(id)
-    document.querySelector(".mark-uchun-koish-joy1").style = "display:flex ";
+    axios.get(`${url}/api/course_theme_task_student/`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res=>{
+      axios.get(`${url}/api/course_theme_comment/task/${JSON.parse(localStorage.getItem("page_video")).id}`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res1=>{
+      const Filter=res.data.filter(item=>item.mark==id.mark)
+      var a=[]
+      for (let i = 0; i < Filter.length; i++) {
+        for (let j = 0; j < res1.data.length; j++) {
+          if(Filter[i].feedback==res1.data[j].id){
+          a.push(Filter[i])
+          }
+        }
+      }
+      a.map(item=>{
+        document.querySelector(".mark-uchun-koish-joy1").style = "display:flex";
+        setMarkPutID(item.id)
+      })
+        setMarkPut(id.id)
+      })
+    })
   }
   function aftermarkopen(id) {
     var formdata = new FormData();
@@ -516,7 +562,6 @@ export default function Youtube1() {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
-        document.querySelector(".m-comment-mark").style = "display:none";
         document.querySelector(".mark-uchun-koish-joy").style = "display:none";
         axios
         .get(`${url}/api/course_theme_comment/task/${JSON.parse(localStorage.getItem("page_video")).id}`, {
@@ -540,7 +585,7 @@ export default function Youtube1() {
   }
   function aftermarkopen2(id) {
     var formdata = new FormData();
-    formdata.append("mark", page);
+    formdata.append("mark", page1);
     formdata.append(
       "image",
       document.querySelector(".comment_file12").files[0]
@@ -552,7 +597,7 @@ export default function Youtube1() {
     );
     formdata.append("feedback", markPut);
     axios
-      .put(`${url}/api/course_theme_task_student/${markPut}`, formdata, {
+      .put(`${url}/api/course_theme_task_student/${markPutID}`, formdata, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
@@ -649,7 +694,8 @@ export default function Youtube1() {
                             <p
                               onClick={() => {
                                 setPage5(2);
-                                painModal1(); 
+                                painModal1();
+                                document.querySelector(".m_otdel_bgc").style = "display: block"; 
                               }}
                               className="zadaniya1"
                             >
@@ -1170,7 +1216,7 @@ export default function Youtube1() {
                                                         </p>):(item.mark!==0?(<p
                                                           className="m-comment-mark"
                                                           onClick={() => {
-                                                            markOpen2(item.id);
+                                                            markOpen2(item);
                                                             setPage(1);
                                                           }}
                                                         >
@@ -1193,8 +1239,9 @@ export default function Youtube1() {
                                                         </>
                                                       ):("")}
                                                       {item5.id ==
-                                                      item.user_id ? (
-                                                        <p
+                                                        item.user_id ? (
+                                                        item.mark==0?(
+                                                          <p
                                                           className="m_comment_delete1"
                                                           onClick={() => {
                                                             deleteComment1(
@@ -1205,9 +1252,11 @@ export default function Youtube1() {
                                                           <AiOutlineDelete />
                                                           <span>удалить</span>
                                                         </p>
+                                                        ):("")
                                                       ) : (
                                                         ""
                                                       )}
+                                                      
                                                     </div>
                                                   );
                                                 })}

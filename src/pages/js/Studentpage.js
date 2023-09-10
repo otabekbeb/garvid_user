@@ -745,6 +745,7 @@ export default function Mentor() {
         if(res.data.one==null){
           document.querySelector("#course_video_error").style = "display:flex";
         }else{
+          localStorage.setItem("page_video",JSON.stringify(res.data.one))
           window.location = "/video";
           localStorage.setItem("abbas", item.id);
         }
