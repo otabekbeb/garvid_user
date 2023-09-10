@@ -601,8 +601,10 @@ export default function Searchfilter() {
             if(res.data.one==null){
               document.querySelector("#course_video_error").style = "display:flex";
             }else{
-              window.location = "/video";
-              localStorage.setItem("abbas", item.id);
+                localStorage.setItem("page_video",JSON.stringify(res.data.one))
+                window.location = "/video";
+                localStorage.setItem("abbas", item.id);
+                
             }
             
           })
