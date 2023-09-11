@@ -21,6 +21,19 @@ export default function Sertifikate() {
             setSertifikat(res.data)
         })
     },[])
+
+
+    const Png="http://localhost:3000/logo512.png"
+
+    const downloadFileAtURL=(url,title)=>{
+    const aTag = document.createElement('a')
+    aTag.href=`http://localhost:3000/${url}`
+    aTag.setAttribute('download',title)
+    document.body.appendChild(aTag)
+    aTag.click()
+    aTag.remove()
+    }
+
     return (
         <div>
 
@@ -47,7 +60,9 @@ export default function Sertifikate() {
                                                 <h4>{item.title}</h4>
                                                 <p>{item.description}</p>
                                             </div>
-                                            <button className='Dast_konter_dust_pro_dest' >Programming</button>
+                                            <button
+                                            onClick={()=>{downloadFileAtURL(item.file,item.title)}} 
+                                            className='Dast_konter_dust_pro_dest' >Programming</button>
                                         </div>
                                     </div>
                                 )
