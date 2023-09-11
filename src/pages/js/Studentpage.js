@@ -18,6 +18,7 @@ import UserChat from "./userChat"
 import Education from "./Education"
 import Sertifikat from './Workforteach'
 import Azo from "./Azo"
+import Loader from './loader'
 import Usernavbar from './Navbar'
 import { TiThMenu } from 'react-icons/ti'
 import Futer from "./Footer1"
@@ -207,6 +208,7 @@ export default function Mentor() {
   const [page, setpage] = useState(1)
   const [counter, setCounter] = React.useState(59)
   const [counter1, setCounter1] = React.useState(70)
+  const[loader,setLoader] = useState(1)
   const [counter2, setCounter2] = React.useState(65)
   const [counter3, setCounter3] = React.useState(70)
   const [counter4, setCounter4] = React.useState(80)
@@ -385,6 +387,7 @@ export default function Mentor() {
       })
       .then((res) => {
         setKursdata(res.data);
+        setLoader(0);
       });
     axios
       .get(`${url}/auth/oneuser/`, {
@@ -775,7 +778,7 @@ export default function Mentor() {
     <div className='studentpagess'>
       <Usernavbar />
 
-      <div>
+      {loader==0?(<><div>
         <div className="profil_size_df">
           <div className="profil_size">
             <div className="profil_blok_bir">
@@ -1691,7 +1694,7 @@ export default function Mentor() {
         <img src={KursClose} alt="" />
         <p>К сожалению, к этому курсу не прикреплено видео.</p>
       </div>
-    </div>
+    </div></>):(<Loader/>)}
 
       <Futer />
     </div>
