@@ -56,7 +56,7 @@ import Oragle from '../img/Oragle.png'
 import Sprint from '../img/Spring.png'
 import Start from '../img/Start.png'
 import FollowCard from '../js/Mysubscribers'
-import Groupimg from '../img/Group 2.png'
+import Groupimg from "../img/Teacher-cuate.png";
 import azoimg from "../img/Ellipse.jpg"
 export default function Profil() {
   const [data, setData] = useState([]);
@@ -654,23 +654,23 @@ export default function Profil() {
           </div>
           <div className="kurs_cards">
             {kursdata === 0 ? (
-              <div className="delete_padding1">
-                <img src={Groupimg} alt="" />
-                <h4 style={{ fontSize: "30px", opacity: "0.3" }}>
-                  You didn't buy the course
-                </h4>
-                <div className="delete_btns">
-                  <a href="/Ourcourse">
-                    {" "}
-                    <button
-                      style={{ background: "#44bef1  " }}
-                      className="delete_btn_yes"
-                    >
-                      Buy a course
-                    </button>
-                  </a>
-                </div>
-              </div>
+                 <div className="delete_padding1">
+                 <img src={Groupimg} alt="" />
+                 <h4 style={{ fontSize: "30px", opacity: "0.3" }}>
+                   You didn't buy the course
+                 </h4>
+                 <div className="delete_btns">
+                   <a href="/Ourcourse">
+                     {" "}
+                     <button
+                       style={{ background: "#44bef1  " }}
+                       className="delete_btn_yes"
+                     >
+                       Buy a course
+                     </button>
+                   </a>
+                 </div>
+               </div>
             ) : (
               <div className="cursu" style={{ display: "flex" }}>
                 {kursdata.map((item) => {
@@ -1173,12 +1173,14 @@ export default function Profil() {
           <div>
             <div className="cards_sertifikat">
               {sertifikat.length === 0 ? (
-                <div className="delete_padding1">
-                  <img src={Groupimg} alt="" />
-                  <h4>Он еще не получил сертификат</h4>
+                  <div className="delete_padding1" >
+                  <img style={{width:"400px" ,height:"400px"}} src="https://cdn3d.iconscout.com/3d/premium/thumb/certificate-4652499-3892851.png" alt="" />
+                  <h4 style={{ fontSize: "30px", opacity: "0.3" ,marginTop:"-30px"}}>
+                   You didn't buy the course
+                 </h4>
                   <div className="delete_btns">
-
-                    <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>
+                    
+                  {/* <a href="/Ourcourse">  <button style={{background:'#44bef1  '}} className="delete_btn_yes">Купить курс</button></a> */}
                   </div>
                 </div>) : (<div className="card_sertifikat">
                   {sertifikat.map(item => {
