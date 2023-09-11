@@ -30,7 +30,7 @@ export default function Searchfilter() {
   const [kursdata, setKursdata] = useState([]);
   const [type, settype] = useState([]);
   const [state1, setState1] = React.useState();
-  const [loader, setLoader] = useState(0);
+  const [loader, setLoader] = useState(1);
   const [oneuser, setOneuser] = useState([]);
   const [star, setStar] = useState([]);
 
@@ -95,11 +95,11 @@ export default function Searchfilter() {
                 }
                 setKursdata(res.data);
                 localStorage.setItem("mycourseUser", res.data.length)
+                setLoader(0);
               });
           });
         })
       })
-    setLoader(0);
   }, []);
 
   function filter(id) {
