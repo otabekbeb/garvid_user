@@ -50,6 +50,7 @@ export default function Searchfilter() {
   const [isModalOpen3, setIsModalOpen3] = useState(false);
   const [themeId,setThemeId]=useState()
   const [CategoryId,setCategoryId]=useState()
+  const [loader,setLoader] = useState(1)
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -514,8 +515,7 @@ export default function Searchfilter() {
         const searchdata = res.data.filter((item) => {
           return searchRegex.test(item.name);
         });
-        const Filter=searchdata.filter(item=>item.author==localStorage.getItem("OneuserId"))
-        setKursdata(Filter);
+        setKursdata(searchdata);
       })
       .catch((err) => {});
   };
