@@ -1,80 +1,135 @@
-import React, { useState, useEffect } from 'react'
-import '../css/Sertifikate.css'
-import Sertifikat from '../img/Sertifikat.png'
-import Start from '../img/Start.png'
-import axios from 'axios'
-import url from './Host'
-import { AiOutlineArrowDown } from 'react-icons/ai'
-import '../css/Nosignal.css'
-import img_for_null from '../img/download.png'
-import Groupimg from '../img/Group 2.png'
+import React, { useState, useEffect } from "react";
+import "../css/Sertifikate.css";
+import Sertifikat from "../img/Sertifikat.png";
+import Start from "../img/Start.png";
+import axios from "axios";
+import url from "./Host";
+import { AiOutlineArrowDown } from "react-icons/ai";
+import "../css/Nosignal.css";
+import img_for_null from "../img/download.png";
+import Groupimg from "../img/Group 2.png";
+import {
+  PDFDownloadLink,
+  Document,
+  Page,
+  Text,
+  View,
+  Image,
+} from "@react-pdf/renderer";
+
 export default function Sertifikate() {
-    const [state1, setState1] = React.useState();
-    const [sertifikat, setSertifikat] = useState([])
+  const [state1, setState1] = React.useState();
+  const [sertifikat, setSertifikat] = useState([]);
+  const [sertifikatID, setSertifikatID] = useState();
 
+  const PDPD = (item) => (
+        <Document>
+                <Page
+                  style={{ paddingHorizontal: 35, paddingTop: 35, paddingBottom: 65 }}
+                >
+                  <View>
+                    <Image style={{ marginBottom: 12 }} src={item.item.file} />
+                    <Image style={{ marginBottom: 12 }} src={item.item.image} />
+                    <Text style={{ fontSize: 24, fontWeight: "900" }} fixed>
+                      {item.item.title}
+                    </Text>
+                    <Text style={{ fontSize: 13, fontWeight: "100" }} fixed>
+                      {item.item.description}
+                    </Text>
+                  </View>
+                  <Text
+                    style={{
+                      position: "absolute",
+                      fontSize: 12,
+                      bottom: 30,
+                      left: 0,
+                      right: 0,
+                      textAlign: "center",
+                      color: "grey",
+                    }}
+                    render={({ pageNumber, totalPages }) =>
+                      `${pageNumber} / ${totalPages}`
+                    }
+                  />
+                </Page>
+        </Document>
+      );
 
-    useEffect(() => {
-        setState1(
-            localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
-        );
-        axios.get(`${url}/edu/student_sertificat`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
-            setSertifikat(res.data)
+  useEffect(() => {
+    setState1(
+      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
+    );
+    axios
+      .get(`${url}/edu/student_sertificat`, {
+        headers: { Authorization: "Bearer" + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        axios.get(`${url}/auth/oneuser`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res1=>{
+            res1.data.map(one=>{
+                const Filter=res.data.filter(item=>item.student_id==one.id)
+                setSertifikat(Filter);  
+            })
         })
-    },[])
+      });
+  }, []);
 
-
-    const Png="http://localhost:3000/logo512.png"
-
-    const downloadFileAtURL=(url,title)=>{
-    const aTag = document.createElement('a')
-    aTag.href=`http://localhost:3000/${url}`
-    aTag.setAttribute('download',title)
-    document.body.appendChild(aTag)
-    aTag.click()
-    aTag.remove()
-    }
-
-    return (
-        <div>
-
-            <div>
-                <div className="cards_sertifikat">
-                    <div className="card_sertifikat">
-                        {sertifikat.length === 0 ? (
-                           <div className="delete_padding1">
-                           <img src={Groupimg} alt="" />
-                           <h4>У вас нет сертификата</h4>
-                           <div className="delete_btns">
-                             
-                           {/* <a href="/Ourcourse">  <button style={{background:'#44bef1  '}} className="delete_btn_yes">Купить курс</button></a> */}
-                           </div>
-                         </div>) : (<div style={{display:'flex',alignItems:'center',justifyContent:'space-around',flexWrap:'wrap'}}>
-                            {sertifikat.map(item => {
-                                return (
-                                    <div style={{marginBottom:"15px"}} className="sertifikat">
-                                        <div className="sertifikat_image">
-                                            {item.image === null ? (<img  src={img_for_null} alt="" />) : (<img  src={item.image} alt="" />)}
-                                        </div>
-                                        <div className="button_text_df_blok_pitani_pro_Max">
-                                            <div className="text_pro_max_gap_sos_lift_gr">
-                                                <h4>{item.title}</h4>
-                                                <p>{item.description}</p>
-                                            </div>
-                                            <button
-                                            onClick={()=>{downloadFileAtURL(item.file,item.title)}} 
-                                            className='Dast_konter_dust_pro_dest' >Programming</button>
-                                        </div>
-                                    </div>
-                                )
-                            })}</div>)}
-
-
-
-                    </div>
+  return (
+    <div>
+      <div>
+        <div className="cards_sertifikat">
+          <div className="card_sertifikat">
+            {sertifikat.length === 0 ? (
+              <div className="delete_padding1">
+                <img src={Groupimg} alt="" />
+                <h4>У вас нет сертификата</h4>
+                <div className="delete_btns">
+                  {/* <a href="/Ourcourse">  <button style={{background:'#44bef1  '}} className="delete_btn_yes">Купить курс</button></a> */}
                 </div>
-
-            </div>
-
+              </div>
+            ) : (
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-around",
+                  flexWrap: "wrap",
+                }}
+              >
+                {sertifikat.map((item) => {
+                  return (
+                    <div
+                      style={{ marginBottom: "15px" }}
+                      className="sertifikat"
+                    >
+                      <div className="sertifikat_image">
+                        {item.image === null ? (
+                          <img src={img_for_null} alt="" />
+                        ) : (
+                          <img src={item.image} alt="" />
+                        )}
+                      </div>
+                      <div className="button_text_df_blok_pitani_pro_Max">
+                        <div className="text_pro_max_gap_sos_lift_gr">
+                          <h4>{item.title}</h4>
+                          <p>{(item.description).slice(0,20)}</p>
+                        </div>
+                        <PDFDownloadLink
+                          document={<PDPD item={item}/>}
+                          fileName={item.title}
+                        >
+                          <button onClick={()=>{setSertifikatID(item.id)}} className="Dast_konter_dust_pro_dest">
+                            Programming
+                          </button>
+                        </PDFDownloadLink>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
