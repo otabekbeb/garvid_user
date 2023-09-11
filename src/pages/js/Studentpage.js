@@ -377,6 +377,7 @@ export default function Mentor() {
         res1.data.map(item1=>{
           axios.get(`${url}/api/nomycourse/${item1.id}`,{headers:{Authorization: "Bearer " + localStorage.getItem("token")}}).then(res=>{
             setCourses(res.data)
+            setLoader(0);
           })
         })
     })
@@ -387,7 +388,7 @@ export default function Mentor() {
       })
       .then((res) => {
         setKursdata(res.data);
-        setLoader(0);
+        
       });
     axios
       .get(`${url}/auth/oneuser/`, {
