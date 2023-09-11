@@ -270,7 +270,7 @@ export default function Searchfilter() {
               </div>
             </div>
             <div className="kurs_cards">
-              {kursdata === 0 ? (
+              {kursdata.lenght === 0 ? (
                 <div className="delete_padding1">
                   <img src={Groupimg} alt="" />
                   <h4 style={{ fontSize: "30px", opacity: "0.3" }}>
