@@ -27,7 +27,6 @@ export default function FollowCard() {
       }).catch(err=>{})
 
     }).catch(err => {
-      alert("ishlxadatoi")
     })
   }
   function folowcolor1(key) {

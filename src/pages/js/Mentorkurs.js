@@ -514,7 +514,8 @@ export default function Searchfilter() {
         const searchdata = res.data.filter((item) => {
           return searchRegex.test(item.name);
         });
-        setKursdata(searchdata);
+        const Filter=searchdata.filter(item=>item.author==localStorage.getItem("OneuserId"))
+        setKursdata(Filter);
       })
       .catch((err) => {});
   };

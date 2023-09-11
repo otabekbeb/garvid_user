@@ -46,7 +46,7 @@ export default function Azo() {
                 {follow.length === 0 ? (
                     <div className="delete_padding1">
                         <img style={{ width: '400px' }} src={Groupimg} alt="" />
-                        <h4 style={{ fontSize: '40px', opacity: '0.3' }}>No subscribers</h4>
+                        <h4 style={{ fontSize: '40px', opacity: '0.3' }}>No subscribtions</h4>
                         <div className="delete_btns">
                             <a href="/Ourcourse">
                                 {" "}
@@ -68,7 +68,7 @@ export default function Azo() {
                                             <a>
                                                 <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
                                                     <div className="our-team">
-                                                        <div className="picture">
+                                                        <div onClick={()=>{window.location="/teacherprofil"}} className="picture">
                                                             {item1.image === null ? (<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjDQxJomerNcXJqX7IQeLmKbFUA7U5JLanCEW23p8p52ZWtq3gcOcQEB4v_HegvorxeZM&usqp=CAU" />) : (<img className="img-fluid" src={item1.image} />)}
                                                         </div>
                                                         <div className="team-content">

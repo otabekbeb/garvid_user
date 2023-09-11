@@ -597,11 +597,11 @@ export default function Searchfilter() {
                               </h5>
                             </div>
                           </div>
-                          {/* <button className="button_circle">
+                          <button className="button_circle">
                             <AiOutlineArrowRight
                               onClick={() => videoPage(item)}
                             />
-                          </button> */}
+                          </button>
                         </div>
                       </div>
                     );

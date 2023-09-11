@@ -60,6 +60,7 @@ import Sertificat from "./Sertifikate"
 import { FiDownload } from "react-icons/fi"
 import { FaHourglassStart } from 'react-icons/fa'
 import { FaHourglassEnd } from 'react-icons/fa'
+import FollowCard from './FollowCard'
 // import Swal from "sweetalert2"; 
 // function openTest() {
 //   document.querySelector(".block-bir-variant1 p").style = `   background-color: #fcfcfc;
@@ -324,29 +325,33 @@ export default function Mentor() {
     //     console.log(error, "KURSDATA");
     //   }
     // };
-    axios
-    .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
-      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-    })
-    .then((res) => {
-      axios
-        .get(`${url}/api/course`, {
-          header: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
+    axios.get(`${url}/auth/oneuser`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res10=>{
+      res10.data.map(ite=>{
+        axios
+        .get(`${url}/api/mycourse/${ite.id}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
-        .then((res1) => {
-          for (let i = 0; i < res.data.length; i++) {
-            for (let j = 0; j < res1.data.length; j++) {
-              if (res.data[i].id == res1.data[j].id) {
-                res.data[i].star = res1.data[j].star;
+        .then((res) => {
+          axios
+            .get(`${url}/api/course`, {
+              header: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+              },
+            })
+            .then((res1) => {
+              for (let i = 0; i < res.data.length; i++) {
+                for (let j = 0; j < res1.data.length; j++) {
+                  if (res.data[i].id == res1.data[j].id) {
+                    res.data[i].star = res1.data[j].star;
+                  }
+                }
               }
-            }
-          }
-          setKursdata(res.data);
-          // localStorage.setItem("mycourseUser", res.data.length)
+              setKursdata(res.data);
+              localStorage.setItem("mycourseUser", res.data.length)
+            });
         });
-    });
+      })
+    })
     axios.get(`${url}/API/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setNatlifikation(res.data)
       axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
@@ -366,6 +371,14 @@ export default function Mentor() {
   }, []);
 
   useEffect(() => {
+    axios.get(`${url}/auth/oneuser` ,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res1=>{
+        res1.data.map(item1=>{
+          axios.get(`${url}/api/nomycourse/${item1.id}`,{headers:{Authorization: "Bearer " + localStorage.getItem("token")}}).then(res=>{
+            setCourses(res.data)
+          })
+        })
+    })
+    
     axios
       .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -395,10 +408,8 @@ export default function Mentor() {
 
 
   }, []);
+
   useEffect(() => {
-    axios.get(`${url}/api/nomycourse/${localStorage.getItem("OneuserId")}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-      setCourses(res.data)
-  }).catch(err=>{})
     axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setUsers(res.data)
     })
@@ -1058,6 +1069,7 @@ export default function Mentor() {
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Chat</h1></div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Tasks</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("stTasks")} pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(7)} style={toggle === 7 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Test</h1></div>
+            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(10)} style={toggle === 10 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>All teachers</h1>{toggle === 10 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("FollowCard")} pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My subscribtions</h1>{toggle === 4 ? ("") : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Courses</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">{courses.length}  pieces</div>) : ("")}</div>
             <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(6)} style={toggle === 6 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Sertificat</h1>{toggle === 6 ? (<div className="fil_text_blok_kurs_lenght">{courses.length}  pieces</div>) : ("")}</div>
@@ -1071,6 +1083,7 @@ export default function Mentor() {
             <h1 onClick={() => updatetoggle(2)} className='fromMenu'>Chat</h1>
             <h1 onClick={() => updatetoggle(3)} className='fromMenu'>Tasks</h1>
             <h1 onClick={() => updatetoggle(7)} className='fromMenu'>Test</h1>
+            <h1 onClick={() => updatetoggle(10)} className='fromMenu'>All teachers</h1>
             <h1 onClick={() => updatetoggle(4)} className='fromMenu'>My subscribtions</h1>
             <h1 onClick={() => updatetoggle(5)} className='fromMenu'>Courses</h1>
             <h1 onClick={() => updatetoggle(6)} className='fromMenu'>Sertificat</h1>
@@ -1456,6 +1469,7 @@ export default function Mentor() {
           <Testpage />
         </div>
         <div className={toggle === 2 ? "show-content" : "content"}><UserChat /></div>
+        <div className={toggle === 10 ? "show-content" : "content"}><FollowCard /></div>
         <div className={toggle === 0 ? "show-content" : "content"}>
           <Education />
 
@@ -1605,55 +1619,7 @@ export default function Mentor() {
 
 
         <div className={toggle === 4 ? "show-content" : "content"}>
-          <div className='followi1'>
-
-
-            <div className="followcards1">
-              {follow.length !== 0 ? (
-                <div className="delete_padding1">
-                  <img style={{ width: '400px' }} src={Following_img} alt="" />
-                  <h4 style={{ fontSize: '30px', opacity: '0.3' }}>No subscribers</h4>
-                  {/* <div className="delete_btns">
-                            <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>
-                        </div> */}
-                </div>) : (<div>
-                  {follow.map((item, key) => {
-                    if (following == item.minuser) {
-                      return <div>
-                        {users.map(item1 => {
-
-                          if (item1.id == item.topuser) {
-                            return (
-                              <a>
-                                <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
-                                  <div className="our-team">
-                                    <div className="picture">
-                                      {item1.image === null ? (<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjDQxJomerNcXJqX7IQeLmKbFUA7U5JLanCEW23p8p52ZWtq3gcOcQEB4v_HegvorxeZM&usqp=CAU" />) : (<img className="img-fluid" src={item1.image} />)}
-                                    </div>
-                                    <div className="team-content">
-                                      <h3 style={{ lineHeight: "70px" }} className="name">{item1.username}</h3>
-                                    </div>
-                                    <center><ul className="social">
-                                      <button style={{ background: "gray" }} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
-                                    </ul></center>
-                                  </div>
-                                </div>
-                              </a>
-
-
-                            )
-                          }
-                        })}
-                      </div>
-                    }
-                  })}
-                </div>)}
-
-
-
-
-            </div>
-          </div>
+          <Azo/>
         </div>
         <div className={toggle === 5 ? "show-content" : "content"}>
           <Ourcourse />

@@ -26,12 +26,18 @@ export default function Pdp() {
   useEffect(() => {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en",
-      axios.get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-        setKursData(res.data)
+      axios.get(`${url}/auth/oneuser`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res10=>{
+        res10.data.map(ite=>{axios.get(`${url}/api/mycourse/${ite.id}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+          setKursData(res.data)
+        }) })
       }),
-      axios.get(`${url}/api/nomycourse/${localStorage.getItem("OneuserId")}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-        setCourses(res.data)
+      axios.get(`${url}/auth/oneuser`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res10=>{
+        res10.data.map(ite=>{axios.get(`${url}/api/nomycourse/${ite.id}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+          setCourses(res.data)
+        }) })
       }),
+      
+      
       axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
         setFollow(res.data)
     }).catch(err=>{})
