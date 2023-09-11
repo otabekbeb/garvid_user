@@ -105,7 +105,6 @@ export default function Proverr2() {
 
 
         }).catch(err => {
-            alert("ishlxadatoi")
         })
         document.querySelector(".aaa").classList.toggle("bbb")
         document.querySelector(".aa").classList.toggle("bb")
@@ -126,7 +125,6 @@ export default function Proverr2() {
         axios.get(`${url}/api/follow/`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
             setbosildi(res.data)
         }).catch(err => {
-            alert("ishlxadatoi")
         })
         // axios.get(`${url}/api/course_data_category/course/${localStorage.getItem("courseid")}`,{headers:{Authorization :  `Bearer ${localStorage.getItem("token")}`}}).then(res=>{ 
         //     setKurs(res.data.one ,"salommmmm")

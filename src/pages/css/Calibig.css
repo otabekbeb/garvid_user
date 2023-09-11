@@ -339,7 +339,7 @@ color: #fff;
         border: 1px solid #44bef1;
         border-radius: 50%;
         background: white;
-        top: 85%;
+        /* top: 85%; */
         color: #44bef1;
         right: 32px;
         display: flex;
@@ -440,7 +440,7 @@ color: #fff;
 }
 
 .kurs_paddaing_auto {
-    padding: 10px 20px 20px 20px;
+    padding: 40px 20px 10px 20px;
 }
 
 .dashed {

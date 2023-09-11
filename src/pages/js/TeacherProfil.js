@@ -56,7 +56,7 @@ import Oragle from '../img/Oragle.png'
 import Sprint from '../img/Spring.png'
 import Start from '../img/Start.png'
 import FollowCard from '../js/Mysubscribers'
-import Groupimg from '../img/Group 2.png'
+import Groupimg from "../img/Teacher-cuate.png";
 import azoimg from "../img/Ellipse.jpg"
 export default function Profil() {
   const [data, setData] = useState([]);
@@ -70,6 +70,36 @@ export default function Profil() {
   const [sertifikat, setSertifikat] = useState([])
   const [follow, setFollow] = useState([])
   const [following, setFollowing] = useState(localStorage.getItem("OneuserId"))
+
+  const [following1, setFollowing1] = useState(localStorage.getItem("allUsersId"))
+
+  function folowcolor1(key) {
+    axios.delete(`${url}/api/follow/${key}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      window.location.reload()
+    }).catch(err => {
+      alert("xato")
+    })
+  }
+  useEffect(() => {
+    axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setFollow(res.data)
+      localStorage.setItem("subscribersLength", res.data.filter(filter => filter.topuser == localStorage.getItem("OneuserId")).length)
+    })
+  }, [])
+  function obuna() {
+    document.querySelector('#azo_bolgan_katta_div_text_block_button').classList.toggle("obuna1")
+  }
+  function obuna2() {
+    document.querySelector('#azo_bolgan_katta_div_text_block_button1').classList.toggle("obuna2")
+  }
+
+  useEffect(() => {
+    axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      setUsers(res.data)
+    })
+  }, []);
+
+
   function Filter() {
     var a = document.querySelector(".filter_button").style.display
     if (a === "none") {
@@ -95,15 +125,15 @@ export default function Profil() {
         if (res.data.all == "") {
           document.querySelector("#course_video_error").style = "display:flex";
         } else {
-            res.data.all.map(item=>{
-            if(item.theme==""){
+          res.data.all.map(item => {
+            if (item.theme == "") {
               document.querySelector("#course_video_error").style = "display:flex";
-            }else{
+            } else {
               window.location = "/video";
               localStorage.setItem("abbas", item.id);
             }
-            })
-          }  
+          })
+        }
       });
   }
   useEffect(() => {
@@ -141,7 +171,7 @@ export default function Profil() {
 
   function filter(id) {
     axios
-      .get(`${url}/api/mycourse/${localStorage.getItem("allUsersId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })
+      .get(`${url}/api/course/${localStorage.getItem("allUsersId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })
       .then((res) => {
         const search = res.data.filter(item => item.course_type === id)
         setKursData(search)
@@ -149,24 +179,20 @@ export default function Profil() {
   }
   const searchInput = (event) => {
     const searchRegex = new RegExp(`^${event.target.value}`, "i");
-    axios.get(`${url}/api/mycourse/${localStorage.getItem("allUsersId")}`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
-      const searchdata = res.data.filter((item) => {
-        return (
-          searchRegex.test(item.name)
-        );
+    axios
+      .get(`${url}/api/course`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
-      setKursData(searchdata)
-    })
+      .then((res) => {
+        const searchdata = res.data.filter((item) => {
+          return searchRegex.test(item.name);
+        });
+        const Filter = searchdata.filter(item => item.author == localStorage.getItem("allUsersId"))
+        setKursData(Filter);
+      })
+      .catch((err) => { });
+  };
 
-  }
-  useEffect(() => {
-    axios.get(`${url}/api/course`).then(res => {
-      setKursData(res.data)
-    })
-    setState1(
-      localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
-    );
-  }, [])
 
 
 
@@ -252,7 +278,7 @@ export default function Profil() {
   }
 
   useEffect(() => {
-    axios
+    axios 
       .get(`${url}/auth/allusers`, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
@@ -614,8 +640,6 @@ export default function Profil() {
               <h1 onClick={() => updatetoggle(5)} className='fromMenu'>Переписка</h1>
             </div>
           </div>)}
-
-
         <div className={toggle === 1 ? "show-content" : "content"}>
           <div className="Filter">
             <div className="blur_blok">
@@ -700,7 +724,7 @@ export default function Profil() {
                         />
                         <div className="kurs_paddaing_auto">
                           <h4>{item.name}</h4>
-                          <div>
+                          <div className="fors_pp">
                             {item.star == 1 ? (
                               <div style={{ display: "flex", gap: "5px" }}>
                                 {" "}
@@ -984,11 +1008,11 @@ export default function Profil() {
                             </h5>
                           </div>
                         </div>
-                        <button className="button_circle">
+                        {/* <button className="button_circle">
                           <AiOutlineArrowRight
                             onClick={() => videoPage(item)}
                           />
-                        </button>
+                        </button> */}
                       </div>
                     </div>
                   );
@@ -1177,12 +1201,14 @@ export default function Profil() {
           <div>
             <div className="cards_sertifikat">
               {sertifikat.length === 0 ? (
-                <div className="delete_padding1">
-                  <img src={Groupimg} alt="" />
-                  <h4>Он еще не получил сертификат</h4>
+                <div className="delete_padding1" >
+                  <img style={{ width: "400px", height: "400px" }} src="https://cdn3d.iconscout.com/3d/premium/thumb/certificate-4652499-3892851.png" alt="" />
+                  <h4 style={{ fontSize: "30px", opacity: "0.3", marginTop: "-30px" }}>
+                    You didn't buy the course
+                  </h4>
                   <div className="delete_btns">
 
-                    <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>
+                    {/* <a href="/Ourcourse">  <button style={{background:'#44bef1  '}} className="delete_btn_yes">Купить курс</button></a> */}
                   </div>
                 </div>) : (<div className="card_sertifikat">
                   {sertifikat.map(item => {
@@ -1244,7 +1270,54 @@ export default function Profil() {
 
 
           </div> */}
-          <FollowCard />
+          <div className='followi1'>
+            <div className="followcards1">
+              {follow.filter(filter => filter.topuser == localStorage.getItem("allUsersId")).length === 0 ? (
+                <div className="rafiki_subcriber_img">
+                  <img src={Groupimg} alt="" />
+                  <h3>No subscribers</h3>
+                  {/* <div className="delete_btns">
+                            <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>
+                        </div> */}
+                </div>) : (<div style={{ display: "flex" }}>
+                  {follow.map((item, key) => {
+                    if (following1 == item.topuser) {
+                      return <div style={{ width: "300px", flexWrap: 'wrap' }}>
+                        {users.map(item1 => {
+
+                          if (item1.id == item.minuser) {
+                            return (
+                              <a>
+                                <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
+                                  <div className="our-team">
+                                    <div className="picture">
+                                      {item1.image === null ? (<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjDQxJomerNcXJqX7IQeLmKbFUA7U5JLanCEW23p8p52ZWtq3gcOcQEB4v_HegvorxeZM&usqp=CAU" />) : (<img className="img-fluid" src={item1.image} />)}
+                                    </div>
+                                    <div className="team-content">
+                                      <h3 style={{ lineHeight: "70px" }} className="name">{item1.username}</h3>
+                                    </div>
+                                    <center><ul className="social">
+                                      {/* <button style={{ background: "gray" }} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button> */}
+                                    </ul></center>
+                                  </div>
+                                </div>
+                              </a>
+
+
+                            )
+                          }
+                        })}
+                      </div>
+                    }
+                  })}
+                </div>)}
+
+
+
+
+            </div>
+
+          </div>
         </div>
       </div>
       <Futer />

@@ -744,7 +744,6 @@ function onclicks(key) {
         </div>
       </div>
       
-      
     </div>
   );
 }

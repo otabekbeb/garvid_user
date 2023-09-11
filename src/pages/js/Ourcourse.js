@@ -96,8 +96,10 @@ export default function Ourcourse() {
 
   useEffect(() => {
     document.querySelector(".filter_card").style = "display:none";
-    axios
-      .get(`${url}/api/nomycourse/${localStorage.getItem("OneuserId")}`, {
+    axios.get(`${url}/auth/oneuser`,{headers:{Authorization:"Bearer " +localStorage.getItem("token")}}).then(res1=>{
+      res1.data.map(item1=>{
+        axios
+      .get(`${url}/api/nomycourse/${item1.id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
@@ -108,6 +110,9 @@ export default function Ourcourse() {
       .catch((err) => {
         console.log(err);
       });
+      })
+    })
+    
     axios
       .get(`${url}/api/course_data_category`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },

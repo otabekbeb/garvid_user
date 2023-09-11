@@ -50,6 +50,7 @@ export default function Searchfilter() {
   const [isModalOpen3, setIsModalOpen3] = useState(false);
   const [themeId,setThemeId]=useState()
   const [CategoryId,setCategoryId]=useState()
+  const [loader,setLoader] = useState(1)
 
   const showModal = () => {
     setIsModalOpen(true);
