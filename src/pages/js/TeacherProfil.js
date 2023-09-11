@@ -278,7 +278,7 @@ export default function Profil() {
   }
 
   useEffect(() => {
-    axios
+    axios 
       .get(`${url}/auth/allusers`, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
