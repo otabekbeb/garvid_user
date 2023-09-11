@@ -65,13 +65,12 @@ export default function Azo() {
                                     localStorage.setItem("for_azo", follow.filter(follow1 => follow1.topuser == item1.id).length)
                                     return (
                                         <div style={{ width: "300px" }}>
-                                            <a>
                                                 <div id='col_12' className="col-12 col-sm-6 col-md-4 col-lg-3">
-                                                    <div className="our-team">
-                                                        <div onClick={()=>{window.location="/teacherprofil"}} className="picture">
+                                                    <div className="our-team"  onClick={()=>{localStorage.setItem("allUsersId",item1.id)}}>
+                                                        <div onClick={()=>{window.location="/TeacherProfil";}} className="picture">
                                                             {item1.image === null ? (<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjDQxJomerNcXJqX7IQeLmKbFUA7U5JLanCEW23p8p52ZWtq3gcOcQEB4v_HegvorxeZM&usqp=CAU" />) : (<img className="img-fluid" src={item1.image} />)}
                                                         </div>
-                                                        <div className="team-content">
+                                                        <div className="team-content" onClick={()=>{window.location="/TeacherProfil";}}> 
                                                             <h3 style={{ lineHeight: "70px" }} className="name">{item1.username}</h3>
                                                         </div>
                                                         <center><ul className="social">
@@ -79,7 +78,7 @@ export default function Azo() {
                                                         </ul></center>
                                                     </div>
                                                 </div>
-                                            </a>
+                                            
 
                                         </div>
                                     )
