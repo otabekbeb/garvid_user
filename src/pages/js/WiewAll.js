@@ -17,8 +17,8 @@ export default function WiewAll() {
     const [pageId, setPageId] = useState()
 
     useEffect(() => {
-        axios.get(`${url}/api/notification`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
-            axios.get(`${url}/auth/allusers`,{ headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res1 => {
+        axios.get(`${url}/api/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+            axios.get(`${url}/auth/allusers`,{ headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
                 for (let i = 0; i < res.data.length; i++) {
                     for (let j = 0; j < res1.data.length; j++) {
                         if (res.data[i].user_id == res1.data[j].id) {
@@ -44,7 +44,7 @@ export default function WiewAll() {
         formdata.append("user_id", oneuser.id)
         formdata.append("to_user_id", id)
         axios.post(`${url}/api/notification`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-            axios.get(`${url}/api/notification`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
+            axios.get(`${url}/api/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
                 axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
                     for (let i = 0; i < res.data.length; i++) {
                         for (let j = 0; j < res1.data.length; j++) {
@@ -53,7 +53,6 @@ export default function WiewAll() {
                                 res.data[i].last_name = res1.data[j].last_name
                             }
                         }
-
                     }
                     setWiew(res.data)
                 })
@@ -114,7 +113,7 @@ export default function WiewAll() {
                                             </div>
                                         </div>
                                     )
-                                } else if (item.to_user_id == read) {
+                                } else if (item.to_user_id == localStorage.getItem("OneuserId")) {
                                     return (
                                         <div>
                                             <div style={{ cursor: "pointer",display:"flex",justifyContent:"space-between" }} className="sms">

@@ -349,6 +349,7 @@ export default function Mentor() {
                 }
               }
               setKursdata(res.data);
+              setLoader(0);
               localStorage.setItem("mycourseUser", res.data.length)
             });
         });
@@ -388,7 +389,7 @@ export default function Mentor() {
       })
       .then((res) => {
         setKursdata(res.data);
-        
+        setLoader(0);
       });
     axios
       .get(`${url}/auth/oneuser/`, {
