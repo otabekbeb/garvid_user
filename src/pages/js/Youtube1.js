@@ -1159,7 +1159,10 @@ export default function Youtube1() {
                                                 <h5>
                                                   {item.oneuser.username}
                                                 </h5>
-                                                {item.mark==0?(""):(item.mark)}
+                                                {item.mark==0?(""):(item.mark === 2 ? (<div className="mark-two-bosa">2</div>):(<>
+                                               {item.mark === 3 ?(<div className="mark-three-bosa">3</div>):(<>{item.mark === 4 ? (
+                                                <div className="mark-four-bosa">4</div>
+                                               ):(<>{item.mark === 5 ? (<div className="mark-five-bosa">5</div>):("")}</>)}</>)}</>))}
                                               </div>
 
                                               <p className="p-create-time-uchun">

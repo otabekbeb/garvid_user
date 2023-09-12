@@ -353,10 +353,12 @@ export default function Mentor() {
                     }
                   }
                 }
-                setKursdata(res.data);
-                localStorage.setItem("mycourseUser", res.data.length)
-              });
-          });
+              })
+              setKursdata(res.data);
+              setLoader(0);
+              localStorage.setItem("mycourseUser", res.data.length)
+            });
+        });
       })
     })
     axios.get(`${url}/API/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
@@ -375,7 +377,7 @@ export default function Mentor() {
         setNatlifikation(res.data)
       })
     })
-  }, []);
+  
 
   useEffect(() => {
     axios.get(`${url}/auth/oneuser`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
@@ -393,7 +395,7 @@ export default function Mentor() {
       })
       .then((res) => {
         setKursdata(res.data);
-
+        setLoader(0);
       });
     axios
       .get(`${url}/auth/oneuser/`, {

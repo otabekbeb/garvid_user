@@ -379,10 +379,7 @@ export default function Searchfilter() {
       document.querySelector(".descriptionPost").value
     );
     formdata.append("price", document.querySelector(".pricePost").value);
-    formdata.append(
-      "planned_time",
-      document.querySelector(".planned_timePost").value
-    );
+    formdata.append("planned_time",document.querySelector(".planned_timePost").value);
     formdata.append("image", document.querySelector(".imagePost").files[0]);
     formdata.append("course_type", document.querySelector(".selectPost").value);
     formdata.append("author", localStorage.getItem("OneuserId"));
