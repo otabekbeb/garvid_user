@@ -680,7 +680,7 @@ pre code {
         margin-top: 20px;
     }
 
-   
+
 }
 
 @media (max-width:515px) {
@@ -10981,6 +10981,7 @@ h6,
 .fa-linkedin-in::before {
     opacity: 0 !important;
 }
+
 /* 
 .newsss1 .swiper-button-prev,
 .swiper-button-next {
@@ -11071,9 +11072,6 @@ h6,
     font-weight: 700;
 }
 
-
-
-
 .News_card {
     width: 340px;
     margin-top: 20px;
@@ -11162,9 +11160,7 @@ body {
     object-fit: cover;
 } */
 
-.mySwiper100 {
-    margin-top: 2%;
-}
+
 
 .News_cards101 {
     display: none;
@@ -11197,4 +11193,3 @@ body {
     font-weight: 700;
     border-left: 5px solid gold;
 }
-
