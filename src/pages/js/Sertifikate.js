@@ -33,11 +33,11 @@ export default function Sertifikate() {
         headers: { Authorization: "Bearer" + localStorage.getItem("token") },
       })
       .then((res) => {
-        axios.get(`${url}/auth/oneuser`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res1=>{
-            res1.data.map(one=>{
-                const Filter=res.data.filter(item=>item.student_id==one.id)
-                setSertifikat(Filter);  
-            })
+        axios.get(`${url}/auth/oneuser`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
+          res1.data.map(one => {
+            const Filter = res.data.filter(item => item.student_id == one.id)
+            setSertifikat(Filter);
+          })
         })
       });
   }, []);
@@ -80,12 +80,12 @@ export default function Sertifikate() {
                       <div className="button_text_df_blok_pitani_pro_Max">
                         <div className="text_pro_max_gap_sos_lift_gr">
                           <h4>{item.title}</h4>
-                          <p>{(item.description).slice(0,20)}</p>
+                          <p>{(item.description).slice(0, 10)}</p>
                         </div>
 
-                          <button onClick={()=>{setSertifikatID(item.id)}} className="Dast_konter_dust_pro_dest">
-                            Programming
-                          </button>
+                        <button onClick={() => { setSertifikatID(item.id) }} className="Dast_konter_dust_pro_dest">
+                          Programming
+                        </button>
 
                       </div>
                     </div>

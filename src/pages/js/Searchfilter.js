@@ -26,7 +26,6 @@ import Groupimg from "../img/Teacher-cuate.png";
 import KursClose from "../img/Course app-rafiki.png";
 export default function Searchfilter() {
   const [courstype, setCoursetype] = useState([]);
-
   const [kursdata, setKursdata] = useState([]);
   const [type, settype] = useState([]);
   const [state1, setState1] = React.useState();
@@ -70,11 +69,11 @@ export default function Searchfilter() {
         setCoursetype(res.data);
         console.log(res.data);
       })
-      .catch((err) => {});
+      .catch((err) => { });
 
-      axios.get(`${url}/auth/oneuser`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res10=>{
-        res10.data.map(ite=>{
-          axios
+    axios.get(`${url}/auth/oneuser`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res10 => {
+      res10.data.map(ite => {
+        axios
           .get(`${url}/api/mycourse/${ite.id}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
           })
@@ -98,8 +97,8 @@ export default function Searchfilter() {
                 setLoader(0);
               });
           });
-        })
       })
+    })
   }, []);
 
   function filter(id) {
@@ -142,28 +141,28 @@ export default function Searchfilter() {
   };
   function all() {
     axios
-    .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
-      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-    })
-    .then((res) => {
-      axios
-        .get(`${url}/api/course`, {
-          header: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        })
-        .then((res1) => {
-          for (let i = 0; i < res.data.length; i++) {
-            for (let j = 0; j < res1.data.length; j++) {
-              if (res.data[i].id == res1.data[j].id) {
-                res.data[i].star = res1.data[j].star;
+      .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        axios
+          .get(`${url}/api/course`, {
+            header: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
+          .then((res1) => {
+            for (let i = 0; i < res.data.length; i++) {
+              for (let j = 0; j < res1.data.length; j++) {
+                if (res.data[i].id == res1.data[j].id) {
+                  res.data[i].star = res1.data[j].star;
+                }
               }
             }
-          }
-          setKursdata(res.data);
-          // localStorage.setItem("mycourseUser", res.data.length)
-        });
-    });
+            setKursdata(res.data);
+            // localStorage.setItem("mycourseUser", res.data.length)
+          });
+      });
   }
   function Allfilter() {
     axios
@@ -198,10 +197,10 @@ export default function Searchfilter() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
-        if(res.data.one==null){
+        if (res.data.one == null) {
           document.querySelector("#course_video_error").style = "display:flex";
-        }else{
-          localStorage.setItem("page_video",JSON.stringify(res.data.one))
+        } else {
+          localStorage.setItem("page_video", JSON.stringify(res.data.one))
           window.location = "/video";
           localStorage.setItem("abbas", item.id);
         }
@@ -241,31 +240,31 @@ export default function Searchfilter() {
                 </div> */}
                   </div>
                   <div onMouseLeave={() => filter1()} className="filter_button">
-                  {courstype.length === 0 ? (
-                    <div className="delete_padding1">
-                      <img src={Groupimg} alt="" />
-                      <h4 style={{ fontSize: '30px', opacity: '0.3' }}>Our courses are not yet</h4>
+                    {courstype.length === 0 ? (
+                      <div className="delete_padding1">
+                        <img src={Groupimg} alt="" />
+                        <h4 style={{ fontSize: '30px', opacity: '0.3' }}>Our courses are not yet</h4>
 
-                    </div>) : (<><span style={{display:"flex",justifyContent:"end",marginRight:"20px"}} onClick={()=>all()}> All</span>  {courstype.map((item) => {
-                      return (
-                        <div className="button_filter_kurs">
-                          {item.name === null ? (
-                            ""
-                          ) : (
-                            <div
-                              onClick={() => filter(item.id)}
-                              className="div_kurs"
-                              style={{ paddingBottom: "5px" }}
-                            >
-                              
-                              {item.name}
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}</>)}
+                      </div>) : (<><span style={{ display: "flex", justifyContent: "end", marginRight: "20px" }} onClick={() => all()}> All</span>  {courstype.map((item) => {
+                        return (
+                          <div className="button_filter_kurs">
+                            {item.name === null ? (
+                              ""
+                            ) : (
+                              <div
+                                onClick={() => filter(item.id)}
+                                className="div_kurs"
+                                style={{ paddingBottom: "5px" }}
+                              >
 
-                </div>
+                                {item.name}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}</>)}
+
+                  </div>
                 </div>
               </div>
             </div>
@@ -315,7 +314,7 @@ export default function Searchfilter() {
                             <h4>{item.name}</h4>
                             <div className="fors_pp">
                               {item.star == 1 ? (
-                                <div  style={{ display: "flex", gap: "5px" }}>
+                                <div style={{ display: "flex", gap: "5px" }}>
                                   {" "}
                                   <div className="star_card">
                                     <i className="star_i">
