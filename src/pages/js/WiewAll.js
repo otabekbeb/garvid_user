@@ -113,7 +113,7 @@ export default function WiewAll() {
                                             </div>
                                         </div>
                                     )
-                                } else if (item.to_user_id == localStorage.getItem("OneuserId")) {
+                                } else if (item.to_user_id == read) {
                                     return (
                                         <div>
                                             <div style={{ cursor: "pointer",display:"flex",justifyContent:"space-between" }} className="sms">
