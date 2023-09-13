@@ -22,18 +22,13 @@ import { AiOutlineEye } from 'react-icons/ai'
 import { FreeMode, Pagination } from 'swiper/modules';
 import Sory from '../img/SoryyNoImage.jpg'
 import Groupimg from "../img/oooo.png";
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-
-
 // import required modules
 // import { Pagination } from 'swiper/modules';
 import axios from 'axios'
 import url from './Host'
-
 export default function News() {
   const [base, setBase] = useState([])
   const [basetype, setBasetype] = useState([])
@@ -50,6 +45,19 @@ export default function News() {
       });
     });
   }, [])
+
+  function all() {
+    localStorage.removeItem("BaseType")
+    axios.get(`${url}/api/knowladge`).then(res=>{
+      setBase(res.data)
+      console.log(res.data,"bb");
+      axios.get(`${url}/api/base_theme`).then(res1=>{
+        setBasetype(res1.data)
+        const type = res.data.filter(item=>item.base_id == localStorage.getItem("BaseType"))
+        setBase(type)
+      })
+    })
+  }
 
   return (
     <div >
@@ -86,6 +94,15 @@ export default function News() {
                   <h4 className="m-0 text-uppercase font-weight-bold">Themes</h4>
                 </div>
                 <div className="bg-white border border-top-0 p-3">
+                  <div onClick={()=>all()}> 
+                    <a href className="d-block w-100 text-white text-decoration-none mb-3" style={{ background: '#52AAF4' }}>
+                      <i className="fab fa-twitter text-center py-4 mr-3" style={{ width: '65px', background: 'rgba(0, 0, 0, .2)' }} />
+                      <span className="font-weight-medium">All</span>
+                    </a>
+                  </div>
+
+
+
                   {basetype.map(item => {
                     return (
                       <div>
@@ -117,7 +134,7 @@ export default function News() {
 
               </Swiper>
             </div>
-            <div className="col-lg-5 px-0">
+            <div className="col-lg-5 px-0" style={{ marginTop: '6%' }}>
               <div className="row mx-0">
                 {base.map((item, key) => {
                   if (key < 2) {
@@ -142,6 +159,10 @@ export default function News() {
             </div>
           </div>
         </div>
+
+
+
+
 
 
         <div className="container-fluid pt-5 mb-3">
@@ -177,11 +198,11 @@ export default function News() {
 
 
 
-              {base === 0 ? (
-                <div className="delete_padding1">
-                <img src={Groupimg} alt="" />
-                <h3>No information</h3>
-              </div>) : (
+              {base.length === 0 ? (
+                <div style={{ marginTop: '20px' }} className="delete_padding1">
+                  <img src={Groupimg} alt="" />
+                  <h4 style={{ marginTop: '15px', fontSize: '20px' }}>No information</h4>
+                </div>) : (
                 <div>   {base.map(item => {
                   return (
                     <SwiperSlide >
@@ -216,13 +237,13 @@ export default function News() {
 
         <div className="News">
           <div className="News_cards">
-            {base === 0?(
-               <div className="delete_padding1">
-               <img src={Groupimg} alt="" />
-               <h3>No information</h3>
-          
-             </div>):(
-              <div style={{display:"flex",justifyContent:"space-around",width:'100%',flexWrap:'wrap'}}>    {base.map(item => {
+            {base.length === 0 ? (
+              <div className="delete_padding1">
+                <img src={Groupimg} alt="" />
+                <h3 style={{ textAlign: 'center', fontSize: '30px', marginTop: '15px' }}>No information</h3>
+
+              </div>) : (
+              <div style={{ display: "flex", justifyContent: "space-around", width: '100%', flexWrap: 'wrap' }}>    {base.map(item => {
                 return (
                   <div className="News_card" >
                     <button className='Card_button'>FEATURED NEWS</button>
@@ -248,12 +269,12 @@ export default function News() {
                     </div>
                   </div>
                 )
-  
+
               })}</div>)}
-        
+
 
           </div>
-      
+
         </div>
         <Footer1 />
       </div>
