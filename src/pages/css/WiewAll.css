@@ -4,15 +4,18 @@
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin: 50px auto;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
     margin-bottom: 40px; 
 }
 .input_notification_bid_div{
-    width: 100%;
+    width: 93%;
+    margin: auto;
     display: flex;
     align-items: center;
     padding: 15px;
     gap: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
     background-color: #AC9292;
     /* display: none; */
     /* display: none; */
@@ -48,10 +51,15 @@
     height: 500px;
     border-radius: 10px;
     margin: auto;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 
 }
-
+.forae_scrol{
+    overflow: hidden;
+    overflow-y: scroll !important;
+    height: 400px;
+    margin-top: 20px;
+}
 .logo {
     width: 100%;
  

@@ -91,10 +91,10 @@ export default function WiewAll() {
                                 </div>
 
                                     <p className='qongiro_title'>You don't have any notifications yet!</p> </div>
-                            ) : (<div>    {Wiew.map((item, key) => {
+                            ) : (<div className='forae_scrol'>    {Wiew.map((item, key) => {
                                 if (item.id == pageId) {
                                     return (
-                                        <div>
+                                        <div >
                                             <div style={{ cursor: "pointer" }} className="sms">
                                                 {/*<div className="qizil"></div>
                                                 <p className='data'>{item.username}</p>
@@ -138,6 +138,7 @@ export default function WiewAll() {
                                 }
                             })} </div>)}
                             <div id='inputNotifaction' className="input_notification_bid_div">
+                                {/* <textarea id="atvetu1" onChange={(e) => setInputValue(e.target.value)} cols="30" rows="10"></textarea> */}
                                 <input id='atvetu1' onChange={(e) => setInputValue(e.target.value)} type="text" />
                                 <button onClick={() => atvet(read)}>Send</button>
                             </div>
