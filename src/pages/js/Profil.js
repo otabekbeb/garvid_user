@@ -29,6 +29,7 @@ export default function Profil() {
   const [natlifikation, setNatlifikation] = React.useState([]);
   const [userid, setOneuserId] = useState(localStorage.getItem("OneuserId"))
   const [koke, setKoke] = useState()
+  const [youtub, setYoutub] = useState([]);
   useEffect(() => {
     console.log("hello");
     axios
@@ -216,6 +217,16 @@ export default function Profil() {
     document.querySelector(".yon_notification_all").style = "right:0%;";
   }
 
+  useEffect(() => {
+    axios.get(`${url}/auth/oneuser`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then((res) => {
+      setYoutub(res.data)
+    })
+  })
+
+
+
+
+
 
 
   return (
@@ -272,15 +283,28 @@ export default function Profil() {
               <button>Regular {localStorage.getItem("position") == 1 ? ("user") : (localStorage.getItem("position") == 2 ? ("teacher") : ("student"))}</button>
               <p>My social networks :</p>
               <div className="blok_bir_icon">
-                <div className="blok_bir_icon_img1">
-                  <BiLogoTelegram />
-                </div>
-                <div className="blok_bir_icon_img2">
-                  <RiInstagramFill />
-                </div>
-                <div className="youtube">
-                  <FaYoutube />
-                </div>
+                {youtub.map((item) => {
+                  return (
+                    <div className="blok_bir_icon_img1" onClick={() => { window.location = `${item.telegram}` }}>
+                      <BiLogoTelegram />
+                    </div>
+                  )
+                })}
+                {youtub.map((item) => {
+                  return (
+                    <div className="blok_bir_icon_img2" onClick={() => { window.location = `${item.instagram}` }}>
+                      <RiInstagramFill />
+                    </div>
+                  )
+                })}
+                {youtub.map((item) => {
+                  return (
+                    <div className="youtube" onClick={() => { window.location = `${item.youtobe}` }}>
+                      <FaYoutube />
+                    </div>
+                  )
+                })}
+
               </div>
             </div>
           </div>
@@ -334,9 +358,9 @@ export default function Profil() {
 
 
 
-{natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length === 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
-                  {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length}
-                </div>)}
+              {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length === 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
+                {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length}
+              </div>)}
 
               {/* {localStorage.getItem("soya").length == 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
                 {localStorage.getItem("soya")}
@@ -374,55 +398,55 @@ export default function Profil() {
 
 
               <div className="profil_blok_ikki_icon_taxriirlash_chat">
-                  <div className="for_wiewall">
-                    {natlifikation.length === 0 ? (
-                      <div><p style={{ textAlign: 'center', marginTop: '35%', fontSize: '20px', opacity: '0.4' }}>Not written to you</p>
+                <div className="for_wiewall">
+                  {natlifikation.length === 0 ? (
+                    <div><p style={{ textAlign: 'center', marginTop: '35%', fontSize: '20px', opacity: '0.4' }}>Not written to you</p>
 
-                      </div>) : (<div>
-                        {natlifikation.map((item, key) => {
+                    </div>) : (<div>
+                      {natlifikation.map((item, key) => {
 
-                          if (item.to_user_id == localStorage.getItem("OneuserId")) {
-                            return (
-                              <div>
-                                {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
-                                <div className="taxrirlash_chad">
-                                  <div className="taxrirlash_chad_img_size">
-                                    <img src={item.image} alt="" />
+                        if (item.to_user_id == localStorage.getItem("OneuserId")) {
+                          return (
+                            <div>
+                              {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
+                              <div className="taxrirlash_chad">
+                                <div className="taxrirlash_chad_img_size">
+                                  <img src={item.image} alt="" />
+
+                                </div>
+                                <div className="taxrirlash_chad_size">
+                                  <div className="taxrirlash_chad_vaqt">
+                                    <h1>{item.username}</h1>
+                                    <div className="taxrirlash_chad_vaqt_soat">
+                                      <TbPointFilled className="chad_set" />
+                                      <p >{item.time_create.slice(11, 16)}</p>
+                                    </div>
+
 
                                   </div>
-                                  <div className="taxrirlash_chad_size">
-                                    <div className="taxrirlash_chad_vaqt">
-                                      <h1>{item.username}</h1>
-                                      <div className="taxrirlash_chad_vaqt_soat">
-                                        <TbPointFilled className="chad_set" />
-                                        <p >{item.time_create.slice(11, 16)}</p>
-                                      </div>
-
-
-                                    </div>
-                                    <div className="taxrirlash_chad_text">
-                                      <p>{item.last_name}</p>
-                                    </div>
+                                  <div className="taxrirlash_chad_text">
+                                    <p>{item.last_name}</p>
                                   </div>
                                 </div>
-
-                                <p >{item.time_create.slice(0, 10)}</p>
                               </div>
 
-                            )
-                          }
-                        })}</div>
+                              <p >{item.time_create.slice(0, 10)}</p>
+                            </div>
 
-                    )}
-                  </div>
+                          )
+                        }
+                      })}</div>
 
-                  <a className="wiewu" style={natlifikation.length === 0 ? { display: "none" } : { display: "flex" }} href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
-                    <p>
-                      view all
-                      <AiOutlineRight />
-                    </p>
-                  </div></a>
+                  )}
                 </div>
+
+                <a className="wiewu" style={natlifikation.length === 0 ? { display: "none" } : { display: "flex" }} href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
+                  <p>
+                    view all
+                    <AiOutlineRight />
+                  </p>
+                </div></a>
+              </div>
             </div>
           </div>
         </div>

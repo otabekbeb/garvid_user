@@ -22,38 +22,7 @@ export default function Sertifikate() {
   const [sertifikat, setSertifikat] = useState([]);
   const [sertifikatID, setSertifikatID] = useState();
 
-  const PDPD = (item) => (
-        <Document>
-                <Page
-                  style={{ paddingHorizontal: 35, paddingTop: 35, paddingBottom: 65 }}
-                >
-                  <View>
-                    <Image style={{ marginBottom: 12 }} src={item.item.file} />
-                    <Image style={{ marginBottom: 12 }} src={item.item.image} />
-                    <Text style={{ fontSize: 24, fontWeight: "900" }} fixed>
-                      {item.item.title}
-                    </Text>
-                    <Text style={{ fontSize: 13, fontWeight: "100" }} fixed>
-                      {item.item.description}
-                    </Text>
-                  </View>
-                  <Text
-                    style={{
-                      position: "absolute",
-                      fontSize: 12,
-                      bottom: 30,
-                      left: 0,
-                      right: 0,
-                      textAlign: "center",
-                      color: "grey",
-                    }}
-                    render={({ pageNumber, totalPages }) =>
-                      `${pageNumber} / ${totalPages}`
-                    }
-                  />
-                </Page>
-        </Document>
-      );
+
 
   useEffect(() => {
     setState1(
@@ -113,14 +82,11 @@ export default function Sertifikate() {
                           <h4>{item.title}</h4>
                           <p>{(item.description).slice(0,20)}</p>
                         </div>
-                        <PDFDownloadLink
-                          document={<PDPD item={item}/>}
-                          fileName={item.title}
-                        >
+
                           <button onClick={()=>{setSertifikatID(item.id)}} className="Dast_konter_dust_pro_dest">
                             Programming
                           </button>
-                        </PDFDownloadLink>
+
                       </div>
                     </div>
                   );

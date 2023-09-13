@@ -43,7 +43,7 @@ import sertifikat from '../img/Sertifikat.png'
 import Groupimg from "../img/Teacher-cuate.png";
 import { BsSearch } from "react-icons/bs"
 import deleteImg from "../img/Group 2.png"
-import {MdOutlineClose, MdDeleteOutline } from "react-icons/md"
+import { MdOutlineClose, MdDeleteOutline } from "react-icons/md"
 import Ourcourse from './Ourcourse'
 import Team from '../img/Task.png'
 import '../css/workforteach.css'
@@ -208,7 +208,7 @@ export default function Mentor() {
   const [page, setpage] = useState(1)
   const [counter, setCounter] = React.useState(59)
   const [counter1, setCounter1] = React.useState(70)
-  const[loader,setLoader] = useState(1)
+  const [loader, setLoader] = useState(1)
   const [counter2, setCounter2] = React.useState(65)
   const [counter3, setCounter3] = React.useState(70)
   const [counter4, setCounter4] = React.useState(80)
@@ -217,7 +217,7 @@ export default function Mentor() {
   const [natlifikation, setNatlifikation] = React.useState([]);
   const [following, setFollowing] = useState(localStorage.getItem("OneuserId"))
   const [edication, setEdication] = useState([])
-  const [education,setForeducation] = useState([])
+  const [education, setForeducation] = useState([])
   // const [edicationId, setEdicationId] = useState()
   // const [tests, setTests] = useState([])
 
@@ -232,30 +232,35 @@ export default function Mentor() {
   const [courstype, setCoursetype] = useState([]);
   const [toggle, setToggle] = useState(1)
   const [users, setUsers] = useState([])
+  const [youtub, setYoutub] = useState([]);
+
+
+
+
   function all() {
     axios
-    .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
-      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-    })
-    .then((res) => {
-      axios
-        .get(`${url}/api/course`, {
-          header: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        })
-        .then((res1) => {
-          for (let i = 0; i < res.data.length; i++) {
-            for (let j = 0; j < res1.data.length; j++) {
-              if (res.data[i].id == res1.data[j].id) {
-                res.data[i].star = res1.data[j].star;
+      .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        axios
+          .get(`${url}/api/course`, {
+            header: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
+          .then((res1) => {
+            for (let i = 0; i < res.data.length; i++) {
+              for (let j = 0; j < res1.data.length; j++) {
+                if (res.data[i].id == res1.data[j].id) {
+                  res.data[i].star = res1.data[j].star;
+                }
               }
             }
-          }
-          setKursdata(res.data);
-          // localStorage.setItem("mycourseUser", res.data.length)
-        });
-    });
+            setKursdata(res.data);
+            // localStorage.setItem("mycourseUser", res.data.length)
+          });
+      });
   }
   useEffect(() => {
     axios
@@ -286,7 +291,7 @@ export default function Mentor() {
   useEffect(() => {
     axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setForeducation(res.data)
-  }).catch(err=>{})
+    }).catch(err => { })
     // const fetchData = async () => {
     //   try {
     //     const token = localStorage.getItem("token");
@@ -327,27 +332,28 @@ export default function Mentor() {
     //     console.log(error, "KURSDATA");
     //   }
     // };
-    axios.get(`${url}/auth/oneuser`,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res10=>{
-      res10.data.map(ite=>{
+    axios.get(`${url}/auth/oneuser`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res10 => {
+      res10.data.map(ite => {
         axios
-        .get(`${url}/api/mycourse/${ite.id}`, {
-          headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-        })
-        .then((res) => {
-          axios
-            .get(`${url}/api/course`, {
-              header: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`,
-              },
-            })
-            .then((res1) => {
-              for (let i = 0; i < res.data.length; i++) {
-                for (let j = 0; j < res1.data.length; j++) {
-                  if (res.data[i].id == res1.data[j].id) {
-                    res.data[i].star = res1.data[j].star;
+          .get(`${url}/api/mycourse/${ite.id}`, {
+            headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+          })
+          .then((res) => {
+            axios
+              .get(`${url}/api/course`, {
+                header: {
+                  Authorization: `Bearer ${localStorage.getItem("token")}`,
+                },
+              })
+              .then((res1) => {
+                for (let i = 0; i < res.data.length; i++) {
+                  for (let j = 0; j < res1.data.length; j++) {
+                    if (res.data[i].id == res1.data[j].id) {
+                      res.data[i].star = res1.data[j].star;
+                    }
                   }
                 }
-              }
+              })
               setKursdata(res.data);
               setLoader(0);
               localStorage.setItem("mycourseUser", res.data.length)
@@ -371,18 +377,18 @@ export default function Mentor() {
         setNatlifikation(res.data)
       })
     })
-  }, []);
+  
 
   useEffect(() => {
-    axios.get(`${url}/auth/oneuser` ,{headers:{Authorization:"Bearer "+localStorage.getItem("token")}}).then(res1=>{
-        res1.data.map(item1=>{
-          axios.get(`${url}/api/nomycourse/${item1.id}`,{headers:{Authorization: "Bearer " + localStorage.getItem("token")}}).then(res=>{
-            setCourses(res.data)
-            setLoader(0);
-          })
+    axios.get(`${url}/auth/oneuser`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
+      res1.data.map(item1 => {
+        axios.get(`${url}/api/nomycourse/${item1.id}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+          setCourses(res.data)
+          setLoader(0);
         })
+      })
     })
-    
+
     axios
       .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -467,7 +473,7 @@ export default function Mentor() {
     );
   }, []);
   useEffect(() => {
-    
+
     axios
       .get(`${url}/auth/oneuser/`, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
@@ -491,7 +497,7 @@ export default function Mentor() {
 
   }, []);
   useEffect(() => {
-    
+
     axios.get(`${url}/api/course_theme_task_student`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setTasks(res.data)
     })
@@ -766,21 +772,29 @@ export default function Mentor() {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
       .then((res) => {
-        if(res.data.one==null){
+        if (res.data.one == null) {
           document.querySelector("#course_video_error").style = "display:flex";
-        }else{
-          localStorage.setItem("page_video",JSON.stringify(res.data.one))
+        } else {
+          localStorage.setItem("page_video", JSON.stringify(res.data.one))
           window.location = "/video";
           localStorage.setItem("abbas", item.id);
         }
       });
   }
 
+
+
+  useEffect(() => {
+    axios.get(`${url}/auth/oneuser`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then((res) => {
+      setYoutub(res.data)
+    })
+  })
+
   return (
     <div className='studentpagess'>
       <Usernavbar />
 
-      {loader==0?(<><div>
+      {loader == 0 ? (<><div>
         <div className="profil_size_df">
           <div className="profil_size">
             <div className="profil_blok_bir">
@@ -831,15 +845,28 @@ export default function Mentor() {
                 <button>Regular Student</button>
                 <p>My social networks :</p>
                 <div className="blok_bir_icon">
-                  <div className="blok_bir_icon_img1">
-                    <BiLogoTelegram />
-                  </div>
-                  <div className="blok_bir_icon_img2">
-                    <RiInstagramFill />
-                  </div>
-                  <div className="youtube">
-                    <FaYoutube />
-                  </div>
+                  {youtub.map((item) => {
+                    return (
+                      <div className="blok_bir_icon_img1" onClick={() => { window.location = `${item.telegram}` }}>
+                        <BiLogoTelegram />
+                      </div>
+                    )
+                  })}
+                  {youtub.map((item) => {
+                    return (
+                      <div className="blok_bir_icon_img2" onClick={() => { window.location = `${item.instagram}` }}>
+                        <RiInstagramFill />
+                      </div>
+                    )
+                  })}
+                  {youtub.map((item) => {
+                    return (
+                      <div className="youtube" onClick={() => { window.location = `${item.youtobe}` }}>
+                        <FaYoutube />
+                      </div>
+                    )
+                  })}
+
                 </div>
               </div>
             </div>
@@ -1066,637 +1093,637 @@ export default function Mentor() {
           <div className="profil-qora-qiladi"></div>
         </div>
       </div>
-      <div>
-        <div className="gray_blok">
-          <div className="fil_text_blok">
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} pieces</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(0)} style={toggle === 0 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Education</h1>{toggle === 0 ? (<div className="fil_text_blok_kurs_lenght">{education.length} pieces</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Chat</h1></div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Tasks</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("stTasks")} pieces</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(7)} style={toggle === 7 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Test</h1></div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(10)} style={toggle === 10 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>All teachers</h1>{toggle === 10 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("FollowCard")} pieces</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My subscribtions</h1>{toggle === 4 ? ("") : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Courses</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">{courses.length}  pieces</div>) : ("")}</div>
-            <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(6)} style={toggle === 6 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Sertificat</h1>{toggle === 6 ? (<div className="fil_text_blok_kurs_lenght">{courses.length}  pieces</div>) : ("")}</div>
+        <div>
+          <div className="gray_blok">
+            <div className="fil_text_blok">
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} pieces</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(0)} style={toggle === 0 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Education</h1>{toggle === 0 ? (<div className="fil_text_blok_kurs_lenght">{education.length} pieces</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Chat</h1></div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Tasks</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("stTasks")} pieces</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(7)} style={toggle === 7 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Test</h1></div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(10)} style={toggle === 10 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>All teachers</h1>{toggle === 10 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("FollowCard")} pieces</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My subscribtions</h1>{toggle === 4 ? ("") : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Courses</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">{courses.length}  pieces</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(6)} style={toggle === 6 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Sertificat</h1>{toggle === 6 ? (<div className="fil_text_blok_kurs_lenght">{courses.length}  pieces</div>) : ("")}</div>
+            </div>
+            <div className="profil_blok_menu_size">
+              <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
+              <TiThMenu onClick={() => menuModalClone()} className='profil_blok_menu_clone' />
+            </div>
+            <div className="profil_modal_media">
+              <h1 onClick={() => updatetoggle(1)} className='fromMenu'>My courses</h1>
+              <h1 onClick={() => updatetoggle(2)} className='fromMenu'>Chat</h1>
+              <h1 onClick={() => updatetoggle(3)} className='fromMenu'>Tasks</h1>
+              <h1 onClick={() => updatetoggle(7)} className='fromMenu'>Test</h1>
+              <h1 onClick={() => updatetoggle(10)} className='fromMenu'>All teachers</h1>
+              <h1 onClick={() => updatetoggle(4)} className='fromMenu'>My subscribtions</h1>
+              <h1 onClick={() => updatetoggle(5)} className='fromMenu'>Courses</h1>
+              <h1 onClick={() => updatetoggle(6)} className='fromMenu'>Sertificat</h1>
+            </div>
           </div>
-          <div className="profil_blok_menu_size">
-            <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
-            <TiThMenu onClick={() => menuModalClone()} className='profil_blok_menu_clone' />
-          </div>
-          <div className="profil_modal_media">
-            <h1 onClick={() => updatetoggle(1)} className='fromMenu'>My courses</h1>
-            <h1 onClick={() => updatetoggle(2)} className='fromMenu'>Chat</h1>
-            <h1 onClick={() => updatetoggle(3)} className='fromMenu'>Tasks</h1>
-            <h1 onClick={() => updatetoggle(7)} className='fromMenu'>Test</h1>
-            <h1 onClick={() => updatetoggle(10)} className='fromMenu'>All teachers</h1>
-            <h1 onClick={() => updatetoggle(4)} className='fromMenu'>My subscribtions</h1>
-            <h1 onClick={() => updatetoggle(5)} className='fromMenu'>Courses</h1>
-            <h1 onClick={() => updatetoggle(6)} className='fromMenu'>Sertificat</h1>
-          </div>
-        </div>
-        <div className={toggle === 1 ? "show-content" : "content"}><div>
-          <div className="Filter">
-            <div className="blur_blok">
-              <div className="inp_blok">
-                <input
-                  onChange={searchInput}
-                  id="search"
-                  type="text"
-                  placeholder="Search among my courses"
-                />
-                <CiSearch className="search" />
-              </div>
-              <div className="blur">
-                <div className="icon_blok">
-                  <div
-                    className="sel_blok"
-                    onClick={() => {
-                      Filter();
-                    }}
-                  >
-                    <BiMenu className="menyu" />
-                    <h4>Filter</h4>
-                  </div>
-                  {/* <div className="win_men">
+          <div className={toggle === 1 ? "show-content" : "content"}><div>
+            <div className="Filter">
+              <div className="blur_blok">
+                <div className="inp_blok">
+                  <input
+                    onChange={searchInput}
+                    id="search"
+                    type="text"
+                    placeholder="Search among my courses"
+                  />
+                  <CiSearch className="search" />
+                </div>
+                <div className="blur">
+                  <div className="icon_blok">
+                    <div
+                      className="sel_blok"
+                      onClick={() => {
+                        Filter();
+                      }}
+                    >
+                      <BiMenu className="menyu" />
+                      <h4>Filter</h4>
+                    </div>
+                    {/* <div className="win_men">
                   <MdWindow className="window" onClick={() => windowModal()} />
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
                 </div> */}
-                </div>
-                <div onMouseLeave={() => filter1()} className="filter_button">
-                  {courstype.length === 0 ? (
-                    <div className="delete_padding1">
-                      <img src={Groupimg} alt="" />
-                      <h4 style={{ fontSize: '30px', opacity: '0.3' }}>Our courses are not yet</h4>
+                  </div>
+                  <div onMouseLeave={() => filter1()} className="filter_button">
+                    {courstype.length === 0 ? (
+                      <div className="delete_padding1">
+                        <img src={Groupimg} alt="" />
+                        <h4 style={{ fontSize: '30px', opacity: '0.3' }}>Our courses are not yet</h4>
 
-                    </div>) : (<><span style={{display:"flex",justifyContent:"end",marginRight:"20px"}} onClick={()=>all()}> All</span>  {courstype.map((item) => {
-                      return (
-                        <div className="button_filter_kurs">
-                          {item.name === null ? (
-                            ""
-                          ) : (
-                            <div
-                              onClick={() => filter(item.id)}
-                              className="div_kurs"
-                              style={{ paddingBottom: "5px" }}
-                            >
-                              
-                              {item.name}
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}</>)}
+                      </div>) : (<><span style={{ display: "flex", justifyContent: "end", marginRight: "20px" }} onClick={() => all()}> All</span>  {courstype.map((item) => {
+                        return (
+                          <div className="button_filter_kurs">
+                            {item.name === null ? (
+                              ""
+                            ) : (
+                              <div
+                                onClick={() => filter(item.id)}
+                                className="div_kurs"
+                                style={{ paddingBottom: "5px" }}
+                              >
 
+                                {item.name}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}</>)}
+
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="kurs_cards">
-            {kursdata.length === 0 ? (
-              <div className="delete_padding1">
-                <img src={Groupimg} alt="" />
-                <h4 style={{ fontSize: '30px', opacity: '0.3' }}>You didn't buy the course</h4>
-                <div className="delete_btns">
-                  <a href="/Ourcourse">
-                    {" "}
-                    <button
-                      style={{ background: "#44bef1  " }}
-                      className="delete_btn_yes"
-                    >
-                      Buy a course
-                    </button>
-                  </a>
+            <div className="kurs_cards">
+              {kursdata.length === 0 ? (
+                <div className="delete_padding1">
+                  <img src={Groupimg} alt="" />
+                  <h4 style={{ fontSize: '30px', opacity: '0.3' }}>You didn't buy the course</h4>
+                  <div className="delete_btns">
+                    <a href="/Ourcourse">
+                      {" "}
+                      <button
+                        style={{ background: "#44bef1  " }}
+                        className="delete_btn_yes"
+                      >
+                        Buy a course
+                      </button>
+                    </a>
+                  </div>
                 </div>
-              </div>
-            ) : kursdata.map(item => {
-              // localStorage.setItem("for_course", kursdata.length)
-              return (
-                <div onClick={() => videoPage(item)} className="kurs_card">
-                  <img src={item.image} alt="" />
-                  <div className="kurs_paddaing_auto">
-                    <h4>{item.name}</h4>
-                    <div className="fors_pp">
-                              {item.star == 1 ? (
-                                <div  style={{ display: "flex", gap: "5px" }}>
-                                  {" "}
-                                  <div className="star_card">
-                                    <i className="star_i">
-                                      <AiFillStar
-                                        style={{ color: "#FFD401" }}
-                                      />
-                                    </i>
-                                    <i className="star_i">
-                                      <AiFillStar
-                                        style={{ color: "#9DA7BB" }}
-                                      />
-                                    </i>
-                                    <i className="star_i">
-                                      <AiFillStar
-                                        style={{ color: "#9DA7BB" }}
-                                      />
-                                    </i>
-                                    <i className="star_i">
-                                      <AiFillStar
-                                        style={{ color: "#9DA7BB" }}
-                                      />
-                                    </i>
-                                    <i className="star_i">
-                                      <AiFillStar
-                                        style={{ color: "#9DA7BB" }}
-                                      />
-                                    </i>
-                                  </div>
-                                  <p style={{ fontSize: "16px" }}>
-                                    {item.star}
-                                  </p>
+              ) : kursdata.map(item => {
+                // localStorage.setItem("for_course", kursdata.length)
+                return (
+                  <div onClick={() => videoPage(item)} className="kurs_card">
+                    <img src={item.image} alt="" />
+                    <div className="kurs_paddaing_auto">
+                      <h4>{item.name}</h4>
+                      <div className="fors_pp">
+                        {item.star == 1 ? (
+                          <div style={{ display: "flex", gap: "5px" }}>
+                            {" "}
+                            <div className="star_card">
+                              <i className="star_i">
+                                <AiFillStar
+                                  style={{ color: "#FFD401" }}
+                                />
+                              </i>
+                              <i className="star_i">
+                                <AiFillStar
+                                  style={{ color: "#9DA7BB" }}
+                                />
+                              </i>
+                              <i className="star_i">
+                                <AiFillStar
+                                  style={{ color: "#9DA7BB" }}
+                                />
+                              </i>
+                              <i className="star_i">
+                                <AiFillStar
+                                  style={{ color: "#9DA7BB" }}
+                                />
+                              </i>
+                              <i className="star_i">
+                                <AiFillStar
+                                  style={{ color: "#9DA7BB" }}
+                                />
+                              </i>
+                            </div>
+                            <p style={{ fontSize: "16px" }}>
+                              {item.star}
+                            </p>
+                          </div>
+                        ) : (
+                          <div>
+                            {item.star == 2 ? (
+                              <div
+                                style={{ display: "flex", gap: "5px" }}
+                              >
+                                <div className="star_card">
+                                  <i className="star_i">
+                                    <AiFillStar
+                                      style={{ color: "#FFD401" }}
+                                    />
+                                  </i>
+                                  <i className="star_i">
+                                    <AiFillStar
+                                      style={{ color: "#FFD401" }}
+                                    />
+                                  </i>
+                                  <i className="star_i">
+                                    <AiFillStar
+                                      style={{ color: "#9DA7BB" }}
+                                    />
+                                  </i>
+                                  <i className="star_i">
+                                    <AiFillStar
+                                      style={{ color: "#9DA7BB" }}
+                                    />
+                                  </i>
+                                  <i className="star_i">
+                                    <AiFillStar
+                                      style={{ color: "#9DA7BB" }}
+                                    />
+                                  </i>
                                 </div>
-                              ) : (
-                                <div>
-                                  {item.star == 2 ? (
-                                    <div
-                                      style={{ display: "flex", gap: "5px" }}
-                                    >
-                                      <div className="star_card">
-                                        <i className="star_i">
-                                          <AiFillStar
-                                            style={{ color: "#FFD401" }}
-                                          />
-                                        </i>
-                                        <i className="star_i">
-                                          <AiFillStar
-                                            style={{ color: "#FFD401" }}
-                                          />
-                                        </i>
-                                        <i className="star_i">
-                                          <AiFillStar
-                                            style={{ color: "#9DA7BB" }}
-                                          />
-                                        </i>
-                                        <i className="star_i">
-                                          <AiFillStar
-                                            style={{ color: "#9DA7BB" }}
-                                          />
-                                        </i>
-                                        <i className="star_i">
-                                          <AiFillStar
-                                            style={{ color: "#9DA7BB" }}
-                                          />
-                                        </i>
-                                      </div>
-                                      <p style={{ fontSize: "16px" }}>
-                                        {item.star}
-                                      </p>
+                                <p style={{ fontSize: "16px" }}>
+                                  {item.star}
+                                </p>
+                              </div>
+                            ) : (
+                              <div>
+                                {item.star === 3 ? (
+                                  <div
+                                    style={{
+                                      display: "flex",
+                                      gap: "5px",
+                                    }}
+                                  >
+                                    <div className="star_card">
+                                      <i className="star_i">
+                                        <AiFillStar
+                                          style={{ color: "#FFD401" }}
+                                        />
+                                      </i>
+                                      <i className="star_i">
+                                        <AiFillStar
+                                          style={{ color: "#FFD401" }}
+                                        />
+                                      </i>
+                                      <i className="star_i">
+                                        <AiFillStar
+                                          style={{ color: "#FFD401" }}
+                                        />
+                                      </i>
+                                      <i className="star_i">
+                                        <AiFillStar
+                                          style={{ color: "#9DA7BB" }}
+                                        />
+                                      </i>
+                                      <i className="star_i">
+                                        <AiFillStar
+                                          style={{ color: "#9DA7BB" }}
+                                        />
+                                      </i>
                                     </div>
-                                  ) : (
-                                    <div>
-                                      {item.star === 3 ? (
-                                        <div
-                                          style={{
-                                            display: "flex",
-                                            gap: "5px",
-                                          }}
-                                        >
-                                          <div className="star_card">
-                                            <i className="star_i">
-                                              <AiFillStar
-                                                style={{ color: "#FFD401" }}
-                                              />
-                                            </i>
-                                            <i className="star_i">
-                                              <AiFillStar
-                                                style={{ color: "#FFD401" }}
-                                              />
-                                            </i>
-                                            <i className="star_i">
-                                              <AiFillStar
-                                                style={{ color: "#FFD401" }}
-                                              />
-                                            </i>
-                                            <i className="star_i">
-                                              <AiFillStar
-                                                style={{ color: "#9DA7BB" }}
-                                              />
-                                            </i>
-                                            <i className="star_i">
-                                              <AiFillStar
-                                                style={{ color: "#9DA7BB" }}
-                                              />
-                                            </i>
-                                          </div>
-                                          <p style={{ fontSize: "16px" }}>
-                                            {item.star}
-                                          </p>
-                                        </div>
-                                      ) : (
-                                        <div>
-                                          {item.star == 4 ? (
-                                            <div
-                                              style={{
-                                                display: "flex",
-                                                gap: "5px",
-                                              }}
-                                            >
-                                              <div className="star_card">
-                                                <i className="star_i">
-                                                  <AiFillStar
-                                                    style={{ color: "#FFD401" }}
-                                                  />
-                                                </i>
-                                                <i className="star_i">
-                                                  <AiFillStar
-                                                    style={{ color: "#FFD401" }}
-                                                  />
-                                                </i>
-                                                <i className="star_i">
-                                                  <AiFillStar
-                                                    style={{ color: "#FFD401" }}
-                                                  />
-                                                </i>
-                                                <i className="star_i">
-                                                  <AiFillStar
-                                                    style={{ color: "#FFD401" }}
-                                                  />
-                                                </i>
-                                                <i className="star_i">
-                                                  <AiFillStar
-                                                    style={{ color: "#9DA7BB" }}
-                                                  />
-                                                </i>
-                                              </div>{" "}
-                                              <p style={{ fontSize: "16px" }}>
-                                                {item.star}
-                                              </p>
-                                            </div>
-                                          ) : (
-                                            <div>
-                                              {item.star == 5 ? (
-                                                <div
+                                    <p style={{ fontSize: "16px" }}>
+                                      {item.star}
+                                    </p>
+                                  </div>
+                                ) : (
+                                  <div>
+                                    {item.star == 4 ? (
+                                      <div
+                                        style={{
+                                          display: "flex",
+                                          gap: "5px",
+                                        }}
+                                      >
+                                        <div className="star_card">
+                                          <i className="star_i">
+                                            <AiFillStar
+                                              style={{ color: "#FFD401" }}
+                                            />
+                                          </i>
+                                          <i className="star_i">
+                                            <AiFillStar
+                                              style={{ color: "#FFD401" }}
+                                            />
+                                          </i>
+                                          <i className="star_i">
+                                            <AiFillStar
+                                              style={{ color: "#FFD401" }}
+                                            />
+                                          </i>
+                                          <i className="star_i">
+                                            <AiFillStar
+                                              style={{ color: "#FFD401" }}
+                                            />
+                                          </i>
+                                          <i className="star_i">
+                                            <AiFillStar
+                                              style={{ color: "#9DA7BB" }}
+                                            />
+                                          </i>
+                                        </div>{" "}
+                                        <p style={{ fontSize: "16px" }}>
+                                          {item.star}
+                                        </p>
+                                      </div>
+                                    ) : (
+                                      <div>
+                                        {item.star == 5 ? (
+                                          <div
+                                            style={{
+                                              display: "flex",
+                                              gap: "5px",
+                                            }}
+                                          >
+                                            <div className="star_card">
+                                              <i className="star_i">
+                                                <AiFillStar
                                                   style={{
-                                                    display: "flex",
-                                                    gap: "5px",
+                                                    color: "#FFD401",
+                                                  }}
+                                                />
+                                              </i>
+                                              <i className="star_i">
+                                                <AiFillStar
+                                                  style={{
+                                                    color: "#FFD401",
+                                                  }}
+                                                />
+                                              </i>
+                                              <i className="star_i">
+                                                <AiFillStar
+                                                  style={{
+                                                    color: "#FFD401",
+                                                  }}
+                                                />
+                                              </i>
+                                              <i className="star_i">
+                                                <AiFillStar
+                                                  style={{
+                                                    color: "#FFD401",
+                                                  }}
+                                                />
+                                              </i>
+                                              <i className="star_i">
+                                                <AiFillStar
+                                                  style={{
+                                                    color: "#FFD401",
+                                                  }}
+                                                />
+                                              </i>
+                                            </div>
+                                            <p
+                                              style={{ fontSize: "16px" }}
+                                            >
+                                              {item.star}
+                                            </p>
+                                          </div>
+                                        ) : (
+                                          <div>
+                                            {item.star === null ? (
+                                              <div
+                                                style={{
+                                                  display: "flex",
+                                                  gap: "5px",
+                                                }}
+                                              >
+                                                <div className="star_card">
+                                                  <i className="star_i">
+                                                    <AiFillStar
+                                                      style={{
+                                                        color: "#9DA7BB",
+                                                      }}
+                                                    />
+                                                  </i>
+                                                  <i className="star_i">
+                                                    <AiFillStar
+                                                      style={{
+                                                        color: "#9DA7BB",
+                                                      }}
+                                                    />
+                                                  </i>
+                                                  <i className="star_i">
+                                                    <AiFillStar
+                                                      style={{
+                                                        color: "#9DA7BB",
+                                                      }}
+                                                    />
+                                                  </i>
+                                                  <i className="star_i">
+                                                    <AiFillStar
+                                                      style={{
+                                                        color: "#9DA7BB",
+                                                      }}
+                                                    />
+                                                  </i>
+                                                  <i className="star_i">
+                                                    <AiFillStar
+                                                      style={{
+                                                        color: "#9DA7BB",
+                                                      }}
+                                                    />
+                                                  </i>
+                                                </div>{" "}
+                                                <p
+                                                  style={{
+                                                    fontSize: "16px",
                                                   }}
                                                 >
-                                                  <div className="star_card">
-                                                    <i className="star_i">
-                                                      <AiFillStar
-                                                        style={{
-                                                          color: "#FFD401",
-                                                        }}
-                                                      />
-                                                    </i>
-                                                    <i className="star_i">
-                                                      <AiFillStar
-                                                        style={{
-                                                          color: "#FFD401",
-                                                        }}
-                                                      />
-                                                    </i>
-                                                    <i className="star_i">
-                                                      <AiFillStar
-                                                        style={{
-                                                          color: "#FFD401",
-                                                        }}
-                                                      />
-                                                    </i>
-                                                    <i className="star_i">
-                                                      <AiFillStar
-                                                        style={{
-                                                          color: "#FFD401",
-                                                        }}
-                                                      />
-                                                    </i>
-                                                    <i className="star_i">
-                                                      <AiFillStar
-                                                        style={{
-                                                          color: "#FFD401",
-                                                        }}
-                                                      />
-                                                    </i>
-                                                  </div>
-                                                  <p
-                                                    style={{ fontSize: "16px" }}
-                                                  >
-                                                    {item.star}
-                                                  </p>
-                                                </div>
-                                              ) : (
-                                                <div>
-                                                  {item.star === null ? (
-                                                    <div
-                                                      style={{
-                                                        display: "flex",
-                                                        gap: "5px",
-                                                      }}
-                                                    >
-                                                      <div className="star_card">
-                                                        <i className="star_i">
-                                                          <AiFillStar
-                                                            style={{
-                                                              color: "#9DA7BB",
-                                                            }}
-                                                          />
-                                                        </i>
-                                                        <i className="star_i">
-                                                          <AiFillStar
-                                                            style={{
-                                                              color: "#9DA7BB",
-                                                            }}
-                                                          />
-                                                        </i>
-                                                        <i className="star_i">
-                                                          <AiFillStar
-                                                            style={{
-                                                              color: "#9DA7BB",
-                                                            }}
-                                                          />
-                                                        </i>
-                                                        <i className="star_i">
-                                                          <AiFillStar
-                                                            style={{
-                                                              color: "#9DA7BB",
-                                                            }}
-                                                          />
-                                                        </i>
-                                                        <i className="star_i">
-                                                          <AiFillStar
-                                                            style={{
-                                                              color: "#9DA7BB",
-                                                            }}
-                                                          />
-                                                        </i>
-                                                      </div>{" "}
-                                                      <p
-                                                        style={{
-                                                          fontSize: "16px",
-                                                        }}
-                                                      >
-                                                        0
-                                                      </p>
-                                                    </div>
-                                                  ) : (
-                                                    ""
-                                                  )}{" "}
-                                                </div>
-                                              )}
-                                            </div>
-                                          )}
-                                        </div>
-                                      )}
-                                    </div>
-                                  )}
-                                </div>
-                              )}
-                            </div>
-                    <div className="hajm">
-                      <h5>
-                        <p>Course size</p>
-                        {item.planned_time}
-                      </h5>
-                      <h5>
-                        <p>Course price</p>
-                        {item.price}$
-                      </h5>
+                                                  0
+                                                </p>
+                                              </div>
+                                            ) : (
+                                              ""
+                                            )}{" "}
+                                          </div>
+                                        )}
+                                      </div>
+                                    )}
+                                  </div>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                      <div className="hajm">
+                        <h5>
+                          <p>Course size</p>
+                          {item.planned_time}
+                        </h5>
+                        <h5>
+                          <p>Course price</p>
+                          {item.price}$
+                        </h5>
+                      </div>
                     </div>
+                    <button className="button_circle">
+                      <AiOutlineArrowRight onClick={() => videoPage(item)} />
+                    </button>
                   </div>
-                  <button className="button_circle">
-                    <AiOutlineArrowRight onClick={() => videoPage(item)} />
-                  </button>
-                </div>
 
-              )
+                )
 
-            })}
+              })}
+
+            </div>
+
+
+          </div></div><div className={toggle === 7 ? "show-content" : "content"}>
+            <Testpage />
+          </div>
+          <div className={toggle === 2 ? "show-content" : "content"}><UserChat /></div>
+          <div className={toggle === 10 ? "show-content" : "content"}><FollowCard /></div>
+          <div className={toggle === 0 ? "show-content" : "content"}>
+            <Education />
 
           </div>
-
-
-        </div></div><div className={toggle === 7 ? "show-content" : "content"}>
-          <Testpage />
-        </div>
-        <div className={toggle === 2 ? "show-content" : "content"}><UserChat /></div>
-        <div className={toggle === 10 ? "show-content" : "content"}><FollowCard /></div>
-        <div className={toggle === 0 ? "show-content" : "content"}>
-          <Education />
-
-        </div>
-        <div className={toggle === 3 ? "show-content" : "content"}>
-          <div className="m_dobavit_kurs">
-            <button onClick={() => openModal()}>Add task</button>
-          </div>
-          <div className="m_zadach">
-            {stTasks.length === 0 ? (
-              <div className="delete_padding1">
-                <img src={Team} alt="" />
-                <h4 style={{ fontSize: '50px', marginTop: '-100px', opacity: '0.3' }}>No tasks</h4>
-              </div>) : (<>   {stTasks.map(item => {
-                // localStorage.setItem("taskLength", stTasks.length)
-                return (
-                  <div>
-                    <div className="m_zadach_block">
-                      <div className="fors_imagesa">
-                        {item.image ? (<img className='jony_foto' src={img_for_null} alt="" />) : (<img src={`${url}/` + item.image} alt="" />)}</div>
-                      <h4>{item.content}</h4>
-                      <div className="zadac_df">
-                        <span><FaHourglassStart style={{ color: "black", marginRight: "7px" }} /> {(item.time_create).slice(0, 10)}</span>
-                        <span><FaHourglassEnd style={{ color: "black", marginRight: "7px" }} /> {(item.time_update).slice(0, 10)}</span>
-                      </div>
-                      <p className='ortapp'>{item.feedback}</p>
-                      <p className='ortap1' style={{ marginTop: "0px" }}>Оценка:{item.mark}</p>
-                      <div className="m_zadacha_icon">
-                        <div className="m_zadach_ktug_icon1" onClick={() => openModal2(item.id)}>
-                          <MdDeleteOutline />
+          <div className={toggle === 3 ? "show-content" : "content"}>
+            <div className="m_dobavit_kurs">
+              <button onClick={() => openModal()}>Add task</button>
+            </div>
+            <div className="m_zadach">
+              {stTasks.length === 0 ? (
+                <div className="delete_padding1">
+                  <img src={Team} alt="" />
+                  <h4 style={{ fontSize: '50px', marginTop: '-100px', opacity: '0.3' }}>No tasks</h4>
+                </div>) : (<>   {stTasks.map(item => {
+                  // localStorage.setItem("taskLength", stTasks.length)
+                  return (
+                    <div>
+                      <div className="m_zadach_block">
+                        <div className="fors_imagesa">
+                          {item.image ? (<img className='jony_foto' src={img_for_null} alt="" />) : (<img src={`${url}/` + item.image} alt="" />)}</div>
+                        <h4>{item.content}</h4>
+                        <div className="zadac_df">
+                          <span><FaHourglassStart style={{ color: "black", marginRight: "7px" }} /> {(item.time_create).slice(0, 10)}</span>
+                          <span><FaHourglassEnd style={{ color: "black", marginRight: "7px" }} /> {(item.time_update).slice(0, 10)}</span>
                         </div>
-                        <div className="m_zadach_ktug_icon" onClick={() => zadacput(item.id)}>
-                          <FiEdit />
-                          {/* onClick={() => dashed(item.id)} */}
-                        </div>
-                      </div>
-                    </div>
-
-
-                    <div className="m_zadacha_tepadan">
-                      <div className="m_zadachi_dobavit">
-                        <div className="m_clouse_x" onClick={() => clouseModal()}>
-                          <GrFormClose /></div>
-                        <div className="m_input_file_dobavit">
-                          <div className="a_input_file12">
-                            <FiDownload /> Add task
+                        <p className='ortapp'>{item.feedback}</p>
+                        <p className='ortap1' style={{ marginTop: "0px" }}>Оценка:{item.mark}</p>
+                        <div className="m_zadacha_icon">
+                          <div className="m_zadach_ktug_icon1" onClick={() => openModal2(item.id)}>
+                            <MdDeleteOutline />
                           </div>
-                          <input type="file" className='img_inp_zadac' />
-                        </div><br />
-                        <div className="m_input_bilmafim">
-                          <label htmlFor="">Name:</label>
-                          <input type="text" name="" id="" className='inp_name_zadac' />
-                          <label htmlFor="">Course theme:</label>
-                          <input type="text" name="" id="" className='inp_course_theme_zadac' />
-                          <label htmlFor="">Time create:</label>
-                          <input type="date" name="" id="" className='inp_bdate_zadac' />
-                          <label htmlFor="">Time update:</label>
-                          <input type="date" name="" id="" className='inp_tdate_zadac' />
-                          <label htmlFor="">Mark:</label>
-                          <input type="text" name="" id="" className='inp_mark_zadac' />
-                          <label htmlFor="">Feedback:</label>
-                          <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadac'></textarea> <br />
-                          <div className="a_button_for_end">
-                            <button onClick={() => { postforzadac() }}>Add</button>
+                          <div className="m_zadach_ktug_icon" onClick={() => zadacput(item.id)}>
+                            <FiEdit />
+                            {/* onClick={() => dashed(item.id)} */}
                           </div>
                         </div>
                       </div>
-                    </div>
+
+
+                      <div className="m_zadacha_tepadan">
+                        <div className="m_zadachi_dobavit">
+                          <div className="m_clouse_x" onClick={() => clouseModal()}>
+                            <GrFormClose /></div>
+                          <div className="m_input_file_dobavit">
+                            <div className="a_input_file12">
+                              <FiDownload /> Add task
+                            </div>
+                            <input type="file" className='img_inp_zadac' />
+                          </div><br />
+                          <div className="m_input_bilmafim">
+                            <label htmlFor="">Name:</label>
+                            <input type="text" name="" id="" className='inp_name_zadac' />
+                            <label htmlFor="">Course theme:</label>
+                            <input type="text" name="" id="" className='inp_course_theme_zadac' />
+                            <label htmlFor="">Time create:</label>
+                            <input type="date" name="" id="" className='inp_bdate_zadac' />
+                            <label htmlFor="">Time update:</label>
+                            <input type="date" name="" id="" className='inp_tdate_zadac' />
+                            <label htmlFor="">Mark:</label>
+                            <input type="text" name="" id="" className='inp_mark_zadac' />
+                            <label htmlFor="">Feedback:</label>
+                            <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadac'></textarea> <br />
+                            <div className="a_button_for_end">
+                              <button onClick={() => { postforzadac() }}>Add</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
 
 
 
 
 
-                  </div>)
-              })}</>)}
+                    </div>)
+                })}</>)}
 
 
 
-          </div>
-          <div id='zadaca_put' className="m_zadacha_tepadan">
+            </div>
+            <div id='zadaca_put' className="m_zadacha_tepadan">
 
-            <div id='zadac_put_card' className="m_zadachi_dobavit">
-              <div className="m_clouse_x" onClick={() => clouseput()}>
-                <GrFormClose /></div>
-              <div className="m_input_file_dobavit">
-                <div className="a_input_file12">
-                  <FiDownload /> Add task
-                </div>
-                <input type="file" className='img_inp_zadacput' />
-              </div><br />
-              <div className="m_input_bilmafim">
-                <label htmlFor="">Name:</label>
-                <input type="text" name="" id="" className='inp_name_zadacput' />
-                <label htmlFor="">Course theme:</label>
-                <input type="text" name="" id="" className='inp_course_theme_put' />
-                <label htmlFor="">Time create:</label>
-                <input type="date" name="" id="" className='inp_bdate_zadacput' />
-                <label htmlFor="">Time update:</label>
-                <input type="date" name="" id="" className='inp_tdate_zadacput' />
-                <label htmlFor="">Mark:</label>
-                <input type="text" name="" id="" className='inp_mark_zadacput' />
-                <label htmlFor="">Feedback:</label>
-                <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadacput'></textarea> <br />
-                <div className="a_button_for_end">
-                  <button onClick={() => dashedput()}>Add</button>
+              <div id='zadac_put_card' className="m_zadachi_dobavit">
+                <div className="m_clouse_x" onClick={() => clouseput()}>
+                  <GrFormClose /></div>
+                <div className="m_input_file_dobavit">
+                  <div className="a_input_file12">
+                    <FiDownload /> Add task
+                  </div>
+                  <input type="file" className='img_inp_zadacput' />
+                </div><br />
+                <div className="m_input_bilmafim">
+                  <label htmlFor="">Name:</label>
+                  <input type="text" name="" id="" className='inp_name_zadacput' />
+                  <label htmlFor="">Course theme:</label>
+                  <input type="text" name="" id="" className='inp_course_theme_put' />
+                  <label htmlFor="">Time create:</label>
+                  <input type="date" name="" id="" className='inp_bdate_zadacput' />
+                  <label htmlFor="">Time update:</label>
+                  <input type="date" name="" id="" className='inp_tdate_zadacput' />
+                  <label htmlFor="">Mark:</label>
+                  <input type="text" name="" id="" className='inp_mark_zadacput' />
+                  <label htmlFor="">Feedback:</label>
+                  <textarea placeholder='Description' name="" id="" cols="30" rows="10" className='inp_ops_zadacput'></textarea> <br />
+                  <div className="a_button_for_end">
+                    <button onClick={() => dashedput()}>Add</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="m_zadacha_tepadan1">
+            <div className="m_zadacha_tepadan1">
 
-            <div className="m_zadachi_dobavit">
-              <div className="m_clouse_x" onClick={() => clouseModal1()}><GrFormClose /></div>
-              <div className="m_input_file_dobavit">
-                <div className="a_input_file12">Change image </div>
-                <input type="file" />
-              </div>
-              <div className="m_input_bilmafim">
-                <select name="" id="select1">
-                  <option value="">Otash bilad</option>
-                </select>
-                <textarea placeholder='Edid description' name="" id="" cols="30" rows="10"></textarea>
-                <div className="a_button_for_end"><button>Change</button></div>
-              </div>
-            </div>
-          </div>
-          <div className="m_delete_tepadan2">
-            <div className="a_delete_bgc">
-              <div className="for_center">
-                <img src={Groupimg} alt="" />
-                <h4>Do you really want to delete?</h4>
-                <div className="a_delete_button">
-                  <button className='a_delete_no' onClick={() => clouseModal2()}>Not</button>
-                  <button onClick={() => deletetask()}
-                    className="a_delete_yes">Yes</button>
+              <div className="m_zadachi_dobavit">
+                <div className="m_clouse_x" onClick={() => clouseModal1()}><GrFormClose /></div>
+                <div className="m_input_file_dobavit">
+                  <div className="a_input_file12">Change image </div>
+                  <input type="file" />
+                </div>
+                <div className="m_input_bilmafim">
+                  <select name="" id="select1">
+                    <option value="">Otash bilad</option>
+                  </select>
+                  <textarea placeholder='Edid description' name="" id="" cols="30" rows="10"></textarea>
+                  <div className="a_button_for_end"><button>Change</button></div>
                 </div>
               </div>
             </div>
+            <div className="m_delete_tepadan2">
+              <div className="a_delete_bgc">
+                <div className="for_center">
+                  <img src={Groupimg} alt="" />
+                  <h4>Do you really want to delete?</h4>
+                  <div className="a_delete_button">
+                    <button className='a_delete_no' onClick={() => clouseModal2()}>Not</button>
+                    <button onClick={() => deletetask()}
+                      className="a_delete_yes">Yes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
           </div>
 
 
+
+
+
+          <div className={toggle === 4 ? "show-content" : "content"}>
+            <Azo />
+          </div>
+          <div className={toggle === 5 ? "show-content" : "content"}>
+            <Ourcourse />
+          </div>
+          <div className={toggle === 6 ? "show-content" : "content"}>
+            <Sertificat />
+          </div>
         </div>
 
+        <div className="profil_notifacation_size">
 
-
-
-
-        <div className={toggle === 4 ? "show-content" : "content"}>
-          <Azo/>
-        </div>
-        <div className={toggle === 5 ? "show-content" : "content"}>
-          <Ourcourse />
-        </div>
-        <div className={toggle === 6 ? "show-content" : "content"}>
-          <Sertificat />
-        </div>
-      </div>
-
-      <div className="profil_notifacation_size">
-
-        {/* <div className="admin">
+          {/* <div className="admin">
             <h4>Sms</h4>
             <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
 
           </div> */}
 
-        <div className="div-admin-sms">
-          <h5>SMS</h5>
-          <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
-        </div>
-        <div className="sms-insta">
-          <div className="sms-insto-bb1">
-            {natlifikation.map(item => {
-              if (item.to_user_id == localStorage.getItem("OneuserId")) {
-                return (
-                  <div className="sms-insta-block">
-                    <div className="sms-img">
-                      <img src={"https://markazback2.onrender.com/" + item.image} alt="" />
-                    </div>
-                    {/* <div className="sms-kotta-pas">
+          <div className="div-admin-sms">
+            <h5>SMS</h5>
+            <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
+          </div>
+          <div className="sms-insta">
+            <div className="sms-insto-bb1">
+              {natlifikation.map(item => {
+                if (item.to_user_id == localStorage.getItem("OneuserId")) {
+                  return (
+                    <div className="sms-insta-block">
+                      <div className="sms-img">
+                        <img src={"https://markazback2.onrender.com/" + item.image} alt="" />
+                      </div>
+                      {/* <div className="sms-kotta-pas">
                         <div className="sms-text-tepa"><p> </p><p></p></div>
                         <div className="sms-text-pas"><p> </p></div>
                       </div> */}
 
-                    <div className="sms_bos">
-                      <div className="nik_name">
-                        <p>{item.title}</p>
-                      </div>
-                      <div className="sms_nik">
-                        <p>{item.description}</p>
+                      <div className="sms_bos">
+                        <div className="nik_name">
+                          <p>{item.title}</p>
+                        </div>
+                        <div className="sms_nik">
+                          <p>{item.description}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )
-              }
-            })}
+                  )
+                }
+              })}
 
 
 
 
 
+            </div>
           </div>
-        </div>
 
 
-      </div>
-      <div className="profil-qora-qiladi"></div>
-      <div id="course_video_error" className="Modal_big_div_video_error">
-      <div className="Modal_big_div_video_error_div">
-        <div className="Modal_big_div_video_error_div_close">
-          <MdOutlineClose
-            onClick={() => {
-              document.querySelector("#course_video_error").style =
-                "display:none";
-            }}
-          />
         </div>
-        <img src={KursClose} alt="" />
-        <p>К сожалению, к этому курсу не прикреплено видео.</p>
-      </div>
-    </div></>):(<Loader/>)}
+        <div className="profil-qora-qiladi"></div>
+        <div id="course_video_error" className="Modal_big_div_video_error">
+          <div className="Modal_big_div_video_error_div">
+            <div className="Modal_big_div_video_error_div_close">
+              <MdOutlineClose
+                onClick={() => {
+                  document.querySelector("#course_video_error").style =
+                    "display:none";
+                }}
+              />
+            </div>
+            <img src={KursClose} alt="" />
+            <p>К сожалению, к этому курсу не прикреплено видео.</p>
+          </div>
+        </div></>) : (<Loader />)}
 
       <Futer />
     </div>
