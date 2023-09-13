@@ -52,10 +52,9 @@ export default function News() {
   }, [])
 
   return (
-    <div>
+    <div >
       <Navbar />
       <div className='newss1'>
-
         <meta charSet="utf-8" />
         <title>BizNews - Free News Website Template</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -223,7 +222,7 @@ export default function News() {
                <h3>No information</h3>
           
              </div>):(
-              <div>    {base.map(item => {
+              <div style={{display:"flex",justifyContent:"space-around",width:'100%',flexWrap:'wrap'}}>    {base.map(item => {
                 return (
                   <div className="News_card" >
                     <button className='Card_button'>FEATURED NEWS</button>
@@ -254,57 +253,7 @@ export default function News() {
         
 
           </div>
-          {/* <div className="News_cards101">
-            <div className="News_card101" >
-              <button className='Card_button'>FEATURED NEWS</button>
-              <img className="img-fluid w-100" src="https://blog.hubspot.com/hubfs/CSS%20Flexbox.png" />
-              <div className="bg-white border border-top-0 p-4">
-                <div className="mb-2">
-                  <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                    href="">Business</a>
-                  <a className="text-body" href=""><small>Jan 01, 2045</small></a>
-                </div>
-                <a className="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                <p className="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                  rebum clita rebum dolor stet amet justo</p>
-              </div>
-              <div className="d-flex justify-content-between bg-white border border-top-0 p-4">
-                <div className="d-flex align-items-center">
-                  <img className="rounded-circle mr-2" src="img/user.jpg" alt="" />
-                  <small>Qodir ali</small>
-                </div>
-                <div className="d-flex align-items-center">
-                  <small className="ml-3"><AiOutlineEye />12345</small>
-                  <small className="ml-3"><BsChat />123</small>
-                </div>
-              </div>
-            </div>
-            <div className="News_card101" >
-              <button className='Card_button'>FEATURED NEWS</button>
-              <img className="img-fluid w-100" src="https://blog.hubspot.com/hubfs/CSS%20Flexbox.png" />
-              <div className="bg-white border border-top-0 p-4">
-                <div className="mb-2">
-                  <a className="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                    href="">Business</a>
-                  <a className="text-body" href=""><small>Jan 01, 2045</small></a>
-                </div>
-                <a className="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
-                <p className="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
-                  rebum clita rebum dolor stet amet justo</p>
-              </div>
-              <div className="d-flex justify-content-between bg-white border border-top-0 p-4">
-                <div className="d-flex align-items-center">
-                  <img className="rounded-circle mr-2" src="img/user.jpg" alt="" />
-                  <small>Qodir ali</small>
-                </div>
-                <div className="d-flex align-items-center">
-                  <small className="ml-3"><AiOutlineEye />12345</small>
-                  <small className="ml-3"><BsChat />123</small>
-                </div>
-              </div>
-            </div>
-
-          </div> */}
+      
         </div>
         <Footer1 />
       </div>

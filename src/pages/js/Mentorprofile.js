@@ -75,9 +75,9 @@ export default function Profil() {
             }
             setNatlifikation(res.data);
           })
-          .catch((err) => {});
+          .catch((err) => { });
       })
-      .catch((err) => {});
+      .catch((err) => { });
   }, []);
 
   function userimgModal() {
@@ -243,7 +243,7 @@ export default function Profil() {
       .get(`${URL}/api/notification/read/${id}`, formdata, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
-      .then((res) => {});
+      .then((res) => { });
 
     // axios.get(`${url}/auth/teachers`, {
     //     headers: { Authorization: "Bearer " + localStorage.getItem("token") },
@@ -423,8 +423,8 @@ export default function Profil() {
               )}
 
               {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length == 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
-                  {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length}
-                </div>)}
+                {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length}
+              </div>)}
 
 
               {/* {localStorage.getItem("soya").length == 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
@@ -485,7 +485,7 @@ export default function Profil() {
                           item.to_user_id == localStorage.getItem("OneuserId")
                         ) {
                           return (
-                            <div> 
+                            <div>
                               {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
                               <div className="taxrirlash_chad">
                                 <div className="taxrirlash_chad_img_size">

@@ -70,9 +70,8 @@ export default function Profil() {
   const [sertifikat, setSertifikat] = useState([])
   const [follow, setFollow] = useState([])
   const [following, setFollowing] = useState(localStorage.getItem("OneuserId"))
-
   const [following1, setFollowing1] = useState(localStorage.getItem("allUsersId"))
-
+  const [youtub, setYoutub] = useState([]);
   function folowcolor1(key) {
     axios.delete(`${url}/api/follow/${key}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       window.location.reload()
@@ -278,7 +277,7 @@ export default function Profil() {
   }
 
   useEffect(() => {
-    axios 
+    axios
       .get(`${url}/auth/allusers`, {
         headers: { Authorization: "Bearer " + localStorage.getItem("token") },
       })
@@ -357,6 +356,15 @@ export default function Profil() {
       setUsers(res.data)
     })
   }, []);
+
+
+
+  useEffect(() => {
+    axios.get(`${url}/auth/oneuser`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then((res) => {
+      setYoutub(res.data)
+    })
+  })
+
   return (
     <div>
       <Usernavbar />
@@ -418,16 +426,30 @@ export default function Profil() {
 
               <button>Regular Teacher</button>
               <p>My social networks :</p>
+
               <div className="blok_bir_icon">
-                <div className="blok_bir_icon_img1">
-                  <BiLogoTelegram />
-                </div>
-                <div className="blok_bir_icon_img2">
-                  <RiInstagramFill />
-                </div>
-                <div className="youtube">
-                  <FaYoutube />
-                </div>
+                {youtub.map((item) => {
+                  return (
+                    <div className="blok_bir_icon_img1" onClick={() => { window.location = `${item.telegram}` }}>
+                      <BiLogoTelegram />
+                    </div>
+                  )
+                })}
+                {youtub.map((item) => {
+                  return (
+                    <div className="blok_bir_icon_img2" onClick={() => { window.location = `${item.instagram}` }}>
+                      <RiInstagramFill />
+                    </div>
+                  )
+                })}
+                {youtub.map((item) => {
+                  return (
+                    <div className="youtube" onClick={() => { window.location = `${item.youtobe}` }}>
+                      <FaYoutube />
+                    </div>
+                  )
+                })}
+
               </div>
             </div>
           </div>
