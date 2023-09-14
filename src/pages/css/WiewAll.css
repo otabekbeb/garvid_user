@@ -1,6 +1,6 @@
 .wiew_div {
     width: 70%;
-    min-height: 600px;
+    /* min-height: 600px; */
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin: 50px auto;
@@ -48,7 +48,7 @@
 
 .wiew_sms_big {
     width: 95%;
-    height: 500px;
+    /* height: 500px; */
     border-radius: 10px;
     margin: auto;
     /* overflow-y: scroll; */
