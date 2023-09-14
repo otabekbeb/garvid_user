@@ -10,6 +10,8 @@ import Futer from '../js/Footer1'
 import { BsArrowLeft } from 'react-icons/bs'
 export default function WiewAll() {
     const [Wiew, setWiew] = useState([])
+    const [Wiew1,setWiew1]=useState([])
+    const [Wiew2,setWiew2]=useState([])
     const [inputValue, setInputValue] = useState()
     const [oneuser, setOneuser] = useState([])
     const [page, setPage] = useState(0)
@@ -37,12 +39,12 @@ export default function WiewAll() {
             })
         })
     })
-    function atvet(id) {
+    function atvet() {
         var formdata = new FormData()
         formdata.append("title", oneuser.username)
         formdata.append("description", inputValue)
         formdata.append("user_id", oneuser.id)
-        formdata.append("to_user_id", id)
+        formdata.append("to_user_id", read)
         axios.post(`${url}/api/notification`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             axios.get(`${url}/api/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
                 axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
@@ -57,6 +59,10 @@ export default function WiewAll() {
                     setWiew(res.data)
                 })
             })
+            const Filter=Wiew.filter(item=>item.id==pageId)
+            setWiew1(Filter)
+            const Filter1=Wiew.filter(item=>item.to_user_id==read)
+            setWiew1(Filter1)
         })
             .catch(err => {
                 alert("xato")
@@ -69,6 +75,10 @@ export default function WiewAll() {
         document.querySelectorAll("#inputNotifaction")[key].style.display = "none"
     }
     function Page(id, key) {
+        const Filter=Wiew.filter(item=>item.id==key)
+        setWiew1(Filter)
+        const Filter1=Wiew.filter(item=>item.to_user_id==id)
+        setWiew1(Filter1)
         setPageId(key)
         setRead(id)
         setPage(1)
@@ -91,8 +101,8 @@ export default function WiewAll() {
                                 </div>
 
                                     <p className='qongiro_title'>You don't have any notifications yet!</p> </div>
-                            ) : (<div className='forae_scrol'>    {Wiew.map((item, key) => {
-                                if (item.id == pageId) {
+                            ) : (<div className='forae_scrol'>
+                                {Wiew1.map((item, key) => {
                                     return (
                                         <div >
                                             <div style={{ cursor: "pointer" }} className="sms">
@@ -112,35 +122,36 @@ export default function WiewAll() {
                                                 </div>
                                             </div>
                                         </div>
-                                    )
-                                } else if (item.to_user_id == read) {
-                                    return (
-                                        <div>
-                                            <div style={{ cursor: "pointer",display:"flex",justifyContent:"space-between" }} className="sms">
-                                                {/*<div className="qizil"></div>*/}
-                                                <div style={{paddingLeft:"15px"}} className="fort_block">
-
-                                                <p style={{marginBottom:'0px'}} className='data'>{item.username}</p>
-                                                <p  className='data'>{item.last_name}</p>
-                                                <div className="data_title">
-                                                    <p className='unred'>{item.title}</p>
+                                    ) 
+                                })} 
+                                {Wiew2.map((item,key)=>{
+                                        return (
+                                            <div>
+                                                <div style={{ cursor: "pointer",display:"flex",justifyContent:"space-between" }} className="sms">
+                                                    {/*<div className="qizil"></div>*/}
+                                                    <div style={{paddingLeft:"15px"}} className="fort_block">
+    
+                                                    <p style={{marginBottom:'0px'}} className='data'>{item.username}</p>
+                                                    <p  className='data'>{item.last_name}</p>
+                                                    <div className="data_title">
+                                                        <p className='unred'>{item.title}</p>
+                                                        
+                                                    </div>
                                                     
+                                                    <div className="p_lorem_sms">
+                                                        <p className='lorem_sms'>{item.description} </p>
+                                                        <input style={{ display: "none" }} type="text" id='atvet' />
+                                                    </div>
+                                                    </div><p  className='data'>{item.time_create.slice(11, 16)}</p>
                                                 </div>
-                                                
-                                                <div className="p_lorem_sms">
-                                                    <p className='lorem_sms'>{item.description} </p>
-                                                    <input style={{ display: "none" }} type="text" id='atvet' />
-                                                </div>
-                                                </div><p  className='data'>{item.time_create.slice(11, 16)}</p>
                                             </div>
-                                        </div>
-                                    )
-                                }
-                            })} </div>)}
+                                        )
+                                })}
+                                </div>)}
                             <div id='inputNotifaction' className="input_notification_bid_div">
                                 {/* <textarea id="atvetu1" onChange={(e) => setInputValue(e.target.value)} cols="30" rows="10"></textarea> */}
                                 <input id='atvetu1' onChange={(e) => setInputValue(e.target.value)} type="text" />
-                                <button onClick={() => atvet(read)}>Send</button>
+                                <button onClick={() => atvet()}>Send</button>
                             </div>
                         </div>) : (
                         <div>
