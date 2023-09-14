@@ -48,12 +48,12 @@ export default function News() {
 
   function all() {
     localStorage.removeItem("BaseType")
-    axios.get(`${url}/api/knowladge`).then(res=>{
+    axios.get(`${url}/api/knowladge`).then(res => {
       setBase(res.data)
-      console.log(res.data,"bb");
-      axios.get(`${url}/api/base_theme`).then(res1=>{
+      console.log(res.data, "bb");
+      axios.get(`${url}/api/base_theme`).then(res1 => {
         setBasetype(res1.data)
-        const type = res.data.filter(item=>item.base_id == localStorage.getItem("BaseType"))
+        const type = res.data.filter(item => item.base_id == localStorage.getItem("BaseType"))
         setBase(type)
       })
     })
@@ -94,7 +94,7 @@ export default function News() {
                   <h4 className="m-0 text-uppercase font-weight-bold">Themes</h4>
                 </div>
                 <div className="bg-white border border-top-0 p-3">
-                  <div onClick={()=>all()}> 
+                  <div onClick={() => all()}>
                     <a href className="d-block w-100 text-white text-decoration-none mb-3" style={{ background: '#52AAF4' }}>
                       <i className="fab fa-twitter text-center py-4 mr-3" style={{ width: '65px', background: 'rgba(0, 0, 0, .2)' }} />
                       <span className="font-weight-medium">All</span>
@@ -117,24 +117,36 @@ export default function News() {
               </div>
             </div>
             <div className="col-lg-7 px-0">
-              <Swiper style={{ cursor: "pointer" }} navigation={true} modules={[Navigation]} className="owl-carousel main-carousel position-relative">
-                {base.map((item, key) => {
-                  return (
-                    <SwiperSlide onClick={() => { localStorage.setItem("baseId", key) }} className="position-relative overflow-hidden" style={{ height: '500px' }}>
-                      {item.image === null ? (<img className="img-fluid h-100" style={{ objectFit: 'cover', width: '100%' }} src={Groupimg} alt="" />) : (<img className="img-fluid h-100" style={{ objectFit: 'cover' }} src={item.image} />)}
-                      <div className="overlay">
-                        <div className="mb-2">
-                          <a className="text-white">{item.time_create.slice(0, 10)}</a>
+              {base.length === 0 ? (
+                <div className="delete_padding1">
+                  <img style={{ width: '400px' }} src={Groupimg} alt="" />
+                  <h4 style={{ fontSize: '40px', opacity: '0.3' }}>No information</h4>
+                  <div className="delete_btns">
+                    <a href="/Ourcourse">
+                      {" "}
+                    </a>
+                  </div>
+                </div>
+              ) : (
+                <Swiper style={{ cursor: "pointer" }} navigation={true} modules={[Navigation]} className="owl-carousel main-carousel position-relative">
+                  {base.map((item, key) => {
+                    return (
+                      <SwiperSlide onClick={() => { localStorage.setItem("baseId", key) }} className="position-relative overflow-hidden" style={{ height: '500px' }}>
+                        {item.image === null ? (<img className="img-fluid h-100" style={{ objectFit: 'cover', width: '100%' }} src={Groupimg} alt="" />) : (<img className="img-fluid h-100" style={{ objectFit: 'cover' }} src={item.image} />)}
+                        <div className="overlay">
+                          <div className="mb-2">
+                            <a className="text-white">{item.time_create.slice(0, 10)}</a>
+                          </div>
+                          <a style={{ cursor: "pointer", zIndex: "10000000" }} onClick={() => { window.location = "/newspage"; localStorage.setItem("baseId", key) }} className="h2 m-0 text-white text-uppercase font-weight-bold">{item.name}</a>
                         </div>
-                        <a style={{ cursor: "pointer", zIndex: "10000000" }} onClick={() => { window.location = "/newspage"; localStorage.setItem("baseId", key) }} className="h2 m-0 text-white text-uppercase font-weight-bold">{item.name}</a>
-                      </div>
-                    </SwiperSlide>
-                  )
-                })}
+                      </SwiperSlide>
+                    )
+                  })}
+                </Swiper>)}
 
-              </Swiper>
             </div>
             <div className="col-lg-5 px-0" style={{ marginTop: '6%' }}>
+
               <div className="row mx-0">
                 {base.map((item, key) => {
                   if (key < 2) {
@@ -199,9 +211,14 @@ export default function News() {
 
 
               {base.length === 0 ? (
-                <div style={{ marginTop: '20px' }} className="delete_padding1">
-                  <img src={Groupimg} alt="" />
-                  <h4 style={{ marginTop: '15px', fontSize: '20px' }}>No information</h4>
+                  <div className="delete_padding1" style={{marginTop:'5%'}}>
+                  <img style={{ width: '400px' }} src={Groupimg} alt="" />
+                  <h4 style={{ fontSize: '40px', opacity: '0.3' }}>No information</h4>
+                  <div className="delete_btns">
+                    <a href="/Ourcourse">
+                      {" "}
+                    </a>
+                  </div>
                 </div>) : (
                 <div>   {base.map(item => {
                   return (
@@ -238,11 +255,15 @@ export default function News() {
         <div className="News">
           <div className="News_cards">
             {base.length === 0 ? (
-              <div className="delete_padding1">
-                <img src={Groupimg} alt="" />
-                <h3 style={{ textAlign: 'center', fontSize: '30px', marginTop: '15px' }}>No information</h3>
-
-              </div>) : (
+                 <div className="delete_padding1">
+                 <img style={{ width: '400px' }} src={Groupimg} alt="" />
+                 <h4 style={{ fontSize: '40px', opacity: '0.3' }}>No information</h4>
+                 <div className="delete_btns">
+                   <a href="/Ourcourse">
+                     {" "}
+                   </a>
+                 </div>
+               </div>) : (
               <div style={{ display: "flex", justifyContent: "space-around", width: '100%', flexWrap: 'wrap' }}>    {base.map(item => {
                 return (
                   <div className="News_card" >
