@@ -354,30 +354,30 @@ export default function Mentor() {
                   }
                 }
               })
-              setKursdata(res.data);
-              setLoader(0);
-              localStorage.setItem("mycourseUser", res.data.length)
-            });
-        });
-      })
+            setKursdata(res.data);
+            setLoader(0);
+            localStorage.setItem("mycourseUser", res.data.length)
+          });
+      });
     })
-    axios.get(`${url}/API/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-      setNatlifikation(res.data)
-      axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
-        setUser(res1.data)
-        for (let i = 0; i < res.data.length; i++) {
-          for (let j = 0; j < res1.data.length; j++) {
-            if (res.data[i].user_id == res1.data[j].id) {
-              res.data[i].image = res1.data[j].image
-              res.data[i].username = res1.data[j].username
-              res.data[i].last_name = res1.data[j].last_name
-            }
+  })
+  axios.get(`${url}/API/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    setNatlifikation(res.data)
+    axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
+      setUser(res1.data)
+      for (let i = 0; i < res.data.length; i++) {
+        for (let j = 0; j < res1.data.length; j++) {
+          if (res.data[i].user_id == res1.data[j].id) {
+            res.data[i].image = res1.data[j].image
+            res.data[i].username = res1.data[j].username
+            res.data[i].last_name = res1.data[j].last_name
           }
         }
-        setNatlifikation(res.data)
-      })
+      }
+      setNatlifikation(res.data)
     })
-  
+  })
+
 
   useEffect(() => {
     axios.get(`${url}/auth/oneuser`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
