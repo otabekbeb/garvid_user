@@ -409,7 +409,7 @@ export default function Profil() {
                           return (
                             <div>
                               {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
-                              <div className="taxrirlash_chad">
+                              <div onClick={()=>{window.location="/WiewAll";localStorage.setItem("fornati",JSON.stringify([item]))}} className="taxrirlash_chad">
                                 <div className="taxrirlash_chad_img_size">
                                   <img src={item.image} alt="" />
 
