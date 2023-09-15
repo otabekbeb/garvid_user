@@ -483,9 +483,9 @@ export default function Profil() {
                 {/* <button>
                   <BsActivity />
                 </button> */}
-                <button className="Following" onClick={() => follow1()}>
+                {/* <button className="Following" onClick={() => follow1()}>
                   Subscribe
-                </button>
+                </button> */}
                 <button style={{ marginTop: "25px" }} className="Following" id="following" >
                   Send a message
                 </button>

@@ -8,6 +8,7 @@ import { AiOutlineArrowDown } from "react-icons/ai";
 import "../css/Nosignal.css";
 import img_for_null from "../img/download.png";
 import Groupimg from "../img/Group 2.png";
+import Diplom  from '../img/Diploma.png'
 import {
   PDFDownloadLink,
   Document,
@@ -49,7 +50,7 @@ export default function Sertifikate() {
           <div className="card_sertifikat">
             {sertifikat.length === 0 ? (
               <div className="delete_padding1">
-                <img src={Groupimg} alt="" />
+                <img src={Diplom} alt="" />
                 <h4>У вас нет сертификата</h4>
                 <div className="delete_btns">
                   {/* <a href="/Ourcourse">  <button style={{background:'#44bef1  '}} className="delete_btn_yes">Купить курс</button></a> */}

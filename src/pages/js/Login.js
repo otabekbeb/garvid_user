@@ -183,10 +183,10 @@ export default function Login() {
                   page === 1
                     ? { background: "#9cf" }
                     : {
-                        background: "white",
-                        color: "black",
-                        border: "2px solid #9cf",
-                      }
+                      background: "white",
+                      color: "black",
+                      border: "2px solid #9cf",
+                    }
                 }
               >
                 {state1 === "en" ? "Login" : "Авторизоваться"}
@@ -197,10 +197,10 @@ export default function Login() {
                   page === 2
                     ? { background: "#9cf" }
                     : {
-                        background: "white",
-                        color: "black",
-                        border: "2px solid #9cf",
-                      }
+                      background: "white",
+                      color: "black",
+                      border: "2px solid #9cf",
+                    }
                 }
               >
                 {state1 === "en" ? "Registration" : "Регистрация"}
