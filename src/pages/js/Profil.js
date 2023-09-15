@@ -210,7 +210,10 @@ export default function Profil() {
   function soyaa(id) {
     var formdata = new FormData()
     formdata.append("read", true)
-    axios.get(`${URL}/api/notification/read/${id}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+    axios.get(`${url}/api/notification/read/${id}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      alert("ishladi")
+    }).catch(err=>{
+        alert("xato")
     })
   }
   function openNotification() {
@@ -222,9 +225,32 @@ export default function Profil() {
       setYoutub(res.data)
     })
   })
+  // function Read(item) {
+  //   window.location="/mynotification";
+  //   localStorage.setItem("NotifId",item.user_id)
 
 
+  //   var formdata = new FormData()
+  //   formdata.append("read",true)
 
+  //   axios.get(`${URL}/api/notification/read/${item.id}`, formdata, { headers: { Authorization: "Bearer " + sessionStorage.getItem("token") } }).then(res => {
+  //     axios.get(`${URL}/api/notification`, { headers: { Authorization: "Bearer " + sessionStorage.getItem("token") } }).then(res => {
+  //       axios.get(`${URL}/auth/users`, { headers: { Authorization: "Bearer " + sessionStorage.getItem("token") } }).then(res1 => {
+  //         for (let i = 0; i < res.data.length; i++) {
+  //           for (let j = 0; j < res1.data.length; j++) {
+  //             if (res.data[i].user_id == res1.data[j].id) {
+  //               res.data[i].image = res1.data[j].image
+  //             }
+  //           }
+  //         }
+  //         setNotification(res.data)
+  
+  //       })
+  //     })
+  //   }).catch(err => {
+  //     alert("Информация не отправлена")
+  //   })
+  // }
 
 
 
@@ -358,8 +384,8 @@ export default function Profil() {
 
 
 
-              {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length === 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
-                {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length}
+              {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId") && filter.read===false) .length === 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
+                {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId") && filter.read===false) .length}
               </div>)}
 
               {/* {localStorage.getItem("soya").length == 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
@@ -404,15 +430,15 @@ export default function Profil() {
 
                     </div>) : (<div>
                       {natlifikation.map((item, key) => {
-
+                        
                         if (item.to_user_id == localStorage.getItem("OneuserId")) {
-                          return (
+                          if(item.read===false){
+return (
                             <div>
                               {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
-                              <div onClick={()=>{window.location="/WiewAll";localStorage.setItem("fornati",JSON.stringify([item]))}} className="taxrirlash_chad">
+                              <div style={{cursor:"pointer"}} onClick={()=>{soyaa(item.id);window.location="/WiewAll";localStorage.setItem("fornati",JSON.stringify([item]))}} className="taxrirlash_chad">
                                 <div className="taxrirlash_chad_img_size">
                                   <img src={item.image} alt="" />
-
                                 </div>
                                 <div className="taxrirlash_chad_size">
                                   <div className="taxrirlash_chad_vaqt">
@@ -421,25 +447,22 @@ export default function Profil() {
                                       <TbPointFilled className="chad_set" />
                                       <p >{item.time_create.slice(11, 16)}</p>
                                     </div>
-
-
                                   </div>
                                   <div className="taxrirlash_chad_text">
                                     <p>{item.last_name}</p>
                                   </div>
                                 </div>
                               </div>
-
                               <p >{item.time_create.slice(0, 10)}</p>
                             </div>
-
                           )
+                          }
+                          
                         }
-                      })}</div>
-
+                      })}
+                      </div>
                   )}
                 </div>
-
                 <a className="wiewu" style={natlifikation.length === 0 ? { display: "none" } : { display: "flex" }} href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
                   <p>
                     view all
@@ -456,7 +479,6 @@ export default function Profil() {
             <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
 
           </div> */}
-
           <div className="div-admin-sms">
             <h5>SMS</h5>
             <div onClick={() => notificationClose()} className="profil_notifacation_size_close"><GrClose className='closei' /></div>
@@ -474,7 +496,6 @@ export default function Profil() {
                         <div className="sms-text-tepa"><p> </p><p></p></div>
                         <div className="sms-text-pas"><p> </p></div>
                       </div> */}
-
                       <div className="sms_bos">
                         <div className="nik_name">
                           <p>{item.title}</p>
@@ -487,11 +508,6 @@ export default function Profil() {
                   )
                 }
               })}
-
-
-
-
-
             </div>
           </div>
 

@@ -522,12 +522,6 @@ export default function Mentor() {
 
 
 
-  function soyaa(id) {
-    var formdata = new FormData()
-    formdata.append("read", true)
-    axios.get(`${URL}/api/notification/read/${id}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-    })
-  }
 
   function folowcolor1(key) {
     axios.delete(`${url}/api/follow/${key}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
@@ -783,7 +777,15 @@ export default function Mentor() {
       });
   }
 
-
+  function soyaa(id) {
+    var formdata = new FormData()
+    formdata.append("read", true)
+    axios.get(`${url}/api/notification/read/${id}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      alert("ishladi")
+    }).catch(err=>{
+        alert("xato")
+    })
+  }
 
   useEffect(() => {
     axios.get(`${url}/auth/oneuser`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then((res) => {
@@ -969,7 +971,7 @@ export default function Mentor() {
                             return (
                               <div>
                                 {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
-                                <div className="taxrirlash_chad">
+                                <div style={{cursor:"pointer"}} onClick={()=>{soyaa(item.id);window.location="/WiewAll";localStorage.setItem("fornati",JSON.stringify([item]))}} className="taxrirlash_chad">
                                   <div className="taxrirlash_chad_img_size">
                                     <img src={item.image} alt="" />
 

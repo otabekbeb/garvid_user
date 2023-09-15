@@ -28,7 +28,15 @@ export default function Profil() {
   const [stsertifikat, setStsertifikat] = useState([]);
   const [natlifikation, setNatlifikation] = React.useState([]);
   const [userid, setOneuserId] = useState(localStorage.getItem("OneuserId"));
-
+  function soyaa(id) {
+    var formdata = new FormData()
+    formdata.append("read", true)
+    axios.get(`${url}/api/notification/read/${id}`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+      alert("ishladi")
+    }).catch(err=>{
+        alert("xato")
+    })
+  }
   useEffect(() => {
     const now = new Date();
     console.log("hello");
@@ -235,28 +243,6 @@ export default function Profil() {
 
   function openNotification() {
     document.querySelector(".yon_notification_all").style = "right:0%;";
-  }
-  function soyaa(id) {
-    var formdata = new FormData();
-    formdata.append("read", true);
-    axios
-      .get(`${URL}/api/notification/read/${id}`, formdata, {
-        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
-      })
-      .then((res) => { });
-
-    // axios.get(`${url}/auth/teachers`, {
-    //     headers: { Authorization: "Bearer " + localStorage.getItem("token") },
-    //   })
-
-    axios
-      .get(`${url}/auth/teachers`, {
-        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
-      })
-      .then((res) => {
-        setData(res.data);
-        console.log(res.data);
-      });
   }
   return (
     <div>
@@ -487,7 +473,7 @@ export default function Profil() {
                           return (
                             <div>
                               {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
-                              <div className="taxrirlash_chad">
+                              <div style={{cursor:"pointer"}} onClick={()=>{soyaa(item.id);window.location="/WiewAll1";localStorage.setItem("fornati",JSON.stringify([item]))}} className="taxrirlash_chad">
                                 <div className="taxrirlash_chad_img_size">
                                   <img src={item.image} alt="" />
                                 </div>
@@ -521,7 +507,7 @@ export default function Profil() {
                       ? { display: "none" }
                       : { display: "flex" }
                   }
-                  href="/WiewAll"
+                  href="/WiewAll1"
                 >
                   {" "}
                   <div className="taxrirlash_chad_barchasini">

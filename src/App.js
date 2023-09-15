@@ -49,6 +49,7 @@ import VideoCall from "./pages/metting";
 import JoinMeeting from "./pages/Join"
 import Sotibol from "./pages/js/Sotibol";
 import WiewAll from "./pages/js/WiewAll";
+import WiewAll1 from "./pages/js/WiewAll1";
 import Sertificate_create from "./pages/js/Sertificate_create";
 import Partner from "./pages/js/Partner";
 import Teams from "./pages/js/Teams";
@@ -104,6 +105,7 @@ export default function App() {
           <Route exact path="/Nosignal" component={Nosignal} />
           <Route exact path="/Ourcourse" component={Ourcourse} />
           <Route exact path="/WiewAll" component={WiewAll} />
+          <Route exact path="/WiewAll1" component={WiewAll1} />
           <Route exact path="/NNN" component={NNN} />
           <Route exact path="/sertificate_create" component={Sertificate_create} />
           <Route exact path="/partner" component={Partner} />
