@@ -13,6 +13,8 @@ import Anime from "../img/download.png";
 import url from "./Host";
 import Footer1 from "./Footer1";
 import Navbar from "./Navbar";
+import Loader from './loader'
+import Groupimg from "../img/Teacher-cuate.png";
 
 
 export default function Ourcourse() {
@@ -20,6 +22,7 @@ export default function Ourcourse() {
   const [kursdata, setKursdata] = useState([]);
   const [kurscategory, setKurscategory] = useState([]);
   const [filter1, setFilter1] = useState([]);
+  const [loader, setLoader] = useState(1)
 
   function filter() {
     var b = document.querySelector(".filter_card").style.display;
@@ -87,6 +90,7 @@ export default function Ourcourse() {
       })
       .then((res) => {
         setKursdata(res.data);
+        setLoader(0);
         // localStorage.setItem("ourcourseLength", res.data.length);
       })
       .catch((err) => {
@@ -259,7 +263,11 @@ export default function Ourcourse() {
         </div>
 
         <div className="filter_kurs">
-          {kursdata.map((item) => {
+          {kursdata.length==0?(<div className="delete_padding1">
+                  <img src={Groupimg} alt="" />
+                  <h4 style={{ fontSize: '30px', opacity: '0.3' }}>You didn't buy the course</h4>
+                </div>):(<>
+            {kursdata.map((item) => {
             return (
               <div
                 onClick={() => {
@@ -569,7 +577,8 @@ export default function Ourcourse() {
                 </button>
               </div>
             );
-          })}
+          })}</>
+          )}
         </div>
       </header>
       {/* <Footer1 /> */}

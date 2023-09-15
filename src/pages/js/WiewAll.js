@@ -83,10 +83,7 @@ export default function WiewAll() {
                   })
                     
                 })
-            })
-            
-                
-                
+            })    
         })
             .catch(err => {})
     }
@@ -105,7 +102,6 @@ export default function WiewAll() {
         setRead(id)
         setPage(1)
     }
-
     return (
         <div>
             <Usernavbar />

@@ -360,7 +360,7 @@ export default function Mentor() {
           });
       });
     })
-  })
+  },[])
   axios.get(`${url}/API/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
     setNatlifikation(res.data)
     axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
@@ -384,8 +384,9 @@ export default function Mentor() {
       res1.data.map(item1 => {
         axios.get(`${url}/api/nomycourse/${item1.id}`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
           setCourses(res.data)
-          setLoader(0);
+          
         })
+        setLoader(0);
       })
     })
 
@@ -429,7 +430,7 @@ export default function Mentor() {
     axios.get(`${url}/api/course_theme_task_student`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
       setTasks(res.data)
     })
-  })
+  },[])
 
   React.useEffect(() => {
     const timer =
