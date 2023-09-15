@@ -435,3 +435,9 @@
   display: block;
   width: 100%;
 }
+
+@media (max-width:401px) {
+  .images1{
+    margin-top: 10%;
+  }
+}
