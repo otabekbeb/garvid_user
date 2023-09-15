@@ -10,17 +10,19 @@ import Futer from '../js/Footer1'
 import { BsArrowLeft } from 'react-icons/bs'
 export default function WiewAll() {
     const [Wiew, setWiew] = useState([])
-    const [Wiew1,setWiew1]=useState([])
-    const [Wiew2,setWiew2]=useState([])
+    const [Wiew1, setWiew1] = useState([])
+    const [Wiew2, setWiew2] = useState([])
     const [inputValue, setInputValue] = useState()
     const [oneuser, setOneuser] = useState([])
-    const [page, setPage] = useState(0)
+    const [page, setPage] = useState(localStorage.getItem("fornati") ? 1 : 0)
     const [read, setRead] = useState()
+    const [read1, setRead1] = useState()
     const [pageId, setPageId] = useState()
+    const [pageId1, setPageId1] = useState()
 
     useEffect(() => {
         axios.get(`${url}/api/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
-            axios.get(`${url}/auth/allusers`,{ headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
+            axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
                 for (let i = 0; i < res.data.length; i++) {
                     for (let j = 0; j < res1.data.length; j++) {
                         if (res.data[i].user_id == res1.data[j].id) {
@@ -31,6 +33,17 @@ export default function WiewAll() {
 
                 }
                 setWiew(res.data)
+                localStorage.getItem("fornati")?
+                JSON.parse(localStorage.getItem("fornati")).map(fornati=>{
+                 const Filter = res.data.filter(item => item.id == fornati.id)
+                setWiew1(Filter)
+                // console.log(JSON.parse(localStorage.getItem("fornati"))[0].id,"salom");
+                const Filter1 = res.data.filter(item => item.to_user_id == fornati.user_id)
+                setWiew2(Filter1)  
+                setRead1(fornati.user_id) 
+                setPageId1(fornati.id)
+                }):localStorage.removeItem("fornati")
+                
             })
         })
         axios.get(`${url}/auth/oneuser`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
@@ -44,7 +57,7 @@ export default function WiewAll() {
         formdata.append("title", oneuser.username)
         formdata.append("description", inputValue)
         formdata.append("user_id", oneuser.id)
-        formdata.append("to_user_id", read)
+        formdata.append("to_user_id", localStorage.getItem("fornati")?read1:read)
         axios.post(`${url}/api/notification`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             axios.get(`${url}/api/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
                 axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
@@ -57,16 +70,22 @@ export default function WiewAll() {
                         }
                     }
                     setWiew(res.data)
+                  document.querySelector("#atvetu1").value=""
+                  localStorage.getItem("fornati")?JSON.parse(localStorage.getItem("fornati")):res.data.map(fornati=>{
+                    setRead1(fornati.user_id)
+                    setPageId1(fornati.id)
+                    const Filter3 = res.data.filter(item => item.id == fornati.id)
+                    const Filter2 = res.data.filter(item => item.to_user_id == fornati.user_id) 
+                    const Filter = res.data.filter(item => item.id == pageId)
+                    const Filter1 = res.data.filter(item => item.to_user_id == read)
+                    localStorage.getItem("fornati")?setWiew1(Filter3):setWiew1(Filter)
+                    localStorage.getItem("fornati")?setWiew2(Filter2) :setWiew2(Filter1) 
+                  })
+                    
                 })
-            })
-            const Filter=Wiew.filter(item=>item.id==pageId)
-            setWiew1(Filter)
-            const Filter1=Wiew.filter(item=>item.to_user_id==read)
-            setWiew1(Filter1)
+            })    
         })
-            .catch(err => {
-                alert("xato")
-            })
+            .catch(err => {})
     }
     function inputOpen(key) {
         document.querySelectorAll("#inputNotifaction")[key].style.display = "block"
@@ -75,15 +94,14 @@ export default function WiewAll() {
         document.querySelectorAll("#inputNotifaction")[key].style.display = "none"
     }
     function Page(id, key) {
-        const Filter=Wiew.filter(item=>item.id==key)
+        const Filter = Wiew.filter(item => item.id == key)
         setWiew1(Filter)
-        const Filter1=Wiew.filter(item=>item.to_user_id==id)
-        setWiew1(Filter1)
+        const Filter1 = Wiew.filter(item => item.to_user_id == id)
+        setWiew2(Filter1)
         setPageId(key)
         setRead(id)
         setPage(1)
     }
-
     return (
         <div>
             <Usernavbar />
@@ -94,7 +112,7 @@ export default function WiewAll() {
                 <div className="wiew_sms_big">
                     {page == 1 ? (
                         <div>
-                            <button className='Exit_notifaction_button' onClick={() => setPage(0)}><BsArrowLeft style={{ fontSize: '20px' }} /></button>
+                            <button className='Exit_notifaction_button' onClick={() => {setPage(0);localStorage.removeItem("fornati")}}><BsArrowLeft style={{ fontSize: '20px' }} /></button>
                             {Wiew === 0 ? (
                                 <div><div className="icon">
                                     <img className='ooo' src={Qongro} alt="" />
@@ -110,44 +128,38 @@ export default function WiewAll() {
                                                 <p className='data'>{item.username}</p>
                                                 <p className='data'>{item.last_name}</p>*/}
                                                 <div className="data_title">
-                                                    <div style={{paddingLeft:"20px",marginTop:"20px"}} className="fort_block">
+                                                    <div style={{ paddingLeft: "20px", marginTop: "20px" }} className="fort_block">
                                                         <p className='unred'>{item.title}</p>
-                                                        <p className='lorem_sms'>{item.description} </p>
-                                                    <input style={{ display: "none" }} type="text" id='atvet' />
-                                                    </div>
-                                                    <p className='data'>{item.time_create.slice(11, 16)}</p>
-                                                </div>
-                                                <div className="p_lorem_sms">
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    ) 
-                                })} 
-                                {Wiew2.map((item,key)=>{
-                                        return (
-                                            <div>
-                                                <div style={{ cursor: "pointer",display:"flex",justifyContent:"space-between" }} className="sms">
-                                                    {/*<div className="qizil"></div>*/}
-                                                    <div style={{paddingLeft:"15px"}} className="fort_block">
-    
-                                                    <p style={{marginBottom:'0px'}} className='data'>{item.username}</p>
-                                                    <p  className='data'>{item.last_name}</p>
-                                                    <div className="data_title">
-                                                        <p className='unred'>{item.title}</p>
-                                                        
-                                                    </div>
-                                                    
-                                                    <div className="p_lorem_sms">
                                                         <p className='lorem_sms'>{item.description} </p>
                                                         <input style={{ display: "none" }} type="text" id='atvet' />
                                                     </div>
-                                                    </div><p  className='data'>{item.time_create.slice(11, 16)}</p>
+                                                    <p className='data'>{item.time_create.slice(11, 16)}</p>
                                                 </div>
                                             </div>
-                                        )
+                                        </div>
+                                    )
                                 })}
-                                </div>)}
+                                {Wiew2.map((item, key) => {
+                                    return (
+                                        <div>
+                                            <div style={{ cursor: "pointer", display: "flex", justifyContent: "space-between" }} className="sms">
+                                                {/*<div className="qizil"></div>*/}
+                                                <div style={{ paddingLeft: "15px" }} className="fort_block">
+                                                    <div className="data_title">
+                                                        <p style={{ paddingTop: "20px" }} className='unred'>{item.title}</p>
+
+                                                    </div>
+
+                                                    <div className="p_lorem_sms">
+                                                        <p style={{ paddingBottom: "0px" }} className='lorem_sms'>{item.description} </p>
+                                                        <input style={{ display: "none" }} type="text" id='atvet' />
+                                                    </div>
+                                                </div><p className='data'>{item.time_create.slice(11, 16)}</p>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+                            </div>)}
                             <div id='inputNotifaction' className="input_notification_bid_div">
                                 {/* <textarea id="atvetu1" onChange={(e) => setInputValue(e.target.value)} cols="30" rows="10"></textarea> */}
                                 <input id='atvetu1' onChange={(e) => setInputValue(e.target.value)} type="text" />
@@ -162,14 +174,11 @@ export default function WiewAll() {
                                             <div onClick={() => Page(item.user_id, item.id)} style={{ cursor: "pointer" }} className="sms">
                                                 <div className="qizil"></div>
                                                 <div className="data_title">
-                                                    <div style={{paddingLeft:"20px"}} className="fort_block">
-                                                    <p className='unred'>{item.username}</p>
-                                                    <p className='lorem_sms'>{item.last_name} </p>
-                                                    <input style={{ display: "none" }} type="text" id='atvet' />
+                                                    <div style={{ paddingLeft: "20px" }} className="fort_block">
+                                                        <p className='unred'>{item.username}</p>
+                                                        <p className='lorem_sms'>{item.last_name} </p>
+                                                        <input style={{ display: "none" }} type="text" id='atvet' />
                                                     </div><p className='data'>{item.time_create.slice(11, 16)}</p>
-                                                </div>
-                                                <div className="p_lorem_sms">
-                                                    
                                                 </div>
                                             </div>
                                         </div>
