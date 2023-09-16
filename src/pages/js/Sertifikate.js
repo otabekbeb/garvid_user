@@ -50,12 +50,10 @@ export default function Sertifikate() {
           <div className="card_sertifikat">
             {sertifikat.length === 0 ? (
               <div className="delete_padding1">
-                <img src={Diplom} alt="" />
-                <h4>У вас нет сертификата</h4>
-                <div className="delete_btns">
-                  {/* <a href="/Ourcourse">  <button style={{background:'#44bef1  '}} className="delete_btn_yes">Купить курс</button></a> */}
-                </div>
-              </div>
+              <img src={Diplom} alt="" />
+              <h4 style={{ fontSize: '30px', opacity: '0.3' }}>Our courses are not yet</h4>
+
+            </div>
             ) : (
               <div
                 style={{
