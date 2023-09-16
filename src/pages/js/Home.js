@@ -465,7 +465,7 @@ export default function Home() {
               <div className="contact_form_input_big_div_input">
                 <form action="">
                   <label>
-                    <p>fullname</p>
+                    <p>FirstName</p>
                     <input type="email" name="" id="contact_inp" required />
                   </label>
                   <label>
