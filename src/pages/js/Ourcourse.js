@@ -265,7 +265,7 @@ export default function Ourcourse() {
         <div className="filter_kurs">
           {kursdata.length==0?(<div className="delete_padding1">
                   <img src={Groupimg} alt="" />
-                  <h4 style={{ fontSize: '30px', opacity: '0.3' }}>You didn't buy the course</h4>
+                  <h4 style={{ fontSize: '30px', opacity: '0.3' }}>No courses yet</h4>
                 </div>):(<>
             {kursdata.map((item) => {
             return (

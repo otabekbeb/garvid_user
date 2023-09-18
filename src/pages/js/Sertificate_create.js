@@ -97,7 +97,7 @@ export default function Sertificate_create() {
             var a = res.data.filter(item => item.mentor == localStorage.getItem("OneuserId"))
             setSertificat(a)
         })
-    })
+    },[])
 
     return (
         <div>

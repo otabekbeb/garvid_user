@@ -91,7 +91,31 @@ export default function Profil() {
   function obuna2() {
     document.querySelector('#azo_bolgan_katta_div_text_block_button1').classList.toggle("obuna2")
   }
-
+  function all() {
+    axios
+      .get(`${url}/api/mycourse/${localStorage.getItem("OneuserId")}`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      })
+      .then((res) => {
+        axios
+          .get(`${url}/api/course`, {
+            header: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          })
+          .then((res1) => {
+            for (let i = 0; i < res.data.length; i++) {
+              for (let j = 0; j < res1.data.length; j++) {
+                if (res.data[i].id == res1.data[j].id) {
+                  res.data[i].star = res1.data[j].star;
+                }
+              }
+            }
+            setData(res.data);
+            // localStorage.setItem("mycourseUser", res.data.length)
+          });
+      });
+  }
   useEffect(() => {
     axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setUsers(res.data)
@@ -334,7 +358,7 @@ export default function Profil() {
     axios.get(`${url}/edu/student_sertificat`, { headers: { Authorization: "Bearer" + localStorage.getItem("token") } }).then(res => {
       setSertifikat(res.data)
     })
-  })
+  },[])
   function folowcolor1(key) {
     document.querySelectorAll('.followButton1')[key].classList.toggle("followButton3")
   }
@@ -363,7 +387,7 @@ export default function Profil() {
     axios.get(`${url}/auth/oneuser`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then((res) => {
       setYoutub(res.data)
     })
-  })
+  },[])
 
   return (
     <div>
@@ -686,19 +710,38 @@ export default function Profil() {
                 </div> */}
                 </div>
                 <div onMouseLeave={() => filter1()} className="filter_button">
+                    {courstype.length == 0 ? (
+                      <div className="delete_padding1">
+                        {/* <img src={Groupimg} alt="" /> */}
+                        <h4 style={{ fontSize: '20px',marginTop:"45px", opacity: '0.3',textAlign:"center" }}>There is no such course yet</h4>
 
+                      </div>) : (
+                      <>
+                      {courstype.length ==0?(<div className="delete_padding1">
+                        {/* <img src={Groupimg} alt="" /> */}
+                        <h4 style={{ fontSize: '20px',marginTop:"45px", opacity: '0.3',textAlign:"center" }}>There is no such course yet</h4>
 
-                  {courstype.map(item => {
-                    return (
-                      <div className="button_filter_kurs" >
-                        {item.name === null ? ("") : (<div onClick={() => filter(item.id)} className="div_kurs" style={{ paddingBottom: '5px' }}>{item.name}</div>)}
-                      </div>
-                    )
-                  })}
+                      </div>):(<><span style={{ display: "flex", justifyContent: "end", marginRight: "20px" }} onClick={() => all()}> All</span>  {courstype.map((item) => {
+                        return (
+                          <div className="button_filter_kurs">
+                            {item.name === null ? (
+                              ""
+                            ) : (
+                              <div
+                                onClick={() => filter(item.id)}
+                                className="div_kurs"
+                                style={{ paddingBottom: "5px" }}
+                              >
 
+                                {item.name}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}</>)}
+                      </>)}
 
-
-                </div>
+                  </div>
               </div>
             </div>
           </div>
@@ -723,7 +766,23 @@ export default function Profil() {
               </div>
             ) : (
               <div className="cursu" style={{ display: "flex" }}>
-                {kursdata.map((item) => {
+                {kursdata.length==0?(<div className="delete_padding1">
+                  <img src={Groupimg} alt="" />
+                  <h4 style={{ fontSize: "30px", opacity: "0.3" }}>
+                    You didn't buy the course
+                  </h4>
+                  <div className="delete_btns">
+                    <a href="/Ourcourse">
+                      {" "}
+                      <button
+                        style={{ background: "#44bef1  " }}
+                        className="delete_btn_yes"
+                      >
+                        Buy a course
+                      </button>
+                    </a>
+                  </div>
+                </div>):(kursdata.map((item) => {
                   return (
                     <div>
                       <div
@@ -1038,7 +1097,8 @@ export default function Profil() {
                       </div>
                     </div>
                   );
-                })}
+                }))}
+                
               </div>
             )}
           </div>

@@ -19,6 +19,7 @@ export default function WiewAll() {
     const [read1, setRead1] = useState()
     const [pageId, setPageId] = useState()
     const [pageId1, setPageId1] = useState()
+    const [page2,setPage2] = useState()
 
     useEffect(() => {
         axios.get(`${url}/api/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
@@ -32,13 +33,15 @@ export default function WiewAll() {
                     }
 
                 }
-                setWiew(res.data)
+                const Filter10=res.data.filter(item=>item.notification_id==0)
+                setWiew(Filter10)
+                setWiew2(res.data)
                 localStorage.getItem("fornati")?
                 JSON.parse(localStorage.getItem("fornati")).map(fornati=>{
                  const Filter = res.data.filter(item => item.id == fornati.id)
                 setWiew1(Filter)
                 // console.log(JSON.parse(localStorage.getItem("fornati"))[0].id,"salom");
-                const Filter1 = res.data.filter(item => item.to_user_id == fornati.user_id)
+                const Filter1 = res.data.filter(item => item.notification_id == fornati.id)
                 setWiew2(Filter1)  
                 setRead1(fornati.user_id) 
                 setPageId1(fornati.id)
@@ -51,13 +54,14 @@ export default function WiewAll() {
                 setOneuser(item)
             })
         })
-    })
+    },[])
     function atvet() {
         var formdata = new FormData()
         formdata.append("title", oneuser.username)
         formdata.append("description", inputValue)
         formdata.append("user_id", oneuser.id)
         formdata.append("to_user_id", localStorage.getItem("fornati")?read1:read)
+        formdata.append("notification_id", localStorage.getItem("fornati")?pageId1:page2)
         axios.post(`${url}/api/notification`, formdata, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
             axios.get(`${url}/api/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
                 axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
@@ -69,17 +73,21 @@ export default function WiewAll() {
                             }
                         }
                     }
-                    setWiew(res.data)
                   document.querySelector("#atvetu1").value=""
-                  localStorage.getItem("fornati")?JSON.parse(localStorage.getItem("fornati")):res.data.map(fornati=>{
-                    setRead1(fornati.user_id)
-                    setPageId1(fornati.id)
-                    const Filter3 = res.data.filter(item => item.id == fornati.id)
-                    const Filter2 = res.data.filter(item => item.to_user_id == fornati.user_id) 
-                    const Filter = res.data.filter(item => item.id == pageId)
-                    const Filter1 = res.data.filter(item => item.to_user_id == read)
-                    localStorage.getItem("fornati")?setWiew1(Filter3):setWiew1(Filter)
-                    localStorage.getItem("fornati")?setWiew2(Filter2) :setWiew2(Filter1) 
+                  localStorage.getItem("fornati")?
+                  JSON.parse(localStorage.getItem("fornati")).map(item1=>{
+                    const Filter2 = res.data.filter(item => item.notification_id == item1.id)
+                    setWiew2(Filter2)
+                  })
+                  :res.data.map(fornati=>{
+                      const Filter2 = res.data.filter(item => item.notification_id == pageId1) 
+                      const Filter3 = res.data.filter(item => item.id == fornati.id)
+                      const Filter = res.data.filter(item => item.id == pageId)
+                      const Filter1 = res.data.filter(item => item.notification_id == pageId)
+                      localStorage.getItem("fornati")?setWiew1(Filter3):setWiew1(Filter)
+                      localStorage.getItem("fornati")?setWiew2(Filter2):setWiew2(Filter1) 
+                      setRead1(fornati.user_id)
+                      setPageId1(fornati.id)
                   })
                     
                 })
@@ -96,11 +104,29 @@ export default function WiewAll() {
     function Page(id, key) {
         const Filter = Wiew.filter(item => item.id == key)
         setWiew1(Filter)
-        const Filter1 = Wiew.filter(item => item.to_user_id == id)
+        axios.get(`${url}/api/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+              const Filter1 = res.data.filter(item => item.notification_id == key)
         setWiew2(Filter1)
         setPageId(key)
         setRead(id)
         setPage(1)
+        setPage2(key)  
+            
+        })   
+        
+// var formdata = new FormData();
+
+//     formdata.append("notification_id", id);
+
+//     axios
+//       .post(`${url}/api/notification/${id}`, formdata,{ headers: { Authorization: "Bearer " + localStorage.getItem("token") } })
+//       .then((res) => {
+//         alert("ishladi")
+//       })
+//       .catch((err) => {
+//         alert("xato")
+//       });
+        
     }
     return (
         <div>
@@ -133,14 +159,17 @@ export default function WiewAll() {
                                                         <p className='lorem_sms'>{item.description} </p>
                                                         <input style={{ display: "none" }} type="text" id='atvet' />
                                                     </div>
+                                                    <div className="time_blockk">
                                                     <p className='data'>{item.time_create.slice(11, 16)}</p>
+                                                    <p className='data'>{item.time_create.slice(0, 10)}</p></div>
                                                 </div>
                                             </div>
                                         </div>
                                     )
                                 })}
                                 {Wiew2.map((item, key) => {
-                                    return (
+
+                                return (
                                         <div>
                                             <div style={{ cursor: "pointer", display: "flex", justifyContent: "space-between" }} className="sms">
                                                 {/*<div className="qizil"></div>*/}
@@ -154,10 +183,12 @@ export default function WiewAll() {
                                                         <p style={{ paddingBottom: "0px" }} className='lorem_sms'>{item.description} </p>
                                                         <input style={{ display: "none" }} type="text" id='atvet' />
                                                     </div>
-                                                </div><p className='data'>{item.time_create.slice(11, 16)}</p>
+                                                </div><div className="time_blockk"><p className='data'>{item.time_create.slice(11, 16)}</p><p className='data'>{item.time_create.slice(0, 10)}</p></div>
                                             </div>
                                         </div>
                                     )
+                                    
+                                    
                                 })}
                             </div>)}
                             <div id='inputNotifaction' className="input_notification_bid_div">
@@ -173,12 +204,12 @@ export default function WiewAll() {
                                         <div>
                                             <div onClick={() => Page(item.user_id, item.id)} style={{ cursor: "pointer" }} className="sms">
                                                 <div className="qizil"></div>
-                                                <div className="data_title">
+                                                <div id='data_title' className="data_title">
                                                     <div style={{ paddingLeft: "20px" }} className="fort_block">
                                                         <p className='unred'>{item.username}</p>
                                                         <p className='lorem_sms'>{item.last_name} </p>
                                                         <input style={{ display: "none" }} type="text" id='atvet' />
-                                                    </div><p className='data'>{item.time_create.slice(11, 16)}</p>
+                                                    </div><div className="time_blockk"><p className='data'>{item.time_create.slice(11, 16)}</p><p id='data' className='data'>{item.time_create.slice(0, 10)}</p></div>
                                                 </div>
                                             </div>
                                         </div>
