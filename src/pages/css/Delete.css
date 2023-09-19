@@ -30,7 +30,7 @@
     background-color: rgba(0, 0, 0, 0.62);
     display: none;
     justify-content: center;
-    z-index: 1000000000000000000000 !important;
+    z-index: 1000000 !important;
 }
 
 .delete_padding {
