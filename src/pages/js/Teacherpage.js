@@ -18,13 +18,13 @@ export default function Contact() {
   const [loader, setLoader] = useState(0)
   const dataPost = () => {
     var formdata = {
-      fullname: document.querySelectorAll('#contact_inp')[0].value,
+      fullname: document.querySelectorAll('#contact_inp')[0].value + " " + document.querySelector("#contact_inp"),
       email: document.querySelectorAll('#contact_inp')[1].value,
       purchase: document.querySelectorAll('#contact_inp')[2].value,
       message: document.querySelector('.contact_textarea').value,
-      // phone: document.querySelector('.contact_inp1').value,
-      // city: document.querySelector('.contact_inp2').value,
-      // which_lesson: document.querySelector('.contact_inp3').value,
+      phone: document.querySelector('.contact_inp1').value,
+      city: document.querySelector('.contact_inp2').value,
+      which_lesson: document.querySelector('.contact_inp3').value,
     
 
     }
