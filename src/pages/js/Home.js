@@ -15,7 +15,7 @@ import Groupimg from "../img/oooo.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
+// Import Swiper style s
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -32,8 +32,7 @@ export default function Home() {
 
   const dataPost = () => {
     var formdata = {
-      fullname: document.querySelectorAll("#contact_inp")[0].value,
-      email: document.querySelectorAll("#contact_inp")[1].value,
+      fullname: document.querySelectorAll("#contact_inp")[0].value + " " + document.querySelectorAll("#contact_inp")[1].value,
       purchase: document.querySelectorAll("#contact_inp")[2].value,
       message: document.querySelector(".contact_textarea").value,
     };
@@ -466,6 +465,10 @@ export default function Home() {
                 <form action="">
                   <label>
                     <p>FirstName</p>
+                    <input type="email" name="" id="contact_inp" required />
+                  </label>
+                  <label>
+                    <p>LastName</p>
                     <input type="email" name="" id="contact_inp" required />
                   </label>
                   <label>
