@@ -13,16 +13,63 @@ export default function WiewAll() {
     const [Wiew1, setWiew1] = useState([])
     const [Wiew2, setWiew2] = useState([])
     const [inputValue, setInputValue] = useState()
+    const [inputValue1, setInputValue1] = useState()
     const [oneuser, setOneuser] = useState([])
+    const [oneuser1, setOneuser1] = useState([])
     const [page, setPage] = useState(localStorage.getItem("fornati") ? 1 : 0)
     const [read, setRead] = useState()
     const [read1, setRead1] = useState()
     const [pageId, setPageId] = useState()
     const [pageId1, setPageId1] = useState()
     const [page2,setPage2] = useState()
+    const [base, setBase] = useState([]);
+    const [select, setSelect] = useState([]);
+    const [news, setNews] = useState([]);
+    const [newId, setNewId] = useState();
+    // const title = document.querySelectorAll("#Notiftitle");
+  const description = document.querySelectorAll("#atvetu1");
+//   const user = document.querySelectorAll("#Notifuser");
+
+    function Select() {
+        document.querySelector(".select_div").style = "display: block !important;";
+      }
+      function SelectNone() {
+        document.querySelector(".select_div").style = "display:none";
+      }
+      function SelcetOption(name, id, key) {
+        var a = select;
+        var t = true;
+        for (let i = 0; i < a.length; i++) {
+          if (a[i].id == id) {
+            t = false;
+            a.splice(i, 1);
+            document.querySelectorAll("#select-input2")[key].style = "";
+          }
+        }
+        if (t) {
+          document.querySelectorAll("#select-input2")[key].style =
+            "background-color: #1890ff;";
+          a.push({ title: name, id: id });
+        }
+        document.querySelector("#select-input").innerHTML = "";
+        a.map((item) => {
+          document.querySelector(
+            "#select-input"
+          ).innerHTML += `<p class="SelectIchi">${item.title}</p>`;
+        });
+        setSelect(a);
+      }
 
     useEffect(() => {
+        axios
+      .get(`${url}/auth/allusers`, {
+        headers: { Authorization: "Beraer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        setBase(res.data);
+      });
         axios.get(`${url}/api/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+            setNews(res.data);
             axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
                 for (let i = 0; i < res.data.length; i++) {
                     for (let j = 0; j < res1.data.length; j++) {
@@ -54,6 +101,15 @@ export default function WiewAll() {
                 setOneuser(item)
             })
         })
+        axios
+      .get(`${url}/auth/oneuser`, {
+        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+      })
+      .then((res) => {
+        res.data.map((item) => {
+          setOneuser1(item.id);
+        });
+      });
     },[])
     function atvet() {
         var formdata = new FormData()
@@ -129,14 +185,41 @@ export default function WiewAll() {
         
     }
     function atvet1() {
-        var formdata= new FormData()
-        formdata.append("title",oneuser.username)
-        formdata.append("description", inputValue)
-        formdata.append("user_id", oneuser.id)
-        formdata.append("to_user_id")
+        for (let i = 0; i < select.length; i++) {
+          var formdata = new FormData();
+          formdata.append("title", oneuser.username);
+          formdata.append("description", inputValue);
+          formdata.append("user_id", oneuser1);
+          formdata.append("notification_id",0)
+          formdata.append("to_user_id", select[i].id);
     
-        
-    }
+          axios
+            .post(`${url}/api/notification`, formdata, {
+              headers: {
+                Authorization: "Bearer " + localStorage.getItem("token"),
+              },
+            })
+            .then((res) => {
+              axios
+                .get(`${url}/api/notification`, {
+                  headers: {
+                    Authorization: "Beraer " + localStorage.getItem("token"),
+                  },
+                })
+                .then((res) => {
+                    const Filter=res.data.filter(item=>item.notification_id==0)
+                  setWiew(Filter);
+                //   alert("ishladi")
+                }).catch((err)=>{
+                    // alert("ish")
+                });
+              window.location.reload();
+            })
+            .catch((err) => {
+              alert("Информация не отправлена");
+            });
+        }
+      }
     return (
         <div>
             <Usernavbar />
@@ -227,9 +310,32 @@ export default function WiewAll() {
                                 }
                             })}</div>
                             <div id='inputNotifaction' className="input_notification_bid_div">
+                            <label style={{ width: "10%" }} htmlFor="">
+              <div className="select_big_div">
+                {/* <input onClick={()=>Select()} id='select-input' type="text" /> */}
+
+                <div onClick={() => Select()} id="select-input"></div>
+                <div onClick={() => SelectNone()} id='selectss' className="select_div">
+                  {base.map((item, key) => {
+                    return (
+                      <p
+                        id="select-input2"
+                        onClick={() =>
+                          SelcetOption(item.username, item.id, key)
+                        }
+                        value={item.id}
+                      >
+                        {item.username}
+                      </p>
+                    );
+                  })}
+                </div>
+              </div>
+            </label>
                             {/* <textarea id="atvetu1" onChange={(e) => setInputValue(e.target.value)} cols="30" rows="10"></textarea> */}
                             <input id='atvetu1' onChange={(e) => setInputValue(e.target.value)} type="text" />
                             <button onClick={() => atvet1()}>Send</button>
+                            
                         </div>
                         </div>
                     )}
