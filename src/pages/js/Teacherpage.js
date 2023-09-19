@@ -9,13 +9,15 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import axios from "axios";
-import Loader from "./loader" 
+import Loader from "./loader"
 import Swal from "sweetalert2";
 import { BsCheck2 } from 'react-icons/bs'
 import { BsCheckAll } from 'react-icons/bs'
 export default function Contact() {
   const [state, setstate] = React.useState();
   const [loader, setLoader] = useState(0)
+
+
   const dataPost = () => {
     var formdata = {
       fullname: document.querySelectorAll('#contact_inp')[0].value + " " + document.querySelector("#contact_inp"),
@@ -50,10 +52,10 @@ export default function Contact() {
           <Usernavbar />
           <div className="contact">
             <div className="contact_left">
-          <h1 onClick={() => window.location = "/contacts"}>
-            {state === "ru" ? "Связаться с нами" : "Connect with us"}
-          </h1>
-          {/* <p className="contact_info">
+              <h1 onClick={() => window.location = "/contacts"}>
+                {state === "ru" ? "Связаться с нами" : "Connect with us"}
+              </h1>
+              {/* <p className="contact_info">
             {state === "ru"
               ? (<div>Как я могу связаться с вами? <br /><br />По номеру <a className="contact_tel" href="tel: +7 032 11 12">
                 (+7) <span> 032 11 12</span>
@@ -62,68 +64,82 @@ export default function Contact() {
                 (+7) <span> 032 11 12</span>
               </a>call or leave a message and our operators will contact you as soon as possible.</div>)}
           </p> */}
-          <p className="contact_address">
-            {state === "ru"
-              ? " Казахстан, Туркестанская область, город Шымкент,Улица Сурикова 3Б"
-              : "Qazaqstan, Turkestan Region, Shymkent city, Surikova street 3B"}
-          </p>
+              <p className="contact_address">
+                {state === "ru"
+                  ? " Казахстан, Туркестанская область, город Шымкент,Улица Сурикова 3Б"
+                  : "Qazaqstan, Turkestan Region, Shymkent city, Surikova street 3B"}
+              </p>
 
-          <div className="email_box">
-            <MdEmail className="email_icon" />
-            <a href="mailto: garvird@gmail.com">
-            info@baisan.org
-            </a>
-          </div>
-          <div className="feat_left contact_icons">
+              <div className="email_box">
+                <MdEmail className="email_icon" />
+                <a href="mailto: garvird@gmail.com">
+                  info@baisan.org
+                </a>
+              </div>
+              <div className="feat_left contact_icons">
 
-            <a href="#" className="iconBox ">
-              <FaFacebookF className="icon icon4" />
-            </a>
-            <a href="#" className="iconBox">
-              <FaTwitter className="icon icon4" />
-            </a>
-            <a href="#" className="iconBox">
-              <FaInstagram className="icon icon4" />
-            </a>
-          </div>
-        </div>
+                <a href="#" className="iconBox ">
+                  <FaFacebookF className="icon icon4" />
+                </a>
+                <a href="#" className="iconBox">
+                  <FaTwitter className="icon icon4" />
+                </a>
+                <a href="#" className="iconBox">
+                  <FaInstagram className="icon icon4" />
+                </a>
+              </div>
+            </div>
 
             <div className="contact_right1">
               <form action="">
                 <label>
-                  <p style={{fontWeight:'700'}}>fullname</p>
-                  <input type="email" name="" id="contact_inp" required />
+                  <p>FirstName</p>
+                  <input type="text" id="inputla1" required />
                 </label>
                 <label>
-                  <p style={{fontWeight:'700'}}>email</p>
-                  <input id='contact_inp' type="text" required />
+                  <p>LastName</p>
+                  <input type="text" id="inputla2" required />
                 </label>
                 <label>
-                  <p style={{fontWeight:'700'}}>purchase</p>
-                  <input id='contact_inp' type="text" required />
-                </label>
-
-
-                <label>
-                  <p style={{fontWeight:'700'}}>Phone</p>
-                  <input id='contact_inp1' type="text" required />
+                  <p>email</p>
+                  <input type="text" id="inputla3" required />
                 </label>
                 <label>
-                  <p style={{fontWeight:'700'}}>City</p>
-                  <input id='contact_inp2' type="text" required />
+                  <p>purchase</p>
+                  <input type="text" id="inputla4" required />
                 </label>
                 <label>
-                  <p style={{fontWeight:'700'}}>which_lesson</p>
-                  <input id='contact_inp3' type="text" required />
+                  <p>city</p>
+                  <input type="text" id="inputla5" required />
                 </label>
                 <label>
-                  <p style={{fontWeight:'700'}}>Message</p>
-                  <textarea name="" className='contact_textarea' id="text1" cols="30" rows="10"></textarea>
+                  <p>phone</p>
+                  <input type="text" id="inputla6" required />
+                </label>
+                <label>
+                  <p>which_lesson</p>
+                  <input type="text" id="inputla7" required />
+                </label>
+                <label>
+                  <p>Message</p>
+                  <textarea
+                    name=""
+                    className="contact_textarea"
+                    id="text1"
+                    cols="30"
+                    rows="10"
+                  ></textarea>
                 </label>
                 <div className="admin_button1">
-                  <button onClick={() => { dataPost() }}>Send</button>
+                  <button
+                    onClick={() => {
+                      dataPost();
+                    }}
+                  >
+                    Send
+                  </button>
                   {/* <div className="admin_title">
-                                            <admin_buttonh4>Admin:</h4>
+                                            <h4>Admin:</h4>
                                             <div className="chec_icon">
                                                 {chec.map(item => {
                                                     return (
@@ -137,7 +153,7 @@ export default function Contact() {
 
 
                                             </div>
-                   </div> */}
+                                        </div> */}
                 </div>
               </form>
 
