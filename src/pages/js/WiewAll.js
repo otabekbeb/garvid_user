@@ -155,7 +155,7 @@ export default function WiewAll() {
                                                 <p className='data'>{item.last_name}</p>*/}
                                                 <div className="data_title">
                                                     <div style={{ paddingLeft: "20px", marginTop: "20px" }} className="fort_block">
-                                                        <p className='unred'>{item.title}</p>
+                                                        <p className='unred'>{item.username}</p>
                                                         <p className='lorem_sms'>{item.description} </p>
                                                         <input style={{ display: "none" }} type="text" id='atvet' />
                                                     </div>
@@ -207,7 +207,7 @@ export default function WiewAll() {
                                                 <div id='data_title' className="data_title">
                                                     <div style={{ paddingLeft: "20px" }} className="fort_block">
                                                         <p className='unred'>{item.username}</p>
-                                                        <p className='lorem_sms'>{item.last_name} </p>
+                                                        <p className='lorem_sms'>{item.description} </p>
                                                         <input style={{ display: "none" }} type="text" id='atvet' />
                                                     </div><div className="time_blockk"><p className='data'>{item.time_create.slice(11, 16)}</p><p id='data' className='data'>{item.time_create.slice(0, 10)}</p></div>
                                                 </div>

@@ -449,7 +449,7 @@ return (
                                     </div>
                                   </div>
                                   <div className="taxrirlash_chad_text">
-                                    <p>{item.last_name}</p>
+                                    <p>{item.description.length>15?(<>{item.description.slice(0,13)}...</>):(item.description)}</p>
                                   </div>
                                 </div>
                               </div>

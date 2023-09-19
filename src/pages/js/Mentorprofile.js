@@ -60,30 +60,21 @@ export default function Profil() {
       .catch((err) => {
         console.log(err);
       });
-    axios
-      .get(`${url}/API/notification`, {
-        headers: { Authorization: "Bearer " + localStorage.getItem("token") },
-      })
-      .then((res) => {
-        setNatlifikation(res.data);
-        axios
-          .get(`${url}/auth/allusers`, {
-            headers: {
-              Authorization: "Bearer " + localStorage.getItem("token"),
-            },
-          })
-          .then((res1) => {
-            setUser(res1.data);
-            for (let i = 0; i < res.data.length; i++) {
-              for (let j = 0; j < res1.data.length; j++) {
-                if (res.data[i].user_id == res1.data[j].id) {
-                  res.data[i].image = res1.data[j].image;
-                }
+      axios.get(`${url}/API/notification`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
+        setNatlifikation(res.data)
+        axios.get(`${url}/auth/allusers`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
+          setUser(res1.data)
+          for (let i = 0; i < res.data.length; i++) {
+            for (let j = 0; j < res1.data.length; j++) {
+              if (res.data[i].user_id == res1.data[j].id) {
+                res.data[i].image = res1.data[j].image
+                res.data[i].username = res1.data[j].username
+                res.data[i].last_name = res1.data[j].last_name
               }
             }
-            setNatlifikation(res.data);
-          })
-          .catch((err) => { });
+          }
+          setNatlifikation(res.data)
+        })
       })
       .catch((err) => { });
   }, []);
@@ -380,36 +371,9 @@ export default function Profil() {
                 onClick={() => taxrirlashChadModal()}
                 className="profil_blok_ikki_icon_bir"
               />
-              {natlifikation.filter(
-                (filter) =>
-                  filter.to_user_id == localStorage.getItem("OneuserId")
-              ).length == 0 ? (
-                ""
-              ) : (
-                <div
-                  className="nol"
-                  style={{
-                    background: "red",
-                    width: "20px",
-                    height: "20px",
-                    borderRadius: "50%",
-                    color: "#fff",
-                    textAlign: "center",
-                    marginTop: "-7%",
-                    marginLeft: "-10px",
-                  }}
-                >
-                  {
-                    natlifikation.filter(
-                      (filter) =>
-                        filter.to_user_id == localStorage.getItem("OneuserId")
-                    ).length
-                  }
-                </div>
-              )}
 
-              {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length == 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
-                {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length}
+{natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId") && filter.read===false) .length === 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
+                {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId") && filter.read===false) .length}
               </div>)}
 
 
@@ -462,7 +426,7 @@ export default function Profil() {
 return (
                             <div>
                               {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
-                              <div style={{cursor:"pointer"}} onClick={()=>{soyaa(item.id);window.location="/WiewAll";localStorage.setItem("fornati1",item.id);localStorage.setItem("fornati",JSON.stringify([item]))}} className="taxrirlash_chad">
+                              <div style={{cursor:"pointer"}} onClick={()=>{soyaa(item.id);window.location="/WiewAll1";localStorage.setItem("fornati1",item.id);localStorage.setItem("fornati",JSON.stringify([item]))}} className="taxrirlash_chad">
                                 <div className="taxrirlash_chad_img_size">
                                   <img src={item.image} alt="" />
                                 </div>
@@ -475,7 +439,7 @@ return (
                                     </div>
                                   </div>
                                   <div className="taxrirlash_chad_text">
-                                    <p>{item.last_name}</p>
+                                  <p>{item.description.length>15?(<>{item.description.slice(0,13)}...</>):(item.description)}</p>
                                   </div>
                                 </div>
                               </div>
