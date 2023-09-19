@@ -13,48 +13,34 @@ import Loader from "./loader"
 import Swal from "sweetalert2";
 import { BsCheck2 } from 'react-icons/bs'
 import { BsCheckAll } from 'react-icons/bs'
+import url from "./Host";
 export default function Contact() {
   const [state, setstate] = React.useState();
   const [loader, setLoader] = useState(0)
 
 
-  const dataPost = () => {
-    var formdata = {
-      fullname: document.querySelector("#inputla1").value + " " + document.querySelector("#inputla2").value,
-      email: document.querySelector("#inputla3").value,
-      city: document.querySelector("#inputla4").value,
-      phone: document.querySelector("#inputla5").value,
-      which_lesson: document.querySelector("#inputla6").value,
-      purchase: document.querySelector("#inputla7").value,
-      message: document.querySelector(".contact_textarea").value,
-
-
-
-
-
-      // fullname: document.querySelector("#inputla1").value + " " + document.querySelector("#inputla2").value,
-      // email: document.querySelector("#inputla3").value,
-      // city: document.querySelector("#inputla4").value,
-      // phone: document.querySelector("#inputla5").value,
-      // which_lesson: document.querySelector("#inputla6").value,
-      // purchase: document.querySelector("#inputla7").value,
-      // message: document.querySelector("#contact_textarea").value,
-    };
+ function dataPost()  {
+  var formdata = new FormData()
+    
+    
+     formdata.append("fullname", document.querySelectorAll("#constactqq")[0].value + " " + document.querySelectorAll("#constactqq")[1].value) 
+     formdata.append("email", document.querySelectorAll("#constactqq")[2].value) 
+     formdata.append("city", document.querySelectorAll("#constactqq")[3].value) 
+     formdata.append("phone", document.querySelectorAll("#constactqq")[4].value) 
+     formdata.append("which_lesson", document.querySelectorAll("#constactqq")[5].value) 
+     formdata.append("purchase", document.querySelectorAll("#constactqq")[6].value) 
+     formdata.append("message", document.querySelector(".contact_textarea").value) 
+    
     axios
-      .post("https://markazback2.onrender.com/api/call_me", formdata, {
+      .post(`${url}/api/call_me`, formdata, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((res) => {
         alert("ishladi")
-        state === "ru"
-          ? Swal.fire("Information sent, wait for a call from the operator")
-          : Swal.fire("Information sent, wait for a call from the operator");
         window.location.reload();
       })
       .catch((err) => {
-        state === "ru"
-          ? Swal.fire("Check information, Failed to send")
-          : Swal.fire("Check information, Failed to send");
+        alert("x")
       });
   };
   useEffect(() => {
@@ -112,31 +98,31 @@ export default function Contact() {
               <form action="">
                 <label>
                   <p>FirstName</p>
-                  <input type="text" id="inputla1" required />
+                  <input type="text" id="constactqq" required />
                 </label>
                 <label>
                   <p>LastName</p>
-                  <input type="text" id="inputla2" required />
+                  <input type="text" id="constactqq" required />
                 </label>
                 <label>
                   <p>email</p>
-                  <input type="text" id="inputla3" required />
+                  <input type="text" id="constactqq" required />
                 </label>
                 <label>
                   <p>purchase</p>
-                  <input type="text" id="inputla4" required />
+                  <input type="text" id="constactqq" required />
                 </label>
                 <label>
                   <p>city</p>
-                  <input type="text" id="inputla5" required />
+                  <input type="text" id="constactqq" required />
                 </label>
                 <label>
                   <p>phone</p>
-                  <input type="text" id="inputla6" required />
+                  <input type="text" id="constactqq" required />
                 </label>
                 <label>
                   <p>which_lesson</p>
-                  <input type="text" id="inputla7" required />
+                  <input type="text" id="constactqq" required />
                 </label>
                 <label>
                   <p>Message</p>

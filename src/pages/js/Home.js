@@ -462,7 +462,59 @@ export default function Home() {
               <h1>Contact Form</h1>
               <div className="blue1"></div>
               <div className="contact_form_input_big_div_input">
-              https://markazback2.onrender.com/api/call_me
+                  <form action="">
+                    <label>
+                      <p>FirstName</p>
+                      <input type="email" name="" id="contact_inp" required />
+                    </label>
+                    <label>
+                      <p>LastName</p>
+                      <input type="email" name="" id="contact_inp" required />
+                    </label>
+                    <label>
+                      <p>email</p>
+                      <input id="contact_inp" type="text" required />
+                    </label>
+                    <label>
+                      <p>purchase</p>
+                      <input id="contact_inp" type="text" required />
+                    </label>
+                    <label>
+                      <p>Message</p>
+                      <textarea
+                        name=""
+                        className="contact_textarea"
+                        id="text1"
+                        cols="30"
+                        rows="10"
+                      ></textarea>
+                    </label>
+                    <div className="admin_button">
+                      <button
+                        onClick={() => {
+                          dataPost();
+                        }}
+                      >
+                        Send
+                      </button>
+                      {/* <div className="admin_title">
+                                              <h4>Admin:</h4>
+                                              <div className="chec_icon">
+                                                  {chec.map(item => {
+                                                      return (
+                                                          <div>
+                                                              {item.read === true ? (<BsCheck2 className='bir_chec' />) : (<BsCheckAll className='ikki_chec' />)}
+
+                                                          </div>
+                                                      )
+
+                                                  })}
+
+
+                                              </div>
+                                          </div> */}
+                    </div>
+                  </form>
               </div>
             </div>
             <img
