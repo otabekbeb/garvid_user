@@ -15,14 +15,14 @@ import { BsCheckAll } from 'react-icons/bs'
 
 export default function Contact() {
   const [state, setstate] = React.useState();
-  
+
 
   const dataPost = () => {
     var formdata = {
-      fullname: document.querySelectorAll('.contact_inp')[0].value,
-      email: document.querySelectorAll('.contact_inp')[1].value,
+      fullname: document.querySelectorAll('.contact_inp')[0].value + " " + document.querySelectorAll('.contact_inp')[1].value,
       purchase: document.querySelectorAll('.contact_inp')[2].value,
-      message: document.querySelectorAll('.contact_textarea').value
+      email: document.querySelector('.contact_inp101').value,
+      message: document.querySelector('.contact_textarea').value
     }
     axios.post('https://markazback2.onrender.com/api/call_me', formdata, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
@@ -30,7 +30,7 @@ export default function Contact() {
       state === "ru" ? (Swal.fire("Информация отправлена, дождитесь звонка оператора")) : (Swal.fire("Information sent, wait for a call from the operator"))
       window.location.reload()
     }).catch(err => {
-      state === "ru"?(Swal.fire("Check information, Failed to send")) : (Swal.fire("Check information, Failed to send"))
+      state === "ru" ? (Swal.fire("Check information, Failed to send")) : (Swal.fire("Check information, Failed to send"))
     })
   }
   useEffect(() => {
@@ -83,7 +83,7 @@ export default function Contact() {
           <div className="email_box">
             <MdEmail className="email_icon" />
             <a href="mailto: garvird@gmail.com">
-            info@baisan.org
+              info@baisan.org
             </a>
           </div>
           <div className="feat_left contact_icons">
@@ -110,7 +110,7 @@ export default function Contact() {
               type="text"
               className="contact_inp"
               placeholder={
-                state === "ru" ? "Электронная почта*" : "Email*"
+                state === "ru" ? "LastName*" : "LastName*"
               }
             />
             <input
@@ -119,6 +119,11 @@ export default function Contact() {
               placeholder={state === "ru" ? "Телефон*" : "Purchase*"}
             />
           </div>
+          <input
+            type="text"
+            className="contact_inp101"
+            placeholder={state === "ru" ? "Электронная почта*" : "Email*"}
+          />
           <textarea
             rows={10}
             placeholder={state === "ru" ? "Сообщение*" : "Message*"}

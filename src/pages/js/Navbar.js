@@ -112,6 +112,16 @@ export default function Navbar() {
      }).catch(err=>{})
       
   };
+  window.onload = function () {
+    googleTranslateElementInit();
+    setTimeout(function() {
+      const translateButton = document.querySelector(".goog-te-combo");
+      if (translateButton) {
+        translateButton.value = "en"; // Ingliz tilini tanlaganini belgilash
+        translateButton.dispatchEvent(new Event("change"));
+      }
+    }, 1000)
+  };
 
   useEffect(() => {
     var addScript = document.createElement("script");

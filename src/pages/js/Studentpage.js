@@ -218,6 +218,7 @@ export default function Mentor() {
   const [following, setFollowing] = useState(localStorage.getItem("OneuserId"))
   const [edication, setEdication] = useState([])
   const [education, setForeducation] = useState([])
+  const [setificatLength,setsetificatLength]=useState()
   // const [edicationId, setEdicationId] = useState()
   // const [tests, setTests] = useState([])
 
@@ -280,6 +281,19 @@ export default function Mentor() {
     axios.get(`${url}/edu/education`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setEdication(res.data)
     })
+
+    axios
+    .get(`${url}/edu/student_sertificat`, {
+      headers: { Authorization: "Bearer" + localStorage.getItem("token") },
+    })
+    .then((res) => {
+      axios.get(`${url}/auth/oneuser`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res1 => {
+        res1.data.map(one => {
+          const Filter = res.data.filter(item => item.student_id == one.id)
+          setsetificatLength(Filter.length);
+        })
+      })
+    });
 
 
   }, [])
@@ -1107,7 +1121,7 @@ export default function Mentor() {
               <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(10)} style={toggle === 10 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>All teachers</h1>{toggle === 10 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("FollowCard")} pieces</div>) : ("")}</div>
               <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My subscribtions</h1>{toggle === 4 ? ("") : ("")}</div>
               <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Courses</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">{courses.length}  pieces</div>) : ("")}</div>
-              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(6)} style={toggle === 6 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Sertificat</h1>{toggle === 6 ? (<div className="fil_text_blok_kurs_lenght">{courses.length}  pieces</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(6)} style={toggle === 6 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Sertificat</h1>{toggle === 6 ? (<div className="fil_text_blok_kurs_lenght">{setificatLength}  pieces</div>) : ("")}</div>
             </div>
             <div className="profil_blok_menu_size">
               <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
