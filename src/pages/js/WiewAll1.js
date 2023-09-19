@@ -185,6 +185,7 @@ export default function WiewAll() {
         
     }
     function atvet1() {
+
         for (let i = 0; i < select.length; i++) {
           var formdata = new FormData();
           formdata.append("title", oneuser.username);
@@ -231,13 +232,7 @@ export default function WiewAll() {
                     {page == 1 ? (
                         <div>
                             <button className='Exit_notifaction_button' onClick={() => {setPage(0);localStorage.removeItem("fornati")}}><BsArrowLeft style={{ fontSize: '20px' }} /></button>
-                            {Wiew === 0 ? (
-                                <div><div className="icon">
-                                    <img className='ooo' src={Qongro} alt="" />
-                                </div>
-
-                                    <p className='qongiro_title'>You don't have any notifications yet!</p> </div>
-                            ) : (<div className='forae_scrol'>
+                             <div className='forae_scrol'>
                                 {Wiew1.map((item, key) => {
                                     return (
                                         <div >
@@ -282,7 +277,7 @@ export default function WiewAll() {
                                     
                                     
                                 })}
-                            </div>)}
+                            </div>
                             <div id='inputNotifaction' className="input_notification_bid_div">
                                 {/* <textarea id="atvetu1" onChange={(e) => setInputValue(e.target.value)} cols="30" rows="10"></textarea> */}
                                 <input id='atvetu1' onChange={(e) => setInputValue(e.target.value)} type="text" />
