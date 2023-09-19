@@ -1049,13 +1049,19 @@ label{
 }
 
 .cursu{
-    width: 81%;
+    width: 1600px;
+    max-width: 100%;
     margin: auto;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 30px;
     margin-bottom: 50px;
-    margin-top: 5%;
+    margin-top: 2%;
     position: relative;
+}
+@media(max-width:460px){
+    .delete_padding1 h4{
+        font-size: 22px !important;
+    }
 }

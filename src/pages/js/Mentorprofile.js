@@ -450,30 +450,19 @@ export default function Profil() {
                 </div>
               </div>
               <div className="profil_blok_ikki_icon_taxriirlash_chat">
-                <div className="for_wiewall">
+              <div className="for_wiewall">
                   {natlifikation.length === 0 ? (
-                    <div>
-                      <p
-                        style={{
-                          textAlign: "center",
-                          marginTop: "35%",
-                          fontSize: "20px",
-                          opacity: "0.4",
-                        }}
-                      >
-                        Not written to you
-                      </p>
-                    </div>
-                  ) : (
-                    <div>
+                    <div><p style={{ textAlign: 'center', marginTop: '35%', fontSize: '20px', opacity: '0.4' }}>Not written to you</p>
+
+                    </div>) : (<div>
                       {natlifikation.map((item, key) => {
-                        if (
-                          item.to_user_id == localStorage.getItem("OneuserId")
-                        ) {
-                          return (
+                        
+                        if (item.to_user_id == localStorage.getItem("OneuserId")) {
+                          if(item.read===false){
+return (
                             <div>
                               {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
-                              <div style={{cursor:"pointer"}} onClick={()=>{soyaa(item.id);window.location="/WiewAll1";localStorage.setItem("fornati",JSON.stringify([item]))}} className="taxrirlash_chad">
+                              <div style={{cursor:"pointer"}} onClick={()=>{soyaa(item.id);window.location="/WiewAll";localStorage.setItem("fornati1",item.id);localStorage.setItem("fornati",JSON.stringify([item]))}} className="taxrirlash_chad">
                                 <div className="taxrirlash_chad_img_size">
                                   <img src={item.image} alt="" />
                                 </div>
@@ -482,7 +471,7 @@ export default function Profil() {
                                     <h1>{item.username}</h1>
                                     <div className="taxrirlash_chad_vaqt_soat">
                                       <TbPointFilled className="chad_set" />
-                                      <p>{item.time_create.slice(11, 16)}</p>
+                                      <p >{item.time_create.slice(11, 16)}</p>
                                     </div>
                                   </div>
                                   <div className="taxrirlash_chad_text">
@@ -490,23 +479,20 @@ export default function Profil() {
                                   </div>
                                 </div>
                               </div>
-
-                              <p>{item.time_create.slice(0, 10)}</p>
+                              <p >{item.time_create.slice(0, 10)}</p>
                             </div>
-                          );
+                          )
+                          }
+                          
                         }
                       })}
-                    </div>
+                      </div>
                   )}
                 </div>
 
                 <a
                   className="wiewu"
-                  style={
-                    natlifikation.length === 0
-                      ? { display: "none" }
-                      : { display: "flex" }
-                  }
+                
                   href="/WiewAll1"
                 >
                   {" "}

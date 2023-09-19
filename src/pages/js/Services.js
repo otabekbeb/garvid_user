@@ -35,7 +35,7 @@ export default function Services() {
     }).catch(err => {
 
     })
-  })
+  },[])
 
   useEffect(() => {
     axios.get(`${url}/auth/teachers/`, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }).then(res => {
@@ -44,7 +44,7 @@ export default function Services() {
     }).catch(err => {
 
     })
-  })
+  },[])
 
   return (
     <div className='ser1'>

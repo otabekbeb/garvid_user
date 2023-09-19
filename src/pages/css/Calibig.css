@@ -387,9 +387,9 @@ color: #fff;
    
 }*/
 
-@media (max-width:370px) {
+@media (max-width:380px) {
     .kurs_card {
-        width: 100%;
+        width: 280px;
     }
 
     .kurs_card img {
@@ -614,5 +614,15 @@ color: #fff;
     }
     .rafiki_img_course h3{
         font-size: 18px !important;
+    }
+    .rafiki_img_course button {
+        width: 160px !important;
+        height: 40px !important;
+        margin-top: 10px;
+        color: #fff;
+        background: #44bef1;
+        border-radius: 5px;
+        font-size: 16px !important;
+        transition: .3s ease;
     }
 }

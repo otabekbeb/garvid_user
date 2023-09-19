@@ -74,7 +74,7 @@ export default function Home() {
         setUnivercard(res.data);
       })
       .catch((err) => {});
-  });
+  },[]);
 
   useEffect(() => {
     axios
@@ -86,7 +86,7 @@ export default function Home() {
         console.log(res.data);
       })
       .catch((err) => {});
-  });
+  },[]);
   return (
     <div>
       <div>

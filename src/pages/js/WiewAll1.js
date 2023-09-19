@@ -51,7 +51,7 @@ export default function WiewAll() {
                 setOneuser(item)
             })
         })
-    })
+    },[])
 
 function atvet1() {
     var formdata= new FormData()
@@ -180,11 +180,12 @@ function atvet1() {
                             </div>
                         </div>) : (
                         <div>
-                            {Wiew.map((item, key) => {
-                                if (item.to_user_id == localStorage.getItem("OneuserId")) {
-                                    return (
+                            
                                         <div>
                                             <div className="forae_scrol">
+                                                {Wiew.map((item, key) => {
+                                if (item.to_user_id == localStorage.getItem("OneuserId")) {
+                                    return (
                                             <div onClick={() => Page(item.user_id, item.id)} style={{ cursor: "pointer" }} className="sms">
                                                 <div className="qizil"></div>
                                                 <div className="data_title">
@@ -194,17 +195,17 @@ function atvet1() {
                                                         <input style={{ display: "none" }} type="text" id='atvet' />
                                                     </div><p className='data'>{item.time_create.slice(11, 16)}</p>
                                                 </div>
-                                            </div></div>
-                                            <div id='inputNotifaction' className="input_notification_bid_div">
-                                {/* <textarea id="atvetu1" onChange={(e) => setInputValue(e.target.value)} cols="30" rows="10"></textarea> */}
-                                <input id='atvetu1' onChange={(e) => setInputValue(e.target.value)} type="text" />
-                                <button onClick={() => atvet1()}>Send</button>
-                            </div>
+                                            </div> )
+                                }
+                            })}</div> <div id='inputNotifaction' className="input_notification_bid_div">
+                            {/* <textarea id="atvetu1" onChange={(e) => setInputValue(e.target.value)} cols="30" rows="10"></textarea> */}
+                            <input id='atvetu1' onChange={(e) => setInputValue(e.target.value)} type="text" />
+                            <button onClick={() => atvet1()}>Send</button>
+                        </div>
+                                           
                             
                                         </div>
-                                    )
-                                }
-                            })}
+                                   
                         </div>
                     )}
                 </div>

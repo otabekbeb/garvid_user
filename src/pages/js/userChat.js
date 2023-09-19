@@ -585,7 +585,7 @@ function onclicks(key) {
           <div className="userList">
             {users.map((item)=>{
               return(
-                <div style={{cursor:"pointer",display:"flex"}} onClick={() => createPrivateRoom(item.email)} className="userDiv" ><div className="tg_img" style={{marginRight:"10px"}}><img style={{height:"100%"}} src={tgimg} alt="" /></div>{item.username}</div>
+                <div style={{cursor:"pointer",display:"flex"}} onClick={() => createPrivateRoom(item.email)} className="userDiv" ><div className="tg_img" style={{marginRight:"10px"}}><img style={{height:"100%"}} src={item.image} alt="" /></div>{item.username}</div>
               )
             })}
           </div>
@@ -713,7 +713,7 @@ function onclicks(key) {
                       <div className="yozishma_bolim_text_nik_text_ism_p">
                       {Filter.map(filter => {
                               return <div className="tg_img">
-                                {item.image===null?(<img src={userNull} alt="" />):(<img src={"https://markazback2.onrender.com/" + filter.image} alt="" />)}
+                                {item.image===null?(<img src={userNull} alt="" />):(<img src={filter.image} alt="" />)}
                                 
                               </div>
                             })}

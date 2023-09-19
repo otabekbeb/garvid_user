@@ -58,7 +58,8 @@
 .delete_padding1 img {
     margin: auto;
     display: flex;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     height: 200px;
     height: 70%;
 }
