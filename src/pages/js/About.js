@@ -38,7 +38,7 @@ export default function About() {
         }).catch(err => {
          
         })
-    })
+    },[])
   return (
 
     

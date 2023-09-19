@@ -240,12 +240,18 @@ export default function Searchfilter() {
                 </div> */}
                   </div>
                   <div onMouseLeave={() => filter1()} className="filter_button">
-                    {courstype.length === 0 ? (
+                    {courstype.length == 0 ? (
                       <div className="delete_padding1">
-                        <img src={Groupimg} alt="" />
-                        <h4 style={{ fontSize: '30px', opacity: '0.3' }}>Our courses are not yet</h4>
+                        {/* <img src={Groupimg} alt="" /> */}
+                        <h4 style={{ fontSize: '20px',marginTop:"45px", opacity: '0.3',textAlign:"center" }}>There is no such course yet</h4>
 
-                      </div>) : (<><span style={{ display: "flex", justifyContent: "end", marginRight: "20px" }} onClick={() => all()}> All</span>  {courstype.map((item) => {
+                      </div>) : (
+                      <>
+                      {courstype.length ==0?(<div className="delete_padding1">
+                        {/* <img src={Groupimg} alt="" /> */}
+                        <h4 style={{ fontSize: '20px',marginTop:"45px", opacity: '0.3',textAlign:"center" }}>There is no such course yet</h4>
+
+                      </div>):(<><span style={{ display: "flex", justifyContent: "end", marginRight: "20px" }} onClick={() => all()}> All</span>  {courstype.map((item) => {
                         return (
                           <div className="button_filter_kurs">
                             {item.name === null ? (
@@ -263,6 +269,7 @@ export default function Searchfilter() {
                           </div>
                         );
                       })}</>)}
+                      </>)}
 
                   </div>
                 </div>
@@ -289,7 +296,24 @@ export default function Searchfilter() {
                 </div>
               ) : (
                 <div className="cursu" style={{ display: "flex" }}>
-                  {kursdata.map((item) => {
+                  {kursdata.length==0?(<div className="delete_padding1">
+                  <img src={Groupimg} alt="" />
+                  <h4 style={{ fontSize: "30px", opacity: "0.3" }}>
+                    You didn't buy the course
+                  </h4>
+                  <div className="delete_btns">
+                    <a href="/Ourcourse">
+                      {" "}
+                      <button
+                        style={{ background: "#44bef1  " }}
+                        className="delete_btn_yes"
+                      >
+                        Buy a course
+                      </button>
+                    </a>
+                  </div>
+                </div>):(
+                    kursdata.map((item) => {
                     return (
                       <div>
                         <div
@@ -604,7 +628,7 @@ export default function Searchfilter() {
                         </div>
                       </div>
                     );
-                  })}
+                  }))}
                 </div>
               )}
             </div>

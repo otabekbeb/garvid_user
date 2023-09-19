@@ -352,7 +352,7 @@ export default function Mentor() {
                       res.data[i].star = res1.data[j].star;
                     }
                   }
-                }
+                }setLoader(0);
               })
             setKursdata(res.data);
             setLoader(0);
@@ -432,32 +432,32 @@ export default function Mentor() {
     })
   },[])
 
-  React.useEffect(() => {
-    const timer =
-      counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
-    return () => clearInterval(timer);
-  }, [counter])
+  // React.useEffect(() => {
+  //   const timer =
+  //     counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
+  //   return () => clearInterval(timer);
+  // }, [counter])
 
-  useEffect(() => {
-    const timer1 =
-      counter1 > 0 && setInterval(() => setCounter1(counter1 - 1), 1000);
-    return () => clearInterval(timer1);
-  }, [counter1])
-  useEffect(() => {
-    const timer2 =
-      counter2 > 0 && setInterval(() => setCounter2(counter2 - 1), 1000);
-    return () => clearInterval(timer2);
-  }, [counter2])
-  useEffect(() => {
-    const timer3 =
-      counter3 > 0 && setInterval(() => setCounter3(counter3 - 1), 1000);
-    return () => clearInterval(timer3);
-  }, [counter3])
-  useEffect(() => {
-    const timer4 =
-      counter4 > 0 && setInterval(() => setCounter4(counter4 - 1), 1000);
-    return () => clearInterval(timer4);
-  }, [counter4])
+  // useEffect(() => {
+  //   const timer1 =
+  //     counter1 > 0 && setInterval(() => setCounter1(counter1 - 1), 1000);
+  //   return () => clearInterval(timer1);
+  // }, [counter1])
+  // useEffect(() => {
+  //   const timer2 =
+  //     counter2 > 0 && setInterval(() => setCounter2(counter2 - 1), 1000);
+  //   return () => clearInterval(timer2);
+  // }, [counter2])
+  // useEffect(() => {
+  //   const timer3 =
+  //     counter3 > 0 && setInterval(() => setCounter3(counter3 - 1), 1000);
+  //   return () => clearInterval(timer3);
+  // }, [counter3])
+  // useEffect(() => {
+  //   const timer4 =
+  //     counter4 > 0 && setInterval(() => setCounter4(counter4 - 1), 1000);
+  //   return () => clearInterval(timer4);
+  // }, [counter4])
   useEffect(() => {
     axios.get(`${url}/api/follow/`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then(res => {
       setFollow(res.data)
@@ -791,7 +791,7 @@ export default function Mentor() {
     axios.get(`${url}/auth/oneuser`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then((res) => {
       setYoutub(res.data)
     })
-  })
+  },[])
 
   return (
     <div className='studentpagess'>
@@ -917,9 +917,9 @@ export default function Mentor() {
                   className="profil_blok_ikki_icon_bir"
                 />
 
-                {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length == 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
-                  {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId")).length}
-                </div>)}
+{natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId") && filter.read===false) .length === 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
+                {natlifikation.filter(filter => filter.to_user_id == localStorage.getItem("OneuserId") && filter.read===false) .length}
+              </div>)}
 
 
                 {/* {localStorage.getItem("soya").length == 0 ? ("") : (<div className="nol" style={{ background: "red", width: "20px", height: "20px", borderRadius: '50%', color: '#fff', textAlign: "center", marginTop: '-7px', marginLeft: '-25px' }}>
@@ -971,7 +971,7 @@ export default function Mentor() {
                             return (
                               <div>
                                 {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
-                                <div style={{cursor:"pointer"}} onClick={()=>{soyaa(item.id);window.location="/WiewAll";localStorage.setItem("fornati",JSON.stringify([item]))}} className="taxrirlash_chad">
+                                <div style={{cursor:"pointer"}} onClick={()=>{soyaa(item.id);window.location="/WiewAll";localStorage.setItem("fornati1",item.id);localStorage.setItem("fornati",JSON.stringify([item]))}} className="taxrirlash_chad">
                                   <div className="taxrirlash_chad_img_size">
                                     <img src={item.image} alt="" />
 
@@ -987,7 +987,7 @@ export default function Mentor() {
 
                                     </div>
                                     <div className="taxrirlash_chad_text">
-                                      <p>{item.last_name}</p>
+                                    <p>{item.description.length>15?(<>{item.description.slice(0,13)}...</>):(item.description)}</p>
                                     </div>
                                   </div>
                                 </div>
@@ -1153,12 +1153,18 @@ export default function Mentor() {
                 </div> */}
                   </div>
                   <div onMouseLeave={() => filter1()} className="filter_button">
-                    {courstype.length === 0 ? (
+                    {courstype.length == 0 ? (
                       <div className="delete_padding1">
-                        <img src={Groupimg} alt="" />
-                        <h4 style={{ fontSize: '30px', opacity: '0.3' }}>Our courses are not yet</h4>
+                        {/* <img src={Groupimg} alt="" /> */}
+                        <h4 style={{ fontSize: '20px',marginTop:"45px", opacity: '0.3',textAlign:"center" }}>There is no such course yet</h4>
 
-                      </div>) : (<><span style={{ display: "flex", justifyContent: "end", marginRight: "20px" }} onClick={() => all()}> All</span>  {courstype.map((item) => {
+                      </div>) : (
+                      <>
+                      {courstype.length ==0?(<div className="delete_padding1">
+                        {/* <img src={Groupimg} alt="" /> */}
+                        <h4 style={{ fontSize: '20px',marginTop:"45px", opacity: '0.3',textAlign:"center" }}>There is no such course yet</h4>
+
+                      </div>):(<><span style={{ display: "flex", justifyContent: "end", marginRight: "20px" }} onClick={() => all()}> All</span>  {courstype.map((item) => {
                         return (
                           <div className="button_filter_kurs">
                             {item.name === null ? (
@@ -1176,6 +1182,7 @@ export default function Mentor() {
                           </div>
                         );
                       })}</>)}
+                      </>)}
 
                   </div>
                 </div>

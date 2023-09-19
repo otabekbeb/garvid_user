@@ -35,6 +35,7 @@
     border-radius: 5px;
     height: 30px;
     padding-left: 10px;
+    padding-right: 10px;
 }
 .input_notification_bid_div button{
     padding-left: 15px;
@@ -91,7 +92,9 @@
     font-weight: 700;   
     /* padding-left: 20px; */
     padding-right: 20px;
-    padding-top: 10px;
+    padding-top: 18px;
+    margin-bottom: 0;
+    width: 100px;
 }
 
 .unred {
@@ -143,3 +146,26 @@
     margin-top: 200px;
    }
 } 
+.time_blockk{
+    text-align: right;
+}
+#data_title p{
+    padding-top: 0px;
+}
+#data{
+    padding-top: 18px !important;
+}
+@media(max-width:500px){
+    .sms{
+        font-size: 12px;
+    }
+    .data_title p {
+        font-size: 12px;
+    }
+    .lorem_sms{
+        font-size: 12px;
+    }
+    .input_notification_bid_div {
+        padding: 10px;
+    }
+}

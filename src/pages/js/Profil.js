@@ -224,7 +224,7 @@ export default function Profil() {
     axios.get(`${url}/auth/oneuser`, { headers: { Authorization: "Bearer " + localStorage.getItem("token") } }).then((res) => {
       setYoutub(res.data)
     })
-  })
+  },[])
   // function Read(item) {
   //   window.location="/mynotification";
   //   localStorage.setItem("NotifId",item.user_id)
@@ -436,7 +436,7 @@ export default function Profil() {
 return (
                             <div>
                               {/* <p style={{ marginLeft: '70%' }} onClick={() => soyaa(item.id)}>прочитал</p> */}
-                              <div style={{cursor:"pointer"}} onClick={()=>{soyaa(item.id);window.location="/WiewAll";localStorage.setItem("fornati",JSON.stringify([item]))}} className="taxrirlash_chad">
+                              <div style={{cursor:"pointer"}} onClick={()=>{soyaa(item.id);window.location="/WiewAll";localStorage.setItem("fornati1",item.id);localStorage.setItem("fornati",JSON.stringify([item]))}} className="taxrirlash_chad">
                                 <div className="taxrirlash_chad_img_size">
                                   <img src={item.image} alt="" />
                                 </div>
@@ -449,7 +449,7 @@ return (
                                     </div>
                                   </div>
                                   <div className="taxrirlash_chad_text">
-                                    <p>{item.last_name}</p>
+                                    <p>{item.description.length>15?(<>{item.description.slice(0,13)}...</>):(item.description)}</p>
                                   </div>
                                 </div>
                               </div>
@@ -463,7 +463,7 @@ return (
                       </div>
                   )}
                 </div>
-                <a className="wiewu" style={natlifikation.length === 0 ? { display: "none" } : { display: "flex" }} href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
+                <a className="wiewu"  href="/WiewAll"> <div className="taxrirlash_chad_barchasini">
                   <p>
                     view all
                     <AiOutlineRight />

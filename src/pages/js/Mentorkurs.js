@@ -58,6 +58,19 @@ export default function Searchfilter() {
     document.querySelector("#course_video_error").style="display:none"
 
   };
+  function all() {axios
+    .get(`${url}/api/course`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+    })
+    .then((res) => {
+      const Filter = res.data.filter(
+        (item) => item.author == localStorage.getItem("OneuserId")
+      );
+      setKursdata(Filter);
+    })
+    .catch((err) => {
+      console.log(err);
+    });}
   const handleOk = () => {
     var formdata=new FormData()
     formdata.append("name",document.querySelector("#Category_Name").value)
@@ -674,23 +687,38 @@ export default function Searchfilter() {
                 </div> */}
               </div>
               <div onMouseLeave={() => filter1()} className="filter_button">
-                {courstype.map((item) => {
-                  return (
-                    <div className="button_filter_kurs">
-                      {item.name === null ? (
-                        ""
-                      ) : (
-                        <div
-                          onClick={() => filter(item.id)}
-                          className="div_kurs"
-                        >
-                          {item.name}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
+                    {courstype.length == 0 ? (
+                      <div className="delete_padding1">
+                        {/* <img src={Groupimg} alt="" /> */}
+                        <h4 style={{ fontSize: '20px',marginTop:"45px", opacity: '0.3',textAlign:"center" }}>There is no such course yet</h4>
+
+                      </div>) : (
+                      <>
+                      {courstype.length ==0?(<div className="delete_padding1">
+                        {/* <img src={Groupimg} alt="" /> */}
+                        <h4 style={{ fontSize: '20px',marginTop:"45px", opacity: '0.3',textAlign:"center" }}>There is no such course yet</h4>
+
+                      </div>):(<><span style={{ display: "flex", justifyContent: "end", marginRight: "20px" }} onClick={() => all()}> All</span>  {courstype.map((item) => {
+                        return (
+                          <div className="button_filter_kurs">
+                            {item.name === null ? (
+                              ""
+                            ) : (
+                              <div
+                                onClick={() => filter(item.id)}
+                                className="div_kurs"
+                                style={{ paddingBottom: "5px" }}
+                              >
+
+                                {item.name}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}</>)}
+                      </>)}
+
+                  </div>
             </div>
           </div>
         </div>

@@ -92,13 +92,25 @@ export default function Navbar() {
 
 
   const googleTranslateElementInit = () => {
-    new window.google.translate.TranslateElement(
-      {
-        pageLanguage: "en",
-        includedLanguages: 'en,zh-TWit,ja,tr,kk,ru,fr,de', // include this for selected languages
-      },
-      "google_translate_element"  
-    );
+    axios.get(`${url}/api/language/mass`).then(res=>{
+      var v=""
+       res.data.map(item=>{
+         v=v+','+item
+       })
+       var a=v.slice(1)
+       new window.google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          autoDisplay: 'true',
+          includedLanguages: `${a}`, // include this for selected languages
+          // layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        },
+        
+        "google_translate_element"  
+        );
+
+     }).catch(err=>{})
+      
   };
 
   useEffect(() => {
@@ -118,7 +130,6 @@ export default function Navbar() {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
-
 
     axios.get(`${url}/auth/oneuser`, { headers: { "Authorization": "Bearer " + localStorage.getItem("token") } }).then(res => {
       setUser(res.data)

@@ -42,7 +42,7 @@ export default function Services() {
     }).catch(err => {
 
     })
-  })
+  },[])
   return (
     <div className='ourteamm'>
 
