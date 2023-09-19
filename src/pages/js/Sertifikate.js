@@ -47,14 +47,15 @@ export default function Sertifikate() {
     <div>
       <div>
         <div className="cards_sertifikat">
-          <div className="card_sertifikat">
-            {sertifikat.length === 0 ? (
-              <div className="delete_padding1">
+        {sertifikat.length === 0 ? (
+            <div style={{display:'flex',alignItems:'center',justifyContent:'center',width:'100%',marginBottom:'50px'}}>
+              <div  className="delete_padding1">
               <img src={Diplom} alt="" />
               <h4 style={{ fontSize: '30px', opacity: '0.3' }}>Our courses are not yet</h4>
-
+              </div>
             </div>
             ) : (
+              <div className="card_sertifikat">
               <div
                 style={{
                   display: "flex",
@@ -91,8 +92,8 @@ export default function Sertifikate() {
                   );
                 })}
               </div>
-            )}
-          </div>
+              </div>
+              )}
         </div>
       </div>
     </div>
