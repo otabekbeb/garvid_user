@@ -11,6 +11,8 @@
 
 .contact_left {
   width: 40%;
+  position: sticky;
+  top: 20%;
 }
 
 .email_box {
@@ -198,9 +200,11 @@
   transition: .3s;
   margin-left: 4px;
 }
-.iconBox .icon{
+
+.iconBox .icon {
   width: 13px;
 }
+
 iframe {
   width: 100%;
   height: 500px;
@@ -242,6 +246,12 @@ iframe {
     align-items: center;
   }
 
+  .contact_left {
+    display: none;
+  }
+  .contact_left666{
+    display: block !important;
+  }
   .feat_left {
     width: 150px !important;
   }
@@ -385,8 +395,8 @@ iframe {
   color: #4d4d4d;
   padding-left: 15px;
   margin-bottom: 10px;
- 
- 
+
+
 }
 
 .contact_right1 label {
@@ -413,6 +423,7 @@ iframe {
     width: 80%;
   }
 }
+
 /* @media (max-width:415px) {
   .contact_right1 input {
     width: 100% !important;
@@ -425,3 +436,6 @@ iframe {
   }
 }
 
+.contact_left666 {
+  display: none;
+}
