@@ -249,9 +249,11 @@ iframe {
   .contact_left {
     display: none;
   }
-  .contact_left666{
+
+  .contact_left666 {
     display: block !important;
   }
+
   .feat_left {
     width: 150px !important;
   }

@@ -18,6 +18,7 @@ import Student from "./pages/js/Student";
 import Mentorcontact from "./pages/js/Mentorcontact";
 import News from "./pages/js/News";
 import Newspage from "./pages/js/Newspage";
+import Number from './pages/js/Number'
 import StudentAll from "./pages/js/StudentAll";
 import LoginpageMentor from "./pages/js/LoginpageMentor";
 import Help from "./pages/js/Help";
@@ -110,6 +111,7 @@ export default function App() {
           <Route exact path="/sertificate_create" component={Sertificate_create} />
           <Route exact path="/partner" component={Partner} />
           <Route exact path="/Teams" component={Teams} />
+          <Route exact path="/Number" component={Number} />
           {/* <Route index element={} />*/}
         </Switch>
       </BrowserRouter>

@@ -50,7 +50,7 @@ export default function Footer1() {
 <div className="futer-block-mini">
   <div className="qwe">
 <ul className='ioguhofg'>
-  <li><a onClick={()=> window.location="/"} href="/">Home</a></li>
+  <li><a onClick={()=> window.location="/"} href="/"z>Home</a></li>
   <li><a onClick={()=> window.location="/about"} href="/about">About Us</a></li>
   <li><a onClick={()=> window.location="/servis"} href="/servis">Services</a></li>
   <li><a onClick={()=> window.location="/blog"} href="/blog">Blog</a></li>

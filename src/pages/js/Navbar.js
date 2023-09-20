@@ -171,7 +171,7 @@ export default function Navbar() {
             <ul>
               <img onClick={()=>window.location="/"} style={{width:"120px", marginRight:'-30px',cursor:"pointer"}} src={logo} alt="" />
               <li className="moto-menu-item">
-                <NavLink to="/" className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/"}>Home</a></NavLink>
+                <NavLink to="/" className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/"}z>Home</a></NavLink>
               </li>
 
 

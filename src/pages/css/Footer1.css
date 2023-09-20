@@ -1141,3 +1141,8 @@ padding: 5px;
         margin-top: 10px;
     }
 }
+@media (max-width:384px) {
+    .media-foter-mobil{
+        margin-top: -10%;
+    }
+}
