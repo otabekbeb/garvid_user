@@ -19,18 +19,18 @@ export default function Contact() {
   const [loader, setLoader] = useState(0)
 
 
- function dataPost()  {
-  var formdata = new FormData()
-    
-    
-     formdata.append("fullname", document.querySelectorAll("#constactqq")[0].value + " " + document.querySelectorAll("#constactqq")[1].value) 
-     formdata.append("email", document.querySelectorAll("#constactqq")[2].value) 
-     formdata.append("city", document.querySelectorAll("#constactqq")[3].value) 
-     formdata.append("phone", document.querySelectorAll("#constactqq")[4].value) 
-     formdata.append("which_lesson", document.querySelectorAll("#constactqq")[5].value) 
-     formdata.append("purchase", document.querySelectorAll("#constactqq")[6].value) 
-     formdata.append("message", document.querySelector(".contact_textarea").value) 
-    
+  function dataPost() {
+    var formdata = new FormData()
+
+
+    formdata.append("fullname", document.querySelectorAll("#constactqq")[0].value + " " + document.querySelectorAll("#constactqq")[1].value)
+    formdata.append("email", document.querySelectorAll("#constactqq")[2].value)
+    formdata.append("city", document.querySelectorAll("#constactqq")[3].value)
+    formdata.append("phone", document.querySelectorAll("#constactqq")[4].value)
+    formdata.append("which_lesson", document.querySelectorAll("#constactqq")[5].value)
+    formdata.append("purchase", document.querySelectorAll("#constactqq")[6].value)
+    formdata.append("message", document.querySelector(".contact_textarea").value)
+
     axios
       .post(`${url}/api/call_me`, formdata, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -93,7 +93,44 @@ export default function Contact() {
                 </a>
               </div>
             </div>
+            <div className="contact_left666">
+              <h1 onClick={() => window.location = "/contacts"}>
+                {state === "ru" ? "Связаться с нами" : "Connect with us"}
+              </h1>
+              {/* <p className="contact_info">
+            {state === "ru"
+              ? (<div>Как я могу связаться с вами? <br /><br />По номеру <a className="contact_tel" href="tel: +7 032 11 12">
+                (+7) <span> 032 11 12</span>
+              </a>  или же оставить сообщение и наши операторы с вами свяжутся в кратчайшее время. </div>)
+              : (<div>How can I contact you? <br /><br /><a className="contact_tel" href="tel: +7 032 11 12">
+                (+7) <span> 032 11 12</span>
+              </a>call or leave a message and our operators will contact you as soon as possible.</div>)}
+          </p> */}
+              <p className="contact_address">
+                {state === "ru"
+                  ? " Казахстан, Туркестанская область, город Шымкент,Улица Сурикова 3Б"
+                  : "Qazaqstan, Turkestan Region, Shymkent city, Surikova street 3B"}
+              </p>
 
+              <div className="email_box">
+                <MdEmail className="email_icon" />
+                <a href="mailto: garvird@gmail.com">
+                  info@baisan.org
+                </a>
+              </div>
+              <div className="feat_left contact_icons">
+
+                <a href="#" className="iconBox ">
+                  <FaFacebookF className="icon icon4" />
+                </a>
+                <a href="#" className="iconBox">
+                  <FaTwitter className="icon icon4" />
+                </a>
+                <a href="#" className="iconBox">
+                  <FaInstagram className="icon icon4" />
+                </a>
+              </div>
+            </div>
             <div className="contact_right1">
               <form action="">
                 <label>
