@@ -94,7 +94,7 @@
     padding-right: 20px;
     padding-top: 18px;
     margin-bottom: 0;
-    width: 100px;
+    width: 120px;
 }
 
 .unred {
@@ -172,3 +172,31 @@
 #selectss{
     width: 200px !important;
 }
+.noti_select{
+    border: 2px solid #A54B50 !important;
+}
+.Wiewals .select_div{
+    border: 2px solid #A54B50 !important;
+}
+.Wiewals .select_div p{
+    border-bottom: 2px solid #A54B50 !important;
+}
+
+::-webkit-scrollbar {
+    /* width: 10px; */
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #A54B50 !important;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #A54B50 !important;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #A54B50 !important;
+  }
