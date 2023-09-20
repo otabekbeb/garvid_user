@@ -214,7 +214,7 @@ export default function WiewAll() {
                 }).catch((err)=>{
                     // alert("ish")
                 });
-              window.location.reload();
+              // window.location.reload();
             })
             .catch((err) => {
               alert("Информация не отправлена");
@@ -222,7 +222,7 @@ export default function WiewAll() {
         }
       }
     return (
-        <div>
+        <div className='Wiewals'>
             <Usernavbar />
             <Profil />
             <h1 style={{ textAlign: 'center' }}></h1>
@@ -306,10 +306,10 @@ export default function WiewAll() {
                             })}</div>
                             <div id='inputNotifaction' className="input_notification_bid_div">
                             <label style={{ width: "10%" }} htmlFor="">
-              <div className="select_big_div">
+              <div  className="select_big_div">
                 {/* <input onClick={()=>Select()} id='select-input' type="text" /> */}
 
-                <div onClick={() => Select()} id="select-input"></div>
+                <div onClick={() => Select()} className='noti_select' id="select-input"></div>
                 <div onClick={() => SelectNone()} id='selectss' className="select_div">
                   {base.map((item, key) => {
                     return (
