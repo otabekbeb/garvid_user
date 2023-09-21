@@ -12,7 +12,7 @@ import Swal from "sweetalert2";
 import { BsCheck2 } from "react-icons/bs";
 import { BsCheckAll } from "react-icons/bs";
 import Groupimg from "../img/oooo.png";
-
+import Number from '../js/Number'
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper style s
@@ -58,7 +58,7 @@ export default function Home() {
       .then((res) => {
         setChec(res.data);
       })
-      .catch((err) => {});
+      .catch((err) => { });
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );
@@ -72,8 +72,8 @@ export default function Home() {
       .then((res) => {
         setUnivercard(res.data);
       })
-      .catch((err) => {});
-  },[]);
+      .catch((err) => { });
+  }, []);
 
   useEffect(() => {
     axios
@@ -84,8 +84,8 @@ export default function Home() {
         setData(res.data);
         console.log(res.data);
       })
-      .catch((err) => {});
-  },[]);
+      .catch((err) => { });
+  }, []);
   return (
     <div>
       <div>
@@ -270,13 +270,13 @@ export default function Home() {
                       style={
                         state === 1
                           ? {
-                              background: "#44bef1",
-                              color: "#fff",
-                              border: "none !important",
-                            }
+                            background: "#44bef1",
+                            color: "#fff",
+                            border: "none !important",
+                          }
                           : state === 2
-                          ? { background: "white" }
-                          : { background: "white" }
+                            ? { background: "white" }
+                            : { background: "white" }
                       }
                       onClick={() => setState(1)}
                       className="but1"
@@ -287,13 +287,13 @@ export default function Home() {
                       style={
                         state === 2
                           ? {
-                              background: "#44bef1",
-                              color: "#fff",
-                              border: "none",
-                            }
+                            background: "#44bef1",
+                            color: "#fff",
+                            border: "none",
+                          }
                           : state === 2
-                          ? { background: "white" }
-                          : { background: "white" }
+                            ? { background: "white" }
+                            : { background: "white" }
                       }
                       onClick={() => setState(2)}
                       className="but2"
@@ -304,13 +304,13 @@ export default function Home() {
                       style={
                         state === 3
                           ? {
-                              background: "#44bef1",
-                              color: "#fff",
-                              border: "none",
-                            }
+                            background: "#44bef1",
+                            color: "#fff",
+                            border: "none",
+                          }
                           : state === 2
-                          ? { background: "white" }
-                          : { background: "white" }
+                            ? { background: "white" }
+                            : { background: "white" }
                       }
                       onClick={() => setState(3)}
                       className="but2"
@@ -462,42 +462,44 @@ export default function Home() {
               <h1>Contact Form</h1>
               <div className="blue1"></div>
               <div className="contact_form_input_big_div_input">
-                  <form action="">
-                    <label>
-                      <p>FirstName</p>
-                      <input type="email" name="" id="contact_inp" required />
-                    </label>
-                    <label>
-                      <p>LastName</p>
-                      <input type="email" name="" id="contact_inp" required />
-                    </label>
-                    <label>
-                      <p>email</p>
-                      <input id="contact_inp" type="text" required />
-                    </label>
-                    <label>
-                      <p>purchase</p>
-                      <input id="contact_inp" type="text" required />
-                    </label>
-                    <label>
-                      <p>Message</p>
-                      <textarea
-                        name=""
-                        className="contact_textarea"
-                        id="text1"
-                        cols="30"
-                        rows="10"
-                      ></textarea>
-                    </label>
-                    <div className="admin_button">
-                      <button
-                        onClick={() => {
-                          dataPost();
-                        }}
-                      >
-                        Send
-                      </button>
-                      {/* <div className="admin_title">
+                <form action="">
+                  <label>
+                    <p>FirstName</p>
+                    <input type="email" name="" id="contact_inp" required />
+                  </label>
+                  <label>
+                    <p>LastName</p>
+                    <input type="email" name="" id="contact_inp" required />
+                  </label>
+                  <label>
+                    <p>email</p>
+                    <input id="contact_inp" type="text" required />
+                  </label>
+                  <p>PhoneNumber</p>
+                  <Number/>
+                  <label>
+                    <p>purchase</p>
+                    <input id="contact_inp" type="text" required />
+                  </label>
+                  <label>
+                    <p>Message</p>
+                    <textarea
+                      name=""
+                      className="contact_textarea"
+                      id="text1"
+                      cols="30"
+                      rows="10"
+                    ></textarea>
+                  </label>
+                  <div className="admin_button">
+                    <button
+                      onClick={() => {
+                        dataPost();
+                      }}
+                    >
+                      Send
+                    </button>
+                    {/* <div className="admin_title">
                                               <h4>Admin:</h4>
                                               <div className="chec_icon">
                                                   {chec.map(item => {
@@ -513,8 +515,8 @@ export default function Home() {
 
                                               </div>
                                           </div> */}
-                    </div>
-                  </form>
+                  </div>
+                </form>
               </div>
             </div>
             <img

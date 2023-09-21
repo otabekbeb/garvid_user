@@ -325,22 +325,27 @@
     background-size: cover;
     height: 2300px;
 }
+
 .jumbotron {
     background: linear-gradient(rgba(40, 120, 235, 0.9), rgba(40, 120, 235, 0.9)), url("https://demo.htmlcodex.com/1574/online-education-website-template/img/header.jpg"), no-repeat center center;
     background-size: cover;
 }
-.body1 .jumbotron{
+
+.body1 .jumbotron {
     margin-bottom: 0px;
 }
-.body1 .jumbotron img{
+
+.body1 .jumbotron img {
     width: 100%;
     position: absolute;
     bottom: 0;
 }
+
 .qiy {
     bottom: 0;
     background-size: contain;
 }
+
 .soz1 {
     display: flex;
     align-items: center;
@@ -1014,7 +1019,7 @@ list-style: none;
 }
 
 .testimonial_cards {
-display: block !important;   
+    display: block !important;
 
 }
 
@@ -1164,7 +1169,8 @@ display: block !important;
 .admin_title h4 {
     font-size: 20px;
 }
-.butonss button{
+
+.butonss button {
     padding: 10px 30px;
     border-radius: 5px;
     background-color: #44bef1;
@@ -1172,44 +1178,54 @@ display: block !important;
     font-size: 20px;
     transition: 0.5s;
 }
-#but22{
+
+#but22 {
     margin-left: 15px;
     background-color: transparent;
     border: 2px solid white;
 }
-.butonss button:hover{
+
+.butonss button:hover {
     background-color: white !important;
     color: #44bef1;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Nunito+Sans:opsz,wght@6..12,700&family=Nunito:wght@500&family=Open+Sans:wght@400;500&family=Roboto&family=Rubik&display=swap');
 
-#huch{
+#huch {
     font-family: 'Nunito', sans-serif !important;
     font-weight: 700 !important;
 }
-#hbir{
+
+#hbir {
     font-size: 4rem;
     font-weight: 800;
     font-family: 'Nunito', sans-serif !important;
 }
-@media(max-width:650px){
-    #hbir{
+
+@media(max-width:650px) {
+    #hbir {
         font-size: 3rem;
     }
 }
-@media(max-width:470px){
-    #hbir{
+
+@media(max-width:470px) {
+    #hbir {
         font-size: 1.8rem;
     }
-    #ppq{
+
+    #ppq {
         font-size: 14px;
     }
-    #pp1{
+
+    #pp1 {
         font-size: 15px !important;
     }
-    .body1 .position-relative{
+
+    .body1 .position-relative {
         height: 500px;
     }
+
     .butonss button {
         padding: 10px 25px;
     }
@@ -1225,8 +1241,8 @@ display: block !important;
 
 
 
-  
-  /* .cards55 {
+
+/* .cards55 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
@@ -1331,43 +1347,52 @@ display: block !important;
 
 
 
-.line-jome-home{
+.line-jome-home {
     width: 90%;
     height: 1px;
-    background-color:#777474b7;
+    background-color: #777474b7;
     display: flex;
     margin: auto;
     margin-bottom: 15px;
 }
-  .iniversty_img img{
+
+.iniversty_img img {
     cursor: crosshair;
-  }
-  .iniversty_card p{
+}
+
+.iniversty_card p {
     color: #000000;
     text-decoration: none;
     font-weight: 700;
     font-style: normal;
     font-size: 17px;
-  }
-  .iniversty_card h2{
+}
+
+.iniversty_card h2 {
     font-weight: 300;
     font-style: normal;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     letter-spacing: 0px;
     color: black !important;
-  }
+}
 
-.home-slider-sli{
+.home-slider-sli {
     width: 400px !important;
     border-radius: 10px;
     border: 1px solid rgb(236, 230, 230);
-    display: block !important; 
+    display: block !important;
 }
 
-.mySwiper342{
- 
-height: 400px;
-overflow: hidden !important;
+.mySwiper342 {
+
+    height: 400px;
+    overflow: hidden !important;
     margin-top: 30px;
 }
+
+.form-control {
+    box-shadow: none !important;
+    background-color:#f4f7f9 !important ;
+}
+

@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import "../css/Contacts.css";
 import Footer1 from "./Footer1";
 import Navbar from "./Navbar";
+import Number from '../js/Number'
 import { MdEmail } from "react-icons/md";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
@@ -12,7 +13,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { BsCheck2 } from 'react-icons/bs'
 import { BsCheckAll } from 'react-icons/bs'
-
+ 
 export default function Contact() {
   const [state, setstate] = React.useState();
 
@@ -162,6 +163,7 @@ export default function Contact() {
             className="contact_inp101"
             placeholder={state === "ru" ? "Электронная почта*" : "Email*"}
           />
+            <Number/>
           <textarea
             rows={10}
             placeholder={state === "ru" ? "Сообщение*" : "Message*"}
