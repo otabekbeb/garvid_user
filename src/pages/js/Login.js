@@ -18,6 +18,7 @@ import Swal from "sweetalert2";
 import Change_password from "./Email";
 import { SmartCaptcha } from "@yandex/smart-captcha";
 import ReCAPTCHA from "react-google-recaptcha";
+import Number from '../js/Number'
 export default function Login() {
   const [page, setPage] = useState(1);
   const [email, setEmail] = useState();
@@ -137,7 +138,7 @@ export default function Login() {
   }, []);
 
   return (
-    <div>
+    <div className="lgn">
       <Navbar />
       <div className="login_big_div">
         {page === 4 ? (
@@ -429,7 +430,7 @@ export default function Login() {
                                     : "Это уже используется"}
                                 </div>
                               </div>
-
+                              <Number/>
                               <div className="login_small_input">
                                 <BiLockAlt className="login_icon" />
                                 <input
@@ -468,17 +469,18 @@ export default function Login() {
                                     ></i>
                                   )}
                                 </span>
+                                
                                 <div className="error">
                                   {state1 === "en"
                                     ? "The password cannot be less than 8"
                                     : "Пароль не может быть меньше 8"}
                                 </div>
                               </div>
+                               
                               <div>
                                 {/* Вставьте свой site key в атрибут 'sitekey' */}
                                 {/* <ReCAPTCHA style={{marginBottom:'10px'}} sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" onChange={onChange} /> */}
                               </div>
-
                               <div className="login_button_div">
                                 <button
                                   type="button"
@@ -494,6 +496,7 @@ export default function Login() {
                                 <AiFillTwitterCircle className="twiter_icon" />
                                 <FaFacebook className="facebooc_icon" />
                               </div>
+                              
                             </div>
                           </form>
                         </div>

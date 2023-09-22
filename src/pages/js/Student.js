@@ -10,6 +10,7 @@ import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import axios from "axios";
 import Loader from "./loader"
+import Number from '../js/Number'
 import Swal from "sweetalert2";
 import { BsCheck2 } from 'react-icons/bs'
 import { BsCheckAll } from 'react-icons/bs'
@@ -39,7 +40,7 @@ export default function Contact() {
     }, 3000);
   }, []);
   return (
-    <div>
+    <div className="studt">
       {loader === 1 ? (
         <div>
           <Usernavbar />
@@ -134,6 +135,8 @@ export default function Contact() {
                   <p style={{ fontWeight: '700' }}>email</p>
                   <input id='contact_inp' type="text" required style={{ paddingLeft: '10px' }} />
                 </label>
+                <p style={{ fontWeight: '700' }}>Phone number</p>
+                <Number/>
                 <label>
                   <p style={{ fontWeight: '700' }}>purchase</p>
                   <input id='contact_inp' type="text" required style={{ paddingLeft: '10px' }} />

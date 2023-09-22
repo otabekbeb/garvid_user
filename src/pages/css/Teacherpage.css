@@ -441,3 +441,10 @@ iframe {
 .contact_left666 {
   display: none;
 }
+
+.studt .form-control {
+  background-color: #fff !important;
+}
+.techr .form-control {
+  background-color: #fff !important;
+}

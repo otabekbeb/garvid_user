@@ -368,3 +368,15 @@
    justify-content: space-around;
    align-items: center;
  }
+
+ .lgn .form-control {
+   background-color: #fff !important;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.704) !important;
+   margin-top: 20px !important;
+   border-radius: 0px !important;
+ }
+
+ .lgn label {
+   width: 100% !important;
+   margin-top: 20px;
+ }

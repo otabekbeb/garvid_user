@@ -14,6 +14,7 @@ import Swal from "sweetalert2";
 import { BsCheck2 } from 'react-icons/bs'
 import { BsCheckAll } from 'react-icons/bs'
 import url from "./Host";
+import Number from '../js/Number'
 export default function Contact() {
   const [state, setstate] = React.useState();
   const [loader, setLoader] = useState(0)
@@ -52,7 +53,7 @@ export default function Contact() {
   return (
     <div>
       {loader === 1 ? (
-        <div>
+        <div className="techr">
           <Usernavbar />
           <div className="contact">
             <div className="contact_left">
@@ -145,6 +146,8 @@ export default function Contact() {
                   <p>email</p>
                   <input type="text" id="constactqq" required />
                 </label>
+                <p>phone number</p>
+                <Number/>
                 <label>
                   <p>purchase</p>
                   <input type="text" id="constactqq" required />
