@@ -48,7 +48,7 @@ export default function WiewAll() {
         }
         if (t) {
           document.querySelectorAll("#select-input2")[key].style =
-            "background-color: #6b3d0c;";
+            "background-color: #6b3d0c;color:white";
           a.push({ title: name, id: id });
         }
         document.querySelector("#select-input").innerHTML = "";

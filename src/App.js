@@ -54,6 +54,7 @@ import WiewAll1 from "./pages/js/WiewAll1";
 import Sertificate_create from "./pages/js/Sertificate_create";
 import Partner from "./pages/js/Partner";
 import Teams from "./pages/js/Teams";
+import Mycard from "./pages/js/Mycard";
 export default function App() {
   return (
     <div>
@@ -112,6 +113,7 @@ export default function App() {
           <Route exact path="/partner" component={Partner} />
           <Route exact path="/Teams" component={Teams} />
           <Route exact path="/Number" component={Number} />
+          <Route exact path="/Mycard" component={Mycard} />
           {/* <Route index element={} />*/}
         </Switch>
       </BrowserRouter>
