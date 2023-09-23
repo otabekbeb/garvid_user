@@ -168,10 +168,10 @@ export default function Home() {
               {univercard.map((item, key) => {
                 return (
                   <div
-                    onClick={() => {
-                      window.location = "/Teams";
-                      localStorage.setItem("partner", item.id);
-                    }}
+                    // onClick={() => {
+                    //   window.location = "/Teams";
+                    //   localStorage.setItem("partner", item.id);
+                    // }}
                     key={key}
                     className="iniversty_card"
                   >
