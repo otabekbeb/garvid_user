@@ -182,7 +182,7 @@ export default function Navbar() {
                     <span>
                       <box-icon
                         name="chevron-down"
-                        color="#44bef1"
+                        color="#fff"
                       ></box-icon>
                     </span>
                   </p>
