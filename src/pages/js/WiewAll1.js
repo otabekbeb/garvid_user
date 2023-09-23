@@ -31,7 +31,7 @@ export default function WiewAll() {
 //   const user = document.querySelectorAll("#Notifuser");
 
     function Select() {
-        document.querySelector(".select_div").style = "display: block !important;";
+        var a=document.querySelector(".select_div").classList.toggle("selectss_div");
       }
       function SelectNone() {
         document.querySelector(".select_div").style = "display:none";
@@ -48,7 +48,7 @@ export default function WiewAll() {
         }
         if (t) {
           document.querySelectorAll("#select-input2")[key].style =
-            "background-color: #A54B50;";
+            "background-color: #6b3d0c;";
           a.push({ title: name, id: id });
         }
         document.querySelector("#select-input").innerHTML = "";
