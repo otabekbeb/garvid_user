@@ -90,7 +90,7 @@
 
 .old_news_pro:hover {
     cursor: pointer;
-    color: #44bef1;
+    color: #6b3d0c;
 }
 .old_news1{
     margin-top: 5%;
@@ -214,14 +214,14 @@
 .all_butn {
     width: 200px;
     height: 40px;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     font-size: 15px;
     background-color: #fff;
     margin: auto;
 }
 
 .all_butn:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: #fff;
     border: none;
 }

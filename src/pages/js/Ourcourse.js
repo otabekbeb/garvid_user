@@ -156,7 +156,7 @@ export default function Ourcourse() {
   return (
     <div>
       <Navbar />
-      <div className="gray_navbar">
+      <div className="#6b3d0c_navbar">
         <div className="course_inp">
           <h1>Our courses</h1>
           <div className="df_inp">

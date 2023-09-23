@@ -164,7 +164,7 @@
     font-weight: 700 !important;
     font-style: normal;
     color: #ffffff;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     border-color: transparent;
     width: 150px;
     height: 50px;
@@ -183,9 +183,9 @@
     margin-left: 40px;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
-    color: #44bef1 !important;
+    color: #6b3d0c !important;
     background-color: #00000000 !important;
-    border: 1px solid #44bef1 !important;
+    border: 1px solid #6b3d0c !important;
     transition: 0.5s;
 }
 
@@ -223,14 +223,14 @@
 
 .button:hover {
     background-color: #00000000;
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
 }
 
 .button1:hover {
-    background-color: #44bef1 !important;
+    background-color: #6b3d0c !important;
     color: white !important;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
 }
 
 .fir_header .button1 {
@@ -241,13 +241,13 @@
 .fir_header .button:hover {
     background-color: white;
     border: 1px solid white;
-    color: #44bef1;
+    color: #6b3d0c;
 }
 
 .fir_header .button1:hover {
     background-color: white !important;
     border: 1px solid white !important;
-    color: #44bef1 !important;
+    color: #6b3d0c !important;
 }
 
 .fir_header p {
@@ -382,7 +382,7 @@
     font-weight: 700;
     font-style: normal;
     color: #ffffff;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     border-color: transparent;
     border-radius: 4px;
     width: 220px;
@@ -428,7 +428,7 @@ list-style: none;
 .blue1 {
     width: 70px;
     height: 3px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
 }
 
 .cards1 {
@@ -466,7 +466,7 @@ list-style: none;
 
 .but1:hover {
     border: 1px solid #dedede !important;
-    background-color: #44bef1 !important;
+    background-color: #6b3d0c !important;
     color: white;
 }
 
@@ -477,7 +477,7 @@ list-style: none;
 }
 
 .but2:hover {
-    background-color: #44bef1 !important;
+    background-color: #6b3d0c !important;
     border: 1px solid #dedede !important;
     color: white;
 }
@@ -551,14 +551,14 @@ list-style: none;
 }
 
 .card4 .card_about_us_ikki_page:hover {
-    color: #44bef1;
+    color: #6b3d0c;
 }
 
 .card_about_us_ikki_button {
     font-weight: 700;
-    color: #44bef1;
+    color: #6b3d0c;
     background-color: #fff;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     border-radius: 4px;
     width: 150px;
     height: 50px;
@@ -567,7 +567,7 @@ list-style: none;
 
 .card_about_us_ikki_button:hover {
     color: #fff;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
 }
 
 .contact_form_input_big {
@@ -641,7 +641,7 @@ list-style: none;
 }
 
 .contact_form_input_big_div button {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: white;
     border-radius: 5px;
     border: 0;
@@ -1154,7 +1154,7 @@ list-style: none;
 .bir_chec {
     width: 20px;
     height: 20px;
-    color: #44bef1;
+    color: #6b3d0c;
     border-radius: 50px;
 }
 
@@ -1162,7 +1162,7 @@ list-style: none;
     width: 20px;
     height: 20px;
     border-radius: 50px;
-    color: #44bef1;
+    color: #6b3d0c;
 
 }
 
@@ -1173,7 +1173,7 @@ list-style: none;
 .butonss button {
     padding: 10px 30px;
     border-radius: 5px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: white;
     font-size: 20px;
     transition: 0.5s;
@@ -1187,7 +1187,7 @@ list-style: none;
 
 .butonss button:hover {
     background-color: white !important;
-    color: #44bef1;
+    color: #6b3d0c;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Nunito+Sans:opsz,wght@6..12,700&family=Nunito:wght@500&family=Open+Sans:wght@400;500&family=Roboto&family=Rubik&display=swap');

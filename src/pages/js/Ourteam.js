@@ -62,7 +62,7 @@ export default function Services() {
           <div className="sahifa">
             <div className="sahifa-glav">
               <div className="safiha-p">
-                <h4><a href="/">Home  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
+                <h4><a href="/">Home  <span><box-icon name='chevron-right' color='#6b3d0c' ></box-icon></span></a></h4>
               </div>
               <div className="safiha-d">
                 <p id='tepaga'>Our team</p>

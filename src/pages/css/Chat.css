@@ -218,7 +218,7 @@ body {
   padding: 0 1.5em;
   font-size: 20px;
   /* border-right: 2px solid #e2e2e2; */
-  color: gray;
+  color: #6b3d0c;
   outline: none;
   font-family: "Open Sans", sans-serif;
 }
@@ -235,7 +235,7 @@ body {
   background: transparent;
   outline: none;
   font-size: 25px;
-  color: lightgray;
+  color: light#6b3d0c;
 }
 
 
@@ -452,7 +452,7 @@ body {
 
 .savename {
   width: 40px;
-  background: #44bef1;
+  background: #6b3d0c;
   height: 40px;
   border-radius: 50%;
   position: absolute;
@@ -466,7 +466,7 @@ body {
 }
 
 #tgs_i:hover {
-  background-color: #44bef1;
+  background-color: #6b3d0c;
 }
 .forsss{
   display: flex;

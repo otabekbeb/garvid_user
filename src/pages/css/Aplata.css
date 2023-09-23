@@ -79,16 +79,16 @@
     padding-left: 10px;
     padding-right: 10px;
     background-color: #fff;
-    color: #44bef1;
+    color: #6b3d0c;
     border-radius: 4px;
     font-weight: 900;
     cursor: pointer;
     transition: all 100ms ease-in-out;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
 }
 
 .container2 button:active {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     transform: scale(0.98);
     color: #fff !important;
 }
@@ -103,14 +103,14 @@
     width: 100%;
     height: 45px;
     padding-left: 10px;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     outline: none;
     border-radius: 5px;
     margin-top: 10px;
     margin-bottom: 30px;
 }
 #PayPal_input:focus{
-    box-shadow: 0px 0px 20px #44bef1;
+    box-shadow: 0px 0px 20px #6b3d0c;
     border: none;
 }
 
@@ -118,14 +118,14 @@
     width: 95%;
     height: 45px;
     padding-left: 10px;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     outline: none;
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
 #Stripe_input:focus{
-    box-shadow: 0px 0px 20px #44bef1;
+    box-shadow: 0px 0px 20px #6b3d0c;
     border: none;
 }
 
@@ -137,7 +137,7 @@
 .FormGroup {
     padding-left: 10px;
     margin-bottom: 10px;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     height: 45px;
     border-radius: 5px;
 }
@@ -159,7 +159,7 @@
 
 .col .title {
     font-size: 20px;
-    color: #44bef1;
+    color: #6b3d0c;
     padding-bottom: 5px;
 }
 
@@ -206,7 +206,7 @@
     width: 100%;
     padding: 12px;
     font-size: 17px;
-    background: #44bef1;
+    background: #6b3d0c;
     color: #fff;
     margin-top: 5px;
     cursor: pointer;
@@ -214,7 +214,7 @@
 }
 
 .container2 form .submit_btn:hover {
-    background: #44bef1;
+    background: #6b3d0c;
 }
 
 input::-webkit-inner-spin-button,

@@ -5,8 +5,8 @@
     padding-bottom: 4px;
     /* margin-bottom: 10px; */
     font-size: 15px;
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
     background-color: #fff;
     cursor: pointer;
     border-radius: 5px;
@@ -34,8 +34,8 @@
     width: 200px;
     padding-top: 5px;
     padding-bottom: 5px;
-    background-color: #44bef1;
-    border: 1px solid #44bef1;
+    background-color: #6b3d0c;
+    border: 1px solid #6b3d0c;
     border-radius: 5px;
     color: #fff;
 }
@@ -45,8 +45,8 @@
     padding-top: 4px;
     padding-bottom: 4px;
     margin-bottom: 10px;
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
     background-color: #fff;
     cursor: pointer;
     border-radius: 5px;
@@ -55,7 +55,7 @@
 }
 
 .user_post_button_ban:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: white;
 }
 
@@ -79,7 +79,7 @@
     border: 1px solid grey;
     /* padding-top: 0.5%; */
     text-align: center;
-    outline-color: #44bef1;
+    outline-color: #6b3d0c;
     /* padding-bottom: 0.5%; */
 }
 
@@ -90,8 +90,8 @@
 
 .Came_button_div button {
     width: 100%;
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
     cursor: pointer;
     background-color: #fff;
     border-radius: 5px;
@@ -119,7 +119,7 @@
 }
 
 .user_post_button:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: white;
 }
 
@@ -182,7 +182,7 @@
     padding: 5px;
     border-radius: 4px;
     border: 1px solid rgb(182, 182, 182);
-    outline-color: #44bef1;
+    outline-color: #6b3d0c;
 }
 
 .postUserModal_div label .descriptions {
@@ -191,7 +191,7 @@
     padding: 5px;
     border-radius: 4px;
     border: 1px solid rgb(182, 182, 182);
-    outline-color: #44bef1;
+    outline-color: #6b3d0c;
 }
 
 .postUserModal_div_label input {
@@ -201,7 +201,7 @@
     padding-left: 5px;
     padding-right: 5px;
     border-radius: 4px;
-    outline-color: #44bef1;
+    outline-color: #6b3d0c;
     border: 1px solid rgb(182, 182, 182);
 }
 
@@ -235,8 +235,8 @@
     align-items: center;
     gap: 5px;
     font-size: 14px;
-    color: #44bef1;
-    border: 2px dashed #44bef1 !important;
+    color: #6b3d0c;
+    border: 2px dashed #6b3d0c !important;
     border-radius: 3px;
     cursor: pointer;
 }
@@ -244,14 +244,14 @@
 .div_img_upload {
     width: 300px;
     height: 35px;
-    border: 1px dashed #44bef1;
+    border: 1px dashed #6b3d0c;
     cursor: pointer;
     border-radius: 4px;
     position: absolute;
     display: flex;
     z-index: 0;
     top: 24px;
-    color: #44bef1;
+    color: #6b3d0c;
     justify-content: center;
     align-items: center;
 }
@@ -275,7 +275,7 @@ select {
     padding-left: 5px;
     border-radius: 4px;
     border: 1px solid grey;
-    outline-color: #44bef1;
+    outline-color: #6b3d0c;
     outline-color: gery;
 }
 
@@ -325,7 +325,7 @@ select {
 .postUserModal_div_icon .icon {
     position: absolute;
     cursor: pointer;
-    color: #44bef1;
+    color: #6b3d0c;
     width: 30px;
     height: 30px;
     /* font-size: 16px; */
@@ -336,7 +336,7 @@ select {
 .postUserModal_div_icon .iconka {
     position: absolute;
     cursor: pointer;
-    color: #44bef1;
+    color: #6b3d0c;
     width: 30px;
     height: 30px;
     font-size: 18px;
@@ -357,8 +357,8 @@ select {
     padding-bottom: 4px;
     margin-bottom: 10px;
     /* margin-left: 30px; */
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
     background-color: #fff;
     cursor: pointer;
     border-radius: 5px;
@@ -366,7 +366,7 @@ select {
 }
 
 .exit_button button:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: #fff;
 }
 
@@ -377,8 +377,8 @@ select {
     padding-bottom: 5px;
     margin-top: 10px;
     /* margin-bottom: 10px; */
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
     background-color: #fff;
     cursor: pointer;
     border-radius: 5px;
@@ -391,7 +391,7 @@ select {
 }
 
 .postUserModal_div_button button:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: white;
 }
 
@@ -434,8 +434,8 @@ select {
     padding-top: 5px;
     padding-bottom: 5px;
     margin-bottom: 10px;
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
     background-color: #fff;
     cursor: pointer;
     border-radius: 5px;
@@ -449,8 +449,8 @@ select {
     padding-bottom: 4px !important;
     margin-bottom: 20px !important;
     margin-top: 10px;
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
     background-color: #fff;
     cursor: pointer;
     font-size: 15px;
@@ -459,12 +459,12 @@ select {
 } */
 /* 
 .user_post_button_malumot:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: #fff
 } */
 
 .deleteModal_div button:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: #fff
 }
 
@@ -518,7 +518,7 @@ select {
 
 .search_big_div input:focus {
     transition: 0.2s;
-    box-shadow: 0px 0px 5px 1px #44bef1;
+    box-shadow: 0px 0px 5px 1px #6b3d0c;
 }
 
 
@@ -542,13 +542,13 @@ select {
     height: 35px;
     border-radius: 5px;
     cursor: pointer;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
 
     transition: 0.4s;
 }
 
 .position button:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: #fff;
 }
 
@@ -621,8 +621,8 @@ select {
         padding-top: 5px;
         padding-bottom: 5px;
         margin-bottom: 10px;
-        border: 1px solid #44bef1;
-        color: #44bef1;
+        border: 1px solid #6b3d0c;
+        color: #6b3d0c;
         background-color: #fff;
         cursor: pointer;
         border-radius: 5px;
@@ -632,7 +632,7 @@ select {
 .select_div {
     width: 100%;
     background-color: #fff;
-    border: 2px solid #44bef1;
+    border: 2px solid #6b3d0c;
     margin-top: 5px;
     height: 200px;
     overflow-y: scroll;
@@ -646,7 +646,7 @@ select {
 .select_div1 {
     width: 100%;
     background-color: #fff;
-    border: 2px solid #44bef1;
+    border: 2px solid #6b3d0c;
     margin-top: 5px;
     height: 200px;
     overflow-y: scroll;
@@ -662,24 +662,24 @@ select {
 }
 
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px #44bef1;
+    -webkit-box-shadow: inset 0 0 6px #6b3d0c;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px #44bef1;
+    -webkit-box-shadow: inset 0 0 6px #6b3d0c;
 }
 
 .select_div p {
     padding: 5px;
     cursor: pointer;
     border-radius: 3px;
-    border-bottom: 1px solid #44bef1;
+    border-bottom: 1px solid #6b3d0c;
 }
 
 .select_div p:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: #fff;
 }
 
@@ -687,11 +687,11 @@ select {
     padding: 5px;
     cursor: pointer;
     border-radius: 3px;
-    border-bottom: 1px solid #44bef1;
+    border-bottom: 1px solid #6b3d0c;
 }
 
 .select_div1 p:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: #fff;
 }
 
@@ -705,7 +705,7 @@ select {
 }
 
 /* .exit_button button:hover {
-        background-color: #44bef1;
+        background-color: #6b3d0c;
         color: #fff;
     } */
 
@@ -721,7 +721,7 @@ select {
     padding-right: 5px;
     padding-bottom: 5px;
     border-radius: 5px;
-    border: 2px solid #44bef1;
+    border: 2px solid #6b3d0c;
 }
 
 .notification_page {
@@ -767,7 +767,7 @@ select {
     border-radius: 6px;
     text-align: center;
     background-color: #fff;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
 }
 
 .teacher_page_big_card h3 {
@@ -780,10 +780,10 @@ select {
     width: 100px;
     height: 30px;
     border-radius: 4px;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     cursor: pointer;
     color: #fff;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     margin-bottom: 10px;
 }
 
@@ -851,7 +851,7 @@ select {
 
 .questions_page_big_div .questions_h3_length {
     padding: 10px;
-    border-bottom: 1px solid #44bef1;
+    border-bottom: 1px solid #6b3d0c;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -907,7 +907,7 @@ select {
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
 }
 
 .notification_page_div p {
@@ -926,7 +926,7 @@ select {
     padding-right: 5px;
     padding-bottom: 5px;
     border-radius: 5px;
-    border: 2px solid #44bef1;
+    border: 2px solid #6b3d0c;
 }
 
 .SelectIchi {
@@ -1020,8 +1020,8 @@ select {
     height: 35px;
     padding-top: 8px;
     font-size: 18px;
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
     background-color: white;
     display: flex;
     justify-content: center;
@@ -1033,8 +1033,8 @@ select {
     padding-top: 5px !important;
     border-radius: 3px !important;
     font-size: 18px;
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
     background-color: white;
     display: flex;
     justify-content: center;
@@ -1042,7 +1042,7 @@ select {
     cursor: pointer;
 }
 .edication_card_button .test_card_btn:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: #fff;
 }
 .test_card_btn_red{

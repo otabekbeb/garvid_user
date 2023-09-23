@@ -84,13 +84,13 @@
     background-size: 200% var(--b), var(--b) 200%;
     cursor: pointer;
     z-index: 9999 !important;
-    filter: grayscale(50%);
+    filter: #6b3d0cscale(50%);
     transition: .3s;
 }
 
 .profil_menu_modal:hover {
     --_p: 75%;
-    filter: grayscale(0%);
+    filter: #6b3d0cscale(0%);
 }
 
 .Front_div {
@@ -241,7 +241,7 @@
 .profil_text_name {
     width: 90%;
     margin: auto;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #6b3d0c;
     display: flex;
     align-items: center;
     justify-content: space-around;

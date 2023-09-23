@@ -68,7 +68,7 @@
         width: 250px !important;
         border: none;
         outline: none;
-        outline: 1px solid #44bef1;
+        outline: 1px solid #6b3d0c;
         border-radius: 5px;
         font-size: 18px;
         transition:  0.3s;
@@ -118,7 +118,7 @@
 }
 
 .Name {
-    color: #44bef1;
+    color: #6b3d0c;
 }
 
 .tuman {
@@ -137,11 +137,11 @@
     color: #fff;
     height: 50px;
     font-size: 22px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
 }
 
 .followButton4 {
-    background-color: gray;
+    background-color: #6b3d0c;
 }
 
 .input {
@@ -149,7 +149,7 @@
     width: 300px;
     border: none;
     outline: none;
-    outline: 1px solid #44bef1;
+    outline: 1px solid #6b3d0c;
     border-radius: 5px;
     font-size: 18px;
     transition: width 0.3s;
@@ -160,7 +160,7 @@
 
 
 .input::placeholder {
-    color: #44bef1;
+    color: #6b3d0c;
 }
 
 
@@ -253,7 +253,7 @@
     width: 100%;
     height: 0;
     border-radius: 50%;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     position: absolute;
     bottom: 135%;
     right: 0;
@@ -272,7 +272,7 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     position: absolute;
     top: 0;
     left: 0;
@@ -304,7 +304,7 @@
     margin: auto;
     padding: 0;
     margin: 0;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     position: absolute;
     bottom: -100px;
     left: 0;
@@ -329,7 +329,7 @@
 }
 
 .our-team .social li a:hover {
-    color: #44bef1;
+    color: #6b3d0c;
     background-color: #f7f5ec;
 }
 
@@ -345,5 +345,5 @@
 }
 
 .followButton7 {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
 }

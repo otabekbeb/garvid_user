@@ -151,7 +151,7 @@
   width: 50px;
   height: 40px;
   border-radius: 2px; 
-  background: #44bef1;
+  background: #6b3d0c;
   cursor: pointer;
   }
   .profil_blok_ikki_button button:nth-child(2){
@@ -161,7 +161,7 @@
     width: 190px;
     height: 40px;
     border-radius: 2px;
-    background: #44bef1;
+    background: #6b3d0c;
     cursor: pointer;
     }
     .profil_size{
@@ -376,7 +376,7 @@
         width: 40px;
         height: 30px;
         border-radius: 2px;
-        background-color: #44bef1;
+        background-color: #6b3d0c;
         cursor: pointer;
         }
         .profil_blok_ikki_button button:nth-child(2){
@@ -386,7 +386,7 @@
           width: 150px;
           height: 30px;
           border-radius: 2px;
-          background-color: #44bef1;
+          background-color: #6b3d0c;
           cursor: pointer;
           }
           .profil_blok_ikki_button{

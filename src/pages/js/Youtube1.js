@@ -174,7 +174,7 @@ export default function Youtube1() {
   }
   function painModal() {
     document.querySelector(".zadaniya").style =
-      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
+      "border-bottom: 2px solid #6b3d0c; color: #2E2E2E;";
     document.querySelector(".zadaniya1").style =
       "border-bottom: none; color: #9DA7BB;";
     setTask_comnet_id(0);
@@ -195,7 +195,7 @@ export default function Youtube1() {
         setTaskData(res.data);
       });
     document.querySelector(".zadaniya1").style =
-      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
+      "border-bottom: 2px solid #6b3d0c; color: #2E2E2E;";
     document.querySelector(".zadaniya").style =
       "border-bottom: none; color: #9DA7BB;";
 
@@ -206,13 +206,13 @@ export default function Youtube1() {
 
   function painModal5() {
     document.querySelector(".zadaniya5").style =
-      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
+      "border-bottom: 2px solid #6b3d0c; color: #2E2E2E;";
     document.querySelector(".zadaniya6").style =
       "border-bottom: none; color: #9DA7BB;";
   }
   function painModal6() {
     document.querySelector(".zadaniya6").style =
-      "border-bottom: 2px solid #44bef1; color: #2E2E2E;";
+      "border-bottom: 2px solid #6b3d0c; color: #2E2E2E;";
     document.querySelector(".zadaniya5").style =
       "border-bottom: none; color: #9DA7BB;";
   }

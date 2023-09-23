@@ -7,14 +7,14 @@ import { AiOutlineLeft } from 'react-icons/ai'
 import { BiSolidDislike } from 'react-icons/bi'
 export default function User_help2() {
   function like() {
-    document.querySelector('.like1').style = "color:#44bef1"
+    document.querySelector('.like1').style = "color:#6b3d0c"
     document.querySelector('.like2').style = "color:black"
     
 
   }
   function liken() {
     document.querySelector('.like1').style = "color:black"
-    document.querySelector('.like2').style = "color:#44bef1"
+    document.querySelector('.like2').style = "color:#6b3d0c"
     
 
   }

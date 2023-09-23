@@ -105,11 +105,11 @@
 }
 
 .obuna1 {
-    background-color: gray !important;
+    background-color: #6b3d0c !important;
 }
 
 .obuna2 {
-    background-color: gray !important;
+    background-color: #6b3d0c !important;
 }
 
 .followcards1 {
@@ -156,7 +156,7 @@
 
 
 .Name {
-    color: #44bef1;
+    color: #6b3d0c;
 }
 
 .tuman {
@@ -174,11 +174,11 @@
     z-index: 6269;
     color: #fff;
     height: 30px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
 }
 
 .followButton3 {
-    background-color: gray;
+    background-color: #6b3d0c;
 }
 
 .followi1 a {

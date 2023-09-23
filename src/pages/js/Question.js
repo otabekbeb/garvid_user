@@ -28,7 +28,7 @@ class Question extends Component{
 						onOptionChange={onOptionChange}
 					/>
 					<div className="butt111">
-					<button style={{background:"#44bef1",border:"none"}} type="submit" className="btn btn-primary mt-2">
+					<button style={{background:"#6b3d0c",border:"none"}} type="submit" className="btn btn-primary mt-2">
 						Next
 					</button></div>
 				</form>

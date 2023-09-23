@@ -4,7 +4,7 @@
   width: 200px;
   height: 42.66px;
   border: none;
-  background-color: #44bef1;
+  background-color: #6b3d0c;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,6 +148,6 @@
   }
 }
 .following2{
-  background-color: gray;
+  background-color: #6b3d0c;
   
 }

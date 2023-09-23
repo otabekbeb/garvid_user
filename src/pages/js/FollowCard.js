@@ -86,7 +86,7 @@ export default function FollowCard() {
                 <a href="/Ourcourse">
                   {" "}
                   <button
-                    style={{ background: "#44bef1  " }}
+                    style={{ background: "#6b3d0c  " }}
                     className="delete_btn_yes"
                   >
                     Купить курс
@@ -109,7 +109,7 @@ export default function FollowCard() {
 
                         <center><ul className="social">
                           {(bosildi.filter(folow => (item.id == folow.topuser && following == folow.minuser)).length > 0) ? (
-                            <button style={{ background: "gray" }} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
+                            <button style={{ background: "#6b3d0c" }} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
                           ) : (
                             <button onClick={() => folowcolor(key, item.id)} className='followButton5' >Subscribe</button>
                           )}

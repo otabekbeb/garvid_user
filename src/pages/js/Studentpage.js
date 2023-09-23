@@ -1111,17 +1111,17 @@ export default function Mentor() {
         </div>
       </div>
         <div>
-          <div className="gray_blok">
+          <div className="#6b3d0c_blok">
             <div className="fil_text_blok">
-              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} pieces</div>) : ("")}</div>
-              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(0)} style={toggle === 0 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Education</h1>{toggle === 0 ? (<div className="fil_text_blok_kurs_lenght">{education.length} pieces</div>) : ("")}</div>
-              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Chat</h1></div>
-              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Tasks</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("stTasks")} pieces</div>) : ("")}</div>
-              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(7)} style={toggle === 7 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Test</h1></div>
-              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(10)} style={toggle === 10 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>All teachers</h1>{toggle === 10 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("FollowCard")} pieces</div>) : ("")}</div>
-              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>My subscribtions</h1>{toggle === 4 ? ("") : ("")}</div>
-              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Courses</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">{courses.length}  pieces</div>) : ("")}</div>
-              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(6)} style={toggle === 6 ? { borderBottom: "2px solid #44bef1" } : {}} className='fromLeft'>Sertificat</h1>{toggle === 6 ? (<div className="fil_text_blok_kurs_lenght">{setificatLength}  pieces</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: "2px solid #6b3d0c" } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} pieces</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(0)} style={toggle === 0 ? { borderBottom: "2px solid #6b3d0c" } : {}} className='fromLeft'>Education</h1>{toggle === 0 ? (<div className="fil_text_blok_kurs_lenght">{education.length} pieces</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: "2px solid #6b3d0c" } : {}} className='fromLeft'>Chat</h1></div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: "2px solid #6b3d0c" } : {}} className='fromLeft'>Tasks</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("stTasks")} pieces</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(7)} style={toggle === 7 ? { borderBottom: "2px solid #6b3d0c" } : {}} className='fromLeft'>Test</h1></div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(10)} style={toggle === 10 ? { borderBottom: "2px solid #6b3d0c" } : {}} className='fromLeft'>All teachers</h1>{toggle === 10 ? (<div className="fil_text_blok_kurs_lenght">{localStorage.getItem("FollowCard")} pieces</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: "2px solid #6b3d0c" } : {}} className='fromLeft'>My subscribtions</h1>{toggle === 4 ? ("") : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: "2px solid #6b3d0c" } : {}} className='fromLeft'>Courses</h1>{toggle === 5 ? (<div className="fil_text_blok_kurs_lenght">{courses.length}  pieces</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(6)} style={toggle === 6 ? { borderBottom: "2px solid #6b3d0c" } : {}} className='fromLeft'>Sertificat</h1>{toggle === 6 ? (<div className="fil_text_blok_kurs_lenght">{setificatLength}  pieces</div>) : ("")}</div>
             </div>
             <div className="profil_blok_menu_size">
               <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
@@ -1211,7 +1211,7 @@ export default function Mentor() {
                     <a href="/Ourcourse">
                       {" "}
                       <button
-                        style={{ background: "#44bef1  " }}
+                        style={{ background: "#6b3d0c  " }}
                         className="delete_btn_yes"
                       >
                         Buy a course

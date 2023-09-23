@@ -3,7 +3,7 @@
     padding: 0;
     text-decoration: none;
 }
-.gray_navbar{
+.#6b3d0c_navbar{
     padding: 40px 0px 0px 8.594vw;
     background: white;
     /* border-bottom: 1px solid #dcdcdc !important; */
@@ -59,7 +59,7 @@ line-height: normal;
 }
 
     @media (max-width:1350px) {
-        .gray_navbar{   
+        .#6b3d0c_navbar{   
             padding: 40px 0px 0px 3.646vw;
         }
         .nav_menu{
@@ -70,7 +70,7 @@ line-height: normal;
         }
     }
 @media (max-width:1000px) {
-    .gray_navbar{
+    .#6b3d0c_navbar{
         padding: 30px 20px 0px 20px;
         padding-left: 20px;
     }
@@ -109,7 +109,7 @@ line-height: normal;
 }
 .nav_item:hover{
     color: var(--black, #2E2E2E);
-    border-bottom: 2px solid #44bef1 ;
+    border-bottom: 2px solid #6b3d0c ;
 }
 .burger{
     display: none !important;
@@ -174,7 +174,7 @@ line-height: normal;
     }
     .block_item:hover{
         color: var(--black, #2E2E2E);
-        border-bottom: 2px solid #44bef1 ;
+        border-bottom: 2px solid #6b3d0c ;
     }
     .curs{
         padding-top: 20px;
@@ -215,7 +215,7 @@ line-height: normal;
         list-style: none;
 }
 .bottom_ul .bottom_li:hover{
-    border-bottom: 2px solid #44bef1 ;
+    border-bottom: 2px solid #6b3d0c ;
 }
 .bottom_line{
     width: 100%;
@@ -352,7 +352,7 @@ line-height: normal;
     height: auto;
     border-radius: 5px;
     background: var(--white, #FFF);
-    /* #44bef1  shadow 2 */
+    /* #6b3d0c  shadow 2 */
     box-shadow: 0px 4px 20px 0px rgba(1, 102, 144, 0.10);
     transition: all 0.2s;
 }
@@ -433,10 +433,10 @@ line-height: normal;
     position: absolute;
     width: 35px;
     height: 35px;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     border-radius: 50%;
     background: white;
-    color: #44bef1;
+    color: #6b3d0c;
     right: 32px;
     bottom: 20px;
     display: flex;
@@ -446,8 +446,8 @@ line-height: normal;
     transition: all 0.3s;
 }
 .button_circle:hover {
-    border: 1px solid #44bef1;
-    background: #44bef1;
+    border: 1px solid #6b3d0c;
+    background: #6b3d0c;
     color: white;
 }
 /* @media (max-width:700px) {
@@ -458,10 +458,10 @@ line-height: normal;
         position: absolute;
         width: 35px;
         height: 35px;
-        border: 1px solid #44bef1;
+        border: 1px solid #6b3d0c;
         border-radius: 50%;
         background: white;
-        color: #44bef1;
+        color: #6b3d0c;
         right: 32px;
         top: 85%;
         display: flex;

@@ -56,7 +56,7 @@ width: 100%;
   }
 .m_comment_otvet p{
     cursor:pointer;
-    color: #44bef1;
+    color: #6b3d0c;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -64,12 +64,12 @@ width: 100%;
 }
 .m_otvet_comment:active{
     color: #fff;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     user-select: none;
 }
 .m_otvet_comment{
     padding: 5px;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     border-radius: 10px;
 }.m_otvet_comment span {
     display: flex;
@@ -154,7 +154,7 @@ height: auto;
     margin-right: 10px !important;
 }
 .m_otpravit{
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     height: 35px;
     width: 120px;
     font-size: 15px;
@@ -184,7 +184,7 @@ height: auto;
 #closeModal{
     margin: auto;
     margin-right: 0px;
-    color: #44bef1;
+    color: #6b3d0c;
 }
 
 .comment_otvet_block h6{
@@ -212,7 +212,7 @@ height: auto;
     .AiOutlineComment{
         position: relative;
         left: 20% !important;
-        color: #44bef1;
+        color: #6b3d0c;
         user-select: none;
     }
     
@@ -269,7 +269,7 @@ height: auto;
             margin-right: 10px !important;
         }
         .m_otpravit{
-            background-color: #44bef1;
+            background-color: #6b3d0c;
             height: 30px;
             width: 100px;
             font-size: 11px;
@@ -319,7 +319,7 @@ height: auto;
             margin-right: 10px !important;
         }
         .m_otpravit{
-            background-color: #44bef1;
+            background-color: #6b3d0c;
             height: 30px;
             width: 100px;
             font-size: 11px;
@@ -377,7 +377,7 @@ height: auto;
     padding: 20px;
 }
 .m_otvet_comment_back{
-    color: #44bef1;
+    color: #6b3d0c;
     cursor: pointer;
     position: relative;
     top: 0;
@@ -414,7 +414,7 @@ height: auto;
 }
 
 .comment_view_all{
-    color: #44bef1;
+    color: #6b3d0c;
     text-decoration: underline;
     cursor: pointer;
     display: flex;
@@ -445,7 +445,7 @@ height: auto;
 .AiOutlineComment{
     position: relative;
     left: 35%;
-    color: #44bef1;
+    color: #6b3d0c;
     user-select: none;
 }
 @media (max-width:1200px) {

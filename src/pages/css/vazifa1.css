@@ -12,19 +12,19 @@
 }
 
 .m-comment-mark:active, .m-comment-mark1:active {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: #fff !important;
     border-radius: 10px;
     user-select: none;
 }
 .m-comment-mark1{
-    color: #44bef1;
+    color: #6b3d0c;
     cursor: pointer;
     gap:10px;
     text-align:center;
     padding:3px;
     display:none;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     border-radius: 10px;
 }
 .comment_file12{
@@ -90,12 +90,12 @@
     border-radius: 10px;
 }
 .zanacha_vaz{
-    color: #44bef1;
+    color: #6b3d0c;
     text-decoration: underline;
 }
 
 .m-comment-Bookmark{
-    color: #44bef1;
+    color: #6b3d0c;
     font-size: 20px;
 }
 
@@ -171,7 +171,7 @@
 #mark-input-in-task, #mark-input-in-task1{
     width: 100% !important;
     margin-bottom: 30px;
-    border-bottom: 1px solid #44bef1;
+    border-bottom: 1px solid #6b3d0c;
 }
 
 .mark-otment-bosa{
@@ -179,7 +179,7 @@
     font-size: 12px;
 }
 .mark-okey-bosa{
-    color: #44bef1;
+    color: #6b3d0c;
     font-size: 12px;
 }
 
@@ -202,14 +202,14 @@
     display: none;
 }
 .m-comment-mark{
-    color:#44bef1 ;
+    color:#6b3d0c ;
     display: flex;
     align-items: center;
     gap: 5px;
     text-align:center; 
     cursor:pointer;
     padding: 5px;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     border-radius: 10px;
 }
 
@@ -318,16 +318,16 @@
     color: white;
 }
 .porver-uchen-but{
-    color: #44bef1;
+    color: #6b3d0c;
     background-color: #fff;
     border-radius: 10px;
     width: 100px;
     height: 30px;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
 }
 .porver-uchen-but:active{
     color: white;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
 
 }
 
@@ -445,7 +445,7 @@
         width: 30px !important;
         height: 30px !important;
         border-radius: 50%;
-        border: 1px solid #44bef1;
+        border: 1px solid #6b3d0c;
         display: flex;
         align-items: center;justify-content: center; 
     }
@@ -453,7 +453,7 @@
         width: 30px !important;
         height: 30px !important;
         border-radius: 50% !important;
-        background-color: #44bef1;
+        background-color: #6b3d0c;
     }
 }
 

@@ -59,7 +59,7 @@ export default function About() {
 <div className="sahifa">
 <div className="sahifa-glav">
 <div className="safiha-p">
-    <h4><a href="/">Home  <span><box-icon name='chevron-right' color='#44bef1' ></box-icon></span></a></h4>
+    <h4><a href="/">Home  <span><box-icon name='chevron-right' color='#6b3d0c' ></box-icon></span></a></h4>
 </div>
 <div className="safiha-d">
     <p  id='tepaga'>About Us</p>
@@ -215,12 +215,12 @@ export default function About() {
       <ul>
         <li className='cher'>Our well-known coaching programs will allow you to:</li>
       <div className="cher2">
-      <li><box-icon name='check' color='#44bef1' ></box-icon> <span>Relationships with clients and employees</span></li>
-        <li><box-icon name='check' color='#44bef1' ></box-icon><span>Integrity in everything we do to achieve complete<br className='adfad'/><span className='dfsdsd'>capacity</span></span></li>
-        <li><box-icon name='check' color='#44bef1' ></box-icon><span>Cut costs without sacrificing quality</span></li>
-        <li><box-icon name='check' color='#44bef1' ></box-icon><span>Integrity in everything we do to reach our full potential</span></li>
-        <li><box-icon name='check' color='#44bef1' ></box-icon> <span>Sharpen your sharp leadership skills to manage your team</span></li>
-        <li><box-icon name='check' color='#44bef1' ></box-icon><span>Manage your time to get more done in less time</span></li>
+      <li><box-icon name='check' color='#6b3d0c' ></box-icon> <span>Relationships with clients and employees</span></li>
+        <li><box-icon name='check' color='#6b3d0c' ></box-icon><span>Integrity in everything we do to achieve complete<br className='adfad'/><span className='dfsdsd'>capacity</span></span></li>
+        <li><box-icon name='check' color='#6b3d0c' ></box-icon><span>Cut costs without sacrificing quality</span></li>
+        <li><box-icon name='check' color='#6b3d0c' ></box-icon><span>Integrity in everything we do to reach our full potential</span></li>
+        <li><box-icon name='check' color='#6b3d0c' ></box-icon> <span>Sharpen your sharp leadership skills to manage your team</span></li>
+        <li><box-icon name='check' color='#6b3d0c' ></box-icon><span>Manage your time to get more done in less time</span></li>
       </div>
 
       </ul>
@@ -243,12 +243,12 @@ export default function About() {
 <div className="about-header-nn">
 <ul>
       <div className="cher2">
-      <li><box-icon name='check' color='#44bef1' ></box-icon> <span>Relationships with clients and employees</span></li>
-        <li><box-icon name='check' color='#44bef1' ></box-icon><span>Integrity in everything we do to reach our full potential</span></li>
-        <li><box-icon name='check' color='#44bef1' ></box-icon><span>Cut costs without sacrificing quality</span></li>
-        <li><box-icon name='check' color='#44bef1' ></box-icon><span>Integrity in everything we do to reach our full potential</span></li>
-        <li><box-icon name='check' color='#44bef1' ></box-icon> <span>Sharpen your sharp leadership skills to manage your team</span></li>
-        <li><box-icon name='check' color='#44bef1' ></box-icon><span>Manage your time to get more done in less time</span></li>
+      <li><box-icon name='check' color='#6b3d0c' ></box-icon> <span>Relationships with clients and employees</span></li>
+        <li><box-icon name='check' color='#6b3d0c' ></box-icon><span>Integrity in everything we do to reach our full potential</span></li>
+        <li><box-icon name='check' color='#6b3d0c' ></box-icon><span>Cut costs without sacrificing quality</span></li>
+        <li><box-icon name='check' color='#6b3d0c' ></box-icon><span>Integrity in everything we do to reach our full potential</span></li>
+        <li><box-icon name='check' color='#6b3d0c' ></box-icon> <span>Sharpen your sharp leadership skills to manage your team</span></li>
+        <li><box-icon name='check' color='#6b3d0c' ></box-icon><span>Manage your time to get more done in less time</span></li>
       </div>
 
       </ul>

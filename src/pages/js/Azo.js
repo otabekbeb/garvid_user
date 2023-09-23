@@ -51,7 +51,7 @@ export default function Azo() {
                             <a href="/Ourcourse">
                                 {" "}
                                 {/* <button
-                    style={{ background: "#44bef1  " }}
+                    style={{ background: "#6b3d0c  " }}
                     className="delete_btn_yes"
                   >
                     Купить курс
@@ -74,7 +74,7 @@ export default function Azo() {
                                                             <h3 style={{ lineHeight: "70px" }} className="name">{item1.username}</h3>
                                                         </div>
                                                         <center><ul className="social">
-                                                            <button style={{ background: "gray" }} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
+                                                            <button style={{ background: "#6b3d0c" }} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button>
                                                         </ul></center>
                                                     </div>
                                                 </div>

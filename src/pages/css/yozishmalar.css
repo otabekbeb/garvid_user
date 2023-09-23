@@ -27,7 +27,7 @@
 
 .javob_chat_div_beruvchi {
     display: block;
-    border-left: 3px solid #44bef1;
+    border-left: 3px solid #6b3d0c;
     padding-left: 10px;
 }
 
@@ -57,7 +57,7 @@
 .javob_chat_ikki_beruvchi {
     display: block;
     padding-left: 10px;
-    border-left: 3px solid #44bef1;
+    border-left: 3px solid #6b3d0c;
     margin-top: 10px;
 }
 
@@ -100,7 +100,7 @@
     align-items: stretch;
     gap: 10px;
     cursor: pointer;
-    color: #44bef1;
+    color: #6b3d0c;
 }
 
 .yozishma_small_text_div_text_javob_sozi .javob_sozi {
@@ -270,7 +270,7 @@
 
 .btnChatAdd {
     width: 40px;
-    background: #44bef1;
+    background: #6b3d0c;
     height: 40px;
     border-radius: 50%;
     position: absolute;
@@ -330,7 +330,7 @@ height: 35px;
 width: 94%;
 border: 1px solid #e2e2e2;
 box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-color: gray;
+color: #6b3d0c;
 }
 @media (max-width:1400px) {
     .yozishma_small_div {
@@ -398,7 +398,7 @@ color: gray;
     }
 
     .javob_chat_div_beruvchi {
-        border-left: 1px solid #44bef1;
+        border-left: 1px solid #6b3d0c;
     }
 
     .javob_sozi {
@@ -674,7 +674,7 @@ color: gray;
     left: 0;
     right: 0;
     background-color: rgba(213 220 233);
-    box-shadow: 1px 0px 0px 1px #44bef1;
+    box-shadow: 1px 0px 0px 1px #6b3d0c;
     width: 100%;
     display: none;
     padding-top: 5px;
@@ -696,7 +696,7 @@ color: gray;
 }
 
 .javob_berish_div_fill {
-    color: #44bef1;
+    color: #6b3d0c;
     font-size: 20px;
 }
 
@@ -725,7 +725,7 @@ color: gray;
 } */
 .Javob {
     text-decoration: none;
-    color: #44bef1;
+    color: #6b3d0c;
 }
 
 .yozishma_bolim_text_nik_text_qongiroq {
@@ -733,7 +733,7 @@ color: gray;
 }
 
 .yozishma_bolim_text_nik_text_qongiroq_bildir {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     border-radius: 50%;
     width: 25px;
     color: white;
@@ -872,7 +872,7 @@ label{
     border-radius: 5px;
     margin-left: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    color: gray;
+    color: #6b3d0c;
 }
 .switch {
     font-size: 17px;

@@ -11,7 +11,7 @@
 .VideoChat_room_big input {
     width: 100%;
     height: 40px;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     border-radius: 5px;
     padding-left: 10px;
     margin-top: 25px;
@@ -20,7 +20,7 @@
 
 .VideoChat_room_big button {
     color: white;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     width: 100%;
     height: 40px;
     border-radius: 5px;

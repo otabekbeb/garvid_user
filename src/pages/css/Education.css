@@ -12,8 +12,8 @@
     padding-bottom: 4px;
     /* margin-bottom: 10px; */
     font-size: 15px;
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
     background-color: #fff;
     cursor: pointer;
     border-radius: 5px;
@@ -39,8 +39,8 @@
     width: 200px;
     padding-top: 5px;
     padding-bottom: 5px;
-    background-color: #44bef1;
-    border: 1px solid #44bef1;
+    background-color: #6b3d0c;
+    border: 1px solid #6b3d0c;
     border-radius: 5px;
     color: #fff;
 }
@@ -50,8 +50,8 @@
     padding-top: 4px;
     padding-bottom: 4px;
     margin-bottom: 10px;
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
     background-color: #fff;
     cursor: pointer;
     border-radius: 5px;
@@ -60,7 +60,7 @@
 }
 
 .user_post_button_ban:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: white;
 }
 
@@ -84,7 +84,7 @@
     border: 1px solid grey;
     /* padding-top: 0.5%; */
     text-align: center;
-    outline-color: #44bef1;
+    outline-color: #6b3d0c;
     /* padding-bottom: 0.5%; */
 }
 
@@ -100,8 +100,8 @@
 
 .Came_button_div button {
     width: 100%;
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
     cursor: pointer;
     background-color: #fff;
     border-radius: 5px;
@@ -129,7 +129,7 @@
 }
 
 .user_post_button:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: white;
 }
 
@@ -262,7 +262,7 @@
     /* padding-bottom: 140px; */
     border-radius: 4px;
     border: 1px solid rgb(182, 182, 182);
-    outline-color: #44bef1;
+    outline-color: #6b3d0c;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Open+Sans:wght@400;500&family=Roboto&family=Rubik&display=swap');
@@ -274,21 +274,21 @@
     height: 35px;
     padding-left: 5px;
     border-radius: 4px;
-    outline-color: #44bef1;
+    outline-color: #6b3d0c;
     border: 1px solid rgb(182, 182, 182);
 }
 
 .div_img_upload {
     width: 300px;
     height: 35px;
-    border: 1px dashed #44bef1;
+    border: 1px dashed #6b3d0c;
     cursor: pointer;
     border-radius: 4px;
     position: absolute;
     display: flex;
     z-index: 0;
     top: 24px;
-    color: #44bef1;
+    color: #6b3d0c;
     justify-content: center;
     align-items: center;
 }
@@ -312,7 +312,7 @@ select {
     padding-left: 5px;
     border-radius: 4px;
     border: 1px solid grey;
-    outline-color: #44bef1;
+    outline-color: #6b3d0c;
     outline-color: gery;
 }
 
@@ -330,7 +330,7 @@ select {
 
 .postUserModal_div_icon .icon {
     cursor: pointer;
-    color: #44bef1;
+    color: #6b3d0c;
     width: 40px;
     height: 40px;
     font-size: 20px;
@@ -342,8 +342,8 @@ select {
     padding-top: 5px;
     padding-bottom: 5px;
     /* margin-bottom: 10px; */
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
     background-color: #fff;
     cursor: pointer;
     border-radius: 5px;
@@ -362,7 +362,7 @@ select {
 }
 
 .postUserModal_div_button button:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: white;
 }
 
@@ -405,8 +405,8 @@ select {
     padding-top: 5px;
     padding-bottom: 5px;
     margin-bottom: 10px;
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
     background-color: #fff;
     cursor: pointer;
     border-radius: 5px;
@@ -420,8 +420,8 @@ select {
     padding-bottom: 4px;
     margin-bottom: 20px !important;
     margin-top: 10px;
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
     background-color: #fff;
     cursor: pointer;
     font-size: 15px;
@@ -430,12 +430,12 @@ select {
 } */
 
 /* .user_post_button_malumot:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: #fff
 } */
 
 .deleteModal_div button:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: #fff
 }
 
@@ -509,13 +509,13 @@ select {
     height: 35px;
     border-radius: 5px;
     cursor: pointer;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
 
     transition: 0.4s;
 }
 
 .position button:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: #fff;
 }
 
@@ -588,8 +588,8 @@ select {
     padding-top: 4px !important;
     padding-bottom: 4px !important;
     margin-bottom: 10px;
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
     background-color: #fff;
     cursor: pointer;
     border-radius: 5px;
@@ -599,7 +599,7 @@ select {
 .select_div {
     width: 100%;
     background-color: #fff;
-    border: 2px solid #44bef1;
+    border: 2px solid #6b3d0c;
     margin-top: 5px;
     height: 200px;
     overflow-y: scroll;
@@ -620,7 +620,7 @@ select {
 .select_div1 {
     width: 100%;
     background-color: #fff;
-    border: 2px solid #44bef1;
+    border: 2px solid #6b3d0c;
     margin-top: 5px;
     height: 200px;
     overflow-y: scroll;
@@ -637,24 +637,24 @@ select {
 }
 
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px #44bef1;
+    -webkit-box-shadow: inset 0 0 6px #6b3d0c;
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px #44bef1;
+    -webkit-box-shadow: inset 0 0 6px #6b3d0c;
 }
 
 .select_div p {
     padding: 5px;
     cursor: pointer;
     border-radius: 3px;
-    border-bottom: 1px solid #44bef1;
+    border-bottom: 1px solid #6b3d0c;
 }
 
 .select_div p:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: #fff;
 }
 
@@ -662,11 +662,11 @@ select {
     padding: 5px;
     cursor: pointer;
     border-radius: 3px;
-    border-bottom: 1px solid #44bef1;
+    border-bottom: 1px solid #6b3d0c;
 }
 
 .select_div1 p:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: #fff;
 }
 
@@ -680,7 +680,7 @@ select {
 }
 
 .exit_button button:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: #fff;
 }
 
@@ -696,7 +696,7 @@ select {
     padding-right: 5px;
     padding-bottom: 5px;
     border-radius: 5px;
-    border: 2px solid #44bef1;
+    border: 2px solid #6b3d0c;
 }
 
 .notification_page {
@@ -742,7 +742,7 @@ select {
     border-radius: 6px;
     text-align: center;
     background-color: #fff;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
 }
 
 .teacher_page_big_card h1 {
@@ -755,10 +755,10 @@ select {
     width: 100px;
     height: 30px;
     border-radius: 4px;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     cursor: pointer;
     color: #fff;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     margin-bottom: 10px;
 }
 
@@ -876,7 +876,7 @@ select {
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
 }
 
 .notification_page_div p {
@@ -895,7 +895,7 @@ select {
     padding-right: 5px;
     padding-bottom: 5px;
     border-radius: 5px;
-    border: 2px solid #44bef1;
+    border: 2px solid #6b3d0c;
 }
 
 .SelectIchi {
@@ -968,14 +968,14 @@ select {
     width: 30px;
     padding-top: 7px;
     padding-bottom: 7px;
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
     display: flex;
     justify-content: center;
 }
 
 .edication_card_button button:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: #fff;
 }
 
@@ -1220,7 +1220,7 @@ select {
     padding: 20px;
     transition: 0.4s;
     border-radius: 5px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     position: fixed;
     top: -100%;
     border: 1px solid #085aff;
@@ -1244,7 +1244,7 @@ select {
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 5px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     cursor: pointer;
     border: 0;
     color: white;
@@ -1280,14 +1280,14 @@ select {
     padding-top: 5px;
     padding-bottom: 5px;
     color: #fff;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     border-radius: 5px;
     cursor: pointer;
     border: 0px;
 }
 
 .comment_big_div_oyna_div_message_div_delete {
-    color: #44bef1;
+    color: #6b3d0c;
     margin-top: 5px;
     margin-bottom: 10px;
     display: flex;
@@ -1298,7 +1298,7 @@ select {
 
 .comment_big_div_oyna_div_message_div_otvet {
     opacity: 0.6;
-    border-left: 1px solid #44bef1;
+    border-left: 1px solid #6b3d0c;
     padding-left: 10px;
     margin-bottom: 5px;
 }
@@ -1334,7 +1334,7 @@ select {
 }
 
 .admin_dostup_div {
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     padding: 5px;
     border-radius: 5px;
 }
@@ -1357,7 +1357,7 @@ select {
 .comment_big_div_oyna_div {
     width: 100%;
     background-color: #fff;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     height: 500px;
     overflow-y: scroll;
     position: relative;
@@ -1372,7 +1372,7 @@ select {
     gap: 5px;
     position: relative;
     background-color: #fff;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
 }
 
 .comment_big_div_message_div_otevt_oyna {
@@ -1384,7 +1384,7 @@ select {
     padding: 10px;
     display: flex;
     z-index: 9999999;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     width: 100%;
     gap: 10px;
     background-color: #fff;
@@ -1424,7 +1424,7 @@ select {
 
 .comment_big_div_message_div input {
     width: 100%;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     border-radius: 5px;
     outline: none;
     height: 35px;
@@ -1441,7 +1441,7 @@ select {
     color: #fff;
     border-radius: 5px;
     border: 0px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
 }
 
 
@@ -1454,7 +1454,7 @@ select {
     width: 100%;
     padding-left: 10px;
     height: 30px;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     border-radius: 5px;
     outline: none;
 }
@@ -1710,9 +1710,9 @@ body {
 .edu_btns button {
     width: 40px;
     height: 40px;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     border-radius: 50%;
-    color: #44bef1;
+    color: #6b3d0c;
     background-color: white;
     transition: .4s ease;
 }
@@ -1724,7 +1724,7 @@ body {
 
 .edu_btns button:hover {
     color: white;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
 }
 
 .edu_btn_delete:hover {

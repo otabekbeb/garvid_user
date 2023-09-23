@@ -29,7 +29,7 @@
     justify-content: end;
     font-size: 20px;
     cursor: pointer;
-    color: #44bef1;
+    color: #6b3d0c;
 }
 .Modal_big_div_video_error_div img{
     width: 80%;
@@ -74,7 +74,7 @@
     padding-bottom: 5px;
     color: black;
     background-color: #fff;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     border-radius: 5px;
 }
 .Modal_big_div_video_error_div_theme_button{
@@ -86,13 +86,13 @@
     cursor: pointer !important;
 }
 .Modal_big_div_video_error_div_theme_button .button:nth-child(1){
-    color: #44bef1 !important;
+    color: #6b3d0c !important;
 }
 .Modal_big_div_video_error_div_theme_button .button:nth-child(2){
     color: red !important;
 }
 .Modal_big_div_video_error_div_button button:hover{
-background-color: #44bef1;
+background-color: #6b3d0c;
 color: #fff;
 }
 .Modal_big_div_video_error_div_theme{
@@ -118,7 +118,7 @@ color: #fff;
 }
 .AiFillFolderAdd{
     font-size: 25px;
-    color: #44bef1;
+    color: #6b3d0c;
     cursor: pointer;
 }
 .Modal_big_div_video_error_div_theme p{
@@ -130,13 +130,13 @@ color: #fff;
 
 }
 /* .kurs_card:hover .kurs_paddaing_auto h4{
-    color: #44bef1;
+    color: #6b3d0c;
 }
 .kurs_card:hover .kurs_paddaing_auto h5{
-    color: #44bef1;
+    color: #6b3d0c;
 }
 .kurs_card:hover .kurs_paddaing_auto p{
-    color: #44bef1;
+    color: #6b3d0c;
 } */
 
 .kurs_card{
@@ -218,7 +218,7 @@ color: #fff;
     border-radius: 2px;
     border: none;
     color: white;
-    background: #44bef1;
+    background: #6b3d0c;
 }
 
 @media (max-width:369px) {}
@@ -316,10 +316,10 @@ color: #fff;
     position: absolute;
     width: 42px;
     height: 42px;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     border-radius: 50%;
     background: white;
-    color: #44bef1;
+    color: #6b3d0c;
     right: 32px;
     display: flex;
     justify-content: center;
@@ -336,11 +336,11 @@ color: #fff;
         position: absolute;
         width: 42px;
         height: 42px;
-        border: 1px solid #44bef1;
+        border: 1px solid #6b3d0c;
         border-radius: 50%;
         background: white;
         /* top: 85%; */
-        color: #44bef1;
+        color: #6b3d0c;
         right: 32px;
         display: flex;
         justify-content: center;
@@ -351,8 +351,8 @@ color: #fff;
 }
 
 .button_circle:hover {
-    border: 1px solid #44bef1;
-    background: #44bef1;
+    border: 1px solid #6b3d0c;
+    background: #6b3d0c;
     color: white;
 }
 
@@ -596,7 +596,7 @@ color: #fff;
     height: 50px;
     margin-top: 10px;
     color: #fff;
-    background: #44bef1;
+    background: #6b3d0c;
     border-radius: 5px;
     font-size: 20px;
     transition: .3s ease;
@@ -620,7 +620,7 @@ color: #fff;
         height: 40px !important;
         margin-top: 10px;
         color: #fff;
-        background: #44bef1;
+        background: #6b3d0c;
         border-radius: 5px;
         font-size: 16px !important;
         transition: .3s ease;

@@ -133,7 +133,7 @@ body {
 }
 
 .prover2-info-filter button:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
 
 }
 
@@ -195,7 +195,7 @@ body {
 }
 
 .prover2-info-filter2 button:hover {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
 
 }
 
@@ -755,7 +755,7 @@ body {
 
     height: 23px;
     border-radius: 2px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: white;
     cursor: pointer;
 }
@@ -913,7 +913,7 @@ body {
     width: 130px !important;
     height: 40px !important;
     border-radius: 2px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: white;
     border: none;
     outline: none;
@@ -1207,7 +1207,7 @@ justify-content: space-around; */
     width: 10px !important;
     height: 10px !important;
     border-radius: 50% !important;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
 }
 
 .prover2-trebovaniya-block {
@@ -1569,7 +1569,7 @@ justify-content: space-around; */
         width: 50% !important;
         height: 40px !important;
         border-radius: 2px;
-        background-color: #44bef1;
+        background-color: #6b3d0c;
         color: white;
         border: none;
         outline: none;
@@ -3593,7 +3593,7 @@ justify-content: space-around; */
     width: 100px;
     height: 30px;
     border-radius: 5px;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     background-color: #fff;
 }
 
@@ -3602,7 +3602,7 @@ justify-content: space-around; */
     width: 100px;
     height: 30px;
     border-radius: 5px;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     background-color: #fff;
 }
 
@@ -3612,13 +3612,13 @@ justify-content: space-around; */
 
 .buy_yes_prover:hover {
     border: none;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: white;
 }
 
 .buy_no_prover:hover {
     border: none;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: white;
 }
 

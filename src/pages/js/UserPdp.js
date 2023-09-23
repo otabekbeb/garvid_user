@@ -97,13 +97,13 @@ export default function Pdp() {
     <div>{loader==0?(<div>
         
       {state1 === "en" ? (
-        <div className="gray_blok">
+        <div className="#6b3d0c_blok">
           <div className="fil_text_blok">
             <div className="fil_text_blok_soz">
               <h1
                 onClick={() => updatetoggle(1)}
                 style={
-                  toggle === 1 ? { borderBottom: "2px solid #44bef1" } : {}
+                  toggle === 1 ? { borderBottom: "2px solid #6b3d0c" } : {}
                 }
                 className="fromLeft"
               >
@@ -121,7 +121,7 @@ export default function Pdp() {
               <h1
                 onClick={() => updatetoggle(2)}
                 style={
-                  toggle === 2 ? { borderBottom: "2px solid #44bef1" } : {}
+                  toggle === 2 ? { borderBottom: "2px solid #6b3d0c" } : {}
                 }
                 className="fromLeft"
               >
@@ -134,7 +134,7 @@ export default function Pdp() {
               <h1
                 onClick={() => updatetoggle(5)}
                 style={
-                  toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}
+                  toggle === 5 ? { borderBottom: "2px solid #6b3d0c" } : {}
                 }
                 className="fromLeft"
               >
@@ -150,7 +150,7 @@ export default function Pdp() {
             <h1
               onClick={() => updatetoggle(6)}
               style={
-                toggle === 6 ? { borderBottom: "2px solid #44bef1" } : {}
+                toggle === 6 ? { borderBottom: "2px solid #6b3d0c" } : {}
               }
               className="fromLeft"
             >
@@ -169,7 +169,7 @@ export default function Pdp() {
               <h1
                 onClick={() => updatetoggle(6)}
                 style={
-                  toggle === 6 ? { borderBottom: "2px solid #44bef1" } : {}
+                  toggle === 6 ? { borderBottom: "2px solid #6b3d0c" } : {}
                 }
                 className="fromLeft"
               >
@@ -182,7 +182,7 @@ export default function Pdp() {
               <h1
                 onClick={() => updatetoggle(8)}
                 style={
-                  toggle === 8 ? { borderBottom: "2px solid #44bef1" } : {}
+                  toggle === 8 ? { borderBottom: "2px solid #6b3d0c" } : {}
                 }
                 className="fromLeft"
               >
@@ -194,7 +194,7 @@ export default function Pdp() {
               <h1
                 onClick={() => updatetoggle(10)}
                 style={
-                  toggle === 10 ? { borderBottom: "2px solid #44bef1" } : {}
+                  toggle === 10 ? { borderBottom: "2px solid #6b3d0c" } : {}
                 }
                 className="fromLeft"
               >
@@ -258,13 +258,13 @@ export default function Pdp() {
           </div>
         </div>
       ) : (
-        <div className="gray_blok">
+        <div className="#6b3d0c_blok">
           <div className="fil_text_blok">
             <div className="fil_text_blok_soz">
               <h1
                 onClick={() => updatetoggle(1)}
                 style={
-                  toggle === 1 ? { borderBottom: "2px solid #44bef1" } : {}
+                  toggle === 1 ? { borderBottom: "2px solid #6b3d0c" } : {}
                 }
                 className="fromLeft"
               >
@@ -282,7 +282,7 @@ export default function Pdp() {
               <h1
                 onClick={() => updatetoggle(2)}
                 style={
-                  toggle === 2 ? { borderBottom: "2px solid #44bef1" } : {}
+                  toggle === 2 ? { borderBottom: "2px solid #6b3d0c" } : {}
                 }
                 className="fromLeft"
               >
@@ -298,7 +298,7 @@ export default function Pdp() {
               <h1
                 onClick={() => updatetoggle(3)}
                 style={
-                  toggle === 3 ? { borderBottom: "2px solid #44bef1" } : {}
+                  toggle === 3 ? { borderBottom: "2px solid #6b3d0c" } : {}
                 }
                 className="fromLeft"
               >
@@ -314,7 +314,7 @@ export default function Pdp() {
               <h1
                 onClick={() => updatetoggle(4)}
                 style={
-                  toggle === 4 ? { borderBottom: "2px solid #44bef1" } : {}
+                  toggle === 4 ? { borderBottom: "2px solid #6b3d0c" } : {}
                 }
                 className="fromLeft"
               >
@@ -330,7 +330,7 @@ export default function Pdp() {
               <h1
                 onClick={() => updatetoggle(5)}
                 style={
-                  toggle === 5 ? { borderBottom: "2px solid #44bef1" } : {}
+                  toggle === 5 ? { borderBottom: "2px solid #6b3d0c" } : {}
                 }
                 className="fromLeft"
               >

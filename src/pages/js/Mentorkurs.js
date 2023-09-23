@@ -1229,7 +1229,7 @@ export default function Searchfilter() {
           <div className="Modal_big_div_video_error_div_button">
           <button
               style={
-                pageVideo == 0 ? { background: "#44bef1", color: "#fff" } : {}
+                pageVideo == 0 ? { background: "#6b3d0c", color: "#fff" } : {}
               }
               onClick={() => {
                 setPageVideo(0);
@@ -1239,7 +1239,7 @@ export default function Searchfilter() {
             </button>  
           <button
               style={
-                pageVideo == 1 ? { background: "#44bef1", color: "#fff" } : {}
+                pageVideo == 1 ? { background: "#6b3d0c", color: "#fff" } : {}
               }
               onClick={() => {
                 setPageVideo(1);

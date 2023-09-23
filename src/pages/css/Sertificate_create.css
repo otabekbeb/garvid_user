@@ -102,8 +102,8 @@
 .sertificate_btn_send {
     width: 80px;
     height: 25px;
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
     background-color: #fff;
     border-radius: 3px;
     cursor: pointer;
@@ -112,7 +112,7 @@
 
 .sertificate_btn_send:hover {
     color: #fff;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
 }
 
 .sertificate_date_inp_edit {
@@ -156,8 +156,8 @@
     width: 80px;
     height: 25px;
     margin-bottom: 0px !important;
-    border: 1px solid #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    color: #6b3d0c;
     background-color: #fff;
     border-radius: 3px;
     cursor: pointer;
@@ -166,7 +166,7 @@
 
 .sertificate_btn_edit:hover {
     color: #fff;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
 }
 .sertificate_botom_df {
     display: flex;
@@ -182,15 +182,15 @@
 .sertificate_post_btn button{
     width: 80px;
     height: 30px;
-    color: #44bef1;
+    color: #6b3d0c;
     background-color: #fff;
-    border: 1px solid #44bef1;
+    border: 1px solid #6b3d0c;
     border-radius: 3px;
     transition: .4s ease;
 }
 .sertificate_post_btn button:hover{
     color: #fff;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
 }
 .sertificate_file_post{
     opacity: -1;

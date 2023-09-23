@@ -23,7 +23,7 @@
 .ichi-text-test button{
     font-size: 20px;
     text-shadow: rgba(0, 0, 0, 0.2) 0px -1px 1px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     border: none;
     border-radius: 5px;
     padding: 5px 20px;
@@ -286,8 +286,8 @@ justify-content: space-between;
 .butonn-la button{
         font-size: 20px;
         text-shadow: rgba(0, 0, 0, 0.2) 0px -1px 1px;
-        background-color: #44bef1;
-        border-color: #44bef1;
+        background-color: #6b3d0c;
+        border-color: #6b3d0c;
         padding: 5px 20px;
         color: white;
         
@@ -482,8 +482,8 @@ justify-content: space-between;
     .butonn-la button{
         font-size: 20px;
         text-shadow: rgba(0, 0, 0, 0.2) 0px -1px 1px;
-        background-color: #44bef1;
-        border-color: #44bef1;
+        background-color: #6b3d0c;
+        border-color: #6b3d0c;
         padding: 5px 20px;
         color: white;
        margin-top: 20px;
@@ -999,7 +999,7 @@ justify-content: space-between;
     margin-bottom: 15px;
 }
 .bir_uchun button{
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     padding: 10px 20px;
     color: white;
     font-size: 25px;
@@ -1052,9 +1052,9 @@ justify-content: space-between;
     display: flex;
     justify-content: center;
     margin-top: 15px !important;
-    border: 2px solid #44bef1 !important;
+    border: 2px solid #6b3d0c !important;
     transition: 0.5s;
-    background-color: #44bef1 !important;
+    background-color: #6b3d0c !important;
     color: white !important;
 }
 .options .form-check-input[type=radio]{
@@ -1075,7 +1075,7 @@ justify-content: space-between;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     border-radius: 10px;
 }
 .mt-2 .options{
@@ -1102,9 +1102,9 @@ justify-content: space-between;
   .left_card{
     width: 25%;
     min-height: 125px;
-    border: 1px solid #44bef1;
-    background-color: #44bef1;
-    color: #44bef1;
+    border: 1px solid #6b3d0c;
+    background-color: #6b3d0c;
+    color: #6b3d0c;
   }
   .mod_svg a{
     cursor: pointer;

@@ -467,7 +467,7 @@ function putname(id) {
 }
 function hover_pen() {
   if(theme=="moon"){
-    document.querySelector(".bx-pencil").style="background:dimgray;color:white"
+    document.querySelector(".bx-pencil").style="background:dim#6b3d0c;color:white"
   }else{
     document.querySelector(".bx-pencil").style="background:gainsboro;color:black"
   }
@@ -481,7 +481,7 @@ function hover_pen_close() {
 }
 function hover_back() {
   if(theme=="moon"){
-    document.querySelector(".bx-left-arrow-alt").style="background:dimgray;color:white"
+    document.querySelector(".bx-left-arrow-alt").style="background:dim#6b3d0c;color:white"
   }else{
     document.querySelector(".bx-left-arrow-alt").style="background:gainsboro;color:black"
   }
@@ -495,7 +495,7 @@ function hover_back_close() {
 }
 function hover_back1() {
   if(theme=="moon"){
-    document.querySelector("#arrow").style="background:dimgray;color:white"
+    document.querySelector("#arrow").style="background:dim#6b3d0c;color:white"
   }else{
     document.querySelector("#arrow").style="background:gainsboro;color:black"
   }
@@ -509,7 +509,7 @@ function hover_back_close1() {
 }
 function hover_rounded() {
   if(theme=="moon"){
-    document.querySelector(".bx-dots-vertical-rounded").style="background:dimgray;color:white"
+    document.querySelector(".bx-dots-vertical-rounded").style="background:dim#6b3d0c;color:white"
   }else{
     document.querySelector(".bx-dots-vertical-rounded").style="background:gainsboro;color:black"
   }
@@ -523,7 +523,7 @@ function hover_rounded_close1() {
 }
 function hover_menu() {
   if(theme=="moon"){
-    document.querySelector("#telegram_menu").style="background:dimgray;color:white"
+    document.querySelector("#telegram_menu").style="background:dim#6b3d0c;color:white"
   }else{
     document.querySelector("#telegram_menu").style="background:gainsboro;color:black"
   }

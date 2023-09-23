@@ -286,7 +286,7 @@ export default function Searchfilter() {
                     <a href="/Ourcourse">
                       {" "}
                       <button
-                        style={{ background: "#44bef1  " }}
+                        style={{ background: "#6b3d0c  " }}
                         className="delete_btn_yes"
                       >
                         Buy a course
@@ -305,7 +305,7 @@ export default function Searchfilter() {
                     <a href="/Ourcourse">
                       {" "}
                       <button
-                        style={{ background: "#44bef1  " }}
+                        style={{ background: "#6b3d0c  " }}
                         className="delete_btn_yes"
                       >
                         Buy a course

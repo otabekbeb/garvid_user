@@ -128,7 +128,7 @@ export default function Navbar() {
                       <span>
                         <box-icon
                           name="chevron-down"
-                          color="#44bef1"
+                          color="#6b3d0c"
                         ></box-icon>
                       </span>
                     </p>
@@ -151,7 +151,7 @@ export default function Navbar() {
                             <span id="menu2spanid">
                               <box-icon
                                 name="chevron-right"
-                                color="#44bef1"
+                                color="#6b3d0c"
                               ></box-icon>
                             </span>
                           </a>{" "}

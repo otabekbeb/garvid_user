@@ -139,9 +139,9 @@ export default function Footer1() {
     <h3>Contact Information</h3>
     <div className="futer-nobil-block-line"></div>
     <div className="futer-text">
-<p className='lls'><box-icon name='check' color='#44bef1' id="pdsfp"></box-icon><span >info@baisan.org</span></p>
-<p className='lls'><box-icon name='check' color='#44bef1' id="pdsfp"></box-icon><span >Mon - Sat: 9:00 - 18:00</span></p>
-<p className='lkas'><box-icon name='check' color='#44bef1' id="pdsfp"></box-icon><span>Qazaqstan, Turkestan Region, Shymkent city, Surikova street 3B</span></p>
+<p className='lls'><box-icon name='check' color='#6b3d0c' id="pdsfp"></box-icon><span >info@baisan.org</span></p>
+<p className='lls'><box-icon name='check' color='#6b3d0c' id="pdsfp"></box-icon><span >Mon - Sat: 9:00 - 18:00</span></p>
+<p className='lkas'><box-icon name='check' color='#6b3d0c' id="pdsfp"></box-icon><span>Qazaqstan, Turkestan Region, Shymkent city, Surikova street 3B</span></p>
 
 </div>
 

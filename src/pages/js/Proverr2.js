@@ -846,7 +846,7 @@ export default function Proverr2() {
                                 <div className="boshqa-mentorla">
                                     <h5>Другие наставники</h5>
                                     {/* <div className="boshqa-mentorla-krugg1">
-                                        <div className="boshqa-kurglaaaaa1" onClick={() => onga()}><box-icon name='right-arrow-alt' color='#44bef1 ' ></box-icon></div>
+                                        <div className="boshqa-kurglaaaaa1" onClick={() => onga()}><box-icon name='right-arrow-alt' color='#6b3d0c ' ></box-icon></div>
                                     </div> */}
                                 </div>
                                 <Swiper style={{ height: "200px !important" }} navigation={true} slidesPerView={1} modules={[Navigation]} className="mySwiper">
@@ -1017,7 +1017,7 @@ dolor sit amet. . . .</p>
                                         <div className="boshqa-mentorla">
                                             <h5>Другие наставники</h5>
                                             {/* <div className="boshqa-mentorla-krugg1">
-                                                <div className="boshqa-kurglaaaaa1" onClick={() => onga()}><box-icon name='right-arrow-alt' color='#44bef1 ' ></box-icon></div>
+                                                <div className="boshqa-kurglaaaaa1" onClick={() => onga()}><box-icon name='right-arrow-alt' color='#6b3d0c ' ></box-icon></div>
                                             </div> */}
                                         </div>
                                         <Swiper style={{ height: "200px !important" }} navigation={true} slidesPerView={1} modules={[Navigation]} className="mySwiper">

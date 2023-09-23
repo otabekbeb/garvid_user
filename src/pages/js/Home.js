@@ -100,7 +100,7 @@ export default function Home() {
               style={{ textAlign: "center", padding: "20px" }}
               className="container my-5 py-5"
             >
-              <h3 id="huch" style={{ fontSize: "18px", color: "#44bef1" }}>
+              <h3 id="huch" style={{ fontSize: "18px", color: "#6b3d0c" }}>
                 BEST ONLINE COURSES
               </h3>
               <h1 className="text-white mt-4 mb-4" id="hbir">
@@ -270,7 +270,7 @@ export default function Home() {
                       style={
                         state === 1
                           ? {
-                            background: "#44bef1",
+                            background: "#6b3d0c",
                             color: "#fff",
                             border: "none !important",
                           }
@@ -287,7 +287,7 @@ export default function Home() {
                       style={
                         state === 2
                           ? {
-                            background: "#44bef1",
+                            background: "#6b3d0c",
                             color: "#fff",
                             border: "none",
                           }
@@ -304,7 +304,7 @@ export default function Home() {
                       style={
                         state === 3
                           ? {
-                            background: "#44bef1",
+                            background: "#6b3d0c",
                             color: "#fff",
                             border: "none",
                           }

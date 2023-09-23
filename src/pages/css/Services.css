@@ -388,7 +388,7 @@
 .dumalo {
   width: 30px;
   height: 30px;
-  border: 1px solid gray;
+  border: 1px solid #6b3d0c;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -426,21 +426,21 @@
 }
 
 .dumalo:hover {
-  border: 1px solid #44bef1;
+  border: 1px solid #6b3d0c;
 }
 
 .dumalo:hover {
-  background: #44bef1;
+  background: #6b3d0c;
   color: white;
   cursor: pointer;
 }
 
 .view span {
-  color: #44bef1;
+  color: #6b3d0c;
 }
 
 .view h4:hover {
-  color: #44bef1;
+  color: #6b3d0c;
   cursor: pointer;
 }
 

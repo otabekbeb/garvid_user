@@ -43,12 +43,12 @@
 }
 
 .media-ul ul li:hover {
-  background-color: #44bef1 !important;
+  background-color: #6b3d0c !important;
   cursor: pointer;
 }
 
 .ichi:hover {
-  background-color: #44bef1;
+  background-color: #6b3d0c;
   cursor: pointer;
 }
 
@@ -139,7 +139,7 @@
 }
 
 .moto-menu-item a:hover {
-  color: #44bef1;
+  color: #6b3d0c;
 }
 
 /* .menu p span:hover{
@@ -189,7 +189,7 @@
 }
 
 .menu ul li:hover {
-  color: #44bef1;
+  color: #6b3d0c;
 }
 
 .menu2 li a span {
@@ -203,15 +203,15 @@
 }
 
 #menu2pp:hover .zaib {
-  color: #44bef1;
+  color: #6b3d0c;
 }
 
 #contactcolor :hover {
-  color: #44bef1;
+  color: #6b3d0c;
 }
 
 .faqcolor:hover .faqscolor {
-  color: #44bef1;
+  color: #6b3d0c;
 }
 
 .faqscolor {
@@ -225,7 +225,7 @@
 
 
 .menu ul p:hover a {
-  color: #44bef1;
+  color: #6b3d0c;
 }
 
 
@@ -363,7 +363,7 @@
     left: 45vw;
 }  */
   .adelna {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     width: 95vw;
     height: 35px;
     color: white;
@@ -451,7 +451,7 @@
 }
 
 .la {
-  background-color: #44bef1;
+  background-color: #6b3d0c;
 }
 
 .laa {
@@ -536,7 +536,7 @@
   align-items: center;
   width: 95vw;
   height: 100%;
-  background-color: #44bef1;
+  background-color: #6b3d0c;
   color: white;
 } */
 
@@ -819,7 +819,7 @@
     width: 100% !important;
     overflow: hidden;
     position: relative;
-    border: 2px solid #44bef1;
+    border: 2px solid #6b3d0c;
     background-color: #ffffff;
     top: -13px;
     display: none;
@@ -954,7 +954,7 @@ Akbar Iteen, [28.07.2023 17:44]
  left: 45vw;
 } */
   .adelna {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     width: 95vw;
     height: 35px;
     color: white;
@@ -1042,7 +1042,7 @@ Akbar Iteen, [28.07.2023 17:44]
 }
 
 .la {
-  background-color: #44bef1;
+  background-color: #6b3d0c;
 }
 
 .laa {
@@ -1127,7 +1127,7 @@ Akbar Iteen, [28.07.2023 17:44]
 align-items: center;
 width: 95vw;
 height: 100%;
-background-color: #44bef1;
+background-color: #6b3d0c;
 color: white;
 } */
 
@@ -1374,7 +1374,7 @@ color: white;
   /* .wone {
     width: 60%;
     height: 3px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     position: relative;
     top: 10px;
     margin-top: 5px;
@@ -1383,7 +1383,7 @@ color: white;
   .wone1 {
     width: 60%;
     height: 3px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     position: relative;
     top: 9px;
     margin-top: 5px;
@@ -1393,7 +1393,7 @@ color: white;
   .wone2 {
     width: 60%;
     height: 3px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     position: relative;
     top: 8px;
     margin-top: 5px;
@@ -1479,7 +1479,7 @@ color: white;
     width: 96vw;
     overflow: hidden;
     position: relative;
-    border: 2px solid #44bef1;
+    border: 2px solid #6b3d0c;
     background-color: #ffffff;
     top: -13px;
     display: none;
@@ -1532,7 +1532,7 @@ color: white;
  left: 45vw;
 } */
   .adelna {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     width: 95vw;
     height: 35px;
     color: white;
@@ -1544,7 +1544,7 @@ color: white;
 }
 
 .la {
-  background-color: #44bef1 !important;
+  background-color: #6b3d0c !important;
 
 }
 
@@ -1647,7 +1647,7 @@ color: white;
 align-items: center;
 width: 95vw;
 height: 100%;
-background-color: #44bef1;
+background-color: #6b3d0c;
 color: white;
 } */
 
@@ -1676,7 +1676,7 @@ color: white;
  width: 93vw;
  overflow: hidden;
  position: relative;
- border: 2px solid #44bef1;
+ border: 2px solid #6b3d0c;
  background-color: #ffffff;
  z-index: 100;
  display: none;
@@ -1688,7 +1688,7 @@ color: white;
  width: 92vw;
  overflow: hidden;
  position: relative;
- border: 2px solid #44bef1;
+ border: 2px solid #6b3d0c;
  background-color: #ffffff;
  z-index: 100;
  display: none;
@@ -2554,7 +2554,7 @@ color: white;
 }
 
 #asdasddasdasasdsa:hover {
-  color: #44bef1;
+  color: #6b3d0c;
 }
 
 @media (max-width:954px) {
@@ -2728,7 +2728,7 @@ div#goog-gt- {
 /*google translate Dropdown */
 
 #google_translate_element select {
-  background: gray;
+  background: #6b3d0c;
   color: #fff;
   border: none;
   border-radius: 3px;
@@ -2739,7 +2739,7 @@ div#goog-gt- {
   position: absolute;
   width: 40px;
   height: 40px;
-  background: #44bef1;
+  background: #6b3d0c;
   top: 0;
   display: none;
 }
@@ -3099,7 +3099,7 @@ div#goog-gt- {
   appearance: none;
   width: 64px;
   height: 35px;
-  border: 2px solid #44bef1;
+  border: 2px solid #6b3d0c;
   border-radius: 20px;
   background: white;
   position: relative;
@@ -3110,8 +3110,8 @@ div#goog-gt- {
   content: "";
   width: 24px;
   height: 24px;
-  border: 2px solid #44bef1;
-  background: #44bef1;
+  border: 2px solid #6b3d0c;
+  background: #6b3d0c;
   border-radius: 50%;
   position: absolute;
   top: 0;
@@ -3130,13 +3130,13 @@ div#goog-gt- {
 }
 
 .checkbox-con input[type="checkbox"]:checked {
-  border: 2px solid #44bef1;
+  border: 2px solid #6b3d0c;
   background: white;
 }
 
 .checkbox-con input[type="checkbox"]:checked::before {
-  background: #44bef1;
-  border: 2px solid #44bef1;
+  background: #6b3d0c;
+  border: 2px solid #6b3d0c;
   transform: translate(133%, 13%);
   transition: all 0.3s ease-in-out;
 }
@@ -3359,7 +3359,7 @@ div#goog-gt- {
 }
 
 .navbar-media-left-ul ul li:hover {
-  color: #44bef1;
+  color: #6b3d0c;
 }
 
 .navbar-box-icons {
@@ -3387,7 +3387,7 @@ div#goog-gt- {
 }
 
 #osdsodsdd:hover {
-  color: #44bef1 !important;
+  color: #6b3d0c !important;
 }
 
 @media (max-width:814px) {

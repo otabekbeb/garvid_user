@@ -63,7 +63,7 @@
     font-weight: 600;
     font-style: normal;
     color: #ffffff;
-    background: #44bef1;
+    background: #6b3d0c;
     cursor: pointer;
     outline: none;
 }
@@ -83,7 +83,7 @@
 }
 
 .right123 span:hover {
-    color: #44bef1;
+    color: #6b3d0c;
 }
 .asdfkja{
     overflow: hidden;
@@ -106,7 +106,7 @@
         font-weight: 700;
         font-style: normal;
         color: #ffffff;
-        background: #44bef1;
+        background: #6b3d0c;
         cursor: pointer;
         outline: none;
         margin-left: 0;

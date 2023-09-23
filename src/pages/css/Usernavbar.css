@@ -96,7 +96,7 @@
 
 .menu a {
   display: block;
-  color: #44bef1;
+  color: #6b3d0c;
   text-decoration: none;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
@@ -117,7 +117,7 @@
 }
 
 .moto-menu-item a:hover {
-  color: #44bef1;
+  color: #6b3d0c;
 }
 
 /* .menu p span:hover{
@@ -176,7 +176,7 @@
 
 
 .menu ul a:hover {
-  color: #44bef1;
+  color: #6b3d0c;
 }
 
 
@@ -301,7 +301,7 @@
   .wone {
     width: 60%;
     height: 3px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     position: relative;
     top: 10px;
     margin-top: 5px;
@@ -311,7 +311,7 @@
   .wone1 {
     width: 60%;
     height: 3px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     position: relative;
     top: 9px;
     margin-top: 5px;
@@ -321,7 +321,7 @@
   .wone2 {
     width: 60%;
     height: 3px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     position: relative;
     top: 8px;
     margin-top: 5px;
@@ -423,7 +423,7 @@
       left: 45vw;
   } */
   .adelna {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     width: 95vw;
     height: 35px;
     color: white;
@@ -509,7 +509,7 @@
 }
 
 .la {
-  background-color: #44bef1;
+  background-color: #6b3d0c;
 }
 
 .laa {
@@ -594,7 +594,7 @@
     align-items: center;
     width: 95vw;
     height: 100%;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: white;
   } */
 
@@ -844,7 +844,7 @@
   .wone {
     width: 60%;
     height: 3px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     position: relative;
     top: 10px;
     margin-top: 5px;
@@ -854,7 +854,7 @@
   .wone1 {
     width: 60%;
     height: 3px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     position: relative;
     top: 9px;
     margin-top: 5px;
@@ -864,7 +864,7 @@
   .wone2 {
     width: 60%;
     height: 3px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     position: relative;
     top: 8px;
     margin-top: 5px;
@@ -944,7 +944,7 @@
     width: 94vw;
     overflow: hidden;
     position: relative;
-    border: 2px solid #44bef1;
+    border: 2px solid #6b3d0c;
     background-color: #ffffff;
     top: -13px;
     display: none;
@@ -979,7 +979,7 @@
     height: 100%;
     position: relative;
     left: -40px !important;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: white;
   }
 
@@ -1000,7 +1000,7 @@
       left: 45vw;
   } */
   .adelna {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     width: 95vw;
     height: 35px;
     color: white;
@@ -1012,7 +1012,7 @@
 }
 
 .la {
-  background-color: #44bef1 !important;
+  background-color: #6b3d0c !important;
 
 }
 
@@ -1111,7 +1111,7 @@
     align-items: center;
     width: 95vw;
     height: 100%;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: white;
   } */
 
@@ -1140,7 +1140,7 @@
       width: 93vw;
       overflow: hidden;
       position: relative;
-      border: 2px solid #44bef1;
+      border: 2px solid #6b3d0c;
       background-color: #ffffff;
       z-index: 100;
       display: none;
@@ -1152,7 +1152,7 @@
       width: 92vw;
       overflow: hidden;
       position: relative;
-      border: 2px solid #44bef1;
+      border: 2px solid #6b3d0c;
       background-color: #ffffff;
       z-index: 100;
       display: none;
@@ -2166,7 +2166,7 @@
   position: absolute;
   width: 40px;
   height: 40px;
-  background: #44bef1;
+  background: #6b3d0c;
   top: 0;
 }
 
@@ -2188,7 +2188,7 @@
   appearance: none;
   width: 64px;
   height: 35px;
-  border: 2px solid #44bef1;
+  border: 2px solid #6b3d0c;
   border-radius: 20px;
   background: #f1e1e1;
   position: relative;
@@ -2199,8 +2199,8 @@
   content: "";
   width: 24px;
   height: 24px;
-  border: 2px solid #44bef1;
-  background: #44bef1;
+  border: 2px solid #6b3d0c;
+  background: #6b3d0c;
   border-radius: 50%;
   position: absolute;
   top: 0;
@@ -2218,13 +2218,13 @@
 }
 
 .checkbox-con input[type="checkbox"]:checked {
-  border: 2px solid #44bef1;
+  border: 2px solid #6b3d0c;
   background: #e2f1e1;
 }
 
 .checkbox-con input[type="checkbox"]:checked::before {
-  background: #44bef1;
-  border: 2px solid #44bef1;
+  background: #6b3d0c;
+  border: 2px solid #6b3d0c;
   transform: translate(133%, 13%);
   transition: all 0.3s ease-in-out;
 }
@@ -2316,7 +2316,7 @@ padding-left: 30px;
     padding-left: 10px;
 }
 .navbar-media-left-ul ul li:hover{
-  color: #44bef1;
+  color: #6b3d0c;
 }
 .navbar-box-icons{
   display: flex;
@@ -2340,7 +2340,7 @@ padding-left: 30px;
     color: rgb(43, 41, 41) !important;
 }
 #osdsodsdd:hover{
-  color: #44bef1 !important;
+  color: #6b3d0c !important;
 }
 @media (max-width:814px) {
   .navbar-qoraaa{

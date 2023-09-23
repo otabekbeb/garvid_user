@@ -188,7 +188,7 @@
 }
 
 /* .qwe ul a:hover {
-    color: #44bef1;
+    color: #6b3d0c;
 } */
 
 .futer-block-mini {
@@ -260,7 +260,7 @@
 }
 
 .futer-text i {
-    color: #44bef1;
+    color: #6b3d0c;
 }
 
 .futer-text span {
@@ -272,7 +272,7 @@
 }
 
 /* .futer-text span:hover {
-    color: #44bef1;
+    color: #6b3d0c;
 } */
 
 .futer-block3 h3 {
@@ -333,7 +333,7 @@
     height: 50px;
     border: none;
     width: auto;
-    background-color: gray !important;
+    background-color: #6b3d0c !important;
     color: white;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -347,7 +347,7 @@
         height: 50px;
         border: none;
         width: auto;
-        /* background-color: #44bef1; */
+        /* background-color: #6b3d0c; */
         color: white;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
@@ -512,7 +512,7 @@
         height: 45px;
         border: none;
         width: auto;
-        background-color: #44bef1;
+        background-color: #6b3d0c;
         color: white;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
@@ -678,7 +678,7 @@
         height: 45px;
         border: none;
         width: auto;
-        background-color: #44bef1;
+        background-color: #6b3d0c;
         color: white;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
@@ -899,11 +899,11 @@
     }
 
     /* .futer-mobil-block-ul a:hover {
-        color: #44bef1;
+        color: #6b3d0c;
     }
 
     .futer-mobil-block-ul1 a:hover {
-        color: #44bef1;
+        color: #6b3d0c;
     } */
 
     .futer-mobil-block3 {
@@ -947,7 +947,7 @@
     }
 
     /* .futer-text .lkas span:hover {
-        color: #44bef1 !important;
+        color: #6b3d0c !important;
     } */
 
     .futer-text .lkas span {
@@ -1018,7 +1018,7 @@
         outline: none;
         padding: 10px;
         cursor: pointer;
-        background-color: gray;
+        background-color: #6b3d0c;
         font-family: 'Roboto', sans-serif;
         font-weight: 500;
         font-style: normal;
@@ -1192,7 +1192,7 @@
         height: 45px;
         border: none;
         width: auto;
-        background-color: #44bef1;
+        background-color: #6b3d0c;
         color: white;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
@@ -1255,7 +1255,7 @@
     border: none;
     width: auto;
     padding: 5px;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: white;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;

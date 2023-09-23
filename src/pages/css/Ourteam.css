@@ -80,7 +80,7 @@
     cursor: pointer;
 }
 .abouts23 .sm:hover {
-    color: #44bef1;
+    color: #6b3d0c;
 }
 .cards23 { 
     width: 300px;
@@ -237,7 +237,7 @@
         font-size: 13px;
     }
     .dumalo12:hover {
-        background: #44bef1;
+        background: #6b3d0c;
         color: white;
         border: none;
     }
@@ -251,7 +251,7 @@
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        border: 1px solid gray;
+        border: 1px solid #6b3d0c;
         /* margin: 5px; */
         transition: 0.5s;
     }
@@ -278,7 +278,7 @@
     display: flex;
 }
 .dumalo12:hover {
-    background: #44bef1;
+    background: #6b3d0c;
     color: white;
     border: none;
 }
@@ -291,7 +291,7 @@
     cursor: pointer;
 }
 .view12 h4:hover {
-    color: #44bef1;
+    color: #6b3d0c;
 }
 
 .two12 h4 {
@@ -308,7 +308,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    border: 1px solid gray;
+    border: 1px solid #6b3d0c;
     margin: 5px;
     transition: 0.5s;
 }

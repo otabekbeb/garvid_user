@@ -646,12 +646,12 @@ export default function Profil() {
       </div>
       <div>
         {state1 === 'en' ? (
-          <div className="gray_blok">
+          <div className="#6b3d0c_blok">
             <div className="fil_text_blok">
-              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} pieces</div>) : ("")}</div>
-              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My learned knowledge</h1>{toggle === 2 ? (<div className="fil_text_blok_kurs_lenght">14 pieces</div>) : ("")}</div>
-              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My certificates</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
-              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>My Subscriptions</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: '2px solid #6b3d0c' } : {}} className='fromLeft'>My courses</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} pieces</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: '2px solid #6b3d0c' } : {}} className='fromLeft'>My learned knowledge</h1>{toggle === 2 ? (<div className="fil_text_blok_kurs_lenght">14 pieces</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: '2px solid #6b3d0c' } : {}} className='fromLeft'>My certificates</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: '2px solid #6b3d0c' } : {}} className='fromLeft'>My Subscriptions</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">24 pieces</div>) : ("")}</div>
 
             </div>
             <div className="profil_blok_menu_size">
@@ -666,13 +666,13 @@ export default function Profil() {
               <h1 onClick={() => updatetoggle(5)} className='fromMenu'>Chat</h1>
             </div>
           </div>) : (
-          <div className="gray_blok">
+          <div className="#6b3d0c_blok">
             <div className="fil_text_blok">
-              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: '2px solid #44bef1', } : {}} className='fromLeft'>Мои курсы</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} штуки</div>) : ("")}</div>
-              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Мои усвоенные знания</h1>{toggle === 2 ? (<div className="fil_text_blok_kurs_lenght">14 штуки</div>) : ("")}</div>
-              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Мои сертификаты</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">24 штуки</div>) : ("")}</div>
-              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Мои подписки</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">24 штуки</div>) : ("")}</div>
-              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: '2px solid #44bef1' } : {}} className='fromLeft'>Переписка</h1><div className="fil_text_blok_kurs_lenght">1 штуки</div></div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(1)} style={toggle === 1 ? { borderBottom: '2px solid #6b3d0c', } : {}} className='fromLeft'>Мои курсы</h1>{toggle === 1 ? (<div className="fil_text_blok_kurs_lenght">{kursdata.length} штуки</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(2)} style={toggle === 2 ? { borderBottom: '2px solid #6b3d0c' } : {}} className='fromLeft'>Мои усвоенные знания</h1>{toggle === 2 ? (<div className="fil_text_blok_kurs_lenght">14 штуки</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(3)} style={toggle === 3 ? { borderBottom: '2px solid #6b3d0c' } : {}} className='fromLeft'>Мои сертификаты</h1>{toggle === 3 ? (<div className="fil_text_blok_kurs_lenght">24 штуки</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(4)} style={toggle === 4 ? { borderBottom: '2px solid #6b3d0c' } : {}} className='fromLeft'>Мои подписки</h1>{toggle === 4 ? (<div className="fil_text_blok_kurs_lenght">24 штуки</div>) : ("")}</div>
+              <div className='fil_text_blok_soz'><h1 onClick={() => updatetoggle(5)} style={toggle === 5 ? { borderBottom: '2px solid #6b3d0c' } : {}} className='fromLeft'>Переписка</h1><div className="fil_text_blok_kurs_lenght">1 штуки</div></div>
             </div>
             <div className="profil_blok_menu_size">
               <TiThMenu onClick={() => menuModal()} className='profil_blok_menu' />
@@ -756,7 +756,7 @@ export default function Profil() {
                   <a href="/Ourcourse">
                     {" "}
                     <button
-                      style={{ background: "#44bef1  " }}
+                      style={{ background: "#6b3d0c  " }}
                       className="delete_btn_yes"
                     >
                       Buy a course
@@ -775,7 +775,7 @@ export default function Profil() {
                     <a href="/Ourcourse">
                       {" "}
                       <button
-                        style={{ background: "#44bef1  " }}
+                        style={{ background: "#6b3d0c  " }}
                         className="delete_btn_yes"
                       >
                         Buy a course
@@ -1290,7 +1290,7 @@ export default function Profil() {
                   </h4>
                   <div className="delete_btns">
 
-                    {/* <a href="/Ourcourse">  <button style={{background:'#44bef1  '}} className="delete_btn_yes">Купить курс</button></a> */}
+                    {/* <a href="/Ourcourse">  <button style={{background:'#6b3d0c  '}} className="delete_btn_yes">Купить курс</button></a> */}
                   </div>
                 </div>) : (<div className="card_sertifikat">
                   {sertifikat.map(item => {
@@ -1359,7 +1359,7 @@ export default function Profil() {
                   <img src={Groupimg} alt="" />
                   <h3>No subscribers</h3>
                   {/* <div className="delete_btns">
-                            <a href="/Ourcourse">  <button style={{ background: '#44bef1  ' }} className="delete_btn_yes">Купить курс</button></a>
+                            <a href="/Ourcourse">  <button style={{ background: '#6b3d0c  ' }} className="delete_btn_yes">Купить курс</button></a>
                         </div> */}
                 </div>) : (<div style={{ display: "flex" }}>
                   {follow.map((item, key) => {
@@ -1379,7 +1379,7 @@ export default function Profil() {
                                       <h3 style={{ lineHeight: "70px" }} className="name">{item1.username}</h3>
                                     </div>
                                     <center><ul className="social">
-                                      {/* <button style={{ background: "gray" }} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button> */}
+                                      {/* <button style={{ background: "#6b3d0c" }} onClick={() => folowcolor1(item.id)} className='followButton5' >Subscribed</button> */}
                                     </ul></center>
                                   </div>
                                 </div>

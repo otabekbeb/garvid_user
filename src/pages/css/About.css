@@ -242,7 +242,7 @@
     /* .wone {
         width: 60%;
         height: 3px;
-        background-color: #44bef1;
+        background-color: #6b3d0c;
         position: relative;
         top: 10px;
         margin-top: 5px;
@@ -253,7 +253,7 @@
     .wone1 {
         width: 60%;
         height: 3px;
-        background-color: #44bef1;
+        background-color: #6b3d0c;
         position: relative;
         top: 9px;
         margin-top: 5px;
@@ -264,7 +264,7 @@
     .wone2 {
         width: 60%;
         height: 3px;
-        background-color: #44bef1;
+        background-color: #6b3d0c;
         position: relative;
         top: 8px;
         margin-top: 5px;
@@ -365,7 +365,7 @@
     }
 
     .adelna {
-        background-color: #44bef1;
+        background-color: #6b3d0c;
         width: 95vw;
         height: 35px;
         color: white;
@@ -378,7 +378,7 @@
 }
 
 .la {
-    background-color: #44bef1;
+    background-color: #6b3d0c;
 }
 
 .laa {
@@ -935,7 +935,7 @@ justify-content: center; */
 
 
 .swiper-button button {
-    color: #44bef1;
+    color: #6b3d0c;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;

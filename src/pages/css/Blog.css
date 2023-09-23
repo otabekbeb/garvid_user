@@ -40,7 +40,7 @@
 .big-cards {
     /* width: 800px; */
     font-size: 15px;
-    border-bottom: 0.5px solid gray;
+    border-bottom: 0.5px solid #6b3d0c;
     margin-bottom: 20px;
 }
 .big-cards p {
@@ -62,7 +62,7 @@
     font-weight: 700;
     font-style: normal;
     color: #ffffff;
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     border: transparent;
     margin-bottom: 30px;
     cursor: pointer;
@@ -80,7 +80,7 @@
     transition: 0.5s;
 }
 .h01 .h11:hover {
-    color: #44bef1;
+    color: #6b3d0c;
 }
 .h01 p {
     display: flex;
@@ -98,10 +98,10 @@
     width: 300px;
 }
 .min-cards h2  a:hover {
-    border-bottom: 1px solid #44bef1;
+    border-bottom: 1px solid #6b3d0c;
 }
 .min-cards h2  a{
-    color: #44bef1; 
+    color: #6b3d0c; 
     text-decoration: none;
     font-size: 0.8em;
 }
@@ -134,7 +134,7 @@
     cursor: pointer;
 }
 .category h3:hover {
-    color: #44bef1;
+    color: #6b3d0c;
 }
 .a {
     margin-bottom: 30px;
@@ -161,7 +161,7 @@
     .big-cards {
         width: 100%;
         font-size: 15px;
-        border-bottom: 0.5px solid gray;
+        border-bottom: 0.5px solid #6b3d0c;
         padding-bottom: 20px;
     }
     .big-card{
@@ -210,7 +210,7 @@
         font-weight: 500;
         font-style: normal;
         color: #ffffff;
-        background-color: #44bef1;
+        background-color: #6b3d0c;
         border: transparent;
         margin-bottom: 15px;
         cursor: pointer;
@@ -223,10 +223,10 @@
         width: 100%;
     }
     .min-cards h2  a:hover {
-        border-bottom: 1px solid #44bef1;
+        border-bottom: 1px solid #6b3d0c;
     }
     .min-cards h2  a{
-        color: #44bef1; 
+        color: #6b3d0c; 
         text-decoration: none;
         font-size: 0.6em;
     }
@@ -263,7 +263,7 @@
         }
     }
     .category h3:hover {
-        color: #44bef1;
+        color: #6b3d0c;
     }
     .a {
         margin-bottom: 30px;
@@ -284,7 +284,7 @@
     overflow: hidden;
 }
 .big-cards button:hover{
-    background-color: #44bef1;
+    background-color: #6b3d0c;
     color: white;
 }
 
