@@ -16,7 +16,7 @@
     gap: 10px;
     margin-top: 20px;
     border-radius: 10px;
-    background-color: #AC9292;
+    background-color: #f4ab42;
     /* display: none; */
     /* display: none; */
 }
@@ -24,14 +24,14 @@
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 5px;
-    background-color: #A54B50;
+    background-color: #6b3d0c;
     color: #fff;
     border-radius: 4px;
     padding-bottom: 5px;
 }
 .input_notification_bid_div input{
     width: 100%;
-    border: 1px solid #AC9292;
+    border: 1px solid #f4ab42;
     border-radius: 5px;
     height: 30px;
     padding-left: 10px;
@@ -41,7 +41,7 @@
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 5px;
-    background-color: #A54B50;
+    background-color: #6b3d0c;
     color: #fff;
     border-radius: 4px;
     padding-bottom: 5px;
@@ -98,7 +98,7 @@
 }
 
 .unred {
-    color: #AC9292;
+    color: #6b3d0c;
     font-weight: 700;
 }
 
@@ -118,7 +118,7 @@
     width: 17px;
     height: 17px;
     background-color: 
-    #A54B50;
+    #6b3d0c;
     border-radius: 50%;
     padding-top: -10px;
 }
@@ -173,15 +173,16 @@
     width: 200px !important;
 }
 .noti_select{
-    background-color: #A54B50 !important;
-    border: 2px solid #A54B50 !important;
+    background-color: #6b3d0c !important;
+    border: 2px solid #6b3d0c !important;
     cursor: pointer;
+    min-height: auto;
 }
 .Wiewals .select_div{
-    border: 2px solid #A54B50 !important;
+    border: 2px solid #6b3d0c !important;
 }
 .Wiewals .select_div p{
-    border-bottom: 2px solid #A54B50 !important;
+    border-bottom: 2px solid #6b3d0c !important;
 }
 
 ::-webkit-scrollbar {
@@ -190,21 +191,29 @@
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #A54B50 !important;
+    background: #6b3d0c !important;
   }
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #A54B50 !important;
+    background: #6b3d0c !important;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #A54B50 !important;
+    background: #6b3d0c !important;
   }
   .selectss_div{
-    display: block;
+    display: block !important;
   }
-  .select_big_div .select-input2:hover{
-    background-color: #A54B50 !important;
+  .select_big_div #select-input2:hover{
+    background-color: #6b3d0c !important;
+    color: black !important;
+  }
+  .select_big_div #select-input{
+    overflow-y: hidden;
+  }
+  #selectss ::-webkit-scrollbar{
+    width: 0px !important;
+    overflow: hidden !important;
   }

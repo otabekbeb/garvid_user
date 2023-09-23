@@ -330,7 +330,7 @@
     justify-content: space-between !important;
   }
   .navbar{
-    background-color: #f4ab42;
+    background-color: #f4ab42 !important;
   }
   .navbar-ul {
     height: 40px;
