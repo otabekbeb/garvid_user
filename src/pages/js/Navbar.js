@@ -167,7 +167,7 @@ export default function Navbar() {
       <div>
         <section onMouseLeave={() => menuul1()} className="navbar">
 
-          <div className="navbar-ul">
+          <div className="navbar-ul" >
             <ul>
               <img onClick={()=>window.location="/"} style={{width:"120px", marginRight:'-30px',cursor:"pointer"}} src={logo} alt="" />
               <li className="moto-menu-item">
