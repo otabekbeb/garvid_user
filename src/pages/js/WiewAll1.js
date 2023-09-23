@@ -31,7 +31,7 @@ export default function WiewAll() {
 //   const user = document.querySelectorAll("#Notifuser");
 
     function Select() {
-        document.querySelector(".select_div").classList.toggle("selectss_div");
+        document.querySelector(".select_div").style = "display: block !important;";
       }
       function SelectNone() {
         document.querySelector(".select_div").style = "display:none";
@@ -52,12 +52,6 @@ export default function WiewAll() {
           a.push({ title: name, id: id });
         }
         document.querySelector("#select-input").innerHTML = "";
-        a.map((item) => {
-          document.querySelector(
-            "#select-input"
-          ).innerHTML += `<p class="SelectIchi">${item.title}</p>`;
-        });
-        setSelect(a);
       }
 
     useEffect(() => {
@@ -214,7 +208,9 @@ export default function WiewAll() {
                 }).catch((err)=>{
                     // alert("ish")
                 });
-              // window.location.reload();
+               window.location.reload();
+              // document.querySelector("#atvetu1").value=""
+              // document.querySelector("#select-input").innerHTML=""
             })
             .catch((err) => {
               alert("Информация не отправлена");

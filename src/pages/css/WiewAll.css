@@ -176,6 +176,7 @@
     background-color: #A54B50 !important;
     border: 2px solid #A54B50 !important;
     cursor: pointer;
+    min-height: auto;
 }
 .Wiewals .select_div{
     border: 2px solid #A54B50 !important;
@@ -203,8 +204,12 @@
     background: #A54B50 !important;
   }
   .selectss_div{
-    display: block;
+    display: block !important;
   }
-  .select_big_div .select-input2:hover{
+  .select_big_div #select-input2:hover{
     background-color: #A54B50 !important;
+    color: black !important;
+  }
+  .select_big_div #select-input{
+    overflow-y: hidden;
   }
