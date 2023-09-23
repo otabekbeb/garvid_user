@@ -30,7 +30,7 @@
     align-items: center;
     justify-content: center;
     padding: 10px 0;
-    color: white;
+    color: #6b3d0c;
 }
 
 .futer-ichi {
@@ -63,7 +63,7 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: rgb(133, 127, 127);
+    background:#6b3d0c ;
     transition: 0.5s;
     cursor: pointer;
 }
@@ -180,7 +180,7 @@
     font-weight: 300;
     font-style: normal;
     font-family: 'Roboto', sans-serif;
-    color: #fff;
+    color: #6b3d0c;
     font-size: 15px;
     line-height: 2.4;
     letter-spacing: 0px;
@@ -822,7 +822,7 @@
     .futer-nobil-block-line {
         width: 98%;
         height: 1.2px;
-        background-color: #434f53;
+        background-color: #6b3d0c;
         position: relative;
         top: 5px;
     }
@@ -830,7 +830,7 @@
     .futer-nobil-block-line1 {
         width: 98%;
         height: 1.2px;
-        background-color: #434f53;
+        background-color: #6b3d0c;
         position: relative;
 
     }
@@ -975,7 +975,7 @@
     .futer-nobil-block-line1 {
         width: 98%;
         height: 1.2px;
-        background-color: #434f53;
+        background-color: #6b3d0c;
         position: relative;
         top: 10px;
 

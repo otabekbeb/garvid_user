@@ -171,18 +171,18 @@ export default function Navbar() {
             <ul>
               <img onClick={()=>window.location="/"} style={{width:"120px", marginRight:'-30px',cursor:"pointer"}} src={logo} alt="" />
               <li className="moto-menu-item">
-                <NavLink to="/" className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/"}z>Home</a></NavLink>
+                <NavLink to="/" className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/"} style={{color:"#6b3d0c"}}>Home</a></NavLink>
               </li>
 
 
               <div className="menu" onMouseLeave={() => menuufolse()}>
                 <div className="menuu" onMouseEnter={() => menuul()}>
                   <p>
-                    <NavLink to="/about" className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/about"}>About us</a></NavLink>
+                    <NavLink to="/about" className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/about"} style={{color:"#6b3d0c"}}>About us</a></NavLink>
                     <span>
                       <box-icon
                         name="chevron-down"
-                        color="#fff"
+                        color="#6b3d0c"
                       ></box-icon>
                     </span>
                   </p>
@@ -190,11 +190,11 @@ export default function Navbar() {
                   <ul>
                     
                     <li onClick={() => window.location = "/"} id="ded">
-                      <a id="contactcolor" href="/">FAQ </a>
+                      <a id="contactcolor" href="/" style={{color:"#6b3d0c"}}>FAQ </a>
                     </li>
                     <div className="navbbar-line-hr"></div>
                     <li onClick={() => window.location = "/contacts"} id="ded">
-                      <a id="contactcolor" href="/contacts">Contact </a>
+                      <a id="contactcolor" href="/contacts" style={{color:"#6b3d0c"}}>Contact </a>
                     </li>
                     <div className="navbbar-line-hr"></div>
 
@@ -202,7 +202,7 @@ export default function Navbar() {
 
                     <li onClick={() => window.location = "/news"} id="menu2pp" >
                       {" "}
-                      <a className="zaib">
+                      <a className="zaib" style={{color:"#6b3d0c"}}>
                         News{" "}
                       </a>{" "}
                     </li>
@@ -223,16 +223,16 @@ export default function Navbar() {
 
               <li className="moto-menu-item">
                 {" "}
-                <NavLink to="/servis"   className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/servis"}>Services</a>{" "}</NavLink>
+                <NavLink to="/servis"   className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/servis"} style={{color:"#6b3d0c"}}>Services</a>{" "}</NavLink>
               </li>
               <li className="moto-menu-item">
-                <NavLink to="/blog" className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/blog"}>Blog</a>{" "}</NavLink>
+                <NavLink to="/blog" className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/blog"} style={{color:"#6b3d0c"}}>Blog</a>{" "}</NavLink>
               </li>
               <li className="moto-menu-item">
-                <NavLink to="/ourteam" className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/ourteam"}> Our team</a>{" "}</NavLink>
+                <NavLink to="/ourteam" className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/ourteam"} style={{color:"#6b3d0c"}}> Our team</a>{" "}</NavLink>
               </li>
               <li className="moto-menu-item">
-                <NavLink to="/contacts" className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/contacts"}>Contacts</a>{" "}</NavLink>
+                <NavLink to="/contacts" className={({ isActive }) => isActive ? activeLink : normalLink}><a onClick={()=>window.location="/contacts"} style={{color:"#6b3d0c"}}>Contacts</a>{" "}</NavLink>
               </li>
 
 
@@ -244,14 +244,14 @@ export default function Navbar() {
 
               <li id="pasasas" className="moto-menu-item">
 
-                <span id="user-cionnaxuy"><BsFillPersonFill /></span>
+                <span id="user-cionnaxuy"><BsFillPersonFill style={{color:"#6b3d0c"}} /></span>
 
                 {(localStorage.getItem("token")&&user.length>0)?(
                   user.map(item => {
-                    return <a id="asdasddasdasasdsa"
+                    return <a id="asdasddasdasasdsa" style={{color:"#6b3d0c"}}
                       onClick={() => { UserTeacherStudent() }}
                     >{item.username}</a>
-                  })):(<a href="/login" >Log in</a>)}
+                  })):(<a href="/login"  style={{color:"#6b3d0c"}}>Log in</a>)}
               </li>
             </div>
             <div id="google_translate_element"></div>
