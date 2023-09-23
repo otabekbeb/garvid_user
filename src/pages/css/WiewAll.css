@@ -208,7 +208,7 @@
   }
   .select_big_div #select-input2:hover{
     background-color: #6b3d0c !important;
-    color: black !important;
+    color: white !important;
   }
   .select_big_div #select-input{
     overflow-y: hidden;
