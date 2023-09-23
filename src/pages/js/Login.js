@@ -182,11 +182,11 @@ export default function Login() {
                 onClick={() => setPage(1)}
                 style={
                   page === 1
-                    ? { background: "#9cf" }
+                    ? { background: "#6b3d0c" }
                     : {
                       background: "white",
                       color: "black",
-                      border: "2px solid #9cf",
+                      border: "2px solid #6b3d0c",
                     }
                 }
               >
@@ -196,11 +196,11 @@ export default function Login() {
                 onClick={() => setPage(2)}
                 style={
                   page === 2
-                    ? { background: "#9cf" }
+                    ? { background: "#6b3d0c" }
                     : {
                       background: "white",
                       color: "black",
-                      border: "2px solid #9cf",
+                      border: "2px solid #6b3d0c",
                     }
                 }
               >
@@ -371,8 +371,8 @@ export default function Login() {
                                 {/* <ReCAPTCHA style={{marginBottom:'10px'}} sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" onChange={onChange} /> */}
                               </div>
                               <div className="login_button_div">
-                                <button
-                                  type="button"
+                                <button    style={{background:"#6b3d0c"}}
+                                  type="button "
                                   onClick={() => userAvto()}
                                 >
                                   {state1 === "en" ? "Login" : "Авторизоваться"}
@@ -420,7 +420,7 @@ export default function Login() {
                                 <input
                                   onChange={setEmail}
                                   className="name"
-                                  placeholder={state1 === "en" ? "Name" : "Имя"}
+                                  placeholder={state1 === "en" ? "FirstName" : "Имя"}
                                   type="text"
                                   required
                                 />
@@ -483,6 +483,7 @@ export default function Login() {
                               </div>
                               <div className="login_button_div">
                                 <button
+                                style={{background:"#6b3d0c"}}
                                   type="button"
                                   onClick={() => userModal()}
                                 >
