@@ -19,6 +19,7 @@ import userNull from "../img/149071.png";
 import { BiLogoTelegram } from "react-icons/bi";
 import { FaYoutube } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
+import {BsFillCreditCard2FrontFill} from 'react-icons/bs'
 import Swal from "sweetalert2";
 
 export default function Profil() {
@@ -406,6 +407,10 @@ export default function Profil() {
                 <div className="taxrirlash_modal_div">
                   <FiLifeBuoy className="taxrirlash_modal_icon" />
                   <p onClick={() => (window.location = "/help")}>Help</p>
+                </div>
+                <div className="taxrirlash_modal_div">
+                  <BsFillCreditCard2FrontFill className="taxrirlash_modal_icon" />
+                  <p onClick={() => (window.location = "/Mycard")}>Mycard</p>
                 </div>
                 <hr />
                 <div className="taxrirlash_modal_div" onClick={() => chiqish()}>
