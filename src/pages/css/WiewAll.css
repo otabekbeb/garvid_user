@@ -173,7 +173,9 @@
     width: 200px !important;
 }
 .noti_select{
+    background-color: #A54B50 !important;
     border: 2px solid #A54B50 !important;
+    cursor: pointer;
 }
 .Wiewals .select_div{
     border: 2px solid #A54B50 !important;
@@ -199,4 +201,10 @@
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #A54B50 !important;
+  }
+  .selectss_div{
+    display: block;
+  }
+  .select_big_div .select-input2:hover{
+    background-color: #A54B50 !important;
   }
