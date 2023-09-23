@@ -73,9 +73,9 @@ export default function Footer1() {
 <h3>Contact Information</h3>
 <div className="futer-liner1"></div>
 <div className="futer-text">
-<p><box-icon name='check' color='#44bef1'id="pdsfp" ></box-icon><span>info@baisan.org</span></p>
-<p><box-icon name='check' color='#44bef1' id="pdsfp"></box-icon><span>Mon - Sat: 9:00 - 18:00</span></p>
-<p><box-icon name='check' color='#44bef1'id="pdsfp" ></box-icon><span>Qazaqstan, Turkestan Region, Shymkent city, <br /> Surikova street 3B</span></p>
+<p><box-icon name='check' color='#fff'id="pdsfp" ></box-icon><span>info@baisan.org</span></p>
+<p><box-icon name='check' color='#fff' id="pdsfp"></box-icon><span>Mon - Sat: 9:00 - 18:00</span></p>
+<p><box-icon name='check' color='#fff'id="pdsfp" ></box-icon><span>Qazaqstan, Turkestan Region, Shymkent city, <br /> Surikova street 3B</span></p>
 
 </div>
 
