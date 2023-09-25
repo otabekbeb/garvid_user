@@ -327,7 +327,7 @@
 }
 
 .jumbotron {
-    background: linear-gradient(rgba(40, 120, 235, 0.9), rgba(40, 120, 235, 0.9)), url("https://demo.htmlcodex.com/1574/online-education-website-template/img/header.jpg"), no-repeat center center;
+    background: linear-gradient(#f4aa42e8, rgba(0, 0, 0, 0.834)), url("https://demo.htmlcodex.com/1574/online-education-website-template/img/header.jpg"), no-repeat center center;
     background-size: cover;
 }
 
