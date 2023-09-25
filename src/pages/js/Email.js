@@ -16,7 +16,7 @@ function Email() {
           <FiMail className="login_icon1" />
           <input placeholder='Email' type="text" required />
           <div className="login_button_div">
-            <button type="button">Email</button>
+            <button type="button" style={{background:"#6b3d0c"}}>Email</button>
           </div>
           <div className="google_div">
             <FcGoogle className="google_icon" />

@@ -100,7 +100,7 @@ export default function Home() {
               style={{ textAlign: "center", padding: "20px" }}
               className="container my-5 py-5"
             >
-              <h3 id="huch" style={{ fontSize: "18px", color: "#6b3d0c" }}>
+              <h3 id="huch" style={{ fontSize: "18px", color: "#fff" }}>
                 BEST ONLINE COURSES
               </h3>
               <h1 className="text-white mt-4 mb-4" id="hbir">
@@ -193,7 +193,7 @@ export default function Home() {
           <div className="big1">
             <div className="bigdiv">
               <div className="card1">
-                <img
+                <img 
                   src="https://template59172.motopreview.com/mt-demo/59100/59172/mt-content/uploads/2016/08/mt-0514-home-icon01.jpg"
                   alt=""
                 />

@@ -13,7 +13,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { BsCheck2 } from 'react-icons/bs'
 import { BsCheckAll } from 'react-icons/bs'
- 
+
 export default function Contact() {
   const [state, setstate] = React.useState();
 
@@ -89,6 +89,44 @@ export default function Contact() {
           </div>
           <div className="feat_left contact_icons">
 
+            <a href="#" className="iconBox " style={{ background: '#6b3d0c', color: '#fff' }}>
+              <FaFacebookF className="icon icon4" />
+            </a>
+            <a href="#" className="iconBox" style={{ background: '#6b3d0c', color: '#fff' }}>
+              <FaTwitter className="icon icon4" />
+            </a>
+            <a href="#" className="iconBox" style={{ background: '#6b3d0c', color: '#fff' }}>
+              <FaInstagram className="icon icon4" />
+            </a>
+          </div>
+        </div>
+        <div className="contact_left666">
+          <h1 onClick={() => window.location = "/contacts"}>
+            {state === "ru" ? "Связаться с нами" : "Connect with us"}
+          </h1>
+          {/* <p className="contact_info">
+            {state === "ru"
+              ? (<div>Как я могу связаться с вами? <br /><br />По номеру <a className="contact_tel" href="tel: +7 032 11 12">
+                (+7) <span> 032 11 12</span>
+              </a>  или же оставить сообщение и наши операторы с вами свяжутся в кратчайшее время. </div>)
+              : (<div>How can I contact you? <br /><br /><a className="contact_tel" href="tel: +7 032 11 12">
+                (+7) <span> 032 11 12</span>
+              </a>call or leave a message and our operators will contact you as soon as possible.</div>)}
+          </p> */}
+          <p className="contact_address">
+            {state === "ru"
+              ? " Казахстан, Туркестанская область, город Шымкент,Улица Сурикова 3Б"
+              : "Qazaqstan, Turkestan Region, Shymkent city, Surikova street 3B"}
+          </p>
+
+          <div className="email_box">
+            <MdEmail className="email_icon" />
+            <a href="mailto: garvird@gmail.com">
+              info@baisan.org
+            </a>
+          </div>
+          <div className="feat_left contact_icons">
+
             <a href="#" className="iconBox ">
               <FaFacebookF className="icon icon4" />
             </a>
@@ -100,44 +138,6 @@ export default function Contact() {
             </a>
           </div>
         </div>
-        <div className="contact_left666">
-              <h1 onClick={() => window.location = "/contacts"}>
-                {state === "ru" ? "Связаться с нами" : "Connect with us"}
-              </h1>
-              {/* <p className="contact_info">
-            {state === "ru"
-              ? (<div>Как я могу связаться с вами? <br /><br />По номеру <a className="contact_tel" href="tel: +7 032 11 12">
-                (+7) <span> 032 11 12</span>
-              </a>  или же оставить сообщение и наши операторы с вами свяжутся в кратчайшее время. </div>)
-              : (<div>How can I contact you? <br /><br /><a className="contact_tel" href="tel: +7 032 11 12">
-                (+7) <span> 032 11 12</span>
-              </a>call or leave a message and our operators will contact you as soon as possible.</div>)}
-          </p> */}
-              <p className="contact_address">
-                {state === "ru"
-                  ? " Казахстан, Туркестанская область, город Шымкент,Улица Сурикова 3Б"
-                  : "Qazaqstan, Turkestan Region, Shymkent city, Surikova street 3B"}
-              </p>
-
-              <div className="email_box">
-                <MdEmail className="email_icon" />
-                <a href="mailto: garvird@gmail.com">
-                  info@baisan.org
-                </a>
-              </div>
-              <div className="feat_left contact_icons">
-
-                <a href="#" className="iconBox ">
-                  <FaFacebookF className="icon icon4" />
-                </a>
-                <a href="#" className="iconBox">
-                  <FaTwitter className="icon icon4" />
-                </a>
-                <a href="#" className="iconBox">
-                  <FaInstagram className="icon icon4" />
-                </a>
-              </div>
-            </div>
         <div className="contact_right">
           <div className="inputs_top">
             <input
@@ -163,7 +163,7 @@ export default function Contact() {
             className="contact_inp101"
             placeholder={state === "ru" ? "Электронная почта*" : "Email*"}
           />
-            <Number/>
+          <Number />
           <textarea
             rows={10}
             placeholder={state === "ru" ? "Сообщение*" : "Message*"}

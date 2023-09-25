@@ -364,7 +364,7 @@ export default function Login() {
                                 </span>
                               </div>
                               <div className="parol-esdan-chiqdi">
-                                <a onClick={() => setPage(5)}>Забыл пароль ?</a>
+                                <a onClick={() => setPage(5)}>Forgot your password ?</a>
                               </div>
                               <div>
                                 {/* Вставьте свой site key в атрибут 'sitekey' */}
